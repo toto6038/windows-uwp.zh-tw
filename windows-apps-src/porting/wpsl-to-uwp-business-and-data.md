@@ -1,20 +1,19 @@
 ---
-description: UI 的背後是商務與資料層。
-title: 將 WPSL 的商務和資料層移植到 UWP
+title: 將 WPSL 商務和資料層移植到 UWP
+description: 瞭解如何將 Windows Phone Silverlight 應用程式的商務和資料層移植至通用 Windows 平臺 (UWP) 。
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9548026f0cae4ac414da15ad4ad2aa86f6226cbc
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: 44d7cc2b503bc471060867f27c01c5edac3eb46c
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734913"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970136"
 ---
-#  <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>將 Windows Phone Silverlight 商務和資料層移植到 UWP
-
+# <a name="porting-windowsphone-silverlight-business-and-data-layers-to-uwp"></a>移植 Windows Phone Silverlight 商務與資料層至 UWP
 
 前一個主題是 [I/O、裝置與 app 模型的移植](wpsl-to-uwp-input-and-sensors.md)。
 
@@ -26,11 +25,11 @@ UI 的背後是商務與資料層。 這些層中的程式碼會呼叫作業系�
 
 ## <a name="background-processing"></a>背景處理
 
-當應用程式不在前景時，Windows Phone Silverlight 應用程式可以使用 managed **ScheduledTaskAgent**物件來執行工作。 UWP app 會使用 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 類別，以類似的方式來建立並登錄背景工作。 您需定義會實作您背景工作之工作的類別。 系統會定期執行您的背景工作，藉由呼叫您類別的 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法來執行工作。 在 UWP app 中，請記得在 app 套件資訊清單中設定 [**背景工作**] 宣告。 如需詳細資訊，請參閱[使用背景工作支援 app](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+Windows Phone Silverlight app 可以使用受管理的 **ScheduledTaskAgent** 物件，以在 app 工作不在前景時執行工作。 UWP app 會使用 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 類別，以類似的方式來建立並登錄背景工作。 您需定義會實作您背景工作之工作的類別。 系統會定期執行您的背景工作，藉由呼叫您類別的 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法來執行工作。 在 UWP app 中，請記得在 app 套件資訊清單中設定 [**背景工作**] 宣告。 如需詳細資訊，請參閱[使用背景工作支援 app](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
-若要在背景傳輸大型資料檔案，Windows Phone Silverlight 應用程式會使用**BackgroundTransferService**類別。 UWP app 會在 [**Windows.Networking.BackgroundTransfer**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer) 命名空間中使用 API 來執行這個動作。 這些功能使用類似的模式來起始傳輸，但新 API 已經改進性能和效能。 如需詳細資訊，請參閱[在背景傳輸資料](https://docs.microsoft.com/previous-versions/windows/apps/hh452975(v=win.10))。
+若要在背景傳輸大量資料檔案，Windows Phone Silverlight app 會使用 **BackgroundTransferService** 類別。 UWP app 會在 [**Windows.Networking.BackgroundTransfer**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer) 命名空間中使用 API 來執行這個動作。 這些功能使用類似的模式來起始傳輸，但新 API 已經改進性能和效能。 如需詳細資訊，請參閱[在背景傳輸資料](https://docs.microsoft.com/previous-versions/windows/apps/hh452975(v=win.10))。
 
-Windows Phone Silverlight 應用程式會在應用程式不在前景時，使用**BackgroundAudio**命名空間中的受控類別來播放音訊。 UWP 使用 Windows Phone 市集 app 模型，請參閱[背景音訊](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)與[背景音訊](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundAudio)範例。
+Windows Phone Silverlight app 會使用 **Microsoft.Phone.BackgroundAudio** 命名空間中的受管理類別，以在 app 不在前景時播放音訊。 UWP 使用 Windows Phone 市集 app 模型，請參閱[背景音訊](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)與[背景音訊](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundAudio)範例。
 
 ## <a name="cloud-services-networking-and-databases"></a>雲端服務、網路功能及資料庫
 
@@ -44,13 +43,13 @@ UWP app 目前沒有內建處理大量資料案例 (如企業營運系統 (LOB) 
 
 ## <a name="launchers-and-choosers"></a>啟動程式與選擇器
 
-使用啟動器和選擇器（可在**Microsoft. Phone**命名空間中找到），Windows Phone Silverlight 應用程式可以與作業系統互動，以執行一般作業，例如撰寫電子郵件、選擇相片，或與另一個應用程式共用特定種類的資料。 在[Windows Phone Silverlight To Windows 10 命名空間和類別](wpsl-to-uwp-namespace-and-class-mappings.md)對應主題中搜尋**Microsoft. Phone** ，以尋找對等的 UWP 類型。 這些範圍包括從類似的機制 (稱為啟動程式和選擇器)，到實作在 app 之間共用資料的協定。
+使用「啟動程式」和「選擇器」(可在 **Microsoft.Phone.Tasks** 命名空間中找到)，Windows Phone Silverlight app 便可以與作業系統互動以執行常見的作業，例如撰寫電子郵件、選擇相片，或是與另一個 app 中共用某些類型的資料。 在 [Windows Phone Silverlight 到 Windows 10 命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)主題中搜尋 **Microsoft.Phone.Tasks**，以尋找對等的 UWP 類型。 這些範圍包括從類似的機制 (稱為啟動程式和選擇器)，到實作在 app 之間共用資料的協定。
 
-在使用時，Windows Phone Silverlight 應用程式可以進入休眠狀態或甚至是已加上的邏輯，例如相片選擇器工作。 使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 類別的同時，UWP app 仍會保持使用中並且執行。
+Windows Phone Silverlight 應用程式可被置於休眠狀態，或甚至是被標記起來 (例如使用相片「選擇器」工作時)。 使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 類別的同時，UWP app 仍會保持使用中並且執行。
 
 ## <a name="monetization-trial-mode-and-in-app-purchases"></a>賺錢 (試用模式和在 app 內購買)
 
-Windows Phone Silverlight 應用程式可以使用 UWP [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp)類別來進行大部分的試用模式和應用程式內購買功能，因此不需要移植程式碼。 但是，Windows Phone Silverlight 應用程式會呼叫**MarketplaceDetailTask**來提供要購買的應用程式：
+Windows Phone Silverlight app 可以將 UWP [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 類別用於其大部分的試用模式與 app 內購買功能，因此不需要移植該程式碼。 但是 Windows Phone Silverlight app 會呼叫 **MarketplaceDetailTask.Show** 來提供要供購買的 app：
 
 ```csharp
     private void Buy()
@@ -74,7 +73,7 @@ Windows Phone Silverlight 應用程式可以使用 UWP [**CurrentApp**](https:
 
 ## <a name="notifications-for-tile-or-toast-updates"></a>磚或快顯通知更新的通知
 
-通知是 Windows Phone Silverlight 應用程式的推播通知模型的延伸。 當您從「Windows 推播通知服務」(WNS) 收到通知時，您可以藉由磚更新或快顯通知將資訊顯示到 UI 上。 如需移植您通知功能的 UI 端，請參閱[磚和快顯通知](w8x-to-uwp-porting-xaml-and-ui.md)。
+通知是 Windows Phone Silverlight 應用程式的推播通知模型延伸。 當您從「Windows 推播通知服務」(WNS) 收到通知時，您可以藉由磚更新或快顯通知將資訊顯示到 UI 上。 如需移植您通知功能的 UI 端，請參閱[磚和快顯通知](w8x-to-uwp-porting-xaml-and-ui.md)。
 
 如需有關在 UWP app 中使用通知的詳細資料，請參閱[傳送快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868266(v=win.10))。
 
@@ -82,7 +81,7 @@ Windows Phone Silverlight 應用程式可以使用 UWP [**CurrentApp**](https:
 
 ## <a name="storage-file-access"></a>儲存區 (檔案存取)
 
-將應用程式設定儲存為隔離儲存區中之索引鍵/值組的 Windows Phone Silverlight 程式碼，很容易就能移植。 以下是一個前後的範例，先 Windows Phone Silverlight 版本：
+您可以輕鬆移植將應用程式設定以機碼值組方式儲存在隔離儲存區中的 Windows Phone Silverlight 程式碼。 以下是移植前和移植後的對照範例，首先是 Windows Phone Silverlight 版本：
 
 ```csharp
     var propertySet = IsolatedStorageSettings.ApplicationSettings;
@@ -101,7 +100,7 @@ Windows Phone Silverlight 應用程式可以使用 UWP [**CurrentApp**](https:
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-雖然有一部分的**Windows. 儲存**命名空間可供使用，但許多 Windows Phone Silverlight 應用程式會使用**remove-isolatedstoragefile**類別來執行檔案 i/o，因為它已支援較長的時間。 假設使用**remove-isolatedstoragefile** ，以下是寫入和讀取檔案的前後範例，首先是 Windows Phone Silverlight 版本：
+雖然有 **Windows.Storage** 命名空間子集可供其使用，但是許多 Windows Phone Silverlight app 仍然會使用 **IsolatedStorageFile** 類別來執行檔案 I/O，因為其受支援的時間較久。 假設目前使用 **IsolatedStorageFile**，以下是寫入和讀取檔案的前後對照範例，首先是 Windows Phone Silverlight 版本：
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -129,7 +128,7 @@ Windows Phone Silverlight 應用程式可以使用 UWP [**CurrentApp**](https:
     string myFavoriteAuthor = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-Windows Phone Silverlight 應用程式具有選擇性 SD 記憶卡的唯讀存取權。 UWP app 擁有 SD 記憶卡的讀寫存取權限。 如需詳細資訊，請參閱[存取 SD 記憶卡](https://docs.microsoft.com/windows/uwp/files/access-the-sd-card)。
+Windows Phone Silverlight 應用程式對選用的 SD 記憶卡具有唯讀存取權。 UWP app 擁有 SD 記憶卡的讀寫存取權限。 如需詳細資訊，請參閱[存取 SD 記憶卡](https://docs.microsoft.com/windows/uwp/files/access-the-sd-card)。
 
 如需有關在 UWP 應用程式中存取相片、音樂與影片檔案的資訊，請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries)。
 
@@ -139,6 +138,6 @@ Windows Phone Silverlight 應用程式具有選擇性 SD 記憶卡的唯讀存�
 
 ## <a name="related-topics"></a>相關主題
 
-* [命名空間和類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)
  
 

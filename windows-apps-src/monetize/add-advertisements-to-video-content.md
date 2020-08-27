@@ -1,17 +1,17 @@
 ---
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
-description: 了解如何使用 AdScheduler 類別在影片內容中顯示廣告。
+description: 瞭解如何使用 AdScheduler 類別，在使用 JavaScript 搭配 HTML 撰寫的通用 Windows 平臺 (UWP) 應用程式中，顯示影片內容中的廣告。
 title: 在影片內容中顯示廣告
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b07b24de9d89d8021090312f62df4f0fb1e78dc
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: b42c917a0532a015a789c8b4ac57d59c65804ce1
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507172"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970196"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 
@@ -27,7 +27,7 @@ ms.locfileid: "77507172"
 
 影片內容的廣告根據程式少於 10 分鐘 (短時間形式) 或超過 10 分鐘 (長時間形式) 而有所不同。 雖然要在服務上設定後者比較複雜，但是寫入用戶端程式碼的方式實際上沒有任何差異。 如果 **AdScheduler** 收到含單一廣告而不是資訊清單的 VAST 承載，就會被視為如同為單一預載廣告 (在時間 00:00 的一個中斷) 呼叫的資訊清單。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * 使用 Visual Studio 2015 或更新版本安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。
 
@@ -50,17 +50,17 @@ ms.locfileid: "77507172"
 
 1. 在 Visual Studio 中，開啟您的專案或建立新專案。
 
-2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]**，請將您的專案更新成使用架構特定的建置輸出 (例如，**\[x86\]**)。 如果專案的目標是 **\[任何 CPU\]**，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 將 **Microsoft Advertising SDK for JavaScript** 程式庫的參考新增至您的專案。
 
-    1. 在 [方案總管] 視窗中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。
-    2. 在 [參考管理員] 中，展開 [通用 Windows]、按一下 [擴充功能]，然後選取 [Microsoft Advertising SDK for JavaScript] (Version 10.0) 旁邊的核取方塊。
-    3. 在 [參考管理員] 中，按一下 [確定]。
+    1. 在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
+    2. 在 [參考管理員]**** 中，展開 [通用 Windows]****、按一下 [擴充功能]****，然後選取 [Microsoft Advertising SDK for JavaScript]**** (Version 10.0) 旁邊的核取方塊。
+    3. 在 [參考管理員]**** 中，按一下 [確定]。
 
 4.  將 AdScheduler.js 檔案新增到您的專案︰
 
-    1. 在 Visual Studio 中，按一下 [專案] 和 [管理 NuGet 套件]。
+    1. 在 Visual Studio 中，按一下 [專案]**** 和 [管理 NuGet 套件]****。
     2. 在搜尋方塊中，輸入 **Microsoft.StoreServices.VideoAdScheduler** 並安裝 Microsoft.StoreServices.VideoAdScheduler 套件。 AdScheduler.js 檔案會新增到您專案中的 ../js 子目錄。
 
 5.  開啟 index.html 檔案 (或其他適用於您專案的 HTML 檔案)。 在 `<head>` 區段中，在專案的 default.css 和 main.js JavaScript 參考後面新增 ad.js 和 adscheduler.js 的參考。
@@ -147,7 +147,7 @@ ms.locfileid: "77507172"
 
 此内容取得或設定媒體必須可播放的毫秒數，以等待逾時之前的廣告要求回應。設定為 0 的值通知系統永遠不要啟動逾時功能。 預設值是 30000 毫秒 (30 秒)。
 
-### <a name="schedule"></a>排程
+### <a name="schedule"></a>schedule
 
 此屬性取得從廣告伺服器擷取的排程資料。 此物件包含與視訊廣告服務樣板 (VAST) 或視訊多廣告播放列表 (VMAP) 視訊的結構相對應的完整階層資料。
 

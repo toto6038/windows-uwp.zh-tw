@@ -1,17 +1,17 @@
 ---
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: 使用計時器提交工作項目
-description: 了解如何建立在計時器過後執行的工作項目。
+description: 瞭解如何使用 Windows.system.threading.threadpooltimer API 建立計時器，以在計時器于通用 Windows 平臺 (UWP) 應用程式中過期時提交工作專案。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b5c0982c10cde25fc5f61314c540c194d6519a2
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 2c34f50d7b5abec28b11fc67a7e0515f07206060
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619332"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970126"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
@@ -27,7 +27,7 @@ ms.locfileid: "82619332"
 
 使用 [**CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 方法建立工作項目的計時器。 提供完成工作的 Lambda，以及使用 *delay* 參數指定執行緒集區需要等待多久的時間，才能將工作項目指派給可用的執行緒。 延遲使用 [**TimeSpan**](https://docs.microsoft.com/uwp/api/Windows.Foundation.TimeSpan) 結構指定。
 
-> **注意**  您可以使用[**CoreDispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)來存取 UI，並顯示工作專案的進度。
+> **注意**   您可以使用[**CoreDispatcher RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)來存取 UI，並顯示工作專案的進度。
 
 下列範例會建立一個在三分鐘內執行的工作項目：
 

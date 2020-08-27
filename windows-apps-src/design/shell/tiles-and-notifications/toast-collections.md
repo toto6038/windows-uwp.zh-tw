@@ -1,18 +1,18 @@
 ---
-Description: 瞭解如何使用集合在行動中心中將通知分組。
 title: 快顯通知集合
+description: 瞭解如何藉由在動作中心內建立、更新或移除通知集合，來組織應用程式的快顯通知。
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, 通知, 集合, 集合, 群組通知, 群組通知, 群組, 組織, 重要訊息中心, 快顯通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 19fc1ed49fe5a3ea7d628684226b960ef2bc0732
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684185"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970066"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>使用集合來群組快顯通知
 使用集合來組織應用程式在重要訊息中心的快顯通知。 集合有助於使用者更容易在重要訊息中心找出資訊，並讓開發人員更好管理他們的通知。  下列 API 允許移除、建立和更新通知集合。
@@ -21,7 +21,7 @@ ms.locfileid: "75684185"
 > **需要 Creators Update**：您必須以 SDK 15063 為目標並執行組建 15063 或更新版本，才能使用快顯通知集合。 相關 API 包含 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection)，以及 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 您可以參閱以下訊息中心應用程式的範例，根據聊天群組分隔通知；每一個標題（Comp Sci 160A 聊天專案、直接訊息、Lacrosse 小組聊天）皆為個別的集合。  請注意如何群組不同的通知就像來自個別的應用程式一樣，即使這些通知皆來自相同的應用程式。  如果您要尋找更精細的方式組織您的通知，請參閱 [快顯通知標頭](toast-headers.md)。  
-具有兩個不同通知群組的 ![集合範例](images/toast-collection-example.png)
+![有兩個不同通知群組的集合範例](images/toast-collection-example.png)
 
 ## <a name="creating-collections"></a>建立集合
 建立每個集合時，您需要提供顯示名稱與圖示，在重要訊息中心中顯示為的集合標題一部分，如上圖所示。 使用者點閱集合標題時，集合也需要啟動引數來協助應用程式在應用程式中對的位置瀏覽。  
@@ -188,6 +188,6 @@ collectionHistory.Clear();
 
 ## <a name="related-topics"></a>相關主題
 
-* [快顯內容](adaptive-interactive-toasts.md)
-* [快顯標頭](toast-headers.md)
-* [GitHub 上的通知程式庫（Windows 社區工具組的一部分）](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [快顯通知內容](adaptive-interactive-toasts.md)
+* [快顯通知標頭](toast-headers.md)
+* [GitHub 上的 Notifications 程式庫 (屬於 Windows 社群工具組)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)

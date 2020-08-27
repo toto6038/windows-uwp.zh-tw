@@ -1,17 +1,17 @@
 ---
 title: 裝置入口網站 SMB API 參考
-description: 了解如何以程式設計方式存取 SMB API。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API/ext/smb/developerfolder，透過檔案總管存取 Xbox One 主控台上的開發人員資料夾。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 ms.localizationpriority: medium
-ms.openlocfilehash: a1040ec91af767d9472842b5ba656d347e7782d0
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 80a49d324c27754a2686ba4d954b47e7529df330
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244064"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970206"
 ---
 # <a name="developer-folder-api-reference"></a>開發人員資料夾 API 參考
 
@@ -31,15 +31,15 @@ GET | /ext/smb/developerfolder
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**   
 路徑 - 檔案開發人員檔案共用的路徑。   

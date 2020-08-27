@@ -1,17 +1,17 @@
 ---
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: 了解如何在您的 app 中抓取 AdControl 錯誤。
+description: 遵循本逐步解說，瞭解如何在 JavaScript 和 HTML5 應用程式中攔截及處理 AdControl 的錯誤。
 title: JavaScript 錯誤處理的逐步解說
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 918c2d289317b63216f11aecc3ec3c758921c19f
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 6bbd892f47f0191455df3b235bdb5125a45ea4fc
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507132"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88970246"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 錯誤處理的逐步解說
 

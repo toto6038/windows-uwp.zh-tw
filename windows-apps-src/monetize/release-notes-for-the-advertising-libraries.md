@@ -1,24 +1,24 @@
 ---
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: 檢閱 Microsoft Advertising 程式庫的版本資訊。
+description: 針對 Windows 10、Windows 8.1、Windows Phone 8.1 和 Windows Phone 8 支援 XAML 和 JavaScript/HTML 應用程式的 Microsoft 廣告程式庫，請參閱版本資訊。
 title: Advertising 程式庫的版本資訊
 ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, release notes, 廣告, 版本資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 377069522c6b31a55028bf35bf9c71ac50c90608
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 10762d28191dfe59ae6f63f06cbeb0dd3e8a9f51
+ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506842"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88969916"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 程式庫的版本資訊
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-本節提供目前版本 Microsoft Advertising 程式庫的版本資訊。 這些程式庫支援適用于 Windows 10、Windows 8.1、Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
+本節提供目前版本 Microsoft Advertising 程式庫的版本資訊。 這些程式庫支援 Windows 10、Windows 8.1、 Windows Phone 8.1 和 Windows Phone 8 的 XAML 和 JavaScript/HTML 應用程式。
 
 ## <a name="installation"></a>安裝
 
@@ -31,7 +31,7 @@ Microsoft Advertising 程式庫屬於 [Microsoft Advertising SDK](https://market
 
 ## <a name="target-architecture-specific-build-outputs"></a>目標架構特定的建置輸出
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 \[任何 CPU\] 為目標。 如果專案的目標是 **\[任何 CPU\]** ，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 \[任何 CPU\]**** 為目標。 如果專案的目標是 **\[任何 CPU\]**，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱 [已知問題](known-issues-for-the-advertising-libraries.md)。
 
 ## <a name="c-support"></a>C++ 支援
 
