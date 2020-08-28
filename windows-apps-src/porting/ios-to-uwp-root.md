@@ -1,18 +1,18 @@
 ---
-description: 從 iOS 移到 UWP
 Search.SourceType: Video
 title: 從 iOS 移到 UWP
+description: 瞭解可用來協助 iOS 開發人員擴充其使用者群的工具，以包含 Windows 10 和通用 Windows 平臺 (UWP) 。
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 266a5f147b57e522088dab2ec298b54596ef77b7
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 608f254114a200850341837528cb7506597c3bed
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260152"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043520"
 ---
 # <a name="move-from-ios-to-uwp"></a>從 iOS 移到 UWP
 
@@ -26,12 +26,12 @@ ms.locfileid: "74260152"
 
 | 主題 | 描述 |
 |-------|-------------|
-| [選取 iOS 和 UWP 應用程式開發的方法](selecting-an-approach-to-ios-and-uwp-app-development.md) | 開發跨平台 app 時有哪些選擇？ |
-| [適用于 iOS 開發人員的 UWP 使用者入門](getting-started-with-uwp-for-ios-developers.md) | 如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 |
-| [使用 Windows 10 設定您的 Mac](setting-up-your-mac-with-windows-10.md) | 使用目前的 Mac 電腦開發適用於 Windows 的 app。 |
+| [選取 iOS 和 UWP 應用程式開發的方式](selecting-an-approach-to-ios-and-uwp-app-development.md) | 開發跨平台 app 時有哪些選擇？ |
+| [開始使用適用於 iOS 開發人員的 UWP](getting-started-with-uwp-for-ios-developers.md) | 如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 |
+| [設定 Mac 的 Windows 10](setting-up-your-mac-with-windows-10.md) | 使用目前的 Mac 電腦開發適用於 Windows 的 app。 |
 
 ## <a name="related-topics"></a>相關主題
 
-**適用于設計人員和開發人員**
-* [建立適用于所有 Windows 裝置的通用 Windows 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [下載適用于 UWP 應用程式的設計資產](https://docs.microsoft.com/windows/uwp/design/downloads/index)
+**適用於設計人員和開發人員**
+* [建置適用於所有 Windows 裝置的通用 Windows 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+* [下載 UWP 應用程式的設計資產](https://docs.microsoft.com/windows/uwp/design/downloads/index)

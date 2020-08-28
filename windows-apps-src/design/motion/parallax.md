@@ -1,6 +1,6 @@
 ---
-Description: 使用 ParallaxView 控制項新增應用程式的深度和動態。
-title: 使用視差在您的應用程式中新增深度和移動。
+title: 使用視差在應用程式中增加深度和動作。
+description: 瞭解如何在 UWP 應用程式中使用 ParallaxView 控制項來建立視覺效果，讓更接近檢視器的專案移動速度比背景中的專案更快。
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d659683d6871d9d48fd17b73c74477e7bd03e258
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970493"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043570"
 ---
 # <a name="parallax"></a>視差
 
@@ -45,11 +45,11 @@ ms.locfileid: "82970493"
 
 ## <a name="parallax-and-the-fluent-design-system"></a>視差和 Fluent 設計系統
 
- Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Parallax 是將動作、深度及縮放比例加入應用程式中的 Fluent 設計系統元件。 若要深入瞭解，請參閱[流暢的設計總覽](/windows/apps/fluent-design-system)。
+ Fluent Design 系統能協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 Parallax 是將動作、深度及縮放比例加入應用程式中的 Fluent 設計系統元件。 若要深入了解，請參閱 [Fluent Design 概觀](/windows/apps/fluent-design-system)。
 
 ## <a name="how-it-works-in-a-user-interface"></a>使用者介面運作方式
 
-在 UI 中建立視差效果的做法是在 UI 捲動或平移時，以不同的速率移動不同的物件。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 為了示範，讓我們看看兩個內容層、一個清單和一個背景影像。  清單位在背景影像上方，這已經造成清單可能比較靠近檢視者的錯覺。  現在，為了達到視差效果，我們想要讓最接近我們的物件以「更快」的速度傳送，而不是距離較遠的物件。  當使用者捲動介面時，清單移動速度比背景影像快，因此造成深度錯覺。
+在 UI 中建立視差效果的做法是在 UI 捲動或平移時，以不同的速率移動不同的物件。 <!-- Parallax is an important tool in adding depth to applications along with other techniques like transition animations, perspective tilt, and layering. --> 為了示範，讓我們看看兩個層級的內容，也就是清單和背景影像。  清單位在背景影像上方，這已經造成清單可能比較靠近檢視者的錯覺。  現在，為了達成視差效果，我們想要最接近我們的物件，使其「更快」行進于距離較遠的物件。  當使用者捲動介面時，清單移動速度比背景影像快，因此造成深度錯覺。
 
  ![一個帶有背景影像和清單的視差範例](images/_Parallax_v2.gif)
 
@@ -102,14 +102,14 @@ ms.locfileid: "82970493"
 </Grid>
 ```    
 
-ParallaxView 會自動調整影像大小，使其適用于視差作業，因此您不必擔心影像的向外滾動。
+ParallaxView 會自動調整影像的大小，使其適用于視差作業，因此您不需要擔心影像滾動的顯示。
 
 ## <a name="customizing-the-parallax-effect"></a>自訂視差效果 
 
 VerticalShift 與 HorizontalShift 屬性可讓您控制視差效果的程度。
 
-* VerticalShift 屬性指定我們要背景在整個視差作業期間垂直移位多遠的距離。 值為0表示背景不會完全移動。
-* HorizontalShift 屬性指定我們要背景在整個視差作業期間水平移位多遠的距離。 值為0表示背景不會完全移動。
+* VerticalShift 屬性指定我們要背景在整個視差作業期間垂直移位多遠的距離。 值為0表示背景完全不會移動。
+* HorizontalShift 屬性指定我們要背景在整個視差作業期間水平移位多遠的距離。 值為0表示背景完全不會移動。
 
 值愈大，效果愈大。 
 
@@ -119,10 +119,10 @@ VerticalShift 與 HorizontalShift 屬性可讓您控制視差效果的程度。
 
 - 在有背景影像的清單中使用視差
 - 當 ListViewItems 包含影像時，考慮在 ListViewItems 中使用視差
-- 請勿在任何地方使用它，過度使用會降低其影響
+- 請勿在任何地方使用它，過度使用可能會降低其影響
 
 ## <a name="related-articles"></a>相關文章
 
 - [ParallaxView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [適用於 UWP 的 Fluent Design](/windows/apps/fluent-design-system)
-- [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) \(英文\)

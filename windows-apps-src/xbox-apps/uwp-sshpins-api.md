@@ -1,15 +1,15 @@
 ---
 title: 裝置入口網站 SSH Pin API 參考
-description: 了解如何以程式設計方式移除所有信任的 SSH Pin 碼。
+description: 瞭解如何使用/ext/app/sshpins Xbox 裝置入口網站 REST API，以程式設計方式移除所有信任的安全殼層 (SSH) pin。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 2c7dc6fab021c11c98276ee53af161bea25601a9
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 307af4cdd4e998832f4a2fe7a8f874615fe10ad7
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57663353"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043530"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH Pin API 參考
 您可以使用此 REST API 在您的 devkit 上移除所有受信任的 SSH Pin 碼。
@@ -20,7 +20,7 @@ ms.locfileid: "57663353"
 
 方法      | 要求 URI
 :------     | :-----
-DELETE | /ext/app/sshpins
+刪除 | /ext/app/sshpins
 <br />
 **URI 參數**
 
@@ -49,7 +49,7 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Xbox
 

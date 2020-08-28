@@ -1,17 +1,17 @@
 ---
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: 了解如何在您的 app 中抓取 AdControl 錯誤。
 title: XAML/C# 錯誤處理的逐步解說
+description: '遵循本逐步解說，瞭解如何在 XAML/c # 應用程式中攔截及處理來自 AdControl 的錯誤。'
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c856322c4940e5bbb28cb17c6da7fa49d4c3465
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 4526f44c1a38af79886a7404eb932416a4414f77
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507122"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043500"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 錯誤處理的逐步解說
 
@@ -71,7 +71,7 @@ ms.locfileid: "77507122"
     }
     ```
 
-4.  建置和執行專案。 執行 app 之後，您將會看到下面與 Visual Studio 之 **Output** 視窗中的訊息類似的訊息。
+4.  建置並執行專案。 執行 app 之後，您將會看到下面與 Visual Studio 之 **Output** 視窗中的訊息類似的訊息。
     ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
