@@ -1,27 +1,27 @@
 ---
-Description: 了解如何使用 快顯通知中的 通用關閉。
 title: 通用關閉
+description: 瞭解如何使用通用解除關閉一部裝置的快顯通知，並在其他裝置上關閉相同的通知。
 label: Universal Dismiss
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 雲端的控制中心, 通用關閉, 通知, 跨裝置, 關閉一個就關閉全部
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dc87e8856e35d60660c2643b70b820b2857b488
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: fff9315b9a5645d8a981ca899c1c37acb04de07c
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57605093"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043450"
 ---
 # <a name="universal-dismiss"></a>通用關閉
 
 通用關閉由雲端的控制中心 (Action Center in the Cloud) 提供，這表示當您關閉一部裝置上的通知，其他裝置上的相同通知也會一起關閉。
 
 > [!IMPORTANT]
-> **需要年度更新版**:您必須為目標 SDK 14393，並執行組建 14393 或更高版本以使用通用的關閉。
+> **需要年度更新版**：您的目標必須是 SDK 14393 並執行組建 14393 或更新版本，才能使用通用關閉。
 
-本案例的常見範例是行事曆提醒... 您在兩部裝置上都裝有行事曆應用程式... 您在手機和桌上型電腦同時收到通知... 您按一下桌上型電腦的關閉... 因為有通用關閉，所以手機上的提醒也同時關閉了！ **啟用通用關閉只需要一行程式碼 ！**
+本案例的常見範例是行事曆提醒... 您在兩部裝置上都裝有行事曆應用程式... 您在手機和桌上型電腦同時收到通知... 您按一下桌上型電腦的關閉... 因為有通用關閉，所以手機上的提醒也同時關閉了！ **啟用通用關閉只需要一行程式碼！**
 
 <img alt="Diagram of Universal Dismiss" src="images/universal-dismiss.gif" width="406"/>
 
@@ -34,7 +34,7 @@ ms.locfileid: "57605093"
 
 ![通用關閉 RemoteId 圖表](images/universal-dismiss-remoteid.jpg)
 
-> **RemoteId**:識別碼可唯一識別通知*跨裝置*。
+> **RemoteId**：*跨裝置*唯一識別通知的識別碼。
 
 只需一行程式碼即可新增 RemoteId，啟用支援通用關閉！ 如何產生您的 RemoteId 操之在您 - 然而，您必須先確認它可以跨裝置唯一識別通知，並可從在不同裝置上執行的不同應用程式執行個體產生相同的識別碼。
 
@@ -57,7 +57,7 @@ ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 
 這就是您必須執行的作業！ 當使用者關閉 (或按下) 通知，我們會檢查是否有 RemoteId，如果有，我們就會關閉使用者所有裝置上的該 RemoteId。
 
-**已知問題**:擷取**RemoteId**透過`ToastNotificationHistory.GetHistory()`API 一律會傳回空字串而非**RemoteId**您所指定。 請不要擔心，所有項目都能運作 - 它只是擷取已損壞的值。
+**已知問題**：透過 `ToastNotificationHistory.GetHistory()` API 擷取 **RemoteId** 一律傳回空字串，而非您指定的 **RemoteId**。 請不要擔心，所有項目都能運作 - 它只是擷取已損壞的值。
 
 > [!NOTE]
 > 如果使用者或企業停用您應用程式的[通知鏡像](notification-mirroring.md) (或完全停用通知鏡像)，則通用關閉將無法運作，因為在雲端中沒有您的通知。
