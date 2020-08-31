@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: f39d8512398c43ea65037de82434e3740bac7ff2
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: c69c61cc1db0796edbaedb2f8e2970e1100c5774
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209704"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158532"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -21,11 +21,11 @@ ms.locfileid: "79209704"
 本主題列出 Microsoft Advertising SDK 目前版本的已知問題。 如需其他疑難排解指導方針，請參閱下列主題。
 
 * [HTML 和 JavaScript 疑難排解指南](html-and-javascript-troubleshooting-guide.md)
-* [XAML 和C#疑難排解指南](xaml-and-c-troubleshooting-guide.md)
+* [XAML 和 C# 的疑難排解指南](xaml-and-c-troubleshooting-guide.md)
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl 介面於 XAML 中為未知
 
-[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
+[AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
 
 ## <a name="lasterror-from-previous-ad-request"></a>來自先前廣告要求的 lastError
 
@@ -33,7 +33,7 @@ ms.locfileid: "79209704"
 
 ## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>手機上的插入式廣告和瀏覽按鈕
 
-在具有軟體 **\[返回\]** 、 **\[開始\]** 及 **\[搜尋\]** 按鈕的手機 (或模擬器) 上，插播式廣告的倒數計時器和點選按鈕可能會被遮住。
+在具有軟體 **\[返回\]**、**\[開始\]** 及 **\[搜尋\]** 按鈕的手機 (或模擬器) 上，插播式廣告的倒數計時器和點選按鈕可能會被遮住。
 
 ## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>最近建立的廣告未被提供到您的 App
 
@@ -43,13 +43,13 @@ ms.locfileid: "79209704"
 
 有很多原因會使您看不見廣告，包括網路錯誤。 其他原因可能包含：
 
-* 在合作夥伴中心選取一個大小大於或小於您應用程式代碼中**AdControl**大小的 ad 單位。
+* 在合作夥伴中心中選取的 ad 單位大小大於或小於您應用程式程式碼中的 **AdControl** 大小。
 
 * 如果您在執行實際 App 時使用[測試模式值](set-up-ad-units-in-your-app.md#test-ad-units)做為您的廣告單位識別碼，則廣告將不會出現。
 
 * 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/windows/support)。 在該頁面上，選擇 [**洽詢 us**]。
+如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/windows/support)。 在該頁面上，選擇 [ **Contact us**]。
 
 您也可以在[論壇](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)中張貼問題。
 
@@ -61,7 +61,7 @@ ms.locfileid: "79209704"
 
 * 側載 App 或在模擬器中執行的 App 將不會顯示實際廣告。
 
-當即時廣告單位正在提供測試廣告時，廣告單位的狀態會顯示 [作用中] **，並提供**[合作夥伴中心] 中的測試廣告。 目前這並不適用於手機 App。
+當即時 ad 單位提供測試廣告時，ad 單位的狀態會顯示為作用中，並在合作夥伴中心中 **提供測試廣告** 。 目前這並不適用於手機 App。
 
 
 <span id="reference_errors"/>
@@ -70,7 +70,7 @@ ms.locfileid: "79209704"
 
 使用 Microsoft Advertising SDK 時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 **\[任何 CPU\]** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
 
-![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
+![referenceerror \- 方案總管](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 **\[組態管理員\]** 來針對偵錯和發行組態設定平台目標。
 
@@ -92,7 +92,7 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 
 設定由 **AdControl** 從其父類別繼承的邊界相關屬性，將會造成廣告位置錯誤。
 
-## <a name="more-information"></a>詳細資訊
+## <a name="more-information"></a>相關資訊
 
 如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising SDK 的相關問題，請造訪[論壇](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。
 

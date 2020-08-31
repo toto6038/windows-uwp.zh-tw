@@ -1,19 +1,19 @@
 ---
 title: DirectX 入門
-description: DirectX 程式設計入門。
+description: 請參閱有關如何開始開發使用 DirectX core 使用者介面架構之 UWP 遊戲的文章。
 ms.assetid: 7e7b95ef-faf9-48e1-8b53-a143be3b08e9
 ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 75c4cfd74dd6eaa416e00171b742e02968cb3b91
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57660223"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054508"
 ---
-# <a name="directx-getting-started"></a>DirectX:開始使用
+# <a name="directx-getting-started"></a>DirectX：入門
 
 本節的資訊可協助您開始使用 DirectX 開發 UWP 遊戲。 
 
@@ -36,15 +36,15 @@ ms.locfileid: "57660223"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">應用程式物件和 DirectX</a></p></td>
+<td align="left"><p><a href="about-the-uwp-user-interface-and-directx.md">App 物件和 DirectX</a></p></td>
 <td align="left"><p>直接與應用程式物件進行存取和互通。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">用於遊戲專案範本和工具</a></p></td>
+<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">遊戲的專案範本與工具</a></p></td>
 <td align="left"><p>為 UWP DirectX 遊戲開發準備開發環境。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">啟動與繼續應用程式</a></p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">啟動和繼續應用程式</a></p></td>
 <td align="left"><p>啟動、暫停和繼續 UWP DirectX 遊戲。</p></td>
 </tr>
 </tbody>

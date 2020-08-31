@@ -1,24 +1,24 @@
 ---
 title: 繪製到螢幕
-description: 最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。
+description: 瞭解如何使用 GXDI 和 Direct3D Api 來移植 OpenGL 程式碼，並將旋轉立方體繪製到螢幕。
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 圖形
 ms.localizationpriority: medium
-ms.openlocfilehash: 68d2c6ec250286b9820ff218f9b35637f49f3b97
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7380ede77eeb14f8b1865d4c948387df7e072453
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368754"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054498"
 ---
 # <a name="draw-to-the-screen"></a>繪製到螢幕
 
 
 
 
-**重要的 Api**
+**重要 API**
 
 -   [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)
 -   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)
@@ -28,20 +28,20 @@ ms.locfileid: "66368754"
 
 在 OpenGL ES 2.0 中，您的繪製內容定義為 EGLContext 類型，其中包含視窗與表面參數以及繪製到轉譯目標所需的資源，將用於構成顯示在視窗上的最終影像。 您使用此內容來設定圖形資源，以便將著色器管線的結果正確顯示在顯示器上。 其中一個主要資源是「背景緩衝區」(或稱為「框架緩衝區物件」)，包含最終的組合轉譯目標，可呈現在顯示器上。
 
-使用 Direct3D 時，設定圖形資源用於繪製到顯示器的程序更易於遵循，且只需要多使用幾個 API。 （Microsoft Visual Studio Direct3D 範本可以大幅簡化此程序，不過 ！）若要取得的內容 （稱為 Direct3D 裝置內容），您必須先取得[ **ID3D11Device1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)物件，並使用它來建立和設定[ **ID3D11DeviceContext1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)物件。 這兩個物件可一起用於設定繪製到顯示器所需的特定資源。
+使用 Direct3D 時，設定圖形資源用於繪製到顯示器的程序更易於遵循，且只需要多使用幾個 API。 (不過，Microsoft Visual Studio Direct3D 範本可大幅精簡此程序！) 若要取得內容 (呼叫 Direct3D 裝置內容)，您必須先取得 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件，然後再使用該物件建立和設定 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件。 這兩個物件可一起用於設定繪製到顯示器所需的特定資源。
 
 簡單來說，DXGI API 包含的主要 API 可用來管理與圖形介面卡直接相關的資源，而 Direct3D 包含的 API 則可讓您在 GPU 與在 CPU 上執行的主要程式間進行互動。
 
 為了在此範例中進行比較，以下是每個 API 的相關類型：
 
--   [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)： 提供的圖形裝置和其資源的虛擬表示法。
--   [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)： 提供介面，以設定緩衝區，並發出轉譯命令。
--   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)： 交換鏈結背景緩衝區中 OpenGL ES 2.0 相當。 這是圖形介面卡的記憶體區域，包含最終要顯示的轉譯影像。 稱為「交換鏈結」是因為它具有數個「交換的」可寫入緩衝區，將最新的轉譯呈現至螢幕。
--   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)： 這包含 2D 點陣圖緩衝區的 Direct3D 裝置內容繪製到，，和交換鏈結所提供。 使用 OpenGL ES 2.0，您可以擁有多個轉譯目標，某些轉譯目標未繫結至交換鏈結，但可用於多重傳遞著色技巧。
+-   [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)：提供圖形裝置與其資源的虛擬表示法。
+-   [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)：提供用來設定緩衝區和發出轉譯命令的介面。
+-   [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)：交換鏈結類似於 OpenGL ES 2.0 中的背景緩衝區。 這是圖形介面卡的記憶體區域，包含最終要顯示的轉譯影像。 稱為「交換鏈結」是因為它具有數個「交換的」可寫入緩衝區，將最新的轉譯呈現至螢幕。
+-   [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)：這包含容納 Direct3D 裝置繪製內容的 2D 點陣圖緩衝區，其由交換鏈結來呈現。 使用 OpenGL ES 2.0，您可以擁有多個轉譯目標，某些轉譯目標未繫結至交換鏈結，但可用於多重傳遞著色技巧。
 
 在範本中，轉譯器物件包含下列欄位：
 
-Direct3D 11:裝置和裝置內容的宣告
+Direct3D 11：裝置與裝置內容宣告
 
 ``` syntax
 Platform::Agile<Windows::UI::Core::CoreWindow>       m_window;
@@ -69,13 +69,13 @@ Direct3D 執行階段會為 [**ID3D11Texture2D**](https://docs.microsoft.com/win
 
 如需與 EGL 及 EGLContext 類型相關的 Direct3D 裝置內容的詳細資訊，請閱讀[將 EGL 程式碼移植到 DXGI 與 Direct3D](moving-from-egl-to-dxgi.md)。
 
-## <a name="instructions"></a>指示
+## <a name="instructions"></a>Instructions
 
-### <a name="step-1-rendering-the-scene-and-displaying-it"></a>步驟 1：轉譯場景，再加以顯示
+### <a name="step-1-rendering-the-scene-and-displaying-it"></a>步驟 1：轉譯場景並顯示
 
 更新立方體資料後 (在此案例中，是延著 Y 軸將它稍微旋轉)，Render 方法會將檢視區設為繪製內容 (EGLContext) 的維度。 此內容包含將會使用設定的顯示器 (EGLDisplay) 顯示於視窗表面 (EGLSurface) 的色彩緩衝區。 此時，範例會更新頂點資料屬性、重新繫結索引緩衝區、繪製立方體，並在著色管線繪製到顯示介面的色彩緩衝區內交換。
 
-OpenGL ES 2.0:轉譯顯示的畫面格
+OpenGL ES 2.0：轉譯框架用於顯示
 
 ``` syntax
 void Render(GraphicsContext *drawContext)
@@ -133,7 +133,7 @@ void Render(GraphicsContext *drawContext)
 -   透過著色器傳送索引後的頂點，並使用 [**ID3D11DeviceContext1::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 將色彩結果輸出到轉譯目標緩衝區。
 -   使用 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 顯示轉譯目標緩衝區。
 
-Direct3D 11:轉譯顯示的畫面格
+Direct3D 11：轉譯框架用於顯示
 
 ``` syntax
 void RenderObject::Render()
@@ -198,10 +198,10 @@ void RenderObject::Render()
 
 呼叫 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 後，您的框架就會輸出到設定的顯示器。
 
-## <a name="previous-step"></a>上一步
+## <a name="previous-step"></a>上一個步驟
 
 
-[GLSL 的連接埠](port-the-glsl.md)
+[移植 GLSL](port-the-glsl.md)
 
 ## <a name="remarks"></a>備註
 
@@ -210,10 +210,10 @@ void RenderObject::Render()
 ## <a name="related-topics"></a>相關主題
 
 
-* [如何： 連接埠到 Direct3D 11 中的簡單的 OpenGL ES 2.0 轉譯器](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [連接埠的著色器物件](port-the-shader-config.md)
-* [GLSL 的連接埠](port-the-glsl.md)
-* [描繪至螢幕](draw-to-the-screen.md)
+* [使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [移植著色器物件](port-the-shader-config.md)
+* [移植 GLSL](port-the-glsl.md)
+* [繪製到螢幕](draw-to-the-screen.md)
 
  
 

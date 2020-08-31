@@ -6,22 +6,22 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3f689f86e629ce81946927fa732a3ab692b219
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: a87382aeffb0e0b7a8eaca1c4baec8561049e91e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409507"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168242"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>轉譯架構 II：遊戲轉譯
 
 > [!NOTE]
-> 本主題是使用 DirectX 教學課程系列[建立簡單的通用 Windows 平臺（UWP）遊戲](tutorial--create-your-first-uwp-directx-game.md)的一部分。 該連結的主題會設定數列的內容。
+> 本主題是使用 DirectX 教學課程系列 [建立簡單通用 Windows 平臺 (UWP) 遊戲](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 該連結的主題會設定數列的內容。
 
 在[轉譯架構 I](tutorial--assembling-the-rendering-pipeline.md) 中，我們已討論如何採用場景資訊，然後呈現中顯示畫面中。 現在，我們將回顧以了解如何準備要轉譯的資料。
 
 >[!Note]
->如果您尚未下載此範例的最新遊戲程式碼，請移至[Direct3D 範例遊戲](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](/windows/uwp/get-started/get-uwp-app-samples)。
+>如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 範例遊戲](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](../get-started/get-app-samples.md)。
 
 ## <a name="objective"></a>目標
 
@@ -44,21 +44,21 @@ ms.locfileid: "85409507"
 * 常數緩衝區定義於此類別以保留各種轉譯所需的資料。
     * 使用採用不同頻率的多個常數緩衝區，以減少每個畫面必須傳送到 GPU 的資料量。 此範例會根據必須更新的頻率，將常數分成不同的緩衝區。 這是 Direct3D 程式設計的最佳做法。 
     * 在此範例遊戲中，會定義4個常數緩衝區。
-        1. __m \_ constantBufferNeverChanges__包含光源參數。 將其在 __FinalizeCreateGameDeviceResources__ 方法中設定一次，之後不再改變。
-        2. __m \_ constantBufferChangeOnResize__包含投影矩陣。 投影矩陣取決於視窗的大小和外觀比例。 其設定在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 中，然後在資源載入到 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法中之後進行更新。 如果以 3D 功能轉譯，也會每個畫面變更兩次。
-        3. __m \_ constantBufferChangesEveryFrame__包含視圖矩陣。 這個矩陣取決於相機位置和觀看方向 (與投影垂直)，而且以 __Render__ 方法在每個畫面變更一次。 這稍早已在__轉譯架構 I：轉譯簡介__ (在 [__GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) 下) 中討論過了。
-        4. __m \_ constantBufferChangesEveryPrim__包含每個基本類型的模型矩陣和材質屬性。 模型矩陣會將頂點從區域座標轉換成全局座標。 這些常數為每個基本類型專用，而且會針對每次繪圖呼叫進行更新。 這稍早已在 __轉譯架構 I：轉譯簡介__ (在 [Primitive rendering](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering) 下) 中討論過了。
+        1. __m \_ constantBufferNeverChanges__ 包含光源參數。 將其在 __FinalizeCreateGameDeviceResources__ 方法中設定一次，之後不再改變。
+        2. __m \_ constantBufferChangeOnResize__ 包含投影矩陣。 投影矩陣取決於視窗的大小和外觀比例。 其設定在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 中，然後在資源載入到 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法中之後進行更新。 如果以 3D 功能轉譯，也會每個畫面變更兩次。
+        3. __m \_ constantBufferChangesEveryFrame__ 包含視圖矩陣。 這個矩陣取決於相機位置和觀看方向 (與投影垂直)，而且以 __Render__ 方法在每個畫面變更一次。 這稍早已在__轉譯架構 I：轉譯簡介__ (在 [__GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) 下) 中討論過了。
+        4. __m \_ constantBufferChangesEveryPrim__ 包含每個基本類型的模型矩陣和材質屬性。 模型矩陣會將頂點從區域座標轉換成全局座標。 這些常數為每個基本類型專用，而且會針對每次繪圖呼叫進行更新。 這稍早已在 __轉譯架構 I：轉譯簡介__ (在 [Primitive rendering](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering) 下) 中討論過了。
 * 在此類別中還會定義保存基本類型紋理的著色器資源物件。
     * 某些紋理已預先定義 ([DDS](/windows/desktop/direct3ddds/dx-graphics-dds-pguide) 是可以用來儲存已壓縮和解壓縮紋理的檔案格式。 DDS 紋理用於世界各地的牆與地板，以及子彈)。
     * 在此範例遊戲中，著色器資源物件為： __m \_ sphereTexture__、 __m \_ cylinderTexture__、 __m \_ ceilingTexture__、 __m \_ floorTexture__、 __m \_ wallsTexture__。
 * 著色器物件定義於此類別來計算我們的基本類型和紋理。 
-    * 在此範例遊戲中，著色器物件__為 \_ m vertexShader__、 __m \_ vertexShaderFlat__和__m \_ 無效__， __m \_ pixelShaderFlat__。
+    * 在此範例遊戲中，著色器物件 __為 \_ m vertexShader__、 __m \_ vertexShaderFlat__和 __m \_ 無效__， __m \_ pixelShaderFlat__。
     * 頂點著色器會處理基本類型和基本光源，而像素著色器 (有時稱為片段著色器) 會處理紋理和任何個別像素的效果。
     * 用來轉譯不同基本類型的這些著色器有兩種版本 (一般和平面)。 我們有不同版本的原因是平面版本簡單許多，而且不處理反射強光光線或任何每個像素的光線效果。 它們是用來轉譯牆，讓低電量裝置上的轉譯變得更快速。
 
 ## <a name="gamerendererh"></a>GameRenderer.h
 
-現在讓我們來看一下範例遊戲轉譯器類別物件中的程式碼。
+現在讓我們看看範例遊戲轉譯器類別物件中的程式碼。
 
 ```cppwinrt
 // Class handling the rendering of the game
@@ -124,7 +124,7 @@ private:
 
 ## <a name="constructor"></a>建構函式
 
-接下來，讓我們檢查範例遊戲的__GameRenderer__函式，並將它與 DirectX 11 應用程式範本中提供的__Sample3DSceneRenderer__函式做比較。
+接下來，讓我們檢查範例遊戲的 __GameRenderer__ 函式，並將它與 DirectX 11 應用程式範本中提供的 __Sample3DSceneRenderer__ 函式進行比較。
 
 ```cppwinrt
 // Constructor method of the main rendering class object
@@ -143,7 +143,7 @@ GameRenderer::GameRenderer(std::shared_ptr<DX::DeviceResources> const& deviceRes
 
 ## <a name="create-and-load-directx-graphic-resources"></a>建立和載入 DirectX 圖形資源
 
-在範例遊戲中（在 Visual Studio 的__DirectX 11 應用程式（通用 Windows）__ 範本）中，建立和載入遊戲資源是使用從__GameRenderer__函式呼叫的這兩種方法來執行：
+在範例遊戲 (和 Visual Studio 的 __DirectX 11 應用程式 (通用 Windows) __ 範本) 中，建立及載入遊戲資源時，會使用從 __GameRenderer__ 函式所呼叫的這兩種方法來執行：
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
 * [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
@@ -154,9 +154,9 @@ GameRenderer::GameRenderer(std::shared_ptr<DX::DeviceResources> const& deviceRes
 
 在遊戲範例中，這些場景物件的操作會改為在 [__CreateGameDeviceResourcesAsync__](#creategamedeviceresourcesasync-method) 和 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法之間分段。 
 
-針對此範例遊戲，這種方法會如何？
+在這個範例遊戲中，此方法有何功能？
 
-* 已具現化的變數（__m \_ gameResourcesLoaded__ = false 和__m \_ levelResourcesLoaded__ = false），指出是否已載入資源，再繼續轉譯，因為我們是以非同步方式載入。 
+* 具現化變數 (__m \_ gameResourcesLoaded__ = false 和 __m \_ levelResourcesLoaded__ = false) 指出是否已載入資源，然後再向前轉譯，因為我們是以非同步方式載入。 
 * 由於 HUD 和重疊轉譯是在不同的類別物件，請在此呼叫 __GameHud::CreateDeviceDependentResources__ 和 __GameInfoOverlay::CreateDeviceDependentResources__ 方法。
 
 以下是 __GameRenderer::CreateDeviceDependentResources__ 的程式碼。
@@ -178,8 +178,8 @@ void GameRenderer::CreateDeviceDependentResources()
 以下是用來建立和載入資源的方法清單。
 
 - CreateDeviceDependentResources
-  - CreateGameDeviceResourcesAsync （已新增）
-  - FinalizeCreateGameDeviceResources （已新增）
+  - CreateGameDeviceResourcesAsync (新增) 
+  - FinalizeCreateGameDeviceResources (新增) 
 - CreateWindowSizeDependentResources
 
 在探究用來建立和載入資源的其他方法之前，請先建立轉譯器，然後查看其如何融入遊戲迴圈。
@@ -226,7 +226,7 @@ winrt::fire_and_forget GameMain::ConstructInBackground()
 
 ## <a name="creategamedeviceresourcesasync-method"></a>CreateGameDeviceResourcesAsync 方法
 
-__CreateGameDeviceResourcesAsync__是從 [__建立 \_ __工作迴圈] 中的 [ __GameMain__ ] [函式] 方法呼叫，因為我們是以非同步方式載入遊戲資源。
+__CreateGameDeviceResourcesAsync__是從__create \_ Task__迴圈中的__GameMain__方法方法呼叫，因為我們是以非同步方式載入遊戲資源。
         
 __CreateDeviceResourcesAsync__ 是當作另一組非同步工作執行以載入遊戲資源的方法。 因為它應該是在另一個執行緒上執行，它只能存取 Direct3D 11 裝置方法 (在 __ID3D11Device__ 上定義的方法) 而不能存取裝置內容方法 (在 __ID3D11DeviceContext__ 上定義的方法)，所以它不執行任何轉譯。
 
@@ -239,13 +239,13 @@ __FinalizeCreateGameDeviceResources__ 方法在主執行緒上執行，且無法
 * 使用此方法將紋理 (例如 .dds 檔案) 及著色器資訊 (例如 .cso 檔案) 載入[著色器](tutorial--assembling-the-rendering-pipeline.md#shaders)。
 
 這個方法用於：
-* 建立4個[常數緩衝區](tutorial--assembling-the-rendering-pipeline.md#buffer)： __m \_ constantBufferNeverChanges__、 __m \_ constantBufferChangeOnResize__、 __m \_ constantBufferChangesEveryFrame__、 __m \_ constantBufferChangesEveryPrim__
+* 建立4個 [常數緩衝區](tutorial--assembling-the-rendering-pipeline.md#buffer)： __m \_ constantBufferNeverChanges__、 __m \_ constantBufferChangeOnResize__、 __m \_ constantBufferChangesEveryFrame__、 __m \_ constantBufferChangesEveryPrim__
 * 建立封裝紋理取樣資訊的[樣本狀態](tutorial--assembling-the-rendering-pipeline.md#sampler-state)物件
 * 建立包含方法所建立之所有非同步工作的工作群組。 它會等候所有這些非同步工作完成之後，接著呼叫 __FinalizeCreateGameDeviceResources__。
 * 使用[基本載入器](tutorial--assembling-the-rendering-pipeline.md#the-basicloader-class)建立載入器。 新增載入器的非同步載入操作，當做工作加入到稍早建立的工作群組。
 * 像 __BasicLoader::LoadShaderAsync__ 和 __BasicLoader::LoadTextureAsync__ 這類的方法用於載入：
     * 編譯的著色器物件 (VertextShader.cso、VertexShaderFlat.cso、PixelShader.cso 以及 PixelShaderFlat.cso)。 如需詳細資訊，請移至[各種著色器檔案格式](tutorial--assembling-the-rendering-pipeline.md#various-shader-file-formats)。
-    * 遊戲特定材質（資產 metal_texture seafloor，dds，cellceiling、cellfloor、dds、 \\ cellwall）。
+    * 遊戲特定的材質 (資產 \\ seafloor、metal_texture dds、cellceiling、cellfloor、dds、cellwall) 。
 
 ```cppwinrt
 IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<Simple3DGame> game)
@@ -354,8 +354,8 @@ IAsyncAction GameRenderer::CreateGameDeviceResourcesAsync(_In_ std::shared_ptr<S
 __FinalizeCreateGameDeviceResources__ 與 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 共用程式碼類似部分，因為它們：
 * 使用 __SetProjParams__，確保相機擁有正確投影矩陣。 如需詳細資訊，請移至[相機和座標空間](tutorial--assembling-the-rendering-pipeline.md#camera-and-coordinate-space)。
 * 透過將 3D 旋轉矩陣與相機投影矩陣後乘來處理螢幕旋轉。 然後使用產生的投影矩陣更新 __ConstantBufferChangeOnResize__ 常數緩衝區。
-* 將__m \_ gameResourcesLoaded__ __布林值__全域變數設定為，表示資源現在已載入緩衝區中，準備好進行下一個步驟。 之前提到，我們第一次透過 __GameRenderer::CreateDeviceDependentResources__ 方法，將此變數初始化為 __FALSE__ in the __GameRenderer__ 的建構函式方法。 
-* 當此__m \_ GameResourcesLoaded__為__TRUE__時，可能會發生場景物件的呈現。 此已涵蓋在__轉譯架構 I：轉譯簡介__ 文章中 (在 [__GameRenderer::Render 方法__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) 下)。
+* 設定 __m \_ gameResourcesLoaded__ __布林值__ 全域變數以指出資源現在已載入緩衝區中，準備好進行下一個步驟。 之前提到，我們第一次透過 __GameRenderer::CreateDeviceDependentResources__ 方法，將此變數初始化為 __FALSE__ in the __GameRenderer__ 的建構函式方法。 
+* 當這個 __m \_ GameResourcesLoaded__ 為 __TRUE__時，可以進行場景物件的呈現。 此已涵蓋在__轉譯架構 I：轉譯簡介__ 文章中 (在 [__GameRenderer::Render 方法__](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) 下)。
 
 ```cppwinrt
 // This method is called from the GameMain constructor.
@@ -569,14 +569,14 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 ## <a name="createwindowsizedependentresource-method"></a>CreateWindowSizeDependentResource method
 
-每次視窗大小、方向、啟用 Stereo 轉譯或解析度變更，都會呼叫 CreateWindowSizeDependentResources 方法。 在範例遊戲中，它會更新__ConstantBufferChangeOnResize__中的投影矩陣。
+每次視窗大小、方向、啟用 Stereo 轉譯或解析度變更，都會呼叫 CreateWindowSizeDependentResources 方法。 在範例遊戲中，它會更新 __ConstantBufferChangeOnResize__中的投射矩陣。
 
 視窗大小資源以此方式更新： 
 * 應用程式架構取得指出視窗狀態變更的數個可能事件之一。 
 * 然後您的主要遊戲迴圈會收到有關事件的通知，並且在主要類型 (__GameMain__) 執行個體呼叫 __CreateWindowSizeDependentResources__，其接著呼叫在遊戲轉譯器 (__GameRenderer__) 類別中的 __CreateWindowSizeDependentResources__ 實作。
 * 此方法的主要工作是確定視覺效果不會因為視窗屬性變更而變得混淆或不正確。
 
-針對此範例遊戲，有數個方法呼叫與[__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method)方法相同。 如需程式碼逐步解說，請移至前一節。
+針對此範例遊戲，有許多方法呼叫與 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法相同。 如需程式碼逐步解說，請移至前一節。
 
 遊戲 HUD 和重疊視窗大小轉譯調整涵蓋在[新增使用者介面](tutorial--adding-a-user-interface.md)下。
 

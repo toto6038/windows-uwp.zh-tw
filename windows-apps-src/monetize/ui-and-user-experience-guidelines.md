@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: 了解關於在應用程式中廣告的 UI 和使用者體驗指導方針。
+description: 請參閱指導方針，以在您的應用程式中使用橫幅廣告、插入式 ads 和原生廣告提供絕佳的 UI 和使用者體驗。
 title: 廣告的 UI 和使用者體驗指導方針
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: d64d5c544f6ec9e1356cc024e634286336dc9f91
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 014cc5a7be370ed5fd579af9bc4ab7600cb96689
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210244"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158352"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
@@ -21,7 +21,7 @@ ms.locfileid: "79210244"
 本文提供的指引可讓您在應用程式中提供絕佳的橫幅廣告、插播式廣告以及原生廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
 
 > [!IMPORTANT]
-> 您應用程式中的任何廣告使用都必須符合 Microsoft Store 原則，包括但不限於[原則 10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有許多其他方式也可能會違反 Microsoft Store 原則而未列於本文中。
+> 您應用程式中的任何廣告使用都必須符合 Microsoft Store 原則，包括但不限於[原則 10.10](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Microsoft Store 原則[原則 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有許多其他方式也可能會違反 Microsoft Store 原則而未列於本文中。
 
 ## <a name="general-best-practices"></a>一般最佳作法
 
@@ -36,9 +36,9 @@ ms.locfileid: "79210244"
 
 ## <a name="guidelines-for-banner-ads"></a>橫幅廣告指南
 
-以下章節提供如何使用 [AdControl](banner-ads.md) 在您的應用程式中實作[橫幅廣告](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)的建議，以及違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。
+以下章節提供如何使用 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 在您的應用程式中實作[橫幅廣告](banner-ads.md)的建議，以及違反 Microsoft Store 原則[原則 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳作法
 
 建議您在應用程式中實作橫幅廣告時，依照這些最佳做法：
 
@@ -52,7 +52,7 @@ ms.locfileid: "79210244"
 
 * 針對沒有可用廣告的情況進行計畫。 有時候廣告可能無法傳送到您的應用程式。 請以無論是否展示廣告都能展現極佳外觀的方式，配置您的頁面。 如需詳細資訊，請參閱[處理廣告錯誤](error-handling-with-advertising-libraries.md)。
 
-* 若您的警示使用者案例最好使用覆疊處理，請於顯示覆疊時呼叫 [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)，接著在完成警示案例時呼叫 [AdControl.Resume](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.resume)。
+* 若您的警示使用者案例最好使用覆疊處理，請於顯示覆疊時呼叫 [AdControl.Suspend](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend)，接著在完成警示案例時呼叫 [AdControl.Resume](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.resume)。
 
 ### <a name="practices-to-avoid"></a>應避免的做法
 
@@ -66,21 +66,21 @@ ms.locfileid: "79210244"
 
 ### <a name="examples-of-policy-violations"></a>原則違反範例
 
-本章節提供會違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的橫幅廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
+本章節提供會違反 Microsoft Store 原則[原則 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的橫幅廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
 
-* 竭盡所能影響使用者檢視橫幅廣告的能力，例如變更 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的不透明度，或在  **AdControl** 上放置其他控制項 (而未先呼叫 [AdControl.Suspend](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend))。
+* 竭盡所能影響使用者檢視橫幅廣告的能力，例如變更 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的不透明度，或在  **AdControl** 上放置其他控制項 (而未先呼叫 [AdControl.Suspend](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.suspend))。
 
 * 要求使用者需按一下橫幅廣告才能在您的應用程式中完成工作，或將應用程式設計為強制使用者按一下橫幅廣告。
 
-* 用任何方式略過橫幅廣告的內建最小重新整理計時器，包括但不限於交換 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 物件，或強制頁面在沒有使用者互動的情況下重新整理。
+* 用任何方式略過橫幅廣告的內建最小重新整理計時器，包括但不限於交換 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 物件，或強制頁面在沒有使用者互動的情況下重新整理。
 
-* 在開發和測試期間，或在模擬器中使用即時 ad 單位（也就是您從合作夥伴中心取得的 ad 單位）。
+* 使用即時 ad 單位 (也就是您在開發和測試期間從合作夥伴中心) 取得的 ad 單位或模擬器。
 
 * 撰寫或散發的程式碼透過您應用程式中執行的 Microsoft 廣告程式庫以外的方式呼叫廣告服務。
 
 * 與 Microsoft 廣告程式庫建立的未記載介面或子物件互動，例如 **WebView** 或 **MediaElement**。
 
-* 將廣告放在 viewbox 中，以減少廣告的大小，以便在頁面上允許比平常更多的廣告。
+* 將廣告放在 viewbox 中，以減少廣告的大小，以允許頁面上的廣告比平常更多。
 
 <span id="interstitialbestpractices10" />
 
@@ -88,9 +88,9 @@ ms.locfileid: "79210244"
 
 巧妙地使用[插播式廣告](interstitial-ads.md)可以大幅提高您應用程式的收益，而不會對使用者滿意的產生負面影響。 當使用不當時，這類廣告會有完全相反的效果。
 
-以下章節提供如何使用 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在您的應用程式中實作插播式影片廣告及標準橫幅廣告的建議，以及違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
+以下章節提供如何使用 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 在您的應用程式中實作插播式影片廣告及標準橫幅廣告的建議，以及違反 Microsoft Store 原則[原則 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
 
-### <a name="best-practices"></a>最佳做法
+### <a name="best-practices"></a>最佳作法
 
 建議您在應用程式中實作插入式廣告時，依照這些最佳做法：
 
@@ -106,9 +106,9 @@ ms.locfileid: "79210244"
 
 * 如果您的應用程式必須看完插播式影片廣告，請先提到這項規則，如此使用者才不會對按下關閉按鈕時所發生的錯誤訊息感到意外。
 
-* 在您需要顯示廣告前，預先擷取廣告 (藉由呼叫 [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad))，理想的情況為 30 秒到 60 秒。
+* 在您需要顯示廣告前，預先擷取廣告 (藉由呼叫 [InterstitialAd.RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad))，理想的情況為 30 秒到 60 秒。
 
-* 訂閱在 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別中公開的四個事件 (**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**) 並使用它們來為應用程式做出正確的決策。
+* 訂閱在 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別中公開的四個事件 (**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**) 並使用它們來為應用程式做出正確的決策。
 
 * 有一些內建的體驗可以用來取代伺服器比對的廣告。 您會在以下的一些範例中發現這很有用：
 
@@ -116,11 +116,11 @@ ms.locfileid: "79210244"
 
     * 當引發 **ErrorOccurred** 事件時。
 
-    * 如果您選擇根據 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 儲存使用者的頻寬時，在 **ConnectionProfile** 類別中有 API 可協助您。
+    * 如果您選擇根據 [ConnectionProfile](/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 儲存使用者的頻寬時，在 **ConnectionProfile** 類別中有 API 可協助您。
 
 * 使用預設 (30 秒) 逾時，除非您有合理的理由設定其他值，在該情況下不低於 10 秒。 插播式影片廣告比標準橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
 
-* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供插播式影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 類別中有 API 可協助您。
+* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供插播式影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 類別中有 API 可協助您。
 
 * 在初始提交後，請繼續改善您的應用程式。 查看[廣告報表](../publish/advertising-performance-report.md)，然後變更設計以改進覆蓋率與插播式影片廣告完成率。
 
@@ -136,11 +136,11 @@ ms.locfileid: "79210244"
 
 * 請勿連續顯示二或多個插入式廣告。 使用者對於廣告進度列重設到開始點會感到不愉快。 許多人會認為這是程式碼或廣告服務錯誤。
 
-* 在呼叫 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 前，請勿擷取超過 5 分鐘的插播式影片廣告。 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
+* 在呼叫 [InterstitialAd.Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 前，請勿擷取超過 5 分鐘的插播式影片廣告。 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
 * 請勿對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告以取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
 
-    * 除非引發 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，否則不要包含該選項。
+    * 除非引發 [InterstitialAd.AdReady](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，否則不要包含該選項。
 
     * 讓包含內建體驗的應用程式可以產生與廣告相同的好處。
 
@@ -148,19 +148,19 @@ ms.locfileid: "79210244"
 
 ### <a name="examples-of-policy-violations"></a>原則違反範例
 
-本章節提供會違反 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的插入式廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
+本章節提供會違反 Microsoft Store 原則[原則 10.10.1](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 的插入式廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
 
 * 將 UI 元素置於插入式廣告容器。
 
-* 在使用者與應用程式互動時呼叫 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show)。
+* 在使用者與應用程式互動時呼叫 [InterstitialAd.Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show)。
 
 * 使用插入式廣告來取得任何可當作貨幣來消費或可與其他使用者交易的項目。
 
-* 在 [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) 事件的事件處理常式內容中要求新的插入式廣告。 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
+* 在 [InterstitialAd.ErrorOccurred](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) 事件的事件處理常式內容中要求新的插入式廣告。 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
 
-* 僅為了讓瀑布式廣告序列有備用廣告而要求插入式廣告。 如果您要求插入式廣告，然後收到 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，在應用程式中顯示的下一個插入式廣告就必須是已經準備好透過 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示的廣告。
+* 僅為了讓瀑布式廣告序列有備用廣告而要求插入式廣告。 如果您要求插入式廣告，然後收到 [InterstitialAd.AdReady](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，在應用程式中顯示的下一個插入式廣告就必須是已經準備好透過 [InterstitialAd.Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示的廣告。
 
-* 在開發和測試期間，或在模擬器中使用即時 ad 單位（也就是您從合作夥伴中心取得的 ad 單位）。
+* 使用即時 ad 單位 (也就是您在開發和測試期間從合作夥伴中心) 取得的 ad 單位或模擬器。
 
 * 撰寫或散發的程式碼透過您應用程式中執行的 Microsoft 廣告程式庫以外的方式呼叫廣告服務。
 
@@ -168,11 +168,11 @@ ms.locfileid: "79210244"
 
 ## <a name="guidelines-for-native-ads"></a>原生廣告指南
 
-[原生廣告](native-ads.md)讓您對於如何呈現廣告給使用者擁有極大的掌控權。 請依照這些需求與指導方針，協助確保廣告商的訊息可以觸及您的使用者，同時也可協助避免提供令人混淆的原生廣告體驗給使用者。
+[原生廣告](native-ads.md) 讓您有很大的控制權，可控制如何向使用者呈現廣告內容。 請依照這些需求與指導方針，協助確保廣告商的訊息可以觸及您的使用者，同時也可協助避免提供令人混淆的原生廣告體驗給使用者。
 
 ### <a name="register-the-container-for-your-native-ad"></a>註冊原生廣告的容器
 
-在您的程式碼中，您必須呼叫 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) 物件的 [RegisterAdContainer](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 方法來註冊做為原生廣告容器的 UI 元素，並可選擇您想要的任何特定控制項來註冊做為廣告的可點選目標。 這樣才能正確追蹤廣告的曝光次數和點擊數。
+在您的程式碼中，您必須呼叫 [NativeAdV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 物件的 [RegisterAdContainer](/uwp/api/microsoft.advertising.winrt.ui.nativeadv2.registeradcontainer) 方法來註冊做為原生廣告容器的 UI 元素，並可選擇您想要的任何特定控制項來註冊做為廣告的可點選目標。 這樣才能正確追蹤廣告的曝光次數和點擊數。
 
 **RegisterAdContainer** 方法有兩個多載可供使用：
 
@@ -182,7 +182,7 @@ ms.locfileid: "79210244"
 
 ### <a name="required-native-ad-elements"></a>必要的原生廣告元素
 
-您至少必須一律顯示下列 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 物件的屬性所提供的原生廣告元素給您原生廣告設計中的使用者。 如果未加入下列元素，您的廣告單元可能會績效不佳、收入低。
+您至少必須一律顯示下列 [NativeAdV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 物件的屬性所提供的原生廣告元素給您原生廣告設計中的使用者。 如果未加入下列元素，您的廣告單元可能會績效不佳、收入低。
 
 1. 一律顯示原生廣告標題 (在 **Title** 屬性中提供)。 提供可顯示至少 25 個字元的空間。 如果標題較長，以省略符號取代其他文字。
 2. 一律顯示至少一個下列元素，協助區分原生廣告體驗和您應用程式的其餘部分，並明確呼叫廣告商提供的內容：
@@ -190,11 +190,11 @@ ms.locfileid: "79210244"
     * *贊助廠商*文字 (在 **SponsoredBy** 屬性中提供)。 此文字由廣告商提供。
     * 另一個顯示*贊助廠商*文字的方法是由您選擇顯示某些其他文字，以協助區分原生廣告體驗和您應用程式的其餘部分，例如「贊助內容」、「促銷內容」、「建議內容」等。
 
-### <a name="user-experience"></a>使用者經歷
+### <a name="user-experience"></a>使用者體驗
 
 原生廣告應該要與您應用程式的其餘部分有明確界定，且周圍有空間以避免意外點按。 使用邊框、不同的背景或其他 UI 來區隔廣告內容和您應用程式的其餘部分。 請記住，意外點擊廣告長期下來對您的廣告收益或一般使用者體驗不會有幫助。
 
-### <a name="description"></a>描述
+### <a name="description"></a>說明
 
 如果您選擇要顯示廣告的描述 (於 **NativeAdV2** 物件的 **Description**屬性提供)，請提供至少可顯示 75 個字元的空間。 我們建議您使用動畫來顯示廣告描述的完整內容。
 

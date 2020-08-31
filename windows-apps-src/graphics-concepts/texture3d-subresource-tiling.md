@@ -1,27 +1,27 @@
 ---
 title: Texture3D 子資源拼貼
-description: 下表顯示了 Texture3D 子資源的拼接方式。
+description: 根據 Texture2D 並排顯示的每個圖元位數，查看顯示 Texture3D 子資源方式的表格。
 ms.assetid: 210D03E4-CF12-47E0-BA2F-C8D059B17D3E
 keywords:
 - Texture3D 子資源拼貼
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b63fdeeffd4b95afab6556b6f0318732ff988b0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 9ee4ff5c87022f9fd303b1331665a2551704cb93
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370898"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167942"
 ---
 # <a name="texture3d-subresource-tiling"></a>Texture3D 子資源拼貼
 
 
-下表顯示了 [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) 子資源的拼接方式。 此表格中的數值並未計入結尾 mip 包裝。
+下表說明 [**Texture3D**](/windows/desktop/direct3dhlsl/sm5-object-texture3d) 子資源如何並排顯示。 此表格中的數值並未計入結尾 mip 包裝。
 
-此表格利用了 [**Texture2D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture2d) 拼接，將 x 及 y 維度各除以 4，並且增加了 16 層的深度。 所有第一個平面的磚 (2D 磚的平面定義了前 16 層深度) 都會在後續平面之前顯示。
+此表格利用了 [**Texture2D**](/windows/desktop/direct3dhlsl/sm5-object-texture2d) 拼接，將 x 及 y 維度各除以 4，並且增加了 16 層的深度。 所有第一個平面的磚 (2D 磚的平面定義了前 16 層深度) 都會在後續平面之前顯示。
 
-**請注意：** 串流資源中針對   [**Texture3D**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/sm5-object-texture3d) 的支援並未在初始串流資源實作中公開，但所需要磚的形狀仍在此列出，作為未來版本可能的支援使用。
+**請注意：** 串流資源中針對   [**Texture3D**](/windows/desktop/direct3dhlsl/sm5-object-texture3d) 的支援並未在初始串流資源實作中公開，但所需要磚的形狀仍在此列出，作為未來版本可能的支援使用。
 
  
 
@@ -37,17 +37,13 @@ ms.locfileid: "66370898"
 
  
 
-不支援使用資料流資源的格式元計數是 96 bpp 格式的視訊格式，DXGI\_格式\_R1\_UNORM、 DXGI\_格式\_R8G8\_B8G8\_UNORM，和 DXGI\_格式\_R8R8\_G8B8\_UNORM。
+串流資源不支援的格式位元數目為 96 bpp 格式、影片格式、DXGI \_ 格式 \_ R1 \_ UNORM、dxgi \_ 格式 \_ R8G8 \_ B8G8 \_ UNORM，以及 dxgi \_ 格式 \_ R8R8 \_ G8B8 UNORM \_ 。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[資料流資源的區域會並排顯示方式](how-a-streaming-resource-s-area-is-tiled.md)
+[如何拼貼串流資源區域](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 
  
-
-
-
-

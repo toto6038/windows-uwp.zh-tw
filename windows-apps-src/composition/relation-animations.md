@@ -1,16 +1,16 @@
 ---
 title: 關聯式動畫
-description: 根據其他物件上的屬性建立動作。
+description: 瞭解當動作相依于另一個物件的屬性時，如何使用 ExpressionAnimations 建立以關聯為基礎的動畫。
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: bfed00cf4866d79d4ac3097026cc09c70f9327cd
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318172"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054418"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 
@@ -112,7 +112,7 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` 是速記"using"標記法來定義 ExpressionBuilder.ExpressionFunctions。
+> `EF` 是簡短的 "using" 標記法，用來定義 r. ExpressionFunctions。
 
 最後，將這些元件結合在一起，並參考紅球的位置來定義數學關係。
 

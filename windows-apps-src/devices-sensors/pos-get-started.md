@@ -1,22 +1,22 @@
 ---
 title: 開始使用服務點
-description: 本文包含開始使用服務點 Windows 執行階段 Api 的相關資訊。
+description: 本文包含開始 Windows 執行階段 Api 的服務點的相關資訊。
 ms.date: 05/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f5f19d1337a7ae49f46ab65d8420fedb775eeb2f
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 7f8f180c25aca0be3bfe9131de4e2c415fbe7968
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730379"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168462"
 ---
 # <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
 服務點、銷售點或服務點裝置是用來協助零售交易的電腦週邊設備。 服務點裝置的範例包括電子收銀機、條碼掃描器、磁條讀取器和收據印表機。
 
-在這裡，您將瞭解使用 Windows 執行階段點服務 Api 來與服務點互動的基本概念。 我們會討論裝置列舉、檢查裝置功能、宣告裝置和裝置共用。 我們使用條碼掃描器裝置做為範例，但幾乎這裡所有的指引都適用於任何 UWP 相容的服務點裝置。 (如需所支援裝置的清單，請參閱 [服務點裝置支援](pos-device-support.md))。
+在此，您將瞭解使用服務 Api 的 Windows 執行階段點來與服務裝置互動的基本概念。 我們會討論裝置列舉、檢查裝置功能、宣告裝置和裝置共用。 我們使用條碼掃描器裝置做為範例，但幾乎這裡所有的指引都適用於任何 UWP 相容的服務點裝置。 (如需所支援裝置的清單，請參閱 [服務點裝置支援](pos-device-support.md))。
 
 ## <a name="finding-and-connecting-to-point-of-service-peripherals"></a>找出和連接至服務點週邊設備
 
@@ -205,7 +205,7 @@ if (claimedBarcodeScanner != null)
 ```
 
 > [!NOTE]
-> 已宣告和未宣告的服務點裝置類別都會實作 [IClosable 介面](https://docs.microsoft.com/uwp/api/windows.foundation.iclosable)。 如果裝置透過網路或藍牙應用程式連接至 App，則必須先處置已宣告及未宣告的物件，其他 App 才能進行連接。
+> 已宣告和未宣告的服務點裝置類別都會實作 [IClosable 介面](/uwp/api/windows.foundation.iclosable)。 如果裝置透過網路或藍牙應用程式連接至 App，則必須先處置已宣告及未宣告的物件，其他 App 才能進行連接。
 
 ## <a name="see-also"></a>另請參閱
 + [條碼掃描器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
@@ -213,4 +213,3 @@ if (claimedBarcodeScanner != null)
 + [行顯示範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [磁條讀取器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
 + [POS 印表機範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
-

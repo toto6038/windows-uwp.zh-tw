@@ -1,5 +1,5 @@
 ---
-Description: 了解如何建立多重步驟的互動，在您的通知。
+description: 瞭解如何使用具有擱置更新啟用的快顯，在快顯通知中建立多步驟互動。
 title: 具有擱置中更新啟用的快顯通知
 label: Toast with pending update activation
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 擱置中的更新, pendingupdate, 多步驟互動性, 多步驟互動
 ms.localizationpriority: medium
-ms.openlocfilehash: b1574ee2913bd2889af204aae1089dc170df95b8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 00551414fbefe5591813731337653964bd2524f3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57648553"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054538"
 ---
 # <a name="toast-with-pending-update-activation"></a>具有擱置中更新啟用的快顯通知
 
@@ -21,14 +21,14 @@ ms.locfileid: "57648553"
 ![具有擱置更新的快顯通知](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **需要 Desktop Fall Creators Update 和通知程式庫的 2.0.0**:您必須執行桌面組建 16299 或更高版本以查看暫止的更新工作。 您必須使用版本 2.0.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在按鈕上指派 **PendingUpdate**。 只有桌上型電腦才支援 **PendingUpdate**，其他裝置上將會忽略。
+> **需要 Desktop Fall Creators Update 和 Notifications 程式庫 2.0.0**：您必須執行桌上型電腦組建 16299 或更新版本，才能看見擱置中更新運作。 您必須使用版本 2.0.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在按鈕上指派 **PendingUpdate**。 只有桌上型電腦才支援 **PendingUpdate**，其他裝置上將會忽略。
 
 
 ## <a name="prerequisites"></a>必要條件
 
 本文假設您已熟悉下列知識...
 
-- [建構快顯內容](adaptive-interactive-toasts.md)
+- [建構快顯通知內容](adaptive-interactive-toasts.md)
 - [傳送快顯通知及處理背景啟用](send-local-toast.md)
 
 
@@ -116,7 +116,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 
 ## <a name="related-topics"></a>相關主題
 
-- [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [傳送快顯通知及控制代碼的本機啟動](send-local-toast.md)
-- [快顯通知內容的文件](adaptive-interactive-toasts.md)
+- [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
+- [傳送本機快顯通知及處理啟用](send-local-toast.md)
+- [快顯通知內容文件](adaptive-interactive-toasts.md)
 - [快顯通知進度列](toast-progress-bar.md)

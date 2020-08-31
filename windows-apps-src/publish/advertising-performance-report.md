@@ -1,36 +1,36 @@
 ---
-Description: 若要檢視 ad 單位，在您的應用程式的效能資料，請在合作夥伴中心內使用廣告效能報告。
+Description: 若要在您的應用程式中查看 ad 單位的效能資料，請使用合作夥伴中心中的 [廣告效能] 報告。
 title: 廣告績效報告
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a96f6f6593a8ccc6714f67b6f825a6416750b432
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: bb9c6a43b9411b2297cc4cbf35dfdb2177e5dab7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640273"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155372"
 ---
 # <a name="advertising-performance-report"></a>廣告績效報告
 
 
-**廣告效能報告**中[合作夥伴中心](https://partner.microsoft.com/dashboard)示範如何您[ad 單位](in-app-ads.md)正在執行，包括社群廣告。 此報告會包含來自 UWP 應用程式中多個使用[廣告流量分配](in-app-ads.md#mediation)的廣告提供者的資料。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)中的 [**廣告效能] 報表**會顯示您的[ad 單位](in-app-ads.md)的執行情況，包括「社區 ads」。 此報告會包含來自 UWP 應用程式中多個使用[廣告流量分配](in-app-ads.md#mediation)的廣告提供者的資料。
 
-若要檢視這份報告，請展開左側瀏覽功能表的 **\[分析\]**，然後選取 **\[廣告效益\]**。 您可以在合作夥伴中心中檢視此資料，或下載要離線檢視，按一下箭號圖示，在頁面上的報表資料。 或者，您也可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得廣告效益資料](../monetize/get-ad-performance-data.md)方法來擷取此資料。
+若要檢視這份報告，請展開左側瀏覽功能表的 **\[分析\]**，然後選取 **\[廣告效益\]**。 您可以在合作夥伴中心中查看這項資料，或按一下頁面上的箭號圖示來下載報表資料，以離線查看。 或者，您也可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得廣告效益資料](../monetize/get-ad-performance-data.md)方法來擷取此資料。
 
 檢視廣告效益報告時，請注意過去三天的報告資料可能會隨著我們從不同來源接收並處理新的資料而有所變更。 此外，過去 90 天的資料都可能發生資料明細重列。
 
-## <a name="apply-filters"></a>套用篩選
+## <a name="apply-filters"></a>套用篩選條件
 
 在頁面頂端附近，您可以選取您想要顯示資料的時間週期。 預設選項是 30D（30 天），但您可以選擇在 3、6 或 12 個月期間顯示資料，或指定自訂的日期範圍。
 
-您也可以展開 **\[篩選條件\]**，依廣告單元、應用程式、廣告提供者和裝置類型篩選此頁面上的所有資料。 您可以選擇下列選項：
+您也可以展開 **\[篩選條件\]**，依廣告單元、應用程式、廣告提供者和裝置類型篩選此頁面上的所有資料。 您可選擇下列選項：
 
-* **彙總**:選擇如何彙總報表資料，以及如何進行篩選進一步。 根據預設，這個篩選條件會設為 **\[所有廣告單位\]**。 您也可以選擇將此篩選條件變更為 **\[所有應用程式\]** 或 **\[所有廣告提供者\]**，或者您也可以選擇依照您在其中使用廣告的特定應用程式來彙總。
-* **Ad 提供者**:篩選特定的效能資料的報表[ad 提供者](in-app-ads.md#paid-networks)。 根據預設，報告會來自所有廣告提供者的資料。 如果您選擇 **\[彙總\]** 下拉式清單中的 **\[所有應用程式\]**，此選項將會停用。
-* **裝置**:篩選報表，針對特定裝置類型的效能資料。 根據預設，報告會顯示所有裝置類型的資料。
+* **彙總**：選擇如何彙總資料，以及如何進一步篩選。 根據預設，這個篩選條件會設為 **\[所有廣告單位\]**。 您也可以選擇將此篩選條件變更為 **\[所有應用程式\]** 或 **\[所有廣告提供者\]**，或者您也可以選擇依照您在其中使用廣告的特定應用程式來彙總。
+* **廣告提供者**︰篩選報告以顯示特定[廣告提供者](in-app-ads.md#paid-networks)的績效資料。 根據預設，報告會來自所有廣告提供者的資料。 如果您選擇 **\[彙總\]** 下拉式清單中的 **\[所有應用程式\]**，此選項將會停用。
+* **裝置**︰篩選報告以顯示特定裝置類型的績效資料。 根據預設，報告會顯示所有裝置類型的資料。
 
 ## <a name="overall-performance"></a>整體效能
 
@@ -45,7 +45,7 @@ ms.locfileid: "57640273"
 
 這個區段會顯示表格，其中包含您在報告中選取的篩選器所指定資料集的所有廣告效能計量。
 
-## <a name="performance-metrics"></a>效能計量
+## <a name="performance-metrics"></a>效能度量
 
 **廣告效能**報告包含下列效能計量資料。 某些計量只會針對某些廣告提供者顯示。
 
@@ -53,20 +53,20 @@ ms.locfileid: "57640273"
 |----------|---------------|
 | 估計營收  |  您從應用程式上播放廣告所收到的估計金額。 |
 | eCPM  |  每千個曝光數的有效成本。 |
-| 要求  | 從您的應用程式傳送廣告要求的次數。  |
+| Requests  | 從您的應用程式傳送廣告要求的次數。  |
 | 曝光數  | 廣告顯示在您應用程式中的次數。  |
 | 投放率  | 從顯示廣告所在的應用程式傳送廣告要求的百分比。  |
-| 點閱數  |  使用者點閱您應用程式中的廣告的次數。 |
+| 點擊  |  使用者點閱您應用程式中的廣告的次數。 |
 | CTR  |  點閱率，即廣告點閱數除以曝光數。 |
-| Viewability | 在您的應用程式中檢視的廣告曝光數百分比。 如需如何計算此值的詳細資訊，請參閱 <<c0> [ 最佳化您的 ad 單元 viewability](../monetize/optimize-ad-unit-viewability.md)。 |
-| 賺取的點數  | 如果您執行[社群廣告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)行銷活動，這是指您藉由在應用程式中顯示社群廣告所賺得的促銷廣告空間點數。  |
-| 花費的點數  | 如果您執行[社群廣告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)行銷活動，這是指您在應用程式廣告上花費的點數。  |
+| Viewability | 可在您的應用程式中看到的廣告閱聽百分比。 如需如何計算此值的詳細資訊，請參閱將 [您的 ad 單位 Viewability 優化](../monetize/optimize-ad-unit-viewability.md)。 |
+| 賺取的點數  | 如果您執行[社群廣告](./about-community-ads.md)行銷活動，這是指您藉由在應用程式中顯示社群廣告所賺得的促銷廣告空間點數。  |
+| 花費的點數  | 如果您執行[社群廣告](./about-community-ads.md)行銷活動，這是指您在應用程式廣告上花費的點數。  |
 
 ## <a name="related-topics"></a>相關主題
 
 * [應用程式內廣告](in-app-ads.md)
 * [使用 Microsoft Advertising SDK 停用應用程式中的廣告](../monetize/display-ads-in-your-app.md)
-* [最佳化您的 ad 單元 viewability](../monetize/optimize-ad-unit-viewability.md)
+* [最佳化您的廣告單元的可見性](../monetize/optimize-ad-unit-viewability.md)
 
 
  

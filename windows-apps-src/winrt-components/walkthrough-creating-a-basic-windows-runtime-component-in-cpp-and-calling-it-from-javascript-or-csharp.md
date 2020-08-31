@@ -6,19 +6,19 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 605b8cf927067da78785ec470cfdbe27852205fd
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493183"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155172"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>建立 C++/CX Windows 執行階段元件，並從 JavaScript 或 C# 呼叫該元件的逐步解說
 
 > [!NOTE]
-> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要瞭解如何使用 c + +/WinRT 建立 Windows 執行階段元件，請參閱[使用 c + +/WinRT Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)。
+> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何使用 C++/WinRT 建立 Windows 執行階段元件，請參閱[使用 C++/WinRT 的 Windows 執行階段元件](./create-a-windows-runtime-component-in-cppwinrt.md)。
 
-本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱[使用 c + +/cx Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md)和[Visual C++ 語言參考（c + +/cx）](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
+本逐步解說示範如何建立可從 JavaScript、C# 或 Visual Basic 呼叫的基本 Windows 執行階段元件 DLL。 開始本逐步解說之前，請確定您了解一些概念，例如：抽象二進位介面 (ABI)、ref 類別，以及讓 ref 類別更容易使用的 Visual C++ 元件擴充功能。 如需詳細資訊，請參閱 [使用 c + +/cx 的 Windows 執行階段元件](creating-windows-runtime-components-in-cpp.md) 和 [Visual C++ 語言參考 (c + +/cx) ](/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 ## <a name="creating-the-c-component-dll"></a>建立 C++ 元件 DLL
 此範例會先建立元件專案，但您也可以先建立 JavaScript 專案。 順序並不重要。
@@ -30,14 +30,14 @@ ms.locfileid: "86493183"
 
 2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++**]，然後選取通用 Windows app 的節點。
 
-3. 在中央窗格中，選取 [ **Windows 執行階段元件**]，然後將專案命名為 WinRT \_ CPP。
+3. 在中央窗格中，選取 [ **Windows 執行階段元件** ]，然後將 project WinRT \_ CPP 命名。
 
 4. 選擇 [確定] **** 按鈕。
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**將可啟用的類別加入至元件**
-可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
 
-將這些 include 指示詞新增 \# 至 Class1. h：
+將這些 include 指示詞新增 \# 至 Class1：
 
 ```cpp
 #include <collection.h>
@@ -267,15 +267,15 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 }
 ```
 
-## <a name="creating-a-javascript-client-app-visual-studio-2017"></a>建立 JavaScript 用戶端應用程式（Visual Studio 2017）
+## <a name="creating-a-javascript-client-app-visual-studio-2017"></a>建立 JavaScript 用戶端應用程式 (Visual Studio 2017) 
 
 如果您想要建立 c # 用戶端，則可以略過本節。
 
 > [!NOTE]
-> Visual Studio 2019 不支援通用 Windows 平臺（UWP）專案。 請參閱[Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循此章節的指示，建議您使用 Visual Studio 2017。 請參閱[Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
+> Visual Studio 2019 不支援通用 Windows 平臺 (UWP) 專案。 請參閱 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循本節的指示，建議您使用 Visual Studio 2017。 請參閱 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
 
 ### <a name="to-create-a-javascript-project"></a>建立 JavaScript 專案
-1. 在方案總管（在 Visual Studio 2017 中，請參閱上面的**注意事項**），開啟方案節點的快捷方式功能表，然後選擇 [**加入]、[新增專案**]。
+1. 在方案總管 (Visual Studio 2017;請參閱上述) 的 **附注** ，開啟方案節點的快捷方式功能表，然後選擇 [ **加入]、[新增專案**]。
 
 2. 展開 \[JavaScript\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)，然後選擇 **\[空白應用程式 (通用 Windows)\]**。
 
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需這項工作的詳細說明，請參閱[建立 "Hello，World" 應用程式（JS）](/windows/uwp/get-started/create-a-hello-world-app-js-uwp)。
+新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需詳細說明，請參閱 [建立 "Hello，World" 應用程式 (JS) ](../get-started/create-a-hello-world-app-js-uwp.md)。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -456,11 +456,11 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 
 5. 將專案參考加入至 WinRT_CPP：
 
-   - 開啟 [**參考**] 節點的快捷方式功能表，然後選擇 [**加入參考**]。
+   - 開啟 [ **參考** ] 節點的快捷方式功能表，然後選擇 [ **加入參考**]。
 
    - 在 **\[參考管理員\]** 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]**。
 
-   - 在中央窗格中，選取 [WinRT_CPP]，然後選擇 [**確定]** 按鈕。
+   - 在中央窗格中，選取 [WinRT_CPP]，然後選擇 [ **確定]** 按鈕。
 
 ## <a name="to-add-the-xaml-that-defines-the-user-interface"></a>加入定義使用者介面的 XAML
 將下列程式碼複製到 MainPage.xaml 中的 Grid 元素。
@@ -592,13 +592,13 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ### <a name="to-inspect-a-component"></a>**檢查元件**
 1. 在功能表列上，依序選擇 **[檢視] 和 [物件瀏覽器]** (Ctrl+Alt+J)。
 
-2. 在物件瀏覽器的左窗格中，展開 [WinRT \_ CPP] 節點，顯示在您的元件上定義的類型和方法。
+2. 在 [物件瀏覽器] 的左窗格中，展開 [WinRT \_ CPP] 節點，以顯示您的元件上定義的類型和方法。
 
 ## <a name="debugging-tips"></a>偵錯秘訣
 若想獲得較佳的偵錯經驗，請從公用 Microsoft 符號伺服器下載偵錯符號：
 
 ### <a name="to-download-debugging-symbols"></a>**下載偵錯符號**
-1. 在功能表列上，選擇 [**工具]、[選項**]。
+1. 在功能表列上，選擇 [ **工具]、[選項**]。
 
 2. 在 **\[選項\]** 對話方塊中，展開 **\[偵錯\]**，然後選取 **\[符號\]**。
 

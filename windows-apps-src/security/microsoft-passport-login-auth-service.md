@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d15173471b7f1ef3f1c6b042671eb85b7a53dc4
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: 1a875a0cb56e6a2a29627f05e6c01398233c8a48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282337"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155392"
 ---
 # <a name="create-a-windows-hello-login-service"></a>建立 Windows Hello 登入服務
 
@@ -51,7 +51,7 @@ ms.locfileid: "72282337"
     }
     ```
 
-    您可能已經注意到，PassportDevices 清單已標記為註解。 這就是您需要針對目前實作中現有使用者所做的修改。 PassportDevices 清單將包含 deviceID、透過 Windows Hello 產生的公開金鑰，以及 [**KeyCredentialAttestationResult**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult)。 而對於這個實習實驗室，您將必須實作 keyAttestationResult，因為只有在擁有 TPM (信賴平台模組) 晶片之裝置上的 Windows Hello 才會提供 keyAttestationResult。 **KeyCredentialAttestationResult** 是多重屬性的組合，必須分割才能利用資料庫來儲存及載入。
+    您可能已經注意到，PassportDevices 清單已標記為註解。 這就是您需要針對目前實作中現有使用者所做的修改。 PassportDevices 清單將包含 deviceID、透過 Windows Hello 產生的公開金鑰，以及 [**KeyCredentialAttestationResult**](/uwp/api/Windows.Security.Credentials.KeyCredentialAttestationResult)。 而對於這個實習實驗室，您將必須實作 keyAttestationResult，因為只有在擁有 TPM (信賴平台模組) 晶片之裝置上的 Windows Hello 才會提供 keyAttestationResult。 **KeyCredentialAttestationResult** 是多重屬性的組合，必須分割才能利用資料庫來儲存及載入。
 
 -   請在 \[AuthService\] 資料夾中，建立名為「PassportDevice.cs」的新類別。 這是上述的 Windows Hello 裝置所用的模型。 請將類型定義變更為 Public，然後加入下列屬性。
 
@@ -804,7 +804,7 @@ ms.locfileid: "72282337"
     }
     ```
 
--   因為當您移除\_帳戶時，會使用 AuthService，\_的使用者\_按一下方法可以移除。 現在方法看起來應該像下面這樣。
+-   當您移除帳戶時，您將會使用 AuthService，但請記住，您 \_ \_ \_ 可以移除使用者按一下方法的 AccountHelper 參考。 現在方法看起來應該像下面這樣。
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)

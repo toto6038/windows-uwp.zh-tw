@@ -4,18 +4,18 @@ title: 企業共用存放裝置
 description: 企業共用存放裝置定義本機資料位置，讓企業營運應用程式共用資料。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05a646979977bca5c19be2efe3f8bec12994cb19
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 595d2d23cca3f128e8be5447f125ab30aedccf9d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259629"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168402"
 ---
 # <a name="enterprise-shared-storage"></a>企業共用存放裝置
 
-企業共用存放裝置包含兩個位置，其中，具有受限制功能 **enterpriseDeviceLockdown** 和一個企業憑證的應用程式具有完整讀取與寫入權。 請注意，**enterpriseDeviceLockdown** 功能讓應用程式能夠使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 如需 API 的詳細資訊，請參閱 [**Windows.Embedded.DeviceLockdown**](https://docs.microsoft.com/uwp/api/Windows.Embedded.DeviceLockdown?redirectedfrom=MSDN) 命名空間。  
+企業共用存放裝置包含兩個位置，其中，具有受限制功能 **enterpriseDeviceLockdown** 和一個企業憑證的應用程式具有完整讀取與寫入權。 請注意，**enterpriseDeviceLockdown** 功能讓應用程式能夠使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 如需 API 的詳細資訊，請參閱 [**Windows.Embedded.DeviceLockdown**](/uwp/api/Windows.Embedded.DeviceLockdown) 命名空間。  
 
 這些位置設定於本機磁碟機︰
 - \Data\SharedData\Enterprise\Persistent
@@ -27,7 +27,7 @@ ms.locfileid: "74259629"
 
 - 您可以在應用程式執行個體內、相同應用程式的執行個體之間或甚至在假設它們具有適當功能和憑證的應用程式之間共用資料。
 - 您可以將資料儲存至本機硬碟的 \Data\SharedData\Enterprise\Persistent 資料夾，而且即使重設裝置之後仍會保存資料。
-- 操作檔案，包括透過行動裝置管理 (MDM) 服務讀取、寫入和刪除裝置上的檔案。 如需如何透過 MDM 服務使用企業共用存放裝置的詳細資訊，請參閱 [EnterpriseExtFileSystem CSP](https://docs.microsoft.com/windows/client-management/mdm/enterpriseextfilessystem-csp?redirectedfrom=MSDN)。
+- 操作檔案，包括透過行動裝置管理 (MDM) 服務讀取、寫入和刪除裝置上的檔案。 如需如何透過 MDM 服務使用企業共用存放裝置的詳細資訊，請參閱 [EnterpriseExtFileSystem CSP](/windows/client-management/mdm/enterpriseextfilessystem-csp)。
 
 ## <a name="access-enterprise-shared-storage"></a>存取企業共用存放裝置
 
@@ -75,4 +75,3 @@ IReadOnlyList<StorageFile> sortedItems =
 foreach (StorageFile file in sortedItems)
     Debug.WriteLine(file.Name + ", " + file.DateCreated);
 ```
-

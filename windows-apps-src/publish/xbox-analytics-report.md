@@ -1,28 +1,28 @@
 ---
-Description: 在合作夥伴中心 Xbox 分析報表會顯示解客戶如何與 Xbox 功能如何在您的產品中的統計資料。
+Description: 合作夥伴中心中的 Xbox 分析報表會顯示有關客戶如何與您的產品中的 Xbox 功能互動的統計資料。
 title: Xbox 分析報告
 ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料
 ms.localizationpriority: medium
-ms.openlocfilehash: a6dc1650e1220cd808422a2aa705d4cbab9f59fb
-ms.sourcegitcommit: fca0132794ec187e90b2ebdad862f22d9f6c0db8
+ms.openlocfilehash: d38e60fbe99db09f5fb49e440249ed9454d44c35
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63788180"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157932"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析報告
 
-**Xbox analytics**中的報表[合作夥伴中心](https://partner.microsoft.com/dashboard)顯示您有關您的客戶的吸引人的遊戲中的 Xbox 功能使用方式統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)中的**Xbox 分析**報表會顯示有關客戶如何與您遊戲中 Xbox 功能互動的統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
 
 > [!IMPORTANT]
-> 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須瀏覽[概念核准程序](../gaming/concept-approval.md)，其中包含所發行的遊戲[Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#microsoft-partners)與遊戲，透過提交[ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview#id). 透過發行遊戲[Xbox Live 創作者計劃](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)目前此報表中看不到。
+> 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須經過[概念核准](../gaming/concept-approval.md)程式，其中包括[Microsoft 合作夥伴](/gaming/xbox-live/developer-program-overview#microsoft-partners)所發佈的遊戲，以及透過[ ID@Xbox 方案](/gaming/xbox-live/developer-program-overview#id)提交的遊戲。 這份報表目前不會顯示透過 [Xbox Live 創作者計畫](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) 發佈的遊戲。
 
-您可以檢視**Xbox analytics**從您的遊戲，方法是展開的左側的導覽功能表的報表**分析**，然後選取**Xbox analytics**。  您可以檢視這項資料在合作夥伴中心，或[將報表下載為](download-analytic-reports.md)要離線檢視。
+您可以展開 [**分析**] 和 [選取**Xbox 分析**]，以從您的遊戲左側導覽功能表中查看**Xbox 分析**報表。  您可以在合作夥伴中心中查看這項資料，或 [下載報表](download-analytic-reports.md) 以離線查看。
 
 
-## <a name="overview-tab"></a>概觀索引標籤
+## <a name="overview-tab"></a>Overview (概觀) 索引標籤
 
 **\[概觀\]** 索引標籤的各區段會顯示有關哪些客戶是您的玩家，以及他們如何與 Xbox Live 功能互動的資訊。
 
@@ -32,7 +32,7 @@ ms.locfileid: "63788180"
 > 這些統計資料來自連線至 Xbox Live 的客戶，而非所有 Xbox 客戶。
 
 
-### <a name="concurrent-usage"></a>同時使用量
+### <a name="concurrent-usage"></a>並行使用方式
 
 此區段顯示有關平均每分鐘或每小時玩遊戲客戶數目的接近即時使用量資料 (有 5-15 分鐘的時間延遲)。 您可以選取此區段右上角的篩選圖示，來選擇時間範圍 (從 **\[過去一小時\]** 到最多 **\[過去 7 天\]**)。
 
@@ -84,14 +84,14 @@ ms.locfileid: "63788180"
 > 檢閱這項資訊並處理問題時，我們建議設定速率限制的優先順序，因為這些錯誤通常會對客戶產生極大影響。
 
 
-### <a name="apply-filters"></a>套用篩選
+### <a name="apply-filters"></a>套用篩選條件
 
 在索引標籤頂端附近，可以選取您想要顯示資料的時間週期。 預設選取項目是 **\[30D\]** (30 天)，但您可以選擇顯示 **\[7D\]** (7 天) 或您所指定之自訂日期範圍 (不超過 30 天) 的資料。 請注意，選擇自訂日期範圍時，所有的圖表都會將圖表範圍修剪到您所輸入日期範圍內的第一天和最後一天。
 
 您也可以展開 **\[篩選條件\]**，依套件版本、裝置類型和/或沙箱篩選此頁面上的所有資料。
-- **套件版本**:預設篩選是**所有版本**，不過您可以限制到特定的封裝版本的服務健全狀況資料。
-- **裝置類型**:預設值是**所有裝置**，不過您可以限制特定裝置類型的服務健康狀態資料。
-- **沙箱**:預設值是**零售**，不過您可以限制對特定的沙箱服務健康狀態資料。
+- **套件版本**︰預設篩選是 **\[所有版本\]**，但您可以將服務健全狀況資料限制在特定套件版本。
+- **裝置類型**：預設設定是 **\[所有裝置\]**，但您可以將服務健全狀況資料限制在特定裝置類型。
+- **沙箱**：預設設定是 **\[零售\]**，但您可以將服務健全狀況資料限制在特定沙箱。
 
 下列所有圖表中的資訊將反映您選取的日期範圍和任何篩選條件。 某些區段也可讓您套用其他篩選。
 

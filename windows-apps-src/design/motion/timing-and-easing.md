@@ -1,5 +1,5 @@
 ---
-Description: 瞭解流暢動作如何使用計時和緩動函數。
+description: 瞭解在 UI 中進入、結束或移動物件時，讓運動感到自然的重要性和簡化。
 title: 計時和加/減速
 label: Timing and easing
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 098a75da573a977aa393197a61a62b0337f0dc06
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 46ec373ffb7ad141bcff36c33fa35900c888daf8
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970503"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054428"
 ---
 # <a name="timing-and-easing"></a>計時和加/減速
 
@@ -28,7 +28,7 @@ ms.locfileid: "82970503"
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
 <td>
-    <p>如果您已安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/EasingFunction">開啟應用程式，並查看作用中的緩</a>時函式。</p>
+    <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項資源庫</strong> 應用程式，請按一下這裡 <a href="xamlcontrolsgallery:/item/EasingFunction">開啟應用程式，並查看緩和功能的</a>作用。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始程式碼 (GitHub)</a></li>
@@ -55,7 +55,7 @@ ms.locfileid: "82970503"
 
 :::row:::
     :::column:::
-針對即將結束場景或關閉的物件或頁面使用。
+用於離開場景或關閉的物件或頁面。
 可讓非常快速的方向回饋離開 UI，而計時不會阻礙畫面播放速率以達到流暢的動畫。
     :::column-end:::
     :::column:::
@@ -67,7 +67,7 @@ ms.locfileid: "82970503"
 
 :::row:::
     :::column:::
-針對輸入場景或開啟的物件或頁面使用。
+用於進入場景或開啟的物件或頁面。
 可在其進入場景時擁有合理的量的時間展示內容。
     :::column-end:::
     :::column:::
@@ -104,11 +104,11 @@ ms.locfileid: "82970503"
     :::column:::
 用於即將結束場景的 UI 或物件。
 
-物件變得強大並獲得動力，直到達到 escape 速度為止。
-所得到的結果是，物件正嘗試從使用者的情況中取得最困難的方法，並騰出空間給新的內容。
+物件會變成有動力並獲得動力，直到達到 escape 速度為止。
+產生的結果是，物件正在嘗試使其無法使用使用者的方式，並騰出空間給新的內容。
     :::column-end:::
     :::column:::
-        ![加速緩動](images/accelEase.gif)
+        ![加速簡化](images/accelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -141,15 +141,15 @@ _exitAnimation.Duration = TimeSpan.FromMilliseconds(150);
 
 :::row:::
     :::column:::
-用於物件或 UI 進入場景，可以導覽或產生。
+針對輸入場景的物件或 UI 使用，不論是流覽或產生。
 
-一旦進入場景之後，就會符合物件的極端阻力，這會使物件變慢。
-所產生的結果是，物件是從遠距離開始，並以極快的速度進入，或快速返回 rest 狀態。
+一旦進入場景之後，就會達到物件的極端干擾，使物件變慢。
+產生的結果是，物件從較遠的距離移離並進入極遠的速度，或是很快地回到 rest 狀態。
 
-即使它之前有無回應，傳入物件的速度還是會有更快速且迅速回應的效果。
+即使它之前有點無回應，連入物件的速度也具有感覺迅速和回應的效果。
     :::column-end:::
     :::column:::
-        ![減速緩動](images/decelEase.gif)
+        ![減速的簡化](images/decelEase.gif)
     :::column-end:::
 :::row-end:::
 
@@ -182,13 +182,13 @@ _enterAnimation.Duration = TimeSpan.FromMilliseconds(300);
 
 :::row:::
     :::column:::
-這是系統內任何動畫參數變更的基準緩動。
+這是系統內任何動畫參數變更的基準簡化。
 請對使用畫面上狀態會改變的物件使用標準加/減速，例如簡單的位置變更。 此外，對場景中的物件變形使用，像是會長大的物件。
 
-所產生的結果是，將狀態從 A 變更為 B 的物件是克服，並由自然強制執行。
+產生的結果是，將狀態從 A 變更為 B 的物件會克服，並透過自然的強制執行。
     :::column-end:::
     :::column:::
-        ![標準緩動](images/standardEase.gif)
+        ![標準簡化](images/standardEase.gif)
     :::column-end:::
 :::row-end:::
 

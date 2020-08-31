@@ -1,16 +1,16 @@
 ---
 title: 輸入導向動畫
-description: 了解如何在您的應用程式 UI 中使用輸入動畫。
+description: 瞭解 InputAnimation API，以及如何使用輸入導向的動畫，在您的應用程式 UI 中建立動態回應的動作。
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 0f9abd902e39b645f27b7a0f5d521097ca4aff8a
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57597753"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054358"
 ---
 # <a name="input-driven-animations"></a>輸入導向動畫
 
@@ -20,7 +20,7 @@ ms.locfileid: "57597753"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [關聯型動畫](relation-animations.md)
+- [關聯式動畫](relation-animations.md)
 
 ## <a name="smooth-motion-driven-from-user-interactions"></a>從使用者互動方式導向的平滑動作
 

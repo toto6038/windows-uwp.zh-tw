@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 螢幕方向, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a09dfe321d661bca342535aaa49b300a3934b0
-ms.sourcegitcommit: 0f2ae8f97daac440c8e86dc07d11d356de29515c
+ms.openlocfilehash: 967fa031ad56e2c35b9e923339970787a7206f1d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83280218"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168372"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>支援螢幕方向 (DirectX 和 C++)
 
 
 
-當您處理 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件時，通用 Windows 平台 (UWP) app 可支援多個螢幕方向。 這裡將討論在 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便能夠有效率及有效地使用 Windows 10 裝置的圖形硬體。
+當您處理 [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件時，通用 Windows 平台 (UWP) app 可支援多個螢幕方向。 這裡將討論在 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便能夠有效率及有效地使用 Windows 10 裝置的圖形硬體。
 
 在您開始之前，請記住不論裝置的方向為何，圖形硬體一律會以相同的方式輸出像素資料。 Windows 10 裝置可以判斷其目前的顯示方向 (使用某種感應器或軟體切換) 並讓使用者變更顯示設定。 因此，Windows 10 本身會處理影像的旋轉，確保根據裝置的方向直立顯示影像。 根據預設，您的應用程式會收到某個東西的方向已經變更的通知，例如視窗大小。 發生這樣的情況時，Windows 10 會立即旋轉影像以供最終顯示。 對於四個特定螢幕方向中的三個 (稍後討論)，Windows 10 會使用額外的圖形資源和運算來顯示最終影像。
 
-對於UWP DirectX app，[**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) 物件會提供您的應用程式可以查詢的基本顯示方向資料。 預設方向是 *「橫向」*，其中顯示器的像素寬度大於高度；另一個方向是 *「直向」*，其中顯示器以任一方向旋轉 90 度，而寬度變成小於高度。
+對於UWP DirectX app，[**DisplayInformation**](/uwp/api/Windows.Graphics.Display.DisplayInformation) 物件會提供您的應用程式可以查詢的基本顯示方向資料。 預設方向是 *「橫向」*，其中顯示器的像素寬度大於高度；另一個方向是 *「直向」*，其中顯示器以任一方向旋轉 90 度，而寬度變成小於高度。
 
 Windows 10 定義了四種特定的顯示方向模式：
 
@@ -37,7 +37,7 @@ Windows 10 定義了四種特定的顯示方向模式：
 整體說來，處理螢幕方向變更的大致程序如下：
 
 1.  使用視窗界限值與顯示方向資料的組合，讓交換鏈結對齊裝置的原生顯示方向。
-2.  使用 [**IDXGISwapChain1::SetRotation**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 通知 Windows 10 交換鏈結的方向。
+2.  使用 [**IDXGISwapChain1::SetRotation**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 通知 Windows 10 交換鏈結的方向。
 3.  變更轉譯程式碼以產生對齊裝置之使用者方向的影像。
 
 ## <a name="resizing-the-swap-chain-and-pre-rotating-its-contents"></a>重新調整交換鏈結的大小並預先旋轉其內容
@@ -45,18 +45,18 @@ Windows 10 定義了四種特定的顯示方向模式：
 
 若要在 UWP DirectX app 中執行基本的調整顯示大小及預先旋轉其內容，可實作下列步驟：
 
-1.  處理 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件。
+1.  處理 [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件。
 2.  將交換鏈結大小調整成新的視窗大小。
-3.  呼叫 [**IDXGISwapChain1::SetRotation**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 來設定交換鏈結的方向。
+3.  呼叫 [**IDXGISwapChain1::SetRotation**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 來設定交換鏈結的方向。
 4.  重新建立任何視窗大小相依資源，例如您的轉譯目標和其他像素資料緩衝區。
 
 現在，讓我們看看這些步驟的更多細節。
 
-您的第一個步驟是要註冊 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件的處理常式。 每次螢幕方向變更 (例如旋轉了顯示器) 時，就會在 app 中引發這個事件。
+您的第一個步驟是要註冊 [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件的處理常式。 每次螢幕方向變更 (例如旋轉了顯示器) 時，就會在 app 中引發這個事件。
 
-若要處理 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件，您需要在所需的 [**SetWindow**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow) 方法中連結 **DisplayInformation::OrientationChanged** 的處理常式，該方法是您的檢視提供者必須實作之 [**IFrameworkView**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) 介面的其中一個方法。
+若要處理 [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件，您需要在所需的 [**SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow) 方法中連結 **DisplayInformation::OrientationChanged** 的處理常式，該方法是您的檢視提供者必須實作之 [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) 介面的其中一個方法。
 
-在這個程式碼範例中，[**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 的事件處理常式是稱為 **OnOrientationChanged** 的方法 。 當 **DisplayInformation::OrientationChanged** 引發時，會接著呼叫名為 **SetCurrentOrientation** 的方法，該方法接著呼叫 **CreateWindowSizeDependentResources**。
+在這個程式碼範例中，[**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 的事件處理常式是稱為 **OnOrientationChanged** 的方法 。 當 **DisplayInformation::OrientationChanged** 引發時，會接著呼叫名為 **SetCurrentOrientation** 的方法，該方法接著呼叫 **CreateWindowSizeDependentResources**。
 
 ```cpp
 void App::SetWindow(CoreWindow^ window)
@@ -330,7 +330,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 您可以增加 0.5f 來確保四捨五入到最接近的整數值。
 
-題外話，[**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 座標一律是以 DIP 定義。 對於 Windows 10 和舊版的 Windows，DIP 是定義為 1/96 英吋，並且與作業系統的「*向上*」定義一致。 當顯示方向旋轉成直向模式時，app 會翻轉 **CoreWindow** 的寬度和高度，而轉譯目標大小 (界限) 必須跟著變更。 由於 Direct3D 的座標一律使用實體像素，因此您必須先從 **CoreWindow** 的 DIP 值轉換成整數像素值，再將這些值傳送給 Direct3D 來設定交換鏈結。
+題外話，[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 座標一律是以 DIP 定義。 對於 Windows 10 和舊版的 Windows，DIP 是定義為 1/96 英吋，並且與作業系統的「*向上*」定義一致。 當顯示方向旋轉成直向模式時，app 會翻轉 **CoreWindow** 的寬度和高度，而轉譯目標大小 (界限) 必須跟著變更。 由於 Direct3D 的座標一律使用實體像素，因此您必須先從 **CoreWindow** 的 DIP 值轉換成整數像素值，再將這些值傳送給 Direct3D 來設定交換鏈結。
 
 按照處理程序，您所做的工作會比只調整交換鏈結大小來得多一些：您實際上是先旋轉影像的 Direct2D 和 Direct3D 元件，再結合它們來進行呈現，並且告知交換鏈結您已經以新方向轉譯結果。 以下是這個處理程序更多的細節，如 **DX::DeviceResources::CreateWindowSizeDependentResources** 的程式碼範例所示：
 
@@ -340,37 +340,37 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 -   接著，請設定適當的 2D 或 3D 矩陣轉換，將圖形管線中的像素或頂點轉譯至交換鏈結時，分別套用像素和頂點。 我們有 4 個可能的旋轉矩陣：
 
-    -   橫向（DXGI \_ 模式 \_ 旋轉 \_ 識別）
-    -   直向（DXGI \_ 模式 \_ 旋轉 \_ ROTATE270）
-    -   橫向，翻轉（DXGI \_ 模式 \_ 旋轉 \_ ROTATE180）
-    -   縱向、翻轉（DXGI \_ 模式 \_ 旋轉 \_ ROTATE90）
+    -   橫向 (DXGI \_ 模式 \_ 旋轉身分 \_ 識別) 
+    -   直向 (DXGI \_ 模式 \_ 旋轉 \_ ROTATE270) 
+    -   橫向、翻轉 (DXGI \_ 模式 \_ 旋轉 \_ ROTATE180) 
+    -   直向、翻轉 (DXGI \_ 模式 \_ 旋轉 \_ ROTATE90) 
 
-    系統會根據 Windows 10 提供的資料 (例如 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 的結果) 選取正確的矩陣來判斷顯示方向，並且該矩陣會乘以場景中每個像素 (Direct2D) 或頂點 (Direct3D) 的座標，有效地旋轉它們來對齊螢幕的方向。 (請注意，在 Direct2D 中，螢幕原點被定義為左上角，而在 Direct3D 中，原點則被定義為視窗的邏輯中心。)
+    系統會根據 Windows 10 提供的資料 (例如 [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 的結果) 選取正確的矩陣來判斷顯示方向，並且該矩陣會乘以場景中每個像素 (Direct2D) 或頂點 (Direct3D) 的座標，有效地旋轉它們來對齊螢幕的方向。 (請注意，在 Direct2D 中，螢幕原點被定義為左上角，而在 Direct3D 中，原點則被定義為視窗的邏輯中心。)
 
-> **注意**   如需用於旋轉之2D 轉換和如何定義的詳細資訊，請參閱[定義螢幕旋轉的矩陣（2d）](#appendix-a-applying-matrices-for-screen-rotation-2-d)。 如需有關用於旋轉的 3D 轉換，請參閱[定義螢幕旋轉的矩陣 (3D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)。
+> **注意**   如需用於旋轉的2D 轉換和如何定義它們的詳細資訊，請參閱[定義螢幕旋轉的矩陣 (2d) ](#appendix-a-applying-matrices-for-screen-rotation-2-d)。 如需有關用於旋轉的 3D 轉換，請參閱[定義螢幕旋轉的矩陣 (3D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)。
 
  
 
-現在，這裡是重點所在：呼叫 [**IDXGISwapChain1::SetRotation**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 並將更新的旋轉矩陣提供給它，如下：
+現在，這裡是重點所在：呼叫 [**IDXGISwapChain1::SetRotation**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 並將更新的旋轉矩陣提供給它，如下：
 
 `m_swapChain->SetRotation(rotation);`
 
 您也需要將選取的旋轉矩陣儲存在轉譯方法於計算新投影時能夠取得它的地方。 當您轉譯最終的 3D 投影或結合最終的 2D 配置時，將會使用這個矩陣。 (它不自動為您套用它。)
 
-接著，請為旋轉的 3D 檢視建立新的轉譯目標，以及為檢視建立新的深度樣板緩衝區。 呼叫 [**ID3D11DeviceContext:RSSetViewports**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) 來為旋轉的場景設定 3D 轉譯檢視區。
+接著，請為旋轉的 3D 檢視建立新的轉譯目標，以及為檢視建立新的深度樣板緩衝區。 呼叫 [**ID3D11DeviceContext:RSSetViewports**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-rssetviewports) 來為旋轉的場景設定 3D 轉譯檢視區。
 
-最後，如果您有 2D 影像要旋轉或配置，請使用 [**ID2D1DeviceContext::CreateBitmapFromDxgiSurface**](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-createbitmapfromdxgisurface(idxgisurface_constd2d1_bitmap_properties1__id2d1bitmap1)) 將 2D 轉譯目標建立成可寫入的點陣圖，以供調整大小的交換鏈結使用，然後將新配置結合，以供更新的方向使用。 設定轉譯目標上您需要的任何屬性，例如消除鋸齒模式 (如程式碼範例中所見)。
+最後，如果您有 2D 影像要旋轉或配置，請使用 [**ID2D1DeviceContext::CreateBitmapFromDxgiSurface**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-createbitmapfromdxgisurface(idxgisurface_constd2d1_bitmap_properties1__id2d1bitmap1)) 將 2D 轉譯目標建立成可寫入的點陣圖，以供調整大小的交換鏈結使用，然後將新配置結合，以供更新的方向使用。 設定轉譯目標上您需要的任何屬性，例如消除鋸齒模式 (如程式碼範例中所見)。
 
 現在，呈現交換鏈結。
 
 ## <a name="reduce-the-rotation-delay-by-using-corewindowresizemanager"></a>使用 CoreWindowResizeManager 降低旋轉延遲
 
 
-不論應用程式模型或語言為何，Windows 10 預設會為所有應用程式提供一個短暫但是可查覺的時間範圍來完成影像旋轉。 不過，可能的情況是，當您的應用程式使用這裡描述的其中一項技術執行旋轉運算時，會在這個時間範圍結束前完成運算。 您會想要取回那些時間並完成旋轉動畫，是嗎？ 這就是 [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 派上用場的地方。
+不論應用程式模型或語言為何，Windows 10 預設會為所有應用程式提供一個短暫但是可查覺的時間範圍來完成影像旋轉。 不過，可能的情況是，當您的應用程式使用這裡描述的其中一項技術執行旋轉運算時，會在這個時間範圍結束前完成運算。 您會想要取回那些時間並完成旋轉動畫，是嗎？ 這就是 [**CoreWindowResizeManager**](/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 派上用場的地方。
 
-以下是 [**CoreWindowResizeManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 的用法：當 [**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件被引發時，請呼叫該事件之處理常式內的 [**CoreWindowResizeManager::GetForCurrentView**](https://docs.microsoft.com/previous-versions/hh404170(v=vs.85)) 以取得 **CoreWindowResizeManager** 的執行個體，然後在新方向的配置完成並呈現時，呼叫 [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) 讓 Windows 知道它可以完成旋轉動畫並顯示應用程式畫面。
+以下是 [**CoreWindowResizeManager**](/uwp/api/Windows.UI.Core.CoreWindowResizeManager) 的用法：當 [**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件被引發時，請呼叫該事件之處理常式內的 [**CoreWindowResizeManager::GetForCurrentView**](/previous-versions/hh404170(v=vs.85)) 以取得 **CoreWindowResizeManager** 的執行個體，然後在新方向的配置完成並呈現時，呼叫 [**NotifyLayoutCompleted**](/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) 讓 Windows 知道它可以完成旋轉動畫並顯示應用程式畫面。
 
-[**DisplayInformation::OrientationChanged**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件處理常式中的程式碼看起來如下：
+[**DisplayInformation::OrientationChanged**](/uwp/api/windows.graphics.display.displayinformation.orientationchanged) 事件處理常式中的程式碼看起來如下：
 
 ```cpp
 CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeManager::GetForCurrentView();
@@ -386,7 +386,7 @@ resizeManager->NotifyLayoutCompleted();
 -   Windows 10 在重建新配置的期間維持住影像。 這是您會想要縮減的時間範圍，因為您的應用程式可能不需要全部的時間。
 -   當配置時間範圍過了之後，或收到配置完成的通知時，Windows 會旋轉影像，然後淡入與淡出至新方向。
 
-如第三個項目符號中所指，當應用程式呼叫 [**NotifyLayoutCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) 時，Windows 10 會停止逾時時間範圍、完成旋轉動畫，然後將控制權交回給應用程式，應用程式此時便會以新的顯示方向繪製影像。 整體的影響就是您的應用程式現在感覺比較有彈性和有回應，並且運作起來較有效率。
+如第三個項目符號中所指，當應用程式呼叫 [**NotifyLayoutCompleted**](/uwp/api/windows.ui.core.corewindowresizemanager.notifylayoutcompleted) 時，Windows 10 會停止逾時時間範圍、完成旋轉動畫，然後將控制權交回給應用程式，應用程式此時便會以新的顯示方向繪製影像。 整體的影響就是您的應用程式現在感覺比較有彈性和有回應，並且運作起來較有效率。
 
 ## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>附錄 A：套用螢幕旋轉的矩陣 (2D)
 
@@ -395,13 +395,13 @@ resizeManager->NotifyLayoutCompleted();
 
 不能在 Direct2D 和 Direct3D 內容套用相同旋轉矩陣的理由有兩個：
 
--   一、兩者使用不同的笛卡兒座標模型。 Direct2D 使用慣用右手規則，其中 Y 座標是從原點向上以正值遞增。 不過，Direct3D 是使用慣用左手規則，其中 Y 座標是從原點向右以正值遞增。 結果就是螢幕座標的原點會位在 Direct2D 的左上方，而螢幕 (投影平面) 的原點則是位在 Direct3D 的左下方。 (如需詳細資訊，請參閱 [3D 座標系統](https://docs.microsoft.com/previous-versions/windows/desktop/bb324490(v=vs.85))。)
+-   一、兩者使用不同的笛卡兒座標模型。 Direct2D 使用慣用右手規則，其中 Y 座標是從原點向上以正值遞增。 不過，Direct3D 是使用慣用左手規則，其中 Y 座標是從原點向右以正值遞增。 結果就是螢幕座標的原點會位在 Direct2D 的左上方，而螢幕 (投影平面) 的原點則是位在 Direct3D 的左下方。 (如需詳細資訊，請參閱 [3D 座標系統](/previous-versions/windows/desktop/bb324490(v=vs.85))。)
 
     ![direct3d 座標系統。](images/direct3d-origin.png)![direct2d 座標系統。](images/direct2d-origin.png)
 
 -   二、必須明確指定 3D 旋轉矩陣，才能避免進位誤差。
 
-交換鏈結會假設原點位於左下方，因此您必須執行旋轉，將慣用右手的 Direct2D 座標系統與交換鏈結所使用的慣用左手座標系統對齊。 更明確地說，您需要將旋轉矩陣乘以轉移矩陣 (Translation Matrix) 來算出旋轉的座標系統原點，然後將影像從 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 的座標空間轉換成交換鏈結的座標空間，將影像重新定位在新慣用左手的方向之下。 當 Direct2D 轉譯目標與交換鏈結相連時，您的應用程式也必須同樣地套用這項轉換。 不過，如果您的應用程式是繪製到並未與交換鏈結直接關聯的中繼介面上，則請勿套用這項座標空間轉換。
+交換鏈結會假設原點位於左下方，因此您必須執行旋轉，將慣用右手的 Direct2D 座標系統與交換鏈結所使用的慣用左手座標系統對齊。 更明確地說，您需要將旋轉矩陣乘以轉移矩陣 (Translation Matrix) 來算出旋轉的座標系統原點，然後將影像從 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 的座標空間轉換成交換鏈結的座標空間，將影像重新定位在新慣用左手的方向之下。 當 Direct2D 轉譯目標與交換鏈結相連時，您的應用程式也必須同樣地套用這項轉換。 不過，如果您的應用程式是繪製到並未與交換鏈結直接關聯的中繼介面上，則請勿套用這項座標空間轉換。
 
 從四種可能的旋轉中選取正確矩陣的程式碼可能看起來如下 (請注意轉到新座標系統原點的轉移)：
 
@@ -447,9 +447,9 @@ default:
     
 ```
 
-在有了 2D 影像的正確旋轉矩陣和原點之後，請在您呼叫 [**ID2D1DeviceContext::BeginDraw**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) 和 [**ID2D1DeviceContext::EndDraw**](https://docs.microsoft.com/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-enddraw) 之間以 [**ID2D1DeviceContext::SetTransform**](https://docs.microsoft.com/windows/desktop/Direct2D/id2d1rendertarget-settransform) 呼叫來設定它。
+在有了 2D 影像的正確旋轉矩陣和原點之後，請在您呼叫 [**ID2D1DeviceContext::BeginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) 和 [**ID2D1DeviceContext::EndDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-enddraw) 之間以 [**ID2D1DeviceContext::SetTransform**](/windows/desktop/Direct2D/id2d1rendertarget-settransform) 呼叫來設定它。
 
-**警告**   Direct2D 沒有轉換堆疊。 如果您應用程式的繪圖程式碼中也使用了 [**ID2D1DeviceContext::SetTransform**](https://docs.microsoft.com/windows/desktop/Direct2D/id2d1rendertarget-settransform)，則這個矩陣必須在後續乘以任何其他您已經套用的轉換。
+**警告**   Direct2D 沒有轉換堆疊。 如果您應用程式的繪圖程式碼中也使用了 [**ID2D1DeviceContext::SetTransform**](/windows/desktop/Direct2D/id2d1rendertarget-settransform)，則這個矩陣必須在後續乘以任何其他您已經套用的轉換。
 
  
 
@@ -490,7 +490,7 @@ default:
 
 在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/DXGI%20swap%20chain%20rotation%20sample%20(Windows%208))) 的範例程式碼中，我們為每個可能的螢幕方向定義了特定的轉換矩陣。 現在，讓我們看看旋轉 3D 場景的矩陣。 如先前一樣，您需要為 4 個可能方向中的每個方向建立一組矩陣。 為了防止進位誤差以至於輕微的視覺不自然感，請在程式碼中明確宣告這些矩陣。
 
-您需要按照下列方式設定這些 3D 旋轉矩陣。 下列程式碼範例中示範的矩陣是標準的旋轉矩陣，用於 0、90、180 及 270 度的頂點 (定義相機 3D 場景空間中的各點) 旋轉。 \[當計算場景的2d 投影時，場景中的每個頂點 x、y、z \] 座標值會乘以此旋轉矩陣。
+您需要按照下列方式設定這些 3D 旋轉矩陣。 下列程式碼範例中示範的矩陣是標準的旋轉矩陣，用於 0、90、180 及 270 度的頂點 (定義相機 3D 場景空間中的各點) 旋轉。 \[當計算場景的2-d 投影時，場景中的每個頂點 x、y、z \] 座標值會乘以此旋轉矩陣。
 
 ```cpp
    
@@ -528,7 +528,7 @@ static const XMFLOAT4X4 Rotation270(
     }
 ```
 
-您需要使用 [**IDXGISwapChain1::SetRotation**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 呼叫來設定交換鏈結上的旋轉類型，如下：
+您需要使用 [**IDXGISwapChain1::SetRotation**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation) 呼叫來設定交換鏈結上的旋轉類型，如下：
 
 `   m_swapChain->SetRotation(rotation);`
 
@@ -549,12 +549,8 @@ ConstantBuffer  m_constantBufferData;          // Constant buffer resource data
 m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotationTransform3D);
 ```
 
-現在，當您呼叫 render 方法時，它會將目前的旋轉矩陣（如類別變數**m \_ orientationTransform3D**所指定）與目前的投影矩陣相乘，並將該作業的結果指派為轉譯器的新投影矩陣。 呈現交換鏈結來查看更新了顯示方向的場景。
+現在，當您呼叫轉譯方法時，它會將目前的旋轉矩陣 (（由類別變數 **m \_ orientationTransform3D**) 指定）與目前的投射矩陣相乘，並將該作業的結果指派為轉譯器的新投影矩陣。 呈現交換鏈結來查看更新了顯示方向的場景。
 
  
 
  
-
-
-
-

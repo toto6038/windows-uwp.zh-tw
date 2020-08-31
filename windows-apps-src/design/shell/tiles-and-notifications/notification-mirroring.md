@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何在您的快顯通知上使用通知鏡像。
+description: 瞭解如何使用由雲端中的行動服務中心提供的通知鏡像，在您的電腦上查看您手機的快顯通知。
 title: 通知鏡像
 label: Notification mirroring
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 雲端的控制中心, 通知鏡像, 通知, 跨裝置
 ms.localizationpriority: medium
-ms.openlocfilehash: b897c6574f6cbfe78406d1c624f2e3b7286ef582
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 13e3e9f0b675ef0e5f9e0787f0544f87689cf74a
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971053"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054008"
 ---
 # <a name="notification-mirroring"></a>通知鏡像
 
@@ -25,7 +25,7 @@ ms.locfileid: "82971053"
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-開發人員從通知鏡像獲得兩個絕佳的好處：鏡像通知會導致更多使用者參與服務，同時也可協助使用者探索您的 Microsoft Store 桌面應用程式！ 您的使用者可能甚至不知道您有絕佳的 Windows 應用程式可供其 Windows 10 desktop 使用。 當使用者從電話接收到鏡像通知時，使用者可以按一下快顯通知以前往 Microsoft Store，他們可以在此安裝您的 Windows 應用程式。
+開發人員可從通知鏡像獲得兩大好處：鏡像通知會導致更多使用者與您的服務互動，同時也可協助使用者探索您的 Microsoft Store 桌面應用程式！ 您的使用者甚至可能不知道您的 Windows 10 desktop 有絕佳的 Windows 應用程式可供使用。 當使用者接收到來自電話的鏡像通知時，使用者可以按一下快顯通知，以移至 Microsoft Store，讓他們可以在其中安裝您的 Windows 應用程式。
 
 鏡像適用於 Windows Phone 和 Android。 使用者必須在他們的手機和桌面同時登入 Cortana，通知鏡像才能運作。
 

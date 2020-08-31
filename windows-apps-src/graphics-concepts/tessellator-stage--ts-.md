@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b8960d9723460fcbb8cec71da0998958cac8a6e8
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 90dfb8d28be786cb542e72fde5a24bed4de68f78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370946"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167972"
 ---
 # <a name="tessellator-ts-stage"></a>曲面細分器 (TS) 階段
 
 
 曲面細分器 (TS) 階段建立代表幾何塊面的網域取樣模式，並產生一組連接這些樣本的小物件 (三角形、點或線)。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途及用途
 
 
 下圖會反白顯示 Direct3D 圖形管線階段。
@@ -52,9 +52,9 @@ Direct3D 執行階段支援實作鑲嵌 (在 GPU 上將低細節的細分表面�
 
 Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 如果應用程式實作大量變形目標和/或更加複雜的皮膚形變 (skinning)/變形模型，這可能會導致非常大的效能改進。
 
-曲面細分器是固定函式階段，透過將[輪廓著色器](hull-shader-stage--hs-.md)繫結至管線而初始化。 (請參閱[How To:初始化鑲嵌階段](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize))。 曲面細分器階段的目的是將網域 (四邊形、三角形或線) 細分成很多較小的物件 (三角形、點或線)。 曲面細分器在標準化 (零到一) 座標系統中並排顯示標準網域。 例如，四邊形網域被鑲嵌為單位正方形。
+曲面細分器是固定函式階段，透過將[輪廓著色器](hull-shader-stage--hs-.md)繫結至管線而初始化。 (請參閱[如何：初始化曲面細分器階段](/windows/desktop/direct3d11/direct3d-11-advanced-stages-tessellator-initialize))。 曲面細分器階段的目的是將網域 (四邊形、三角形或線) 細分成很多較小的物件 (三角形、點或線)。 曲面細分器在標準化 (零到一) 座標系統中並排顯示標準網域。 例如，四邊形網域被鑲嵌為單位正方形。
 
-### <a name="span-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanspan-idphasesinthetessellatortsstagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>在鑲嵌 (TS) 階段中的階段
+### <a name="span-idphases_in_the_tessellator__ts__stagespanspan-idphases_in_the_tessellator__ts__stagespanspan-idphases_in_the_tessellator__ts__stagespanphases-in-the-tessellator-ts-stage"></a><span id="Phases_in_the_Tessellator__TS__stage"></span><span id="phases_in_the_tessellator__ts__stage"></span><span id="PHASES_IN_THE_TESSELLATOR__TS__STAGE"></span>曲面細分器 (TS) 階段中的相位
 
 曲面細分器 (TS) 階段在兩個相位中運作：
 
@@ -63,16 +63,16 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
 
     | 分割類型 | 範圍                       |
     |----------------------|-----------------------------|
-    | Fractional\_odd      | \[1...63\]                  |
-    | 小數\_甚至     | TessFactor 範圍：\[2..64\] |
-    | 整數              | TessFactor 範圍：\[1..64\] |
-    | Pow2                 | TessFactor 範圍：\[1..64\] |
+    | \_奇數小數      | \[1 ... 63\]                  |
+    | 偶數的分數 \_     | TessFactor 範圍： \[ 2.. 64\] |
+    | 整數              | TessFactor 範圍： \[ 1.. 64\] |
+    | Pow2                 | TessFactor 範圍： \[ 1.. 64\] |
 
      
 
-由兩個可程式化著色器階段實作鑲嵌：[輪廓著色器](hull-shader-stage--hs-.md)和[網域著色器](domain-shader-stage--ds-.md)。 這些著色器階段是用 HLSL 程式碼 (定義在著色器模型 5 中) 程式化。 著色器目標： hs\_5\_0 和 ds\_5\_0。 標題建立著色器，然後從已編譯著色器 (當著色器繫結至管線時傳遞至執行階段) 擷取程式碼給硬體。
+由兩個可程式化著色器階段實作鑲嵌：[輪廓著色器](hull-shader-stage--hs-.md)和[網域著色器](domain-shader-stage--ds-.md)。 這些著色器階段是用 HLSL 程式碼 (定義在著色器模型 5 中) 程式化。 著色器的目標是： hs \_ 5 \_ 0 和 ds \_ 5 \_ 0。 標題建立著色器，然後從已編譯著色器 (當著色器繫結至管線時傳遞至執行階段) 擷取程式碼給硬體。
 
-### <a name="span-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanspan-idenablingdisablingtessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>啟用/停用的鑲嵌式
+### <a name="span-idenabling_disabling_tessellationspanspan-idenabling_disabling_tessellationspanspan-idenabling_disabling_tessellationspanenablingdisabling-tessellation"></a><span id="Enabling_disabling_tessellation"></span><span id="enabling_disabling_tessellation"></span><span id="ENABLING_DISABLING_TESSELLATION"></span>啟用/停用鑲嵌
 
 藉由建立輪廓著色器並將它繫結至輪廓著色器階段 (這會自動設定曲面細分器階段)，來啟用鑲嵌。 若要從鑲嵌塊面產生最終頂點位置，您也需要建立[網域著色器](domain-shader-stage--ds-.md)並將其繫結至網域著色器階段。 一旦鑲嵌啟用後，輸入到輸入組合語言 (IA) 階段的資料必須是塊面資料。 輸入組合拓撲必須是塊面常數拓撲。
 
@@ -83,7 +83,7 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
 
 使用從輪廓著色器階段傳入的鑲嵌因數 (這指定網域被鑲嵌的細微程度) 和分割類型 (指定用於切割塊面的演算法)，曲面細分器每個塊面運作一次。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 曲面細分器輸出 uv (和選擇性 w) 座標及表面拓撲至網域著色器階段。
@@ -96,7 +96,3 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
  
 
  
-
-
-
-

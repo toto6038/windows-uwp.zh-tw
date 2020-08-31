@@ -1,27 +1,27 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: 使用傾角計
-description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
+description: 瞭解如何建立使用傾角羅盤輸入裝置的基本應用程式，以決定音調、翻轉和偏擺。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 15ea49ea0e8e334158000248caf26f662ee5bd35
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ebfbdda8f5f7bf308ee427ab79d8dd45969e3108
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369639"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054328"
 ---
 # <a name="use-the-inclinometer"></a>使用傾角計
 
 
-**重要的 Api**
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
 -   [**Inclinometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)
 
-**Sample**
+**範例**
 
 -   如需更完整的實作，請參閱[傾角計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "66369639"
 
  ## <a name="prerequisites"></a>必要條件
 
-您應該先熟悉使用 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
+您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援傾角計。
 
@@ -39,9 +39,9 @@ ms.locfileid: "66369639"
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單傾角計應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-###  <a name="instructions"></a>指示
+###  <a name="instructions"></a>Instructions
 
--   從 [Visual C#]  專案範本中選擇 [空白應用程式 (通用 Windows)]  來建立一個新專案。
+-   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -136,11 +136,11 @@ ms.locfileid: "66369639"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **InclinometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="InclinometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:InclinometerCS"`。
 
--   按 F5 或選取 [偵錯]   >  [開始偵錯]  以建置、部署及執行 App。
+-   按 F5 或選取 [ **Debug**  >  **開始調試**程式]，以建立、部署和執行應用程式。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更傾角計值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]   >  [停止偵錯]  以停止 App。
+-   返回 Visual Studio 並按 Shift + F5 或選取 [ **Debug**停止錯] 以停止應用程式，以停止應用程式  >  **Stop Debugging** 。
 
 ###  <a name="explanation"></a>說明
 

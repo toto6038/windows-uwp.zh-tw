@@ -1,27 +1,27 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: 使用加速計
-description: 了解如何使用加速計來回應使用者移動。
+description: 瞭解如何建立依賴單一感應器（加速計）以回應使用者移動的基本應用程式。
 ms.date: 06/06/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2fe6fe4c7fe22d71e2154be2db082bb43cc4ed1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: e38d64750b410369a9ff9ebf871267b03e0ad07e
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369697"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054338"
 ---
 # <a name="use-the-accelerometer"></a>使用加速計
 
 
-**重要的 Api**
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Accelerometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
+-   [**加速計**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
-**Sample**
+**範例**
 
 -   如需更完整的實作，請參閱[加速計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
 
@@ -29,9 +29,9 @@ ms.locfileid: "66369697"
 
 簡單的遊戲應用程式倚賴單一感應器 (也就是加速計) 做為輸入裝置。 這些應用程式通常只使用一或兩個軸做為輸入，但是它們也可以使用 shake 事件做為另一個輸入來源。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
-您應該先熟悉使用 Extensible Application Markup Language (XAML)，Microsoft Visual C#，和事件。
+您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援加速計。
 
@@ -39,9 +39,9 @@ ms.locfileid: "66369697"
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單加速計應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-### <a name="instructions"></a>指示
+### <a name="instructions"></a>Instructions
 
--   從 [Visual C#]  專案範本中選擇 [空白應用程式 (通用 Windows)]  來建立一個新專案。
+-   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -136,11 +136,11 @@ ms.locfileid: "66369697"
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **AccelerometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="AccelerometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:AccelerometerCS"`。
 
--   按 F5 或選取**偵錯** &gt; **開始偵錯**建置、 部署及執行應用程式。
+-   按 F5 或選取 **\[偵錯\]** &gt; **\[開始偵錯\]** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更加速器值。
 
--   返回 Visual Studio，然後按 Shift + F5 停止應用程式，或選取**偵錯** &gt; **停止偵錯**停止應用程式。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** &gt; **\[停止偵錯\]** 以停止 App。
 
 ### <a name="explanation"></a>說明
 

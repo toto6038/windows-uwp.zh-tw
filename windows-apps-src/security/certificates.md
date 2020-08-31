@@ -4,14 +4,14 @@ description: 本文討論通用 Windows 平台 (UWP) app 的憑證用法。
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 28419df1a37ff640db7246b54e50da5bfce9fedb
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7c8d3fd007e688bd11423c32bd175203a6f1917d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372624"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157882"
 ---
 # <a name="intro-to-certificates"></a>憑證簡介
 
@@ -22,7 +22,7 @@ ms.locfileid: "66372624"
 
 ### <a name="shared-certificate-stores"></a>共用的憑證存放區
 
-UWP 應用程式會使用在 Windows 8 中引進的新導致應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
+UWP app 使用 Windows 8 引進的新 Isolationist 應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
 
 ### <a name="certificate-storage-per-app-container"></a>每一個 app 容器有一個憑證存放區
 
@@ -53,25 +53,25 @@ X.509 公開金鑰憑證標準已隨著時間不斷修訂。 每個後續的資�
 
 ![x.509 憑證版本 1、2 及 3](images/x509certificateversions.png)
 
-部分欄位和延伸可以在使用 [**CertificateRequestProperties**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) 類別建立憑證要求時直接指定。 但大部分無法直接指定。 這些欄位可由發行授權單位填寫或留白。 如需欄位的詳細資訊，請參閱下列各節：
+部分欄位和延伸可以在使用 [**CertificateRequestProperties**](/uwp/api/Windows.Security.Cryptography.Certificates.CertificateRequestProperties) 類別建立憑證要求時直接指定。 但大部分無法直接指定。 這些欄位可由發行授權單位填寫或留白。 如需欄位的詳細資訊，請參閱下列各節：
 
 ### <a name="version-1-fields"></a>版本 1 欄位
 
 | 欄位 | 描述 |
 |-------|-------------|
-| Version | 指定編碼憑證的版本編號。 目前，此欄位可以接受的值為 0、1 或 2。 |
+| 版本 | 指定編碼憑證的版本編號。 目前，此欄位可以接受的值為 0、1 或 2。 |
 | 序號 | 包含一個由憑證授權單位 (CA) 指派給憑證的唯一正整數。 |
 | 簽章演算法 | 包含一個物件識別碼 (OID)，指定 CA 用來簽署憑證時使用的演算法。 例如，1.2.840.113549.1.1.5 指定 SHA-1 雜湊演算法結合來自 RSA Laboratories 制定的 RSA 加密演算法。 |
-| 簽發者 | 包含建立並簽署憑證之 CA 的 X.500 辨別名稱 (DN)。 |
-| 有效性 | 指定憑證有效的時間間隔。 直至 2049 年底的日期都使用國際標準時間 (格林威治標準時間) 格式 (yymmddhhmmssz)。 從 2050 年 1 月 1 日開始的日期則使用一般時間格式 (yyyymmddhhmmssz)。 |
-| Subject | 包含實體的 X.500 辨別名稱，該實體與憑證中包含的公開金鑰相關聯。 |
+| Issuer | 包含建立並簽署憑證之 CA 的 X.500 辨別名稱 (DN)。 |
+| 有效期 | 指定憑證有效的時間間隔。 直至 2049 年底的日期都使用國際標準時間 (格林威治標準時間) 格式 (yymmddhhmmssz)。 從 2050 年 1 月 1 日開始的日期則使用一般時間格式 (yyyymmddhhmmssz)。 |
+| 主旨 | 包含實體的 X.500 辨別名稱，該實體與憑證中包含的公開金鑰相關聯。 |
 | 公開金鑰 | 包含公開金鑰和相關聯的演算法資訊。 |
 
 ### <a name="version-2-fields"></a>版本 2 欄位
 
 X.509 版本 2 憑證包含版本 1 中定義的基本欄位，並新增下列欄位。
 
-| 欄位 | 描述 |
+| 欄位 | 說明 |
 |-------|-------------|
 | 簽發者唯一識別碼 | 包含唯一識別碼，可以在一段時間後，當其他實體重複使用 CA 時，清楚識別該 CA 的 X.500 名稱。 |
 | 主體唯一識別碼 | 包含唯一識別碼，可以在一段時間後，當其他實體重複使用憑證主體時，清楚識別該憑證主體的 X.500 名稱。 |
@@ -80,7 +80,7 @@ X.509 版本 2 憑證包含版本 1 中定義的基本欄位，並新增下列�
 
 X.509 版本 3 憑證包含版本 1 和版本 2 中定義的欄位，並新增憑證延伸。
 
-| 欄位  | 描述 |
+| 欄位  | 說明 |
 |--------|-------------|
 | 授權單位金鑰識別元 | 識別憑證授權單位 (CA) 公開金鑰，這個金鑰會對應到用來簽署憑證的 CA 私密金鑰。 |
 | 基本限制 | 指定實體是否可以用來做為 CA，如果可以，可以存在於憑證鏈結中該 CA 下方的次級 CA 數目。 |
@@ -88,12 +88,11 @@ X.509 版本 3 憑證包含版本 1 和版本 2 中定義的欄位，並新增�
 | CRL 發佈點 | 包含基本憑證撤銷清單 (CRL) 的 URI。 |
 | 增強金鑰使用方法 | 指定憑證所含公開金鑰的使用方法。 |
 | 簽發者別名 | 針對憑證要求的簽發者指定一或多個別名形式。 |
-| 金鑰使用方法 | 指定憑證中所含公開金鑰可以執行的操作限制。|
+| 金鑰使用方式 | 指定憑證中所含公開金鑰可以執行的操作限制。|
 | 名稱限制  | 指定憑證階層中所有主體名稱必須放置的命名空間。 這個延伸只能用於一個 CA 憑證中。 |
 | 原則限制 | 透過禁止原則對應，或是要求階層中的每個憑證包含可接受的原則識別碼來限制路徑驗證。 這個延伸只能用於一個 CA 憑證中。 |
 | 原則對應 | 指定次級 CA 中的原則，這個次級 CA 會對應到發行 CA 中的原則。 |
 | 私密金鑰使用期限 | 指定私密金鑰的有效期間，且要與該私密金鑰相關聯憑證不同的有效期間。 |
-| 主體別名 | 針對憑證要求的主體指定一或多個別名形式。 別名形式範例包含電子郵件地址、DNS 名稱、IP 位址及 URI。 |
+| 主體替代名稱 | 針對憑證要求的主體指定一或多個別名形式。 別名形式範例包含電子郵件地址、DNS 名稱、IP 位址及 URI。 |
 | 主體目錄屬性 | 傳遞身分識別屬性，例如憑證主體的國籍。 延伸值是 OID 值配對的序列。 |
 | 主體金鑰識別碼 | 區別憑證主體持有的多個公開金鑰。 延伸值通常是金鑰的 SHA-1 雜湊。 |
-

@@ -6,43 +6,43 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 8248e17a342563a0746e3c54c3a69a52f027d072
-ms.sourcegitcommit: 445320ff0ee7323d823194d4ec9cfa6e710ed85d
+ms.openlocfilehash: dcfa3702f43907453da0769cf5c6430cfbcae6d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72282430"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157952"
 ---
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
 
 這是一份完整逐步解說的第 1 部分，將說明如何建立會利用 Windows Hello 來取代傳統的使用者名稱及密碼驗證系統的 Windows 10 UWP (通用 Windows 平台) 應用程式。 應用程式利用使用者名稱來進行登入作業，並為每個帳戶建立 Hello 金鑰。 這些帳戶會受到 PIN 碼的保護；而該 PIN 碼是在 Windows 設定中針對 Windows Hello 組態所設定的。
 
-這個逐步解說分成兩個部分：建置應用程式，以及連線至後端服務。 當您完成本文時，請繼續進行第2部分：[Windows Hello 登入服務](microsoft-passport-login-auth-service.md)。
+這個逐步解說分成兩個部分：建置應用程式，以及連線至後端服務。 當您讀完這篇文章之後，請繼續參閱第 2 部分：[Windows Hello 登入服務](microsoft-passport-login-auth-service.md)。
 
 在您開始之前，您應先閱讀 [Windows Hello](microsoft-passport.md) 概觀，讓自己對 Windows Hello 的運作方式有大致的概念。
 
 ## <a name="get-started"></a>開始使用
 
 
-為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也必須在 Windows 10 電腦上使用 Visual Studio 2015 （版本或更高版本）或 Visual Studio 的較新版本。 雖然 Visual Studio 2015 是最小的必要版本，但建議您使用最新版本的 Visual Studio，以取得最新的開發人員和安全性更新。
+為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要在 Windows 10 電腦上使用 Visual Studio 2015 (的版或更高的) 或較新版本的 Visual Studio。 雖然 Visual Studio 2015 是所需的最低版本，但我們建議您使用最新版本的 Visual Studio 來取得最新的開發人員和安全性更新。
 
--   開啟 Visual Studio，然後選取 [檔案 > 新增 > 專案]。
+-   開啟 Visual Studio，然後選取 [檔案] > 新的 > 專案]。
 -   這將會開啟 \[新增專案\] 視窗。 瀏覽至 \[範本\] &gt; \[Visual C#\]。
 -   選擇 \[空白應用程式 (通用 Windows)\]，然後把您的應用程式命名為「PassportLogin」。
 -   建置並執行新的應用程式 (F5)，您應該會看到畫面出現空白的視窗。 關閉應用程式。
 
 ![Windows Hello 新專案](images/passport-login-1.png)
 
-## <a name="exercise-1-login-with-microsoft-passport"></a>練習1：使用 Microsoft Passport 登入
+## <a name="exercise-1-login-with-microsoft-passport"></a>練習 1：使用 Microsoft Passport 登入
 
 
 您將在這個練習中，了解如何查看電腦是否已設定 Windows Hello，以及如何使用 Windows Hello 來登入帳戶。
 
--   您將在新的專案中，為新的解決方案建立名為「Views」的新資料夾。 這個資料夾將包含會在這個範例中瀏覽的頁面。 在方案總管中，用滑鼠右鍵按一下專案、選取 \[加入\] &gt; \[新增資料夾\]，然後將資料夾重新命為 Views。
+-   您將在新的專案中，為新的解決方案建立名為「Views」的新資料夾。 這個資料夾將包含會在這個範例中瀏覽的頁面。 在方案總管中，用滑鼠右鍵按一下專案、選取 \[加入\] > \[新增資料夾\]，然後將資料夾重新命為 Views。
 
     ![Windows Hello 新增資料夾](images/passport-login-2.png)
 
--   用滑鼠右鍵按一下新的 \[Views\] 資料夾、選取 \[加入\] &gt; \[新增項目\]，然後選取 \[空白頁\]。 請將此頁面命名為 "Login.xaml"。
+-   用滑鼠右鍵按一下新的 \[Views\] 資料夾、選取 \[加入\] > \[新增項目\]，然後選取 \[空白頁\]。 請將此頁面命名為 "Login.xaml"。
 
     ![Windows Hello 新增空白頁](images/passport-login-3.png)
 
@@ -419,7 +419,7 @@ ms.locfileid: "72282430"
     }
     ```
 
--   您可能已經注意到參考 MicrosoftPassportHelper 中之方法的已加上註解標記的程式碼。 請在 MicrosoftPassportHelper.cs 中，加入名為 CreatePassportKeyAsync 的新方法。 這個方法在 [**KeyCredentialManager**](https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.KeyCredentialManager) 中使用 Windows Hello API。 呼叫 [**RequestCreateAsync**](https://docs.microsoft.com/previous-versions/windows/dn973048(v=win.10)) 將會建立 *accountId* 及本機電腦專屬的 Passport 金鑰。 如果您想在真實世界的案例中實作 Switch 陳述式，請留意 Switch 陳述式中的註解。
+-   您可能已經注意到參考 MicrosoftPassportHelper 中之方法的已加上註解標記的程式碼。 請在 MicrosoftPassportHelper.cs 中，加入名為 CreatePassportKeyAsync 的新方法。 這個方法在 [**KeyCredentialManager**](/uwp/api/Windows.Security.Credentials.KeyCredentialManager) 中使用 Windows Hello API。 呼叫 [**RequestCreateAsync**](/previous-versions/windows/dn973048(v=win.10)) 將會建立 *accountId* 及本機電腦專屬的 Passport 金鑰。 如果您想在真實世界的案例中實作 Switch 陳述式，請留意 Switch 陳述式中的註解。
 
     ```cs
     /// <summary>
@@ -486,11 +486,11 @@ ms.locfileid: "72282430"
     }
     ```
 
--   請建置並執行應用程式。 系統將帶您前往 Login 頁面。 請輸入「sampleUsername」，然後按一下 \[Login\] \(登入\)。 系統會以 Windows Hello 提示要求您輸入 PIN 碼。 在您正確輸入自己的 PIN 碼之後，CreatePassportKeyAsync 方法就能建立 Windows Hello 金鑰。 請監視輸出視窗，看看是否顯示已成功登入的訊息。
+-   建置並執行應用程式。 系統將帶您前往 Login 頁面。 請輸入「sampleUsername」，然後按一下 \[Login\] \(登入\)。 系統會以 Windows Hello 提示要求您輸入 PIN 碼。 在您正確輸入自己的 PIN 碼之後，CreatePassportKeyAsync 方法就能建立 Windows Hello 金鑰。 請監視輸出視窗，看看是否顯示已成功登入的訊息。
 
     ![Windows Hello 登入 PIN 提示](images/passport-login-8.png)
 
-## <a name="exercise-2-welcome-and-user-selection-pages"></a>練習2：[歡迎使用] 和 [使用者選擇] 頁面
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>練習 2：歡迎使用頁面和使用者選取頁面
 
 
 您將在這個練習中，繼續先前的練習。 當使用者成功登入之後，他們應該會看見歡迎頁面，而該頁面會有能讓使用者登出或刪除自己帳戶的選項。 由於 Windows Hello 會為每台電腦建立金鑰，您可以建立使用者選取畫面，來顯示所有曾經登入該電腦的使用者。 然後使用者就能選取其中一個帳戶，不用重新輸入密碼就能直接前往歡迎畫面，原因是該使用者已通過驗證來存取該電腦。
@@ -624,11 +624,11 @@ ms.locfileid: "72282430"
     }
     ```
 
--   請建置並執行應用程式。 然後使用「sampleUsername」登入，並按一下 \[Login\] \(登入\)。 請輸入您的 PIN 碼；如果登入成功，您應該會看到歡迎畫面。 請嘗試按一下能忘記使用者的按鈕，然後監視輸出視窗，看看使用者是否遭到刪除。 請注意，當使用者遭到刪除時，您仍舊會在歡迎頁面上。 您必須建立 app 可以瀏覽的使用者選取頁面。
+-   建置並執行應用程式。 然後使用「sampleUsername」登入，並按一下 \[Login\] \(登入\)。 請輸入您的 PIN 碼；如果登入成功，您應該會看到歡迎畫面。 請嘗試按一下能忘記使用者的按鈕，然後監視輸出視窗，看看使用者是否遭到刪除。 請注意，當使用者遭到刪除時，您仍舊會在歡迎頁面上。 您必須建立應用程式可以瀏覽的使用者選取頁面。
 
     ![Windows Hello 歡迎畫面](images/passport-login-9.png)
 
--   在 [Views] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
+-   在 [Views] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -872,14 +872,14 @@ ms.locfileid: "72282430"
     }
     ```
 
--   請建置並執行應用程式。 然後使用 "sampleUsername" 登入。 請輸入您的 PIN；如果登入成功，您將會看到歡迎畫面。 請按一下 Back to User List \(返回使用者清單\)。 現在，您應該會看到清單中有一位使用者。 如果您按一下該使用者，Passport 就會讓您重新登入，但不必重新輸入任何密碼等資料。
+-   建置並執行應用程式。 然後使用 "sampleUsername" 登入。 請輸入您的 PIN；如果登入成功，您將會看到歡迎畫面。 請按一下 Back to User List \(返回使用者清單\)。 現在，您應該會看到清單中有一位使用者。 如果您按一下該使用者，Passport 就會讓您重新登入，但不必重新輸入任何密碼等資料。
 
     ![Windows Hello 選取使用者清單](images/passport-login-10.png)
 
-## <a name="exercise-3-registering-a-new-windows-hello-user"></a>練習3：註冊新的 Windows Hello 使用者
+## <a name="exercise-3-registering-a-new-windows-hello-user"></a>練習 3︰ 登錄新 Windows Hello 使用者
 
 
-您將在這個練習中建立新的頁面，以便利用 Windows Hello 來建立新帳戶。 該頁面的運作方式與 Login 頁面類似。 \[登入\] 頁面會針對正移轉去使用 Windows Hello 的現有使用者實作。 PassportRegister 頁面將為新的使用者建立 Windows Hello 註冊。
+您將在這個練習中建立新的頁面，以便利用 Windows Hello 來建立新帳戶。 該頁面的運作方式與 \[登入\] 頁面類似。 \[登入\] 頁面會針對正移轉去使用 Windows Hello 的現有使用者實作。 PassportRegister 頁面將為新的使用者建立 Windows Hello 註冊。
 
 -   請在 views 資料夾中，建立名為 "PassportRegister.xaml" 的新空白頁。 然後在 XAML 中新增下列程式碼來設定使用者介面。 這裡的介面與 \[登入\] 頁面很類似。
 
@@ -961,7 +961,7 @@ ms.locfileid: "72282430"
     }
     ```
 
--   請建置並執行應用程式。 然後嘗試為新的使用者註冊。 接著返回使用者清單，並驗證您可以選取該使用者來登入。
+-   建置並執行應用程式。 然後嘗試為新的使用者註冊。 接著返回使用者清單，並驗證您可以選取該使用者來登入。
 
     ![Windows Hello 登錄新的使用者](images/passport-login-11.png)
 

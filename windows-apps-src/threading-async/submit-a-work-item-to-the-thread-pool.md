@@ -6,32 +6,32 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
-ms.openlocfilehash: a9da63e05380987d69d97a74123e593acd0b8cb1
-ms.sourcegitcommit: 2dbf4a3f3473c1d3a0ad988bcbae6e75dfee3640
+ms.openlocfilehash: 3576f907e4ab601013d22fe9ae7697e0ec523ce4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82619342"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155202"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
-\[已更新 Windows 10 上的 UWP 應用程式。 如需 Windows [8.x 的文章](https://docs.microsoft.com/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN)，請參閱封存\]
+\[ 已更新 Windows 10 上的 UWP 應用程式。 如 Windows 8. x 文章，請參閱[archive](/previous-versions/windows/apps/mt244353(v=win.10))封存\]
 
 <b>重要 API</b>
 
--   [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)
--   [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)
+-   [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync)
+-   [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction)
 
 了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。 工作若還要好一段時間才能完成，可使用這種方式讓 UI 保持回應，還可用來以並行方式完成多個工作。
 
 ## <a name="create-and-submit-the-work-item"></a>建立及提交工作項目
 
-透過呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 建立工作項目。 提供委派進行工作 (您可以使用 Lambda 或委派函式)。 請注意，**RunAsync** 會傳回 [**IAsyncAction**](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction) 物件；請將這個物件儲存起來以在下個步驟中使用。
+透過呼叫 [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) 建立工作項目。 提供委派進行工作 (您可以使用 Lambda 或委派函式)。 請注意，**RunAsync** 會傳回 [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction) 物件；請將這個物件儲存起來以在下個步驟中使用。
 
-提供三個版本的 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
+提供三個版本的 [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
 
 >[!NOTE]
->使用[**RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync)來存取 UI 執行緒，並顯示工作專案的進度。
+>使用 [**CoreDispatcher RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) 來存取 UI 執行緒，並顯示工作專案的進度。
 
 下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
 
@@ -269,13 +269,13 @@ auto asyncAction = ThreadPool::RunAsync(workItem);
 m_workItem = asyncAction;
 ```
 
-呼叫 [**RunAsync**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpool.runasync) 之後，工作項目會排入執行緒集區，然後在有執行緒可用時執行。 執行緒集區工作項目會以非同步方式執行，執行順序不拘，以確保工作項目可以獨立運作。
+呼叫 [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) 之後，工作項目會排入執行緒集區，然後在有執行緒可用時執行。 執行緒集區工作項目會以非同步方式執行，執行順序不拘，以確保工作項目可以獨立運作。
 
-請注意，工作項目會檢查 [**IAsyncInfo.Status**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncinfo.status) 屬性，並在取消工作項目時結束。
+請注意，工作項目會檢查 [**IAsyncInfo.Status**](/uwp/api/windows.foundation.iasyncinfo.status) 屬性，並在取消工作項目時結束。
 
 ## <a name="handle-work-item-completion"></a>處理工作項目的完成
 
-透過設定工作項目的 [**IAsyncAction.Completed**](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncaction.completed) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](https://docs.microsoft.com/uwp/api/windows.ui.core.coredispatcher.runasync) 存取 UI 執行緒及顯示結果。
+透過設定工作項目的 [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed) 屬性，提供完成處理常式。 提供委派 (您可以使用 Lambda 或委派函式) 處理工作項目的完成。 例如，使用 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) 存取 UI 執行緒及顯示結果。
 
 下列範例以在步驟 1 提交之工作項目的結果更新 UI：
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要和後續步驟
 
-若要深入瞭解，請從本快速入門中的建立針對 Windows 8.1 撰寫的[ThreadPool 工作專案範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample)中的程式碼，然後在 Win\_unap Windows 10 應用程式中重複使用原始程式碼。
+若要深入瞭解，請從本快速入門的程式碼，建立針對 Windows 8.1 所撰寫的 [ThreadPool 工作專案範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) ，並重複使用 win \_ unap Windows 10 應用程式中的原始程式碼。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -1,23 +1,23 @@
 ---
 title: 遊戲的輸入練習
-description: 了解有效使用輸入裝置所需的模式與技巧。
+description: 瞭解在通用 Windows 平臺 (UWP) 遊戲中有效使用輸入裝置的模式和技巧。
 ms.assetid: CBAD3345-3333-4924-B6D8-705279F52676
 ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: aa2036cb8d91b17d084e4e4922d01d4256bdb7de
-ms.sourcegitcommit: 29eb375bc634bf733be58107c1d648dc818da7f8
+ms.openlocfilehash: eb543e86221f8f1a37565c2e6e6bf1fe4a8d3635
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051323"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054488"
 ---
 # <a name="input-practices-for-games"></a>遊戲的輸入練習
 
 本主題說明在通用 Windows 平臺 (UWP) 遊戲中有效使用輸入裝置的模式和技巧。
 
-藉由閱讀本主題，您將瞭解：
+閱讀本主題之後，您將瞭解：
 
 * 如何追蹤玩家，以及他們目前所使用的輸入與瀏覽裝置
 * 如何偵測按鈕轉換 (按下轉換到放開，放開轉換到按下)
