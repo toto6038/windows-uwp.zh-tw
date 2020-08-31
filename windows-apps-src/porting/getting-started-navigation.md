@@ -1,17 +1,17 @@
 ---
 title: 瀏覽入門
-description: 瀏覽入門
+description: 瞭解如何使用通用 Windows 平臺 (UWP) Frame 類別，將頁面流覽新增至具有多個視圖的 Windows 10 應用程式。
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d2f73ba6a14ace1319285ca436db4738f84548
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 3d26bf6e63c61207142b8945c48f9925a7459844
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493293"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094685"
 ---
 # <a name="getting-started-navigation"></a>開始使用：瀏覽
 
@@ -34,7 +34,7 @@ iOS 提供 **UINavigationController** 類別來協助 app 內瀏覽：您可以�
 
 接下來，將按鈕新增到 BlankPage.xaml 檔案。 讓我們使用 AppBarButton 控制項，並為它提供一個返回箭頭影像：在 \[**XAML**\] 檢視中，於 `<Grid> </Grid>` 元素之間新增 ` <AppBarButton Icon="Back"/>`。
 
-現在，讓我們將事件處理常式新增至按鈕：在**設計**視圖中按兩下控制項，Microsoft Visual Studio 將文字 "AppBarButton \_ click" 加入至**按一下**方塊（如下圖所示），然後在 BlankPage.xaml.cs 檔案中加入和顯示對應的事件處理常式。
+現在，讓我們將事件處理常式新增至按鈕：在 **設計** 視圖中按兩下控制項，然後 Microsoft Visual Studio 將文字 "icon \_ click" 加入至 **按一下** 方塊（如下圖所示），然後在 BlankPage.xaml.cs 檔案中加入並顯示對應的事件處理常式。
 
 ![在 Visual Studio 中新增上一頁按鈕及其 Click 事件](images/ios-to-uwp/vs-add-back-button.png)
 
@@ -64,7 +64,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 現在執行程式。 點選「Go To Page」按鈕移至其他頁面，然後點選上一頁箭頭按鈕返回上一個頁面。
 
-頁面瀏覽是由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別來管理的。 當 iOS 中的**UINavigationController**類別使用**pushViewController**和**popViewController**方法時，UWP 應用程式的**Frame**類別會提供[**導覽**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)和[**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)方法。 **Frame** 類別也有名為 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，可執行您期待的動作。
+頁面瀏覽是由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別來管理的。 當 iOS 中的 **UINavigationController** 類別使用 **pushViewController** 和 **popViewController** 方法時，UWP 應用程式的 **Frame** 類別會提供 [**導覽**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 和 [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) 方法。 **Frame** 類別也有名為 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，可執行您期待的動作。
 
 這個逐步解說會在您每次瀏覽到 BlankPage 時，建立新的 BlankPage 執行個體。 (系統會自動釋出或*釋放*之前的執行個體)。 如果您不想要每次都建立新的執行個體，請將下列程式碼新增到 BlankPage.xaml.cs 檔案中的 BlankPage 類別建構函式。 這會啟用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 行為。
 
@@ -81,7 +81,7 @@ public BlankPage()
 
 如需瀏覽的詳細資訊，請參閱[瀏覽](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)和 [XAML 個人特質動畫範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208))。
 
-**注意**   如需使用 JavaScript 和 HTML 流覽 UWP 應用程式的相關資訊，請參閱[快速入門：使用單頁導覽](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
+**注意**   如需使用 JavaScript 和 HTML 流覽 UWP 應用程式的詳細資訊，請參閱[快速入門：使用單頁流覽](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
  
 ### <a name="next-step"></a>後續步驟
 

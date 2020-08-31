@@ -1,17 +1,17 @@
 ---
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
-description: 在媒體播放期間處理系統支援的中繼資料提示
+description: 瞭解如何利用一些可能內嵌在媒體檔案或資料流程中的計時元資料格式。
 title: 系統支援的定時中繼資料提示
 ms.date: 04/18/2017
 ms.topic: article
 keywords: windows 10, uwp, metadata, cue, speech, chapter, 中繼資料, 提示, 語音, 章節
 ms.localizationpriority: medium
-ms.openlocfilehash: 92f8826729bb2374b87267d27b961d74eb72e928
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 8991a2044caa20a4441d4b30d5359b6d4c6a8fa1
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360545"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053598"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>系統支援的定時中繼資料提示
 本文描述如何充分利用可嵌入到媒體檔案或資料流的數種定時中繼資料格式。 UWP app 可以註冊只要發現這些中繼資料提示，媒體管線就會在播放期間引發的事件。 使用 [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) 類別，應用程式可以實作其專屬自訂中繼資料提示，但本文著重在媒體管線自動偵測到的數種中繼資料標準，包括︰
@@ -148,7 +148,7 @@ ms.locfileid: "66360545"
 
 [!code-cs[RegisterMetadataHandlerForID3Cues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForID3Cues)]
 
-在 **CueEntered** 事件的處理常式中，將 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的 **Cue** 屬性中所含的資料提示轉型為 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  檢查以確定提示的 **DataCue** 和 [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) 屬性不是空值。 在傳輸資料流中，是以表單原始位元組提供延伸 EMU 意見 (請參閱 [http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure))。 建立新的 **DataReader** 來讀取提示資料，方法是呼叫 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer)。  在此範例中，ID3 標記中的標頭值是從提示資料中進行讀取，並寫入偵錯輸出中。
+在 **CueEntered** 事件的處理常式中，將 [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) 的 **Cue** 屬性中所含的資料提示轉型為 [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue)。  檢查以確定提示的 **DataCue** 和 [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) 屬性不是空值。 擴充的 EMU 批註是以傳輸串流中的原始位元組格式提供 (請參閱 [http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure)) 。 建立新的 **DataReader** 來讀取提示資料，方法是呼叫 [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer)。  在此範例中，ID3 標記中的標頭值是從提示資料中進行讀取，並寫入偵錯輸出中。
 
 [!code-cs[ID3CueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetID3CueEntered)]
 
@@ -182,7 +182,7 @@ ms.locfileid: "66360545"
 ## <a name="related-topics"></a>相關主題
 
 * [媒體播放](media-playback.md)
-* [媒體項目、 播放清單，以及追蹤](media-playback-with-mediasource.md)
+* [媒體項目、播放清單與曲目](media-playback-with-mediasource.md)
 
 
  

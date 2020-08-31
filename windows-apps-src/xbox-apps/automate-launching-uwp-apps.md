@@ -4,12 +4,12 @@ description: 開發人員可以使用通訊協定啟用和啟動啟用來自動�
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: abc0b40178dc9b7c386342af6a6d85c6fb61945a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 661576ede9a940f7f8aa71715900306d2c2b28a9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67320263"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154872"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自動化啟動 Windows 10 UWP App
 
@@ -28,15 +28,15 @@ ms.locfileid: "67320263"
 請依照下列步驟來設定 app 的通訊協定啟用： 
 
 1. 在 Visual Studio 中開啟 **Package.appxmanifest** 檔案。
-2. 選取 [宣告]  索引標籤。
-3. 在 [可用的宣告]  下拉式清單下，選取 [通訊協定]  ，然後選取 [新增]  。
-4. 在 [名稱]  欄位中的 [屬性]  下，輸入要啟動的 app 的唯一名稱。 
+2. 選取 **\[宣告\]** 索引標籤。
+3. 在 **\[可用的宣告\]** 下拉式清單下，選取 **\[通訊協定\]**，然後選取 **\[新增\]**。
+4. 在 **\[名稱\]** 欄位中的 **\[屬性\]** 下，輸入要啟動的 app 的唯一名稱。 
 
     ![通訊協定啟用](images/automate-uwp-apps-1.png)
 
 5. 儲存檔案並部署專案。 
 6. 部署專案之後，通訊協定啟用就應該已經設定完畢。 
-7. 移至 [控制台\所有控制台項目\預設程式]  並選取 [建立檔案類型或通訊協定與特定程式之間的關聯]  。 捲動到 [通訊協定]  區段，以查看是否列出通訊協定。 
+7. 移至 **\[控制台\所有控制台項目\預設程式\]** 並選取 **\[建立檔案類型或通訊協定與特定程式之間的關聯\]**。 捲動到 **\[通訊協定\]** 區段，以查看是否列出通訊協定。 
 
 這樣就已設定通訊協定啟用，您就有使用通訊協定啟動 app 的兩個選項 (命令列或啟動程式應用程式)。 
 
@@ -48,7 +48,7 @@ App 就可以透過使用包含 start 命令，後面接著之前設定的通訊
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-URI 物件都有剖析此格式之 URI 字串的方法。 如需詳細資訊，請參閱 [URI 類別 (MSDN)](https://docs.microsoft.com/uwp/api/windows.foundation.uri)。 
+URI 物件都有剖析此格式之 URI 字串的方法。 如需詳細資訊，請參閱 [URI 類別 (MSDN)](/uwp/api/windows.foundation.uri)。 
 
 範例：
 
@@ -110,11 +110,11 @@ Uri(URI));
 取得套件系列名稱最好的方式就是完成下列步驟：
 
 1. 開啟 **Package.appxmanifest** 檔案。
-2. 在 [封裝]  索引標籤中，輸入**套件名稱**。
+2. 在 **\[封裝\]** 索引標籤中，輸入**套件名稱**。
 
     ![啟動啟用](images/automate-uwp-apps-2.png)
 
-3. 如果未列出 [套件系列名稱]  ，請開啟 PowerShell 並執行 `>get-appxpackage MyPackageName` 以尋找 **PackageFamilyName**。
+3. 如果未列出 **\[套件系列名稱\]**，請開啟 PowerShell 並執行 `>get-appxpackage MyPackageName` 以尋找 **PackageFamilyName**。
 
 應用程式識別碼可以在 `<Applications>` 元素底下的 **Package.appxmanifest** 檔案 (在 XML 檢視中開啟) 中找到。
 
@@ -136,7 +136,7 @@ C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.s
 
 ### <a name="launcher-application"></a>啟動程式應用程式
 
-您可以建立支援使用 COM 來進行啟動的個別應用程式。 下列範例顯示利用啟動程式中的啟動啟用進行啟動的 C++ 程式碼。 您可以使用這個程式碼建立 **ApplicationActivationManager** 物件並在先前發現的 AUMID 和任何引數中呼叫 **ActivateApplication** 傳遞。 如需其他參數的詳細資訊，請參閱 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)。
+您可以建立支援使用 COM 來進行啟動的個別應用程式。 下列範例顯示利用啟動程式中的啟動啟用進行啟動的 C++ 程式碼。 您可以使用這個程式碼建立 **ApplicationActivationManager** 物件並在先前發現的 AUMID 和任何引數中呼叫 **ActivateApplication** 傳遞。 如需其他參數的詳細資訊，請參閱 [IApplicationActivationManager::ActivateApplication 方法 (MSDN)](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication)。
 
 ```
 #include <ShObjIdl.h>
@@ -207,9 +207,8 @@ void OnActivated(IActivatedEventArgs^ args)
 }
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>[摘要]
 在摘要中，您可以使用各種方法來啟動 UWP app。 根據需求和使用情況，某些方法可能會比其他方法更適合。 
 
 ## <a name="see-also"></a>另請參閱
-- [在 Xbox One UWP](index.md)
-
+- [Xbox One 上的 UWP](index.md)

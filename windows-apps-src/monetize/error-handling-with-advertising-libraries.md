@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3cc4d3d0b0cde40117a8534589f48c9d463c44
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 2a1a82c9977bfbe61712d39e4d23fdd68cd598ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507112"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171552"
 ---
 # <a name="handle-ad-errors"></a>處理廣告錯誤
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-每個 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 和 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 類別都有 **ErrorOccurred** 事件，會在發生廣告相關錯誤時引發。 您的應用程式程式碼可以處理這個事件，並檢查事件引數物件的 [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) 和 [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) 屬性以協助判斷錯誤原因。
+每個 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol)、[InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 和 [NativeAdsManagerV2](/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 類別都有 **ErrorOccurred** 事件，會在發生廣告相關錯誤時引發。 您的應用程式程式碼可以處理這個事件，並檢查事件引數物件的 [ErrorCode](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) 和 [ErrorMessage](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) 屬性以協助判斷錯誤原因。
 
 <span id="bkmk-dotnet"/>
 
@@ -28,9 +28,9 @@ ms.locfileid: "77507112"
 
 1. 指派 **AdControl**、**InterstitialAd** 或 **NativeAdsManagerV2** 物件的 **ErrorOccurred** 事件給事件處理常式委派的名稱。
 
-2. 為事件處理常式委派撰寫程式碼，以使其使用兩個參數：一個適用於寄件者的 **Object** 和一個 [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) 物件。
+2. 為事件處理常式委派撰寫程式碼，以使其使用兩個參數：一個適用於寄件者的 **Object** 和一個 [AdErrorEventArgs](/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) 物件。
 
-以下範例會將名為 **OnAdError** 的委派指派給名為 **myBannerAdControl** 的 **AdControl** 物件之 *ErrorOccurred* 事件。
+以下範例會將名為 **OnAdError** 的委派指派給名為 *myBannerAdControl* 的 **AdControl** 物件之 **ErrorOccurred** 事件。
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -70,9 +70,9 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 </div>
 ```
 
-錯誤處理函式是宣告式的，並且必須使用 [markSupportedForProcessing](https://docs.microsoft.com/previous-versions/windows/apps/hh967819(v=win.10)) 函式括住。
+錯誤處理函式是宣告式的，並且必須使用 [markSupportedForProcessing](/previous-versions/windows/apps/hh967819(v=win.10)) 函式括住。
 
-錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](https://docs.microsoft.com/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods)。
+錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](/scripting/jswinrt/special-error-properties-from-asynchronous-windows-runtime-methods)。
 
 以下是處理 **onErrorOccurred** 事件且名為 **errorLogger** 之錯誤處理函式的範例。
 

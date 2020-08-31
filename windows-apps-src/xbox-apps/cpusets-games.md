@@ -4,12 +4,12 @@ description: 本文章提供通用 Windows 平台 (UWP) 新功能 CPUSets API �
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 02/08/2017
-ms.openlocfilehash: 693abe68fcc7e4a341d773c6fa1af0d777c60c15
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: a20838a6d58eede75efb2441680aba6629db1700
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67322160"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154202"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets 遊戲開發
 
@@ -43,17 +43,17 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 每個傳回的 **SYSTEM_CPU_SET_INFORMATION** 執行個體會包含一個唯一的處理單元資訊，又稱為 CPU 集合。 這不一定表示它代表唯一的實際硬體。 利用超執行緒的 CPU 會有多個邏輯核心在單一實體處理核心上執行。 將多個執行緒排程在位於相同實體核心上的不同邏輯核心，可讓硬體層級資源最佳化，否則會需要在核心層級完成額外工作。 排程在相同實體核心上不同邏輯核心的兩個執行緒必須共用 CPU 時間，但比起將它們排程到同一個邏輯核心，執行起來會更有效率。
 
-### <a name="systemcpusetinformation"></a>SYSTEM_CPU_SET_INFORMATION
+### <a name="system_cpu_set_information"></a>SYSTEM_CPU_SET_INFORMATION
 
 此資料結構每個執行個體內的資訊 (由 **GetSystemCpuSetInformation** 傳回) 包含可能在上面排程執行緒的唯一處理單元資訊。 基於目標裝置的可能範圍，**SYSTEM_CPU_SET_INFORMATION** 資料結構中的許多資訊可能不適用於遊戲開發。 表 1 提供適用於遊戲開發的資料成員說明。
 
- **表 1。適用於遊戲開發的資料成員。**
+ **[表 1]。適用于遊戲開發的資料成員。**
 
 | 成員名稱  | 資料類型 | 描述 |
 | ------------- | ------------- | ------------- |
 | 類型  | CPU_SET_INFORMATION_TYPE  | 結構中的資訊類型。 如果這個值不是 **CpuSetInformation**，則應該忽略。  |
 | Id  | unsigned long  | 指定的 CPU 集合識別碼。 這是應該要搭配 CPU 集合函式 (例如 **SetThreadSelectedCpuSets**) 使用的識別碼。  |
-| 群組  | unsigned short  | 指定 CPU 集合的「處理器群組」。 處理器群組可讓電腦擁有超過 64 個邏輯核心，並允許在系統執行時進行 CPU 熱交換。 非伺服器電腦配備超過一個群組的狀況是很少見的。 除非您正在撰寫的應用程式是在大型的伺服器或伺服器陣列上執行，否則最好使用單一群組中的 CPU 集合，因為大部分的消費者電腦只會有一個處理器群組。 此結構中的所有其他值都與 Group 有關。  |
+| 分組  | unsigned short  | 指定 CPU 集合的「處理器群組」。 處理器群組可讓電腦擁有超過 64 個邏輯核心，並允許在系統執行時進行 CPU 熱交換。 非伺服器電腦配備超過一個群組的狀況是很少見的。 除非您正在撰寫的應用程式是在大型的伺服器或伺服器陣列上執行，否則最好使用單一群組中的 CPU 集合，因為大部分的消費者電腦只會有一個處理器群組。 此結構中的所有其他值都與 Group 有關。  |
 | LogicalProcessorIndex  | unsigned char  | CPU 集合的群組相關索引  |
 | CoreIndex  | unsigned char  | CPU 集合所在位置之實體 CPU 核心的群組相關索引  |
 | LastLevelCacheIndex  | unsigned char  | 和此 CPU 集合關聯之上次快取的群組相關索引 除非系統使用 NUMA 節點，否則這是最慢的快取，通常是 L2 或 L3 快取。  |
@@ -64,15 +64,15 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 以下是從各種不同類型硬體上執行的 UWP 應用程式所收集的一些資訊類型範例。
 
-**表 2。從 Microsoft Lumia 950 上執行的 UWP app 傳回的資訊。這是使用多個末級快取的系統範例。Lumia 950 功能包含雙核心 ARM Cortex A57 和四核心 ARM Cortex A53 Cpu Qualcomm 808 Snapdragon 程序。**
+**[表 2]從在 Microsoft Lumia 950 上執行的 UWP 應用程式傳回的資訊。這是具有多個最後層級快取的系統範例。Lumia 950 具有一個 Qualcomm 808 Snapdragon 程式，其中包含雙核心 ARM Cortex-m A57 和四核心 ARM Cortex-m A53 Cpu。**
 
   ![表 2](images/cpusets-table2.png)
 
-**表 3。從一般電腦上執行的 UWP app 所傳回的資訊。這是使用超執行緒的系統範例；每個實體核心具有兩個邏輯核心，可供在上面排程執行緒。在此情況下，系統會包含 Intel Xenon 的 CPU E5-2620年。**
+**[表 3]。在一般電腦上執行的 UWP 應用程式所傳回的資訊。這是使用超執行緒的系統範例;每個實體核心都有兩個邏輯核心可供排程的執行緒。在此情況下，系統會包含 Intel Xenon CPU E5-2620。**
 
   ![表 3](images/cpusets-table3.png)
 
-**[表 4]。從四核心 Microsoft Surface Pro 4 上執行的 UWP app 傳回的資訊。此系統具有 Intel Core i5 中 6300 CPU。**
+**表4。從在四核心 Microsoft Surface Pro 4 上執行的 UWP 應用程式傳回的資訊。此系統有 Intel Core i5 6300 CPU。**
 
   ![表 4](images/cpusets-table4.png)
 
@@ -182,16 +182,15 @@ for (size_t i = 0; i < count; ++i)
 
 圖 1 中所示的快取配置，是您可能在系統中看到的配置類型範例。 下圖是在 Microsoft Lumia 950 中找到的快取圖例。 在 CPU 256 與 CPU 260 之間發生的內部執行緒通訊會產生大量的額外負荷，因為它需要系統維持 L2 快取一致性。
 
-**圖 1。在 Microsoft Lumia 950 裝置上找到的快取架構。**
+**圖1。在 Microsoft Lumia 950 裝置上找到快取架構。**
 
 ![Lumia 950 快取](images/cpusets-lumia950cache.png)
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>[摘要]
 
 適用於 UWP 開發的 CPUSets API 提供大量的資訊和控制多執行緒處理的選項。 相較於之前適用於 Windows 開發的多執行緒 API，新增的彈性具有一些學習曲線，但增加的彈性最終可在各種消費者電腦和其他硬體目標上有更佳的效能。
 
 ## <a name="additional-resources"></a>其他資源
-- [CPU 集合 (MSDN)](https://docs.microsoft.com/windows/desktop/ProcThread/cpu-sets)
-- [提供 ATG CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
-- [在 Xbox One UWP](index.md)
-
+- [CPU 集合 (MSDN)](/windows/desktop/ProcThread/cpu-sets)
+- [ATG 提供的 CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Xbox One 上的 UWP](index.md)

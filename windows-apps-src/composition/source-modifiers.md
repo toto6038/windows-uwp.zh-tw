@@ -1,28 +1,28 @@
 ---
 title: 使用來源修飾詞執行拖動以重新整理
-description: 使用 SourceModifiers 建立自訂的拖動以重新整理控制項
+description: 瞭解如何使用 InteractionTracker 的 SourceModifier 功能來建立自訂的提取重新整理控制項。
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e4eb90b4801d01ecb85c91b5e64ccc9155d199
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: b20b4b22d1de2252864287b97bedc4a1fc176602
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318090"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053958"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用來源修飾詞執行拖動以重新整理
 
 在本文中，我們將深入探討如何使用 InteractionTracker 的 SourceModifier 功能，並示範使用它來建立自訂的拖動以重新整理控制項。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入驅動動畫](input-driven-animations.md)
-- [InteractionTracker 自訂操作經驗](interaction-tracker-manipulations.md)
-- [關聯型動畫](relation-animations.md)
+- [輸入導向動畫](input-driven-animations.md)
+- [使用 InteractionTracker 自訂操作體驗](interaction-tracker-manipulations.md)
+- [關聯式動畫](relation-animations.md)
 
 ## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>SourceModifier 是什麼？為什麼很實用？
 
@@ -67,7 +67,7 @@ ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.IsScrollInertiaEnabled="F
 </StackPanel>
 ```
 
-因為 ListView (`ThumbnailList`) 是已捲動的 XAML 控制項，當其到達最上方項目且不能再捲動時，您需讓捲動鏈結至其父系 (`ContentPanel`)。 （ContentPanel 是，您將在其中套用來源修飾詞）。此選項必須設為 ScrollViewer.IsVerticalScrollChainingEnabled **，則為 true** ListView 標記中。 您也需要將 VisualInteractionSource 上的鏈結模式設定為 **Always**。
+因為 ListView (`ThumbnailList`) 是已捲動的 XAML 控制項，當其到達最上方項目且不能再捲動時，您需讓捲動鏈結至其父系 (`ContentPanel`)。 (ContentPanel 是套用來源修飾詞的地方)。為了做到這一點，您需要在 ListView 標記中將 ScrollViewer.IsVerticalScrollChainingEnabled 設定為 **true**。 您也需要將 VisualInteractionSource 上的鏈結模式設定為 **Always**。
 
 您需要設定 PointerPressedEvent 處理常式搭配將 _handledEventsToo_ 參數設為 **true**。 若沒有此選項，PointerPressedEvent 將不會鏈結至 ContentPanel，ListView 控制項會將將這些事件標示為已處理，且不會傳送視覺鏈結。
 

@@ -1,17 +1,17 @@
 ---
 title: 背景工作的指導方針
-description: 確保您的應用程式符合執行背景工作的需求。
+description: 查看在您的應用程式中開發和執行同進程和跨進程背景工作的詳細指導方針。
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，背景工作
+keywords: windows 10、uwp、背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 7709e93ba14d3ecf5418accc41a9fe52c968fcec
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: bdcf398b448a3b0571b07063b9d4e70800259248
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262759"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094585"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -28,7 +28,7 @@ ms.locfileid: "84262759"
 
 |考量 | 影響 |
 |--------------|--------|
-|復原能力   | 如果您的背景處理序在另一個處理序中執行，背景處理序毀損並不會關閉您的前景應用程式。 此外，如果背景活動執行超過執行時間限制，即使在您的應用程式內，也可以終止。 當前景和背景處理序不需要彼此通訊 (因為同處理序背景工作的主要優點之一，就是處理程間不需要通訊) 時，最好選擇將背景工作和前景應用程式的工作分開。 |
+|恢復功能   | 如果您的背景處理序在另一個處理序中執行，背景處理序毀損並不會關閉您的前景應用程式。 此外，如果背景活動執行超過執行時間限制，即使在您的應用程式內，也可以終止。 當前景和背景處理序不需要彼此通訊 (因為同處理序背景工作的主要優點之一，就是處理程間不需要通訊) 時，最好選擇將背景工作和前景應用程式的工作分開。 |
 |簡潔    | 同處理序背景工作不需要跨處理序通訊，撰寫上也比較不複雜。  |
 |可用的觸發程序 | 同處理序背景工作不支援下列觸發程序︰[DeviceUseTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceusetrigger?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.deviceservicingtrigger) 和 **IoTStartupTask**。 |
 |VoIP | 同處理序背景工作不支援在應用程式內啟用 VoIP 背景工作。 |  
@@ -39,7 +39,7 @@ ms.locfileid: "84262759"
 
 **管理背景工作：** 您的應用程式應該取得已登錄的背景工作清單、登錄進度與完成處理常式，並適當地處理這些事件。 您的背景工作類別應該報告進度、取消和完成。 如需詳細資訊，請參閱[處理已取消的背景工作](handle-a-cancelled-background-task.md)和[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)。
 
-**使用 [BackgroundTaskDeferral](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral)：** 如果背景工作類別執行非同步程式碼，請務必使用延遲。 否則，當[Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法傳回時，您的背景工作可能會提前終止（或在同進程背景工作的情況下， [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated)方法）。 如需詳細資訊，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
+**使用 [BackgroundTaskDeferral](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskDeferral)：** 如果背景工作類別執行非同步程式碼，請務必使用延遲。 否則，當 [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法在同進程背景工作) 的情況下傳回 (或 [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onbackgroundactivated) 方法時，您的背景工作可能會提前終止。 如需詳細資訊，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 或者，要求一個延遲並使用 **async/await** 來完成非同步方法呼叫。 請在 **await** 方法呼叫後關閉延遲。
 
@@ -59,11 +59,11 @@ ms.locfileid: "84262759"
 
 **執行背景工作的要求：**
 
-> **重要事項**   從 Windows 10 開始，應用程式不再需要在鎖定畫面上做為執行背景工作的必要元件。
+> **重要**   從 Windows 10 開始，不再需要在鎖定畫面上將應用程式作為執行背景工作的先決條件。
 
-通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫[**GetAccessState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 請確定 [**GetAccessStatus**] 不會傳回其中一個拒絕的[**BackgroundAccessStatus**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus)列舉。 例如， https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) 如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回。
+通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫 [**GetAccessState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 確認 [**GetAccessStatus**] 不會傳回其中一個已拒絕的 [**BackgroundAccessStatus**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉。 例如， https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) 如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回 (。
 
-如果您的應用程式在背景中遭到拒絕而無法執行，您的應用程式應該呼叫[**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並確保在註冊背景工作之前不會拒絕回應。
+如果您的應用程式在背景中被拒絕執行，您的應用程式應該呼叫 [**RequestAccessAsync**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並確保在註冊背景工作之前，不會拒絕回應。
 
 如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>背景工作檢查清單
@@ -79,7 +79,7 @@ ms.locfileid: "84262759"
 
 *僅適用於跨處理序背景工作*
 
--   在 Windows 執行階段元件中建立背景工作。
+-   在 Windows 執行階段元件中建立您的背景工作。
 -   請勿顯示背景工作快顯通知、磚以及徽章更新以外的 UI。
 -   在 [Run](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法中，針對每個非同步方法呼叫要求延遲，並在方法完成時關閉它們。 或者，搭配 **async/await** 使用單一延遲。
 -   使用永久性存放裝置在背景工作和應用程式之間分享資料。
@@ -94,7 +94,7 @@ ms.locfileid: "84262759"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立並註冊同進程背景](create-and-register-an-inproc-background-task.md)工作。
+* [建立並註冊同進程的背景](create-and-register-an-inproc-background-task.md)工作。
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)

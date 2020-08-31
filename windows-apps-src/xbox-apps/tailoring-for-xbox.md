@@ -1,16 +1,16 @@
 ---
 title: Xbox 最佳做法
-description: 如何針對 Xbox 最佳化應用程式。
+description: 瞭解如何遵循這些 Xbox 開發最佳做法，將通用 Windows 平臺 (UWP) 應用 Xbox One 程式優化。
 ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ce69549996a5adfb8c5d2d585753cf95ef3fdc3
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684907"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094455"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -22,7 +22,7 @@ ms.locfileid: "75684907"
 
 ### <a name="do-turn-off-mouse-mode"></a>*請務必：* 關閉滑鼠模式
 
-Xbox 使用者喜愛其控制器。 若要優化控制器輸入，請[停用滑鼠模式](how-to-disable-mouse-mode.md)並啟用方向導覽（也稱為「 [XY 焦點導覽」和「互動](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)」）。 留意焦點陷阱和無法存取的 UI。
+Xbox 使用者喜歡其控制器。 若要優化控制器輸入，請 [停用滑鼠模式](how-to-disable-mouse-mode.md) 並啟用方向導覽 (也稱為「 [XY 焦點導覽」和「互動](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)) 。 留意焦點陷阱和無法存取的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*請務必：* 繪製一個適合 10 英呎體驗的焦點矩形
 
@@ -43,7 +43,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*請考慮︰* 使用電視安全色彩
 
-電視無法像電腦監視器一樣處理極端的色調。 請避免在您的 App 中使用高濃度色彩，這樣使用者才不會看到奇怪的條狀效果或褪色的影像。 此外請注意，由於電視之間的差異，在*您的*電視上看起來很棒的色彩，在使用者的電視上看起來可能會非常不同。 閱讀[色彩](../design/devices/designing-for-tv.md#colors)以瞭解如何讓您的應用程式對每個人都有絕佳的外觀！
+電視無法像電腦監視器一樣處理極端的色調。 請避免在您的 App 中使用高濃度色彩，這樣使用者才不會看到奇怪的條狀效果或褪色的影像。 此外請注意，由於電視之間的差異，在*您的*電視上看起來很棒的色彩，在使用者的電視上看起來可能會非常不同。 閱讀 [色彩](../design/devices/designing-for-tv.md#colors) 以瞭解如何讓您的應用程式看起來更適合每個人！
 
 ### <a name="remember-you-can-disable-scaling"></a>*請記住：* 您可以停用縮放比例
 
@@ -56,21 +56,21 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 
 ## <a name="channel-9"></a>Channel 9
 
-下列在 [Channel 9](https://channel9.msdn.com/) 上的討論，是在 Xbox 上建置優秀 App 的絕佳資訊來源：
+[Channel 9](https://channel9.msdn.com/)上的下列討論是在 Xbox 上建立絕佳應用程式的絕佳資訊來源：
 
 - [建置適用於 Xbox 的絕佳通用 Windows 平台 (UWP) 應用程式](https://channel9.msdn.com/Events/Build/2016/B883)
 - [針對 Xbox One 與電視調整您的應用程式](https://channel9.msdn.com/Events/Build/2016/T651-R1)
-- [UWP 開發1：建立調適型 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
-- [超出瀏覽器的 Web Apps：跨平臺符合跨裝置](https://channel9.msdn.com/Events/Build/2016/B888)
+- [UWP 開發 1：建置調適型 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [瀏覽器以外的 Web 應用程式：跨平台與跨裝置](https://channel9.msdn.com/Events/Build/2016/B888)
 
 ## <a name="app-dev-on-xbox"></a>Xbox 上的應用程式開發
 
-**Xbox 事件上的應用程式開發**是開發人員在 xbox 上建立應用程式的新起點。
+**應用程式開發**人員的 xbox 活動是新開發人員在 xbox 上建立應用程式的絕佳起點。
 
-* [觀看錄製的課程](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [觀賞錄製的研討會](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
 * [閱讀 blog 文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Xbox One 上的 UWP](index.md)
 - [針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md)

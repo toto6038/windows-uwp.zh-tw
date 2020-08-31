@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, 連絡人, 連絡人卡片, 註解
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 8310b7c5b629d8d3a35a05b1124b140ebf35cf17
-ms.sourcegitcommit: 05be6929cd380a9dd241cc1298fd53f11c93d774
+ms.openlocfilehash: 246a74ca008e1b8c89460aabb652accf35c842b1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73061877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154712"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>將應用程式連結到連絡人卡片上的動作
 
@@ -20,7 +20,7 @@ ms.locfileid: "73061877"
 
 ![連絡人卡片與迷你連絡人卡片](images/all-contact-cards.png)
 
-若要開始，請尋找現有的連絡人或建立新的連絡人。 接下來，請建立「註解」和幾個封裝資訊清單項目，以描述您的 app 支援哪些動作。 然後，撰寫執行動作的程式碼。
+若要開始，請尋找現有的連絡人或建立新的連絡人。 接下來，請建立「註解」** 和幾個封裝資訊清單項目，以描述您的 app 支援哪些動作。 然後，撰寫執行動作的程式碼。
 
 如需更完整的範例，請參閱[連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)。
 
@@ -181,13 +181,13 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 ## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>在使用者於連絡人卡片中選取您的 app 時執行作業
 
-覆寫您 **App.cs** 檔案中的 [Application.OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 方法，並將使用者導覽至您應用程式中的頁面。 [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)會說明這樣做的其中一種方法。
+覆寫您 **App.cs** 檔案中的 [Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated) 方法，並將使用者導覽至您應用程式中的頁面。 [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)會說明這樣做的其中一種方法。
 
-在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
+在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
 
-若要開始視訊或語音通話，請參閱此範例：[VoIP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 您將會在 [WIndows.ApplicationModel.Calls](https://docs.microsoft.com/uwp/api/windows.applicationmodel.calls) 命名空間中發現完整的 API。
+若要開始視訊或語音通話，請參閱此範例：[VoIP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 您將會在 [WIndows.ApplicationModel.Calls](/uwp/api/windows.applicationmodel.calls) 命名空間中發現完整的 API。
 
-若要加快傳訊速度，請參閱 [Windows.ApplicationModel.Chat](https://docs.microsoft.com/uwp/api/windows.applicationmodel.chat) 命名空間。
+若要加快傳訊速度，請參閱 [Windows.ApplicationModel.Chat](/uwp/api/windows.applicationmodel.chat) 命名空間。
 
 您也可以啟動另一個 app。 這就是此程式碼所執行的動作。
 

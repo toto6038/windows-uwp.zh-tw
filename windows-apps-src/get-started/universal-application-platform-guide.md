@@ -2,20 +2,27 @@
 title: 何謂通用 Windows 平台 (UWP) 應用程式？
 description: 了解可以在各式各樣執行 Windows 10 裝置上執行的「通用 Windows 平台」(UWP) 應用程式。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 05/07/2018
+ms.date: 08/21/2020
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b2c270538ec49a139b88fb1c7eddb92acad10a
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 412dfe7d9e2387a90bc51f834755e8565f170812
+ms.sourcegitcommit: ab68ff43139f2423091bf8830c00f8a0fc7326ee
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730098"
+ms.lasthandoff: 08/24/2020
+ms.locfileid: "88785030"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
-![通用 Windows 平台應用程式在各種裝置上執行、支援調適型使用者介面、自然使用者輸入、一個市集、合作夥伴中心和雲端服務](images/universalapps-overview.png)
+
+## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 開發案例中的定位為何？
+
+UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用程式會使用 WinRT API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。 UWP 應用程式仍然可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0))。
+
+Microsoft 開發案例持續演進，並提供 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
+
+## <a name="features-of-a-uwp-app"></a>UWP 應用程式的功能
 
 UWP 應用程式：
 
@@ -77,7 +84,7 @@ UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/
 - 付費下載是最簡單的選項。 只要訂出價格即可。
 - 試用版讓使用者在購買應用程式之前先試用，提供比傳統「免費增值」選項更為簡單的可搜尋性和轉換。
 - 激勵使用者的銷售價格。
-- 此外，您還可以使用應用程式內購買與廣告。
+- App 內購買。
 
 ### <a name="apps-from-the-microsoft-store-provide-a-seamless-install-uninstall-and-upgrade-experience"></a>Microsoft Store 的應用程式提供順暢的安裝、解除安裝和升級體驗
 

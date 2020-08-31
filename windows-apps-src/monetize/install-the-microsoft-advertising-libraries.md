@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
-description: 了解如何安裝 Microsoft Advertising SDK。
+description: 瞭解如何安裝 Microsoft Advertising SDK，以在 Windows 10 通用 Windows 平臺 (UWP) 應用程式中顯示廣告。
 title: 安裝 Microsoft Advertising SDK
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 109ddbd3551dbd4304b86e56ace40f39e1b71211
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: d5c5c18c41996c5d46c261f351a900fea2532a93
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209634"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094666"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
@@ -21,7 +21,7 @@ ms.locfileid: "79209634"
 若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
 
 > [!NOTE]
-> 如果您正在開發 JavaScript/HTML UWP 應用程式，且已安裝 Windows 10 SDK 版本10.0.14393 （年度更新版）或更新版本，則也必須安裝[WinJS](https://github.com/winjs/winjs)程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。
+> 如果您正在開發 JavaScript/HTML UWP 應用程式，且您已安裝 Windows 10 SDK 版本 10.0.14393 (年度更新) 或更新版本，您也必須安裝 [WinJS](https://github.com/winjs/winjs) 程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。
 
 <span id="install-msi" />
 
@@ -29,7 +29,7 @@ ms.locfileid: "79209634"
 
 透過 MSI 安裝程式安裝 Microsoft Advertising SDK：
 
-1.  關閉 Visual Studio 的所有執行個體。
+1.  關閉所有 Visual Studio 執行個體。
 
 2. 如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
     ```console
@@ -42,7 +42,7 @@ ms.locfileid: "79209634"
 
 4.  重新啟動 Visual Studio。
 
-5.  如果您現有的專案參考來自任何舊版 Microsoft Advertising SDK、通用廣告用戶端 SDK 或 Microsoft Store Engagement and Monetization SDK 的廣告庫，建議您在 Visual Studio 中開啟您的專案，然後清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]** ，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]** )。
+5.  如果您現有的專案參考來自任何舊版 Microsoft Advertising SDK、通用廣告用戶端 SDK 或 Microsoft Store Engagement and Monetization SDK 的廣告庫，建議您在 Visual Studio 中開啟您的專案，然後清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]**，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]**)。
 
   否則，如果您是第一次在專案中使用 Microsoft Advertising SDK，您現在便已準備好[新增 Microsoft Advertising SDK 的參考](#reference)。
 
@@ -52,7 +52,7 @@ ms.locfileid: "79209634"
 
 若要透過 NuGet 在特定 UWP 專案中安裝 Microsoft Advertising SDK：
 
-1.  關閉 Visual Studio 的所有執行個體。
+1.  關閉所有 Visual Studio 執行個體。
 
 2.  如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
     ```console
@@ -65,7 +65,7 @@ ms.locfileid: "79209634"
     > [!NOTE]
     > 如果您的專案已經包含來自先前 MSI 安裝之 SDK 的程式庫參考，請從您的專案中移除這些參考。 這些參考的旁邊將會有警告圖示，因為在先前的步驟中已移除它們所參考的程式庫。
 
-4. 在 Visual Studio 中，按一下 [專案] 和 [管理 NuGet 套件]。
+4. 在 Visual Studio 中，按一下 [專案]**** 和 [管理 NuGet 套件]****。
 
 5. 在搜尋方塊中，輸入 **Microsoft.Advertising.XAML** (適用於 XAML 專案) 或 **Microsoft.Advertising.JS** (適用於 JavaScript/HTML 專案) 並安裝對應的套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
@@ -73,7 +73,7 @@ ms.locfileid: "79209634"
 
 6. 關閉您的方案，然後重新開啟它。
 
-7.  如果您的專案已經參考來自透過 NuGet 安裝之舊版 Microsoft Advertising SDK 的程式庫，而您已將專案更新至新版 SDK，建議您清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]** ，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]** )。
+7.  如果您的專案已經參考來自透過 NuGet 安裝之舊版 Microsoft Advertising SDK 的程式庫，而您已將專案更新至新版 SDK，建議您清除並重建您的專案 (在 **\[方案總管\]** 中您的專案節點上按一下滑鼠右鍵並選擇 **\[清除\]**，然後在您的專案節點上再次按一下滑鼠右鍵並選擇 **\[重建\]**)。
 
   否則，如果您是第一次在專案中使用 SDK，您現在便已準備好[新增 Microsoft Advertising SDK 的參考](#reference)。
 
@@ -83,15 +83,15 @@ ms.locfileid: "79209634"
 
 安裝 Microsoft Advertising SDK 之後，請依照這些指示，在專案中參考 SDK 以便使用廣告 API。
 
-1. 在 Visual Studio 中開啟專案。
+1. 在 Visual Studio 中，開啟您的專案。
     > [!NOTE]
-    > 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+    > 如果專案的目標是 **\[任何 CPU\]**，請將您的專案更新成使用架構特定的建置輸出 (例如，**\[x86\]**)。 如果專案的目標是 **\[任何 CPU\]**，您將無法於下列步驟中成功加入 Microsoft Advertising SDK 的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-2. 在 **\[方案總管\]** 中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]** 。
+2. 在**方案總管**中，以滑鼠右鍵按一下 [**參考**]，然後選取 [**加入參考**]。
 
-3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** ，按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於 XAML app) 或 **\[適用於 JavaScript 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於使用 JavaScript 和 HTML 建置的應用程式)。
+3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**，按一下 **\[擴充功能\]**，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於 XAML app) 或 **\[適用於 JavaScript 的 Microsoft Advertising SDK\]** 旁邊的核取方塊 (適用於使用 JavaScript 和 HTML 建置的應用程式)。
 
-4.  在 [參考管理員] 中，按一下 [確定]。
+4.  在 [參考管理員]**** 中，按一下 [確定]。
 
 如需示範如何開始使用廣告 API 的逐步解說，請參閱下列文章：
 

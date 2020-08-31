@@ -5,16 +5,16 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: tutorial
-ms.openlocfilehash: a6954538159c6fffb3185aa8b3137af26e17b32f
-ms.sourcegitcommit: 4fdab7be28aca18cb3879fc205eb49edc4f9a96b
+ms.openlocfilehash: 72264b51edcc0b02aa335b8766100c196a0d5090
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629089"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168812"
 ---
 # <a name="use-symbols-in-net-traceprocessing"></a>在 .NET TraceProcessing 中使用符號
 
-[TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor)支援從數個數據源載入符號及取得堆疊。 下列主控台應用程式會查看 CPU 樣本，並輸出特定函式執行的預估持續時間（根據追蹤的 CPU 使用量統計取樣）。
+[TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) 支援從數個數據源載入符號和取得堆疊。 下列主控台應用程式會查看 CPU 範例，並輸出特定函式執行的預估持續時間 (依據 CPU 使用量) 的追蹤統計取樣。
 
 ```csharp
 using Microsoft.Windows.EventTracing;
@@ -90,14 +90,14 @@ winlogon.exe: 20.15 ms
 "C:\Users\AdminUAC\AppData\Local\Microsoft\OneDrive\OneDrive.exe" /background: 2.09 ms
 ```
 
-（輸出詳細資料會依追蹤而有所不同）。
+ (輸出詳細資料會根據追蹤) 而有所不同。
 
 ## <a name="symbols-format"></a>符號格式
 
-就內部而言，TraceProcessor 會使用[SymCache](https://docs.microsoft.com/windows-hardware/test/wpt/loading-symbols#symcache-path)格式，這是儲存在 PDB 中部分資料的快取。 載入符號時，TraceProcessor 需要指定要用於這些 SymCache 檔（SymCache 路徑）的位置，並可選擇性地指定要存取 Pdb 的 SymbolPath。 當提供 SymbolPath 時，TraceProcessor 會視需要從 PDB 檔案建立 SymCache 檔案，而後續處理相同的資料可以直接使用 SymCache 檔案以獲得更好的效能。
+就內部而言，TraceProcessor 會使用 [SymCache](/windows-hardware/test/wpt/loading-symbols#symcache-path) 格式，也就是儲存在 PDB 中的部分資料快取。 載入符號時，TraceProcessor 需要指定要用於這些 SymCache 檔 (SymCache 路徑的位置) ，並支援選擇性地指定 SymbolPath 來存取 Pdb。 提供 SymbolPath 時，TraceProcessor 會視需要建立 PDB 檔案中的 SymCache 檔案，而後續的相同資料處理也可以直接使用 SymCache 檔案，以提升效能。
 
 ## <a name="next-steps"></a>後續步驟
 
 在本教學課程中，您已瞭解如何在處理追蹤時載入符號。
 
-下一個步驟是瞭解如何[使用串流](streaming.md)來存取追蹤資料，而不需要緩衝處理記憶體中的所有專案。
+下一步是瞭解如何 [使用串流](streaming.md) 來存取追蹤資料，而不需要緩衝處理記憶體中的所有專案。

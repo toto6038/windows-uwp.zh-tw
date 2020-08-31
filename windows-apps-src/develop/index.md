@@ -1,16 +1,16 @@
 ---
-description: 了解如何開發 UWP 應用程式。
+description: 檢視針對 Windows 10 開發通用 Windows 平台 (UWP) 應用程式的相關文章連結清單，其中包含概觀、範例和 API 參考。
 title: 開發 UWP 應用程式
 keywords: uwp 應用程式開發執行緒非同步平台概觀入口網站開發的開發人員
 ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86fa9fb7f2cea7f190640b02fdcf219c3376115d
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: 6d1f4b63f6caee6b7bb081a03158dc4798c0435d
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882847"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094713"
 ---
 # <a name="develop-uwp-apps"></a>開發 UWP 應用程式
 

@@ -1,17 +1,17 @@
 ---
 title: Microsoft Store 原則變更歷程記錄
-description: Microsoft Store 原則變更歷程記錄
+description: 檢視說明 Microsoft Store 原則變更歷程記錄的資料表，其中描述每項變更的新增、更新和刪除。
 ms.date: 10/01/2019
 ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 3fbdc8e4831a39386396dc2c1dad25581f12fbf9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bfdcaca05d704b0f6b62aa5c1023ea09ed2392c0
+ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607275"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88942858"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 原則變更歷程記錄
 

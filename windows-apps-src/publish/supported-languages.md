@@ -6,19 +6,19 @@ ms.date: 03/07/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a3b3ada3415e6f1abc98dc3c351f6db791adc984
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 79d729f97bef68a429c57894e6c0eeeab389c642
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043430"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170892"
 ---
 # <a name="supported-languages"></a>支援的語言
 
 
 您可以將應用程式提交至100以上版本的 Microsoft Store。
 
-若要深入瞭解如何在您的應用程式中設定語言，請參閱 [全球化和當地語系化](../design/globalizing/globalizing-portal.md) ，以及 [瞭解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，可以協助您撰寫支援多種語言的 app。
+若要深入瞭解如何在您的應用程式中設定語言，請參閱 [全球化和當地語系化](../design/globalizing/globalizing-portal.md) ，以及 [瞭解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](../design/globalizing/use-mat.md)，可以協助您撰寫支援多種語言的 app。
 
 ## <a name="supported-languages"></a>支援的語言
 
@@ -138,7 +138,3 @@ ms.locfileid: "89043430"
  
 
  
-
-
-
-

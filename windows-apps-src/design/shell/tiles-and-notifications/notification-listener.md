@@ -8,22 +8,22 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c18740cbba0ea037440300edbe2d7ba4fd116e
-ms.sourcegitcommit: 1d04910a6bbfcaa985d2074caf8f898c35eab7ab
+ms.openlocfilehash: dc2afb36337439cd115273cd9df8ee1cb2eb3741
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65933156"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169182"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
-通知接聽程式可供存取使用者的通知。 智慧手錶與其他穿戴式裝置可以使用通知接聽程式來傳送手機通知給穿戴式裝置。 居家自動化應用程式可以使用通知接聽程式來執行特定動作時收到通知，例如進行時收到通話燈在閃爍。 
+通知接聽程式可供存取使用者的通知。 智慧手錶與其他穿戴式裝置可以使用通知接聽程式來傳送手機通知給穿戴式裝置。 「家庭自動化」應用程式可以使用通知接聽程式，在收到通知時執行特定動作，例如，當您收到來電時讓燈光閃爍。 
 
 > [!IMPORTANT]
-> **需要年度更新版**:您必須為目標 SDK 14393，並執行組建 14393 或更高版本以使用通知接聽程式。
+> **需要年度更新版**：您的目標必須是 SDK 14393 並執行組建 14393 或更新版本，才能使用通知接聽程式。
 
 
-> **重要的 Api**:[UserNotificationListener 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)， [UserNotificationChangedTrigger 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
+> **重要 API**：[UserNotificationListener 類別](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener)、[UserNotificationChangedTrigger 類別](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 
 
 ## <a name="enable-the-listener-by-adding-the-user-notification-capability"></a>新增使用者通知功能來啟用接聽程式 
@@ -37,7 +37,7 @@ ms.locfileid: "65933156"
 
 ## <a name="check-whether-the-listener-is-supported"></a>檢查是否支援接聽程式
 
-如果您的應用程式支援舊版 Windows 10，則需使用 [ApiInformation 類別](https://docs.microsoft.com/uwp/api/Windows.Foundation.Metadata.ApiInformation)來檢查是否支援接聽程式。  如果接聽程式不受支援，請避免執行任何接聽程式 API 呼叫。
+如果您的應用程式支援舊版 Windows 10，則需使用 [ApiInformation 類別](/uwp/api/Windows.Foundation.Metadata.ApiInformation)來檢查是否支援接聽程式。  如果接聽程式不受支援，請避免執行任何接聽程式 API 呼叫。
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Notifications.Management.UserNotificationListener"))
@@ -54,7 +54,7 @@ else
 
 ## <a name="requesting-access-to-the-listener"></a>要求存取接聽程式
 
-由於接聽程式允許存取使用者的通知，使用者必須提供存取其通知的權限給您的應用程式。 在應用程式首次執行期間，您應該要求存取權以使用通知接聽程式。 如果您想，也可以在呼叫 [RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync) 之前顯示初步 UI，來解釋您的應用程式為何需要使用者通知的存取權，讓使用者了解為什麼他們應允許存取。
+由於接聽程式允許存取使用者的通知，使用者必須提供存取其通知的權限給您的應用程式。 在應用程式首次執行期間，您應該要求存取權以使用通知接聽程式。 如果您想，也可以在呼叫 [RequestAccessAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync) 之前顯示初步 UI，來解釋您的應用程式為何需要使用者通知的存取權，讓使用者了解為什麼他們應允許存取。
 
 ```csharp
 // Get the listener
@@ -91,12 +91,12 @@ switch (accessStatus)
 }
 ```
 
-使用者隨時可以透過 Windows 設定撤銷存取權。 因此，您的應用程式應該永遠會檢查透過存取狀態[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)方法，然後再執行程式碼所使用的通知接聽程式。 如果使用者撤銷存取權，API 將會失敗且不顯示訊息，而非擲回例外狀況 (例如，取得所有通知的 API 只會傳回空的清單)。
+使用者隨時可以透過 Windows 設定撤銷存取權。 因此，在執行使用通知接聽程式的程式碼之前，您的應用程式應該一律透過 [GetAccessStatus](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) 方法檢查存取狀態。 如果使用者撤銷存取權，API 將會失敗且不顯示訊息，而非擲回例外狀況 (例如，取得所有通知的 API 只會傳回空的清單)。
 
 
 ## <a name="access-the-users-notifications"></a>存取使用者的通知
 
-利用通知接聽程式，您可以取得使用者目前通知的清單。 只需呼叫 [GetNotificationsAsync](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) 方法，並指定您要取得的通知類型 (目前支援的通知類型只有快顯通知)。
+利用通知接聽程式，您可以取得使用者目前通知的清單。 只需呼叫 [GetNotificationsAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) 方法，並指定您要取得的通知類型 (目前支援的通知類型只有快顯通知)。
 
 ```csharp
 // Get the toast notifications
@@ -106,7 +106,7 @@ IReadOnlyList<UserNotification> notifs = await listener.GetNotificationsAsync(No
 
 ## <a name="displaying-the-notifications"></a>顯示通知
 
-每個通知會表示為 [UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification)，提供通知來源應用程式的相關資訊、通知建立的時間、通知的 ID 和通知本身內容。
+每個通知會表示為 [UserNotification](/uwp/api/windows.ui.notifications.usernotification)，提供通知來源應用程式的相關資訊、通知建立的時間、通知的 ID 和通知本身內容。
 
 ```csharp
 public sealed class UserNotification
@@ -118,7 +118,7 @@ public sealed class UserNotification
 }
 ```
 
-[AppInfo](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.AppInfo) 屬性提供顯示通知所需的資訊。
+[AppInfo](/uwp/api/windows.ui.notifications.usernotification.AppInfo) 屬性提供顯示通知所需的資訊。
 
 > [!NOTE]
 > 我們建議在 try/catch 中包含處理單一通知的所有程式碼，以避免擷取單一通知時發生例外狀況。 您不應只因一個特定通知發生問題，就完全無法顯示其他通知。
@@ -136,9 +136,9 @@ RandomAccessStreamReference appLogoStream = notif.AppInfo.DisplayInfo.GetLogo(ne
 await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
 ```
 
-通知本身的內容 (例如通知文字) 包含在 [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification.Notification) 屬性中。 此屬性包含通知的視覺效果部分。 (如果您熟悉如何在 Windows 上傳送通知，就會注意到 [Notification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification) 物件中的 [Visual](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notification.Visual) 和 [Visual.Bindings](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationvisual.Bindings) 屬性對應至彈出通知時開發人員傳送的內容)。
+通知本身的內容 (例如通知文字) 包含在 [Notification](/uwp/api/windows.ui.notifications.usernotification.Notification) 屬性中。 此屬性包含通知的視覺效果部分。 (如果您熟悉如何在 Windows 上傳送通知，就會注意到 [Notification](/uwp/api/windows.ui.notifications.notification) 物件中的 [Visual](/uwp/api/windows.ui.notifications.notification.Visual) 和 [Visual.Bindings](/uwp/api/windows.ui.notifications.notificationvisual.Bindings) 屬性對應至彈出通知時開發人員傳送的內容)。
 
-我們想尋找快顯通知繫結 (對於錯誤驗證程式碼，您應檢查繫結不是 null)。 從繫結可以取得文字元素。 您可以選擇顯示任意數目的文字元素。 （在理想情況下，您應該會顯示它們全部。）您可以選擇將文字項目以不同的方式;比方說，視為本文中標題文字，第一個與後續項目。
+我們想尋找快顯通知繫結 (對於錯誤驗證程式碼，您應檢查繫結不是 null)。 從繫結可以取得文字元素。 您可以選擇顯示任意數目的文字元素。 (理論上，您應該將它們全部顯示)。您可以選擇以不同方式處理文字元素；例如，將第一個文字視為標題，後續文字視為本文)。
 
 ```csharp
 // Get the toast binding, if present
@@ -161,7 +161,7 @@ if (toastBinding != null)
 
 ## <a name="remove-a-specific-notification"></a>移除特定通知
 
-如果您的穿戴式裝置或服務允許使用者關閉通知，您可以移除實際通知，讓使用者稍後不會在他們的手機或電腦上看到。 只需提供您要移除之通知的通知識別碼即可 (從 [UserNotification](https://docs.microsoft.com/uwp/api/windows.ui.notifications.usernotification) 物件取得)： 
+如果您的穿戴式裝置或服務允許使用者關閉通知，您可以移除實際通知，讓使用者稍後不會在他們的手機或電腦上看到。 只需提供您要移除之通知的通知識別碼即可 (從 [UserNotification](/uwp/api/windows.ui.notifications.usernotification) 物件取得)： 
 
 ```csharp
 // Remove the notification
@@ -171,7 +171,7 @@ listener.RemoveNotification(notifId);
 
 ## <a name="clear-all-notifications"></a>清除所有通知
 
-[UserNotificationListener.ClearNotifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) 方法會清除所有使用者的通知。 使用此方法應小心謹慎。 您只應在穿戴式裝置或服務會顯示「所有」通知時，才清除所有通知。 如果穿戴式裝置或服務只會顯示特定通知，當使用者按下 \[清除通知\] 按鈕，使用者只預期移除這些特定通知；然而，呼叫 [ClearNotifications](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) 方法實際上會移除所有通知，包括穿戴式裝置或服務未顯示的通知。
+[UserNotificationListener.ClearNotifications](/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) 方法會清除所有使用者的通知。 使用此方法應小心謹慎。 您只應在穿戴式裝置或服務會顯示「所有」通知時，才清除所有通知。 如果穿戴式裝置或服務只會顯示特定通知，當使用者按下 \[清除通知\] 按鈕，使用者只預期移除這些特定通知；然而，呼叫 [ClearNotifications](/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications) 方法實際上會移除所有通知，包括穿戴式裝置或服務未顯示的通知。
 
 ```csharp
 // Clear all notifications. Use with caution.
@@ -183,7 +183,7 @@ listener.ClearNotifications();
 
 啟用應用程式來接聽通知的常見方式是設定背景工作，無論您的應用程式是否正在執行，都讓您知道何時新增或關閉了通知。
 
-歸功於年度更新版新增了[單一處理程序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)，新增背景工作非常簡單。 在主要應用程式的程式碼中，在您已經取得通知接聽程式的使用者存取權並取得執行背景工作的存取權後，只需註冊新的背景工作，並使用[快顯通知類型](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationkinds)設定 [UserNotificationChangedTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) 即可。
+歸功於年度更新版新增了[單一處理程序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)，新增背景工作非常簡單。 在主要應用程式的程式碼中，在您已經取得通知接聽程式的使用者存取權並取得執行背景工作的存取權後，只需註冊新的背景工作，並使用[快顯通知類型](/uwp/api/windows.ui.notifications.notificationkinds)設定 [UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) 即可。
 
 ```csharp
 // TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync
@@ -207,7 +207,7 @@ if (!BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name.Equals("UserNotif
 }
 ```
 
-然後，在 App.xaml.cs 中，覆寫 [OnBackgroundActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.OnBackgroundActivated) 方法 (如果尚未覆寫)，並在工作名稱上使用 switch 陳述式來判斷您的眾多背景工作觸發程序中是哪一個被叫用。
+然後，在 App.xaml.cs 中，覆寫 [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.OnBackgroundActivated) 方法 (如果尚未覆寫)，並在工作名稱上使用 switch 陳述式來判斷您的眾多背景工作觸發程序中是哪一個被叫用。
 
 ```csharp
 protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
@@ -229,7 +229,7 @@ protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs
 
 背景工作是只是「拍肩提醒」：它並不提供新增或移除哪個特定通知的任何相關資訊。 背景工作被觸發時，您應該同步穿戴式裝置上的通知，讓它們反映平台中的通知。 這樣可確保如果您的背景工作失敗，穿戴式裝置上的通知仍可在背景工作下一次執行時復原。
 
-`SyncNotifications` 是您實作; 方法下一個區段顯示方式。 
+`SyncNotifications` 是您所執行的方法;下一節將說明。 
 
 
 ## <a name="determining-which-notifications-were-added-and-removed"></a>判斷新增和移除了哪些通知
@@ -277,9 +277,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>新增/關閉通知的前景事件
 
 > [!IMPORTANT] 
-> 已知的問題：在組建之前建置 17763 / 2018 年 10 月更新 / 版本 1809年前景事件會導致 CPU 迴圈和/或無法運作。 如果您需要在這些較早的建置支援時，請改為使用背景工作。
+> 已知問題：在組建 17763/2018 年10月更新/1809 版之前的組建中，前景事件將導致 CPU 迴圈和/或無法運作。 如果您需要舊版組建的支援，請改用背景工作。
 
-您也可以從記憶體中的事件處理常式來接聽通知...
+您也可以從記憶體中的事件處理常式接聽通知 .。。
 
 ```csharp
 // Subscribe to foreground event
@@ -292,6 +292,6 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 ```
 
 
-## <a name="howto-fixdelays-in-the-background-task"></a>若要修正延遲的背景工作中的方式
+## <a name="howto-fixdelays-in-the-background-task"></a>如何修正背景工作的延遲
 
-在測試您的應用程式時，您可能會注意到背景工作有時候會延遲，並不會觸發的幾分鐘的時間。 若要修正延遲，提示使用者移至 系統設定-> 系統-> 電池-> 應用程式的電池使用方式、 尋找您的應用程式清單中，選取它，然後將它設為 一律允許在背景中 」。 在此之後，背景工作應該一律觸發內接收通知的第二個周圍。
+測試您的應用程式時，您可能會注意到背景工作有時會延遲，並不會觸發幾分鐘的時間。 若要修正延遲情形，請提示使用者移至 [系統設定-> 系統-> > 電池使用量]、[在清單中尋找您的應用程式]、選取它，然後將它設定為 [一律允許在背景中使用]。設定好之後，背景工作應一律會在收到通知的一秒內便觸發。

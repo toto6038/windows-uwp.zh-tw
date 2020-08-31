@@ -6,26 +6,26 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 應用程式提交, 完成
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: bfab2a56c3b8c7508042091f16a33d45b3272106
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 65c3d976607d260cca38e8ee09520d6a60e758a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371769"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171512"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>完成應用程式提交的推出
 
 
-使用「Microsoft Store 提交 API」中的這個方法來[完成 App 提交的套件推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 如需使用 Microsoft Store 提交 API 建立 App 提交的程序的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
+在 Microsoft Store 提交 API 中使用此方法來完成提交應用程式的 [套件首](../publish/gradual-package-rollout.md#completing-the-rollout) 度發行。 如需使用 Microsoft Store 提交 API 建立 App 提交的程序的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
 ## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
-* 合作夥伴中心帳戶中建立的應用程式提交。 您可以在合作夥伴中心，或您可以使用[建立應用程式提交](create-an-app-submission.md)方法。
-* 啟用提交的漸進式套件推出。 您可以執行這項操作[在合作夥伴中心](../publish/gradual-package-rollout.md)，或您可以執行這項操作[使用 Microsoft Store 提交 API](manage-app-submissions.md#manage-gradual-package-rollout)。
+* [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以取得新的權杖。
+* 在您的合作夥伴中心帳戶中建立應用程式的提交。 您可以在合作夥伴中心中進行這項作業，也可以使用 [ [建立應用程式] 提交](create-an-app-submission.md) 方法來完成這項作業。
+* 啟用提交的漸進式套件推出。 您可以 [在合作夥伴中心中](../publish/gradual-package-rollout.md)這麼做，也可以 [使用 Microsoft Store 提交 API](manage-app-submissions.md#manage-gradual-package-rollout)來完成這項作業。
 
 ## <a name="request"></a>要求
 
@@ -36,24 +36,24 @@ ms.locfileid: "66371769"
 | POST   | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/finalizepackagerollout` |
 
 
-### <a name="request-header"></a>要求的標頭
+### <a name="request-header"></a>要求標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 名稱        | 類型   | 描述                                                                 |
+| 名稱        | 類型   | 說明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 App 的「市集識別碼」，此 App 包含您想要完成其套件推出的提交。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | 字串 | 必要。 您想要完成其套件推出之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 提交在合作夥伴中心所建立，此識別碼也會提供在合作夥伴中心內的 [提交] 頁面的 url。  |
+| applicationId | 字串 | 必要。 App 的「Store 識別碼」，此 App 包含您想要完成其套件推出的提交。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](../publish/view-app-identity-details.md)。  |
+| submissionId | 字串 | 必要。 您想要完成其套件推出之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 針對合作夥伴中心中建立的提交，此識別碼也可在 [提交] 頁面的 URL 中找到合作夥伴中心。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>Request body
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -66,7 +66,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>回應
 
-下列範例示範成功呼叫此方法時的 JSON 回應主體。 如需有關回應主體中各個值的詳細資訊，請參閱[套件推出資源](manage-app-submissions.md#package-rollout-object)。
+下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需有關回應主體中各個值的詳細資訊，請參閱[套件推出資源](manage-app-submissions.md#package-rollout-object)。
 
 ```json
 {
@@ -85,11 +85,11 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到提交。 |
-| 409  | 此代碼指出下列其中一個錯誤：<br/><br/><ul><li>提交狀態不是漸進式推出作業的有效狀態 (呼叫此方法之前，必須先發佈提交且 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) 值必須設定為 **PackageRolloutInProgress**)。</li><li>提交不屬於指定的 App。</li><li>應用程式使用的 DevPartner Center 功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。</li></ul> |   
+| 409  | 此代碼指出下列其中一個錯誤：<br/><br/><ul><li>提交狀態不是漸進式推出作業的有效狀態 (呼叫此方法之前，必須先發佈提交且 [packageRolloutStatus](manage-app-submissions.md#package-rollout-object) 值必須設定為 **PackageRolloutInProgress**)。</li><li>提交不屬於指定的 App。</li><li>應用程式會使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的 DevPartner 中心功能。</li></ul> |   
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [漸進式封裝首度發行](../publish/gradual-package-rollout.md)
-* [管理使用 Microsoft Store 提交 API 提交的應用程式](manage-app-submissions.md)
-* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [漸進式套件推出](../publish/gradual-package-rollout.md)
+* [使用 Microsoft Store 提交 API 管理 App 提交](manage-app-submissions.md)
+* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)

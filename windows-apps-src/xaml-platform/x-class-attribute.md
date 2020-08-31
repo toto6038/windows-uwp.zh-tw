@@ -1,17 +1,17 @@
 ---
 description: 設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
-title: x:Class 屬性
+title: xClass 屬性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dcda1677a8b5d289fd4c5e86db69212004f00824
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: be238be3414fb17ff64a5c6d5da713f614c297be
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371107"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169082"
 ---
 # <a name="xclass-attribute"></a>x:Class 屬性
 
@@ -31,12 +31,12 @@ ms.locfileid: "66371107"
 
 | 詞彙 | 描述 |
 |------|-------------|
-| 命名空間 | 選擇性。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
+| namespace | 選擇性。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
 | classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 | 
 
 ## <a name="remarks"></a>備註
 
-**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 根目錄的屬性。 在任何情況下，為未使用 [頁面]  建置動作編譯的 XAML 檔案在根節點外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
+**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 根目錄的屬性。 在任何情況下，為未使用 **\[頁面\]** 建置動作編譯的 XAML 檔案在根節點外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
 
 做為 **x:Class** 的類別不可以是巢狀類別。
 
@@ -45,4 +45,3 @@ ms.locfileid: "66371107"
 ## <a name="clr-language-rules"></a>CLR 語言規則
 
 雖然您的程式碼後置檔案可能是 C++ 檔案，但某些慣例仍舊依循 CLR 語言格式，因此，在 XAML 語法上並無差異。 特別的是，任何 **x:Class** 值的命名空間與類別名稱元件之間的分隔符號永遠都是點 (".")，雖然在與 XAML 關聯的 C++ 程式碼檔案中，命名空間與類別名稱之間的分隔符號是 "::"。 如果您使用 C++ 宣告巢狀命名空間，則當您指定 **x:Class** 值的 *namespace* 部分時，後續巢狀命名空間字串之間的分隔符號也應該是 "." 而不是 "::"。
-

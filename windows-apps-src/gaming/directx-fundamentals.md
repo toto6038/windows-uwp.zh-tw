@@ -1,17 +1,17 @@
 ---
 title: DirectX 程式設計的基礎
-description: DirectX 程式設計基礎。
+description: 請參閱有關 DirectX 程式設計基礎的文章，包括 Direct2D 和 Direct3D 程式庫和使用方式。
 ms.assetid: 05a1bc59-f32e-44a0-8902-94cf1e099b1b
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 載入, 點陣化, 網格, 點陣圖, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 942a775fca262903b1ee72831b4eae6612d25786
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1718677dce325cccc535e603aca1910eb83d1de0
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368859"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053578"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 程式設計的基礎
 
@@ -50,7 +50,7 @@ ms.locfileid: "66368859"
 <td align="left"><p>建立基本 3D DirectX 圖形。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="load-a-game-asset.md">載入您的 DirectX 遊戲中的資源</a></p></td>
+<td align="left"><p><a href="load-a-game-asset.md">在 DirectX 遊戲中載入資源</a></p></td>
 <td align="left"><p>在 DirectX 遊戲中載入網格。</p></td>
 </tr>
 </tbody>

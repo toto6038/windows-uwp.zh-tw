@@ -1,25 +1,25 @@
 ---
 title: 選擇資源
-description: 資源是 3D 管線使用的一組資料。
+description: 瞭解如何在您的應用程式中，找出並選取最適合與3D 圖形管線不同階段系結的資源。
 ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
 keywords:
 - 選擇資源
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ccc99395dba2f2d1894db81fb48abb59f9a8ba4f
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 69527915988136854e201b82332c17f3e0134290
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57613393"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094466"
 ---
 # <a name="choosing-a-resource"></a>選擇資源
 
 
 資源是 3D 管線使用的一組資料。 建立資源及定義其行為，是應用程式的程式設計首項步驟。 本指引涵蓋基本主題，內容為選擇應用程式所需的資源。
 
-## <a name="span-ididentifybindingspanspan-ididentifybindingspanspan-ididentifybindingspanidentify-pipeline-stages-that-need-resources"></a><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>識別需要資源的管線階段
+## <a name="span-ididentify_bindingspanspan-ididentify_bindingspanspan-ididentify_bindingspanidentify-pipeline-stages-that-need-resources"></a><span id="Identify_Binding"></span><span id="identify_binding"></span><span id="IDENTIFY_BINDING"></span>找出需要資源的管線階段
 
 
 首項步驟為選擇一或多個將會使用資源的[圖形管線](graphics-pipeline.md)階段。 意即，找出會從資源讀取資料以及將資料寫入資源的階段。 了解資源使用所在的管線階段，可決定要呼叫用來將資源繫結至階段的 API。
@@ -28,29 +28,29 @@ ms.locfileid: "57613393"
 
 | 管線階段  | 輸入/輸出 | 資源               | 資源類型                           |
 |-----------------|--------|------------------------|-----------------------------------------|
-| 輸入組合器 | 向內     | 頂點緩衝區          | 緩衝區                                  |
-| 輸入組合器 | 向內     | 索引緩衝區           | 緩衝區                                  |
-| 著色器階段   | 向內     | Shader-ResourceView    | 緩衝區, Texture1D, Texture2D, Texture3D |
-| 著色器階段   | 向內     | Shader-Constant Buffer | 緩衝區                                  |
-| 資料流輸出   | 向外    | 緩衝區                 | 緩衝區                                  |
-| 輸出合併   | 向外    | 轉譯目標檢視     | 緩衝區, Texture1D, Texture2D, Texture3D |
-| 輸出合併   | 向外    | 深度/樣板檢視     | Texture1D, Texture2D                    |
+| 輸入組合器 | 位於     | 頂點緩衝區          | Buffer                                  |
+| 輸入組合器 | 位於     | 索引緩衝區           | Buffer                                  |
+| 著色器階段   | 位於     | Shader-ResourceView    | 緩衝區, Texture1D, Texture2D, Texture3D |
+| 著色器階段   | 位於     | Shader-Constant Buffer | Buffer                                  |
+| 資料流輸出   | 外    | Buffer                 | Buffer                                  |
+| 輸出合併   | 外    | 轉譯目標檢視     | 緩衝區, Texture1D, Texture2D, Texture3D |
+| 輸出合併   | 外    | 深度/樣板檢視     | Texture1D, Texture2D                    |
 
  
 
-## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>識別每個資源的使用方式
+## <a name="span-ididentify_usagespanspan-ididentify_usagespanspan-ididentify_usagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>找出每個資源的使用方式
 
 
 選擇應用程式要使用的管線階段 (以及各階段需要的資源) 後，下一個步驟為決定各個資源的使用方式，意即 CPU 或 GPU 是否可存取資源。
 
 應用程式執行所在的硬體上至少會有一個 CPU 和一個 GPU。 若要挑選使用值，請從下列選項考慮何種類型的處理器需要讀取或寫入資源。
 
-| 資源使用方式 | 可透過下項更新                    | 更新的頻率 |
+| 資源使用狀況 | 可透過下項更新                    | 更新的頻率 |
 |----------------|--------------------------------------|---------------------|
-| 預設值        | GPU                                  | 不常        |
+| 預設        | GPU                                  | 不常        |
 | 動態        | CPU                                  | 頻繁          |
-| 執行        | GPU                                  | 不適用                 |
-| 固定      | CPU (只能在資源建立的時間) | 不適用                 |
+| 預備        | GPU                                  | n/a                 |
+| 固定      | CPU (只能在資源建立的時間) | n/a                 |
 
  
 
@@ -64,18 +64,18 @@ ms.locfileid: "57613393"
 
 另一種看待相同想法的方式是，試想應用程式與資源的搭配方式。
 
-| 應用程式使用資源的方式     | 資源使用方式       |
+| 應用程式使用資源的方式     | 資源使用狀況       |
 |---------------------------------------|----------------------|
 | 載入一次且永不更新            | 固定或預設 |
 | 應用程式重複填滿資源 | 動態              |
-| 轉譯至紋理                     | 預設值              |
-| CPU 的 GPU 資料存取權                | 執行              |
+| 轉譯至紋理                     | 預設              |
+| CPU 的 GPU 資料存取權                | 預備              |
 
  
 
 如果您不確定要選擇哪個使用方式，請先使用預設使用方式，因其是最常見的情形。 著色器常數緩衝區這項資源類型應一律使用預設使用方式。
 
-## <a name="span-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanspan-idresourcetypesandpipelinestagesspanbinding-resources-to-pipeline-stages"></a><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>繫結至管線階段的資源
+## <a name="span-idresource_types_and_pipeline_stagesspanspan-idresource_types_and_pipeline_stagesspanspan-idresource_types_and_pipeline_stagesspanbinding-resources-to-pipeline-stages"></a><span id="Resource_Types_and_Pipeline_stages"></span><span id="resource_types_and_pipeline_stages"></span><span id="RESOURCE_TYPES_AND_PIPELINE_STAGES"></span>將資源系結至管線階段
 
 
 資源可同時繫結至多個管線階段，只要符合資源建立時所指定的限制即可。 這些限制指定為使用方式旗標、繫結旗標或 CPU 存取旗標。 更明確地說，資源可同時繫結為輸入與輸出，只要不同時發生資源的讀取和寫入部分即可。

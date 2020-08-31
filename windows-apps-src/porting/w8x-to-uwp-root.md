@@ -1,38 +1,38 @@
 ---
-description: 如果您有 &\#8212 的通用8.1 應用程式; 無論是以 Windows 8.1、Windows Phone 8.1，還是 &\#8212 的目標，您都會發現原始程式碼和技能會順暢地移植到 Windows 10。
+description: 如果您有通用的8.1 應用程式&\# 郵件; 它的目標是 Windows 8.1、Windows Phone 8.1 或兩者&\# 郵件; 然後您會發現您的原始程式碼和技能會順暢地移植到 Windows 10。
 title: 從 Windows Runtime 8.x 移至 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dafa2b5820c0c93f5b7ff5fbefc2b7d4db6d3018
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5509de1e8b4719055a49142fa92bf1704f725aec
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259092"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171172"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>從 Windows Runtime 8.x 移至 UWP
 
 
-如果您有通用8.1 應用程式（無論是以 Windows 8.1、Windows Phone 8.1 或兩者為目標），則您會發現原始程式碼和技能會順暢地移植到 Windows 10。 使用 Windows 10 時，您可以建立通用 Windows 平臺（UWP）應用程式，這是您的客戶可以安裝到每一種裝置上的單一應用程式套件。 如需更多 Windows 10、UWP 應用程式的背景，以及我們將在此移植指南中提及之適應性程式碼和調適型 UI 的概念，請參閱[UWP 應用程式指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
+如果您有通用 8.1 app (無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計)，則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在本移植指南中提及之 Windows 10、UWP 應用程式，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱 [UWP 應用程式指南](../get-started/universal-application-platform-guide.md)。
 
-移植時，您會發現 Windows 10 與舊版平臺共用大部分的 Api，以及 XAML 標記、UI 架構和工具，而且您會發現所有的 reassuringly 都很熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
+在移植時，您將發現 Windows 10 會與先前的平台共用大部分的 API，以及 XAML 標記、UI 架構及工具，而且全都讓人非常熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
 
 ## <a name="if-you-have-a-universal-81-app"></a>如果您有通用 8.1 應用程式
 
-通用 8.1 app是從 8.1 通用 app 專案建置的。 假設專案的名稱是 AppName\_81。 它包含這些子專案。
+通用 8.1 app是從 8.1 通用 app 專案建置的。 假設專案的名稱是 AppName \_ 81。 它包含這些子專案。
 
--   AppName\_81. Windows。 這是為 Windows 8.1 建立應用程式套件的專案。
--   AppName\_81. .Windows 及 .windowsphone。 這是建立適用於 Windows Phone 8.1 之應用程式套件的專案。
--   AppName\_81. Shared。 這個專案當中包含其他兩個專案都會用到的原始程式碼、標記檔案及其他資產與資源。
+-   AppName \_ 81. Windows。 這是建置適用於 Windows 8.1 之應用程式套件的專案。
+-   AppName \_ 81. WindowsPhone。 這是建立適用於 Windows Phone 8.1 之應用程式套件的專案。
+-   AppName \_ 81. Shared。 這個專案當中包含其他兩個專案都會用到的原始程式碼、標記檔案及其他資產與資源。
 
-8\.1 通用 Windows 應用程式通常會提供相同的功能，並在其 Windows 8.1 和 Windows Phone 8.1 表單中使用相同的程式碼和標記。 這類應用程式是移植到單一 Windows 10 應用程式（以通用裝置系列為目標）的理想候選，而且您可以將其安裝到最廣泛的裝置上。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
+通常，8.1 通用 Windows app 會以Windows 8.1 與 Windows Phone 8.1 兩種形式—使用相同的程式碼和標記—來提供相同的功能。 這類 app 最適合移植到針對通用裝置系列設計的單一 Windows 10 應用程式 (這表示它所能安裝的裝置種類最廣泛)。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
 
-有時候，應用程式的 Windows 8.1 和/或 Windows Phone 8.1 表單會包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
+其他時候，Windows 8.1 和/或 Windows Phone 8.1 形式的應用程式會包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
 
-1.  將共用專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 和 WindowsPhone 專案的任何其他內容，以便在應用程式中無條件地使用那些內容，或在您的應用程式當時執行所在的裝置上有條件地使用那些內容 (後者的行為稱為「調適型」行為)。
+1.  將共用專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 和 WindowsPhone 專案的任何其他內容，以便在應用程式中無條件地使用那些內容，或在您的應用程式當時執行所在的裝置上有條件地使用那些內容 (後者的行為稱為「調適型」** 行為)。
 2.  將 WindowsPhone 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。
 3.  將 Windows 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 WindowsPhone 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。
 4.  將 Windows 專案的內容移植到針對通用或傳統型裝置系列設計的應用程式，以及將 WindowsPhone 專案的內容移植到針對通用或行動裝置系列設計的應用程式。 您可以建立一個包含共用專案的解決方案，然後繼續在兩個專案之間共用原始程式碼、標記檔案及其他資產和資源。 或者您可以建立不同的解決方案，但仍然使用連結來共用相同的項目。
@@ -53,25 +53,25 @@ ms.locfileid: "74259092"
 
 將通用 8.1 應用程式移植到 UWP 應用程式的模型時，您所有的知識和經驗，以及大部分您所使用的原始程式碼、標記及軟體模式，都會一併轉移過去。
 
--   **檢視**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的 UI 標記和設計—甚至是操作 UI 元素的命令式程式碼—都會直接移植。
--   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型和資料模型程式碼也都使用非視覺作業系統和 .NET Framework API (包括用於資料存取的 API)。 而且那些 API 也都[適用於 UWP 應用程式](https://docs.microsoft.com/previous-versions/windows/br211369(v=win.10))，所以此程式碼大部分 (如果不是全部的話) 都將在沒有任何改變的情況下移植。
+-   **查看**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的 UI 標記和設計—甚至是操作 UI 元素的命令式程式碼—都會直接移植。
+-   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型和資料模型程式碼也都使用非視覺作業系統和 .NET Framework API (包括用於資料存取的 API)。 而且那些 API 也都[適用於 UWP 應用程式](/previous-versions/windows/br211369(v=win.10))，所以此程式碼大部分 (如果不是全部的話) 都將在沒有任何改變的情況下移植。
 -   **雲端服務**。 您的應用程式某些部分 (也許佔相當大的部分) 可能是在雲端以服務的形式執行。 在用戶端裝置上執行的應用程式部分則會連線到那些服務。 這是分散式 app 中最有可能在移植用戶端部分時保持不變的部分。 如果您還沒有雲端服務，[Microsoft Azure 行動服務](https://azure.microsoft.com/services/mobile-services/)會是您 UWP 應用程式的一個絕佳雲端服務選項，它提供強大的後端元件，可供您的應用程式呼叫以取得服務，服務涵蓋範圍可從簡單的動態磚更新，一直到伺服器陣列可提供的那種高難度延展性。
 
-在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](https://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
+在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
-| [移植專案](w8x-to-uwp-porting-to-a-uwp-project.md) | 當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://docs.microsoft.com/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中。 |
+| [移植專案](w8x-to-uwp-porting-to-a-uwp-project.md) | 當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](/visualstudio/misc/migrate-apps-to-the-universal-windows-platform-uwp?view=vs-2015) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中。 |
 | [疑難排解](w8x-to-uwp-troubleshooting.md) | 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。 為此，您可以暫時將任何非必要的程式碼標成註解或移除，稍後再回來清償該負債。 本主題中的疑難排解問題和解決方式表格雖然無法用來替代閱讀接下來的幾個主題，但是在這個階段可能對您很有幫助。 在您進展到後續的主題時，隨時可以回來參考這個表格。 |
-| [移植 XAML 和 UI](w8x-to-uwp-porting-xaml-and-ui.md) | 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至 UWP app。 您會發現大部分標記都相容，雖然您可能需要對系統的「資源」索引鍵或您使用的自訂範本進行一些調整。 |
-| [適用于 i/o、裝置和應用程式模型的移植](w8x-to-uwp-input-and-sensors.md) | 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。 |
-| [案例研究： Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主題提供的案例研究可將非常簡單的通用 8.1 app 移植到 Windows 10 UWP app。 通用 8.1 app 會針對 Windows 8.1 建置一個應用程式套件，並針對 Windows Phone 8.1 建置另一個應用程式套件。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 請參閱 [UWP app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。 |
-| [案例研究： Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 這個案例研究是以 [SemanticZoom](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項中提供的資訊為基礎建置。 在檢視模型中，每個 Author 類別執行個體都代表該作者所著之書籍的群組，而在 SemanticZoom 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
-| [案例研究： QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主題提供的案例研究會將對等運作的測驗遊戲 WinRT 8.1 app 範例移植到 Windows 10 UWP app。 |
+| [移植 XAML 與 UI](w8x-to-uwp-porting-xaml-and-ui.md) | 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至 UWP app。 您會發現大部分標記都相容，雖然您可能需要對系統的「資源」索引鍵或您使用的自訂範本進行一些調整。 |
+| [I/O、裝置與應用程式模型的移植](w8x-to-uwp-input-and-sensors.md) | 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。 |
+| [案例研究：Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | 本主題提供的案例研究可將非常簡單的通用 8.1 app 移植到 Windows 10 UWP app。 通用 8.1 app 會針對 Windows 8.1 建置一個應用程式套件，並針對 Windows Phone 8.1 建置另一個應用程式套件。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 請參閱 [UWP app 指南](../get-started/universal-application-platform-guide.md)。 |
+| [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 這個案例研究是以 [SemanticZoom](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) 控制項中提供的資訊為基礎建置。 在檢視模型中，每個 Author 類別執行個體都代表該作者所著之書籍的群組，而在 SemanticZoom 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
+| [案例研究：QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主題提供的案例研究會將對等運作的測驗遊戲 WinRT 8.1 app 範例移植到 Windows 10 UWP app。 |
 
 ## <a name="related-topics"></a>相關主題
 
-**文件**
-* [Windows 執行階段參考](https://docs.microsoft.com/uwp/api/)
-* [建立適用于所有 Windows 裝置的通用 Windows 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [設計應用程式的 UX](https://docs.microsoft.com/previous-versions/windows/hh767284(v=win.10))
+**文件集**
+* [Windows 執行階段參考](/uwp/api/)
+* [建置適用於所有 Windows 裝置的通用 Windows 應用程式](../get-started/universal-application-platform-guide.md)
+* [設計 app 的 UX](/previous-versions/windows/hh767284(v=win.10))

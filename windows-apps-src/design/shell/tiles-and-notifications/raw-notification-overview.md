@@ -1,5 +1,5 @@
 ---
-Description: 原始通知是簡短、一般用途的推播通知。
+description: 深入瞭解原始通知，這是很簡短的一般用途推播通知，這些通知完全是教學，不包含 UI 元件。
 title: 原始通知概觀
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eb90e47a1d821c489e06a9ce19c913eb6702767
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2c4072070837d0bde67b644e2536bc2c93b0efc3
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493233"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053968"
 ---
 # <a name="raw-notification-overview"></a>原始通知概觀
 
@@ -36,7 +36,7 @@ ms.locfileid: "86493233"
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
 
 -   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://docs.microsoft.com/previous-versions/windows/apps/hh465412(v=win.10))。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 **\[功能\]** 索引標籤下找到此 **\[網際網路 (用戶端)\]** 選項。 如需詳細資訊，請參閱[**功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
+-   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 **\[功能\]** 索引標籤下找到此 **\[網際網路 (用戶端)\]** 選項。 如需詳細資訊，請參閱 [**功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)。
 
 通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
 

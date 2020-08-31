@@ -1,17 +1,17 @@
 ---
 title: 裝置入口網站 Xbox 開發人員設定 API 參考
-description: 了解如何存取 Xbox 開發人員設定。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API 存取適用于開發的 Xbox One 設定。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 54a15be26adf0da97105f15f3a44f26ee7bfc96d
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: 0aceb7afdce9cc76eab3ee330f0018fdc7ccd1bb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240036"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168982"
 ---
 # <a name="developer-settings-api-reference"></a>開發人員設定 API 參考
 
@@ -29,15 +29,15 @@ GET | /ext/settings
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**   
 回應是包含所有設定的 Settings JSON 陣列。 每個設定物件包含下列欄位：
@@ -49,14 +49,14 @@ GET | /ext/settings
 * Category - (字串) 設定的類別。
 * Type - ("Text" | "Number" | "Bool" | "Select") 這個欄位指示是設定的類型：文字輸入、布林值 ("true" 或 "false")、有最小值和最大值的數字，或有特定值清單的 select。
 
-如果設定的數字：
+如果設定為數字：
 
-* 最小值為 （數字） 此欄位表示設定的最小數值。
-* 最大-（數字） 此欄位代表設定的最大的數字值。
+* 最小值- (數位) 此欄位表示設定的最小數值。
+* 最大值- (數位) 此欄位表示設定的最大數值。
 
-如果設定為選取項目：
+如果設定為 select：
 
-* OptionsVariable-("Yes"|[否]） 這個欄位會指示設定選項是否為變數，如果有效的選項可以變更而重新開機。
+* OptionsVariable- ( "Yes" |"No" ) 此欄位指出如果有效的選項不需要重新開機，是否可以變更設定選項是否為變數。
 * Options - JSON 陣列，包含有效 select 選項 (為字串)。
 
 **狀態碼**
@@ -79,19 +79,19 @@ HTTP 狀態碼      | 描述
 
 方法      | 要求 URI
 :------     | :-----
-GET | /ext/settings/\<設定名稱\>
+GET | /ext/settings/\<setting name\>
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**   
 回應是 JSON 物件，包含下列欄位：
@@ -103,14 +103,14 @@ GET | /ext/settings/\<設定名稱\>
 * Category - (字串) 設定的類別。
 * Type - ("Text" | "Number" | "Bool" | "Select") 這個欄位指示是設定的類型：文字輸入、布林值 ("true" 或 "false")、有最小值和最大值的數字，或有特定值清單的 select。
 
-如果設定的數字：
+如果設定為數字：
 
-* 最小值為 （數字） 此欄位表示設定的最小數值。
-* 最大-（數字） 此欄位代表設定的最大的數字值。
+* 最小值- (數位) 此欄位表示設定的最小數值。
+* 最大值- (數位) 此欄位表示設定的最大數值。
 
-如果設定為選取項目：
+如果設定為 select：
 
-* OptionsVariable-("Yes"|[否]） 這個欄位會指示設定選項是否為變數，如果有效的選項可以變更而重新開機。
+* OptionsVariable- ( "Yes" |"No" ) 此欄位指出如果有效的選項不需要重新開機，是否可以變更設定選項是否為變數。
 * Options - JSON 陣列，包含有效 select 選項 (為字串)。
 
 **狀態碼**
@@ -133,15 +133,15 @@ HTTP 狀態碼      | 描述
 
 方法      | 要求 URI
 :------     | :-----
-PUT | /ext/settings/\<設定名稱\>
+PUT | /ext/settings/\<setting name\>
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**   
 要求主體是 JSON 物件，包含下列欄位：   
@@ -149,7 +149,7 @@ Value - (字串) 設定的新值。
 
 **回應**   
 
-- None
+- 無
 
 **狀態碼**
 

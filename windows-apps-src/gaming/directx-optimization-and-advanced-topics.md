@@ -1,17 +1,17 @@
 ---
 title: DirectX 遊戲的最佳化與進階主題
-description: DirectX 遊戲程式設計的最佳化與進階主題。
+description: 請參閱提供將 DirectX 遊戲效能優化的相關資訊，以及其他 advanced 主題的相關文章。
 ms.assetid: b5f29fb2-3bcf-43b2-9a68-f8819473bf62
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 最佳化, 多重取樣, 交換鏈結
 ms.localizationpriority: medium
-ms.openlocfilehash: e9618a35ecd8f9d1a37b627494c0f00a5ed84806
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f19081a2618ea683c7790db3cd7517078f19269c
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57595013"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053648"
 ---
 # <a name="optimization-and-advanced-topics-for-directx-games"></a>DirectX 遊戲的最佳化與進階主題
 
@@ -42,15 +42,15 @@ ms.locfileid: "57595013"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="asynchronous-programming-directx-and-cpp.md">適用於遊戲的非同步程式設計</a></p></td>
+<td align="left"><p><a href="asynchronous-programming-directx-and-cpp.md">遊戲的非同步程式設計</a></p></td>
 <td align="left"><p>了解如何使用 DirectX 進行非同步程式設計與執行緒處理。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="handling-device-lost-scenarios.md">處理在 Direct3D 11 中移除的裝置案例</a></p></td>
+<td align="left"><p><a href="handling-device-lost-scenarios.md">在 Direct3D 11 中處理裝置移除案例</a></p></td>
 <td align="left"><p>在移除或重新初始化圖形卡之後，重建 Direct3D 與 DXGI 裝置介面鏈結。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">在 UWP 應用程式的多重取樣</a></p></td>
+<td align="left"><p><a href="multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md">UWP app 中的多重取樣</a></p></td>
 <td align="left"><p>在使用 Direct3D 建置的 UWP 遊戲中使用多重取樣。</p></td>
 </tr>
 <tr class="even">
@@ -58,11 +58,11 @@ ms.locfileid: "57595013"
 <td align="left"><p>降低輸入延遲和最佳化轉譯迴圈。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">減少延遲 DXGI 1.3 交換鏈結</a></p></td>
+<td align="left"><p><a href="reduce-latency-with-dxgi-1-3-swap-chains.md">透過 DXGI 1.3 交換鏈結減少延遲</a></p></td>
 <td align="left"><p>使用 DXGI 1.3 減少有效的畫面延遲。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="multisampling--scaling--and-overlay-swap-chains.md">交換鏈結調整和覆疊</a></p></td>
+<td align="left"><p><a href="multisampling--scaling--and-overlay-swap-chains.md">交換鏈結縮放和重疊</a></p></td>
 <td align="left"><p>在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結來提高視覺品質。</p></td>
 </tr>
 </tbody>

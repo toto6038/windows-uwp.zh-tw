@@ -5,17 +5,17 @@ ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7703f2dfac2eed6df1f59b8e1cdfa6371e240eb4
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 8d498c3214effd64895c6a894802a9ccc82ff357
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67317105"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169262"
 ---
 # <a name="content-transition-animations"></a>內容轉換動畫
 
@@ -23,7 +23,7 @@ ms.locfileid: "67317105"
 
 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 
-> **重要的 Api**:[**ContentThemeTransition 類別 (XAML)** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+> **重要 API**: [**ContentThemeTransition 類別 (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -41,15 +41,11 @@ ms.locfileid: "67317105"
 ## <a name="related-articles"></a>相關文章
 
 **適用於開發人員 (XAML)**
-* [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [以動畫顯示的內容轉換](https://docs.microsoft.com/previous-versions/windows/apps/jj649426(v=win.10))
-* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**ContentThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+* [動畫概觀](./xaml-animation.md)
+* [讓內容轉換產生動畫效果](/previous-versions/windows/apps/jj649426(v=win.10))
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**ContentThemeTransition 類別**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
  
 
  
-
-
-
-

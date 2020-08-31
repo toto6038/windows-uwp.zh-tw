@@ -4,14 +4,14 @@ ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: 在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b30f2e9d08fd36686045523c54180829570cbd2d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5da59c85f2b091ce21b9da5bb676a410a4b318ba
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171312"
 ---
 # <a name="getting-started-animation"></a>開始使用：動畫
 
@@ -68,7 +68,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 重新執行專案，看看矩形的動畫效果。 萬歲！
 
-如果開啟 MainPage.xaml 檔案，在 [**XAML**] 檢視中，您會看到當您在設計工具中工作時 Blend 為您新增的 XAML 程式碼。 請特別看看 `<Storyboard>` 和 `<Rectangle>` 元素中的程式碼。 下列程式碼顯示範例。 橢圓形表示為簡潔而省略的不相關程式碼；為了便於閱讀程式碼，我們加入了斷行符號。
+如果開啟 MainPage.xaml 檔案，在 [**XAML**] 檢視中，您會看到當您在設計工具中工作時 Blend 為您新增的 XAML 程式碼。 請特別看看 `<Storyboard>` 和 `<Rectangle>` 元素中的程式碼。 下列程式碼為範例。 橢圓形表示為簡潔而省略的不相關程式碼；為了便於閱讀程式碼，我們加入了斷行符號。
 
 ```xml
 ...
@@ -124,10 +124,10 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ...
 ```
 
-您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。
+您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](../design/motion/xaml-animation.md)。
 
-**附註**  如需動畫的詳細資訊<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP 應用程式</span>，請參閱[以動畫顯示您的 UI (HTML)](https://docs.microsoft.com/previous-versions/windows/apps/hh465165(v=win.10))。
+**注意**   如需<span class="legacy-term">使用 JavaScript 和 html 進行 UWP 應用程式</span>動畫的詳細資訊，請參閱以[動畫顯示 UI (HTML) ](/previous-versions/windows/apps/hh465165(v=win.10))。
 
 ### <a name="next-step"></a>後續步驟
 
-[開始使用：接下來呢？](getting-started-what-next.md)
+[開始使用：接下來該怎麼辦？](getting-started-what-next.md)
