@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb65acf606ffa44f075016720ebcd055ba5febc8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 06cff7247dff4f370d9e20a736c4383a9c09c25a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234459"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174612"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Windows 應用程式的磚、徽章及通知
  
@@ -37,7 +37,7 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 Windows 應用程�
 | 文章 | 說明 |
 | --- | --- |
 | [建立磚](creating-tiles.md) | 自訂您的 App 的預設磚，並提供不同螢幕大小的資產。 |
-| [應用程式圖示資產](app-assets.md) | 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比 Windows 應用程式的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。 |
+| [應用程式圖示資產](../../style/app-icons-and-logos.md) | 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比 Windows 應用程式的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。 |
 | [主要磚 API](primary-tile-apis.md) | 要求釘選應用程式的主要磚，並檢查主要磚目前是否已釘選。 |
 | [磚內容](create-adaptive-tiles.md) | 磚通知內容是使用調適型 (Windows 10 中的新功能) 所指定，可讓您使用配合不同螢幕密度調整的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為 Windows 應用程式建立彈性動態磚。 |
 | [磚內容結構描述](../tiles-and-notifications/tile-schema.md) | 以下是用來建立彈性磚的元素和屬性。 |

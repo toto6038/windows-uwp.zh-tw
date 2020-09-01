@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 785047b3ee5f18fa4f6ea8fd78f6d8ab7a92e8e6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173422"
+ms.locfileid: "89187893"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -386,7 +386,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *工具提示中的快速按鍵組合*
 
-針對 [Button](/uwp/api/windows.ui.xaml.controls.button)、 [icon](/uwp/api/windows.ui.xaml.controls.appbarbutton)和 [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 物件，鍵盤快捷工具會附加至控制項的預設工具提示。 針對 [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) 物件，會顯示具有飛出視窗文字的鍵盤快速鍵。
+針對 [Button](/uwp/api/windows.ui.xaml.controls.button)、 [icon](/uwp/api/windows.ui.xaml.controls.appbarbutton)和 [AppBarToggleButton](/uwp/api/windows.ui.xaml.controls.appbartogglebutton) 物件，鍵盤快捷工具會附加至控制項的預設工具提示。 針對 [MenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.appbarbutton) 和 [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 物件，會顯示具有飛出視窗文字的鍵盤快速鍵。
 
 > [!NOTE]
 > 指定工具提示 (請參閱下列範例中的 Button1) 覆寫此行為。

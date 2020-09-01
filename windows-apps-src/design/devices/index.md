@@ -8,12 +8,12 @@ keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b77e62f14418611047a3af49bd15ed4f8094b4
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8a4d34db2b6782f3b660bb88e3b3a07f6e2d01b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157042"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>適用於 Windows 裝置的 UI 考量
 
@@ -131,7 +131,7 @@ UI 考量
 
 所有計算裝置中最為廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-透過 Continuum 手機版 (此為可相容的 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN)一文)。
+透過 Continuum 手機版 (此為可相容的 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](/windows-hardware/design/device-experiences/continuum-phone)一文)。
 
 螢幕大小
 -   手機 (4 吋 到 5 吋)

@@ -285,7 +285,7 @@
         - name: 快速存取 UWP 中的檔案屬性
           href: ../files/fast-file-properties.md
     - name: 機器學習
-      href: 'https://docs.microsoft.com/windows/ai/'
+      href: /windows/ai/
 - name: 部署
   items:
     - name: 選擇 UWP 版本
@@ -727,7 +727,7 @@
         - name: 新增零售示範 (RDX) 功能
           href: ../monetize/retail-demo-experience.md
         - name: 使用付款要求 API 簡化付款
-          href: ../monetize/payment-request.md
+          href: ../monetize/index.md
     - name: 封裝應用程式
       items:
         - name: 概觀
@@ -1276,7 +1276,7 @@
         - name: 案例研究：Bookstore2
           href: ../porting/wpsl-to-uwp-case-study-bookstore2.md
     - name: 在 Windows 10 上將您的 Web 應用程式轉換成 PWA
-      href: 'https://docs.microsoft.com/microsoft-edge/progressive-web-apps'
+      href: /microsoft-edge/progressive-web-apps
       items:
         - name: 將 Windows 7 應用程式封裝為 PWA
           href: 'https://docs.pwabuilder.com/jekyll/update/2018/02/03/how-to-package-windows7.html'

@@ -4,12 +4,12 @@ description: 用於 Windows 應用程式開發的 WinUI 程式庫。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk, winui, Windows UI 程式庫
-ms.openlocfilehash: 54b2d44dab1c311e6d1b75d0be35ed419056a953
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: eb87744ed5d3eb5882b4ebae75b8dcf295d89f10
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492973"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166752"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 程式庫 (WinUI)
 
@@ -26,7 +26,7 @@ WinUI 將 [Fluent Design 系統](https://www.microsoft.com/design/fluent/#/)併�
 
 ## <a name="windows-ui-2x-library"></a>Windows UI 2.x 程式庫
 
-WinUI 2.x 可以在 UWP 應用程式中使用，並透過使用 [XAML Islands](/windows/apps/desktop/modernize/xaml-islands) 合併到新的或現有的桌面應用程式中。
+WinUI 2.x 可以在 UWP 應用程式中使用，並透過使用 [XAML Islands](../desktop/modernize/xaml-islands.md) 合併到新的或現有的桌面應用程式中。
 
 > [!NOTE]
 > WinUI 2.4 是最新的 WinUI 2.x 版本。 如需下一版中的計畫工作清單，請參閱 [WinUI 2.5 里程碑](https://github.com/microsoft/microsoft-ui-xaml/milestone/10)。
@@ -42,7 +42,7 @@ WinUI 2.x 程式庫可與 [Windows 10 SDK](https://developer.microsoft.com/windo
 ### <a name="related-links-for-winui-2x"></a>WinUI 2.x 的相關連結
 
 - [WinUI 2.x 程式庫概觀](winui2/index.md)
-- [API 文件](https://docs.microsoft.com/uwp/api/overview/winui/)
+- [API 文件](/uwp/api/overview/winui/)
 - [原始程式碼](https://aka.ms/winui)
 - [XAML 控制項庫應用程式](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
@@ -59,7 +59,7 @@ WinUI 3 是 WinUI 的下一個版本，這是與 [Windows 10 SDK](https://develo
 
 因為 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) 與 XAML、撰寫和輸入 API 完全分離，所以 WinUI 3.0 的範圍包含完整的 Windows 10 原生 UI 平台。
 
-WinUI 是所有 Windows 應用程式向前邁進的路徑 - 您可以使用此平台作為原生 UWP 或 Win32 應用程式上的 UI 層，也可以搭配 [XAML Islands](https://docs.microsoft.com/windows/apps/desktop/modernize/xaml-islands) 來逐一現代化您的桌面應用程式。
+WinUI 是所有 Windows 應用程式向前邁進的路徑 - 您可以使用此平台作為原生 UWP 或 Win32 應用程式上的 UI 層，也可以搭配 [XAML Islands](../desktop/modernize/xaml-islands.md) 來逐一現代化您的桌面應用程式。
 
 所有新的 XAML 功能最終都會隨附在 WinUI 中。 隨附於作業系統的現有 UWP XAML API 將不會再收到新的功能更新。 不過會隨著 Windows 10 支援週期，繼續收到安全性更新和重大修正程式。
 

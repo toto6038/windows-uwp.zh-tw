@@ -3,12 +3,12 @@ title: WinUI 版本資訊
 description: WinUI 版本資訊的索引。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 4161b8d8a74ffc493c44bba5104c54cb911861c6
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 33d4b9dfb497017f446549d4f3daf737a8fa5ebb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492873"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166692"
 ---
 # <a name="windows-ui-library-2x-release-notes"></a>Windows UI 程式庫 2.x 版本資訊
 
@@ -22,7 +22,7 @@ WinUI 包含兩個 NuGet 套件：
 
 * [Microsoft.UI.Xaml.Core.Direct](https://www.nuget.org/packages/Microsoft.UI.Xaml.Core.Direct)：用於中介軟體元件的低層級 API。
 
-您可以使用 NuGet 套件管理員，在您的應用程式中下載及使用 WinUI 套件：如需詳細資訊，請參閱[開始使用 Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/getting-started)。
+您可以使用 NuGet 套件管理員，在您的應用程式中下載及使用 WinUI 套件：如需詳細資訊，請參閱[開始使用 Windows UI 程式庫](/uwp/toolkits/winui/getting-started)。
 
 ## <a name="examples"></a>範例
 

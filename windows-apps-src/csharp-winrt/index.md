@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: e52763d78937405b308c4c4fe06f6d231fa3abcf
-ms.sourcegitcommit: d0f479f1955881afb62c2af249db5d0b053b63e5
+ms.openlocfilehash: 8fb098cb247890dc1b3919f6123b76b54366d60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83580275"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154322"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -23,9 +23,9 @@ C#/WinRT 目前提供使用 WinRT 類型的支援，而目前的預覽版可讓�
 
 ## <a name="motivation-for-cwinrt"></a>C#/WinRT 的動機
 
-[.Net Core](https://docs.microsoft.com/dotnet/core/) 是 .NET 平台的重點，而 .NET 5 則是下一個主要版本。 此架構是開放原始碼的跨平台執行階段，可用來建置裝置、雲端和 IoT 應用程式。
+[.Net Core](/dotnet/core/) 是 .NET 平台的重點，而 .NET 5 則是下一個主要版本。 此架構是開放原始碼的跨平台執行階段，可用來建置裝置、雲端和 IoT 應用程式。
 
-舊版 .NET Framework 和 .NET Core 已內建 Windows 特有技術 WinRT 的知識。 為了支援 .NET 5 的可攜性和效率目標，我們已從 .NET 編譯器和執行階段提取 WinRT 投影支援，並將其移至 C#/WinRT 工具組。 C#/WinRT 的目標是提供等同於舊版 C# 編譯器和 .NET 執行階段內建 WinRT 支援的架構。 如需詳細資訊，請參閱 [Windows 執行階段類型的 .NET 對應](https://docs.microsoft.com/windows/uwp/winrt-components/net-framework-mappings-of-windows-runtime-types)。
+舊版 .NET Framework 和 .NET Core 已內建 Windows 特有技術 WinRT 的知識。 為了支援 .NET 5 的可攜性和效率目標，我們已從 .NET 編譯器和執行階段提取 WinRT 投影支援，並將其移至 C#/WinRT 工具組。 C#/WinRT 的目標是提供等同於舊版 C# 編譯器和 .NET 執行階段內建 WinRT 支援的架構。 如需詳細資訊，請參閱 [Windows 執行階段類型的 .NET 對應](../winrt-components/net-framework-mappings-of-windows-runtime-types.md)。
 
 C#/WinRT 也支援 WinUI 3.0。 此版 WinUI 會從作業系統中提取原生的 Microsoft UI 控制項和功能。 這可讓應用程式開發人員使用 Windows 10 1803 版和更新版本上的最新控制項和視覺效果。
 
@@ -124,7 +124,7 @@ C#/WinRT 支援啟用作業系統所裝載的 WinRT 類型，以及 [Win2D](http
 2. Contoso.Controls.dll
 3. Contoso.dll
 
-C#/WinRT 會使用 [LoadLibrary 替代搜尋順序](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order?#alternate-search-order-for-desktop-applications)來尋找實作 DLL。 依賴此後援行為的應用程式應該會將實作 DLL 連同應用程式模組封裝在一起。
+C#/WinRT 會使用 [LoadLibrary 替代搜尋順序](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications)來尋找實作 DLL。 依賴此後援行為的應用程式應該會將實作 DLL 連同應用程式模組封裝在一起。
 
 ## <a name="known-issues"></a>已知問題
 

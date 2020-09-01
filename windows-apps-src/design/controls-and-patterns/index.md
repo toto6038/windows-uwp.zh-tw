@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e6d91b5a4147237cd04b46dc5b69b8151fece9
-ms.sourcegitcommit: 6dd6d61c912daab2cc4defe5ba0cf717339f7765
+ms.openlocfilehash: 08471b8a04d37c34378b549b8534979a4188d7b8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84978380"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173952"
 ---
 # <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
 
@@ -44,7 +44,7 @@ ms.locfileid: "84978380"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | 某些控制項僅包含在 Windows UI 程式庫 (WinUI) 中，此程式庫是包含新控制項和 UI 功能的 NuGet 封裝。 若要加以取得，請參閱 [Windows UI 程式庫概觀和安裝指示](/uwp/toolkits/winui/)。<br/>從 WinUI 2.2 版開始，許多控制項的預設樣式已更新為使用圓角。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | 某些控制項僅包含在 Windows UI 程式庫 (WinUI) 中，此程式庫是包含新控制項和 UI 功能的 NuGet 封裝。 若要加以取得，請參閱 [Windows UI 程式庫概觀和安裝指示](/uwp/toolkits/winui/)。<br/>從 WinUI 2.2 版開始，許多控制項的預設樣式已更新為使用圓角。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 |
 
 ## <a name="alphabetical-index"></a>依字母排序的索引
 
@@ -79,7 +79,7 @@ ms.locfileid: "84978380"
 - [影像與影像筆刷](images-imagebrushes.md)
 - [筆跡控制項](inking-controls.md)
 - [清單檢視](listview-and-gridview.md)
-- [地圖控制項](../../maps-and-location/controls-map.md)
+- [地圖控制項](../../maps-and-location/display-maps.md)
 - [主要/詳細資料](master-details.md) (模式)
 - [媒體播放](media-playback.md)
 - [功能表列](menus.md#create-a-menu-bar) ![WinUI 標誌](images/winui-logo-16x16.png)

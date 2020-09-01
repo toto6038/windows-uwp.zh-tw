@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cb82c137bf2aa0d1cd4e03025d3babace07549b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 151abd02b34263cdd92b917127f306c25ebc5e0d
+ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173412"
+ms.locfileid: "89187835"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -107,15 +107,16 @@ void MyProject::MainPage::Grid_KeyUp(
 
 輔助按鍵是使用者通常會與其他按鍵一起按的按鍵，如 Ctrl 或 Shift。 您的應用程式可以使用這些按鍵組合當作鍵盤快速鍵來叫用應用程式命令。
 
-在您的 [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) 與 [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) 事件處理常式中使用程式碼，即可偵測快速鍵組合。 然後，您可以追蹤想了解的輔助按鍵按下狀態。 當非輔助按鍵發生鍵盤事件時，您可以同時檢查輔助按鍵是否處於按下狀態。
+您可以在「 [**KeyDown**](/uwp/api/windows.ui.xaml.uielement.keydown) 」和「 [**KeyUp**](/uwp/api/windows.ui.xaml.uielement.keyup) 」事件處理常式中偵測快速鍵組合。 當非輔助按鍵發生鍵盤事件時，您可以檢查輔助按鍵是否處於已按下的狀態。
+
+或者， [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) (的[**GetKeyState ( # B1**](/uwp/api/windows.ui.core.corewindow.getkeystate)函式是透過[**CoreWindow 取得 ( # B4**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread)) 也可以在按下非輔助按鍵時，用來檢查修飾詞的狀態。
+
+下列範例會執行第二個方法，同時也包含第一個執行的存根程式碼。
 
 > [!NOTE]
 > Alt 鍵以 **VirtualKey.Menu** 值表示。
 
- 
-
 ### <a name="shortcut-keys-example"></a>快速鍵範例
-
 
 以下範例示範如何實作快速鍵。 在這個範例中，使用者可以使用「播放」、「暫停」以及「停止」按鈕或 Ctrl+P、Ctrl+A 以及 Ctrl+S 鍵盤快速鍵來控制媒體的播放。 按鈕 XAML 使用工具提示以及按鈕標籤中的 [**AutomationProperties**](/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties) 屬性顯示捷徑。 這個自我說明文件對於提高應用程式的可用性及協助性是很重要的。 如需詳細資訊，請參閱[鍵盤協助工具](../accessibility/keyboard-accessibility.md)。
 
