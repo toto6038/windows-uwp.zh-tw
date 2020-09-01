@@ -1,27 +1,27 @@
 ---
-Description: 產品宣告有助於確保您的應用程式會適當地顯示在 Microsoft Store 中，並提供給正確的一組客戶。
+Description: 產品聲明可協助確保您的應用程式在 Microsoft Store 中正確顯示，並提供給正確的客戶集合。
 title: 產品宣告
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 47011a22353f26361a392690d857bde1fc180c03
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79211004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167362"
 ---
 # <a name="product-declarations"></a>產品宣告
 
-[提交](app-submissions.md)程式的 [[屬性](enter-app-properties.md)] 頁面的 [**產品**宣告] 區段有助於確保您的應用程式會適當地顯示並提供給正確的客戶集合，並協助他們瞭解他們可以如何使用您的應用程式。
+[提交](app-submissions.md)程式之 [[屬性](enter-app-properties.md)] 頁面的 [**產品**宣告] 區段有助於確保您的應用程式能適當地顯示並提供給正確的客戶集合，並協助他們瞭解他們如何使用您的應用程式。
 
-下列各節說明一些宣告，以及判斷每個宣告是否適用于您的應用程式時，您必須考慮的事項。 請注意，預設會檢查其中兩個宣告（如下所述）。視產品的類別而定，您可能也會看到其他宣告。 請務必審查所有宣告，並確保其正確地反映您的提交。
+下列各節說明一些宣告，以及您在判斷每個宣告是否適用于您的應用程式時所需考慮的事項。 請注意，根據預設 (會檢查其中的兩個宣告，如下所述 ) 。根據您的產品類別，您可能也會看到其他宣告。 請務必檢查所有的宣告，並確保它們能準確地反映您的提交內容。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此應用程式可讓使用者進行購買，但不會使用 Microsoft Store commerce 系統。
 
-幾乎每次提交時，您應該將此方塊保留為未核取，因為提供購買專案的機會，或可在您的應用程式內取用或使用的應用程式，必須使用 Microsoft Store 應用程式內購買 API 來建立和提交附加元件。 根據[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，在2015年6月29日之前建立和提交的應用程式，只要購買功能符合[Microsoft Store 的原則](store-policies.md#108-financial-transactions)，就可以繼續提供應用程式內購買功能，而不需使用 Microsoft 的商務引擎。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+對於幾乎每次提交，您應該將此方塊保留為未核取，因為供應商機的應用程式必須使用 Microsoft Store 的應用程式內購買 API，才能建立及提交附加元件。 根據 [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement)，在2015年6月29日前建立和提交的應用程式，只要購買功能符合 [Microsoft Store 原則](store-policies.md#108-financial-transactions)，就可以繼續提供應用程式內的購買功能，而不需要使用 Microsoft 的商務引擎。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 
@@ -40,13 +40,13 @@ ms.locfileid: "79211004"
 如需詳細資訊，請參閱 [協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)和[市集中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 不會將您的應用程式列為可存取，除非您已特別針對該目的進行設計和測試。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> 除非您已特別針對該目的進行設計和測試，否則請勿將應用程式列為可存取。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
-預設會核取此方塊，以允許客戶將您的應用程式安裝到外部或卸除式存放裝置媒體（例如 SD 記憶卡）或非系統磁片磁碟機（例如外部磁片磁碟機）。
+預設會核取此方塊，以允許客戶將您的應用程式安裝到外部或卸除式存放裝置媒體（例如 SD 記憶卡）或非系統磁碟區磁片磁碟機（例如外部磁片磁碟機）。
 
-如果您想要防止將應用程式安裝到替代磁片磁碟機或卸除式存放裝置，而且只允許安裝到裝置上的內部硬碟，請取消核取此方塊。 （請注意，沒有任何選項可限制安裝，因此*只能*將應用程式安裝到卸除式存放裝置媒體）。
+如果您想要防止應用程式安裝到替代磁片磁碟機或卸除式存放裝置，並且只允許安裝到其裝置上的內部硬碟，請取消核取此方塊。  (請注意，沒有限制安裝的選項，因此應用 *程式只能安裝* 至卸除式存放裝置媒體。 ) 
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
@@ -67,7 +67,3 @@ ms.locfileid: "79211004"
  
 
  
-
-
-
-

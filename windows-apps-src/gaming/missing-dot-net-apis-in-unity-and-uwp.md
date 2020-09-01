@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c7f906a19ddbabea85b0426aca9e41a62327e36
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: dcacb227205c0049cfc3467c9906784b0b55728f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82729801"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165232"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中遺失 .NET API
 
@@ -19,15 +19,15 @@ ms.locfileid: "82729801"
 
 此外，部分遊戲引擎使用未與 UWP 適用的 .NET (例如 Unity 的 Mono) 完全相容的不同類型 .NET。 所以當您撰寫遊戲時，所有項目在編輯器中可能運作正常，但是當您移至 UWP 的建置，您可能會收到這類錯誤：**命名空間 'System.Runtime.Serialization' 中沒有類型或命名空間 'Formatters' (是否遺漏了組件參考？)**
 
-幸好 Unity 提供一些這些遺失的 API 作為延伸方法和更換類型，這在[通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)中有所描述。 不過，如果您需要的功能不在這裡，則[適用于 Windows 8.x 應用程式的 .net 總覽](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))會討論如何將程式碼轉換為使用 WinRT 或 .net 來 Windows 執行階段 api 的方式。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
+幸好 Unity 提供一些這些遺失的 API 作為延伸方法和更換類型，這在[通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)中有所描述。 但是，如果您需要的功能不在此處，則 [.net for Windows 8. x 應用程式的總覽](/previous-versions/windows/apps/br230302(v=vs.140)) 將討論您可以如何將程式碼轉換為使用 WinRT 或 .net 來 Windows 執行階段 api。 (這討論 Windows 8，但也適用於 Windows 10 UWP app)。
 
 ## <a name="net-standard"></a>.NET Standard
 
-若要了解為何一些 API 可能無法運作，請務必了解不同的 .NET 類型，以及 UWP 如何實作 .NET。 [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard) 是 .NET API 的正式規格，可跨平台和統一不同的 .NET 類型。 每個實作的 .NET 支援特定版本的 .NET Standard。 您可以在 [.NET 實作支援](https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support)看到標準和實作的表格。
+若要了解為何一些 API 可能無法運作，請務必了解不同的 .NET 類型，以及 UWP 如何實作 .NET。 [.NET Standard](/dotnet/standard/net-standard) 是 .NET API 的正式規格，可跨平台和統一不同的 .NET 類型。 每個實作的 .NET 支援特定版本的 .NET Standard。 您可以在 [.NET 實作支援](/dotnet/standard/net-standard#net-implementation-support)看到標準和實作的表格。
 
 每個版本的 UWP SDK 符合不同層級的 .NET Standard。 例如，16299 SDK (Fall Creators Update) .NET Standard 2.0。
 
-如果您想要知道特定 .NET API 在您的目標 UWP 版本中是否受支援，您可以檢查 [.NET Standard API 參考](https://docs.microsoft.com/dotnet/api/index?view=netstandard-2.0)，然後選取該版本的 UWP 支援的 .NET Standard 版本。
+如果您想要知道特定 .NET API 在您的目標 UWP 版本中是否受支援，您可以檢查 [.NET Standard API 參考](/dotnet/api/index?view=netstandard-2.0)，然後選取該版本的 UWP 支援的 .NET Standard 版本。
 
 ## <a name="scripting-backend-configuration"></a>指令碼後端設定
 
@@ -35,7 +35,7 @@ ms.locfileid: "82729801"
 
 **\[指令碼執行階段版本\]** 是 Unity 指令碼後端用來讓您取得您所選擇大致上對等版本的 .NET Framework 支援。 不過，請記住，並非該版本的 .NET framework 的所有 API 都支援，只有您的 UWP 目標那些 .NET Standard 版本。
 
-通常若推出 .NET 新版本，會有更多的 API 新增至 .NET Standard，讓您可以跨獨立和 UWP 使用相同的程式碼。 例如，[System.Runtime.Serialization.Json](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json) 命名空間已導入 .NET Standard 2.0。 如果您設定 **\[指令碼執行階段版本\]** 為 **\[.NET 3.5 同等\]**(其目標是較舊版本的 .NET Standard)，嘗試使用 API 時，您將會收到錯誤，請將其切換為 **\[.NET 4.6 同等\]**(支援 .NET Standard 2.0)，API 將可運作。
+通常若推出 .NET 新版本，會有更多的 API 新增至 .NET Standard，讓您可以跨獨立和 UWP 使用相同的程式碼。 例如，[System.Runtime.Serialization.Json](/dotnet/api/system.runtime.serialization.json) 命名空間已導入 .NET Standard 2.0。 如果您設定 **\[指令碼執行階段版本\]** 為 **\[.NET 3.5 同等\]**(其目標是較舊版本的 .NET Standard)，嘗試使用 API 時，您將會收到錯誤，請將其切換為 **\[.NET 4.6 同等\]**(支援 .NET Standard 2.0)，API 將可運作。
 
 **\[指令碼後端\]** 可以是 **\[.NET\]** 或 **\[IL2CPP\]**。 本主題中，我們假設您已選擇 **\[.NET\]**，因為那是此處所討論的問題所在。 如需詳細資訊，請參閱[指令碼後端](https://docs.unity3d.com/Manual/windowsstore-scriptingbackends.html)。
 
@@ -60,7 +60,7 @@ ms.locfileid: "82729801"
 ```
 
 > [!NOTE]
-> `NETFX_CORE`僅適用于檢查您是否要針對 .NET 腳本後端編譯 c # 程式碼。 如果您要使用不同的腳本後端（例如 IL2CPP） [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) ，請改用。
+> `NETFX_CORE` 只是要檢查您是否要針對 .NET 腳本後端編譯 c # 程式碼。 如果您要使用不同的腳本後端（例如 IL2CPP），請 [`ENABLE_WINMD_SUPPORT`](https://docs.unity3d.com/Manual/windowsstore-code-snippets.html) 改用。
 
 如需平台相關編譯指示詞的完整清單，請參閱[平台相關編譯](https://docs.unity3d.com/Manual/PlatformDependentCompilation.html)。
 
@@ -70,7 +70,7 @@ ms.locfileid: "82729801"
 
 ### <a name="data-serialization-using-binaryformatter"></a>使用 BinaryFormatter 資料序列化
 
-遊戲通常會將儲存資料序列化，使得玩家無法輕易操縱它。 不過，[BinaryFormatter](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.formatters.binary.binaryformatter) 會將物件序列化為二進位，並不適用於較舊版本的 .NET Standard (2.0 之前)。 請考慮改為使用 [XmlSerializer](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer) 或 [DataContractJsonSerializer](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer)。
+遊戲通常會將儲存資料序列化，使得玩家無法輕易操縱它。 不過，[BinaryFormatter](/dotnet/api/system.runtime.serialization.formatters.binary.binaryformatter) 會將物件序列化為二進位，並不適用於較舊版本的 .NET Standard (2.0 之前)。 請考慮改為使用 [XmlSerializer](/dotnet/api/system.xml.serialization.xmlserializer) 或 [DataContractJsonSerializer](/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer)。
 
 ```csharp
 private void Save()
@@ -90,15 +90,15 @@ private void Save()
 
 ### <a name="io-operations"></a>I/O 作業
 
-[System.IO](https://docs.microsoft.com/dotnet/api/system.io) 命名空間中的某些類型，例如 [FileStream](https://docs.microsoft.com/dotnet/api/system.io.filestream)，不適用於較舊版本的 .NET Standard。 不過，Unity 提供 [Directory](https://docs.microsoft.com/dotnet/api/system.io.directory)、[File](https://docs.microsoft.com/dotnet/api/system.io.file) 和 **FileStream** 類型，您可以在您的遊戲中使用它們。
+[System.IO](/dotnet/api/system.io) 命名空間中的某些類型，例如 [FileStream](/dotnet/api/system.io.filestream)，不適用於較舊版本的 .NET Standard。 不過，Unity 提供 [Directory](/dotnet/api/system.io.directory)、[File](/dotnet/api/system.io.file) 和 **FileStream** 類型，您可以在您的遊戲中使用它們。
 
-或者，您可以使用 [Windows.Storage](https://docs.microsoft.com/uwp/api/Windows.Storage) API，這僅適用於 UWP app。 不過，這些 API 會限制 App 寫入其特定的儲存空間，並且不提供免費存取整個檔案系統的權限。 如需詳細資訊，請參閱[檔案、資料夾和媒體櫃](https://docs.microsoft.com/windows/uwp/files/)。
+或者，您可以使用 [Windows.Storage](/uwp/api/Windows.Storage) API，這僅適用於 UWP app。 不過，這些 API 會限制 App 寫入其特定的儲存空間，並且不提供免費存取整個檔案系統的權限。 如需詳細資訊，請參閱[檔案、資料夾和媒體櫃](../files/index.md)。
 
-一個重要事項是 [Close](https://docs.microsoft.com/dotnet/api/system.io.stream.close) 方法只有在 .NET Standard 2.0 及更新版本中可用 (雖然 Unity 提供延伸方法)。 改為使用 [Dispose](https://docs.microsoft.com/dotnet/api/system.io.stream.dispose)。
+一個重要事項是 [Close](/dotnet/api/system.io.stream.close) 方法只有在 .NET Standard 2.0 及更新版本中可用 (雖然 Unity 提供延伸方法)。 改為使用 [Dispose](/dotnet/api/system.io.stream.dispose)。
 
 ### <a name="threading"></a>執行緒
 
-[System.Threading](https://docs.microsoft.com/dotnet/api/system.threading) 命名空間中的某些類型，例如 [ThreadPool](https://docs.microsoft.com/dotnet/api/system.threading.threadpool)，不適用於較舊版本的 .NET Standard。 在這些情況中，您可以改為使用 [Windows.System.Threading](https://docs.microsoft.com/uwp/api/windows.system.threading) 命名空間。
+[System.Threading](/dotnet/api/system.threading) 命名空間中的某些類型，例如 [ThreadPool](/dotnet/api/system.threading.threadpool)，不適用於較舊版本的 .NET Standard。 在這些情況中，您可以改為使用 [Windows.System.Threading](/uwp/api/windows.system.threading) 命名空間。
 
 以下是如何可處理 Unity 遊戲中的執行緒，使用平台相關編譯來為 UWP 和非 UWP 平台 做準備︰
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>安全性
 
-部分 **System.Security.*** 命名空間，例如 [System.Security.Cryptography.X509Certificates](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)，在您建置適用於 UWP 的 Unity 遊戲時不會提供。 在這些案例中，請使用 **Windows.Security.*** API，其涵蓋幾乎相同的功能。
+部分 **System.Security.*** 命名空間，例如 [System.Security.Cryptography.X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)，在您建置適用於 UWP 的 Unity 遊戲時不會提供。 在這些案例中，請使用 **Windows.Security.*** API，其涵蓋幾乎相同的功能。
 
 下列範例只會取得憑證存放區中具指定名稱的憑證：
 
@@ -134,16 +134,16 @@ private async void GetCertificatesAsync(string certStoreName)
     }
 ```
 
-如需使用 WinRT 安全性 API 的詳細資訊，請參閱 [安全性](https://docs.microsoft.com/windows/uwp/security/)。
+如需使用 WinRT 安全性 API 的詳細資訊，請參閱 [安全性](../security/index.md)。
 
 ### <a name="networking"></a>網路功能
 
-部分 **System&period;Net.*** 命名空間，例如 [System.Net.Mail](https://docs.microsoft.com/dotnet/api/system.net.mail?view=netstandard-2.0)，也在建置適用於 UWP 的 Unity 遊戲時不會提供。 對於這些 API 大部分，請使用對應的 **Windows.Networking.*** 和 **Windows.Web.*** WinRT API 來取得類似的功能。 如需詳細資訊，請參閱[網路和 web 服務](https://docs.microsoft.com/windows/uwp/networking/)。
+部分 **System&period;Net.*** 命名空間，例如 [System.Net.Mail](/dotnet/api/system.net.mail?view=netstandard-2.0)，也在建置適用於 UWP 的 Unity 遊戲時不會提供。 對於這些 API 大部分，請使用對應的 **Windows.Networking.*** 和 **Windows.Web.*** WinRT API 來取得類似的功能。 如需詳細資訊，請參閱[網路和 web 服務](../networking/index.md)。
 
-在 **System.Net.Mail** 的案例中，使用 [Windows.ApplicationModel.Email](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email) 命名空間。 如需詳細資訊，請參閱[傳送電子郵件](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)。
+在 **System.Net.Mail** 的案例中，使用 [Windows.ApplicationModel.Email](/uwp/api/windows.applicationmodel.email) 命名空間。 如需詳細資訊，請參閱[傳送電子郵件](../contacts-and-calendar/sending-email.md)。
 
 ## <a name="see-also"></a>另請參閱
 
 * [通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [用於 UWP App 的 .NET 概觀](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+* [用於 UWP App 的 .NET 概觀](/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP 移植指南](https://unity3d.com/partners/microsoft/porting-guides)

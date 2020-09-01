@@ -6,14 +6,14 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, c#, 範例程式碼
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d908151e30510977669f2bc101575754a946560
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 18e38e9b672b5e96733131c33b3a632cd7a95aeb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507042"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164592"
 ---
-# <a name="interstitial-ad-sample-code-in-c"></a>插入式 C\# 中的 ad 範例程式碼 #  
+# <a name="interstitial-ad-sample-code-in-c"></a>C 中的插入式 ad 範例程式碼\# #  
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
@@ -24,10 +24,10 @@ ms.locfileid: "77507042"
 
 本節顯示的內容為顯示插播式廣告的基本應用程式中的 MainPage.xaml 和 MainPage.xaml.cs 檔的內容。 若要使用這些範例，請將程式碼複製到 Visual Studio 中 Visual C# 的 **「空白應用程式 (通用 Windows)」** 專案中。
 
-此範例應用程式使用兩個按鈕來要求然後啟動插播式廣告。 將 ```myAppId``` 和 ```myAdUnitId``` 欄位的值取代為合作夥伴中心的即時值，再將您的應用程式提交至存放區。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+此範例應用程式使用兩個按鈕來要求然後啟動插播式廣告。 將和欄位的值取代為 ```myAppId``` ```myAdUnitId``` 合作夥伴中心的即時值，然後再將您的應用程式提交至商店。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 > [!NOTE]
-> 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **AdType.Display** 傳遞到  [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一個參數，而不是 **AdType.Video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
+> 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **AdType.Display** 傳遞到  [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一個參數，而不是 **AdType.Video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
 
 ### <a name="mainpagexaml"></a>MainPage.xaml
 

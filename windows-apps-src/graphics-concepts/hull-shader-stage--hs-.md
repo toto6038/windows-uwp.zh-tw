@@ -7,18 +7,18 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dd45408c484534009bf632eb81be11e6ef4d58b7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 11c9f0a52c4a320306cf5dfd5ce90fd5bbe2c407
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370582"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165012"
 ---
 # <a name="hull-shader-hs-stage"></a>輪廓著色器 (HS)階段
 
-輪廓著色器 (HS) 階段是其中一個鑲嵌階段，有效率地將模型的單一表面分成多個三角形。 輪廓著色器 (HS) 階段會產生幾何塊面 (和塊面常數)，對應每一個輸入塊面 (四方形、三角形或線條)。 輪廓著色器會針對每個塊面叫用一次，並且將定義低位表面的輸入控制點轉換成構成塊面的控制點。 它也會進行一些每個塊面計算，以提供資料給[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)和[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)。
+輪廓著色器 (HS) 階段是其中一個鑲嵌階段，有效率地將模型的單一表面分成多個三角形。 輪廓著色器 (HS) 階段會產生幾何塊面 (和塊面常數)，對應每一個輸入塊面 (四方形、三角形或線條)。 輪廓著色器會針對每個塊面叫用一次，並且將定義低位表面的輸入控制點轉換成構成塊面的控制點。 它也會進行一些每個修補計算，以提供 [鑲嵌 (TS) 階段](tessellator-stage--ts-.md) 和 [網域著色器 (DS) 階段](domain-shader-stage--ds-.md)的資料。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途及用途
 
 
 ![輪廓著色器階段圖](images/d3d11-hull-shader.png)
@@ -40,7 +40,7 @@ ms.locfileid: "66370582"
 -   輪廓著色器會宣告[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)所需的狀態。 這些資訊包括控制點數目、塊面的類型，以及鑲嵌時分割使用的類型。 這項資訊會顯示為宣告，通常是在著色器程式碼的前方。
 -   鑲嵌係數決定每個塊面要細分成多少數目。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
 介於 1 到 32 輸出控制點之間，共同構成塊面。
@@ -48,7 +48,7 @@ ms.locfileid: "66370582"
 -   著色器輸出介於 1 到 32 個控制點之間，無論鑲嵌係數的數目為何。 輪廓著色器的控制點輸出可以由網域著色器階段取用。 塊面常數資料可以由網域著色器取用。 鑲嵌係數可以由[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)和[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)取用。
 -   如果輪廓著色器將任何邊緣鑲嵌係數設為 ≤ 0 或 NaN，塊面就會被消除 (省略)。 如此一來，曲面細分器階段就不一定會執行，網域著色器將不會執行，而該塊面也不會產生任何可見的輸出。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例子
 
 
 ```hlsl
@@ -67,7 +67,7 @@ MyOutPoint main(uint Id : SV_ControlPointID,
 }
 ```
 
-請參閱[How To:建立 輪廓著色器](https://docs.microsoft.com/windows/desktop/direct3d11/direct3d-11-advanced-stages-hull-shader-create)。
+請參閱[使用方法︰建立輪廓著色器](/windows/desktop/direct3d11/direct3d-11-advanced-stages-hull-shader-create)。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
@@ -77,7 +77,3 @@ MyOutPoint main(uint Id : SV_ControlPointID,
  
 
  
-
-
-
-

@@ -1,23 +1,23 @@
 ---
 title: 資料保護
-description: 本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP app 中的數位資料。
+description: 本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP 應用程式中的數位資料。
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 15feb86677cd70774a99fe4046d817c71fc71f90
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 67419be613c3bd3da4aa9b2b2cb3d265ae5b7c4f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372584"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167222"
 ---
 # <a name="data-protection"></a>資料保護
 
 
 
-本文說明如何使用 [**Windows.Security.Cryptography.DataProtection**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection) 命名空間中的 [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 類別，來加密和解密 UWP 應用程式中的數位資料。
+本文說明如何使用[**DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection)命名空間中的[**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider)類別，將 UWP 應用程式中的數位資料加密和解密。
 
 使用資料保護 API 有多種方式：
 
@@ -26,12 +26,12 @@ ms.locfileid: "66372584"
 -   使用對稱金鑰來保護資料。 例如，這種方式可以保護非 AD 主體的資料 (如 Live ID)。
 -   利用登入網站時使用的認證資料 (密碼) 來保護資料。
 
-若要保護資料，當您建立 [**DataProtectionProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 物件時，必須在呼叫 [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) 或 [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) 之前先指定保護描述元。 下列範例顯示可能的範例保護描述元。
+若要保護資料，當您建立 [**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) 物件時，必須在呼叫 [**ProtectAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) 或 [**ProtectStreamAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) 之前先指定保護描述元。 下列範例顯示可能的範例保護描述元。
 
 ## <a name="protecting-static-data"></a>保護靜態資料
 
 
-下列範例示範如何使用 [**ProtectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) 和 [**UnprotectAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) 方法，用非同步方式來保護目前使用者 SID 的靜態資料。
+下列範例示範如何使用 [**ProtectAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) 和 [**UnprotectAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) 方法，用非同步方式來保護目前使用者 SID 的靜態資料。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -116,7 +116,7 @@ namespace SampleProtectAsync
 ## <a name="protecting-stream-data"></a>保護串流資料
 
 
-下列範例示範如何使用 [**ProtectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) 和 [**UnprotectStreamAsync**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) 方法，以非同步方式來保護目前使用者 SID 的串流資料。
+下列範例示範如何使用 [**ProtectStreamAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) 和 [**UnprotectStreamAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) 方法，以非同步方式來保護目前使用者 SID 的串流資料。
 
 ```cs
 using Windows.Security.Cryptography;

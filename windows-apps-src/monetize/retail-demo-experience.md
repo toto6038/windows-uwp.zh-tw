@@ -1,82 +1,82 @@
 ---
-title: 將零售示範（RDX）功能新增至您的應用程式
-description: 準備您的應用程式以進行零售示範模式，協助在零售業銷售樓層展示您的應用程式。
+title: 將零售示範 (RDX) 功能新增至您的應用程式
+description: 準備您的應用程式以進行零售示範模式，協助展示您的應用程式在零售地板上。
 ms.assetid: f83f950f-7fdd-4f18-8127-b92a8f400061
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be39760ee2b8837cfb9b0809a354262e790970b
-ms.sourcegitcommit: 5dfa98a80eee41d97880dba712673168070c4ec8
+ms.openlocfilehash: 39f1cb7439c02f215824c6c632fb2e2fc6afdb39
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73051995"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164532"
 ---
-# <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範（RDX）功能新增至您的應用程式
+# <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能新增至您的應用程式
 
 在您的 Windows 應用程式中加入零售示範模式，讓在銷售場所試用電腦和裝置的客戶可以直接開始試用。
 
-當客戶在零售商店時，他們希望能夠試用電腦和裝置的示範。 他們通常會花費相當長的時間，透過[零售示範體驗（RDX）](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)在應用程式中播放。
+當客戶在零售商店時，他們希望能夠試用電腦和裝置的示範。 他們通常會透過 [零售示範體驗 (RDX) ](/windows-hardware/customize/desktop/retail-demo-experience)，花大量時間來處理應用程式。
 
-您可以設定您的應用程式，以在_一般_或_零售_模式中提供不同的體驗。 例如，如果您的應用程式是以安裝程式開始進行，您可以在零售模式中略過它，並使用範例資料和預設設定預先填入應用程式，讓他們可以直接前往。
+您可以設定應用程式，以在 _一般_ 或 _零售_ 模式下提供不同的體驗。 例如，如果您的應用程式是從安裝程式開始，您可以在零售模式中略過它，並使用範例資料和預設設定預先填入應用程式，讓他們可以直接跳到。
 
-從客戶的觀點來看，只有一個應用程式。 為了協助客戶區別這兩種模式，建議您在應用程式處於零售模式時，在標題列或適當的位置中，以醒目方式顯示「零售」這個字。
+從客戶的觀點來看，只有一個應用程式。 為了協助客戶區分這兩種模式，建議您在應用程式處於「零售」模式時，它會在標題列中或在適當的位置中，以醒目方式顯示「零售」一字。
 
-除了應用程式的 Microsoft Store 需求之外，RDX 感知應用程式也必須與 RDX 安裝程式、清除和更新流程相容，以確保客戶在零售商店擁有一致的正面體驗。
+除了應用程式的 Microsoft Store 需求以外，RDX 感知應用程式也必須與 RDX 設定、清理和更新程式相容，以確保客戶在零售商店擁有一致的正面體驗。
 
 ## <a name="design-principles"></a>設計原則
 
-* **展現您的最佳效果**。 使用零售示範體驗來展示應用程式 rocks 的原因。 這可能是您的第一次客戶看到您的應用程式，因此請將其顯示為最佳部分！
+* **展示您的最佳**選擇。 使用零售示範體驗來展示應用程式 rocks 的原因。 這很可能是您的客戶第一次看到您的應用程式，因此請將其顯示為最佳的部分！
 
 * **快速顯示**。 客戶可能沒有那麼多耐心 - 能讓使用者越快體驗到您 App 的實際價值越好。
 
-* **讓故事保持簡單**。 零售示範體驗是應用程式價值的電梯。
+* **讓故事保持簡潔**。 零售示範體驗是您應用程式價值的電梯簡報。
 
 * **專注于體驗**。 讓使用者有時間消化您的內容。 雖然讓他們快速進入最精彩的部分很重要，但設計適當的停頓可協助他們盡情享受這項體驗。
 
 ## <a name="technical-requirements"></a>技術需求
 
-由於 RDX 感知應用程式的目的是要向零售客戶展示您的應用程式，因此他們必須符合技術需求，並遵守 Microsoft Store 針對所有零售示範體驗應用程式所提供的隱私權規定。
+由於 RDX 感知應用程式的目的是要向零售客戶展示您的應用程式，因此必須符合技術需求，並遵守 Microsoft Store 針對所有零售示範體驗應用程式所提供的隱私權法規。
 
-這可以用來做為檢查清單，以協助您準備進行驗證程式，並在測試程式中提供清楚的說明。 請注意，您不僅要針對驗證程序維護這些需求，只要您的 App 持續在零售示範裝置上執行，您也必須針對零售示範體驗 App 的整個生命週期維護這些需求。
+這可以用來做為檢查清單，協助您準備進行驗證程式，並在測試程式中提供清楚的說明。 請注意，您不僅要針對驗證程序維護這些需求，只要您的 App 持續在零售示範裝置上執行，您也必須針對零售示範體驗 App 的整個生命週期維護這些需求。
 
 ### <a name="critical-requirements"></a>重要需求
 
-不符合這些重要需求的 RDX 感知應用程式，將會儘快從所有零售示範裝置中移除。
+不符合這些重要需求的 RDX 感知應用程式將會儘快從所有零售示範裝置移除。
 
-* **不要要求個人識別資訊（PII）** 。 這包括登入資訊、Microsoft 帳戶資訊或連絡人詳細資料。
+* **請勿要求 (PII) 的個人識別資訊 **。 這包括登入資訊、Microsoft 帳戶資訊或連絡人詳細資料。
 
-* **錯誤-免費體驗**。 您的 App 必須在執行時不發生任何錯誤。 此外，不應向使用零售示範裝置的客戶顯示任何錯誤快顯畫面或通知。 錯誤反映了應用程式本身、品牌、裝置品牌、裝置的 manufacturer's 品牌和 Microsoft 品牌的負面影響。
+* **無錯誤的體驗**。 您的 App 必須在執行時不發生任何錯誤。 此外，不應向使用零售示範裝置的客戶顯示任何錯誤快顯畫面或通知。 錯誤會在應用程式本身、品牌、裝置品牌、裝置的 manufacturer's 品牌，以及 Microsoft 的品牌之間有負面的反應。
 
-* **付費應用程式必須具有試用模式**。 您的應用程式必須是免費或包含[試用模式](https://docs.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客戶不會想要為零售商店中的體驗支付費用。
+* **付費應用程式必須有試用模式**。 您的應用程式必須是免費的或包含 [試用模式](./exclude-or-limit-features-in-a-trial-version-of-your-app.md)。 客戶不會想要為零售商店中的體驗支付費用。
 
 ### <a name="high-priority-requirements"></a>高優先順序需求
 
-不符合這些高優先順序需求的 RDX 感知應用程式，必須立即調查修正程式。 如果找不到立即的修正程式，此 App 便可能從所有的零售示範裝置中被移除。
+不符合這些高優先順序需求的 RDX 感知應用程式，必須立即調查是否有修正問題。 如果找不到立即的修正程式，此 App 便可能從所有的零售示範裝置中被移除。
 
-* **記住離線體驗**。 您的應用程式需要示範絕佳的離線體驗，因為在零售位置上，大約50% 的裝置已離線。 這是要確保與您 App 進行離線互動的客戶仍然能夠享有有意義且正面的體驗。
+* 令人**印象深刻的離線體驗**。 因為大約50% 的裝置在零售地點離線，所以您的應用程式需要示範絕佳的離線體驗。 這是要確保與您 App 進行離線互動的客戶仍然能夠享有有意義且正面的體驗。
 
-* **已更新內容體驗**。 在線上時，您的應用程式永遠不會提示更新。 如果需要更新，則應該以無訊息模式執行。
+* **更新的內容體驗**。 當您的應用程式上線時，永遠不會提示您進行更新。 如果需要更新，則應該以無訊息模式執行。
 
-* **無匿名通訊**。 因為使用零售示範裝置的客戶是匿名使用者，所以他們不應該能夠從裝置訊息或共用內容。
+* **無匿名通訊**。 因為使用零售示範裝置的客戶是匿名使用者，所以不能從裝置訊息或共用內容。
 
-* **使用清除程式來提供一致的體驗**。 每個客戶在走近零售示範裝置時都應該有相同的體驗。 您的應用程式應該使用[清除進程](#cleanup-process)，在每次使用之後回到相同的預設狀態。 我們不想讓下一個客戶看到最後一個客戶留下的內容。 這包括計分板、成就及解鎖項目。
+* **使用清除程式提供一致的體驗**。 每個客戶在走近零售示範裝置時都應該有相同的體驗。 在每次使用之後，您的應用程式都應該使用 [清除](#cleanup-process) 程式以返回相同的預設狀態。 我們不希望下一個客戶看到最後一個客戶的背後。 這包括計分板、成就及解鎖項目。
 
-* **保留適當的內容**。 所有應用程式內容都必須獲派「青少年」或「較低」的評等類別。 若要深入瞭解，請參閱[讓您的應用程式依 IARC](https://www.globalratings.com/for-developers.aspx)和[ESRB 評等評分](https://www.esrb.org/ratings/ratings_guide.aspx)。
+* **使用適當的內容**。 所有應用程式內容都需要指派青少年或低評等類別。 若要深入瞭解，請參閱 [讓您的應用程式依 IARC](https://www.globalratings.com/for-developers.aspx) 和 [ESRB 評等評分](https://www.esrb.org/ratings/ratings_guide.aspx)。
 
 ### <a name="medium-priority-requirements"></a>中優先順序需求
 
 「Windows 零售商店」小組可以直接接觸開發人員，來發起一個有關如何修正這修問題的討論。
 
-* **能夠成功地在各種裝置上執行**。 應用程式必須在所有裝置上順利執行，包括具有低端規格的裝置。 如果應用程式安裝在不符合最小規格的裝置上，應用程式就必須清楚告知使用者這種情況。 最低裝置需求必須公開，以便讓 App 一律能夠以高效能模式執行。
+* **能夠順利執行一系列裝置**。 應用程式必須在所有裝置上都能正常運作，包括具有低終端規格的裝置。 如果應用程式安裝在不符合最低規格的裝置上，應用程式必須清楚告知使用者這項資訊。 最低裝置需求必須公開，以便讓 App 一律能夠以高效能模式執行。
 
-* **符合零售商店應用程式的大小需求**。 App 大小必須小於 800 MB。 如果您的 RDX 感知應用程式不符合大小需求，請直接聯絡 Windows 零售商店小組以進一步討論。
+* **符合零售商店應用程式大小需求**。 App 大小必須小於 800 MB。 如果您的 RDX 感知應用程式不符合大小需求，請直接洽詢 Windows 零售商店小組以進一步討論。
 
 ## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>RetailInfo API：準備您的程式碼以進行示範模式
 
 ### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
-[**RetailInfo**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)公用程式類別中的[**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)屬性是 windows 10 SDK 中的[windows. Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空間的一部分，用來做為布林值指標，以指定應用程式執行時所使用的程式碼路徑-_正常_模式或_零售_模式。
+[**RetailInfo**](/uwp/api/Windows.System.Profile.RetailInfo)公用程式類別中的[**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)屬性，這是[Windows.System 的一部分。](/uwp/api/windows.system.profile)WINDOWS 10 SDK 中的設定檔命名空間是用來做為布林值指標，以指定您的應用程式在_一般_模式或_零售_模式上執行的程式碼路徑。
 
 ``` csharp
 using Windows.Storage;
@@ -129,7 +129,7 @@ if (Windows.System.Profile.retailInfo.isDemoModeEnabled) {
 
 ### <a name="retailinfoproperties"></a>RetailInfo。屬性
 
-當 [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) 傳回 true 時，您可以使用 [**RetailInfo.Properties**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.properties) 來查詢裝置相關的一組屬性，以建置一個自訂程度更高的零售示範體驗。 這些屬性包括 [**ManufacturerName**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](https://docs.microsoft.com/uwp/api/windows.system.profile.knownretailinfoproperties.memory) 等。
+當 [**IsDemoModeEnabled**](/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled) 傳回 true 時，您可以使用 [**RetailInfo.Properties**](/uwp/api/windows.system.profile.retailinfo.properties) 來查詢裝置相關的一組屬性，以建置一個自訂程度更高的零售示範體驗。 這些屬性包括 [**ManufacturerName**](/uwp/api/windows.system.profile.knownretailinfoproperties.manufacturername)、[**Screensize**](/uwp/api/windows.system.profile.knownretailinfoproperties.screensize)、[**Memory**](/uwp/api/windows.system.profile.knownretailinfoproperties.memory) 等。
 
 ```csharp
 using Windows.UI.Xaml.Controls;
@@ -156,7 +156,7 @@ var pro = Windows.System.Profile;
 console.log(pro.retailInfo.properties[pro.KnownRetailInfoProperties.price);
 ```
 
-#### <a name="idl"></a>IDL
+#### <a name="idl"></a>Idl
 
 ```cpp
 //  Copyright (c) Microsoft Corporation. All rights reserved.
@@ -229,11 +229,11 @@ namespace Windows.System.Profile
 
 ## <a name="cleanup-process"></a>清除進程
 
-當購物者停止與裝置互動之後，就會開始清除兩分鐘。 零售示範會進行播放，而 Windows 會開始重設連絡人、相片和其他應用程式中的任何範例資料。 視裝置而定，這可能需要1-5 分鐘的時間，才能將所有內容全部恢復正常。 這可確保零售商店中的每個客戶都能引導至裝置，並在與裝置互動時擁有相同的體驗。
+當購物者停止與裝置互動後，就會開始進行清除兩分鐘。 零售示範的播放，Windows 會開始重設連絡人、相片和其他應用程式中的任何範例資料。 視裝置而定，這可能需要1-5 分鐘的時間，才能將所有專案全部恢復正常。 這可確保零售商店中的每個客戶都可以在裝置上進行互動，並在與裝置互動時獲得相同的體驗。
 
 步驟1：清除
 * 所有 Win32 和 Microsoft Store  App 都會被關閉
-* 在已知資料夾 (例如 __\[圖片\]__ 、 __\[影片\]__ 、 __\[音樂\]__ 、 __\[文件\]__ 、 __\[已儲存的相片\]__ 、 __\[手機相簿\]__ 、 __\[桌面\]__ 及 __\[下載\]__ 資料夾) 中的所有檔案都會被刪除
+* 已知資料夾中的所有__檔案（例如____圖片__、影片、__音樂__、__檔__、 __SavedPictures__、 __CameraRoll__、__桌面__及__下載__資料夾）都會刪除
 * 非結構化和結構化漫遊狀態都會被刪除
 * 結構化本機狀態會被刪除
 
@@ -243,15 +243,15 @@ namespace Windows.System.Profile
 
 ### <a name="store-data-across-user-sessions"></a>跨使用者會話儲存資料
 
-若要跨使用者會話儲存資料，您可以將資訊儲存在__ApplicationData__中，因為預設清除進程不會自動刪除此資料夾中的資料。 請注意，在清除過程中，會刪除使用*LocalState*儲存的資訊。
+若要跨使用者會話儲存資料，您可以將資訊儲存在 __ApplicationData__ 中，因為預設清除程式不會自動刪除此資料夾中的資料。 請注意，在清除過程中，會刪除使用 *LocalState* 儲存的資訊。
 
 ### <a name="customize-the-cleanup-process"></a>自訂清除進程
 
-若要自訂清除程式，請將 `Microsoft-RetailDemo-Cleanup` app service 部署到您的應用程式中。
+若要自訂清除程式，請在 `Microsoft-RetailDemo-Cleanup` 您的應用程式中執行 app service。
 
-需要自訂清除邏輯的情況包括執行廣泛的設定、下載和快取資料，或不想要刪除*LocalState*資料。
+需要自訂清除邏輯的案例包括執行廣泛的安裝、下載及快取資料，或不想要刪除 *LocalState* 資料。
 
-步驟1：在您的應用程式資訊清單中宣告_Microsoft RetailDemo-清除_服務。
+步驟1：在您的應用程式資訊清單中宣告 _Microsoft RetailDemo 清除_ 服務。
 ``` CSharp
   <Applications>
       <Extensions>
@@ -264,7 +264,7 @@ namespace Windows.System.Profile
 
 ```
 
-步驟2：使用下列範例範本，在_AppdataCleanup_ case 函式下執行您的自訂清除邏輯。
+步驟2：使用下列範例範本，在 _AppdataCleanup_ 案例函式下執行您的自訂清除邏輯。
 ``` CSharp
 using System;
 using System.IO;
@@ -359,7 +359,7 @@ namespace MyCompany.MyApp
 
 ## <a name="related-links"></a>相關連結
 
-* [儲存和取出應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [如何建立和使用 app service](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
-* [當地語系化應用程式內容](https://docs.microsoft.com/windows/uwp/globalizing/globalizing-portal)
-* [零售示範體驗（RDX）](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)
+* [儲存和擷取應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
+* [如何建立及使用 app service](../launch-resume/how-to-create-and-consume-an-app-service.md)
+* [將 App 當地語系化](../design/globalizing/globalizing-portal.md)
+* [零售示範體驗 (RDX) ](/windows-hardware/customize/desktop/retail-demo-experience)

@@ -1,29 +1,29 @@
 ---
-Description: 您可以使用 SendRequestAsync 方法，將要求傳送至 Microsoft Store，以取得 Windows SDK 中尚未提供 API 的作業。
+Description: 您可以使用 SendRequestAsync 方法將要求傳送至 Microsoft Store，以找出 Windows SDK 中還沒有 API 可用的作業。
 title: 傳送要求至 Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 810c546eb0ee0263dcb50b3ce58e593ad294435c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867328"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164492"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>傳送要求至 Microsoft Store
 
-從 Windows 10 版本 1607 開始，Windows SDK 在 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中針對 Microsoft Store 相關作業 (例如 App 內購買) 提供 API。 不過，雖然支援 Microsoft Store 的服務會在作業系統發行之間經常更新、擴展和改良，新 API 通常只在主要作業系統發行期間加入 Windows SDK。
+從 Windows 10 版本 1607 開始，Windows SDK 在 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間中針對 Microsoft Store 相關作業 (例如 App 內購買) 提供 API。 不過，雖然支援 Microsoft Store 的服務會在作業系統發行之間經常更新、擴展和改良，新 API 通常只在主要作業系統發行期間加入 Windows SDK。
 
-我們提供 [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) 方法，以方便您在新版的 Windows SDK 發行之前，提供新的 Microsoft Store 作業給通用 Windows 平台 (UWP) 應用程式使用。 您可以使用此方法，針對 Windows SDK 最新版本中沒有對應 API 的新作業，將要求傳送給 Microsoft Store。
+我們提供 [SendRequestAsync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) 方法，以方便您在新版的 Windows SDK 發行之前，提供新的 Microsoft Store 作業給通用 Windows 平台 (UWP) 應用程式使用。 您可以使用此方法，針對 Windows SDK 最新版本中沒有對應 API 的新作業，將要求傳送給 Microsoft Store。
 
 > [!NOTE]
 > **SendRequestAsync** 方法僅適用於目標為 Windows 10 版本 1607 或更新版本的 app。 這個方法支援的一些要求，只在 Windows 10 版本 1607 之後版本中受支援。
 
-**SendRequestAsync** 是 [StoreRequestHelper](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper) 類別的靜態方法。 若要呼叫這個方法，您必須將下列資訊傳遞給此方法：
-* [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 物件，提供您想要為其執行作業的使用者相關資訊。 如需有關這個物件的詳細資訊，請參閱[開始使用 StoreContext 類別](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class)。
+**SendRequestAsync** 是 [StoreRequestHelper](/uwp/api/windows.services.store.storerequesthelper) 類別的靜態方法。 若要呼叫這個方法，您必須將下列資訊傳遞給此方法：
+* [StoreContext](/uwp/api/windows.services.store.storecontext) 物件，提供您想要為其執行作業的使用者相關資訊。 如需有關這個物件的詳細資訊，請參閱[開始使用 StoreContext 類別](in-app-purchases-and-trials.md#get-started-with-the-storecontext-class)。
 * 整數，辨識您想要傳送給 Microsoft Store 的要求。
 * 如果要求支援任何引數，您也可以傳遞 JSON 格式化字串，其中包含與要求一起傳遞的引數。
 
@@ -58,7 +58,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 **SendRequestAsync** 方法支援正式發行前小眾測試版群組案例的一組要求，例如將使用者或裝置新增至正式發行前小眾測試版群組。 若要提交這些要求，傳送值 7 或 8 至 *requestKind* 參數，並將 JSON 格式化字串傳送至 *parametersAsJson* 參數，表示您想要與任何相關引數一起提交的要求。 這些 *requestKind* 值在下列方面不同。
 
-|  要求類型值  |  描述  |
+|  要求類型值  |  說明  |
 |----------------------|---------------|
 |  7                   |  要求是在目前裝置的內容中執行。 這個值僅能在 Windows 10 版本 1703 或更新版本中使用。  |
 |  8                   |  要求是在目前已登入 Microsoft Store 之使用者的內容中執行。 這個值可以在 Windows 10 版本 1607 或更新版本中使用。  |
@@ -72,12 +72,12 @@ public async Task<bool> AddUserToFlightGroup()
 
 此要求擷取目前使用者或裝置所屬最高排名之正式發行前小眾測試版群組的遠端變數。 若要傳送這個要求，傳遞下列資訊到 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 參數。
 
-|  參數  |  描述  |
+|  參數  |  說明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7，傳回裝置所屬最高排名之正式發行前小眾測試版群組，或指定 8 傳回目前使用者與裝置所屬最高排名之正式發行前小眾測試版群組。 我們建議 *requestKind* 參數使用值 8，因為這個值會跨目前使用者及裝置的成員資格，傳回最高排名之正式發行前小眾測試版群組。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
 
-下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將 [ *projectId* ] 欄位指派給您在 [合作夥伴中心] 中定義遠端變數的專案識別碼。
+下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將 *projectId* 欄位指派給您在合作夥伴中心中定義遠端變數的專案識別碼。
 
 ```json
 { 
@@ -86,9 +86,9 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-您提交此要求後，[StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [Response](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) 屬性包含有下列欄位的 JSON 格式化字串。
+您提交此要求後，[StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) 屬性包含有下列欄位的 JSON 格式化字串。
 
-|  欄位  |  描述  |
+|  欄位  |  說明  |
 |----------------------|---------------|
 |  *匿名*                   |  布林值，**true** 表示使用者或裝置身分識別未出現在要求中，**false** 表示使用者或裝置身分識別出現在要求中。  |
 |  *name*                   |  字串，包含裝置或使用者所屬最高排名之正式發行前小眾測試版群組的名稱。  |
@@ -115,7 +115,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要傳送這個要求，傳遞下列資訊到 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 參數。
 
-|  參數  |  描述  |
+|  參數  |  說明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 將裝置新增到正式發行前小眾測試版群組中，或指定 8 將目前已登入 Microsoft Store 之使用者新增到正式發行前小眾測試版群組中。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
@@ -129,7 +129,7 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-如果要求發生錯誤，[StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 屬性包含回應碼。
+如果要求發生錯誤，[StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 屬性包含回應碼。
 
 ### <a name="remove-the-current-device-or-user-from-a-flight-group"></a>從正式發行前小眾測試版群組移除目前裝置或使用者
 
@@ -138,7 +138,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要傳送這個要求，傳遞下列資訊到 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 參數。
 
-|  參數  |  描述  |
+|  參數  |  說明  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 從正式發行前小眾測試版群組中移除裝置，或指定 8 從正式發行前小眾測試版群組中移除目前已登入 Microsoft Store 之使用者。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
@@ -152,9 +152,9 @@ public async Task<bool> AddUserToFlightGroup()
 }
 ```
 
-如果要求發生錯誤，[StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [HttpStatusCode](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 屬性包含回應碼。
+如果要求發生錯誤，[StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) 屬性包含回應碼。
 
 ## <a name="related-topics"></a>相關主題
 
 * [顯示您的應用程式中的評分並評論對話方塊](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)
-* [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)
+* [SendRequestAsync](/uwp/api/windows.services.store.storerequesthelper.sendrequestasync)

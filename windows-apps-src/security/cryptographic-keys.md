@@ -4,14 +4,14 @@ description: 本文說明如何使用標準金鑰衍生函式來衍生金鑰，�
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae9d6e3092acb994c755b01d2ed2487c71011c1
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a781ae79b54223916c9de379dcdb4f8cb3b8e4b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66372607"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167252"
 ---
 # <a name="cryptographic-keys"></a>密碼編譯金鑰
 
@@ -23,7 +23,7 @@ ms.locfileid: "66372607"
 ## <a name="symmetric-keys"></a>對稱金鑰
 
 
-對稱金鑰加密又稱為祕密金鑰加密，在加密和解密時需要使用同一個金鑰。 您可以使用 [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 類別來指定對稱演算法以及建立或匯入金鑰。 您可以透過使用演算法和金鑰，在 [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 類別上使用靜態方法來加密和解密資料。
+對稱金鑰加密又稱為祕密金鑰加密，在加密和解密時需要使用同一個金鑰。 您可以使用 [**SymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 類別來指定對稱演算法以及建立或匯入金鑰。 您可以透過使用演算法和金鑰，在 [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 類別上使用靜態方法來加密和解密資料。
 
 對稱金鑰加密通常會使用區塊密碼和區塊密碼模式。 區塊密碼是一種對稱式加密功能，可以在固定大小的區塊上操作。 如果您想要加密的訊息長度大於區塊長度，則必須使用區塊密碼模式。 區塊密碼模式是使用區塊密碼建置的對稱式加密功能。 它會將純文字加密成一連串固定大小的區塊。 下列是應用程式支援的模式：
 
@@ -32,18 +32,18 @@ ms.locfileid: "66372607"
 -   CCM (CBC-MAC 計數器) 模式會結合 CBC 區塊密碼模式和訊息驗證碼 (MAC)。
 -   GCM (Galois 計數器模式) 模式會結合計數器加密模式和 Galois 驗證模式。
 
-一些像是 CBC 的模式會要求您針對第一個加密文字區塊使用初始化向量 (IV)。 以下為常見的初始化向量。 呼叫 [**CryptographicEngine.Encrypt**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographicengine.encrypt) 時，您可以指定 IV。 在大部分情況下，絕對不能使用相同金鑰重複使用 IV，這點很重要。
+一些像是 CBC 的模式會要求您針對第一個加密文字區塊使用初始化向量 (IV)。 以下為常見的初始化向量。 呼叫 [**CryptographicEngine.Encrypt**](/uwp/api/windows.security.cryptography.core.cryptographicengine.encrypt) 時，您可以指定 IV。 在大部分情況下，絕對不能使用相同金鑰重複使用 IV，這點很重要。
 
 -   「固定」針對要加密的所有訊息使用相同的 IV。 但這樣會造成資訊外洩，因此不建議使用。
 -   「計數器」會讓每個區塊的 IV 遞增。
--   「隨機」會建立虛擬隨機的 IV。 您可以使用 [**CryptographicBuffer.GenerateRandom**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom) 來建立 IV。
+-   「隨機」會建立虛擬隨機的 IV。 您可以使用 [**CryptographicBuffer.GenerateRandom**](/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom) 來建立 IV。
 -   「Nonce 產生」會針對每個要加密的訊息使用唯一數字。 Nonce 通常是一個修改過的訊息或者交易識別碼。 Nonce 不需要保密，不過在相同金鑰之下切勿重複使用它。
 
 多數模式都會規定純文字長度必須是區塊大小的整數倍數。 通常您需要填補其他純文字才能取得適當的長度。
 
 區塊密碼可以加密固定大小的資料區塊，而串流密碼是對稱加密功能，結合純文字位元和虛擬隨機位元串流 (稱為金鑰串流) 來產生加密文字。 部分像是輸出回饋模式 (OTF) 以及計數器模式 (CTR) 的區塊密碼模式，可以有效地將區塊密碼轉換成串流密碼。 不過，像 RC4 這樣的實際串流密碼，它的運作通常可以達到比區塊密碼模式更高的速度。
 
-下列範例示範如何使用 [**SymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 類別來建立對稱金鑰，並使用它來加密和解密資料。
+下列範例示範如何使用 [**SymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) 類別來建立對稱金鑰，並使用它來加密和解密資料。
 
 ## <a name="asymmetric-keys"></a>非對稱金鑰
 
@@ -62,17 +62,17 @@ ms.locfileid: "66372607"
 -   Alice 使用她的私密金鑰 (從私密/公開金鑰組) 來解密 Bob 的對稱金鑰。
 -   Alice 使用 Bob 的對稱金鑰來解密電子郵件。
 
-您可以使用 [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 物件指定非對稱式演算法或簽章演算法，以建立或匯入一個暫時金鑰組，或是匯入金鑰組的公開金鑰部分。
+您可以使用 [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 物件指定非對稱式演算法或簽章演算法，以建立或匯入一個暫時金鑰組，或是匯入金鑰組的公開金鑰部分。
 
 ## <a name="deriving-keys"></a>衍生金鑰
 
 
-您通常需要從共用密碼來衍生其他金鑰。 您可以使用 [**KeyDerivationAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider) 類別，以及 [**KeyDerivationParameters**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.KeyDerivationParameters) 類別中下列專用方法的其中一種來衍生金鑰。
+您通常需要從共用密碼來衍生其他金鑰。 您可以使用 [**KeyDerivationAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.KeyDerivationAlgorithmProvider) 類別，以及 [**KeyDerivationParameters**](/uwp/api/Windows.Security.Cryptography.Core.KeyDerivationParameters) 類別中下列專用方法的其中一種來衍生金鑰。
 
-| 物件                                                                            | 描述                                                                                                                                |
+| Object                                                                            | 描述                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforpbkdf2)    | 建立用於密碼型金鑰衍生函數 2 (PBKDF2) 的 KeyDerivationParameters 物件。                                 |
-| [**BuildForSP800108**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforsp800108)  | 建立用於計數器模式、雜湊訊息驗證碼 (HMAC) 金鑰衍生函數的 KeyDerivationParameters 物件。 |
-| [**BuildForSP80056a**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforsp80056a)  | 建立用於 SP800-56A 金鑰衍生函數的 KeyDerivationParameters 物件。                                                 |
+| [**BuildForPbkdf2**](/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforpbkdf2)    | 建立用於密碼型金鑰衍生函數 2 (PBKDF2) 的 KeyDerivationParameters 物件。                                 |
+| [**BuildForSP800108**](/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforsp800108)  | 建立用於計數器模式、雜湊訊息驗證碼 (HMAC) 金鑰衍生函數的 KeyDerivationParameters 物件。 |
+| [**BuildForSP80056a**](/uwp/api/windows.security.cryptography.core.keyderivationparameters.buildforsp80056a)  | 建立用於 SP800-56A 金鑰衍生函數的 KeyDerivationParameters 物件。                                                 |
 
  

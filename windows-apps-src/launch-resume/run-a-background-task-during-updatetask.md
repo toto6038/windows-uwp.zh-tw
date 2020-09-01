@@ -3,14 +3,14 @@ title: 在更新 UWP 應用程式時執行背景工作
 description: 了解如何在更新通用 Windows 平台 (UWP) 市集應用程式時執行背景工作。
 ms.date: 04/21/2017
 ms.topic: article
-keywords: windows 10，uwp，更新，背景工作，updatetask，背景工作
+keywords: windows 10、uwp、更新、背景工作、updatetask、背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 15406e52eeceb579f2add783c74a1011074c69b7
-ms.sourcegitcommit: d38e2f31c47434cd6dbbf8fe8d01c20b98fabf02
+ms.openlocfilehash: ff4dd5487357728b6a79f4c4d31a437075fcd006
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70393550"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164802"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在更新 UWP 應用程式時執行背景工作
 
@@ -18,18 +18,18 @@ ms.locfileid: "70393550"
 
 「更新工作」背景工作是在使用者安裝已安裝於裝置之 App 的更新之後，由作業系統叫用。 這可讓 App 在使用者啟動更新的 App 之前執行初始化工作，例如初始化新的推播通知通道、更新資料庫結構描述等工作。
 
-「更新工作」不同於使用 [ServicingComplete](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 觸發程序啟動背景工作，因為在此情況下，您的 App 就必須在更新之前執行至少一次，才能註冊將會由 **ServicingComplete** 觸發程序啟動的背景工作。  「更新工作」未註冊，也因此從未執行 App，若不是升級，仍將觸發其更新工作。
+「更新工作」不同於使用 [ServicingComplete](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 觸發程序啟動背景工作，因為在此情況下，您的 App 就必須在更新之前執行至少一次，才能註冊將會由 **ServicingComplete** 觸發程序啟動的背景工作。  「更新工作」未註冊，也因此從未執行 App，若不是升級，仍將觸發其更新工作。
 
-## <a name="step-1-create-the-background-task-class"></a>步驟 1:建立背景工作類別
+## <a name="step-1-create-the-background-task-class"></a>步驟 1：建立背景工作類別
 
-與其他類型的背景工作一樣，您會將「更新工作」背景工作實作為 Windows 執行階段元件。 若要建立此元件，請依照[建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) **「建立背景工作類別」** 一節中的步驟進行。 這些步驟包括：
+與其他類型的背景工作一樣，您會將「更新工作」背景工作實作為 Windows 執行階段元件。 若要建立此元件，請依照[建立和註冊跨處理序背景工作](./create-and-register-a-background-task.md)**「建立背景工作類別」** 一節中的步驟進行。 步驟包括：
 
-- 將 Windows 執行階段元件專案新增至您的方案。
+- 將 Windows 執行階段元件專案加入至方案。
 - 從 App 建立元件的參考。
-- 在實作 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 的元件中建立公用密封類別。
-- 實作 [**Run**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法，這是在執行「更新工作」時呼叫的必要進入點。 如果您要從背景工作進行非同步呼叫，[建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task) 會說明如何在 **Run** 方法中使用延遲。
+- 在實作 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 的元件中建立公用密封類別。
+- 實作 [**Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法，這是在執行「更新工作」時呼叫的必要進入點。 如果您要從背景工作進行非同步呼叫，[建立和註冊跨處理序背景工作](./create-and-register-a-background-task.md) 會說明如何在 **Run** 方法中使用延遲。
 
-您不需要註冊此背景工作 ( **「建立和註冊跨處理序背景工作」** 主題中的「註冊要執行的背景工作」一節)，就能使用「更新工作」。 這就是使用「更新工作」的主要原因，因為您不需要新增任何程式碼至 App 來註冊背景工作，而且 App 不必在更新之前至少執行一次，也能註冊背景工作。
+您不需要註冊此背景工作 (**「建立和註冊跨處理序背景工作」** 主題中的「註冊要執行的背景工作」一節)，就能使用「更新工作」。 這就是使用「更新工作」的主要原因，因為您不需要新增任何程式碼至 App 來註冊背景工作，而且 App 不必在更新之前至少執行一次，也能註冊背景工作。
 
 下列範例程式碼使用 C# 示範「更新工作」背景工作類別的基本起點： 背景工作類別本身 (及背景工作專案中的所有其他類別) 必須是 **public** 和 **sealed**。 背景工作類別必須衍生自 **IBackgroundTask**，並且具有如下所示簽章的公用 **Run()** 方法：
 
@@ -48,9 +48,9 @@ namespace BackgroundTasks
 }
 ```
 
-## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>步驟 2:在封裝資訊清單中宣告背景工作
+## <a name="step-2-declare-your-background-task-in-the-package-manifest"></a>步驟 2：在封裝資訊清單中宣告背景工作
 
-在 Visual Studio 方案總管中，以滑鼠右鍵按一下 **Package.appxmanifest**，然後按一下 **[檢視程式碼]** 以檢視封裝資訊清單。 新增下列 `<Extensions>` XML 來宣告更新工作：
+在 Visual Studio 方案總管中，以滑鼠右鍵按一下 **Package.appxmanifest**，然後按一下**\[檢視程式碼\]** 以檢視封裝資訊清單。 新增下列 `<Extensions>` XML 來宣告更新工作：
 
 ```XML
 <Package ...>
@@ -68,9 +68,9 @@ namespace BackgroundTasks
 </Package>
 ```
 
-在上述 XML 中，確定 `EntryPoint` 屬性已設定為更新工作的 namespace.class 名稱。 此名稱區分大小寫。
+在上述 XML 中，確定 `EntryPoint` 屬性已設定為更新工作的 namespace.class 名稱。 名稱區分大小寫。
 
-## <a name="step-3-debugtest-your-update-task"></a>步驟 3：Debug/test 您的更新工作
+## <a name="step-3-debugtest-your-update-task"></a>步驟 3：偵錯/測試更新工作
 
 確定您已將 App 部署到電腦，讓其中有要更新的項目。
 
@@ -78,7 +78,7 @@ namespace BackgroundTasks
 
 ![設定中斷點](images/run-func-breakpoint.png)
 
-接下來，在方案總管中，以滑鼠右鍵按一下 App 的專案 (而非背景工作專案)，然後按一下 **[屬性]** 。 在應用程式的屬性視窗中，按一下左側的 **\[偵錯\]** ，然後選取 **\[不啟動，但在我的程式碼啟動時進行偵錯\]** ：
+接下來，在方案總管中，以滑鼠右鍵按一下 App 的專案 (而非背景工作專案)，然後按一下**\[屬性\]**。 在應用程式的屬性視窗中，按一下左側的 **\[偵錯\]**，然後選取 **\[不啟動，但在我的程式碼啟動時進行偵錯\]**：
 
 ![設定偵錯設定](images/do-not-launch-but-debug.png)
 
@@ -86,13 +86,13 @@ namespace BackgroundTasks
 
 ![更新版本](images/bump-version.png)
 
-現在，當您按下 F5 時，在 Visual Studio 2019 中，您的應用程式將會更新，而系統將會在背景中啟動您的 UpdateTask 元件。 偵錯工具會自動連結到背景處理程序。 觸及中斷點後，您即可逐步檢查更新程式碼邏輯。
+現在，在 Visual Studio 2019 中，當您按下 F5 時，將會更新您的應用程式，而且系統會在背景中啟動您的 UpdateTask 元件。 偵錯工具會自動連結到背景處理程序。 觸及中斷點後，您即可逐步檢查更新程式碼邏輯。
 
 背景工作完成時，就可以在相同偵錯工作階段中，從 Windows [開始] 功能表啟動前景 App。 偵錯工具會再次自動連結，但這次是連結到前景處理程序，您可以逐步檢查 App 的邏輯。
 
 > [!NOTE]
-> Visual Studio 2015 使用者：上述步驟適用于 Visual Studio 2017 或 Visual Studio 2019。 如果使用的是 Visual Studio 2015，除了 Visual Studio 不會連結到 UpdateTask 之外，您都可以使用相同的技術來觸發和測試它。 VS 2015 中的替代程序是設定 [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)，這會將 UpdateTask 設定為其進入點，並直接從前景 App 觸發執行。
+> Visual Studio 2015 使用者：上述步驟適用于 Visual Studio 2017 或 Visual Studio 2019。 如果使用的是 Visual Studio 2015，除了 Visual Studio 不會連結到 UpdateTask 之外，您都可以使用相同的技術來觸發和測試它。 VS 2015 中的替代程序是設定 [ApplicationTrigger](./trigger-background-task-from-app.md)，這會將 UpdateTask 設定為其進入點，並直接從前景 App 觸發執行。
 
 ## <a name="see-also"></a>另請參閱
 
-[建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[建立及註冊跨處理序的背景工作](./create-and-register-a-background-task.md)

@@ -4,14 +4,14 @@ title: 組合視覺效果
 description: 「組合視覺效果」構成組合 API 的所有其他功能所使用和倚賴的視覺化樹狀結構。 API 可讓開發人員定義及建立一或多個視覺物件，每個物件各代表視覺化樹狀結構中的單一節點。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6d150f2f882348bffb36dd2918f0f61ea1586c7
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 70f71265ff763ff8a160705694476e03bf8b6667
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66360491"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166352"
 ---
 # <a name="composition-visual"></a>組合視覺效果
 
@@ -21,11 +21,11 @@ ms.locfileid: "66360491"
 
 有三個構成視覺化樹狀結構的視覺效果類型，外加一個含有多個影響視覺效果內容之子類別的基底筆刷類別：
 
-- [**Visual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) – 基底物件時，大多數的屬性是在這裡，和其他視覺物件所繼承。
-- [**ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual) – 衍生自[**視覺**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)，並將能夠建立子系。
-- [**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) – 衍生自[ **ContainerVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ContainerVisual)並將功能加入至關聯的筆刷，讓視覺效果可以轉譯的像素為單位，包括影像、 效果或完整色彩。
+- [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
+- [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) – 衍生自 [**Visual**](/uwp/api/Windows.UI.Composition.Visual)，並且會新增建立子系的能力。
+- [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – 衍生自 [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
 
-您可以使用 [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) 和其子類別 (包括[**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush))，將內容和效果套用至 SpriteVisuals。 若要深入了解筆刷，請參閱 [**CompositionBrush 概觀**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes) (英文)。
+您可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 和其子類別 (包括[**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush))，將內容和效果套用至 SpriteVisuals。 若要深入了解筆刷，請參閱 [**CompositionBrush 概觀**](./composition-brushes.md) (英文)。
 
 ## <a name="the-compositionvisual-sample"></a>CompositionVisual 範例
 
@@ -44,7 +44,7 @@ ms.locfileid: "66360491"
 
 ## <a name="creating-a-compositor"></a>建立撰寫器
 
-建立 [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 並將它儲存在變數中以做為處理站，是相當簡單的工作。 以下程式碼片段示範如何建立一個新的 **Compositor**：
+建立 [**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) 並將它儲存在變數中以做為處理站，是相當簡單的工作。 以下程式碼片段示範如何建立一個新的 **Compositor**：
 
 ```cs
 _compositor = new Compositor();
@@ -52,18 +52,18 @@ _compositor = new Compositor();
 
 ## <a name="creating-a-spritevisual-and-colorbrush"></a>建立 SpriteVisual 和 ColorBrush
 
-使用 [**Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 可讓您在需要物件時輕鬆建立物件， 例如 [**SpriteVisual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual) 和 [**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)：
+使用 [**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) 可讓您在需要物件時輕鬆建立物件， 例如 [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) 和 [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)：
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-雖然這是只需幾行程式碼時，它會示範一個功能強大的概念：[**SpriteVisual** ](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.SpriteVisual)物件會影響系統的核心。 **SpriteVisual** 可在色彩、影像及效果建立上，提供絕佳的彈性和相互作用。 **SpriteVisual** 是單一的視覺效果類型，可以使用筆刷 (在此案例中為單色) 填滿 2D 矩形。
+雖然這只是幾行的程式碼，但卻展示了一個強大的概念，亦即：[**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) 物件是效果系統的核心。 **SpriteVisual** 可在色彩、影像及效果建立上，提供絕佳的彈性和相互作用。 **SpriteVisual**是單一視覺效果類型，可以使用筆刷（在此案例中為純色）填滿2d 矩形。
 
 ## <a name="clipping-a-visual"></a>裁剪視覺效果
 
-[  **Compositor**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Compositor) 也可以用來建立對 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 的裁剪。 以下範例來自使用 [**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) 來修剪視覺效果之每一面的樣本：
+[**Compositor**](/uwp/api/Windows.UI.Composition.Compositor) 也可以用來建立對 [**Visual**](/uwp/api/Windows.UI.Composition.Visual) 的裁剪。 以下範例來自使用 [**InsetClip**](/uwp/api/Windows.UI.Composition.InsetClip) 來修剪視覺效果之每一面的樣本：
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -74,11 +74,11 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-與 API 中的其他物件相同，[**InsetClip**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.InsetClip) 的屬性也可以套用動畫效果。
+與 API 中的其他物件相同，[**InsetClip**](/uwp/api/Windows.UI.Composition.InsetClip) 的屬性也可以套用動畫效果。
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋轉美工圖案
+## <a name="span-idrotating_a_clipspanspan-idrotating_a_clipspanspan-idrotating_a_clipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋轉裁剪
 
-您可以使用旋轉來轉換 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual)。 請注意，[**RotationAngle**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.rotationangle) 同時支援弧度與角度。 預設使用的是弧度，但是也可以輕鬆指定成角度，如下列程式碼片段所示：
+您可以使用旋轉來轉換 [**Visual**](/uwp/api/Windows.UI.Composition.Visual)。 請注意，[**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) 同時支援弧度與角度。 預設使用的是弧度，但是也可以輕鬆指定成角度，如下列程式碼片段所示：
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
@@ -94,13 +94,13 @@ child.RotationAngleInDegrees = 45.0f;
 visual.Opacity = 0.8f;
 ```
 
-與旋轉相同，[**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visual.opacity) 屬性也可以套用動畫效果。
+與旋轉相同，[**Opacity**](/uwp/api/windows.ui.composition.visual.opacity) 屬性也可以套用動畫效果。
 
 ## <a name="changing-the-visuals-position-in-the-collection"></a>變更視覺效果在集合中的位置
 
-「組合 API」允許使用數種方法來變更 Visual 在 [**VisualCollection**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection) 中的位置。 它可以透過 [**InsertAbove**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertabove) 放在另一個 Visual 上、透過 [**InsertBelow**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertbelow) 放在另一個 Visual 下、透過 [**InsertAtTop**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertattop) 移至頂端，或透過 [**InsertAtBottom**](https://docs.microsoft.com/uwp/api/windows.ui.composition.visualcollection.insertatbottom) 移至底端。
+「組合 API」允許使用數種方法來變更 Visual 在 [**VisualCollection**](/uwp/api/windows.ui.composition.visualcollection) 中的位置。 它可以透過 [**InsertAbove**](/uwp/api/windows.ui.composition.visualcollection.insertabove) 放在另一個 Visual 上、透過 [**InsertBelow**](/uwp/api/windows.ui.composition.visualcollection.insertbelow) 放在另一個 Visual 下、透過 [**InsertAtTop**](/uwp/api/windows.ui.composition.visualcollection.insertattop) 移至頂端，或透過 [**InsertAtBottom**](/uwp/api/windows.ui.composition.visualcollection.insertatbottom) 移至底端。
 
-在此範例中，已點選過的 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 被排序在最上方：
+在此範例中，已點選過的 [**Visual**](/uwp/api/Windows.UI.Composition.Visual) 被排序在最上方：
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
@@ -108,7 +108,7 @@ parent.Children.InsertAtTop(_currentVisual);
 
 ## <a name="full-example"></a>完整範例
 
-在這個完整範例中，將上述所有概念一併搭配使用來建構和執行一個簡單的 [**Visual**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) 物件樹狀結構，以在不使用 XAML、WWA 或 DirectX 的情況下變更不透明度。 這個範例示範如何建立和新增子系 **Visual** 物件，以及如何變更屬性。
+在這個完整範例中，將上述所有概念一併搭配使用來建構和執行一個簡單的 [**Visual**](/uwp/api/Windows.UI.Composition.Visual) 物件樹狀結構，以在不使用 XAML、WWA 或 DirectX 的情況下變更不透明度。 這個範例示範如何建立和新增子系 **Visual** 物件，以及如何變更屬性。
 
 ```cs
 using System;

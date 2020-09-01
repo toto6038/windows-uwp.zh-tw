@@ -4,14 +4,14 @@ description: 本文討論如何在通用 Windows 平台 (UWP) app 中使用訊�
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10 uwp 安全性
+keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 78b14023f61dd3f8c27bc31f5876407ff0ed0366
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 7932636679a09834b982e2c320309b90c759c365
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371199"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167142"
 ---
 # <a name="macs-hashes-and-signatures"></a>MAC、雜湊以及簽章
 
@@ -23,22 +23,22 @@ ms.locfileid: "66371199"
 ## <a name="message-authentication-codes-macs"></a>訊息驗證碼 (MAC)
 
 
-加密有助於防止未授權的人員讀取訊息，但加密無法防止該人員篡改訊息。 即使竄改不會產生任何不良影響且無意義，被竄改的訊息還是會產生實際成本。 訊息驗證碼 (MAC) 有助於防止訊息遭篡改。 例如，請考慮下列情況：
+加密有助於防止未授權的人員讀取訊息，但加密無法防止該人員篡改訊息。 即使竄改不會產生任何不良影響且無意義，被竄改的訊息還是會產生實際成本。 訊息驗證碼 (MAC) 有助於防止訊息遭篡改。 例如，請考慮下列案例：
 
 -   Bob 與 Alice 共用祕密金鑰並同意使用 MAC 函數。
 -   Bob 建立訊息，然後將訊息與祕密金鑰輸入 MAC 函數來擷取 MAC 值。
--   傳送 Bob\[加密\]訊息和 MAC 值給 Alice 透過網路。
+-   Bob 透過 \[ 網路將未加密的 \] 訊息和 MAC 值傳送給 Alice。
 -   Alice 使用祕密金鑰與訊息做為 MAC 函數的輸入。 然後將產生的 MAC 值與 Bob 傳送的 MAC 值相比較。 若結果相同，表示訊息在傳輸時未遭到變更。
 
 請注意，竊聽 Bob 與 Alice 之間交談的第三者 Eve，無法有效操縱該訊息。 Eve 無法存取私密金鑰，因此也無法建立 MAC 值來讓 Alice 以為遭竄改的訊息是合法訊息。
 
 建立訊息驗證碼只可確保原始訊息不被竄改，而且還可透過使用共用的祕密金鑰，確保訊息雜湊是由可存取私密金鑰的人員所簽署。
 
-您可以使用 [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 來列舉可用的 MAC 演算法以及產生對稱金鑰。 您可以在 [**CryptographicEngine**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 類別使用靜態方法，執行必要的加密來建立 MAC 值。
+您可以使用 [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 來列舉可用的 MAC 演算法以及產生對稱金鑰。 您可以在 [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) 類別使用靜態方法，執行必要的加密來建立 MAC 值。
 
 數位簽章是等同於私密金鑰訊息驗證碼 (MAC) 的公開金鑰。 雖然 MAC 使用私密金鑰讓訊息收件者驗證訊息在傳輸期間未遭竄改，但簽章使用的是私密/公開金鑰組。
 
-下列範例程式碼說明如何使用 [**MacAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 類別來建立雜湊訊息驗證碼 (HMAC)。
+下列範例程式碼說明如何使用 [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) 類別來建立雜湊訊息驗證碼 (HMAC)。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -132,16 +132,16 @@ namespace SampleMacAlgorithmProvider
 
 -   Bob 與 Alice 共用祕密金鑰並同意使用 MAC 函數。
 -   Bob 建立訊息，然後將訊息與祕密金鑰輸入 MAC 函數來擷取 MAC 值。
--   傳送 Bob\[加密\]訊息和 MAC 值給 Alice 透過網路。
+-   Bob 透過 \[ 網路將未加密的 \] 訊息和 MAC 值傳送給 Alice。
 -   Alice 使用祕密金鑰與訊息做為 MAC 函數的輸入。 然後將產生的 MAC 值與 Bob 傳送的 MAC 值相比較。 若結果相同，表示訊息在傳輸時未遭到變更。
 
 請注意，Alice 傳送的是未加密的郵件。 僅加密了雜湊。 這個程序僅確保原始郵件未經過修改，而且，使用 Alice 的公開金鑰，郵件雜湊會由具有 Alice 私密金鑰存取權的人來簽署，可能就是 Alice 本人。
 
-您可以使用 [**HashAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) 類別來列舉可用的雜湊演算法及建立 [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 值。
+您可以使用 [**HashAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.HashAlgorithmProvider) 類別來列舉可用的雜湊演算法及建立 [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 值。
 
 數位簽章是等同於私密金鑰訊息驗證碼 (MAC) 的公開金鑰。 相對而言，MAC 使用私密金鑰讓郵件收件者驗證郵件在傳輸期間沒有被修改，而簽章則是使用私密/公開金鑰組。
 
-[  **CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 物件可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 [  **Append**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.append) 方法會將新資料加入要雜湊的緩衝區。 [  **GetValueAndReset**](https://docs.microsoft.com/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) 方法會進行資料拼湊並重設物件以供下次使用。 如下列範例所示。
+[**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 物件可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 [**Append**](/uwp/api/windows.security.cryptography.core.cryptographichash.append) 方法會將新資料加入要雜湊的緩衝區。 [**GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) 方法會進行資料拼湊並重設物件以供下次使用。 如下列範例所示。
 
 ```cs
 public void SampleReusableHash()
@@ -191,4 +191,4 @@ public void SampleReusableHash()
 
 簽署僅確保原始郵件未經過修改，而且，使用寄件者的公開金鑰，郵件雜湊會由具有私密金鑰存取權的人來簽署。
 
-您可以使用 [**AsymmetricKeyAlgorithmProvider**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 物件來列舉可用的簽章演算法及產生或匯入金鑰組。 您可以在 [**CryptographicHash**](https://docs.microsoft.com/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 類別上使用靜態方法來簽署郵件或驗證簽章。
+您可以使用 [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) 物件來列舉可用的簽章演算法及產生或匯入金鑰組。 您可以在 [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) 類別上使用靜態方法來簽署郵件或驗證簽章。

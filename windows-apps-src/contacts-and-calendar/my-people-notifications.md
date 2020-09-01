@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c106df0efc7952895f882ec5c05cc1af52bcfac
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683496"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166322"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -18,10 +18,10 @@ ms.locfileid: "75683496"
 
 ![心型表情符號通知](images/heart-emoji-notification-small.gif)
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
-+ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](../get-started/get-set-up.md)。
++ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="how-it-works"></a>運作方式
 
@@ -75,10 +75,10 @@ experienceType="shoulderTap"
     + 例如 remoteid:1234
 
 > [!NOTE]
-> 如果您的應用程式使用 [ContactStore API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](https://docs.microsoft.com/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
-> 如果您應用程式使用的遠端識別碼不保證固定且唯一，您可以使用 [RemoteIdHelper 類別](https://docs.microsoft.com/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，先將唯一標記新增至您所有的遠端識別碼，再新增到系統。 或者您可以選擇完全不使用 RemoteId 屬性，而是建立自訂延伸屬性，讓連絡人的遠端識別碼儲存在此屬性中。
+> 如果您的應用程式使用 [ContactStore API](/uwp/api/windows.applicationmodel.contacts.contactstore) 並使用 [StoredContact.RemoteId](/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) 屬性將儲存在 PC 上的連絡人與遠端儲存的連絡人連結在一起，則 RemoteId 屬性的值必須是固定且唯一的。 這表示遠端識別碼必須能一致地識別單一使用者帳戶，且應包含唯一的標記以保證不會與 PC 上其他連絡人的遠端識別碼衝突，包括其他應用程式擁有的連絡人。
+> 如果您應用程式使用的遠端識別碼不保證固定且唯一，您可以使用 [RemoteIdHelper 類別](/previous-versions/windows/apps/jj207024(v=vs.105)#BKMK_UsingtheRemoteIdHelperclass)，先將唯一標記新增至您所有的遠端識別碼，再新增到系統。 或者您可以選擇完全不使用 RemoteId 屬性，而是建立自訂延伸屬性，讓連絡人的遠端識別碼儲存在此屬性中。
 
-除了第二個繫結與裝載外，您必須在第一個繫結包含另一個裝載，以做為遞補快顯通知 若強制還原回一般通知時將使用該通知 (在 [這份文件的結尾](/windows/uwp/contacts-and-calendar/my-people-notifications#falling-back-to-toast)進一步解釋)。
+除了第二個繫結與裝載外，您必須在第一個繫結包含另一個裝載，以做為遞補快顯通知  若強制還原回一般通知時將使用該通知 (在 [這份文件的結尾](#falling-back-to-toast)進一步解釋)。
 
 ## <a name="creating-the-notification"></a>建立通知
 您可以如同建立[快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)般的建立朋友圈通知範本。
@@ -126,7 +126,7 @@ experienceType="shoulderTap"
 ![spritesheet 通知](images/pizza-notification-small.gif)
 
 ## <a name="starting-the-notification"></a>啟動通知
-為了啟動朋友圈通知，我們必須將快顯通知範本轉換為 [XmlDocument](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) 物件。 當您已在 XML 檔案中定義快顯通知 (在此名為 "content.xml")，則可以使用此程式碼啟動快顯通知：
+為了啟動朋友圈通知，我們必須將快顯通知範本轉換為 [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) 物件。 當您已在 XML 檔案中定義快顯通知 (在此名為 "content.xml")，則可以使用此程式碼啟動快顯通知：
 
 ```CSharp
 string xmlText = File.ReadAllText("content.xml");
@@ -150,8 +150,8 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果朋友圈通知遞補快顯通知，則會忽略第二個朋友圈特有的繫結，並只使用第一個繫結來顯示快顯通知。 這就是在第一個快顯通知繫結中提供遞補裝載如此重要的原因。
 
-## <a name="see-also"></a>請參閱
-+ [我的人員通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
-+ [新增我的人員支援](my-people-support.md)
-+ [調適型快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
-+ [ToastNotification 類別](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastnotification)
+## <a name="see-also"></a>另請參閱
++ [朋友圈通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
++ [新增朋友圈支援](my-people-support.md)
++ [調適性快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)
++ [ToastNotification 類別](/uwp/api/windows.ui.notifications.toastnotification)

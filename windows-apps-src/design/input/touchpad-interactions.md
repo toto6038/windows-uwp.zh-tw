@@ -1,5 +1,5 @@
 ---
-Description: 以直覺且獨特的使用者互動體驗來建立 Windows 應用程式，其已針對觸控板優化，但在輸入裝置之間具有一致的功能。
+Description: 以直覺且特殊的使用者互動體驗來建立 Windows 應用程式，這些體驗已針對觸控板優化，但在輸入裝置上的功能一致。
 title: 觸控板互動
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,12 +8,12 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ffc3ce96c7e8c2ad4a34aecd1ca85ff644bdef97
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 9e83cb1ceca96e5c7b51e71cb419b86b0395ea99
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234479"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165862"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -29,7 +29,7 @@ ms.locfileid: "83234479"
 
 -   標準觸控板或 Windows 精確式觸控板。
 
-    精確度 touchpads 已針對 Windows 應用程式裝置進行優化。 它們讓系統本質上就能處理特定層面的觸控板體驗 (例如手指追蹤和手掌偵測)，以便在不同的裝置上取得更一致的體驗。
+    有效位數 touchpads 已針對 Windows 應用程式裝置優化。 它們讓系統本質上就能處理特定層面的觸控板體驗 (例如手指追蹤和手掌偵測)，以便在不同的裝置上取得更一致的體驗。
 
 -   觸控板上一或多根手指的直接接觸點。
 -   觸控接觸點的移動 (或者沒有，根據時間閾值)。
@@ -40,9 +40,9 @@ ms.locfileid: "83234479"
 -   辨識為替代的輸入法，例如滑鼠或手寫筆。
 -   用來補充或修改其他輸入法的層面，例如弄髒手寫筆繪製的筆跡筆觸。
 
-觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入優化您的 Windows 應用程式設計，並根據預設取得觸控板支援。
+觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這樣的結合讓觸控板適用於觸控最佳化 UI 以及一般較小目標的生產力應用程式和桌面環境兩者。 針對觸控輸入將您的 Windows 應用程式設計優化，並依預設取得觸控板支援。
 
-因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
+因為觸控板支援整合的互動體驗，所以我們建議使用 [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件，在內建的觸控輸入支援以外，還提供滑鼠樣式的 UI 命令。 例如，使用 [上一頁] 和 [下一頁] 按鈕，讓使用者翻頁內容以及移動瀏覽內容。
 
 本主題中討論的手勢和指導方針可以協助您確保您的應用程式使用最少的程式碼就能順暢地支援觸控板輸入。
 
@@ -55,11 +55,11 @@ ms.locfileid: "83234479"
 
 ![標準觸控板設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>標準的 \\ 觸控板 \\ 設定</sup>
+<sup>標準 \\ 觸控板 \\ 設定</sup>
 
 ![Windows 精確式觸控板設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows \\ 精確的 \\ 觸控板 \\ 設定</sup>
+<sup>Windows 有效 \\ 位數 \\ 觸控板 \\ 設定</sup>
 
 以下是一些已針對觸控板進行最佳化且適用於執行一般工作的手勢範例。
 
@@ -119,7 +119,7 @@ ms.locfileid: "83234479"
 ## <a name="hardware"></a>硬體
 
 
-查詢滑鼠裝置的功能 ([**MouseCapabilities**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseCapabilities))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
+查詢滑鼠裝置的功能 ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 
@@ -132,14 +132,14 @@ ms.locfileid: "83234479"
 -   請勿搭配觸控板互動使用焦點矩形。 請保留這些給鍵盤互動。
 -   如果所有元素均代表相同的輸入目標，請同時顯示視覺化回饋。
 
-如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-visualfeedback)。
+如需有關視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](./guidelines-for-visualfeedback.md)。
 
 ## <a name="cursors"></a>資料指標
 
 
 我們提供了一組可用於觸控板指標的標準游標。 它們可用來指示元素的主要動作。
 
-每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 UWP app 透過 [**PointerCursor**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 函式指定游標影像。
+每一個標準游標都有與其關聯之相對應的預設影像。 使用者或應用程式可以隨時取代與任何標準游標相關聯的預設影像。 UWP app 透過 [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) 函式指定游標影像。
 
 如果您需要自訂滑鼠游標：
 
@@ -165,5 +165,5 @@ ms.locfileid: "83234479"
 
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：使用 GestureRecognizer 處理手勢與操作](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)

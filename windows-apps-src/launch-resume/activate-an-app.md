@@ -1,32 +1,32 @@
 ---
 title: 處理應用程式啟用
-description: 了解如何透過覆寫 OnLaunched 方法來處理 app 啟用。
+description: 了解如何透過覆寫 OnLaunched 方法來處理應用程式啟用。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ms.date: 07/02/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 622fc4246c0ce8051135feab07295034b55a82e4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0c3aa86fd8eee3724e092799eea6d34f0b9d453b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370826"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164992"
 ---
 # <a name="handle-app-activation"></a>處理應用程式啟用
 
-了解如何藉由覆寫處理應用程式啟動[ **Application.OnLaunched** ](/uwp/api/windows.ui.xaml.application.onlaunched)方法。
+瞭解如何藉由覆寫 [**>onlaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) 方法來處理應用程式啟用。
 
 ## <a name="override-the-launch-handler"></a>覆寫啟動處理常式
 
-啟動應用程式時，因為任何原因，系統會傳送[ **CoreApplicationView.Activated** ](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)事件。 如需啟用類型的清單，請參閱 [**ActivationKind**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 列舉。
+當應用程式啟動時，如果有任何原因，系統會傳送 [**CoreApplicationView**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件。 如需啟用類型的清單，請參閱 [**ActivationKind**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 列舉。
 
-[  **Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 類別定義了您可以覆寫來處理不同啟用類型的方法。 數種啟用類型有您可以覆寫的特定方法。 如需其他啟用類型，請覆寫 [**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onactivated) 方法。
+[**Windows.UI.Xaml.Application**](/uwp/api/Windows.UI.Xaml.Application) 類別定義了您可以覆寫來處理不同啟用類型的方法。 數種啟用類型有您可以覆寫的特定方法。 如需其他啟用類型，請覆寫 [**OnActivated**](/uwp/api/windows.ui.xaml.application.onactivated) 方法。
 
 定義應用程式的類別。
 
@@ -37,10 +37,10 @@ ms.locfileid: "66370826"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 ```
 
-覆寫 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法。 不論使用者何時啟動 app 都會呼叫這個方法。 [  **LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 參數包含 app 之前的狀態以及啟用引數。
+覆寫 [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) 方法。 不論使用者何時啟動 app 都會呼叫這個方法。 [**LaunchActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.LaunchActivatedEventArgs) 參數包含 app 之前的狀態以及啟用引數。
 
 > [!NOTE]
-> 在 Windows 中，啟動暫停的應用程式，從 開始 圖格或應用程式 清單不會呼叫這個方法。
+> 在 Windows 中，從 [開始] 磚或應用程式清單啟動暫停的應用程式不會呼叫這個方法。
 
 ```csharp
 using System;
@@ -187,7 +187,7 @@ void App::EnsurePageCreatedAndActivate()
 
 ## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>在 app 暫停然後終止時還原應用程式資料
 
-當使用者切換到已終止的 app 時，系統會傳送 [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件，並將 [**Kind**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 設定成 **Launch**，以及將 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) 設定成 **Terminated** 或 **ClosedByUser**。 App 必須載入它已儲存的應用程式資料，並且重新整理已顯示的內容。
+當使用者切換到已終止的 app 時，系統會傳送 [**Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件，並將 [**Kind**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.kind) 設定成 **Launch**，以及將 [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) 設定成 **Terminated** 或 **ClosedByUser**。 App 必須載入它已儲存的應用程式資料，並且重新整理已顯示的內容。
 
 ```csharp
 async protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -259,19 +259,19 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-如果 [**PreviousExecutionState**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) 的值是 **NotRunning**，app 將無法成功儲存它的應用程式資料，而且 app 必須從頭開始，如同它剛被初始啟動一般。
+如果 [**PreviousExecutionState**](/uwp/api/windows.applicationmodel.activation.iactivatedeventargs.previousexecutionstate) 的值是 **NotRunning**，app 將無法成功儲存它的應用程式資料，而且 app 必須從頭開始，如同它剛被初始啟動一般。
 
 ## <a name="remarks"></a>備註
 
 > [!NOTE]
-> 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查[ **LaunchActivatedEventArgs.TileId** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid)屬性來判斷是否應用程式已啟動從主要或次要的圖格並根據該資訊，決定是否應該提供全新或繼續應用程式體驗。
+> 如果目前的視窗中已有設定的內容，App 便可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs TileId**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) 屬性，以判斷應用程式是從主要或次要磚啟動，並根據該資訊來決定您是否應該提出全新或繼續的應用程式體驗。
 
 ## <a name="important-apis"></a>重要 API
-* [Windows.ApplicationModel.Activation](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation)
-* [Windows.UI.Xaml.Application](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application)
+* [ApplicationModel。啟用](/uwp/api/Windows.ApplicationModel.Activation)
+* [Windows.UI.Xaml.Application](/uwp/api/Windows.UI.Xaml.Application)
 
 ## <a name="related-topics"></a>相關主題
 * [處理應用程式暫停](suspend-an-app.md)
 * [處理應用程式繼續執行](resume-an-app.md)
-* [應用程式的指導方針暫停和繼續](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [App 暫停和繼續執行的指導方針](./index.md)
 * [應用程式生命週期](app-lifecycle.md)

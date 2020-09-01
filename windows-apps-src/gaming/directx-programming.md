@@ -6,12 +6,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: windows 10, uwp, 遊戲, 概觀, 程式設計, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 24c15516bc18eacd6c5dfcad8edec9a2c088fc7f
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 846c333a7cce9d8f373b01aabf525f103dba57f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970256"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165302"
 ---
 # <a name="directx-programming"></a>DirectX 程式設計
 
@@ -25,7 +25,7 @@ ms.locfileid: "88970256"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -61,11 +61,5 @@ ms.locfileid: "88970256"
 </table>
 
 
-如需 DirectX 參考及程式設計指南，請參閱 [Direct3D 11 圖形](https://docs.microsoft.com/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)與 [Direct3D 12 圖形](https://docs.microsoft.com/windows/desktop/direct3d12/direct3d-12-graphics)。
+如需 DirectX 參考及程式設計指南，請參閱 [Direct3D 11 圖形](/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11)與 [Direct3D 12 圖形](/windows/desktop/direct3d12/direct3d-12-graphics)。
  
-
-
-
-
-
-

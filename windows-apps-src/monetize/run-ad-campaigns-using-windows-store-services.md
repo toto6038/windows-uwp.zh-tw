@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 560f9b545cc7c7b547e707bffb2b19904c36863b
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 9b9cb30d2a87d93df1790fb42ad3b4b243f0f713
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846768"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164552"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用Microsoft Store 服務執行廣告行銷活動
 
@@ -36,7 +36,7 @@ ms.locfileid: "88846768"
 
 * 您必須先 [使用合作夥伴中心中的 [ **ad 活動** ] 頁面建立一個付費的 ad 活動](../publish/create-an-ad-campaign-for-your-app.md)，然後在此頁面上至少新增一個付款條件，您才能使用此 API 成功建立和啟動 ad 活動。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 您使用此 API 建立的 ad 活動傳遞行，會自動為合作夥伴中心中的 [ **ad 活動** ] 頁面上選擇的預設付款條件產生帳單。
 
-* 您 (或您的組織) 必須具有 Azure AD 目錄，且您必須具備該目錄的[全域管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) \(部分機器翻譯\) 權限。 如果您已經使用 Microsoft 365 或 Microsoft 的其他商務服務，則您已經有 Azure AD 目錄。 否則，您可以 [在合作夥伴中心中建立新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，而不需要額外收費。
+* 您 (或您的組織) 必須具有 Azure AD 目錄，且您必須具備該目錄的[全域管理員](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) \(部分機器翻譯\) 權限。 如果您已經使用 Microsoft 365 或 Microsoft 的其他商務服務，則您已經有 Azure AD 目錄。 否則，您可以 [在合作夥伴中心中建立新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，而不需要額外收費。
 
 * 您必須將 Azure AD 應用程式與您的合作夥伴中心帳戶建立關聯、取出應用程式的租使用者識別碼和用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Microsoft Store 促銷 API 的 App 或服務。 您需要租用戶識別碼、用戶端識別碼及金鑰，以取得您會傳遞給 API 的 Azure AD 存取權杖。
     > [!NOTE]
@@ -58,7 +58,7 @@ ms.locfileid: "88846768"
 
 在 Microsoft Store 促銷 API 中呼叫任何方法之前，您必須先取得傳遞至 API 中每個方法的 **Authorization** 標頭的 Azure AD 存取權杖。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以重新整理權杖以便在後續呼叫 API 時繼續使用。
 
-若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的指示，將 HTTP POST 傳送至 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 端點。 以下是範例要求。
+若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow)中的指示，將 HTTP POST 傳送至 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 端點。 以下是範例要求。
 
 ```syntax
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -73,7 +73,7 @@ grant_type=client_credentials
 
 針對 POST URI 中的 *租使用者 \_ 識別碼* 值，以及 *客戶 \_ 端識別碼* 和用戶端 * \_ 密碼* 參數，指定您的應用程式的租使用者識別碼、用戶端識別碼和金鑰，並從上一節的合作夥伴中心中取出。 針對 *resource* 參數，您必須指定 ```https://manage.devcenter.microsoft.com```。
 
-存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。
+存取權杖到期之後，您可以按照[這裡](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的指示，重新整理權杖。
 
 <span id="call-the-windows-store-promotions-api" />
 

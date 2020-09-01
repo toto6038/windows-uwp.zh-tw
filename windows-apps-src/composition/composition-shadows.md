@@ -1,24 +1,24 @@
 ---
-title: 撰寫陰影
-description: 陰影 Api 可讓您加入 UI 內容的動態可自訂的陰影。
+title: 組合陰影
+description: 影子 Api 可讓您將動態可自訂陰影新增至 UI 內容。
 ms.date: 07/16/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a47a5f8ffca1d9ca2ddab05fe0baf2f85977d7f
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 29ca04ac3faf3a2884bcc2346177f49222cf786e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318186"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166422"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的陰影
 
-[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)類別提供建立可套用至一個可設定陰影的方式[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)或是[LayerVisual](/uwp/api/windows.ui.composition.layervisual) （樹狀子目錄的視覺效果）。 由於是慣用的視覺分層中的物件，就可以使用 CompositionAnimations 使用動畫 DropShadow 的所有屬性。
+[DropShadow](/uwp/api/Windows.UI.Composition.DropShadow)類別提供建立可設定的陰影，以套用至視覺效果) 之[SpriteVisual](/uwp/api/windows.ui.composition.spritevisual)或[LayerVisual](/uwp/api/windows.ui.composition.layervisual) (子樹的方法。 如同視覺分層中物件的慣例，DropShadow 的所有屬性都可以使用 CompositionAnimations 來進行動畫。
 
-## <a name="basic-drop-shadow"></a>基本的陰影
+## <a name="basic-drop-shadow"></a>基本陰影
 
-若要建立基本的陰影，只要建立新的 DropShadow 和其關聯到您的視覺效果。 陰影是預設的矩形。 一組標準屬性的可調整的外觀及操作您的陰影。
+若要建立基本陰影，只要建立新的 DropShadow，並將它與您的視覺效果建立關聯。 根據預設，陰影是矩形。 您可以使用一組標準的屬性來調整陰影的外觀和風格。
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -33,19 +33,19 @@ basicShadow.Offset = new Vector3(20, 20, 20);
 basicRectVisual.Shadow = basicShadow;
 ```
 
-![使用基本 DropShadow 矩形視覺效果](images/rectangular-dropshadow.png)
+![具有基本 DropShadow 的矩形視覺效果](images/rectangular-dropshadow.png)
 
 ## <a name="shaping-the-shadow"></a>塑造陰影
 
-有幾種方式來定義您 DropShadow 圖形：
+有幾種方式可以為您的 DropShadow 定義圖形：
 
-- **使用預設**-DropShadow 圖形 CompositionDropShadowSourcePolicy 的 'Default' 模式所定義的預設。 SpriteVisual，預設值為矩形除非提供遮罩。 LayerVisual，預設值為繼承使用視覺效果的筆刷的 alpha 的遮罩。
-- **設定遮罩**– 您可以設定[遮罩](/uwp/api/windows.ui.composition.dropshadow.mask)屬性來定義陰影的不透明度遮罩。
-- **指定要使用繼承遮罩**– 設定[SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)屬性，以使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)。 若要使用的視覺效果的筆刷的 alpha 從產生的遮罩 InheritFromVisualContent。
+- **使用預設值** -根據預設，DropShadow 圖形是在 CompositionDropShadowSourcePolicy 上以「預設」模式定義。 若為 SpriteVisual，除非提供遮罩，否則預設值為矩形。 針對 LayerVisual，預設值是使用視覺效果筆刷的 Alpha 來繼承遮罩。
+- **設定遮罩** –您可以設定 [mask](/uwp/api/windows.ui.composition.dropshadow.mask) 屬性來定義陰影的不透明度遮罩。
+- **指定使用繼承的遮罩** –將 [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) 屬性設定為使用 [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy)。 InheritFromVisualContent，以使用從視覺效果之筆刷的 Alpha 產生的遮罩。
 
-## <a name="masking-to-match-your-content"></a>遮罩，以符合您的內容
+## <a name="masking-to-match-your-content"></a>遮罩以符合您的內容
 
-如果您想要與視覺效果的內容，您可以使用視覺效果的筆刷陰影遮罩屬性，或是設定為自動繼承內容中的遮罩陰影比您陰影。 如果使用 LayerVisual，陰影將預設繼承的遮罩。
+如果您想要讓您的陰影符合視覺效果的內容，您可以針對陰影遮罩屬性使用視覺效果的筆刷，或將陰影設定為自動繼承內容中的遮罩。 如果使用 LayerVisual，陰影預設會繼承遮罩。
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -65,13 +65,13 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![已連接的 web 與遮罩的下拉式陰影的映像](images/ms-brand-web-dropshadow.png)
+![具有遮罩陰影的連線 web 影像](images/ms-brand-web-dropshadow.png)
 
-## <a name="using-an-alternative-mask"></a>使用替代的遮罩
+## <a name="using-an-alternative-mask"></a>使用替代遮罩
 
-在某些情況下，您可能想要圖形的陰影，使它不符合您的視覺效果內容。 若要達到此效果，您必須明確設定使用 alpha 使用筆刷的遮罩屬性。
+在某些情況下，您可能會想要塑造陰影，使其不符合視覺效果的內容。 若要達成這個效果，您必須使用具有 Alpha 的筆刷來明確設定 Mask 屬性。
 
-在下列範例中，我們會載入兩個介面-一個視覺化內容，陰影遮罩的另一個：
+在下列範例中，我們會載入兩個介面：一個適用于視覺內容，另一個用於陰影遮罩：
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -93,11 +93,11 @@ shadow.Offset = new Vector3(20, 20, 20);
 imageSpriteVisual.Shadow = shadow;
 ```
 
-![已連接的 web 與遮罩的圓形下拉式陰影的映像](images/ms-brand-web-masked-dropshadow.png)
+![具有圓形遮罩投影的已連接網路影像](images/ms-brand-web-masked-dropshadow.png)
 
-## <a name="animating"></a>建立動畫
+## <a name="animating"></a>動畫
 
-為視覺分層中的標準，就可以使用組合動畫使用動畫 DropShadow 屬性。 下面我們修改上面建立動畫之陰影柔化半徑還要範例程式碼。
+如同視覺分層中的標準，DropShadow 屬性可以使用複合動畫來進行動畫。 在下面，我們會修改上述還要範例中的程式碼，以動畫顯示陰影的模糊半徑。
 
 ```cs
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -109,25 +109,25 @@ blurAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 shadow.StartAnimation("BlurRadius", blurAnimation);
 ```
 
-## <a name="shadows-in-xaml"></a>在 XAML 中的陰影
+## <a name="shadows-in-xaml"></a>XAML 中的陰影
 
-如果您想要為更複雜的架構元素加上陰影，有幾種方式，與 XAML 和組合之間的陰影互通：
+如果您想要將陰影新增至更複雜的 framework 元素，有幾種方式可在 XAML 和組合之間與陰影進行 interop：
 
-1. 使用[DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs)可用 Windows 社群工具組中。 請參閱[DropShadowPanel 文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)如需有關如何使用它。
-1. 建立視覺效果，以做為陰影主應用程式和繫結到 XAML 講義視覺效果。
-1. 使用組合範例圖庫[SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) CompositionShadow 的自訂控制項。 請參閱此處的範例使用方式。
+1. 使用 Windows 社群工具組中提供的 [DropShadowPanel](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) 。 如需如何使用的詳細資訊，請參閱 [DropShadowPanel 檔](/windows/uwpcommunitytoolkit/controls/DropShadowPanel) 。
+1. 建立要做為陰影主控制項的視覺效果，& 將其系結至 XAML 講義視覺效果。
+1. 使用組合範例庫的 [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) 自訂 CompositionShadow 控制項。 請參閱此處的範例以瞭解用法。
 
 ## <a name="performance"></a>效能
 
-雖然視覺分層會有許多最佳化位置進行有效率且可使用的效果，則產生 shadows 可能會相當耗費資源的作業，根據您設定哪些選項。 以下是層級 '的高成本' 不同類型的陰影。 請注意，雖然某些 shadows 可能很昂貴，但它們仍然可能適合在某些情況下盡量不要使用。
+雖然視覺分層具有許多優化功能，可讓效果有效率且可供使用，但根據您設定的選項而定，產生陰影可能是相當昂貴的作業。 以下是不同類型陰影的高階「成本」。 請注意，雖然某些陰影的成本可能很高，但在某些情況下，可能仍適合謹慎使用。
 
 陰影特性| 成本
 ------------- | -------------
 矩形    | 低
-Shadow.Mask      | 高
+遮蔽      | 高
 CompositionDropShadowSourcePolicy.InheritFromVisualContent | 高
-靜態柔化半徑 | 低
-以動畫顯示柔化半徑 | 高
+靜態模糊半徑 | 低
+製作模糊半徑的動畫 | 高
 
 ## <a name="additional-resources"></a>其他資源
 

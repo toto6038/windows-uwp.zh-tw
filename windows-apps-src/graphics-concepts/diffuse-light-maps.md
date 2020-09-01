@@ -1,18 +1,18 @@
 ---
 title: 擴散光源對應
-description: 霧面表面有擴散光線反映。
+description: 瞭解如何使用材質 light 地圖來模擬粗糙表面的複雜擴散光源反映。
 ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541
 keywords:
 - 擴散光源對應
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0605de5313b59689c19b9560d10e088d26d29b52
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 25089911a1dd273cd7513cda7e0a904b8d36d6f5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57627733"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165022"
 ---
 # <a name="diffuse-light-maps"></a>擴散光源對應
 
@@ -24,7 +24,7 @@ ms.locfileid: "57627733"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[淺色與紋理的對應](light-mapping-with-textures.md)
+[光源與紋理對應](light-mapping-with-textures.md)
 
  
 

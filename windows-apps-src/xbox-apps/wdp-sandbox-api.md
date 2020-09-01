@@ -1,17 +1,17 @@
 ---
 title: 裝置入口網站 Xbox Live 沙箱 API 參考
-description: 了解如何以程式設計方式存取 Xbox Live 沙箱。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API 來取得和設定裝置 Xbox Live 沙箱的值。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f04514962cf0684daa99ee75d4c4da73c785735
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: ebe280af4279719109db2e36904b501623956339
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244084"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166802"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙箱 API 參考   
 您可以使用此 REST API 取得並設定您的 Xbox Live 沙箱。
@@ -28,15 +28,15 @@ GET | /ext/xboxlive/sandbox
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**   
 Sandbox - (字串) 目前裝置所在的沙箱。   
@@ -64,11 +64,11 @@ PUT | /ext/xboxlive/sandbox
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**   
 要求主體是包含下列欄位的 JSON 物件：   

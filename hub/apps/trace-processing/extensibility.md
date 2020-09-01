@@ -5,21 +5,21 @@ author: maiak
 ms.author: maiak
 ms.date: 02/23/2020
 ms.topic: overview
-ms.openlocfilehash: 59722f1f31364c464a8a763d28f3d15ef13609a8
-ms.sourcegitcommit: cfba95a96202c4250de845115d1b99361412a779
+ms.openlocfilehash: f5680bdc6502c4b917667e5a59084286b445063c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77903285"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166732"
 ---
 # <a name="extend-traceprocessor"></a>擴充 TraceProcessor
 
-許多類型的追蹤資料在[TraceProcessor](https://docs.microsoft.com/dotnet/api/microsoft.windows.eventtracing.traceprocessor)中都有內建支援，但如果您有想要分析的其他提供者（包括您自己的自訂提供者），則在進行處理時，也可以從追蹤即時取得該資料。
+許多種類的追蹤資料在 [TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor)中都有內建支援，但如果您有想要分析的其他提供者 (包括) 的自訂提供者，則在進行處理時，該資料也會在即時追蹤中提供。
 
 > [!NOTE]
-> API 的這個部分處於預覽狀態，且正在進行開發。 在未來的版本中可能會變更。
+> 這部分的 API 目前處於預覽狀態，且正在進行開發。 未來的版本可能會變更。
 
-例如，以下是在追蹤中取得提供者識別碼清單的簡單方法。
+例如，以下是取得追蹤中提供者識別碼清單的簡單方法。
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
@@ -37,7 +37,7 @@ static void Run(ITraceProcessor trace)
 }
 ```
 
-下列範例會顯示簡化的自訂資料來源。
+下列範例顯示簡化的自訂資料來源。
 
 ```csharp
 // Open a trace with TraceProcessor.Create() and call Run...
@@ -69,4 +69,4 @@ class CustomDataSource : IFilteredEventConsumer
 
 在本教學課程中，您已瞭解如何擴充 TraceProcessor。
 
-下一步是瞭解如何載入追蹤的[符號](symbols.md)。
+下一步是瞭解如何載入追蹤的 [符號](symbols.md) 。

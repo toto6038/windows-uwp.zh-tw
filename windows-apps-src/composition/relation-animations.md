@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 91e3ae5b23b7429633053f4d4d876f02127d26e3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054418"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166362"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 
@@ -46,9 +46,9 @@ ms.locfileid: "89054418"
 
 - 參數 - 代表常數值或參考其他 Composition 物件的值。
 - 數學運算子 – 一般數學運算子：加號 (+)、減號 (-)、乘號 (*)、除號 (/)，將參數連接起來以形成方程式。 也包含條件式運算子，例如大於 (>)、等於 (==)、三元運算子 (condition ? ifTrue : ifFalse) 等。
-- 數學函數 – 根據 System.Numerics 的數學函數/捷徑。 如需完整的支援函數清單，請參閱 [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation)。
+- 數學函數 – 根據 System.Numerics 的數學函數/捷徑。 如需完整的支援函數清單，請參閱 [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation)。
 
-Expressions 也支援一組關鍵字 - 只有在 ExpressionAnimation 系統中才具有不同意義的特殊片語。 這些會列在 (以及數學函數的完整清單) [ExpressionAnimation](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.ExpressionAnimation) 文件中。
+Expressions 也支援一組關鍵字 - 只有在 ExpressionAnimation 系統中才具有不同意義的特殊片語。 這些會列在 (以及數學函數的完整清單) [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation) 文件中。
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>使用 ExpressionBuilder 建立 Expressions
 

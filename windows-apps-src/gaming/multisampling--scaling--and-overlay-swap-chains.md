@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 交換鏈縮放比例, 覆疊, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e5dac007654449fcfbe2053fda65b123e073fa
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: ade5812999a3fe085a7c2091363857d7eefa1870
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368339"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165162"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>交換鏈結縮放和重疊
 
@@ -119,7 +119,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 ## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>針對 UI 元素建立硬體重疊交換鏈結
 
 
-使用交換鏈結縮放時有一個繼承的缺點，便是 UI 也會縮小，因此可能使它變得模糊且難以使用。 在含有覆疊交換鏈結之硬體支援的裝置上，藉由從即時遊戲內容分離出來的交換鏈結中以原生解析度來轉譯 UI，即可完全解決這個問題。 請注意，此技術僅能套用到 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 交換鏈結 - 無法與 XAML Interop 搭配使用。
+使用交換鏈結縮放時有一個繼承的缺點，便是 UI 也會縮小，因此可能使它變得模糊且難以使用。 在含有覆疊交換鏈結之硬體支援的裝置上，藉由從即時遊戲內容分離出來的交換鏈結中以原生解析度來轉譯 UI，即可完全解決這個問題。 請注意，此技術僅能套用到 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 交換鏈結 - 無法與 XAML Interop 搭配使用。
 
 使用下列步驟來建立前景交換鏈結，以使用硬體重疊功能。 這些步驟會在先針對即時遊戲內容建立交換鏈結之後執行，如前所述。
 
@@ -142,21 +142,21 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
         );
     ```
 
-    如果輸出介面卡針對 [**SupportsOverlays**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays) 傳回 True，就表示 DXGI 介面卡支援覆疊。
+    如果輸出介面卡針對 [**SupportsOverlays**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays) 傳回 True，就表示 DXGI 介面卡支援覆疊。
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **附註**  如果 DXGI 配接器支援重疊，請繼續下一個步驟。 如果裝置不支援覆疊，使用多個交換鏈結進行轉譯將會失效。 可改為在和即時遊戲內容相同的交換鏈結中，以降低的解析度來轉譯 UI。
+    > **注意**   如果 DXGI 介面卡支援重迭，請繼續下一個步驟。 如果裝置不支援覆疊，使用多個交換鏈結進行轉譯將會失效。 可改為在和即時遊戲內容相同的交換鏈結中，以降低的解析度來轉譯 UI。
 
      
 
-2.  使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) 建立前景交換鏈結。 必須設定下列選項， [ **DXGI\_交換\_鏈結\_DESC1** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)提供給*pDesc*參數：
+2.  使用 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) 建立前景交換鏈結。 您必須在提供給*pDesc*參數的 [ [**DXGI \_ SWAP CHAIN] \_ \_ DESC1**](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)中設定下列選項：
 
-    -   指定[ **DXGI\_交換\_鏈結\_旗標\_前景\_層**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)交換鏈結旗標，表示前景交換鏈結。
-    -   使用[ **DXGI\_ALPHA\_模式\_PREMULTIPLIED** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_alpha_mode) alpha 模式旗標。 前景交換鏈結一律是預乘的。
-    -   設定[ **DXGI\_調整\_NONE** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_scaling)旗標。 前景交換鏈結一律會以原生解析度執行。
+    -   指定 [ [**DXGI \_ 交換 \_ 鏈 \_ 旗標 \_ 前景 \_ 層**](/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) 交換鏈] 旗標，表示前景交換鏈。
+    -   使用 [**DXGI \_ Alpha 模式 \_ 預 \_ 乘**](/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_alpha_mode) Alpha 模式旗標。 前景交換鏈結一律是預乘的。
+    -   設定 [ [**DXGI \_ 調整 \_ 無**](/windows/desktop/api/dxgi1_2/ne-dxgi1_2-dxgi_scaling) ] 旗標。 前景交換鏈結一律會以原生解析度執行。
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -164,7 +164,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **附註**  設定[ **DXGI\_交換\_鏈結\_旗標\_前景\_層**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)再每隔交換鏈結會調整大小的時間。
+    > **注意**   每次調整交換鏈大小時，都要再次設定[**DXGI \_ swap \_ chain \_ 旗標 \_ 前景 \_ 圖層**](/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)。
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -199,7 +199,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 4.  前景交換鏈結一律使用預乘的 Alpha。 呈現框架之前，您可以預期每個像素的色彩值都已經與 Alpha 值相乘。 例如，50% Alpha 的 100% 白色 BGRA 像素會設為 (0.5, 0.5, 0.5, 0.5)。
 
-    可以在 輸出合併階段完成 alpha premultiplication 步驟，藉由套用應用程式的 blend 狀態 (請參閱[ **ID3D11BlendState**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11blendstate)) 與[ **D3D11\_呈現\_目標\_BLEND\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_blend_desc)結構的**SrcBlend**欄位設定為**D3D11\_SRC\_ALPHA**。 含有預乘 Alpha 值的資產也可以使用。
+    Alpha premultiplication 步驟可在輸出合併階段中完成，方法是套用應用程式 blend 狀態 (請參閱 [**ID3D11BlendState**](/windows/desktop/api/d3d11/nn-d3d11-id3d11blendstate)) ，並將 [**D3D11 轉譯 \_ \_ 目標 \_ blend \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_blend_desc) 結構的 **SrcBlend** 欄位設定為 **D3D11 \_ SRC \_ Alpha**。 含有預乘 Alpha 值的資產也可以使用。
 
     如果 Alpha 預乘步驟尚未完成，前景交換鏈結上的色彩將會較預期的明亮。
 
@@ -325,7 +325,3 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
  
 
  
-
-
-
-

@@ -6,29 +6,29 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP, egl, dxgi, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a93f78cdc0d716f9b421fdc493317208f9d17b2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a9e521810c5220d412afb98d25a00f5ac499af1b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368377"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165212"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL 程式碼與 DXGI 和 Direct3D 的比較
 
 
 
 
-**重要的 Api**
+**重要 API**
 
--   [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
--   [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)
--   [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)
+-   [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)
+-   [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)
 
 DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的角色。 本主題可以協助您從 EGL 的觀點來了解 DXGI 和 Direct3D 11。
 
 DXGI 和 Direct3D 如同 EGL 都提供方法來設定圖形資源、取得著色器要繪製的轉譯內容，以及在視窗中顯示結果。 但是，DXGI 和 Direct3D 有更多的選項，而從 EGL 移植時需要投入更多心力才能正確設定。
 
-> **附註**   Khronos 群組的開放式規格的 EGL 1.4，這裡都根據本指導方針：[Khronos 原生平台圖形介面 （EGL 1.4 版-2011 年 4 月 6 日） \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
+> **注意**   本指南是以 EGL 1.4 的 Khronos 群組 open 規格為基礎，可在這裡找到： [Khronos 原生平臺圖形介面 (EGL 1.4 版-年4月6日 2011) \[ PDF \] ](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
 
  
 
@@ -47,7 +47,7 @@ EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式
 -   轉譯成特定的轉譯目標 (例如紋理)。
 -   使用圖形資源轉譯的結果來更新視窗的顯示表面。
 
-若要查看基本的 Direct3D 程序，設定 圖形管線，查看在 Microsoft Visual Studio 2015 中的 DirectX 11 應用程式 (通用 Windows) 範本。 該範本中的基本轉譯類別可提供設定 Direct3D 11 圖形基礎結構和在其上設定基本資源的良好基準，並且支援通用 Windows 平台 (UWP) app 功能 (例如，螢幕旋轉)。
+若要查看設定圖形管線的基本 Direct3D 程序，請查看 Microsoft Visual Studio 2015 中的 DirectX 11 app (通用 Windows) 範本。 該範本中的基本轉譯類別可提供設定 Direct3D 11 圖形基礎結構和在其上設定基本資源的良好基準，並且支援通用 Windows 平台 (UWP) app 功能 (例如，螢幕旋轉)。
 
 相較於 Direct3D 11，EGL 具有很少 API，而且如果您不熟悉平台特有的命名方式與專業用語，瀏覽後者就是一項挑戰。 這裡提供可協助您找到方向的簡單概觀。
 
@@ -55,24 +55,24 @@ EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式
 
 | EGL 抽象概念 | 類似的 Direct3D 表示法                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **EGLDisplay**  | 在 Direct3D (針對 UWP app) 中，可以透過 [**Windows::UI::CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) API (或公開 HWND 的 **ICoreWindowInterop** 介面) 來取得顯示控制代碼。 介面卡與硬體設定是以 [**IDXGIAdapter**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgiadapter) 與 [**IDXGIDevice1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgidevice2) COM 介面來分別設定。                                                                                                                                                                                                                                                           |
-| **EGLSurface**  | 在 Direct3D 中，緩衝區與其他視窗資源 (可見或螢幕上不可見的) 都是透過特定的 DXGI 介面來建立與設定，其中包含 [**IDXGIFactory2**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) (這是一種 Factory 模式實作，可用來取得像是 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) (顯示緩衝區)) 的 DXGI 資源。 代表圖形裝置及其資源的 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 可以使用 [**D3D11Device::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 來取得。 針對轉譯目標，請使用 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 介面。 |
-| **EGLContext**  | 在 Direct3D 中，您可以使用 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 介面，設定並發出命令給圖形管線。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **EGLConfig**   | 在 Direct3D 11 中，您可以使用 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 介面上的方法來建立和設定圖形資源，例如，緩衝區、紋理、樣板及著色器。                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **EGLDisplay**  | 在 Direct3D (針對 UWP app) 中，可以透過 [**Windows::UI::CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) API (或公開 HWND 的 **ICoreWindowInterop** 介面) 來取得顯示控制代碼。 介面卡與硬體設定是以 [**IDXGIAdapter**](/windows/desktop/api/dxgi/nn-dxgi-idxgiadapter) 與 [**IDXGIDevice1**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgidevice2) COM 介面來分別設定。                                                                                                                                                                                                                                                           |
+| **EGLSurface**  | 在 Direct3D 中，緩衝區與其他視窗資源 (可見或螢幕上不可見的) 都是透過特定的 DXGI 介面來建立與設定，其中包含 [**IDXGIFactory2**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) (這是一種 Factory 模式實作，可用來取得像是 [**IDXGISwapChain1**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) (顯示緩衝區)) 的 DXGI 資源。 代表圖形裝置及其資源的 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 可以使用 [**D3D11Device::CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 來取得。 針對轉譯目標，請使用 [**ID3D11RenderTargetView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 介面。 |
+| **EGLContext**  | 在 Direct3D 中，您可以使用 [**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 介面，設定並發出命令給圖形管線。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **EGLConfig**   | 在 Direct3D 11 中，您可以使用 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 介面上的方法來建立和設定圖形資源，例如，緩衝區、紋理、樣板及著色器。                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
  
 
 現在，以下是在 UWP app 的 DXGI 與 Direct3D 中設定簡易圖形顯示、資源及內容最基本的程序。
 
-1.  透過呼叫 [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以取得 app 核心 UI 執行緒的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 物件控制代碼。
-2.  針對 UWP app，從含有 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) 的 [**IDXGIAdapter2**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiadapter2) 取得交換鏈結，然後將您在步驟 1 取得的 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 參考傳送給它。 隨後您將收到 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) 執行個體。 將它的範圍設定為您的轉譯器物件和其轉譯的執行緒。
-3.  呼叫 [**D3D11Device::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法以取得 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 與 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 執行個體。 以及將它們的範圍設定為您的轉譯器物件。
-4.  使用您轉譯器的 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件上的方法來建立著色器、材質及其他資源。
-5.  使用您轉譯器的 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件上的方法來定義緩衝區、執行著色器及管理管線階段。
-6.  當管線已執行且框架繪製到背景緩衝區後，請使用 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 將它呈現到螢幕。
+1.  透過呼叫 [**CoreWindow::GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以取得 app 核心 UI 執行緒的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 物件控制代碼。
+2.  針對 UWP app，從含有 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) 的 [**IDXGIAdapter2**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiadapter2) 取得交換鏈結，然後將您在步驟 1 取得的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 參考傳送給它。 隨後您將收到 [**IDXGISwapChain1**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) 執行個體。 將它的範圍設定為您的轉譯器物件和其轉譯的執行緒。
+3.  呼叫 [**D3D11Device::CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法以取得 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 與 [**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 執行個體。 以及將它們的範圍設定為您的轉譯器物件。
+4.  使用您轉譯器的 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件上的方法來建立著色器、材質及其他資源。
+5.  使用您轉譯器的 [**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件上的方法來定義緩衝區、執行著色器及管理管線階段。
+6.  當管線已執行且框架繪製到背景緩衝區後，請使用 [**IDXGISwapChain1::Present1**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 將它呈現到螢幕。
 
-如果要更詳細地檢驗此程序，請檢閱 [DirectX 圖形入門](https://docs.microsoft.com/windows/desktop/getting-started-with-directx-graphics)。 本文的其餘部分涵蓋許多基本圖形管線設定和管理的一般步驟。
-> **附註**   Windows 桌面應用程式會有不同的 Api 來取得 Direct3D 交換鏈結，例如[ **D3D11Device::CreateDeviceAndSwapChain**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdeviceandswapchain)，而且不會使用[ **CoreWindow** ](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)物件。
+如果要更詳細地檢驗此程序，請檢閱 [DirectX 圖形入門](/windows/desktop/getting-started-with-directx-graphics)。 本文的其餘部分涵蓋許多基本圖形管線設定和管理的一般步驟。
+> **注意**   Windows 桌面應用程式有不同的 Api 可取得 Direct3D 交換鏈，例如[**D3D11Device：： CreateDeviceAndSwapChain**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdeviceandswapchain)，且不使用[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)物件。
 
  
 
@@ -117,7 +117,7 @@ if (surface == EGL_NO_SURFACE)
 }
 ```
 
-在 Direct3D 中，UWP app 的主視窗是由 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 物件來表示，您可以在針對 Direct3D 建構的「檢視提供者」的初始化程序中呼叫 [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread)，從 app 物件中取得這個物件。 （如果您使用 Direct3D XAML interop 時，您使用 XAML 架構的檢視提供者）。建立 Direct3D 檢視提供者的程序涵蓋[如何設定您的應用程式，以顯示檢視](https://docs.microsoft.com/previous-versions/windows/apps/hh465077(v=win.10))。
+在 Direct3D 中，UWP app 的主視窗是由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 物件來表示，您可以在針對 Direct3D 建構的「檢視提供者」的初始化程序中呼叫 [**CoreWindow::GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread)，從 app 物件中取得這個物件。 (如果您是使用 Direct3D-XAML 互通性，則使用 XAML 架構的檢視提供者。) 建立 Direct3D 檢視提供者的程序涵蓋於[如何設定 app 以顯示檢視](/previous-versions/windows/apps/hh465077(v=win.10))中。
 
 取得 Direct3D 的 CoreWindow。
 
@@ -125,7 +125,7 @@ if (surface == EGL_NO_SURFACE)
 CoreWindow::GetForCurrentThread();
 ```
 
-一旦取得 [**CoreWindow**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow) 參考之後，就必須啟用視窗，這個視窗會執行主物件的 **Run** 方法，並開始進行視窗事件處理。 在那之後，建立[ **ID3D11Device1** ](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)並[ **ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)，並使用它們來取得基礎[**IDXGIDevice1** ](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgidevice1)並[ **IDXGIAdapter** ](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgiadapter)好讓您可以取得[ **IDXGIFactory2**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgifactory2)物件來建立交換鏈結資源將會根據您[ **DXGI\_交換\_鏈結\_DESC1** ](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)組態。
+一旦取得 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 參考之後，就必須啟用視窗，這個視窗會執行主物件的 **Run** 方法，並開始進行視窗事件處理。 之後，請建立 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 和 [**ID3D11DeviceCoNtext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)，並使用它們來取得基礎 [**IDXGIDevice1**](/windows/desktop/api/dxgi/nn-dxgi-idxgidevice1) 和 [**IDXGIAdapter**](/windows/desktop/api/dxgi/nn-dxgi-idxgiadapter) ，讓您可以取得 [**IDXGIFactory2**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgifactory2) 物件，以根據您的 [**DXGI \_ 交換 \_ 鏈 \_ DESC1**](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) 設定建立交換鏈資源。
 
 在 Direct3D 的 CoreWindow 上設定 DXGI 交換鏈結。
 
@@ -176,9 +176,9 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
 }
 ```
 
-當您準備好框架之後，請呼叫 [**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 方法來顯示該框架。
+當您準備好框架之後，請呼叫 [**IDXGISwapChain1::Present1**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1) 方法來顯示該框架。
 
-請注意，在 Direct3D 11 中，並沒有與 EGLSurface 完全相同的抽象概念。 (沒有[ **IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1)，但以不同的方式使用。)為最接近的概念近似值[ **ID3D11RenderTargetView** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)物件，我們用來指派材質 ([**ID3D11Texture2D** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)) 作為我們著色器的管線會繪製到背景緩衝區。
+請注意，在 Direct3D 11 中，並沒有與 EGLSurface 完全相同的抽象概念。 (雖然有 [**IDXGISurface1**](/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1)，但用法完全不同。) 最接近的概念近似項目是 [**ID3D11RenderTargetView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 物件，我們可以使用這個物件來指派紋理 ([**ID3D11Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)) 做為著色器管線將繪製到其中的背景緩衝區。
 
 在 Direct3D 11 中針對交換鏈結設定背景緩衝區
 
@@ -197,7 +197,7 @@ m_d3dDevice->CreateRenderTargetView(
     &m_d3dRenderTargetViewWin);
 ```
 
-每當建立視窗或變更視窗大小時，呼叫這個程式碼是一個很好的做法。 在轉譯期間，先利用 [**ID3D11DeviceContext1::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 來設定轉譯目標檢視，然後再設定任何其他子資源，像是頂點緩衝區或著色器。
+每當建立視窗或變更視窗大小時，呼叫這個程式碼是一個很好的做法。 在轉譯期間，先利用 [**ID3D11DeviceContext1::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 來設定轉譯目標檢視，然後再設定任何其他子資源，像是頂點緩衝區或著色器。
 
 ``` syntax
 // Set the render target for the draw operation.
@@ -243,7 +243,7 @@ if (!eglMakeCurrent(display, surface, surface, context))
 }
 ```
 
-Direct3D 11 中的轉譯內容是透過 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件來表示，其代表介面卡並讓您能夠建立像是緩衝區和著色器的 Direct3D 資源，同時也可透過 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件來表示，這讓您能夠管理圖形管線並執行著色器。
+Direct3D 11 中的轉譯內容是透過 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件來表示，其代表介面卡並讓您能夠建立像是緩衝區和著色器的 Direct3D 資源，同時也可透過 [**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件來表示，這讓您能夠管理圖形管線並執行著色器。
 
 請注意 Direct3D 功能層級！ 這些都可以用來支援較舊的 Direct3D 硬體平台，範圍涵蓋 DirectX 9.1 到 DirectX 11。 許多使用低電量圖形硬體的平台 (例如平板電腦) 只能存取 DirectX 9.1 功能，而較舊的支援圖形硬體的範圍則涵蓋 9.1 到 11。
 
@@ -306,7 +306,7 @@ eglChooseConfig(eglDsplay, pBufConfigAttrs, &pBufConfig, 1, &totalpBufAttrs);
 EGLSurface pBuffer = eglCreatePbufferSurface(eglDisplay, pBufConfig, EGL_TEXTURE_RGBA); 
 ```
 
-在 Direct3D 11 中，您可以建立 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 資源並為它設定轉譯目標。 設定轉譯目標使用[ **D3D11\_轉譯\_目標\_檢視\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_view_desc)。 當您呼叫[ **ID3D11DeviceContext::Draw** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw)方法 (或類似的繪製\*作業上的裝置內容) 使用此呈現目標，結果會繪製到材質。
+在 Direct3D 11 中，您可以建立 [**ID3D11Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 資源並為它設定轉譯目標。 使用 [**D3D11 轉譯 \_ \_ 目標 \_ 視圖 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_view_desc)設定呈現目標。 當您在裝置內容上呼叫 [**>id3d11devicecoNtext：:D 原始**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) 方法 (或類似的繪圖作業 \*) 使用此轉譯目標時，結果會繪製成材質。
 
 使用 Direct3D 11 繪製到紋理
 
@@ -330,14 +330,14 @@ m_d3dContext->OMSetRenderTargets(
         nullptr);
 ```
 
-如果這個紋理已與 [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview) 產生關聯，就能傳送到著色器。
+如果這個紋理已與 [**ID3D11ShaderResourceView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview) 產生關聯，就能傳送到著色器。
 
 ## <a name="drawing-to-the-screen"></a>繪製到螢幕
 
 
 一旦您已使用 EGLContext 來設定緩衝區並更新資料之後，就可以執行繫結到它的著色器，並使用 glDrawElements 將結果繪製到背景緩衝區。 您可以呼叫 eglSwapBuffers 來顯示背景緩衝區。
 
-Open GL ES 2.0:繪製至螢幕。
+Open GL ES 2.0：繪製到螢幕。
 
 ``` syntax
 glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
@@ -345,9 +345,9 @@ glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 eglSwapBuffers(drawContext->eglDisplay, drawContext->eglSurface);
 ```
 
-在 Direct3D 11 中，您可以設定緩衝區，並將著色器繫結到 [**IDXGISwapChain::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)。 然後呼叫其中一種[ **ID3D11DeviceContext1::Draw** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) \*執行著色器，並繪製結果做為交換鏈結背景緩衝區設定為轉譯目標的方法。 在此之後，您只需呼叫 **IDXGISwapChain::Present1**，就能將背景緩衝區呈現到顯示。
+在 Direct3D 11 中，您可以設定緩衝區，並將著色器繫結到 [**IDXGISwapChain::Present1**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)。 然後，您可以呼叫其中一個[**ID3D11DeviceCoNtext1：:D 原始**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-draw) \* 方法來執行著色器，並將結果繪製至設定為交換鏈後置緩衝區的轉譯目標。 在此之後，您只需呼叫 **IDXGISwapChain::Present1**，就能將背景緩衝區呈現到顯示。
 
-Direct3D 11:繪製至螢幕。
+Direct3D 11：繪製到螢幕。
 
 ``` syntax
 
@@ -372,47 +372,43 @@ m_swapChainCoreWindow->Present1(1, 0, &parameters);
 EGLBoolean eglTerminate(eglDisplay);
 ```
 
-在 UWP app 中，您可以使用 [**CoreWindow::Close**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.close) 來關閉 CoreWindow，即使這只適用於次要的 UI 視窗也一樣。 您無法關閉主要的 UI 執行緒及其相關聯的 CoreWindow；而是透過作業系統讓它們到期。 然而，在關閉次要的 CoreWindow 時，會引發 [**CoreWindow::Closed**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.closed) 事件。
+在 UWP app 中，您可以使用 [**CoreWindow::Close**](/uwp/api/windows.ui.core.corewindow.close) 來關閉 CoreWindow，即使這只適用於次要的 UI 視窗也一樣。 您無法關閉主要的 UI 執行緒及其相關聯的 CoreWindow；而是透過作業系統讓它們到期。 然而，在關閉次要的 CoreWindow 時，會引發 [**CoreWindow::Closed**](/uwp/api/windows.ui.core.corewindow.closed) 事件。
 
 ## <a name="api-reference-mapping-for-egl-to-direct3d-11"></a>EGL 與 Direct3D 11 的 API 參照對應
 
 
 | EGL API                          | 類似 Direct3D 11 API 或行為                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| eglBindAPI                       | 不適用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| eglBindTexImage                  | 呼叫 [**ID3D11Device::CreateTexture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) 以設定 2D 紋理。                                                                                                                                                                                                                                                                                                                                                                                          |
+| eglBindAPI                       | N/A。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| eglBindTexImage                  | 呼叫 [**ID3D11Device::CreateTexture2D**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d) 以設定 2D 紋理。                                                                                                                                                                                                                                                                                                                                                                                          |
 | eglChooseConfig                  | Direct3D 未提供預設的框架緩衝區設定組合。 交換鏈結的設定                                                                                                                                                                                                                                                                                                                                                                                           |
-| eglCopyBuffers                   | 若要複製緩衝區資料，請呼叫 [**ID3D11DeviceContext::CopyStructureCount**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-copystructurecount)。 若要複製資源，請呼叫 [**ID3DDeviceCOntext::CopyResource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-copyresource)。                                                                                                                                                                                                                                                      |
-| eglCreateContext                 | 透過呼叫 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 以建立 Direct3D 裝置內容，這樣會將控制代碼傳回到 Direct3D 裝置和預設的 Direct3D 直接內容 ([**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件)。 您也可以在傳回的 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件上呼叫 [**ID3D11Device2::CreateDeferredContext**](https://docs.microsoft.com/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-createdeferredcontext2)，以建立 Direct3D 延遲內容。 |
-| eglCreatePbufferFromClientBuffer | 所有的緩衝區都會當成 Direct3D 子資源來讀取與寫入，例如 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)。 使用像是 [**ID3D11DeviceContext1:CopyResource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-copyresource) 的方法，從某個相容的子資源複製到另一個子資源。                                                                                                                                                                                                     |
-| eglCreatePbufferSurface          | 若要建立不包含交換鏈結的 Direct3D 裝置，請呼叫靜態 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法。 針對 Direct3D 轉譯目標檢視，呼叫 [**ID3D11Device::CreateRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview)。                                                                                                                                                                                                                               |
-| eglCreatePixmapSurface           | 若要建立不包含交換鏈結的 Direct3D 裝置，請呼叫靜態 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法。 針對 Direct3D 轉譯目標檢視，呼叫 [**ID3D11Device::CreateRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview)。                                                                                                                                                                                                                               |
-| eglCreateWindowSurface           | 取得 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) (用於顯示緩衝區) 和 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) (用於圖形裝置及其資源的虛擬介面)。 使用 **ID3D11Device1** 來定義 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)，您可以用它來建立要疑供給 **IDXGISwapChain1** 的框架緩衝區。                                                                                         |
-| eglDestroyContext                | 不適用。 使用 [**ID3D11DeviceContext::DiscardView1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-discardview1) 來移除轉譯目標檢視。 若要關閉父項 [**ID3D11DeviceContext1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)，請將執行個體設為 Null，並等候平台回收它的資源。 您無法直接摧毀裝置內容。                                                                                                                                                |
-| eglDestroySurface                | 不適用。 當平台關閉 UWP app 的 CoreWindow 時，就會清理圖形資源。                                                                                                                                                                                                                                                                                                                                                                                                 |
-| eglGetCurrentDisplay             | 呼叫 [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetCurrentSurface             | 這是目前的 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)。 這通常會將範圍設定為您的轉譯器物件。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | 由 DirectX 介面上大部分方法所傳回的 HRESULT 來取得錯誤。 如果方法未傳回 HRESULT，請呼叫 [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)。 若要轉換的 HRESULT 值的系統錯誤，請使用 [**HRESULT\_FROM\_WIN32**](https://docs.microsoft.com/windows/desktop/api/winerror/nf-winerror-hresult_from_win32) 巨集。                                                                                                                                                                                                  |
-| eglInitialize                    | 呼叫 [**CoreWindow::GetForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
-| eglMakeCurrent                   | 使用 [**ID3D11DeviceContext1::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 來設定要在目前內容上繪製的轉譯目標。                                                                                                                                                                                                                                                                                                                                  |
-| eglQueryContext                  | 不適用。 但是，您可能會從 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 執行個體取得轉譯目標，以及一些設定資料 (請參閱可用方法清單的連結)。                                                                                                                                                                                                                                                                                           |
-| eglQuerySurface                  | 不適用。 然而，您可能會從 [**ID3D11Device1**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 執行個體上的方法，取得檢視區和目前圖形硬體的相關資料 (請參閱可用方法清單的連結)。                                                                                                                                                                                                                                                                               |
-| eglReleaseTexImage               | 不適用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| eglReleaseThread                 | 針對一般 GPU 多執行緒，請參閱[多執行緒](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                                                              |
-| eglSurfaceAttrib                 | 使用[ **D3D11\_轉譯\_目標\_檢視\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_view_desc)設定 Direct3D 轉譯目標檢視                                                                                                                                                                                                                                                                                                                                                               |
-| eglSwapBuffers                   | 使用[**IDXGISwapChain1::Present1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)。                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| eglSwapInterval                  | 請參閱 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)。                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| eglCopyBuffers                   | 若要複製緩衝區資料，請呼叫 [**ID3D11DeviceContext::CopyStructureCount**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-copystructurecount)。 若要複製資源，請呼叫 [**ID3DDeviceCOntext::CopyResource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-copyresource)。                                                                                                                                                                                                                                                      |
+| eglCreateContext                 | 透過呼叫 [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 以建立 Direct3D 裝置內容，這樣會將控制代碼傳回到 Direct3D 裝置和預設的 Direct3D 直接內容 ([**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1) 物件)。 您也可以在傳回的 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 物件上呼叫 [**ID3D11Device2::CreateDeferredContext**](/windows/desktop/api/d3d11_2/nf-d3d11_2-id3d11device2-createdeferredcontext2)，以建立 Direct3D 延遲內容。 |
+| eglCreatePbufferFromClientBuffer | 所有的緩衝區都會當成 Direct3D 子資源來讀取與寫入，例如 [**ID3D11Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)。 使用像是 [**ID3D11DeviceContext1:CopyResource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-copyresource) 的方法，從某個相容的子資源複製到另一個子資源。                                                                                                                                                                                                     |
+| eglCreatePbufferSurface          | 若要建立不包含交換鏈結的 Direct3D 裝置，請呼叫靜態 [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法。 針對 Direct3D 轉譯目標檢視，呼叫 [**ID3D11Device::CreateRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview)。                                                                                                                                                                                                                               |
+| eglCreatePixmapSurface           | 若要建立不包含交換鏈結的 Direct3D 裝置，請呼叫靜態 [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 方法。 針對 Direct3D 轉譯目標檢視，呼叫 [**ID3D11Device::CreateRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createrendertargetview)。                                                                                                                                                                                                                               |
+| eglCreateWindowSurface           | 取得 [**IDXGISwapChain1**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1) (用於顯示緩衝區) 和 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) (用於圖形裝置及其資源的虛擬介面)。 使用 **ID3D11Device1** 來定義 [**ID3D11RenderTargetView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)，您可以用它來建立要疑供給 **IDXGISwapChain1** 的框架緩衝區。                                                                                         |
+| eglDestroyContext                | N/A。 使用 [**ID3D11DeviceContext::DiscardView1**](/windows/desktop/api/d3d11_1/nf-d3d11_1-id3d11devicecontext1-discardview1) 來移除轉譯目標檢視。 若要關閉父項 [**ID3D11DeviceContext1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11devicecontext1)，請將執行個體設為 Null，並等候平台回收它的資源。 您無法直接摧毀裝置內容。                                                                                                                                                |
+| eglDestroySurface                | N/A。 當平台關閉 UWP app 的 CoreWindow 時，就會清理圖形資源。                                                                                                                                                                                                                                                                                                                                                                                                 |
+| eglGetCurrentDisplay             | 呼叫 [**CoreWindow::GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
+| eglGetCurrentSurface             | 這是目前的 [**ID3D11RenderTargetView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview)。 這通常會將範圍設定為您的轉譯器物件。                                                                                                                                                                                                                                                                                                                                                         |
+| eglGetError                      | 由 DirectX 介面上大部分方法所傳回的 HRESULT 來取得錯誤。 如果方法未傳回 HRESULT，請呼叫 [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror)。 若要將系統錯誤轉換成 HRESULT 值，請使用 [** \_ \_ WIN32**](/windows/desktop/api/winerror/nf-winerror-hresult_from_win32)宏的 hresult   。                                                                                                                                                                                                  |
+| eglInitialize                    | 呼叫 [**CoreWindow::GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
+| eglMakeCurrent                   | 使用 [**ID3D11DeviceContext1::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 來設定要在目前內容上繪製的轉譯目標。                                                                                                                                                                                                                                                                                                                                  |
+| eglQueryContext                  | N/A。 但是，您可能會從 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 執行個體取得轉譯目標，以及一些設定資料 (請參閱可用方法清單的連結)。                                                                                                                                                                                                                                                                                           |
+| eglQuerySurface                  | N/A。 然而，您可能會從 [**ID3D11Device1**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1) 執行個體上的方法，取得檢視區和目前圖形硬體的相關資料 (請參閱可用方法清單的連結)。                                                                                                                                                                                                                                                                               |
+| eglReleaseTexImage               | N/A。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| eglReleaseThread                 | 針對一般 GPU 多執行緒，請參閱[多執行緒](/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                                                              |
+| eglSurfaceAttrib                 | 使用 [**D3D11 \_ 轉譯 \_ 目標 \_ 視圖 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_render_target_view_desc) 來設定 Direct3D 轉譯目標視圖，                                                                                                                                                                                                                                                                                                                                                               |
+| eglSwapBuffers                   | 使用[**IDXGISwapChain1::Present1**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-present1)。                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| eglSwapInterval                  | 請參閱 [**IDXGISwapChain1**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)。                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | eglTerminate                     | 用來顯示圖形管線輸出的 CoreWindow 是由作業系統所管理。                                                                                                                                                                                                                                                                                                                                                                                          |
-| eglWaitClient                    | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                    |
-| eglWaitGL                        | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                    |
-| eglWaitNative                    | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](https://docs.microsoft.com/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                    |
+| eglWaitClient                    | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                    |
+| eglWaitGL                        | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                    |
+| eglWaitNative                    | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](/windows/desktop/direct3d11/overviews-direct3d-11-render-multi-thread-intro)。                                                                                                                                                                                                                                                                                                                                    |
 
  
 
  
 
  
-
-
-
-
