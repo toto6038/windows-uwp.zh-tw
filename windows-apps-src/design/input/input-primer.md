@@ -1,5 +1,5 @@
 ---
-Description: Windows 應用程式中的使用者互動是輸入和輸出來源（例如滑鼠、鍵盤、畫筆、觸控、觸控板、語音、Cortana、控制器、手勢、注視等等）的組合，以及各種模式或修飾詞，可提供延伸體驗（包括滑鼠滾輪和按鈕、畫筆橡皮擦和張盒按鈕、觸控鍵盤和背景應用程式服務）。
+Description: Windows 應用程式中的使用者互動是輸入和輸出來源的組合 (例如滑鼠、鍵盤、畫筆、觸控、觸控板、語音、Cortana、控制器、手勢、注視等) ，以及各種可提供延伸體驗的模式或修飾詞 (包括滑鼠滾輪和按鈕、畫筆橡皮擦和圓筒按鈕、觸控鍵盤和背景應用程式服務) 。
 title: 互動基本資訊
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
@@ -8,20 +8,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef3adfd192acbef45ee341b133e4133e1f1ff586
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: dc220d1b5489faf96653472880dc06124c10b047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968154"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173442"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 
 ![Windows 輸入類型](images/input-interactions/icons-inputdevices03.png)
 
-Windows 應用程式中的使用者互動是輸入和輸出來源（例如滑鼠、鍵盤、畫筆、觸控、觸控板、語音、 **Cortana**、控制器、手勢、注視等等）的組合，以及各種模式或修飾詞，可提供延伸體驗（包括滑鼠滾輪和按鈕、畫筆橡皮擦和張盒按鈕、觸控鍵盤和背景應用程式服務）。
+Windows 應用程式中的使用者互動是輸入和輸出來源的組合 (例如滑鼠、鍵盤、畫筆、觸控、觸控板、語音、 **Cortana**、控制器、手勢、注視等) ，以及各種可提供延伸體驗的模式或修飾詞 (包括滑鼠滾輪和按鈕、畫筆橡皮擦和圓筒按鈕、觸控鍵盤和背景應用程式服務) 。
 
-UWP 會使用「智慧型」內容互動系統，在大多數情況下，不需要個別處理您的應用程式所接收的唯一輸入類型。 這包含了做為一般指標類型的處理觸控、觸控板、滑鼠和手寫筆輸入，以支援靜態手勢 (例如點選或長按)、操作手勢 (例如滑動進行移動瀏覽，或呈現數位筆跡)。
+UWP 使用「智慧型」內容互動系統，在大部分情況下，不需要個別處理您應用程式所接收的唯一輸入類型。 這包含了做為一般指標類型的處理觸控、觸控板、滑鼠和手寫筆輸入，以支援靜態手勢 (例如點選或長按)、操作手勢 (例如滑動進行移動瀏覽，或呈現數位筆跡)。
 
 與特定尺寸規格配對使用時，請熟悉各個輸入裝置類型及其行為、功能與限制。 這可以協助您判斷您的應用程式是否有足夠的平台控制項與能供性，或者需要您提供自訂的互動體驗。
 
@@ -34,12 +34,12 @@ UWP 會使用「智慧型」內容互動系統，在大多數情況下，不需�
 
 ### <a name="device-support"></a>裝置支援
 
-- 平板電腦
+- Tablet
 - 電腦和膝上型電腦
 
 ### <a name="typical-usage"></a>一般使用方式
 
-追蹤使用者的注視、注意力，以及根據他們眼球的位置與移動存在。 這項功能強大的新方法與 Windows 應用程式的互動，對於具有為主眼部神經 muscular 疾病（例如 ALS）的使用者，以及牽涉到受損肌肉或 nerve 功能的其他殘障人士而言，是非常有用的輔助技術。 注視輸入也提供吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
+追蹤使用者的注視、注意力，以及根據他們眼球的位置與移動存在。 這項強大的新方法可讓您使用 Windows 應用程式並與之互動，特別適用于具有為主眼部神經 muscular 疾病 (（例如 ALS) 和其他與受損肌肉或 nerve 函式的障礙等使用者的輔助技術。 注視輸入也提供吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
 
 ### <a name="more-info"></a>其他資訊
 
@@ -51,7 +51,7 @@ UWP 會使用「智慧型」內容互動系統，在大多數情況下，不需�
 
 ### <a name="device-support"></a>裝置支援
 
-- 平板電腦
+- Tablet
 - 電腦和膝上型電腦
 
 ### <a name="typical-usage"></a>一般使用方式
@@ -69,7 +69,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT
@@ -82,14 +82,14 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 語音命令會定義於語音命令定義 (VCD) 檔中，它是一種單次語言表達，會透過 **Cortana** 導向已安裝的應用程式。 根據互動的層次和複雜性，您可以在前景或背景啟動這個應用程式。 例如，某些語音命需要參考前後文或者需要使用者輸入資料，那麼在前景進行處理最合適；而基本的命令，則可以在背景進行處理。
 
-整合應用程式的基本功能，並提供一個中心進入點，讓使用者不需要開啟應用程式就能完成大部分的工作，這讓 **Cortana** 成為您的應用程式與使用者之間的橋樑。 在許多情況下，這可以讓使用者節省大量時間與精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)。
+整合應用程式的基本功能，並提供一個中心進入點，讓使用者不需要開啟應用程式就能完成大部分的工作，這讓 **Cortana** 成為您的應用程式與使用者之間的橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。 如需詳細資訊，請參閱 [Cortana 設計指導方針](/cortana/skills/cortana-design-guidelines)。
 
 ### <a name="more-info"></a>其他資訊
 
-[Cortana 設計指導方針](https://docs.microsoft.com/cortana/skills/cortana-design-guidelines)
+[Cortana 設計指導方針](/cortana/skills/cortana-design-guidelines)
  
 
-## <a name="speech"></a>Speech
+## <a name="speech"></a>語音
 
 語音是使用者可用來與應用程式互動的有效且自然的方式。 這是與應用程式通訊的簡單且精確的方式，並讓使用者能夠提高生產力，且在各種不同的情況下收到通知。
 
@@ -100,7 +100,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT
@@ -135,14 +135,14 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 ### <a name="more-info"></a>其他資訊
 
-[語音設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
+[語音設計指導方針](./speech-interactions.md)
  
 
 ## <a name="pen"></a>手寫筆
 
 手寫筆可以當做像素精確指標裝置 (例如滑鼠)，而且是適用於數位筆跡輸入的最佳裝置。
 
-**請注意**  ，有兩種類型的手寫筆裝置：主動和被動。
+**注意**   畫筆裝置有兩種類型：主動和被動。
   -   被動式手寫筆不包含電子產品，可有效地模擬來自手指的觸控輸入。 它們需要基本的裝置顯示器，根據接觸點的壓力來辨識輸入。 由於使用者在輸入介面上書寫時通常會將手擱在上面，因此，輸入資料會因為未順利防手掌誤觸而受到干擾。
   -   主動式手寫筆包含電子產品，而且可與複雜的裝置顯示器一起使用，為系統和應用程式提供更廣泛的輸入資料 (包括暫留或鄰近性資料)。 防手掌誤觸的功能更加強固。
 
@@ -151,7 +151,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT
@@ -168,7 +168,7 @@ Windows 筆跡平台搭配手寫筆之後，使用者就可以自然的方式手
 
 ### <a name="more-info"></a>其他資訊
 
-[手寫筆設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions)
+[手寫筆設計指導方針](./pen-and-stylus-interactions.md)
  
 
 ## <a name="touch"></a>觸控
@@ -178,7 +178,7 @@ Windows 筆跡平台搭配手寫筆之後，使用者就可以自然的方式手
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT
@@ -203,7 +203,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 
 ### <a name="more-info"></a>其他資訊
 
-[觸控設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)
+[觸控設計指導方針](./touch-interactions.md)
  
 
 ## <a name="touchpad"></a>Touchpad
@@ -227,19 +227,19 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 
 ### <a name="more-info"></a>其他資訊
 
-[觸控板設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/touch-interactions)
+[觸控板設計指導方針](./touch-interactions.md)
  
 
 ## <a name="keyboard"></a>鍵盤
 
 鍵盤是文字的主要輸入裝置，對於某些行動不便的使用者，或是認為鍵盤是與應用程式互動更快速且更有效率之方式的使用者來說，通常是不可或缺。
 
-透過 [Continuum 手機版](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
+透過 [Continuum 手機版](/windows-hardware/design/device-experiences/continuum-phone) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
 
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT
@@ -256,7 +256,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 觸控式鍵盤是視覺化的軟體鍵盤，使用觸控輸入來輸入文字。 觸控式鍵盤不能取代 OSK，因為它只能輸入文字 (它不會模擬硬體鍵盤)，而且只有文字欄位或其他可編輯的文字控制項得到焦點之後，才會顯示。 觸控式鍵盤不支援應用程式或系統命令。
 
-**請注意**  ，OSK 的優先順序高於觸控式鍵盤，如果 OSK 存在，則不會顯示。
+**注意**   OSK 的優先順序高於觸控鍵盤，如果有 OSK，就不會顯示。
 
 一般而言，鍵盤是：
 
@@ -267,7 +267,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 ### <a name="more-info"></a>其他資訊
 
-[鍵盤設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)
+[鍵盤設計指導方針](./keyboard-interactions.md)
  
 
 ## <a name="mouse"></a>滑鼠
@@ -277,7 +277,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT
@@ -294,7 +294,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 ### <a name="more-info"></a>其他資訊
 
-[滑鼠設計指導方針](https://docs.microsoft.com/windows/uwp/input-and-devices/mouse-interactions)
+[滑鼠設計指導方針](./mouse-interactions.md)
  
 
 ## <a name="gesture"></a>手勢
@@ -349,7 +349,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 ### <a name="device-support"></a>裝置支援
 
 -   手機和平板手機
--   平板電腦
+-   Tablet
 -   電腦和膝上型電腦
 -   Surface Hub
 -   IoT

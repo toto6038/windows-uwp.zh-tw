@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, 遊戲, 連接埠
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c17e0b8ceb5938b7ca224f4a67198929a37a7f4
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cdd5bc20d9cceff992cc23ae4863f952ea719877
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368364"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175212"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
 
@@ -27,7 +27,7 @@ ms.locfileid: "66368364"
 
 本主題一開始假設您已建立新的 DirectX 11 專案。 若要了解如何建立新的 DirectX 11 專案，請閱讀[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)。
 
-從這其中任一個連結建立的專案都會包含所有針對 [Direct3D](https://docs.microsoft.com/windows/desktop/direct3d11/dx-graphics-overviews) 基礎結構所準備的程式碼，而您可以立即開始進行將轉譯器從 Open GL ES 2.0 移植到 Direct3D 11 的程序。
+從這其中任一個連結建立的專案都會包含所有針對 [Direct3D](/windows/desktop/direct3d11/dx-graphics-overviews) 基礎結構所準備的程式碼，而您可以立即開始進行將轉譯器從 Open GL ES 2.0 移植到 Direct3D 11 的程序。
 
 本主題將逐步解說兩個執行相同基本圖形工作的程式碼路徑：在視窗中顯示旋轉的頂點著色立方體。 在這兩個案例中，程式碼會涵蓋下列程序：
 
@@ -80,23 +80,23 @@ typedef struct
 
 這個結構含有一個執行個體，並包含所有用來轉譯非常簡單且頂點已著色的網格所需的元件。
 
-> **附註**  Khronos 群組中，所提供的 Windows API 實作根據本主題中的任何的 OpenGL ES 2.0 程式碼，並使用 Windows C 程式設計語法。
+> **注意**   本主題中的任何 OpenGL ES 2.0 程式碼都是以 Khronos 群組所提供的 Windows API 實作為基礎，並且使用 Windows C 程式設計語法。
 
  
 
-## <a name="what-you-need-to-know"></a>您需要知道的事項
+## <a name="what-you-need-to-know"></a>您必須知道的事項
 
 
 ### <a name="technologies"></a>技術
 
--   [Microsoft Visual C++](https://docs.microsoft.com/previous-versions/60k1461a(v=vs.140))
+-   [Microsoft Visual C++](/previous-versions/60k1461a(v=vs.140))
 -   OpenGL ES 2.0
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 -   選擇性。 檢閱[將 EGL 程式碼移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 閱讀本主題以更加了解 DirectX 所提供的圖形介面。
 
-## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>步驟
+## <a name="span-idkeylinks_steps_headingspansteps"></a><span id="keylinks_steps_heading"></span>步驟
 
 
 <table>
@@ -107,24 +107,24 @@ typedef struct
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="port-the-shader-config.md">連接埠的著色器物件</a></p></td>
+<td align="left"><p><a href="port-the-shader-config.md">移植著色器物件</a></p></td>
 <td align="left"><p>從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">連接埠的端點緩衝區和資料</a></p></td>
+<td align="left"><p><a href="port-the-vertex-buffers-and-data-config.md">移植頂點緩衝區與資料</a></p></td>
 <td align="left"><p>在這個步驟中，您將定義包含網格的頂點緩衝區，以及允許著色器以特定順序周遊頂點的索引緩衝區。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="port-the-glsl.md">GLSL 的連接埠</a></p></td>
+<td align="left"><p><a href="port-the-glsl.md">移植 GLSL</a></p></td>
 <td align="left"><p>一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="draw-to-the-screen.md">描繪至螢幕</a></p></td>
+<td align="left"><p><a href="draw-to-the-screen.md">繪製到螢幕</a></p></td>
 <td align="left"><p>最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。</p></td>
 </tr>
 </tbody>
@@ -132,17 +132,13 @@ typedef struct
 
  
 
-## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>其他資源
+## <a name="span-idadditional_resourcesspanadditional-resources"></a><span id="additional_resources"></span>其他資源
 
 
--   [準備開發環境適用於 UWP 的 DirectX 遊戲開發](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [建立新的 DirectX 11 專案適用於 UWP](user-interface.md)
+-   [準備開發環境以進行 UWP DirectX 遊戲開發](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [建立適用於 UWP 的新 DirectX 11 專案](user-interface.md)
 -   [將 OpenGL ES 2.0 概念與基礎結構對應到 Direct3D 11](map-concepts-and-infrastructure.md)
 
  
 
  
-
-
-
-

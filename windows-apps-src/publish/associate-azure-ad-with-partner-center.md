@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: medium
-ms.openlocfilehash: fa26f4ea3fa91f43dea117ff5ffd2fec87514544
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: e30768b376b2bca01deb3d9b21d867db393d7604
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846758"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174812"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>將 Azure Active Directory 與您的合作夥伴中心帳戶建立關聯
 
@@ -19,7 +19,7 @@ ms.locfileid: "88846758"
 [合作夥伴中心](https://partner.microsoft.com/dashboard) 利用 Azure AD 進行多使用者帳戶存取和管理。 如果您的組織已使用 Microsoft 365 或 Microsoft 的其他商務服務，您就已經有 Azure AD。 否則，您可以從合作夥伴中心內建立新的 Azure AD 租使用者，而不需額外付費。
 
 > [!TIP]
-> 本主題是[合作夥伴中心](https://partner.microsoft.com/dashboard)中的 Windows 應用程式開發人員計畫專屬的，但讓租使用者與管理使用者的運作方式類似于 Windows 傳統型應用程式計畫中的帳戶 (如需詳細資訊，請參閱 Windows 傳統型應用程式計畫。如需詳細資訊，請參閱[Windows Desktop Application Program](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)) ，在 Windows 硬體開發人員計畫**中，管理員角色的**參考也適用于具有**系統管理員**角色的硬體帳戶;如需詳細資訊，請參閱[儀表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)) 。
+> 本主題是[合作夥伴中心](https://partner.microsoft.com/dashboard)中的 Windows 應用程式開發人員計畫專屬的，但讓租使用者與管理使用者的運作方式類似于 Windows 傳統型應用程式計畫中的帳戶 (如需詳細資訊，請參閱 Windows 傳統型應用程式計畫。如需詳細資訊，請參閱[Windows Desktop Application Program](/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)) ，在 Windows 硬體開發人員計畫**中，管理員角色的**參考也適用于具有**系統管理員**角色的硬體帳戶;如需詳細資訊，請參閱[儀表板管理](/windows-hardware/drivers/dashboard/dashboard-administration)) 。
 
 單一 Azure AD 租使用者可以與多個合作夥伴中心帳戶相關聯。 您只需要有一個 Azure AD 租使用者與您的合作夥伴中心帳戶建立關聯，才能新增多個帳戶使用者，但您也可以選擇將多個 Azure AD 租使用者新增至單一合作夥伴中心帳戶。 在合作夥伴中心帳戶內，所有具有**管理員**角色的使用者，都可以選擇從帳戶新增和移除 Azure AD 租用戶。
 
@@ -38,7 +38,7 @@ ms.locfileid: "88846758"
 5.  如果關聯成功，您可以接著在合作夥伴中心的 [使用者] 區段中，新增和管理帳戶使用者。
 
 > [!IMPORTANT]
-> 若要建立新使用者，或對 Azure AD 進行其他變更，您將需要使用擁有該租用戶之[全域系統管理員權限](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)的帳戶來登入該 Azure AD。 不過，您不需要全域管理員許可權，就能關聯租使用者，或將該租使用者中已存在的使用者新增至您的合作夥伴中心帳戶。
+> 若要建立新使用者，或對 Azure AD 進行其他變更，您將需要使用擁有該租用戶之[全域系統管理員權限](/azure/active-directory/users-groups-roles/directory-assign-admin-roles)的帳戶來登入該 Azure AD。 不過，您不需要全域管理員許可權，就能關聯租使用者，或將該租使用者中已存在的使用者新增至您的合作夥伴中心帳戶。
 
 
 ## <a name="create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account"></a>建立與您的合作夥伴中心帳戶相關聯的全新 Azure AD
@@ -78,5 +78,3 @@ ms.locfileid: "88846758"
 
 > [!TIP]
 > 如果您目前使用相同租使用者中的帳戶登入合作夥伴中心，就無法移除該租使用者。 若要移除租用戶，您必須以另一個租用戶 (與帳戶相關聯) 的**管理員**身分登入合作夥伴中心。 如果只有一個租用戶與此帳戶相關聯，則只有在用以開啟帳戶的 Microsoft 帳戶登入之後，才能移除該租用戶。
-
-

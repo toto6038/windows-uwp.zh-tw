@@ -1,26 +1,26 @@
 ---
-Description: 在桌面應用程式和 UWP 應用程式之間共用程式碼
-title: 在桌面應用程式和 UWP 應用程式之間共用程式碼
+Description: 在傳統型應用程式與 UWP 應用程式之間共用程式碼
+title: 在傳統型應用程式與 UWP 應用程式之間共用程式碼
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c07a3bbff4b29d2b59ef7d6d8a5912ce3675a4e
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730357"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174932"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>從桌面應用程式移至 UWP
 
-如果您現有的桌面應用程式是使用 .NET Framework （包括 WPF 和 Windows Forms）或 c + + Win32 Api 所建立，則您有數個選項可移至通用 Windows 平臺（UWP）和 Windows 10。
+如果您現有的桌面應用程式是使用 .NET Framework (所建立，包括 WPF 和 Windows Forms) 或 c + + Win32 Api，您有數個選項可移至通用 Windows 平臺 (UWP) 和 Windows 10。
 
-## <a name="package-your-desktop-application-in-an-msix-package"></a>將桌面應用程式封裝在 MSIX 套件中
+## <a name="package-your-desktop-application-in-an-msix-package"></a>將您的桌面應用程式封裝在 MSIX 套件中
 
-您可以在 MSIX 套件中封裝桌面應用程式，以取得更多 Windows 10 功能的存取權。 MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 不論您是否有原始程式碼，或是只有現有的安裝程式檔案（例如 MSI 或 App-v 安裝程式），您都可以封裝應用程式。 封裝應用程式之後，您可以整合 UWP 功能，例如封裝延伸模組和其他 UWP 元件。
+您可以在 MSIX 套件中封裝桌面應用程式，以存取更多 Windows 10 功能。 MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 您可以封裝您的應用程式是否有原始程式碼，或者您是否只有現有的安裝程式檔案 (例如 MSI 或 App-v 安裝程式) 。 封裝您的應用程式之後，您可以整合 UWP 功能，例如封裝延伸模組和其他 UWP 元件。
 
-如需詳細資訊，請參閱[封裝桌面應用程式（桌面橋接器）](/windows/msix/desktop/desktop-to-uwp-root)和[需要套件識別的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+如需詳細資訊，請參閱 [封裝桌面應用程式 (傳統型橋接器) ](/windows/msix/desktop/desktop-to-uwp-root) 以及 [需要套件身分識別的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
 
 ## <a name="use-windows-runtime-apis"></a>使用 Windows 執行階段 Api
 
@@ -30,13 +30,13 @@ ms.locfileid: "82730357"
 
 ## <a name="migrate-a-net-framework-app-to-a-uwp-app"></a>將 .NET Framework 應用程式遷移至 UWP 應用程式
 
-如果您的應用程式是在 .NET Framework 上執行，您可以利用 .NET Standard 2.0，將它遷移至 UWP 應用程式。 盡可能將最多的程式碼移至 .NET Standard 2.0 類別庫，然後建立參考您 .NET Standard 2.0 程式庫的 UWP 應用程式。 
+如果您的應用程式是在 .NET Framework 上執行，您可以利用 .NET Standard 2.0 將它遷移至 UWP 應用程式。 盡可能將多個程式碼移至 .NET Standard 2.0 類別庫，然後建立可參考 .NET Standard 2.0 程式庫的 UWP 應用程式。 
 
 ### <a name="share-code-in-a-net-standard-20-library"></a>共用 .NET Standard 2.0 程式庫中的程式碼
 
-如果您的應用程式是在 .NET Framework 上執行，請將盡可能多的程式碼放入 .NET Standard 2.0 類別庫。 只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
+如果您的應用程式是在 .NET Framework 上執行，請盡可能將最多的程式碼放入 .NET Standard 2.0 類別庫中。 只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
 
-這裡提供的影片會告訴您更多相關資訊。
+以下是告訴您詳細資訊的影片。
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
@@ -70,7 +70,7 @@ ms.locfileid: "82730357"
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
+如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](/dotnet/api/?view=netstandard-2.0)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
 
 ![Dot Net 選項](images/desktop-to-uwp/dot-net-option.png)
 
@@ -78,11 +78,11 @@ ms.locfileid: "82730357"
 
 #### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：將資料存取程式碼移轉至 .NET Standard 2.0 程式庫
 
-假設我們有一個非常基本的 Windows Forms 應用程式，它會顯示 Northwind 範例資料庫中的客戶。
+假設我們有一個非常基本的 Windows Forms 應用程式，它會向我們的 Northwind 範例資料庫顯示客戶。
 
 ![Windows Forms 應用程式](images/desktop-to-uwp/win-forms-app.png)
 
-專案包含內有名為 **Northwind** 靜態類別的 .NET Standard 2.0 類別庫。 如果我們將此程式碼移**至 Northwind**類別，它將不會編譯， ``SQLConnection``因為``SqlCommand``它會``SqlDataReader``使用、和類別，以及 .NET Standard 2.0 中未提供的類別。
+專案包含內有名為 **Northwind** 靜態類別的 .NET Standard 2.0 類別庫。 如果將此程式碼移至 **Northwind** 類別，則不會進行編譯，因為它會使用 ``SQLConnection`` 、 ``SqlCommand`` 和 ``SqlDataReader`` 類別，以及 .NET Standard 2.0 中未提供的類別。
 
 ```csharp
 public static ArrayList GetCustomerNames()
@@ -112,7 +112,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-您可以使用 [.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)尋找替代方式。 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 類別全都以 .NET Standard 2.0 提供，所以我們可以改為使用它們。  
+您可以使用 [.NET API 瀏覽器](/dotnet/api/?view=netstandard-2.0)尋找替代方式。 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 類別全都以 .NET Standard 2.0 提供，所以我們可以改為使用它們。  
 
 此修訂版本使用這些類別來取得客戶清單，但要建立 ``DbConnection`` 類別，就必須傳入我們在用戶端應用程式中建立的 Factory 物件。
 
@@ -216,7 +216,7 @@ public sealed partial class MainPage : Page
 }
 ```
 
-若要開始使用 UWP，請參閱[什麼是 UWP app](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
+若要開始使用 UWP，請參閱[什麼是 UWP app](../get-started/universal-application-platform-guide.md)。
 
 ### <a name="reach-ios-and-android-devices"></a>將目標範本擴及 iOS 和 Android 裝置
 
@@ -239,7 +239,7 @@ public sealed partial class MainPage : Page
 ![Xamarin 應用程式](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
->跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 [在這裡](https://docs.microsoft.com/xamarin/xamarin-forms/)深入瞭解。
+>跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 [在此](/xamarin/xamarin-forms/)深入了解。
 
 接著，從 Android、iOS 或跨平台專案中新增類別庫專案的參考。
 
@@ -278,13 +278,13 @@ public class MainActivity : ListActivity
 }
 ```
 
-若要開始使用 Android、iOS 和跨平台專案，請參閱 [Xamarin 開發人員入口網站](https://docs.microsoft.com/xamarin)。
+若要開始使用 Android、iOS 和跨平台專案，請參閱 [Xamarin 開發人員入口網站](/xamarin)。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>接下來的步驟
 
 **尋找您的問題解答**
 
-有任何疑問嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標籤](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在這裡](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)發問。
 
 **提供意見反應或功能建議**
 

@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2cccf0392c4e71cc76449d1cfe505af092871e
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 92f670fbacef8c3e87cf1b3389a3d8ab9a9db444
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970146"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174772"
 ---
 # <a name="manage-your-ad-campaign"></a>管理您的廣告活動
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-若要在 [合作夥伴中心](https://partner.microsoft.com/dashboard)中管理應用程式的 ad 活動，請展開左側導覽功能表中的 [ **吸引** ]，然後選取 [ **ad 活動**]。 您會看到所有與您的 App 相關聯的廣告活動，以及每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)中這些詞彙的定義。
+若要在 [合作夥伴中心](https://partner.microsoft.com/dashboard)中管理應用程式的 ad 活動，請展開左側導覽功能表中的 [ **吸引** ]，然後選取 [ **ad 活動**]。 您會看到所有與您的 App 相關聯的廣告活動，以及每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱[廣告活動報告](/windows/uwp/publish/ad-campaign-report)中這些詞彙的定義。
 
 若要篩選廣告活動的清單，請按一下 [**區段篩選器**] 下拉式清單，然後從下列篩選器中進行選擇：
 
@@ -33,7 +33,7 @@ ms.locfileid: "88970146"
 ## <a name="reporting"></a>報告
 
 
-在此頁面上會顯示報告的詳細資料。 如需詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)。
+在此頁面上會顯示報告的詳細資料。 如需詳細資訊，請參閱[廣告活動報告](/windows/uwp/publish/ad-campaign-report)。
 
 
 ## <a name="edit-an-ad-campaign"></a>編輯廣告活動
@@ -46,12 +46,8 @@ ms.locfileid: "88970146"
 
 * [為您的應用程式建立廣告活動](create-an-ad-campaign-for-your-app.md)
 * [關於自家廣告](about-house-ads.md)
-* [應用程式安裝廣告報告](app-install-ads-reports.md)
+* [應用程式安裝廣告報告](/windows/uwp/publish/ad-campaign-report)
 * [常見問題](common-questions.md)
  
 
  
-
-
-
-

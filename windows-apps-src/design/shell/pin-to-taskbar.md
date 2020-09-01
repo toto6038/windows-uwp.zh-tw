@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile, 工作列, 工作列管理員, 釘選到工作列, 主要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 44ef6430398960e13fe5eebb40a52d022df6f0d2
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8c5bba4a3bd6ebf1c4cbe0ef59a21c0e6ce44c79
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173832"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>將應用程式釘選到工作列
 
@@ -22,12 +22,12 @@ ms.locfileid: "82970653"
 > [!IMPORTANT]
 > **需要 Fall Creators Update**：您的目標必須是 SDK 16299 並執行組建 16299 或更新版本，才能使用工作列 API。
 
-> **重要 API**：[TaskbarManager 類別](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager) 
+> **重要 API**：[TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>何時您應要求使用者將您的應用程式釘選在工作列上？ 
 
-[TaskbarManager 類別](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)可讓您要求使用者將應用程式釘選到工作列上；使用者必須核准此要求。 您大費周章地建構了主要應用程式，現在您有機會可以要求使用者將它釘選到工作列。 但在我們深入了解程式碼之前，應先知道以下一些設計您在設計體驗時要注意的事項：
+[TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager)可讓您要求使用者將應用程式釘選到工作列上；使用者必須核准此要求。 您大費周章地建構了主要應用程式，現在您有機會可以要求使用者將它釘選到工作列。 但在我們深入了解程式碼之前，應先知道以下一些設計您在設計體驗時要注意的事項：
 
 * **務必**在應用程式中以明確的「釘選至工作列」動作製作不具破壞性且可輕鬆關閉的 UX。 避免將對話方塊與飛出視窗用於此用途。 
 * **務必**先清楚說明您應用程式的真實意義，再要求使用者釘選。
@@ -38,7 +38,7 @@ ms.locfileid: "82970653"
 
 ## <a name="1-check-whether-the-required-apis-exist"></a>1. 檢查所需的 API 是否存在
 
-如果您的應用程式支援舊版 Windows 10，則必須檢查 TaskbarManager 類別是否可用。 您可以使用 [ApiInformation.IsTypePresent 方法](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_)執行這項檢查。 如果無可用的 TaskbarManager 類別，請避免執行任何 API 呼叫。
+如果您的應用程式支援舊版 Windows 10，則必須檢查 TaskbarManager 類別是否可用。 您可以使用 [ApiInformation.IsTypePresent 方法](/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_)執行這項檢查。 如果無可用的 TaskbarManager 類別，請避免執行任何 API 呼叫。
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Shell.TaskbarManager"))
@@ -55,9 +55,9 @@ else
 
 ## <a name="2-check-whether-taskbar-is-present-and-allows-pinning"></a>2. 檢查工作列是否存在並允許釘選
 
-Windows 應用程式可以在各種不同的裝置上執行;並非全部都支援工作列。 目前只有傳統型裝置支援工作列。 
+Windows 應用程式可以在各種不同的裝置上執行;並非所有專案都支援工作列。 目前只有傳統型裝置支援工作列。 
 
-即使工作列可供使用，使用者電腦上的群組原則仍可停用工作列釘選。 因此，在您嘗試釘選應用程式之前，您必須檢查是否支援釘選到工作列。 如果工作列存在並允許釘選，[TaskbarManager.IsPinningAllowed 屬性](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed)會傳回 true。 
+即使工作列可供使用，使用者電腦上的群組原則仍可停用工作列釘選。 因此，在您嘗試釘選應用程式之前，您必須檢查是否支援釘選到工作列。 如果工作列存在並允許釘選，[TaskbarManager.IsPinningAllowed 屬性](/uwp/api/windows.ui.shell.taskbarmanager.IsPinningAllowed)會傳回 true。 
 
 ```csharp
 // Check if taskbar allows pinning (Group Policy can disable it, or some device families don't have taskbar)
@@ -65,12 +65,12 @@ bool isPinningAllowed = TaskbarManager.GetDefault().IsPinningAllowed;
 ```
 
 > [!NOTE]
-> 如果您不想要將應用程式釘選到工作列，而且只想要了解工作列是否可供使用，請使用 [TaskbarManager.IsSupported 屬性](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsSupported)。
+> 如果您不想要將應用程式釘選到工作列，而且只想要了解工作列是否可供使用，請使用 [TaskbarManager.IsSupported 屬性](/uwp/api/windows.ui.shell.taskbarmanager.IsSupported)。
 
 
 ## <a name="3-check-whether-your-app-is-currently-pinned-to-the-taskbar"></a>3. 檢查應用程式目前是否已釘選到工作列
 
-顯然地，如果應用程式已釘選在工作列，則沒有必要去要求使用者或讓您將應用程式釘選到工作列。 您可以使用 [TaskbarManager.IsCurrentAppPinnedAsync 方法](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.IsCurrentAppPinnedAsync)先檢查應用程式是否已釘選，再要求使用者。
+顯然地，如果應用程式已釘選在工作列，則沒有必要去要求使用者或讓您將應用程式釘選到工作列。 您可以使用 [TaskbarManager.IsCurrentAppPinnedAsync 方法](/uwp/api/windows.ui.shell.taskbarmanager.IsCurrentAppPinnedAsync)先檢查應用程式是否已釘選，再要求使用者。
 
 ```csharp
 // Check whether your app is currently pinned
@@ -91,7 +91,7 @@ else
 
 如果工作列存在並允許釘選，且您的應用程式目前尚未釘選，您可能會想要顯示精巧的秘訣讓使用者知道他們可以釘選您的應用程式。 例如，您可能會在 UI 中使用者可以點擊的某一處顯示釘選圖示。 
 
-如果使用者按一下您的釘選建議 UI，您可以呼叫 [TaskbarManager.RequestPinCurrentAppAsync method](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.RequestPinCurrentAppAsync)。 此方法會顯示對話方塊要求使用者確認他們要將您的應用程式釘選到工作列上。
+如果使用者按一下您的釘選建議 UI，您可以呼叫 [TaskbarManager.RequestPinCurrentAppAsync method](/uwp/api/windows.ui.shell.taskbarmanager.RequestPinCurrentAppAsync)。 此方法會顯示對話方塊要求使用者確認他們要將您的應用程式釘選到工作列上。
 
 > [!IMPORTANT]
 > 這必須從前景 UI 執行緒呼叫，否則將會擲回例外狀況。
@@ -109,5 +109,5 @@ bool isPinned = await TaskbarManager.GetDefault().RequestPinCurrentAppAsync();
 ## <a name="resources"></a>資源
 
 * [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-pin-to-taskbar)
-* [TaskbarManager 類別](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager)
 * [將應用程式釘選到開始功能表](tiles-and-notifications/primary-tile-apis.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b122aa6436e55c80276cdd684b7c10cc3c47d28
-ms.sourcegitcommit: 49a34e957433966ac8d4822b5822f21087aa61c3
+ms.openlocfilehash: bf61935459d8b842a3d26fcfe546995427d98d3f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74153719"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175692"
 ---
 # <a name="supported-codecs"></a>支援的轉碼器
 
@@ -28,7 +28,7 @@ ms.locfileid: "74153719"
 
  
 
-### <a name="desktop"></a>傳統型
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -339,7 +339,7 @@ ms.locfileid: "74153719"
 
  
 
-### <a name="mobile"></a>行動裝置
+### <a name="mobile"></a>行動
 
 <table>
 <colgroup>
@@ -1593,7 +1593,7 @@ ms.locfileid: "74153719"
 
  
 
-### <a name="desktop"></a>傳統型
+### <a name="desktop"></a>桌面
 
 <table>
 <colgroup>
@@ -1812,7 +1812,7 @@ ms.locfileid: "74153719"
 
  
 
-### <a name="mobile"></a>行動裝置
+### <a name="mobile"></a>行動
 
 <table>
 <colgroup>
@@ -2697,7 +2697,7 @@ ms.locfileid: "74153719"
 <thead>
 <tr class="header">
 <th align="left">轉碼器</th>
-<th align="left">傳統型</th>
+<th align="left">桌面</th>
 <th align="left">其他裝置系列</th>
 </tr>
 </thead>
@@ -2749,12 +2749,12 @@ ms.locfileid: "74153719"
 <tr class="even">
 <td align="left">Camera RAW</td>
 <td align="left">D<sup>3</sup></td>
-<td align="left">無</td>
+<td align="left">否</td>
 </tr>
 </table>
 
-<sup>1</sup> 支援透過 BC5 壓縮使用 BC1 的 DDS 影像。  
+<sup>1</sup> 支援使用 BC1 透過 BC5 壓縮的 DDS 映射。  
 <sup>2</sup> 支援具有非 RAW 內嵌預覽的 DNG 影像。  
 <sup>3</sup> 僅支援部分 Camera RAW 格式。  
 
-如需影像轉碼器的詳細資訊，請參閱[原生 WIC 轉碼器](https://docs.microsoft.com/windows/desktop/wic/native-wic-codecs)。
+如需影像轉碼器的詳細資訊，請參閱[原生 WIC 轉碼器](/windows/desktop/wic/native-wic-codecs)。

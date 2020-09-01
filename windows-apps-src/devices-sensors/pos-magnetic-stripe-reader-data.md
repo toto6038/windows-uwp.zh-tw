@@ -1,16 +1,16 @@
 ---
 title: 取得並了解磁條資料
-description: 瞭解如何取得及解讀磁性 stripe 的資料。
+description: 瞭解如何使用通用 Windows 平臺 (UWP) 服務點 (POS) Api，從磁性 stripe 讀取器取得和解讀資料。
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10、uwp、point of service、pos、磁性 stripe 讀取器
 ms.localizationpriority: medium
-ms.openlocfilehash: eb4238d35497bdd90671dd0b6fa63d589c0ec740
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a405a66fbc243925c4c9bbd5b1ee499a9a7b9f8
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173262"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238273"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>取得並了解磁條資料
 

@@ -8,25 +8,25 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bbc0f23ad712850e565814febe5b7e681e58a85d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 7cee236b385b6129e7ab1a9cacd549f217f6e734
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234578"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175602"
 ---
 # <a name="create-adaptive-tiles"></a>建立彈性磚
 
-彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為您的 Windows 應用程式建立適應性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](../tiles-and-notifications/tile-schema.md)。
+彈性磚範本是 Windows 10 中的新功能，可讓您使用能夠適應不同螢幕密度的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為 Windows 應用程式建立彈性動態磚。 如需彈性元素和屬性的完整清單，請參閱[彈性磚結構描述](../tiles-and-notifications/tile-schema.md)。
 
-(設計適用於 Windows 10 的通知時，如果您想要，仍然可以使用 [Windows 8 磚範本目錄](https://docs.microsoft.com/previous-versions/windows/apps/hh761491(v=win.10))中的預設範本)。
+(設計適用於 Windows 10 的通知時，如果您想要，仍然可以使用 [Windows 8 磚範本目錄](/previous-versions/windows/apps/hh761491(v=win.10))中的預設範本)。
 
 
 ## <a name="getting-started"></a>開始使用
 
 **安裝 Notifications 程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
 
-**安裝通知視覺化工具。** 這項免費的 Windows 應用程式可協助您設計自我調整動態磚，方法是在編輯它時提供磚的立即視覺化預覽，類似 Visual Studio 的 XAML 編輯器/設計檢視。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
+**安裝通知視覺化工具。** 這個免費的 Windows 應用程式可協助您設計自動調整動態磚，方法是在編輯時提供磚的立即視覺效果預覽，類似于 Visual Studio 的 XAML 編輯器/設計檢視。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
 
 
 ## <a name="how-to-send-a-tile-notification"></a>如何傳送磚通知
@@ -107,7 +107,7 @@ TileContent content = new TileContent()
 };
 ```
 
-**結果：**
+**結果︰**
 
 ![快速範例磚](images/adaptive-tiles-quicksample.png)
 
@@ -199,16 +199,16 @@ TileContent content = new TileContent()
 };
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚大小：小、中、寬及大](images/adaptive-tiles-sizes.png)
 
-## <a name="branding"></a>Branding
+## <a name="branding"></a>商標
 
 
 您可以使用通知承載的商標屬性，控制動態磚底部的商標 (顯示名稱和角標誌)。 您可以選擇顯示 "none"、僅顯示 "name"、僅顯示 "logo"，或使用 "nameAndLogo" 來顯示兩者。
 
-**注意**   Windows Mobile 不支援「角落」標誌，因此行動裝置上的「標誌」和「nameAndLogo」預設為「名稱」。
+**注意**   Windows Mobile 不支援角落標誌，因此在行動裝置上，"標誌" 和 "nameAndLogo" 預設為 "name"。
 
  
 
@@ -226,7 +226,7 @@ new TileVisual()
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚、名稱和標誌](images/adaptive-tiles-namelogo.png)
 
@@ -280,7 +280,7 @@ TileContent content = new TileContent()
 
 如果您沒有指定通知承載中的品牌，基底磚的屬性將決定品牌。 如果基底磚顯示顯示名稱，則品牌將會預設為 "name"。 否則若未出現顯示名稱，品牌將會預設為 "none"。
 
-**注意**   這是 Windows 8.x 的變更，預設商標為「標誌」。
+**注意**   這是 Windows 8. x 的變更，其中預設商標為「標誌」。
 
  
 
@@ -331,7 +331,7 @@ TileContent content = new TileContent()
 };
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚顯示名稱](images/adaptive-tiles-displayname.png)
 
@@ -352,7 +352,7 @@ new AdaptiveText()
 };
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚文字](images/adaptive-tiles-text.png)
 
@@ -374,7 +374,7 @@ new AdaptiveText()
 };
 ```
 
-**結果：**
+**結果︰**
 
 ![含文字換行的彈性磚](images/adaptive-tiles-textwrapping.png)
 
@@ -402,11 +402,11 @@ new AdaptiveText()
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚文字樣式](images/adaptive-tiles-textstyles.png)
 
-**注意**   如果未指定提示樣式，樣式會預設為 [標題]。
+**注意**   如果未指定提示樣式，則樣式預設為標題。
 
  
 
@@ -414,14 +414,14 @@ new AdaptiveText()
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;文字提示-style = " \* "/&gt; | 字型高度               | 字型寬度 |
-| caption                        | 12 個有效像素 (epx) | 標準     |
-| body                           | 15 epx                    | 標準     |
+| &lt;text 提示-style = " \* "/&gt; | 字型高度               | 字型寬度 |
+| caption                        | 12 個有效像素 (epx) | 定期     |
+| body                           | 15 epx                    | 定期     |
 | base                           | 15 epx                    | 半粗體    |
-| subtitle                       | 20 epx                    | 標準     |
+| subtitle                       | 20 epx                    | 定期     |
 | title                          | 24 epx                    | Semilight   |
-| subheader                      | 34 epx                    | 輕量型       |
-| 頁首                         | 46 epx                    | 輕量型       |
+| subheader                      | 34 epx                    | 淺色       |
+| header                         | 46 epx                    | 淺色       |
 
  
 
@@ -474,7 +474,7 @@ new AdaptiveText()
 };
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚文字對齊方式](images/adaptive-tiles-textalignment.png)
 
@@ -569,7 +569,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![彈性磚群組以及子群組](images/adaptive-tiles-groups-subgroups.png)
 
@@ -679,7 +679,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 
 ![子群組，加權總計為 100](images/adaptive-tiles-subgroups03.png)
 
-**注意**   資料行之間會自動加入8圖元的邊界。
+**注意**   系統會自動在資料行之間加入8圖元的邊界。
 
  
 
@@ -783,11 +783,11 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![天氣磚的範例](images/adaptive-tiles-weathertile.png)
 
-## <a name="images"></a>映像
+## <a name="images"></a>影像
 
 
 &lt;image&gt; 元素用來顯示磚通知上的影像。 影像可以內嵌於磚內容內 (預設值)、當做內容後方的背景影像，或當做以動畫方式從通知上方進入的預覽影像。
@@ -871,7 +871,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![影像範例](images/adaptive-tiles-images01.png)
 
@@ -904,7 +904,7 @@ TileLarge = new TileBinding()
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![影像對齊方式範例 (靠左、置中、靠右)](images/adaptive-tiles-imagealignment.png)
 
@@ -1052,7 +1052,7 @@ TileLarge = new TileBinding()
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![影像裁剪範例](images/adaptive-tiles-imagecropping.png)
 
@@ -1134,7 +1134,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**結果：**
+**結果︰**
 
 ![背景影像範例](images/adaptive-tiles-backgroundimage.png)
 
@@ -1399,7 +1399,3 @@ TileWide = new TileBinding()
  
 
  
-
-
-
-

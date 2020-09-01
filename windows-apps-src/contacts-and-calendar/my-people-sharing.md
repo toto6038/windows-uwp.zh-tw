@@ -1,16 +1,16 @@
 ---
 title: 朋友圈分享
-description: 說明如何新增朋友圈分享的支援
+description: 使用朋友圈共用] 可讓使用者將連絡人釘選到其工作列，並可輕鬆地從視窗中的任何位置保持聯繫。
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff37a243f88bdd378998070f58ec35196c62a6cf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683486"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173662"
 ---
 # <a name="my-people-sharing"></a>朋友圈分享
 
@@ -18,18 +18,18 @@ ms.locfileid: "75683486"
 
 ![朋友圈分享面板](images/my-people-sharing.png)
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)。
-+ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](../get-started/get-set-up.md)。
++ C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="overview"></a>概觀
 
 您必須採取三個步驟，才能讓您的應用程式成為朋友圈分享目標：
 
-1. [在您的應用程式資訊清單中宣告 Windows.sharetarget 啟用合約的支援。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#declaring-support-for-the-share-contract)
-2. [標注使用者可以使用您的應用程式共用的連絡人。](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/my-people-sharing#annotating-contacts)
-3. 支援同時執行應用程式的多個執行個體。  使用者亦將您應用程式的完整版與他人分享時，必須能夠與該版本互動。 他們可以同時將該版本用於多個分享視窗中。 若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](https://docs.microsoft.com/windows/uwp/design/layout/show-multiple-views) (英文) 一文。
+1. [宣告支援您應用程式資訊清單中的 shareTarget 啟用合約。](#declaring-support-for-the-share-contract)
+2. [為使用者可分享使用您應用程式的連絡人加上註解。](#annotating-contacts)
+3. 支援同時執行應用程式的多個執行個體。  使用者亦將您應用程式的完整版與他人分享時，必須能夠與該版本互動。 他們可以同時將該版本用於多個分享視窗中。 若要支援此功能，您的應用程式必須能夠同時執行多個檢視。 若要了解做法，請參閱[顯示應用程式的多重檢視](../design/layout/show-multiple-views.md) (英文) 一文。
 
 當您已完成此作業時，您的應用程式將在 \[朋友圈分享\] 視窗中顯示成分享目標，該視窗的啟動方式有兩種：
 1. 透過分享共用鍵選擇連絡人。
@@ -37,7 +37,7 @@ ms.locfileid: "75683486"
 
 ## <a name="declaring-support-for-the-share-contract"></a>宣告支援分享協定
 
-若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 \[XML (文字) 編輯器\]，然後按一下 \[確定\]。 接著，對資訊清單進行以下變更：
+若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\]**** 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]****，然後選取 \[開啟方式\]****。 從功能表中，選取 [ **XML (Text) 編輯器** ]，然後按一下 **[確定]**。 接著，對資訊清單進行以下變更：
 
 
 **之前**
@@ -75,7 +75,7 @@ ms.locfileid: "75683486"
 </Applications>
 ```
 
-此程式碼會新增所有檔案與資料格式的支援，但您可以選擇指定支援哪些檔案類型與資料格式 (請參閱[ShareTarget 類別文件](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget) (英文) 以取得詳細資訊)。
+此程式碼會新增所有檔案與資料格式的支援，但您可以選擇指定支援哪些檔案類型與資料格式 (請參閱[ShareTarget 類別文件](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget) (英文) 以取得詳細資訊)。
 
 ## <a name="annotating-contacts"></a>註解連絡人
 
@@ -107,7 +107,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 
 ## <a name="running-as-a-my-people-share-target"></a>做為朋友圈分享目標執行
 
-最後，若要執行應用程式，請覆寫您應用程式主要類別中的 [OnShareTargetActivated](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 方法，以處理分享目標啟用。 [ShareTargetActivatedEventArgs.ShareOperation.Contacts](https://docs.microsoft.com/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) 屬性將包含正要與其分享的連絡人，如果這是標準分享作業 (不是朋友圈分享) 則將為空白。
+最後，若要執行應用程式，請覆寫您應用程式主要類別中的 [OnShareTargetActivated](/uwp/api/Windows.UI.Xaml.Application#Windows_UI_Xaml_Application_OnShareTargetActivated_Windows_ApplicationModel_Activation_ShareTargetActivatedEventArgs_) 方法，以處理分享目標啟用。 [ShareTargetActivatedEventArgs.ShareOperation.Contacts](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation#Properties) 屬性將包含正要與其分享的連絡人，如果這是標準分享作業 (不是朋友圈分享) 則將為空白。
 
 ```Csharp
 protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>請參閱
-+ [新增我的人員支援](my-people-support.md)
-+ [Windows.sharetarget 類別](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
+## <a name="see-also"></a>另請參閱
++ [新增朋友圈支援](my-people-support.md)
++ [ShareTarget 類別](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

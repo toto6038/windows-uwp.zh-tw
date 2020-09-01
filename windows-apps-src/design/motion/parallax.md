@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ded09e2de6e3aafa0108d3f7ef66808cb02bfd8
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: 5eac1b5d95dff4887258278f9ff700adaf663194
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043570"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175542"
 ---
 # <a name="parallax"></a>視差
 
@@ -56,14 +56,14 @@ ms.locfileid: "89043570"
  
 ## <a name="using-the-parallaxview-control-to-create-a-parallax-effect"></a>使用 ParallaxView 控制項產生視差效果
 
-若要建立的視差效果，請使用 [ParallaxView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 控制項。 此控制項會將前景元素 (例如清單) 的捲動位置，繫結至背景元素 (例如影像)。 當您捲動前景元素時，背景元素會有動畫效果，以產生視差效果。 
+若要建立的視差效果，請使用 [ParallaxView](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 控制項。 此控制項會將前景元素 (例如清單) 的捲動位置，繫結至背景元素 (例如影像)。 當您捲動前景元素時，背景元素會有動畫效果，以產生視差效果。 
 
-若要使用 ParallaxView 控制項，請提供來源元素、背景元素，並將 [VerticalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (針對垂直捲動) 和/或 [HorizontalShift](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (針對水平捲動) 屬性設定為大於零的值。 
-* Source 屬性會參考前景元素。 為了讓視差效果發生，前景應該是 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 或包含 ScrollViewer 的元素，例如 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 或 [RichTextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)。 
+若要使用 ParallaxView 控制項，請提供來源元素、背景元素，並將 [VerticalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.VerticalShift) (針對垂直捲動) 和/或 [HorizontalShift](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview.HorizontalShift) (針對水平捲動) 屬性設定為大於零的值。 
+* Source 屬性會參考前景元素。 為了讓視差效果發生，前景應該是 [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 或包含 ScrollViewer 的元素，例如 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 或 [RichTextBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)。 
 
-* 若要設定背景元素，請將該元素新增成為 ParallaxView 控制項的子系。 背景元素可以是任何的 [UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，例如 [Image](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)，或包含其他 UI 元素的面板。 
+* 若要設定背景元素，請將該元素新增成為 ParallaxView 控制項的子系。 背景元素可以是任何的 [UIElement](/uwp/api/windows.ui.xaml.uielement)，例如 [Image](/uwp/api/Windows.UI.Xaml.Controls.Image)，或包含其他 UI 元素的面板。 
 
-若要建立視差效果，ParallaxView 必須在前景元素的後方。 [Grid](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)與 [Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas) 面板可讓您將項目以互相交疊的方式分層，讓它們能夠搭配 ParallaxView 控制項運作。  
+若要建立視差效果，ParallaxView 必須在前景元素的後方。 [Grid](/uwp/api/windows.ui.xaml.controls.grid)與 [Canvas](/uwp/api/windows.ui.xaml.controls.canvas) 面板可讓您將項目以互相交疊的方式分層，讓它們能夠搭配 ParallaxView 控制項運作。  
 
 此範例會為清單產生視差效果：
  
@@ -123,6 +123,6 @@ VerticalShift 與 HorizontalShift 屬性可讓您控制視差效果的程度。
 
 ## <a name="related-articles"></a>相關文章
 
-- [ParallaxView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
+- [ParallaxView 類別](/uwp/api/Windows.UI.Xaml.Controls.Parallaxview) 
 - [適用於 UWP 的 Fluent Design](/windows/apps/fluent-design-system)
 - [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) \(英文\)

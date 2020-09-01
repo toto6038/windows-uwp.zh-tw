@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c48b02de34bd37acced8ef65859708f31fd78ca2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 62fbbf3f21d614739918478b58394e51dbe577f9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370864"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175162"
 ---
 # <a name="tier-2"></a>第 2 層
 
 
 串流資源的第 2 層支援新增第 1 層以外的功能，例如當大小至少是一個標準磚形狀時保證非壓縮紋理 mipmap；鉗制詳細等級 (LOD) 以及取得著色器作業狀態的相關著色器指示；此外，讀取 NULL 對應磚，將取樣值視為零。
 
-## <a name="span-idtier2generalsupportspanspan-idtier2generalsupportspanspan-idtier2generalsupportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>第 2 層一般支援
+## <a name="span-idtier_2_general_supportspanspan-idtier_2_general_supportspanspan-idtier_2_general_supportspantier-2-general-support"></a><span id="Tier_2_general_support"></span><span id="tier_2_general_support"></span><span id="TIER_2_GENERAL_SUPPORT"></span>第2層一般支援
 
 
 第 2 層支援包括下列各項。
@@ -30,26 +30,26 @@ ms.locfileid: "66370864"
 
 除了這些項目外，還會出現一些特定的支援問題。
 
-## <a name="span-idnon-mappedtilesspanspan-idnon-mappedtilesspanspan-idnon-mappedtilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>非對應的磚
+## <a name="span-idnon-mapped_tilesspanspan-idnon-mapped_tilesspanspan-idnon-mapped_tilesspannon-mapped-tiles"></a><span id="Non-mapped_tiles"></span><span id="non-mapped_tiles"></span><span id="NON-MAPPED_TILES"></span>非對應的磚
 
 
 讀取非對應的磚時，會在格式的所有非遺漏元件以及遺失元件的預設值內傳回 0。
 
 非對應磚的寫入將停止移至記憶體，但最後可能會傳至快取，該快取後續會讀取同一個可能會被選取的位址。
 
-## <a name="span-idtexturefilteringspanspan-idtexturefilteringspanspan-idtexturefilteringspantexture-filtering"></a><span id="Texture_filtering"></span><span id="texture_filtering"></span><span id="TEXTURE_FILTERING"></span>紋理篩選
+## <a name="span-idtexture_filteringspanspan-idtexture_filteringspanspan-idtexture_filteringspantexture-filtering"></a><span id="Texture_filtering"></span><span id="texture_filtering"></span><span id="TEXTURE_FILTERING"></span>材質篩選
 
 
 記憶體使用量供 **NULL** 與非 **NULL** 磚共用的紋理篩選，會為 **NULL** 磚上的材質，而將 0 (含遺失格式元件預設值) 提供至整體篩選作業。 如果任何材質 (含非零權數) 落在 **NULL** 磚上，某些舊版的硬體會不符合此需求，並讓完整篩選結果傳回 0 (含遺失格式元件預設值)。 不允許任何其他硬體遺漏將所有 (非零權數) 材質包含在篩選作業中的需求。
 
-存取 **NULL** 材質會造成狀態回應上 [**CheckAccessFullyMapped**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/checkaccessfullymapped) (英文) 作業的紋理讀取傳回 False。 無論紋理存取結果如何在著色器內寫入遮罩，以及多少元件為紋理格式 (紋理格式的組合可能會造成不須存取其紋理的假象)，都會發生這項問題。
+存取 **NULL** 材質會造成狀態回應上 [**CheckAccessFullyMapped**](/windows/desktop/direct3dhlsl/checkaccessfullymapped) (英文) 作業的紋理讀取傳回 False。 無論紋理存取結果如何在著色器內寫入遮罩，以及多少元件為紋理格式 (紋理格式的組合可能會造成不須存取其紋理的假象)，都會發生這項問題。
 
-## <a name="span-idalignmentconstraintsspanspan-idalignmentconstraintsspanspan-idalignmentconstraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>對齊條件約束
+## <a name="span-idalignment_constraintsspanspan-idalignment_constraintsspanspan-idalignment_constraintsspanalignment-constraints"></a><span id="Alignment_constraints"></span><span id="alignment_constraints"></span><span id="ALIGNMENT_CONSTRAINTS"></span>對齊條件約束
 
 
-標準的並排顯示圖形的對齊條件約束：若要使用標準並排，視為其餘封裝為保證填滿所有維度中至少一個標準的並排顯示的 Mipmap**單位**成 N (N 回報給應用程式)。 應用程式可將 N 磚對應至磚集區中的任意斷續位置，但必須將所有的壓縮磚都對應，否則全都不對應。 Mip 套件是每個陣列切割中的一組獨特壓縮磚。
+標準磚圖形對齊限制︰在所有維度填滿至少一個標準磚的 Mipmap 一定會使用標準並排，餘數會視為**單位**而封裝至 N 磚 (將 N 回報至應用程式)。 應用程式可將 N 磚對應至磚集區中的任意斷續位置，但必須將所有的壓縮磚都對應，否則全都不對應。 Mip 套件是每個陣列切割中的一組獨特壓縮磚。
 
-## <a name="span-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanspan-idminmaxreductionfilteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大減少篩選
+## <a name="span-idmin_max_reduction_filteringspanspan-idmin_max_reduction_filteringspanspan-idmin_max_reduction_filteringspanminmax-reduction-filtering"></a><span id="Min_Max_reduction_filtering"></span><span id="min_max_reduction_filtering"></span><span id="MIN_MAX_REDUCTION_FILTERING"></span>最小/最大削減篩選
 
 
 支援最小/最大削減篩選。 請參閱[串流資源紋理取樣功能](streaming-resources-texture-sampling-features.md) (英文)。
@@ -64,12 +64,8 @@ ms.locfileid: "66370864"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[資料流的資源功能層級](streaming-resources-features-tiers.md)
+[串流資源功能層級](streaming-resources-features-tiers.md)
 
  
 
  
-
-
-
-

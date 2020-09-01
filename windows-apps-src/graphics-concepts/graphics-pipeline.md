@@ -8,19 +8,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b931268dc20f40c1bc1d7c700f346d29d6aa9d6
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a562e1eb99447db263cd2bb4f87ec1a642ed8394
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370616"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175172"
 ---
 # <a name="graphics-pipeline"></a>圖形管線
 
 
 Direct3D 圖形管線專為即時遊戲應用程式產生圖形而設計。 透過每個可設定或可編程階段，從輸入到輸出的資料流。
 
-所有階段都可以使用 Direct3D API 設定。 搭配常見著色器核心的階段 (圓角矩形區塊) 可使用 [HLSL](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 程式語言進行程式設計。 如此可讓管線極具彈性和適應能力。
+所有階段都可以使用 Direct3D API 設定。 搭配常見著色器核心的階段 (圓角矩形區塊) 可使用 [HLSL](/windows/desktop/direct3dhlsl/dx-graphics-hlsl) 程式語言進行程式設計。 如此可讓管線極具彈性和適應能力。
 
 最常使用的是頂點著色器 (VS) 階段和像素著色器 (PS) 階段。 如果您連這些著色器階段都未提供，則會使用預設的沒有選項、傳遞頂點和像素著色器。
 
@@ -44,11 +44,11 @@ Direct3D 圖形管線專為即時遊戲應用程式產生圖形而設計。 透�
 
 ## <a name="domain-shader-stage"></a>網域著色器階段
 
-|-|-| |用途|[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)會計算輸出塊面中細分點的頂點位置；它會計算對應每一個網域取樣的頂點位置。 網域著色器會在每個曲面細分器階段輸出點執行一次，並且對輪廓著色器輸出塊面和輸出塊面常數，以及曲面細分器階段輸出 UV 座標具有唯讀存取權。| |輸入|網域著色器會耗用來自[輪廓著色器 (HS) 階段](hull-shader-stage--hs-.md)的輸出控制點。 輪廓著色器輸出包括：控制點、 修補檔常數資料，以及鑲嵌式因素 （鑲嵌式因素可以包含固定函式鑲嵌，以及原始的值-由整數鑲嵌式-例如有助於 geomorphing，捨入前使用的值). 網域著色器會對來自[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)的每個輸出座標叫用一次。| |輸出|網域著色器 (DS) 階段會將輸出塊面中細分點的頂點位置輸出。|
+|-|-| |用途|[網域著色器 (DS) 階段](domain-shader-stage--ds-.md)會計算輸出塊面中細分點的頂點位置；它會計算對應每一個網域取樣的頂點位置。 網域著色器會在每個曲面細分器階段輸出點執行一次，並且對輪廓著色器輸出塊面和輸出塊面常數，以及曲面細分器階段輸出 UV 座標具有唯讀存取權。| |輸入|網域著色器會耗用來自[輪廓著色器 (HS) 階段](hull-shader-stage--hs-.md)的輸出控制點。 輪廓著色器輸出包括：控制點、塊面常數資料及鑲嵌係數 (鑲嵌係數可能包括固定函式曲面細分器使用的值，以及整數鑲嵌進位之前的原始值，可簡化地理變形)。 網域著色器會對來自[曲面細分器 (TS) 階段](tessellator-stage--ts-.md)的每個輸出座標叫用一次。| |輸出|網域著色器 (DS) 階段會將輸出塊面中細分點的頂點位置輸出。|
 
 ## <a name="geometry-shader-stage"></a>幾何著色器階段
 
-|-|-| |用途|[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)會處理整個基本類型：三角形、線條和點，以及它們相鄰的頂點。 它支援幾何放大和取消放大。 它對於演算法來說很實用，包括 Point Sprite Expansion、Dynamic Particle Systems、Fur/Fin Generation、Shadow Volume Generation、Single Pass Render-to-Cubemap、Per-Primitive Material Swapping 及 Per-Primitive Material Setup (包括產生質心座標做為基本類型資料，如此像素著色器就能執行自訂屬性插補)。 | |輸入|與在單一頂點上操作的頂點著色器不同的是，幾何著色器的輸入是完整基本類型 (三角形的三個頂點、線條的兩個頂點，或點的單一頂點) 的頂點。| |輸出|幾何著色器 (GS) 階段能夠輸出多個頂點，以形成選取的單一拓撲。 可用的幾何著色器輸出拓撲包括 <strong>tristrip</strong>、<strong>linestrip</strong> 和 <strong>pointlist</strong>。 發出的基本類型數目可在幾何著色器的任何叫用內自由改變，雖然可發出的頂點最大數目必須以靜態方式宣告。 從幾何著色器叫用發出的連環長度可以是任意的，而新的連環可以透過 [RestartStrip](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 功能建立。|
+|-|-| |用途|[幾何著色器 (GS) 階段](geometry-shader-stage--gs-.md)會處理整個基本類型：三角形、線條和點，以及它們相鄰的頂點。 它支援幾何放大和取消放大。 它對於演算法來說很實用，包括 Point Sprite Expansion、Dynamic Particle Systems、Fur/Fin Generation、Shadow Volume Generation、Single Pass Render-to-Cubemap、Per-Primitive Material Swapping 及 Per-Primitive Material Setup (包括產生質心座標做為基本類型資料，如此像素著色器就能執行自訂屬性插補)。 | |輸入|與在單一頂點上操作的頂點著色器不同的是，幾何著色器的輸入是完整基本類型 (三角形的三個頂點、線條的兩個頂點，或點的單一頂點) 的頂點。| |輸出|幾何著色器 (GS) 階段能夠輸出多個頂點，以形成選取的單一拓撲。 可用的幾何著色器輸出拓撲包括 <strong>tristrip</strong>、<strong>linestrip</strong> 和 <strong>pointlist</strong>。 發出的基本類型數目可在幾何著色器的任何叫用內自由改變，雖然可發出的頂點最大數目必須以靜態方式宣告。 從幾何著色器叫用發出的連環長度可以是任意的，而新的連環可以透過 [RestartStrip](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-so-restartstrip) HLSL 功能建立。|
 
 ## <a name="stream-output-stage"></a>資料流輸出階段
 

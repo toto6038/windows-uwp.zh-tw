@@ -1,17 +1,17 @@
 ---
 title: Xbox One 工具簡介
-description: 使用 Windows Device Portal 的 Xbox One 特有工具「開發人員首頁」。
+description: 瞭解如何在 Xbox One 開發工具組中使用 Dev Home 應用程式存取 Xbox One 裝置入口網站。
 ms.date: 10/04/2017
 ms.topic: article
 keywords: windows 10, uwp, xbox one, 工具
 ms.assetid: 6eaf376f-0d7c-49de-ad78-38e689b43658
 ms.localizationpriority: medium
-ms.openlocfilehash: ed106095d83ed0c6e055d22a1a0cf229380cff71
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: ed9df02ba929d170eca5b37e4376220e93e4902f
+ms.sourcegitcommit: e273e5901bfa6596dfef4cc741bb1c42614c25ab
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57609323"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238313"
 ---
 # <a name="introduction-to-xbox-one-tools"></a>Xbox One 工具簡介
 
@@ -30,7 +30,7 @@ Xbox 裝置入口網站是瀏覽器為基礎的裝置管理工具，可讓您新
 
 若要在 Xbox One 主機上啟用 Xbox 裝置入口網站：
 
-1. 選取主畫面上的 **\[開發人員首頁\]** 磚。
+1. 選取主畫面上的 **開發人員首頁** 磚。
 
   ![選取 [開發人員首頁] 磚](images/introduction-to-xbox-one-tools-1.png)
 
@@ -55,7 +55,7 @@ Xbox 裝置入口網站是瀏覽器為基礎的裝置管理工具，可讓您新
 ## <a name="xbox-dev-mode-companion"></a>Xbox 開發人員模式小幫手
 Xbox 開發人員模式小幫手是可讓您在不需離開電腦的情況下，於主機上進行工作的工具。 該 App 允許您檢視主機畫面並向它傳送輸入。 如需詳細資訊，請參閱 [Xbox 開發人員模式小幫手](xbox-dev-mode-companion.md)。
 
-## <a name="see-also"></a>請參閱
-- [如何使用 Fiddler Xbox One uwp 開發時](uwp-fiddler.md)
-- [Windows Device Portal 概觀](../debug-test-perf/device-portal.md)
-- [在 Xbox One UWP](index.md)
+## <a name="see-also"></a>另請參閱
+- [開發 UWP 時如何使用 Fiddler 搭配 Xbox One](uwp-fiddler.md)
+- [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)
+- [Xbox One 上的 UWP](index.md)

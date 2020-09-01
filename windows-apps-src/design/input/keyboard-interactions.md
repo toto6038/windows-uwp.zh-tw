@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何設計和優化您的 Windows 應用程式，使其能為鍵盤使用者和殘障和其他協助工具需求提供最佳的體驗。
+Description: 瞭解如何設計和優化您的 Windows 應用程式，使其能為鍵盤電源使用者以及殘障人士和其他協助工具需求提供最佳體驗。
 title: 鍵盤互動
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
@@ -11,26 +11,26 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: 44cb122f70825df3ceef043d84e57cd077780749
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234703"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173482"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
 ![鍵盤主角影像](images/keyboard/keyboard-hero.jpg)
 
-瞭解如何設計和優化您的 Windows 應用程式，使其能為鍵盤使用者和殘障和其他協助工具需求提供最佳的體驗。
+瞭解如何設計和優化您的 Windows 應用程式，使其能為鍵盤電源使用者以及殘障人士和其他協助工具需求提供最佳體驗。
 
-跨裝置，鍵盤輸入是整體 Windows 應用程式互動體驗的重要部分。 精心設計的鍵盤體驗可讓使用者有效率瀏覽您的應用程式 UI，不需要從鍵盤移開手，就能存取應用程式的完整功能。
+在裝置上，鍵盤輸入是整體 Windows 應用程式互動體驗的重要部分。 精心設計的鍵盤體驗可讓使用者有效率瀏覽您的應用程式 UI，不需要從鍵盤移開手，就能存取應用程式的完整功能。
 
 ![鍵盤與遊戲台影像](images/keyboard/keyboard-gamepad.jpg)
 
 ***鍵盤與遊戲台之間共用一般互動模式***
 
-在本主題中，我們特別著重于 Windows 應用程式設計，以在電腦上進行鍵盤輸入。 不過，設計良好的鍵盤體驗對於支援協助工具工具（例如 Windows 朗讀程式），使用[軟體鍵盤](#software-keyboard)（例如觸控鍵盤和螢幕小鍵盤（OSK）），以及處理其他輸入裝置類型（例如 Xbox 遊戲台和遠端控制）而言非常重要。
+在本主題中，我們將特別著重于電腦上鍵盤輸入的 Windows 應用程式設計。 不過，設計完善的鍵盤體驗對於支援協助工具工具（例如，Windows 朗讀程式）而言很重要，例如使用觸控鍵盤和螢幕小鍵盤的 [軟體鍵盤](#software-keyboard) (OSK) ，以及處理其他輸入裝置類型，例如 Xbox 遊戲台和遠端控制。
 
 本文討論的許多指導方針和建議，包括[對焦視覺效果](#focus-visuals)、[便捷鍵](#access-keys)和 [UI 瀏覽](#navigation)，也適用於這些其他案例。
 
@@ -51,14 +51,14 @@ ms.locfileid: "83234703"
 
 如前所述，例如 Xbox 遊戲台與遙控器等輸入裝置，以及例如「朗讀程式」等協助工具，都共用瀏覽和命令功能的許多鍵盤輸入體驗。 在輸入類型和工具之間的這個共同體驗減少您的額外工作，並對通用 Windows 平台的「建置一次，隨處執行」目標做出貢獻。
 
-在必要時，我們會識別您應該留意的主要差異，並描述您應該考慮的任何緩和措施。
+在必要時，我們會找出您應該注意的重要差異，並說明您應考慮的任何緩和措施。
 
 以下是本主題中討論的裝置和工具：
 
 | 裝置/工具                       | 說明     |
 |-----------------------------------|-----------------|
-|鍵盤 (硬體與軟體)   |除了標準硬體鍵盤之外，Windows 應用程式也支援兩種軟體鍵盤：[觸控（或軟體）鍵盤](#software-keyboard)和[螢幕小鍵盤](#on-screen-keyboard)。|
-|遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需遊戲台和遠端控制之 Windows 支援的特定詳細資料，請參閱[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。|
+|鍵盤 (硬體與軟體)   |除了標準硬體鍵盤之外，Windows 應用程式也支援兩種軟體鍵盤： [觸控 (或軟體) 鍵盤](#software-keyboard) 和 [螢幕小鍵盤](#on-screen-keyboard)。|
+|遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需適用于遊戲台和遠端控制的 Windows 支援的特定詳細資訊，請參閱 [遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。|
 |螢幕助讀程式（朗讀程式）          |「朗讀程式」是 Windows 內建螢幕助讀程式，提供唯一互動體驗和功能，但仍依賴基本鍵盤瀏覽和輸入。 如需朗讀程式詳細資訊，請參閱[開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)。|
 
 ## <a name="custom-experiences-and-efficient-keyboarding"></a>自訂體驗與有效的鍵盤
@@ -69,7 +69,7 @@ ms.locfileid: "83234703"
     - 為「內部瀏覽」提供方向鍵瀏覽 (請參閱[瀏覽](#navigation))
 - 支援鍵盤快速鍵
     - 提供快速控制項目提供快速鍵 (請參閱[加速鍵](#accelerators))
-    - 提供存取金鑰以流覽應用程式的 UI （請參閱[存取金鑰](access-keys.md)）
+    - 提供便捷鍵以流覽您應用程式的 UI (查看 [存取金鑰](access-keys.md)) 
 
 ### <a name="focus-visuals"></a>焦點視覺效果
 
@@ -87,11 +87,11 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 ### <a name="tab-stops"></a>定位停駐點
 
-若要搭配使用控制項 (包括瀏覽元素) 與鍵盤，控制項必須有焦點。 控制項接收鍵盤焦點的其中一種方式，就是在您應用程式的定位順序中，將其識別為索引標籤，以透過 tab 鍵導覽來存取。
+若要搭配使用控制項 (包括瀏覽元素) 與鍵盤，控制項必須有焦點。 控制項接收鍵盤焦點的其中一種方式，是在應用程式的定位順序中，藉由將其識別為索引標籤，讓它可透過 tab 鍵流覽來存取。
 
-若要讓控制項包含在定位順序中， [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled)屬性必須設定為**True** ，而且[IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop)屬性必須設定為**true**。
+若要將控制項包含在定位順序中， [IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) 屬性必須設定為 **True** ，而且 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 屬性必須設定為 **true**。
 
-若要從定位順序中特別排除控制項，請將[IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop)屬性設定為**false**。
+若要特別從定位順序中排除控制項，請將 [ [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) ] 屬性設定為 [ **false**]。
 
 根據預設，Tab 順序反映 UI 元素建立的順序。 例如，如果 `StackPanel` 包含 `Button`、`Checkbox` 和 `TextBox`，Tab 順序就是 `Button`、`Checkbox` 和 `TextBox`。
 
@@ -101,23 +101,23 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 精心設計的鍵盤瀏覽，使用有邏輯與可預測的 Tab 順序，可讓您的應用程式更直覺，可協助使用者更有效且更有效率瀏覽、探索及存取功能。
 
-所有互動式控制項都應該要有定位停駐點（除非它們是在[群組](#control-group)中），而非互動式控制項（例如標籤）則不應該。
+除非互動式控制項位於 [群組](#control-group)) 中，否則所有互動式控制項都應該要有定位停駐點 (，而非互動式控制項（例如標籤）則否。
 
 避免讓焦點在應用程式中四處跳躍的自訂定位順序。 例如，表單中的控制項清單應該會有由上至下和由左至右的定位順序 (取決於地區)。
 
-如需自訂定位停駐點的詳細資訊，請參閱[鍵盤協助工具](../accessibility/keyboard-accessibility.md)。
+如需有關自訂索引標籤停止的詳細資訊，請參閱 [鍵盤協助工具](../accessibility/keyboard-accessibility.md) 。
 
 #### <a name="try-to-coordinate-tab-order-and-visual-order"></a>試著調整 Tab 順序和視覺順序
 
-協調定位順序和視覺效果順序（也稱為「讀取順序」或「顯示順序」）可在使用者流覽應用程式的 UI 時，減少其混淆。
+協調定位順序和視覺效果的 (也稱為「讀取順序」或「顯示順序) 可在使用者流覽應用程式的 UI 時，減少對使用者的混淆。
 
 試著先同時依 Tab 順序和視覺順序排列並呈現最重要的命令、控制項及內容。 不過，實際的顯示位置可能取決於上層配置容器，以及會影響配置之子元素的某些屬性。 特別的是，使用格線隱喻或表格隱喻的配置可以有與 Tab 順序完全不同的視覺順序。
 
 **注意** 視覺順序也是視地區設定和語言而定。
 
-### <a name="initial-focus"></a>最初的焦點
+### <a name="initial-focus"></a>初始焦點
 
-最初的焦點指定當應用程式或網頁第一次啟動或啟用時取得焦點的 UI 項目。 使用鍵盤時，是由使用者開始與應用程式的 UI 互動。
+最初的焦點指定當應用程式或網頁第一次啟動或啟用時取得焦點的 UI 項目。 使用鍵盤時，會從這個元素開始，讓使用者與應用程式的 UI 互動。
 
 對於 UWP app，最初的焦點設定為可以接收焦點、具有最高 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的元素。 忽略容器控制項的子元素。 在平局，視覺化樹狀結構上的第一個元素會接收焦點。
 
@@ -127,13 +127,13 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 -   相片 app，焦點設定到影像中心的第一個項目
 -   音樂 app，焦點設定到播放按鈕
 
-#### <a name="dont-set-initial-focus-on-an-element-that-exposes-a-potentially-negative-or-even-disastrous-outcome"></a>不要將初始焦點設定在公開可能負面或甚至是災難性結果的元素上
+#### <a name="dont-set-initial-focus-on-an-element-that-exposes-a-potentially-negative-or-even-disastrous-outcome"></a>請勿將初始焦點設定在公開可能為負面或甚至是災難性結果的元素上
 
-此功能層級應該是使用者的選擇。 最初的焦點設定到會產生重要結果的元素，可能會造成意外的資料遺失或系統存取。 例如，流覽至電子郵件時，請勿將焦點設定為 [刪除] 按鈕。
+這一層級的功能應該是使用者的選擇。 最初的焦點設定到會產生重要結果的元素，可能會造成意外的資料遺失或系統存取。 例如，流覽至電子郵件時，請勿將焦點設定為 [刪除] 按鈕。
 
-如需覆寫定位字元順序的詳細資訊，請參閱[焦點導覽](focus-navigation.md)。
+如需覆寫定位順序的詳細資訊，請參閱 [焦點導覽](focus-navigation.md) 。
 
-### <a name="navigation"></a>瀏覽
+### <a name="navigation"></a>導覽
 
 鍵盤瀏覽通常是透過 Tab 鍵和方向鍵來支援。
 
@@ -143,16 +143,16 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 -   **Tab 鍵**依 Tab 順序在可動作/使用中控制項之間瀏覽。
 -   **Shift + Tab** 依反向的 Tab 順序瀏覽控制項。 如果使用者已使用方向鍵瀏覽到控制項內部，焦點設為控制項內部的最後一個已知的值。
 -   **方向鍵**公開控制項特定的「內部瀏覽」。當使用者進入「內部瀏覽」時，方向鍵不會瀏覽移出控制項。 部分範例包括：
-    -   向上/向下鍵會將焦點移 `ListView` 到內部和`MenuFlyout`
-    -   修改和的目前選取值 `Slider``RatingsControl`
-    -   在內部移動插入號`TextBox`
-    -   展開/折迭內的專案`TreeView`
+    -   向上/向下鍵會將焦點移至 `ListView` 和 `MenuFlyout`
+    -   針對和修改目前選取的值 `Slider``RatingsControl`
+    -   在內部移動插入號 `TextBox`
+    -   展開/折迭內的專案 `TreeView`
 
-使用這些預設行為來優化應用程式的鍵盤導覽。
+使用這些預設行為，將應用程式的鍵盤流覽優化。
 
 #### <a name="use-inner-navigation-with-sets-of-related-controls"></a>使用「內部瀏覽」搭配相關控制項組
 
-提供方向鍵導覽至一組相關的控制項，會在應用程式 UI 的整體組織中加強其關聯性。
+提供箭號導覽至一組相關控制項，會在應用程式 UI 的整體組織內強調其關聯性。
 
 例如，此處顯示的 `ContentDialog` 控制項為水平列按鈕預設提供內部瀏覽 (對於自訂控制項，請參閱[控制項群組](#control-group)一節)。
 
@@ -162,9 +162,9 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 如果在單欄中顯示項目時，向上/向下鍵瀏覽項目。 在單列中顯示項目時，向左/向右鍵瀏覽項目。 如果是多欄項目，所有 4 個方向鍵瀏覽。
 
-#### <a name="define-a-single-tab-stop-for-a-collection-of-related-controls"></a>為相關控制項的集合定義一個定位停駐點
+#### <a name="define-a-single-tab-stop-for-a-collection-of-related-controls"></a>針對相關控制項的集合定義單一制表位
 
-藉由定義一組相關或互補控制項的單一索引標籤，您可以將應用程式中整體索引標籤停止的數目降到最低。
+藉由針對相關或互補的控制項集合定義單一索引標籤，您可以將應用程式中整體索引標籤的數目降至最低。
 
 例如，下列影像顯示兩個堆疊的 `ListView` 控制項。 在左側的影像會顯示搭配定位停駐點使用方向鍵在 `ListView` 之間瀏覽，右邊的影像會顯示，透過不使用 tab 鍵周遊父控制項，子元素之間的瀏覽變得更容易且更有效率。
 
@@ -237,28 +237,28 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 
 鍵盤快速鍵可讓您的應用程式更容易使用，方法是為鍵盤使用者提供協助工具的增強支援和改善的效率。
 
-除了在您的應用程式中支援鍵盤流覽和啟用之外，也最好提供應用程式功能的快捷方式。 索引標籤導覽提供良好的基本鍵盤支援，但使用更複雜的 UI 時，您也可能會想要新增快速鍵的支援。 
+除了在您的應用程式中支援鍵盤流覽和啟用之外，也最好提供應用程式功能的快捷方式。 索引標籤流覽提供良好的基本鍵盤支援，但使用更複雜的 UI 時，您可能也會想要新增快速鍵的支援。 
 
 鍵盤快速鍵是一種鍵盤組合，可讓使用者更有效率地存取應用程式功能，提高工作效率。 目前有兩種捷徑：
--   [快速鍵](#accelerators)是叫用應用程式命令的快捷方式。 您的應用程式不一定會提供對應于命令的特定 UI。 快速鍵通常包含 Ctrl 鍵加上字母鍵。
--   [存取金鑰](#access-keys)是將焦點設定至應用程式中特定 UI 的快捷方式。 [存取金鑰] typicaly 由 ALT 鍵加上字母鍵組成。
+-   [快速鍵](#accelerators) 是叫用應用程式命令的快捷方式。 您的應用程式不一定會提供對應至命令的特定 UI。 加速器通常包含 Ctrl 鍵和字母按鍵。
+-   [存取金鑰](#access-keys) 是將焦點設定在應用程式中特定 UI 的快捷方式。 存取金鑰 typicaly 由 ALT 鍵加上字母鍵組成。
 
-提供一致的鍵盤快速鍵，可跨應用程式支援類似的工作，使其更有用且更強大，並協助使用者記住它們。
+提供一致的鍵盤快速鍵，可跨應用程式支援類似的工作，讓它們更加實用且更強大，並協助使用者記住它們。
 
 #### <a name="accelerators"></a>快速鍵
 
-加速器可協助使用者在應用程式中更快速且更有效率地執行一般動作。 
+加速器可協助使用者更快速且更有效率地在應用程式中執行一般動作。 
 
 快速鍵的範例：
--   在**郵件**應用程式中的任何位置按 Ctrl + N 鍵會啟動新的訊息項目。
--   在 Microsoft Edge 中的任何位置按 Ctrl + E 鍵（以及許多 Microsoft Store 應用程式）都會啟動搜尋。
+-   在 **郵件** 應用程式中的任何位置按 Ctrl + N 鍵會啟動新的訊息項目。
+-   在 Microsoft Edge (和許多 Microsoft Store 應用程式的任何位置按 Ctrl + E 鍵) 會啟動搜尋。
 
 加速鍵具有下列特性：
--   它們主要是使用 Ctrl 和函式按鍵順序（Windows 系統快速鍵也會使用 Alt + 非英數位元和 Windows 標誌鍵）。
+-   它們主要是使用 Ctrl 和函式按鍵序列 (Windows 系統快速鍵也會使用 Alt + 非英數位元和 Windows 標誌鍵) 。
 -   它們只會指派給最常用的命令。
 -   它們需要被記住，而且只會記載於功能表、工具提示和說明。
--   當支援時，它們會在整個應用程式中生效。
--   它們應該以一致的方式指派，因為它們是記下而不是直接記載的。
+-   在支援的情況下，它們會在整個應用程式中生效。
+-   它們應該一致地指派，因為它們是記下而不是直接記載。
 
 #### <a name="access-keys"></a>便捷鍵
 
@@ -269,9 +269,9 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 便捷鍵具有下列特性：
 -   它們使用 Alt 鍵和英數字元按鍵。
 -   它們是主要的協助工具。
--   它們是直接在 UI 中記錄，並透過[重要秘訣](access-keys.md)在控制項旁邊。
+-   它們是直接記錄在 UI 中，與控制項連續的 [按鍵提示](access-keys.md)。
 -   它們只在目前的視窗中有作用，可瀏覽到對應的功能表項目或控制項。
--   您應該盡可能將存取金鑰一致地指派給常用的命令（特別是 [認可] 按鈕）。
+-   存取金鑰應該一致地指派給常用的命令 (特別是) 的認可按鈕。
 -   它們會當地語系化。
 
 #### <a name="common-keyboard-shortcuts"></a>常用的鍵盤快速鍵
@@ -293,7 +293,7 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 | 關閉索引標籤                            | Ctrl+F4 或 Ctrl+W                                |
 | 語意式縮放                        | Ctrl++ 或 Ctrl+-                                 |
 
-如需 Windows 系統快捷方式的完整清單，請參閱[windows 的鍵盤快速鍵](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)。 如需常見的應用程式快捷方式，請參閱[Microsoft 應用程式的鍵盤快速鍵](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps)。
+如需 Windows 系統快速鍵的完整清單，請參閱 [windows 的鍵盤快速鍵](https://support.microsoft.com/help/12445/windows-keyboard-shortcuts)。 如需常見的應用程式快捷方式，請參閱 [Microsoft 應用程式的鍵盤快速鍵](https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps)。
 
 ## <a name="advanced-experiences"></a>進階體驗
 
@@ -306,13 +306,13 @@ Esc 鍵可讓使用者取消暫時性 UI（以及該 UI 中的任何持續動作
 #### <a name="arrow-key-navigation"></a>方向鍵瀏覽
 
 UI 區域中有類似、相關控制項的群組時，使用者期望有方向鍵瀏覽的支援：
--   `AppBarButtons`在`CommandBar`
--   `ListItems`或 `GridItems` 內部 `ListView` 或`GridView`
--   `Buttons`境內`ContentDialog`
+-   `AppBarButtons` 在 `CommandBar`
+-   `ListItems` 或 `GridItems` 內部 `ListView` 或 `GridView`
+-   `Buttons` 裡面 `ContentDialog`
 
 UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組，使用 `XYFocusKeyboardNavigation="Enabled"` 提供類似的行為。
 
-使用下列控制項時，請考慮新增箭頭按鍵導覽的支援：
+使用下列控制項時，請考慮新增對箭號導覽的支援：
 
 <table>
   <tr>
@@ -333,7 +333,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
 
 #### <a name="tab-stops"></a>定位停駐點
 
-根據您應用程式的功能和版面配置，控制項群組的最佳導覽選項可能是單一索引標籤停駐，其中的箭號導覽至子專案、多個定位停駐點或某種組合。
+視您應用程式的功能和配置而定，控制項群組的最佳導覽選項可能是單一索引標籤，其中包含箭號導覽至子項目、多個定位停駐點或某些組合。
 
 ##### <a name="use-multiple-tab-stops-and-arrow-keys-for-buttons"></a>對按鈕使用多個定位停駐點和方向鍵
 
@@ -347,7 +347,7 @@ UWP 控制項預設支援方向鍵瀏覽。 對於自訂配置和控制項群組
 
 範例包括：
 -   `RadioButtons`
--   `ListViews`看起來像這樣的多個，其行為類似于單一`ListView`
+-   `ListViews`看起來像是單一的多重`ListView`
 -   外觀及操作像磚格線的任何 UI（例如 [開始] 功能表磚）
 
 #### <a name="specifying-control-group-behavior"></a>指定控制項群組行為
@@ -377,17 +377,17 @@ UWP 鍵盤行為以及「朗讀程式」支援的鍵盤行為之間的一些差�
 
 ![自動建議鍵盤焦點](images/keyboard/auto-suggest-keyboard.png)
 
-*使用鍵盤，使用者按下* ***enter*** *鍵以提交搜尋查詢*
+*使用鍵盤，使用者可以按* ***enter*** *鍵提交搜尋查詢*
 
 <table>
   <tr>
     <td>
       <p><img src="images/keyboard/auto-suggest-narrator-1.png" alt="autosuggest narrator focus"/></p>
-      <p><em>使用 [朗讀程式] 時，使用者按下<strong>enter</strong>鍵以提交搜尋查詢</em></p>
+      <p><em>使用「朗讀程式」時，使用者按下 <strong>enter</strong> 鍵提交搜尋查詢</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/auto-suggest-narrator-2.png" alt="autosuggest narrator focus on search"/></p>
-      <p><em>使用 [朗讀程式] 時，使用者也可以使用<strong>Caps lock + 向右鍵鍵</strong>，然後按<strong>空格鍵</strong>來存取 [搜尋] 按鈕</em></p>
+      <p><em>使用「朗讀程式」時，使用者也可以使用 <strong>Caps lock + 向右鍵</strong>，然後按 <strong>空格鍵</strong> 來存取 [搜尋] 按鈕</em></p>
     </td>
   </tr>
 </table>
@@ -396,7 +396,7 @@ UWP 鍵盤行為以及「朗讀程式」支援的鍵盤行為之間的一些差�
 
 Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因為缺少鍵盤的各種按鍵選項，遊戲台與遙控器缺少許多鍵盤最佳化（遙控器比遊戲台更受限）。
 
-如需適用于遊戲台和遠端控制輸入之 UWP 支援的詳細資訊，請參閱[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。
+請參閱 [遊戲台和遠端控制互動](gamepad-and-remote-interactions.md) ，以取得適用于遊戲台和遠端控制輸入的 UWP 支援詳細資料。
 
 以下顯示鍵盤、遊戲台與遙控器之間的一些按鍵對應。
 
@@ -405,8 +405,8 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 | Space         | A 按鍵                            | 選取按鈕       |
 | Enter         | A 按鍵                            | 選取按鈕       |
 | 逸出        | B 按鍵                            | [上一頁] 按鈕         |
-| Home/End      | 不適用                                 | 不適用                 |
-| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | 不適用                 |
+| Home/End      | N/A                                 | N/A                 |
+| Page Up/Down  | 發射鍵用於垂直捲動，緩衝鍵用於水平捲動   | N/A                 |
 
 設計 UWP 應用程式使用於遊戲台與遙控器時，應該留意的一些重要差異包括：
 -   文字輸入需要使用者按 A 啟動文字控制項。
@@ -421,7 +421,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 方向瀏覽是由 UWP[焦點管理員](/uwp/api/Windows.UI.Xaml.Input.FocusManager)協助程式類別所管理，它接受所按下的方向鍵 (鍵盤方向鍵、遊戲台與遙控器方向鍵)，並嘗試在對應的視覺的方向中移動焦點。
 
-與鍵盤不同的是，當應用程式選擇不使用[滑鼠模式](gamepad-and-remote-interactions.md#mouse-mode)時，會在整個應用程式中，針對遊戲台和遠端控制套用方向性導覽。 如需雙向導覽優化的詳細資訊，請參閱[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。
+與鍵盤不同的是，當應用程式退出 [滑鼠模式](gamepad-and-remote-interactions.md#mouse-mode)時，會在整個應用程式中，針對遊戲台和遠端控制套用方向導覽。 如需方向流覽優化的詳細資訊，請參閱 [遊戲台和遠端控制互動](gamepad-and-remote-interactions.md) 。
 
 **注意** 使用鍵盤 Tab 鍵瀏覽並不是方向瀏覽。 如需詳細資訊，請參閱[定位停駐點](#tab-stops)一節。
 
@@ -429,7 +429,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
   <tr>
     <td>
       <p><img src="images/keyboard/directional-navigation.png" alt="directional navigation"/></p>
-      <p><em><strong>支援的方向導覽</strong></br>使用方向鍵（鍵盤方向鍵、遊戲台與遙控器方向鍵）時，使用者可以瀏覽不同的控制項。</em></p>
+      <p><em><strong>支援方向導覽</strong></br>使用方向鍵（鍵盤方向鍵、遊戲台與遙控器方向鍵）時，使用者可以瀏覽不同的控制項。</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/no-directional-navigation.png" alt="no directional navigation"/></p>
@@ -446,11 +446,11 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 ![單欄方向鍵瀏覽](images/keyboard/single-column-arrow.png)
 
-***單一資料行箭號導覽***
+***單一資料行方向鍵流覽***
 
 ![單列方向鍵瀏覽](images/keyboard/single-row-arrow.png)
 
-***單一資料列方向鍵導覽***
+***單一資料列方向鍵流覽***
 
 ![多欄和列方向鍵瀏覽](images/keyboard/multiple-column-and-row-navigation.png)
 
@@ -472,7 +472,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
   <tr>
     <td>
       <p><img src="images/keyboard/row-major-keyboard.png" alt="row major keyboard navigation"/></p>
-      <p><em>資料列主要鍵盤導覽</em></p>
+      <p><em>資料列主要鍵盤流覽</em></p>
     </td>
     <td>
       <p><img src="images/keyboard/column-major-keyboard.png" alt="column major keyboard navigation"/></p>
@@ -483,23 +483,23 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 #### <a name="popup-ui"></a>快顯 UI 
 
-如先前所述，您應該嘗試確保方向導覽對應至應用程式 UI 中控制項的視覺化順序。
+如先前所述，您應該嘗試確定方向導覽對應到應用程式 UI 中控制項的視覺效果順序。
 
-某些控制項（例如內容功能表、CommandBar 溢位功能表和 [自動建議] 功能表）會在相對於主要控制項和可用螢幕空間的位置和方向（依預設）顯示功能表快顯視窗。 請注意，在執行時間可能會有各種不同的因素影響開頭的方向。
+某些控制項 (例如內容功能表、[畫面格溢位] 功能表和 [自動建議] 功能表) 在位置和方向中顯示功能表快顯視窗， (依預設) 相對於主要控制項和可用的螢幕空間。 請注意，在執行時間，開啟方向可能會受到各種因素的影響。
 
 <table>
   <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key" /></td>
   <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key" /></td>
 </table>
 
-針對這些控制項，當第一次開啟功能表（且使用者未選取任何專案）時，向下鍵一律會將焦點設定為第一個專案，而向上鍵則會將焦點設定為功能表上的最後一個專案。 
+針對這些控制項，當首次開啟功能表 (，且使用者) 未選取任何專案時，向下鍵一律會將焦點設為第一個專案，而向上箭號則一律會將焦點設為功能表上的最後一個專案。 
 
-如果最後一個專案具有焦點，且按下方向鍵，則焦點會移至功能表上的第一個專案。 同樣地，如果第一個專案具有焦點，且按下向上鍵，則焦點會移至功能表上的最後一個專案。 這種行為稱為「*迴圈*」，適用于流覽可無法預期的方向開啟的快顯功能表。
+如果最後一個專案具有焦點，且按下箭號鍵，則焦點會移至功能表上的第一個專案。 同樣地，如果第一個專案具有焦點，且按下向上鍵，則焦點會移至功能表上的最後一個專案。 這種行為稱為「 *迴圈* 」，適合用來導覽可能以無法預期的方向開啟的快顯功能表。
 
 > [!NOTE]
-> 在非快顯的 Ui 中應該避免迴圈，使用者可能會感覺到無限迴圈。 
+> 在非快顯的 Ui 中應避免迴圈，使用者可能會在無限迴圈中攔截。 
 
-我們建議您在自訂控制項中模擬這些相同的行為。 如需如何執行此行為的程式碼範例，請參閱以程式[設計的焦點導覽](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element)檔。
+建議您在自訂控制項中模擬這些相同的行為。 有關如何執行此行為的程式碼範例，可以在程式 [設計焦點導覽](focus-navigation-programmatic.md#find-the-first-and-last-focusable-element) 檔中找到。
 
 
 ## <a name="test-your-app"></a>測試應用程式
@@ -511,7 +511,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 * [識別輸入裝置](identify-input-devices.md)
 * [回應觸控式鍵盤的出現](respond-to-the-presence-of-the-touch-keyboard.md)
 * [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
-* [NavigationView 控制項鍵盤細節](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation) 
+* [NavigationView 控制項鍵盤細節](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
 
 ## <a name="appendix"></a>附錄
 
@@ -521,7 +521,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 ![Windows 10 觸控式鍵盤](images/keyboard/default.png)
 
-***Windows 10 觸控式鍵盤***
+***Windows 10 觸控鍵盤***
 
 ![Xbox one 螢幕小鍵盤](images/keyboard/xbox-onscreen-keyboard.png)
 
@@ -547,7 +547,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 -   功能表列
 -   功能表項目
 -   工具列
--   List
+-   清單
 -   清單項目
 
 以下是觸控式鍵盤各種模式的範例。 第一個影像是預設版面配置，第二個是拇指版面配置 (不是所有語言都有提供)。
@@ -558,7 +558,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 ![展開配置模式的觸控式鍵盤](images/keyboard/extendedview.png)
 
-***擴充的版面配置模式中的觸控鍵盤***
+***展開的版面配置模式中的觸控鍵盤***
 
 成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的應用程式操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
 
@@ -569,7 +569,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 
 螢幕小鍵盤可以從 [設定] &gt; [輕鬆存取] 中的 [鍵盤] 頁面開啟。
 
-**注意**螢幕小鍵盤的優先順序高於觸控鍵盤，如果螢幕小鍵盤出現，則不會顯示。
+**注意** 螢幕小鍵盤的優先順序高於觸控鍵盤，如果出現螢幕小鍵盤，則不會顯示。
 
 ![螢幕小鍵盤](images/keyboard/osk.png)
 

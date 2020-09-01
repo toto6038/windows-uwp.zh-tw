@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: b42c917a0532a015a789c8b4ac57d59c65804ce1
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 6baf26b083cce08557a9b09f2ba95d5ad889f4a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970196"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175102"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 
@@ -73,7 +73,7 @@ ms.locfileid: "88970196"
     > [!NOTE]
     > 這一行必須放在 `<head>` 區段所包含的 main.js 之後，否則建置專案時會發生錯誤。
 
-6.  在專案的 main.js 檔案中，新增建立新 **AdScheduler** 物件的程式碼。 傳入裝載影片內容的 **MediaPlayer**。 程式碼必須放在 [WinJS.UI.processAll](https://docs.microsoft.com/previous-versions/windows/apps/hh440975) 後面執行。
+6.  在專案的 main.js 檔案中，新增建立新 **AdScheduler** 物件的程式碼。 傳入裝載影片內容的 **MediaPlayer**。 程式碼必須放在 [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975) 後面執行。
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "88970196"
 
     * 如果您是獲得向 Microsoft 廣告伺服器要求廣告排程權限的 Microsoft 合作夥伴，請使用 **requestSchedule** 並指定由您的 Microsoft 代表提供給您的應用程式識別碼和單位識別碼。
 
-        這個方法採用[承諾](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps#asynchronous-patterns-in-uwp-using-javascript) 形式，它是一種非同步建構，其中傳遞了兩個功能指標：一個指標在承諾成功完成時呼叫**onComplete** 函數，另一個指標在遇到錯誤時呼叫 **onError** 函數。 在 **onComplete** 函數中，開始播放視訊內容。 廣告將在已排程的時間開始播放。 在您 **onError** 函數中，處理錯誤，然後開始播放視訊。 您的視訊內容在播放時不會有廣告。 **onError** 函數的引數包含下列成員的物件。
+        這個方法採用[承諾](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript) 形式，它是一種非同步建構，其中傳遞了兩個功能指標：一個指標在承諾成功完成時呼叫**onComplete** 函數，另一個指標在遇到錯誤時呼叫 **onError** 函數。 在 **onComplete** 函數中，開始播放視訊內容。 廣告將在已排程的時間開始播放。 在您 **onError** 函數中，處理錯誤，然後開始播放視訊。 您的視訊內容在播放時不會有廣告。 **onError** 函數的引數包含下列成員的物件。
 
         [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
 
@@ -165,7 +165,7 @@ ms.locfileid: "88970196"
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-當 **AdScheduler** 發生錯誤會引發此事件。 有關錯誤碼值的詳細資訊，請參閱 [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode)。
+當 **AdScheduler** 發生錯誤會引發此事件。 有關錯誤碼值的詳細資訊，請參閱 [ErrorCode](/uwp/api/microsoft.advertising.errorcode)。
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 

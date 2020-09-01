@@ -6,22 +6,22 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b5b5678ad1a0666e6f008a2ec69ba63c35441edf
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b44e4ba86ab96474d4770c32024b8edc5641c396
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493513"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174282"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 
 > [!NOTE]
-> 如需有關如何在[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Windows 執行階段元件中引發事件的詳細資訊，請參閱[在 c + + 中撰寫事件/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)。
+> 如需在 [c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 執行階段元件中引發事件的詳細資訊，請參閱 [在 c + + 中撰寫事件/WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-如果您的 Windows 執行階段元件會在背景執行緒（工作者執行緒）上引發使用者定義之委派類型的事件，而且您希望 JavaScript 能夠接收事件，則可以使用任何一種方法來執行和/或引發它。
+如果您的 Windows 執行階段元件在背景執行緒上引發使用者定義之委派類型的事件， (背景工作執行緒) ，而您想要讓 JavaScript 能夠接收事件，則您可以使用下列其中一種方式來執行和（或）引發事件。
 
--   （選項1）透過[**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher)引發事件，將事件封送處理至 JavaScript 執行緒內容。 雖然這通常是最佳選擇，但在某些情況下卻無法提供最佳效能。
--   （選項2）請使用** [EventHandler](/uwp/api/windows.foundation.eventhandler-1) \<Object\> ** （但遺失事件種類資訊）。 如果選項1不可行，或其效能不足，則這是很好的第二個選擇，因為可以接受遺失類型資訊。 如果您要撰寫 c # Windows 執行階段元件，則無法使用**EventHandler \<Object\> **類型; 相反地，該類型會投射至[**EventHandler**](/dotnet/api/system.eventhandler)，因此您應該改為使用它。
+-    (選項 1) 透過 [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) 引發事件，以將事件封送處理至 JavaScript 執行緒內容。 雖然這通常是最佳選擇，但在某些情況下卻無法提供最佳效能。
+-    (選項 2) 使用** [EventHandler](/uwp/api/windows.foundation.eventhandler-1) \<Object\> ** (但遺失事件種類資訊) 。 如果選項1不可行，或其效能不足，則這是理想的第二個選擇，因為可以接受遺失類型資訊。 如果您要撰寫 c # Windows 執行階段元件，則無法使用**EventHandler \<Object\> **類型，而是將該類型投射到[**EventHandler**](/dotnet/api/system.eventhandler)，因此您應該改用該類型。
 -   (選項 3) 針對元件建立您自己的 Proxy 和虛設常式。 這是最難實作的選項，但對於有需要的案例來說，與選項 1 相比，這個選項不僅可以保留類型資訊，可能還會提供更佳的效能。
 
 如果您僅在背景執行緒上引發事件，卻沒有使用上述任何選項，JavaScript 用戶端就不會接收事件。
@@ -74,9 +74,9 @@ public void MakeToastWithDispatcher(string message)
 ## <a name="option-2-use-eventhandlerltobjectgt-but-lose-type-information"></a>(選項 2) 使用 EventHandler&lt;Object&gt;，但會遺失類型資訊
 
 > [!NOTE]
-> 如果您要撰寫 c # Windows 執行階段元件，則無法使用**EventHandler \<Object\> **類型; 相反地，該類型會投射至[**EventHandler**](/dotnet/api/system.eventhandler)，因此您應該改為使用它。
+> 如果您要撰寫 c # Windows 執行階段元件，則無法使用**EventHandler \<Object\> **類型，而是將該類型投射到[**EventHandler**](/dotnet/api/system.eventhandler)，因此您應該改用該類型。
 
-另一種從背景執行緒傳送事件的方式，是使用[EventHandler](/uwp/api/windows.foundation.eventhandler) &lt; 物件 &gt; 做為事件的型別。 Windows 會提供這個泛型類型的具象安裝，並為其提供 Proxy 和虛設常式。 缺點是事件引數的類型資訊和傳送者都會遺失。 C++ 和 .NET 用戶端必須透過文件來得知收到事件時要轉換回的類型。 JavaScript 用戶端不需要原始類型資訊， 而是會根據其在中繼資料內的名稱來尋找 arg 屬性。
+另一種從背景執行緒傳送事件的方式，就是使用[EventHandler](/uwp/api/windows.foundation.eventhandler) &lt; 物件 &gt; 做為事件的型別。 Windows 會提供這個泛型類型的具象安裝，並為其提供 Proxy 和虛設常式。 缺點是事件引數的類型資訊和傳送者都會遺失。 C++ 和 .NET 用戶端必須透過文件來得知收到事件時要轉換回的類型。 JavaScript 用戶端不需要原始類型資訊， 而是會根據其在中繼資料內的名稱來尋找 arg 屬性。
 
 下列範例示範如何在 C# 中使用 Windows.Foundation.EventHandler&lt;Object&gt;：
 
@@ -126,7 +126,7 @@ toastCompletedEventHandler: function (event) {
 
 本文的剩餘部分說明如何使用 C# 來建立基本 Windows 執行階段元件，然後使用 C++ 來為 Proxy 和虛設常式建立 DLL，讓 JavaScript 能夠取用非同步作業中元件所引發的 Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; 事件。 (您也可以使用 C++ 或 Visual Basic 來建立元件。 建立 Proxy 和虛設常式的相關步驟都一樣)。這個逐步解說會以＜建立 Windows 執行階段同處理序元件範例 (C++/CX)＞為基礎，協助說明其用途。
 
-本逐步解說包含這些部分。
+本逐步解說包含這些元件。
 
 -   您將在此處建立兩個基本的 Windows 執行階段類別。 其中一個類別會公開類型為 [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](/uwp/api/windows.foundation.typedeventhandler-2) 的事件，另一個類別則是傳回 JavaScript 做為 TValue 之引數的類型。 除非您完成後續步驟，否則這些類別都無法與 JavaScript 通訊。
 -   這個 app 會啟用主要類別物件、呼叫方法，然後處理 Windows 執行階段元件所引發的事件。
@@ -136,13 +136,13 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>建立 Windows 執行階段元件
 
-在 Visual Studio 的功能表列上，選擇 [檔案] [新增] [ ** &gt; 專案**]。 在 [新增專案]**** 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]****，然後選取 [空白應用程式]****。 將專案命名為 ToasterApplication，然後選擇 [確定]**** 按鈕。
+在 Visual Studio 的功能表列上，選擇 [ **檔案 &gt; 新增專案**]。 在 [新增專案]**** 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]****，然後選取 [空白應用程式]****。 將專案命名為 ToasterApplication，然後選擇 [確定]**** 按鈕。
 
-將 C# Windows 執行階段元件加入至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 [加入] &gt; [新增專案]****。 展開 [ **Visual c #] &gt; Microsoft Store**然後選取 [ **Windows 執行階段元件**]。 將專案命名為 ToasterComponent，然後選擇 [確定]**** 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
+將 C# Windows 執行階段元件加入至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 [加入] &gt; [新增專案]****。 展開 [ **Visual c #] &gt; Microsoft Store** 然後選取 [ **Windows 執行階段元件**]。 將專案命名為 ToasterComponent，然後選擇 [確定]**** 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
 
 在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 [屬性]****。 在 [屬性頁]**** 對話方塊的左窗格中選取 [組態屬性]****，然後將對話方塊頂端的 [組態]**** 設定為 [偵錯]****，並將 [平台]**** 設定為 [x86]、[x64] 或 [ARM]。 選擇 [確定] **** 按鈕。
 
-**重要事項**  平臺 = 任何 CPU 都無法使用，因為它對您稍後將加入至方案的機器碼 Win32 DLL 無效。
+**重要**  Platform = 任何 CPU 都將無法運作，因為它對您稍後將新增至方案的機器碼 Win32 DLL 而言是不正確。
 
 在 [方案總管] 中，將 class1.cs 重新命名為 ToasterComponent.cs，使其符合專案的名稱。 Visual Studio 會自動重新命名檔案中的類別，以符合新的檔案名稱。
 
@@ -218,7 +218,7 @@ IToast 介面包含可擷取來描述快顯通知類型的字串。 IToaster 介
 
 在上述程式碼中，我們建立了快顯通知，然後備妥執行緒集區工作項目來引發通知。 雖然 IDE 可能會建議您將 await 關鍵字套用至非同步呼叫，但在這種情況下不必這麼做，因為方法不會執行任何取決於作業結果的工作。
 
-**注意**  上述程式碼中的非同步呼叫會使用 RunAsync，只是為了示範在背景執行緒上引發事件的簡單方式。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
+**注意**  上述程式碼中的非同步呼叫只會使用 ThreadPool. RunAsync 來示範在背景執行緒上引發事件的簡單方式。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
   
 ```csharp
     public async void MakeToast(string message)
@@ -283,7 +283,7 @@ makeToast 函式必須連結至一個按鈕。 更新 default.html 以增加一�
 
 ## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>為元件的介面產生 GUID (C# 及其他 .NET 程式語言)
 
-在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid （"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx "） \] 。 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
+在功能表列上，依序選擇 \[工具\] &gt; \[建立 GUID\]。 在對話方塊中，選取 5. \[Guid ( "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx .。。xxxx ") \] 。 選擇 \[新的 GUID\] 按鈕，然後選擇 \[複製\] 按鈕。
 
 ![GUID 產生器工具](./images/guidgeneratortool.png)
 
@@ -330,10 +330,10 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要事項**   若為 ARM 或 x64 專案設定，請將 MIDL/env 參數變更為 x64 或 arm32。
+**重要**   若為 ARM 或 x64 專案設定，請將 MIDL/env 參數變更為 x64 或 arm32。
 
 若要確保每次 .winmd 檔案變更時都會重新產生 IDL 檔案，請將 **\[執行 post-build 事件\]** 變更為 **\[當組建更新專案輸出時\]**
-[組建事件] 屬性頁應該與下列類似： ![ 組建事件](./images/buildevents.png)
+[組建事件] 屬性頁應如下所示： ![ 組建事件](./images/buildevents.png)
 
 重建方案以產生並編譯 IDL。
 
@@ -341,7 +341,7 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 ## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>將 Proxy 和虛設常式程式碼編譯為 DLL
 
-您現在已經擁有所需的所有檔案，接著您就可以將他們編譯為一個由 C++ 構成的 DLL 檔案。 若要以最簡單的方式完成這項工作，請新增一個專案以支援建置 Proxy。 開啟 ToasterApplication 方案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增專案\]**。 在 [**新增專案**] 對話方塊的左窗格中，展開 [ **Visual C++ &gt; windows &gt; 通用視窗**]，然後在中間窗格中選取 **[DLL （UWP 應用程式）**]。 (請注意這不是 C++ Windows 執行階段元件專案。) 將專案名稱命名為「Proxies」，然後選擇 **\[確定\]** 按鈕。 當 C# 類別發生變更時，這些檔案會由 post-build 事件進行更新。
+您現在已經擁有所需的所有檔案，接著您就可以將他們編譯為一個由 C++ 構成的 DLL 檔案。 若要以最簡單的方式完成這項工作，請新增一個專案以支援建置 Proxy。 開啟 ToasterApplication 方案的捷徑功能表，然後依序選擇 **\[加入\] > \[新增專案\]**。 在 [ **新增專案** ] 對話方塊的左窗格中，展開 [ **Visual C++ &gt; windows &gt; 通用視窗**]，然後在中間窗格中，選取 [ ** (UWP 應用程式) 的 DLL **。 (請注意這不是 C++ Windows 執行階段元件專案。) 將專案名稱命名為「Proxies」，然後選擇 **\[確定\]** 按鈕。 當 C# 類別發生變更時，這些檔案會由 post-build 事件進行更新。
 
 根據預設值，Proxy 專案會產生標頭 .h 檔案以及 C++ .cpp 檔案。 由於 DLL 是利用 MIDL 產生的檔案進行建置的，因此不需要 .h 和 .cpp 檔案。 在 \[方案總管\] 中，開啟他們的捷徑功能表，選擇 **\[移除\]**，然後確認刪除。
 
@@ -414,11 +414,11 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 
 在繼續下一步前，請務必確定︰
 
--   ProxyStub 的 ClassId 會設定為 ToasterComponent i. c 檔案中的第一個 GUID \_ 。 使用這個檔案中定義的第一個 GUID 作為 classId 使用。 (這可能會跟 ITypedEventHandler2 的 GUID 一樣。)
+-   ProxyStub ClassId 會設定為 ToasterComponent c 檔案中的第一個 GUID。 \_ 使用這個檔案中定義的第一個 GUID 作為 classId 使用。 (這可能會跟 ITypedEventHandler2 的 GUID 一樣。)
 -   Path 已設定為 Proxy 二進位檔案的相對路徑。 (在此逐步解說中，proxies.dll 位於與 ToasterApplication.winmd 相同的資料夾中。)
 -   GUID 已設定為正確的格式。 (這部分很容易發生錯誤。)
--   資訊清單中的介面識別碼符合 ToasterComponent i. c 檔案中的 Iid \_ 。
--   資訊清單中的介面名稱都是唯一的。 由於系統並不會使用到這些，您可以選擇使用數值來命名。 通常選擇與您定義的介面明確相符的介面名稱是一個很好的作法。 針對產生的介面，名稱應該要能夠指示產生的介面。 您可以使用 ToasterComponent \_ i. c 檔案來協助您產生介面名稱。
+-   資訊清單中的介面識別碼符合 ToasterComponent i .c 檔案中的 Iid \_ 。
+-   資訊清單中的介面名稱都是唯一的。 由於系統並不會使用到這些，您可以選擇使用數值來命名。 通常選擇與您定義的介面明確相符的介面名稱是一個很好的作法。 針對產生的介面，名稱應該要能夠指示產生的介面。 您可以使用 ToasterComponent 的 \_ c 檔案來協助您產生介面名稱。
 
 若您嘗試現在就執行方案，您將會收到一則錯誤，告知您 proxies.dll 並非承載的一部分。 在 ToasterApplication 專案中開啟 **\[參考\]** 資料夾的捷徑功能表，然後選擇 **\[加入參考\]**。 選取 Proxies 專案旁的核取方塊。 同時，請確定 ToasterComponent 旁邊的核取方塊也已選取。 選擇 [確定] **** 按鈕。
 

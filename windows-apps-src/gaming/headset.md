@@ -1,19 +1,19 @@
 ---
-title: 耳機
+title: Headset
 description: 使用 Windows.Gaming.Input 耳機 API，偵測耳機、擷取播放程式語音和播放音訊。
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 耳機
 ms.localizationpriority: medium
-ms.openlocfilehash: 73815fb3f1b732537e9f08932639a1eccd7ed1b0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5e5b0894dbab03490cb74bdae8c231b57d397cb4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368620"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175292"
 ---
-# <a name="headset"></a>耳機
+# <a name="headset"></a>Headset
 
 此頁面說明使用 [Windows.Gaming.Input.Headset][headset] 進行耳機程式設計的基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
 
@@ -65,12 +65,12 @@ inputDevice.HeadsetDisconnected += ref new TypedEventHandler<IGameController^, H
 
 [Headset][] 類別是由兩個代表 XAudio 端點識別碼的字串組成，一個用於音訊擷取 (從耳麥式麥克風錄製)，另一個用於音訊轉譯 (透過耳機播放)。
 
-使用 XAudio 的詳細資料不在此做討論，如需詳細資訊，請參閱 [XAudio2 程式設計指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide) (英文) 和 [XAudio2 API 參考](https://docs.microsoft.com/windows/desktop/xaudio2/programming-reference) (英文)。
+使用 XAudio 的詳細資料不在此做討論，如需詳細資訊，請參閱 [XAudio2 程式設計指南](/windows/desktop/xaudio2/programming-guide) (英文) 和 [XAudio2 API 參考](/windows/desktop/xaudio2/programming-reference) (英文)。
 
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[igamecontroller]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
-[igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
-[igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[Windows. 輸入]: /uwp/api/Windows.Gaming.Input
+[igamecontroller]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headset]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[igamecontroller.headsetdisconnected]: /uwp/api/Windows.Gaming.Input.IGameController
+[耳機]: /uwp/api/Windows.Gaming.Input.Headset

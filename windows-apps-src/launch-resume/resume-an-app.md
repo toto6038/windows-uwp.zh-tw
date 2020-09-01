@@ -4,31 +4,31 @@ description: 了解如何在系統繼續執行您的應用程式時，重新整�
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: d7f26e7a4ae05aaf3e197843e18273cb765754a0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d7898dd727ffb4c9255b66725ea69d2005e8d650
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371464"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175142"
 ---
 # <a name="handle-app-resume"></a>處理應用程式繼續執行
 
-**重要的 Api**
+**重要 API**
 
-- [**繼續**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)
+- [**繼續中**](/uwp/api/windows.ui.xaml.application.resuming)
 
-了解當系統繼續執行您的 App 時，要從何處重新整理 UI。 這個主題中的範例會登錄 [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming) 事件的事件處理常式。
+了解當系統繼續執行您的 App 時，要從何處重新整理 UI。 這個主題中的範例會登錄 [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) 事件的事件處理常式。
 
 ## <a name="register-the-resuming-event-handler"></a>登錄繼續事件處理常式
 
-登錄以處理 [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming) 事件，此事件會指出使用者已切換離開您的 App 然後又返回。
+登錄以處理 [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) 事件，此事件會指出使用者已切換離開您的 App 然後又返回。
 
 ```csharp
 partial class MainPage
@@ -73,7 +73,7 @@ MainPage::MainPage()
 
 在使用者切換到另一個 App 或切換到桌面時，系統會將您的 App 暫停幾秒鐘。 當使用者切換回您的 App 時，系統就會繼續執行您的 App。 當系統繼續執行您的 App 時，您的變數內容和資料結構會與系統暫停 App 之前一樣。 系統會從停止 App 的地方恢復執行。 對使用者來說，App 看起來就像是在背景執行一樣。
 
-當您的 App 處理 [**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming) 事件時，它可能已經被暫停數個小時或數天。 它應該重新整理在暫停期間可能已變成過時的所有內容，例如新聞摘要或使用者的位置。
+當您的 App 處理 [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) 事件時，它可能已經被暫停數個小時或數天。 它應該重新整理在暫停期間可能已變成過時的所有內容，例如新聞摘要或使用者的位置。
 
 這也是還原您在 App 暫停期間所發行之任何獨佔資源的好時機，例如檔案控制代碼、相機、I/O 裝置、外部裝置及網路資源。
 
@@ -116,13 +116,13 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ```
 
 > [!NOTE]
-> 因為[ **Resuming** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming)不會從 UI 執行緒引發事件，發送器必須可用於您的處理常式以任何將呼叫分派至 UI。
+> 因為不會從 UI 執行緒引發 [**繼續**](/uwp/api/windows.ui.xaml.application.resuming) 事件，所以您的處理常式必須使用發送器來分派對 UI 的任何呼叫。
 
 ## <a name="remarks"></a>備註
 
-當您的 App 連接至 Visual Studio 偵錯工具時，系統將不會暫停它。 不過，您可以從偵錯工具暫停它，然後將 **Resume** 事件傳送給它，以便對您的程式碼進行偵錯。 請確定可看見 [偵錯位置工具列]  ，然後按一下 [暫停]  圖示旁邊的下拉式清單。 然後選擇 [繼續]  。
+當您的 App 連接至 Visual Studio 偵錯工具時，系統將不會暫停它。 不過，您可以從偵錯工具暫停它，然後將 **Resume** 事件傳送給它，以便對您的程式碼進行偵錯。 請確定可看見 **\[偵錯位置工具列\]**，然後按一下 **\[暫停\]** 圖示旁邊的下拉式清單。 然後選擇 **\[繼續\]**。
 
-就「Windows Phone 市集」應用程式而言，[**Resuming**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.resuming) 事件的後面一律跟著 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched)，即使在應用程式目前已被暫停，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
+就「Windows Phone 市集」應用程式而言，[**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) 事件的後面一律跟著 [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched)，即使在應用程式目前已被暫停，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，App 便可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
 
 ## <a name="related-topics"></a>相關主題
 

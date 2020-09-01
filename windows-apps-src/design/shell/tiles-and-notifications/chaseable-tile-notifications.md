@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e27dec0e7256cfc035ecc3150bd976f69743fe3
-ms.sourcegitcommit: f15cf141c299bde9cb19965d8be5198d7f85adf8
+ms.openlocfilehash: a10e68f2926761338a95d5d2c649c84468efada8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58358613"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173812"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
@@ -21,10 +21,10 @@ ms.locfileid: "58358613"
 例如，新聞應用程式可使用此功能來判斷當使用者啟動它時，其動態磚會顯示什麼新聞故事，藉以確保以醒目的方式顯示某些新聞，讓使用者可以找到它。 
 
 > [!IMPORTANT]
-> **需要年度更新版**:若要使用與 chaseable 磚通知C#， C++，或 VB 為基礎的 UWP 應用程式，您必須為目標 SDK 14393，並執行組建 14393 或更高版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
+> **需要年度更新版**：若要搭配 C#、C++ 或 VB 型 UWP app 使用可追蹤式磚通知，您的目標必須是 SDK 14393 並執行組建 14393 或更新版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
 
 
-> **重要的 Api**:[LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要 API**：[LaunchActivatedEventArgs.TileActivatedInfo 屬性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、[TileActivatedInfo 類別](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>運作方式
@@ -40,7 +40,7 @@ ms.locfileid: "58358613"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>如何使用可追蹤式磚通知
 
-最重要的是要注意在大部分案例中，**您不應直接瀏覽到當使用者按下時磚上的特定通知**。 動態磚可做為應用程式的進入點。 當使用者按一下即時磚時，則可以是兩個案例：（1） 他們想要啟動您的應用程式，一般來說，或者 （2） 他們想要查看已在 [Live] 圖格的特定通知的詳細資訊。 由於使用者無法明確表明他們想要哪種操作，理想的經驗是**正常啟動您的應用程式，並確認可以輕鬆找到使用者看到的通知**。
+最重要的是要注意在大部分案例中，**您不應直接瀏覽到當使用者按下時磚上的特定通知**。 動態磚可做為應用程式的進入點。 使用者在兩種情形下會按動態磚：(1) 他們想以正常方式啟動您的應用程式，或 (2) 他們想查看剛剛出現在動態磚上的特定通知的相關資訊。 由於使用者無法明確表明他們想要哪種操作，理想的經驗是**正常啟動您的應用程式，並確認可以輕鬆找到使用者看到的通知**。
 
 例如，按一下「MSN 新聞」應用程式的動態磚會正常啟動應用程式：它會顯示首頁，或使用者先前閱讀的文章。 不過，在首頁中，應用程式可確保能輕鬆找到動態磚上的故事。 如此一來就能同時支援這兩種情形：您只是想要啟動/繼續應用程式，以及您想檢視特定故事。
 
@@ -105,13 +105,13 @@ TileContent content = new TileContent()
 
 ## <a name="how-to-check-for-the-arguments-property-when-your-app-launches"></a>當您的應用程式啟動時如何查看引數屬性
 
-大部分應用程式有 App.xaml.cs 檔案，其中包含 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法的覆寫。 正如其名，您的應用程式啟動時會呼叫這個方法。 它採用單一引數，一個 [LaunchActivatedEventArgs](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 物件。
+大部分應用程式有 App.xaml.cs 檔案，其中包含 [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法的覆寫。 正如其名，您的應用程式啟動時會呼叫這個方法。 它採用單一引數，一個 [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 物件。
 
-LaunchActivatedEventArgs 物件具有可啟用可追蹤式通知的屬性：[TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)，這可供存取 [TileActivatedInfo 物件](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)。 當使用者從磚啟動您的應用程式 (而不是從應用程式清單、搜尋或任何其他進入點)，您的應用程式會初始化此屬性。
+LaunchActivatedEventArgs 物件具有可啟用可追蹤式通知的屬性：[TileActivatedInfo 屬性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)，這可供存取 [TileActivatedInfo 物件](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)。 當使用者從磚啟動您的應用程式 (而不是從應用程式清單、搜尋或任何其他進入點)，您的應用程式會初始化此屬性。
 
-[TileActivatedInfo 物件](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含名為 [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的屬性，其中包含過去 15 分鐘內顯示在磚上的通知清單。 清單中的第一個項目表示磚上的目前通知，後續項目代表目前通知之前使用者看到的先前通知。 如果您的磚已清除，這份清單會是空的。
+[TileActivatedInfo 物件](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含名為 [RecentlyShownNotifications](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的屬性，其中包含過去 15 分鐘內顯示在磚上的通知清單。 清單中的第一個項目表示磚上的目前通知，後續項目代表目前通知之前使用者看到的先前通知。 如果您的磚已清除，這份清單會是空的。
 
-每個 ShownTileNotification 具有引數屬性。 將您的磚通知裝載，則為 null 的引數字串初始化引數 屬性，如果您承載不包含引數字串。
+每個 ShownTileNotification 都有 Arguments 屬性。 Arguments 屬性會使用磚通知裝載上的引數字串來初始化，而如果裝載未包含引數字串則為 null。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -140,14 +140,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
-### <a name="accessing-onlaunched-from-desktop-applications"></a>從桌面應用程式存取 OnLaunched
+### <a name="accessing-onlaunched-from-desktop-applications"></a>從桌面應用程式存取 >onlaunched
 
-傳統型應用程式 （如 Win32，WPF 中，等） 使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，也可以使用 chaseable 磚 ！ 唯一的差別存取 OnLaunched 引數。 請注意，您必須先[封裝使用傳統型橋接器應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)。
+桌面應用程式 (例如 Win32、WPF 等) 使用 [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，也可以使用 chaseable 圖格！ 唯一的差異在於存取 >onlaunched 引數。 請注意，您必須先 [使用傳統型橋接器封裝您的應用程式](/windows/msix/desktop/source-code-overview)。
 
 > [!IMPORTANT]
-> **需要 2018 年 10 月更新**:若要使用`AppInstance.GetActivatedEventArgs()`API，您必須為目標 SDK 17763，而且執行組建，17763 或更高版本。
+> **需要2018年10月更新**：若要使用 `AppInstance.GetActivatedEventArgs()` API，您必須以 SDK 17763 為目標，並執行組建17763或更新版本。
 
-針對桌面應用程式，若要存取的啟動引數，執行下列操作...
+針對桌面應用程式，若要存取啟動引數，請執行下列動作 .。。
 
 ```csharp
 
@@ -221,5 +221,5 @@ static void Main()
 
 ## <a name="related-articles"></a>相關文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
-- [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+- [LaunchActivatedEventArgs.TileActivatedInfo 屬性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [TileActivatedInfo 類別](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

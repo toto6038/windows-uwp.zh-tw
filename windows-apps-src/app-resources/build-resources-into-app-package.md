@@ -1,17 +1,17 @@
 ---
 Description: 某些類型的應用程式 (多語系字典、翻譯工具等) 需要覆寫應用程式套件組合的預設行為，並將資源建置到應用程式套件中，而不是讓這些資源分散在不同的資源套件中。 本主題說明如何執行這個動作。
-title: 將資源建立到您的應用程式套件
+title: 在您的應用程式套件中建立資源
 template: detail.hbs
 ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: d7a63c44ac8cb6f6b17951cf6515fad33fb83ee9
-ms.sourcegitcommit: ae9c1646398bb5a4a888437628eca09ae06e6076
+ms.openlocfilehash: b975dcf88ecd26dc5a24d602c117b779fa2aada6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74734943"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174522"
 ---
 # <a name="build-resources-into-your-app-package-instead-of-into-a-resource-pack"></a>將資源建置到您的應用程式套件，而不是資源套件
 
@@ -19,13 +19,13 @@ ms.locfileid: "74734943"
 
 根據預設，當您建置[應用程式套件組合 (.appxbundle)](/windows/msix/package/packaging-uwp-apps) 時，只會將您語言、縮放比例及 DirectX 功能層級的預設資源建置到應用程式套件中。 您的已翻譯資源 (以及針對非預設縮放比例和/或 DirectX 功能層級所量身訂做的資源) 會內建在資源套件中，並且只會下載到需要這些資源的裝置上。 如果客戶要使用語言喜好設定已設為西班牙文的裝置，從 Microsoft Store 購買您的應用程式，則只會下載並安裝您的應用程式以及西班牙文資源套件。 如果同一個使用者稍後在 **\[設定\]** 中將他們的語言喜好設定變更為法文，則會下載並安裝您應用程式的法文資源套件。 類似的情況會發生在您的縮放比例和 DirectX 功能層級所限定的資源。 對大多數的應用程式來說，這種行為提供可貴的效率，正是您和客戶所*樂見其成*的結果。
 
-但如果您的應用程式可讓使用者從應用程式中即時 (而不是透過 **\[設定\]** ) 變更語言，那麼這種預設行為並不適當。 您實際想要的是，一次就無條件地隨應用程式一起下載並安裝所有的語言資源，然後將其保留在裝置上。 您想要將所有這些資源建置到您的應用程式套件中，而不是分散至不同的資源套件。
+但如果您的應用程式可讓使用者從應用程式中即時 (而不是透過 **\[設定\]**) 變更語言，那麼這種預設行為並不適當。 您實際想要的是，一次就無條件地隨應用程式一起下載並安裝所有的語言資源，然後將其保留在裝置上。 您想要將所有這些資源建置到您的應用程式套件中，而不是分散至不同的資源套件。
 
 **注意**：將資源包含在應用程式套件中，基本上會增加應用程式的大小。 這就是為什麼只有在應用程式本質上有需要時，才值得如此行。 不然，除了像平常一樣建置一般應用程式套件組合以外，就不需要執行任何動作。
 
 您可以設定 Visual Studio，透過兩種方式之一，將資源建置到應用程式套件中。 您可以將設定檔案新增至專案，或是直接編輯專案檔案。 請使用下列選項中用起來最順手的任何選項，或是任何最適用於您的建置系統的選項。
 
-## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>選項 1： 使用 priconfig.packaging.xml 將資源建置到您的應用程式套件中
+## <a name="option-1-use-priconfigpackagingxml-to-build-resources-into-your-app-package"></a>選項 1。 使用 priconfig.packaging.xml 將資源建置到您的應用程式套件中
 
 1. 在 Visual Studio 中，將新項目加入至您的專案。 選擇 XML 檔案，並將檔案命名為 `priconfig.packaging.xml`。
 2. 在方案總管中，選取 [`priconfig.packaging.xml`]，並檢查屬性視窗。 檔案的 [建置動作] 必須設定為 [無]，而 [複製到輸出目錄] 則應設定為 [不要複製]。
@@ -71,7 +71,7 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂「套
 
 將 `FILE-PATH-AND-NAME` 取代為您的檔案的路徑和名稱。
 
-## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>選項 2： 使用專案檔案，將資源建置到您的應用程式套件中
+## <a name="option-2-use-your-project-file-to-build-resources-into-your-app-package"></a>選項 2。 使用專案檔案，將資源建置到您的應用程式套件中
 
 這是「選項 1」的替代方法。 您了解「選項 1」的運作方式之後，就可以選擇改為執行「選項 2」，如果這樣更適合您的開發和/或建置工作流程的話。
 
@@ -97,6 +97,6 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂「套
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Visual Studio 封裝 UWP 應用程式](../packaging/packaging-uwp-apps.md)
+* [使用 Visual Studio 封裝 UWP 應用程式](/windows/msix/package/packaging-uwp-apps)
 * [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
 * [指定您的應用程式使用的預設資源](specify-default-resources-installed.md)

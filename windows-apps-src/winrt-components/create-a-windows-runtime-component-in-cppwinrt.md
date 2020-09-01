@@ -1,48 +1,48 @@
 ---
-title: 使用 c + +/WinRT 的 Windows 執行階段元件
-description: 本主題說明如何使用[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)來建立和使用可 &mdash; 從使用任何 Windows 執行階段語言所建立之通用 Windows 應用程式呼叫的元件 Windows 執行階段元件。
+title: 使用 C++/WinRT 的 Windows 執行階段元件
+description: 本主題說明如何使用 [c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 來建立和取用 Windows 執行階段元件 &mdash; ，該元件可從使用任何 Windows 執行階段語言建立的通用 Windows 應用程式中呼叫。
 ms.date: 07/06/2020
 ms.topic: article
-keywords: windows 10，uwp，windows，執行時間，元件，元件，Windows 執行階段元件，WRC，c + +/WinRT
+keywords: windows 10、uwp、windows、執行時間、元件、元件、Windows 執行階段元件、WRC、c + +/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: e47175579fcfc5544587ff36baaaa653003c4c63
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 1f84158311ef789851c268e9e21dbf5317063370
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86494145"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174312"
 ---
-# <a name="windows-runtime-components-with-cwinrt"></a>使用 c + +/WinRT 的 Windows 執行階段元件
+# <a name="windows-runtime-components-with-cwinrt"></a>使用 C++/WinRT 的 Windows 執行階段元件
 
-本主題說明如何使用[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)來建立和使用可 &mdash; 從使用任何 Windows 執行階段語言所建立之通用 Windows 應用程式呼叫的元件 Windows 執行階段元件。
+本主題說明如何使用 [c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 來建立和取用 Windows 執行階段元件 &mdash; ，該元件可從使用任何 Windows 執行階段語言建立的通用 Windows 應用程式中呼叫。
 
-在 c + +/Winrt 中建立 Windows 執行階段元件有幾個原因
-- 在複雜或需要大量運算的作業中享用 c + + 的效能優勢。
-- 重複使用已撰寫並測試的 standard c + + 程式碼。
-- 若要將 Win32 功能公開至以撰寫的通用 Windows 平臺（UWP）應用程式，例如 c #。
+在 c + + 中建立 Windows 執行階段元件有幾個原因/Winrt
+- 在複雜或需要大量運算的作業中享有 c + + 的效能優勢。
+- 重複使用已撰寫並測試的標準 c + + 程式碼。
+- 若要將 Win32 功能公開給以撰寫的通用 Windows 平臺 (UWP) 應用程式，例如 c #。
 
-一般而言，當您撰寫 c + +/WinRT 元件時，您可以使用 standard c + + 程式庫中的型別，以及內建型別，但在您于另一個封裝中的程式碼之間傳遞資料的應用程式二進位介面（ABI）界限除外 `.winmd` 。 在 ABI 上，使用 Windows 執行階段類型。 此外，在您的 c + +/WinRT 程式碼中，使用委派和事件之類的類型來執行可從元件引發並以另一種語言處理的事件。 如需 c + +/Winrt 的詳細資訊，請參閱[c + +/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+一般情況下，當您撰寫 c + +/WinRT 元件時，您可以使用 standard c + + 程式庫中的類型和內建類型，但在應用程式二進位介面 (ABI) 界限（您將資料傳入和寫入其他封裝中的程式碼） `.winmd` 。 在 ABI 上，使用 Windows 執行階段類型。 此外，在您的 c + +/WinRT 程式碼中，請使用委派和事件之類的型別，來執行可從元件引發並以其他語言處理的事件。 如需 c + +/Winrt 的詳細資訊，請參閱[c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)
 
 本主題的其餘部分將逐步引導您瞭解如何在 c + +/WinRT 中撰寫 Windows 執行階段元件，以及如何從應用程式使用它。
 
-您將在本主題中建立的 Windows 執行階段元件包含代表銀行帳戶的執行時間類別。 本主題也會示範使用銀行帳戶執行時間類別的核心應用程式，並呼叫函數來調整餘額。
+您將在本主題中建立的 Windows 執行階段元件包含代表銀行帳戶的執行時間類別。 本主題也會示範使用銀行帳戶執行時間類別的核心應用程式，並呼叫函式來調整餘額。
 
 > [!NOTE]
-> 如需安裝和使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 > [!IMPORTANT]
-> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis) 和[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
+> 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](../cpp-and-winrt-apis/consume-apis.md) 和[使用 C++/WinRT 撰寫 API](../cpp-and-winrt-apis/author-apis.md)。
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
 
-請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將其命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 請確定未核取 **[將方案和專案放在相同的目錄**]。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。 為 *BankAccountWRC* 專案命名可讓您在本主題的其餘步驟中提供最簡單的使用體驗。 
+請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **Windows 執行階段元件 (C++/WinRT)** 專案，並將其命名為 *BankAccountWRC* (適用於「銀行帳戶 Windows 執行階段元件」)。 確定已取消核取 [將方案和專案放置於同一個目錄]。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。 為 *BankAccountWRC* 專案命名可讓您在本主題的其餘步驟中提供最簡單的使用體驗。 
 
 尚未建置專案。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 在方案總管中，將該檔案 `BankAccount.idl` 重新命名 (重新命名 `.idl` 檔案也會自動將相依的 `.h` 和 `.cpp` 檔案重新命名)。 以下面的清單取代 `BankAccount.idl` 的內容。
 
 > [!NOTE]
-> 不用說，您不能以這種方式來實行生產財務軟體;我們只是為了 `Single` 方便起見，在此範例中使用。
+> 不用說，您也不會以這種方式來實行生產財務軟體;我們 `Single` 只為了方便起見，在此範例中使用。
 
 ```idl
 // BankAccountWRC.idl
@@ -60,7 +60,7 @@ namespace BankAccountWRC
 
 在建置程序期間，執行 `midl.exe` 工具建立元件的 Windows 執行階段中繼資料檔案 (其為 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然後，執行 `cppwinrt.exe` 工具 (有 `-component` 選項) 產生原始碼檔案在撰寫您的元件中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BankAccount** 執行階段類別。 這些虛設常式為 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 與 `BankAccount.cpp`。
 
-以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]。 這會在檔案總管中開啟專案資料夾。 然後，從 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` 資料夾將虛設常式檔案 `BankAccount.h` 和 `BankAccount.cpp` 複製到包含專案檔案的資料夾中，也就是 `\BankAccountWRC\BankAccountWRC\` 並取代目的地中的檔案。 現在要開啟 `BankAccount.h` 與 `BankAccount.cpp`，並實作我們的執行階段類別。 在中 `BankAccount.h` ，將新的私用成員新增至**BankAccount**的執行（*而非*factory 執行）。
+以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]。 這會在檔案總管中開啟專案資料夾。 然後，從 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\` 資料夾將虛設常式檔案 `BankAccount.h` 和 `BankAccount.cpp` 複製到包含專案檔案的資料夾中，也就是 `\BankAccountWRC\BankAccountWRC\` 並取代目的地中的檔案。 現在要開啟 `BankAccount.h` 與 `BankAccount.cpp`，並實作我們的執行階段類別。 在中 `BankAccount.h` ，將新的私用成員新增 (至 BankAccount，*而不*是**BankAccount**的 factory 執行) 。
 
 ```cppwinrt
 // BankAccount.h
@@ -78,7 +78,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-在中 `BankAccount.cpp` ，執行**AdjustBalance**方法，如下列清單所示。
+在中 `BankAccount.cpp` ，執行 **AdjustBalance** 方法，如下列清單所示。
 
 ```cppwinrt
 // BankAccount.cpp
@@ -116,7 +116,7 @@ namespace winrt::BankAccountWRC::implementation
 ...
 ```
 
-此外，在中 `App.cpp` 新增下列程式碼，以具現化**BankAccount**物件（使用投影類型的預設函式），並在 bank 帳戶物件上呼叫方法。
+此外，在中 `App.cpp` ，加入下列程式碼以具現化 **BankAccount** 物件 (使用投影的型別預設的函式) ，然後在銀行帳戶物件上呼叫方法。
 
 ```cppwinrt
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
@@ -133,10 +133,10 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 };
 ```
 
-每次您按一下視窗時，就會遞增銀行帳戶物件的餘額。 如果您想要逐步執行程式碼，以確認應用程式確實呼叫 Windows 執行階段元件，您可以設定中斷點。
+每次您按一下視窗時，都會遞增銀行帳戶物件的餘額。 如果您想要逐步執行程式碼，以確認應用程式確實呼叫 Windows 執行階段元件，您可以設定中斷點。
 
 ## <a name="next-steps"></a>後續步驟
 
-若要將更多的功能或新的 Windows 執行階段類型新增至 c + +/WinRT Windows 執行階段元件，您可以遵循如上所示的相同模式。 首先，使用 IDL 來定義您想要公開的功能。 然後在 Visual Studio 中建立專案，以產生存根的執行。 然後適當地完成執行。 使用您的 Windows 執行階段元件的應用程式，可以看到您在 IDL 中定義的任何方法、屬性和事件。 如需 IDL 的詳細資訊，請參閱[Microsoft 介面定義語言3.0 簡介](/uwp/midl-3/intro)。
+若要將更多功能或新的 Windows 執行階段類型新增至 c + +/WinRT Windows 執行階段元件，您可以遵循如上所示的相同模式。 首先，使用 IDL 來定義您想要公開的功能。 然後，在 Visual Studio 中建立專案，以產生存根的執行。 然後視需要完成執行。 使用您的 Windows 執行階段元件的應用程式，可以看到您在 IDL 中定義的任何方法、屬性和事件。 如需 IDL 的詳細資訊，請參閱 [Microsoft 介面定義語言3.0 簡介](/uwp/midl-3/intro)。
 
-如需如何將事件新增至 Windows 執行階段元件的範例，請參閱[在 c + + 中撰寫事件/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)。
+如需如何將事件加入 Windows 執行階段元件的範例，請參閱 [在 c + + 中撰寫事件/WinRT](../cpp-and-winrt-apis/author-events.md)。

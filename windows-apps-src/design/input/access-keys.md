@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何藉由提供直覺的方式，讓使用者透過鍵盤（而不是指標裝置，例如觸控或滑鼠）來快速流覽並與應用程式的可見 UI 互動，以改善 Windows 應用程式的可用性和可存取性。
+Description: 瞭解如何藉由提供直覺的方式，讓使用者透過鍵盤（而非指標裝置）（而非指標 (裝置）（例如觸控或滑鼠) ）快速流覽應用程式，並與之互動，藉此改善您的 Windows 應用程式的可用性和可存取性。
 title: 便捷鍵設計指導方針
 label: Access keys design guidelines
 keywords: 鍵盤, 便捷鍵, keytip, 按鍵提示, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d5808c462beb72341fd83c6fc4c1cfc0178b2f
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970973"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173892"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -25,9 +25,9 @@ ms.locfileid: "82970973"
 請參閱[快速鍵](keyboard-accelerators.md)主題，以了解有關使用鍵盤快速鍵在 Windows 應用程式中叫用常見動作的詳細資訊。 
 
 > [!NOTE]
-> 鍵盤對身障使用者而言是不可或缺的工具 (請參閱[鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility))，對於希望透過它而能更有效率地與應用程式互動的使用者而言，也是重要工具。
+> 鍵盤對身障使用者而言是不可或缺的工具 (請參閱[鍵盤協助工具](../accessibility/keyboard-accessibility.md))，對於希望透過它而能更有效率地與應用程式互動的使用者而言，也是重要工具。
 
-Windows 應用程式透過稱為重要秘訣的視覺提示，為鍵盤型存取金鑰和相關聯的 UI 意見反應，提供跨平臺控制項的內建支援。
+Windows 應用程式透過稱為按鍵提示的視覺提示，為鍵盤型存取金鑰和相關 UI 回饋提供跨平臺控制項的內建支援。
 
 ## <a name="overview"></a>概觀
 
@@ -72,11 +72,11 @@ _在 Microsoft Word 便捷鍵 KeyTip 徽章_
 
 下列影像示範 Word 中的兩個便捷鍵範圍。 第一個影像顯示主要便捷鍵，讓使用者選取索引標籤和其他最上層命令，而第二個影像顯示 [首頁] 索引標籤的次要便捷鍵。
 
-![Microsoft word 中的主要存取](images/accesskeys/primary-access-keys-word.png)
-金鑰 microsoft word 中的_主要存取金鑰_
+![Microsoft word 中 microsoft word ](images/accesskeys/primary-access-keys-word.png)
+ _主要存取金鑰_的主要存取金鑰
 
-![Microsoft word 中的次要存取](images/accesskeys/secondary-access-keys-word.png)
-金鑰 microsoft word 的_次要存取金鑰_
+![Microsoft word 中 Microsoft Word ](images/accesskeys/secondary-access-keys-word.png)
+ _次要存取金鑰_的次要存取金鑰
 
 對於不同範圍中的項目，便捷鍵可以複製。 在先前的範例，“2”是主要範圍中 [復原] 的便捷鍵，也是次要範圍中 [斜體] 的便捷鍵。
 
@@ -241,7 +241,7 @@ _英文和西班牙文資源 string 資料夾_
 
 _在 resources.resw 檔案中指定 AccessKey 屬性_
 
-如需詳細資訊，請參閱[翻譯 UI 資源](https://docs.microsoft.com/previous-versions/windows/apps/hh965329(v=win.10))
+如需詳細資訊，請參閱[翻譯 UI 資源](/previous-versions/windows/apps/hh965329(v=win.10))
 
 ## <a name="key-tip-positioning"></a>按鍵提示位置
 
@@ -261,7 +261,7 @@ _自動按鍵提示位置的範例_
     b.  按鍵提示應該**避免遮蔽具有便捷鍵的已啟用元素**。   
     c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
 
-2.  **發現**性：使用者可以快速地探索具有關鍵提示的控制項。
+2.  可探索**性：使用者**可以快速探索具有金鑰提示的控制項。
 
     a.  按鍵提示絕不與其他按鍵提示**重疊**。  
 
@@ -272,7 +272,7 @@ _自動按鍵提示位置的範例_
 
 ### <a name="relative-position"></a>相對位置
 
-您可以使用**KeyTipPlacementMode**屬性，自訂每個專案或每個群組的索引鍵提示位置。
+使用 **KeyTipPlacementMode** 屬性可自訂每個元素或每個群組的按鍵提示放置。
 
 位置模式是：Top、Bottom、Right、Left、Hidden、Center 和 Auto。
 
@@ -353,14 +353,12 @@ _按鍵提示自訂選項_
 
 XAML 架構公開自動化屬性，可讓 UI 自動化用戶端探索使用者介面項目的相關資訊。
 
-如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://docs.microsoft.com/dotnet/api/system.windows.automation.automationproperties.accesskey) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
+如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](/dotnet/api/system.windows.automation.automationproperties.accesskey) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
 
 ## <a name="related-articles"></a>相關文章
 
 * [鍵盤互動](keyboard-interactions.md)
-* [鍵盤加速器](keyboard-accelerators.md)
+* [鍵盤快速操作](keyboard-accelerators.md)
 
 **範例**
-* [XAML 控制項資源庫（也稱為 XamlUiBasics）](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
-
-
+* [XAML 控制項資源庫 (也稱為 XamlUiBasics) ](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)

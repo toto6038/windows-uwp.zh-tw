@@ -5,12 +5,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 02c76991a60205042642f57fed475755db8c8071
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630373"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174082"
 ---
 # <a name="natural-motion-animations"></a>自然運動動畫
 
@@ -22,21 +22,21 @@ ms.locfileid: "57630373"
 
 動作可協助建置這種連結的其中一種方式是建立使用者熟悉的外觀和感受。 使用者在無意識中會預期收到以實際生活體驗為基礎的動作。 我們觀察物體如何滑過地板、從桌子上掉下來、互相反彈以及使用彈簧擺盪。 運用真實世界物理原理的動作，我們看起來和感覺起來都會更自然。 動作會變得更加自然且互動性更高，但更重要的是，整個體驗會變得更令人印象深刻且容易使用。
 
-![調整規模動作不會以動畫](images/animation/scale-no-animation.gif)
-![調整動作與三次方貝茲](images/animation/scale-cubic-bezier.gif)
-![調整 spring 動畫的影片](images/animation/scale-spring.gif)
+![使用 ](images/animation/scale-no-animation.gif)
+ ![ 彈簧動畫以三次方貝塞爾 ](images/animation/scale-cubic-bezier.gif)
+ ![ 比例動態調整動作，而不使用動畫縮放動作](images/animation/scale-spring.gif)
 
 獲得的成果就是使用者參與率以及應用程式保留率提高。
 
 ## <a name="balancing-control-and-dynamism"></a>在控制程度和動態之間取得平衡
 
-在傳統 UI 中，[KeyFrameAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.keyframeanimation)s 是描述動作的主流方式。 KeyFrames 可提供最高的控制程度給設計人員和開發人員來定義開始、結尾和插補。 雖然這在許多情況下很有幫助，但 KeyFrame 動畫不夠動態；動作不會自動調整，在任何條件下看起來都相同。
+在傳統 UI 中，[KeyFrameAnimation](/uwp/api/windows.ui.composition.keyframeanimation)s 是描述動作的主流方式。 KeyFrames 可提供最高的控制程度給設計人員和開發人員來定義開始、結尾和插補。 雖然這在許多情況下很有幫助，但 KeyFrame 動畫不夠動態；動作不會自動調整，在任何條件下看起來都相同。
 
 而在光譜的另一端，常可在遊戲與物理引擎中看到模擬。 這些通常是使用者可與之互動的最栩栩如生體驗 – 創造出使用者每天可以看到的氛圍和隨意感覺。 雖然這能讓動作感覺更生動活潑，但會讓設計人員和開發人員感覺控制程度變低，因而更難以整合到傳統 UI。
 
 ![控制範圍圖表](images/animation/natural-motion-diagram.png)
 
-[NaturalMotionAnimation](https://docs.microsoft.com/uwp/api/windows.ui.composition.naturalmotionanimation)s 有助於彌合這個鴻溝 – 可以提供開始/完成之類動畫重要元素的控制權平衡，同時維持動畫看起來自然生動。
+[NaturalMotionAnimation](/uwp/api/windows.ui.composition.naturalmotionanimation)s 有助於彌合這個鴻溝 – 可以提供開始/完成之類動畫重要元素的控制權平衡，同時維持動畫看起來自然生動。
 
 > [!NOTE]
 > NaturalMotionAnimations 並非用來取代 KeyFrame 動畫 – Fluent 設計語言中仍有推薦使用 KeyFrames 的地方。 NaturalMotionAnimations 是為了用在需要使用動作，但 KeyFrame 動畫不夠動態的地方。

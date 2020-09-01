@@ -8,12 +8,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 互動式快顯通知, 調適性快顯通知, 快顯通知內容, 快顯通知裝載
 ms.localizationpriority: medium
-ms.openlocfilehash: bda62b76973adb7b6cfe068cdd9ca33b1a54454c
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 97dd16d712dca3de69a98c608b7c8947ebbddfea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970923"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173362"
 ---
 # <a name="toast-content"></a>快顯通知內容
 
@@ -22,14 +22,14 @@ ms.locfileid: "82970923"
 > **重要 API**：[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
-> 若要查看來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10))。
+> 若要查看來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](/previous-versions/windows/apps/hh761494(v=win.10))。
 
 
 ## <a name="getting-started"></a>開始使用
 
 **安裝 Notifications 程式庫。** 如果您想要使用 C# 而不是 XML 產生通知，請安裝名稱為 [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 的 NuGet 套件 (搜尋 "notifications uwp")。 本文中所提供的 C# 範例使用該 NuGet 套件 1.0.0 版本。
 
-**安裝通知視覺化工具。** 這項免費的 Windows 應用程式可協助您設計互動式快顯通知，其方式是在編輯時提供快顯的立即視覺化預覽，類似 Visual Studio 的 XAML 編輯器/設計檢視。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
+**安裝通知視覺化工具。** 這個免費的 Windows 應用程式可協助您設計互動式快顯通知，方法是在編輯時提供快顯通知的立即視覺預覽，類似于 Visual Studio 的 XAML 編輯器/設計檢視。 如需詳細資訊，請參閱[通知視覺化工具](notifications-visualizer.md)或[從 Microsoft Store 下載通知視覺化工具](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)。
 
 
 ## <a name="sending-a-toast-notification"></a>傳送快顯通知
@@ -103,7 +103,7 @@ ToastContent content = new ToastContent()
 
 ## <a name="text-elements"></a>文字元素
 
-每個快顯必須至少有一個文字元素，而且可以包含兩個額外的文字元素，全都是[**AdaptiveText**](toast-schema.md#adaptivetext)類型。
+每個快顯都必須至少有一個文字專案，而且可以包含兩個額外的文字元素，全部都是 [**AdaptiveText**](toast-schema.md#adaptivetext)類型。
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
@@ -144,7 +144,7 @@ new ToastBindingGeneric()
 
 ## <a name="app-logo-override"></a>App 標誌覆寫
 
-根據預設，快顯通知會顯示 App 的標誌。 不過，您可以使用自己的[**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo)影像來覆寫此標誌。 例如，如果這是來自某個人的通知，我們建議以那個人的相片來覆寫 App 標誌。
+根據預設，快顯通知會顯示 App 的標誌。 不過，您可以使用自己的 [**ToastGenericAppLogo**](toast-schema.md#toastgenericapplogo) 映射覆寫此標誌。 例如，如果這是來自某個人的通知，我們建議以那個人的相片來覆寫 App 標誌。
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
@@ -296,14 +296,14 @@ ToastContent toastContent = new ToastContent()
 
 ## <a name="progress-bar"></a>進度列
 
-建立**者更新的新**功能：您可以在快顯通知上提供進度列，讓使用者知道如下載作業的進度。
+建立**者更新的新**功能：您可以提供快顯通知的進度列，讓使用者知道下載作業的進度。
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
 若要深入了解使用進度列，請參閱[快顯通知進度列](toast-progress-bar.md)。
 
 
-## <a name="headers"></a>標頭
+## <a name="headers"></a>headers
 
 **Creators Update 的新功能**：您可以將通知分組在控制中心的標頭下方。 例如，您可以將來自某個群組聊天的群組訊息分組在一個標頭下，或將常見主題的通知分組在一個標頭下，以此類推。
 
@@ -318,7 +318,7 @@ ToastContent toastContent = new ToastContent()
 
 這個額外內容是使用 Adaptive 所指定，您可以閱讀[調適型磚文件](create-adaptive-tiles.md) 進行深入了解。
 
-請注意，任何適應性內容都必須包含在[**AdaptiveGroup**](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema#adaptivegroup)中。 否則無法使用 Adaptive 呈現出來。
+請注意，任何自我調整內容都必須包含在 [**AdaptiveGroup**](./toast-schema.md#adaptivegroup)內。 否則無法使用 Adaptive 呈現出來。
 
 
 ### <a name="columns-and-text-elements"></a>欄和文字元素
@@ -406,7 +406,7 @@ new ToastBindingGeneric()
 -   使用可用來瀏覽至特定頁面/內容的引數，在前景啟用應用程式。
 -   針對快速回覆或類似案例，啟用 App 的背景工作。
 -   透過通訊協定啟動來啟用另一個應用程式。
--   執行系統動作，例如 snoozing 或關閉通知。
+-   執行系統動作，例如正在延遲或關閉通知。
 
 > [!NOTE]
 > 您最多只能有 5 個按鈕 (包括稍後會討論的操作功能表項目)。
@@ -502,7 +502,7 @@ new ToastButton("Dismiss", "dismiss")
 > [!NOTE]
 > 在舊款裝置上，這些額外的內容功能表動作會在您的快顯通知上顯示為一般按鈕。
 
-您新增的其他內容功能表動作（例如「變更位置」）會出現在兩個預設系統專案的上方。
+您新增 (的其他內容功能表動作（例如「變更位置」 ) 會出現在兩個預設系統專案上方。
 
 <img alt="Toast with context menu" src="images/toast-contextmenu.png" width="444"/>
 
@@ -551,7 +551,7 @@ ToastContent content = new ToastContent()
 
 ### <a name="quick-reply-text-box"></a>快速回覆文字方塊
 
-若要啟用 [快速回復] 文字方塊（例如，在訊息應用程式中），請加入文字輸入和按鈕，並參考文字輸入欄位的識別碼，讓按鈕顯示在輸入欄位旁。 按鈕的圖示應該是32x32 圖元影像，其中沒有填補、白色圖元設定為透明，以及100% 縮放比例。
+若要啟用快速回復文字方塊 (例如，在訊息應用程式中) 新增文字輸入和按鈕，並參考文字輸入欄位的識別碼，讓按鈕顯示在輸入欄位的旁邊。 按鈕的圖示應為32x32 圖元影像，沒有填補、白色圖元設定為透明，以及100% 縮放比例。
 
 <img alt="notification with text input and actions" src="images/adaptivetoasts-xmlsample05.jpg" width="364"/>
 

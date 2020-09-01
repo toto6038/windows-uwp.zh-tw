@@ -1,23 +1,23 @@
 ---
 title: Xbox 開發人員計畫上的 UWP 已知問題
-description: 列出 UWP 在 Xbox 開發人員計畫上的已知問題。
+description: 瞭解 Xbox One 開發人員計畫上 UWP 的一些已知問題，並瞭解如何存取其他說明資源。
 ms.date: 03/29/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: dbf9d40d4dc2cfedaa78cbca5b16c4cc26d2d4e1
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 52421d17de5f26fe29060c39d33b51cc85fa197a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730078"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174552"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
 本主題說明 Xbox One 開發人員計畫上的 UWP 已知問題。 如需此計畫的詳細資訊，請參閱 [Xbox 上的 UWP](index.md)。 
 
-\[如果您從 API 參考主題中的連結進入這裡，而且正在尋找通用裝置系列 API 資訊，請參閱[Xbox 尚未支援的 UWP 功能](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。\]
+\[如果您是從 API 參考主題中的連結，並正在尋找通用裝置系列 API 資訊，請參閱 [Xbox 上尚未支援的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。\]
 
 下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
 
@@ -39,7 +39,7 @@ ms.locfileid: "82730078"
 6. 關閉應用程式。
 7. 使用 F5 從 VS 啟動，應用程式將會以無提示方式啟動。
 
-此時，除非您卸載並重新安裝應用程式，否則許可權會一直_保留到您_登出使用者為止。
+此時，除非您將應用程式卸載後再重新安裝，否則許可權會一直在 _您將使用者_ 登出之前。
  
 有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 **\[一律\]** 允許子女啟動該應用程式。 該免除項目儲存於雲端，即使子女登出後又重新登入，也會保留。
 
@@ -60,7 +60,7 @@ Xbox One 裝置上的通用 Windows 平台 (UWP) 應用程式具有無法繫結�
 
 ## <a name="windows-runtime-api-coverage"></a>Windows 執行階段 API 涵蓋範圍
 
-Xbox 不支援所有的 Windows 執行階段 Api。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](https://docs.microsoft.com/uwp/extension-sdks/uwp-limitations-on-xbox?redirectedfrom=MSDN)。 如果您發現其他 API 問題，請在論壇上報告它們。 
+Xbox 上並不支援所有 Windows 執行階段 Api。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](/uwp/extension-sdks/uwp-limitations-on-xbox)。 如果您發現其他 API 問題，請在論壇上報告它們。 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告

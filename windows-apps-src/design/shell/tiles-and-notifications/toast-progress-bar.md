@@ -1,5 +1,5 @@
 ---
-Description: 了解如何使用進度列在您的快顯通知。
+description: 使用快顯通知內的進度列，將長時間執行的作業狀態傳達給使用者。
 title: 快顯通知進度列和資料繫結
 label: Toast progress bar and data binding
 template: detail.hbs
@@ -7,23 +7,23 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 進度列, 快顯通知進度列, 通知, 快顯通知資料繫結
 ms.localizationpriority: medium
-ms.openlocfilehash: 742270a4cdc6cbbc9eed0879e30b3e7066722f05
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: 4219154a3fe3241b9c1871c07a1fbbb2b63f2348
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714107"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174602"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>快顯通知進度列和資料繫結
 
 在快顯通知中使用進度列可以將長期執行的作業狀態傳達給使用者，例如下載、視訊呈現、練習目標等。
 
 > [!IMPORTANT]
-> **需要 Creators Update 和通知程式庫的 1.4.0**:您必須為目標 SDK 15063，並執行組建 15063 或更新版本，才能使用進度列在快顯通知。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構進度列。
+> **需要 Creators Update 和 Notifications 程式庫 1.4.0**：您的目標必須是 SDK 15063 並執行組建 15063 或更高版本，才能在快顯通知上使用進度列。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構進度列。
 
-進度列在快顯通知可以是 「 不定 」 （沒有特定的值，動畫的點會指出正在進行的作業） 或 「 確定 」 （特定百分比列的填滿時，例如 60%）。
+快顯快顯中的進度列可以是「不定」 (沒有特定值、動畫的點表示作業發生) 或「確定」 (填滿特定的橫條百分比，例如 60% ) 。
 
-> **重要的 Api**:[NotificationData 類別](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)， [ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)， [ToastNotification 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **重要 API**：[NotificationData 類別](/uwp/api/windows.ui.notifications.notificationdata)、[ToastNotifier.Update 方法](/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、[ToastNotification 類別](/uwp/api/Windows.UI.Notifications.ToastNotification)
 
 > [!NOTE]
 > 僅桌上型電腦支援快顯通知中的進度列。 在其他裝置上，會從您的通知捨棄進度列。
@@ -32,12 +32,12 @@ ms.locfileid: "67714107"
 
 <img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626"/>
 
-| 屬性 | type | 必要項 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
-| **標題** | string 或 [BindableString](toast-schema.md#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
+| **標題** | 字串或 [BindableString](toast-schema.md#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
 | **值** | double 或 [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | 取得或設定進度列的值。 支援資料繫結。 預設為 0。 可以是之間 0.0 和 1.0 之間的 double、`AdaptiveProgressBarValue.Indeterminate` 或 `new BindableProgressBarValue("myProgressValue")`。 |
-| **ValueStringOverride** | string 或 [BindableString](toast-schema.md#bindablestring) | false | 取得或設定要顯示的選用字串，用於取代預設百分比字串。 如果未提供此項，將會顯示「70%」之類的內容。 |
-| **狀態** | string 或 [BindableString](toast-schema.md#bindablestring) | true | 取得或設定狀態字串 (必要)，它會顯示在左側進度列的下方。 這個字串應該反映作業的狀態，例如「正在下載...」或「正在安裝...」 |
+| **ValueStringOverride** | 字串或 [BindableString](toast-schema.md#bindablestring) | false | 取得或設定要顯示的選用字串，用於取代預設百分比字串。 如果未提供此項，將會顯示「70%」之類的內容。 |
+| **狀態** | 字串或 [BindableString](toast-schema.md#bindablestring) | true | 取得或設定狀態字串 (必要)，它會顯示在左側進度列的下方。 這個字串應該反映作業的狀態，例如「正在下載...」或「正在安裝...」 |
 
 
 以下是產生上方所見通知的方式...
@@ -157,7 +157,7 @@ public void SendUpdatableToastWithProgress()
 }
 ```
 
-接著，當您想要變更 **Data** 值，請使用 [**Update**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update) 方法來提供新的資料，而不需要重新建構整個快顯通知承載。
+接著，當您想要變更 **Data** 值，請使用 [**Update**](/uwp/api/Windows.UI.Notifications.ToastNotifier.Update) 方法來提供新的資料，而不需要重新建構整個快顯通知承載。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -188,7 +188,7 @@ public void UpdateProgress()
 
 使用 **Update** 方法而非更換整個快顯通知，也可確保快顯通知停在控制中心的相同位置而不會向上或向下移動。 如果因為填入進度列而使得快顯通知每隔幾秒就跳到控制中心的頂端，會令使用者感到相當困惑！
 
-**Update** 方法會傳回列舉 [**NotificationUpdateResult**](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationupdateresult)，這可讓您知道更新是否成功或是否找不到通知 (這表示使用者可能已關閉通知，因此您應該停止傳送更新)。 在進度作業完成 (例如下載完成) 前，不建議您彈出另一個快顯通知。
+**Update** 方法會傳回列舉 [**NotificationUpdateResult**](/uwp/api/windows.ui.notifications.notificationupdateresult)，這可讓您知道更新是否成功或是否找不到通知 (這表示使用者可能已關閉通知，因此您應該停止傳送更新)。 在進度作業完成 (例如下載完成) 前，不建議您彈出另一個快顯通知。
 
 
 ## <a name="elements-that-support-data-binding"></a>支援資料繫結的元素
@@ -204,10 +204,10 @@ public void UpdateProgress()
 
 | | 更換 | 更新 |
 | -- | -- | --
-| **在 行動作業中心的位置** | 通知會移到控制中心的頂端。 | 通知停留在控制中心的相同位置。 |
+| **控制中心中的位置** | 通知會移到控制中心的頂端。 | 通知停留在控制中心的相同位置。 |
 | **修改內容** | 完全可以變更快顯通知的所有內容/配置 | 只能變更支援資料繫結的屬性 (進度列和最上層的文字) |
-| **以快顯方式重新出現** | 若保留 **SuppressPopup** 設定為 `false` 可以快顯通知快顯方式重新出現 (或設定為 true，則以無訊息方式傳送至控制中心) | 不會以快顯視窗方式重新出現；快顯通知資料以無訊息方式在控制中心內更新 |
-| **關閉的使用者** | 無論使用者是否關閉您先前的通知，一律會傳送更換快顯通知 | 如果使用者關閉您的快顯通知，快顯通知更新將會失敗 |
+| **以快顯視窗方式重新出現** | 若保留 **SuppressPopup** 設定為 `false` 可以快顯通知快顯方式重新出現 (或設定為 true，則以無訊息方式傳送至控制中心) | 不會以快顯視窗方式重新出現；快顯通知資料以無訊息方式在控制中心內更新 |
+| **使用者關閉** | 無論使用者是否關閉您先前的通知，一律會傳送更換快顯通知 | 如果使用者關閉您的快顯通知，快顯通知更新將會失敗 |
 
 一般而言，**更新適用於...**
 
@@ -222,5 +222,5 @@ public void UpdateProgress()
 
 ## <a name="related-topics"></a>相關主題
 
-- [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
-- [快顯通知內容的文件](adaptive-interactive-toasts.md)
+- [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
+- [快顯通知內容文件](adaptive-interactive-toasts.md)

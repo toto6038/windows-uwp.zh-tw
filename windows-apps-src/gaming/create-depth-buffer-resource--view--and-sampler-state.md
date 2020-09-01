@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, Direct3D, 深度緩衝區
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd45f620addcf7a3f6292ed2257bdfccc862cd3
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0032d77bb8d572229ea77df736c807a0a85e9ecb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368896"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175372"
 ---
 # <a name="create-depth-buffer-device-resources"></a>建立深度緩衝區裝置資源
 
 
 
 
-了解如何建立必要的 Direct3D 裝置資源，以支援陰影體的深度測試。 第 1 部分[逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區](implementing-depth-buffers-for-shadow-mapping.md)。
+了解如何建立必要的 Direct3D 裝置資源，以支援陰影體的深度測試。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)第一部分。
 
 ## <a name="resources-youll-need"></a>所需資源
 
@@ -38,7 +38,7 @@ ms.locfileid: "66368896"
 ## <a name="check-feature-support"></a>檢查功能支援
 
 
-建立深度地圖之前, 呼叫[ **CheckFeatureSupport** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport)方法在 Direct3D 裝置上，要求**D3D11\_功能\_D3D9\_陰影\_支援**，並提供[ **D3D11\_功能\_資料\_D3D9\_陰影\_支援**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support)結構。
+在建立深度對應之前，請在 Direct3D 裝置上呼叫 [**CheckFeatureSupport**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-checkfeaturesupport) 方法，要求 **D3D11 \_ 功能 \_ D3D9 \_ 陰影 \_ 支援**，並提供 [**D3D11 \_ 功能 \_ 資料 \_ D3D9 \_ 陰影 \_ 支援**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_feature_data_d3d9_shadow_support) 結構。
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -55,14 +55,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-如果不支援這項功能，不會試著載入著色器編譯著色器模型 4 層級 9\_呼叫範例的比較函式的 x。 在許多案例中，缺乏此功能的支援通常表示 GPU 是傳統裝置，其中的驅動程式未經更新，且無法支援 WDDM 1.2 或以上版本。 如果裝置支援最少功能層級 10\_0，則您可以載入範例比較著色器編譯著色器模型 4\_0 改。
+如果這項功能不受支援，請勿嘗試載入針對著色器模型4層級 9 \_ x （呼叫範例比較函式）編譯的著色器。 在許多案例中，缺乏此功能的支援通常表示 GPU 是傳統裝置，其中的驅動程式未經更新，且無法支援 WDDM 1.2 或以上版本。 如果裝置至少支援功能層級 10 \_ 0，則您可以改為載入針對著色器模型 4 0 編譯的範例比較著色器 \_ 。
 
 ## <a name="create-depth-buffer"></a>建立深度緩衝區
 
 
 首先，嘗試使用較高精確度的深度格式來建立深度圖。 先設定相符的著色器資源檢視屬性。 如果資源建立失敗，例如因為裝置記憶體過低或硬體不支援該格式，請嘗試較低精確度的格式，並變更為符合的屬性。
 
-這個步驟是選擇性，如果您只需要一種低精確度深度格式，例如，中等解析度 Direct3D 功能層級 9 上轉譯時\_1 的裝置。
+如果您只需要低精確度的深度格式（例如，在中型解決方案 Direct3D 功能層級 9 1 的裝置上轉譯時），則這個步驟是選擇性的 \_ 。
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -82,7 +82,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-接著建立資源檢視。 在深度樣板檢視上將 MIP 圖塊設成零，在著色器資源檢視上將 MIP 層級設為 1。 兩者都有的 TEXTURE2D，紋理維度，而且兩者都必須使用相符[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。
+接著建立資源檢視。 在深度樣板檢視上將 MIP 圖塊設成零，在著色器資源檢視上將 MIP 層級設為 1。 兩者都有 TEXTURE2D 的材質維度，而且兩者都需要使用相符的 [**DXGI \_ 格式**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -113,11 +113,11 @@ hr = pD3DDevice->CreateShaderResourceView(
 ## <a name="create-comparison-state"></a>建立比較狀態
 
 
-現在要建立比較取樣器狀態物件。 功能層級 9\_1 只支援 D3D11\_比較\_較少\_相等。 [支援硬體範圍的陰影圖](target-a-range-of-hardware.md)中會深入說明篩選選項 - 或者您可直接挑選快速陰影圖的點篩選。
+現在要建立比較取樣器狀態物件。 功能層級 9 \_ 1 只支援 \_ \_ 較不 \_ 相等的 D3D11 比較。 [支援硬體範圍的陰影圖](target-a-range-of-hardware.md)中會深入說明篩選選項 - 或者您可直接挑選快速陰影圖的點篩選。
 
-請注意，您可以指定 D3D11\_紋理\_地址\_框線的位址模式，而且能夠在功能層級 9 上\_1 的裝置。 這適用於像素著色器，它在進行深度測試之前，不會測試像素是否位於光源的檢視範圍中。 為每個邊界指定 0 或 1，您就可以控制是否要讓超出光源檢視範圍的像素通過深度測試，像素因而照亮或處於陰影中。
+請注意，您可以指定 D3D11 \_ 材質 \_ 位址 \_ 邊界位址模式，它會在功能層級 9 \_ 1 的裝置上運作。 這適用於像素著色器，它在進行深度測試之前，不會測試像素是否位於光源的檢視範圍中。 為每個邊界指定 0 或 1，您就可以控制是否要讓超出光源檢視範圍的像素通過深度測試，像素因而照亮或處於陰影中。
 
-在功能層級 9\_1，以下所需的值必須設定：**MinLOD**設為零， **MaxLOD**設定為**D3D11\_FLOAT32\_MAX**，並**MaxAnisotropy**設為零。
+在功能層級 9 \_ 1 上，必須設定下列必要值： **MinLOD** 設定為零、 **MaxLOD** 設定為 **D3D11 \_ FLOAT32 \_ MAX**，而 **MaxAnisotropy** 設定為零。
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -152,7 +152,7 @@ DX::ThrowIfFailed(
 ## <a name="create-render-states"></a>建立轉譯狀態
 
 
-現在要建立轉譯狀態，您可以用於啟用正面消除。 請注意該功能層級 9\_1 的裝置需要**DepthClipEnable**設定為**true**。
+現在要建立轉譯狀態，您可以用於啟用正面消除。 請注意，功能層級 9 \_ 1 裝置需要將 **DepthClipEnable** 設為 **true**。
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -261,7 +261,3 @@ m_shadowViewport.MaxDepth = 1.f;
  
 
  
-
-
-
-

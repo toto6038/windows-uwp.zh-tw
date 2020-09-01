@@ -8,12 +8,12 @@ ms.date: 01/24/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 942c24e8f5c7c521502ee5a9f9eb7175bf04b94f
-ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
+ms.openlocfilehash: 4c05f39c0497a2e2ef369abd04ed437f8387e60f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067510"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173992"
 ---
 # <a name="landmarks-and-headings"></a>地標和標題
 
@@ -33,14 +33,14 @@ ms.locfileid: "89067510"
 
 「設定」app 提供無障礙功能，不須經由地標和標題，但有這些會更實用。 螢幕助讀程式使用者可快速、輕鬆地前往所需的群組 (地標)，然後同樣可快速前往子群組 (標題)。
 
-使用 [AutomationProperties.LandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 將 UI 元素設定為您希望的[地標類型](https://docs.microsoft.com/windows/desktop/WinAuto/landmark-type-identifiers)。 這個地標 UI 元素會封裝適合該地標的所有其他 UI 元素。
+使用 [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) 將 UI 元素設定為您希望的[地標類型](/windows/desktop/WinAuto/landmark-type-identifiers)。 這個地標 UI 元素會封裝適合該地標的所有其他 UI 元素。
 
-使用 [AutomationProperties.LocalizedLandmarkTypeProperty](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 可具體為地標命名。 如果您選取預先定義的地標類型，例如主要或瀏覽，這些名稱會做為地標名稱。 不過，如果您將地標類型設定為自訂，則必須透過此屬性具體為地標命名。 您也可以使用此屬性覆寫非自訂地標類型的預設名稱。
+使用 [AutomationProperties.LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) 可具體為地標命名。 如果您選取預先定義的地標類型，例如主要或瀏覽，這些名稱會做為地標名稱。 不過，如果您將地標類型設定為自訂，則必須透過此屬性具體為地標命名。 您也可以使用此屬性覆寫非自訂地標類型的預設名稱。
 
-使用 [AutomationProperties.HeadingLevel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) 將 UI 元素設定為特定層級 *Level1* 到 *Level9* 的標題。
+使用 [AutomationProperties.HeadingLevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) 將 UI 元素設定為特定層級 *Level1* 到 *Level9* 的標題。
 
 ## <a name="examples"></a>範例
 
-如需示範如何解決 Windows 傳統型應用程式中許多常見程式設計的協助工具問題的程式碼範例，請參閱程式 [代碼範例，以解決 windows 傳統型應用程式中常見的程式設計協助工具問題](https://docs.microsoft.com/accessibility-tools-docs/)。
+如需示範如何解決 Windows 傳統型應用程式中許多常見程式設計的協助工具問題的程式碼範例，請參閱程式 [代碼範例，以解決 windows 傳統型應用程式中常見的程式設計協助工具問題](/accessibility-tools-docs/)。
 
 這些程式碼範例是由[ 適用于 Windows 的 Microsoft 協助工具見解](https://github.com/microsoft/accessibility-insights-windows)直接參考，可協助您在 UI 中聚焦許多協助工具問題。

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f8afe892b7b8e91e72c1be7c655c8bc00998dd4
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 0591b32671c7e1e74b47a41448f3b77b915a7dc7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094615"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174902"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -66,7 +66,7 @@ ms.locfileid: "89094615"
 <td align="left"><strong>資料系結。</strong> <br><br>一種軟體設計模式，可讓 app UI 轉譯資料，而且可以選擇與該資料保持同步。</td>
 <td align="left">目前已提供 <strong>Data Binding Library (資料繫結程式庫)</strong>，不過仍是搶鮮版 (Beta)。</td>
 <td align="left">iOS 上沒有內建的繫結系統。 可透過使用第三方程式庫或撰寫額外的程式碼，以 <strong>Key-Value Observing (索引鍵值觀察)</strong> 為基礎進行建置，以執行資料繫結。 控制項使用委派/回呼方法來取得資料。</td>
-<td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您可以使用 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a></strong> 標記延伸來利用高效能系結或 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension">{binding}</a></strong> 來利用更多功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/data-binding/index">資料繫結</a></td>
+<td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您可以使用 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a></strong> 標記延伸來利用高效能系結或 <strong><a href="https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension">{binding}</a></strong> 來利用更多功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/data-binding/index">資料系結</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>消費者介面自動化。</strong> <br><br>以程式設計方式存取 UI 元素，讓輔助技術產品可以存取 app，以及讓自動化測試指令碼與您的 UI 互動。</td>
@@ -127,13 +127,13 @@ ms.locfileid: "89094615"
 <td align="left"><strong>對等導覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
 <td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong> 提供<strong>橫式瀏覽</strong>。</td>
 <td align="left">索引標籤列<strong>控制器</strong>、<strong>分割視圖控制器</strong>和<strong>頁面流覽控制器</strong>允許在相等階層的視圖之間進行導覽。</td>
-<td align="left">您可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 [ <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">流覽] 窗格/[分割] 視圖</a></strong> 可讓您連同內容一起顯示連結清單。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">巡覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
+<td align="left">您可以使用<strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 [ <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/split-view">流覽] 窗格/[分割] 視圖</a></strong> 可讓您連同內容一起顯示連結清單。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">導覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式導覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
 <td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供 <strong>descendent navigation (下階瀏覽)</strong> 以載入其他 <strong>activity (活動)</strong>。</td>
 <td align="left"><strong>流覽控制器</strong> 可讓使用者在階層的層級之間流覽。</td>
-<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/master-details">主版/詳細</a></strong> 資料可讓使用者從 [對應的詳細資料] 區段旁邊顯示的專案摘要清單中挑選。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">巡覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
+<td align="left"><strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/hub">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/master-details">主版/詳細</a></strong> 資料可讓使用者從 [對應的詳細資料] 區段旁邊顯示的專案摘要清單中挑選。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigation-basics">導覽</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>[上一頁] 按鈕導覽。</strong> <br><br>在應用程式內往回瀏覽。</td>
@@ -354,7 +354,7 @@ ms.locfileid: "89094615"
 <td align="left"><strong>清單視圖優化。</strong> <br><br>用來協助將資料清單最佳化的內建模式，這種清單需要顯示大量資料時，通常會發生效能不佳的情況</td>
 <td align="left"><strong>ViewHolder</strong> 設計模式是用來避免多個檢視查閱，可讓您使用重複使用的 UI 元素。</td>
 <td align="left">可進行一些最佳化以改善 <strong>UITableView</strong> 的效能，沒有任何內建項目。</td>
-<td align="left">您可以使用直接提供 <strong>UI 虛擬化</strong>的 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview">ListView</a> 和 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="https://docs.microsoft.com/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 與 GridView UI 最佳化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 與 GridView 資料虛擬化</a></td>
+<td align="left">您可以使用直接提供 <strong>UI 虛擬化</strong>的 <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView</a> 和 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview">GridView</a> 控制項，它們提供順暢的移動瀏覽和捲動體驗及較快的啟動時間。 您也可以在資料來源中實作 <a href="/dotnet/api/system.collections.ilist">IList</a> 和 <a href="https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a>，它們提供<strong>資料虛擬化</strong>並進一步提升效能。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView 與 GridView UI 最佳化</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization">ListView 與 GridView 資料虛擬化</a></td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ ms.locfileid: "89094615"
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>排程本機通知。</strong> <br><br>由您的 app 在排定的時間傳送的本機通知。</td>
 <td align="left">通知與動作是使用 <strong>NotificationCompat.Buildr</strong> 來定義的，而且可以在 app 中使用 <strong>AlarmManager</strong> 和 <strong>BroadcastReceiver</strong> 來排程並處理。</td>
-<td align="left">本機通知是使用 <strong>UILocalNotification</strong> 所建立，可以透過 <b>UILocalNotification.scheduleLocalNotification: <strong>進行排程。| 您可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification</a><strong> 排程快顯通知。您可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">TileNotification 類別</a><strong>從 App 傳送，或是透過 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">ScheduledTileNotification</a> 排程磚通知。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">調適型和互動式快顯通知</a><br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">傳送本機磚通知</a> | |正在傳送 </strong> 推播通知。</b> 從推播通知伺服器傳送，而且可選擇在 App 內處理的通知。</td>
+<td align="left">本機通知是使用 <strong>UILocalNotification</strong> 所建立，可以透過 <b>UILocalNotification.scheduleLocalNotification: <strong>進行排程。| 您可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification</a><strong> 排程快顯通知。您可以使用 </strong><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification">TileNotification 類別</a><strong>從 App 傳送，或是透過 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ScheduledTileNotification">ScheduledTileNotification</a> 排程磚通知。<br/><br/><a href="https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts">調適型和互動式快顯通知</a><br/><br/><a href="/windows/uwp/controls-and-patterns/tiles-and-notifications-sending-a-local-tile-notification">傳送本機磚通知</a> | |正在傳送 </strong> 推播通知。</b> 從推播通知伺服器傳送，而且可選擇在 App 內處理的通知。</td>
 <td align="left"><strong>Google 雲端通訊</strong> 提供適用于 Android 的推播通知支援。</td>
 </tr>
 </tbody>

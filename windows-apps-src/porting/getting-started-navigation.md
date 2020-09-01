@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d26bf6e63c61207142b8945c48f9925a7459844
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: ec5073664c911133b769ed9079a597459381a670
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094685"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174862"
 ---
 # <a name="getting-started-navigation"></a>開始使用：瀏覽
 
@@ -20,9 +20,9 @@ ms.locfileid: "89094685"
 
 iOS 提供 **UINavigationController** 類別來協助 app 內瀏覽：您可以推入及彈出檢視控制項來建立 **UIViewControllers** 的階層以定義您的 app。
 
-相反地，包含多個檢視的 Windows 10 app 會採取類似網站的方式進行瀏覽。 您可以想像您的使用者透過不斷點按控制項，從一個頁面跳至不同的頁面來使用 app。 如需詳細資訊，請參閱[瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)。
+相反地，包含多個檢視的 Windows 10 app 會採取類似網站的方式進行瀏覽。 您可以想像您的使用者透過不斷點按控制項，從一個頁面跳至不同的頁面來使用 app。 如需詳細資訊，請參閱[瀏覽設計基本知識](../design/basics/navigation-basics.md)。
 
-在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別。 下列逐步解說會說明如何嘗試使用這種方式。
+在 Windows 10 app 中管理這類瀏覽的其中一種方式是使用 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別。 下列逐步解說會說明如何嘗試使用這種方式。
 
 讓我們繼續之前開始的方案，開啟 **MainPage.xaml** 檔案，然後在 \[**設計**\] 檢視中新增一個按鈕。 將按鈕的 \[**Content**\] 屬性從「Button」變更為「Go To Page」。 然後為按鈕的 **Click** 事件建立一個處理常式，如下圖中所示。 如果您不記得怎麼做，請檢閱上一節中的逐步解說 (提示：按兩下 \[**設計**\] 檢視中的按鈕)。
 
@@ -64,9 +64,9 @@ private void Button_Click(object sender, RoutedEventArgs e)
 
 現在執行程式。 點選「Go To Page」按鈕移至其他頁面，然後點選上一頁箭頭按鈕返回上一個頁面。
 
-頁面瀏覽是由 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別來管理的。 當 iOS 中的 **UINavigationController** 類別使用 **pushViewController** 和 **popViewController** 方法時，UWP 應用程式的 **Frame** 類別會提供 [**導覽**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 和 [**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback) 方法。 **Frame** 類別也有名為 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，可執行您期待的動作。
+頁面瀏覽是由 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別來管理的。 當 iOS 中的 **UINavigationController** 類別使用 **pushViewController** 和 **popViewController** 方法時，UWP 應用程式的 **Frame** 類別會提供 [**導覽**](/uwp/api/windows.ui.xaml.controls.frame.navigate) 和 [**GoBack**](/uwp/api/windows.ui.xaml.controls.frame.goback) 方法。 **Frame** 類別也有名為 [**GoForward**](/uwp/api/windows.ui.xaml.controls.frame.goforward) 的方法，可執行您期待的動作。
 
-這個逐步解說會在您每次瀏覽到 BlankPage 時，建立新的 BlankPage 執行個體。 (系統會自動釋出或*釋放*之前的執行個體)。 如果您不想要每次都建立新的執行個體，請將下列程式碼新增到 BlankPage.xaml.cs 檔案中的 BlankPage 類別建構函式。 這會啟用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 行為。
+這個逐步解說會在您每次瀏覽到 BlankPage 時，建立新的 BlankPage 執行個體。 (系統會自動釋出或*釋放*之前的執行個體)。 如果您不想要每次都建立新的執行個體，請將下列程式碼新增到 BlankPage.xaml.cs 檔案中的 BlankPage 類別建構函式。 這會啟用 [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 行為。
 
 ```csharp
 public BlankPage()
@@ -77,13 +77,12 @@ public BlankPage()
 }
 ```
 
-您也可以取得或設定 **Frame** 類別的 [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) 屬性，以管理瀏覽記錄可以快取的頁面數。
+您也可以取得或設定 **Frame** 類別的 [**CacheSize**](/uwp/api/windows.ui.xaml.controls.frame.cachesize) 屬性，以管理瀏覽記錄可以快取的頁面數。
 
-如需瀏覽的詳細資訊，請參閱[瀏覽](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)和 [XAML 個人特質動畫範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208))。
+如需瀏覽的詳細資訊，請參閱[瀏覽](../design/basics/navigation-basics.md)和 [XAML 個人特質動畫範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20personality%20animations%20sample%20(Windows%208))。
 
-**注意**   如需使用 JavaScript 和 HTML 流覽 UWP 應用程式的詳細資訊，請參閱[快速入門：使用單頁流覽](https://docs.microsoft.com/previous-versions/windows/apps/hh452768(v=win.10))。
+**注意**   如需使用 JavaScript 和 HTML 流覽 UWP 應用程式的詳細資訊，請參閱[快速入門：使用單頁流覽](/previous-versions/windows/apps/hh452768(v=win.10))。
  
 ### <a name="next-step"></a>後續步驟
 
 [開始使用：動畫](getting-started-animation.md)
-

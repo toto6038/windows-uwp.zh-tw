@@ -1,16 +1,16 @@
 ---
 title: Device Portal Xbox 資訊 API 參考
-description: 了解如何存取 Xbox 裝置資訊。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API 的 GET 方法存取 Xbox One 的裝置資訊。
 ms.date: 04/18/2019
 ms.topic: article
-keywords: windows 10、 uwp、 xbox、 裝置入口網站
+keywords: windows 10、uwp、xbox、裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: c6a8e595be9a0846df2af81ea0b7fc1605f62e5f
-ms.sourcegitcommit: 139717a79af648a9231821bdfcaf69d8a1e6e894
+ms.openlocfilehash: c2a4cecaf3340818b3679dfd3f64b9759ea46752
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67714079"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174652"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 資訊 API 參考   
 您可以使用此 API 存取 Xbox One 裝置資訊。
@@ -27,15 +27,15 @@ GET | /ext/xbox/info
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 ## <a name="response"></a>回應
 JSON 物件，包含下列欄位：
@@ -59,6 +59,6 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-**可用的裝置系列**
+**可用裝置系列**
 
 * Windows Xbox

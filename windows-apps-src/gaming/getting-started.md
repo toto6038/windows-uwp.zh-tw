@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10、uwp、遊戲、入門
 localizationpriority: medium
-ms.openlocfilehash: eb2feeaa7d4ad67ecb9d6b54c5bc275faf9cc0bd
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970236"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175312"
 ---
 # <a name="getting-started"></a>開始使用
 
@@ -54,7 +54,7 @@ ms.locfileid: "88970236"
 
 如果您想要開發 Xbox 遊戲或在遊戲中使用 Xbox Live 功能，請加入 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 或 [ID@Xbox](https://www.xbox.com/Developers/id) 程式。 
 
-若要深入瞭解每個程式可用的 Xbox Live 功能，請參閱 [功能表](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#feature-table)。 如需詳細資訊，請參閱 [開發人員計畫](e2e.md#developer-programs)。
+若要深入瞭解每個程式可用的 Xbox Live 功能，請參閱 [功能表](/gaming/xbox-live/developer-program-overview.md#feature-table)。 如需詳細資訊，請參閱 [開發人員計畫](e2e.md#developer-programs)。
 
 > [!Note]
 > 所有開發人員都可以使用 Xbox Live 創作者計畫。 **任何人都** 可以發佈 Xbox 遊戲。 若要讓您的標題成為 Xbox Live 創作者計畫的一部分，您只需要從合作夥伴中心啟用此選項。 如需註冊合作夥伴中心帳戶的詳細資訊，請參閱下面的 [步驟 5](#step-5-sign-up-for-a-partner-center-account) 。

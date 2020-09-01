@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: windows 10, uwp, ads, advertising, release notes, 廣告, 版本資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 10762d28191dfe59ae6f63f06cbeb0dd3e8a9f51
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 8faf352040b9d7bdc9fc8bc79804d5903573d41d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88969916"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174962"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 程式庫的版本資訊
 
@@ -35,7 +35,7 @@ Microsoft Advertising 程式庫屬於 [Microsoft Advertising SDK](https://market
 
 ## <a name="c-support"></a>C++ 支援
 
-Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd** 類別) 支援使用 Windows 執行階段互通性 (*interop*) 以C++ 和 DirectX 撰寫的 app。 如需使用 XAML 和 C++ 程式設計的詳細資訊與相關範例，請參閱[類型系統](https://docs.microsoft.com/cpp/cppcx/type-system-c-cx)。
+Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd** 類別) 支援使用 Windows 執行階段互通性 (*interop*) 以C++ 和 DirectX 撰寫的 app。 如需使用 XAML 和 C++ 程式設計的詳細資訊與相關範例，請參閱[類型系統](/cpp/cppcx/type-system-c-cx)。
 
 ## <a name="no-toolbox-control"></a>沒有工具箱控制項
 

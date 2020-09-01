@@ -1,17 +1,17 @@
 ---
 title: 如何關閉縮放比例
-description: 關閉預設縮放比例的指示。
+description: 瞭解如何關閉預設比例因素，並讓您的應用程式使用實際的 1910 x 1080 圖元裝置尺寸。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 ms.localizationpriority: medium
-ms.openlocfilehash: 44688ff40792ba2ee72cbd1d96bae1ac59834efa
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 404bdd9a4b25254c1941928dbfb0b548492f03a5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57604743"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174702"
 ---
 # <a name="how-to-turn-off-scaling"></a>如何關閉縮放比例   
 根據預設，若為 XAML，應用程式會調整為 200%，若為 HTML app 則為 150%。 您可以關閉預設縮放比例。 這會導致應用程式使用裝置的實際像素尺寸 (1910 x 1080 像素)。   
@@ -43,6 +43,6 @@ bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayo
 ## <a name="directxc"></a>DirectX/C++   
 DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 XAML 應用程式。  
 
-## <a name="see-also"></a>請參閱
-- [Xbox 的最佳作法](tailoring-for-xbox.md)
-- [在 Xbox One UWP](index.md)
+## <a name="see-also"></a>另請參閱
+- [Xbox 的最佳做法](tailoring-for-xbox.md)
+- [Xbox One 上的 UWP](index.md)

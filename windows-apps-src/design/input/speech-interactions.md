@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fd33720255a04ffd8669673f027973afb4369086
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684214"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173342"
 ---
 # <a name="speech-interactions"></a>語音互動
 
@@ -23,8 +23,8 @@ ms.locfileid: "75684214"
 
 **TTS**：TTS 使用語音合成引擎 (語音) 以轉換文字字串為口說字詞。 輸入的字串可以是基本、原始的文字，或是更加複雜的語音合成標記語言 (SSML)。 SSML 提供一個控制語音輸出特性 (例如發音、音量、音調、速率或速度，以及重音) 的標準方式。
 
-**其他語音相關元件**：
-Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入) 於前景啟動您的應用程式 (應用程式會取得焦點，如同在 [開始] 功能表啟動一樣)，或當作背景服務啟動 (**Cortana** 會保留焦點，但會提供應用程式的結果)。 如果您要在 **Cortana** UI 中公開應用程式功能，請參閱 [Cortana 語音命令 (VCD) 指導方針](https://docs.microsoft.com/cortana/voice-commands/vcd)。
+**其他語音相關元件：** 
+Windows 應用程式中的**Cortana**會使用自訂語音命令 (說出或輸入) ，以將您的應用程式啟動到前景 (應用程式取得焦點，就像是從 [開始] 功能表啟動一樣，或以背景服務的形式啟動應用程式) **Cortana**會保留焦點，但會從應用程式 (提供結果。 如果您要在 **Cortana** UI 中公開應用程式功能，請參閱 [Cortana 語音命令 (VCD) 指導方針](/cortana/voice-commands/vcd)。
 
 ## <a name="speech-interaction-design"></a>語音互動設計
 
@@ -58,7 +58,7 @@ Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入
 
 指定某些無語音輸入的時間長度，以指示辨識已經結束。 在這一段期間之後請不要自動重新啟動辨識，因為這通常表示使用者已停止使用應用程式。
 
-如果沒有可用的網路連線，請停用所有的連續辨識 UI 並終止辨識工作階段。 連續辨識需要網路連線。
+如果沒有可用的網路連線，請停用所有的連續辨識 UI 並終止辨識工作階段。 連續辨識需要網路連接。
 
 ## <a name="commanding"></a>命令
 
@@ -80,21 +80,21 @@ Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入
 
 -   預先定義的文法 (聽寫或網頁搜尋)
 
-    -   **\[正在聆聽\]** 畫面。
-    -   **[正在思考]** 畫面。
-    -   **\[聽到您說\]** 畫面或錯誤畫面。
+    -   **接聽**畫面。
+    -   **思考**畫面。
+    -   **您說**的是畫面或錯誤畫面。
 -   字詞或片語的清單或 SRGS 文法檔案
 
-    -   **\[正在聆聽\]** 畫面。
-    -   **[您說的是]** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
-    -   **\[聽到您說\]** 畫面或錯誤畫面。
+    -   **接聽**畫面。
+    -   **您說**的是，如果使用者所說的內容可以解讀為一個以上的可能結果，
+    -   **您說**的是畫面或錯誤畫面。
 
-您可以在 **\[正在聆聽\]** 畫面上：
+在 **接聽** 畫面上，您可以：
 
 -   自訂標頭文字
 -   提供使用者可以說出的範例文字。
--   指定是否顯示 **\[聽到您說\]** 畫面。
--   在 **\[聽到您說\]** 畫面向使用者讀出已辨識到的字串。
+-   指定是否顯示 **您說** 的畫面。
+-   在 **您說出** 的畫面上，將已辨識的字串讀回使用者。
 
 以下是使用 SRGS 定義限制之語音辨識器的內建辨識流程範例。 在這個範例中，語音辨識是成功的。
 
@@ -136,7 +136,7 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 
 聆聽音訊輸入並嘗試修正問題。 語音辨識器可以偵測到可能會影響語音辨識正確性的音訊品質問題。 您可以使用語音辨識器提供的資訊來告知使用者問題，讓他們採取修正動作 (如果可能的話)。 例如，如果麥克風的音量設定太低，您可以提示使用者提高說話音量或麥克風音量。
 
-## <a name="constraints"></a>限制式
+## <a name="constraints"></a>條件約束
 
 限制式或文法定義可與語音辨識器相符的口說字詞和片語。 您可以指定一個預先定義的 Web 服務文法，或者您可以建立自訂文法與您的 app 一起安裝。
 
@@ -164,7 +164,7 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
     -   讓每個文法精簡。 包含較少的片語的文法通常會比包含許多片語的較大文法提供更準確的辨識。 針對特定案例設定數個較小的文法是較好的作法，而不是為整個應用程式設定單一文法。
     -   讓使用者了解對於每個應用程式內容要說的項目，並視需要啟用和停用文法。
     -   設計各種文法，讓使用者可以以不同的方式說出命令。 例如，您可以使用 **GARBAGE** 規則來比對文法未定義的語音輸入。 這可以讓使用者說出在 app 中沒有意義的其他字詞。 例如，「給我」、「和」、「呃」、「或許」等等。
-    -   嘗試使用 [sapi:subset](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) 元素來協助比對語音輸入。 這是對 SRGS 規格的 Microsoft 擴充，協助比對部分片語。
+    -   嘗試使用 [sapi:subset](/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)) 元素來協助比對語音輸入。 這是對 SRGS 規格的 Microsoft 擴充，協助比對部分片語。
     -   盡量避免在文法中定義只包含一個音節的片語。 包含兩個或多個音節的片語可以更正確地辨識。
     -   避免使用聽起來相似的片語。 例如，"hello"、"bellow"，和 "fellow" 之類的片語可能混淆辨識引擎，導致不佳的辨識準確度。
 
@@ -175,9 +175,9 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 
 如果您的應用程式包含專門詞彙使用生僻、虛構或特殊發音的單字，則可定義自訂發音以改進這些單字的辨識效能。
 
-對於小型的字詞和片語清單，或不常使用的字詞和片語清單，您可以在 SRGS 文法中建立自訂發音。 如需詳細資訊，請參閱 [token 元素](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361600(v=office.14))。
+對於小型的字詞和片語清單，或不常使用的字詞和片語清單，您可以在 SRGS 文法中建立自訂發音。 如需詳細資訊，請參閱 [token 元素](/previous-versions/office/developer/speech-technologies/hh361600(v=office.14))。
 
-對於較大的字詞和片語，或經常使用的字詞和片語清單，您可以另外建立發音字典文件。 如需詳細資訊，請參閱[關於字典和語音字母](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh361646(v=office.14))。
+對於較大的字詞和片語，或經常使用的字詞和片語清單，您可以另外建立發音字典文件。 如需詳細資訊，請參閱[關於字典和語音字母](/previous-versions/office/developer/speech-technologies/hh361646(v=office.14))。
 
 ## <a name="testing"></a>測試
 
@@ -200,7 +200,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 -   將字詞或說話部分的數字或標點符號以不常用的順序串連，可能會導致片語變得無法理解。
 -   當語調或抑揚頓挫不同於母語使用者說出片語的方式，語音聽起來可能會不自然。
 
-這兩個問題都可以使用 SSML 來解決，而不是以純文字做為語音合成器的輸入。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[語音合成標記語言參考](https://docs.microsoft.com/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
+這兩個問題都可使用 SSML （而非純文字）作為語音合成器的輸入來解決。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](/previous-versions/office/developer/speech-technologies/hh378454(v=office.14))和[語音合成標記語言參考](/previous-versions/office/developer/speech-technologies/hh378377(v=office.14))。
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章 
 
@@ -211,12 +211,12 @@ TTS 從純文字或 SSML 產生語音輸出。
 | [定義自訂辨識限制式](define-custom-recognition-constraints.md) | 了解如何定義及使用自訂限制式來進行語音辨識。 |
 | [啟用連續聽寫](enable-continuous-dictation.md) |了解如何擷取及辨識較長且連續的聽寫語音輸入。 |
 | [管理音訊輸入的問題](manage-issues-with-audio-input.md) | 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。 |
-| [設定語音辨識超時](set-speech-recognition-timeouts.md) | 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。 |
+| [設定語音辨識逾時](set-speech-recognition-timeouts.md) | 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。 |
 
 ## <a name="related-articles"></a>相關文章
 
-* [語音互動](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)
-* [Cortana 互動](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-interactions)
+* [語音互動]()
+* [Cortana 互動](./cortana-interactions.md)
 
  **範例**
 
@@ -224,6 +224,3 @@ TTS 從純文字或 SSML 產生語音輸出。
  
 
  
-
-
-

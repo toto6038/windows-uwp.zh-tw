@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動
 ms.date: 07/13/2018
 ms.topic: article
-ms.openlocfilehash: 969d0c24c86a47e72cbfec08d835c25b6e6779c4
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: cc3577a116e47ca054e7dea5dbbb657fa37cb8b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173352"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤的出現
 
@@ -20,16 +20,16 @@ ms.locfileid: "83234879"
 
 ### <a name="important-apis"></a>重要 API
 
-- [AutomationPeer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
-- [InputPane](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane)
+- [AutomationPeer](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer)
+- [InputPane](/uwp/api/Windows.UI.ViewManagement.InputPane)
 
 ![預設配置模式的觸控式鍵盤](images/keyboard/default.png)
 
 <sup>預設版面配置模式中的觸控鍵盤</sup>
 
-觸控式鍵盤可讓支援觸控的裝置輸入文字。 Windows 應用程式文字輸入控制項預設會在使用者按下可編輯的輸入欄位時，叫用觸控鍵盤。 當使用者在表單中的控制項之間瀏覽時，觸控式鍵盤通常會保持可見，但是這種行為可能會因表單內的其他控制項類型而有所不同。
+觸控式鍵盤可讓支援觸控的裝置輸入文字。 當使用者按下可編輯的輸入欄位時，Windows 應用程式文字輸入控制項預設會叫用觸控鍵盤。 當使用者在表單中的控制項之間瀏覽時，觸控式鍵盤通常會保持可見，但是這種行為可能會因表單內的其他控制項類型而有所不同。
 
-若要在不是衍生自標準文字輸入控制項的自訂文字輸入控制項支援對應的觸控式鍵盤行為，您必須使用 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> 類別以將您的控制項公開給 Microsoft UI 自動化，並且實作正確的 UI 自動化控制項模式。 請參閱[鍵盤協助工具](https://docs.microsoft.com/windows/uwp/design/accessibility/keyboard-accessibility)和[自訂自動化對等](https://docs.microsoft.com/windows/uwp/design/accessibility/custom-automation-peers)。
+若要在不是衍生自標準文字輸入控制項的自訂文字輸入控制項支援對應的觸控式鍵盤行為，您必須使用 <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer">AutomationPeer</a> 類別以將您的控制項公開給 Microsoft UI 自動化，並且實作正確的 UI 自動化控制項模式。 請參閱[鍵盤協助工具](../accessibility/keyboard-accessibility.md)和[自訂自動化對等](../accessibility/custom-automation-peers.md)。
 
 一旦這項支援新增到您的自訂控制項之後，您可以適當地回應觸控式鍵盤的目前狀態。
 
@@ -39,14 +39,14 @@ ms.locfileid: "83234879"
 
 您應該有標準鍵盤互動、處理鍵盤輸入和事件及 UI 自動化的基本了解。
 
-如果您是開發 Windows 應用程式的新手，請參閱這些主題，以熟悉此處所討論的技術。
+如果您是開發 Windows 應用程式的新手，請參閱這些主題，以瞭解此處所討論的技術。
 
-- [建立您的第一個應用程式](https://docs.microsoft.com/windows/uwp/get-started/your-first-app)
-- 請參閱[事件與路由事件概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)，以了解事件相關資訊
+- [建立您的第一個應用程式](../../get-started/your-first-app.md)
+- 請參閱[事件與路由事件概觀](../../xaml-platform/events-and-routed-events-overview.md)，以了解事件相關資訊
 
 **使用者經驗指導方針：**
 
-如需有關設計實用且吸引人的應用程式以進行鍵盤輸入的實用秘訣，請參閱[鍵盤互動](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions)。
+如需有關設計適合鍵盤輸入的實用且吸引人的應用程式的實用秘訣，請參閱 [鍵盤互動](./keyboard-interactions.md) 。
 
 ## <a name="touch-keyboard-and-a-custom-ui"></a>觸控式鍵盤和自訂 UI
 
@@ -54,15 +54,15 @@ ms.locfileid: "83234879"
 
 - 與您的表單互動時全程顯示觸控式鍵盤。
 
-- 請確定您的自訂控制項具有適當的 UI 自動化 [AutomationControlType](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) ，以便在焦點從文字輸入欄位移至文字專案內容時保存。 例如，如果有功能表在輸入文字期間開啟，而您希望鍵盤繼續顯示，則功能表必須要有功能表的 **AutomationControlType**。
+- 確定您的自訂控制項具有適當的消費者介面自動化 [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) ，以便在焦點移出文字輸入欄位時，在文字輸入的內容中從文字輸入欄位繼續進行。 例如，如果有功能表在輸入文字期間開啟，而您希望鍵盤繼續顯示，則功能表必須要有功能表的 **AutomationControlType**。
 
 - 不要操縱 UI 自動化屬性以控制觸控式鍵盤。 其他協助工具依賴 UI 自動化屬性的精確度。
 
 - 確保使用者一律可以看到正在互動的輸入欄位。
 
-    由於觸控鍵盤會 occludes 大部分的螢幕，因此當使用者流覽表單上的控制項（包括目前不在視圖中的控制項）時，Windows 會確保具有焦點的輸入欄位會滾動到視野中。
+    由於觸控鍵盤會 occludes 大部分的螢幕，因此 Windows 會確定具有焦點的輸入欄位會在使用者流覽表單上的控制項時滾動，包括目前不在視野中的控制項。
 
-    自訂您的 UI 時，提供觸控式鍵盤外觀的類似行為，方法是處理 [InputPane](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing) 物件公開的 [Showing](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding) 和 [**Hiding**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.InputPane) 事件。
+    自訂您的 UI 時，提供觸控式鍵盤外觀的類似行為，方法是處理 [InputPane](/uwp/api/windows.ui.viewmanagement.inputpane.showing) 物件公開的 [Showing](/uwp/api/windows.ui.viewmanagement.inputpane.hiding) 和 [**Hiding**](/uwp/api/Windows.UI.ViewManagement.InputPane) 事件。
 
     ![顯示和未顯示觸控式鍵盤的表單](images/touch-keyboard-pan1.png)
 
@@ -72,7 +72,7 @@ ms.locfileid: "83234879"
 
 ## <a name="handling-the-showing-and-hiding-events"></a>處理顯示和隱藏事件
 
-以下範例會附加觸控鍵盤的[顯示](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.showing)和[隱藏](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.inputpane.hiding)事件的事件處理常式。
+以下是附加觸控[鍵盤事件之事件處理](/uwp/api/windows.ui.viewmanagement.inputpane.hiding)程式[的範例](/uwp/api/windows.ui.viewmanagement.inputpane.showing)。
 
 ```csharp
 using Windows.UI.ViewManagement;
@@ -211,8 +211,8 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 ## <a name="related-articles"></a>相關文章
 
 - [鍵盤互動](keyboard-interactions.md)
-- [鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
-- [自訂自動化對等](https://docs.microsoft.com/windows/uwp/accessibility/custom-automation-peers)
+- [鍵盤協助工具](../accessibility/keyboard-accessibility.md)
+- [自訂自動化對等](../accessibility/custom-automation-peers.md)
 
 ### <a name="samples"></a>範例
 

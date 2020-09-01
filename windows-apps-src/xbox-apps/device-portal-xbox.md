@@ -1,17 +1,17 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Xbox 的 Device Portal
-description: 瞭解如何啟用適用于 Xbox One 的裝置入口網站，讓您可以從遠端存取您的開發 Xbox。
+description: 瞭解如何啟用適用于 Xbox One 的 Xbox 裝置入口網站，可讓您從遠端存取您的開發 Xbox。
 ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 485cd9dc5a7ecb437cacf4a2c9c6eee57c3717f1
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043480"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174782"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
@@ -43,17 +43,17 @@ ms.locfileid: "89043480"
 
 Xbox 裝置入口網站提供一組標準頁面，類似 Windows 裝置入口網站上提供的，另外還有幾個特殊的頁面。 如需前者的詳細描述，請參閱 [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)。 下列章節描述 Xbox 裝置入口網站專有的頁面。
 
-### <a name="home"></a>首頁
+### <a name="home"></a>家庭
 
 類似 Windows 裝置入口網站的 **\[應用程式管理員\]** 頁面，Xbox 裝置入口網站的 **\[首頁\]** 頁面也會顯示已安裝遊戲和 app 的清單，位於 **\[我的遊戲與 app\]** 底下。 按一下遊戲或 app 名稱，即可查看與其相關的詳細資料，例如 **\[套件系列名稱\]**。 在 **\[動作\]** 下拉式清單中，您可以對遊戲或 app 執行動作，例如將它 **\[啟動\]**。
 
 在 **\[Xbox Live 測試帳戶\]** 底下，您可以管理與 Xbox 相關的帳戶。 您可以新增使用者和訪客帳戶、建立新使用者、將使用者登入和登出，以及移除帳戶。
 
-![首頁](images/device-portal-xbox-16.png)
+![家庭](images/device-portal-xbox-16.png)
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (遊戲儲存)
 
-Windows 裝置入口網站和 Xbox 裝置入口網站都有 **\[Xbox Live\]** 頁面。 不過，Xbox 裝置入口網站有一個專用區段 **\[Xbox Live 遊戲儲存\]**，可讓您儲存 Xbox 上已安裝遊戲的資料。 輸入與標題和遊戲儲存相關的 **\[服務設定 ID (SCID)\]** (如需詳細資訊，請參閱 [Xbox Live 服務設定](https://docs.microsoft.com/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids))、**\[Membername (MSA)\]** 和 **\[套件系列名稱 (PFN)\]**，瀏覽 **\[輸入檔案 (.json 或.xml)\]**，然後選取其中一個按鈕 (**\[重設\]**、**\[匯入\]**、**\[匯出\]** 和 **\[刪除\]**) 來操控儲存資料。
+Windows 裝置入口網站和 Xbox 裝置入口網站都有 **\[Xbox Live\]** 頁面。 不過，Xbox 裝置入口網站有一個專用區段 **\[Xbox Live 遊戲儲存\]**，可讓您儲存 Xbox 上已安裝遊戲的資料。 輸入與標題和遊戲儲存相關的 **\[服務設定 ID (SCID)\]** (如需詳細資訊，請參閱 [Xbox Live 服務設定](/gaming/xbox-live/xbox-live-service-configuration.md#get-your-ids))、**\[Membername (MSA)\]** 和 **\[套件系列名稱 (PFN)\]**，瀏覽 **\[輸入檔案 (.json 或.xml)\]**，然後選取其中一個按鈕 (**\[重設\]**、**\[匯入\]**、**\[匯出\]** 和 **\[刪除\]**) 來操控儲存資料。
 
 在 **\[產生\]** 區段中，您可以產生虛設資料，並儲存到指定的輸入檔案。 只要輸入 **\[容器 (預設為 2)\]**、**\[Blob (預設為 3)\]** 和 **\[Blob 大小 (預設為 1024)\]**，然後選取 **\[產生\]**。
 
@@ -202,4 +202,4 @@ Kinect 感應器必須連接至主機，才能變更這些設定。
 ## <a name="see-also"></a>另請參閱
 
 * [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)
-* [裝置入口網站核心 API 參考資料](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [裝置入口網站核心 API 參考資料](../debug-test-perf/device-portal-api-core.md)

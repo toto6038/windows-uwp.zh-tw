@@ -4,14 +4,14 @@ description: 本節說明如何設定 app 的啟動顯示畫面。
 ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09eadb8467725cbf40f3fb54d32741960fc89321
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 490f5f70efcd21fe2be5c909bcc409daf1feeeea
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371867"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175122"
 ---
 # <a name="splash-screens"></a>啟動顯示畫面
 
@@ -27,9 +27,9 @@ ms.locfileid: "66371867"
 
 無論您的 app 執行所在的裝置為何，具有背景色彩的簡單影像看起來都很美觀。 只會變更背景的大小來適應不同的螢幕大小。 您的影像將永遠保持不變。
 
-此外，您可以使用 [**SplashScreen**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) 類別自訂 app 的啟動經驗。 您可以放置延長式啟動顯示畫面，建立這個畫面是為了讓您的 app 有更多的時間可以完成其他工作，像是準備 app UI 或是完成網路作業。 您也可以使用 **SplashScreen** 類別，在關閉啟動顯示畫面時通知您，這樣您就可以開始進入動畫。
+此外，您可以使用 [**SplashScreen**](/uwp/api/Windows.ApplicationModel.Activation.SplashScreen) 類別自訂 app 的啟動經驗。 您可以放置延長式啟動顯示畫面，建立這個畫面是為了讓您的 app 有更多的時間可以完成其他工作，像是準備 app UI 或是完成網路作業。 您也可以使用 **SplashScreen** 類別，在關閉啟動顯示畫面時通知您，這樣您就可以開始進入動畫。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
-| [新增啟動顯示畫面](add-a-splash-screen.md) | 設定應用程式的啟動顯示畫面影像與背景色彩 |
-| [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |
+| [新增啟動顯示畫面](add-a-splash-screen.md) | 設定 app 的啟動顯示畫面影像與背景色彩 |
+| [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為 app 建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您 app 啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |

@@ -1,5 +1,5 @@
 ---
-Description: 在您的 Windows 應用程式中，接收、處理和管理指標的輸入資料，例如觸控、滑鼠、畫筆/手寫筆和觸控板。
+Description: 在您的 Windows 應用程式中，接收、處理和管理指標裝置（例如觸控、滑鼠、畫筆/手寫筆和觸控板）的輸入資料。
 title: 處理指標輸入
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
@@ -8,33 +8,33 @@ keywords: pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 609f6f1ad33c3736d9ac99ec40cbbfe7ade9500a
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: f544b73e069827f3c680db45797081605ce41b63
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234820"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173452"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
-在您的 Windows 應用程式中，接收、處理和管理來自指標裝置（例如觸控、滑鼠、畫筆/手寫筆和觸控板）的輸入資料。
+在您的 Windows 應用程式中接收、處理及管理指標裝置 (的輸入資料，例如觸控、滑鼠、畫筆/手寫筆和觸控板) 。
 
 > [!Important]
 > 只有在需求明確且定義清楚，而且沒有平台控制項支援的互動可以支援您的情況時，才能建立自訂互動。  
-> 若您在您的 Windows 應用程式中自訂互動體驗，使用者會預期他們一致、直覺化且可搜尋到。 基於這些理由，我們建議您在[平台控制項](../controls-and-patterns/controls-by-function.md)支援的項目上為您的自訂互動建模。 平臺控制項提供完整的 Windows 應用程式使用者互動體驗，包括標準互動、動畫物理效果、視覺化意見反應和協助工具。 
+> 若您在您的 Windows 應用程式中自訂互動體驗，使用者會預期他們一致、直覺化且可搜尋到。 基於這些理由，我們建議您在[平台控制項](../controls-and-patterns/controls-by-function.md)支援的項目上為您的自訂互動建模。 平臺控制項可提供完整的 Windows 應用程式使用者互動體驗，包括標準互動、動畫物理效果、視覺效果意見反應和協助工具。 
 
 ## <a name="important-apis"></a>重要 API
-- [Windows.Devices.Input](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)
-- [Windows.UI.Input](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
-- [Windows. UI. Xaml. 輸入](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+- [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
+- [Windows.UI.Input](/uwp/api/Windows.UI.Core)
+- [Windows.UI.Xaml.Input](/uwp/api/Windows.UI.Input)
 
 ## <a name="pointers"></a>指標
-大多數互動體驗通常會牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將內容升級並合併到整合的輸入堆疊，並公開為與裝置無關的指標資料。 然後您的 Windows 應用程式就可以取用此資料，而不必擔心所使用的輸入裝置。
+大多數互動體驗通常會牽涉到使用者透過使用輸入裝置指向想要互動的物件來識別該物件，例如觸控、滑鼠、畫筆/手寫筆及觸控板。 由於這些輸入裝置所提供的原始人性化介面裝置 (HID) 資料包含許多常用屬性，因此，會將內容升級並合併到整合的輸入堆疊，並公開為與裝置無關的指標資料。 然後，您的 Windows 應用程式就可以使用此資料，而不需要擔心所使用的輸入裝置。
 
 > [!NOTE]
 > 裝置特定的資訊也會視您應用程式的需求，從原始 HID 資料升級。
 
-輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.Pointer) 物件來表示，此物件是透過各種不同指標事件處理常式中的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入指標。
+輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](/uwp/api/Windows.UI.Xaml.Input.Pointer) 物件來表示，此物件是透過各種不同指標事件處理常式中的 [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入指標。
 
 ## <a name="pointer-events"></a>指標事件
 
@@ -43,7 +43,7 @@ ms.locfileid: "83234820"
 Windows 應用程式可以接聽下列指標事件：
 
 > [!NOTE]
-> 藉由在指標事件處理常式中的該項目上呼叫 [**CapturePointer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer) 來輸入特定 UI 項目的限制指標。 當項目擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 [**IsInContact**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isincontact) (按下滑鼠，接觸觸控或手寫筆) 必須為 true，**CapturePointer** 才會成功。
+> 藉由在指標事件處理常式中的該項目上呼叫 [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer) 來輸入特定 UI 項目的限制指標。 當項目擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 [**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact) (按下滑鼠，接觸觸控或手寫筆) 必須為 true，**CapturePointer** 才會成功。
 
 <table>
 <colgroup>
@@ -108,7 +108,7 @@ Windows 應用程式可以接聽下列指標事件：
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>當指標指出元素界限區域內的按下動作 (例如，觸控向下、滑鼠向下、手寫筆向下或觸控板按鈕向下) 時，即會發生此情況。</p>
-<p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> 必須從此事件的處理常式中呼叫。</p></td>
+<p><a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> 必須從此事件的處理常式中呼叫。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
@@ -117,7 +117,7 @@ Windows 應用程式可以接聽下列指標事件：
 <tr class="even">
 <td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>發生於旋轉滑鼠滾輪時。</p>
-<p>滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> 事件建立指標與該按鈕的次要關聯。</p></td>
+<p>滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> 事件建立指標與該按鈕的次要關聯。</p></td>
 </tr>
 </tbody>
 </table> 
@@ -128,13 +128,13 @@ Windows 應用程式可以接聽下列指標事件：
 
 ![指標應用程式 UI](images/pointers/pointers1.gif)
 
-**從[指標輸入範例下載此範例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
+**從[ (基本) 的指標輸入範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)下載此範例**
 
 ### <a name="create-the-ui"></a>建立 UI
 
-在此範例中，我們使用[矩形](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.rectangle)（ `Target` ）做為物件耗用指標輸入。 當指標狀態變更時，目標的色彩就會變更。
+在此範例中，我們會使用 [矩形](/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) 作為物件取用指標輸入。 當指標狀態變更時，目標的色彩就會變更。
 
-每個指標的詳細資料都會顯示於浮動的 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中，該區塊會與指標一起移動。 指標事件本身會在位於矩形右側的 [RichTextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 中回報。
+每個指標的詳細資料都會顯示於浮動的 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中，該區塊會與指標一起移動。 指標事件本身會在位於矩形右側的 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 中回報。
 
 這是適用於此範例中 UI 的 Extensible Application Markup Language (XAML)。 
 
@@ -191,9 +191,9 @@ Windows 應用程式可以接聽下列指標事件：
 
 ### <a name="listen-for-pointer-events"></a>接聽指標事件
 
-在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 來取得指標資訊。
+在大部分情況下，我們建議您透過事件處理常式的 [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 來取得指標資訊。
 
-如果事件引數未公開所需的指標詳細資料，您可以透過 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，取得公開的延伸 [**PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 資訊。
+如果事件引數未公開所需的指標詳細資料，您可以透過 [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 的 [**GetCurrentPoint**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，取得公開的延伸 [**PointerPoint**](/uwp/api/Windows.UI.Input.PointerPoint) 資訊。
 
 下列程式碼會設定全域字典物件，用於追蹤每一個作用中的指標，並識別目標物件的各種指標事件接聽程式。
 
@@ -237,10 +237,10 @@ public MainPage()
 
 接下來，將使用 UI 回饋來示範基本指標事件處理常式。
 
--   這個處理常式會管理 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我們將事件新增到事件記錄檔、將指標新增到作用中的指標字典，並顯示指標詳細資料。
+-   這個處理常式會管理 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我們將事件新增到事件記錄檔、將指標新增到作用中的指標字典，並顯示指標詳細資料。
 
     > [!NOTE]
-    > [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件不一定會成對出現。 您的應用程式應接聽和處理可能得出指標向下 (例如 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)、 以及 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)) 的任何事件。      
+    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件不一定會成對出現。 您的應用程式應接聽和處理可能得出指標向下 (例如 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)、 以及 [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)) 的任何事件。      
 
 ```csharp
 /// <summary>
@@ -282,7 +282,7 @@ void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理 [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件。 我們將事件新增到事件記錄檔、將指標新增到指標集合，並顯示指標詳細資料。
+-   這個處理常式會管理 [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) 事件。 我們將事件新增到事件記錄檔、將指標新增到指標集合，並顯示指標詳細資料。
 
 ```csharp
 /// <summary>
@@ -319,10 +319,10 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 事件。 我們將事件新增到事件記錄檔，並更新指標詳細資料。
+-   這個處理常式會管理 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) 事件。 我們將事件新增到事件記錄檔，並更新指標詳細資料。
 
     > [!Important]
-    > 滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved) 事件進行路由。     
+    > 滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) 事件進行路由。     
 
 ```csharp
 /// <summary>
@@ -369,7 +369,7 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理 [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) 事件。 我們將事件新增到事件記錄檔、將指標新增到指標陣列 (必要時)，並顯示指標詳細資料。
+-   這個處理常式會管理 [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) 事件。 我們將事件新增到事件記錄檔、將指標新增到指標陣列 (必要時)，並顯示指標詳細資料。
 
 ```csharp
 /// <summary>
@@ -399,7 +399,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理終止與數位板接觸的 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件。 我們將事件新增到事件記錄檔、從指標集合移除指標，並更新指標詳細資料。
+-   這個處理常式會管理終止與數位板接觸的 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件。 我們將事件新增到事件記錄檔、從指標集合移除指標，並更新指標詳細資料。
 
 ```csharp
 /// <summary>
@@ -451,7 +451,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理與數位板保持接觸的 [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
+-   這個處理常式會管理與數位板保持接觸的 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
 ```csharp
 /// <summary>
@@ -486,7 +486,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理 [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
+-   這個處理常式會管理 [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
 ```csharp
 /// <summary>
@@ -525,10 +525,10 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   這個處理常式會管理 [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
+-   這個處理常式會管理 [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 可能會取代 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 發生。 指標擷取可能會因為各種原因遺失，包括使用者互動、使用程式設計方式擷取另一個指標、呼叫 [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased) 等。     
+    > [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) 可能會取代 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 發生。 指標擷取可能會因為各種原因遺失，包括使用者互動、使用程式設計方式擷取另一個指標、呼叫 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 等。     
 
 ```csharp
 /// <summary>
@@ -569,9 +569,9 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>取得指標屬性
 
-如稍早所述，您必須透過 [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 的 [**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，從 [**Windows.UI.Input.PointerPoint**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint) 物件取得最延伸的指標資訊。 下列程式碼片段顯示取得的方式。
+如稍早所述，您必須透過 [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) 的 [**GetCurrentPoint**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) 與 [**GetIntermediatePoints**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) 方法，從 [**Windows.UI.Input.PointerPoint**](/uwp/api/Windows.UI.Input.PointerPoint) 物件取得最延伸的指標資訊。 下列程式碼片段顯示取得的方式。
 
--   首先，為每個指標建立一個新的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+-   首先，為每個指標建立一個新的 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 ```csharp
 /// <summary>
@@ -594,7 +594,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 }
 ```
 
--   接著，我們提供一個方法，用來更新與該指標相關之現有 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中的指標資訊。
+-   接著，我們提供一個方法，用來更新與該指標相關之現有 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 中的指標資訊。
 
 ```csharp
 /// <summary>
@@ -678,7 +678,7 @@ String QueryPointer(PointerPoint ptrPt)
 ## <a name="primary-pointer"></a>主要指標
 某些輸入裝置，例如觸控數位板或觸控板，可支援比一般單一滑鼠或手寫筆指標更多的指標 (在大多數的案例中為 Surface Hub，因為其支援兩個手寫筆輸入)。 
 
-請使用 **[PointerPointerProperties](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties)** 類別的唯讀 **[IsPrimary](https://docs.microsoft.com/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 屬性識別和區別單一主要指標 (主要指標在輸入序列期間永遠都是第一個偵測到的指標)。 
+請使用 **[PointerPointerProperties](/uwp/api/windows.ui.input.pointerpointproperties)** 類別的唯讀 **[IsPrimary](/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary)** 屬性識別和區別單一主要指標 (主要指標在輸入序列期間永遠都是第一個偵測到的指標)。 
 
 藉由識別主要指標，您可以使用它來模擬滑鼠或手寫筆輸入、自訂互動，或提供其他特定功能或 UI。
 
@@ -693,11 +693,11 @@ String QueryPointer(PointerPoint ptrPt)
 
 ![帶有動畫視覺回饋的指標應用程式](images/pointers/pointers-usercontrol-animation.gif)
 
-**從[指標輸入範例下載此範例（使用動畫的 UserControl）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)**
+**[使用動畫 (UserControl 的指標輸入範例](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)下載此範例) **
 
 ### <a name="visual-feedback"></a>視覺化回饋
 
-我們會根據 XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 物件，定義一個 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 來醒目提示哪個指標正位於畫布上，並使用 **[Storyboard](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.storyboard)** 來為對應到主要指標的橢圓形建立動畫。
+我們會根據 XAML **[Ellipse](/uwp/api/windows.ui.xaml.shapes.ellipse)** 物件，定義一個 **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)** 來醒目提示哪個指標正位於畫布上，並使用 **[Storyboard](/uwp/api/windows.ui.xaml.media.animation.storyboard)** 來為對應到主要指標的橢圓形建立動畫。
 
 **以下是 XAML：**
 
@@ -889,7 +889,7 @@ namespace UWP_Pointers
 ```
 
 ### <a name="create-the-ui"></a>建立 UI
-此範例中的 UI 會限制在輸入 **[Canvas](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.canvas)** 中，我們會在其中追蹤任何指標並轉譯指標指示器和主要指標動畫 (若適用的話)，搭配包含指標計數器和主要指標識別識別碼的標頭列。
+此範例中的 UI 會限制在輸入 **[Canvas](/uwp/api/windows.ui.xaml.controls.canvas)** 中，我們會在其中追蹤任何指標並轉譯指標指示器和主要指標動畫 (若適用的話)，搭配包含指標計數器和主要指標識別識別碼的標頭列。
 
 以下是 MainPage.xaml：
 
@@ -964,5 +964,5 @@ namespace UWP_Pointers
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
