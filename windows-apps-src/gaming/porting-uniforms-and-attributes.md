@@ -6,23 +6,23 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes, 遊戲, 緩衝區, 統一, 頂點屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d79a4573438aec49d4aa1b828c90e72c04150de
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0ba95f2279491d1f1ab2b27c2aaf7a9a7e2409b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368148"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159322"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
 
 
 
 
-**重要的 Api**
+**重要 API**
 
--   [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
--   [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
--   [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
+-   [**ID3D11Device1::CreateBuffer**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)
+-   [**ID3D11Device1::CreateInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout)
 
 在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。
 
@@ -34,9 +34,9 @@ ms.locfileid: "66368148"
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | uniform                   | 常數緩衝區 (**cbuffer**) 欄位。                                                                                                                                                |
 | 屬性                 | 頂點緩衝區元素欄位是由輸入配置所指定，並以特定的 HLSL 語意來標示。                                                                                |
-| 緩衝區物件             | 緩衝區;請參閱[ **D3D11\_SUBRESOURCE\_DATA** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)並[ **D3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)和一般用途緩衝區定義。 |
-| 框架緩衝區物件 (FBO) | 轉譯目標；請參閱 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 與 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)。                                       |
-| 背景緩衝區               | 含有「背景緩衝區」表面的交換鏈結；請參閱含有附加 [**IDXGISurface1**](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) 的 [**IDXGISwapChain1**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)。                       |
+| 緩衝區物件             | 備用請參閱 [**D3D11 \_ SUBRESOURCE \_ 資料**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) 和 [**D3D11 \_ 緩衝區 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) 和一般用途的緩衝區定義。 |
+| 框架緩衝區物件 (FBO) | 轉譯目標；請參閱 [**ID3D11RenderTargetView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 與 [**ID3D11Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d)。                                       |
+| 背景緩衝區               | 含有「背景緩衝區」表面的交換鏈結；請參閱含有附加 [**IDXGISurface1**](/windows/desktop/api/dxgi/nn-dxgi-idxgisurface1) 的 [**IDXGISwapChain1**](/windows/desktop/api/dxgi1_2/nn-dxgi1_2-idxgiswapchain1)。                       |
 
  
 
@@ -46,14 +46,14 @@ ms.locfileid: "66368148"
 在 OpenGL ES 2.0 中，建立並繫結任何種類的緩衝區程序通常會遵循這個模式。
 
 -   呼叫 glGenBuffers 以產生一或多個緩衝區，並將控制代碼傳回給它們。
--   呼叫來定義版面配置的緩衝區，例如 GL glBindBuffer\_項目\_陣列\_緩衝區。
+-   呼叫 glBindBuffer 來定義緩衝區的版面配置，例如 GL \_ 元素 \_ 陣列 \_ 緩衝區。
 -   呼叫 glBufferData，在特定的配置中使用特定資料 (例如，頂點結構、索引資料或色彩資料) 填入緩衝區。
 
 最常見的緩衝區種類是頂點緩衝區，這在部分座標系統中至少會包含頂點的位置。 在典型的用法中，頂點是使用包含位置座標、頂點位置的法向量、頂點位置的正切函數向量，以及紋理查閱 (uv) 座標的結構來表示。 緩衝區包含這些頂點的連續性清單，並以某種順序排列 (例如，三角形清單、條形或扇形)，而且會在您的場景中共同呈現可見的多邊形 (在 Direct3D 11 以及 OpenGL ES 2.0 中，針對每個繪製呼叫提供多個頂點緩衝區是無效率的)。
 
 這裡提供的範例是使用 OpenGL ES 2.0 建立的頂點緩衝區與索引緩衝區：
 
-OpenGL ES 2.0:建立和填入的頂點緩衝區和索引緩衝區。
+OpenGL ES 2.0：建立和填入頂點緩衝區和索引緩衝區。
 
 ``` syntax
 glGenBuffers(1, &renderer->vertexBuffer);
@@ -73,11 +73,11 @@ glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vert
 
 在 Direct3D 11 中，緩衝區資料元素會被視為「子資源」，而涵蓋範圍可從個別的頂點資料元素到 MIP 圖紋理。
 
--   填入[ **D3D11\_SUBRESOURCE\_DATA** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)設定緩衝區的資料元素的結構。
--   填入[ **D3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)結構大小的緩衝區，以及緩衝區類型中的個別項目。
--   使用這兩個結構呼叫 [**ID3D11Device1::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)。
+-   以緩衝區資料元素的設定填入 [**D3D11 \_ SUBRESOURCE \_ 資料**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) 結構。
+-   以緩衝區中的個別元素大小以及緩衝區類型填入 [**D3D11 \_ BUFFER \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) 結構。
+-   使用這兩個結構呼叫 [**ID3D11Device1::CreateBuffer**](/windows/desktop/api/d3d11_1/nn-d3d11_1-id3d11device1)。
 
-Direct3D 11:建立和填入的頂點緩衝區和索引緩衝區。
+Direct3D 11：建立和填入頂點緩衝區和索引緩衝區。
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -106,9 +106,9 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-可寫入的像素緩衝區或地圖 (例如，框架緩衝區) 可建立為 [**ID3D11Texture2D**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 物件。 這些都可以當成資源繫結到 [**ID3D11RenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 或 [**ID3D11ShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview)，一旦繪製到其中之後，就可以分別使用相關聯的交換鏈結來顯示，或是傳送到著色器。
+可寫入的像素緩衝區或地圖 (例如，框架緩衝區) 可建立為 [**ID3D11Texture2D**](/windows/desktop/api/d3d11/nn-d3d11-id3d11texture2d) 物件。 這些都可以當成資源繫結到 [**ID3D11RenderTargetView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11rendertargetview) 或 [**ID3D11ShaderResourceView**](/windows/desktop/api/d3d11/nn-d3d11-id3d11shaderresourceview)，一旦繪製到其中之後，就可以分別使用相關聯的交換鏈結來顯示，或是傳送到著色器。
 
-Direct3D 11:建立框架緩衝區物件。
+Direct3D 11：建立框架緩衝區物件。
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView> m_d3dRenderTargetViewWin;
@@ -127,7 +127,7 @@ m_d3dDevice->CreateRenderTargetView(
 
 在 Open GL ES 2.0 中，Uniform 是提供常數資料給個別著色器程式的機制。 著色器無法變更這個資料。
 
-設定統一通常牽涉到提供其中一個 glUniform\* GPU，以及應用程式記憶體中的資料指標中的上傳位置的方法。 在檢視器 glUniform 之後\*方法執行、 統一的資料是在 GPU 記憶體而且可供存取的宣告，統一的著色器。 您必須確定資料的封裝方式，是可讓著色器基於著色器中的 Uniform 宣告來解譯資料 (透過使用相容的類型)。
+設定統一通常會牽涉到提供其中一個 glUniform \* 方法，其中包含 GPU 中的上傳位置，以及應用程式記憶體中資料的指標。 在 ithe glUniform \* 方法執行之後，統一資料會在 GPU 記憶體中，並可由已宣告為統一的著色器存取。 您必須確定資料的封裝方式，是可讓著色器基於著色器中的 Uniform 宣告來解譯資料 (透過使用相容的類型)。
 
 OpenGL ES 2.0 建立 Uniform 並將資料上傳給它
 
@@ -141,17 +141,17 @@ glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatri
 
 在著色器的 GLSL 中，對應的 Uniform 宣告看起來像這樣：
 
-Open GL ES 2.0:GLSL 統一的宣告
+Open GL ES 2.0：GLSL Uniform 宣告
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D 指定 Uniform 資料做為「常數緩衝區」，與 Uniform 一樣，其中包含提供給個別著色器的常數資料。 至於 Uniform 緩衝區，請務必在記憶體中使用與著色器預期用來解譯它的相同方法來封裝常數緩衝區資料。 使用 DirectXMath 類型 (例如[ **XMFLOAT4**](https://docs.microsoft.com/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) 而不是平台類型 (例如**float\*** 或**float\[4\]** ) 可確保適當的資料元素對齊方式。
+Direct3D 指定 Uniform 資料做為「常數緩衝區」，與 Uniform 一樣，其中包含提供給個別著色器的常數資料。 至於 Uniform 緩衝區，請務必在記憶體中使用與著色器預期用來解譯它的相同方法來封裝常數緩衝區資料。 使用 DirectXMath 類型 (例如[**XMFLOAT4**](/windows/desktop/api/directxmath/ns-directxmath-xmfloat4)) ，而不是平臺類型 (例如**float \* **或**float \[ 4 \] **) 保證適當的資料元素對齊。
 
 常數緩衝區必須有一個關聯的 GPU 暫存器，以用來在 GPU 上參考該資料。 資料會封裝到緩衝區配置所指定的暫存器位置。
 
-Direct3D 11:建立常數緩衝區，並將資料上傳給它
+Direct3D 11：建立常數緩衝區並上傳資料給它
 
 ``` syntax
 struct ModelViewProjectionConstantBuffer
@@ -176,7 +176,7 @@ m_d3dDevice->CreateBuffer(
 
 在著色器的 HLSL 中，對應的常數緩衝區宣告看起來像這樣：
 
-Direct3D 11:常數緩衝區 HLSL 宣告
+Direct3D 11：常數緩衝區 HLSL 宣告
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -190,7 +190,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 ## <a name="port-vertex-attributes-to-a-direct3d-input-layouts-and-hlsl-semantics"></a>將頂點屬性移植到 Direct3D 輸入配置與 HLSL 語意
 
 
-由於著色器管線可以修改頂點資料，因此 OpenGL ES 2.0 要求您將它們指定為「屬性」而非 "Uniform" （這已在新版的 OpenGL 和 GLSL 中變更）。做為屬性值，會將特定頂點的資料這類的頂點位置、 normals、 正切函數和色彩值提供給著色器。 這些屬性值會對應到頂點資料中每個元素的特定位移；例如，第一個屬性可以指向個別頂點的位置元件，而第二個指向法向量，依此類推。
+由於著色器管線可以修改頂點資料，因此 OpenGL ES 2.0 要求您將它們指定為「屬性」而非 "Uniform" (這在較新版本的 OpenGL 與 GLSL 中已經變更)。頂點特定的資料 (例如，頂點位置、法向量、正切函數及色彩值) 都會當成屬性值來提供給著色器。 這些屬性值會對應到頂點資料中每個元素的特定位移；例如，第一個屬性可以指向個別頂點的位置元件，而第二個指向法向量，依此類推。
 
 將頂點緩衝區資料從主要記憶體移至 GPU 的基本程序看起來像這樣：
 
@@ -199,7 +199,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 -   呼叫 glVertexAttribPointer，在個別頂點資料元素內部設定正確的屬性大小與位移。 針對每個屬性執行此動作。
 -   使用 glEnableVertexAttribArray 啟用頂點資料配置資訊。
 
-OpenGL ES 2.0:頂點緩衝區資料上傳至著色器屬性
+OpenGL ES 2.0：將頂點緩衝區資料上傳到著色器屬性
 
 ``` syntax
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->vertexBuffer);
@@ -217,18 +217,18 @@ glEnableVertexAttribArray(loc);
 
 現在，在頂點著色器中，以您在對 glGetAttribLocation 的呼叫中所定義的相同名稱來宣告屬性。
 
-OpenGL ES 2.0:宣告 GLSL 中的屬性
+OpenGL ES 2.0：在 GLSL 中宣告屬性
 
 ``` syntax
 attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-從某些方面來說，這個相同程序適用於 Direct3D。 輸入緩衝區中提供的是頂點資料，而不是屬性，輸入緩衝區中包含頂點緩衝區及對應的索引緩衝區。 但是，由於 Direct3D 沒有「屬性」宣告，因此，您必須指定輸入配置，在頂點緩衝區與 HLSL 語意中宣告資料元素的個別元件，語意中會指出頂點著色器要在何處及如何解譯這些元件。 HLSL 語意要求您使用特定的字串來定義每個元件的用法，以通知著色器引擎它的相關用途。 例如，頂點位置資料會標示為 POSITION、法向量資料會標示為 NORMAL，而頂點色彩資料會標示為 COLOR （其他著色器階段也會需要特定的語意，而且這些語意有根據著色器階段的不同解譯）。如需 HLSL 語意的詳細資訊，請閱讀[連接埠著色器管線](change-your-shader-loading-code.md)並[HLSL 語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dcl-usage---ps)。
+從某些方面來說，這個相同程序適用於 Direct3D。 輸入緩衝區中提供的是頂點資料，而不是屬性，輸入緩衝區中包含頂點緩衝區及對應的索引緩衝區。 但是，由於 Direct3D 沒有「屬性」宣告，因此，您必須指定輸入配置，在頂點緩衝區與 HLSL 語意中宣告資料元素的個別元件，語意中會指出頂點著色器要在何處及如何解譯這些元件。 HLSL 語意要求您使用特定的字串來定義每個元件的用法，以通知著色器引擎它的相關用途。 例如，頂點位置資料會標示為 POSITION、法向量資料會標示為 NORMAL，而頂點色彩資料會標示為 COLOR (其他著色器階段也需要特定的語意，而那些語意會根據著色器階段而有不同的解譯方式)。如需關於 HLSL 語意的詳細資料，請參閱[移植您的著色器管線](change-your-shader-loading-code.md)與 [HLSL 語意](/windows/desktop/direct3dhlsl/dcl-usage---ps)。
 
 總括來說，設定頂點與索引緩衝區以及設定輸入配置的程序稱為 Direct3D 圖形管線的「輸入組件」(IA) 階段。
 
-Direct3D 11:設定輸入組件的階段
+Direct3D 11：設定輸入組件階段
 
 ``` syntax
 // Set up the IA stage corresponding to the current draw operation.
@@ -250,14 +250,14 @@ m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-您可以藉由宣告頂點資料元素的格式與每個元件所使用的語意，來宣告輸入配置並與頂點著色器產生關聯。 端點項目資料配置述 D3D11\_輸入\_項目\_DESC 您建立必須對應到對應的結構的配置。 您可以在此處建立含有兩個元件的頂點資料配置：
+您可以藉由宣告頂點資料元素的格式與每個元件所使用的語意，來宣告輸入配置並與頂點著色器產生關聯。 您所建立之 D3D11 輸入元素 DESC 中所述的頂點元素資料配置， \_ \_ \_ 必須對應至對應結構的配置。 您可以在此處建立含有兩個元件的頂點資料配置：
 
 -   頂點位置座標 (在主記憶體中以 XMFLOAT3 來表示)，這是 (x, y, z) 座標的 3 個 32 位元浮點數值的對齊陣列。
 -   頂點色彩值 (以 XMFLOAT4 來表示)，這是色彩 (RGBA) 的 4 個 32 位元浮點數值的對齊陣列。
 
-您需為每一個元件指派語意以及格式類型。 然後將描述傳送到 [**ID3D11Device1::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)。 當您在執行轉譯方法期間設定輸入組件時，我們會在呼叫 [**ID3D11DeviceContext1::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 時使用輸入配置。
+您需為每一個元件指派語意以及格式類型。 然後將描述傳送到 [**ID3D11Device1::CreateInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout)。 當您在執行轉譯方法期間設定輸入組件時，我們會在呼叫 [**ID3D11DeviceContext1::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 時使用輸入配置。
 
-Direct3D 11:描述特定的語意與輸入的配置
+Direct3D 11：使用特定語意說明輸入配置
 
 ``` syntax
 ComPtr<ID3D11InputLayout> m_inputLayout;
@@ -285,7 +285,7 @@ m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 
 最後，您需要確定著色器能夠藉由宣告輸入來了解輸入資料。 您在配置中指派的語意是用來選取 GPU 記憶體中的正確位置。
 
-Direct3D 11:宣告具有 HLSL 語意的著色器輸入的資料
+Direct3D 11：使用 HLSL 語意宣告著色器輸入資料
 
 ``` syntax
 struct VertexShaderInput
@@ -298,7 +298,3 @@ struct VertexShaderInput
  
 
  
-
-
-
-

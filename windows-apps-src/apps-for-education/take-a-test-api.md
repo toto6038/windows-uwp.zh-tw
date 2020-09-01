@@ -6,18 +6,18 @@ ms.date: 08/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: 3708252908c9f63bbb5070ef864b8418c857ac19
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: f5894e80c11d69c91be8492b80c3200e15a3dc31
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854716"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161262"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
-[進行測試](https://docs.microsoft.com/education/windows/take-tests-in-windows-10)是以瀏覽器為基礎的 UWP 應用程式，可呈現鎖定的線上評量以進行高 stakes its 的測試，讓教師可以專注于評量內容，而不是如何提供安全的測試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[進行測驗](/education/windows/take-tests-in-windows-10) 是以瀏覽器為基礎的 UWP 應用程式，可針對高風險測試轉譯鎖定的線上評量，讓教師能夠專注于評量內容，而不是如何提供安全的測試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
-如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
+如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
 
 ## <a name="reference-documentation"></a>參考文件
 進行測驗 API 存在於下列命名空間。 請注意，所有的 API 都相依於全域 `SecureBrowser` 物件。
@@ -30,9 +30,9 @@ ms.locfileid: "83854716"
 
 安全性命名空間可讓您鎖定裝置、檢查使用者和系統進程的清單、取得 MAC 和 IP 位址，以及清除快取的 web 資源。
 
-| 方法 | 描述   |
+| 方法 | 說明   |
 |--------|---------------|
-|[住](#lockDown) | 鎖定裝置以進行考試。 |
+|[鎖定](#lockDown) | 鎖定裝置以進行考試。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 判斷是否依舊將鎖定內容套用至裝置。 |
 |[getDeviceInfo](#getDeviceInfo) | 取得有關考試應用程式執行所在平台的詳細資訊。 |
 |[examineProcessList](#examineProcessList)|取得執行中使用者及系統處理程序的清單。|
@@ -58,9 +58,9 @@ ms.locfileid: "83854716"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **參數**  
-* `enable` - **true**表示在鎖定畫面上方執行「接受測試」應用程式，並套用本[檔](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中討論的原則。 **false** 會在鎖定畫面上停止執行 [進行測驗] 並將其關閉 (除非未將 App 鎖定)；在這種情況下沒有任何作用。  
-* `onSuccess`-[選擇性] 已成功啟用或停用鎖定之後要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
-* `onError`-[選擇性] 鎖定作業失敗時要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
+* `enable` - **true** 表示在鎖定畫面上方執行「進行測試」應用程式，並套用本 [檔](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中討論的原則。 **false** 會在鎖定畫面上停止執行 [進行測驗] 並將其關閉 (除非未將 App 鎖定)；在這種情況下沒有任何作用。  
+* `onSuccess` -[選擇性] 已成功啟用或停用鎖定之後要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
+* `onError` -[選擇性] 鎖定作業失敗時要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 
 **需求**  
 Windows 10 (版本 1709)
@@ -76,7 +76,7 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.isEnvironmentSecure(Function callback);`
 
 **參數**  
-* `callback`-此函式完成時所要呼叫的函數。 這必須是 `Function(String state)` 的格式，其中 `state` 是包含兩個欄位的 JSON 字串。 第一個是 `secure` 欄位，只有在所有必要的鎖定都已啟用 (或功能已停用) 來啟用安全考試環境，而且自從 App 進入鎖定模式後，這些鎖定無一遭到入侵時，此欄位才會顯示 `true`。 另一個欄位 `messageKey` 包含廠商特定的其他詳細資料或資訊。 這裡的意圖是要允許廠商加入增強布林值 `secure` 旗標的額外資訊：
+* `callback` -此函數完成時要呼叫的函式。 這必須是 `Function(String state)` 的格式，其中 `state` 是包含兩個欄位的 JSON 字串。 第一個是 `secure` 欄位，只有在所有必要的鎖定都已啟用 (或功能已停用) 來啟用安全考試環境，而且自從 App 進入鎖定模式後，這些鎖定無一遭到入侵時，此欄位才會顯示 `true`。 另一個欄位 `messageKey` 包含廠商特定的其他詳細資料或資訊。 這裡的意圖是要允許廠商加入增強布林值 `secure` 旗標的額外資訊：
 
 ```JSON
 {
@@ -99,12 +99,12 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.getDeviceInfo(Function callback);`
 
 **參數**  
-* `callback`-此函式完成時所要呼叫的函數。 這必須是 `Function(String infoObj)` 的格式，其中 `infoObj` 是包含數個欄位的 JSON 字串。 必須支援下列欄位：
-    * `os`代表 OS 類型（例如： Windows、macOS、Linux、iOS、Android 等）
-    * `name`代表作業系統版本名稱（如果有的話）（例如：塞拉里昂、Ubuntu）。
-    * `version`代表作業系統版本（例如：10.1、10 Pro 等）
-    * `brand`代表安全的瀏覽器商標（例如： OAKS、CA、SmarterApp 等）
-    * `model`僅代表行動裝置的裝置型號;桌面瀏覽器為 null/未使用。
+* `callback` -此函數完成時要呼叫的函式。 這必須是 `Function(String infoObj)` 的格式，其中 `infoObj` 是包含數個欄位的 JSON 字串。 必須支援下列欄位：
+    * `os` 代表作業系統類型 (例如： Windows、macOS、Linux、iOS、Android 等 ) 
+    * `name` 代表作業系統版本名稱（如果有的話） (例如：塞拉里昂、Ubuntu) 。
+    * `version` 代表作業系統版本 (例如：10.1、10 Pro 等 ) 
+    * `brand` 代表安全的瀏覽器商標 (例如： OAKS、CA、SmarterApp 等等 ) 
+    * `model` 只代表行動裝置的裝置型號;適用于桌面瀏覽器的 null/未使用。
 
 **需求**  
 Windows 10 (版本 1709)
@@ -120,8 +120,8 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.examineProcessList(String[] blacklistedProcessList, Function callback);`
 
 **參數**  
-* `blacklistedProcessList`-測試應用程式已列入黑名單的進程清單。  
-`callback`-一旦找到使用中的進程之後，要叫用的函式。 這必須使用下列格式：`Function(String foundBlacklistedProcesses)`，其中 `foundBlacklistedProcesses` 的格式為：`"['process1.exe','process2.exe','processEtc.exe']"`。 如果找不到任何列入封鎖清單的處理程序，這會是空白。 如果為 null，這表示原始函式呼叫發生錯誤。
+* `blacklistedProcessList` -測試應用程式已列入封鎖清單的進程清單。  
+`callback` -找到使用中的進程之後，要叫用的函數。 這必須使用下列格式：`Function(String foundBlacklistedProcesses)`，其中 `foundBlacklistedProcesses` 的格式為：`"['process1.exe','process2.exe','processEtc.exe']"`。 如果找不到任何列入封鎖清單的處理程序，這會是空白。 如果為 null，這表示原始函式呼叫發生錯誤。
 
 **備註**：清單不包含系統處理程序。
 
@@ -139,7 +139,7 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.close(restart);`
 
 **參數**  
-* `restart`-忽略此參數，但必須提供。
+* `restart` -這個參數會被忽略，但必須提供。
 
 **備註**：在 Windows 10 版本 1607 中，一開始必須鎖定裝置。 在較新版本中，這個方法會關閉瀏覽器，不論是否鎖定裝置。
 
@@ -157,7 +157,7 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.getPermissiveMode(Function callback)`
 
 **參數**  
-* `callback`-這個呼叫完成時要叫用的函式。 這必須使用下列格式：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 表示瀏覽器目前是否處於寬鬆模式。 如果未定義或為 null，則會在取得作業中發生錯誤。
+* `callback` -此呼叫完成時要叫用的函數。 這必須使用下列格式：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 表示瀏覽器目前是否處於寬鬆模式。 如果未定義或為 null，則會在取得作業中發生錯誤。
 
 **需求**  
 Windows 10 (版本 1709)
@@ -173,8 +173,8 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.setPermissiveMode(Boolean enable, Function callback)`
 
 **參數**  
-* `enable`-布林值，表示預期的寬鬆模式狀態。  
-* `callback`-這個呼叫完成時要叫用的函式。 這必須使用下列格式：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 表示瀏覽器目前是否處於寬鬆模式。 如果未定義或為 null，則會在設定作業中發生錯誤。
+* `enable` -指出預期的寬鬆模式狀態的布林值。  
+* `callback` -此呼叫完成時要叫用的函數。 這必須使用下列格式：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 表示瀏覽器目前是否處於寬鬆模式。 如果未定義或為 null，則會在設定作業中發生錯誤。
 
 **需求**  
 Windows 10 (版本 1709)
@@ -203,7 +203,7 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.getMACAddress(Function callback);`
 
 **參數**  
-* `callback`-這個呼叫完成時要叫用的函式。 這必須使用下列格式：`Function(String addressArray)`，其中 `addressArray` 的格式為：`"['00:11:22:33:44:55','etc']"`。
+* `callback` -此呼叫完成時要叫用的函數。 這必須使用下列格式：`Function(String addressArray)`，其中 `addressArray` 的格式為：`"['00:11:22:33:44:55','etc']"`。
 
 **備註**  
 依賴來源 IP 位址區分考試伺服器內的終端使用者電腦並不容易，因為學校的防火牆/NAT/Proxy 通常都在使用中。 MAC 位址可讓應用程式區分一般診斷用防火牆後方的終端用戶端電腦。
@@ -221,7 +221,7 @@ Windows 10 (版本 1709)
 **語法**  
 `DateTime SecureBrowser.security.getStartTime();`
 
-**退貨**  
+**返回**  
 表示考試應用程式啟動時間的 DateTime 物件。
 
 **需求**  
@@ -238,7 +238,7 @@ Windows 10 (版本 1709)
 `Object SecureBrowser.security.getCapability(String feature)`
 
 **參數**  
-`feature`-用來決定要查詢哪些功能的字串。 有效的功能字串是 "screenMonitoring"、"printing" 和 "textSuggestions" (區分大小寫)。
+`feature` -用來判斷要查詢之功能的字串。 有效的功能字串是 "screenMonitoring"、"printing" 和 "textSuggestions" (區分大小寫)。
 
 **傳回值**  
 此函式會傳回 JavaScript 物件或常值，格式為：`{<feature>:true|false}`。 如果啟用查詢的功能，則為**true**，如果未啟用功能，或功能字串無效，則為**false**。
@@ -256,10 +256,10 @@ Windows 10 (版本 1709)
 `void SecureBrowser.security.setCapability(String feature, String value, Function onSuccess, Function onError)`
 
 **參數**  
-* `feature`-用來決定要設定之功能的字串。 有效的功能字串是 `"screenMonitoring"`、`"printing"` 和 `"textSuggestions"` (區分大小寫)。  
-* `value`-功能的預定設定。 這必須是 `"true"` 或 `"false"`。  
-* `onSuccess`-[選擇性] 成功完成設定作業之後要呼叫的函式。 這必須使用 `Function(String jsonValue)` 的格式：其中 *jsonValue* 的格式為：`{<feature>:true|false|undefined}`。  
-* `onError`-[選擇性] 設定作業失敗時所要呼叫的函數。 這必須使用 `Function(String jsonValue)` 的格式：其中 *jsonValue* 的格式為：`{<feature>:true|false|undefined}`。
+* `feature` -用以判斷要設定之功能的字串。 有效的功能字串是 `"screenMonitoring"`、`"printing"` 和 `"textSuggestions"` (區分大小寫)。  
+* `value` -功能所需的設定。 這必須是 `"true"` 或 `"false"`。  
+* `onSuccess` -[選擇性] 成功完成設定作業之後要呼叫的函數。 這必須使用 `Function(String jsonValue)` 的格式：其中 *jsonValue* 的格式為：`{<feature>:true|false|undefined}`。  
+* `onError` -[選擇性] 設定作業失敗時要呼叫的函數。 這必須使用 `Function(String jsonValue)` 的格式：其中 *jsonValue* 的格式為：`{<feature>:true|false|undefined}`。
 
 **備註**  
 如果目標功能是瀏覽器未知的功能，則此函式會將 `undefined` 的值傳遞給回呼函式。

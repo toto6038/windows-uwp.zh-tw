@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e38d64750b410369a9ff9ebf871267b03e0ad07e
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 4bed5ad24c1478d47456d1e35a83ba4c54f99406
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054338"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159542"
 ---
 # <a name="use-the-accelerometer"></a>使用加速計
 
 
 **重要 API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**加速計**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**加速計**](/uwp/api/Windows.Devices.Sensors.Accelerometer)
 
 **範例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "89054338"
 
 簡單的遊戲應用程式倚賴單一感應器 (也就是加速計) 做為輸入裝置。 這些應用程式通常只使用一或兩個軸做為輸入，但是它們也可以使用 shake 事件做為另一個輸入來源。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 

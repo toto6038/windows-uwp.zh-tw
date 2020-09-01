@@ -1,38 +1,38 @@
 ---
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: 啟用裝置功能
-description: 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。
+description: 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的應用程式使用相機、麥克風、定位感應器及其他裝置。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cd8c493333c2c35dee5ead064f9d002701cc1148
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 51481e30f3dc2f60bf4483e4a22d48b5df533994
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370219"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159712"
 ---
 # <a name="enable-device-capabilities"></a>啟用裝置功能
 
 
 
-本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。
+本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的應用程式使用相機、麥克風、定位感應器及其他裝置。
 
 ## <a name="specify-the-device-capabilities-your-app-will-use"></a>指定您 app 將要使用的裝置功能
 
 
-當您使用特定類型的裝置時，Windows app 需要您在 app 套件資訊清單中指定。 在 Visual Studio 中，您可以使用[資訊清單設計工具](https://docs.microsoft.com/previous-versions/br230259(v=vs.140))宣告大多數的功能，或是如同[如何在套件資訊清單中指定裝置功能 (手動)](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) 中所述的方式，手動新增它們。 本教學課程假設您使用的是資訊清單設計工具。
+當您使用特定類型的裝置時，Windows app 需要您在 app 套件資訊清單中指定。 在 Visual Studio 中，您可以使用[資訊清單設計工具](/previous-versions/br230259(v=vs.140))宣告大多數的功能，或是如同[如何在套件資訊清單中指定裝置功能 (手動)](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest) 中所述的方式，手動新增它們。 本教學課程假設您使用的是資訊清單設計工具。
 
-**附註**  某些類型的裝置，例如印表機、 掃描器和感應器，不需要在應用程式封裝資訊清單中宣告。
+**注意**   某些類型的裝置（例如印表機、掃描器和感應器）不需要在應用程式套件資訊清單中宣告。
 
 -   在 Visual Studio [方案總管] 中，按兩下套件資訊清單檔案 **Package.appxmanifest**。
--   開啟 [功能]  索引標籤。
--   選取您的應用程式使用的裝置功能。 如果沒有在資訊清單設計工具中看到您要尋找的功能，可手動新增。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)。
+-   開啟 **\[功能\]** 索引標籤。
+-   選取您的應用程式使用的裝置功能。 如果沒有在資訊清單設計工具中看到您要尋找的功能，可手動新增。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-in-a-package-manifest)。
 
-| 裝置功能 | 資訊清單設計工具 | 描述 |
+| 裝置功能 | 資訊清單設計工具 | 說明 |
 |-------------------|-------------------|-------------|    
-| AllJoyn | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓網路上具備 AllJoyn 功能的 app 和裝置能夠進行探索且與彼此互動。 存取 [**Windows.Devices.AllJoyn**](https://docs.microsoft.com/uwp/api/Windows.Devices.AllJoyn) 命名空間中之 API 的所有 app 都必須使用這個功能。 |
+| AllJoyn | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓網路上具備 AllJoyn 功能的 app 和裝置能夠進行探索且與彼此互動。 存取 [**Windows.Devices.AllJoyn**](/uwp/api/Windows.Devices.AllJoyn) 命名空間中之 API 的所有 app 都必須使用這個功能。 |
 | 封鎖的聊天訊息 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠讀取已由垃圾郵件篩選 app 封鎖的 SMS 和 MMS 訊息。 |
 | 輸入聊天存取 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠讀取及刪除文字訊息。 它也能讓 app 將聊天訊息儲存於系統資料存放區中。 |
 | 程式碼產生 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠動態產生程式碼。 |
@@ -42,22 +42,22 @@ ms.locfileid: "66370219"
 | Location| ![資訊清單設計工具中提供](images/ap-tools.png) | 提供目前位置的存取。 這是透過專用硬體 (如電腦中的 GPS 感應器) 取得或由可用的網路資訊衍生的位置。 | 
 | 麥克風 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供麥克風音訊摘要的存取。 這樣可讓 app 從連接的麥克風錄音。 | 
 | 音樂媒體櫃 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供在本機電腦和 **HomeGroup** 電腦中，新增、變更或刪除**音樂媒體櫃**中檔案的功能。 | 
-| 物件 3D | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓使用者以程式設計方式存取他們的 [立體物件]  ，允許 app 在沒有使用者互動的情況下，列舉和存取媒體櫃中的所有檔案。 這項功能通常用於必須存取整個 [立體物件]  庫的 3D app 和遊戲。 | 
-| 通話 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠存取所有裝置上的電話線路，並執行下列功能：在無需提示使用者的情況下，在手機上撥打電話並顯示系統撥號程式、存取與線路相關的中繼資料、存取與線路相關的觸發程序。 讓使用者選取的垃圾電話篩選 app 能夠設定和檢查封鎖清單及通話來源資訊。 | 
+| 物件 3D | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓使用者以程式設計方式存取他們的 **\[立體物件\]**，允許 app 在沒有使用者互動的情況下，列舉和存取媒體櫃中的所有檔案。 這項功能通常用於必須存取整個 **\[立體物件\]** 庫的 3D app 和遊戲。 | 
+| 撥打電話 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠存取所有裝置上的電話線路，並執行下列功能：在無需提示使用者的情況下，在手機上撥打電話並顯示系統撥號程式、存取與線路相關的中繼資料、存取與線路相關的觸發程序。 讓使用者選取的垃圾電話篩選 app 能夠設定和檢查封鎖清單及通話來源資訊。 | 
 | 圖片媒體櫃 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供在本機電腦和 **HomeGroup** 電腦中，新增、變更或刪除**圖片媒體櫃**中檔案的功能。 | 
-| 服務點 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供服務點週邊設備存取權。 需要具備這個功能，才能存取 [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) 命名空間中的 API。 | 
+| 服務點 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供服務點週邊設備存取權。 需要具備這個功能，才能存取 [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService) 命名空間中的 API。 | 
 | 私人網路 (用戶端 &amp; 伺服器) | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供對內和對外存取權限給具有已驗證網域控制站或使用者已指定為家用或工作場所網路的內部網路。 一律封鎖對重要連接埠的輸入存取。 | 
-| 近接 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供透過近距離無線通訊 (NFC) 將鄰近裝置連線到電腦的能力。 近距離鄰近性可用來傳送檔案或與鄰近裝置上的 app 通訊。 | 
-| 抽取式存放裝置 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供新增、變更或刪除卸除式存放裝置上檔案的功能。 app 在抽取式存放裝置上可以存取的檔案類型，只有在資訊清單中使用**檔案類型關聯**宣告所定義的檔案類型。 app 無法存取 **HomeGroup** 電腦上的抽取式存放裝置。 | 
-| 共用的使用者憑證 | ![資訊清單設計工具中提供](images/ap-tools.png) | 這個功能會受限於 Microsoft Store 原則。 它提供存取軟體和硬體憑證 (例如智慧卡憑證)，進行使用者身分識別驗證的功能。 系統會在執行階段中叫用相關的 API，使用者必須採取動作 (插入卡、選取憑證等)。 如果您的 app 包含透過 **Certificates** 宣告的私密憑證，則不需要這個功能。 | 
-| 使用者帳戶資訊 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供 app 存取使用者名稱和圖片的能力。 您需要具備這個功能，才能存取 [**Windows.System.UserProfile**](https://docs.microsoft.com/uwp/api/Windows.System.UserProfile) 命名空間中的某些 API。 | 
+| 鄰近 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供透過近距離無線通訊 (NFC) 將鄰近裝置連線到電腦的能力。 近距離鄰近性可用來傳送檔案或與鄰近裝置上的 app 通訊。 | 
+| 卸除式存放裝置 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供新增、變更或刪除卸除式存放裝置上檔案的功能。 app 在抽取式存放裝置上可以存取的檔案類型，只有在資訊清單中使用**檔案類型關聯**宣告所定義的檔案類型。 app 無法存取 **HomeGroup** 電腦上的抽取式存放裝置。 | 
+| 共用使用者憑證 | ![資訊清單設計工具中提供](images/ap-tools.png) | 這個功能會受限於 Microsoft Store 原則。 它提供存取軟體和硬體憑證 (例如智慧卡憑證)，進行使用者身分識別驗證的功能。 系統會在執行階段中叫用相關的 API，使用者必須採取動作 (插入卡、選取憑證等)。 如果您的 app 包含透過 **Certificates** 宣告的私密憑證，則不需要這個功能。 | 
+| 使用者帳戶資訊 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供 app 存取使用者名稱和圖片的能力。 您需要具備這個功能，才能存取 [**Windows.System.UserProfile**](/uwp/api/Windows.System.UserProfile) 命名空間中的某些 API。 | 
 | 視訊庫 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供在本機電腦和 **HomeGroup** 電腦中，新增、變更或刪除**視訊庫**中檔案的功能。 | 
-| VOIP 通話 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠在 [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) 命名空間中存取 VOIP 通話 API。 | 
-| Webcam | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供存取內建相機或連接的網路攝影機的視訊輸出。 這可讓應用程式擷取快照和影片。 | 
+| VOIP 通話 | ![資訊清單設計工具中提供](images/ap-tools.png) | 讓 app 能夠在 [**Windows.ApplicationModel.Calls**](/uwp/api/Windows.ApplicationModel.Calls) 命名空間中存取 VOIP 通話 API。 | 
+| 網路攝影機 | ![資訊清單設計工具中提供](images/ap-tools.png) | 提供存取內建相機或連接的網路攝影機的視訊輸出。 這可讓應用程式擷取快照和影片。 | 
 | USB | | 提供自訂 USB 裝置的存取。 此功能需要子元素。 Windows Phone 不支援此功能。 | 
-| 人性化介面裝置 (HID) | | 提供人性化介面裝置 (HID) 的存取。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定 HID 的裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)。 | 
-| 藍牙 GATT | | 透過主要服務的集合 (包括服務、特性和描述元)，提供藍牙 LE 裝置的存取。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定藍牙的裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth)。 | 
-| 藍牙 RFCOMM |  | 提供可支援基本速率/延伸資料速率 (BR/EDR) 傳輸之 API 的存取，也讓您的 UWP app 存取可實作序列埠設定檔 (SPP) 的裝置。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定藍牙的裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth)。 |
+| 人性化介面裝置 (HID) | | 提供人性化介面裝置 (HID) 的存取。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定 HID 的裝置功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid)。 | 
+| 藍牙 GATT | | 透過主要服務的集合 (包括服務、特性和描述元)，提供藍牙 LE 裝置的存取。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定藍牙的裝置功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth)。 | 
+| 藍牙 RFCOMM |  | 提供可支援基本速率/延伸資料速率 (BR/EDR) 傳輸之 API 的存取，也讓您的 UWP app 存取可實作序列埠設定檔 (SPP) 的裝置。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定藍牙的裝置功能](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth)。 |
 
 ## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>使用 Windows 執行階段 API 與您的裝置進行通訊
 
@@ -65,15 +65,14 @@ ms.locfileid: "66370219"
 
 | 裝置功能        | API             | 
 |--------------------------|-----------------|
-| AllJoyn                  | [**Windows.Devices.AllJoyn**](https://docs.microsoft.com/uwp/api/Windows.Devices.AllJoyn) | 
-| 封鎖的聊天訊息    | [**Windows.ApplicationModel.CommunicationBlocking**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.CommunicationBlocking) | 
-| Location                 | 如需詳細資訊，請參閱[地圖與位置概觀](https://docs.microsoft.com/windows/uwp/maps-and-location/index)。 | 
-| 通話               | [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) | 
-| 使用者帳戶資訊 | [**Windows.System.UserProfile**](https://docs.microsoft.com/uwp/api/Windows.System.UserProfile) | 
-| VOIP 通話             | [**Windows.ApplicationModel.Calls**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Calls) | 
-| USB                      | [**Windows.Devices.Usb**](https://docs.microsoft.com/uwp/api/Windows.Devices.Usb) | 
-| HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://docs.microsoft.com/uwp/api/Windows.Devices.HumanInterfaceDevice) | 
-| 藍牙 GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) | 
-| 藍牙 RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) | 
-| 服務點         | [**Windows.Devices.PointOfService**](https://docs.microsoft.com/uwp/api/Windows.Devices.PointOfService) |
-
+| AllJoyn                  | [**Windows.Devices.AllJoyn**](/uwp/api/Windows.Devices.AllJoyn) | 
+| 封鎖的聊天訊息    | [**Windows.ApplicationModel.CommunicationBlocking**](/uwp/api/Windows.ApplicationModel.CommunicationBlocking) | 
+| Location                 | 如需詳細資訊，請參閱[地圖與位置概觀](../maps-and-location/index.md)。 | 
+| 撥打電話               | [**ApplicationModel 呼叫**](/uwp/api/Windows.ApplicationModel.Calls) | 
+| 使用者帳戶資訊 | [**Windows.System。UserProfile**](/uwp/api/Windows.System.UserProfile) | 
+| VOIP 通話             | [**ApplicationModel 呼叫**](/uwp/api/Windows.ApplicationModel.Calls) | 
+| USB                      | [**Windows.Devices.Usb**](/uwp/api/Windows.Devices.Usb) | 
+| HID                      | [**Windows.Devices.HumanInterfaceDevice**](/uwp/api/Windows.Devices.HumanInterfaceDevice) | 
+| 藍牙 GATT           | [**GenericAttributeProfile。**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) | 
+| 藍牙 RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm) | 
+| 服務點         | [**Windows.Devices.PointOfService**](/uwp/api/Windows.Devices.PointOfService) |

@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows, 遊戲, 轉譯, 場景, 深度測試, 陰影
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c2c4e5d45b28c318085f4ce257b587f23f1426
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: fd38378e0a1f4cbdf4f9ded246b4b94ed3a705eb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368101"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159242"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>使用深度測試轉譯場景
 
 
 
 
-將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 第 3 個[逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區](implementing-depth-buffers-for-shadow-mapping.md)。
+將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第三部分。
 
 ## <a name="include-transformation-for-light-frustum"></a>包含光線範圍的轉換
 
@@ -67,7 +67,7 @@ PixelShaderInput main(VertexShaderInput input)
 ## <a name="test-whether-the-position-is-in-the-light-frustum"></a>測試位置是否位於光線範圍中
 
 
-首先，透過將 X 與 Y 座標標準化，以檢查像素是否位於光線的檢視範圍中。 如果它們都在範圍內\[0，1\]則很可能要在陰影中像素。 否則，您可以略過深度測試。 著色器可以呼叫 [Saturate](https://docs.microsoft.com/windows/desktop/direct3dhlsl/saturate) 並根據原始值來比較結果，藉以快速測試此項目。
+首先，透過將 X 與 Y 座標標準化，以檢查像素是否位於光線的檢視範圍中。 如果兩者都在 \[ 0 到1的範圍內，則 \] 圖元可以是陰影。 否則，您可以略過深度測試。 著色器可以呼叫 [Saturate](/windows/desktop/direct3dhlsl/saturate) 並根據原始值來比較結果，藉以快速測試此項目。
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -89,7 +89,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 ## <a name="depth-test-against-the-shadow-map"></a>根據陰影圖進行的深度測試
 
 
-使用一個取樣比較函式 ([SampleCmp](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) 或 [SampleCmpLevelZero](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero))，根據深度圖來測試像素在光線空間中的深度。 計算標準化的光線空間深度值 (也就是 `z / w`)，並將值傳遞到比較函式。 因為我們針對取樣器使用 LessOrEqual 比較測試，因此內建函式會在通過比較測試時傳回零；這表示像素位於陰影中。
+使用一個取樣比較函式 ([SampleCmp](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmp) 或 [SampleCmpLevelZero](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-samplecmplevelzero))，根據深度圖來測試像素在光線空間中的深度。 計算標準化的光線空間深度值 (也就是 `z / w`)，並將值傳遞到比較函式。 因為我們針對取樣器使用 LessOrEqual 比較測試，因此內建函式會在通過比較測試時傳回零；這表示像素位於陰影中。
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -161,7 +161,3 @@ return float4(input.color * ambient, 1.f);
  
 
  
-
-
-
-

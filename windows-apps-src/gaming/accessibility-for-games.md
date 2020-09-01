@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, 協助工具, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 347f5c6900806ef4658b81b8db15957029d39116
-ms.sourcegitcommit: 6af7ce0e3c27f8e52922118deea1b7aad0ae026e
+ms.openlocfilehash: f90f976f696d5c49e7f772627bbb7d0e3e3d0908
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478644"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159432"
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 
@@ -35,7 +35,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 如果您製作了令人驚嘆的遊戲，但是內容過於複雜難懂，以致於只有少數玩家可以進行，您就限制了您的銷售。 同樣地，如果您製作的遊戲不適合有肢體障礙、感官障礙或認知障礙的玩家進行，您也會錯過潛在的銷售。 例如，考慮到在[美國有 19% 的人口有某種形式的身心障礙](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[預估美國 14% 的成人有閱讀困難](https://nces.ed.gov/naal/estimates/overview.aspx)，並且[預估 10% 的男性有某種形式的色覺辨認障礙](https://www.aao.org/eye-health/diseases/color-blindness-risk)，這對於您作品的收益可能會有很大的影響。 
 
-如需更詳細的商業理由，請參閱[如何設計無障礙遊戲](https://docs.microsoft.com/windows/desktop/DxTechArts/accessibility-best-practices)。
+如需更詳細的商業理由，請參閱[如何設計無障礙遊戲](/windows/desktop/DxTechArts/accessibility-best-practices)。
 
 ### <a name="better-games"></a>更棒的遊戲
 
@@ -71,12 +71,12 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 「障礙」的定義為「提供的服務、產品或環境不符合個人需求」。 ([包容性影片](https://www.microsoft.com/design/inclusive/)，Microsoft.com)。這表示任何人都可能體驗到障礙，且該障礙可能是短期或情境的狀態。 請思考擁有這些狀態的玩家在進行您的遊戲時可能遭遇到的挑戰，並思考如何設計使遊戲的能更加適合他們。 以下是一些需要考量的障礙：
 
-### <a name="vision"></a>視力
+### <a name="vision"></a>視覺
 
 *   醫學性的長期症狀，例如青光眼、白內障、色盲、近視及糖尿病視網膜病變
 *   短期的情境狀態，例如小型監視器或螢幕大小、低解析度螢幕，或是因明亮光源像是陽光照射在監視器或手機螢幕上而產生的螢幕反光
         
-### <a name="hearing"></a>聽力
+### <a name="hearing"></a>聽覺
 
 * 醫學性的長期症狀，例如因疾病或遺傳所造成的完全失聰或部分聽力損失
 * 短期的情境狀態，例如過多的背景噪音、低品質的音質，或是為了避免干擾其他人而限制音量
@@ -115,7 +115,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ### <a name="reinforce-communicate-information-in-more-than-one-way"></a>強化：使用一種以上的方式進行資訊的通訊
 
-第二個原則是通用設計的概念應運而生，不僅帶來更多玩家，也改善整體的體驗。 例如，影像以及文字、符號和色彩。 以不同顏色標記範圍為基礎的地圖不僅不可能供彩色盲玩家使用，對於必須記住所有內容的人來說，這也很令人沮喪。 新增符號對每個人來說可擁有更好的使用體驗。
+第二個原則是通用設計的概念應運而生，不僅帶來更多玩家，也改善整體的體驗。 例如，影像以及文字、符號和色彩。 以不同顏色標記範圍為基礎的地圖，不僅無法讓色盲的玩家使用，也對必須記住所有專案的其他人感到挫折。 新增符號對每個人來說可擁有更好的使用體驗。
 
 ### <a name="innovate-be-creative"></a>創新：發揮創意
 
@@ -140,10 +140,10 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 | 檢查清單                                         | 協助工具功能                                                                                                         |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
 | 遊戲內動畫                                | 有字幕和輔助字幕、已測試光敏感性                                                                           |
-| 整體藝術 (2D 與 3D 圖形)              | 色彩盲易懂的色彩和選項，不完全取決於識別的色彩，也會使用圖形和模式|
+| 整體藝術 (2D 與 3D 圖形)              | 彩色的易記色彩和選項，不會完全相依于色彩以進行識別，但是也會使用圖形和模式|
 | 開始畫面、設定功能表及其他功能表       | 能夠大聲讀出選項的功能、能夠記住設定的功能、替代的命令控制輸入方法、可調整的 UI 字型大小  |
 | 遊戲方式                                          | 豐富的可調整難度等級、字幕及輔助字幕、針對玩家提供良好的視覺及音訊回饋                           |
-| 抬頭顯示器                                       | 可調整的螢幕位置、可調整的字型大小、彩色的易記選項                                                  |        
+| 抬頭顯示器                                       | 可調整的螢幕位置、可調字型大小、色盲易記選項                                                  |        
 | 控制輸入                                     | 可對應到輸入裝置的控制項、自訂控制器支援、允許簡化遊戲輸入                               |        
 
 ### <a name="playtest-and-iterate-get-gamers-feedback"></a>遊戲測試與逐一查看：取得玩家的意見反應
@@ -158,24 +158,24 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ## <a name="game-accessibility-features"></a>遊戲協助工具功能
 
-本節會概述一些可讓遊戲變得更容易存取的功能。 這些功能是從[遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)網站取得的指導方針衍生而來。 該資源代表一組共同作業的工作室、專家和學校檔的結果。
+本節會概述一些可讓遊戲變得更容易存取的功能。 這些功能衍生自 [遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/) 網站所採用的指導方針。 該資源代表一組工作室、專家和學校的合作結果。
 
-### <a name="color-blind-friendly-graphics-and-user-interface"></a>彩色的易記圖形和使用者介面
+### <a name="color-blind-friendly-graphics-and-user-interface"></a>色盲易記圖形和使用者介面
 
 眼睛的視網膜有兩種感光細胞：視錐細胞感受光線位置，視杆細胞感受低光源的環境。 
 
-視錐細胞有三種類型 (紅、綠和藍)，讓我們可以正確地檢視色彩。 當這三種類型中的一或多個光線未如預期般運作時，會發生色盲。 色盲的程度範圍可以從幾乎一般的色彩感知，到紅色、綠色或藍色光源的區分，完全無法察覺任何色彩。 
+視錐細胞有三種類型 (紅、綠和藍)，讓我們可以正確地檢視色彩。 當這三種類型的一或多個淺圓錐未如預期般運作時，就會發生色盲。 色盲程度的範圍從幾乎一般的色彩感知，到 red、綠或藍燈的敏感度都完全無法完全察覺。 
 
-由於對藍色光源的區分程度較低，因此在設計色盲時，色彩的選擇是針對紅色或綠色色盲的人員所提供：
+因為在設計色盲時較不常降低對藍色的敏感度，所以色彩的選取範圍適用于紅色或綠色色盲的人員：
  
-  + 使用色彩組合，讓具有紅色/綠色色盲的人可以區別：
+  + 使用色彩組合，可由視力為紅色/綠色色盲的人員區分：
   
     * 看起來類似的色彩：所有色度的紅色和綠色，包含棕色和橘色
     * 突出的色彩：藍色和黃色
     
   + 不要僅仰賴要傳達或區分遊戲物件的色彩。 也使用形狀和圖案。
   + 如果您必須只單獨依賴色彩，可組合預設和自由選擇的色彩，以便可由需要的玩家充分進行自訂，而不用針對不需要它們的玩家建立額外的工作。
-  + 使用色盲的模擬器測試您的設計，讓您可以透過色盲眼來觀看您的設計。 這可協助您避免發生常見的對比問題。 [Color Oracle](https://www.colororacle.org)是免費的彩色盲模擬器，可以模擬三種最常見的色彩視覺缺點類型-deuteranopia、protanopia 和 tritanopia。
+  + 使用色盲模擬器來測試您的設計，讓您可以透過色盲眼來觀賞您的設計。 這可協助您避免發生常見的對比問題。 [Color Oracle](https://www.colororacle.org) 是一個免費的色盲模擬器，可模擬三種最常見的色彩視覺缺陷類型： deuteranopia、protanopia 和 tritanopia。
   
 ### <a name="closed-captioning-and-subtitles"></a>隱藏式輔助字幕與字幕
 
@@ -185,7 +185,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 *   選取簡單易於閱讀的字型。
 *   選取夠大的字型大小，或考慮使用可調整字型大小選項以提供更多彈性。 (理想的字型大小取決於螢幕大小、和螢幕之間的檢視距離等等)。
-*   在背景與字型色彩之間建立高對比。 文字使用強調外框和陰影。 標題使用深色背景重疊字並請記得提供可將其開啟或關閉的選項。 (如需詳細資訊，請參閱[對比率資訊](https://docs.microsoft.com/windows/uwp/accessibility/accessible-text-requirements))。
+*   在背景與字型色彩之間建立高對比。 文字使用強調外框和陰影。 標題使用深色背景重疊字並請記得提供可將其開啟或關閉的選項。 (如需詳細資訊，請參閱[對比率資訊](../design/accessibility/accessible-text-requirements.md))。
 * 在畫面上顯示簡短句子，一次每行最長 38 個字元且最多 2-3 行。 (請記住不要在事件發生前顯示文字，以避免洩漏遊戲劇情)。
 *   區別發出聲音或說話的對象。 (範例：「丹尼爾：嗨！」)
 *   提供開啟和關閉隱藏式輔助字幕和字幕的選項。 (其他功能：根據重要性選擇顯示多少聲音資訊的功能)。
@@ -196,7 +196,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 沒有麥克風連接到其遊戲裝置的人，仍然可與正在說話的某人用語音交談。 他們可以在聊天視窗中輸入文字，而這些訊息會轉換為語音。 也可以讓聽力不太好的人，閱讀其正用語音交談之對象的對話轉譯後的文字訊息。
 
-對於 ID@Xbox 的開發人員和受管理的合作夥伴計畫，在 Xbox Live 服務中，文字轉換語音和語音轉換文字功能可做為[遊戲聊天 2 協助工具功能](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分。 如需詳細資訊，請參閱[遊戲交談 2 概觀](https://docs.microsoft.com/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md)。
+對於 ID@Xbox 的開發人員和受管理的合作夥伴計畫，在 Xbox Live 服務中，文字轉換語音和語音轉換文字功能可做為[遊戲聊天 2 協助工具功能](/gaming/xbox-live/multiplayer/chat/using-game-chat-2.md#accessibility)的一部分。 如需詳細資訊，請參閱[遊戲交談 2 概觀](/gaming/xbox-live/multiplayer/chat/game-chat-2-overview.md)。
 
 ### <a name="sound-feedback"></a>音訊回饋
 
@@ -243,7 +243,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：由 Cambridge Research System Ltd 與 Graham Harding 教授開發的 [The Harding Test](https://www.hardingtest.com/index.php?page=test) 和 [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)。) 
 
-包含做為設定選項的 **\[閃爍開啟/關閉\]** ，預設是將 **\[閃爍\]** 設為 **\[關閉\]** 。 如此一來，您即保護還不知道他們很容易癲癇發作的玩家。
+包含做為設定選項的 **\[閃爍開啟/關閉\]**，預設是將 **\[閃爍\]** 設為 **\[關閉\]**。 如此一來，您即保護還不知道他們很容易癲癇發作的玩家。
 
 在遊戲關卡間設計中斷點，鼓勵玩家休息以避免不停地進行遊戲。
 
@@ -252,22 +252,22 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 以下是一些提供遊戲協助工具其他資訊的外部網站。
 
 ### <a name="game-accessibility-guidelines"></a>遊戲協助工具指導方針
-* [遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)（用來做為本主題的參考）
-* [AbleGamers Foundation 指導方針](https://accessible.games/accessible-player-experiences/)（做為本主題的參考）
-* [設計通用存取（UA）遊戲](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* 本主題中的[遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/) (用來作為參考) 
+* 本主題中的[AbleGamers 基礎指導方針](https://accessible.games/accessible-player-experiences/) (用來作為參考) 
+* [設計通用無障礙 (UA) 遊戲](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自訂輸入控制器
-* [特殊效果](https://www.specialeffect.org.uk/)
-* [War 戰鬥機參與](https://www.warfighterengaged.org/)
+* [Special effect](https://www.specialeffect.org.uk/)
+* [War fighter engaged](https://www.warfighterengaged.org/)
 
-### <a name="other-references-used"></a>其他使用的參考
-* [彩色盲人感知，這是一家社區感青睞的公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [如何妥善執行子字幕&mdash;Gamasutra by Ian Hamilton 的 blog 文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [所有計劃的創新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [癲癇 foundation](https://www.epilepsy.com/)
+### <a name="other-references-used"></a>使用的其他參考
+* [Color Blind Awareness，一間以社群利益為重的公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [如何 &mdash; 在 Gamasutra By Ian Hamilton 上進行子標題的完整 blog 文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [適用所有程式的創新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [癲癇症基本知識](https://www.epilepsy.com/)
 
 ### <a name="related-links"></a>相關連結
-* [內含設計](https://www.microsoft.com/design/inclusive/)
+* [包容性設計](https://www.microsoft.com/design/inclusive/)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
-* [開發可存取的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/accessibility/accessibility)
-* [協助工具電子書的工程軟體](https://www.microsoft.com/download/details.aspx?id=19262)
+* [開發無障礙的 UWP App](../design/accessibility/accessibility.md)
+* [適用於協助工具電子書的工程軟體](https://www.microsoft.com/download/details.aspx?id=19262)

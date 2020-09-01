@@ -6,46 +6,46 @@ ms.date: 07/03/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b61b7bcd18419ec9be719b5f565e5503953be7c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8836753778b1dd5dcbc8856b0df5ec1f11d8e753
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493465"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159802"
 ---
 # <a name="sensor-orientation"></a>感應器方向
 
-[**加速**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Accelerometer)計、[**陀螺儀**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**羅盤**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Compass)、[**傾角**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Inclinometer)和[**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor)類別中的感應器資料是由其參考軸所定義。 這些軸線是由裝置的參照畫面定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
+[**加速**](/uwp/api/Windows.Devices.Sensors.Accelerometer)計、[**陀螺儀**](/uwp/api/Windows.Devices.Sensors.Gyrometer)、[**羅盤**](/uwp/api/Windows.Devices.Sensors.Compass)、[**傾角羅盤**](/uwp/api/Windows.Devices.Sensors.Inclinometer)和[**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor)類別的感應器資料是由其參考軸所定義。 這些軸線是由裝置的參照畫面定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
 
 ### <a name="important-apis"></a>重要 API
 
-- [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
-- [**Windows. 感應器。自訂**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Custom)
+- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+- [**Windows. 感應器. 自訂**](/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## <a name="display-orientation-vs-device-orientation"></a>顯示方向和裝置方向
 
 為了了解感應器的參考軸線，您必須區分顯示方向與裝置方向。 顯示方向就是螢幕上顯示的方向文字與影像，而裝置方向則是裝置的實際位置。
 
 > [!NOTE]
-> 正 Z 軸會從裝置畫面延伸，如下圖所示。
-> :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="適用于膝上型電腦的 Z 軸":::
+> 正 Z 軸會從裝置畫面中擴充，如下圖所示。
+> :::image type="content" source="images/sensor-orientation-zaxis-1-small.png" alt-text="Z 軸的膝上型電腦":::
 
-在下列圖表中，裝置和顯示方向都是[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)（顯示的感應器軸專屬於橫向方向）。
+在下列圖表中，裝置和顯示方向都是 [橫向](/uwp/api/Windows.Graphics.Display.DisplayOrientations) (感應器軸顯示為橫向) 特定。
 
 
-此圖表顯示[橫向](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)的顯示和裝置方向。
+下圖顯示 [橫向](/uwp/api/Windows.Graphics.Display.DisplayOrientations)的顯示和裝置方向。
 
 :::image type="content" source="images/sensor-orientation-a-small.jpg" alt-text="顯示方向與裝置方向為 Landscape":::
 
-下圖顯示[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)中的顯示和裝置方向。
+下圖顯示 [LandscapeFlipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations)中顯示和裝置的方向。
 
 :::image type="content" source="images/sensor-orientation-b-small.jpg" alt-text="顯示方向與裝置方向為 LandscapeFlipped":::
 
-這個最後的圖表會顯示裝置方向為[LandscapeFlipped](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations)時的橫向顯示方向。
+此最後的圖表會顯示橫向的顯示方向，而裝置方向為 [LandscapeFlipped](/uwp/api/Windows.Graphics.Display.DisplayOrientations)。
 
 :::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="顯示方向為 Landscape，而裝置方向為 LandscapeFlipped":::
 
-使用 [**GetForCurrentView**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) 方法搭配 [**CurrentOrientation**](https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation.currentorientation) 屬性，即可透過 [**DisplayInformation**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayInformation) 類別查詢方向值。 接著與 [**DisplayOrientations**](https://docs.microsoft.com/uwp/api/Windows.Graphics.Display.DisplayOrientations) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
+使用 [**GetForCurrentView**](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) 方法搭配 [**CurrentOrientation**](/uwp/api/windows.graphics.display.displayinformation.currentorientation) 屬性，即可透過 [**DisplayInformation**](/uwp/api/Windows.Graphics.Display.DisplayInformation) 類別查詢方向值。 接著與 [**DisplayOrientations**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) 列舉比較就能建立邏輯。 記住您支援哪些方向，就必須支援將參考軸線轉換為該方向。
 
 ## <a name="landscape-first-vs-portrait-first-devices"></a>橫向優先裝置與直向優先裝置
 
@@ -164,7 +164,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="display-orientation-and-device-orientation"></a>顯示方向和裝置方向
 
-[**OrientationSensor**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 請將這些不同的方向視為逆時針旋轉到 Z 軸，因此我們需要反轉旋轉以取回使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
+[**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) 資料必須以不同方式變更。 您可以將這些不同的方向視為逆時針旋轉至 Z 軸的方向，因此我們必須反轉旋轉，以取回使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
 :::image type="content" source="images/eulers-formula.png" alt-text="尤拉公式":::
 
@@ -183,4 +183,4 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## <a name="see-also"></a>另請參閱
 
-[整合動作與方向感應器](https://docs.microsoft.com/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)
+[整合動作與方向感應器](/windows-hardware/design/whitepapers/integrating-motion-and-orientation-sensors)

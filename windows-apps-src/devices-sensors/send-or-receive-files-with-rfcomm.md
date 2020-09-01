@@ -10,34 +10,34 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: d95b7159c64c7796e55d4566d62630c076a707b1
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: 069fea914a5802e8f8f09efbda5751cb0447c910
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469553"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159612"
 ---
 # <a name="bluetooth-rfcomm"></a>藍牙 RFCOMM
 
 **重要 API**
 
-- [**Windows. 藍牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+- [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
+- [**Windows.Devices.Bluetooth.Rfcomm**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 本文將概略說明通用 Windows 平台 (UWP) app 中的藍牙 RFCOMM，並提供範例程式碼來說明如何傳送或接收檔案。
 
 > [!Important]
-> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+> 您必須在 *package.appxmanifest*中宣告「藍牙」功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 ## <a name="overview"></a>概觀
 
-[**Windows.Devices.Bluetooth.Rfcomm**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](https://docs.microsoft.com/uwp/api/Windows.Devices.Portable.StorageDevice)。 資料讀取和寫入是為了利用 [**established data stream patterns**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
+[**Windows.Devices.Bluetooth.Rfcomm**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm) 命名空間中的 API 建構在適用於 Windows 裝置的現有模式上，包括 [**enumeration**](/uwp/api/Windows.Devices.Enumeration) 和 [**instantiation**](/uwp/api/Windows.Devices.Portable.StorageDevice)。 資料讀取和寫入是為了利用 [**established data stream patterns**](/uwp/api/Windows.Storage.Streams.DataReader) 和 [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams) 中的物件所設計。 服務探索通訊協定 (SDP) 屬性具有值和預期的類型。 但是一些常見裝置的 SDP 屬性實作有誤，導致值並非預期的類型。 此外，許多 RFCOMM 的用法完全不需要額外的 SDP 屬性。 基於這些理由，此 API 提供未剖析之 SDP 資料的存取，開發人員可藉此取得所需的資訊。
 
 RFCOMM API 運用了服務識別碼的概念。 雖然服務識別碼只是 128 位元的 GUID，但也通常會指定為 16 或 32 位元的整數。 RFCOMM API 為服務識別碼提供一個包裝函式，使它們可指定和做為 128 位元的 GUID 及 32 位元的整數使用，但不提供 16 位元的整數。 這對 API 而言不是問題，因為語言將自動轉換成 32 位元的整數，而且仍然可以正確地產生識別碼。
 
-app 可以在背景工作中執行多步驟的裝置作業，因此即使 app 移至背景且暫停，作業仍然可以完成。 這可允許可靠的裝置提供服務 (例如永續性設定或韌體的變更) 及內容同步，不需要使用者在一旁監督進度列。 使用 [**DeviceServicingTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 提供裝置服務，使用 [**DeviceUseTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 執行內容同步。 請注意，這些背景工作會限制 app 可在背景執行的時間，且不允許無限期的作業或同步。
+app 可以在背景工作中執行多步驟的裝置作業，因此即使 app 移至背景且暫停，作業仍然可以完成。 這可允許可靠的裝置提供服務 (例如永續性設定或韌體的變更) 及內容同步，不需要使用者在一旁監督進度列。 使用 [**DeviceServicingTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) 提供裝置服務，使用 [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) 執行內容同步。 請注意，這些背景工作會限制 app 可在背景執行的時間，且不允許無限期的作業或同步。
 
 如需 RFCOMM 作業詳細資訊的完整程式碼範例，請參閱 Github 上的[**藍牙 Rfcomm 交談範例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat) 。  
 
@@ -45,10 +45,10 @@ app 可以在背景工作中執行多步驟的裝置作業，因此即使 app �
 
 傳送檔案時，依據所需的服務連線至成對裝置，是最基本的案例。 請執行下列步驟：
 
-- 使用**RfcommDeviceService. GetDeviceSelector \* **函式可協助產生 AQS 查詢，以便用來列舉所需服務的配對裝置實例。
-- 選擇一個列舉裝置、建立一個 [**RfcommDeviceService**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，並視需要讀取 SDP 屬性 (使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 剖析屬性的資料)。
-- 建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 和 [**RfcommDeviceService.ConnectionServiceName**](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 屬性以[**StreamSocket.ConnectAsync**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.connectasync) 至具有適當參數的遠端裝置服務。
-- 遵循建立的資料串流模式以讀取檔案中的資料區塊，並在通訊端的 [**StreamSocket.OutputStream**](https://docs.microsoft.com/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上將它傳送至裝置。
+- 您可以使用**RfcommDeviceService. \* GetDeviceSelector**函數來協助產生 AQS 查詢，以用來列舉所需服務的配對裝置實例。
+- 選擇一個列舉裝置、建立一個 [**RfcommDeviceService**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommDeviceService)，並視需要讀取 SDP 屬性 (使用 [**established data helpers**](/uwp/api/Windows.Storage.Streams.DataReader) 剖析屬性的資料)。
+- 建立通訊端，並且使用[**RfcommDeviceService.ConnectionHostName**](/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname) 和 [**RfcommDeviceService.ConnectionServiceName**](/uwp/api/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename) 屬性以[**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) 至具有適當參數的遠端裝置服務。
+- 遵循建立的資料串流模式以讀取檔案中的資料區塊，並在通訊端的 [**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.outputstream) 上將它傳送至裝置。
 
 ```csharp
 using System;
@@ -361,13 +361,13 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 
 另一個常見的 RFCOMM app 案例是在電腦上代管服務，並向其他服務公開該服務。
 
-- 建立 [**RfcommServiceProvider**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) 以通告所需的服務。
-- 設定 SDP 屬性 (使用 [**established data helpers**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.DataReader) 來產生屬性的資料) 並開始通告 SDP 記錄以供其他裝置擷取。
+- 建立 [**RfcommServiceProvider**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider) 以通告所需的服務。
+- 設定 SDP 屬性 (使用 [**established data helpers**](/uwp/api/Windows.Storage.Streams.DataReader) 來產生屬性的資料) 並開始通告 SDP 記錄以供其他裝置擷取。
 - 為連線至用戶端裝置，建立一個通訊端接聽程式以開始接聽內送的連線要求。
 - 在收到連線時，儲存連線的通訊端以稍後處理。
 - 遵循建立的資料串流模式，以讀取通訊端的 InputStream 中的資料區塊，並將它儲存至檔案。
 
-若要保留背景中的 RFCOMM 服務，請使用 [**RfcommConnectionTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.rfcommconnectiontrigger)。 連線至服務時會觸發背景工作。 開發人員會在背景工作收到通訊端的控制代碼。 背景工作是長時間執行，且只要通訊端為使用中就會持續執行。    
+若要保留背景中的 RFCOMM 服務，請使用 [**RfcommConnectionTrigger**](/uwp/api/windows.applicationmodel.background.rfcommconnectiontrigger)。 連線至服務時會觸發背景工作。 開發人員會在背景工作收到通訊端的控制代碼。 背景工作是長時間執行，且只要通訊端為使用中就會持續執行。    
 
 ```csharp
 Windows.Devices.Bluetooth.Rfcomm.RfcommServiceProvider _provider;

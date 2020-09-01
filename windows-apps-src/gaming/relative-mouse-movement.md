@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, games, mouse, input,遊戲, 滑鼠, 輸入
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d36d81aa3f4e0124f79cf8c736b715eb91590d0
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 155fed8e4bc1cb12196fcaaca4b7232b84c19032
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368188"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159252"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>相對滑鼠移動和 CoreWindow
 
@@ -39,7 +39,7 @@ ms.locfileid: "66368188"
 ## <a name="handling-relative-mouse-movement"></a>處理相對滑鼠移動
 
 
-若要存取相對滑鼠差異值，請登錄 [MouseDevice::MouseMoved](https://docs.microsoft.com/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件，如此處所示。
+若要存取相對滑鼠差異值，請登錄 [MouseDevice::MouseMoved](/uwp/api/windows.devices.input.mousedevice.mousemoved) 事件，如此處所示。
 
 
 ```cpp
@@ -85,18 +85,18 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-本程式碼範例中的事件處理常式 **OnMouseMoved** 會根據滑鼠的移動來轉譯檢視。 滑鼠指標的位置會傳送到處理常式，做為 [MouseEventArgs](https://docs.microsoft.com/uwp/api/Windows.Devices.Input.MouseEventArgs) 物件。 
+本程式碼範例中的事件處理常式 **OnMouseMoved** 會根據滑鼠的移動來轉譯檢視。 滑鼠指標的位置會傳送到處理常式，做為 [MouseEventArgs](/uwp/api/Windows.Devices.Input.MouseEventArgs) 物件。 
 
-當您的應用程式變成處理相對滑鼠移動值時，會略過處理來自 [CoreWindow::PointerMoved](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointermoved) 事件的絕對滑鼠資料。 不過，只有在滑鼠輸入的結果是 **CoreWindow::PointerMoved** 事件時 (相較於觸控輸入)，才會略過此輸入。 已將 [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 設為 **nullptr** 來隱藏游標。 
+當您的應用程式變成處理相對滑鼠移動值時，會略過處理來自 [CoreWindow::PointerMoved](/uwp/api/windows.ui.core.corewindow.pointermoved) 事件的絕對滑鼠資料。 不過，只有在滑鼠輸入的結果是 **CoreWindow::PointerMoved** 事件時 (相較於觸控輸入)，才會略過此輸入。 已將 [CoreWindow::PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) 設為 **nullptr** 來隱藏游標。 
 
 ## <a name="returning-to-absolute-mouse-movement"></a>返回絕對滑鼠移動
 
-當應用程式結束 3D 物件或場景操縱模式，且不再使用相對滑鼠移動時 (例如返回功能表畫面時)，則返回一般的絕對滑鼠移動處理。 此時，會停止讀取相對滑鼠資料，重新啟動標準滑鼠 (及指標) 事件的處理，並將 [CoreWindow::PointerCursor](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow.pointercursor) 設為非 Null 值。 
+當應用程式結束 3D 物件或場景操縱模式，且不再使用相對滑鼠移動時 (例如返回功能表畫面時)，則返回一般的絕對滑鼠移動處理。 此時，會停止讀取相對滑鼠資料，重新啟動標準滑鼠 (及指標) 事件的處理，並將 [CoreWindow::PointerCursor](/uwp/api/windows.ui.core.corewindow.pointercursor) 設為非 Null 值。 
 
 > **注意**  
 當您的應用程式處於 3D 物件/場景操縱模式時 (處理相對滑鼠移動，且游標關閉)，滑鼠無法叫用邊緣 UI，例如常用鍵、上一頁堆疊或應用程式列。 因此，提供一個結束此特殊模式的機制是很重要的，例如最常使用的 **Esc** 鍵。
 
 ## <a name="related-topics"></a>相關主題
 
-* [適用於遊戲的移動尋找控制項](tutorial--adding-move-look-controls-to-your-directx-game.md) 
-* [適用於遊戲的觸控式控制項](tutorial--adding-touch-controls-to-your-directx-game.md)
+* [適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md) 
+* [適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)

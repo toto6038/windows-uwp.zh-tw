@@ -4,14 +4,14 @@ description: 本文示範如何使用手動裝置控制項來啟用美化的視�
 title: 視訊擷取的手動相機控制項
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d20f2d372354cf7bbfa596318f165c424f08c8ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d484571f69025ceb1ce8c6eeb827c46cacfa15ed
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66358856"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160972"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>視訊擷取的手動相機控制項
 
@@ -21,47 +21,47 @@ ms.locfileid: "66358856"
 
 本文中討論的視訊裝置控制項全都會使用相同的模式新增到您的 app。 首先，檢查 app 目前執行所在的裝置是否支援此控制項。 如果支援此控制項，則為控制項設定所需的模式。 通常，如果目前的裝置不支援特定的控制項，您應該停用或隱藏可讓使用者啟用該功能的 UI 元素。
 
-此文章中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices) 命名空間的成員。
+此文章中討論的所有裝置控制項 API 都是 [**Windows.Media.Devices**](/uwp/api/Windows.Media.Devices) 命名空間的成員。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
 > [!NOTE] 
-> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
+> 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
 ## <a name="hdr-video"></a>HDR 視訊
 
-高動態範圍 (HDR) 視訊功能可將 HDR 處理套用至擷取裝置的視訊資料流。 選取 [**HdrVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supported) 屬性，以判斷是否支援 HDR 視訊。
+高動態範圍 (HDR) 視訊功能可將 HDR 處理套用至擷取裝置的視訊資料流。 選取 [**HdrVideoControl.Supported**](/uwp/api/windows.media.devices.hdrvideocontrol.supported) 屬性，以判斷是否支援 HDR 視訊。
 
-HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置會動態判斷 HDR 視訊處理是否可改進媒體擷取，若是可以，則會啟用 HDR 視訊。 若要判斷目前的裝置是否支援特定的模式，請查看 [**HdrVideoControl.SupportedModes**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes) 集合是否包含所需的模式。
+HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置會動態判斷 HDR 視訊處理是否可改進媒體擷取，若是可以，則會啟用 HDR 視訊。 若要判斷目前的裝置是否支援特定的模式，請查看 [**HdrVideoControl.SupportedModes**](/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes) 集合是否包含所需的模式。
 
-將 [**HdrVideoControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.hdrvideocontrol.mode) 設定為所需的模式，以啟用或停用 HDR 視訊處理。
+將 [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) 設定為所需的模式，以啟用或停用 HDR 視訊處理。
 
 [!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
 ## <a name="exposure-priority"></a>曝光優先順序
 
-啟用 [**ExposurePriorityVideoControl**](https://docs.microsoft.com/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl) 後，會評估來自擷取裝置的視訊框架，以判斷視訊是否擷取光線不足的場景。 若是如此，此控制項會降低所擷取視訊的框架速度，以增加每個框架的曝光時間並改善所擷取視訊的視覺品質。
+啟用 [**ExposurePriorityVideoControl**](/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl) 後，會評估來自擷取裝置的視訊框架，以判斷視訊是否擷取光線不足的場景。 若是如此，此控制項會降低所擷取視訊的框架速度，以增加每個框架的曝光時間並改善所擷取視訊的視覺品質。
 
-檢查 [**ExposurePriorityVideoControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported) 屬性，以判斷目前的裝置是否支援曝光優先順序控制項。
+檢查 [**ExposurePriorityVideoControl.Supported**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported) 屬性，以判斷目前的裝置是否支援曝光優先順序控制項。
 
-將 [**ExposurePriorityVideoControl.Enabled**](https://docs.microsoft.com/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) 設定為所需的模式，以啟用或停用曝光優先順序控制項。
+將 [**ExposurePriorityVideoControl.Enabled**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) 設定為所需的模式，以啟用或停用曝光優先順序控制項。
 
 [!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
 ## <a name="temporal-denoising"></a>時態性去雜訊
 從 Windows 10 版本 1803 開始，您可以在支援時態性去雜訊的裝置上為影片啟用此功能。 這項功能可即時融合多個相鄰畫面的影像資料，製作較少視覺雜訊的視訊畫面。
 
-[  **VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 可讓您的應用程式判斷目前裝置是否支援時態性去雜訊，而如果支援，是支援哪種去雜訊模式。 可用的 denoising 模式會[**關閉**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)， [**上**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode)，以及[**自動**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingmode).裝置可能不支援所有的模式，但每個裝置必須支援**自動**或是**上**並**關閉**。
+[**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol) 可讓您的應用程式判斷目前裝置是否支援時態性去雜訊，而如果支援，是支援哪種去雜訊模式。 可用的去雜訊模式為 [**Off**](/uwp/api/windows.media.devices.videotemporaldenoisingmode)、[**On**](/uwp/api/windows.media.devices.videotemporaldenoisingmode) 和 [**Auto**](/uwp/api/windows.media.devices.videotemporaldenoisingmode)。一部裝置可能無法支援所有模式，但必須支援 **Auto** 或 **On** 及 **Off**。
 
 下列範例使用簡單的 UI 來提供選項按鈕，讓使用者在去雜訊模式之間切換。
 
 [!code-xml[SnippetDenoiseXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetDenoiseXAML)]
 
-在下列方法中，會檢查 [**VideoTemporalDenoisingControl.Supported**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 屬性，以查看目前的裝置是否支援時態性去雜訊。 如果支援，接著檢查以確定支援的是 **Off** 和 **Auto** 或 **On**，以便顯示相應的選項按鈕。 接著，如果支援 **Auto** 和 **On** 方法則顯示這些按鈕。
+在下列方法中，會檢查 [**VideoTemporalDenoisingControl.Supported**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) 屬性，以查看目前的裝置是否支援時態性去雜訊。 如果支援，接著檢查以確定支援的是 **Off** 和 **Auto** 或 **On**，以便顯示相應的選項按鈕。 接著，如果支援 **Auto** 和 **On** 方法則顯示這些按鈕。
 
 [!code-cs[SnippetUpdateDenoiseCapabilities](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetUpdateDenoiseCapabilities)]
 
-在選項按鈕的 **Checked** 事件處理常式中，透過設定 [**VideoTemporalDenoisingControl.Mode**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) 屬性來檢查按鈕的名稱並設定對應模式。
+在選項按鈕的 **Checked** 事件處理常式中，透過設定 [**VideoTemporalDenoisingControl.Mode**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) 屬性來檢查按鈕的名稱並設定對應模式。
 
 [!code-cs[SnippetDenoiseButtonChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetDenoiseButtonChecked)]
 
@@ -87,11 +87,7 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
-* [MediaCapture 擷取基本的相片、 視訊和音訊](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [處理媒體與 MediaFrameReader 的畫面格](process-media-frames-with-mediaframereader.md)
-*  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
+* [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
+*  [**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
  
-
-
-
-

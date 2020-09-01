@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d, 遊戲, 轉譯, 陰影圖, 深度緩衝區
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ae67df457d4abafc8fb689a747139f62ca0e0e
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 5f492b1007a96b893abf6cdd1e7c6686cd5a41ee
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368068"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159232"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>將陰影圖轉譯為深度緩衝區
 
 
 
 
-從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 第 2 部分[逐步解說：實作使用 Direct3D 11 中的深度緩衝區的陰影磁碟區](implementing-depth-buffers-for-shadow-mapping.md)。
+從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第二部分。
 
 ## <a name="clear-the-depth-buffer"></a>清除深度緩衝區
 
@@ -37,7 +37,7 @@ context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D1
 
 指定光線檢視區、頂點著色器，並設定光線空間常數緩衝區。 針對這個階段使用正面剔除，以便將陰影緩衝區中的深度值最佳化。
 
-請注意，在大部分的裝置上，您可以為像素著色器指定 nullptr (或者完全略過指定像素著色器的部分)。 但是，部分驅動程式可能會在您使用設為 null 的像素著色器，於 Direct3D 裝置上呼叫繪製時擲回例外狀況。 若要避免發生這個例外狀況，您可以為陰影轉譯階段設定最低像素著色器。 這個著色器的輸出會捨棄；它可以在每個像素上呼叫 [**discard**](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard)。
+請注意，在大部分的裝置上，您可以為像素著色器指定 nullptr (或者完全略過指定像素著色器的部分)。 但是，部分驅動程式可能會在您使用設為 null 的像素著色器，於 Direct3D 裝置上呼叫繪製時擲回例外狀況。 若要避免發生這個例外狀況，您可以為陰影轉譯階段設定最低像素著色器。 這個著色器的輸出會捨棄；它可以在每個像素上呼叫 [**discard**](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-discard)。
 
 轉譯可以轉換陰影的物件，但是不必轉譯無法轉換陰影的幾何圖形 (像是房間中的地板，或者基於最佳化因素而從陰影階段中移除的物件)。
 
@@ -125,7 +125,7 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**最佳化檢視範圍：** 請確定您的實作會計算緊密的檢視範圍，以便您深度緩衝區中發揮最大有效位數。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](https://docs.microsoft.com/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
+**最佳化檢視範圍：**  確定您的實作會運算緊密的檢視範圍，讓您可以從深度緩衝區中取得最佳的精確度。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](/windows/desktop/DxTechArts/common-techniques-to-improve-shadow-depth-maps)。
 
 ## <a name="vertex-shader-for-shadow-pass"></a>適用於陰影階段的頂點著色器
 
@@ -153,7 +153,3 @@ PixelShaderInput main(VertexShaderInput input)
  
 
  
-
-
-
-

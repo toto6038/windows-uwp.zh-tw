@@ -4,14 +4,14 @@ description: 本文章說明如何將包含 Microsoft PlayReady 內容保護的�
 title: 搭配使用彈性資料流與 PlayReady
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e0f6ef206dc836e48bfc904767ff8c8c7bdca9db
-ms.sourcegitcommit: a20457776064c95a74804f519993f36b87df911e
+ms.openlocfilehash: 3bef1e1061948c4327426485621b9f611fc51f21
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71340047"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161242"
 ---
 # <a name="adaptive-streaming-with-playready"></a>搭配使用彈性資料流與 PlayReady
 
@@ -26,7 +26,7 @@ PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
 
 這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
-本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的[彈性資料流範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 案例 4 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後選取 [下載 ZIP] 按鈕。
+本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的[彈性資料流範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 案例 4 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後選取 **\[下載 ZIP\]** 按鈕。
 
 您將需要下列 **using** 陳述式：
 
@@ -63,9 +63,9 @@ private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 
 ## <a name="setting-up-the-mediaprotectionmanager"></a>設定 MediaProtectionManager
 
-若要將 PlayReady 內容保護新增到您的 UWP app，您將需要設定 [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager) 物件。 您會在初始化 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) 物件時設定。
+若要將 PlayReady 內容保護新增到您的 UWP app，您將需要設定 [MediaProtectionManager](/uwp/api/Windows.Media.Protection.MediaProtectionManager) 物件。 您會在初始化 [**AdaptiveMediaSource**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) 物件時設定。
 
-下列程式碼會設定 [MediaProtectionManager](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.MediaProtectionManager)：
+下列程式碼會設定 [MediaProtectionManager](/uwp/api/Windows.Media.Protection.MediaProtectionManager)：
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -100,7 +100,7 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 
 直接將這個程式碼複製到您的應用程式即可，因為需要它才能設定內容保護。
 
-二進位資料載入失敗時會觸發 [ComponentLoadFailed](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed) 事件。 我們需要新增事件處理常式來處理此事件，發送表示載入未完成的訊號：
+二進位資料載入失敗時會觸發 [ComponentLoadFailed](/uwp/api/windows.media.protection.mediaprotectionmanager.componentloadfailed) 事件。 我們需要新增事件處理常式來處理此事件，發送表示載入未完成的訊號：
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -111,7 +111,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-同樣地，我們需要為要求服務時觸發的 [ServiceRequested](https://docs.microsoft.com/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested) 事件新增事件處理常式。 這個程式碼會檢查要求的類型，並適當地回應：
+同樣地，我們需要為要求服務時觸發的 [ServiceRequested](/uwp/api/windows.media.protection.mediaprotectionmanager.servicerequested) 事件新增事件處理常式。 這個程式碼會檢查要求的類型，並適當地回應：
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -192,7 +192,7 @@ async void ProActiveIndivRequest()
 
 ## <a name="license-acquisition-service-requests"></a>授權取得服務要求
 
-如果要求是 [PlayReadyLicenseAcquisitionServiceRequest](https://docs.microsoft.com/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest)，則我們將呼叫以下函式來要求並取得 PlayReady 授權。 我們向傳入的 **MediaProtectionServiceCompletion** 物件告知要求是否成功，然後完成該要求：
+如果要求是 [PlayReadyLicenseAcquisitionServiceRequest](/uwp/api/Windows.Media.Protection.PlayReady.PlayReadyLicenseAcquisitionServiceRequest)，則我們將呼叫以下函式來要求並取得 PlayReady 授權。 我們向傳入的 **MediaProtectionServiceCompletion** 物件告知要求是否成功，然後完成該要求：
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -274,7 +274,7 @@ async void LicenseAcquisitionRequest(
 
 ## <a name="initializing-the-adaptivemediasource"></a>初始化 AdaptiveMediaSource
 
-最後，您將需要一個函式來初始化 [AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)，可從已知的 [Uri](https://docs.microsoft.com/dotnet/api/system.uri) 和 [MediaElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 來建立。 **Uri** 應為連結至媒體檔案 (HLS 或 DASH) 的連結；**MediaElement** 應在您的 XAML 中定義。
+最後，您將需要一個函式來初始化 [AdaptiveMediaSource](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)，可從已知的 [Uri](/dotnet/api/system.uri) 和 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 來建立。 **Uri** 應為連結至媒體檔案 (HLS 或 DASH) 的連結；**MediaElement** 應在您的 XAML 中定義。
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -297,7 +297,3 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 ## <a name="see-also"></a>另請參閱
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-

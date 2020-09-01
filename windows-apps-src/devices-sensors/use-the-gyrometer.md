@@ -6,20 +6,20 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 10d65a6b752c904d7145c3c5e09194dab7c8e0a5
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 2e82b2e7de98c28bba860fd1c935a63b06390a4b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943088"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159532"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺儀
 
 
 **重要 API**
 
--   [**Windows.Devices.Sensors**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors)
--   [**Gyrometer**](https://docs.microsoft.com/uwp/api/Windows.Devices.Sensors.Gyrometer)
+-   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
+-   [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
 **範例**
 
@@ -29,7 +29,7 @@ ms.locfileid: "88943088"
 
 陀螺儀與加速計可互補做為遊戲控制器。 加速計可測量線性動作，而陀螺儀可測量角速度或旋轉動作。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 

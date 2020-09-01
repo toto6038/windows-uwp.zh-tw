@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, visual studio, 工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c97c24eca55cf43559b9f518eaf2fbc4656aa374
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 250450b2174ce249d1ec5afaf4c5188df9266f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942804"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159262"
 ---
 # <a name="visual-studio-tools-for-game-programming"></a>用來進行遊戲程式設計的 Visual Studio 工具
 
@@ -43,7 +43,7 @@ ms.locfileid: "88942804"
 
 建立[組建自訂檔](#build-customizations-for-3d-assets)，在建置期間將這些檔案新增到 .dds 檔案。
 
-如需詳細資訊，請參閱[使用紋理與影像](https://docs.microsoft.com/visualstudio/designers/working-with-textures-and-images?view=vs-2015)。
+如需詳細資訊，請參閱[使用紋理與影像](/visualstudio/designers/working-with-textures-and-images?view=vs-2015)。
 
 > **注意**   影像編輯器不適合用來取代完整的功能影像編輯應用程式，但適用于許多簡單的觀賞和編輯案例。
 
@@ -62,7 +62,7 @@ ms.locfileid: "88942804"
 
 ![茶壺](images/modeleditor.png)
 
-如需詳細資訊，請參閱[使用 3D 模型](https://docs.microsoft.com/visualstudio/designers/working-with-3-d-models?view=vs-2015)。
+如需詳細資訊，請參閱[使用 3D 模型](/visualstudio/designers/working-with-3-d-models?view=vs-2015)。
 
 > **注意**   模型編輯器不會取代完整的功能模型編輯應用程式，但適用于許多簡單的觀賞和編輯案例。
 
@@ -109,7 +109,7 @@ float3 LambertLighting(
 }
 ```
 
-如需相關資訊，請參閱[使用著色器](https://docs.microsoft.com/visualstudio/designers/working-with-shaders?view=vs-2015)。
+如需相關資訊，請參閱[使用著色器](/visualstudio/designers/working-with-shaders?view=vs-2015)。
 
 ## <a name="build-customizations-for-3d-assets"></a>適用於 3D 資產的組建自訂
 
@@ -122,7 +122,7 @@ float3 LambertLighting(
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。
 -   著色器內容管線會從 Visual Studio 著色器編輯器中取得視覺著色器圖形 (.dgsl)，並輸出編譯過的著色器輸出 (.cso) 檔案。
 
-如需詳細資訊，請參閱[在遊戲或應用程式中使用 3D 資產](https://docs.microsoft.com/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015)。
+如需詳細資訊，請參閱[在遊戲或應用程式中使用 3D 資產](/visualstudio/designers/using-3-d-assets-in-your-game-or-app?view=vs-2015)。
 
 ## <a name="debugging-directx-graphics"></a>偵錯 DirectX 圖形
 
@@ -139,7 +139,7 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 -   有限的 Direct2D 支援。
 -   作業系統與 SDK 需求。
 
-如需詳細資訊，請參閱[偵錯 DirectX 圖形](https://docs.microsoft.com/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
+如需詳細資訊，請參閱[偵錯 DirectX 圖形](/visualstudio/debugger/visual-studio-graphics-diagnostics?view=vs-2015)。
 
 
  
@@ -147,7 +147,3 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
  
 
  
-
-
-
-

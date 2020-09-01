@@ -4,18 +4,18 @@ title: 使用視覺層搭配 XAML
 description: 了解使用視覺層 API 搭配現有 XAML 內容來建立進階動畫及效果的技術。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d6c1b4c477bfe5c4f584227491ef5a94e375fa2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 5b0c8f9909f59cb3a0dd5e16a6bb1c46fc069bfb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74255664"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160802"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>使用視覺層搭配 XAML
 
-大部分使用視覺層功能的 app，都會使用 XAML 來定義主要 UI 內容。 在 Windows 10 年度更新版中，XAML 架構和視覺層中的新功能可更輕鬆地結合這兩項技術，以建立令人驚艷的使用者體驗。
+大部分使用視覺層功能的應用程式，都會使用 XAML 來定義主要 UI 內容。 在 Windows 10 年度更新版中，XAML 架構和視覺層中的新功能可更輕鬆地結合這兩項技術，以建立令人驚艷的使用者體驗。
 XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法提供的進階動畫與效果。 這包括：
 
 - 筆刷效果，例如模糊和毛玻璃
@@ -31,9 +31,9 @@ XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法�
 
 **XamlCompositionBrush** 會針對使用**CompositionBrush**繪製區域的 XAML 筆刷，提供基底類別。 這可用來輕鬆地將模糊或毛玻璃這類組合效果套用至 XAML UI 元素。
 
-請參閱[**筆刷**](/windows/uwp/design/style/brushes#xamlcompositionbrushbase)小節，以取得搭配使用筆刷與 XAML UI 的詳細資訊。
+請參閱[**筆刷**](../design/style/brushes.md#xamlcompositionbrushbase)小節，以取得搭配使用筆刷與 XAML UI 的詳細資訊。
 
-如需程式碼範例，請參閱 [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的參考頁面。
+如需程式碼範例，請參閱 [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 的參考頁面。
 
 ## <a name="the-xamllight-class"></a>XamlLight 類別
 
@@ -41,20 +41,20 @@ XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法�
 
 請參閱[**光源**](xaml-lighting.md)小節，以取得使用光源 (包括光源 XAML UI 元素) 的詳細資訊。
 
-如需程式碼範例，請參閱 [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) 的參考頁面。
+如需程式碼範例，請參閱 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) 的參考頁面。
 
 ## <a name="the-elementcompositionpreview-class"></a>ElementCompositionPreview 類別
 
-[**ElementCompositionPreview**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview)是靜態類別，提供 XAML 和視覺化層 interop 功能。 如需視覺層及其功能的概觀，請參閱[視覺層](https://docs.microsoft.com/windows/uwp/graphics/visual-layer)。 **ElementCompositionPreview** 類別會提供下列方法︰
+[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) 是靜態類別，提供 XAML 和視覺層互通性功能。 如需視覺層及其功能的概觀，請參閱[視覺層](./visual-layer.md)。 **ElementCompositionPreview** 類別會提供下列方法︰
 
--   [**GetElementVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：取得用來呈現此元素的「講義」視覺效果
--   [**SetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)：將 "Handin" 視覺效果設定為這個專案之視覺化樹狀結構的最後一個子系。 這個 Visual 將會在其餘元素的頂端繪製。 
--   [**GetElementChildVisual**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：使用**SetElementChildVisual**捕獲視覺效果集合
--   [**GetScrollViewerManipulationPropertySet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：取得可用來根據**ScrollViewer**中的捲軸位移來建立60fps 動畫的物件
+-   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：取得「交出」Visual，它用來轉譯此元素
+-   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)︰設定「交入」Visual 做為此元素視覺化樹狀結構的最後一個子項。 這個 Visual 將會在其餘元素的頂端繪製。 
+-   [**GetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：抓取使用 **SetElementChildVisual** 的 Visual 集合
+-   [**GetScrollViewerManipulationPropertySet**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)：取得可根據 **ScrollViewer** 中的捲動位移，用來建立 60fps 動畫的物件
 
 ## <a name="remarks-on-elementcompositionpreviewgetelementvisual"></a>ElementCompositionPreview.GetElementVisual 備註
 
-**ElementCompositionPreview.GetElementVisual** 會傳回「交出」Visual，它用來轉譯指定的 **UIElement**。 屬性 (例如 **Visual.Opacity**、**Visual.Offset** 和 **Visual.Size**) 是根據 UIElement 狀態為基礎，透過 XAML 架構設定。 這可以使用例如隱含重新定位動畫的技術 (請參閱＜做法＞)。
+**ElementCompositionPreview.GetElementVisual** 會傳回「交出」Visual，它用來轉譯指定的 **UIElement**。 屬性 (例如 **Visual.Opacity**、**Visual.Offset** 和 **Visual.Size**) 是根據 UIElement 狀態為基礎，透過 XAML 架構設定。 這可以使用例如隱含重新定位動畫的技術 (請參閱＜做法＞**)。
 
 請注意，由於 **Offset** 和 **Size** 會設定做為 XAML 架構配置的結果，開發人員在對這些屬性進行修改或是產生動畫效果時應該小心謹慎。 當配置中元素的左上角與其父項的位置相同時，開發人員應僅對 Offset 進行修改或產生動畫效果。 Size 通常不應修改，但存取此屬性可能會很有用。 例如，以下的「陰影」和「毛玻璃」範例就使用交出 Visual 的 Size 作為動畫的輸入。
 
@@ -62,7 +62,7 @@ XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法�
 
 ### <a name="example-of-offset-animation"></a>**Offset** 動畫範例
 
-#### <a name="incorrect"></a>錯誤
+#### <a name="incorrect"></a>不正確
 
 ```xaml
 <Border>
@@ -96,9 +96,9 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## <a name="getalphamask-methods"></a>**GetAlphaMask** 方法
 
-[**Image**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Image)、 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)和[**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)分別會執行一個稱為**GetAlphaMask**的方法，它會傳回代表具有元素形狀之灰階影像的**CompositionBrush** 。 這個 **CompositionBrush** 可做為組合 **DropShadow** 的輸入，如此陰影就可以反映元素的形狀而不是矩形。 這可讓您使用 Alpah 和形狀，針對文字和影像建立完美像素、以輪廓為主的陰影。 如需 API 的範例，請參閱下方的＜陰影＞。
+[**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image)、[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) 都會實作稱為 **GetAlphaMask** 的方法，它會傳回代表灰階影像與元素形狀的 **CompositionBrush**。 這個 **CompositionBrush** 可做為組合 **DropShadow** 的輸入，如此陰影就可以反映元素的形狀而不是矩形。 這可讓您使用 Alpah 和形狀，針對文字和影像建立完美像素、以輪廓為主的陰影。 如需 API 的範例，請參閱下方的＜陰影＞**。
 
-## <a name="recipes"></a>做法
+## <a name="recipes"></a>食譜
 
 ### <a name="reposition-animation"></a>重新定位動畫
 
@@ -151,7 +151,7 @@ private void InitializeRepositionAnimation(UIElement repositionTarget)
 3. 透過遮罩，從目標元素取得其形狀來設定 **DropShadow**
     - **DropShadow** 預設是矩形，因此如果目標是矩形就不必這樣做
 4. 將陰影附加到新的 **SpriteVisual**，然後將 **SpriteVisual** 設定為裝載元素的子項
-5. 使用 **ExpressionAnimation**，將 **SpriteVisual** 的大小與裝載的大小繫結
+5. 使用 **ExpressionAnimation**，繫結 **SpriteVisual** 的大小與裝載的大小
 
 ```xaml
 <Grid Width="200" Height="200">
@@ -199,7 +199,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-以下兩個清單顯示 [C + + / WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/index) 和 [C + + / CX](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx) 對等的上一個使用相同 XAML 結構的 C&#35; 程式碼。
+以下兩個清單顯示 [C + + / WinRT](../cpp-and-winrt-apis/index.md) 和 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx) 對等的上一個使用相同 XAML 結構的 C&#35; 程式碼。
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -291,8 +291,8 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 2.  使用 Win2D 和 **CompositionEffectSourceParameter** 建立模糊效果樹狀結構
 3.  根據效果樹狀結構建立 **CompositionEffectBrush**
 4.  將 **CompositionEffectBrush** 的輸入設定為 **CompositionBackdropBrush**，如此可讓效果套用至 **SpriteVisual** 後方的內容
-5.  將 **CompositionEffectBrush** 設為新的 **SpriteVisual** 的內容，並將 **SpriteVisual** 設為裝載元素的子項。 您可以改為使用 XamlCompositionBrushBase。
-6.  使用 **ExpressionAnimation**，將 **SpriteVisual** 的大小與裝載的大小繫結
+5.  將 **CompositionEffectBrush** 設定為新 **SpriteVisual**的內容，並將 **SpriteVisual** 設定為主機元素的子系。 您可以改為使用 XamlCompositionBrushBase。
+6.  使用 **ExpressionAnimation**，繫結 **SpriteVisual** 的大小與裝載的大小
 
 ```xaml
 <Grid Width="300" Height="300" Grid.Column="1">
@@ -362,8 +362,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## <a name="additional-resources"></a>其他資源
 
-- [視覺分層總覽](https://docs.microsoft.com/windows/uwp/composition/visual-layer)
-- [**ElementCompositionPreview**類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
-- [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples) 有進階的 UI 和組合範例
+- [視覺層概觀](./visual-layer.md)
+- [**ElementCompositionPreview** 類別](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples)中的先進 UI 和組合範例
 - [BasicXamlInterop 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [ParallaxingListItems 範例](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

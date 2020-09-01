@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a3429607ecd9245dd10722fbb47d06d7aa6ef75
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 1f2f4ad915d565ad56865dd89d25174f1ed9c2bb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234838"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159902"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
@@ -42,7 +42,7 @@ var <mobile-service-name>Client = new Microsoft.WindowsAzure.MobileServices.Mobi
 ## <a name="registration-for-push-notifications"></a>推播通知的登錄
 
 
-在 push. register. 中 \* ，UploadChannel 方法會註冊裝置以接收推播通知。 市集會追蹤已安裝應用程式的執行個體，並提供推播通知通道。 請參閱 [**PushNotificationChannelManager**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
+在 push. 註冊中 \* ，UploadChannel 方法會註冊裝置以接收推播通知。 市集會追蹤已安裝應用程式的執行個體，並提供推播通知通道。 請參閱 [**PushNotificationChannelManager**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)。
 
 用戶端程式碼類似 JavaScript 後端和 .NET 後端兩者。 根據預設，當您新增 JavaScript 後端服務的推播通知時，對 notifyAllUsers 自訂 API 的一個範例呼叫會插入 UploadChannel 方法。
 
@@ -174,9 +174,9 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 ## <a name="server-side-scripts-javascript-backend-only"></a>伺服器端指令碼 (僅限 JavaScript 後端)
 
 
-如果是使用 JavaScript 後端的行動服務，則會在進行刪除、插入、讀取或更新操作時執行伺服器端指令碼。 指令碼不會實作這些操作，但是當用戶端呼叫 Windows Mobile REST API 觸發這些事件時，就會執行指令碼。 然後指令碼會呼叫 request.execute 或 request.respond 向呼叫內容發出回應，將控制權傳遞給操作本身。 請參閱 [Azure 行動服務 REST API 參考](https://msdn.microsoft.com/library/azure/jj710108.aspx)。
+如果是使用 JavaScript 後端的行動服務，則會在進行刪除、插入、讀取或更新操作時執行伺服器端指令碼。 指令碼不會實作這些操作，但是當用戶端呼叫 Windows Mobile REST API 觸發這些事件時，就會執行指令碼。 然後指令碼會呼叫 request.execute 或 request.respond 向呼叫內容發出回應，將控制權傳遞給操作本身。 請參閱 [Azure 行動服務 REST API 參考](/previous-versions/azure/reference/jj710108(v=azure.100))。
 
-伺服器端指令碼提供各種不同函式。 請參閱[在 Azure 行動服務中登錄資料表操作](https://msdn.microsoft.com/library/azure/dn167708.aspx)。 如需所有可用函式的參考，請參閱[行動服務伺服器指令碼參考](https://msdn.microsoft.com/library/windowsazure/jj554226)。
+伺服器端指令碼提供各種不同函式。 請參閱[在 Azure 行動服務中登錄資料表操作](https://msdn.microsoft.com/library/azure/dn167708.aspx)。 如需所有可用函式的參考，請參閱[行動服務伺服器指令碼參考](/previous-versions/azure/reference/jj554226(v=azure.100))。
 
 系統也會在 Notifyallusers.js 中建立下列自訂 API 程式碼：
 
@@ -216,24 +216,24 @@ sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也�
 
 Windows 可支援推播通知以外的通知。 如需有關通知的一般資訊，請參閱[選擇通知傳遞方法](choosing-a-notification-delivery-method.md)。
 
-快顯通知的使用方式非常簡單，您可以檢閱通道表上的 Insert.js 程式碼中為您產生的範例。 如果您計劃使用磚或徽章通知，必須為磚和徽章建立 XML 範本，也必須指定範本中的封裝資訊編碼方式。 請參閱[使用磚、徽章以及快顯通知](https://docs.microsoft.com/previous-versions/windows/apps/hh868259(v=win.10))。
+快顯通知的使用方式非常簡單，您可以檢閱通道表上的 Insert.js 程式碼中為您產生的範例。 如果您計劃使用磚或徽章通知，必須為磚和徽章建立 XML 範本，也必須指定範本中的封裝資訊編碼方式。 請參閱[使用磚、徽章以及快顯通知](/previous-versions/windows/apps/hh868259(v=win.10))。
 
 因為 Windows 會回應推播通知，所以能在應用程式未執行時處理大部分的這類通知。 例如，即使本機郵件應用程式並未執行，推播通知也能讓使用者得知有新的郵件訊息。 Windows 處理快顯通知的方式是顯示訊息，例如文字訊息的第一行。 Windows 處理磚或徽章通知的方式是更新應用程式的動態磚，以反映新郵件訊息數。 您可以利用這種方式提示應用程式使用者檢查新資訊。 您的應用程式可以在執行時收到原始通知，而您可以使用這類通知將資料傳送給應用程式。 如果應用程式未執行，您可以設定背景工作來監視推播通知。
 
-您應該根據 Windows 應用程式的指導方針使用推播通知，因為這些通知會佔用使用者的資源，而且如果過度使用，可能會有干擾。 請參閱[推播通知的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)。
+您應該根據 Windows 應用程式的指導方針來使用推播通知，因為這些通知會使用使用者的資源，如果過度使用，可能會造成干擾。 請參閱[推播通知的指導方針和檢查清單](./windows-push-notification-services--wns--overview.md)。
 
-如果您利用推播通知更新動態磚，也應該遵循[磚與徽章的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-creating-tiles)中的指導方針。
+如果您利用推播通知更新動態磚，也應該遵循[磚與徽章的指導方針和檢查清單](./creating-tiles.md)中的指導方針。
 
 ## <a name="next-steps"></a>後續步驟
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>使用 Windows 推播通知服務 (WNS)
 
-若行動服務提供的彈性不足、您想要以 C# 或 Visual Basic 撰寫伺服器程式碼，或是您已經有雲端服務並想要透過它傳送推播通知，則可以直接呼叫 Windows 推播通知服務 (WNS)。 直接呼叫 WNS 時，可以從您自己的雲端服務 (例如，監視來自資料庫或其他 Web 服務之資料的工作者角色) 傳送推播通知。 您的雲端服務必須透過 WNS 進行驗證，才能將推播通知傳送到您的應用程式。 請參閱[如何使用 Windows 推播通知服務進行驗證 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/hh465407(v=win.10)) 或 [(C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/hh868206(v=win.10))。
+若行動服務提供的彈性不足、您想要以 C# 或 Visual Basic 撰寫伺服器程式碼，或是您已經有雲端服務並想要透過它傳送推播通知，則可以直接呼叫 Windows 推播通知服務 (WNS)。 直接呼叫 WNS 時，可以從您自己的雲端服務 (例如，監視來自資料庫或其他 Web 服務之資料的工作者角色) 傳送推播通知。 您的雲端服務必須透過 WNS 進行驗證，才能將推播通知傳送到您的應用程式。 請參閱[如何使用 Windows 推播通知服務進行驗證 (JavaScript)](/previous-versions/windows/apps/hh465407(v=win.10)) 或 [(C#/C++/VB)](/previous-versions/windows/apps/hh868206(v=win.10))。
 
-您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](https://azure.microsoft.com/documentation/articles/mobile-services-schedule-recurring-tasks/)。
+您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](/azure/)。
 
-**警告**   一旦執行推播通知嚮導一次，請不要第二次執行嚮導來新增另一個行動服務的註冊程式碼。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push 中移動 wizard 產生的程式碼來完成這項操作。 \*（包括**CreatePushNotificationChannelForApplicationAsync**的呼叫）在 OnLaunched 事件之外，但這方面的細節將取決於您的應用程式架構。
+**警告**   一旦您執行了推播通知嚮導一次，請不要第二次執行嚮導來新增另一個行動服務的註冊程式碼。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push. register \* 中移動 wizard 產生的程式碼來完成這項工作。 (包括 >onlaunched 事件外的) **CreatePushNotificationChannelForApplicationAsync** 呼叫，但這項操作的詳細內容將取決於您的應用程式架構。
 
  
 
@@ -242,13 +242,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 * [原始通知概觀](raw-notification-overview.md)
-* [連線到 Microsoft Azure 行動服務 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263160(v=win.10))
-* [連線到 Microsoft Azure 行動服務 (C#/C++/VB)](https://docs.microsoft.com/previous-versions/windows/apps/dn263175(v=win.10))
-* [快速入門：為行動服務加入推播通知 (JavaScript)](https://docs.microsoft.com/previous-versions/windows/apps/dn263163(v=win.10))
+* [連線到 Microsoft Azure 行動服務 (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
+* [連線到 Microsoft Azure 行動服務 (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
+* [快速入門：為行動服務加入推播通知 (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  
-
-
-
-

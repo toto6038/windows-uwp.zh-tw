@@ -5,12 +5,12 @@ ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: c63f59e7bcf282dc829d0fb8fa5971113f7638ad
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 8846fc11dc39a3931d8f3278caf13b7aff464bc2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053588"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160832"
 ---
 # <a name="time-based-animations"></a>以時間為基礎的動畫
 
@@ -53,7 +53,7 @@ ms.locfileid: "89053588"
 - 動畫群組 – 同時開始多個動畫。
   - 通常用於想同時以動畫顯示多個屬性時。
 
-如需詳細資訊，請參閱 [CompositionAnimationGroup](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositionanimationgroup)。
+如需詳細資訊，請參閱 [CompositionAnimationGroup](/uwp/api/windows.ui.composition.compositionanimationgroup)。
 
 記住這些概念後，現在來談一談建構 KeyFrameAnimation 的一般公式：
 
