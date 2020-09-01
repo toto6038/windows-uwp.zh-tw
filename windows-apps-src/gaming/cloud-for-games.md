@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 雲端服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c0cfd98a37c4822d80eded7fe69e23c54bcdc89
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054408"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173172"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
@@ -49,7 +49,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
     </colgroup>
     <tr class="header" align="left">
         <th>開發人員</th>
-        <th>描述</th>
+        <th>說明</th>
         <th>主要遊戲案例</th>
         <th>深入了解</th>
     </tr>
@@ -170,7 +170,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 | 遊戲資料的雲端儲存體       | 最新的遊戲資料將儲存於雲端中，並會傳送到用戶端裝置 | [Azure Blob 儲存體](https://azure.microsoft.com/services/storage/blobs/)| 無限制的可儲存檔案類型。適用於大量未結構化資料 (例如影像、音訊、視訊等等) 的物件儲存體。  |
 | 暫時資料儲存體表格| 遊戲交易 (遊戲狀態的變更) 會暫時儲存在表格中 | [Azure 資料表儲存體](https://azure.microsoft.com/services/storage/tables/)| 遊戲資料可根據遊戲的需求，以彈性的結構描述進行儲存 |
 | 佇列遊戲交易/要求| 遊戲交易會以佇列的形式處理 | [Azure 佇列儲存體](https://azure.microsoft.com/services/storage/queues/)| 佇列可以緩衝未預期的突發流量，並且能防止伺服器在遊戲期間因突然湧入大量要求而造成效能遲緩   |
-| 可調整的關聯式遊戲資料庫| 結構化的關聯式資料儲存體，例如傳輸到資料庫中的遊戲內交易 | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL 資料庫即服務 ([與 VM 上的 SQL 比較](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
+| 可調整的關聯式遊戲資料庫| 結構化的關聯式資料儲存體，例如傳輸到資料庫中的遊戲內交易 | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL 資料庫即服務 ([與 VM 上的 SQL 比較](/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview))  |
 | 可調整的分散式低延遲遊戲資料庫| 使用彈性結構描述快速讀取、寫入及查詢遊戲與玩家資料 | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)| 低延遲 NoSQL 文件資料庫即服務   |
 | 使用自己的資料中心搭配 Azure 服務 | 遊戲將擷取自您的資料中心並傳送到用戶端裝置 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 可讓您的組織從自己的資料中心傳遞 Azure 服務，以協助完成更多工作  |
 | 大型資料區塊傳輸| 大型檔案 (例如遊戲影像、音訊及視訊) 可以透過 Azure CDN 從最近的內容傳遞網路 (CDN) pop 位置傳送給使用者    | [Azure 內容傳遞網路](https://azure.microsoft.com/services/cdn/) | Azure CDN 建置在大型集中式節點的現代化網路拓樸上，能夠處理突發的流量尖峰和大量負載以大幅增加速度與可用性，並產生顯著的使用者體驗改善  |
@@ -221,7 +221,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 
 ## <a name="related-links"></a>相關連結
 
-* [Windows 10 遊戲開發指南](https://docs.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 遊戲開發指南](./e2e.md)
 * [用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups](https://startups.microsoft.com)

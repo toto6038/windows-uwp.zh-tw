@@ -1,18 +1,18 @@
 ---
 ms.assetid: a56156e4-7adb-bf37-527b-fc3243e04b46
 title: 主機上的開發人員首頁 (開發人員首頁)
-description: 提供適用於 Xbox One 之「開發人員首頁」App 的相關資訊。
+description: 瞭解 Xbox One 主控台開發工具組的 Dev Home 工具體驗如何協助開發人員生產力。
 ms.date: 08/09/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 4113df37446d93883cf395e7c1e86b1de6c1b328
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 40100adb1bd9337d933b8ebd155847bde71e341a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57620843"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172812"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>主機上的開發人員首頁 (開發人員首頁)
    
@@ -43,10 +43,10 @@ ms.locfileid: "57620843"
   
 開發人員首頁使用者介面的標頭包含下列有關開發主機的重要「簡介」資訊：   
  
-   *  **主控台 IP:** 在主控台的目前的 IP 位址。   
-   *  **主控台名稱：** 在主控台的目前主機名稱。  
-   *  **沙箱：**「 主控台 」 中的沙箱的名稱。  
-   *  **作業系統版本：** 目前的復原版本在主控台上執行。
+   *  **主機 IP；** 主機目前的 IP 位址。   
+   *  **主機名稱：** 主機目前的主機名稱。  
+   *  **沙箱：** 主機所在的沙箱名稱。  
+   *  **作業系統版本：** 在主機上執行的目前復原版本。
    *  目前的系統時間。   
 
    
@@ -56,7 +56,7 @@ ms.locfileid: "57620843"
    *  [首頁](devhome-home.md)  
    *  [Xbox Live](devhome-live.md)  
    *  [設定](devhome-settings.md)  
-   *  [擷取媒體](devhome-capture.md)  
+   *  [媒體抓取](devhome-capture.md)  
    *  [網路功能](devhome-networking.md)  
    *  [效能](devhome-performance.md)  
 
@@ -145,38 +145,38 @@ ms.locfileid: "57620843"
 
 ## <a name="in-this-section"></a>本節內容  
   
-[首頁 （開發人員首頁）](devhome-home.md)  
+[首頁 (開發人員首頁)](devhome-home.md)  
 
 
-&nbsp;&nbsp;提供快速存取開發主控台定期執行的工作。 
+&nbsp;&nbsp;可讓您快速存取在開發主機上例行性執行的工作。 
   
   
-[Xbox Live 頁面 （開發人員首頁）](devhome-live.md)  
+[Xbox Live 頁面 (開發人員首頁)](devhome-live.md)  
 
 
-&nbsp;&nbsp;擷取多人遊戲的資訊，並顯示目前的 Xbox Live 服務的狀態。 
+&nbsp;&nbsp;擷取多人遊戲資訊，並顯示 Xbox Live 服務的目前狀態。 
   
   
-[設定頁面 （開發人員首頁）](devhome-settings.md)  
+[設定頁面 (開發人員首頁)](devhome-settings.md)  
 
 
-&nbsp;&nbsp;提供各種設定會對開發主控台存取。 
+&nbsp;&nbsp;為開發主機提供各種不同設定的存取。 
   
   
-[媒體擷取 （開發人員首頁） 頁面](devhome-capture.md)  
+[媒體擷取頁面 (開發人員首頁)](devhome-capture.md)  
 
 
-&nbsp;&nbsp;**媒體擷取**頁面開發人員首頁會擷取目前正在執行於主控台標題的影片。 
+&nbsp;&nbsp;Dev Home 的 [ **Media capture** ] 頁面會捕獲目前在主控台上執行之標題的影片。 
   
   
-[網路功能 頁面 （開發人員首頁）](devhome-networking.md)  
+[網路功能頁面 (開發人員首頁)](devhome-networking.md)  
 
 
-&nbsp;&nbsp;模擬各種網路功能的狀況，供疑難排解之用。 
+&nbsp;&nbsp;模擬各種不同的網路條件以進行疑難排解。 
   
   
-[[效能] 頁面 （開發人員首頁）](devhome-performance.md)  
+[效能頁面 (開發人員首頁)](devhome-performance.md)  
 
 
-&nbsp;&nbsp;模擬各種不同的磁碟活動和 CPU 使用狀況，供疑難排解之用。 
+&nbsp;&nbsp;模擬各種磁碟活動和 CPU 使用條件以進行疑難排解。 
  

@@ -1,5 +1,5 @@
 ---
-Description: 支援 Windows Ink 的 windows 應用程式可以將筆墨筆劃序列化和還原序列化為筆墨序列化格式（ISF）檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
+Description: 支援 Windows Ink 的 Windows 應用程式可以將筆墨筆劃序列化和還原序列化為筆跡序列化格式 (ISF) 檔。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
 title: 儲存和抓取 Windows Ink 筆劃資料
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
@@ -8,32 +8,32 @@ keywords: Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, ISF, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 819358fb775444d62cbad414668a779fc5c305ca
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 72076ffb27046a5c5e804cf30e8cb6c78b88cd69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970243"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173332"
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>儲存和抓取 Windows Ink 筆劃資料
 
 
-支援 Windows Ink 的 windows 應用程式可以將筆墨筆劃序列化和還原序列化為筆墨序列化格式（ISF）檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
+支援 Windows Ink 的 Windows 應用程式可以將筆墨筆劃序列化和還原序列化為筆跡序列化格式 (ISF) 檔。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
 
 > [!NOTE]
 > ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二進位文件格式中 (例如 GIF 檔案)，或直接放置到剪貼簿上。
 
-> **重要 API**：[**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking)
+> **重要 API**：[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)、[**Windows.UI.Input.Inking**](/uwp/api/Windows.UI.Input.Inking)
 
 ## <a name="save-ink-strokes-to-a-file"></a>將筆墨筆劃儲存為檔案
 
-我們將在此處示範如何儲存在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項上繪製的筆墨筆劃。
+我們將在此處示範如何儲存在 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項上繪製的筆墨筆劃。
 
-**從從[筆墨序列化格式（ISF）檔案儲存和載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)下載此範例**
+**從[筆跡序列化格式 (ISF) 檔案的儲存和載入筆墨筆觸，](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)下載此範例**
 
 1.  一開始先設定 UI。
 
-    UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
+    UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -63,7 +63,7 @@ ms.locfileid: "82970243"
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，而且會針對按鈕上的 click 事件宣告接聽程式。
+    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，而且會針對按鈕上的 click 事件宣告接聽程式。
 ```csharp
 public MainPage()
     {
@@ -83,13 +83,13 @@ public MainPage()
     }
 ```
 
-3.  最後，我們會將筆墨儲存在 [**儲存**] 按鈕的 click 事件處理常式中。
+3.  最後，我們會將筆墨儲存在 [ **儲存** ] 按鈕的 click 事件處理常式中。
 
-    [**FileSavePicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileSavePicker) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
+    [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
-    選取檔案之後，我們會開啟已設為 [**ReadWrite**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) 的 [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) 資料流。
+    選取檔案之後，我們會開啟已設為 [**ReadWrite**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream) 的 [**IRandomAccessStream**](/uwp/api/Windows.Storage.FileAccessMode) 資料流。
 
-    接著呼叫 [**SaveAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync)，將 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 管理的筆墨筆劃序列化至資料流。
+    接著呼叫 [**SaveAsync**](/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync)，將 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 管理的筆墨筆劃序列化至資料流。
 
 ```csharp
 // Save ink data to a file.
@@ -155,17 +155,17 @@ public MainPage()
 ```
 
 > [!NOTE]
-> GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法 (請見下一節的示範) 可以支援用於回溯相容性的其他格式。
+> GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法 (請見下一節的示範) 可以支援用於回溯相容性的其他格式。
 
 ## <a name="load-ink-strokes-from-a-file"></a>從檔案載入筆墨筆劃
 
-我們將在此處示範如何從檔案載入筆墨筆劃，並在 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項上轉譯它們。
+我們將在此處示範如何從檔案載入筆墨筆劃，並在 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項上轉譯它們。
 
-**從從[筆墨序列化格式（ISF）檔案儲存和載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)下載此範例**
+**從[筆跡序列化格式 (ISF) 檔案的儲存和載入筆墨筆觸，](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)下載此範例**
 
 1.  一開始先設定 UI。
 
-    UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
+    UI 包含 [儲存]、[載入] 和 [清除] 按鈕，以及 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -195,7 +195,7 @@ public MainPage()
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，而且會針對按鈕上的 click 事件宣告接聽程式。
+    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))，而且會針對按鈕上的 click 事件宣告接聽程式。
 ```csharp
 public MainPage()
     {
@@ -215,13 +215,13 @@ public MainPage()
     }
 ```
 
-3.  最後，我們會在 [**載入**] 按鈕的 click 事件處理常式中載入筆墨。
+3.  最後，我們會將筆墨載入至 **載入** 按鈕的 click 事件處理常式。
 
-    [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
+    [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
-    選取檔案之後，我們會開啟已設為 [**Read**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStream) 的 [**IRandomAccessStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.FileAccessMode) 資料流。
+    選取檔案之後，我們會開啟已設為 [**Read**](/uwp/api/Windows.Storage.Streams.IRandomAccessStream) 的 [**IRandomAccessStream**](/uwp/api/Windows.Storage.FileAccessMode) 資料流。
 
-    接著呼叫 [**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync)，來讀取並還原序列化已儲存的筆墨筆劃，然後載入 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)。 將筆劃載入 **InkStrokeContainer**，會導致 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 立即將它們轉譯到 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
+    接著呼叫 [**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync)，來讀取並還原序列化已儲存的筆墨筆劃，然後載入 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)。 將筆劃載入 **InkStrokeContainer**，會導致 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 立即將它們轉譯到 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
 
     > [!NOTE]
     > InkStrokeContainer 中的所有現有筆劃都會先清除，然後再載入新的筆劃。
@@ -260,9 +260,9 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法可以支援用於回溯相容性的下列格式。
+> GIF 是儲存筆墨資料時唯一支援的檔案格式。 不過，[**LoadAsync**](/uwp/api/windows.ui.input.inking.inkmanager.loadasync) 方法可以支援用於回溯相容性的下列格式。
 
-| [格式]                    | 描述 |
+| 格式                    | 描述 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | 指定使用 ISF 保留的筆墨。 這是最簡單且易於保留格式的筆墨表示法。 它可以內嵌到二進位文件格式中，或直接放置到剪貼簿上。                                                                                                                                                                                                         |
 | Base64InkSerializedFormat | 指定透過將 ISF 編碼為 base64 資料流來保留的筆墨。 提供這個格式是為了讓筆墨能夠直接在 XML 或 HTML 檔案中進行編碼。                                                                                                                                                                                                                                                |
@@ -273,15 +273,15 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 我們將在此處示範如何使用剪貼簿，在 app 之間傳輸筆墨筆劃。
 
-若要支援剪貼簿功能，內建的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 剪下和複製命令會要求選取一或多個筆墨筆劃。
+若要支援剪貼簿功能，內建的 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 剪下和複製命令會要求選取一或多個筆墨筆劃。
 
 在這個範例中，我們將在使用畫筆筆身按鈕 (或滑鼠右鍵按鈕) 修改輸入時啟用筆劃選取項目。 如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的＜傳入輸入以進行進階處理＞。
 
-**從[[儲存] 和 [從剪貼簿載入筆跡筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)] 下載此範例**
+**從剪貼簿的[儲存和載入筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)下載此範例**
 
 1.  一開始先設定 UI。
 
-    UI 包含 [剪下]、[複製]、[貼上] 和 [清除] 按鈕，以及 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和選取項目畫布。
+    UI 包含 [剪下]、[複製]、[貼上] 和 [清除] 按鈕，以及 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和選取項目畫布。
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -317,7 +317,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 
 2.  然後設定一些基本的筆墨輸入行為。
 
-    [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
+    [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 已設定為可將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes))。 此處也會宣告按鈕上適用於 click 事件的接聽程式，以及適用於選取功能的指標和筆劃事件。
 
     如需如何實作筆劃選取項目的完整範例，請參閱[畫筆和手寫筆互動](pen-and-stylus-interactions.md)中的＜傳入輸入以進行進階處理＞。
 ```csharp
@@ -365,11 +365,11 @@ public MainPage()
     }
 ```
 
-3.  最後，在新增筆觸選取支援之後，我們會在 [**剪**下]、[**複製**] 和 [**貼**上] 按鈕的 click 事件處理常式中，執行剪貼簿功能。
+3.  最後，在新增筆觸選取範圍支援之後，我們會在 **剪**下、 **複製**和 **貼** 上按鈕的 click 事件處理常式中，執行剪貼簿功能。
 
-    針對剪下功能，我們會先在 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上呼叫 [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
+    針對剪下功能，我們會先在 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上呼叫 [**CopySelectedToClipboard**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
 
-    接著呼叫 [**DeleteSelected**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) 來移除筆墨畫布上的筆劃。
+    接著呼叫 [**DeleteSelected**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected) 來移除筆墨畫布上的筆劃。
 
     最後，從選取項目畫布中刪除所有選取筆劃。
     
@@ -403,7 +403,7 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-針對複製功能，我們只需在 [**InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上呼叫 [**CopySelectedToClipboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
+針對複製功能，我們只需在 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard) 的 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) 上呼叫 [**CopySelectedToClipboard**](/uwp/api/Windows.UI.Input.Inking.InkPresenter)。
 
 
 ```csharp
@@ -413,9 +413,9 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-針對貼上，我們呼叫 [**CanPasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) 確認剪貼簿上的內容可貼到筆跡畫布。
+針對貼上，我們呼叫 [**CanPasteFromClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard) 確認剪貼簿上的內容可貼到筆跡畫布。
 
-若可以的話，我們便會呼叫 [**PasteFromClipboard**](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) 將剪貼簿的筆墨筆劃插入 [**IntPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的 [**InkStrokeContainer**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)，接著便會將筆劃轉譯到筆跡畫布。
+若可以的話，我們便會呼叫 [**PasteFromClipboard**](/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard) 將剪貼簿的筆墨筆劃插入 [**IntPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 的 [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer)，接著便會將筆劃轉譯到筆跡畫布。
 
 ```csharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
@@ -444,9 +444,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [簡單的筆跡範例 (C#/C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)
 * [複雜的筆跡範例 (C++)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk)
 * [筆跡範例 (JavaScript)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208))
-* [開始使用教學課程：在您的 Windows 應用程式中支援筆墨](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
+* [開始教學課程：在您的 Windows 應用程式中支援筆墨](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink)
 * [著色本範例](https://github.com/Microsoft/Windows-appsample-coloringbook)
 * [家庭記事本範例](https://github.com/Microsoft/Windows-appsample-familynotes)
-
-
-

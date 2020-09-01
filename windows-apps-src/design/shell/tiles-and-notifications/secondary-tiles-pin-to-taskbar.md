@@ -7,12 +7,12 @@ ms.date: 11/28/2018
 ms.topic: article
 keywords: windows 10、uwp、釘選到工作列、次要磚、將次要磚釘選到工作列、快捷方式
 ms.localizationpriority: medium
-ms.openlocfilehash: a57fa9c6a268b22df3c1772e0aec111c769d907b
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 23feaf6cbc2293951116167662ab5647e3d35c44
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054188"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172322"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>將次要磚釘選到工作列
 
@@ -35,9 +35,9 @@ ms.locfileid: "89054188"
 
 如果您以舊版的 Windows 10) 為目標，則較舊的裝置沒有 (的工作列釘選 Api。 因此，您不應該在無法釘選的裝置上顯示釘選按鈕。
 
-此外，這項功能會在有限存取下鎖定。 若要取得存取權，請洽詢 Microsoft。 對 **[TaskbarManager. RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**、 **[TaskbarManager. IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 和 **[TaskbarManager](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** 的 API 呼叫將會失敗，並出現「拒絕存取」例外狀況。 不允許應用程式在沒有許可權的情況下使用此 API，而且 API 定義可能會隨時變更。
+此外，這項功能會在有限存取下鎖定。 若要取得存取權，請洽詢 Microsoft。 對 **[TaskbarManager. RequestPinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync#Windows_UI_Shell_TaskbarManager_RequestPinSecondaryTileAsync_Windows_UI_StartScreen_SecondaryTile_)**、 **[TaskbarManager. IsSecondaryTilePinnedAsync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 和 **[TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)** 的 API 呼叫將會失敗，並出現「拒絕存取」例外狀況。 不允許應用程式在沒有許可權的情況下使用此 API，而且 API 定義可能會隨時變更。
 
-使用 [ApiInformation. IsMethodPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) 方法來判斷 api 是否存在。 然後使用 **[LimitedAccessFeatures](https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures)** api 來嘗試解除鎖定 api。
+使用 [ApiInformation. IsMethodPresent](/uwp/api/windows.foundation.metadata.apiinformation.ismethodpresent#Windows_Foundation_Metadata_ApiInformation_IsMethodPresent_System_String_System_String_) 方法來判斷 api 是否存在。 然後使用 **[LimitedAccessFeatures](/uwp/api/windows.applicationmodel.limitedaccessfeatures)** api 來嘗試解除鎖定 api。
 
 ```csharp
 if (ApiInformation.IsMethodPresent("Windows.UI.Shell.TaskbarManager", "RequestPinSecondaryTileAsync"))
@@ -70,7 +70,7 @@ else
 
 ## <a name="2-get-the-taskbarmanager-instance"></a>2. 取得 TaskbarManager 實例
 
-Windows 應用程式可以在各種不同的裝置上執行;並非所有專案都支援工作列。 目前只有傳統型裝置支援工作列。 此外，也有可能出現工作列。 若要檢查是否目前有工作列存在，請呼叫 **[TaskbarManager GetDefault](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** 方法，並檢查傳回的實例是否不是 null。 如果工作列不存在，請不要顯示 [釘選] 按鈕。
+Windows 應用程式可以在各種不同的裝置上執行;並非所有專案都支援工作列。 目前只有傳統型裝置支援工作列。 此外，也有可能出現工作列。 若要檢查是否目前有工作列存在，請呼叫 **[TaskbarManager GetDefault](/uwp/api/windows.ui.shell.taskbarmanager.getdefault)** 方法，並檢查傳回的實例是否不是 null。 如果工作列不存在，請不要顯示 [釘選] 按鈕。
 
 建議您在單一作業的持續時間內（例如釘選）保存實例，然後在您下次需要進行另一項作業時，再抓取新的實例。
 
@@ -90,7 +90,7 @@ else
 
 ## <a name="3-check-whether-your-tile-is-currently-pinned-to-the-taskbar"></a>3. 檢查您的磚目前是否已釘選到工作列
 
-如果您的磚已釘選，您應該改為顯示 [取消釘選] 按鈕。 您可以使用 **[IsSecondaryTilePinnedAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 方法來檢查您的磚目前是否已釘選 (使用者可以隨時將其取消釘選) 。 在此方法中，您會將您想要知道的磚 **TileId** 傳遞給釘選。
+如果您的磚已釘選，您應該改為顯示 [取消釘選] 按鈕。 您可以使用 **[IsSecondaryTilePinnedAsync](/uwp/api/windows.ui.shell.taskbarmanager.issecondarytilepinnedasync)** 方法來檢查您的磚目前是否已釘選 (使用者可以隨時將其取消釘選) 。 在此方法中，您會將您想要知道的磚 **TileId** 傳遞給釘選。
 
 ```csharp
 if (await taskbarManager.IsSecondaryTilePinnedAsync("myTileId"))
@@ -107,7 +107,7 @@ else
 
 ## <a name="4-check-whether-pinning-is-allowed"></a>4. 檢查是否允許釘選
 
-群組原則可以停用釘選到工作列。 [TaskbarManager. IsPinningAllowed](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed)屬性可讓您檢查是否允許釘選。
+群組原則可以停用釘選到工作列。 [TaskbarManager. IsPinningAllowed](/uwp/api/windows.ui.shell.taskbarmanager.ispinningallowed)屬性可讓您檢查是否允許釘選。
 
 當使用者按一下 [釘選] 按鈕時，您應該檢查這個屬性，如果是 false，您應該會顯示訊息對話方塊，通知使用者此電腦上不允許釘選。
 
@@ -136,7 +136,7 @@ else
 
 首先，請建立您的次要磚，就像釘選開始時一樣。 您可以讀取 [釘選次要磚來開始，以](secondary-tiles-pinning.md)深入瞭解次要磚屬性。 不過，當釘選到工作列時，除了先前需要的屬性之外，Square44x44Logo (這是工作列) 所使用的標誌。 否則便會擲回例外狀況。
 
-然後，將磚傳遞給 **[RequestPinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** 方法。 由於這是受限制的存取權，因此不會顯示確認對話方塊，也不需要 UI 執行緒。 但在未來，當這項功能不受限制存取時，呼叫端不會使用有限存取權，將會收到一個對話方塊，而且必須使用 UI 執行緒才能使用。
+然後，將磚傳遞給 **[RequestPinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.requestpinsecondarytileasync)** 方法。 由於這是受限制的存取權，因此不會顯示確認對話方塊，也不需要 UI 執行緒。 但在未來，當這項功能不受限制存取時，呼叫端不會使用有限存取權，將會收到一個對話方塊，而且必須使用 UI 執行緒才能使用。
 
 ```csharp
 // Initialize the tile (all properties below are required)
@@ -155,7 +155,7 @@ bool isPinned = await taskbarManager.RequestPinSecondaryTileAsync(tile);
 
 ## <a name="enumerate-tiles"></a>列舉磚
 
-若要查看您建立的所有圖格，但仍固定在某個位置 (開始、工作列或兩個) ，請使用 **[FindAllAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**。 接著，您可以檢查這些磚是否釘選到工作列和/或啟動。 如果介面不受支援，則這些方法會傳回 false。
+若要查看您建立的所有圖格，但仍固定在某個位置 (開始、工作列或兩個) ，請使用 **[FindAllAsync](/uwp/api/windows.ui.startscreen.secondarytile.findallasync)**。 接著，您可以檢查這些磚是否釘選到工作列和/或啟動。 如果介面不受支援，則這些方法會傳回 false。
 
 ```csharp
 var taskbarManager = TaskbarManager.GetDefault();
@@ -179,12 +179,12 @@ foreach (SecondaryTile tile in await SecondaryTile.FindAllAsync())
 
 ## <a name="update-a-tile"></a>更新磚
 
-若要更新已釘選的圖格，您可以使用 [**SecondaryTile. >updateasync**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.updateasync) 方法（如 [更新次要磚](secondary-tiles-pinning.md#updating-a-secondary-tile)中所述）。
+若要更新已釘選的圖格，您可以使用 [**SecondaryTile. >updateasync**](/uwp/api/windows.ui.startscreen.secondarytile.updateasync) 方法（如 [更新次要磚](secondary-tiles-pinning.md#updating-a-secondary-tile)中所述）。
 
 
 ## <a name="unpin-a-tile"></a>取消釘選磚
 
-如果磚目前已釘選，您的應用程式應該提供 [取消釘選] 按鈕。 若要取消釘選磚，只要呼叫 **[TryUnpinSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**，然後傳入您要取消固定的次要磚 **TileId** 即可。
+如果磚目前已釘選，您的應用程式應該提供 [取消釘選] 按鈕。 若要取消釘選磚，只要呼叫 **[TryUnpinSecondaryTileAsync](/uwp/api/windows.ui.shell.taskbarmanager.tryunpinsecondarytileasync)**，然後傳入您要取消固定的次要磚 **TileId** 即可。
 
 這個方法會傳回布林值，指出您的磚是否不再釘選到工作列。 如果您的磚未固定在第一個位置，這也會傳回 true。 如果不允許取消釘選，則會傳回 false。
 
@@ -201,7 +201,7 @@ if (taskbarManager != null)
 
 ## <a name="delete-a-tile"></a>刪除磚
 
-如果您想要從任何地方取消釘選圖格 (開始，工作列) ，請使用 **[RequestDeleteAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** 方法。
+如果您想要從任何地方取消釘選圖格 (開始，工作列) ，請使用 **[RequestDeleteAsync](/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync)** 方法。
 
 這適用于使用者釘選的內容不再適用的情況。 例如，如果您的應用程式可讓您將筆記本釘選到 [開始] 和 [工作列]，然後使用者刪除筆記本，您應該只刪除與筆記本相關聯的磚。
 
@@ -217,7 +217,7 @@ await toBeDeleted.RequestDeleteAsync();
 
 ## <a name="unpin-only-from-start"></a>僅從開始取消釘選
 
-如果您只想要在工作列上將次要磚取消釘選，請呼叫 **[StartScreenManager. TryRemoveSecondaryTileAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** 方法。 同樣地，如果磚不再釘選到任何其他表面，也會刪除磚。
+如果您只想要在工作列上將次要磚取消釘選，請呼叫 **[StartScreenManager. TryRemoveSecondaryTileAsync](/uwp/api/windows.ui.startscreen.startscreenmanager.tryremovesecondarytileasync)** 方法。 同樣地，如果磚不再釘選到任何其他表面，也會刪除磚。
 
 這個方法會傳回布林值，指出您的磚是否不再釘選為開始。 如果您的磚未固定在第一個位置，這也會傳回 true。 如果不允許取消釘選，或不支援啟動，則會傳回 false。
 
@@ -228,5 +228,5 @@ await StartScreenManager.GetDefault().TryRemoveSecondaryTileAsync("myTileId");
 
 ## <a name="resources"></a>資源
 
-* [TaskbarManager 類別](https://docs.microsoft.com/uwp/api/windows.ui.shell.taskbarmanager)
+* [TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager)
 * [將次要磚釘選到開始](secondary-tiles-pinning.md)

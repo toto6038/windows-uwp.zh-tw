@@ -1,6 +1,6 @@
 ---
 title: 注視互動
-Description: 瞭解如何設計和優化您的 Windows 應用程式，為依賴眼和 head 追蹤器的使用者提供最佳的體驗。
+Description: 瞭解如何設計和優化您的 Windows 應用程式，為依賴眼睛和前端追蹤器輸入的使用者提供最佳體驗。
 label: Gaze interactions
 template: detail.hbs
 keywords: 注視, 眼球追蹤, 頭部追蹤, 注視點, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,38 +11,38 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4cfd84d54ecd1425b3b7e66c54c96fbd78c2dd46
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970123"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172502"
 ---
-# <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>Windows 應用程式中的注視互動和眼追蹤
+# <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>在 Windows 應用程式中注視互動和眼睛追蹤
 
 ![眼球追蹤英雄](images/gaze/eyecontrolbanner1.png)
 
 提供支援追蹤使用者的注視、注意力，以及根據他們眼球的位置與移動存在。
 
 > [!NOTE]
-> 如需 [Windows Mixed Reality](https://docs.microsoft.com/windows/mixed-reality/) 中的注視輸入，請參閱 [注視](https://docs.microsoft.com/windows/mixed-reality/gaze)。
+> 如需 [Windows Mixed Reality](/windows/mixed-reality/) 中的注視輸入，請參閱 [注視](/windows/mixed-reality/gaze)。
 
-**重要 Api**: [Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview),[GazeDevicePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicepreview),[GazePointPreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview),[GazeInputSourcePreview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要 Api**: [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview),[GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview),[GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview),[GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概觀
 
-注視輸入是一種功能強大的方式，可讓您互動和使用 Windows 應用程式，特別適用于具有為主眼部神經 muscular 疾病（例如 ALS）的使用者輔助技術，以及其他牽涉到受損肌肉或 nerve 功能的障礙。
+「注視輸入」是一種強大的方式，可讓您互動和使用 Windows 應用程式，這些應用程式特別適用于具有為主眼部神經 muscular 疾病 (（例如 ALS) 和其他與受損肌肉或 nerve 函式的便利性）的使用者輔助技術。
 
 此外，注視輸入提供同樣吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
 
 > [!NOTE]
-> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 **Windows 10 2018 年4月更新（版本1803、組建17134）** 及更新版本，可供建立可與眼睛追蹤硬體互動之應用程式的一組 Windows 執行階段 Api （[windows. 輸入. 預覽](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)）。
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 Windows 執行階段 Api ([Windows. 輸入. Preview](/uwp/api/windows.devices.input.preview)) 來建立可與眼睛追蹤硬體互動的應用程式，可在 **Windows 10 2018 年4月更新 (1803 版、組建 17134) 和更新版本中 ** 取得。
 
 ## <a name="privacy"></a>隱私權
 
-由於眼睛追蹤裝置所收集的可能敏感性個人資料，因此您必須在應用程式的`gazeInput`應用程式資訊清單中宣告功能（請參閱下列**安裝**程式一節）。 宣告時，Windows 會自動提示使用者同意對話方塊（初次執行應用程式時），使用者必須授與應用程式與眼球追蹤裝置通訊和存取此資料的權限。
+由於眼睛追蹤裝置所收集的潛在敏感個人資料，您必須 `gazeInput` 在應用程式的應用程式資訊清單中宣告功能 (請參閱下列 **設定** 章節) 。 宣告時，Windows 會自動提示使用者同意對話方塊（初次執行應用程式時），使用者必須授與應用程式與眼球追蹤裝置通訊和存取此資料的權限。
 
-此外，如果您的應用程式收集、儲存或傳輸眼球追蹤資料，則您必須在應用程式的隱私權聲明中說明，並遵守 [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement) 和 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies) 中 **個人資訊** 的所有其他需求。
+此外，如果您的應用程式收集、儲存或傳輸眼球追蹤資料，則您必須在應用程式的隱私權聲明中說明，並遵守 [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement) 和 [Microsoft Store 原則](/legal/windows/agreements/store-policies) 中 **個人資訊** 的所有其他需求。
 
 ## <a name="setup"></a>安裝程式
 
@@ -64,15 +64,15 @@ ms.locfileid: "82970123"
 
 ## <a name="basic-eye-tracking"></a>基本眼球追蹤
 
-在此範例中，我們會示範如何追蹤使用者在 Windows 應用程式中的注視，並使用計時函式進行基本的點擊測試，以指出它們可以在特定元素上維護其注視焦點的程度。
+在此範例中，我們會示範如何在 Windows 應用程式中追蹤使用者的注視，並使用計時函式搭配基本點擊測試，以指出他們可以在特定專案上維持其注視焦點的程度。
 
-小橢圓形用來顯示應用程式檢視區中的注視點所在位置，而 [Windows 社群工具組](https://docs.microsoft.com/windows/communitytoolkit/) 的 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 是隨機放置在畫布上。 在進度列上偵測到注視焦點時，開始使用計時器，且進度列達到 100% 時隨機將進度列移至畫布上。
+小橢圓形用來顯示應用程式檢視區中的注視點所在位置，而 [Windows 社群工具組](/windows/communitytoolkit/) 的 [RadialProgressBar](/windows/communitytoolkit/controls/radialprogressbar) 是隨機放置在畫布上。 在進度列上偵測到注視焦點時，開始使用計時器，且進度列達到 100% 時隨機將進度列移至畫布上。
 
 ![使用計時器範例的注視追蹤](images/gaze/gaze-input-timed2.gif)
 
 *使用計時器範例的注視追蹤*
 
-**從[注視輸入範例下載此範例（基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
+**從 [注視輸入範例下載此範例 (基本) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。
 
@@ -154,7 +154,7 @@ ms.locfileid: "82970123"
 
 2. 接下來，初始化我們的 App。
 
-    在這個片段中，我們可以宣告全球物件並覆寫 [OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 頁面事件，開始我們的 [注視裝置監看員](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) 和 [OnNavigatedFrom](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 頁面事件，停止我們的 [注視裝置監看員](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)。
+    在這個片段中，我們可以宣告全球物件並覆寫 [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) 頁面事件，開始我們的 [注視裝置監看員](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview) 和 [OnNavigatedFrom](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 頁面事件，停止我們的 [注視裝置監看員](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview)。
 
     ```csharp
     using System;
@@ -233,7 +233,7 @@ ms.locfileid: "82970123"
 
 3. 接下來，新增我們的注視裝置監看員方法。 
     
-    在 `StartGazeDeviceWatcher` 中，我們呼叫 [CreateWatcher](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher)，並宣告眼球追蹤裝置事件接聽程式 ([DeviceAdded](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added)，[DeviceUpdated](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated)，和 [DeviceRemoved](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed))。
+    在 `StartGazeDeviceWatcher` 中，我們呼叫 [CreateWatcher](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher)，並宣告眼球追蹤裝置事件接聽程式 ([DeviceAdded](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added)，[DeviceUpdated](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated)，和 [DeviceRemoved](/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed))。
 
     在 `DeviceAdded` 中，檢查眼球追蹤裝置的狀態。 如果是可候用裝置，則增加我們的裝置計數並啟用注視追蹤。 如需詳細資訊，請參閱下一步。
 
@@ -330,10 +330,10 @@ ms.locfileid: "82970123"
 
 4. 檢查裝置在 `IsSupportedDevice` 中是否可候用，如果是，請嘗試在 `TryEnableGazeTrackingAsync` 中啟用注視追蹤。
 
-    在 `TryEnableGazeTrackingAsync` 中，我們宣告注視事件處理常式，並呼叫 [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) 取得的輸入來源的參考 (必須在 UI 執行緒上呼叫，請參閱 [保持 UI 執行緒回應 ](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive))。
+    在 `TryEnableGazeTrackingAsync` 中，我們宣告注視事件處理常式，並呼叫 [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview) 取得的輸入來源的參考 (必須在 UI 執行緒上呼叫，請參閱 [保持 UI 執行緒回應 ](../../debug-test-perf/keep-the-ui-thread-responsive.md))。
 
     > [!NOTE]
-    > 只有當眼球追蹤相容的裝置已連接且應用程式有需求時，您應該呼叫 [GazeInputSourcePreview.GetForCurrentView()](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview)。 否則，同意對話方塊是非必要的。
+    > 只有當眼球追蹤相容的裝置已連接且應用程式有需求時，您應該呼叫 [GazeInputSourcePreview.GetForCurrentView()](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview)。 否則，同意對話方塊是非必要的。
 
 ```csharp
     /// <summary>
@@ -405,7 +405,7 @@ ms.locfileid: "82970123"
 
     分別在 `GazeEntered` 與 `GazeExited` 顯示或隱藏注視追蹤橢圓形。
 
-    在 `GazeMoved` 中，我們根據 [GazeEnteredPreviewEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 所提供的 [EyeGazePosition](https://docs.microsoft.com/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移除注視追蹤橢圓形。 我們也在 [RadialProgressBar](https://docs.microsoft.com/windows/communitytoolkit/controls/radialprogressbar) 上管理注視焦點計時器，其觸發重新放置進度列。 如需詳細資訊，請參閱下一步。
+    在 `GazeMoved` 中，我們根據 [GazeEnteredPreviewEventArgs](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs) 的 [CurrentPoint](/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint) 所提供的 [EyeGazePosition](/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition) 移除注視追蹤橢圓形。 我們也在 [RadialProgressBar](/windows/communitytoolkit/controls/radialprogressbar) 上管理注視焦點計時器，其觸發重新放置進度列。 如需詳細資訊，請參閱下一步。
 
     ```csharp
     /// <summary>
@@ -499,9 +499,9 @@ ms.locfileid: "82970123"
     ```
 6. 最後，以下是適用於此應用程式用來管理是注視焦點計時器的方法。
 
-    `DoesElementContainPoint`檢查注視指標是否在進度列上。 若是如此，它開始使用注視計時器，並在每個注視計時器刻度上遞增進度列。
+    `DoesElementContainPoint` 檢查注視指標是否在進度列上方。 若是如此，它開始使用注視計時器，並在每個注視計時器刻度上遞增進度列。
 
-    `SetGazeTargetLocation`設定進度列的初始位置，如果進度列完成（視注視焦點計時器而定），則將進度列移到隨機位置。
+    `SetGazeTargetLocation` 設定進度列的初始位置，如果進度列 (完成（視注視焦點計時器) 而定），則會將進度列移至隨機位置。
 
     ```csharp
     /// <summary>
@@ -600,7 +600,7 @@ ms.locfileid: "82970123"
 
 ### <a name="resources"></a>資源
 
-- [Windows 社群工具組注視媒體櫃](https://docs.microsoft.com/windows/communitytoolkit/gaze/gazeinteractionlibrary)
+- [Windows 社群工具組注視媒體櫃](/windows/communitytoolkit/gaze/gazeinteractionlibrary)
 
 ### <a name="topic-samples"></a>主題範例
 

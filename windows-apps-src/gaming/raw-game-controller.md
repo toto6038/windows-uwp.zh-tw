@@ -6,16 +6,16 @@ ms.date: 03/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 輸入,原始遊戲控制器
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: d21b411965da874cfb324fc2ee867e39bdcd0ded
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57644623"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171982"
 ---
 # <a name="raw-game-controller"></a>原始遊戲控制器
 
-此頁面說明使用 [Windows.Gaming.Input.RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)及通用 Windows 平台 (UWP) 相關 API 為幾乎任何類型的遊戲控制器進行程式設計的基本知識。
+此頁面說明使用 [Windows.Gaming.Input.RawGameController](/uwp/api/windows.gaming.input.rawgamecontroller)及通用 Windows 平台 (UWP) 相關 API 為幾乎任何類型的遊戲控制器進行程式設計的基本知識。
 
 閱讀此頁面，即可了解：
 
@@ -28,17 +28,17 @@ ms.locfileid: "57644623"
 
 原始遊戲控制器是遊戲控制器的一般呈現，具有在許多不同類型的常見遊戲控制器上找到的輸入。 這些輸入作為未命名的按鈕、切換裝置和軸的簡單陣列而公開。 您可以使用原始遊戲控制器，讓客戶建立自訂輸入的對應，不論使用哪種類型的控制器。
 
-[RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)類別非常適用於其他輸入類別 ([ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)，[FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick)等等) 不符合您的需求的情況&mdash;如果您預期客戶會使用多種不同類型的遊戲控制器，而想要更一般的項目，就適合使用者個類別。
+[RawGameController](/uwp/api/windows.gaming.input.rawgamecontroller)類別非常適用於其他輸入類別 ([ArcadeStick](/uwp/api/windows.gaming.input.arcadestick)，[FlightStick](/uwp/api/windows.gaming.input.flightstick)等等) 不符合您的需求的情況&mdash;如果您預期客戶會使用多種不同類型的遊戲控制器，而想要更一般的項目，就適合使用者個類別。
 
 ## <a name="detect-and-track-raw-game-controllers"></a>偵測及追蹤原始遊戲控制器
 
-使用與遊戲台相同的方式偵測及追蹤原始遊戲控制器的運作，但 [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) 類別除外，而不是 [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) 類別。 如需詳細資訊，請參閱[遊戲台與震動](gamepad-and-vibration.md)。
+使用與遊戲台相同的方式偵測及追蹤原始遊戲控制器的運作，但 [RawGameController](/uwp/api/windows.gaming.input.rawgamecontroller) 類別除外，而不是 [Gamepad](/uwp/api/Windows.Gaming.Input.Gamepad) 類別。 如需詳細資訊，請參閱[遊戲台與震動](gamepad-and-vibration.md)。
 
 <!-- Raw game controllers are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected raw game controllers and events to notify you when a raw game controller is added or removed.
 
 ### The raw game controller list
 
-The [RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller) class provides a static property, [RawGameControllers](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_RawGameControllers), which is a read-only list of raw game controllers that are currently connected. Because you might only be interested in some of the connected raw game controllers, we recommend that you maintain your own collection instead of accessing them through the **RawGameControllers** property.
+The [RawGameController](/uwp/api/windows.gaming.input.rawgamecontroller) class provides a static property, [RawGameControllers](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_RawGameControllers), which is a read-only list of raw game controllers that are currently connected. Because you might only be interested in some of the connected raw game controllers, we recommend that you maintain your own collection instead of accessing them through the **RawGameControllers** property.
 
 The following example copies all connected raw game controllers into a new collection:
 
@@ -54,7 +54,7 @@ for (auto rawGameController : RawGameController::RawGameControllers)
 
 ### Adding and removing raw game controllers
 
-When a raw game controller is added or removed, the [RawGameControllerAdded](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_RawGameControllerAdded) and [RawGameControllerRemoved](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_RawGameControllerRemoved) events are raised. You can register handlers for these events to keep track of the raw game controllers that are currently connected.
+When a raw game controller is added or removed, the [RawGameControllerAdded](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_RawGameControllerAdded) and [RawGameControllerRemoved](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_RawGameControllerRemoved) events are raised. You can register handlers for these events to keep track of the raw game controllers that are currently connected.
 
 The following example starts tracking a raw game controller that's been added:
 
@@ -90,7 +90,7 @@ Each raw game controller can be associated with a user account to link their ide
 
 ## <a name="get-the-capabilities-of-a-raw-game-controller"></a>取得原始遊戲控制器的功能
 
-找出您感興趣的原始遊戲控制器後，您就可以收集控制器功能的相關資訊。 您可以用[RawGameController.ButtonCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.ButtonCount)取得原始遊戲控制器按鈕數目，用[RawGameController.AxisCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.AxisCount)取得類比軸數目，以及用[RawGameController.SwitchCount](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.SwitchCount)取得切換裝置數目。 此外，您可以使用[RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_)取得切換裝置類型。
+找出您感興趣的原始遊戲控制器後，您就可以收集控制器功能的相關資訊。 您可以用[RawGameController.ButtonCount](/uwp/api/windows.gaming.input.rawgamecontroller.ButtonCount)取得原始遊戲控制器按鈕數目，用[RawGameController.AxisCount](/uwp/api/windows.gaming.input.rawgamecontroller.AxisCount)取得類比軸數目，以及用[RawGameController.SwitchCount](/uwp/api/windows.gaming.input.rawgamecontroller.SwitchCount)取得切換裝置數目。 此外，您可以使用[RawGameController.GetSwitchKind](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_)取得切換裝置類型。
 
 下列範例會取得原始遊戲控制器的輸入次數︰
 
@@ -118,7 +118,7 @@ for (uint32_t i = 0; i < switchCount; i++)
 
 輪詢可在精確的時間點擷取原始遊戲控制器的快照。 這種輸入收集方式適用於大部分遊戲，因為其邏輯一般是以決定性迴圈執行，而不是透過事件驅動 從一次全部收集的輸入來解譯遊戲命令，一般也比從不同時間收集的許多單一輸入來解譯遊戲命令更為簡單。
 
-輪詢原始遊戲控制器，可透過呼叫[RawGameController.GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetCurrentReading_System_Boolean___Windows_Gaming_Input_GameControllerSwitchPosition___System_Double___)。 這項功能會填入包含原始遊戲控制器狀態的按鈕、切換裝置及軸的陣列。
+輪詢原始遊戲控制器，可透過呼叫[RawGameController.GetCurrentReading](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetCurrentReading_System_Boolean___Windows_Gaming_Input_GameControllerSwitchPosition___System_Double___)。 這項功能會填入包含原始遊戲控制器狀態的按鈕、切換裝置及軸的陣列。
 
 下列範例會輪詢原始遊戲控制器的目前狀態。
 
@@ -137,19 +137,19 @@ rawGameController->GetCurrentReading(
     currentAxisReading);
 ```
 
-因為無法保證在不同的控制器類型中，各個陣列的哪個位置會有哪個輸入值，所以您必須檢查哪個輸入使用[RawGameController.GetButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_)和[RawGameController.GetSwitchKind](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_)方法。
+因為無法保證在不同的控制器類型中，各個陣列的哪個位置會有哪個輸入值，所以您必須檢查哪個輸入使用[RawGameController.GetButtonLabel](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_)和[RawGameController.GetSwitchKind](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetSwitchKind_System_Int32_)方法。
 
 **GetButtonLabel**會告知您實體按鈕上印的文字或符號，而不是按鈕的功能&mdash;因此，在您想要提示玩家哪個按鈕會執行哪個功能的情況下，會最適合用作 UI 的協助。 **GetSwitchKind**會告知您切換裝置類型（也就是其具有幾個位置），但不是名稱。
 
 取得軸或切換裝置標籤並沒有標準方法，因此您需要自己測試這些以判斷哪個輸入是哪個。
 
-如果您有想支援的特定控制器，您可以取得[RawGameController.HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId)和[RawGameController.HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId)，並檢查是否符合該控制器。 對於每個具有相同**HardwareProductId**和**HardwareVendorId**的控制器而言，各陣列中各輸入的位置都是相同的，所以您不用擔心在相同類型的不同控制器之間可能存在不一致的邏輯。
+如果您有想支援的特定控制器，您可以取得[RawGameController.HardwareProductId](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId)和[RawGameController.HardwareVendorId](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId)，並檢查是否符合該控制器。 對於每個具有相同**HardwareProductId**和**HardwareVendorId**的控制器而言，各陣列中各輸入的位置都是相同的，所以您不用擔心在相同類型的不同控制器之間可能存在不一致的邏輯。
 
-除了原始遊戲控制器狀態之外，每次讀取都會傳回精確指出狀態擷取時間的時間戳記。 此時間戳記適用於關聯到先前讀取的計時或遊戲模擬的計時。
+除了原始遊戲控制器狀態之外，每次讀取都會傳回精確指出狀態擷取時間的時間戳記。 時間戳記適用於與先前讀取的計時或遊戲模擬的計時建立關聯。
 
 ### <a name="reading-the-buttons-and-switches"></a>讀取按鈕及切換裝置
 
-原始遊戲控制器的兩個開火按鈕都各自提供數位讀取來指出按下(向下)或放開(向上)。 按鈕讀取會在單一陣列中以個別布林值呈現。 可以使用[RawGameController.GetButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_)搭配陣列中布林值的索引找到每個按鈕的標籤。 每個值都會以[GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)呈現。
+原始遊戲控制器的兩個開火按鈕都各自提供數位讀取來指出按下(向下)或放開(向上)。 按鈕讀取會在單一陣列中以個別布林值呈現。 可以使用[RawGameController.GetButtonLabel](/uwp/api/windows.gaming.input.rawgamecontroller#Windows_Gaming_Input_RawGameController_GetButtonLabel_System_Int32_)搭配陣列中布林值的索引找到每個按鈕的標籤。 每個值都會以[GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel)呈現。
 
 下列範例會判斷是否按下**XboxA**按鈕。
 
@@ -168,9 +168,9 @@ for (uint32_t i = 0; i < buttonCount; i++)
 }
 ```
 
-您有時必須要判斷按鈕何時從按下轉換為放開或從放開轉換為按下、是否按下或放開多個按鈕，或是否以特定方式排列一組按鈕 (部分為按下，部分則否)。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
+您有時必須要判斷按鈕何時從按下轉換為放開或從放開轉換為按下、是否按下或放開多個按鈕，或是否以特定方式排列一組按鈕 (部分為按下，部分則否)。 如需如何偵測這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
-切換值會以[GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition)的陣列提供。 因為此屬性是位元欄位，所以使用位元遮罩來隔離切換裝置的方向。
+切換值會以[GameControllerSwitchPosition](/uwp/api/windows.gaming.input.gamecontrollerswitchposition)的陣列提供。 因為此屬性是位元欄位，所以使用位元遮罩來隔離切換裝置的方向。
 
 下列範例會判斷各切換裝置是否在向上位置︰
 
@@ -205,7 +205,7 @@ float leftTrigger = currentAxisReading[4];
 float rightTrigger = currentAxisReading[5];
 ```
 
-讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.5；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.5 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」，這是指接近理想中心位置的可忽略值範圍。
+讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.5；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.5 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」__，這是指接近理想中心位置的可忽略值範圍。
 
 實作靜止區域的一種方法是判定搖桿與中心的距離，若讀數比您選擇的距離值更接近中心則予以忽略。 只要使用畢式定理，就可以約略計算出距離；因為搖桿讀數基本上是極性 (非平面) 值，所以距離不是確切值。 所產生的會是一個放射狀靜止區域。
 
@@ -231,11 +231,11 @@ if ((oppositeSquared + adjacentSquared) < deadzoneSquared)
 
 The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use raw game controllers. TODO: More information-->
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
-* [輸入適用於遊戲](input-for-games.md)
-* [輸入適用於遊戲的作法](input-practices-for-games.md)
-* [Windows.Gaming.Input 命名空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
-* [Windows.Gaming.Input.RawGameController 類別](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
-* [Windows.Gaming.Input.IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.IGameControllerBatteryInfo 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)
+* [遊戲的輸入](input-for-games.md)
+* [遊戲的輸入練習](input-practices-for-games.md)
+* [Windows.Gaming.Input 命名空間](/uwp/api/windows.gaming.input)
+* [Windows.Gaming.Input.RawGameController 類別](/uwp/api/windows.gaming.input.rawgamecontroller)
+* [Windows.Gaming.Input.IGameController 介面](/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows.Gaming.Input.IGameControllerBatteryInfo 介面](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo)

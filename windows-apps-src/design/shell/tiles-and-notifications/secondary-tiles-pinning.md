@@ -1,23 +1,23 @@
 ---
-Description: 瞭解如何釘選次要磚，以從您的 Windows 應用程式開始。
-title: 釘選次要磚以開始
+Description: 瞭解如何釘選次要磚，以從您的 Windows 應用程式啟動。
+title: 將次要磚釘選到開始
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, 次要磚, 釘選, 快速入門, 程式碼範例, 範例
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c535e7e2abaf68212cb0a2f6daac8741b6548a5
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7499a9a4040850595f616a5de0badb9efeab635f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971043"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172312"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>釘選次要磚以開始
+# <a name="pin-secondary-tiles-to-start"></a>將次要磚釘選到開始
 
 
-本主題將逐步引導您建立 Windows 應用程式的次要磚，並將其釘選到 [開始] 功能表。
+本主題將逐步引導您建立 Windows 應用程式的次要磚，並將其釘選至 [開始] 功能表。
 
 ![次要磚螢幕擷取畫面](images/secondarytiles.png)
 
@@ -181,6 +181,6 @@ var tiles = await SecondaryTile.FindAllAsync();
 
 * [次要磚概觀](secondary-tiles.md)
 * [次要磚指導方針](secondary-tiles-guidance.md)
-* [磚資產](app-assets.md)
+* [磚資產](../../style/app-icons-and-logos.md)
 * [磚內容文件](create-adaptive-tiles.md)
 * [傳送本機磚通知](sending-a-local-tile-notification.md)

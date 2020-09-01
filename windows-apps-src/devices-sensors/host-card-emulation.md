@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c419b494af02f20b00c0a6da67ec3e0f7310e63
-ms.sourcegitcommit: 2a1ceeacf5cdadc803bad83dc3ceb57a16ce79a3
+ms.openlocfilehash: 80b3c4f46e595eedd2c6a259a03348822c9f51bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89067520"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172222"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>建立 NFC 智慧卡應用程式
 
@@ -22,7 +22,7 @@ Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模�
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>開發 HCE 應用程式所需的項目
 
-若要開發適用於 Windows 10 行動裝置版且以 HCE 為基礎的卡片模擬應用程式，您需要開始設定開發環境。 您可以藉由安裝 Microsoft Visual Studio 2015 開始進行設定，其中包括 Windows 開發人員工具，以及具備 NFC 模擬支援的 Windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
+若要開發適用於 Windows 10 行動裝置版且以 HCE 為基礎的卡片模擬應用程式，您需要開始設定開發環境。 您可以藉由安裝 Microsoft Visual Studio 2015 開始進行設定，其中包括 Windows 開發人員工具，以及具備 NFC 模擬支援的 Windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](../get-started/get-set-up.md)
 
 或者，如果您想要使用實際的 Windows 10 行動裝置版裝置，而不是隨附的 Windows 10 行動裝置版模擬器來測試，也需要下列項目。
 
@@ -94,7 +94,7 @@ Windows 10 行動裝置版會在 [NFC 設定] 頁面中提供 [SIM 卡] 功能�
 
 ## <a name="create-and-register-your-background-task"></a>建立並登錄您的背景工作
 
-您必須在 HCE 應用程式中建立背景工作，來處理和回應系統要路由傳送到它的 APDU。 在第一次啟動您的應用程式期間，前景會登錄實作 [**IBackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) 介面的 HCE 背景工作，如下列程式碼所示。
+您必須在 HCE 應用程式中建立背景工作，來處理和回應系統要路由傳送到它的 APDU。 在第一次啟動您的應用程式期間，前景會登錄實作 [**IBackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskRegistration) 介面的 HCE 背景工作，如下列程式碼所示。
 
 ```cppcx
 var taskBuilder = new BackgroundTaskBuilder();
@@ -104,16 +104,16 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType)。 **EmulatorHostApplicationActivated**。 這表示每當要解析應用程式的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
+請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType)。 **EmulatorHostApplicationActivated**。 這表示每當要解析應用程式的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
 
 ## <a name="receive-and-respond-to-apdus"></a>接收和回應 APDU
 
-如果有 APDU 的目標是您的應用程式時，系統將會啟動您的背景工作。 您的背景工作將會接收透過 [**SmartCardEmulatorApduReceivedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorApduReceivedEventArgs) 物件的 [**CommandApdu**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu) 屬性傳遞的 APDU，並使用相同物件的 [**TryRespondAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.tryrespondwithcryptogramsasync) 方法來回應 APDU。 基於效能考量，請考慮讓您的背景工作保持為輕量型作業。 例如，在完成所有處理時，立即回應 APDU，並結束您的背景工作。 由於 NFC 交易的性質，使用者通常只會在讀卡機上持有其裝置一段極短暫的時間。 您的背景工作將繼續接收來自讀卡機的流量，直到您的連線停用為止，在這種情況下，您將會接收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorConnectionDeactivatedEventArgs) 物件。 您的連線會因為下列原因 (如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 屬性中所示) 而停用。
+如果有 APDU 的目標是您的應用程式時，系統將會啟動您的背景工作。 您的背景工作將會接收透過 [**SmartCardEmulatorApduReceivedEventArgs**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorApduReceivedEventArgs) 物件的 [**CommandApdu**](/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu) 屬性傳遞的 APDU，並使用相同物件的 [**TryRespondAsync**](/uwp/api/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.tryrespondwithcryptogramsasync) 方法來回應 APDU。 基於效能考量，請考慮讓您的背景工作保持為輕量型作業。 例如，在完成所有處理時，立即回應 APDU，並結束您的背景工作。 由於 NFC 交易的性質，使用者通常只會在讀卡機上持有其裝置一段極短暫的時間。 您的背景工作將繼續接收來自讀卡機的流量，直到您的連線停用為止，在這種情況下，您將會接收到 [**SmartCardEmulatorConnectionDeactivatedEventArgs**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorConnectionDeactivatedEventArgs) 物件。 您的連線會因為下列原因 (如 [**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](/uwp/api/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) 屬性中所示) 而停用。
 
 - 如果連線是使用 **ConnectionLost** 值來停用，就表示使用者已將他們的裝置抽離讀卡機。 如果您的應用程式需要使用者輕觸終端機較長的時間，您可能要考慮透過回饋來提示他們。 您應該快速終止背景工作 (藉由完成您的延遲)，以確保使用者再次輕觸它時，它不會因等待前一個背景工作結束而延遲。
 - 如果連線是使用 **ConnectionRedirected** 值來停用，就表示終端機所傳送的新 SELECT AID 命令 APDU 並導向至不同的 AID。 在此情況下，您的應用程式應該立即結束背景工作 (藉由完成您的延遲)，以便讓另一個背景工作能夠執行。
 
-背景工作也應該在 [**IBackgroundTaskInstance interface**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 上針對 [**Canceled event**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) 進行登錄，然後同樣地快速結束背景工作 (藉由完成您的延遲)，因為這個事件會在您的背景工作完成它時由系統所引發。 以下是示範 HCE 應用程式背景工作的程式碼。
+背景工作也應該在 [**IBackgroundTaskInstance interface**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTaskInstance) 上針對 [**Canceled event**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) 進行登錄，然後同樣地快速結束背景工作 (藉由完成您的延遲)，因為這個事件會在您的背景工作完成它時由系統所引發。 以下是示範 HCE 應用程式背景工作的程式碼。
 
 ```cppcx
 void BgTask::Run(
@@ -213,7 +213,7 @@ void BgTask::HandleHceActivation()
 
 大部分的付款卡都會針對同一個 AID (其為 PPSE AID) 以及其他付款網路卡特定的 AID 進行登錄。 每個 AID 群組都代表一張卡片，而且當使用者啟用該卡片時，群組中的所有 AID 都會啟用。 同樣地，當使用者會停用卡片時，群組中的所有 AID 都會停用。
 
-若要登錄 AID 群組，您需要建立 [**SmartCardAppletIdGroup**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup) 物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Payment**，而且應該將 [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+若要登錄 AID 群組，您需要建立 [**SmartCardAppletIdGroup**](/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup) 物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Payment**，而且應該將 [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
 
 ```cppcx
 public static byte[] AID_PPSE =
@@ -231,7 +231,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Other**，而且應該將 [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Other**，而且應該將 [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
 
 ```cppcx
 public static byte[] AID_OTHER =
@@ -250,19 +250,19 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 您最多可以針對每個 AID 群組包含 9 個 AID (每個長度為 5-16 位元組)。
 
-使用 [**RegisterAppletIdGroupAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) 方法來向系統登錄您的 AID 群組，這樣將會傳回 [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 物件。 根據預設，會將登錄物件的 [**ActivationPolicy**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 屬性設定為 **Disabled**。 這表示即使您的 AID 已向系統登錄，但它們仍未啟用且將不會接收流量。
+使用 [**RegisterAppletIdGroupAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) 方法來向系統登錄您的 AID 群組，這樣將會傳回 [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 物件。 根據預設，會將登錄物件的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 屬性設定為 **Disabled**。 這表示即使您的 AID 已向系統登錄，但它們仍未啟用且將不會接收流量。
 
 ```cppcx
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-您可以使用 [**SmartCardAppletIdGroupRegistration**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 類別的 [**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法來啟用登錄的卡片 (AID 群組)，如下所示。 由於系統上一次只能啟用單一付款卡，因此將付款 AID 群組的 [**ActivationPolicy**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 設定為 **Enabled**，與設定預設付款卡相同。 系統將提示使用者允許此卡片做為預設付款卡，不論是否已經選取預設付款卡。 如果您的應用程式已經是預設付款應用程式，而且只會在它自己的 AID 群組之間變更，則這個論點並不正確。 您最多可以針對每個應用程式登錄 10 個 AID 群組。
+您可以使用 [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 類別的 [**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法來啟用登錄的卡片 (AID 群組)，如下所示。 由於系統上一次只能啟用單一付款卡，因此將付款 AID 群組的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 設定為 **Enabled**，與設定預設付款卡相同。 系統將提示使用者允許此卡片做為預設付款卡，不論是否已經選取預設付款卡。 如果您的應用程式已經是預設付款應用程式，而且只會在它自己的 AID 群組之間變更，則這個論點並不正確。 您最多可以針對每個應用程式登錄 10 個 AID 群組。
 
 ```cppcx
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 ```
 
-您可以查詢應用程式已向作業系統登錄的 AID 群組，並使用 [**GetAppletIdGroupRegistrationsAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.getappletidgroupregistrationsasync) 方法來檢查它們的啟用原則。
+您可以查詢應用程式已向作業系統登錄的 AID 群組，並使用 [**GetAppletIdGroupRegistrationsAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.getappletidgroupregistrationsasync) 方法來檢查它們的啟用原則。
 
 當您將付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時，唯有在您的應用程式不是預設付款應用程式的情況下，使用者才會收到提示。 如果發生 AID 衝突，使用者將會在您將非付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時收到提示。
 
@@ -288,13 +288,13 @@ bgTask = taskBuilder.Register();
 
 ## <a name="foreground-override-behavior"></a>前景覆寫行為
 
-您可以在您的應用程式仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 變更為 **ForegroundOverride**，而使用者將不會收到提示。 當使用者在您的應用程式仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的應用程式。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的應用程式離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景應用程式中變更付款或非付款卡的 **ActivationPolicy**，如下所示。 請注意，[**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法只能從前景應用程式呼叫，無法從背景工作呼叫。
+您可以在您的應用程式仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 變更為 **ForegroundOverride**，而使用者將不會收到提示。 當使用者在您的應用程式仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的應用程式。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的應用程式離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景應用程式中變更付款或非付款卡的 **ActivationPolicy**，如下所示。 請注意，[**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法只能從前景應用程式呼叫，無法從背景工作呼叫。
 
 ```cppcx
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-此外，您可以登錄由單一 0 長度的 AID 所組成的 AID 群組，這將導致系統路由傳送所有 APDU (無論 AID 為何)，這也包含接收到 SELECT AID 命令之前傳送的任何命令 APDU。 不過，這類 AID 群組僅能在您的應用程式於前景執行時運作，因為它只能設定為 **ForegroundOverride** 且無法永久啟用。 此外，此機制可針對 [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType) 列舉的 **Host** 和 **UICC** 值進行運作，以便將所有流量路由傳送到 HCE 背景工作或 SIM 卡。
+此外，您可以登錄由單一 0 長度的 AID 所組成的 AID 群組，這將導致系統路由傳送所有 APDU (無論 AID 為何)，這也包含接收到 SELECT AID 命令之前傳送的任何命令 APDU。 不過，這類 AID 群組僅能在您的應用程式於前景執行時運作，因為它只能設定為 **ForegroundOverride** 且無法永久啟用。 此外，此機制可針對 [**SmartCardEmulationType**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType) 列舉的 **Host** 和 **UICC** 值進行運作，以便將所有流量路由傳送到 HCE 背景工作或 SIM 卡。
 
 ```cppcx
 public static byte[] AID_Foreground =
@@ -319,7 +319,7 @@ NFC 智慧卡模擬功能只能在 Windows 10 行動裝置版上啟用，因此�
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
 ```
 
-您可以藉由檢查 [**SmartCardEmulator.GetDefaultAsync**](https://docs.microsoft.com/uwp/api/windows.devices.smartcards.smartcardemulator.getdefaultasync) 方法是否會傳回 Null 來進行額外檢查，以查看裝置是否具備某種形式卡片模擬功能的 NFC 硬體。 若是如此，則裝置上不支援任何 NFC 卡片模擬。
+您可以藉由檢查 [**SmartCardEmulator.GetDefaultAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.getdefaultasync) 方法是否會傳回 Null 來進行額外檢查，以查看裝置是否具備某種形式卡片模擬功能的 NFC 硬體。 若是如此，則裝置上不支援任何 NFC 卡片模擬。
 
 ```cppcx
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
@@ -335,7 +335,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 Windows 10 行動裝置版具有裝置層級的卡片模擬設定，可透過行動電信業者或裝置製造商來設定。 除非 MO 或 OEM 覆寫這些值，否則預設會停用 [輕觸支付] 切換，並將 [裝置層級的啟用原則] 設定為 [自動]。
 
-您的應用程式可以在裝置層級上查詢 [**EnablementPolicy**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorEnablementPolicy) 的值，並根據應用程式在每個狀態中所需的行為，針對每個案例採取動作。
+您的應用程式可以在裝置層級上查詢 [**EnablementPolicy**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulatorEnablementPolicy) 的值，並根據應用程式在每個狀態中所需的行為，針對每個案例採取動作。
 
 ```cppcx
 SmartCardEmulator emulator = await SmartCardEmulator.GetDefaultAsync();
@@ -373,7 +373,7 @@ return "Card emulation always on";
 
 ## <a name="aid-registration-and-other-updates-for-sim-based-apps"></a>AID 登錄以及適用於以 SIM 為基礎之應用程式的其他更新
 
-使用 SIM 卡做為安全元素的卡片模擬應用程式可向 Windows 服務進行登錄，以宣告 SIM 卡上支援的 AID。 此登錄非常類似以 HCE 為基礎的應用程式登錄。 唯一的差別是 [**SmartCardEmulationType**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType)，您應該針對以 SIM 卡為基礎的應用程式將它設定為 Uicc。 登錄付款卡之後，也會將該卡片的顯示名稱填入 NFC 設定功能表中。
+使用 SIM 卡做為安全元素的卡片模擬應用程式可向 Windows 服務進行登錄，以宣告 SIM 卡上支援的 AID。 此登錄非常類似以 HCE 為基礎的應用程式登錄。 唯一的差別是 [**SmartCardEmulationType**](/uwp/api/Windows.Devices.SmartCards.SmartCardEmulationType)，您應該針對以 SIM 卡為基礎的應用程式將它設定為 Uicc。 登錄付款卡之後，也會將該卡片的顯示名稱填入 NFC 設定功能表中。
 
 ```cppcx
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -383,5 +383,9 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
+< < < < < < < HEAD
 > [!Important]
 > Windows Phone 8.1 中的舊版二進位 SMS 攔截支援已遭移除，並使用 Windows 10 行動裝置版中更廣泛的新 SMS 支援來取代，但任何依賴該功能的舊版 Windows Phone 8.1 應用程式都必須更新，以使用新的 Windows 10 行動裝置版 SMS API。
+=======
+<b>重要</b>   舊版的二進位 SMS 攔截 Windows Phone 8.1 中的支援已移除，並取代為 Windows 10 行動裝置版中新的更廣泛 SMS 支援，但是任何依賴該更新的舊版 Windows Phone 8.1 應用程式都必須更新，才能使用新的 Windows 10 行動裝置版 SMS Api。
+>>>>>>> 05b1708b6...連結： Windows UWP

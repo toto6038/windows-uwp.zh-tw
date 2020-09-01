@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c17351cf964ffb05dc60dbaf5c6ced1db467f78
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: fd5f2b76af856dd66e2dfd0ee2b3e429199e6a19
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469533"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172282"
 ---
 # <a name="bluetooth-gatt-client"></a>藍牙 GATT 用戶端
 
@@ -23,18 +23,18 @@ ms.locfileid: "85469533"
 - 訂閱特性值變更時的通知
 
 > [!Important]
-> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+> 您必須在 *package.appxmanifest*中宣告「藍牙」功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 > **重要 API**
 >
-> - [**Windows. 藍牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-> - [**Windows. GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+> - [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
+> - [**GenericAttributeProfile。**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 ## <a name="overview"></a>概觀
 
-開發人員可以使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) 命名空間中的 API 來存取藍牙 LE 裝置。 藍牙 LE 裝置透過下列一組項目公開功能：
+開發人員可以使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) 命名空間中的 API 來存取藍牙 LE 裝置。 藍牙 LE 裝置透過下列一組項目公開功能：
 
 - 服務
 - 特性
@@ -59,9 +59,9 @@ ms.locfileid: "85469533"
 - DeviceWatcher in Windows.Devices.Enumeration
 - Windows.Devices.Bluetooth.Advertisement 中的 AdvertisementWatcher
 
-第 2 種方法會在[廣告](ble-beacon.md)文件中深入討論，因此在這裡不會討論太多，但基本概念是尋找附近裝置中符合特定[廣告篩選](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter)(英文) 的藍牙位址。 有了這個位址之後，您就可以呼叫[BluetoothLEDevice.FromBluetoothAddressAsync](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync)來取得裝置的參考。
+第 2 種方法會在[廣告](ble-beacon.md)文件中深入討論，因此在這裡不會討論太多，但基本概念是尋找附近裝置中符合特定[廣告篩選](/uwp/api/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.advertisementfilter)(英文) 的藍牙位址。 有了這個位址之後，您就可以呼叫[BluetoothLEDevice.FromBluetoothAddressAsync](/uwp/api/windows.devices.bluetooth.bluetoothledevice.frombluetoothaddressasync)來取得裝置的參考。
 
-現在，回到 DeviceWatcher 方法。 藍牙 LE 裝置就像 Windows 中的任何其他裝置一樣，而且可以使用[列舉 API](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration) 進行查詢。 使用[DeviceWatcher](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher)類別，並傳遞查詢字串，以指定要尋找的裝置︰
+現在，回到 DeviceWatcher 方法。 藍牙 LE 裝置就像 Windows 中的任何其他裝置一樣，而且可以使用[列舉 API](/uwp/api/Windows.Devices.Enumeration) 進行查詢。 使用[DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher)類別，並傳遞查詢字串，以指定要尋找的裝置︰
 
 ```csharp
 // Query for extra properties you want returned
@@ -87,11 +87,11 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 deviceWatcher.Start();
 ```
 
-啟動 DeviceWatcher 之後，就會收到每個符合查詢之裝置的[DeviceInformation](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceInformation)，而查詢位於有問題裝置中 [Added](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)事件的處理常式。 若要更詳細地查看 DeviceWatcher，請參閱 [Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) 上的完整範例。
+啟動 DeviceWatcher 之後，就會收到每個符合查詢之裝置的[DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)，而查詢位於有問題裝置中 [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added)事件的處理常式。 若要更詳細地查看 DeviceWatcher，請參閱 [Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) 上的完整範例。
 
 ## <a name="connecting-to-the-device"></a>連接至裝置
 
-探索到想要的裝置之後，請使用[DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)取得有問題裝置的藍牙 LE 裝置物件︰
+探索到想要的裝置之後，請使用[DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id)取得有問題裝置的藍牙 LE 裝置物件︰
 
 ```csharp
 async void ConnectDevice(DeviceInformation deviceInfo)
@@ -188,7 +188,7 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **提示**：使用您從許多藍牙 api 取得的原始緩衝區時，會不可或缺[DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader)和[資料寫入元](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter)。
+> **秘訣**：當使用您從許多藍牙 api 取得的原始緩衝區時，會不可或缺 [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [>datawriter](/uwp/api/windows.storage.streams.datawriter) 。
 
 ## <a name="subscribing-for-notifications"></a>訂閱通知
 
@@ -201,7 +201,7 @@ if (result == GattCommunicationStatus.Success)
 - 寫入至用戶端特性組態描述元 (CCCD)
 - 處理 Characteristic.ValueChanged 事件
 
-寫入至 CCCD 是要告訴「伺服器」裝置，每次特定特性值變更時，這個用戶端都想要知道。 作法：
+寫入至 CCCD 是要告訴「伺服器」裝置，每次特定特性值變更時，這個用戶端都想要知道。 若要這樣做：
 
 ```csharp
 GattCommunicationStatus status = await selectedCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync(

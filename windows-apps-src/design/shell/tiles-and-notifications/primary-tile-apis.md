@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile, 釘選主要磚, 主要磚 api, 檢查是否釘選, 動態磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 04d7c66b358a3a465522ad3b56d8ae926358ae57
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 569ef5de9298a0fb9da58e4aaa88689c35b98c72
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57596193"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172342"
 ---
 # <a name="primary-tile-apis"></a>主要磚 API
  
@@ -20,9 +20,9 @@ ms.locfileid: "57596193"
 主要磚 API 可讓您查看您的應用程式目前是否釘選在 \[開始\] 上，以及要求釘選您應用程式的主要磚。
 
 > [!IMPORTANT]
-> **需要 Creators Update**:您必須為目標 SDK 15063，並執行組建 15063 或更新版本，才能使用 [主要] 圖格的 Api。
+> **需要 Creators Update**：您的目標必須是 SDK 15063 並執行組建 15063 或更新版本，才能使用主要磚 API。
 
-> **重要的 Api**:[**StartScreenManager 類別**](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager)， [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)， [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **重要 API**：[**StartScreenManager 類別**](/uwp/api/windows.ui.startscreen.startscreenmanager)、[ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)、[RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>使用主要磚 API 的時機
@@ -68,7 +68,7 @@ bool isSupported = StartScreenManager.GetDefault().SupportsAppListEntry(entry);
 
 ## <a name="check-whether-youre-currently-pinned"></a>檢查您的磚目前是否已釘選
 
-若要了解主要磚目前是否已釘選到 [開始]，請使用 [ContainsAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) 方法。
+若要了解主要磚目前是否已釘選到 [開始]，請使用 [ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) 方法。
 
 ```csharp
 // Get your own app list entry
@@ -84,9 +84,9 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 如果主要磚目前未釘選，但 [開始] 支援畫面此磚時，您可能需要向使用者顯示提示，告知他們可以釘選您的主要磚。
 
 > [!NOTE]
-> 您的應用程式位於前景，而使用者刻意要求 （例如之後使用者已按下 [是] 以您的圖格釘選的秘訣）, 釘選 [主要] 圖格之後，您應該只呼叫此 API，您必須從 UI 執行緒呼叫此 API。
+> 您必須在 App 處於前景時從 UI 執行緒呼叫此 API，而且只能在刻意要求使用者釘選主要磚之後 (例如，在使用者針對關於釘選主要磚的提示按一下 [是] 之後) 呼叫此 API。
 
-如果使用者按一下按鈕來釘選主要磚，您可以接著呼叫 [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) 方法以要求將磚釘選到 [開始]。 這樣會顯示對話方塊，要求使用者確認他們想要將您的磚釘選到 [開始]。
+如果使用者按一下按鈕來釘選主要磚，您可以接著呼叫 [RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) 方法以要求將磚釘選到 [開始]。 這樣會顯示對話方塊，要求使用者確認他們想要將您的磚釘選到 [開始]。
 
 此時將傳回表示您的磚現在是否已釘選到 [開始] 的布林值。 如果您的磚尚未釘選，將會立即傳回 true，而不會向使用者顯示對話方塊。 如果使用者按一下對話方塊中的 [否]，或系統不支援釘選您的磚到 [開始] 時，將會傳回 false。 否則，若使用者按了一下 [是] 且磚已釘選時，API 將會傳回 true。
 
@@ -101,7 +101,7 @@ bool isPinned = await StartScreenManager.GetDefault().RequestAddAppListEntryAsyn
 
 ## <a name="resources"></a>資源
 
-* [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
+* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-pin-primary-tile)
 * [釘選到工作列](../pin-to-taskbar.md)
 * [磚、徽章及通知](index.md)
-* [自動調整圖格文件](create-adaptive-tiles.md)
+* [調適型磚文件](create-adaptive-tiles.md)

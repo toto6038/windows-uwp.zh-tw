@@ -5,34 +5,34 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ab41001f7331defc6d37b0561e2844392ccca3c
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 5649a81e1c6e869e9e010841cb31432350bb33d6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67321845"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172882"
 ---
 # <a name="get-xbox-live-analytics-data"></a>取得 Xbox Live 分析資料
 
-在 Microsoft Store 分析 API 中使用此方法可取得玩 [Xbox Live-enabled game](https://docs.microsoft.com/gaming/xbox-live/index.md) 的客戶的過去 30 天的一般分析資料，包括裝置配件使用量、網際網路連接類型、玩家分數分佈情況、遊戲統計資料以及朋友和追隨者資料。 這項資訊也會提供[Xbox 分析報告](../publish/xbox-analytics-report.md)在合作夥伴中心。
+在 Microsoft Store 分析 API 中使用此方法可取得玩 [Xbox Live-enabled game](/gaming/xbox-live/index.md) 的客戶的過去 30 天的一般分析資料，包括裝置配件使用量、網際網路連接類型、玩家分數分佈情況、遊戲統計資料以及朋友和追隨者資料。 這項資訊也可在合作夥伴中心的 [Xbox 分析報表](../publish/xbox-analytics-report.md) 中取得。
 
 > [!IMPORTANT]
-> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過  [ID@Xbox程式](https://docs.microsoft.com/gaming/xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](https://docs.microsoft.com/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](/gaming/xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過 [ [ID@Xbox程式](/gaming/xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 可透過下列方法取得支援已啟用 Xbox Live 遊戲的其他分析資料：
-* [取得 Xbox Live 的成就資料](get-xbox-live-achievements-data.md)
-* [取得 Xbox Live 的健全狀況資料](get-xbox-live-health-data.md)
-* [取得 Xbox Live 的遊戲中樞資料](get-xbox-live-game-hub-data.md)
-* [取得 Xbox Live club 資料](get-xbox-live-club-data.md)
-* [取得 Xbox Live 多人的資料](get-xbox-live-multiplayer-data.md)
-* [取得 Xbox Live 並行使用方式資料](get-xbox-live-concurrent-usage-data.md)
+* [取得 Xbox Live 成就資料](get-xbox-live-achievements-data.md)
+* [取得 Xbox Live 健康情況資料](get-xbox-live-health-data.md)
+* [取得 Xbox Live 遊戲中心資料](get-xbox-live-game-hub-data.md)
+* [取得 Xbox Live 俱樂部資料](get-xbox-live-club-data.md)
+* [取得 Xbox Live 多人遊戲資料](get-xbox-live-multiplayer-data.md)
+* [取得 Xbox Live 並行使用資料](get-xbox-live-concurrent-usage-data.md)
 
 ## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未這樣做，請先完成 Microsoft Store 分析 API 的所有[先決條件](access-analytics-data-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以取得新的權杖。
 
 ## <a name="request"></a>要求
 
@@ -44,16 +44,16 @@ ms.locfileid: "67321845"
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/gameanalytics``` |
 
 
-### <a name="request-header"></a>要求的標頭
+### <a name="request-header"></a>要求標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要項  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取一般 Xbox Live 分析資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取之 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **productvalues**值。  |  是  |
@@ -72,7 +72,7 @@ Authorization: Bearer <your access token>
 
 此方法傳回包含下列物件的*值*陣列。
 
-| 物件      | 描述                  |
+| Object      | 描述                  |
 |-------------|---------------------------------------------------|
 | ProductData   |   包含一個 [DeviceProperties](#deviceproperties) 物件和一個 [UserProperties](#userproperties) 物件，該物件包含過去 30 天遊戲的裝置和使用者分析資料。    |  
 | XboxwideData   |  包含一個 [DeviceProperties](#deviceproperties) 物件和一個 [UserProperties](#userproperties) 物件，其中包含了過去 30 天內所有 Xbox Live 客戶裝置和使用者分析的平均資料，以百分比表示。 包含這些資料是為了與遊戲資料作比較。   |                                           
@@ -82,10 +82,10 @@ Authorization: Bearer <your access token>
 
 此資源包含遊戲的裝置使用情況資料或過去 30 天所有 Xbox Live 客戶的平均裝置使用情況資料。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | 說明        |
 |-----------------|---------|------|
 |  applicationId               |    字串     |  遊戲中的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)，用於擷取分析資料。   |
-|  connectionTypeDistribution               |    陣列     |   包含指出在 Xbox 上有多少客戶使用有線網際網路連線與無線網際網路連線的物件。 每個物件都有兩個字串欄位︰ <ul><li>**conType**:指定連接類型。</li><li>**deviceCount**:在  **ProductData**物件，此欄位會指定使用的連接類型的遊戲的客戶數目。 在 **XboxwideData** 物件，此欄位詳列所有使用連線類型之 Xbox Live 客戶之百分比。</li></ul>   |     
+|  connectionTypeDistribution               |    array     |   包含指出在 Xbox 上有多少客戶使用有線網際網路連線與無線網際網路連線的物件。 每個物件都有兩個字串欄位︰ <ul><li>**conType**：指定連線的類型。</li><li>**deviceCount**：在 **ProductData** 物件中，此欄位詳列使用連線類型的遊戲客戶的數目。 在 **XboxwideData** 物件，此欄位詳列所有使用連線類型之 Xbox Live 客戶之百分比。</li></ul>   |     
 |  deviceCount               |   字串      |  在 **ProductData** 物件，此欄位詳列在過去 30 天內玩過您的遊戲的客戶裝置的數目。 在 **XboxwideData** 物件，此欄位一律 1，表示所有 Xbox Live 客戶的資料的起始百分比均為100％。   |     
 |  eliteControllerPresentDeviceCount               |   字串      |  在 **ProductData** 物件中，此欄位詳列使用 Xbox Elite 無線控制器的遊戲客戶的數目。 在 **XboxwideData** 物件，此欄位詳列使用 Xbox Elite 無線控制器的所有 Xbox Live 客戶之百分比。  |     
 |  externalDrivePresentDeviceCount               |   字串      |  在 **ProductData** 物件中，此欄位詳列在 Xbox 上使用外接式硬碟的遊戲客戶的數目。 在 **XboxwideData** 物件，此欄位詳列在 Xbox 上使用外接式硬碟的所有 Xbox Live 客戶之百分比。  |
@@ -95,22 +95,22 @@ Authorization: Bearer <your access token>
 
 此資源包含遊戲的使用者資料或過去 30 天所有 Xbox Live 客戶的平均使用者資料。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | 說明        |
 |-----------------|---------|------|
 |  applicationId               |    字串     |   遊戲中的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)，用於擷取分析資料。  |
 |  userCount               |    字串     |   在 **ProductData** 物件，此欄位詳列在過去 30 天玩過您的遊戲的客戶數目。 在 **XboxwideData** 物件，此欄位一律 1，表示所有 Xbox Live 客戶的資料的起始百分比均為100％。   |     
-|  dvrUsageCounts               |   陣列      |  包含指示有多少客戶使用遊戲 DVR 來記錄和檢視遊戲的物件。 每個物件都有兩個字串欄位︰ <ul><li>**dvrName**:指定遊戲 DVR 功能使用。 可能的值為 **gameClipUploads**、**gameClipViews**、**screenshotUploads** 和 **screenshotViews**。</li><li>**userCount**:在  **ProductData**物件，此欄位會指定使用指定的遊戲 DVR 功能的遊戲的客戶數目。 在 **XboxwideData** 物件，此欄位詳列使用指定的遊戲 DVR 功能的所有 Xbox Live 客戶之百分比。</li></ul>   |     
-|  followerCountPercentiles               |   陣列      |  包含為客戶提供有關追隨者數量的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**百分比**:目前，這個值一律是 50，表示實行項目資料提供做為中間值的值。</li><li>**值**:在  **ProductData**物件，此欄位會指定您的遊戲客戶的粉絲數目中間值。 在 **XboxwideData** 物件，此欄位詳列所有 Xbox Live 客戶的追隨者數量的中位數。</li></ul>  |   
-|  friendCountPercentiles               |   陣列      |  包含為客戶提供有關朋友數量的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**百分比**:目前，這個值一律是 50，表示朋友資料可作為中間值。</li><li>**值**:在  **ProductData**物件，此欄位會指定您的遊戲客戶的朋友的中位數。 在 **XboxwideData** 物件，此欄位詳列所有 Xbox Live 客戶的朋友數量的中位數。</li></ul>  |     
-|  gamerScoreRangeDistribution               |   陣列      |  包含為客戶提供有關遊戲玩家分佈的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**scoreRange**:下列欄位提供使用量資料的玩家分數範圍。 例如，**10K-25K**。</li><li>**userCount**:在  **ProductData**物件，此欄位會指定已在指定的範圍內，它們已播放的所有遊戲的玩家分數的遊戲的客戶數目。 在 **XboxwideData** 物件，此欄位詳列遊戲客戶在指定範圍內所有擁有玩家分數的 Xbox Live 客戶之百分比，而這些遊戲已被他們玩過。</li></ul>  |
-|  titleGamerScoreRangeDistribution               |   陣列      |  包含為您的遊戲提供有關遊戲玩家分佈的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**scoreRange**:下列欄位提供使用量資料的玩家分數範圍。 例如，**100-200**。</li><li>**userCount**:在  **ProductData**物件，此欄位會指定在指定的範圍為遊戲玩家分數的遊戲的客戶數目。 在 **XboxwideData** 物件，此欄位詳列遊戲客戶在您的遊戲指定範圍內所有擁有玩家分數的 Xbox Live 客戶之百分比。</li></ul>   |
-|  socialUsageCounts               |   陣列      |  包含為客戶提供有關社群使用的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**scName**:社交的使用方式的型別。 例如，**gameInvites** 和 **textMessages**。</li><li>**userCount**:在  **ProductData**物件，此欄位會指定參與的遊戲的客戶數目在指定的社交使用類型。 在 **XboxwideData** 物件，此欄位詳列參與指定社群使用類型的所有 Xbox Live 客戶之百分比。</li></ul>   |
-|  streamingUsageCounts               |   陣列      |  包含為客戶提供有關串流使用的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**stName**:串流平台類型。 例如，**youtubeUsage**、**twitchUsage** 和 **mixerUsage**。</li><li>**userCount**:在  **ProductData**物件，此欄位會指定已使用指定的串流平台的遊戲的客戶數目。 在 **XboxwideData** 物件，此欄位詳列使用指定串流平台的所有 Xbox Live 客戶之百分比。</li></ul>  |
+|  dvrUsageCounts               |   array      |  包含指示有多少客戶使用遊戲 DVR 來記錄和檢視遊戲的物件。 每個物件都有兩個字串欄位︰ <ul><li>**dvrName**：指定使用的遊戲 DVR 功能。 可能的值為 **gameClipUploads**、**gameClipViews**、**screenshotUploads** 和 **screenshotViews**。</li><li>**userCount**：在 **ProductData** 物件中，此欄位詳列使用指定的遊戲 DVR 功能的遊戲客戶數目。 在 **XboxwideData** 物件，此欄位詳列使用指定的遊戲 DVR 功能的所有 Xbox Live 客戶之百分比。</li></ul>   |     
+|  followerCountPercentiles               |   array      |  包含為客戶提供有關追隨者數量的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**百分比**：目前這個值都 50，表示追隨者資料是以中間值作提供的。</li><li>**數值**：在 **ProductData** 物件，此欄位詳列遊戲客戶的追隨者數量的中位數。 在 **XboxwideData** 物件，此欄位詳列所有 Xbox Live 客戶的追隨者數量的中位數。</li></ul>  |   
+|  friendCountPercentiles               |   array      |  包含為客戶提供有關朋友數量的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**百分比**：目前這個值都 50，表示朋友資料是以中位數提供的。</li><li>**數值**：在 **ProductData** 物件，此欄位詳列遊戲客戶的朋友數量的中位數。 在 **XboxwideData** 物件，此欄位詳列所有 Xbox Live 客戶的朋友數量的中位數。</li></ul>  |     
+|  gamerScoreRangeDistribution               |   array      |  包含為客戶提供有關遊戲玩家分佈的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**scoreRange**：用於下列欄位所提供使用資料的玩家分數範圍。 例如，**10K-25K**。</li><li>**userCount**：在 **ProductData** 物件，此欄位詳列遊戲客戶在指定範圍內所有擁有玩家分數的遊戲客戶數目，而這些遊戲已被他們玩過。 在 **XboxwideData** 物件，此欄位詳列遊戲客戶在指定範圍內所有擁有玩家分數的 Xbox Live 客戶之百分比，而這些遊戲已被他們玩過。</li></ul>  |
+|  titleGamerScoreRangeDistribution               |   array      |  包含為您的遊戲提供有關遊戲玩家分佈的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**scoreRange**：用於下列欄位所提供使用資料的玩家分數範圍。 例如，**100-200**。</li><li>**userCount**：在 **ProductData** 物件，此欄位詳列您的遊戲指定範圍內所有擁有玩家分數的遊戲客戶數目。 在 **XboxwideData** 物件，此欄位詳列遊戲客戶在您的遊戲指定範圍內所有擁有玩家分數的 Xbox Live 客戶之百分比。</li></ul>   |
+|  socialUsageCounts               |   array      |  包含為客戶提供有關社群使用的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**scName**：社群使用的類型。 例如，**gameInvites** 和 **textMessages**。</li><li>**userCount**：在 **ProductData** 物件，此欄位詳列參與指定社群使用類型的遊戲客戶數量。 在 **XboxwideData** 物件，此欄位詳列參與指定社群使用類型的所有 Xbox Live 客戶之百分比。</li></ul>   |
+|  streamingUsageCounts               |   array      |  包含為客戶提供有關串流使用的詳細資訊的物件。 每個物件都有兩個字串欄位︰ <ul><li>**stName**：串流平台的類型。 例如，**youtubeUsage**、**twitchUsage** 和 **mixerUsage**。</li><li>**userCount**：在 **ProductData** 物件中，此欄位詳列已使用指定串流平台的遊戲客戶數目。 在 **XboxwideData** 物件，此欄位詳列使用指定串流平台的所有 Xbox Live 客戶之百分比。</li></ul>  |
 
 
 ### <a name="response-example"></a>回應範例
 
-下列範例示範這個要求的一個範例 JSON 回應主體。
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```json
 {
@@ -409,10 +409,10 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務的存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得 Xbox Live 的成就資料](get-xbox-live-achievements-data.md)
-* [取得 Xbox Live 的健全狀況資料](get-xbox-live-health-data.md)
-* [取得 Xbox Live 的遊戲中樞資料](get-xbox-live-game-hub-data.md)
-* [取得 Xbox Live club 資料](get-xbox-live-club-data.md)
-* [取得 Xbox Live 多人的資料](get-xbox-live-multiplayer-data.md)
-* [取得 Xbox Live 並行使用方式資料](get-xbox-live-concurrent-usage-data.md)
+* [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [取得 Xbox Live 成就資料](get-xbox-live-achievements-data.md)
+* [取得 Xbox Live 健康情況資料](get-xbox-live-health-data.md)
+* [取得 Xbox Live 遊戲中樞資料](get-xbox-live-game-hub-data.md)
+* [取得 Xbox Live 俱樂部資料](get-xbox-live-club-data.md)
+* [取得 Xbox Live 多人遊戲資料](get-xbox-live-multiplayer-data.md)
+* [取得 Xbox Live 並行使用資料](get-xbox-live-concurrent-usage-data.md)

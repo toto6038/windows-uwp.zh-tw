@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 網格, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b5aa00b5beb7c80a903fbf17d432f73f16561a2
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 360a916033a18805094336d868a09800f09c091c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368979"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173162"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>建立和顯示基本網格
 
@@ -19,23 +19,23 @@ ms.locfileid: "66368979"
 
 3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。 組成這些多邊形物件與表面結構的一系列頂點則稱為網格。 我們在此建立一個立方體物件的基本網格，並將它提供給著色器管線進行轉譯和顯示。
 
-> **重要**  類型 （例如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4） 和 DirectXMath.h 中宣告的內嵌方法，這裡會使用包含的範例程式碼。 如果您要剪下和貼上此程式碼中，\#包括&lt;DirectXMath.h&gt;專案中。
+> **重要**   此處所包含的範例程式碼會使用類型 (例如 DirectX：： XMFLOAT3 和 DirectX：： XMFLOAT4X4) ，以及在 DirectXMath 中宣告的內嵌方法。 如果您要剪下並貼上此程式碼，請 \# &lt; &gt; 在您的專案中包含 DirectXMath。
 
  
 
-## <a name="what-you-need-to-know"></a>您需要知道的事項
+## <a name="what-you-need-to-know"></a>您必須知道的事項
 
 
 ### <a name="technologies"></a>技術
 
--   [Direct3D](https://docs.microsoft.com/windows/desktop/getting-started-with-direct3d)
+-   [Direct3D](/windows/desktop/getting-started-with-direct3d)
 
-### <a name="prerequisites"></a>必要條件
+### <a name="prerequisites"></a>先決條件
 
 -   線性代數與 3D 座標系統的基本知識
 -   Visual Studio 2015 或更新版本的 Direct3D 範本
 
-## <a name="instructions"></a>指示
+## <a name="instructions"></a>Instructions
 
 下列步驟將示範如何建立基本的網格立方體。 
 
@@ -46,7 +46,7 @@ ms.locfileid: "66368979"
 <iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
 
 
-### <a name="step-1-construct-the-mesh-for-the-model"></a>步驟 1：建構模型網格
+### <a name="step-1-construct-the-mesh-for-the-model"></a>步驟 1：建構模型的網格
 
 在大多數的遊戲中，遊戲物件的網格會從包含特定頂點資料的檔案中載入。 這些頂點的順序取決於應用程式，但通常會序列化為條形或扇形。 頂點資料可以來自任一軟體來源，也可以手動建立。 您的遊戲可以決定要使用哪種讓頂點著色器能夠有效處理資料的方式來解譯資料。
 
@@ -75,9 +75,9 @@ SimpleCubeVertex cubeVertices[] =
 
 因此，您有 8 個頂點，每個頂點各有一個指定的色彩。 在範例中，每個頂點/色彩配對就表示一個頂點的完整資料。 當您指定我們的頂點緩衝區時，必須記住這個特殊的配置。 我們會將此輸入配置提供給頂點著色器，讓它可以了解您的頂點資料。
 
-### <a name="step-2-set-up-the-input-layout"></a>步驟 2：設定輸入的版面配置
+### <a name="step-2-set-up-the-input-layout"></a>步驟 2：設定輸入配置
 
-現在您的記憶體中已經有頂點。 但是您的圖形裝置有自己的記憶體，而您使用 Direct3D 進行存取。 為了將頂點資料送入圖形裝置以進行處理，您必須想以往一樣執行一些前置作業：您必須宣告如何配置頂點資料，圖形裝置才能在從遊戲取得頂點資料時解譯這些資料。 若要這樣做，可以使用 [**ID3D11InputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)。
+現在您的記憶體中已經有頂點。 但是您的圖形裝置有自己的記憶體，而您使用 Direct3D 進行存取。 為了將頂點資料送入圖形裝置以進行處理，您必須想以往一樣執行一些前置作業：您必須宣告如何配置頂點資料，圖形裝置才能在從遊戲取得頂點資料時解譯這些資料。 若要這樣做，可以使用 [**ID3D11InputLayout**](/windows/desktop/api/d3d11/nn-d3d11-id3d11inputlayout)。
 
 宣告和設定頂點緩衝區的輸入配置。
 
@@ -100,27 +100,27 @@ m_d3dDevice->CreateInputLayout(
 
 在此程式碼中，您指定了頂點的配置，更具體地說，就是頂點清單中每個元素包含的資料。 在這裡的 **basicVertexLayoutDesc** 中，您指定兩個資料部分：
 
--   **位置**:這是 HLSL 著色器所提供的位置資料的語意。 在此程式碼中是 DirectX::XMFLOAT3，或者更具體地說，這是與 3D 座標 (x, y, z) 對應的 3 個 32 位元浮點值的結構。 您也可以使用 float4，如果您所提供的同質"w"的座標，而在此情況下，您可以指定 DXGI\_格式\_R32G32B32A32\_浮點數。 要使用 DirectX::XMFLOAT3 還是 float4 會取決於遊戲的特殊需求。 您唯一要確定的是網格的頂點資料是否能夠正確地對應您使用的格式！
+-   **POSITION**：這是一個 HLSL 語意，會將位置資料提供給著色器。 在此程式碼中是 DirectX::XMFLOAT3，或者更具體地說，這是與 3D 座標 (x, y, z) 對應的 3 個 32 位元浮點值的結構。 如果您要提供同質 "w" 座標，也可以使用 float4，在這種情況下，您可以指定 DXGI \_ 格式 \_ R32G32B32A32 \_ FLOAT。 要使用 DirectX::XMFLOAT3 還是 float4 會取決於遊戲的特殊需求。 您唯一要確定的是網格的頂點資料是否能夠正確地對應您使用的格式！
 
     在物件的座標空間中，每個座標值都會以介於 -1 和 1 之間的浮點值表示。 當頂點著色器完成時，轉換的頂點會位於同質 (已修正透視) 的檢視投影空間中。
 
     您聰明的注意到 「但列舉值所指為 RGB，而非 XYZ」。 好眼力！ 在色彩資料與座標資料這兩種情況中，您通常會使用 3 或 4 個值來組成，那麼何不在這兩種情況中使用相同的格式呢？ HLSL 語意 (不是格式名稱) 會指示著色器處理資料的方式。
 
--   **色彩**:這是 HLSL 色彩資料的語意。 與 **POSITION** 一樣，它包含 3 個 32 位元的浮點值 (DirectX::XMFLOAT3)。 每個值各包含一個色彩元件：紅 (r)、藍 (b) 或綠 (g)，以一個介於 0 和 1 之間的浮點數字表示。
+-   **COLOR**：這是色彩資料的 HLSL 語意。 與 **POSITION** 一樣，它包含 3 個 32 位元的浮點值 (DirectX::XMFLOAT3)。 每個值各包含一個色彩元件：紅 (r)、藍 (b) 或綠 (g)，以一個介於 0 和 1 之間的浮點數字表示。
 
     **COLOR** 值通常會在著色器管線尾端以一個有 4 個組成部分的 RGBA 值傳回。 例如，您會在所有像素的著色器管線中，將 "A" Alpha 值設為 1.0 (最大不透明度)。
 
-如需的格式的完整清單，請參閱[ **DXGI\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。 如需 HLSL 語意的完整清單，請參閱[語意](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)。
+如需格式的完整清單，請參閱 [**DXGI \_ 格式**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)。 如需 HLSL 語意的完整清單，請參閱[語意](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics)。
 
-在 Direct3D 裝置上呼叫 [**ID3D11Device::CreateInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) 並建立輸入配置。 現在，您必須建立可以實際容納資料的緩衝區！
+在 Direct3D 裝置上呼叫 [**ID3D11Device::CreateInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createinputlayout) 並建立輸入配置。 現在，您必須建立可以實際容納資料的緩衝區！
 
-### <a name="step-3-populate-the-vertex-buffers"></a>步驟 3：填入端點緩衝區
+### <a name="step-3-populate-the-vertex-buffers"></a>步驟 3：填入頂點緩衝區
 
 頂點緩衝區包含網格中每個三角形的頂點清單。 每個頂點在清單中必須是唯一的。 在範例中，立方體有 8 個頂點。 頂點著色器會在圖形裝置上執行並讀取頂點緩衝區的內容，而且會依據您在先前步驟中指定的輸入配置解譯資料。
 
-在下一個範例中，您會提供緩衝區的描述和子資源以告知 Direct3D 關於頂點資料實際對應的一些資訊，以及如何在圖形裝置的記憶體中處理它。 由於您使用的是可包含任何項目的一般 [**ID3D11Buffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer)，因此這是必要的動作。 [ **D3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)並[ **D3D11\_SUBRESOURCE\_資料**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)結構會提供給確保 Direct3D 了解實體記憶體配置的緩衝區，包括每個頂點的元素大小的緩衝區，以及頂點清單的大小上限。 您也可以在此控制緩衝區記憶體的存取和如何進行周遊，但這不在本教學課程的範圍內。
+在下一個範例中，您會提供緩衝區的描述和子資源以告知 Direct3D 關於頂點資料實際對應的一些資訊，以及如何在圖形裝置的記憶體中處理它。 由於您使用的是可包含任何項目的一般 [**ID3D11Buffer**](/windows/desktop/api/d3d11/nn-d3d11-id3d11buffer)，因此這是必要的動作。 系統會提供 [**D3D11 \_ BUFFER \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) 和 [**D3D11 \_ SUBRESOURCE \_ 資料**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) 結構，以確保 Direct3D 瞭解緩衝區的實體記憶體配置，包括緩衝區中每個頂點元素的大小，以及頂點清單的大小上限。 您也可以在此控制緩衝區記憶體的存取和如何進行周遊，但這不在本教學課程的範圍內。
 
-在設定緩衝區後，您要呼叫 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 才能實際建立它。 顯而易見地，如果您有多個的物件，就必須為每個不同的模型建立緩衝區。
+在設定緩衝區後，您要呼叫 [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 才能實際建立它。 顯而易見地，如果您有多個的物件，就必須為每個不同的模型建立緩衝區。
 
 宣告與建立頂點緩衝區。
 
@@ -153,16 +153,16 @@ m_d3dDevice->CreateBuffer(
 
 ![具有八個已編號頂點的立方體](images/cube-mesh-1.png)
 
-在立方體範例中，您有 8 個頂點，每一面會建立 6 個象限。 您將象限分割為三角形，總共有 12 個三角形使用我們的 8 個頂點。 因為每個三角形有 3 個頂點，所以我們的索引緩衝區共有 36 個項目。 在我們的範例，此索引模式就是三角形 清單中，並且向與 Direct3D **D3D11\_基本型\_拓樸\_TRIANGLELIST**當您設定基本拓撲。
+在立方體範例中，您有 8 個頂點，每一面會建立 6 個象限。 您將象限分割為三角形，總共有 12 個三角形使用我們的 8 個頂點。 因為每個三角形有 3 個頂點，所以我們的索引緩衝區共有 36 個項目。 在我們的範例中，此索引模式稱為三角形清單，而您會在設定基本拓撲時，將它表示為 **D3D11 \_ 基本 \_ 拓撲 \_ TRIANGLELIST** 。
 
 以這種方式列出索引非常沒有效率，因為三角形共用點和邊時會產生多餘的索引元素。 例如，當三角形共用菱形的某一邊時，您會為 4 個頂點列出 6 個索引，就像這樣：
 
 ![建構菱形時的索引順序](images/rhombus-surface-1.png)
 
--   三角形 1:\[0, 1, 2\]
--   三角形 2:\[0, 2, 3\]
+-   三角形1： \[ 0、1、2\]
+-   三角形2： \[ 0、2、3\]
 
-寬帶或風扇拓撲時，您可以訂購的頂點 （例如端從索引 0 到索引 2 的映像中。） 周遊期間排除許多多餘的側邊的方式針對大型的網狀結構，這會大幅減少端點著色器執行時，並大幅改善效能的次數。 不過，我們將持續以最簡單的方式說明三角形清單。
+在條形或扇形的拓撲中，您會在排列頂點順序時排除周遊期間多餘的邊 (如影像中索引 0 到索引 2 的邊)。對於大型的網格而言，這會大幅減少執行頂點著色器的次數，並能大幅改善效能。 不過，我們將持續以最簡單的方式說明三角形清單。
 
 將頂點緩衝區的索引宣告為簡單的三角形清單拓撲。
 
@@ -187,11 +187,11 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-當您只有 8 個頂點時，緩衝區中 36 個索引元素的數目就顯得太多。 如果您選擇要排除部分備援，並使用不同的頂點清單類型，例如帶狀線還是風扇，您就必須指定該型別，當您提供特定[ **D3D11\_基本\_拓樸**](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))值[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology)方法。
+當您只有 8 個頂點時，緩衝區中 36 個索引元素的數目就顯得太多。 如果您選擇排除部分的一些部分，並使用不同的頂點清單類型（例如，帶狀或風扇），則當您將特定的 [**D3D11 \_ 基本 \_ 拓撲**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85)) 值提供給 [**>id3d11devicecoNtext：： IASetPrimitiveTopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) 方法時，必須指定該類型。
 
-如需不同索引清單技巧的詳細資訊，請參閱[基本拓撲](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies)。
+如需不同索引清單技巧的詳細資訊，請參閱[基本拓撲](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-primitive-topologies)。
 
-### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>步驟 5：建立您的轉換矩陣的常數緩衝區
+### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>步驟 5：為您的轉換矩陣建立常數緩衝區
 
 在開始處理頂點之前，您必須先提供執行時將套用 (相乘) 到每個頂點的轉換矩陣。 對於大多數的 3D 遊戲而言，它們共有三種：
 
@@ -199,13 +199,13 @@ unsigned short cubeIndices[] =
 -   從世界座標系統轉換成相機 (視圖) 座標系統的 4x4 矩陣。
 -   從相機座標系統轉換成 2D 檢視投影座標系統的 4x4 矩陣。
 
-這些矩陣會傳送到「常數緩衝區」  中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
+這些矩陣會傳送到 *「常數緩衝區」* 中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
 
 HLSL 不會變更常數緩衝區。 您可以在遊戲更新特定資料時變更它們。 遊戲開發人員通常會建立 4 種類別的常數緩衝區：一種用於依畫面更新；一種用於依模型/物件更新；一種用於依遊戲狀態重新整理更新；還有一種用於遊戲生命週期內均未曾變更的資料。
 
 在此範例中，我們只使用未曾變更資料的類型：三個矩陣的 DirectX::XMFLOAT4X4 資料。
 
-> **附註**  此處所提供的範例程式碼會使用主要資料行矩陣。 您可以使用，改為使用資料列為主矩陣**資料列\_主要**HLSL，並確保您的來源矩陣資料中的關鍵字也是資料列為主。 DirectXMath 使用資料列為主矩陣，並可直接與定義的 HLSL 矩陣**資料列\_主要**關鍵字。
+> **注意**   此處提供的範例程式碼會使用資料行主要矩陣。 您可以使用 HLSL 中的 **row \_ 主要** 關鍵字，並確定您的來源矩陣資料也是資料列主要，以使用資料列主要矩陣。 DirectXMath 使用資料列主要矩陣，而且可以直接與以資料 **列 \_ 主要** 關鍵字定義的 HLSL 矩陣一起使用。
 
  
 
@@ -257,7 +257,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **附註**  您通常宣告投影矩陣當您設定裝置特定的資源，因為與它的乘法的結果必須符合目前的 2d 檢視區大小參數 （這通常會對應與像素高度和寬度顯示）。 如果變更了值，您也必須適當地調整 x 與 y 座標值。
+> **注意**   當您設定裝置特定資源時，通常會宣告投影矩陣，因為與其相乘的結果必須符合目前的2-d 區大小參數 (這通常會與顯示) 的圖元高度和寬度相對應。 如果變更了值，您也必須適當地調整 x 與 y 座標值。
 
  
 
@@ -289,7 +289,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-到了這裡，請在[ID3D11DeviceContext](https://docs.microsoft.com/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context) 上設定頂點和索引緩衝區，還有您正在使用的拓撲。
+到了這裡，請在[ID3D11DeviceContext](/windows/desktop/direct3d11/d3d11-graphics-reference-10level9-context) 上設定頂點和索引緩衝區，還有您正在使用的拓撲。
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -312,7 +312,7 @@ m_d3dDeviceContext->IASetIndexBuffer(
 
 好！ 輸入組件完成。 轉譯的一切準備工作都已就緒。 讓我們開始執行這個頂點著色器。
 
-### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>步驟 6：處理程序與頂點著色器網格
+### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>步驟 6：使用頂點著色器處理網格
 
 有了定義網格頂點的頂點緩衝區以及定義處理頂點之順序的索引緩衝區之後，您要將它們傳送給頂點著色器。 頂點著色器程式碼 (以編譯的高階著色器語言表示) 會針對頂點緩衝區中的每個頂點執行一次，讓您可以執行每一頂點的轉換。 最終的結果通常是 2D 投影。
 
@@ -381,9 +381,9 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 
 **PixelShaderInput** 會指定頂點著色器的主要函式所傳回的資料配置。 當處理完頂點時，將會傳回 2D 投影空間中的頂點位置，以及用於每一頂點光源的色彩。 圖形卡使用著色器輸出的資料來計算在管線的下一階段執行像素著色器時必須著色的「片段」(可能的像素)。
 
-### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>步驟 7：傳遞的網狀結構，透過像素著色器
+### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>步驟 7：透過像素著色器傳送網格
 
-通常在圖形管線的這個階段中，您要在物件可見的投影表面執行每一像素作業。 （人喜歡紋理）。基於範例的目的，不過，您只需將它傳遞透過此階段。
+通常在圖形管線的這個階段中，您要在物件可見的投影表面執行每一像素作業。 (大家都愛紋理)。但在這個範例中，您只要透過此階段傳送它。
 
 首先，先建立像素著色器的執行個體。 像素著色器會針對您場景中 2D 投影的每個像素執行，並指派一種色彩給該像素。 在此例中，我們會直接傳送頂點著色器傳回的像素色彩。
 
@@ -410,9 +410,9 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 將此程式碼放在不同於頂點著色器 HLSL (如 SimplePixelShader.hlsl) 的 HLSL 檔案中。 此程式碼會針對檢視區 (您要繪製的畫面區域的記憶體內部表示法) 中的每個可見像素執行一次。在此例中，檢視區對應整個畫面。 現在，您的圖形管線已經完整定義了！
 
-### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>步驟 8：點陣化，並顯示網狀拓撲
+### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>步驟8：點陣化和顯示網格
 
-我們來執行管線吧。 很簡單：呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed)。
+我們來執行管線吧。 很簡單：呼叫 [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d10/nf-d3d10-id3d10device-drawindexed)。
 
 繪製該立方體！
 
@@ -447,12 +447,8 @@ m_swapChain->Present(1, 0);
 ## <a name="related-topics"></a>相關主題
 
 
-* [如何將您的 DirectX 遊戲中的資源](load-a-game-asset.md)
+* [如何在您的 DirectX 遊戲中載入資源](load-a-game-asset.md)
 
  
 
  
-
-
-
-

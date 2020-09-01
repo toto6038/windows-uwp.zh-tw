@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf17a6b835e0e594454f433770edb598ae637a0
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e020972a8dff0b0721fd2c5726999a7896d359c4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942828"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167902"
 ---
 # <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
 
@@ -51,7 +51,7 @@ URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開�
 ## <a name="launch-a-uri-from-your-app"></a>從您的 app 啟動 URI
 
 
-若要從您的 app 啟動 Windows 地圖 app，請使用 **bingmaps:**、**ms-drive-to:** 或 **ms-walk-to:** URI 呼叫 [**LaunchUriAsync**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。 下列範例會啟動與前一個範例中相同的 URI。 如需關於透過 URI 啟動 app 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
+若要從您的 app 啟動 Windows 地圖 app，請使用 **bingmaps:**、**ms-drive-to:** 或 **ms-walk-to:** URI 呼叫 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法。 下列範例會啟動與前一個範例中相同的 URI。 如需關於透過 URI 啟動 app 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
 
 ```cs
 // Center on New York City
@@ -63,7 +63,7 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-在這個範例中，會使用 [**LauncherOptions**](https://docs.microsoft.com/uwp/api/Windows.System.LauncherOptions) 類別確保 Windows 地圖 app 可啟動。
+在這個範例中，會使用 [**LauncherOptions**](/uwp/api/Windows.System.LauncherOptions) 類別確保 Windows 地圖 app 可啟動。
 
 ## <a name="display-known-locations"></a>顯示已知位置
 
@@ -350,7 +350,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tr>
 
 <tr class="even">
-<td align="left"><p><b>collection</b></p></td>
+<td align="left"><p><b>收集</b></p></td>
 <td align="left"><p>集合</p></td>
 <td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
 <p>name = "name." whereval </p>

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen, 延伸執行, 最小化, ExtendedExecutionSession, 背景工作, 應用程式週期, 鎖定畫面
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb47a7c57ff8ef719b819253ab768c0d836be14
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 41a084088ab75293cd4f8f70d5d8c248000645b9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75684549"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89167742"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>透過延長執行延後應用程式暫停
 
@@ -23,7 +23,7 @@ ms.locfileid: "75684549"
 
 如果 App 必須繼續執行，則作業系統必須讓 App 繼續執行，或者 App 可以要求繼續執行。 例如在背景播放音訊時，您可以依照[背景媒體播放](../audio-video-camera/background-audio.md)的步驟進行，作業系統就可以讓應用程式執行久一點。 否則，您就必須手動要求更多執行時間。 您可取得用來執行背景執行的時間長度可能會有幾分鐘，但是您必須做好準備，才能隨時處理撤銷中的工作階段。 當 App 在偵錯工具下執行時，這些應用程式週期時間限制會停用。 基於這個原因，務必未在偵錯工具下執行，或者使用 Visual Studio 中可用的週期事件時，測試延伸執行及其他工具以延後 App 暫停。 
  
-建立 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 來要求更多時間，以便在背景完成作業。 您建立的 **ExtendedExecutionSession** 類型是由您建立它時提供的 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) 所決定。 有三個 **ExtendedExecutionReason** 列舉值：**Unspecified、LocationTracking** 和 **SavingData**。 只有一個 **ExtendedExecutionSession** 可隨時要求；已核准的工作階段要求目前正在使用中時嘗試建立另一個工作階段，將會導致例外狀況 0x8007139F 從 **ExtendedExecutionSession** 建構函式擲回，以表示該群組或資源不在正確的狀態以執行所要求的作業。 請勿使用 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)；這些列舉值需要的功能受限，不適合在 Microsoft Store 應用程式中使用。
+建立 [ExtendedExecutionSession](/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 來要求更多時間，以便在背景完成作業。 您建立的 **ExtendedExecutionSession** 類型是由您建立它時提供的 [ExtendedExecutionReason](/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason) 所決定。 有三個 **ExtendedExecutionReason** 列舉值：**Unspecified、LocationTracking** 和 **SavingData**。 只有一個 **ExtendedExecutionSession** 可隨時要求；已核准的工作階段要求目前正在使用中時嘗試建立另一個工作階段，將會導致例外狀況 0x8007139F 從 **ExtendedExecutionSession** 建構函式擲回，以表示該群組或資源不在正確的狀態以執行所要求的作業。 請勿使用 [ExtendedExecutionForegroundSession](/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason);它們需要受限的功能，且無法在存放區應用程式中使用。
 
 ## <a name="run-while-minimized"></a>在最小化時執行
 
@@ -39,13 +39,13 @@ ms.locfileid: "75684549"
 
 在啟動長時間執行的作業時要求延長時間，可延後進入**暫止中**狀態，否則應用程式就會移至背景。 在桌面裝置上，使用 **ExtendedExecutionReason.Unspecified** 建立的延伸執行工作階段具有可感知電池的時間限制。 如果裝置連接到牆上電源，則延伸執行的時間長度就沒有限制。 如果裝置使用電池電源，則在背景中延伸執行的時間最多為十分鐘。
 
-當 **\[依 App 的電池使用情況\]** 設定中選取 **\[允許應用程式執行背景工作\]** 選項時，平板電腦或膝上型電腦使用者可以犧牲電池使用時間來獲得相同的長時間執行。 (若要在膝上型電腦上中尋找此選項，請移至 **\[設定\]**  >  **\[系統\]**  >  **\[電池\]**  >  **\[依 App 的電池使用情況\]** (此連結位於剩餘電池電量百分比下方) > 選取應用程式 > 關閉 **\[由 Windows 管理\]** > 選取 **\[允許應用程式執行背景工作\]** 。  
+當 **\[依 App 的電池使用情況\]** 設定中選取 **\[允許應用程式執行背景工作\]** 選項時，平板電腦或膝上型電腦使用者可以犧牲電池使用時間來獲得相同的長時間執行。  (若要在膝上型電腦上尋找此選項，請移至 [**設定**  >  **系統**  >  **電池**  >  電力**使用量（依應用程式**）] ([) 剩餘的電池電力百分比] 下的連結 > 選取 > 關閉**Windows 管理**的應用程式 > 選取 [**允許應用程式執行背景**工作]。  
 
 在所有的作業系統版本上，當裝置進入連線待命模式時，就會停止這種延伸執行工作階段。 在執行 Windows 10 行動裝置版的行動裝置上，只要螢幕持續開啟，這種延伸執行工作階段就會一直執行。 當螢幕關閉時，裝置會立即嘗試進入低電源的連線待命模式。 在桌面裝置上，如果出現鎖定畫面，此工作階段將會繼續執行。 當螢幕關閉後，裝置在一段時間內不會進入連線待命模式。 在 Xbox 作業系統版本上，除非使用者變更預設值，否則裝置會在一個小時後進入連線待命模式。
 
 ## <a name="track-the-users-location"></a>追蹤使用者的位置
 
-當您建立 **ExtendedExecutionSession** 時，如果您的應用程式必須定期從 [GeoLocator](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator) 記錄位置，請指定 **ExtendedExecutionReason.LocationTracking**。 由於健身追蹤與導航用應用程式必須定期監控使用者位置，因此應使用這個功能。
+當您建立 **ExtendedExecutionSession** 時，如果您的應用程式必須定期從 [GeoLocator](/uwp/api/windows.devices.geolocation.geolocator) 記錄位置，請指定 **ExtendedExecutionReason.LocationTracking**。 由於健身追蹤與導航用應用程式必須定期監控使用者位置，因此應使用這個功能。
 
 只要需要，位置追蹤延伸的執行工作階段便會執行，包括當行動裝置的螢幕鎖定時。 但是，每個裝置上只能執行一個這樣的工作階段。 位置追蹤的延伸執行工作階段只能在前景中要求，而且應用程式必須處於**執行中**狀態。 如此可確保使用者會察覺此應用程式已開始延伸位置追蹤工作階段。 當應用程式在背景時，依然可以透過背景工作或應用程式服務來使用 GeoLocator，而不必要求位置追蹤的延伸執行工作階段。
 
@@ -53,7 +53,7 @@ ms.locfileid: "75684549"
 
 當您建立 **ExtendedExecutionSession** 時指定 **ExtendedExecutionReason.SavingData** 可儲存使用者資料，以免應用程式終止之前未儲存資料而發生資料遺失和不愉快的使用者經驗。
 
-請勿使用這種工作階段來延長應用程式上傳或下載資料的時間。 如果您必須上傳資料，請要求[背景傳輸](https://docs.microsoft.com/windows/uwp/networking/background-transfers)或是登錄 **MaintenanceTrigger**，在有 AC 電源時處理傳輸。 當應用程式在前景執行並處於**執行中**狀態，或是在背景執行並處於**暫止中**狀態時，可以要求 **ExtendedExecutionReason.SavingData** 延伸執行工作階段。
+請勿使用這種工作階段來延長應用程式上傳或下載資料的時間。 如果您必須上傳資料，請要求[背景傳輸](../networking/background-transfers.md)或是登錄 **MaintenanceTrigger**，在有 AC 電源時處理傳輸。 當應用程式在前景執行並處於**執行中**狀態，或是在背景執行並處於**暫止中**狀態時，可以要求 **ExtendedExecutionReason.SavingData** 延伸執行工作階段。
 
 **暫止中**狀態是應用程式生命週期中，應用程式在終止之前可以執行工作的最後機會。 **ExtendedExecutionReason.SavingData** 是 **ExtendedExecutionSession** 的唯一類型，可在 **Suspending** 狀態中要求該類型。 請注意，當應用程式處於**暫止中**狀態時要求 **ExtendedExecutionReason.SavingData** 延伸執行工作階段可能會產生下列問題。 如果在處於**暫止中**狀態時要求延伸執行工作階段，而且使用者要求應用程式重新啟動，則可能需要很長的時間才能啟動。 這是因為延伸執行工作階段期間必須先完成，然後舊的應用程式執行個體才可以關閉，而新的應用程式執行個體才可以啟動。 為確保使用者狀態不會遺失，因此必須犧牲啟動效能時間。
 
@@ -81,15 +81,15 @@ switch (result)
         break;
 }
 ```
-[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+[參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
 透過作業系統來呼叫 **RequestExtensionAsync** 檢查，以了解使用者是否已核准應用程式的背景活動，以及系統是否有可用的資源來啟用背景執行。 只有一個工作階段會在任何時候針對 App 核准，導致額外呼叫 **RequestExtensionAsync** 以致工作階段被拒絕。
 
-您可以事先檢查 [BackgroundExecutionManager](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 來判斷 [BackgroundAccessStatus](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus?f=255&MSPPError=-2147217396)，它是決定您的應用程式是否可在背景執行的使用者設定。 若要深入了解這些使用者設定，請參閱[背景活動和能源意識](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97) (英文)。
+您可以事先檢查 [BackgroundExecutionManager](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 來判斷 [BackgroundAccessStatus](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus?f=255&MSPPError=-2147217396)，它是決定您的應用程式是否可在背景執行的使用者設定。 若要深入了解這些使用者設定，請參閱[背景活動和能源意識](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97) (英文)。
 
 **ExtendedExecutionReason** 會表示您的應用程式在背景執行的作業。 **Description** 字串是一般人看得懂的字串，說明您的 App 必須執行此作業的原因。 這個字串不會向使用者顯示，但可能會在未來的 Windows 版本中提供。 需要 **Revoked** 事件處理常式，這樣當使用者或系統決定不要繼續在背景執行應用程式時，延伸執行工作階段才可以正常停止。
 
-### <a name="revoked"></a>撤銷
+### <a name="revoked"></a>已撤銷
 
 如果 App 擁有作用中的延伸執行工作階段，而且系統要求停止背景活動，因為前景應用程式需要資源，則此工作階段會被撤銷。 一定要先引發 **Revoked** 事件處理常式，才能終止延伸執行工作階段期間。
 
@@ -119,9 +119,9 @@ private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventAr
     });
 }
 ```
-[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+[參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
 
-### <a name="dispose"></a>Dispose
+### <a name="dispose"></a>處置
 
 最後一個步驟為處置延伸執行工作階段。 您應該處置工作階段及其他任何耗用大量記憶體的資產，否則應用程式在等候工作階段關閉時所使用的能源將會不利於應用程式的能源配額。 為了盡量保留多一點的能源配額給應用程式使用，當您完成工作階段的工作時一定要處置工作階段，這樣應用程式才可以更快移入**已暫止**狀態。
 
@@ -140,7 +140,7 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
     }
 }
 ```
-[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+[參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
 
 應用程式一次只能有一個 **ExtendedExecutionSession** 處於作用中狀態。 許多應用程式使用非同步工作來完成複雜的作業，而這些作業必須存取存放裝置、網路或網路服務等資源。 如果某項作業要求完成多個非同步工作，則必須考量每一項工作的狀態，然後才能處置 **ExtendedExecutionSession** 並允許暫止應用程式。 參照必須算出依然在執行中而且未處置工作階段的數量，直到該值變成零為止。
 
@@ -247,21 +247,21 @@ static class ExtendedExecutionHelper
     }
 }
 ```
-[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+[參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>確認應用程式正常使用資源
 
-調整應用程式的記憶體與能源使用量很重要，這樣一來當您的應用程式不再是前景應用程式時，作業系統仍將允許它繼續執行。 使用[記憶體管理 API](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 來了解您的應用程式正在使用多少記憶體。 您的應用程式使用的記憶體越多，當有另一個應用程式在前景時，作業系統就越難讓您的應用程式繼續執行。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。
+調整應用程式的記憶體與能源使用量很重要，這樣一來當您的應用程式不再是前景應用程式時，作業系統仍將允許它繼續執行。 使用[記憶體管理 API](/uwp/api/windows.system.memorymanager) 來了解您的應用程式正在使用多少記憶體。 您的應用程式使用的記憶體越多，當有另一個應用程式在前景時，作業系統就越難讓您的應用程式繼續執行。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。
 
-使用 [BackgroundExecutionManager.RequestAccessAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。
+使用 [BackgroundExecutionManager.RequestAccessAsync](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
-[擴充執行範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
-[應用程式生命週期](https://docs.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
-[應用程式週期 - 利用背景工作與延伸執行使 App 繼續運作](https://msdn.microsoft.com/magazine/mt590969.aspx)
-[背景記憶體管理](https://docs.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
-[背景傳輸](https://docs.microsoft.com/windows/uwp/networking/background-transfers)  
+[延伸執行範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[應用程式生命週期](./app-lifecycle.md)  
+[應用程式生命週期-透過背景工作和延伸執行](/archive/msdn-magazine/2015/windows-10-special-issue/app-lifecycle-keep-apps-alive-with-background-tasks-and-extended-execution) 
+ 讓應用程式保持運作[背景記憶體管理](./reduce-memory-usage.md)  
+[背景傳輸](../networking/background-transfers.md)  
 [電池感知和背景活動](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
-[MemoryManager 類別](https://docs.microsoft.com/uwp/api/windows.system.memorymanager)  
-[在背景播放媒體](https://docs.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[MemoryManager 類別](/uwp/api/windows.system.memorymanager)  
+[在背景播放媒體](../audio-video-camera/background-audio.md)

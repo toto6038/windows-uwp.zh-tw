@@ -6,12 +6,12 @@ ms.date: 11/20/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: eb543e86221f8f1a37565c2e6e6bf1fe4a8d3635
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: d8ea74f7053cfdd0aeb6ef3dbe032afdb089f420
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054488"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173112"
 ---
 # <a name="input-practices-for-games"></a>遊戲的輸入練習
 
@@ -25,23 +25,23 @@ ms.locfileid: "89054488"
 
 ## <a name="choosing-an-input-device-class"></a>選擇輸入裝置類別
 
-您有多種不同類型的輸入 API 可以使用，例如[ArcadeStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.arcadestick)、[FlightStick](https://docs.microsoft.com/uwp/api/windows.gaming.input.flightstick)和[Gamepad](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad)。 如何決定要在遊戲使用哪個 API？
+您有多種不同類型的輸入 API 可以使用，例如[ArcadeStick](/uwp/api/windows.gaming.input.arcadestick)、[FlightStick](/uwp/api/windows.gaming.input.flightstick)和[Gamepad](/uwp/api/windows.gaming.input.gamepad)。 如何決定要在遊戲使用哪個 API？
 
 您應該選擇為遊戲提供最適當輸入的 API。 例如，如果您正在進行2D平台遊戲，或許您只要使用**Gamepad**類別即可，而不必因為其他類別提供的額外功能煩惱。 這會限制遊戲只支援遊戲台，並提供一致的介面，不需要額外的程式碼即可在多個不同遊戲台運作。
 
-相反地，為進行複雜的飛行與賽車模擬，您必須列舉所有[RawGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)物件作為基準，以確認其支援熱衷玩家可能會有的任何冷門裝置，包含仍有單一玩家使用的獨立踏板或節流閥等裝置。 
+相反地，為進行複雜的飛行與賽車模擬，您必須列舉所有[RawGameController](/uwp/api/windows.gaming.input.rawgamecontroller)物件作為基準，以確認其支援熱衷玩家可能會有的任何冷門裝置，包含仍有單一玩家使用的獨立踏板或節流閥等裝置。 
 
-在該處，您可以使用輸入類別的**FromGameController**的方法，例如[Gamepad.FromGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.fromgamecontroller)，來查看各個裝置是否有統整得更好的檢視。 例如，如果您的裝置也是**Gamepad**，您就必須調整按鈕對應 UI加以反映，並提供對應一些合理預設按鈕對應以供選擇。 (這樣做的相反是要求玩家手動設定遊樂台輸入，如果您僅使用 **RawGameController**。) 
+在該處，您可以使用輸入類別的**FromGameController**的方法，例如[Gamepad.FromGameController](/uwp/api/windows.gaming.input.gamepad.fromgamecontroller)，來查看各個裝置是否有統整得更好的檢視。 例如，如果您的裝置也是**Gamepad**，您就必須調整按鈕對應 UI加以反映，並提供對應一些合理預設按鈕對應以供選擇。 (這樣做的相反是要求玩家手動設定遊樂台輸入，如果您僅使用 **RawGameController**。) 
 
-或者，您可以看看 **RawGameController** 的廠商識別碼 (VID) 和產品識別碼 (PID) (分別使用[HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId)和[HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId))，並為熱門裝置提供建議的按鈕對應，同時透過玩家的手動對應，仍能夠與未來推出的未知裝置相容。
+或者，您可以看看 **RawGameController** 的廠商識別碼 (VID) 和產品識別碼 (PID) (分別使用[HardwareVendorId](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId)和[HardwareProductId](/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId))，並為熱門裝置提供建議的按鈕對應，同時透過玩家的手動對應，仍能夠與未來推出的未知裝置相容。
 
 ## <a name="keeping-track-of-connected-controllers"></a>持續追蹤連接的控制器
 
-每個控制器類型包括連接的控制器的清單時 (例如 [Gamepad.Gamepads](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepad.Gamepads))，最好維護您自己的一份控制器清單。 如需詳細資訊，請參閱[遊戲台清單](gamepad-and-vibration.md#the-gamepads-list) (每個控制器類型在它自己的主題上有命名類似的區段)。
+每個控制器類型包括連接的控制器的清單時 (例如 [Gamepad.Gamepads](/uwp/api/windows.gaming.input.gamepad.Gamepads))，最好維護您自己的一份控制器清單。 如需詳細資訊，請參閱[遊戲台清單](gamepad-and-vibration.md#the-gamepads-list) (每個控制器類型在它自己的主題上有命名類似的區段)。
 
 不過，當玩家拔除他們控制器，或插入到一個新的時會發生什麼？ 您需要處理這些事件，並依此更新您的清單。 如需詳細資訊，請參閱[新增和移除遊戲台](gamepad-and-vibration.md#adding-and-removing-gamepads) (依樣，每個控制器類型在它自己的主題上有命名類似的區段)。
 
-因為新增和移除事件是非同步引發，所以您在處理您的控制器清單時會取得不正確的結果。 因此，每當您存取您的控制器清單時，您應該將其鎖定，以便一次只有一個執行緒可以存取它。 這可以使用[並行執行階段](https://docs.microsoft.com/cpp/parallel/concrt/concurrency-runtime)做到，尤其是 **&lt;ppl.h&gt;** 中的[critical_section 類別](https://docs.microsoft.com/cpp/parallel/concrt/reference/critical-section-class)。
+因為新增和移除事件是非同步引發，所以您在處理您的控制器清單時會取得不正確的結果。 因此，每當您存取您的控制器清單時，您應該將其鎖定，以便一次只有一個執行緒可以存取它。 這可以使用[並行執行階段](/cpp/parallel/concrt/concurrency-runtime)做到，尤其是 **&lt;ppl.h&gt;** 中的[critical_section 類別](/cpp/parallel/concrt/reference/critical-section-class)。
 
 要思考的另一件事是一開始連接的控制器的清單將會是空白，需要一兩秒時間填入。 所以，如果您在 start 方法中只指派目前的遊戲台，其將會是 **null**！
 
@@ -166,11 +166,11 @@ void OnGamepadRemoved(Platform::Object^ sender, Gamepad^ args)
 
 ## <a name="tracking-users-and-their-devices"></a>追蹤使用者及其裝置
 
-所有的輸入裝置皆與[使用者](https://docs.microsoft.com/uwp/api/windows.system.user)相關聯，如此他們的身分識別便可連結到其遊戲、成就、設定變更和其他活動。 使用者可以隨意登入或登出，而且通常不同的使用者可在前一名使用者登出後，從與系統連線的輸入裝置登入。當使用者登入或登出時，會引發 [IGameController.UserChanged](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 您可以登錄此事件的事件處理常式來追蹤玩家，以及其正在使用的裝置。
+所有的輸入裝置皆與[使用者](/uwp/api/windows.system.user)相關聯，如此他們的身分識別便可連結到其遊戲、成就、設定變更和其他活動。 使用者可以隨意登入或登出，而且通常不同的使用者可在前一名使用者登出後，從與系統連線的輸入裝置登入。當使用者登入或登出時，會引發 [IGameController.UserChanged](/uwp/api/windows.gaming.input.igamecontroller.UserChanged) 事件。 您可以登錄此事件的事件處理常式來追蹤玩家，以及其正在使用的裝置。
 
 使用者識別也是輸入裝置與其對應 [UI 瀏覽控制器](ui-navigation-controller.md)建立關聯的方式。
 
-基於這些原因，應使用裝置類別的 [User](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller.User) 屬性 (繼承自 [IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller) 介面) 來追蹤與關聯玩家輸入。
+基於這些原因，應使用裝置類別的 [User](/uwp/api/windows.gaming.input.igamecontroller.User) 屬性 (繼承自 [IGameController](/uwp/api/windows.gaming.input.igamecontroller) 介面) 來追蹤與關聯玩家輸入。
 
 [UserGamepadPairingUWP](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)範例會示範如何追蹤使用者和他們所使用的裝置。
 
@@ -230,7 +230,7 @@ bool ButtonJustReleased(GamepadButtons selection)
 
 ## <a name="detecting-complex-button-arrangements"></a>偵測複雜按鈕排列
 
-輸入裝置的每個按鈕都會提供讀取數值，指明其按下 (向下) 或放開 (向上) 狀態。 基於效率考量，按鈕讀數並不是以個別布林值表示，而是封裝到以 [GamepadButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons) 之類的裝置特定列舉表示的位元欄位中。 若要讀取特定按鈕，可使用位元遮罩來隔離您感興趣的值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
+輸入裝置的每個按鈕都會提供讀取數值，指明其按下 (向下) 或放開 (向上) 狀態。 基於效率考量，按鈕讀數並不是以個別布林值表示，而是封裝到以 [GamepadButtons](/uwp/api/windows.gaming.input.gamepadbuttons) 之類的裝置特定列舉表示的位元欄位中。 若要讀取特定按鈕，可使用位元遮罩來隔離您感興趣的值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
 
 回想如何判斷按下或放開單一按鈕；這裡顯示的是遊戲台，但機台搖桿、賽車方向盤和其他輸入裝置類型所適用的原則都相同。
 
@@ -297,13 +297,13 @@ if (buttonArrangement == buttonSelection)
 
 ## <a name="get-the-state-of-the-battery"></a>取得電池的狀態
 
-對於實作 [IGameControllerBatteryInfo](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) 介面的任何遊戲控制器，您可以呼叫控制器執行個體上的 [TryGetBatteryReport](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport)，取得提供有關控制器中電池的相關資訊的 [BatteryReport](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport) 物件。 您可以取得屬性，例如電池充電速率 ([ChargeRateInMilliwatts](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts))、新電池的預估容量 ([DesignCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours))，以及目前電池完全充電的容量 ([FullChargeCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours))。
+對於實作 [IGameControllerBatteryInfo](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo) 介面的任何遊戲控制器，您可以呼叫控制器執行個體上的 [TryGetBatteryReport](/uwp/api/windows.gaming.input.igamecontrollerbatteryinfo.TryGetBatteryReport)，取得提供有關控制器中電池的相關資訊的 [BatteryReport](/uwp/api/windows.devices.power.batteryreport) 物件。 您可以取得屬性，例如電池充電速率 ([ChargeRateInMilliwatts](/uwp/api/windows.devices.power.batteryreport.ChargeRateInMilliwatts))、新電池的預估容量 ([DesignCapacityInMilliwattHours](/uwp/api/windows.devices.power.batteryreport.DesignCapacityInMilliwattHours))，以及目前電池完全充電的容量 ([FullChargeCapacityInMilliwattHours](/uwp/api/windows.devices.power.batteryreport.FullChargeCapacityInMilliwattHours))。
 
 對於支援詳細的電池報告的遊戲控制器，您可以取得此報告以及詳細的電池相關資訊，如[取得電池資訊](../devices-sensors/get-battery-info.md)中所詳述。 不過，大部分遊戲控制器不支援該層級的電池報告] 下方，並且反而使用低成本的硬體。 對於這些控制器，請牢記下列事項：
 
 * **ChargeRateInMilliwatts** 與 **DesignCapacityInMilliwattHours** 將一律為 **NULL**。
 
-* 您可以藉由計算[RemainingCapacityInMilliwattHours](https://docs.microsoft.com/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours)FullChargeCapacityInMilliwattHours 來取得電池百分比  /  ** **。 您應該會忽略這些屬性的值，並只處理已計算的百分比。
+* 您可以藉由計算[RemainingCapacityInMilliwattHours](/uwp/api/windows.devices.power.batteryreport.RemainingCapacityInMilliwattHours)FullChargeCapacityInMilliwattHours 來取得電池百分比  /  ** **。 您應該會忽略這些屬性的值，並只處理已計算的百分比。
 
 * 前一個項目符號的百分比一定會是下列其中一項：
 
@@ -316,7 +316,7 @@ if (buttonArrangement == buttonSelection)
 
 ## <a name="see-also"></a>另請參閱
 
-* [Windows.System.User 類別](https://docs.microsoft.com/uwp/api/windows.system.user)
-* [Windows.Gaming.Input.IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [Windows.Gaming.Input.GamepadButtons 列舉](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamepadbuttons)
+* [Windows.System.User 類別](/uwp/api/windows.system.user)
+* [Windows.Gaming.Input.IGameController 介面](/uwp/api/windows.gaming.input.igamecontroller)
+* [Windows.Gaming.Input.GamepadButtons 列舉](/uwp/api/windows.gaming.input.gamepadbuttons)
 * [UserGamepadPairingUWP 範例](/samples/microsoft/xbox-atg-samples/usergamepadpairinguwp/)

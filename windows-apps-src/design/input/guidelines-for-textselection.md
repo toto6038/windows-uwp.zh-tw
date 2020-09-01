@@ -1,5 +1,5 @@
 ---
-Description: 本主題說明用來選取和管理文字、影像和控制項的新 Windows UI，並提供在 Windows 應用程式中使用這些新的選取和操作機制時應考慮的使用者經驗指導方針。
+Description: 本主題說明選取和操作文字、影像和控制項的新的 Windows UI，並提供在 Windows 應用程式中使用這些新的選取專案和操作機制時應考慮的使用者經驗指導方針。
 title: 選取文字和影像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,23 +8,23 @@ keywords: 鍵盤、文字、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a118a7160842154a656e0f2d29783b1b2e676755
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7a779053f0e14317c4142158fdface4c806a02aa
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970093"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172462"
 ---
 # <a name="selecting-text-and-images"></a>選取文字和影像
 
 
 本文描述如何選取及操作文字、影像以及控制項，並提供在應用程式中使用這些機制時，所應考慮的使用者經驗指導方針。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)
+> **重要 API**：[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
  
 
 
-## <a name="dos-and-donts"></a>建議事項和避免事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   在實作自己的移駐夾 UI 時，使用字型字符。 移駐夾為兩個全系統可用的 Segoe UI 字型組合。 使用字型資源可簡化不同 dpi 的呈現問題，以及配合各種不同 UI 的縮放倍數使用。 實作自己的移駐夾時，這些移駐夾必須共有以下的 UI 特點：
@@ -47,9 +47,9 @@ ms.locfileid: "82970093"
 
 **考量與建議**
 
-使用 Windows 語言架構公開的內建控制項，建立提供完整平台使用者互動經驗 (包括選取和操作行為) 的應用程式。 您會發現內建控制項的互動功能足以滿足大多數的 Windows 應用程式。
+使用 Windows 語言架構公開的內建控制項，建立提供完整平台使用者互動經驗 (包括選取和操作行為) 的應用程式。 您可以找到內建控制項的互動功能，足以滿足大部分的 Windows 應用程式。
 
-使用標準 Windows 文字控制項時，無法自訂本主題中所述的選取行為和視覺效果。
+使用標準的 Windows 文字控制項時，無法自訂此主題中所述的選取行為和視覺效果。
 
 **文字選取**
 
@@ -78,7 +78,7 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 ![在選取範圍內或在移駐夾上進行點選 (或長按)，以叫用操作功能表。](images/textselection-show-context.png)
 
-**請注意**  ，這些互動在拼錯字組的情況下會有些不同。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
+**注意**   在拼錯的單字案例中，這些互動會有些許差異。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
 
  
 
@@ -92,7 +92,7 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 **物件操作**
 
-在可能的情況下，在 Windows 應用程式中執行自訂物件操作時，使用相同（或類似的）移駐資源做為文字選取範圍。 這樣可讓平台的互動體驗保持一致。
+在可能的情況下，在 Windows 應用程式中執行自訂物件操作時，請使用相同的 (或類似的) 控制項資源作為文字選取範圍。 這樣可讓平台的互動體驗保持一致。
 
 例如，您也可以在支援大小調整和裁剪的影像處理應用程式，或提供可調整進度列的媒體播放程式應用程式中使用移駐夾，如下列影像中所示。
 
@@ -108,7 +108,7 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 ### <a name="for-developers"></a>開發人員
 
-- [自訂使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
+- [自訂使用者互動](../layout/index.md)
 
 ### <a name="samples"></a>範例
 
@@ -122,8 +122,8 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 - [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [輸入：Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [輸入：Windows 8 手勢範例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 觸控輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

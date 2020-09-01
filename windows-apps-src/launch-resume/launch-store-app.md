@@ -1,23 +1,23 @@
 ---
 title: 啟動 Microsoft Store 應用程式
-description: 本主題描述 ms-windows-store URI 配置。 您的應用程式可以使用此 URI 配置，來啟動 Microsoft Store 應用程式存放區中的特定頁面。
+description: 本主題描述 ms-windows-store URI 配置。 您的應用程式可以使用此 URI 配置，將 Microsoft Store 應用程式啟動至存放區中的特定頁面。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd0e7137f31a8f1620f7937b52efe1ca84a6b99a
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 1a31c762c002e711a87e99e2f97de6c26e2c8b48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370778"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172982"
 ---
 # <a name="launch-the-microsoft-store-app"></a>啟動 Microsoft Store 應用程式
 
 
 
-本主題描述**ms windows 市集：** URI 配置。 您的應用程式可以使用此 URI 配置，啟動 Microsoft Store 應用程式存放區中的特定頁面使用[ **LaunchUriAsync** ](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync)方法。
+本主題說明 **ms--store：** URI 配置。 您的應用程式可以使用此 URI 配置，利用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法，將 Microsoft Store 應用程式啟動至存放區中的特定頁面。
 
 此範例顯示如何將 Microsoft Store 開啟到 \[遊戲\] 頁面：
 
@@ -25,12 +25,12 @@ ms.locfileid: "66370778"
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store://navigatetopage/?Id=Games"));
 ```
 
-## <a name="ms-windows-store-uri-scheme-reference"></a>ms windows 市集：URI 配置參考
+## <a name="ms-windows-store-uri-scheme-reference"></a>ms-windows-store: URI 配置參考
 
 <table>
-<tr><th>描述</th><th></th><th>URI 配置</th></tr>
+<tr><th>說明</th><th></th><th>URI 配置</th></tr>
 <tr><td>啟動市集的首頁。</td><td /><td>ms-windows-store://home</td></tr>
-<tr><td>啟動市集中的頂層類別。<p>注意:並非所有的使用者可以存取所有的縱向市場。</p>
+<tr><td>啟動市集中的頂層類別。<p>注意： 並非所有使用者皆可存取所有類別。</p>
 </td><td /><td>
 <p>ms-windows-store://navigatetopage/?Id=Apps </p>
 <p>ms-windows-store://navigatetopage/?Id=Games</p>
@@ -40,11 +40,11 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </td>
 </tr>
 <tr>
-<td rowspan="4">啟動產品的產品詳細資料頁面 (PDP)。 <p>存放區識別碼建議用於 Windows 10 上的客戶，並將所有的作業系統版本，但這麼做的先前方式運作 (例如：PFN) 都仍受支援。</p>
-<p>這些值可在<a href="https://partner.microsoft.com/dashboard">合作夥伴中心</a>上<a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">應用程式身分識別</a>每個應用程式的應用程式管理 區段中的頁面。</p>
+<td rowspan="4">啟動產品的產品詳細資料頁面 (PDP)。 <p>建議針對 Windows 10 的客戶使用市集識別碼，此識別碼將適用於所有作業系統版本，但仍支援先前執行它的方式 (例如︰PFN)。</p>
+<p>您可以在每個應用程式的 [應用程式管理] 區段中，于 [<a href="https://docs.microsoft.com/windows/uwp/publish/view-app-identity-details">應用程式識別</a>] 頁面的<a href="https://partner.microsoft.com/dashboard">合作夥伴中心</a>中找到這些值。</p>
 </td>
 <td>
-Store 識別碼 <p>(建議使用)</p>
+市集識別碼 <p>(建議使用)</p>
 </td>
 <td>
 <p>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</p>
@@ -66,7 +66,7 @@ Store 識別碼 <p>(建議使用)</p>
 </tr>
 <tr>
 <td rowspan="4">啟動產品的撰寫評論體驗。</td>
-<td>Store 識別碼 <p>(建議使用)</p></td>
+<td>市集識別碼 <p>(建議使用)</p></td>
 <td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL </td>
 </tr>
 <tr>

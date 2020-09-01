@@ -4,31 +4,31 @@ description: 了解如何在系統暫停您的應用程式時，儲存重要的�
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: f912e6212346a4019d8421c542a81eb2318dc5d9
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 1c75200a768efd258aa84b20493b9d296578a05c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260402"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171822"
 ---
 # <a name="handle-app-suspend"></a>處理應用程式暫停
 
 **重要 API**
 
-- [**暫停**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending)
+- [**Suspending**](/uwp/api/windows.ui.xaml.application.suspending)
 
-了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。 這個範例會為 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件登錄一個事件處理常式，並將一個字串儲存至檔案。
+了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。 這個範例會為 [**Suspending**](/uwp/api/windows.ui.xaml.application.suspending) 事件登錄一個事件處理常式，並將一個字串儲存至檔案。
 
-## <a name="register-the-suspending-event-handler"></a>登錄暫停事件處理常式
+## <a name="register-the-suspending-event-handler"></a>註冊暫停事件處理常式
 
-登錄以處理 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件，它會指示 app 必須在系統暫停 app 之前，儲存自己的應用程式資料。
+登錄以處理 [**Suspending**](/uwp/api/windows.ui.xaml.application.suspending) 事件，它會指示 app 必須在系統暫停 app 之前，儲存自己的應用程式資料。
 
 ```csharp
 using System;
@@ -82,7 +82,7 @@ MainPage::MainPage()
 
 ## <a name="save-application-data-before-suspension"></a>暫停之前，先儲存應用程式資料
 
-當您的 app 處理 [**Suspending**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.suspending) 事件時，它有機會在處理常式函式中儲存自己的重要應用程式資料。 App 必須使用 [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) 儲存 API 來同步儲存簡單的應用程式資料。
+當您的 app 處理 [**Suspending**](/uwp/api/windows.ui.xaml.application.suspending) 事件時，它有機會在處理常式函式中儲存自己的重要應用程式資料。 App 必須使用 [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) 儲存 API 來同步儲存簡單的應用程式資料。
 
 ```csharp
 partial class MainPage
@@ -125,7 +125,7 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 }
 ```
 
-## <a name="release-resources"></a>釋放資源
+## <a name="release-resources"></a>釋出資源
 
 您應該釋放獨占資源及檔案控制代碼，這樣當您的 app 暫停時，其他 app 仍然可以使用它們。 獨占資源的範例包括相機、I/O 裝置、外部裝置及網路資源。 明確釋放獨占資源及檔案控制代碼，有助於確保當您的 app 暫停時，其他 app 仍然可以使用它們。 當應用程式繼續執行時，應要重新取得獨占資源和檔案控制代碼。
 
@@ -133,26 +133,26 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 當使用者切換至另一個 app、桌面或 [開始] 畫面時，系統會暫停您的 app。 當使用者切換回您的 app 時，系統就會繼續執行 app。 當系統繼續執行您的 app 時，您的變數和資料結構內容和系統暫停 app 之前一樣，沒有變化。 系統會將 app 回復成暫停之前的相同狀態，如此使用者會以為 app 一直在背景中執行。
 
-當 app 暫停時，系統會嘗試讓 app 及其資料保留在記憶體中。 不過，如果系統沒有資源可將 app 保存在記憶體中，系統將終止您的 app。 當使用者切換回已被終止的暫停 app 時，系統會傳送 [**Activated**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件，且必須在它的 [**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法中復原應用程式資料。
+當 app 暫停時，系統會嘗試讓 app 及其資料保留在記憶體中。 不過，如果系統沒有資源可將 app 保存在記憶體中，系統將終止您的 app。 當使用者切換回已被終止的暫停 app 時，系統會傳送 [**Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件，且必須在它的 [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched) 方法中復原應用程式資料。
 
 系統不會在 app 終止時提供通知，所以 app 必須在暫停時儲存應用程式資料並釋放獨占資源及檔案控制代碼，並在終止狀態結束後重新啟用時還原這些項目。
 
-如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 物件使用 [**GetDeferral**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel?redirectedfrom=MSDN) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral.complete) 物件呼叫 [**Complete**](https://docs.microsoft.com/uwp/api/windows.foundation.deferral) 方法之後。
+如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](/uwp/api/Windows.ApplicationModel) 物件使用 [**GetDeferral**](/uwp/api/Windows.ApplicationModel) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](/uwp/api/windows.foundation.deferral) 物件呼叫 [**Complete**](/uwp/api/windows.foundation.deferral.complete) 方法之後。
 
-延遲不會提高在應用程式終止之前所需執行的程式碼數量。 其只會延遲終止，直到呼叫延遲的 *Complete* 方法或期限到期 (*視何者先發生*) 為止。 若要延長暫停狀態的時間，請使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
+延遲不會提高在應用程式終止之前所需執行的程式碼數量。 只會延遲終止，直到呼叫延遲的 *Complete* 方法或期限到期 (*視何者先發生*) 為止。 若要延長暫停狀態的時間，請使用 [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> 為了改善 Windows 8.1 中的系統回應能力，應用程式會在暫止的情況下獲得低優先順序的資源存取權。 為了支援這個新的優先順序，會延長暫停作業逾時，在 Windows 上讓 app 與標準優先順序一樣擁有 5 秒逾時，或在 Windows Phone 上有介於 1 到 10 秒之間的逾時。 您無法延長或改變這個逾時長度。
+> 為了改善 Windows 8.1 中的系統回應性，應用程式會在資源暫止之後獲得低優先順序的存取權。 為了支援這個新的優先順序，會延長暫停作業逾時，在 Windows 上讓 app 與標準優先順序一樣擁有 5 秒逾時，或在 Windows Phone 上有介於 1 到 10 秒之間的逾時。 您無法延長或改變這個逾時長度。
 
-**有關使用 Visual Studio 進行偵錯的注意事項：** Visual Studio 會防止 Windows 暫停已連接至偵錯工具的 app。 這是為了讓使用者在 app 執行時可以檢視 Visual Studio 偵錯 UI。 當您正在對某個 app 偵錯時，您可以使用 Visual Studio 傳送一個暫停事件給該 app。 確定 **\[偵錯位置\]** 工具列已經顯示，然後按一下 **\[暫停\]** 圖示。
+**使用 Visual Studio 進行調試的附注：** Visual Studio 防止 Windows 暫停附加至偵錯工具的應用程式。 這是為了讓使用者在 app 執行時可以檢視 Visual Studio 偵錯 UI。 當您正在對某個 app 偵錯時，您可以使用 Visual Studio 傳送一個暫停事件給該 app。 確定正在顯示 [ **偵錯工具位置** ] 工具列，然後按一下 [ **暫停** ] 圖示。
 
 ## <a name="related-topics"></a>相關主題
 
-* [應用程式週期](app-lifecycle.md)
+* [應用程式生命週期](app-lifecycle.md)
 * [處理應用程式啟用](activate-an-app.md)
 * [處理應用程式繼續執行](resume-an-app.md)
-* [啟動、暫停和繼續的 UX 指導方針](https://docs.microsoft.com/windows/uwp/launch-resume/index)
-* [擴充執行](run-minimized-with-extended-execution.md)
+* [啟動、暫停和繼續的 UX 指導方針](./index.md)
+* [延伸執行](run-minimized-with-extended-execution.md)
 
  
 

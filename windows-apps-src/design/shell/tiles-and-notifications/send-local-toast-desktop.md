@@ -8,16 +8,16 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: 'windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c #、c 清晰、快顯通知、wpf、傳送快顯通知 wpf、傳送快顯通知 winforms、傳送快顯通知 c #、傳送通知 wpf、傳送通知 c #、快顯通知 wpf、通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a339a4f2dca52a9bc04b1bba92f149a3e627878
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: 1e78e68cdd44890b50209f3f900c538278bd523c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846748"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172292"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
-傳統型應用程式 (包括封裝 [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置以及如果您不是使用 MSIX 或稀疏套件，桌面應用程式可能會有一些特殊步驟。
+傳統型應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置以及如果您不是使用 MSIX 或稀疏套件，桌面應用程式可能會有一些特殊步驟。
 
 > [!IMPORTANT]
 > 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
@@ -60,7 +60,7 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="msixsparse-packages"></a>[MSIX/sparse 封裝](#tab/msix-sparse)
 
-如果您使用的是 [MSIX](https://docs.microsoft.com/windows/msix/desktop/source-code-overview) 或 [sparse 封裝](https://docs.microsoft.com/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者，如果您同時支援這兩個) ，請在 **package.appxmanifest**中新增：
+如果您使用的是 [MSIX](/windows/msix/desktop/source-code-overview) 或 [sparse 封裝](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者，如果您同時支援這兩個) ，請在 **package.appxmanifest**中新增：
 
 1. **xmlns:com** 的宣告
 2. **xmlns:desktop** 的宣告
@@ -338,7 +338,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-8-deploying-and-debugging"></a>步驟8：部署和調試
 
-若要部署和 MSIX 應用程式，請參閱 [執行、偵測和測試已封裝的桌面應用程式](/windows/uwp/porting/desktop-to-uwp-debug)。
+若要部署和 MSIX 應用程式，請參閱 [執行、偵測和測試已封裝的桌面應用程式](/windows/msix/desktop/desktop-to-uwp-debug)。
 
 若要部署和偵錯您的傳統型 Win32 應用程式，在正常偵錯前，您必須透過安裝程式安裝一次您的應用程式，以便顯示包含您的 AUMID 與 CLSID 的 [開始] 畫面捷徑。 [開始] 畫面捷徑出現後，您可以使用 Visual Studio 的 F5 來偵錯。
 
@@ -359,4 +359,3 @@ DesktopNotificationManagerCompat.History.Clear();
 * [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/desktop-toasts)
 * [傳統型應用程式的快顯通知](toast-desktop-apps.md)
 * [快顯通知內容文件](adaptive-interactive-toasts.md)
-

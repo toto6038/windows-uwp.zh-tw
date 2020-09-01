@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 使用者介面, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: cbe67a50cd51f17aa628ff2e02955fd90781392f
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: eca248887985fc6d33ca6d6b552a0b61a98ce428
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942818"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173102"
 ---
 # <a name="add-a-user-interface"></a>新增使用者介面
 
@@ -21,7 +21,7 @@ ms.locfileid: "88942818"
 現在我們的遊戲已經有了3D 視覺效果，接下來就是把重點放在新增一些2D 元素，讓遊戲可以提供遊戲狀態給玩家的意見反應。 這可以藉由在3D 圖形管線輸出上加入簡單的功能表選項和上顯的顯示元件來達成。
 
 >[!Note]
->如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 範例遊戲](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](/windows/uwp/get-started/get-uwp-app-samples)。
+>如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 範例遊戲](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](../get-started/get-app-samples.md)。
 
 ## <a name="objective"></a>目標
 

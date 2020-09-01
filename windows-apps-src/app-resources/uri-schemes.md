@@ -1,21 +1,21 @@
 ---
-Description: 有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您的 App 的檔案資源 (.resw) 載入的字串。
+Description: 有幾個可供您用來參考您的應用程式套件、您的應用程式資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您應用程式的檔案資源 (.resw) 載入的字串。
 title: URI 配置
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 8627bd7f9f405509cb1bff40d94f10552241f4ce
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 2f5bf063c12362fe26e3810e6153b857b7c1a2e4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254590"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170522"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
-有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您的 App 的檔案資源 (.resw) 載入的字串。 您可以在程式碼、XAML 標記、應用程式套件資訊清單或磚及快顯通知範本中使用這些 URI 配置。
+有幾個可供您用來參考您的應用程式套件、您的應用程式資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您應用程式的檔案資源 (.resw) 載入的字串。 您可以在程式碼、XAML 標記、應用程式套件資訊清單或磚及快顯通知範本中使用這些 URI 配置。
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 配置的一般功能
 
@@ -41,7 +41,7 @@ hier-part   = "//" authority path-abempty
 
 本主題說明的所有 URI 配置都遵循配置正規化及資源擷取的一般 URI 規則 (RFC 3986)。 這些標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼。
 
-就本主題所述的所有 URI 配置而言，*配置*、*授權單位*和*路徑*依照標準不區分大小寫，或是由其他系統以不區分大小寫的方式來處理。 **注意**：該規則的唯一例外是  *的*授權單位`ms-resource`，這會區分大小寫。
+就本主題所述的所有 URI 配置而言，*配置*、*授權單位*和*路徑*依照標準不區分大小寫，或是由其他系統以不區分大小寫的方式來處理。 **注意**：該規則的唯一例外是 `ms-resource` 的*授權單位*，這會區分大小寫。
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx 和 ms-appx-web
 
@@ -112,7 +112,7 @@ ms-appx:///images/logo.png
 
 `ms-appx(-web)` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，當存取資源的基礎檔案系統不區分大小寫時 (例如 NTFS)，則是以不區分大小寫的方式進行擷取。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' （雙引號字元）必須以百分比編碼，表示檔案或資料夾名稱之類的資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的檔案，請使用這個 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' (雙引號字元) 必須在路徑中以百分比編碼，以代表資料，例如檔案或資料夾名稱。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的檔案，請使用這個 URI。
 
 ```xml
 ms-appx:///Hello%23World.html
@@ -185,7 +185,7 @@ ms-appdata:///roaming/
 
 `ms-appdata` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，當存取資源的基礎檔案系統不區分大小寫時 (例如 NTFS)，則是以不區分大小寫的方式進行擷取。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' （雙引號字元）必須以百分比編碼，表示檔案或資料夾名稱之類的資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的本機檔案，請使用這個 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' (雙引號字元) 必須在路徑中以百分比編碼，以代表資料，例如檔案或資料夾名稱。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要擷取名稱為 Hello#World.html 的本機檔案，請使用這個 URI。
 
 ```xml
 ms-appdata://local/Hello%23World.html
@@ -221,7 +221,7 @@ ms-resource://
 
 ### <a name="authority-ms-resource"></a>授權單位 (ms-resource)
 
-授權單位是封裝資源索引 (PRI) 中定義的最上層資源對應，通常對應至封裝資訊清單中的定義的套件識別名稱。 請參閱[封裝應用程式](../packaging/index.md)。 因此受限於套件識別名稱中所允許之字元集的 URI 和 IRI (國際化資源識別項) 形式。 套件名稱必須是在目前執行中應用程式的套件相依性關係圖上，其中一個套件的名稱。
+授權單位是封裝資源索引 (PRI) 中定義的最上層資源對應，通常對應至封裝資訊清單中的定義的套件識別名稱。 請參閱 [封裝應用程式](../packaging/index.md)) 。 因此受限於套件識別名稱中所允許之字元集的 URI 和 IRI (國際化資源識別項) 形式。 套件名稱必須是在目前執行中應用程式的套件相依性關係圖上，其中一個套件的名稱。
 
 ```xml
 ms-resource://Contoso.MyApp/
@@ -249,13 +249,13 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>路徑 (ms-resource)
 
-路徑會識別 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 樹狀子目錄的階層位置 (請參閱[資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))) 以及其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)。 這通常對應至資源檔案 (.resw) 的檔名 (不含副檔名)，以及其中字串資源的識別碼。
+路徑會識別 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 樹狀子目錄的階層位置 (請參閱[資源管理系統](/previous-versions/windows/apps/jj552947(v=win.10))) 以及其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)。 這通常對應至資源檔案 (.resw) 的檔名 (不含副檔名)，以及其中字串資源的識別碼。
 
 如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎的抓取會執行[CompareStringOrdinal](https://docs.microsoft.com/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) ，並將*ignoreCase*設定為 `true`。
+`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎抓取會執行 [CompareStringOrdinal](/windows/desktop/api/winstring/nf-winstring-windowscomparestringordinal) ，並將 *ignoreCase* 設定為 `true` 。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' （雙引號字元）必須以百分比編碼，表示檔案或資料夾名稱之類的資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從名為 `Hello#World.resw`的資源檔中取出字串資源，請使用此 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 字元 "？"、"#"、"/"、"*" 和 ' "' (雙引號字元) 必須在路徑中以百分比編碼，以代表資料，例如檔案或資料夾名稱。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從名為的資源檔取出字串資源 `Hello#World.resw` ，請使用此 URI。
 
 ```xml
 ms-resource:///Hello%23World/String1
@@ -269,10 +269,10 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相關主題
 
-* [統一資源識別元（URI）：一般語法](https://www.ietf.org/rfc/rfc3986.txt)
+* [統一資源識別項 (URI)：一般語法](https://www.ietf.org/rfc/rfc3986.txt)
 * [封裝應用程式](../packaging/index.md)
 * [從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [儲存及擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
-* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](localize-strings-ui-manifest.md)
-* [資源管理系統](https://docs.microsoft.com/previous-versions/windows/apps/jj552947(v=win.10))
-* [語言、縮放和高對比的磚與快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
+* [當地語系化您的 UI 及應用程式套件資訊清單中的字串](localize-strings-ui-manifest.md)
+* [資源管理系統](/previous-versions/windows/apps/jj552947(v=win.10))
+* [對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

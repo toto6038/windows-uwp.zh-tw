@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4264a9a3a75c076fc033bb98dad45ff8dc99f2ef
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a2a61dd70915195673dacaed78510eb7b7c2f2f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970283"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172402"
 ---
 # <a name="add-and-delete-animations"></a>新增和刪除動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970283"
 
 清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
 
-> **重要 API**: [**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+> **重要 API**: [**AddDeleteThemeTransition 類別**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -38,15 +38,11 @@ ms.locfileid: "82970283"
 
 ## <a name="related-articles"></a>相關文章
 
-* [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [讓清單新增和刪除產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/jj649430(v=win.10))
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**AddDeleteThemeTransition 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
+* [動畫概觀](./xaml-animation.md)
+* [讓清單新增和刪除產生動畫效果](/previous-versions/windows/apps/jj649430(v=win.10))
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**AddDeleteThemeTransition 類別**](/uwp/api/windows.ui.xaml.media.animation.adddeletethemetransition)
 
  
 
  
-
-
-
-

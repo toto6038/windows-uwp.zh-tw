@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a4643e6a73e0eb015fc40c7354d0cd307fa0d1
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: b4cf26d4f4fe5fa33f9f214da32263031188c5f0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469543"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172252"
 ---
 # <a name="bluetooth-gatt-server"></a>藍牙 GATT 伺服器
 
@@ -23,20 +23,20 @@ ms.locfileid: "85469543"
 - 將通知傳送給訂閱的用戶端
 
 > [!Important]
-> 您必須在*package.appxmanifest.xml*中宣告 "bluetooth" 功能。
+> 您必須在 *package.appxmanifest*中宣告「藍牙」功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
 **重要 API**
 
-- [**Windows. 藍牙**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows. GenericAttributeProfile**](https://docs.microsoft.com/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+- [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
+- [**GenericAttributeProfile。**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 ## <a name="overview"></a>概觀
 
 Windows 通常以用戶端角色操作。 不過，許多案例也都需要 Windows 作為藍牙 LE GATT 伺服器。 幾乎 IoT 裝置的所有案例，以及大部分跨平台 BLE 通訊，都需要 Windows 作為 GATT 伺服器。 此外，將通知傳送至附近的穿戴式裝置會變成也需要這項技術的常見案例。  
 
-伺服器的作業將圍繞著服務提供者和 GattLocalCharacteristic。 這兩個類別會提供宣告、執行及公開資料階層至遠端裝置所需的功能。
+伺服器的作業將圍繞著服務提供者和 GattLocalCharacteristic。 這兩個類別會提供宣告、執行和公開資料階層至遠端裝置所需的功能。
 
 ## <a name="define-the-supported-services"></a>定義支援的服務
 您的應用程式可能會宣告將由 Windows 發行的一或多個服務。 每個服務都是透過 UUID 唯一識別。
@@ -45,7 +45,7 @@ Windows 通常以用戶端角色操作。 不過，許多案例也都需要 Wind
 每個服務、特性和描述元都是透過其專屬唯一 128 位元 UUID 所定義。
 > Windows API 都會使用 GUID 這個詞彙，但藍牙標準將它們定義為 UUID。 基於我們的目的，這兩個詞彙可交換使用，因此我們將會繼續使用 UUID 這個詞彙。 
 
-如果屬性是標準且由 Bluetooth 定義的定義，它也會有對應的16位簡短識別碼（例如，電池層級 UUID 是 0000**2A19**-0000-1000-8000-00805F9B34FB，而簡短識別碼是0x2A19）。 在 [GattServiceUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids)和[GattCharacteristicUuids](https://docs.microsoft.com/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids)中可以看到這些標準 UUID。
+如果屬性是標準的，而且是由藍牙 SIG 定義所定義，它也會有對應的16位簡短識別碼 (例如，電池層級 UUID 為 0000**2A19**-0000-1000-8000-00805F9B34FB，且簡短識別碼為 0x2A19) 。 在 [GattServiceUuids](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattserviceuuids)和[GattCharacteristicUuids](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattcharacteristicuuids)中可以看到這些標準 UUID。
 
 如果您的應用程式要實作其專屬自訂服務，則必須產生自訂 UUID。 這在 Visual Studio 中透過 [工具] -> [CreateGuid] 很容易就可以完成 (使用選項 5 即可取得 "xxxxxxxx-xxxx-...xxxx" 格式的 UUID)。 這個 uuid 現在可以用來宣告新的本機服務、特性或描述元。
 
@@ -73,7 +73,7 @@ Windows 通常以用戶端角色操作。 不過，許多案例也都需要 Wind
 
 > 請注意，目前不支援廣播。  指定廣播 GattCharacteristicProperty，將會導致例外狀況。
 
-### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>建立服務和特性的階層架構
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>建立服務和特性的階層
 GattServiceProvider 是用來建立和廣告根主要服務定義。  每個服務都需要其在 GUID 中接受的專屬 ServiceProvider 物件︰ 
 
 ```csharp
@@ -182,7 +182,7 @@ async void ReadCharacteristic_ReadRequested(GattLocalCharacteristic sender, Gatt
 }
 ``` 
 
-### <a name="write"></a>寫入
+### <a name="write"></a>Write
 當遠端裝置嘗試將值寫入特性時，會使用遠端裝置、要寫入的特性和值本身的詳細資料來呼叫 WriteRequested 事件︰ 
 
 ```csharp

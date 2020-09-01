@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0de537ec8b3b1fde0692234f7b4f39350459b7fe
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: f5864be7a4a7f80e376439e8db387e2b2853dfd7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82558792"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172482"
 ---
 # <a name="optical-zoom-and-resizing"></a>視覺化縮放和調整大小
 
@@ -21,7 +21,7 @@ ms.locfileid: "82558792"
 
 這個文章描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
 
-> **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Input (XAML)**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
 
 視覺化縮放可以讓使用者將內容區域內的內容檢視放大 (執行對象是內容區域本身)，而調整大小則可以讓使用者變更一或多個物件的相對大小，卻不變更對該內容區域的檢視 (執行對象是內容區域內的物件)。
 
@@ -37,11 +37,11 @@ ms.locfileid: "82558792"
 
 ![將手指靠攏會縮小物件，將手指分開會放大物件。](images/objectresize.png)
 
-**注意：**    [光學縮放] 不應與 [[語義縮放](../controls-and-patterns/semantic-zoom.md)] 混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
+**注意**   光學縮放不應與[語義縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
 
  
 
-## <a name="dos-and-donts"></a>建議事項和避免事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 對於支援調整大小或視覺化縮放的應用程式，請參考下列指導方針：
@@ -49,7 +49,7 @@ ms.locfileid: "82558792"
 -   如果定義了最大和最小大小限制或界限，可以在使用者達到或超出這些界限時，使用視覺化回饋作為顯示。
 -   使用貼齊點來影響縮放和大小調整行為，方法為提供停止操作的邏輯點，並確保檢視區中顯示特定內容子集。 提供一般縮放比例或邏輯檢視的貼齊點，讓使用者可以比較容易選取這些比例。 例如，相片應用程式會提供 100% 比例的大小調整貼齊點，或如果是地圖應用程式，貼齊點對於城市、省以及國家/地區檢視有可能會相當有用。
 
-    貼齊點可以讓使用者不需要太精準就能達到他們的目標。 如果使用的是 XAML，請參閱 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的貼齊點屬性。 若為 JavaScript 和 HTML，請使用 [**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895)。
+    貼齊點可以讓使用者不需要太精準就能達到他們的目標。 如果使用的是 XAML，請參閱 [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 的貼齊點屬性。 若為 JavaScript 和 HTML，請使用 [**-ms-content-zoom-snap-points**](/previous-versions/hh771895(v=vs.85))。
 
     貼齊點有兩種類型：
 
@@ -65,7 +65,7 @@ ms.locfileid: "82558792"
     -   繪圖應用程式，可調整大小的項目可以顯示在可調整大小的畫布或製圖板上。
     -   包含內嵌物件 (如地圖) 的網頁。
 
-    **請注意**   ，在所有情況下，內容區域都會調整大小，除非所有觸控點都在可調整大小的物件內。
+    **注意**   在所有情況下，除非所有觸控點都在可調整大小的物件內，否則內容區域會調整大小。
 
 ## <a name="related-articles"></a>相關文章
 
@@ -81,8 +81,8 @@ ms.locfileid: "82558792"
 - [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [輸入：Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [輸入：Windows 8 手勢範例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 觸控輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

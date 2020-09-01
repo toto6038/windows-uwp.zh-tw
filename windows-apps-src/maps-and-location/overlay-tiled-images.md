@@ -1,21 +1,21 @@
 ---
 title: 在地圖上重疊顯示並排影像
-description: 藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
+description: 使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
-ms.openlocfilehash: 501e28f88d07a85c1ded3ae880d1e679169ac36a
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: a2a93ac408232e71c2a5ec2bc79f99388e24e5df
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74260378"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171732"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
-藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
+使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 
 **提示**若要深入了解如何在應用程式中使用地圖，請到 Github 下載[通用 Windows 平台 (UWP) 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)。
 
@@ -23,11 +23,11 @@ ms.locfileid: "74260378"
 
 ## <a name="tiled-image-overview"></a>並排影像概觀
 
-Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成正方形磚以便快速抓取和顯示。 這些磚的大小是 256 像素 x 256 像素，並以多個詳細層級預先轉譯。 許多協力廠商服務也會提供切成磚的地圖式資料。 您可以使用磚來源來抓取協力廠商磚，或建立您自己的自訂磚，然後在 [**MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 中顯示的地圖上重疊顯示這些磚。
+Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成正方形磚以便快速抓取和顯示。 這些磚的大小是 256 像素 x 256 像素，並以多個詳細層級預先轉譯。 許多協力廠商服務也會提供切成磚的地圖式資料。 您可以使用磚來源來抓取協力廠商磚，或建立您自己的自訂磚，然後在 [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 中顯示的地圖上重疊顯示這些磚。
 
-**重要**   當您使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [  **MapControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
+**重要**   當您使用磚來源時，不需要撰寫程式碼來要求或放置個別的磚。 [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
 
-以下是 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 屬性範例，示範 X 和 Y 座標及縮放比例的可置換參數。
+以下是 [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 的 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 屬性範例，示範 X 和 Y 座標及縮放比例的可置換參數。
 
 ```syntax
 http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -35,43 +35,43 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 (X 和 Y 座標代表具指定詳細層級之世界地圖內個別磚的位置。 磚編號系統從地圖左上角的 {0, 0} 開始。 例如，位於 {1, 2} 的磚是在磚格線之第三列的第二欄中。)
 
-如需有關地圖服務所使用之磚系統的詳細資訊，請參閱 [Bing 地圖服務磚系統](https://docs.microsoft.com/bingmaps/articles/bing-maps-tile-system?redirectedfrom=MSDN)。
+如需有關地圖服務所使用之磚系統的詳細資訊，請參閱 [Bing 地圖服務磚系統](/bingmaps/articles/bing-maps-tile-system)。
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>重疊顯示來自磚來源的磚
 
-藉由使用 [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)，即可在地圖上重疊顯示來自磚來源的並排影像。
+藉由使用 [**MapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource)，即可在地圖上重疊顯示來自磚來源的並排影像。
 
-1.  將繼承自 [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource) 的三個磚資料來源類別其中之一具現化。
+1.  將繼承自 [**MapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource) 的三個磚資料來源類別其中之一具現化。
 
-    -   [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)
-    -   [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)
-    -   [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)
+    -   [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)
+    -   [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)
+    -   [**CustomMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)
 
     藉由在基底 URI 或檔案名稱中插入可置換參數，設定要用來要求磚的 **UriFormatString**。
 
-    下列範例會將 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 具現化。 這個範例會在 [HttpMapTileDataSource**的建構函式中指定**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring)UriFormatString 的值。
+    下列範例會將 [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 具現化。 這個範例會在 **HttpMapTileDataSource** 的建構函式中指定 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的值。
 
     ```csharp
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  將 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 具現化並設定。 將您在上一個步驟中設定的 [**MapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource) 指定為 [MapTileSource**的**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)DataSource。
+2.  將 [**MapTileSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 具現化並設定。 將您在上一個步驟中設定的 [**MapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileDataSource) 指定為 **MapTileSource** 的 [**DataSource**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)。
 
-    下列範例會在 [**MapTileSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource) 的建構函式中指定 [**DataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource)。
+    下列範例會在 [**MapTileSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的建構函式中指定 [**DataSource**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.datasource)。
 
     ```csharp
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    您可以使用 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的屬性來限制顯示磚的條件。
+    您可以使用 [**MapTileSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的屬性來限制顯示磚的條件。
 
-    -   藉由提供 [**Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds) 屬性的值，只顯示特定地理區域內的磚。
-    -   藉由提供 [**ZoomLevelRange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange) 屬性的值，只以特定詳細層級顯示磚。
+    -   藉由提供 [**Bounds**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds) 屬性的值，只顯示特定地理區域內的磚。
+    -   藉由提供 [**ZoomLevelRange**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange) 屬性的值，只以特定詳細層級顯示磚。
 
-    您也可以依選擇設定 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的其他屬性來影響磚的載入或顯示，例如 [**Layer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer)、[**AllowOverstretch**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.allowoverstretch)、[**IsRetryEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.isretryenabled) 及 [**IsTransparencyEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.istransparencyenabled)。
+    您也可以依選擇設定 [**MapTileSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的其他屬性來影響磚的載入或顯示，例如 [**Layer**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer)、[**AllowOverstretch**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.allowoverstretch)、[**IsRetryEnabled**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.isretryenabled) 及 [**IsTransparencyEnabled**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.istransparencyenabled)。
 
-3.  將 [**MapTileSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 新增到 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.tilesources) 的 [**TileSources**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 集合。
+3.  將 [**MapTileSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 新增到 [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的 [**TileSources**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.tilesources) 集合。
 
     ```csharp
          MapControl1.TileSources.Add(tileSource);
@@ -80,20 +80,20 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 ## <a name="overlay-tiles-from-a-web-service"></a>重疊顯示來自 Web 服務的磚
 
 
-藉由使用 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)，即可重疊顯示抓取自 Web 服務的並排影像。
+藉由使用 [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource)，即可重疊顯示抓取自 Web 服務的並排影像。
 
-1.  將 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 具現化。
-2.  指定 Web 服務預期做為 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 屬性值的 URI 格式。 若要建立這個值，請在基底 URI 中插入可置換參數。 例如，在下列程式碼範例中，**UriFormatString** 的值是：
+1.  將 [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 具現化。
+2.  指定 Web 服務預期做為 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 屬性值的 URI 格式。 若要建立這個值，請在基底 URI 中插入可置換參數。 例如，在下列程式碼範例中，**UriFormatString** 的值是：
 
     ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Web 服務必須支援包含可置換參數 {x}、{y} 及 {zoomlevel} 的 URI。 大部分 Web 服務 (例如 Nokia、Bing 及 Google) 都支援此格式的 URI。 如果 Web 服務需要 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.urirequested) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
+    Web 服務必須支援包含可置換參數 {x}、{y} 及 {zoomlevel} 的 URI。 大部分 Web 服務 (例如 Nokia、Bing 及 Google) 都支援此格式的 URI。 如果 Web 服務需要 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.urirequested) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
 
 3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
-下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [  **UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的值是在 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds) 屬性所指定的地理界限內，才會顯示磚。
+下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的值是在 [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.bounds) 屬性所指定的地理界限內，才會顯示磚。
 
 ```csharp
 private void AddHttpMapTileSource()
@@ -167,16 +167,16 @@ void MainPage::AddHttpMapTileSource()
 ## <a name="overlay-tiles-from-local-storage"></a>重疊顯示來自本機存放區的磚
 
 
-藉由使用 [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)，即可重疊顯示在本機存放區中儲存為檔案的並排影像。 通常您會將這些檔案與您的 app 封裝在一起並散布。
+藉由使用 [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource)，即可重疊顯示在本機存放區中儲存為檔案的並排影像。 通常您會將這些檔案與您的 app 封裝在一起並散布。
 
-1.  將 [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 具現化。
-2.  指定檔案名稱的格式做為 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 屬性的值。 若要建立這個值，請在基底檔案名稱中插入可置換參數。 例如，在下列程式碼範例中，[**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的值是：
+1.  將 [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 具現化。
+2.  指定檔案名稱的格式做為 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 屬性的值。 若要建立這個值，請在基底檔案名稱中插入可置換參數。 例如，在下列程式碼範例中， [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的值為：
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果檔案名稱格式需要 [**UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.urirequested) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
+    如果檔案名稱格式需要 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.urirequested) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
 
 3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
@@ -185,15 +185,15 @@ void MainPage::AddHttpMapTileSource()
 | Uri | 其他資訊 |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | ms-appx:/// | 指向 app 安裝資料夾的根目錄。 |
-|  | 這是 [Package.InstalledLocation](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.installedlocation) 屬性所參考的位置。 |
+|  | 這是 [Package.InstalledLocation](/uwp/api/windows.applicationmodel.package.installedlocation) 屬性所參考的位置。 |
 | ms-appdata:///local | 指向 app 本機存放區的根目錄。 |
-|  | 這是 [ApplicationData.LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) 屬性所參考的位置。 |
+|  | 這是 [ApplicationData.LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 屬性所參考的位置。 |
 | ms-appdata:///temp | 指向 app 的暫存資料夾。 |
-|  | 這是 [ApplicationData.TemporaryFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) 屬性所參考的位置。 |
+|  | 這是 [ApplicationData.TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 屬性所參考的位置。 |
 
  
 
-下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [  **UriFormatString**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 的值是在 [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange) 屬性指定的範圍內時，才會顯示磚。
+下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 的值是在 [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.zoomlevelrange) 屬性指定的範圍內時，才會顯示磚。
 
 ```csharp
         void AddLocalMapTileSource()
@@ -219,10 +219,10 @@ void MainPage::AddHttpMapTileSource()
 
 ## <a name="provide-a-custom-uri"></a>提供自訂 URI
 
-如果 [**HttpMapTileDataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 屬性或 [**LocalMapTileDataSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 的 [**UriFormatString**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 屬性所提供的可置換參數不足以擷取您的磚，您就必須建立自訂 URI。 為 **UriRequested** 事件提供自訂處理常式以建立及傳回自訂 URI。 將會針對每個個別磚引發 **UriRequested** 事件。
+如果 [**HttpMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.HttpMapTileDataSource) 的 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.httpmaptiledatasource.uriformatstring) 屬性或 [**LocalMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.LocalMapTileDataSource) 的 [**UriFormatString**](/uwp/api/windows.ui.xaml.controls.maps.localmaptiledatasource.uriformatstring) 屬性所提供的可置換參數不足以擷取您的磚，您就必須建立自訂 URI。 為 **UriRequested** 事件提供自訂處理常式以建立及傳回自訂 URI。 將會針對每個個別磚引發 **UriRequested** 事件。
 
-1.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.x) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.y)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.zoomlevel) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 屬性結合，以建立自訂 URI。
-2.  傳回 [**MapTileUriRequest**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequest.uri) (包含在 [**MapTileUriRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequest) 的 [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.request) 屬性中) 之 [**Uri**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 屬性中的自訂 URI。
+1.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 的 [**X**](/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.x)、[**Y**](/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.y) 及 [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.zoomlevel) 屬性結合，以建立自訂 URI。
+2.  傳回 [**MapTileUriRequest**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequest) (包含在 [**MapTileUriRequestedEventArgs**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileUriRequestedEventArgs) 的 [**Request**](/uwp/api/windows.ui.xaml.controls.maps.maptileurirequestedeventargs.request) 屬性中) 之 [**Uri**](/uwp/api/windows.ui.xaml.controls.maps.maptileurirequest.uri) 屬性中的自訂 URI。
 
 下列範例示範如何為 **UriRequested** 事件建立自訂處理常式來提供自訂 URI。 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
 
@@ -264,14 +264,14 @@ using System.Threading.Tasks;
 
 ## <a name="overlay-tiles-from-a-custom-source"></a>重疊顯示來自自訂來源的磚
 
-藉由使用 [**CustomMapTileDataSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)，即可重疊顯示自訂磚。 您可以透過程式設計方式在記憶體中即時建立磚，或撰寫您自己的程式碼，以從另一個來源載入現有的磚。
+藉由使用 [**CustomMapTileDataSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.CustomMapTileDataSource)，即可重疊顯示自訂磚。 您可以透過程式設計方式在記憶體中即時建立磚，或撰寫您自己的程式碼，以從另一個來源載入現有的磚。
 
-若要建立或載入自訂磚，請為 [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件提供自訂處理常式。 將會針對每個個別磚引發 **BitmapRequested** 事件。
+若要建立或載入自訂磚，請為 [**BitmapRequested**](/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件提供自訂處理常式。 將會針對每個個別磚引發 **BitmapRequested** 事件。
 
-1.  在 [**BitmapRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 屬性結合，以建立或抓取自訂磚。
-2.  傳回 [**MapTileBitmapRequest**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequest.pixeldata) (包含在 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest) 的 [**Request**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.request) 屬性中) 之 [**PixelData**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 屬性中的自訂磚。 **PixelData** 屬性的類型為 [**IRandomAccessStreamReference**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IRandomAccessStreamReference)。
+1.  在 [**BitmapRequested**](/uwp/api/windows.ui.xaml.controls.maps.custommaptiledatasource.bitmaprequested) 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileBitmapRequestedEventArgs**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 的 [**X**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x)、[**Y**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) 及 [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 屬性結合，以建立或抓取自訂磚。
+2.  傳回 [**MapTileBitmapRequest**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequest) (包含在 [**MapTileBitmapRequestedEventArgs**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 的 [**Request**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.request) 屬性中) 之 [**PixelData**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequest.pixeldata) 屬性中的自訂磚。 **PixelData** 屬性的類型為 [**IRandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.IRandomAccessStreamReference)。
 
-下列範例示範如何為 **BitmapRequested** 事件建立自訂處理常式來提供自訂磚。 這個範例會建立局部不透明的相同紅色磚。 這個範例會忽略 [**MapTileBitmapRequestedEventArgs**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x) 的 [**X**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y)、[**Y**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 及 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 屬性。 雖然這不是真實世界的範例，但是此範例示範了如何在記憶體中即時建立自訂磚。 此範例同時也示範當您需要以非同步方式執行工作來建立自訂磚時，要如何實作延遲模式。
+下列範例示範如何為 **BitmapRequested** 事件建立自訂處理常式來提供自訂磚。 這個範例會建立局部不透明的相同紅色磚。 這個範例會忽略 [**MapTileBitmapRequestedEventArgs**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileBitmapRequestedEventArgs) 的 [**X**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.x)、[**Y**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.y) 及 [**ZoomLevel**](/uwp/api/windows.ui.xaml.controls.maps.maptilebitmaprequestedeventargs.zoomlevel) 屬性。 雖然這不是真實世界的範例，但是此範例示範了如何在記憶體中即時建立自訂磚。 此範例同時也示範當您需要以非同步方式執行工作來建立自訂磚時，要如何實作延遲模式。
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -415,13 +415,13 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 
 完全以協力廠商磚或自訂磚取代預設地圖：
 
--   指定 [**MapTileLayer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** 做為 [**MapTileSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer) 的 [**Layer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 屬性值。
--   指定 [**MapStyle**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** 做為 [**MapControl**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) 的 [**Style**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 屬性值。
+-   指定 [**MapTileLayer**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileLayer).**BackgroundReplacement** 做為 [**MapTileSource**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapTileSource) 的 [**Layer**](/uwp/api/windows.ui.xaml.controls.maps.maptilesource.layer) 屬性值。
+-   指定 [**MapStyle**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapStyle).**None** 做為 [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 的 [**Style**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.style) 屬性值。
 
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
 * [UWP 地圖範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
-* [地圖的設計指導方針](https://docs.microsoft.com/windows/uwp/maps-and-location/controls-map)
-* [組建2015影片：在您的 Windows 應用程式中跨電話、平板電腦和 PC 運用地圖和位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [地圖的設計指導方針](./display-maps.md)
+* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 車流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)

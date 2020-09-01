@@ -1,5 +1,5 @@
 ---
-Description: 在偵測、解讀及處理 Windows 應用程式的互動時，使用視覺效果意見反應來顯示使用者。
+Description: 使用視覺效果意見反應，在偵測、解釋和處理與 Windows 應用程式的互動時，顯示使用者。
 title: 視覺化回饋
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
@@ -8,26 +8,26 @@ keywords: 視覺化回饋、焦點回饋、觸控回饋、觸控點視覺效果�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fcb6945c488bc1b715c339fa39949ea62bdb2a12
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9ced83ca771f4954f8e42dc42e0882d1a5b7c6b1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970073"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172452"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
 使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
-> **重要 API**：[**Windows.Devices.Input**](https://docs.microsoft.com/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](https://docs.microsoft.com/uwp/api/Windows.UI.Core)
+> **重要 API**：[**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
 
 ## <a name="recommendations"></a>建議
 
 - 嘗試限制修改這些與您的設計目的直接相關的控制項範本，不然的話，多出來的變更會影響控制項和應用程式的效能與可存取性。 
-    - 請參閱 [XAML 樣式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)以取得有關自訂控制項屬性的詳細資訊，包括可見狀態屬性。
-    - 請參閱 [UserControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)以取得有關變更控制項範本的詳細資訊
+    - 請參閱 [XAML 樣式](../controls-and-patterns/xaml-styles.md)以取得有關自訂控制項屬性的詳細資訊，包括可見狀態屬性。
+    - 請參閱 [UserControl 類別](/uwp/api/windows.ui.xaml.controls.usercontrol)以取得有關變更控制項範本的詳細資訊
     - 如果您需要大幅變更控制項範本，請考慮建立自訂範本化控制項。 如需自訂範本化控制項的範例，請參閱[自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
-- 如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback)。
+- 如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback)。
 - 不要在非必要情況下顯示回饋。 除非您是要藉由顯示視覺化回饋來添加其他地方所無法提供的好處，否則請勿顯示視覺化回饋，以便讓 UI 保持簡潔、整齊。
 - 不要嘗試對內建的 Windows 手勢進行大幅的視覺化回饋行為自訂，因為這可能會導致產生不一致和混淆的使用者體驗。
 
@@ -44,7 +44,7 @@ ms.locfileid: "82970073"
 
 視覺化回饋通常取決於輸入裝置 (觸控、觸控板、滑鼠、畫筆/手寫筆、鍵盤等等)。 例如，內建的滑鼠回饋通常涉及移動和變更游標，觸控和手寫筆需要的是接觸點視覺效果，而鍵盤輸入和瀏覽則是使用焦點矩形和醒目提示。
 
-使用 [**ShowGestureFeedback**](https://docs.microsoft.com/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) 設定平台手勢的回饋行為。
+使用 [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) 設定平台手勢的回饋行為。
 
 如果自訂回饋 UI，請確定您提供支援且適合所有輸入模式的回饋。
 
@@ -58,13 +58,13 @@ ms.locfileid: "82970073"
 
 所有 Windows 應用程式都支援在應用程式內的可互動控制項周圍使用更詳細定義的焦點視覺效果。 這些新的焦點視覺效果都是完全可自訂的，而且也可視需要予以停用。
 
-針對 Xbox 和電視典型的 **10 英呎體驗**，Windows 支援**顯色焦點**，當透過遊樂器或鍵盤輸入聚焦時，這個光源效果會動畫顯示可聚焦的元素邊框，例如按鈕。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus)。
+針對 Xbox 和電視典型的 **10 英呎體驗**，Windows 支援**顯色焦點**，當透過遊樂器或鍵盤輸入聚焦時，這個光源效果會動畫顯示可聚焦的元素邊框，例如按鈕。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](../devices/designing-for-tv.md#reveal-focus)。
 
 ## <a name="color-branding--customizing"></a>色彩商標和自訂
 
 ### <a name="border-properties"></a>框線屬性
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」**。 次要框線的粗細為 **1px**，圍繞在主要框線「內」**。
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」  。 次要框線的粗細為 **1px**，圍繞在主要框線「內」  。
 ![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
@@ -73,9 +73,9 @@ ms.locfileid: "82970073"
 ```
 ![高可見度焦點視覺效果邊界粗細](images/FocusMargin.png)
 
-邊界是 [**Thickness**](https://docs.microsoft.com/dotnet/api/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱下方![：高可見度焦點著重于底部的視覺邊界粗細](images/FocusThicknessSide.png)
+邊界是 [**Thickness**](/dotnet/api/system.windows.thickness) 類型的屬性，因此可將邊界自訂成只出現在控制項的特定邊。 請參閱以下內容： ![ 高可見度焦點視覺邊界粗細僅靠下](images/FocusThicknessSide.png)
 
-邊界是控制項的視覺界限和焦點視覺效果*次要框線*之間的間距。 預設邊界會從控制項界限中**1px**出來。 您可以藉由變更**FocusVisualMargin**屬性，針對每個控制來編輯此邊界：
+邊界是控制項的視覺界限和焦點視覺效果 *次要框線*的起點之間的空間。 預設邊界會 **1px** 離開控制項界限。 您可以藉由變更 **FocusVisualMargin** 屬性，針對每個控制項來編輯此邊界：
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
@@ -114,7 +114,7 @@ ms.locfileid: "82970073"
 
 ### <a name="for-developers"></a>開發人員
 
-- [自訂使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
+- [自訂使用者互動](../layout/index.md)
 
 ### <a name="samples"></a>範例
 
@@ -128,9 +128,9 @@ ms.locfileid: "82970073"
 - [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [輸入：Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [輸入：Windows 8 手勢範例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 觸控輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
  

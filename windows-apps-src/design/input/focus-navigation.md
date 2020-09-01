@@ -1,6 +1,6 @@
 ---
-title: 沒有滑鼠的焦點導覽
-Description: 瞭解如何使用焦點導覽，在 Windows 應用程式中提供完整且一致的互動體驗，以及鍵盤使用者的自訂控制項、殘障和其他協助工具需求，以及10英尺的電視螢幕和 Xbox one 體驗。
+title: 不使用滑鼠的焦點導覽
+Description: 瞭解如何使用焦點導覽，在您的 Windows 應用程式中提供完整且一致的互動體驗，以及鍵盤電源使用者的自訂控制項、殘障人士和其他協助工具需求的自訂控制項，以及適用于電視螢幕和 Xbox One 的10英尺體驗。
 label: ''
 template: detail.hbs
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 方向內部瀏覽, 方向區域, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,31 +11,31 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ad76db55ffb2f6073e565201ec42bebb418289ed
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 4ad0e986de3f3084cd33f217df7715c955cb6b57
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970133"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172572"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
 
 ![鍵盤、遠端與方向鍵](images/dpad-remote/dpad-remote-keyboard.png)
 
-使用焦點導覽，在 Windows 應用程式中提供完整且一致的互動體驗，以及鍵盤使用者的自訂控制項、殘障和其他協助工具需求，以及10英尺的電視螢幕和 Xbox one 體驗。
+使用焦點導覽，在您的 Windows 應用程式中提供完整且一致的互動體驗，並提供鍵盤電源使用者的自訂控制項、殘障人士和其他協助工具需求，以及適用于電視螢幕和 Xbox One 的10英尺體驗。
 
 ## <a name="overview"></a>概觀
 
-焦點導覽指的是可讓使用者使用鍵盤、遊戲台或遠端控制，流覽 Windows 應用程式的 UI 並與之互動的基礎機制。
+焦點導覽指的是可讓使用者使用鍵盤、遊戲台或遠端控制來流覽和與 Windows 應用程式 UI 互動的基礎機制。
 
 > [!NOTE]
 > 輸入裝置通常會分類為指標裝置 (例如觸控、觸控板、手寫筆和滑鼠)，以及非指標裝置 (例如鍵盤、遊戲台和遙控器)。
 
-本主題說明如何優化 Windows 應用程式，並為依賴非指向輸入類型的使用者建立自訂互動體驗。 
+本主題說明如何針對依賴非指向輸入類型的使用者，將 Windows 應用程式優化並建立自訂的互動體驗。 
 
-雖然我們將焦點放在電腦上 Windows 應用程式中的自訂控制項的鍵盤輸入，但設計良好的鍵盤體驗也非常重要，像是觸控鍵盤和螢幕小鍵盤（OSK）、支援 Windows 朗讀程式之類的協助工具工具，以及支援10英尺的經驗。
+雖然我們將焦點放在電腦上 Windows 應用程式中自訂控制項的鍵盤輸入，但設計完善的鍵盤體驗也很重要，例如觸控鍵盤和螢幕小鍵盤 (OSK) 、支援協助工具工具（例如 Windows 朗讀程式），以及支援10英尺體驗。
 
-如需在 Windows 應用程式中為指標裝置建立自訂體驗的指引，請參閱[控制碼指標輸入](handle-pointer-input.md)。
+如需在適用于指標裝置的 Windows 應用程式中建立自訂體驗的指引，請參閱 [控制碼指標輸入](handle-pointer-input.md) 。
 
 如需更多為鍵盤建置應用程式和體驗的一般資訊，請參閱[鍵盤互動](keyboard-interactions.md)。
 
@@ -59,25 +59,25 @@ ms.locfileid: "82970133"
 控制項或控制項群組的 2D 內部瀏覽區域，稱為其「方向區域」。 當焦點移動到此物件時，鍵盤方向鍵 (左、右、上、下) 可用來瀏覽方向區域內的子元素。
 
 ![](images/keyboard/directional-area-small.png)
-*控制項群組的方向區2d 內部導覽區域或方向區域*
+*控制項群組的方向區2d 內部導覽區域（或方向區）*
 
-您可以使用 [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) 屬性 (其可能值為 [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)、[Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) 或 [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) 管理鍵盤方向鍵的 2D 內部瀏覽。
+您可以使用 [XYFocusKeyboardNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) 屬性 (其可能值為 [Auto](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)、[Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) 或 [Disabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) 管理鍵盤方向鍵的 2D 內部瀏覽。
 
 > [!NOTE]
-> 定位順序不會受到此屬性影響。 若要避免產生混亂的瀏覽體驗，我們建議「不要」** 在您應用程式的 Tab 瀏覽順序中明確指定方向區域的子元素。 請參閱 [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以取得元素定位行為的詳細資訊。
+> 定位順序不會受到此屬性影響。 若要避免產生混亂的瀏覽體驗，我們建議「不要」** 在您應用程式的 Tab 瀏覽順序中明確指定方向區域的子元素。 請參閱 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以取得元素定位行為的詳細資訊。
 
-### <a name="auto-default-behavior"></a>[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (預設行為)
+### <a name="auto-default-behavior"></a>[Auto](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (預設行為)
 
 當設定為 Auto 時，方向瀏覽的行為會由元素的上階或繼承階層決定。 如果所有上階都是預設模式 (設定為 **Auto**)，則「不」** 支援使用鍵盤的方向瀏覽。
 
-### <a name="disabled"></a>[停用](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="disabled"></a>[Disabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 將 **XYFocusKeyboardNavigation** 設為 **Disabled** 則會封鎖控制項及其子元素的方向瀏覽。
 
-![XYFocusKeyboardNavigation 停用](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-的行為*XYFocusKeyboardNavigation 停用的行為*
+![XYFocusKeyboardNavigation 停用的行為 ](images/keyboard/xyfocuskeyboardnav-disabled.gif)
+ *XYFocusKeyboardNavigation 停用的行為*
 
-在此範例中，主要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 但是，B3 和 B4 元素則位於次要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其 **XYFocusKeyboardNavigation** 已設為 **Disabled**，因此會覆寫主要容器並停用自身和其子元素間的方向鍵瀏覽。
+在此範例中，主要 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 但是，B3 和 B4 元素則位於次要 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其 **XYFocusKeyboardNavigation** 已設為 **Disabled**，因此會覆寫主要容器並停用自身和其子元素間的方向鍵瀏覽。
 
 ```XAML
 <Grid 
@@ -125,16 +125,16 @@ ms.locfileid: "82970133"
 </Grid>
 ```
 
-### <a name="enabled"></a>[Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### <a name="enabled"></a>[Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
-將 **XYFocusKeyboardNavigation** 設為 **Enabled** 則會支援控制項和它每一個 [UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 子物件的 2D 方向瀏覽。
+將 **XYFocusKeyboardNavigation** 設為 **Enabled** 則會支援控制項和它每一個 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 子物件的 2D 方向瀏覽。
 
 當設定時，使用方向鍵瀏覽會限制在方向區域內的元素。 Tab 瀏覽不會受到影響，因為所有控制項仍然可透過其定位順序階層進行存取。
 
-![啟用 XYFocusKeyboardNavigation 的](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-行為*XYFocusKeyboardNavigation 啟用的行為*
+![啟用 XYFocusKeyboardNavigation 的行為 ](images/keyboard/xyfocuskeyboardnav-enabled.gif)
+ *XYFocusKeyboardNavigation enabled 行為*
 
-在此範例中，主要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 B3 和 B4 元素位於次要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其中並未設定 **XYFocusKeyboardNavigation**，因此會繼承主要容器設定。 B5 元素並未位於宣告的方向區域中，因此不支援方向鍵瀏覽，但支援 Tab 瀏覽行為。
+在此範例中，主要 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 B3 和 B4 元素位於次要 [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其中並未設定 **XYFocusKeyboardNavigation**，因此會繼承主要容器設定。 B5 元素並未位於宣告的方向區域中，因此不支援方向鍵瀏覽，但支援 Tab 瀏覽行為。
 
 ```xaml
 <Grid
@@ -194,8 +194,8 @@ ms.locfileid: "82970133"
 
 以下是位於不明確支援 2D 方向瀏覽元素中兩個巢狀方向區域的範例。 在此案例中，兩個巢狀區域間不支援方向瀏覽。
 
-![已啟用 XYFocusKeyboardNavigation 且](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-*已啟用嵌套行為 XYFocusKeyboardNavigation 和嵌套行為*
+![啟用 XYFocusKeyboardNavigation 且已啟用嵌套行為 ](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
+ *XYFocusKeyboardNavigation 和嵌套行為*
 
 以下是三個巢狀方向區域更複雜的範例，其中：
 
@@ -209,9 +209,9 @@ ms.locfileid: "82970133"
 
 ## <a name="tab-navigation"></a>Tab 瀏覽
 
-當方向鍵可用於2D 方向導覽 witin 控制項或控制項群組時，Tab 鍵可用於在 Windows 應用程式中的所有控制項之間流覽。 
+雖然箭號可用來進行2D 方向導覽 witin 控制項或控制項群組，但您可以使用 Tab 鍵在 Windows 應用程式中的所有控制項之間進行導覽。 
 
-所有互動式控制項都預設支援 TAB 鍵瀏覽 ([IsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) 和 [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 屬性為 **true**)，其中邏輯定位順序會衍生自您應用程式中的控制項配置。 不過，預設的順序不一定和肉眼觀察的順序一致。 實際的顯示位置可能取決於上層配置容器，以及可在子元素上設定而影響配置的某些屬性。
+所有互動式控制項都預設支援 TAB 鍵瀏覽 ([IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) 和 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 屬性為 **true**)，其中邏輯定位順序會衍生自您應用程式中的控制項配置。 不過，預設的順序不一定和肉眼觀察的順序一致。 實際的顯示位置可能取決於上層配置容器，以及可在子元素上設定而影響配置的某些屬性。
 
 避免讓焦點在應用程式中四處跳躍的自訂定位順序。 例如，表單中的控制項清單應該會有由上至下和由左至右的定位順序 (取決於地區)。
 
@@ -219,31 +219,31 @@ ms.locfileid: "82970133"
 
 ### <a name="set-the-tab-navigation-behavior"></a>設定 Tab 瀏覽行為 
 
-[UIElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement) 的 [TabFocusNavigation](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 屬性會指定整個物件樹狀結構 (或方向區域) 的 Tab 瀏覽。
+[UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的 [TabFocusNavigation](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 屬性會指定整個物件樹狀結構 (或方向區域) 的 Tab 瀏覽。
 
 > [!NOTE]
-> 針對不使用 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate) 的物件使用此屬性而非 [Control.TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) 屬性，以定義其外觀。
+> 針對不使用 [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) 的物件使用此屬性而非 [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) 屬性，以定義其外觀。
 
-如同我們在先前章節提到的，若要避免產生混亂的瀏覽體驗，我們建議「不要」** 在您應用程式的 Tab 瀏覽順序中明確指定方向區域的子元素。 請參閱 [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以取得元素定位行為的詳細資訊。   
-> 針對 Windows 10 Creators Update (組建 10.0.15063) 先前的版本，Tab 設定僅限 [ControlTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate) 物件。 如需詳細資訊，請參閱 [Control.TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation)。
+如同我們在先前章節提到的，若要避免產生混亂的瀏覽體驗，我們建議「不要」** 在您應用程式的 Tab 瀏覽順序中明確指定方向區域的子元素。 請參閱 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以取得元素定位行為的詳細資訊。   
+> 針對 Windows 10 Creators Update (組建 10.0.15063) 先前的版本，Tab 設定僅限 [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) 物件。 如需詳細資訊，請參閱 [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation)。
 
-[TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 具有 [KeyboardNavigationMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) 類型的值，其可能值如下 (請注意這些範例並非自訂控制群組，因此不需要使用方向鍵的內部瀏覽)：
+[TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 具有 [KeyboardNavigationMode](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) 類型的值，其可能值如下 (請注意這些範例並非自訂控制群組，因此不需要使用方向鍵的內部瀏覽)：
 
-- **本機**（預設值）   
+- **本機** (預設)    
   標籤索引會在容器內的位置子樹上識別。 針對此範例，定位順序為 B1、B2、B3、B4、B5、B6、B7、B1。
 
    ![「區域」Tab 瀏覽行為](images/keyboard/tabnav-local.gif)
 
    *「區域」Tab 瀏覽行為*
 
-- **即可**  
+- **一次**  
   容器和所有子元素都會取得焦點一次。 針對此範例，定位順序為 B1、B2、B7、B1 (此處也會同時展示使用方向鍵的內部瀏覽)。
 
    ![「一次」Tab 瀏覽行為](images/keyboard/tabnav-once.gif)
 
    *「一次」Tab 瀏覽行為*
 
-- **重**   
+- **週期**   
   焦點循環會回到容器內第一個可設定為焦點的元素。 針對此範例，定位順序為 B1、B2、B3、B4、B5、B6、B2...
 
    ![「循環」Tab 瀏覽行為](images/keyboard/tabnav-cycle.gif)
@@ -318,23 +318,23 @@ ms.locfileid: "82970133"
 </Grid>
 ```
 
-### <a name="tabindex"></a>[TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
+### <a name="tabindex"></a>[TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
 
-使用 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 指定使用者使用 TAB 鍵巡覽控制項時，元素取得焦點的順序。 擁有較低標籤索引的控制項會在擁有較高索引的控制項之後取得焦點。
+使用 [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 指定使用者使用 TAB 鍵巡覽控制項時，元素取得焦點的順序。 擁有較低標籤索引的控制項會在擁有較高索引的控制項之後取得焦點。
 
-當控制項沒有指定 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 時，它便會根據範圍，指派高於目前視覺化樹狀結構中所有互動控制項內最高索引值的索引值 (最低優先順序)， 
+當控制項沒有指定 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 時，它便會根據範圍，指派高於目前視覺化樹狀結構中所有互動控制項內最高索引值的索引值 (最低優先順序)， 
 
 所有控制項的子元素都會視為在同一個範圍內，若其中有一個元素也有子元素，則會視為另一個範圍。 任何語意模糊都會透過選擇範圍內視覺化樹狀結構的第一個元素來解析。 
 
-若要將控制項從定位順序中排除，請將 [IsTabStop](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 屬性設為 **false**。
+若要將控制項從定位順序中排除，請將 [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) 屬性設為 **false**。
 
-設定 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以覆寫預設定位順序。
+設定 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以覆寫預設定位順序。
 
 > [!NOTE] 
-> [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的運作方式與 [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [Control.TabNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) 相同。
+> [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 的運作方式與 [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) 相同。
 
 
-在這裡我們會展示焦點瀏覽受到特定元素上 [TabIndex](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性影響的方式。 
+在這裡我們會展示焦點瀏覽受到特定元素上 [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性影響的方式。 
 
 ![使用 TabIndex 的「區域」Tab 瀏覽行為](images/keyboard/tabnav-tabindex.gif)
 
@@ -421,11 +421,11 @@ ms.locfileid: "82970133"
 
 ## <a name="2d-directional-navigation-for-keyboard-gamepad-and-remote-control"></a>適用於鍵盤、遊戲台和遙控器的 2D 方向瀏覽
 
-非指標輸入類型（例如鍵盤、遊戲台、遠端控制和協助工具工具，如 Windows 朗讀程式）共用了通用的基礎機制，可用於流覽和與 Windows 應用程式的 UI 互動。
+非指標輸入類型，例如鍵盤、遊戲台、遠端控制和協助工具工具（如 Windows 朗讀程式）共用通用的基礎機制，用來流覽和與 Windows 應用程式的 UI 互動。
 
 在本節中，我們涵蓋如何指定慣用的瀏覽策略和透過一組支援所有焦點式、非指標輸入類型的瀏覽策略屬性微調您應用程式內的焦點瀏覽。
 
-如需有關為 Xbox/TV 建立應用程式和體驗的一般資訊，請參閱[鍵盤互動](keyboard-interactions.md)、 [Xbox 和電視的設計](../devices/designing-for-tv.md)和[遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。
+如需建立 Xbox/TV 應用程式和體驗的一般資訊，請參閱 [鍵盤互動](keyboard-interactions.md)、 [為 xbox 和電視設計](../devices/designing-for-tv.md)，以及 [遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。
 
 ### <a name="navigation-strategies"></a>瀏覽策略
 
@@ -438,14 +438,14 @@ ms.locfileid: "82970133"
 -   XYFocusLeftNavigationStrategy
 -   XYFocusRightNavigationStrategy
 
-這些屬性的可能值為[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) (預設)、[NavigationDirectionDistance](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)、[Projection](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)，或 [RectilinearDistance](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)。
+這些屬性的可能值為[Auto](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) (預設)、[NavigationDirectionDistance](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)、[Projection](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)，或 [RectilinearDistance](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy)。
 
 如果設為 **Auto**，元素行為是根據元素的上階。 如果所有元素都設定為 **Auto**，則使用 **Projection**。
 
 > [!NOTE]
 > 其他如先前取得焦點之元素或瀏覽方向軸鄰近性等因素會影響結果。
 
-### <a name="projection"></a>投影
+### <a name="projection"></a>Projection
 
 Projection 策略會在目前取得焦點元素的邊緣受到「投影」** 時，將焦點移至遇到的第一個元素。
 
@@ -459,7 +459,7 @@ Projection 策略會在目前取得焦點元素的邊緣受到「投影」** 時
 
 NavigationDirectionDistance 策略會將焦點移至最接近瀏覽方向軸的元素。
 
-對應到導覽方向的周框矩形邊緣會進行*擴充*並*投射*，以識別候選目標。 系統會將碰到的第一個元素視為目標。 如果有多個候選項目，則會將最靠近的元素視為目標。 如果仍有多個候選項目，則會將最上方/最左邊的元素視為候選項目。
+對應至導覽方向的周框矩形邊緣會進行 *擴充* 並 *投射* 以識別候選目標。 系統會將碰到的第一個元素視為目標。 如果有多個候選項目，則會將最靠近的元素視為目標。 如果仍有多個候選項目，則會將最上方/最左邊的元素視為候選項目。
 
 ![NavigationDirectionDistance 瀏覽策略](images/keyboard/xyfocusnavigationstrategy-navigationdirectiondistance.gif)
 
@@ -484,7 +484,4 @@ RectilinearDistance 策略會根據 2D 直線距離 ([計程車幾何](https://e
 ## <a name="related-articles"></a>相關文章
 - [程式設計焦點瀏覽](focus-navigation-programmatic.md)
 - [鍵盤互動](keyboard-interactions.md)
-- [鍵盤協助工具](../accessibility/keyboard-accessibility.md) 
-
-
-
+- [鍵盤協助工具](../accessibility/keyboard-accessibility.md)

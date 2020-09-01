@@ -1,20 +1,20 @@
 ---
 title: 非對應磚的轉譯器行為
-description: 本節說明非對應磚的轉譯器行為。
+description: 瞭解如何使用非對應的磚，DepthStencilView (DSV) 和 RenderTargetView (RTV) 轉譯器的行為。
 ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
 keywords:
 - 非對應磚的轉譯器行為
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e3089444820f990644526eaafb7f2ef9007fa70a
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f8085d8d29a86c0c5da82f6cb98c57c037b81beb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57631883"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89171882"
 ---
-# <a name="span-iddirect3dconceptsrasterizerbehaviorwithnon-mappedtilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>與非對應的圖格的轉譯器行為
+# <a name="span-iddirect3dconceptsrasterizer_behavior_with_non-mapped_tilesspanrasterizer-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.rasterizer_behavior_with_non-mapped_tiles"></span>非對應磚的轉譯器行為
 
 
 本節說明非對應磚的轉譯器行為。
@@ -42,7 +42,7 @@ ms.locfileid: "57631883"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[資料流資源的存取管線](pipeline-access-to-streaming-resources.md)
+[串流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
  
 

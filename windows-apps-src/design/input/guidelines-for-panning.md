@@ -8,22 +8,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e391354b34f00460eb5988f4e03c1ff07a9296
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e77485bd2febe2ee032f9a0c3ceada31c2807ee0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970113"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172492"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
 
 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
-> **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
-## <a name="dos-and-donts"></a>建議事項和避免事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 **移動瀏覽指標和捲軸**
@@ -32,7 +32,7 @@ ms.locfileid: "82970113"
 
 -   顯示移動瀏覽指示器和捲軸來提供位置和尺寸提示。若您要提供自訂瀏覽功能，請隱藏他們。
 
-    **注意：**  與標準捲軸不同的是，移動指標純粹是資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
+    **注意**   不同于標準捲軸，移動游標是純資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
 
      
 
@@ -66,7 +66,7 @@ ms.locfileid: "82970113"
 
 **鏈結內嵌或巢狀的內容**
 
--   對於文字與格線內容，請使用單軸移動瀏覽 (通常為水平) 與欄配置。 在這些情況下，內容通常會從資料行自然地包裝和流程，並讓使用者在 Windows 應用程式之間保持一致且可探索的體驗。
+-   對於文字與格線內容，請使用單軸移動瀏覽 (通常為水平) 與欄配置。 在這些情況下，內容通常會從資料行自然地包裝和流出至資料行，並讓使用者體驗在 Windows 應用程式之間保持一致且可供探索。
 
 -   不要使用內嵌的可移動瀏覽區域來顯示文字或項目清單。 因為只有在區域內偵測到輸入接觸點時，才會顯示移動瀏覽指標與捲軸，所以這並非直覺式或可探索的使用者經驗。
 
@@ -79,7 +79,7 @@ ms.locfileid: "82970113"
 利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
 
 > <div id="main">
-> <strong>Windows 10 秋季建立者更新-行為變更</strong>根據預設，使用中的畫筆現在會在 Windows 應用程式（例如觸控、觸控板和被動畫筆）中滾動/移動，而不是文字選取專案。  
+> <strong>Windows 10 Fall Creators Update 行為變更</strong> 使用中的畫筆預設會在 Windows 應用程式中進行滾動/移動 (例如觸控、觸控板和被動畫筆) ，而不是文字選取。  
 > 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a> \(英文\) 的 API 參考主題。
 > </div>
 
@@ -108,14 +108,14 @@ Windows 8 支援三種移動瀏覽類型：
 
 移動瀏覽的互動經驗對輸入裝置都是唯一的，但仍然能提供類似的功能。
 
-**Pannable 區域**Pannable 區域行為會在設計階段使用 JavaScript 開發人員透過階層式樣式表（CSS）公開給 Windows 應用程式。
+**Pannable 區域** Pannable 區域行為是在設計階段透過階層式樣式表 (CSS) ，在設計階段使用 JavaScript 開發人員公開給 Windows 應用程式。
 
 根據偵測到的輸入裝置，提供兩種移動瀏覽顯示模式：
 
 -   觸控時為移動瀏覽指標。
 -   使用其他輸入裝置 (包括滑鼠、觸控板、鍵盤以及手寫筆) 時為捲軸。
 
-**附注**  只有在觸控連絡人位於 pannable 區域內時，才會顯示行動電話指標。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
+**注意**   只有當觸控連絡人位於 pannable 區域內時，才會顯示行動電話指標。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
 
  
 
@@ -125,8 +125,8 @@ Windows 8 支援三種移動瀏覽類型：
 
 ![顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標的影像。](images/scrolling-indicators.png)
 
-**移動流覽行為**
-**貼齊點**使用滑動手勢移動會在觸控觸點提起時，將慣性行為帶入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
+**移動流覽行為** 
+**貼齊點**移動觸控手勢時，移動觸控手勢時，會將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
 
 貼齊點會指定應用程式內容的邏輯停止點。 貼齊點的作用就像是供使用者使用的分頁機制，將在大型可移動瀏覽區域的過度滑動或撥動減至最低程度。 使用它們即可處理不精確的使用者輸入，確保檢視區中可以顯示特定內容子集或關鍵資訊。
 
@@ -170,9 +170,9 @@ Windows 8 支援三種移動瀏覽類型：
 
 ## <a name="related-articles"></a>相關文章
 
-- [自訂使用者互動](https://docs.microsoft.com/windows/uwp/design/layout/index)
-- [最佳化 ListView 與 GridView](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)
-- [鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)
+- [自訂使用者互動](../layout/index.md)
+- [最佳化 ListView 與 GridView](../../debug-test-perf/optimize-gridview-and-listview.md)
+- [鍵盤協助工具](../accessibility/keyboard-accessibility.md)
 
 **範例**
 - [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
@@ -184,8 +184,8 @@ Windows 8 支援三種移動瀏覽類型：
 - [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [輸入：Windows 8 手勢範例](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [輸入：Windows 8 手勢範例](/samples/browse/?redirectedfrom=MSDN-samples)
 - [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 觸控輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

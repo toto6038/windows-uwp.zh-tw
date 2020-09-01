@@ -1,6 +1,6 @@
 ---
-Description: 本主題說明輪替的新 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
-title: 輪替
+Description: 本主題說明旋轉的新的 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
+title: 旋轉
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d0eb18d59c9a5c19826eb7b6e8d4b65179b6fd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 98ba886ffd74f03b4b502e1f7351c75c76646147
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970103"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172472"
 ---
-# <a name="rotation"></a>輪替
+# <a name="rotation"></a>旋轉
 
 
-本文說明輪替的新 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
+本文描述輪替的新的 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
 
-> **重要 API**：[**Windows.UI.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
-## <a name="dos-and-donts"></a>建議事項和避免事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   使用旋轉以協助使用者直接旋轉 UI 元素。
 
@@ -31,7 +31,7 @@ ms.locfileid: "82970103"
 
 **旋轉概觀**
 
-旋轉是 Windows 應用程式所使用的觸控優化技術，可讓使用者以迴圈方向（順時針或逆時針）來轉換物件。
+輪替是 Windows 應用程式所使用的觸控優化技術，可讓使用者以迴圈方式開啟物件， (順時針或逆時針) 。
 
 根據輸入裝置，旋轉互動會透過以下方式執行：
 
@@ -44,7 +44,7 @@ ms.locfileid: "82970103"
 
 ![示範旋轉所支援的各種手指姿勢的圖。](images/ux-rotate-positions.png)
 
-**請注意**   ，在大多數情況下，旋轉點是兩個觸控點的其中一個，除非使用者可以指定與連絡人點無關的旋轉點（例如，在繪圖或版面配置應用程式中）。 下列影像示範未以這樣的方式限制旋轉點時，會如何對使用者經驗產生負面影響。
+**注意**   在大部分的情況下，旋轉點是兩個觸控點的其中一個，除非使用者可指定與連絡人點無關的旋轉點 (例如，在繪圖或配置應用程式) 中。 下列影像示範未以這樣的方式限制旋轉點時，會如何對使用者經驗產生負面影響。
 
 第一張圖片顯示初始 (拇指) 和次要 (食指) 觸碰點：食指觸碰一顆樹，而拇指觸碰一段木材。
 
@@ -61,7 +61,7 @@ ms.locfileid: "82970103"
 
  
 
-Windows 10 支援三種類型的輪替： [免費]、[受限制] 和 [合併]。
+Windows 10 支援三種類型的旋轉：「免費」、「受限」和「合併」。
 
 <table>
 <colgroup>
@@ -71,7 +71,7 @@ Windows 10 支援三種類型的輪替： [免費]、[受限制] 和 [合併]。
 <thead>
 <tr class="header">
 <th align="left">類型</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -88,7 +88,7 @@ Windows 10 支援三種類型的輪替： [免費]、[受限制] 和 [合併]。
 <td align="left">組合式旋轉</td>
 <td align="left"><p>組合式旋轉支援依區域 (類似於<a href="guidelines-for-panning.md">移動瀏覽的指導方針</a>中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
 <div class="alert">
-<strong>請注意</strong>  ，「使用者介面滑軌」是一種功能，其中的目的地區域會限制某個特定值或位置的移動，以影響其選取範圍。
+<strong>注意</strong>   「使用者介面滑軌」（user interface 鐵路）是一種功能，可讓目標周圍的區域限制移至特定的值或位置，以影響其選取專案。
 </div>
 <div>
  
@@ -111,8 +111,8 @@ Windows 10 支援三種類型的輪替： [免費]、[受限制] 和 [合併]。
 - [輸入：XAML 使用者輸入事件範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
 - [輸入：裝置功能範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
 - [輸入：觸控點擊測試範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML 捲軸、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
+- [XAML 滾動、移動流覽和縮放範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [輸入：簡化的筆跡範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
-- [輸入：使用 GestureRecognizer 處理手勢與操作](https://docs.microsoft.com/samples/browse/?redirectedfrom=MSDN-samples)
+- [輸入：使用 GestureRecognizer 處理手勢與操作](/samples/browse/?redirectedfrom=MSDN-samples)
 - [輸入：操作和手勢範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX 觸控輸入範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))

@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, uwp, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: f6e3839ac2c15c1f976a9135b121ffea26174d41
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259621"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173242"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 資訊保護 (WIP)
 
-__注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
+__備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
 
 WIP 會強制執行組織所定義的原則，以保護屬於組織的資料。 如果您的應用程式包含在這些原則中，則應用程式產生的所有資料都會受到原則限制。 本主題可協助您建置能順利強制執行這些原則的應用程式，且使用者的個人資料不會受到任何影響。
 <iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
@@ -31,7 +31,7 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 系統管理員可透過使用 MDM 或 MAM，識別哪些應用程式可存取屬於組織的檔案，以及使用者是否可以複製這些檔案中的資料，並將資料貼到個人文件。
 
-它的運作方式如下： 使用者在組織的行動裝置管理 (MDM) 系統註冊他們的裝置。 管理組織中的系統管理員使用 Microsoft Intune 或 System Center Configuration Manager (SCCM) 定義原則，接著部署到註冊的裝置。
+其運作方式如下。 使用者在組織的行動裝置管理 (MDM) 系統註冊他們的裝置。 管理組織中的系統管理員使用 Microsoft Intune 或 System Center Configuration Manager (SCCM) 定義原則，接著部署到註冊的裝置。
 
 若使用者不須註冊其裝置，系統管理員會使用其 MAM 系統定義並部署適用於特定應用程式的原則。 使用者安裝任何這類的應用程式時，即會收到相關聯的原則。
 
@@ -43,11 +43,11 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 > **深入瞭解 WIP** <br>
 * [Windows 資訊保護簡介](https://techcommunity.microsoft.com/t5/Windows-IT-Pro-Blog/bg-p/Windows10Blog)
-* [使用 Windows 資訊保護（WIP）保護您的企業資料](https://docs.microsoft.com/windows/whats-new/edp-whats-new-overview)
+* [使用 Windows 資訊保護 (WIP) 保護您的企業資料](/windows/whats-new/edp-whats-new-overview)
 
 如果您的應用程式在允許清單中，則應用程式產生的所有資料都會受到原則限制。 這表示如果系統管理員撤銷使用者的企業資料存取權，這些使用者就會失去應用程式產生的所有資料的存取權。
 
-如果您的應用程式只是設計成供企業使用就無所謂。 但如果您的應用程式建立的資料對使用者來說是個人資料，您會想要*啟發*您的應用程式，以明智地分辨企業資料和個人資料。 我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
+如果您的應用程式只是設計成供企業使用就無所謂。 但是，如果您的應用程式會建立使用者認為個人的資料，您會想要 *enlighten* 您的應用程式，以在企業和個人資料之間聰明地辨別。 我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
 
 ## <a name="create-an-enterprise-enlightened-app"></a>建立企業啟發式應用程式
 
@@ -61,13 +61,13 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 如果您已經準備好啟發您的應用程式，請參閱以下指南之一︰
 
-**針對您使用建立的通用 Windows 平臺（UWP）應用程式C#**
+**針對通用 Windows 平臺 (UWP) 您使用 C 所建立的應用程式#**
 
 [Windows 資訊保護 (WIP) 開發人員指南](wip-dev-guide.md)。
 
-**針對您使用建立的桌面應用程式C++**
+**如果是使用 C++ 建置的傳統型應用程式：**
 
-[Windows 資訊保護 (WIP) 開發人員指南 (C++)](https://docs.microsoft.com/previous-versions/windows/desktop/EDP/wip-developer-guide?redirectedfrom=MSDN)。
+[Windows 資訊保護 (WIP) 開發人員指南 (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide)。
 
 
 ## <a name="create-non-enlightened-enterprise-app"></a>建立非啟發式企業應用程式
