@@ -6,34 +6,34 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1858600b1d21c2462404a45620584735064176e0
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: cd85141889fd0f1cf1145aaf93db662afdd61753
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730335"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162162"
 ---
 #  <a name="move-from-windowsphone-silverlight-to-uwp"></a>從 Windows Phone Silverlight 移到 UWP
 
 
-如果您是 Windows Phone Silverlight app 的開發人員，便可以在移到 Windows 10 時，充分利用您的技能組合與原始程式碼。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在此移植指南中提及之 Windows 10、UWP app，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱[通用 Windows 平台 (UWP) app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)。
+如果您是 Windows Phone Silverlight app 的開發人員，便可以在移到 Windows 10 時，充分利用您的技能組合與原始程式碼。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在此移植指南中提及之 Windows 10、UWP app，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱[通用 Windows 平台 (UWP) app 指南](../get-started/universal-application-platform-guide.md)。
 
-當您將 Windows Phone Silverlight 應用程式移植成 Windows 10 應用程式時，將可補足已在 [Windows Phone 8.1 引入](https://docs.microsoft.com/previous-versions/windows/apps/ff402535(v=vs.105))的行動裝置功能，還能超越它們，使用可在所有 Windows 10 裝置通用的應用程式模型與 UI 架構之「通用 Windows 平台 (UWP)」。 這使得以一個程式碼為基底，以及單一應用程式套件，來支援電腦、平板電腦、手機與大量其他種類裝置成為可能。 而這將讓您 app 的潛在對象倍增，並藉由共用資料、購買的消費性產品等，創造新的可能性。 如需新功能的詳細資訊，請參閱 [Windows 10 提供給開發人員的新功能](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)。
+當您將 Windows Phone Silverlight 應用程式移植成 Windows 10 應用程式時，將可補足已在 [Windows Phone 8.1 引入](/previous-versions/windows/apps/ff402535(v=vs.105))的行動裝置功能，還能超越它們，使用可在所有 Windows 10 裝置通用的應用程式模型與 UI 架構之「通用 Windows 平台 (UWP)」。 這使得以一個程式碼為基底，以及單一應用程式套件，來支援電腦、平板電腦、手機與大量其他種類裝置成為可能。 而這將讓您 app 的潛在對象倍增，並藉由共用資料、購買的消費性產品等，創造新的可能性。 如需新功能的詳細資訊，請參閱 [Windows 10 提供給開發人員的新功能](../whats-new/windows-10-build-19041.md)。
 
 您也可以選擇將 app 的 Windows Phone Silverlight 版本與 Windows 10 版本同時提供給客戶。
 
-**請注意**  ，本指南的設計可協助您手動將 Windows Phone Silverlight 應用程式移植到 Windows 10。 除了使用本指南中的資訊移植您的 app 外，您還可嘗試 **Mobilize.NET 的 Silverlight Bridge** 的開發人員預覽以協助移植程序自動化。 此工具會分析您的應用程式的原始程式碼，並將 Windows Phone Silverlight 控制項和 API 的參考轉換成其 UWP 對應項目。 因為此工具仍在開發人員預覽中，尚無法處理所有轉換案例。 不過，大部分的開發人員應可藉由開始使用此工具而節省一些時間和精力。 若要嘗試開發人員預覽，請瀏覽 [Mobilize.NET 的網站](https://www.mobilize.net/uwp-bridge)。
+**注意**   本指南的設計目的是協助您將 Windows Phone Silverlight 應用程式移植到手動 Windows 10。 除了使用本指南中的資訊移植您的 app 外，您還可嘗試 **Mobilize.NET 的 Silverlight Bridge** 的開發人員預覽以協助移植程序自動化。 此工具會分析您的應用程式的原始程式碼，並將 Windows Phone Silverlight 控制項和 API 的參考轉換成其 UWP 對應項目。 因為此工具仍在開發人員預覽中，尚無法處理所有轉換案例。 不過，大部分的開發人員應可藉由開始使用此工具而節省一些時間和精力。 若要嘗試開發人員預覽，請瀏覽 [Mobilize.NET 的網站](https://www.mobilize.net/uwp-bridge)。
 
 ## <a name="xaml-and-net-or-html"></a>XAML 與 .NET 或 HTML？
 
-Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構，而且您會針對某個版本的 .NET Framework 和 Windows 執行階段 Api 的一小部分進行程式設計。 由於您已在 Windows Phone Silverlight 應用程式中使用 Extensible Application Markup Language (XAML)，XAML 應該是適合用在您 Windows 10 版本的選擇，因為您多數的知識與經驗，以及大部分的原始程式碼與所使用的軟體模式都會一併轉移過去。 甚至您的 UI 標記與設計也可以輕易地移植過去。 您將發現 Managed API、XAML 標記、UI 架構與工具全都令人熟悉不已，而且您可以在 UWP app 中使用 C++、C# 或 Visual Basic 來搭配 XAML。 您可能會訝異此程序相對上有多麼容易，即使過程中有一兩項挑戰。
+Windows Phone Silverlight 有以 Silverlight 4.0 為基礎的 XAML UI 架構，您可以針對 .NET Framework 的版本和 Windows 執行階段 Api 的一小部分進行程式設計。 由於您已在 Windows Phone Silverlight 應用程式中使用 Extensible Application Markup Language (XAML)，XAML 應該是適合用在您 Windows 10 版本的選擇，因為您多數的知識與經驗，以及大部分的原始程式碼與所使用的軟體模式都會一併轉移過去。 甚至您的 UI 標記與設計也可以輕易地移植過去。 您將發現 Managed API、XAML 標記、UI 架構與工具全都令人熟悉不已，而且您可以在 UWP app 中使用 C++、C# 或 Visual Basic 來搭配 XAML。 您可能會訝異此程序相對上有多麼容易，即使過程中有一兩項挑戰。
 
-請參閱[使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) app 的藍圖](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))。
+請參閱[使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) app 的藍圖](/previous-versions/windows/apps/br229583(v=win.10))。
 
-**請注意**  ，Windows 10 支援的 .NET Framework 比 Windows Phone Store 應用程式更多。 例如，Windows 10 有數個 System.servicemodel。\*命名空間，以及 System.Net、system System.net.networkinformation 和 system .Net. socket。 因此，現在是移植您的 Windows Phone Silverlight，讓您的 .NET 程式碼直接編譯並在新平台上運作的絕佳時機。 請參閱[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)。
+**注意**   Windows 10 支援比 Windows Phone Store 應用程式更多的 .NET Framework。 例如，Windows 10 有數個 System.servicemodel。 \* 命名空間以及 System.Net、System System.net.networkinformation.networkinformationexception 和 System .Net。 因此，現在是移植您的 Windows Phone Silverlight，讓您的 .NET 程式碼直接編譯並在新平台上運作的絕佳時機。 請參閱[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)。
 將現有 .NET 原始程式碼重新編譯為 Windows 10 應用程式另一個極好的理由是，您將可以從 .NET 原生 (一種事先編譯技術，其將 MSIL 轉換成原生可執行機器碼) 獲得助益。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。
 
-此移植指南將著重于 XAML，但您也可以建立功能相同的應用程式，也就是使用 JavaScript、階層式樣式表（CSS）和 HTML5 搭配 Windows Library for JavaScript，來呼叫許多相同的 Windows 執行階段 Api。 雖然 XAML 與 HTML 的 Windows 執行階段 UI 架構彼此並不相同，但是不論您選擇哪一個，都可在各種 Windows 裝置上通用。
+此移植指南將著重于 XAML，但您也可以建立功能相當的應用程式，使用 JavaScript、階層式樣式表 (CSS) 和 HTML5 以及適用於 JavaScript 的 Windows Library 來呼叫許多相同的 Windows 執行階段 Api。 雖然 XAML 與 HTML 的 Windows 執行階段 UI 架構彼此並不相同，但是不論您選擇哪一個，都可在各種 Windows 裝置上通用。
 
 ## <a name="targeting-the-universal-or-the-mobile-device-family"></a>以通用或行動裝置系列為目標
 
@@ -45,11 +45,11 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 
 ## <a name="approaching-porting-layer-by-layer"></a>逐層進行移植
 
--   **View**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的大部分 UI 標記和設計 (甚至是操作 UI 元素的命令式程式碼) 都會直接移植。
--   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型與資料模型程式碼也都會使用非視覺作業系統與 .NET API (包括用於資料存取的 API)。 其中大多數皆[可供 UWP app 使用](https://docs.microsoft.com/previous-versions/windows/br211369(v=win.10))，因此您應該能夠原封不動地移植此程式碼中的大部分。 不過別忘了：視圖模型是視圖的模型或*抽象*層。 檢視模型提供 UI 的狀態與行為，而檢視本身則提供視覺效果。 基於這個原因，您為了配合 UWP 允許您在其上執行的不同尺寸而調整的任何 UI，可能都需要有對應的檢視模型變更。 針對網路和呼叫雲端服務，您通常可以選擇使用 .NET 或 Windows 執行階段 Api。 如需涉及做出決定的因素，請參閱[雲端服務、網路功能及資料庫](wpsl-to-uwp-business-and-data.md)。
+-   **查看**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的大部分 UI 標記和設計 (甚至是操作 UI 元素的命令式程式碼) 都會直接移植。
+-   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型與資料模型程式碼也都會使用非視覺作業系統與 .NET API (包括用於資料存取的 API)。 其中大多數皆[可供 UWP app 使用](/previous-versions/windows/br211369(v=win.10))，因此您應該能夠原封不動地移植此程式碼中的大部分。 不過請記住：視圖模型是視圖的模型或 *抽象概念*。 檢視模型提供 UI 的狀態與行為，而檢視本身則提供視覺效果。 基於這個原因，您為了配合 UWP 允許您在其上執行的不同尺寸而調整的任何 UI，可能都需要有對應的檢視模型變更。 針對網路功能和呼叫雲端服務，您通常可以選擇使用 .NET 或 Windows 執行階段 Api。 如需涉及做出決定的因素，請參閱[雲端服務、網路功能及資料庫](wpsl-to-uwp-business-and-data.md)。
 -   **雲端服務**。 您的應用程式某些部分 (也許佔相當大的部分) 可能是在雲端以服務的形式執行。 在用戶端裝置上執行的應用程式部分則會連線到那些服務。 這是分散式 app 中最有可能在移植用戶端部分時保持不變的部分。 如果您還沒有雲端服務，[Microsoft Azure 行動服務](https://azure.microsoft.com/services/mobile-services/)會是您 UWP app 的一個絕佳雲端服務選項，它提供強大的後端元件，可供通用 Windows 應用程式呼叫以取得服務，服務涵蓋範圍可從簡單的動態磚更新，到伺服器陣列可提供的那種高難度延展性。
 
-在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將 UWP app 分解為如上所述的分層，可讓您更容易更正 app、加以測試，並進行後續的閱讀與維護。 您可以讓功能更容易重複使用及避免平台之間的一些 UI API 差異問題，只要依照 Model-View-ViewModel ([MVVM](https://msdn.microsoft.com/magazine/dd419663.aspx)) 模式即可。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
+在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將 UWP app 分解為如上所述的分層，可讓您更容易更正 app、加以測試，並進行後續的閱讀與維護。 您可以讓功能更容易重複使用及避免平台之間的一些 UI API 差異問題，只要依照 Model-View-ViewModel ([MVVM](/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern)) 模式即可。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
 
 ## <a name="one-or-two-exceptions-to-the-rule"></a>此規則的幾個例外
 
@@ -59,19 +59,19 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 
 | 沒有 UWP 對等功能的功能 | Windows Phone Silverlight 功能的文件 |
 |----------------------------------------------|---------------------------------------------------------|
-| Microsoft XNA。 一般而言，使用 C++ 的 [Microsoft DirectX](https://docs.microsoft.com/windows/desktop/directx) 可以做為替代。 請參閱[開發遊戲](https://docs.microsoft.com/previous-versions/windows/apps/hh452744(v=win.10))和 [DirectX 與 XAML 互通性](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))。 | [XNA Framework 類別庫](https://docs.microsoft.com/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)) | 
-|鏡頭應用程式 | [Windows Phone 8 的鏡頭](https://docs.microsoft.com/previous-versions/windows/apps/jj206990(v=vs.105)) |
+| Microsoft XNA。 一般而言，使用 C++ 的 [Microsoft DirectX](/windows/desktop/directx) 可以做為替代。 請參閱[開發遊戲](/previous-versions/windows/apps/hh452744(v=win.10))和 [DirectX 與 XAML 互通性](/previous-versions/windows/apps/hh825871(v=win.10))。 | [XNA Framework 類別庫](/previous-versions/windows/xna/bb200104(v=xnagamestudio.41)) | 
+|鏡頭應用程式 | [Windows Phone 8 的鏡頭](/previous-versions/windows/apps/jj206990(v=vs.105)) |
 
 &nbsp;
 
-| 主題| 描述|
+| 主題| 說明|
 |------|------------| 
 | [命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md) | 本主題提供 Windows Phone Silverlight API 與其 UWP 對等 API 的完整對應。 |
 | [移植專案](wpsl-to-uwp-porting-to-a-uwp-project.md) | 您將在 Visual Studio 中建立新的 Windows 10 專案，然後將您的檔案複製到此專案中，以開始移植程序。 |
 | [疑難排解](wpsl-to-uwp-troubleshooting.md) | 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。 為此，您可以暫時將任何非必要的程式碼標成註解或移除，稍後再回來清償該負債。 本主題中的疑難排解問題和解決方式表格雖然無法用來替代閱讀接下來的幾個主題，但是在這個階段可能對您很有幫助。 在您進展到後續的主題時，隨時可以回來參考這個表格。 |
 | [移植 XAML 與 UI](wpsl-to-uwp-porting-xaml-and-ui.md) | 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從 Windows Phone Silverlight 轉譯至 UWP app。 您會發現在更新系統資源索引鍵參考、變更某些元素類型名稱，以及將 "clr-namespace" 變更為 "using" 之後，大部分的標記都相容。 |
-| [I/O、裝置與 app 模型的移植](wpsl-to-uwp-input-and-sensors.md) | 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。 |
-| [移植商務與資料層](wpsl-to-uwp-business-and-data.md) | UI 的背後是商務與資料層。 這些層中的程式碼會呼叫作業系統和 .NET Framework API (例如背景處理、位置、相機、檔案系統、網路及其他資料存取)。 其中大多數皆[可供 UWP app 使用](https://docs.microsoft.com/previous-versions/windows/br211369(v=win.10))，因此您應該能夠原封不動地移植此程式碼中的大部分。 |
+| [I/O、裝置與應用程式模型的移植](wpsl-to-uwp-input-and-sensors.md) | 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。 它也可能涉及資料處理。 但是這個程式碼通常不被認為是 UI 層或資料層。 這個程式碼包含與震動控制器、加速計、陀螺儀、麥克風和喇叭 (與語音辨識和合成交集)、(地理) 位置以及輸入形式 (例如觸控、滑鼠、鍵盤及手寫筆) 的整合。 |
+| [移植商務與資料層](wpsl-to-uwp-business-and-data.md) | UI 的背後是商務與資料層。 這些層中的程式碼會呼叫作業系統和 .NET Framework API (例如背景處理、位置、相機、檔案系統、網路及其他資料存取)。 其中大多數皆[可供 UWP app 使用](/previous-versions/windows/br211369(v=win.10))，因此您應該能夠原封不動地移植此程式碼中的大部分。 |
 | [尺寸與 UX 的移植](wpsl-to-uwp-form-factors-and-ux.md) | Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。|
 |[案例研究：Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) | 本主題提供將一個非常簡單的 Windows Phone Silverlight app 移植到 Windows 10 UWP app 的案例研究。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 |
 | [案例研究：Bookstore2](wpsl-to-uwp-case-study-bookstore2.md) | 這個案例研究 (根據 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 中所提供的資訊來建置) 是從在 **LongListSelector** 中顯示分組資料的 Windows Phone Silverlight App 開始著手。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
@@ -79,10 +79,10 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 ## <a name="related-topics"></a>相關主題
 
 **文件集**
-* [Windows 10 提供給開發人員的新功能](https://docs.microsoft.com/windows/uwp/whats-new/windows-10-version-latest)
-* [通用 Windows 平台 (UWP) app 指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-* [使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) App 的藍圖](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))
-* [Windows Phone 8 開發人員的下一步](https://docs.microsoft.com/previous-versions/windows/apps/dn655121(v=vs.105))
+* [Windows 10 提供給開發人員的新功能](../whats-new/windows-10-build-19041.md)
+* [通用 Windows 平台 (UWP) app 指南](../get-started/universal-application-platform-guide.md)
+* [使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) App 的藍圖](/previous-versions/windows/apps/br229583(v=win.10))
+* [Windows Phone 8 開發人員的下一步](/previous-versions/windows/apps/dn655121(v=vs.105))
 
 **雜誌文章**
 * [Visual Studio 雜誌：Windows Phone 8.1：Convergence 的一大躍進](https://visualstudiomagazine.com/articles/2014/05/01/whats-new-for-developers-with-windows-phone-8_1.aspx)
@@ -90,4 +90,3 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 **簡報**
 * [將 Nokia 音樂從 Windows Phone 移到 Windows 8 的案例](https://channel9.msdn.com/Events/Build/2013/2-219)
  
-

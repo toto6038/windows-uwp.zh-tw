@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, latency, dxgi, swap chains, directx, 遊戲, 延遲, 交換鏈結
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ecce9d95d3c2e852b049e3cac9579850022df9
-ms.sourcegitcommit: d2aabe027a2fff8a624111a00864d8986711cae6
+ms.openlocfilehash: 41d11865daadacf8ff90971836cab7cd941c4182
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82880858"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163042"
 ---
 # <a name="reduce-latency-with-dxgi-13-swap-chains"></a>透過 DXGI 1.3 交換鏈結減少延遲
 
@@ -21,18 +21,18 @@ ms.locfileid: "82880858"
 
 使用翻轉模型交換鏈結，背景緩衝區「翻轉」會在您的遊戲呼叫 [**IDXGISwapChain::Present**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-present) 時排入佇列。 當轉譯迴圈呼叫 Present() 時，系統會封鎖執行緒，直到它完成先前框架的顯示為止，在它實際顯示之前，清出空間以將新框架排入佇列。 這會導致遊戲繪製框架的時間和系統允許它顯示該框架的時間之間，產生額外的延遲。 在許多情況下，系統將會到達一個穩定的平衡，遊戲在它轉譯的時間和它呈現每個畫面的時間之間，一律會等候一個幾乎完全是額外存在的畫面。 最好是等到系統準備好接受新畫面，然後根據目前資料來轉譯該畫面，並立即將該畫面排入佇列。
 
-使用[**\_DXGI 交換\_鏈\_旗\_標框架\_延遲\_可等候\_物件**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標來建立可等候交換鏈。 使用此方法建立的交換鏈結，可以在系統真正準備好接受新框架時通知您的轉譯迴圈。 這讓您的遊戲可以根據目前的資料進行轉譯，然後立即在目前佇列中放置結果。
+使用 [**DXGI \_ swap \_ chain \_ 旗標 \_ 框架 \_ 延遲 \_ 可等候 \_ 物件**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag) 旗標來建立可等候交換鏈。 使用此方法建立的交換鏈結，可以在系統真正準備好接受新框架時通知您的轉譯迴圈。 這讓您的遊戲可以根據目前的資料進行轉譯，然後立即在目前佇列中放置結果。
 
 ## <a name="step-1-create-a-waitable-swap-chain"></a>步驟 1： 建立可等候交換鏈
 
-當您呼叫[**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)時，指定[**\_DXGI\_交換\_\_\_鏈旗\_標畫面\_延遲可等候物件**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標。
+當您呼叫[**CreateSwapChainForCoreWindow**](/windows/win32/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow)時，指定[**DXGI \_ SWAP \_ CHAIN \_ 旗標 \_ 框架 \_ 延遲 \_ 可等候 \_ 物件**](/windows/win32/api/dxgi/ne-dxgi-dxgi_swap_chain_flag)旗標。
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
 > [!NOTE]
-> 相對於某些旗標，無法使用[**ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)來新增或移除此旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
+> 相對於某些旗標，無法使用 [**ResizeBuffers**](/windows/win32/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)新增或移除此旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
 
 ```cpp
 // If the swap chain already exists, resize it.
@@ -45,7 +45,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## <a name="step-2-set-the-frame-latency"></a>步驟 2： 設定框架延遲
+## <a name="step-2-set-the-frame-latency"></a>步驟 2： 設定幀延遲
 
 使用 [**IDXGISwapChain2::SetMaximumFrameLatency**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-setmaximumframelatency) API 來設定畫面延遲，而不是呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](/windows/win32/api/dxgi/nf-dxgi-idxgidevice1-setmaximumframelatency)。
 
@@ -73,7 +73,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## <a name="step-4-wait-before-rendering-each-frame"></a>步驟 4： 在轉譯每個畫面格之前等候
+## <a name="step-4-wait-before-rendering-each-frame"></a>步驟 4： 在呈現每個畫面格之前等候
 
 您的轉譯迴圈在開始轉譯每個框架之前，應該先等候交換鏈結透過可等候的物件發出訊號。 這包含第一個使用交換鏈結轉譯的畫面。 使用 [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)，提供步驟 2 中抓取的等候控制代碼，為每個畫面的開始發出訊號。
 
@@ -141,7 +141,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](/windows/win32/api/dxgi1_3/nf-dxgi1_3-idxgiswapchain2-getframelatencywaitableobject)
 * [**WaitForSingleObjectEx**](/windows/win32/api/synchapi/nf-synchapi-waitforsingleobjectex)
 * [**Windows.System.Threading**](/uwp/api/Windows.System.Threading)
-* [C + + 中的非同步程式設計](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)
+* [C + + 中的非同步程式設計](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)
 * [進程和執行緒](/windows/win32/procthread/processes-and-threads)
-* [參與](/windows/win32/sync/synchronization)
+* [同步處理](/windows/win32/sync/synchronization)
 * [使用事件物件 (Windows)](/windows/win32/sync/using-event-objects)

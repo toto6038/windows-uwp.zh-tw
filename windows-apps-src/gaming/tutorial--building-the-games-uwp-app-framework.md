@@ -1,43 +1,43 @@
 ---
 title: 定義遊戲的 UWP app 架構
-description: 撰寫通用 Windows 平臺（UWP）遊戲程式碼的第一個步驟，就是建立可讓應用程式物件與 Windows 互動的架構。
+description: 編寫通用 Windows 平臺 (UWP) 遊戲的第一步，是建立可讓應用程式物件與 Windows 互動的架構。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.date: 06/24/2020
 ms.topic: article
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 5052b4e71196950b6a8a91aaa271b5550fb448b5
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: 2d762aebeaa5c97c1b23a91f0765cb5c09a91b46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409617"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163052"
 ---
 #  <a name="define-the-games-uwp-app-framework"></a>定義遊戲的 UWP app 架構
 
 > [!NOTE]
-> 本主題是使用 DirectX 教學課程系列[建立簡單的通用 Windows 平臺（UWP）遊戲](tutorial--create-your-first-uwp-directx-game.md)的一部分。 該連結的主題會設定數列的內容。
+> 本主題是使用 DirectX 教學課程系列 [建立簡單通用 Windows 平臺 (UWP) 遊戲](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 該連結的主題會設定數列的內容。
 
-編碼通用 Windows 平臺（UWP）遊戲的第一個步驟，是建立可讓應用程式物件與 Windows 互動的架構，包括 Windows 執行階段的功能，例如暫停-繼續事件處理、視窗焦點的變更，以及貼齊。
+撰寫通用 Windows 平臺 (UWP) 遊戲的第一個步驟是建立架構，讓應用程式物件與 Windows 互動，包括 Windows 執行階段功能，例如暫停-繼續事件處理、視窗焦點變更和貼齊。
 
 ## <a name="objectives"></a>目標
 
-* 設定通用 Windows 平臺（UWP） DirectX 遊戲的架構，並執行定義整體遊戲流程的狀態機器。
+* 設定通用 Windows 平臺 (UWP) DirectX 遊戲的架構，並執行定義整體遊戲流程的狀態機器。
 
 > [!NOTE]
-> 若要遵循本主題的指示，請查看您所下載[Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/)範例遊戲的原始程式碼。
+> 若要遵循本主題的指示，請查看您下載的 [Simple3DGameDX](/samples/microsoft/windows-universal-samples/simple3dgamedx/) 範例遊戲的原始程式碼。
 
 ## <a name="introduction"></a>簡介
 
-在[設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md)主題中，我們引進了**WWinMain**函數以及[**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)和[**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)介面。 我們已瞭解**應用程式**類別（您可以在 Simple3DGameDX 專案中的 `App.cpp` 原始程式碼檔案中看到） **Simple3DGameDX**可同時做為*視圖提供者 factory*和*視圖提供者*。
+在「 [設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md) 」主題中，我們引進了 **WWinMain** 函數以及 [**IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 和 [**IFrameworkView**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource) 介面。 我們已瞭解**應用程式**類別 (您可以在 Simple3DGameDX 專案的原始程式碼檔中看到定義， `App.cpp`) 可作為*視圖提供者 factory*和*view provider*。 **Simple3DGameDX**
 
-本主題將從該處挑選，並深入瞭解遊戲中的**應用程式**類別如何執行**IFrameworkView**的方法。
+本主題將從該處挑選，更詳細地說明遊戲中的 **應用程式** 類別如何執行 **IFrameworkView**的方法。
 
 ## <a name="the-appinitialize-method"></a>App：： Initialize 方法
 
-在應用程式啟動時，Windows 呼叫的第一個方法是我們的[**IFrameworkView：： Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)的執行。
+在應用程式啟動時，Windows 呼叫的第一個方法是我們的 [**IFrameworkView：： Initialize**](/uwp/api/windows.applicationmodel.core.iframeworkview.initialize)的實作為。
 
-您的執行應該會處理 UWP 遊戲最基本的行為，例如確定遊戲可以藉由訂閱這些事件來處理暫停（以及可能的後續恢復）事件。 我們也可以存取此處的顯示介面卡裝置，讓我們能夠建立相依于裝置的圖形資源。
+您的執行應該會處理 UWP 遊戲的最基本行為，例如，確定遊戲可以處理暫停 (，且稍後可能會藉由訂閱這些事件來繼續) 事件。 我們也可以在這裡存取顯示介面卡裝置，因此我們可以建立相依于裝置的圖形資源。
 
 ```cppwinrt
 void Initialize(CoreApplicationView const& applicationView)
@@ -54,19 +54,19 @@ void Initialize(CoreApplicationView const& applicationView)
 }
 ```
 
-盡可能避免原始指標（而且幾乎一律會這麼做）。
+盡可能避免原始指標 (，且幾乎一律可能) 。
 
-- 對於 Windows 執行階段類型，您可以非常避免指標，而只是在堆疊上建立值。 如果您需要指標，請使用[**winrt：： com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （我們很快就會看到此範例）。
-- 若為唯一指標，請使用[**std：： unique_ptr**](/cpp/cpp/how-to-create-and-use-unique-ptr-instances)和**std：： make_unique**。
-- 若為共用指標，請使用[**std：： shared_ptr**](/cpp/cpp/how-to-create-and-use-shared-ptr-instances)和**std：： make_shared**。
+- 針對 Windows 執行階段類型，您通常可以完全避免指標，而只是在堆疊上建立一個值。 如果您需要指標，請使用 [**winrt：： com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) (我們會看到很快) 的範例。
+- 針對唯一指標，請使用 [**std：： unique_ptr**](/cpp/cpp/how-to-create-and-use-unique-ptr-instances) 和 **std：： make_unique**。
+- 針對共用指標，請使用 [**std：： shared_ptr**](/cpp/cpp/how-to-create-and-use-shared-ptr-instances) 和 **std：： make_shared**。
 
 ## <a name="the-appsetwindow-method"></a>App：： SetWindow 方法
 
-**初始化**之後，Windows 會呼叫[**IFrameworkView：： SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)的實作為，傳遞代表遊戲主要視窗的[**CoreWindow**](/uwp/api/windows.ui.core.corewindow)物件。
+在 **初始化**之後，Windows 會呼叫 [**IFrameworkView：： SetWindow**](/uwp/api/windows.applicationmodel.core.iframeworkview.setwindow)的實址，並傳遞代表遊戲主視窗的 [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) 物件。
 
-在**App：： SetWindow**中，我們會訂閱與視窗相關的事件，並設定一些視窗和顯示行為。 例如，我們會建立一個滑鼠指標（透過[**CoreCursor**](/uwp/api/windows.ui.core.corecursor)類別），這可供滑鼠和觸控控制項使用。 我們也會將視窗物件傳遞至裝置相依的資源物件。
+在 **應用程式：： SetWindow**中，我們會訂閱與視窗相關的事件，並設定一些視窗和顯示行為。 例如，我們會透過 [**CoreCursor**](/uwp/api/windows.ui.core.corecursor) 類別來建立滑鼠指標 () ，可供滑鼠和觸控控制項使用。 我們也會將 window 物件傳遞給與裝置相關的資源物件。
 
-我們將在[遊戲流程管理](tutorial-game-flow-management.md#event-handling)主題中詳細討論處理事件。
+我們將在 [遊戲流程管理](tutorial-game-flow-management.md#event-handling) 主題中討論如何處理事件。
 
 ```cppwinrt
 void SetWindow(CoreWindow const& window)
@@ -102,9 +102,9 @@ void SetWindow(CoreWindow const& window)
 }
 ```
 
-## <a name="the-appload-method"></a>應用程式：： Load 方法
+## <a name="the-appload-method"></a>App：： Load 方法
 
-現在已設定主視窗，我們會呼叫[**IFrameworkView：： Load**](/uwp/api/windows.applicationmodel.core.iframeworkview.load)的執行。 **載入**是預先提取遊戲資料或資產的最佳位置，而不是**初始化**和**SetWindow**。
+現在主視窗已設定，我們會呼叫 [**IFrameworkView：： Load**](/uwp/api/windows.applicationmodel.core.iframeworkview.load) 的實作為。 **載入** 是預先提取遊戲資料或資產的最佳位置，而不是 **初始化** 和 **SetWindow**。
 
 ```cppwinrt
 void Load(winrt::hstring const& /* entryPoint */)
@@ -116,15 +116,15 @@ void Load(winrt::hstring const& /* entryPoint */)
 }
 ```
 
-如您所見，實際的工作會委派給我們在這裡所做的**GameMain**物件的函式。 **GameMain**類別定義于和中 `GameMain.h` `GameMain.cpp` 。
+如您所見，實際的工作會委派給我們在這裡所做的 **GameMain** 物件的函式。 **GameMain**類別定義于和中 `GameMain.h` `GameMain.cpp` 。
 
 ### <a name="the-gamemaingamemain-constructor"></a>GameMain：： GameMain 函數
 
-**GameMain**的函式（以及它所呼叫的其他成員函式）會開始一組非同步載入作業來建立遊戲物件、載入圖形資源，以及初始化遊戲的狀態機器。 在遊戲開始之前，我們也會執行任何必要的準備工作，例如設定任何起始狀態或全域值。
+**GameMain**函式 (以及它所呼叫的其他成員函式) 開始一組非同步載入作業來建立遊戲物件、載入圖形資源，以及初始化遊戲的狀態機器。 我們也會在遊戲開始之前執行任何必要的準備工作，例如設定任何起始狀態或全域值。
 
-Windows 在開始處理輸入之前，會對您的遊戲所能採取的時間施加限制。 因此使用非同步，就像我們在這裡所做的一樣，這表示**載入**作業會在背景中繼續進行時快速傳回。 如果載入需要很長的時間，或是有許多資源，則為您的使用者提供經常更新的進度列，是個不錯的主意。 
+Windows 在開始處理輸入之前，會限制您的遊戲可花費的時間。 所以使用非同步（如我們在這裡所做的），表示 **負載** 可以快速傳回，而它開始的工作會在背景中繼續進行。 如果載入花費很長的時間，或有許多資源，則為您的使用者提供經常更新的進度列是個不錯的主意。 
 
-如果您不熟悉非同步程式設計，請參閱[使用 c + +/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。
+如果您不熟悉非同步程式設計，請參閱 [使用 c + +/WinRT 的並行和非同步作業](../cpp-and-winrt-apis/concurrency.md)。
 
 ```cppwinrt
 GameMain::GameMain(std::shared_ptr<DX::DeviceResources> const& deviceResources) :
@@ -231,21 +231,21 @@ void GameMain::InitializeGameState()
 }
 ```
 
-以下是由函式所啟動之工作順序的大綱。
+以下是由函式開始的工作順序大綱。
 
-- 建立並初始化**GameRenderer**類型的物件。 如需詳細資訊，請參閱[轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md)。
-- 建立並初始化**Simple3DGame**類型的物件。 如需詳細資訊，請參閱[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)。
-- 建立遊戲 UI 控制項物件，並顯示 [遊戲資訊重迭]，以在載入資源檔時顯示進度列。 如需詳細資訊，請參閱[新增使用者介面](tutorial--adding-a-user-interface.md)。
-- 建立控制器物件，以從控制器（觸控、滑鼠或 Xbox 無線控制器）讀取輸入。 如需詳細資訊，請參閱[新增控制項](tutorial--adding-controls.md)。
-- 分別在 [移動] 和 [相機觸控] 控制項的螢幕左下方和右下角定義兩個矩形區域。 播放程式會使用左下角矩形（定義于**SetMoveRect**的呼叫中）做為虛擬控制板，以便向前和向後移動相機，以及側邊。 右下角矩形（由**SetFireRect**方法定義）是用來引發 ammo 的虛擬按鈕。
-- 使用協同程式將資源載入分成不同的階段。 Direct3D 裝置內容的存取權僅限於建立裝置內容的執行緒;雖然在建立物件時可以自由執行緒存取 Direct3D 裝置。 因此， **GameRenderer：： CreateGameDeviceResourcesAsync**協同程式可以與完成工作（**GameRenderer：： FinalizeCreateGameDeviceResources**）在不同的執行緒上執行，此工作會在原始執行緒上執行。
-- 我們使用類似的模式，透過**Simple3DGame：： LoadLevelAsync**和**Simple3DGame：： FinalizeLoadLevel**載入層級資源。
+- 建立並初始化 **GameRenderer**型別的物件。 如需詳細資訊，請參閱[轉譯架構 I：轉譯簡介](tutorial--assembling-the-rendering-pipeline.md)。
+- 建立並初始化 **Simple3DGame**型別的物件。 如需詳細資訊，請參閱[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)。
+- 建立遊戲 UI 控制項物件，並顯示遊戲資訊重迭，在資源檔載入時顯示進度列。 如需詳細資訊，請參閱[新增使用者介面](tutorial--adding-a-user-interface.md)。
+- 建立控制器物件以讀取控制器的輸入 (觸控、滑鼠或 Xbox 無線控制器) 。 如需詳細資訊，請參閱[新增控制項](tutorial--adding-controls.md)。
+- 分別針對移動和攝影機觸控控制項，在畫面的左下角和右下角定義兩個矩形區域。 播放程式會使用左下角的矩形 (在 **SetMoveRect**) 的呼叫中定義為虛擬控制板，以便向前及向後移動相機，以及並存。 **SetFireRect**方法所定義的右下角矩形 () 用來做為引發 ammo 的虛擬按鈕。
+- 使用協同程式將資源載入分成不同的階段。 Direct3D 裝置內容的存取權僅限於建立裝置內容的執行緒;存取 Direct3D 裝置以進行物件建立是無限制執行緒。 因此， **GameRenderer：： CreateGameDeviceResourcesAsync** 協同程式可以在與完成工作不同的執行緒上執行， (**GameRenderer：： FinalizeCreateGameDeviceResources**) （在原始執行緒上執行）。
+- 我們使用類似的模式來載入具有 **Simple3DGame：： LoadLevelAsync** 和 **Simple3DGame：： FinalizeLoadLevel**的層級資源。
 
-我們會在下一個主題中看到更多**GameMain：： InitializeGameState** （[遊戲流程管理](tutorial-game-flow-management.md)）。
+我們將在下一個主題中看到更多 **GameMain：： InitializeGameState** ， ([遊戲流程管理](tutorial-game-flow-management.md)) 。
 
 ## <a name="the-apponactivated-method"></a>App：： OnActivated 方法
 
-接下來，會引發[**CoreApplicationView：：已啟用**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated)事件。 因此，系統會呼叫您擁有的任何**OnActivated**事件處理常式（例如我們的**App：： OnActivated**方法）。
+接下來，會引發 [**CoreApplicationView：：啟用**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件。 因此會呼叫您 (的任何 **OnActivated** 事件處理常式，例如我們的 **App：： OnActivated** 方法) 。
 
 ```cppwinrt
 void OnActivated(CoreApplicationView const& /* applicationView */, IActivatedEventArgs const& /* args */)
@@ -255,11 +255,11 @@ void OnActivated(CoreApplicationView const& /* applicationView */, IActivatedEve
 }
 ```
 
-我們在此所做的唯一工作是啟用主要[**CoreWindow**](/uwp/api/windows.ui.core.corewindow)。 或者，您也可以選擇在**App：： SetWindow**中執行此動作。
+唯一的工作就是啟動主要 [**CoreWindow**](/uwp/api/windows.ui.core.corewindow)。 或者，您也可以選擇在 **應用程式：： SetWindow**中執行此動作。
 
 ## <a name="the-apprun-method"></a>App：： Run 方法
 
-**Initialize**、 **SetWindow**和**Load**已設定階段。 現在，遊戲已啟動並執行中，我們會呼叫[**IFrameworkView：： Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run)的實作為。
+**Initialize**、 **SetWindow**和 **Load** 已設定階段。 現在遊戲已啟動且正在執行，我們會呼叫 [**IFrameworkView：： Run**](/uwp/api/windows.applicationmodel.core.iframeworkview.run) 的實作為。
 
 ```cppwinrt
 void Run()
@@ -268,22 +268,22 @@ void Run()
 }
 ```
 
-同樣地，工作會委派給**GameMain**。
+同樣地，工作會委派給 **GameMain**。
 
 ### <a name="the-gamemainrun-method"></a>GameMain：： Run 方法
 
-**GameMain：： Run**是遊戲的主要迴圈;您可以在中找到它 `GameMain.cpp` 。 基本的邏輯是，當遊戲的視窗維持開啟狀態時，分派所有事件、更新計時器，然後轉譯和呈現圖形管線的結果。 此外，在此也會分派和處理用來在遊戲狀態之間轉換的事件。
+**GameMain：： Run** 是遊戲的主要迴圈;您可以在中找到它 `GameMain.cpp` 。 基本邏輯是當遊戲的視窗保持開啟時，會分派所有事件、更新計時器，然後轉譯和呈現圖形管線的結果。 此外，在這種情況下，會分派和處理在遊戲狀態之間轉換所使用的事件。
 
-這裡的程式碼也關心「遊戲引擎」狀態機器中的兩個狀態。
+此處的程式碼也會關心遊戲引擎狀態機器中的兩個狀態。
 
-- **UpdateEngineState：:D eactivated**。 這表示遊戲視窗已停用（已失去焦點）或已進行快照。 
+- **UpdateEngineState：:D eactivated**。 這會指定停用遊戲視窗， (失去焦點) 或已貼齊。 
 - **UpdateEngineState：： TooSmall**。 這表示工作區太小，無法在中呈現遊戲。
 
-在上述任一種狀態中，遊戲都會暫停事件處理，並等候視窗聚焦、unsnap 或調整大小。
+在上述任一狀態中，遊戲都會暫停事件處理，並等候視窗聚焦、unsnap 或調整大小。
 
-當使用者與您的遊戲互動時，您必須處理位於訊息佇列的每個事件，因此必須使用 **ProcessAllIfPresent** 選項呼叫 [**CoreWindowDispatch.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他選項可能會造成處理訊息事件的延遲，這可能會讓您的遊戲感覺無回應，或導致觸控行為變慢。
+當使用者與您的遊戲互動時，您必須處理位於訊息佇列的每個事件，因此必須使用 **ProcessAllIfPresent** 選項呼叫 [**CoreWindowDispatch.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents)。 其他選項可能會導致處理訊息事件的延遲，這可讓您的遊戲感覺沒有回應，或導致觸控行為變得緩慢。
 
-當遊戲未顯示、暫止或尚未進行快照時，您不會想要讓它使用任何資源迴圈來分派永遠不會抵達的訊息。 在此情況下，您的遊戲必須使用 [ **ProcessOneAndAllPending** ] 選項。 該選項會封鎖直到取得事件，然後在處理第一個事件時處理該事件（以及任何其他到達進程佇列的其他專案）。 然後， **ProcessEvents**會在處理完佇列之後立即傳回。
+當遊戲未顯示、已暫止，或未貼齊時，您不希望它使用任何資源迴圈來分派永遠不會抵達的訊息。 在此情況下，您的遊戲必須使用 **ProcessOneAndAllPending** 選項。 該選項會封鎖直到取得事件為止，然後處理該事件 (以及處理第一個) 期間抵達處理常式佇列的任何其他事件。 然後， **CoreWindowDispatch**會在處理佇列之後立即傳回。
 
 ```cppwinrt
 void GameMain::Run()
@@ -350,9 +350,9 @@ void GameMain::Run()
 
 ## <a name="the-appuninitialize-method"></a>App：：解除初始化方法
 
-遊戲結束時，會呼叫[**IFrameworkView：：解除初始化**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize)的執行。 這是我們執行清除的機會。 關閉應用程式視窗並不會終止應用程式的進程;但改為將應用程式的狀態寫入記憶體。 如果在系統回收此記憶體時必須進行任何特殊動作（包括任何特殊的資源清除），請將該清除的程式碼放在取消**初始化**中。
+當遊戲結束時，會呼叫 [**IFrameworkView：：解除初始化**](/uwp/api/windows.applicationmodel.core.iframeworkview.uninitialize) 的實作為。 這是我們執行清除的機會。 關閉應用程式視窗不會終止應用程式的進程;但是它會將應用程式 singleton 的狀態寫入記憶體。 如果系統回收此記憶體時必須進行特殊的任何動作，包括任何特殊的資源清除，請將該清除的程式碼放在取消 **初始化**中。
 
-在我們的案例中， **App：：解除初始化**是無作用的。
+在我們的案例中， **應用程式：：解除初始化** 是無作業。
 
 ```cpp
 void Uninitialize()
@@ -362,14 +362,14 @@ void Uninitialize()
 
 ## <a name="tips"></a>提示
 
-開發您自己的遊戲時，請根據本主題中所述的方法來設計您的啟動程式碼。 以下是每個方法的基本建議的簡單列表。
+開發您自己的遊戲時，請根據本主題中所述的方法來設計您的啟始程式碼。 以下是每個方法基本建議的簡單列表。
 
-- 使用**Initialize**來配置您的主要類別，並連接基本的事件處理常式。
-- 使用**SetWindow**來訂閱任何視窗特定的事件，並將您的主視窗傳遞至裝置相依的資源物件，讓它可以在建立交換鏈時使用該視窗。
-- 使用**Load**來處理任何剩餘的設定，以及起始物件的非同步建立和資源的載入。 如果您需要建立任何暫存檔案或資料，例如 cti 產生的資產，則也請在這裡執行此動作。
+- 使用 **Initialize** 來配置您的主要類別，並連接基本的事件處理常式。
+- 使用 **SetWindow** 來訂閱任何視窗特定的事件，並將主視窗傳遞至裝置相依的資源物件，讓它可以在建立交換鏈時使用該視窗。
+- 使用 **負載** 來處理任何剩餘的設定，以及起始物件的非同步建立和載入資源。 如果您需要建立任何暫存檔案或資料（例如 cti 產生的資產），請在這裡進行。
 
 ## <a name="next-steps"></a>後續步驟
 
-本主題涵蓋了使用 DirectX 之 UWP 遊戲的一些基本結構。 建議您記住這些方法，因為我們將在稍後的主題中回頭說明。
+本主題涵蓋了使用 DirectX 之 UWP 遊戲的一些基本結構。 建議您記住這些方法，因為我們會在稍後的主題中回頭參考其中一些方法。
 
-在下一個主題「 &mdash; [遊戲流程管理](tutorial-game-flow-management.md)」中， &mdash; 我們將深入探討如何管理遊戲狀態和事件處理，以便讓遊戲流動。
+在下一個主題的 &mdash; [遊戲流程管理](tutorial-game-flow-management.md)中， &mdash; 我們將深入探討如何管理遊戲狀態和事件處理，以保持遊戲流動。

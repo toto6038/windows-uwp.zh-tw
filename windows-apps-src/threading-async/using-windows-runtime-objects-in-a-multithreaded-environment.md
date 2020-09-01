@@ -1,30 +1,30 @@
 ---
 title: 在多執行緒環境中使用 Windows 執行階段物件 | Microsoft Docs
-description: 本文討論 .NET Framework 處理從和 Visual Basic 程式碼到C# Windows 執行階段或 Windows 執行階段元件所提供之物件的呼叫方式。
+description: '本文討論 .NET Framework 處理從 c # 和 Visual Basic 程式碼到 Windows 執行階段或 Windows 執行階段元件所提供物件的呼叫方式。'
 ms.date: 01/14/2017
 ms.topic: article
 ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 948b16c4e093f7b638ba9abc5bf18e30da8047a2
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 4287ed5fd5659b7d39d52ada9e3958c592771d59
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259794"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164132"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多執行緒環境中使用 Windows 執行階段物件
-本文討論 .NET Framework 處理從和 Visual Basic 程式碼到C# Windows 執行階段或 Windows 執行階段元件所提供之物件的呼叫方式。
+本文討論 .NET Framework 處理從 c # 和 Visual Basic 程式碼到 Windows 執行階段或 Windows 執行階段元件所提供物件的呼叫方式。
 
 在 .NET Framework 中，您預設可從多執行緒中存取任何物件，無需特殊處理。 您只需要物件的參考即可。 在 Windows 執行階段中，這類物件稱做 *agile*。 大多數的 Windows 執行階段類別為 agile，但一些類別不是，agile 類別甚至可能需要特殊處理。
 
 如果可行，Common Language Runtime (CLR) 會將其他來源 (例如 Windows 執行階段) 的物件視為 .NET Framework 物件：
 
-- 如果物件實作 [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 介面，或有具有 [MarshalingType.Agile](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingbehaviorattribute.aspx) 的 [MarshalingBehaviorAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingtype.aspx) 屬性，則 CLR 會將該物件視為 agile。
+- 如果物件實作 [IAgileObject](/windows/desktop/api/objidl/nn-objidl-iagileobject) 介面，或有具有 [MarshalingType.Agile](/uwp/api/Windows.Foundation.Metadata.MarshalingType) 的 [MarshalingBehaviorAttribute](/uwp/api/Windows.Foundation.Metadata.MarshalingBehaviorAttribute) 屬性，則 CLR 會將該物件視為 agile。
 
 - 如果 CLR 會封送處理來自執行緒的呼叫，且該執行緒是對目標物件的執行緒內容進行此呼叫之處，則系統會以透明的方式進行。
 
-- 如果物件有具有 [MarshalingType.None](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingbehaviorattribute.aspx) 的 [MarshalingBehaviorAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingtype.aspx) 屬性，則該類別不會提供封送處理資訊。 CLR 無法封送處理呼叫，因此會擲回 [InvalidCastException](/dotnet/api/system.invalidcastexception) 例外狀況，並顯示訊息指出該物件僅用於其建立所在的執行緒內容中。
+- 如果物件有具有 [MarshalingType.None](/uwp/api/Windows.Foundation.Metadata.MarshalingType) 的 [MarshalingBehaviorAttribute](/uwp/api/Windows.Foundation.Metadata.MarshalingBehaviorAttribute) 屬性，則該類別不會提供封送處理資訊。 CLR 無法封送處理呼叫，因此會擲回 [InvalidCastException](/dotnet/api/system.invalidcastexception) 例外狀況，並顯示訊息指出該物件僅用於其建立所在的執行緒內容中。
 
 下列章節說明此行為對各種來源中物件的效果。
 
@@ -34,10 +34,10 @@ ms.locfileid: "74259794"
 > [!NOTE]
 >  敏捷性並不代表執行緒是安全的。 在 Windows 執行階段與 .NET Framework 中，大多數的類別都不是安全執行緒，因為執行緒安全性具有效能成本，且大多數的物件從未由多個執行緒存取過。 只有在需要時才同步處理對個別物件的存取 (或使用安全執行緒類別)，這種做法會更有效率。
 
-當您撰寫 Windows 執行階段元件時，您可以覆寫預設值。 查看 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) 介面與 [IAgileObject](https://docs.microsoft.com/windows/desktop/api/objidl/nn-objidl-iagileobject) 介面。
+當您撰寫 Windows 執行階段元件時，您可以覆寫預設值。 查看 [ICustomQueryInterface](/dotnet/api/system.runtime.interopservices.icustomqueryinterface) 介面與 [IAgileObject](/windows/desktop/api/objidl/nn-objidl-iagileobject) 介面。
 
 ## <a name="objects-from-the-windows-runtime"></a>來自 Windows 執行階段的物件
-Windows 執行階段中大多數的類別是 agile，CLR 會將這些類別視為 agile。 這些類別的文件會列出類別屬性之間的 "MarshalingBehaviorAttribute(Agile)"。 但是，如果未在 UI 執行緒上呼叫這些 agile 類別中的成員，例如 XAML 控制項，則這些成員會擲回例外狀況。 例如，下列程式碼嘗試使用背景執行緒，來設定已按下按鈕的屬性。 按鈕的 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性擲回例外狀況。
+Windows 執行階段中大多數的類別是 agile，CLR 會將這些類別視為 agile。 這些類別的文件會列出類別屬性之間的 "MarshalingBehaviorAttribute(Agile)"。 但是，如果未在 UI 執行緒上呼叫這些 agile 類別中的成員，例如 XAML 控制項，則這些成員會擲回例外狀況。 例如，下列程式碼嘗試使用背景執行緒，來設定已按下按鈕的屬性。 按鈕的 [Content](/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 屬性擲回例外狀況。
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ Private Async Sub Button_Click_2(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-您可以使用按鈕的 [Dispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.dispatcher.aspx) 屬性，或任何存在於 UI 執行緒 (例如按鈕為開啟的頁面) 其內容中物件的 `Dispatcher` 屬性，來安全地存取按鈕。 下列程式碼使用 [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 物件的 [RunAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) 方法在 UI 執行緒上發送呼叫。
+您可以使用按鈕的 [Dispatcher](/uwp/api/Windows.UI.Xaml.DependencyObject) 屬性，或任何存在於 UI 執行緒 (例如按鈕為開啟的頁面) 其內容中物件的 `Dispatcher` 屬性，來安全地存取按鈕。 下列程式碼使用 [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) 物件的 [RunAsync](/uwp/api/Windows.UI.Core.CoreDispatcher) 方法在 UI 執行緒上發送呼叫。
 
 ```csharp
 private async void Button_Click_2(object sender, RoutedEventArgs e)
@@ -92,9 +92,9 @@ End Sub
 如果您透過繼承 XAML 控制項或撰寫一組 XAML 控制項來建立自己的控制項，您的控制項是 agile，因為它是 .NET Framework 物件。 但如果它呼叫其基底類別或組成類別的成員，或如果您呼叫繼承的成員，則當從 UI 執行緒以外的任何執行緒呼叫這些成員時，這些成員將擲回例外狀況。
 
 ### <a name="classes-that-cant-be-marshaled"></a>無法封送處理的類別
-未提供封送處理資訊的 Windows 執行階段類別有具有 [MarshalingType.None](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingbehaviorattribute.aspx) 的 [MarshalingBehaviorAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.marshalingtype.aspx) 屬性。 這類類別的文件會在其屬性之間列出 "MarshalingBehaviorAttribute(None)"。
+未提供封送處理資訊的 Windows 執行階段類別有具有 [MarshalingType.None](/uwp/api/Windows.Foundation.Metadata.MarshalingType) 的 [MarshalingBehaviorAttribute](/uwp/api/Windows.Foundation.Metadata.MarshalingBehaviorAttribute) 屬性。 這類類別的文件會在其屬性之間列出 "MarshalingBehaviorAttribute(None)"。
 
-下列程式碼會在 UI 執行緒中建立 [CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.cameracaptureui.aspx) 物件，然後嘗試從執行緒集區執行緒設定該物件的屬性。 CLR 無法封送處理呼叫，且會擲回 [System.InvalidCastException](/dotnet/api/system.invalidcastexception) 例外狀況，並顯示訊息指出該物件僅用於其建立所在的執行緒內容中。
+下列程式碼會在 UI 執行緒中建立 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) 物件，然後嘗試從執行緒集區執行緒設定該物件的屬性。 CLR 無法封送處理呼叫，且會擲回 [System.InvalidCastException](/dotnet/api/system.invalidcastexception) 例外狀況，並顯示訊息指出該物件僅用於其建立所在的執行緒內容中。
 
 ```csharp
 Windows.Media.Capture.CameraCaptureUI ccui;
@@ -122,9 +122,9 @@ Private Async Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-[CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.cameracaptureui.aspx) 的文件也列出類別屬性之間的 "ThreadingAttribute(STA)"，因為它必須在如 UI 執行緒的單一執行緒內容中建立。
+[CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) 的文件也列出類別屬性之間的 "ThreadingAttribute(STA)"，因為它必須在如 UI 執行緒的單一執行緒內容中建立。
 
-如果您想要存取另一個執行緒的 [CameraCaptureUI](https://msdn.microsoft.com/library/windows/apps/windows.media.capture.cameracaptureui.aspx) 物件，您可以快取 UI 執行緒的 [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 物件，並稍後使用此物件在該執行緒上發送呼叫。 或者您可以從如頁面等 XAML 物件取得發送器，如以下程式碼所示。
+如果您想要存取另一個執行緒的 [CameraCaptureUI](/uwp/api/Windows.Media.Capture.CameraCaptureUI) 物件，您可以快取 UI 執行緒的 [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) 物件，並稍後使用此物件在該執行緒上發送呼叫。 或者您可以從如頁面等 XAML 物件取得發送器，如以下程式碼所示。
 
 ```csharp
 Windows.Media.Capture.CameraCaptureUI ccui;
@@ -158,9 +158,9 @@ End Sub
 ## <a name="objects-from-a-windows-runtime-component-that-is-written-in-c"></a>來自以 C++ 語言所撰寫 Windows 執行階段元件的物件
 依預設，在可啟用元件中的類別為 agile。 然而，C++ 允許大量的控制項控制執行緒模型與封送處理行為。 如本文稍早所述，CLR 會辨識 agile 類別、在類別非 agile 時嘗試封送處理呼叫，及在類別沒有封送處理資訊時擲回 [System.InvalidCastException](/dotnet/api/system.invalidcastexception) 例外狀況。
 
-若物件在 UI 執行緒上執行，且當從 UI 執行緒之外的執行緒呼叫該物件時，您可以對該物件使用 UI 執行緒的 [CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) 物件來發送呼叫。
+若物件在 UI 執行緒上執行，且當從 UI 執行緒之外的執行緒呼叫該物件時，您可以對該物件使用 UI 執行緒的 [CoreDispatcher](/uwp/api/Windows.UI.Core.CoreDispatcher) 物件來發送呼叫。
 
 ## <a name="see-also"></a>另請參閱
-[C# 指南](/dotnet/csharp/)
+[C # 指南](/dotnet/csharp/)
 
 [Visual Basic 指南](/dotnet/visual-basic/)

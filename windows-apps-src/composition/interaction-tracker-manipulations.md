@@ -5,23 +5,23 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b393120657b7c02ccfe10ce6aca16be80118aa
-ms.sourcegitcommit: f282c906cddf0d57217484e61a5cbd2fe8469421
+ms.openlocfilehash: 8a4b682f009a4ac1350ceee3b8c23fe5e772150d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852265"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163592"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>使用 InteractionTracker 自訂操作體驗
 
 在本文中，我們將示範如何使用 InteractionTracker 來建立自訂操作體驗。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入驅動動畫](input-driven-animations.md)
-- [關聯型動畫](relation-animations.md)
+- [輸入導向動畫](input-driven-animations.md)
+- [關聯式動畫](relation-animations.md)
 
 ## <a name="why-create-custom-manipulation-experiences"></a>為何要建立自訂操作體驗？
 
@@ -48,8 +48,8 @@ ms.locfileid: "65852265"
 
 建立自訂操作體驗時，您會與兩個主要元件互動。 我們先討論這兩個元件：
 
-- [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) – 維護狀態機器的核心物件，其屬性由作用中使用者輸入或直接更新和動畫來驅動。 它隨後會用來繫結到 CompositionAnimation 以建立自訂操作動作。
-- [VisualInteractionSource](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.visualinteractionsource) – 定義將輸入傳送到 InteractionTracker 之時機和條件的補充物件。 它會定義用於點擊測試的 CompositionVisual，以及其他輸入設定屬性。
+- [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker) – 維護狀態機器的核心物件，其屬性由作用中使用者輸入或直接更新和動畫來驅動。 它隨後會用來繫結到 CompositionAnimation 以建立自訂操作動作。
+- [VisualInteractionSource](/uwp/api/windows.ui.composition.interactions.visualinteractionsource) – 定義將輸入傳送到 InteractionTracker 之時機和條件的補充物件。 它會定義用於點擊測試的 CompositionVisual，以及其他輸入設定屬性。
 
 做為狀態機器，InteractionTracker 的屬性可由下列任一項驅動：
 
@@ -59,16 +59,16 @@ ms.locfileid: "65852265"
 
 ### <a name="interactiontracker-state-machine"></a>InteractionTracker 狀態機器
 
-如先前所述，InteractionTracker 是具有 4 個狀態 – 每一個都可以轉換成任何其他四個狀態的狀態機器。 (如需 InteractionTracker 如何在這些狀態之間轉換的詳細資訊，請參閱 [InteractionTracker](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.interactiontracker) 類別文件)。
+如前所述，InteractionTracker 是具有 4 種狀態的狀態機器，每一種皆可轉換到任何其他四個狀態。 (如需 InteractionTracker 如何在這些狀態之間轉換的詳細資訊，請參閱 [InteractionTracker](/uwp/api/windows.ui.composition.interactions.interactiontracker) 類別文件)。
 
 | State | 描述 |
 |-------|-------------|
 | 閒置 | 未使用中，驅動輸入或動畫 |
 | Interacting | 偵測到作用中使用者輸入 |
-| Inertia | 作用中輸入或程式設計速度導致作用中動作 |
+| 慣性 | 作用中輸入或程式設計速度導致作用中動作 |
 | CustomAnimation | 自訂動畫導致作用中動作 |
 
-在 InteractionTracker 狀態變更的每種情況下，會產生您可以聆聽的事件 (或回呼)。 為了讓您可以聆聽這些事件，必須實作 [IInteractionTrackerOwner](https://docs.microsoft.com/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner) 介面並使用 CreateWithOwner 方法來建立其 InteractionTracker 物件。 下圖也概述會觸發的不同事件。
+在 InteractionTracker 狀態變更的每種情況下，會產生您可以聆聽的事件 (或回呼)。 為了讓您可以聆聽這些事件，必須實作 [IInteractionTrackerOwner](/uwp/api/windows.ui.composition.interactions.iinteractiontrackerowner) 介面並使用 CreateWithOwner 方法來建立其 InteractionTracker 物件。 下圖也概述會觸發的不同事件。
 
 ![InteractionTracker 狀態機器](images/animation/interaction-tracker-diagram.png)
 
@@ -78,8 +78,8 @@ ms.locfileid: "65852265"
 
 1. 會追蹤輸入的點擊測試區域，以及會偵測手勢的座標空間
 1. 會偵測和傳送的輸入設定，包括：
-    - 偵測到筆勢：位置的 X 和 Y （水平及垂直移動瀏覽），小數位數 （縮小）
-    - Inertia
+    - 可偵測的手勢：位置 X 和 Y (水平和垂直平移)、縮放比例 (捏合)
+    - 慣性
     - 柵欄與鏈結
     - 重新導向模式：會自動重新導向哪些輸入資料至 InteractionTracker
 
@@ -167,5 +167,5 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
 
 如需更多 InteractionTracker 進階使用方式，請參閱以下文章：
 
-- [建立 InertiaModifiers 貼齊點](inertia-modifiers.md)
-- [提取以更新與 SourceModifiers](source-modifiers.md)
+- [使用 InertiaModifiers 建立貼齊點](inertia-modifiers.md)
+- [使用 SourceModifiers 拖動以重新整理](source-modifiers.md)

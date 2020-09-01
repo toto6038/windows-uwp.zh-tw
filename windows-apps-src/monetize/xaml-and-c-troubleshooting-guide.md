@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: ab8ba3930c13ffcb00d2cb9701a89cafe581b4ff
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 719e05d67d68627fcd631edfd6c688b17f8507bd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506882"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164382"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 
@@ -21,14 +21,14 @@ ms.locfileid: "77506882"
 本主題包含在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
 * [XAML](#xaml)
-  * [AdControl 未出現](#xaml-notappearing)
-  * [黑色箱閃爍並消失](#xaml-blackboxblinksdisappears)
-  * [廣告未重新整理](#xaml-adsnotrefreshing)
+  * [沒有顯示 AdControl](#xaml-notappearing)
+  * [黑色方塊閃爍然後消失](#xaml-blackboxblinksdisappears)
+  * [廣告沒有重新整理](#xaml-adsnotrefreshing)
 
 * [C#](#csharp)
-  * [AdControl 未出現](#csharp-adcontrolnotappearing)
-  * [黑色箱閃爍並消失](#csharp-blackboxblinksdisappears)
-  * [廣告未重新整理](#csharp-adsnotrefreshing)
+  * [沒有顯示 AdControl](#csharp-adcontrolnotappearing)
+  * [黑色方塊閃爍然後消失](#csharp-blackboxblinksdisappears)
+  * [廣告沒有重新整理](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 
@@ -40,7 +40,7 @@ ms.locfileid: "77506882"
 
 1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
-2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須與您在合作夥伴中心取得的應用程式識別碼和 ad 單位識別碼相符。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合您在合作夥伴中心中取得的應用程式識別碼和 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -48,7 +48,7 @@ ms.locfileid: "77506882"
                   Width="728" Height="90" />
     ```
 
-3.  檢查 **Height** 和 **Width** 屬性。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
+3.  檢查 [ **高度** ] 和 [ **寬度** ] 屬性。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -57,7 +57,7 @@ ms.locfileid: "77506882"
                   Width="728" Height="90" />
     ```
 
-4.  檢查元素的位置。 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 必須在可檢視區域內。
+4.  檢查元素的位置。 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 必須在可檢視區域內。
 
 5.  檢查 **Visibility** 屬性。 選擇性的 **Visibility** 屬性不得設為 collapsed 或 hidden。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
@@ -82,7 +82,7 @@ ms.locfileid: "77506882"
 
 7.  確定 **AdControl** 沒有在檢視區隱藏。 **AdControl** 必須可見，廣告才能正確顯示。
 
-8.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 都使用**測試值**。
+8.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 **ApplicationId** 和 **AdUnitId** 都使用[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
 <span id="xaml-blackboxblinksdisappears"/>
 
@@ -116,7 +116,7 @@ ms.locfileid: "77506882"
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
-3.  [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 運作正常。
+3.  [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 運作正常。
 
     根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
 
@@ -124,7 +124,7 @@ ms.locfileid: "77506882"
 
 ### <a name="ads-not-refreshing"></a>廣告沒有重新整理
 
-1.  檢查 [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled) 屬性。 根據預設，這個選用的屬性會設為 **True**。 當設為 **False** 時，必須使用 [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) 方法來擷取另一個廣告。
+1.  檢查 [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled) 屬性。 依預設，此選擇性屬性會設定為 **True**。 當設為 **False** 時，必須使用 [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh) 方法來擷取另一個廣告。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -134,7 +134,7 @@ ms.locfileid: "77506882"
                   IsAutoRefreshEnabled="True" />
     ```
 
-2.  檢查對 **Refresh** 方法的呼叫。 當使用自動重新整理時，無法使用 **Refresh** 來擷取另一個廣告。 使用手動重新整理時，**Refresh** 應於最少 30 秒至 60 秒 (依裝置目前的數據連線而定) 之後才呼叫。
+2.  檢查對 **Refresh** 方法的呼叫。 當使用自動重新整理時，無法使用 **Refresh** 來擷取另一個廣告。 使用手動重新整理時 **，應該** 只在至少30到60秒的時間內呼叫重新整理，視裝置目前的資料連線而定。
 
     下列程式碼片段顯示如何使用 **Refresh** 方法的範例。 第一個程式碼片段是 XAML UI 標記。
 
@@ -176,7 +176,7 @@ ms.locfileid: "77506882"
     > [!div class="tabbedCodeSnippets"]
     [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須與您在合作夥伴中心取得的應用程式識別碼和 ad 單位識別碼相符。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合您在合作夥伴中心中取得的應用程式識別碼和 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -186,7 +186,7 @@ ms.locfileid: "77506882"
     adControl.Width = 728;
     ```
 
-4.  檢查 **Height** 和 **Width** 參數。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
+4.  檢查 **Height** 和 **Width** 參數。 這些必須設定為橫幅廣告的其中一種 [支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -219,7 +219,7 @@ ms.locfileid: "77506882"
 
 8.  檢查 **AdControl** 的父項。 該父元素必須為使用中且可見。
 
-9. 不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 [ApplicationId](set-up-ad-units-in-your-app.md#test-ad-units) 和 **AdUnitId** 都使用**測試值**。
+9. 不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確保 **AdControl** 如預期般運作，請對 **ApplicationId** 和 **AdUnitId** 都使用[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
 <span id="csharp-blackboxblinksdisappears"/>
 
@@ -249,9 +249,9 @@ ms.locfileid: "77506882"
 
 ### <a name="ads-not-refreshing"></a>廣告沒有重新整理
 
-1.  檢查 [IsAutoRefreshEnabled](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 屬性 (其屬於您的 **AdControl**) 是否設為 false。 根據預設，這個選用的屬性會設為 **true**。 當設為 **false** 時，必須使用 **Refresh** 方法來擷取另一個廣告。
+1.  檢查 [IsAutoRefreshEnabled](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 屬性 (其屬於您的 **AdControl**) 是否設為 false。 依預設，此選擇性屬性會設定為 **true**。 當設定為 **false**時，必須使用重新 **整理方法來** 取得另一個廣告。
 
-2.  檢查對 [Refresh](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的呼叫。 使用自動重新整理 (**IsAutoRefreshEnabled** 為 **true**) 時，**Refresh** 無法用來擷取其他廣告。 使用手動重新整理 (**IsAutoRefreshEnabled** 為 **false**) 時，僅應在至少 30 到 60 秒後 (取決於裝置的目前資料連線) 才呼叫 **Refresh**。
+2.  檢查對 [Refresh](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的呼叫。 使用自動重新整理 (**IsAutoRefreshEnabled** 為 **true**) 時，**Refresh** 無法用來擷取其他廣告。 使用手動重新整理 (**IsAutoRefreshEnabled** 為 **false**) 時，僅應在至少 30 到 60 秒後 (取決於裝置的目前資料連線) 才呼叫 **Refresh**。
 
     下列範例示範如何呼叫 **Refresh** 方法。
 

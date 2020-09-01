@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 音訊, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 47190e98bd20f217742709e600f260776e1615a6
-ms.sourcegitcommit: 520a858435cad1900d4dc9a29fde61c168c8ce23
+ms.openlocfilehash: f0493c68fcb3453890f95c123b0c870cf321fe7e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80229433"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162912"
 ---
 # <a name="audio-for-games"></a>遊戲的音訊
 
 了解如何開發音樂和聲音，並將它們納入您的 DirectX 遊戲，以及如何處理音訊訊號來建立動態和聲音定位。
 
-針對音訊程式設計，建議使用 DirectX 中的[XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal)程式庫或 Windows 執行階段的[音訊圖形](/windows/uwp/audio-video-camera/audio-graphs)api。 我們在這裡使用 XAudio2。 XAudio2 是低階的音訊庫，為遊戲提供訊號處理 和混合的基礎，而且支援多種格式。
+針對音訊程式設計，我們建議使用 DirectX 中的 [XAudio2](/windows/win32/xaudio2/xaudio2-apis-portal) 程式庫，或 Windows 執行階段的 [音訊圖形](../audio-video-camera/audio-graphs.md) api。 我們在這裡使用 XAudio2。 XAudio2 是低階的音訊庫，為遊戲提供訊號處理 和混合的基礎，而且支援多種格式。
 
-您也可以使用 [Microsoft 媒體基礎](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)實作簡單的聲音和音樂播放。 Microsoft 媒體基礎是設計來播放音訊和視訊的媒體檔案和串流，但是也可以在遊戲中使用，而且對於遊戲中的電影場景或非互動式元件特別實用。
+您也可以使用 [Microsoft 媒體基礎](/windows/desktop/medfound/microsoft-media-foundation-sdk)實作簡單的聲音和音樂播放。 Microsoft 媒體基礎是設計來播放音訊和視訊的媒體檔案和串流，但是也可以在遊戲中使用，而且對於遊戲中的電影場景或非互動式元件特別實用。
 
-## <a name="concepts-at-a-glance"></a>概念簡介
+## <a name="concepts-at-a-glance"></a>概念一覽
 
 這裡是我們在本節中使用的一些音訊程式設計概念。
 
@@ -53,7 +53,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -62,15 +62,15 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <td align="left"><p>本主題提供 XAudio2 支援的音訊程式設計功能清單。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/getting-started">使用 XAudio2 消費者入門</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/getting-started">XAudio2 入門</a></p></td>
 <td align="left"><p>本主題提供主要 XAudio2 概念、XAudio2 版本及 RIFF 音訊格式的資訊。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/common-audio-concepts">常見的音訊程式設計概念</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/common-audio-concepts">一般音訊程式設計概念</a></p></td>
 <td align="left"><p>本主題提供音訊開發人員應熟悉的一般音訊概念概觀。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-voices">XAudio2 語音</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-voices">XAudio2 聲音</a></p></td>
 <td align="left"><p>本主題包含 XAudio2 聲音的概觀，XAudio2 聲音可用來次混音、操作和控制音訊資料。</p></td>
 </tr>
 <tr class="odd">
@@ -110,76 +110,76 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2">如何：初始化 XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--initialize-xaudio2">使用方法：初始化 XAudio2</a></p></td>
 <td align="left"><p>了解如何透過建立 XAudio2 引擎的執行個體和建立主播放聲音，以初始化 XAudio2 進行音訊播放。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2">如何：在 XAudio2 中載入音訊資料檔案</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--load-audio-data-files-in-xaudio2">使用方法：在 XAudio2 中載入音訊資料檔</a></p></td>
 <td align="left"><p>了解如何產生在 XAudio2 中播放音訊資料所需的結構。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2">如何：使用 XAudio2 播放音效</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--play-a-sound-with-xaudio2">使用方法：使用 XAudio2 播放音效</a></p></td>
 <td align="left"><p>了解如何在 XAudio2 中播放先前載入的音訊資料。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-submix-voices">如何：使用 Submix 語音</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-submix-voices">使用方法：使用次混音聲音</a></p></td>
 <td align="left"><p>了解如何設定聲音群組，以將它們的輸出傳送至相同的次混音聲音。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-source-voice-callbacks">如何：使用來源語音回呼</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-source-voice-callbacks">使用方法：使用來源聲音回呼</a></p></td>
 <td align="left"><p>了解如何使用 XAudio2 來源聲音回呼。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-engine-callbacks">如何：使用引擎回呼</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-engine-callbacks">使用方法：使用引擎回呼</a></p></td>
 <td align="left"><p>了解如何使用 XAudio2 引擎回呼。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">如何：建立基本的音訊處理圖形</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">使用方法：建立基本音訊處理圖形</a></p></td>
 <td align="left"><p>了解如何建立音訊處理圖形 (由單一主播放聲音和單一來源聲音建構而成)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--dynamically-add-or-remove-voices-from-an-audio-graph">如何：以動態方式新增或移除音訊圖形中的語音</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--dynamically-add-or-remove-voices-from-an-audio-graph">使用方法：從音訊圖形動態新增或移除聲音</a></p></td>
 <td align="left"><p>了解如何在依照<a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">使用方法：建立基本音訊處理圖形</a>步驟建立的圖形中，新增或移除次混音聲音。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--create-an-effect-chain">如何：建立效果鏈</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--create-an-effect-chain">使用方法：建立效果鏈</a></p></td>
 <td align="left"><p>了解如何將效果鏈套用至聲音，以允許自訂該聲音的音訊資料處理。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--create-an-xapo">How to：建立 XAPO</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--create-an-xapo">使用方法：建立 XAPO</a></p></td>
 <td align="left"><p>了解如何實作 <a href="https://docs.microsoft.com/windows/desktop/api/xapo/nn-xapo-ixapo"><strong>IXAPO</strong></a> 來建立 XAudio2 音訊處理物件 (XAPO)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--add-run-time-parameter-support-to-an-xapo">如何：將執行時間參數支援加入至 XAPO</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--add-run-time-parameter-support-to-an-xapo">使用方法：新增 XAPO 的執行階段參數支援</a></p></td>
 <td align="left"><p>了解如何透過實作 <a href="https://docs.microsoft.com/windows/desktop/api/xapo/nn-xapo-ixapoparameters"><strong>IXAPOParameters</strong></a> 介面，新增 XAPO 的執行階段參數支援。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-an-xapo-in-xaudio2">如何：在 XAudio2 中使用 XAPO</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-an-xapo-in-xaudio2">使用方法：在 XAudio2 中使用 XAPO</a></p></td>
 <td align="left"><p>了解如何在 XAudio2 效果鏈中使用實作為 XAPO 的效果。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-xapofx-in-xaudio2">如何：在 XAudio2 中使用 XAPOFX</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--use-xapofx-in-xaudio2">使用方法：在 XAudio2 中使用 XAPOFX</a></p></td>
 <td align="left"><p>了解如何在 XAudio2 效果鏈中使用 XAPOFX 中的其中一個效果。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--stream-a-sound-from-disk">如何：從磁片串流音效</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--stream-a-sound-from-disk">使用方法：從磁碟串流處理音效</a></p></td>
 <td align="left"><p>了解如何透過建立讀取音訊緩衝區的個別執行緒來串流處理 XAudio2 中的音訊資料，以及如何使用回呼以控制該執行緒。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--integrate-x3daudio-with-xaudio2">如何：整合 X3DAudio 與 XAudio2</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--integrate-x3daudio-with-xaudio2">使用方法：整合 X3DAudio 與 XAudio2</a></p></td>
 <td align="left"><p>了解如何使用 X3DAudio 來提供 XAudio2 聲音的音量與音調值，以及 XAudio2 內建的殘響效果的參數。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--group-audio-methods-as-an-operation-set">如何：將音訊方法分組為作業集</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/how-to--group-audio-methods-as-an-operation-set">使用方法：將音訊方法群組為操作集</a></p></td>
 <td align="left"><p>了解如何使用 XAudio2 操作集，同時讓一組方法呼叫生效。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/debugging-audio-glitches-in-xaudio2">在 XAudio2 中調試音訊問題</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/xaudio2/debugging-audio-glitches-in-xaudio2">對 XAudio2 中的音訊問題進行偵錯</a></p></td>
 <td align="left"><p>了解如何設定 XAudio2 的偵錯記錄層次。</p></td>
 </tr>
 </tbody>
@@ -197,7 +197,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -214,11 +214,11 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <td align="left"><p>本節描述 Microsoft 媒體基礎的一般設計，及其使用的媒體基本類型和處理管線。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/audio-video-capture">音訊/影片捕獲</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/audio-video-capture">音訊/視訊擷取</a></p></td>
 <td align="left"><p>本主題描述如何使用 Microsoft 媒體基礎來執行音訊和視訊擷取。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/audio-video-playback">音訊/影片播放</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/audio-video-playback">音訊/視訊播放</a></p></td>
 <td align="left"><p>本主題描述如何在應用程式中實作音訊/視訊播放。</p></td>
 </tr>
 <tr class="even">
@@ -226,11 +226,11 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <td align="left"><p>本主題列出 Microsoft 媒體基礎原始支援的媒體格式 (協力廠商廠商可撰寫自訂的外掛程式來支援其他格式)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/encoding-and-file-authoring">編碼和檔案撰寫</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/encoding-and-file-authoring">編碼與檔案編寫</a></p></td>
 <td align="left"><p>本主題描述如何使用 Microsoft 媒體基礎來執行音訊和視訊編碼，以及編寫媒體檔案。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/windows-media-codecs">Windows Media 編解碼器</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/desktop/medfound/windows-media-codecs">Windows Media 轉碼器</a></p></td>
 <td align="left"><p>本主題描述如何使用 Windows Media 音訊和視訊轉碼器來製作和使用壓縮的資料串流。</p></td>
 </tr>
 <tr class="odd">
@@ -246,7 +246,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
 ### <a name="windows-runtime-xaml-media-types"></a>Windows 執行階段 XAML 媒體類型
 
-如果您使用的是 [DirectX-XAML interop](https://docs.microsoft.com/previous-versions/windows/apps/hh825871(v=win.10))，您可以在較簡單的遊戲案例使用 DirectX 搭配 C++，將 Windows 執行階段 XAML 媒體 API 合併到您的 UWP app。
+如果您使用的是 [DirectX-XAML interop](/previous-versions/windows/apps/hh825871(v=win.10))，您可以在較簡單的遊戲案例使用 DirectX 搭配 C++，將 Windows 執行階段 XAML 媒體 API 合併到您的 UWP app。
 
 <table>
 <colgroup>
@@ -256,12 +256,12 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement"><strong>Windows. UI .Xaml. MediaElement</strong></a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement"><strong>Windows.UI.Xaml.Controls.MediaElement</strong></a></p></td>
 <td align="left"><p>代表包含音訊、視訊或兩者之物件的 XAML 元素。</p></td>
 </tr>
 <tr class="even">
@@ -277,7 +277,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 <td align="left"><p>了解如何在您的 UWP App 中串流處理低延遲的媒體檔案。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/media-casting">媒體轉換</a></p></td>
+<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/audio-video-camera/media-casting">媒體傳播</a></p></td>
 <td align="left"><p>了解如何使用「播放至」協定，將 UWP App 中的媒體串流處理至另一個裝置。</p></td>
 </tr>
 </tbody>
@@ -285,10 +285,10 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
 ## <a name="reference"></a>參考
 
--   [XAudio2 簡介](https://docs.microsoft.com/windows/desktop/xaudio2/xaudio2-introduction)
--   [XAudio2 程式設計指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
--   [Microsoft 媒體基礎總覽](https://docs.microsoft.com/windows/desktop/medfound/microsoft-media-foundation-sdk)
+-   [XAudio2 簡介](/windows/desktop/xaudio2/xaudio2-introduction)
+-   [XAudio2 程式設計指南](/windows/desktop/xaudio2/programming-guide)
+-   [Microsoft 媒體基礎概觀](/windows/desktop/medfound/microsoft-media-foundation-sdk)
 
 ## <a name="related-topics"></a>相關主題
 
--   [XAudio2 程式設計指南](https://docs.microsoft.com/windows/desktop/xaudio2/programming-guide)
+-   [XAudio2 程式設計指南](/windows/desktop/xaudio2/programming-guide)

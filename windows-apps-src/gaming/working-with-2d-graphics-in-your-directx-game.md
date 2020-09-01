@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 2d, 圖形
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e3a843c00d28d83157cf35a0bd9527be8c6b62f
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4dfcb56eb225dafd204a2975b998d0d59253c4ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66367349"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162922"
 ---
 # <a name="2d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的 2D 圖形
 
@@ -21,9 +21,9 @@ ms.locfileid: "66367349"
 
 2D 圖形是 3D 圖形的子集，可處理 2D 基本類型或點陣圖。 較普遍的說法是，2D 圖形不使用 3D 遊戲中會使用的 z 座標，因為遊戲通常是限定在 x-y 平面上。 它們偶爾會使用 3D 圖形技術來建立自己的視覺元件，而且它們的開發通常也比較簡單。 如果您是遊戲的初學者，2D 遊戲是很好的起點，而且 2D 圖形開發也是適合您學習處理 DirectX 的好方法。
 
-您可以使用 Direct2D 或 Direct3D 或將兩者組合，在 DirectX 中開發 2D 遊戲圖形。 2D 遊戲開發中許多較為實用的類別是在 Direct3D 中，如 [**Sprite**](https://docs.microsoft.com/windows/desktop/direct3d10/id3dx10sprite) 類別。 Direct2D 是一組 API，主要針對需要支援繪圖基本類型 (例如圓形、線條和平面多邊形等) 的使用者介面和應用程式。 雖然如此，它仍然提供一組強大和高效能的類別和方法，可用來建立遊戲圖形，特別是建立遊戲重疊、介面以及抬頭顯示器 (HUD)，或是用來建立從簡單到適度詳細的各種 2D 遊戲。 不過，建立 2D 遊戲最有效的方式，是使用這兩種類別庫中的元素，而這就是我們在這個主題中開發 2D 圖形的方式。
+您可以使用 Direct2D 或 Direct3D 或將兩者組合，在 DirectX 中開發 2D 遊戲圖形。 2D 遊戲開發中許多較為實用的類別是在 Direct3D 中，如 [**Sprite**](/windows/desktop/direct3d10/id3dx10sprite) 類別。 Direct2D 是一組 API，主要針對需要支援繪圖基本類型 (例如圓形、線條和平面多邊形等) 的使用者介面和應用程式。 雖然如此，它仍然提供一組強大和高效能的類別和方法，可用來建立遊戲圖形，特別是建立遊戲重疊、介面以及抬頭顯示器 (HUD)，或是用來建立從簡單到適度詳細的各種 2D 遊戲。 不過，建立 2D 遊戲最有效的方式，是使用這兩種類別庫中的元素，而這就是我們在這個主題中開發 2D 圖形的方式。
 
-## <a name="concepts-at-a-glance"></a>概念簡介
+## <a name="concepts-at-a-glance"></a>概念一覽
 
 
 在現代 3D 圖形和支援這種圖形的硬體出現之前，遊戲主要都是 2D 的，而且它們的許多圖形技術都牽涉到移動記憶體區塊，通常是色彩資料陣列，以 1:1 的比例轉譯或轉換為螢幕上的像素。
@@ -32,7 +32,7 @@ ms.locfileid: "66367349"
 
 這裡是您開始進行 2D 圖形開發時必須熟悉的一些基本概念。
 
--   像素和光柵座標。 像素是光柵顯示器上的單個點，而且具有自己的 (x, y) 座標組，指示它在顯示器上的位置 （「 像素 」 一詞是經常交換使用之間構成顯示實體像素，以及用來保存像素的色彩和 alpha 值，再傳送至顯示的可定址記憶體元素。）點陣會被視為矩形格線的像素的項目，這通常會有 1:1 的對應關係實體的像素格線顯示的 api。 光柵座標系統從左上方開始，格線最左上角的像素為 (0, 0)。
+-   像素和光柵座標。 像素是光柵顯示器上的單個點，而且具有自己的 (x, y) 座標組，指示它在顯示器上的位置 (「像素」這個詞是個互通名詞，它可以用來指組成顯示器的實際像素，或者是指傳送到顯示器前先存放在可定址記憶體元素中像素的色彩和 Alpha 值)。光柵被 API 視為像素元件的矩形格線，通常與顯示器上實際像素格線具有 1:1 的對應比例。 光柵座標系統從左上方開始，格線最左上角的像素為 (0, 0)。
 -   點陣圖圖形 (有時候也稱為光柵圖形) 是圖形元素，以矩形格線的像素值來表示。 子畫面技術是獨立於光柵以外管理的計算處理像素陣列，它是點陣圖圖形的其中一種，常用於遊戲中的主要角色或與背景無關的動畫物件。 子畫面技術的動畫的各種畫面是以稱為「表」或「批次」的點陣圖集合表示的。 背景是較大的點陣圖物件，與螢幕光柵具有相同或更高的解析度，通常是作為遊戲區域的底圖。
 -   向量圖形是使用幾何基本類型 (如點、線、圓形和多邊形) 來定義 2D 物件。 它們不是用像素陣列來表示的，而是使用算術等式在 2D 空間中定義。 它們與顯示器的像素格線不一定具有 1:1 的對應比例，而且必須從轉譯它們的座標系統轉換為顯示器上的光柵座標系統。
 -   轉譯是使用一點或一個頂點，然後計算它在相同座標系統上的新位置。
@@ -53,9 +53,9 @@ ms.locfileid: "66367349"
 
 出色的作品變成視覺化呈現時，是您最大的資產。 雖然您的點陣圖圖形在使用最新的著色器模型功能時不一定具有 3D 照相寫實視覺效果的震撼力，但是絕佳的高解析度作品，通常能夠表達更多風格和個性，而且不會耗用太多效能。
 
-## <a name="reference"></a>參考資料
+## <a name="reference"></a>參考
 
 
--   [Direct2D 概觀](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-overview)
--   [Direct2D 快速入門](https://docs.microsoft.com/windows/desktop/Direct2D/getting-started-with-direct2d)
--   [Direct2D 和 Direct3D 的互通性概觀](https://docs.microsoft.com/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)
+-   [Direct2D 概觀](/windows/desktop/Direct2D/direct2d-overview)
+-   [Direct2D 快速入門](/windows/desktop/Direct2D/getting-started-with-direct2d)
+-   [Direct2D 和 Direct3D 互通性總覽](/windows/desktop/Direct2D/direct2d-and-direct3d-interoperation-overview)

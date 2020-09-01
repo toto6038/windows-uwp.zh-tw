@@ -1,26 +1,26 @@
 ---
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: 了解支援的橫幅廣告大小。
+description: 瞭解通用 Windows 平臺 (UWP) 應用程式支援的橫幅 ad 大小，並查看橫幅廣告大小的範例。
 title: 支援的橫幅廣告大小
 ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 大小, 橫幅
 ms.localizationpriority: medium
-ms.openlocfilehash: ec96d744f7a9d2e91b27feae1fe5f3b0c322a450
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 2ed20f6307b5bbf833dc321cd44354e4fe79c046
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77506852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162402"
 ---
 # <a name="supported-banner-ad-sizes"></a>支援的橫幅廣告大小
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-通用 Windows 平台 (UWP) app 支援下列橫幅廣告大小。 當您在應用程式中具現化**AdControl**物件時，請確定您已設定 width 和 height 屬性，以符合其中一種支援的大小。
+通用 Windows 平台 (UWP) app 支援下列橫幅廣告大小。 當您在應用程式中具現化 **AdControl** 物件時，請確定您已將 [寬度] 和 [高度] 屬性設定為符合其中一種支援的大小。
 
-大小為寬度 x 高度。
+大小是寬度 x 高度。
 
 * 160x600
 * 300x50

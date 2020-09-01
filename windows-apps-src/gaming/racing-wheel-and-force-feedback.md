@@ -6,16 +6,16 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10, uwp, games, racing wheel, force feedback, 遊戲, 賽車方向盤, 動力回饋
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b28284fcc459a5d4f155ec7b5fc7cedc0ed8ca
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 0d92fe45a008ee0c3864355faf8133ab8e1ebefb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75685169"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163062"
 ---
-# <a name="racing-wheel-and-force-feedback"></a>賽車方向盤與動力回饋
+# <a name="racing-wheel-and-force-feedback"></a>競速方向盤與力回饋
 
-本頁面說明使用[RacingWheel][racingwheel]的 Xbox one 賽車程式設計的基本概念，以及適用于通用 WINDOWS 平臺（UWP）的相關 api。
+本頁面說明使用 [RacingWheel][racingwheel] 的程式設計的基本概念，以及適用于通用 WINDOWS 平臺 (UWP) Xbox One 的相關 api。
 
 閱讀此頁面，即可了解：
 
@@ -27,13 +27,13 @@ ms.locfileid: "75685169"
 
 ## <a name="racing-wheel-overview"></a>賽車方向盤概觀
 
-賽車方向盤是與真實賽車駕駛艙感覺類似的輸入裝置。 賽車方向盤對於以汽車或卡車為主的大型機台式與模擬式賽車遊戲而言，都是完美的輸入裝置。 在 Windows 10 和 Xbox One UWP 應用程式中，賽車方向盤受到 [Windows.Gaming.Input](https://docs.microsoft.com/uwp/api/windows.gaming.input) 命名空間所支援。
+賽車方向盤是與真實賽車駕駛艙感覺類似的輸入裝置。 賽車方向盤對於以汽車或卡車為主的大型機台式與模擬式賽車遊戲而言，都是完美的輸入裝置。 在 Windows 10 和 Xbox One UWP 應用程式中，賽車方向盤受到 [Windows.Gaming.Input](/uwp/api/windows.gaming.input) 命名空間所支援。
 
 Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入與動力回饋功能也會更多及更好。 所有的賽車方向盤都配備類比方向盤、類比油門和煞車控制以及方向盤上控制鈕。 部分賽車方向盤也會額外配備類比離合器和手煞車控制、換檔與動力回饋功能。 並非所有的賽車方向盤都有配備相同的功能組合，對於特定功能的支援也可能各不相同；例如，方向盤支援的旋轉範圍可能不同，而換檔功能支援檔數也不同。
 
 ### <a name="device-capabilities"></a>裝置功能
 
-不同的 Xbox One 賽車提供不同組的選用裝置功能，以及這些功能的各種支援層級;單一輸入裝置之間的這種變化層級在[Windows](https://docs.microsoft.com/uwp/api/windows.gaming.input)所支援的裝置之間是唯一的。 此外，您所接觸的大多數裝置至少會支援部分選用功能或其他變化。 因此，個別判斷每一個連接之賽車方向盤的功能以及支援您的遊戲所適合之各項功能，是非常重要的事。
+不同的 Xbox One 賽車輪子提供不同組的選用裝置功能，以及這些功能的不同支援層級;單一輸入裝置之間的這種差異層級，在 [Windows](/uwp/api/windows.gaming.input) 的裝置所支援的裝置之間是唯一的。 此外，您所接觸的大多數裝置至少會支援部分選用功能或其他變化。 因此，個別判斷每一個連接之賽車方向盤的功能以及支援您的遊戲所適合之各項功能，是非常重要的事。
 
 如需詳細資訊，請參閱[判斷賽車方向盤功能](#determining-racing-wheel-capabilities)。
 
@@ -45,49 +45,49 @@ Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入�
 
 ### <a name="ui-navigation"></a>UI 瀏覽
 
-為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
+為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__ 輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」__ 輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
 由於它們特別著重於不同賽車方向盤之間的類比控制與變化程度，所以它們通常會配備數位方向鍵、**檢視**、**選單**、**A**、**B**、**X** 和 **Y** 按鈕，與[遊戲台](gamepad-and-vibration.md)類似；這些按鈕並非用於支援遊戲命令，所以無法直接當做賽車方向盤按鈕進行存取。
 
-當成 UI 瀏覽控制器使用時，賽車方向盤會將瀏覽命令的[必要集](ui-navigation-controller.md#required-set)對應至左搖桿、方向鍵、**檢視**、**選單**、**A** 和 **B** 按鈕。
+以 UI 流覽控制器而言，賽車會將 [所需的一組](ui-navigation-controller.md#required-set) 流覽命令對應到左側操縱杆、D-Pad **、View**、 **Menu**、 **a**和 **B** 按鈕。
 
-| 瀏覽命令 | 賽車方向盤輸入 |
+| 導覽命令 | 賽車方向盤輸入 |
 | ------------------:| ------------------ |
-|                 向上 | 方向鍵向上           |
+|                 Up | 方向鍵向上           |
 |               Down | 方向鍵向下         |
 |               Left | 方向鍵向左         |
 |              Right | 方向鍵向右        |
-|               [檢視] | 檢視按鈕        |
-|               Menu | 選項按鈕        |
+|               檢視 | 檢視按鈕        |
+|               功能表 | 功能表按鈕        |
 |             接受 | A 按鍵           |
-|             [取消] | B 按鍵           |
+|             取消 | B 按鍵           |
 
 此外，部分賽車方向盤可能會將瀏覽命令的一些[選用集](ui-navigation-controller.md#optional-set)對應到它們所支援的其他輸入，但是命令對應可能會因裝置而異。 您也可考慮支援這些命令，但是請確定這些不是瀏覽您遊戲介面的必要命令。
 
-| 瀏覽命令 | 賽車方向盤輸入    |
+| 導覽命令 | 賽車方向盤輸入    |
 | ------------------:| --------------------- |
-|            上一頁 | _差異_              |
-|          下一頁 | _差異_              |
-|          向左翻頁 | _差異_              |
-|         向右翻頁 | _差異_              |
-|          向上捲動 | _差異_              |
-|        向下捲動 | _差異_              |
-|        向左捲動 | _差異_              |
-|       向右捲動 | _差異_              |
-|          內容 1 | X 按鈕 (常用) |
-|          內容 2 | Y 按鈕 (常用) |
-|          內容 3 | _差異_              |
-|          內容 4 | _差異_              |
+|            Page Up | _不同_              |
+|          Page Down | _不同_              |
+|          向左翻頁 | _不同_              |
+|         向右翻頁 | _不同_              |
+|          向上捲動 | _不同_              |
+|        向下捲動 | _不同_              |
+|        向左捲動 | _不同_              |
+|       向右捲動 | _不同_              |
+|          內容 1 | X 按鈕 (_通常_)  |
+|          內容 2 | Y 按鈕 (__ 常用) |
+|          內容 3 | _不同_              |
+|          內容 4 | _不同_              |
 
 ## <a name="detect-and-track-racing-wheels"></a>偵測和追蹤賽車方向盤
 
-使用與遊戲台相同的方式偵測及追蹤賽車方向盤的運作，但 [RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel) 類別除外，而不是 [Gamepad](https://docs.microsoft.com/uwp/api/Windows.Gaming.Input.Gamepad) 類別。 如需詳細資訊，請參閱[遊戲台與震動](gamepad-and-vibration.md)。
+使用與遊戲台相同的方式偵測及追蹤賽車方向盤的運作，但 [RacingWheel](/uwp/api/windows.gaming.input.racingwheel) 類別除外，而不是 [Gamepad](/uwp/api/Windows.Gaming.Input.Gamepad) 類別。 如需詳細資訊，請參閱[遊戲台與震動](gamepad-and-vibration.md)。
 
 <!-- Racing wheels are managed by the system, therefore you don't have to create or initialize them. The system provides a list of connected racing wheels and events to notify you when a racing wheel is added or removed.
 
 ### The racing wheels list
 
-The [RacingWheel](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel) class provides a static property, [RacingWheels](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.racingwheels#Windows_Gaming_Input_RacingWheel_RacingWheels), which is a read-only list of racing wheels that are currently connected. Because you might only be interested in some of the connected racing wheels, it's recommended that you maintain your own collection instead of accessing them through the `RacingWheels` property.
+The [RacingWheel](/uwp/api/windows.gaming.input.racingwheel) class provides a static property, [RacingWheels](/uwp/api/windows.gaming.input.racingwheel.racingwheels#Windows_Gaming_Input_RacingWheel_RacingWheels), which is a read-only list of racing wheels that are currently connected. Because you might only be interested in some of the connected racing wheels, it's recommended that you maintain your own collection instead of accessing them through the `RacingWheels` property.
 
 The following example copies all connected racing wheels into a new collection.
 ```cpp
@@ -102,7 +102,7 @@ for (auto racingwheel : RacingWheel::RacingWheels)
 
 ### Adding and removing racing wheels
 
-When a racing wheel is added or removed the [RacingWheelAdded](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.racingwheeladded) and [RacingWheelRemoved](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.racingwheelremoved) events are raised. You can register handlers for these events to keep track of the racing wheels that are currently connected.
+When a racing wheel is added or removed the [RacingWheelAdded](/uwp/api/windows.gaming.input.racingwheel.racingwheeladded) and [RacingWheelRemoved](/uwp/api/windows.gaming.input.racingwheel.racingwheelremoved) events are raised. You can register handlers for these events to keep track of the racing wheels that are currently connected.
 
 The following example starts tracking an racing wheels that's been added.
 ```cpp
@@ -138,7 +138,7 @@ Each racing wheel can be associated with a user account to link their identity t
 
 輪詢可在精確的時間點擷取賽車方向盤的快照。 這種輸入收集方式適用於大部分遊戲，因為其邏輯一般是以決定性迴圈執行，而不是透過事件驅動；透過一次所收集的輸入來解譯遊戲命令，一般也比透過不同時間所收集的許多單一輸入來解譯遊戲命令更為簡單。
 
-呼叫 [GetCurrentReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.getcurrentreading#Windows_Gaming_Input_RacingWheel_GetCurrentReading) 即可輪詢賽車方向盤；此函式會傳回包含賽車方向盤狀態的 [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading)。
+呼叫 [GetCurrentReading](/uwp/api/windows.gaming.input.racingwheel.getcurrentreading#Windows_Gaming_Input_RacingWheel_GetCurrentReading) 即可輪詢賽車方向盤；此函式會傳回包含賽車方向盤狀態的 [RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading)。
 
 下列範例會輪詢賽車方向盤的目前狀態。
 
@@ -154,7 +154,7 @@ RacingWheelReading reading = racingwheel->GetCurrentReading();
 
 許多賽車方向盤控制項為選用，或甚至在必要的控制項中也會支援不同的變化，所以您必須個別判斷每個賽車方向盤的功能，然後才可以處理在每個賽車方向盤讀取中所收集的輸入。
 
-選用的控制項為手煞車、離合器和換檔功能；您可以藉由分別讀取賽車方向盤的 [HasHandbrake](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.hashandbrake#Windows_Gaming_Input_RacingWheel_HasHandbrake)、[HasClutch](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.hasclutch#Windows_Gaming_Input_RacingWheel_HasClutch) 和 [HasPatternShifter](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.haspatternshifter#Windows_Gaming_Input_RacingWheel_HasPatternShifter) 屬性來判斷連接的賽車方向盤是否支援這些控制項。 如果屬性的值為 **true**，就表示支援該控制項，否則就是不支援。
+選用的控制項為手煞車、離合器和換檔功能；您可以藉由分別讀取賽車方向盤的 [HasHandbrake](/uwp/api/windows.gaming.input.racingwheel.hashandbrake#Windows_Gaming_Input_RacingWheel_HasHandbrake)、[HasClutch](/uwp/api/windows.gaming.input.racingwheel.hasclutch#Windows_Gaming_Input_RacingWheel_HasClutch) 和 [HasPatternShifter](/uwp/api/windows.gaming.input.racingwheel.haspatternshifter#Windows_Gaming_Input_RacingWheel_HasPatternShifter) 屬性來判斷連接的賽車方向盤是否支援這些控制項。 如果屬性的值為 **true**，就表示支援該控制項，否則就是不支援。
 
 ```cpp
 if (racingwheel->HasHandbrake)
@@ -180,7 +180,7 @@ auto maxWheelDegrees = racingwheel->MaxWheelAngle;
 auto maxShifterGears = racingwheel->MaxPatternShifterGear;
 ```
 
-最後，部分賽車方向盤會透過方向盤來支援動力回饋。 您可以讀取賽車方向盤的 [WheelMotor](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) 屬性來判斷連接的賽車方向盤是否支援動力回饋。 如果 `WheelMotor` 值不是 **null**，就表示支援動力回饋，否則就是不支援。
+最後，部分賽車方向盤會透過方向盤來支援動力回饋。 您可以讀取賽車方向盤的 [WheelMotor](/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) 屬性來判斷連接的賽車方向盤是否支援動力回饋。 如果不是 null，則支援強制意見反應， `WheelMotor` 否則不支援。 **null**
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -193,12 +193,12 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="reading-the-buttons"></a>讀取按鈕
 
-每個賽車方向盤按鈕 (四個方向的方向鍵、**上一檔**和**下一檔**按鈕及其他 16 個按鈕) 都會提供數位讀取來指出按下 (下) 還是放開 (上)。 基於效率考量，按鈕讀取並不是以個別布林值表示，而是封裝到以 [RacingWheelButtons](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelbuttons) 列舉表示的單一位元欄位中。
+每一個賽車滾輪都 &mdash; 有四個方向： D 板、 **先前的齒輪** 和 **下齒輪** 按鈕，還有另外16個按鈕則 &mdash; 會提供數位閱讀，指出是否按下 () ，或 (向上) 釋放。 基於效率考量，按鈕讀取並不是以個別布林值表示，而是封裝到以 [RacingWheelButtons](/uwp/api/windows.gaming.input.racingwheelbuttons) 列舉表示的單一位元欄位中。
 
 > [!NOTE]
 > 賽車方向盤有配備用於 UI 瀏覽的其他按鈕，例如**檢視**和**選單**按鈕。 這些按鈕不是 `RacingWheelButtons` 列舉的一部分，而且只能將賽車方向盤當成 UI 瀏覽裝置存取來進行讀取。 如需詳細資訊，請參閱 [UI 瀏覽裝置](ui-navigation-controller.md)。
 
-按鈕值讀取自 [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Buttons` 屬性。 因為此屬性是位元欄位，所以使用位元遮罩來隔離感興趣按鈕的值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
+按鈕值讀取自 [RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Buttons` 屬性。 因為此屬性是位元欄位，所以使用位元遮罩來隔離感興趣按鈕的值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
 
 下列範例會判斷是否按下**下一檔**按鈕。
 
@@ -222,7 +222,7 @@ if (RacingWheelButtons::None == (reading.Buttons & RacingWheelButtons::NextGear)
 
 ### <a name="reading-the-wheel"></a>讀取方向盤
 
-方向盤是必要的控制項，它會提供介於 -1.0 與 +1.0 之間的類比讀數。 -1.0 的值對應到最左邊的方向盤位置；+1.0 的值對應到最右邊的方向盤位置。 方向盤的值讀取自 [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Wheel` 屬性。
+方向盤是必要的控制項，它會提供介於 -1.0 與 +1.0 之間的類比讀數。 -1.0 的值對應到最左邊的方向盤位置；+1.0 的值對應到最右邊的方向盤位置。 方向盤的值讀取自 [RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Wheel` 屬性。
 
 ```cpp
 float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
@@ -232,7 +232,7 @@ float wheel = reading.Wheel;  // returns a value between -1.0 and +1.0.
 
 ### <a name="reading-the-throttle-and-brake"></a>讀取油門和煞車
 
-油門和煞車是必要的控制項，兩者皆可提供介於 0.0 (完全放開) 和 1.0 (完全按下) 之間的類比讀數 (以浮點值表示)。 油門控制項的值讀取自 [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Throttle` 屬性；煞車控制項的值讀取自 `Brake` 屬性。
+油門和煞車是必要的控制項，兩者皆可提供介於 0.0 (完全放開) 和 1.0 (完全按下) 之間的類比讀數 (以浮點值表示)。 油門控制項的值讀取自 [RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Throttle` 屬性；煞車控制項的值讀取自 `Brake` 屬性。
 
 ```cpp
 float throttle = reading.Throttle;  // returns a value between 0.0 and 1.0
@@ -241,7 +241,7 @@ float brake    = reading.Brake;     // returns a value between 0.0 and 1.0
 
 ### <a name="reading-the-handbrake-and-clutch"></a>讀取手煞車和離合器
 
-手煞車和離合器是選用的控制項，兩者皆可提供介於 0.0 (完全放開) 和 1.0 (完全使用) 之間的類比讀數 (以浮點值表示)。 手煞車控制項的值讀取自 [RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Handbrake` 屬性；離合器控制項的值讀取自 `Clutch` 屬性。
+手煞車和離合器是選用的控制項，兩者皆可提供介於 0.0 (完全放開) 和 1.0 (完全使用) 之間的類比讀數 (以浮點值表示)。 手煞車控制項的值讀取自 [RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading) 結構的 `Handbrake` 屬性；離合器控制項的值讀取自 `Clutch` 屬性。
 
 ```cpp
 float handbrake = 0.0;
@@ -260,7 +260,7 @@ if(racingwheel->HasClutch)
 
 ### <a name="reading-the-pattern-shifter"></a>讀取換檔功能
 
-換檔功能是選用的控制項，可提供介於 -1 與 [MaxPatternShifterGear](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之間的數位讀數 (以帶正負號的整數值表示)。 -1 或 0 的值會分別對應到 _「倒退檔」_ 和 _「空檔」_ ；越大的正數值會對應到越大的前進檔，最大為 **MaxPatternShifterGear**。 會從[RacingWheelReading](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading)結構的[PatternShifterGear](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)屬性讀取模式移位的值。
+換檔功能是選用的控制項，可提供介於 -1 與 [MaxPatternShifterGear](/uwp/api/windows.gaming.input.racingwheel.maxpatternshiftergear) 之間的數位讀數 (以帶正負號的整數值表示)。 -1 或 0 的值會分別對應到 _「倒退檔」_ 和 _「空檔」_；越大的正數值會對應到越大的前進檔，最大為 **MaxPatternShifterGear**。 模式移位的值是從[RacingWheelReading](/uwp/api/windows.gaming.input.racingwheelreading)結構的[PatternShifterGear](/uwp/api/windows.gaming.input.racingwheelreading.patternshiftergear)屬性讀取的。
 
 ```cpp
 if (racingwheel->HasPatternShifter)
@@ -274,11 +274,11 @@ if (racingwheel->HasPatternShifter)
 
 ## <a name="run-the-inputinterfacing-sample"></a>執行 InputInterfacing 範例
 
-[InputInterfacingUWP 範例 _(github)_ ](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) 示範如何同時使用賽車方向盤和不同類型的輸入裝置，以及這些輸入裝置如何當成 UI 瀏覽控制器操作。
+[InputInterfacingUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/InputInterfacingUWP) 示範如何同時使用賽車方向盤和不同類型的輸入裝置，以及這些輸入裝置如何當成 UI 瀏覽控制器操作。
 
 ## <a name="force-feedback-overview"></a>動力回饋概觀
 
-許多賽車方向盤都有動力回饋功能，以便提供更身歷其境及挑戰性更高的駕駛體驗。 支援動力回饋的賽車方向盤通常都會配備單一馬達，以便沿著單一軸 (方向盤旋轉的軸) 對方向盤施力。 Windows 10 和 Xbox One UWP 應用程式會透過[ForceFeedback](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback)命名空間來支援強制意見反應。
+許多賽車方向盤都有動力回饋功能，以便提供更身歷其境及挑戰性更高的駕駛體驗。 支援動力回饋的賽車方向盤通常都會配備單一馬達，以便沿著單一軸 (方向盤旋轉的軸) 對方向盤施力。 [ForceFeedback](/uwp/api/windows.gaming.input.forcefeedback)命名空間會在 Windows 10 和 Xbox One UWP 應用程式中支援強制意見反應。
 
 > [!NOTE]
 > 動力回饋 API 能夠支援多個施力軸，但是目前沒有任何 Xbox One 賽車方向盤可支援方向盤旋轉軸以外的回饋軸。
@@ -289,7 +289,7 @@ if (racingwheel->HasPatternShifter)
 
 ### <a name="determining-force-feedback-capabilities"></a>判斷動力回饋功能
 
-您可以讀取賽車方向盤的 [WheelMotor](https://docs.microsoft.com/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) 屬性來判斷連接的賽車方向盤是否支援動力回饋。 如果 `WheelMotor` 值為 **null** 就表示不支援動力回饋，否則就是支援動力回饋；接著您可以繼續判斷馬達的特定回饋功能，像是可影響的軸。
+您可以讀取賽車方向盤的 [WheelMotor](/uwp/api/windows.gaming.input.racingwheel.wheelmotor#Windows_Gaming_Input_RacingWheel_WheelMotor) 屬性來判斷連接的賽車方向盤是否支援動力回饋。 如果 `WheelMotor` 值為 **null** 就表示不支援動力回饋，否則就是支援動力回饋；接著您可以繼續判斷馬達的特定回饋功能，像是可影響的軸。
 
 ```cpp
 if (racingwheel->WheelMotor != nullptr)
@@ -315,7 +315,7 @@ if (racingwheel->WheelMotor != nullptr)
 
 ### <a name="loading-force-feedback-effects"></a>載入動力回饋效果
 
-動力回饋效果會載入到回饋裝置上，然後在裝置上由遊戲控制自行「播放」。 會提供一些基本效果;您可以透過執行[IForceFeedbackEffect](https://docs.microsoft.com/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect)介面的類別來建立自訂效果。
+動力回饋效果會載入到回饋裝置上，然後在裝置上由遊戲控制自行「播放」。 提供一些基本效果;您可以透過實 [IForceFeedbackEffect](/uwp/api/windows.gaming.input.forcefeedback.iforcefeedbackeffect) 介面的類別來建立自訂效果。
 
 | 效果類別         | 效果描述                                                                     |
 | -------------------- | -------------------------------------------------------------------------------------- |
@@ -369,25 +369,25 @@ else
 
 最後，您可以隨時在特定的賽車方向盤上以非同步方式啟用、停用或重設整個動力回饋系統。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
-* [Windows.Gaming.Input.UINavigationController](https://docs.microsoft.com/uwp/api/windows.gaming.input.uinavigationcontroller)
-* [Windows. IGameController](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)
-* [遊戲的輸入實務](input-practices-for-games.md)
+* [Windows.Gaming.Input.UINavigationController](/uwp/api/windows.gaming.input.uinavigationcontroller)
+* [Windows.Gaming.Input.IGameController](/uwp/api/windows.gaming.input.igamecontroller)
+* [遊戲的輸入練習](input-practices-for-games.md)
 
-[Windows.Gaming.Input]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx
-[Windows.Gaming.Input.UINavigationController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationcontroller.aspx
-[Windows.Gaming.Input.IGameController]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.aspx
-[racingwheel]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.aspx
-[racingwheels]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.racingwheels.aspx
-[racingwheeladded]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.racingwheeladded.aspx
-[racingwheelremoved]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.racingwheelremoved.aspx
-[haspatternshifter]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.haspatternshifter.aspx
-[hashandbrake]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.hashandbrake.aspx
-[hasclutch]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.hasclutch.aspx
-[maxpatternshiftergear]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.maxpatternshiftergear.aspx
-[maxwheelangle]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.maxwheelangle.aspx
-[getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.getcurrentreading.aspx
-[wheelmotor]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.wheelmotor.aspx
-[racingwheelreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelreading.aspx
-[racingwheelbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelbuttons.aspx
+[Windows.Gaming.Input]: /uwp/api/Windows.Gaming.Input
+[Windows.Gaming.Input.UINavigationController]: /uwp/api/Windows.Gaming.Input.UINavigationController
+[Windows.Gaming.Input.IGameController]: /uwp/api/Windows.Gaming.Input.IGameController
+[racingwheel]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[racingwheels]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[racingwheeladded]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[racingwheelremoved]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[haspatternshifter]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[hashandbrake]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[hasclutch]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[maxpatternshiftergear]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[maxwheelangle]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[getcurrentreading]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[wheelmotor]: /uwp/api/Windows.Gaming.Input.RacingWheel
+[racingwheelreading]: /uwp/api/Windows.Gaming.Input.RacingWheelReading
+[racingwheelbuttons]: /uwp/api/Windows.Gaming.Input.RacingWheelButtons

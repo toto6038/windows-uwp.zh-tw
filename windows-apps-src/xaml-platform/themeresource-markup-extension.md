@@ -4,18 +4,18 @@ title: ThemeResource 標記延伸
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f4ad8c6fe4108546a66a2915ef1c453d812dff5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 89ae286fbc29628e8d81899265019ccdaaa038a3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371108"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161702"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} 標記延伸
 
-透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。 與 [{StaticResource} 標記延伸](staticresource-markup-extension.md)類似，資源是在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定義，而 **ThemeResource** 用法會參考該資源在 **ResourceDictionary** 中的索引鍵。
+透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。 與 [{StaticResource} 標記延伸](staticresource-markup-extension.md)類似，資源是在 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定義，而 **ThemeResource** 用法會參考該資源在 **ResourceDictionary** 中的索引鍵。
 
 ## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
@@ -27,7 +27,7 @@ ms.locfileid: "66371108"
 
 | 詞彙 | 描述 |
 |------|-------------|
-| key | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
+| 索引鍵 | 要求資源的金鑰。 這個索引鍵最初是由 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
 
 ## <a name="remarks"></a>備註
 
@@ -37,37 +37,37 @@ ms.locfileid: "66371108"
 
 **ThemeResource** 接受一個引數，這個引數指定了所要求的資源的索引鍵。 資源索引鍵一律是 Windows 執行階段 XAML 中的一個字串。 如需如何在一開始指定資源索引鍵的詳細資訊，請參閱 [x:Key 屬性](x-key-attribute.md)。
 
-如需有關如何定義資源及正確使用 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) (包括範例程式碼) 的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
+如需有關如何定義資源及正確使用 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) (包括範例程式碼) 的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)。
 
 **重要** 與使用 **StaticResource** 時一樣，**ThemeResource** 不得嘗試對 XAML 檔案中進一步定義詞彙的資源做向前參考。 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
 
 嘗試將 **ThemeResource** 指定給無法解析的索引鍵，會導致在執行階段擲回 XAML 剖析例外狀況。 設計工具也可能發出警告或錯誤。
 
-在 Windows 執行階段 XAML 處理器實作中，沒有 **ThemeResource** 的支援類別表示法。 在程式碼中最接近的相等做法是使用 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的集合 API，例如呼叫 [**Contains**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.contains) 或 [**TryGetValue**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.trygetvalue)。
+在 Windows 執行階段 XAML 處理器實作中，沒有 **ThemeResource** 的支援類別表示法。 在程式碼中最接近的相等做法是使用 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 的集合 API，例如呼叫 [**Contains**](/uwp/api/windows.ui.xaml.resourcedictionary.contains) 或 [**TryGetValue**](/uwp/api/windows.ui.xaml.resourcedictionary.trygetvalue)。
 
-**ThemeResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
+**ThemeResource** 是一個標記延伸。 如果必須將屬性 (Attribute) 值加上逸出符號，以免成為常值或處理常式名稱，而且這個動作必須更全面地實施 (而不是只對特定類型或屬性 (Property) 設定類型轉換子 (Type Converter))，則通常會實作標記延伸。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
 ### <a name="when-and-how-to-use-themeresource-rather-than-staticresource"></a>使用 {ThemeResource} 而不是 {StaticResource} 的時機和方式
 
-將 **ThemeResource** 解析成資源字典中的項目時所依據的規則，大致上與 **StaticResource** 相同。 **ThemeResource** 查詢可以延伸到 [**ThemeDictionaries**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 集合所參考的 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 檔案中，但是 **StaticResource** 也可以那麼做。 差別在於 **ThemeResource** 可以在執行階段重新評估，但 **StaticResource** 不可以。
+將 **ThemeResource** 解析成資源字典中的項目時所依據的規則，大致上與 **StaticResource** 相同。 **ThemeResource** 查詢可以延伸到 [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) 集合所參考的 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 檔案中，但是 **StaticResource** 也可以那麼做。 差別在於 **ThemeResource** 可以在執行階段重新評估，但 **StaticResource** 不可以。
 
 每個佈景主題字典中的索引鍵組都應該提供一組相同的索引鍵資源，不論使用中的佈景主題是哪一個。 如果 **HighContrast** 佈景主題字典中有某個指定的索引鍵資源，則 **Light** 和 **Default** 中也應該要有另一個具有該名稱的資源。 如果不是這樣，當使用者切換佈景主題時，資源查詢可能會失敗，而您的應用程式會看起來不正常。 雖然佈景主題字典包含的索引鍵資源有可能只從相同範圍內參考以提供子值；這些在所有佈景主題中不一定要相等。
 
 一般而言，您應該將資源放在佈景主題字典中，然後只當這些值可以在佈景主題之間變更或受變更值支援時，才使用 **ThemeResource** 參考這些資源。 這適用於下列資源類型：
 
--   筆刷 (使用 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 的特定色彩)。 這些構成預設 XAML 控制項範本 (generic.xaml) 中大約 80% 的 **ThemeResource** 使用。
+-   筆刷 (使用 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 的特定色彩)。 這些構成預設 XAML 控制項範本 (generic.xaml) 中大約 80% 的 **ThemeResource** 使用。
 -   框線、位移、邊界及邊框間距等等的像素值。
 -   字型屬性 (例如，**FontFamily** 或 **FontSize**)。
--   限定數量之控制項的完整範本，這些控制項通常是系統樣式並且用於動態呈現 (例如，[**GridViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 和 [**ListViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListViewItem))。
+-   限定數量之控制項的完整範本，這些控制項通常是系統樣式並且用於動態呈現 (例如，[**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 和 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem))。
 -   文字顯示樣式 (通常用來變更字型色彩、背景，也可能用來變更字型大小)。
 
-Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這些都列在 XAML 檔案 themeresources.xaml 中，您可以從 Windows 軟體開發套件 (SDK) 所含的 include/winrt/xaml/design 資料夾中找到這個檔案。 如需有關佈景主題筆刷及 themeresources.xaml 中定義之其他樣式的文件，請參閱 [XAML 佈景主題資源](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)。 筆刷相關資訊列在表格中，其中說明三種可能的使用中佈景主題中每種筆刷的色彩值。
+Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這些都列在 XAML 檔案 themeresources.xaml 中，您可以從 Windows 軟體開發套件 (SDK) 所含的 include/winrt/xaml/design 資料夾中找到這個檔案。 如需有關佈景主題筆刷及 themeresources.xaml 中定義之其他樣式的文件，請參閱 [XAML 佈景主題資源](../design/controls-and-patterns/xaml-theme-resources.md)。 筆刷相關資訊列在表格中，其中說明三種可能的使用中佈景主題中每種筆刷的色彩值。
 
 只要基礎資源可能因佈景主題變更而改變，控制項範本中視覺狀態的 XAML 定義就應該使用 **ThemeResource** 參考。 系統佈景主題變更通常不會同時導致視覺狀態變更。 在這種情況下，資源需要使用 **ThemeResource** 參考，才能針對仍在使用中的視覺狀態重新評估值。 例如，如果您有一個視覺狀態會變更特定 UI 部分的筆刷色彩及它的其中一個屬性，而該筆刷色彩依佈景主題而有不同，您應該使用 **ThemeResource** 參考來提供該屬性在預設範本中的值，並且也提供任何視覺狀態修改給該預設範本。
 
-您可能會在一系列的相依值中看到 **ThemeResource** 的使用。 例如，[**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 使用的 [**Color**](https://docs.microsoft.com/uwp/api/Windows.UI.Color) 值同時也是索引鍵資源，可能使用 **ThemeResource** 參考。 但是，所有使用索引鍵 **SolidColorBrush** 資源的 UI 屬性也會使用 **ThemeResource** 參考，因此具體說來，在佈景主題變更時啟用動態值變更的是每個 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性。
+您可能會在一系列的相依值中看到 **ThemeResource** 的使用。 例如，[**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 使用的 [**Color**](/uwp/api/Windows.UI.Color) 值同時也是索引鍵資源，可能使用 **ThemeResource** 參考。 但是，所有使用索引鍵 **SolidColorBrush** 資源的 UI 屬性也會使用 **ThemeResource** 參考，因此具體說來，在佈景主題變更時啟用動態值變更的是每個 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性。
 
-**附註**  `{ThemeResource}`及佈景主題切換執行階段資源評估是在 Windows 8.1 的 XAML 支援，但不是支援在 XAML 中以 Windows 8 為目標的應用程式。
+**注意**   `{ThemeResource}`Windows 8.1 XAML 支援主題切換上的執行時間資源評估，但以 Windows 8 為目標的應用程式則不支援 XAML。
 
 ### <a name="system-resources"></a>系統資源
 
@@ -77,7 +77,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 ### <a name="an-example-themeresource-usage"></a>{ThemeResource} 用法範例
 
-這裡提供一些取自預設 generic.xaml 和 themeresources.xaml 檔案的範例 XAML，用來說明如何使用 **ThemeResource**。 我們只會看一個範本 (預設 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button))，以及如何宣告兩個屬性 ([**Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) 和 [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground)) 以回應佈景主題變更。
+這裡提供一些取自預設 generic.xaml 和 themeresources.xaml 檔案的範例 XAML，用來說明如何使用 **ThemeResource**。 我們只會看一個範本 (預設 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button))，以及如何宣告兩個屬性 ([**Background**](/uwp/api/windows.ui.xaml.controls.control.background) 和 [**Foreground**](/uwp/api/windows.ui.xaml.controls.control.foreground)) 以回應佈景主題變更。
 
 ```xml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
@@ -87,9 +87,9 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 ...
 ```
 
-在這裡，屬性採用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值，而使用 **ThemeResource** 建立對名為 `ButtonBackgroundThemeBrush` 和 `ButtonForegroundThemeBrush` 之 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的參考。
+在這裡，屬性採用 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值，而使用 **ThemeResource** 建立對名為 `ButtonBackgroundThemeBrush` 和 `ButtonForegroundThemeBrush` 之 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 資源的參考。
 
-[  **Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background) 和 [**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 物件及對筆刷的參考。
+[**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 的一些視覺狀態也會調整這些相同的屬性。 較明顯的就是當按一下按鈕時，背景色彩會變更。 同樣地，在這裡，視覺狀態腳本中的 [**Background**](/uwp/api/windows.ui.xaml.controls.control.background) 和 [**Foreground**](/uwp/api/windows.ui.xaml.controls.control.foreground) 動畫會以 **ThemeResource** 做為主要畫面值，使用 [**DiscreteObjectKeyFrame**](/uwp/api/Windows.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame) 物件及對筆刷的參考。
 
 ```xml
 <VisualState x:Name="Pressed">
@@ -136,21 +136,20 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 這裡的 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 值是對系統資源的另一個 **ThemeResource** 參考。 如果您參考某個系統資源，並且希望它隨著佈景主題變更而改變，您應該使用 **ThemeResource** 進行參考。
 
-## <a name="windows8-behavior"></a>Windows 8 的行為
+## <a name="windows8-behavior"></a>Windows 8 行為
 
-不支援 Windows 8 **ThemeResource**標記延伸，它是從 Windows 8.1 推出。 此外，Windows 8 不支援動態切換 Windows 執行階段應用程式的佈景主題相關資源。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這不是良好的使用者經驗，讓應用程式會極力建議您重新編譯，並以 Windows 8.1 為目標，使其可以使用的樣式**ThemeResource**使用方式和動態切換佈景主題，當使用者執行。 針對 Windows 8，但執行 Windows 8.1 上繼續使用 Windows 8 行為所編譯的應用程式。
+Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開始可供使用。 此外，Windows 8 不支援針對 Windows 執行階段應用程式動態切換與佈景主題相關的資源。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這並不是一個良好的使用者經驗，因此，強烈建議將應用程式重新編譯並定位為 Windows 8.1，讓它們可將樣式與 **ThemeResource** 用法搭配使用，且可在使用者進行時動態切換佈景主題。 針對 Windows 8 編譯但在 Windows 8.1 上執行的應用程式會繼續使用 Windows 8 的行為。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>**{ThemeResource}** 標記延伸的設計階段工具支援
 
-Microsoft Visual Studio 2013 時，可以包含可能的索引鍵值的 Microsoft IntelliSense 下拉式清單中您使用 **{ThemeResource}** XAML 頁面中的標記延伸。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)的資源索引鍵。
+當您在 XAML 頁面中使用 **{ThemeResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](../design/controls-and-patterns/xaml-theme-resources.md)的資源索引鍵。
 
-一旦資源索引鍵存在於任何 **{ThemeResource}** 用法中， **[移至定義]** (F12) 功能就可以立即解析該資源，並為您顯示設計階段的 generic.xaml，這是定義佈景主題資源的位置。 因為已經多次定義佈景主題資源 (針對每個佈景主題)，所以 **[移至定義]** 會將您帶往檔案中找到的第一個定義，也就是 **Default** 的定義。 如果你需要其他定義，可以在檔案內搜尋索引鍵名稱，以尋找其他佈景主題的定義。
+一旦資源索引鍵存在於任何 **{ThemeResource}** 用法中，**[移至定義]** (F12) 功能就可以立即解析該資源，並為您顯示設計階段的 generic.xaml，這是定義佈景主題資源的位置。 因為已經多次定義佈景主題資源 (針對每個佈景主題)，所以 **[移至定義]** 會將您帶往檔案中找到的第一個定義，也就是 **Default** 的定義。 如果你需要其他定義，可以在檔案內搜尋索引鍵名稱，以尋找其他佈景主題的定義。
 
 ## <a name="related-topics"></a>相關主題
 
-* [資源字典和 XAML 資源參考](https://docs.microsoft.com/windows/uwp/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-* [XAML 佈景主題資源](https://docs.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
-* [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary)
-* [X:key 屬性](x-key-attribute.md)
+* [ResourceDictionary 與 XAML 資源參考](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+* [XAML 佈景主題資源](../design/controls-and-patterns/xaml-theme-resources.md)
+* [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary)
+* [x:Key 屬性](x-key-attribute.md) \(部分機器翻譯\)
  
-

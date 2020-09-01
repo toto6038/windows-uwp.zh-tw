@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 網路功能, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0dd6168d932d1c131ca6bcd4530795c6ed1ba3
-ms.sourcegitcommit: b408494ebe8489b9ba84fb8bfd893d90c8524020
+ms.openlocfilehash: 6d6d9d927c60cb74f1b19de607480e0811f47cbb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88576851"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162932"
 ---
 # <a name="networking-for-games"></a>遊戲的網路功能
 
@@ -27,7 +27,7 @@ ms.locfileid: "88576851"
 
 對於單人遊戲，通常會使用中央 Web 伺服器或服務來儲存使用者名稱、遊戲分數與其他資訊。 在這些遊戲中，因為網路傳輸的速度與延遲不會直接影響遊戲運作，因此不是太重要。
 
-網路狀況會隨時改變，因此所有使用網路功能 API 的遊戲都必須能處理可能發生的網路例外狀況。 若要深入了解如何處理網路例外狀況，請參閱[網路功能基本知識](/windows/uwp/networking/networking-basics)。
+網路狀況會隨時改變，因此所有使用網路功能 API 的遊戲都必須能處理可能發生的網路例外狀況。 若要深入了解如何處理網路例外狀況，請參閱[網路功能基本知識](../networking/networking-basics.md)。
 
 防火牆與 Web Proxy 很常見，且可能影響網路功能的使用。 使用網路的遊戲必須預備好能正確處理防火牆與 Proxy。
 
@@ -362,7 +362,7 @@ using namespace Windows::Web::Http;
 * [利用資料流通訊端連線到網路資源](/previous-versions/windows/apps/jj150599(v=win.10))
 * [連線到網路服務](/previous-versions/windows/apps/hh452976(v=win.10))
 * [連線到 Web 服務](/previous-versions/windows/apps/hh761504(v=win.10))
-* [網路功能基本知識](/windows/uwp/networking/networking-basics)
+* [網路功能基本知識](../networking/networking-basics.md)
 * [如何設定網路隔離功能](/previous-versions/windows/apps/hh770532(v=win.10))
 * [如何啟用回送以及偵錯網路隔離](/previous-versions/windows/apps/hh780593(v=win.10))
 

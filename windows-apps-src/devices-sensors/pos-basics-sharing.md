@@ -5,12 +5,12 @@ ms.date: 06/14/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 5416628b88a070c7bd4f361f9f438fe690951d34
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: 4fad9bc75ed0ff79be1596a3c99445c7e9f97b1f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054158"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163262"
 ---
 # <a name="pointofservice-device-sharing"></a>PointOfService 裝置共用
 
@@ -54,11 +54,11 @@ if (printer != null)
 
 ## <a name="api-methods-used"></a>使用的 API 方法 
 
-+ [BarcodeScanner。 Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
-+ [CashDrawer。 Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
-+ [LineDisplay。 Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
-+ [MagneticStripeReader。 Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-+ [PosPrinter。 Dispose](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
++ [BarcodeScanner。 Dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose) 
++ [CashDrawer。 Dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose) 
++ [LineDisplay。 Dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose) 
++ [MagneticStripeReader。 Dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
++ [PosPrinter。 Dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose) 
 
 
 [!INCLUDE [feedback](./includes/pos-feedback.md)]

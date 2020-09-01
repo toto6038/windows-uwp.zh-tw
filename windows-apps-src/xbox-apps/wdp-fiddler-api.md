@@ -1,17 +1,17 @@
 ---
 title: Device Portal Fiddler API 參考
-description: 了解如何以程式設計方式啟用/停用 Fiddler 追蹤。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API，在您的 devkit 上啟用和停用 Fiddler 網路追蹤。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbdae1084f96901e90f8237d71bd59bf2d4c592
-ms.sourcegitcommit: 681c1e3836d2a51cd3b31d824ece344281932bcd
+ms.openlocfilehash: f431adae41021432dfcfca6b4e79df5237fcb283
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59240016"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163992"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
@@ -29,15 +29,15 @@ GET | /ext/fiddler
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**   
 
-- None
+- 無
 
 **回應**   
 
@@ -49,7 +49,7 @@ GET | /ext/fiddler
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 | 成功
+200 | Success
 4XX | 錯誤碼
 5XX | 錯誤碼
 
@@ -67,7 +67,7 @@ POST | /ext/fiddler
 
 您可以在要求 URI 上指定下列其他參數：
 
-| URI 參數      | 描述     | 
+| URI 參數      | 說明     | 
 | ------------------ |-----------------|
 | proxyAddress       | 執行 Fiddler 之裝置的 IP 位址或主機名稱 |
 | proxyPort          | Fiddler 用來監視流量的連接埠。 預設值為 8888 |
@@ -76,7 +76,7 @@ POST | /ext/fiddler
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -84,7 +84,7 @@ POST | /ext/fiddler
 
 **回應**   
 
-- None  
+- 無  
 
 **狀態碼**
 
@@ -104,23 +104,23 @@ HTTP 狀態碼      | 描述
 
 方法      | 要求 URI
 :------     | :-----
-DELETE | /ext/fiddler
+刪除 | /ext/fiddler
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**   
 
-- None
+- 無
 
 **回應**   
 
-- None 
+- 無 
 
 **狀態碼**
 

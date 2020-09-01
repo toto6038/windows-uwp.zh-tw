@@ -6,38 +6,38 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 03bd2740022864008e87b448682c1025c46d2f2d
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 1ee18b6ea4cc8a2e77a970a273bc4a8a51516247
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209674"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162352"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 
-您可以使用 [Windows.ApplicationModel.Store](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store) 命名空間中的成員，將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利。 這些 API 也會提供對您 App 授權資訊的存取權。
+您可以使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空間中的成員，將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利。 這些 API 也會提供對您 App 授權資訊的存取權。
 
 本節中的文章針對數個常見的案例，提供使用 **Windows.ApplicationModel.Store** 命名空間中成員的深入指引及程式碼範例。 如需 UWP app 中 App 內購買相關基本概念的概觀，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。 如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間來實作試用版和 App 內購買的完整範例，請參閱[ Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store**命名空間不再以新功能更新。 如果您專案的目標為 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本 (也就是，您以 Windows 10 版本 1607 或更新版本為目標)，建議您改用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](https://docs.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 使用[桌面橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面應用程式，或在合作夥伴中心使用開發沙箱的應用程式或遊戲中不支援**ApplicationModel. Store**命名空間（例如，與 Xbox Live 整合的任何遊戲都是如此）。 這些產品必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
+> **Windows.ApplicationModel.Store**命名空間不再以新功能更新。 如果您專案的目標為 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本 (也就是，您以 Windows 10 版本 1607 或更新版本為目標)，建議您改用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](./in-app-purchases-and-trials.md)。 使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 windows 桌面應用程式，或在合作夥伴中心 (使用開發沙箱的應用程式或遊戲中，不支援**ApplicationModel。** 例如，與 Xbox Live) 整合的所有遊戲都是如此。 這些產品必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>開始使用 CurrentApp 和 CurrentAppSimulator 類別
 
-**Windows.ApplicationModel.Store** 命名空間的主要進入點是 [CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) 類別。 這個類別提供靜態屬性和一些方法，可供您用來取得目前應用程式及其可用附加元件的資訊、取得目前應用程式或其附加元件的授權資訊、為目前的使用者購買應用程式或附加元件，以及執行其他工作。
+**Windows.ApplicationModel.Store** 命名空間的主要進入點是 [CurrentApp](/uwp/api/windows.applicationmodel.store.currentapp) 類別。 這個類別提供靜態屬性和一些方法，可供您用來取得目前應用程式及其可用附加元件的資訊、取得目前應用程式或其附加元件的授權資訊、為目前的使用者購買應用程式或附加元件，以及執行其他工作。
 
-[CurrentApp](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp) 類別會從 Microsoft Store 取得其資料，因此您必須有開發人員帳戶，而且必須先在 Microsoft Store 中發行您的 App，才能順利在 App 中使用這個類別。 將 App 提交到 Microsoft Store 之前，可以使用這個類別的模擬版本 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) 測試您的程式碼。 測試 App 後，在將它提交到 Microsoft Store 之前，您必須將所有 **CurrentAppSimulator** 取代為 **CurrentApp**。 如果您的 App 使用 **CurrentAppSimulator**，將無法通過認證。
+[CurrentApp](/uwp/api/windows.applicationmodel.store.currentapp) 類別會從 Microsoft Store 取得其資料，因此您必須有開發人員帳戶，而且必須先在 Microsoft Store 中發行您的 App，才能順利在 App 中使用這個類別。 將 App 提交到 Microsoft Store 之前，可以使用這個類別的模擬版本 [CurrentAppSimulator](/uwp/api/windows.applicationmodel.store.currentappsimulator) 測試您的程式碼。 測試 App 後，在將它提交到 Microsoft Store 之前，您必須將所有 **CurrentAppSimulator** 取代為 **CurrentApp**。 如果您的 App 使用 **CurrentAppSimulator**，將無法通過認證。
 
 使用 **CurrentAppSimulator** 時，是在開發電腦上名為 WindowsStoreProxy.xml 的本機檔案中描述 App 授權以及應用程式內產品的初始狀態。 如需有關此檔案的詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](#proxy)。
 
 如需有關您可以使用 **CurrentApp** 和 **CurrentAppSimulator** 來執行之常見工作的詳細資訊，請參閱下列文章。
 
-| 主題       | 描述                 |
+| 主題       | 說明                 |
 |----------------------------|-----------------------------|
-| [排除或限制試用版中的功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 |
-| [啟用 App 內產品購買](enable-in-app-product-purchases.md)      |  無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。  |
-| [啟用消費性 App 內產品購買](enable-consumable-in-app-product-purchases.md)      | 您可以透過 Microsoft Store 商業平台提供消費性的應用程式內產品 (亦即可購買、使用，然後再次購買的項目)，為客戶提供既健全又可靠的購買體驗。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。 |
-| [管理應用程式內產品的大型目錄](manage-a-large-catalog-of-in-app-products.md)      |   如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。    |
+| [在試用版本中排除或限制某些功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 |
+| [啟用應用程式內產品購買](enable-in-app-product-purchases.md)      |  無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。  |
+| [啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)      | 您可以透過 Microsoft Store 商業平台提供消費性的應用程式內產品 (亦即可購買、使用，然後再次購買的項目)，為客戶提供既健全又可靠的購買體驗。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。 |
+| [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)      |   如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。    |
 | [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)      |   成功購買產品時所產生的每個 Microsoft Store 交易可以選擇性地傳回交易收據，以便提供所列出產品的相關資訊與客戶的貨幣成本。 如果您的 App 需要確認使用者已購買 App，或是已從 Microsoft Store 進行應用程式內產品購買，這項資訊的存取將可支援這些情況。 |
 
 <span id="proxy" />
@@ -46,12 +46,12 @@ ms.locfileid: "79209674"
 
 使用 **CurrentAppSimulator** 時，是在開發電腦上名為 WindowsStoreProxy.xml 的本機檔案中描述 App 授權以及應用程式內產品的初始狀態。 更改 App 狀態的 **CurrentAppSimulator** 方法 (例如購買授權或處理 App 內購買) 只會更新記憶體中 **CurrentAppSimulator** 物件的狀態。 不會變更 WindowsStoreProxy.xml 的內容。 當 App 重新啟動時，授權狀態會還原到 WindowsStoreProxy.xml 中所描述的狀態。
 
-預設會在下列位置建立 WindowsStoreProxy：%UserProfile%\AppData\Local\Packages\\&lt;應用程式套件資料夾&gt;\LocalState\Microsoft\Windows Store\ApiData。 您可以編輯此檔案，在 **CurrentAppSimulator** 屬性中定義您想要模擬的案例。
+預設會在下列位置建立 WindowsStoreProxy.xml 檔案：%UserProfile%\AppData\Local\Packages \\ &lt; 應用程式套件資料夾 &gt; \LocalState\Microsoft\Windows Store\ApiData。 您可以編輯此檔案，在 **CurrentAppSimulator** 屬性中定義您想要模擬的案例。
 
-雖然您可以修改此檔案中的值，但我們還是建議您建立自己的 WindowsStoreProxy.xml 檔案 (在 Visual Studio 專案的資料資料夾) 來改用 **CurrentAppSimulator**。 模擬交易時，請呼叫 [ReloadSimulatorAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync) 載入您的檔案。 如果您沒有呼叫 **ReloadSimulatorAsync** 載入自己的 WindowsStoreProxy.xml 檔案，**CurrentAppSimulator** 會建立/載入 (但不覆寫) 預設的 WindowsStoreProxy.xml 檔案。
+雖然您可以修改此檔案中的值，但我們還是建議您建立自己的 WindowsStoreProxy.xml 檔案 (在 Visual Studio 專案的資料資料夾) 來改用 **CurrentAppSimulator**。 模擬交易時，請呼叫 [ReloadSimulatorAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync) 載入您的檔案。 如果您沒有呼叫 **ReloadSimulatorAsync** 載入自己的 WindowsStoreProxy.xml 檔案，**CurrentAppSimulator** 會建立/載入 (但不覆寫) 預設的 WindowsStoreProxy.xml 檔案。
 
 > [!NOTE]
-> 請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Microsoft Store 安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個理由，請設計您的程式碼，使其在這兩種情況下都能以非同步和同步方式處理。
+> 請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Microsoft Store 安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個理由，請設計您的程式碼，使其在這兩種情況下都能以非同步和同步方式運作。
 
 
 <span id="proxy-examples" />
@@ -144,18 +144,18 @@ ms.locfileid: "79209674"
 
 <span id="proxy-schema" />
 
-### <a name="schema"></a>Schema
+### <a name="schema"></a>結構描述
 
 本節列出定義 WindowsStoreProxy.xml 檔案結構的 XSD 檔案。 若要在使用 WindowsStoreProxy.xml 檔案時將這個結構描述套用到 Visual Studio 中的 XML 編輯器，請執行下列動作︰
 
 1. 在 Visual Studio 中開啟 WindowsStoreProxy.xml 檔案。
-2. 在 **\[XML\]** 功能表中，按一下 **\[建立結構描述\]** 。 這會根據 XML 檔案的內容建立一個暫時的 WindowsStoreProxy.xsd 檔案。
+2. 在 [ **XML** ] 功能表上，按一下 [ **建立架構**]。 這會根據 XML 檔案的內容建立一個暫時的 WindowsStoreProxy.xsd 檔案。
 3. 使用下面的結構描述取代該 .xsd 檔案的內容。
 4. 將檔案儲存到您可以將它套用到多個應用程式專案的位置。
 5. 在 Visual Studio 中切換到您的 WindowsStoreProxy.xml 檔案。
-6. 在 **\[XML\]** 功能表中，按一下 **\[結構描述\]** ，然後在清單中找出 WindowsStoreProxy.xsd 檔案的那一列。 如果檔案的位置不是您想要的位置 (例如，如果仍然顯示暫存檔案)，請按一下 **\[加入\]** 。 導覽到正確的檔案，然後按一下 **\[確定\]** 。 現在，您應該會在清單中看到該檔案。 確認該結構描述的 **\[使用\]** 欄中出現核取記號。
+6. 在 [ **XML** ] 功能表上，按一下 [ **架構**]，然後在清單中找出 WindowsStoreProxy .xsd 檔案的資料列。 如果檔案的位置不是您想要的位置 (例如，如果暫存檔仍顯示) ，請按一下 [ **新增**]。 流覽至正確的檔案，然後按一下 **[確定]**。 現在，您應該會在清單中看到該檔案。 請確定該架構的 [ **使用** ] 資料行中出現核取記號。
 
-完成這個動作之後，您對 WindowsStoreProxy.xml 進行的編輯就會依照結構描述。 如需詳細資訊，請參閱[做法︰選取要使用的 XML 結構描述](https://msdn.microsoft.com/library/ms255816)。
+完成這個動作之後，您對 WindowsStoreProxy.xml 進行的編輯就會依照結構描述。 如需詳細資訊，請參閱[做法︰選取要使用的 XML 結構描述](/visualstudio/xml-tools/how-to-select-the-xml-schemas-to-use)。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -355,12 +355,12 @@ ms.locfileid: "79209674"
 
 此檔案的根元素是 **CurrentApp** 元素，代表目前的 App。 此元素包含下列子項元素。
 
-|  元素  |  必要項  |  數量  |  描述   |
+|  元素  |  必要  |  數量  |  說明   |
 |-------------|------------|--------|--------|
 |  [ListingInformation](#listinginformation)  |    是        |  1  |  包含 App 清單中的資料。            |
 |  [LicenseInformation](#licenseinformation)  |     是       |   1    |   描述此 App 和其耐久性附加元件可使用的授權。     |
 |  [ConsumableInformation](#consumableinformation)  |      否      |   0 或 1   |   描述此 App 可使用的消費性附加元件。      |
-|  [模擬](#simulation)  |     否       |      0 或 1      |   描述在測試期間，各種 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) 方法的呼叫在 App 中如何運作。    |
+|  [模擬](#simulation)  |     否       |      0 或 1      |   描述在測試期間，各種 [CurrentAppSimulator](/uwp/api/windows.applicationmodel.store.currentappsimulator) 方法的呼叫在 App 中如何運作。    |
 
 <span id="listinginformation" />
 
@@ -370,10 +370,10 @@ ms.locfileid: "79209674"
 
 **ListingInformation** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  |  描述   |
+|  元素  |  必要  |  數量  |  說明   |
 |-------------|------------|--------|--------|
-|  [相關](#app-child-of-listinginformation)  |    是   |  1   |    提供有關 App 的資料。         |
-|  [產品](#product-child-of-listinginformation)  |    否  |  0 或以上   |      描述 App 的附加元件。     |     |
+|  [App](#app-child-of-listinginformation)  |    是   |  1   |    提供有關 App 的資料。         |
+|  [產品](#product-child-of-listinginformation)  |    否  |  0 或更多   |      描述 App 的附加元件。     |     |
 
 <span id="app-child-of-listinginformation"/>
 
@@ -383,13 +383,13 @@ ms.locfileid: "79209674"
 
 **App** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  | 描述   |
+|  元素  |  必要  |  數量  | 說明   |
 |-------------|------------|--------|--------|
 |  **AppId**  |    是   |  1   |   識別 Microsoft Store 中 App 的 GUID。 測試時可以是任何 GUID。        |
-|  **Linkuri>< externallink>**  |    是  |  1   |    Microsoft Store 清單頁面的 URI。 測試時可以是任何有效的 URI。         |
+|  **LinkUri**  |    是  |  1   |    Microsoft Store 清單頁面的 URI。 測試時可以是任何有效的 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客戶的國家/地區。         |
-|  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是您在提交應用程式時，在 [合作夥伴中心] 中指定的相同值。 Microsoft Store 所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
-|  [MarketData](#marketdata-child-of-app)  |    是  |  1 或更多      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
+|  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 當您提交應用程式時，這是您在合作夥伴中心中指定的相同值。 Microsoft Store 所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
+|  [MarketData](#marketdata-child-of-app)  |    是  |  1 或多個      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
 
 <span id="marketdata-child-of-app"/>
 
@@ -399,17 +399,17 @@ ms.locfileid: "79209674"
 
 **MarketData** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  | 描述   |
+|  元素  |  必要  |  數量  | 說明   |
 |-------------|------------|--------|--------|
 |  **名稱**  |    是   |  1   |   在此國家/地區的 App 名稱。        |
 |  **描述**  |    是  |  1   |      用於此國家/地區的 App 描述。       |
-|  **高價**  |    是  |  1   |     在此國家/地區的 App 價格。        |
+|  **價格**  |    是  |  1   |     在此國家/地區的 App 價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
 |  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  |
 
 **MarketData** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
 |  **xml： lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
 
@@ -421,11 +421,11 @@ ms.locfileid: "79209674"
 
 **Product** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |    包含 App 用來識別附加元件的字串。           |
 |  **LicenseDuration**  |    否        |    指示授權在項目購買之後將會一直有效的天數。 由產品購買建立之新授權的到期日期是購買日期加上授權持續時間。 只有當 **ProductType** 屬性是 **Durable** 時，才會使用這個屬性；消費性附加元件會忽略這個屬性。           |
-|  **ProductType**  |    否        |    包含可識別應用程式內產品持續性的值。 支援的值為 **Durable** (預設值) 和 **Consumable**。 如果是耐久性類型，[LicenseInformation](#product-child-of-licenseinformation) 下的 [Product](#licenseinformation) 元素會描述額外資訊，如果是消費性類型，則是在 [ConsumableInformation](#product-child-of-consumableinformation) 下的 [Product](#consumableinformation) 元素描述額外資訊。           |  |
+|  **ProductType**  |    否        |    包含可識別應用程式內產品持續性的值。 支援的值為 **Durable** (預設值) 和 **Consumable**。 如果是耐久性類型，[LicenseInformation](#licenseinformation) 下的 [Product](#product-child-of-licenseinformation) 元素會描述額外資訊，如果是消費性類型，則是在 [ConsumableInformation](#consumableinformation) 下的 [Product](#product-child-of-consumableinformation) 元素描述額外資訊。           |  |
 
 <span id="marketdata-child-of-product"/>
 
@@ -435,20 +435,20 @@ ms.locfileid: "79209674"
 
 **MarketData** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  | 描述   |
+|  元素  |  必要  |  數量  | 說明   |
 |-------------|------------|--------|--------|
 |  **名稱**  |    是   |  1   |   在此國家/地區的附加元件名稱。        |
-|  **高價**  |    是  |  1   |     在此國家/地區的附加元件價格。        |
+|  **價格**  |    是  |  1   |     在此國家/地區的附加元件價格。        |
 |  **CurrencySymbol**  |    是  |  1   |     在此國家/地區中使用的貨幣符號。        |
 |  **CurrencyCode**  |    否  |  0 或 1      |      在此國家/地區中使用的貨幣代碼。         |  
 |  **描述**  |    否  |   0 或 1   |      用於此國家/地區的附加元件描述。       |
-|  **標籤**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
+|  **Tag**  |    否  |   0 或 1   |      附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (也稱為標記)。       |
 |  **關鍵字**  |    否  |   0 或 1   |      最多可以有 10 個 **Keyword** 元素，包含附加元件的[關鍵字](../publish/enter-add-on-properties.md#keywords)。       |
 |  **ImageUri**  |    否  |   0 或 1   |      附加元件清單中[影像的 URI](../publish/create-add-on-store-listings.md#icon)。           |  |
 
 **MarketData** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
 |  **xml： lang**  |    是        |     指定市場資料資訊適用的國家/地區。          |  |
 
@@ -460,10 +460,10 @@ ms.locfileid: "79209674"
 
 **LicenseInformation** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  | 描述   |
+|  元素  |  必要  |  數量  | 說明   |
 |-------------|------------|--------|--------|
-|  [相關](#app-child-of-licenseinformation)  |    是   |  1   |    描述 App 的授權。         |
-|  [產品](#product-child-of-licenseinformation)  |    否  |  0 或以上   |      描述 App 中耐久性附加元件的授權狀態。         |   |
+|  [App](#app-child-of-licenseinformation)  |    是   |  1   |    描述 App 的授權。         |
+|  [產品](#product-child-of-licenseinformation)  |    否  |  0 或更多   |      描述 App 中耐久性附加元件的授權狀態。         |   |
 
 下表顯示如何結合 **App** 和 **Product** 元素下的值來模擬一些常見的情形。
 
@@ -471,7 +471,7 @@ ms.locfileid: "79209674"
 |-------------|------------|--------|--------|
 |  完整授權  |    true   |  false  |    不存在。 它實際上可以存在並指定未來的日期，但建議您省略 XML 檔案的元素。 如果它存在，而且指定過去的日期，則 **IsActive** 會被忽略並視為 false。          |
 |  在試用期間  |    true  |  true   |      &lt;未來的日期時間&gt; 此元素必須存在，因為 **IsTrial** 為 true。 您可以造訪顯示目前國際標準時間 (UTC) 的網站，來得知要設定的未來時間，以取得您想要的剩餘試用期間。         |
-|  試用版已到期  |    false  |  true   |      &lt;過去的日期時間&gt; 此元素必須存在，因為 **IsTrial** 為 true。 您可以造訪顯示目前國際標準時間 (UTC) 的網站，得知「過去」的時間 (以 UTC 表示)。         |
+|  試用版已到期  |    false  |  true   |      &lt;&gt;因為**IsTrial**為 true，所以在超過此元素的日期時間必須存在。 您可以造訪顯示目前國際標準時間 (UTC) 的網站，得知「過去」的時間 (以 UTC 表示)。         |
 |  無效  |    false  | false       |     &lt;任何值或省略&gt;          |  |
 
 <span id="app-child-of-licenseinformation"/>
@@ -482,7 +482,7 @@ ms.locfileid: "79209674"
 
 **App** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  | 描述   |
+|  元素  |  必要  |  數量  | 說明   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1   |    描述此 App 目前的授權狀態。 值 **true** 表示授權有效；**false** 表示無效的授權。 無論 App 是否有試用模式，此值通常為 **true**。  將此值設定為 **false** 可測試您的 App 在授權無效時是如何運作。           |
 |  **IsTrial**  |    是  |  1   |      描述此 App 目前的試用狀態。 值 **true** 表示 App 正在試用期間；**false** 表示 App 不在試用，可能因為已購買 App，或試用期間已到期。         |
@@ -496,14 +496,14 @@ ms.locfileid: "79209674"
 
 **Product** 包含下列子項元素。
 
-|  元素  |  必要項  |  數量  | 描述   |
+|  元素  |  必要  |  數量  | 說明   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    是   |  1     |    描述此附加元件目前的授權狀態。 值 **true** 表示附加元件可以使用；**false** 表示附加元件無法使用或尚未購買           |
 |  **ExpirationDate**  |    否   |  0 或 1     |     附加元件到期的日期，以國際標準時間 (UTC) 表示。 日期的格式必須為︰yyyy-mm-ddThh:mm:ss.ssZ。 例如，2015 年 1 月 19 日 05:00 要指定為 2015-01-19T05:00:00.00Z。 如果此元素存在，附加元件就會有到期日期。 如果不存在，附加元件就不會過期。  |  
 
 **Product** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含 App 用來識別附加元件的字串。            |
 |  **OfferId**  |     否       |   包含 App 用來識別附加元件所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
@@ -512,11 +512,11 @@ ms.locfileid: "79209674"
 
 #### <a name="simulation-element"></a>Simulation 元素
 
-此元素描述在測試期間，各種 [CurrentAppSimulator](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator) 方法的呼叫在 App 中如何運作。 **Simulation** 是 **CurrentApp** 元素選用的子項，包含零或多個 [DefaultResponse](#defaultresponse) 元素。
+此元素描述在測試期間，各種 [CurrentAppSimulator](/uwp/api/windows.applicationmodel.store.currentappsimulator) 方法的呼叫在 App 中如何運作。 **Simulation** 是 **CurrentApp** 元素選用的子項，包含零或多個 [DefaultResponse](#defaultresponse) 元素。
 
 **Simulation** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
 |  **SimulationMode**  |    否        |      值可以是 **Interactive** 或 **Automatic**。 當此屬性設為 **Automatic** 時，方法會自動傳回指定的 HRESULT 錯誤碼。 這可以在執行自動的測試案例時使用。       |
 
@@ -528,10 +528,10 @@ ms.locfileid: "79209674"
 
 **DefaultResponse** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
-|  **名稱**  |    是        |   對此屬性指派**結構描述**中 [StoreMethodName](#schema) 類型所顯示的其中一個列舉值。 這些列舉值代表在測試期間，您想要模擬 App 中錯誤碼傳回值的 **CurrentAppSimulator** 方法。 例如，值 **RequestAppPurchaseAsync_GetResult** 表示您想要模擬 [RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的錯誤碼傳回值。            |
-|  **HResult**  |     是       |   對此屬性指派**結構描述**中 [ResponseCodes](#schema) 類型所顯示的其中一個列舉值。 這些列舉值代表您想要為已指派給此 **DefaultResponse** 元素之 **MethodName** 屬性的方法傳回的錯誤碼。           |
+|  **MethodName**  |    是        |   對此屬性指派[結構描述](#schema)中 **StoreMethodName** 類型所顯示的其中一個列舉值。 這些列舉值代表在測試期間，您想要模擬 App 中錯誤碼傳回值的 **CurrentAppSimulator** 方法。 例如，值 **RequestAppPurchaseAsync_GetResult** 表示您想要模擬 [RequestAppPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync) 方法的錯誤碼傳回值。            |
+|  **HResult**  |     是       |   對此屬性指派[結構描述](#schema)中 **ResponseCodes** 類型所顯示的其中一個列舉值。 這些列舉值代表您想要為已指派給此 **DefaultResponse** 元素之 **MethodName** 屬性的方法傳回的錯誤碼。           |
 
 <span id="consumableinformation"/>
 
@@ -547,7 +547,7 @@ ms.locfileid: "79209674"
 
 **Product** 具有下列屬性。
 
-|  屬性  |  必要項  |  描述   |
+|  屬性  |  必要  |  說明   |
 |-------------|------------|----------------|
 |  **ProductId**  |    是        |   包含 App 用來識別消費性附加元件的字串。            |
 |  **TransactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |

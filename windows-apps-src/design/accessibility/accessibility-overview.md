@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 386ea9a5ea9b66b0756963da10f72c3dbed53ff9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a790af10f6cfc06029e269dba4c984a041932239
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82969653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163432"
 ---
 # <a name="accessibility-overview"></a>協助工具概觀
 
@@ -43,7 +43,7 @@ XAML 的控制項提供內建的鍵盤以及輔助技術 (例如螢幕助讀程�
 
 ## <a name="ui-automation"></a>UI 自動化
 
-對於協助工具支援，主要是來自針對 Microsoft UI 自動化架構的整合支援。 該支援是透過基底類別和針對控制項類型之類別實作的內建行為，以及使用者介面自動化提供者 API 的介面表示法來提供。 每一個控制項類別會使用自動化對等和自動化模式的使用者介面自動化概念，將控制項的角色和內容回報給使用者介面自動化用戶端。 使用者介面自動化會將 App 視為最上層視窗，然後透過使用者介面自動化架構，該 App 內所有與協助工具相關的內容都可供使用者介面自動化用戶端使用。 如需使用者介面自動化的詳細資訊，請參閱[使用者介面自動化概觀](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-uiautomationoverview)。
+對於協助工具支援，主要是來自針對 Microsoft UI 自動化架構的整合支援。 該支援是透過基底類別和針對控制項類型之類別實作的內建行為，以及使用者介面自動化提供者 API 的介面表示法來提供。 每一個控制項類別會使用自動化對等和自動化模式的使用者介面自動化概念，將控制項的角色和內容回報給使用者介面自動化用戶端。 使用者介面自動化會將 App 視為最上層視窗，然後透過使用者介面自動化架構，該 App 內所有與協助工具相關的內容都可供使用者介面自動化用戶端使用。 如需使用者介面自動化的詳細資訊，請參閱[使用者介面自動化概觀](/windows/desktop/WinAuto/uiauto-uiautomationoverview)。
 
 <span id="Assistive_technology"/>
 <span id="assistive_technology"/>
@@ -85,7 +85,7 @@ App 如果具有出色的鍵盤和螢幕助讀程式支援，通常也可以在�
 
 ## <a name="keyboard-support"></a>鍵盤支援
 
-為了提供出色的鍵盤支援，您必須確定應用程式的各項功能都可以配合鍵盤的操作。 如果 App 大部分使用標準控制項，而且不使用任何的自訂控制項，那麼就可以節省許多工作。 基本的 XAML 控制項模型提供內建的鍵盤支援，其中包括 Tab 瀏覽、文字輸入以及控制項特有的支援。 當作配置容器 (例如面板) 的元素，使用配置順序建立預設的 Tab 順序。 這種順序通常是用於 UI 協助工具表示的正確 Tab 順序。 如果您使用 [**ListBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 控制項來顯示資料，它們會提供內建的方向鍵瀏覽功能。 或者，如果您使用 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項，這個控制項會預先處理按鈕啟用的空格鍵或 Enter 鍵。
+為了提供出色的鍵盤支援，您必須確定應用程式的各項功能都可以配合鍵盤的操作。 如果 App 大部分使用標準控制項，而且不使用任何的自訂控制項，那麼就可以節省許多工作。 基本的 XAML 控制項模型提供內建的鍵盤支援，其中包括 Tab 瀏覽、文字輸入以及控制項特有的支援。 當作配置容器 (例如面板) 的元素，使用配置順序建立預設的 Tab 順序。 這種順序通常是用於 UI 協助工具表示的正確 Tab 順序。 如果您使用 [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) 控制項來顯示資料，它們會提供內建的方向鍵瀏覽功能。 或者，如果您使用 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項，這個控制項會預先處理按鈕啟用的空格鍵或 Enter 鍵。
 
 如需鍵盤支援各層面的詳細資訊，包括定位順序及按鍵型啟用或瀏覽，請參閱[鍵盤協助工具](keyboard-accessibility.md)。
 
@@ -95,7 +95,7 @@ App 如果具有出色的鍵盤和螢幕助讀程式支援，通常也可以在�
 
 ## <a name="media-and-captioning"></a>媒體和字幕
 
-您通常是透過 [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 物件顯示視聽媒體。 您可以使用 **MediaElement** API，控制媒體播放。 為了達到協助工具的目的，請視需要提供讓使用者播放、暫停，和停止媒體的控制項。 有時候，媒體包含其他專門為協助工具而準備的元件，例如字幕或含旁白的替代音軌。
+您通常是透過 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 物件顯示視聽媒體。 您可以使用 **MediaElement** API，控制媒體播放。 為了達到協助工具的目的，請視需要提供讓使用者播放、暫停，和停止媒體的控制項。 有時候，媒體包含其他專門為協助工具而準備的元件，例如字幕或含旁白的替代音軌。
 
 <span id="Accessible_text"/>
 <span id="accessible_text"/>
@@ -127,7 +127,7 @@ UI 控制項會使用一種視覺表示，定義為佈景主題的 XAML 資源�
 
 在許多情況下，您可以利用多種技術傳達重要資訊，藉此吸引更多的使用者。 例如，您可以使用圖示或色彩資訊來突顯資訊，以協助色盲使用者。另外，除了聲音之外，您也可以顯示視覺警示，以協助聽障人士。
 
-需要時，您可以提供替代的無障礙使用者介面元素，全面移除不重要的元素和動畫，與提供其他簡化方式，讓使用者更容易操作。 以下的程式碼範例示範如何根據使用者設定，顯示一個 [**UserControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl) 執行個體，用於取代另一個執行個體。
+需要時，您可以提供替代的無障礙使用者介面元素，全面移除不重要的元素和動畫，與提供其他簡化方式，讓使用者更容易操作。 以下的程式碼範例示範如何根據使用者設定，顯示一個 [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) 執行個體，用於取代另一個執行個體。
 
 XAML
 
@@ -192,7 +192,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-custom-controls"></a>自訂控制項中的輔助技術支援
 
-當您建立自訂的控制項時，建議您也實作或擴充一或多個 [**AutomationPeer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 子類別，以提供協助工具支援。 在某些情況下，只要您使用與基本控制項類別所使用的相同對等類別，衍生類別的自動化支援在基本層級就已經足夠。 不過，您還是應該進行測試，而且最好的做法還是建議您實作對等，這樣對等才能正確的回報新控制項類別的類別名稱。 實作自訂自動化對等有幾個步驟。 如需詳細資訊，請參閱[自訂自動化對等](custom-automation-peers.md)。
+當您建立自訂的控制項時，建議您也實作或擴充一或多個 [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 子類別，以提供協助工具支援。 在某些情況下，只要您使用與基本控制項類別所使用的相同對等類別，衍生類別的自動化支援在基本層級就已經足夠。 不過，您還是應該進行測試，而且最好的做法還是建議您實作對等，這樣對等才能正確的回報新控制項類別的類別名稱。 實作自訂自動化對等有幾個步驟。 如需詳細資訊，請參閱[自訂自動化對等](custom-automation-peers.md)。
 
 <span id="Assistive_technology_support_in_apps_that_support_XAML___Microsoft_DirectX_interop"/>
 <span id="assistive_technology_support_in_apps_that_support_xaml___microsoft_directx_interop"/>
@@ -200,12 +200,12 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>應用程式中可支援 XAML / Microsoft DirectX 互通性的輔助技術支援
 
-以 XAML UI (使用 [**SwapChainPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
+以 XAML UI (使用 [**SwapChainPanel**](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 或 [**SurfaceImageSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/%5BC%23%5D-Windows%208.1%20Store%20app%20samples/XAML%20SwapChainPanel%20DirectX%20interop%20sample)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
 
 ## <a name="related-topics"></a>相關主題
 
-* [**Windows. UI. Xaml. Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation)
-* [協助工具設計](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-overview)
+* [**Windows. .Xaml**](/uwp/api/Windows.UI.Xaml.Automation)
+* [協助工具設計]()
 * [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
-* [協助工具選項](accessibility.md)
+* [協助工具](accessibility.md)
 * [開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

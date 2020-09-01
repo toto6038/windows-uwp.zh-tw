@@ -6,12 +6,12 @@ ms.date: 05/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 地圖, 位置, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57640773"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162512"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>關於使用行止動線追蹤功能的指導方針
 
@@ -19,7 +19,7 @@ ms.locfileid: "57640773"
 
 ## <a name="preliminary-setup"></a>初步設定
 
-繼續進行之前，請確定您的應用程式可以存取裝置的位置。 您必須在資訊清單中宣告 `Location`，並呼叫 **[Geolocator.RequestAccessAsync](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** 方法，以確保使用者將位置權限授與應用程式。 如需此作法的詳細資訊，請參閱[取得使用者的位置](get-location.md)。 
+繼續進行之前，請確定您的應用程式可以存取裝置的位置。 您必須在資訊清單中宣告 `Location`，並呼叫 **[Geolocator.RequestAccessAsync](/uwp/api/Windows.Devices.Geolocation.Geolocator.RequestAccessAsync)** 方法，以確保使用者將位置權限授與應用程式。 如需此作法的詳細資訊，請參閱[取得使用者的位置](get-location.md)。 
 
 請記得將 `Geolocation` 命名空間新增至您的類別。 本指南中所有的程式碼片段都必須這樣做才能運作。
 
@@ -28,7 +28,7 @@ using Windows.Devices.Geolocation;
 ```
 
 ## <a name="check-the-latest-visit"></a>檢查最新行止動線
-最簡單方式是使用行止動線追蹤功能，擷取最後一次已知與行止動線相關的狀態變更。 狀態變更是平台切換事件，此時使用者進入/離開顯著位置、自上次回報後發生顯著移動，或是使用者位置遺失 (請參閱 **[VisitStateChange](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.visitstatechange)** 列舉)。 狀態變更以 **[Geovisit](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisit)** 執行個體來表示。 若要擷取上次記錄狀態變更的 **Geovisit** 執行個體，只需使用 **[GeovisitMonitor](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geovisitmonitor)** 類別中指定的方法即可。
+最簡單方式是使用行止動線追蹤功能，擷取最後一次已知與行止動線相關的狀態變更。 狀態變更是平台切換事件，此時使用者進入/離開顯著位置、自上次回報後發生顯著移動，或是使用者位置遺失 (請參閱 **[VisitStateChange](/uwp/api/windows.devices.geolocation.visitstatechange)** 列舉)。 狀態變更以 **[Geovisit](/uwp/api/windows.devices.geolocation.geovisit)** 執行個體來表示。 若要擷取上次記錄狀態變更的 **Geovisit** 執行個體，只需使用 **[GeovisitMonitor](/uwp/api/windows.devices.geolocation.geovisitmonitor)** 類別中指定的方法即可。
 
 > [!NOTE]
 > 檢查上次記錄的行止動線不保證系統目前正在追蹤行止動線。 為了在行止動線有動靜時加以追蹤，您必須在前景進行監視，或註冊進行背景追蹤 (請參閱以下各節)。
@@ -131,7 +131,7 @@ public void UnregisterFromVisits() {
 
 您還可以實作在背景工作中監視行止動線的功能，如此一來，即使應用程式未開放，也能在裝置上處理行止動線相關活動。 這是建議使用的方法，因為較為通用且更加節能。 
 
-本指南將會使用[建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)中的模型，其中主要應用程式檔案位於一個專案，而背景工作檔案取得位於相同方案的另一個專案。 如果您不熟悉實作背景工作，建議您主要依照其中指引進行，進行下面必要的替代以建立行止動線相關背景工作。
+本指南將會使用[建立和註冊跨處理序背景工作](../launch-resume/create-and-register-a-background-task.md)中的模型，其中主要應用程式檔案位於一個專案，而背景工作檔案取得位於相同方案的另一個專案。 如果您不熟悉實作背景工作，建議您主要依照其中指引進行，進行下面必要的替代以建立行止動線相關背景工作。
 
 > [!NOTE]
 > 為了簡單起見，下列程式碼片段省略了一些重要的功能，例如錯誤處理和本機存放區。 如需強固的背景行止動線處理實作，請參閱[範例應用程式](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)。
@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 您的應用程式現在應該可以註冊行止動線處理背景工作，而且每當裝置記錄一次行止動線相關狀態變更時，都必須啟動這項工作。 您必須在背景工作類別中填入邏輯，以判斷如何處理此狀態變更資訊。
 
 ## <a name="related-topics"></a>相關主題
-* [建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [建立及註冊跨處理序的背景工作](../launch-resume/create-and-register-a-background-task.md)
 * [取得使用者的位置](get-location.md)
-* [Windows.Devices.Geolocation 命名空間](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)
+* [Windows.Devices.Geolocation 命名空間](/uwp/api/windows.devices.geolocation)

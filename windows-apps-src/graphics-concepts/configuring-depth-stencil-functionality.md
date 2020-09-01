@@ -7,26 +7,26 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cd23938387b40c8ce268c65209d1fb11d5da529c
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 2d9c33e9625f36bbf183df46d5cd590f9e66d3c4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370634"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162802"
 ---
-# <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>設定 深度樣板功能
+# <a name="span-iddirect3dconceptsconfiguring_depth-stencil_functionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>設定深度樣板功能
 
 
 本章節涵蓋的步驟，內容為設定深度樣板緩衝區及輸出合併階段的深度樣板狀態。
 
 待您了解如何使用深度樣板緩衝區及其對應的深度樣板狀態之後，請參閱[進階樣板技術](#advanced-stencil-techniques)。
 
-## <a name="span-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespanspan-idcreatedepthstencilstatespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>建立深度樣板狀態
+## <a name="span-idcreate_depth_stencil_statespanspan-idcreate_depth_stencil_statespanspan-idcreate_depth_stencil_statespancreate-depth-stencil-state"></a><span id="Create_Depth_Stencil_State"></span><span id="create_depth_stencil_state"></span><span id="CREATE_DEPTH_STENCIL_STATE"></span>建立深度樣板狀態
 
 
-深度樣板狀態會告訴輸出合併階段如何執行[深度樣板測試](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)。 深度樣板測試決定是否要繪製給定的像素。
+深度樣板狀態會告訴輸出合併階段如何執行[深度樣板測試](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)。 深度樣板測試決定是否要繪製給定的像素。
 
-## <a name="span-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanspan-idbinddepthstenciltotheomstagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>深度樣板資料繫結至 OM 階段
+## <a name="span-idbind_depth_stencil_to_the_om_stagespanspan-idbind_depth_stencil_to_the_om_stagespanspan-idbind_depth_stencil_to_the_om_stagespanbind-depth-stencil-data-to-the-om-stage"></a><span id="Bind_Depth_Stencil_to_the_OM_Stage"></span><span id="bind_depth_stencil_to_the_om_stage"></span><span id="BIND_DEPTH_STENCIL_TO_THE_OM_STAGE"></span>將深度樣板資料繫結至輸出合併階段
 
 
 繫結深度樣板狀態。
@@ -38,22 +38,22 @@ ms.locfileid: "66370634"
 當緩衝區作為轉譯目標使用時，則不支援深度樣板測試和多重轉譯目標。
 
 -   最多可以同時繫結 8 個轉譯目標。
--   所有呈現目標必須在所有維度中都有相同的大小 (寬和頁高及 3D 或陣列大小的深度\*陣列型別)。
+-   所有的呈現目標在所有維度中都必須具有相同的大小 (寬度和高度，以及 \*) 陣列類型的3d 或陣列大小的深度。
 -   各個轉譯目標可能會有不同的資料格式。
 -   寫入遮罩可用來控制將寫入轉譯目標的資料。 輸出寫入遮罩可根據每個轉譯目標及每個元件，控制將寫入轉譯目標的資料。
 
-## <a name="span-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvancedstenciltechniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>進階的樣板技術
+## <a name="span-idadvanced_stencil_techniquesspanspan-idadvanced_stencil_techniquesspanspan-idadvanced_stencil_techniquesspanspan-idadvanced-stencil-techniquesspanadvanced-stencil-techniques"></a><span id="Advanced_Stencil_Techniques"></span><span id="advanced_stencil_techniques"></span><span id="ADVANCED_STENCIL_TECHNIQUES"></span><span id="advanced-stencil-techniques"></span>進階樣板技術
 
 
 深度樣板緩衝區的樣板部分可用於建立轉譯效果，例如：合成、印花，以及外框。
 
--   [複合 （compositing)](#compositing)
+-   [合成](#compositing)
 -   [Decaling](#decaling)
--   [外框輪廓和 Silhouettes](#outlines-and-silhouettes)
--   [雙面樣板](#two-sided-stencil)
--   [讀取深度樣板緩衝區當成紋理](#reading-the-depth-stencil-buffer-as-a-texture)
+-   [大綱和 Silhouettes](#outlines-and-silhouettes)
+-   [雙側範本](#two-sided-stencil)
+-   [以材質的形式讀取深度樣板緩衝區](#reading-the-depth-stencil-buffer-as-a-texture)
 
-### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>複合 （compositing)
+### <a name="span-idcompositingspanspan-idcompositingspanspan-idcompositingspancompositing"></a><span id="Compositing"></span><span id="compositing"></span><span id="COMPOSITING"></span>組合
 
 您的應用程式可利用樣板緩衝區將 2D 或 3D 影像合成為 3D 場景。 樣板緩衝區中的遮罩可用於遮蔽轉譯目標的部分表面區域。 儲存的 2D 資訊 (例如文字或點陣圖) 接著便可寫入遮蔽區域。 或者，您的應用程式也可將其他 3D 原始物件轉譯至轉譯目標表面的樣板遮蔽區域。 甚至可以轉譯整個場景。
 
@@ -69,7 +69,7 @@ Direct3D 應用程式使用印花來控制從特定原始影像繪製到轉譯�
 
 多重紋理混合可用於解決此問題。
 
-### <a name="span-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlinesandsilhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">外框輪廓和 Silhouettes
+### <a name="span-idoutlines_and_silhouettesspanspan-idoutlines_and_silhouettesspanspan-idoutlines_and_silhouettesspanspan-idoutlines-and-silhouettesoutlines-and-silhouettes"></a><span id="Outlines_and_Silhouettes"></span><span id="outlines_and_silhouettes"></span><span id="OUTLINES_AND_SILHOUETTES"></span><span id="outlines-and-silhouettes">外框及剪影
 
 您可以利用樣板緩衝區以獲得更抽象的效果，例如：外框及剪影。
 
@@ -77,7 +77,7 @@ Direct3D 應用程式使用印花來控制從特定原始影像繪製到轉譯�
 
 如果樣板遮罩的大小及形狀與您正在轉譯的原始物件相同，產出的影像將會在原先原始物件所在的位置留下一個洞。 您的應用程式可以再以黑色填滿該空洞，產生原始物件的剪影效果。
 
-### <a name="span-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwosidedstencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">雙面樣板
+### <a name="span-idtwo_sided_stencilspanspan-idtwo_sided_stencilspanspan-idtwo_sided_stencilspanspan-idtwo-sided-stenciltwo-sided-stencil"></a><span id="Two_Sided_Stencil"></span><span id="two_sided_stencil"></span><span id="TWO_SIDED_STENCIL"></span><span id="two-sided-stencil">雙側範本
 
 利用樣板緩衝區繪製陰影時將會使用到陰影錐。 應用程式透過計算剪影的邊緣，將其往光源的反方向突出並形成一組 3D 體積的集合，進而計算遮蔽幾何物的陰影錐。 這些物體接著會在經過兩次的轉譯之後寫入樣板緩衝區。
 
@@ -87,7 +87,7 @@ Direct3D 應用程式使用印花來控制從特定原始影像繪製到轉譯�
 
 這表示針對每個光源，陰影幾何都會繪製兩次，因此對 GPU 的頂點輸送量形成了壓力。 雙面樣板便是為了避免這種情況而設計出來的功能。 在這種方法之下，會有兩組樣板狀態 (命名如下)：其中一組為針對每個面向前端的三角形設定的樣板狀態，另外一組則是針對面向後端的三角形。 如此一來，針對每個光源及每個陰影錐都只會進行一階段的繪製。
 
-### <a name="span-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreadingthedepth-stencilbufferasatexturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>讀取深度樣板緩衝區當成紋理
+### <a name="span-idreading_the_depth-stencil_buffer_as_a_texturespanspan-idreading_the_depth-stencil_buffer_as_a_texturespanspan-idreading_the_depth-stencil_buffer_as_a_texturespanspan-idreading-the-depth-stencil-buffer-as-a-texturespanreading-the-depth-stencil-buffer-as-a-texture"></a><span id="Reading_the_Depth-Stencil_Buffer_as_a_Texture"></span><span id="reading_the_depth-stencil_buffer_as_a_texture"></span><span id="READING_THE_DEPTH-STENCIL_BUFFER_AS_A_TEXTURE"></span><span id="reading-the-depth-stencil-buffer-as-a-texture"></span>以材質的形式讀取深度樣板緩衝區
 
 非使用中的深度樣板緩衝區可由著色器作為紋理讀取。 讀取深度樣板緩衝區作為紋理的應用程式，將會進行二階段的轉譯：在第一階段寫入深度樣板緩衝區，並於第二階段從緩衝區中讀取。 這可以讓著色器將先前寫入緩衝區的深度值或樣板值，與目前轉譯中像素的值互相比較。 比較的結果可用來建立效果，例如陰影貼圖或粒子系統中的軟粒子。
 
@@ -98,4 +98,4 @@ Direct3D 應用程式使用印花來控制從特定原始影像繪製到轉譯�
 
 [圖形管線](graphics-pipeline.md)
 
-[輸出合併階段](https://docs.microsoft.com/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)
+[輸出合併階段](/windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage)

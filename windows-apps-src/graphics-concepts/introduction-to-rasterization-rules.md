@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c635d0efad627734e0305c687e015ad183764717
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 38522be28280c0a08f6cb065e5dfb5c2f26642a8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371057"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162792"
 ---
 # <a name="introduction-to-rasterization-rules"></a>點陣化規則簡介
 
@@ -21,7 +21,7 @@ ms.locfileid: "66371057"
 
 這是點陣化規則的簡介。 如需詳細資訊，請參閱[點陣化規則](rasterization-rules.md)。 另請參閱[轉譯器 (RS) 階段](rasterizer-stage--rs-.md)。
 
-## <a name="span-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspanspan-idtrianglerasterizationrulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>三角形點陣化規則
+## <a name="span-idtriangle_rasterization_rulesspanspan-idtriangle_rasterization_rulesspanspan-idtriangle_rasterization_rulesspantriangle-rasterization-rules"></a><span id="Triangle_Rasterization_Rules"></span><span id="triangle_rasterization_rules"></span><span id="TRIANGLE_RASTERIZATION_RULES"></span>三角形點陣化規則
 
 
 Direct3D 針對填充幾何使用左上角填充慣例。 這是針對 GDI 和 OpenGL 矩形中使用的相同慣例。 在 Direct3D 中，像素的中心是決定點。 如果中心在三角形內部，像素是三角形的一部分。 像素中心位於整數座標。
@@ -52,14 +52,14 @@ Direct3D 針對填充幾何使用左上角填充慣例。 這是針對 GDI 和 O
 
 ![像素受到前述兩個編號正方形的影響](images/samepix.png)
 
-## <a name="span-idpointandlinerulesspanspan-idpointandlinerulesspanspan-idpointandlinerulesspanpoint-and-line-rules"></a><span id="Point_and_Line_Rules"></span><span id="point_and_line_rules"></span><span id="POINT_AND_LINE_RULES"></span>點和行規則
+## <a name="span-idpoint_and_line_rulesspanspan-idpoint_and_line_rulesspanspan-idpoint_and_line_rulesspanpoint-and-line-rules"></a><span id="Point_and_Line_Rules"></span><span id="point_and_line_rules"></span><span id="POINT_AND_LINE_RULES"></span>點和行規則
 
 
 點的呈現與點精靈相同，兩者均呈現為對齊螢幕的四邊形，因此遵守和多邊形著色演算相同的規則。
 
-非平滑化行轉譯規則確實和是[GDI 行](https://docs.microsoft.com/windows/desktop/gdi/lines)一樣。
+非平滑化行轉譯規則確實和是[GDI 行](/windows/desktop/gdi/lines)一樣。
 
-## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>點 Sprite 規則
+## <a name="span-idpoint_sprite_rulesspanspan-idpoint_sprite_rulesspanspan-idpoint_sprite_rulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>點 Sprite 規則
 
 
 點精靈和修補程式的基本類型，就好像基本類型第一次鑲嵌至三角形，而結果三角形點陣被點陣化。
@@ -76,7 +76,3 @@ Direct3D 針對填充幾何使用左上角填充慣例。 這是針對 GDI 和 O
  
 
  
-
-
-
-

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: 使用執行緒集區的最佳做法
-description: 本主題描述使用執行緒集區的最佳做法。
+description: 瞭解如何使用執行緒集區來以非同步方式在平行線程中完成工作的最佳做法。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
-ms.openlocfilehash: a498f685e7a810d19e2f1eb63ae112dd02587b84
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 692dcae11c80e817d1d400e66e5f90b65df8b249
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370689"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161712"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用執行緒集區的最佳做法
 
@@ -26,9 +26,9 @@ ms.locfileid: "66370689"
 
 -   建立短期且獨立的工作項目。 工作項目會以非同步方式執行，而且可從佇列中以任何順序提交至集區。
 
--   使用 [**Windows.UI.Core.CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 將更新分派至 UI 執行緒。
+-   使用 [**Windows.UI.Core.CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 將更新分派至 UI 執行緒。
 
--   使用 [**ThreadPoolTimer.CreateTimer**](https://docs.microsoft.com/uwp/api/windows.system.threading.threadpooltimer.createtimer) 代替 **Sleep** 函式。
+-   使用 [**ThreadPoolTimer.CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) 代替 **Sleep** 函式。
 
 -   使用執行緒集區，而不是建立自己的執行緒管理系統。 執行緒集區可在作業系統層級使用進階功能執行，且已經根據處理程序和整個系統中的裝置資源及活動最佳化以動態調整。
 
@@ -39,11 +39,11 @@ ms.locfileid: "66370689"
 ## <a name="donts"></a>禁止事項
 
 
--   不要建立 *period* 值小於 &lt;1 (包括 0) 毫秒的定時計時器。 這會讓工作項目變得像是單次計時器。
+-   不要建立 *period* 值 &lt;1 (包括 0) 毫秒的定時計時器。 這會讓工作項目變得像是單次計時器。
 
 -   不要提交完成時間比您使用 *period* 參數指定的時間更長的定期工作項目。
 
--   不要嘗試從在背景工作分派的工作項目傳送 UI 更新 (除了快顯通知及通知之外)。 請改為使用背景工作進度和完成處理常式 - 例如，[**IBackgroundTaskInstance.Progress**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress)。
+-   不要嘗試從在背景工作分派的工作項目傳送 UI 更新 (除了快顯通知及通知之外)。 請改為使用背景工作進度和完成處理常式 - 例如，[**IBackgroundTaskInstance.Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress)。
 
 -   當您使用利用 **async** 關鍵字的工作項目處理常式時，請注意在處理常式中所有的程式碼執行之前，執行緒集區工作項目可能會設為完整狀態。 處理常式中 **await** 關鍵字之後的程式碼可能會在工作項目已經設為完整狀態之後才會執行。
 

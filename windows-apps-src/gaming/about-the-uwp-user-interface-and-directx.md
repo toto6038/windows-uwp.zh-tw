@@ -6,37 +6,37 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX 應用程式物件
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c4475ba22e1fd9fe6c1bb95db2183211ee734e
-ms.sourcegitcommit: e0f6150c8f45b69a3e114d0556c2c3d5aed7238f
+ms.openlocfilehash: 29eaba70a7114624474275b8f98ec77f8038b2b0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72560813"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163162"
 ---
 # <a name="the-app-object-and-directx"></a>App 物件和 DirectX
 
 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。 相反地，由於它們在 Windows 執行階段堆疊的較低層次執行，因此必須以更基礎的方法來與使用者介面架構進行互通： 方法為直接與 app 物件進行存取和互通。 了解這個互通發生的時間和方式，以及身為 DirectX 開發人員如何 在開發 UWP app 時有效使用這個模型。
 
-如需閱讀時所遇到之不熟悉圖形詞彙或概念的詳細資訊，請參閱[Direct3D 圖形詞彙](../graphics-concepts/index.md)。
+請參閱 [Direct3D 圖形詞彙](../graphics-concepts/index.md) ，以取得您在閱讀時所遇到的不熟悉圖形詞彙或概念的相關資訊。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心使用者介面命名空間
 
 首先，請注意您必須加入 (利用 **using**) UWP app 中的 Windows 執行階段命名空間。 稍後我們會深入討論它。
 
--   [**Windows. ApplicationModel Core**](/uwp/api/Windows.ApplicationModel.Core)
+-   [**ApplicationModel 核心**](/uwp/api/Windows.ApplicationModel.Core)
 -   [**ApplicationModel。啟用**](/uwp/api/Windows.ApplicationModel.Activation)
--   [**Windows. UI Core**](/uwp/api/Windows.UI.Core)
--   [**Windows. System**](/uwp/api/Windows.System)
--   [**Windows Foundation**](/uwp/api/Windows.Foundation)
+-   [**Windows. 核心**](/uwp/api/Windows.UI.Core)
+-   [**Windows.System**](/uwp/api/Windows.System)
+-   [**Windows.Foundation**](/uwp/api/Windows.Foundation)
 
 > [!NOTE]
 > 如果您不是開發 UWP 應用程式，請使用 JavaScript 或 XAML 特定程式庫和命名空間中提供的使用者介面元件，而不是這些命名空間中提供的類型。
 
 ## <a name="the-windows-runtime-app-object"></a>Windows 執行階段 App 物件
 
-在您的 UWP app 中，您想取得一個視窗和一個檢視提供者，然後透過這個檢視提供者取得檢視，並將您的交換鏈結 (顯示緩衝區) 連接到這個檢視提供者。 您也可以將這個檢視與執行中 app 的視窗專屬事件連結。 若要取得應用程式物件的父視窗（由[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)類型所定義），請建立可執行[**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的類型。 如需示範如何執行**IFrameworkViewSource**的[ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)程式碼範例，請參閱[使用 DirectX 和 Direct2D 撰寫原生交互操作](/windows/uwp/composition/composition-native-interop)。
+在您的 UWP app 中，您想取得一個視窗和一個檢視提供者，然後透過這個檢視提供者取得檢視，並將您的交換鏈結 (顯示緩衝區) 連接到這個檢視提供者。 您也可以將這個檢視與執行中 app 的視窗專屬事件連結。 若要取得應用程式物件的父視窗（由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 類型定義），請建立實 [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的型別。 如需示範如何執行**IFrameworkViewSource**的[c + +/WinRT](../cpp-and-winrt-apis/index.md)程式碼範例，請參閱[使用 DirectX 和 Direct2D 組合原生交互操作](../composition/composition-native-interop.md)。
 
-以下是使用核心使用者介面架構取得視窗的基本步驟集。
+以下是使用核心使用者介面架構取得視窗的一組基本步驟。
 
 1.  建立實作 [**IFrameworkView**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkView) 的類型。 這是您的檢視。
 
@@ -62,15 +62,15 @@ ms.locfileid: "72560813"
 
 這裡是 Windows 執行階段中的其他核心使用者介面類型，可能對您有所幫助：
 
--   [**Windows. ApplicationModel. CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
--   [**CoreWindow。** ](/uwp/api/Windows.UI.Core.CoreWindow)
--   [**CoreDispatcher。** ](/uwp/api/Windows.UI.Core.CoreDispatcher)
+-   [**Windows.ApplicationModel.Core.CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)
+-   [**Windows.UI.Core.CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)
+-   [**CoreDispatcher。**](/uwp/api/Windows.UI.Core.CoreDispatcher)
 
-您可以使用這些類型來存取 App 的檢視 (特別是繪製 App 父視窗內容的位元)，並處理該視窗所引發的事件。 應用程式視窗的處理程序是一個 *「應用程式單一執行緒 Apartment (ASTA)」* ，它可以獨立運作並處理所有回呼。
+您可以使用這些類型來存取 App 的檢視 (特別是繪製 App 父視窗內容的位元)，並處理該視窗所引發的事件。 應用程式視窗的處理程序是一個 *「應用程式單一執行緒 Apartment (ASTA)」*，它可以獨立運作並處理所有回呼。
 
 您的應用程式檢視是由應用程式視窗的檢視提供者所產生，在大部分情況下，都將由特定的架構套件或系統本身來實作，因此您不需要自己實作它。 針對 DirectX，您需要實作精簡型檢視提供者，如先前所討論。 下列元件和行為之間有特定的 1 對 1 關係：
 
--   [  **CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) 類型表示的應用程式檢視，可定義更新視窗的方法。
+-   [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) 類型表示的應用程式檢視，可定義更新視窗的方法。
 -   ASTA，這個元件的屬性可以定義應用程式執行緒的行為。 您無法在 ASTA 上建立 COM STA 屬性類型的執行個體。
 -   應用程式從系統取得或您實作的檢視提供者。
 -   一個父視窗，由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 類型表示。
@@ -80,13 +80,13 @@ ms.locfileid: "72560813"
 
 ## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView 行為和屬性
 
-[**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)代表目前的應用程式視圖。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) 屬性來取得顯示檢視的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件以處理啟用或停用事件。
+[**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) 代表目前的應用程式檢視。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) 屬性來取得顯示檢視的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](/uwp/api/windows.applicationmodel.core.coreapplicationview.activated) 事件以處理啟用或停用事件。
 
 ## <a name="corewindow-behaviors-and-properties"></a>CoreWindow 行為和屬性
 
 初始化應用程式物件時，會建立父視窗 ([**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 執行個體) 並將它傳送至檢視提供者。 如果應用程式有可以顯示的視窗，就會顯示該視窗；否則只會初始化檢視。
 
-[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)提供一些輸入和基本視窗行為特有的事件。 將自己的委派登錄到這些事件後，您就可以處理它們了。
+[**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 會提供與輸入和基本視窗行為相關的一系列事件。 將自己的委派登錄到這些事件後，您就可以處理它們了。
 
 您也可以存取 [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) 屬性 (提供 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 執行個體)，並藉此取得視窗的視窗事件發送器。
 
@@ -134,6 +134,6 @@ int main(Platform::Array<Platform::String^>^)
     -   使用平行模式程式庫 (PPLTasks.h) 中定義的 **async** 模式
     -   儘快從 app 的 ASTA (app 的主要執行緒) 呼叫 [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) 以允許任意呼叫。
 
-    也就是說，您無法依賴直接將不相關的呼叫傳遞至 app 的 ASTA。 如需非同步呼叫的詳細資訊， 請閱讀[使用 C++ 進行非同步程式設計](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    也就是說，您無法依賴直接將不相關的呼叫傳遞至 app 的 ASTA。 如需非同步呼叫的詳細資訊， 請閱讀[使用 C++ 進行非同步程式設計](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 總而言之，在設計 UWP app 時，請為 App 的 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 與 [**CoreDispatcher::ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) 使用 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 以處理所有 UI 執行緒，而非嘗試自行建立和管理您的 MTA 執行緒。 當您需要無法以 **CoreDispatcher** 處理的不同執行緒時，請使用非同步模式，並依循前述的指導原則以避免重新進入問題。

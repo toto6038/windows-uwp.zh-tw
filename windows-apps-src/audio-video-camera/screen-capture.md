@@ -9,16 +9,16 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: fce0dbad0e36fe2470d8e07944afa80054cfb3d7
-ms.sourcegitcommit: a5031e95b90ee72babace8e80370551f3fa88593
+ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88722023"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163622"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
-從 Windows 10 版本 1803 起，[Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) 命名空間提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。
+從 Windows 10 版本 1803 起，[Windows.Graphics.Capture](/uwp/api/windows.graphics.capture) 命名空間提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。
 
 使用螢幕擷取，開發人員可以為終端使用者叫用安全的系統 UI，選取要擷取的顯示或應用程式視窗，系統會在主動擷取項目周圍繪製黃色通知邊框。 在多個同時擷取工作階段中，會在每個擷取項目周圍繪製黃色邊框。
 
@@ -37,7 +37,7 @@ ms.locfileid: "88722023"
 
 ## <a name="launch-the-system-ui-to-start-screen-capture"></a>啟動系統 UI 以開始螢幕擷取
 
-啟動系統 UI 之前，您可以查看您的應用程式目前是否可以進行螢幕擷取。 您的應用程式目前是否可以進行螢幕擷取可能有數個原因，包括裝置不符合硬體需求，或擷取目標的應用程式封鎖螢幕擷取。 使用 [GraphicsCaptureSession](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturesession) 類別中的 **IsSupported** 方法來判斷是否支援 UWP 螢幕擷取︰
+啟動系統 UI 之前，您可以查看您的應用程式目前是否可以進行螢幕擷取。 您的應用程式目前是否可以進行螢幕擷取可能有數個原因，包括裝置不符合硬體需求，或擷取目標的應用程式封鎖螢幕擷取。 使用 [GraphicsCaptureSession](/uwp/api/windows.graphics.capture.graphicscapturesession) 類別中的 **IsSupported** 方法來判斷是否支援 UWP 螢幕擷取︰
 
 ```csharp
 // This runs when the application starts.
@@ -59,7 +59,7 @@ Public Sub OnInitialization()
 End Sub
 ```
 
-確認支援螢幕擷取後，使用 [GraphicsCapturePicker](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscapturepicker) 類別來叫用系統選擇器 UI。 終端使用者使用這個 UI 來選擇要進行螢幕擷取的顯示器或應用程式視窗。 選擇器會傳回 [GraphicsCaptureItem](https://docs.microsoft.com/uwp/api/windows.graphics.capture.graphicscaptureitem)，這將用來建立 **GraphicsCaptureSession**：
+確認支援螢幕擷取後，使用 [GraphicsCapturePicker](/uwp/api/windows.graphics.capture.graphicscapturepicker) 類別來叫用系統選擇器 UI。 終端使用者使用這個 UI 來選擇要進行螢幕擷取的顯示器或應用程式視窗。 選擇器會傳回 [GraphicsCaptureItem](/uwp/api/windows.graphics.capture.graphicscaptureitem)，這將用來建立 **GraphicsCaptureSession**：
 
 ```csharp
 public async Task StartCaptureAsync()
@@ -113,7 +113,7 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>建立擷取畫面集區與擷取工作階段
 
-使用 **GraphicsCaptureItem**，您將會建立具有 D3D 裝置的 [Direct3D11CaptureFramePool](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、支援的像素格式 (**DXGI \_ 格式 \_ B8G8R8A8 \_ UNORM**) 、所需的框架數目 (可以是任何整數) 和框架大小。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
+使用 **GraphicsCaptureItem**，您將會建立具有 D3D 裝置的 [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、支援的像素格式 (**DXGI \_ 格式 \_ B8G8R8A8 \_ UNORM**) 、所需的框架數目 (可以是任何整數) 和框架大小。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
 
 ```csharp
 private GraphicsCaptureItem _item;
@@ -176,7 +176,7 @@ _session.StartCapture();
 _session.StartCapture()
 ```
 
-若要取得這些擷取畫面 (這是 [Direct3D11CaptureFrame](https://docs.microsoft.com/uwp/api/windows.graphics.capture.direct3d11captureframe) 物件)，您可以使用 **Direct3D11CaptureFramePool.FrameArrived** 事件：
+若要取得這些擷取畫面 (這是 [Direct3D11CaptureFrame](/uwp/api/windows.graphics.capture.direct3d11captureframe) 物件)，您可以使用 **Direct3D11CaptureFramePool.FrameArrived** 事件：
 
 ```csharp
 _framePool.FrameArrived += (s, a) =>
@@ -216,15 +216,15 @@ End Sub
 
 或者，您也可以使用 **Direct3D11CaptureFramePool.TryGetNextFrame** 方法手動提取畫面，直到您取得所有所需畫面。
 
-**Direct3D11CaptureFrame** 物件包含 **ContentSize**、**Surface** 和 **SystemRelativeTime** 的屬性。 **SystemRelativeTime** 是 QPC ([QueryPerformanceCounter](https://docs.microsoft.com/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) 時間，可用於同步處理其他媒體元素。
+**Direct3D11CaptureFrame** 物件包含 **ContentSize**、**Surface** 和 **SystemRelativeTime** 的屬性。 **SystemRelativeTime** 是 QPC ([QueryPerformanceCounter](/windows/desktop/api/profileapi/nf-profileapi-queryperformancecounter)) 時間，可用於同步處理其他媒體元素。
 
 ## <a name="process-capture-frames"></a>進程捕獲框架
 
-呼叫 **TryGetNextFrame** 時會從 **Direct3D11CaptureFramePool** 簽出每個畫面，並根據 **Direct3D11CaptureFrame** 物件的存留期將其簽入。 對於原生應用程式，釋放 **Direct3D11CaptureFrame** 物件就足以將畫面簽入回畫面集區。 對於受管理應用程式，建議使用 **Direct3D11CaptureFrame.Dispose** (C++ 中的 **Close**) 方法。 **Direct3D11CaptureFrame** 會實作 [IClosable](https://docs.microsoft.com/uwp/api/Windows.Foundation.IClosable) 介面，這會為 C# 呼叫者投射為 [IDisposable](https://docs.microsoft.com/dotnet/api/system.idisposable)。
+呼叫 **TryGetNextFrame** 時會從 **Direct3D11CaptureFramePool** 簽出每個畫面，並根據 **Direct3D11CaptureFrame** 物件的存留期將其簽入。 對於原生應用程式，釋放 **Direct3D11CaptureFrame** 物件就足以將畫面簽入回畫面集區。 對於受管理應用程式，建議使用 **Direct3D11CaptureFrame.Dispose** (C++ 中的 **Close**) 方法。 **Direct3D11CaptureFrame** 會實作 [IClosable](/uwp/api/Windows.Foundation.IClosable) 介面，這會為 C# 呼叫者投射為 [IDisposable](/dotnet/api/system.idisposable)。
 
 在畫面簽入之後，應用程式不應該儲存 **Direct3D11CaptureFrame** 物件的參考，也不應該儲存基礎 Direct3D 表面的參考。
 
-在處理畫面時，建議應用程式在與 **Direct3D11CaptureFramePool** 物件相關聯的相同裝置上採用 [ID3D11Multithread](https://docs.microsoft.com/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 鎖定。
+在處理畫面時，建議應用程式在與 **Direct3D11CaptureFramePool** 物件相關聯的相同裝置上採用 [ID3D11Multithread](/windows/desktop/api/d3d11_4/nn-d3d11_4-id3d11multithread) 鎖定。
 
 基礎 Direct3D 表面一定是在建立 (或重新建立) **Direct3D11CaptureFramePool** 時指定的大小。 如果內容大於畫面，內容會被裁剪到畫面的大小。 如果內容小於畫面，則畫面的其餘部分會包含未定義的資料。 建議應用程式使用 **ContentSize** 屬性為 **Direct3D11CaptureFrame** 複製子矩形，以避免顯示未定義的內容。
 
@@ -686,8 +686,8 @@ End Class
 
 ## <a name="record-a-video"></a>錄製影片
 
-如果您想要錄製應用程式的影片，您可以更輕鬆地使用 [AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是桌面擴充功能 SDK 的一部分，因此它只適用于桌上型電腦，而且需要您從專案新增對它的參考。 如需詳細資訊，請參閱 [裝置系列總覽](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview) 。
+如果您想要錄製應用程式的影片，您可以更輕鬆地使用 [AppRecording 命名空間](/uwp/api/windows.media.apprecording)。 這是桌面擴充功能 SDK 的一部分，因此它只適用于桌上型電腦，而且需要您從專案新增對它的參考。 如需詳細資訊，請參閱 [裝置系列總覽](/uwp/extension-sdks/device-families-overview) 。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
-* [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空間](/uwp/api/windows.graphics.capture)

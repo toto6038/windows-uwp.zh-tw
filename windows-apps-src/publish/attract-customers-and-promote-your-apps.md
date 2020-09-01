@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2532683c7f5762f35640ef7e80180827404cde73
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943028"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164262"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客戶以及促銷您的應用程式
 
@@ -105,21 +105,21 @@ ms.locfileid: "88943028"
 
 [在儀表板中建立廣告活動](create-an-ad-campaign-for-your-app.md)
 
-[使用我們的 REST API 建立 ad 活動](https://docs.microsoft.com/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+[使用我們的 REST API 建立 ad 活動](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
-[查看儀表板中的行銷活動效能資料](promote-your-app-report.md)
+[查看儀表板中的行銷活動效能資料](/windows/uwp/publish/ad-campaign-report)
 
-[使用我們的 REST API 取得活動效能資料](https://docs.microsoft.com/windows/uwp/monetize/)
+[使用我們的 REST API 取得活動效能資料](../monetize/index.md)
 
 ## <a name="promotion-analytics"></a>促銷分析
 
 ![促銷分析](images/ads-promotion-analytics.png)
 
-[廣告行銷活動報告](promote-your-app-report.md)
+[廣告行銷活動報告](/windows/uwp/publish/ad-campaign-report)
 
 [下載數報告](acquisitions-report.md)
 
-[使用我們的 REST API 取得分析資料](https://docs.microsoft.com/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+[使用我們的 REST API 取得分析資料](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>升級應用程式的其他方式
 
