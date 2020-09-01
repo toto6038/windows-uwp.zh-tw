@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 77b47866bc064baec7c0ecf556eb615f67af0554
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 8599d1f493dc37095c0cb9464aa1d14c22072413
+ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234380"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88846838"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 
@@ -47,7 +47,7 @@ C++/WinRT 程式碼範例 | 我們在文件中針對主題新增了 250 個 C++/
 DirectX 圖形架構 (DXGI) | 已針對遺漏的 DXGI API 新增了新文件，我們在 Windows 10 上提供了一篇關於最佳作法的文章。 </br> * [為了達到最佳效能，請使用 DXGI 翻轉模型](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)：提供有關如何在現代化版本的 Windows 上，最大化簡報堆疊中效能和效率的指引。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)：通知應用程式支援硬體伸展。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 列舉](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)：描述支援的硬體組合層級。
 開始使用 | 我們的[入門](../get-started/index.md)內容已經透過新主題重寫，提供有關剛接觸 Windows 10 的開發人員如何完成以下一般工作的資訊和指引： </br> * [建構表單](../get-started/construct-form-learning-track.md) </br> * [在清單中顯示客戶](../get-started/display-customers-in-list-learning-track.md) </br> * [儲存和載入設定](../get-started/settings-learning-track.md) </br> * [使用檔案](../get-started/fileio-learning-track.md)
 地圖樣式表編輯器 | 使用新的[地圖樣式表編輯器](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft?rtc=1#activetab=pivot:overviewtab)應用程式，以互動方式自訂新增至應用程式之地圖的外觀。
-Microsoft Learn | 全新的 [Microsoft Learn 網站](https://www.microsoft.com/learning/default.aspx)為 Microsoft 開發人員提供新的實際操作學習和訓練機會。 目前，Microsoft Learn 為 Microsoft 365、Microsoft Azure、Office 365 和 Windows Server 提供培訓及認證。
+Microsoft Learn | 全新的 [Microsoft Learn 網站](https://www.microsoft.com/learning/default.aspx)為 Microsoft 開發人員提供新的實際操作學習和訓練機會。 目前，Microsoft Learn 為 Microsoft 365、Microsoft Azure 和 Windows Server 提供培訓及認證。
 記事本 | [[記事本] 已更新](https://blogs.windows.com/windowsexperience/2018/07/11/announcing-windows-10-insider-preview-build-17713/) \(英文\)，新增了縮放、循環尋找/取代，以及 Unix/Linux (LF) 和 Mac (CR) 行尾結束符號的支援。
 Project Rome | [Project Rome](https://docs.microsoft.com/windows/project-rome/) 現在可以在支援的平台和 SDK 之間提供一致的程式設計體驗。 </br>  新的 [Microsoft Graph 通知](https://developer.microsoft.com/graph/docs/concepts/notifications-concept-overview)使用 Project Rome 為您的應用程式提供以人為中心的跨平台通知平台。
 螢幕剪取 | 新的 [URI 配置](../launch-resume/launch-screen-snipping.md)允許您的應用程式以程式設計方式開啟新的剪取，或針對註釋啟動帶有特定影像的剪取與繪圖應用程式。

@@ -1,23 +1,23 @@
 ---
-title: 擴充範例遊戲
-description: 了解如何實作 UWP DirectX 遊戲的 XAML 重疊。
+title: 延伸遊戲範例
+description: 瞭解如何在基本通用 Windows 平臺 (UWP) DirectX 遊戲中，針對重迭使用 XAML 而非 Direct2D。
 keywords: DirectX, XAML
 ms.date: 10/24/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 06b52e5b6fdba1db83c941e770cd49360085accf
-ms.sourcegitcommit: 20969781aca50738792631f4b68326f9171a3980
+ms.openlocfilehash: be2ef3b4d5c3cce4a4305a8faa1f4af5dea3e8bc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85409547"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156372"
 ---
-# <a name="extend-the-sample-game"></a>擴充範例遊戲
+# <a name="extend-the-sample-game"></a>延伸遊戲範例
 
 > [!NOTE]
-> 本主題是使用 DirectX 教學課程系列[建立簡單的通用 Windows 平臺（UWP）遊戲](tutorial--create-your-first-uwp-directx-game.md)的一部分。 該連結的主題會設定數列的內容。
+> 本主題是使用 DirectX 教學課程系列 [建立簡單通用 Windows 平臺 (UWP) 遊戲](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 該連結的主題會設定數列的內容。
 
-現在，我們已經討論基本通用 Windows 平台 (UWP) DirectX 3D 遊戲的關鍵元件。 您可以為遊戲設定架構，包括視圖提供者和呈現管線，以及實作為基本遊戲迴圈。 您也可以建立基本的使用者介面重疊，並納入音效和實作控制項。 您已開始建立自己的遊戲，但如果您需要更多協助和資訊，請查看這些資源。
+現在，我們已經討論基本通用 Windows 平台 (UWP) DirectX 3D 遊戲的關鍵元件。 您可以設定遊戲的架構，包括視圖提供者和轉譯管線，以及執行基本的遊戲迴圈。 您也可以建立基本的使用者介面重疊，並納入音效和實作控制項。 您已開始建立自己的遊戲，但如果您需要更多協助和資訊，請查看這些資源。
 
 -   [DirectX 圖形與遊戲](/windows/desktop/directx)
 -   [Direct3D 11 概觀](/windows/desktop/direct3d11/dx-graphics-overviews)
@@ -43,7 +43,7 @@ ms.locfileid: "85409547"
 使用者介面元素 | XAML 使用者介面元素來自標準化元素，它們屬於 Windows 執行階段 XAML API 的一部分，包括 [**Windows::UI::Xaml**](/uwp/api/Windows.UI.Xaml) 和 [**Windows::UI::Xaml::Controls**](/uwp/api/Windows.UI.Xaml.Controls)。 處理 XAML 使用者介面元素行為的程式碼定義在程式碼後置檔案 Main.xaml.cpp 中。 | 簡單圖形可以繪製成類似矩形和省略符號。
 調整視窗大小 | 自然地處理重新調整大小和檢視狀態變更事件，並依變更轉換重疊 | 需要手動指定重新繪製重疊的元件。
 
-另一個大不相同的點包含[交換鏈結](/windows/uwp/graphics-concepts/swap-chains)。 您不必附加交換鏈結到 [**Windows::UI::Core::CoreWindow**](/uwp/api/windows.ui.core.corewindow) 物件。 相反地，在建構新的 [**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) 物件時，由納入 XAML 的 DirectX App 關聯交換鏈結。 
+另一個大不相同的點包含[交換鏈結](../graphics-concepts/swap-chains.md)。 您不必附加交換鏈結到 [**Windows::UI::Core::CoreWindow**](/uwp/api/windows.ui.core.corewindow) 物件。 相反地，在建構新的 [**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel) 物件時，由納入 XAML 的 DirectX App 關聯交換鏈結。 
 
 下列程式碼片段顯示如何宣告 XAML 適用於 **SwapChainPanel** (在 [**DirectXPage.xaml**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml) 檔案中)。
 ```xml
@@ -132,6 +132,6 @@ void App::OnLaunched(_In_ LaunchActivatedEventArgs^ /* args */)
 
 ## <a name="sample"></a>範例
 
-若要下載這個使用 XAML 進行重迭的此遊戲版本，請移至[Direct3D 疑難排解範例遊戲（XAML）](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameXaml)。
+若要下載此使用 XAML 進行重迭的遊戲版本，請移至 [ (xaml) 的 Direct3D 診斷範例遊戲 ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameXaml)。
 
-不同于這些主題其餘部分所討論的範例遊戲版本，XAML 版本會在[app.xaml](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp)和[DirectXPage](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml.cpp)檔案中定義其架構，而不是分別在[應用程式 .cpp](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/App.cpp)和[GameInfoOverlay](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp)中。
+不同于這些主題其餘部分中所討論的範例遊戲版本，XAML 版本會在[應用程式](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/App.xaml.cpp)中定義其架構，而不是分別在[DirectXPage](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/DirectXPage.xaml.cpp)和[GameInfoOverlay](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp) [.cpp 檔案](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameDX/cpp/App.cpp)中定義。

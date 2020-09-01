@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9712b4498b03460568d20d4c8e27172ad5c14360
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: b300747027f0c9466e7ca04b4c4b571882f57a6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79210094"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156432"
 ---
 # <a name="resource-types"></a>資源類型
 
@@ -29,16 +29,16 @@ ms.locfileid: "79210094"
 <thead>
 <tr class="header">
 <th align="left">項目</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>輸入</p></td>
+<td align="left"><p><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>類型</p></td>
 <td align="left"><p>建立資源時完整指定類型。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>—</p></td>
+<td align="left"><p><span id="Typeless"></span><span id="typeless"></span><span id="TYPELESS"></span>無</p></td>
 <td align="left"><p>資源繫結到管線時完整指定類型。</p></td>
 </tr>
 </tbody>
@@ -46,7 +46,7 @@ ms.locfileid: "79210094"
 
  
 
-## <a name="span-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>緩衝區資源
+## <a name="span-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer_resourcesspanspan-idbuffer-resourcesspanbuffer-resources"></a><span id="Buffer_Resources"></span><span id="buffer_resources"></span><span id="BUFFER_RESOURCES"></span><span id="buffer-resources"></span>緩衝資源
 
 
 緩衝資源是完整具類型的資料的集合，緩衝區則包含元素。 一個元素由 1 到 4 個元件組成。 元素資料類型的範例包括︰封裝資料值 (例如 R8G8B8A8)、單一的 8 位元整數、四個 32 位元浮點值。 這些資料類型是用來儲存資料，例如位置向量、一般向量、頂點緩衝區中的紋理座標、索引緩衝區中的索引，或者裝置狀態。
@@ -110,16 +110,16 @@ Direct3D 具有緩衝區，以提供稱為著色器常數衝緩區或只是常�
 
 使用常數緩衝區來儲存資料流輸出階段的結果。
 
-如需在著色器中宣告常數緩衝區的範例，請參閱[著色器常數 (DirectX HLSL)](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
+如需在著色器中宣告常數緩衝區的範例，請參閱[著色器常數 (DirectX HLSL)](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-constants)。
 
 ## <a name="span-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture_resourcesspanspan-idtexture-resourcesspantexture-resources"></a><span id="Texture_Resources"></span><span id="texture_resources"></span><span id="TEXTURE_RESOURCES"></span><span id="texture-resources"></span>材質資源
 
 
-紋理資源是設計來儲存紋素的結構化資料集合。 和緩衝區不同的是，紋理可依紋理樣本篩選，由著色器單位讀取。 紋理類型會影響篩選紋理的方式。 紋素代表管線可讀取或寫入的最小紋理單位。 每個材質包含1到4個元件，並以其中一個 DXGI 格式排列（請參閱[**dxgi\_格式**](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)）。
+紋理資源是設計來儲存紋素的結構化資料集合。 和緩衝區不同的是，紋理可依紋理樣本篩選，由著色器單位讀取。 紋理類型會影響篩選紋理的方式。 紋素代表管線可讀取或寫入的最小紋理單位。 每個材質都包含1至4個元件，以其中一個 DXGI 格式排列 (請參閱 [**dxgi \_ 格式**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)) 。
 
 紋裡會建立結構化資源，以便得知其大小。 不過，每個紋理在建立資源時可能具有類型或是無類型，只要在紋理與管線繫結時使用檢視完整指定類型。
 
--   [材質類型](#texture-types)
+-   [紋理類型](#texture-types)
 -   [子資源](#subresources)
 -   [強式與弱式類型](#typed)
 
@@ -128,11 +128,11 @@ Direct3D 具有緩衝區，以提供稱為著色器常數衝緩區或只是常�
 有數種紋理類型︰1D、2D、3D，每一個都可使用或不使用 Mipmap 建立。 Direct3D 也支援紋理陣列和多重取樣的紋理。
 
 -   [1D 材質](#texture1d-resource)
--   [1D 紋理陣列](#texture1d-array-resource)
+-   [1D 材質陣列](#texture1d-array-resource)
 -   [2D 材質和2D 材質陣列](#texture2d-resource)
 -   [3D 材質](#texture3d-resource)
 
-### <a name="span-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1D 材質
+### <a name="span-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d_resourcespanspan-idtexture1d-resourcespan1d-texture"></a><span id="Texture1D_Resource"></span><span id="texture1d_resource"></span><span id="TEXTURE1D_RESOURCE"></span><span id="texture1d-resource"></span>1D 紋理
 
 最簡單形式的 1D 紋理所包含的紋理資料，可以使用單一紋理座標處理，它可以視覺化為紋素陣列，如下圖所示。
 
@@ -144,7 +144,7 @@ Direct3D 具有緩衝區，以提供稱為著色器常數衝緩區或只是常�
 
 Mipmap 層次是比上層小二的 n 次方的紋理。 最上層包含大部分的詳細資料，每個後續層級較小；若是 1D 的 Mipmap，最小層級包含一個紋素。 不同層級是以稱為 LOD (詳細層級) 的索引來識別；您可以在呈現不是那麼靠近相機的幾何圖形時，使用 LOD 存取較小的紋理。
 
-### <a name="span-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1D 紋理陣列
+### <a name="span-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d_array_resourcespanspan-idtexture1d-array-resourcespan1d-texture-array"></a><span id="Texture1D_Array_Resource"></span><span id="texture1d_array_resource"></span><span id="TEXTURE1D_ARRAY_RESOURCE"></span><span id="texture1d-array-resource"></span>1D 材質陣列
 
 Direct3D 10 對於紋理陣列也有新的資料結構。 1D 紋理陣列概念上看起來像下圖。
 
@@ -154,7 +154,7 @@ Direct3D 10 對於紋理陣列也有新的資料結構。 1D 紋理陣列概念�
 
 在 Direct3D 中的所有紋理陣列都是同質紋理陣列，這表示紋理陣列中的每種紋理必須有相同資料格式和大小 (包括紋理寬度和 Mipmap 層次數目)。 只要每一個紋理陣列中的所有紋理大小都相符，您可以建立不同大小的紋理陣列。
 
-### <a name="span-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>2D 材質和2D 材質陣列
+### <a name="span-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d_resourcespanspan-idtexture2d-resourcespan2d-texture-and-2d-texture-array"></a><span id="Texture2D_Resource"></span><span id="texture2d_resource"></span><span id="TEXTURE2D_RESOURCE"></span><span id="texture2d-resource"></span>2D 紋理和 2D 紋理陣列
 
 Texture2D 資源包含 2D 紋格。 每個紋素是由 u、v 向量定位。 因為是紋理資源，它可能包含 Mipmap 層次和子資源。 完全填充的 2D 紋理資源看起來如下圖。
 
@@ -168,7 +168,7 @@ Texture2DArray 資源是同質 2D 紋理陣列；也就是每個紋理都有相�
 
 這個紋理包含三個紋理，每個紋理為 3x5 含兩個 Mipmap 層次。
 
-### <a name="span-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>使用 Texture2DArray 做為材質 Cube
+### <a name="span-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanspan-idtexture2darray_resource_as_a_texture_cubespanusing-a-texture2darray-as-a-texture-cube"></a><span id="Texture2DArray_Resource_as_a_Texture_Cube"></span><span id="texture2darray_resource_as_a_texture_cube"></span><span id="TEXTURE2DARRAY_RESOURCE_AS_A_TEXTURE_CUBE"></span>使用 Texture2DArray 作為紋理 Cube
 
 紋理立方體是包含 6 個紋理的 2D 紋理陣列，每個立方體表面一個紋理。 完全填充的紋理立方體如下圖所示。
 
@@ -216,13 +216,13 @@ Direct3D API 參考整個資源或資源子集。 若要指定部分資源，Dir
 
 ![陣列切片的圖例](images/d3d10-resource-array-slice.png)
 
-### <a name="span-idmip_slicespanspan-idmip_slicespanspan-idmip_slicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>Mip 配量
+### <a name="span-idmip_slicespanspan-idmip_slicespanspan-idmip_slicespanmip-slice"></a><span id="Mip_Slice"></span><span id="mip_slice"></span><span id="MIP_SLICE"></span>Mip 切片
 
 Mip 切片 (以白色矩形代表) 對於陣列中的每個紋理包含一個 Mipmap 層次，如下圖所示。
 
 ![Mip 切片的圖例](images/d3d10-resource-mip-slice.png)
 
-### <a name="span-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>選取單一 Subresource
+### <a name="span-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanspan-idselecting_a_single_subresourcespanselecting-a-single-subresource"></a><span id="Selecting_a_Single_Subresource"></span><span id="selecting_a_single_subresource"></span><span id="SELECTING_A_SINGLE_SUBRESOURCE"></span>選取單一子資源
 
 您可以使用這兩種切片來選擇單一子資源，如下圖所示。
 
@@ -236,7 +236,7 @@ Mip 切片 (以白色矩形代表) 對於陣列中的每個紋理包含一個 Mi
 
 無論您使用哪種紋理類型，含有或未含 Mipmap，具有或不具紋理陣列，通常都會提供 Helper 函式來運算特定子資源的索引。
 
-### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>強式與弱式類型
+### <a name="span-idtypedspanspan-idtypedspanspan-idtypedspanstrong-vs-weak-typing"></a><span id="Typed"></span><span id="typed"></span><span id="TYPED"></span>強輸入與弱輸入
 
 建立完整具類型的資源會限制資源為其建立時使用的格式。 這可讓執行階段將存取最佳化，尤其是若資源的建立是使用指出應用程式無法對應的旗標。 使用特定類型建立的資源無法使用檢視機制重新解譯。
 

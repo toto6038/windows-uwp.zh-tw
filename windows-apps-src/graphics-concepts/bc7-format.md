@@ -7,30 +7,30 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ee9960e55100eaf743d73d7007e9bcf51342ee
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 4ca22bc897acf0d4cbd924002de96d13f2ba8549
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370727"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159022"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
 
 BC7 格式是用於高品質 RGB 和 RGBA 資料壓縮的紋理壓縮格式。
 
-如需 BC7 格式的區塊模式資訊，請參閱 [BC7 格式模式參考](https://docs.microsoft.com/windows/desktop/direct3d11/bc7-format-mode-reference) (英文)。
+如需 BC7 格式的區塊模式資訊，請參閱 [BC7 格式模式參考](/windows/desktop/direct3d11/bc7-format-mode-reference) (英文)。
 
-## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgiformatbc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>關於 BC7/DXGI\_格式\_BC7
+## <a name="span-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanspan-idabout-bc7-dxgi-format-bc7spanabout-bc7dxgi_format_bc7"></a><span id="About-BC7-DXGI-FORMAT-BC7"></span><span id="about-bc7-dxgi-format-bc7"></span><span id="ABOUT-BC7-DXGI-FORMAT-BC7"></span>關於 BC7/DXGI \_ 格式 \_ BC7
 
 
-BC7 由下列的 DXGI\_格式的列舉值：
+BC7 是由下列 DXGI \_ 格式列舉值所指定：
 
--   **DXGI\_格式\_BC7\_TYPELESS**。
--   **DXGI\_格式\_BC7\_UNORM**。
--   **DXGI\_格式\_BC7\_UNORM\_SRGB**。
+-   **DXGI \_格式化 \_ BC7 \_ **無別。
+-   **DXGI \_FORMAT \_ BC7 \_ UNORM**。
+-   **DXGI \_FORMAT \_ BC7 \_ UNORM \_ SRGB**。
 
-BC7 格式可用於 [Texture2D](https://docs.microsoft.com/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
+BC7 格式可用於 [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
 
 BC7 使用固定的 16 位元組 (128 位元) 區塊大小，以及固定之 4x4 材質的磚大小。 與之前的 BC 格式一樣，大於支援之磚大小 (4x4) 的紋理影像，程式會使用多重區塊對其進行壓縮。 此位址身分識別也適用於 3D 圖片和 Mipmap、立方體貼圖，以及紋理陣列。 所有影像磚都必須格式相同。
 
@@ -51,7 +51,7 @@ BC7 區塊可能包含多個端點配對。 對應至端點配對的索引集可
 
 對於具有合併色彩和 Alpha 元件的 BC7 區塊，一個區塊包含模式位元、壓縮端點、壓縮索引，以及選用的分割位元和一個 P 位元。 在這些區塊中，端點色彩以 RGBA 格式表示，而且會插入 Alpha 元件值和色彩元件值。
 
-對於具有不同色彩與 Alpha 元件的 BC7 區塊，一個區塊包含模式位元、旋轉位元、壓縮端點、壓縮索引，和一個選擇性的索引選取器位元。 這些區塊有有效的 RGB 向量\[R、 G、 B\]和純量的 alpha 色板\[A\]分別編碼。
+對於具有不同色彩與 Alpha 元件的 BC7 區塊，一個區塊包含模式位元、旋轉位元、壓縮端點、壓縮索引，和一個選擇性的索引選取器位元。 這些區塊具有有效的 RGB 向量 \[ R、G、B \] 和純量 Alpha 通道，而且會 \[ 另外進行 \] 編碼。
 
 下表列出每個區塊類型的元件。
 
@@ -224,14 +224,14 @@ bitcount get_color_bitcount(block, mode)
 }
 ```
 
-## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>BC7 格式模式的參考
+## <a name="span-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanspan-idbc7-format-mode-referencespanbc7-format-mode-reference"></a><span id="BC7-format-mode-reference"></span><span id="bc7-format-mode-reference"></span><span id="BC7-FORMAT-MODE-REFERENCE"></span>BC7 格式模式參考
 
 
 本節中包含了一份 8 個區塊模式和 BC7 紋理壓縮格式區塊之位元配置的清單。
 
 區塊中每個子集的色彩會以兩個明確端點色彩以及其之間插入的色彩組呈現。 依區塊索引精確度而定，每個子集能具備 4 個、8 或 16 個可用的色彩。
 
-### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>模式 0
+### <a name="span-idmode-0spanspan-idmode-0spanspan-idmode-0spanmode-0"></a><span id="Mode-0"></span><span id="mode-0"></span><span id="MODE-0"></span>模式0
 
 BC7 模式 0 的特性如下︰
 
@@ -243,7 +243,7 @@ BC7 模式 0 的特性如下︰
 
 ![模式 0 位元配置](images/bc7-mode0.png)
 
-### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a><span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>模式 1
+### <a name="span-idmode-1spanspan-idmode-1spanspan-idmode-1spanmode-1"></a><span id="Mode-1"></span><span id="mode-1"></span><span id="MODE-1"></span>模式1
 
 BC7 模式 1 的特性如下︰
 
@@ -308,7 +308,7 @@ BC7 模式 5 的特性如下︰
 
 ![模式 5 位元配置](images/bc7-mode5.png)
 
-### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>模式 6
+### <a name="span-idmode-6spanspan-idmode-6spanspan-idmode-6spanmode-6"></a><span id="Mode-6"></span><span id="mode-6"></span><span id="MODE-6"></span>模式6
 
 BC7 模式 6 的特性如下︰
 
@@ -331,7 +331,7 @@ BC7 模式 7 的特性如下︰
 
 ![模式 7 位元配置](images/bc7-mode7.png)
 
-### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>註解
+### <a name="span-idremarksspanspan-idremarksspanspan-idremarksspanremarks"></a><span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>言論
 
 模式 8 (最小顯著性位元組設定為 0x00) 已保留。 請勿在您的編碼器中使用它。 如果您將此模式傳遞至硬體，就會傳回初始化至所有零的區塊。
 
@@ -339,13 +339,13 @@ BC7 模式 7 的特性如下︰
 
 -   不具備明確 Alpha 元件編碼的區塊類型。 在這些區塊中，色彩端點有一個僅限 RGB 的編碼，還有對所有材質解碼至 1.0 的 Alpha 元件。
 -   具有合併色彩與 Alpha 元件的區塊類型。 在這些區塊中，端點色彩值會以 RGBA 格式指定，而且會插入 Alpha 元件值和色彩值。
--   具有獨立色彩與 Alpha 元件的區塊類型。 在這些區塊中，色彩和 Alpha 值是個別指定的，兩方都有獨立的索引集。 如此一來，具有有效的向量和純量的通道，分別是編碼向量通常指定的色頻\[R、 G、 B\]和純量指定 alpha 色頻\[A\]。 為了支援這種方式，編碼中提供了一個獨立的 2 位元欄位，允許將不同的通道編碼指定為純量值。 如此一來，區塊就可以具有此 Alpha 編碼 (同 2 元欄位所指示) 下列四個不同表示法中的其中一項︰
+-   具有獨立色彩與 Alpha 元件的區塊類型。 在這些區塊中，色彩和 Alpha 值是個別指定的，兩方都有獨立的索引集。 如此一來，它們就會分別編碼有效的向量和純量通道，其中向量通常會指定色板 \[ R、G、B，而純量會 \] 指定 Alpha 色板 \[ a \] 。 為了支援這種方式，編碼中提供了一個獨立的 2 位元欄位，允許將不同的通道編碼指定為純量值。 如此一來，區塊就可以具有此 Alpha 編碼 (同 2 元欄位所指示) 下列四個不同表示法中的其中一項︰
     -   RGB|A：獨立 Alpha 色板
     -   AGB|R：獨立「紅色」色彩通道
     -   RAB|G：獨立「綠色」色彩通道
     -   RGA|B：獨立「藍色」色彩通道
 
-    解碼器在解碼之後會將通道順序重新排列回 RGBA，因此開發人員看不到內部區塊格式。 具有獨立色彩和 Alpha 元件的黑色也有兩組索引資料︰一個用於通道的向量集，一個用於純量通道。 (模式 4，在這些索引屬於不同的寬度\[2 或 3 位元\]。 模式 4 也包含 1 位元選取器，可指定向量或純量通道是否使用 3 位元索引。)
+    解碼器在解碼之後會將通道順序重新排列回 RGBA，因此開發人員看不到內部區塊格式。 具有獨立色彩和 Alpha 元件的黑色也有兩組索引資料︰一個用於通道的向量集，一個用於純量通道。 在模式4的情況下 (，這些索引的寬度為 \[ 2 或3位 \] 。 模式 4 也包含 1 位元選取器，可指定向量或純量通道是否使用 3 位元索引。)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
@@ -355,7 +355,3 @@ BC7 模式 7 的特性如下︰
  
 
  
-
-
-
-

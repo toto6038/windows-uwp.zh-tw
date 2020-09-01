@@ -4,14 +4,14 @@ description: 矩陣轉換處理很多 3D 圖形低階數學運算。
 ms.assetid: B5220EE8-2533-4B55-BF58-A3F9F612B977
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fe97d689711202511dcfec023b718cd1ba9b0b1d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 0f8efd1984ae8a726870bd8e7aaa3960baf91218
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370937"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156212"
 ---
 # <a name="transform-overview"></a>轉換概觀
 
@@ -19,7 +19,7 @@ ms.locfileid: "66370937"
 
 幾何管線使用頂點做為輸入。 轉換引擎將世界、檢視和影轉換套用至頂點，剪輯結果，然後將所有項目傳遞至轉譯器。
 
-| 轉換與空間                           | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| 轉換與空間                           | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 模型空間中的模型座標              | 在管線的開頭，模型頂點的宣告是相對於區域座標系統。 這是區域原點和方向。 此座標方向通常稱為*模型空間*。 個別座標稱為*模型座標*。                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | 世界矩陣轉換成世界空間              | 幾何管線的第一階段會將模型的頂點從其區域座標系統轉換成場景中所有物件所使用的座標系統。 頂點重新定向的程序稱為[世界矩陣轉換](world-transform.md)，從模型空間轉換成新的方向，稱為*世界空間*。 在世界區域中的每個頂點都是使用*世界座標*宣告的。                                                                                                                                                                                                                                                                                                                           |
@@ -37,7 +37,7 @@ ms.locfileid: "66370937"
 -   [檢視轉換](view-transform.md) - 從世界空間轉換成檢視空間。
 -   [投影轉換](projection-transform.md) - 從檢視空間轉換成投影空間。
 
-## <a name="span-idmatrixtransformsspanspan-idmatrixtransformsspanspan-idmatrixtransformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>矩陣轉換
+## <a name="span-idmatrix_transformsspanspan-idmatrix_transformsspanspan-idmatrix_transformsspanmatrix-transforms"></a><span id="Matrix_Transforms"></span><span id="matrix_transforms"></span><span id="MATRIX_TRANSFORMS"></span>矩陣轉換
 
 
 在與 3D 圖形搭配運作的應用程式，您可以使用幾何轉換，執行下列動作：
@@ -60,7 +60,7 @@ ms.locfileid: "66370937"
 
 ![統一縮放矩陣的方程式](images/matrix.png)
 
-在 C++，Direct3D 使用矩陣結構，宣告矩陣為二維陣列。 下列範例顯示如何初始化 [**D3DMATRIX**](https://docs.microsoft.com/windows/desktop/direct3d9/d3dmatrix) 結構做為統一縮放矩陣（縮放比例 "s"）。
+在 C++，Direct3D 使用矩陣結構，宣告矩陣為二維陣列。 下列範例顯示如何初始化 [**D3DMATRIX**](/windows/desktop/direct3d9/d3dmatrix) 結構做為統一縮放矩陣（縮放比例 "s"）。
 
 ```cpp
 D3DMATRIX scale = {
@@ -71,7 +71,7 @@ D3DMATRIX scale = {
 };
 ```
 
-## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>轉譯
+## <a name="span-idtranslatespanspan-idtranslatespanspan-idtranslatespantranslate"></a><span id="Translate"></span><span id="translate"></span><span id="TRANSLATE"></span>翻譯
 
 
 下面方程式將點 (x, y, z) 轉移到新點 (x', y', z')。
@@ -92,14 +92,14 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }    // End of Translate
 ```
 
-## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>小數位數
+## <a name="span-idscalespanspan-idscalespanspan-idscalespanscale"></a><span id="Scale"></span><span id="scale"></span><span id="SCALE"></span>規模
 
 
 下面方程式以 x、y 與 z 方向的任意值，將點 (x, y, z) 縮放成新點 (x', y', z')。
 
 ![新點縮放矩陣的方程式](images/matscale.png)
 
-## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>Rotate
+## <a name="span-idrotatespanspan-idrotatespanspan-idrotatespanrotate"></a><span id="Rotate"></span><span id="rotate"></span><span id="ROTATE"></span>旋轉
 
 
 這裡描述的轉換適用於左手座標系統，因此可能不同於您在其他地方看到的轉移矩陣。
@@ -134,7 +134,7 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 }
 ```
 
-## <a name="span-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanspan-idconcatenatingmatricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串連的矩陣
+## <a name="span-idconcatenating_matricesspanspan-idconcatenating_matricesspanspan-idconcatenating_matricesspanconcatenating-matrices"></a><span id="Concatenating_Matrices"></span><span id="concatenating_matrices"></span><span id="CONCATENATING_MATRICES"></span>串連矩陣
 
 
 使用矩陣的一個優點是，您可以透過將矩陣相乘，組合兩個或更多矩陣的效果。 這表示，若要旋轉模型，然後將它轉移到特定位置，您不需要套用兩個矩陣。 而是，您將旋轉矩陣和轉移矩陣相乘，產生一個包含所有效果的複合矩陣。 這個程序，稱為矩陣串連，可以使用下面方程式撰寫。
@@ -161,7 +161,3 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
  
 
  
-
-
-
-

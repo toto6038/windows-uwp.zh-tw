@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 02108ad2926fc1514ca94f08d11f565bc342a62d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2fd92209e821d0d07f5cffda0850423e0496b03a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970313"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156822"
 ---
 # <a name="edge-based-ui-animations"></a>以邊緣為基礎的 UI 動畫
 
@@ -23,7 +23,7 @@ ms.locfileid: "82970313"
 
 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是應用程式表面的一部分，則可能需要重新調整應用程式其餘部分的大小以容納它。
 
-> **重要 API**: [**EdgeUIThemeTransition 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **重要 API**: [**EdgeUIThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -45,18 +45,14 @@ ms.locfileid: "82970313"
 
 
 **開發人員**
-* [動畫概觀](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)
-* [讓以邊緣為基礎的 UI 產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/jj649428(v=win.10))
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/hh452703(v=win.10))
-* [**EdgeUIThemeTransition 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
-* [**PaneThemeTransition 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
-* [讓淡入/淡出產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/jj649429(v=win.10))
-* [讓重新定位產生動畫效果](https://docs.microsoft.com/previous-versions/windows/apps/jj649434(v=win.10))
+* [動畫概觀](./xaml-animation.md)
+* [讓以邊緣為基礎的 UI 產生動畫效果](/previous-versions/windows/apps/jj649428(v=win.10))
+* [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
+* [**EdgeUIThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+* [**PaneThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition)
+* [讓淡入/淡出產生動畫效果](/previous-versions/windows/apps/jj649429(v=win.10))
+* [讓重新定位產生動畫效果](/previous-versions/windows/apps/jj649434(v=win.10))
 
  
 
  
-
-
-
-

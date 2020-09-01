@@ -6,16 +6,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 針對性優惠
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ea4adac82692e80d652523d05a7ba0b901db300
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: 6cb429168e82419223f354bdb6548ab9a9e60dd1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334396"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155482"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用Microsoft Store 服務管理針對性優惠
 
-如果您建立*目標的供應項目*中**接洽 > 設為目標的供應項目**在合作夥伴中心，使用您應用程式頁面*設為目標的 Microsoft Store 提供的 API*您的應用程式程式碼中擷取資訊，可協助您實作應用程式內體驗為目標的供應項目。 如需有關針對性優惠，以及如何在儀表板中建立它們的詳細資訊，請參閱[使用針對性優惠提高吸引力與轉換數](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
+如果您在合作夥伴中心中為您的應用程式在 [**參與 > 目標**供應專案] 頁面中建立*目標供應*專案，請使用應用程式程式碼中的*Microsoft Store 目標*供應專案 API 來取得資訊，以協助您為目標供應專案執行應用程式內體驗。 如需有關針對性優惠，以及如何在儀表板中建立它們的詳細資訊，請參閱[使用針對性優惠提高吸引力與轉換數](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
 
 性優惠 App 是簡單的 REST API，可根據使用者是不是針對性優惠客戶區隔的一部分，取得適用於目前使用者的針對性優惠。 若要在 app 程式碼中使用這個 API，請依照下列步驟執行：
 
@@ -31,7 +31,7 @@ ms.locfileid: "58334396"
 
 在您的 app 程式碼，為目前已登入的使用者取得 Microsoft 帳戶 (MSA) 權杖。 您必須針對 Microsoft Store 針對性優惠 API，在 ```Authorization``` 要求標頭中傳送此權杖。 Microsoft Store 會使用此權杖來擷取適用於目前使用者的針對性優惠。
 
-若要取得 MSA 權杖，請使用[WebAuthenticationCoreManager](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 類別來要求使用範圍 ```devcenter_implicit.basic,wl.basic``` 的權杖。 以下範例示範操作方法。 此範例是[完整範例](#code-example)的摘要，並需要完整範例中提供的 **using** 陳述式。
+若要取得 MSA 權杖，請使用[WebAuthenticationCoreManager](/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 類別來要求使用範圍 ```devcenter_implicit.basic,wl.basic``` 的權杖。 下列範例示範如何進行這項操作。 此範例是[完整範例](#code-example)的摘要，並需要完整範例中提供的 **using** 陳述式。
 
 [!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "58334396"
 
 <span id="code-example" />
 
-## <a name="complete-code-example"></a>完整程式碼範例
+## <a name="complete-code-example"></a>完整的程式碼範例
 
 以下程式碼範例示範下列工作：
 
@@ -65,5 +65,5 @@ ms.locfileid: "58334396"
 
 ## <a name="related-topics"></a>相關主題
 
-* [若要最大化 engagement 和轉換中使用目標的供應項目](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
-* [取得目標的供應項目](get-targeted-offers.md)
+* [使用針對性優惠提高吸引力與轉換數](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)
+* [取得針對性供應項目](get-targeted-offers.md)

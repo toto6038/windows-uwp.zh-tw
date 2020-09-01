@@ -6,22 +6,22 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, direct3d 11, 初始設定, 移植, direct3d 9
 ms.localizationpriority: medium
-ms.openlocfilehash: c5a7f33ddbc6d70af5293b92165892c2098e452d
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 576b065293f792732bb36f91c9c4117cf3f4a5c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66368037"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159172"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
 
 
-**摘要**
+**總結**
 
--   第 1 部分：初始化 Direct3D 11
--   [第 2 部分：轉換轉譯架構](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   [第 3 部分：連接埠遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
+-   第一部分：初始化 Direct3D 11
+-   [第二部分：轉換轉譯架構](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   [第三部分：移植遊戲迴圈](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
 示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第一部分。
@@ -29,7 +29,7 @@ ms.locfileid: "66368037"
 ## <a name="initialize-the-direct3d-device"></a>初始化 Direct3D 裝置
 
 
-在 Direct3D 9 中，我們透過呼叫 [**IDirect3D9::CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice) 來建立 Direct3D 裝置的控制代碼。 我們一開始先取得 [**IDirect3D9 interface**](https://docs.microsoft.com/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) 的指標，並指定一些參數來控制 Direct3D 裝置與交換鏈結的設定。 在這樣做之前，我們已呼叫 [**GetDeviceCaps**](https://docs.microsoft.com/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps)，確定我們沒有要求裝置執行某些它無法執行的動作。
+在 Direct3D 9 中，我們透過呼叫 [**IDirect3D9::CreateDevice**](/windows/desktop/api/d3d9/nf-d3d9-idirect3d9-createdevice) 來建立 Direct3D 裝置的控制代碼。 我們一開始先取得 [**IDirect3D9 interface**](/windows/desktop/api/d3d9helper/nn-d3d9helper-idirect3d9) 的指標，並指定一些參數來控制 Direct3D 裝置與交換鏈結的設定。 在這樣做之前，我們已呼叫 [**GetDeviceCaps**](/windows/desktop/api/wingdi/nf-wingdi-getdevicecaps)，確定我們沒有要求裝置執行某些它無法執行的動作。
 
 Direct3D 9
 
@@ -69,11 +69,11 @@ m_pD3D->CreateDevice(
 
 在 Direct3D 11 中，裝置內容與圖形基礎結構被視為與裝置本身不同。 初始化分成數個步驟。
 
-首先，我們會建立裝置。 我們取得裝置支援的功能層級清單 - 這會告知大部分我們需要了解有關 GPU 的事項。 此外，不需要建立只為存取 Direct3D 的介面， 而是應該使用 [**D3D11CreateDevice**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 核心 API。 這個 API 可以為我們提供裝置的控制代碼與裝置的直接內容。 裝置內容是用來設定管線狀態和產生轉譯命令。
+首先，我們會建立裝置。 我們取得裝置支援的功能層級清單 - 這會告知大部分我們需要了解有關 GPU 的事項。 此外，不需要建立只為存取 Direct3D 的介面， 而是應該使用 [**D3D11CreateDevice**](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 核心 API。 這個 API 可以為我們提供裝置的控制代碼與裝置的直接內容。 裝置內容是用來設定管線狀態和產生轉譯命令。
 
 建立 Direct3D 11 裝置與內容之後，我們可以利用 COM 指標功能來取得包含額外功能的最新介面版本 (一律建議您取得最新版本)。
 
-> **附註**   D3D\_功能\_層級\_9\_1 （其對應至著色器模型 2.0） 是您的 Microsoft Store 遊戲，才可支援的最低層級。 (您的遊戲 ARM 套件將會失敗憑證，如果您不支援 9\_1。)如果您的遊戲也包含轉譯路徑著色器模型 3 的功能，則您應該在包含 D3D\_功能\_層級\_9\_3 陣列中的。
+> **注意**   D3D \_ 功能 \_ 層級 \_ 9 \_ 1 (對應至著色器模型 2.0) 是 Microsoft Store 遊戲必須支援的最低層級。 如果您不支援 9 1， (遊戲的 ARM 套件將會無法通過認證 \_ 。 ) 如果您的遊戲也包含著色器模型3功能的轉譯路徑，則您 \_ 應該 \_ 在陣列中包含 D3D 功能層級 \_ 9 \_ 3。
 
  
 
@@ -125,7 +125,7 @@ Direct3D 11 包含稱為 DirectX Graphics Infrastructure (DXGI) 的裝置 API。
 
 Direct3D 裝置會實作 DXGI 的 COM 介面。 首先，我們需要取得該介面，並使用它來要求裝載裝置的 DXGI 介面卡。 接著，使用 DXGI 介面卡來建立 DXGI Factory。
 
-> **附註**  這些是 COM 介面，因此您第一次的回應可能會使用[ **QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 您應該改用 [**Microsoft::WRL::ComPtr**](https://docs.microsoft.com/cpp/windows/comptr-class) 智慧型指標。 接著，只需呼叫 [**As()** ](https://docs.microsoft.com/previous-versions/br230426(v=vs.140)) 方法，提供正確介面類型的空 COM 指標。
+> **注意**   這些是 COM 介面，因此您的第一個回應可能是使用[**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 您應該改用 [**Microsoft::WRL::ComPtr**](/cpp/windows/comptr-class) 智慧型指標。 接著，只需呼叫 [**As()**](/previous-versions/br230426(v=vs.140)) 方法，提供正確介面類型的空 COM 指標。
 
  
 
@@ -147,9 +147,9 @@ dxgiAdapter->GetParent(
     );
 ```
 
-現在，我們已經有 DXGI Factory，可以使用它來建立交換鏈結。 讓我們來定義交換鏈結參數。 我們需要指定介面的格式;我們將選擇[ **DXGI\_格式\_B8G8R8A8\_UNORM** ](https://docs.microsoft.com/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format)因為它是與 Direct2D 相容。 我們關閉顯示縮放比例、多重取樣及立體著色運算，因為這個範例中並未用到它們。 由於我們是直接在 CoreWindow 中執行，所以能夠讓寬度與高度保留為 0 的設定，並自動取得全螢幕值。
+現在，我們已經有 DXGI Factory，可以使用它來建立交換鏈結。 讓我們來定義交換鏈結參數。 我們必須指定介面格式;我們會選擇 [**DXGI \_ FORMAT \_ B8G8R8A8 \_ UNORM**](/windows/desktop/api/dxgiformat/ne-dxgiformat-dxgi_format) ，因為它與 Direct2D 相容。 我們關閉顯示縮放比例、多重取樣及立體著色運算，因為這個範例中並未用到它們。 由於我們是直接在 CoreWindow 中執行，所以能夠讓寬度與高度保留為 0 的設定，並自動取得全螢幕值。
 
-> **附註**  永遠組*SDKVersion*參數，以 D3D11\_SDK\_UWP 應用程式的版本。
+> **注意**   一律將*SDKVersion*參數設定為 \_ \_ 適用于 UWP 應用程式的 D3D11 SDK 版本。
 
  
 
@@ -167,9 +167,9 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-若要確保我們不比實際顯示畫面可以更常轉譯，我們設定 1 」 和 「 使用畫面格延遲[ **DXGI\_交換\_效果\_FLIP\_循序**](https://docs.microsoft.com/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect). 這樣就能節省電源，而且這是一項市集憑證需求；我們將在這個逐步解說的第二部分中深入了解如何在螢幕上顯示。
+為了確保我們不會比螢幕實際顯示的更頻繁地呈現，我們會將畫面格延遲設定為1，並使用 [ [**DXGI \_ 交換 \_ 效果] \_ 反轉 \_ 順序**](/windows/desktop/api/dxgi/ne-dxgi-dxgi_swap_effect)。 這樣就能節省電源，而且這是一項市集憑證需求；我們將在這個逐步解說的第二部分中深入了解如何在螢幕上顯示。
 
-> **附註**  您可以使用多執行緒處理 (例如[ **ThreadPool** ](https://docs.microsoft.com/uwp/api/Windows.System.Threading)工作項目) 呈現執行緒封鎖時，請繼續執行其他工作。
+> **注意**   您可以使用多執行緒處理 (例如， [**ThreadPool**](/uwp/api/Windows.System.Threading)工作專案) 在轉譯執行緒遭到封鎖時繼續其他工作。
 
  
 
@@ -184,7 +184,7 @@ dxgiDevice->SetMaximumFrameLatency(1);
 ## <a name="configure-the-back-buffer-as-a-render-target"></a>設定背景緩衝區做為轉譯目標。
 
 
-首先，我們必須取得背景緩衝區的控制代碼 （請注意，背景緩衝區屬於 DXGI 交換鏈結，而在 DirectX 9 它之擁有者為 Direct3D 裝置。）然後我們告訴她能夠使用它做為呈現目標建立呈現目標的 Direct3D 裝置*檢視*使用背景緩衝區。
+首先，我們必須取得背景緩衝區的控制代碼 (請注意，背景緩衝區是由 DXGI 交換鏈結所擁有，而在 DirectX 9 中則是由 Direct3D 裝置所擁有)。接著，藉由使用背景緩衝區來建立轉譯目標*檢視*，告知 Direct3D 裝置使用它做為轉譯目標。
 
 **Direct3D 11**
 
@@ -222,12 +222,8 @@ CD3D11_VIEWPORT viewport(
 m_d3dContext->RSSetViewports(1, &viewport);
 ```
 
-現在我們有裝置控制代碼與全螢幕轉譯目標，所以已經準備好載入與繪製幾何圖形。 若要繼續[第 2 部分：轉譯](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)。
+現在我們有裝置控制代碼與全螢幕轉譯目標，所以已經準備好載入與繪製幾何圖形。 繼續進行[第二部分：轉譯](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)。
 
  
 
  
-
-
-
-

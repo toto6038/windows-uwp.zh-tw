@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a280d07ab7d715adaa7da941be641cd54e24443
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: d7f2c06564e0477fcec67418cae739e2fae123d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66371009"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158852"
 ---
 # <a name="lost-devices"></a>遺失裝置
 
@@ -21,13 +21,13 @@ Direct3D 裝置可能在操作狀態或遺失狀態。 *操作*狀態是一般�
 
 經過設計，未指定可能會導致裝置遺失的整套案例。 一些常見的範例包括焦點，例如當使用者按下 ALT + TAB 或當初始化系統對話方塊時。 裝置也可能因電源管理事件而遺失，或在另一個應用程式繼續全螢幕作業時遺失。 此外，重設裝置的失敗致使裝置進入遺失狀態。
 
-所有衍生自[**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)的方法，保證在裝置遺失之後運作。 遺失裝置之後，每項功能通常具有以下三個選項︰
+所有衍生自[**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)的方法，保證在裝置遺失之後運作。 遺失裝置之後，每項功能通常具有以下三個選項︰
 
 -   因「裝置遺失」錯誤而失敗 - 這表示應用程式需要辨識該裝置已經遺失，以便應用程式識別未如預期的運作。
--   以無訊息模式失敗，並傳回 S\_[確定] 或任何其他傳回碼-如果函式以無訊息模式失敗，應用程式通常無法分辨結果 「 成功 」 和 「 無訊息失敗 」。
+-   以無訊息方式失敗、傳回 S \_ 確定或任何其他傳回碼-如果函式以無訊息模式失敗，應用程式通常無法區分「成功」和「無提示失敗」的結果。
 -   傳回一個傳回碼。
 
-## <a name="span-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanspan-idrespondingtoalostdevicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>遺失的裝置回應
+## <a name="span-idresponding_to_a_lost_devicespanspan-idresponding_to_a_lost_devicespanspan-idresponding_to_a_lost_devicespanresponding-to-a-lost-device"></a><span id="Responding_to_a_Lost_Device"></span><span id="responding_to_a_lost_device"></span><span id="RESPONDING_TO_A_LOST_DEVICE"></span>回應遺失裝置
 
 
 遺失的裝置必須在重設後重新建立資源 (包括視訊記憶體資源)。 如果遺失裝置，應用程式會查詢裝置，查看是否可以還原到運作狀態。 若否，應用程式會等到裝置還原。
@@ -36,7 +36,7 @@ Direct3D 裝置可能在操作狀態或遺失狀態。 *操作*狀態是一般�
 
 大部分的 Direct3D 高頻呼叫不會傳回是否裝置已遺失的任何資訊。 應用程式可以繼續呼叫轉譯方法，而不會收到遺失裝置的通知。 內部將會捨棄這些作業，直到裝置重設為操作狀態。
 
-## <a name="span-idlockingoperationsspanspan-idlockingoperationsspanspan-idlockingoperationsspanlocking-operations"></a><span id="Locking_Operations"></span><span id="locking_operations"></span><span id="LOCKING_OPERATIONS"></span>鎖定的作業
+## <a name="span-idlocking_operationsspanspan-idlocking_operationsspanspan-idlocking_operationsspanlocking-operations"></a><span id="Locking_Operations"></span><span id="locking_operations"></span><span id="LOCKING_OPERATIONS"></span>鎖定作業
 
 
 在內部 Direct3D 運作以確保遺失裝置之後成功鎖定作業。 不過，它並不保證鎖定作業期間影片記憶體資源的資料是準確的。 它保證不傳回錯誤碼。 這可讓應用程式寫入，不需擔心鎖定作業期間遺失裝置。
@@ -50,7 +50,7 @@ Direct3D 裝置可能在操作狀態或遺失狀態。 *操作*狀態是一般�
 
 您可以使用單一程式碼路徑開發應用程式，以回應裝置遺失。 此程式碼路徑如果和初始啟動裝置的程式碼路徑不相同，也會很類似。
 
-## <a name="span-idretrieveddataspanspan-idretrieveddataspanspan-idretrieveddataspanretrieved-data"></a><span id="Retrieved_Data"></span><span id="retrieved_data"></span><span id="RETRIEVED_DATA"></span>擷取的資料
+## <a name="span-idretrieved_dataspanspan-idretrieved_dataspanspan-idretrieved_dataspanretrieved-data"></a><span id="Retrieved_Data"></span><span id="retrieved_data"></span><span id="RETRIEVED_DATA"></span>擷取的資料
 
 
 Direct3D 可讓應用程式驗證紋理和硬體單一行程轉譯的轉譯狀態。
@@ -67,7 +67,3 @@ Direct3D 也可讓應用程式複製已產生或先前從視訊記憶體資源�
  
 
  
-
-
-
-

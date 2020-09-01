@@ -1,60 +1,60 @@
 ---
-Description: 瞭解一些關於 Windows 10 的基本開發人員問題的答案。
-title: Windows 10 開發人員常見問題
+Description: 瞭解 Windows 10X 的一些基本開發人員相關問題的答案。
+title: Windows 10X 開發人員常見問題
 ms.topic: article
 ms.date: 06/02/2020
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 3ba14e33c098d3515522a9a5907065751fafba87
-ms.sourcegitcommit: 13bda6040988461a61b1b5561fde2f7a54835ccd
+ms.openlocfilehash: f321815658a1b59d941f8b2c0e1fa5aa0142b4f7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84318234"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157672"
 ---
-# <a name="windows-10x-developer-faq"></a>Windows 10 開發人員常見問題
+# <a name="windows-10x-developer-faq"></a>Windows 10X 開發人員常見問題
 
 > [!IMPORTANT]
-> 我們最近宣佈了 Windows 10 和 Windows 10 的優先順序變更。
-> 這些公告包括對 Windows 10 外型規格優先順序的變更。 [如需詳細資訊，請參閱這裡。](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
+> 我們最近宣佈了 Windows 10 和 Windows 10X 中優先順序的變更。
+> 這些公告包括對 Windows 10X 外形規格優先順序的變更。 [請於此處深入了解。](https://blogs.windows.com/windowsexperience/2020/05/04/accelerating-innovation-in-windows-10-to-meet-customers-where-they-are/)
 
-Windows 10 是 Windows 系列中的產品線，最適合用於雙螢幕裝置。 身為開發人員，您可以將 Windows 10 的應用程式優化，利用行動裝置和雙畫面觀眾特有的新功能，同時享有相同範圍的 Windows 10 功能和豐富的桌面支援，來觸及更多物件。 [我們已于2019年底宣佈 Windows 10](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97)，我們正期待在晚期2020中發行。
+Windows 10X 是 Windows 系列中最適合用於雙螢幕裝置的產品線。 身為開發人員，您可以藉由將應用程式優化以進行 Windows 10X，利用行動裝置和雙螢幕觀眾專屬的新功能，同時享有相同的 Windows 10 功能及豐富的桌面支援，來觸及更多物件。 [我們已在2019年底宣佈 Windows 10X](https://blogs.windows.com/windowsexperience/2019/10/02/introducing-windows-10x-enabling-dual-screen-pcs-in-2020/#6qxkItE2XMPu24uw.97)，我們期待在晚期2020中發行。
 
-![執行 Windows 10 的裝置](images/windows-10x-devices.png)
+![執行 Windows 10 倍的裝置](images/windows-10x-devices.png)
  
-*[顯示發行前版本的產品、模擬的螢幕並可能變更]*
+*[顯示的發行前產品，模擬的畫面並有可能變更]*
 
-如需有關建立雙畫面體驗和 Windows 10 倍的詳細資訊，請參閱[Microsoft 365 Dev Day](https://developer.microsoft.com/microsoft-365/virtual-events)的虛擬研討會，或[雙畫面開發人員](https://docs.microsoft.com/dual-screen/)檔。如需概覽資訊，以下是您可能會遇到的一些問題答案。
+如需有關建立雙螢幕體驗和 Windows 10X 的詳細資訊，請參閱 [Microsoft 365 Dev Day](https://developer.microsoft.com/microsoft-365/virtual-events)的虛擬研討會，或 [雙螢幕開發人員](/dual-screen/)檔。以下是一些您可能會遇到的問題的解答。
 
-### <a name="how-is-this-different-from-developing-for-windows-10"></a>這與針對 Windows 10 進行開發有何不同？
+### <a name="how-is-this-different-from-developing-for-windows-10"></a>這與開發 Windows 10 有何不同？
 
-對於大部分的應用程式而言，完全不同。 撰寫 Windows 10 的應用程式是透過 Windows 10 SDK 來支援。 Windows 10 是 Windows 10 的運算式，可支援 Windows 執行階段（WinRT） Api，並透過原生容器執行 Win32 應用程式。 接著，您可以從新的或現有的 UWP 或 Win32 應用程式呼叫專為雙畫面裝置設計的新 Api，讓他們能夠存取此新平臺的功能和優點。
+大部分的應用程式都不會有太大的差異。 您可以透過 Windows 10 SDK 來支援撰寫 Windows 10X 的應用程式。 Windows 10 的運算式中，Windows 10X 支援 Windows 執行階段 (WinRT) Api，並透過原生容器執行 Win32 應用程式。 然後，您可以從新的或現有的 UWP 或 Win32 應用程式，呼叫專為雙螢幕裝置設計的新 Api，讓他們能夠存取這個新平臺的功能和優點。
 
-### <a name="does-this-replace-desktop-windows-10"></a>這會取代桌上型電腦 Windows 10 嗎？
+### <a name="does-this-replace-desktop-windows-10"></a>這會取代桌面 Windows 10 嗎？
 
-不會。 Windows 10 將會平行發行至 Windows 10 的桌上出版本。 桌上出版的 Windows 10 將繼續提供新式桌面應用程式案例的增強功能和改進。 Windows 10 是另一個針對支援雙畫面平臺而優化的平臺。
+否。 Windows 10X 將會與 Windows 10 的桌上出版本平行發行。 桌上出版的 Windows 10 將繼續提供新式桌面應用程式案例的增強功能和增強功能。 Windows 10X 是另一個優化的平臺，可支援雙螢幕平臺。
 
-### <a name="when-will-windows-10x-be-released"></a>何時會釋放 Windows 10 倍？
+### <a name="when-will-windows-10x-be-released"></a>何時會 Windows 10X 發行？
 
-Windows 10 將會隨著 Surface Neo 和其他協力廠商雙畫面裝置在2020晚期發行。
+Windows 10X 將在2020年的協力廠商 Neo 和其他協力廠商雙螢幕裝置上發行。
 
-### <a name="when-can-i-start-development-for-windows-10x"></a>何時可以開始開發 Windows 10？
+### <a name="when-can-i-start-development-for-windows-10x"></a>何時可以開始 Windows 10X 的開發？
 
-您現在可以下載[Microsoft 模擬器和 Windows 10 倍模擬器映射](https://docs.microsoft.com/dual-screen/windows/get-dev-tools)。 我們將繼續改善此模擬器，並對其他支援 Windows 10 的裝置提供更好的協助工具。 這些模擬器與 Windows SDK 的搶鮮版結合，可讓您在第一個雙畫面裝置公開發行之前，先針對 Windows 10 進行開發。
+您現在可以下載 [Microsoft Emulator 和 Windows 10X Emulator Image](/dual-screen/windows/get-dev-tools) 。 我們將繼續改善此模擬器，並透過支援其他已啟用 Windows 10X 的裝置來補充此模擬器。 這些模擬器結合了 Windows SDK 的發行前版本，可讓您在第一個雙螢幕裝置公開發行之前，進行 Windows 10X 的開發。
 
-### <a name="will-my-universal-windows-platform-uwp-apps-run-on-windows-10x"></a>我的通用 Windows 平臺（UWP）應用程式會在 Windows 10 上執行嗎？
+### <a name="will-my-universal-windows-platform-uwp-apps-run-on-windows-10x"></a>我的通用 Windows 平臺 (UWP) 應用程式是否會在 Windows 10X 上執行？
 
-大部分的 UWP 應用程式在 Windows 10 上完全受到支援，並在執行 Windows 10 的裝置上運作，而不需要任何變更。 所有的 WinRT Api 都受到支援，就像 UWP 應用程式可以存取的其他功能一樣。 當發行前版本開發繼續進行時，我們將發行詳述其他不支援功能的檔。
+大部分 UWP 應用程式在 Windows 10X 上都受到完整支援，且在執行 Windows 10X 的裝置上運作，而不需要任何變更。 所有的 WinRT Api 都受到支援，如同 UWP 應用程式可存取的其他大部分功能。 當發行前版本開發繼續進行時，我們將發行詳述其他不支援功能的檔。
 
-### <a name="will-my-win32-apps-run-on-windows-10x"></a>我的 Win32 應用程式會在 Windows 10 上執行嗎？
+### <a name="will-my-win32-apps-run-on-windows-10x"></a>我的 Win32 應用程式是否會在 Windows 10X 上執行？
 
-Windows 10 提供原生支援，可在包含的環境中執行 Win32 應用程式。 大部分的 Win32 應用程式都可以在 Windows 10 裝置上執行及進行調試，而不需要事件，而且您也可以使用新的 Win32 Api 將雙畫面支援新增至您的應用程式。
+Windows 10X 提供原生支援，以在包含的環境中執行 Win32 應用程式。 大部分的 Win32 應用程式都可以在沒有事件的 Windows 10X 裝置上執行和調試，您也可以使用新的 Win32 Api 將雙螢幕支援新增至您的應用程式。
 
-### <a name="are-there-any-features-of-my-app-that-wont-work-on-windows-10x"></a>我的應用程式有任何功能無法在 Windows 10 上使用嗎？
+### <a name="are-there-any-features-of-my-app-that-wont-work-on-windows-10x"></a>我的應用程式是否有任何無法在 Windows 10X 上運作的功能？
 
-隨著 Windows 10 繼續進行發行前版本的開發，我們將發行檔來強調其特定限制。 不過，用來執行 Win32 應用程式的內含環境並不包含 Windows Shell，因此不支援 Shell 延伸模組和類似的功能。 同樣地，Windows 10 的裝置不支援與特定系統設定相關的 Api，例如電源使用選項。
+隨著 Windows 10X 繼續進行發行前版本的開發，我們將版本資訊其特定限制的檔。 不過，用來執行 Win32 應用程式的包含環境不包含 Windows Shell，因此不支援 Shell 擴充功能和類似的功能。 同樣地，Windows 10X 裝置不支援與特定系統設定相關的 Api，例如電源使用選項。
 
-### <a name="if-i-enhance-my-app-with-windows-10x-features-will-it-still-run-on-devices-running-desktop-windows-10"></a>如果我使用 Windows 10 的功能來增強我的應用程式，它還是會在執行 desktop Windows 10 的裝置上執行？
+### <a name="if-i-enhance-my-app-with-windows-10x-features-will-it-still-run-on-devices-running-desktop-windows-10"></a>如果我使用 Windows 10X 功能來增強我的應用程式，它仍會在執行 desktop Windows 10 的裝置上執行嗎？
 
-針對 Windows 10 所設計的應用程式仍可在執行桌上出版本 Windows 10 的裝置上運作，不過，在下一個主要版本更新之前，這些新的 Windows Api 將不會新增至 Windows 10 的桌上出版本。 就像您在多個桌面 Windows 10 版本上開發的應用程式一樣，請遵循調適型[編碼最佳作法](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)，以確保您的應用程式可在10倍和桌面 windows 10 上正常運作。 
+針對 Windows 10X 設計的應用程式仍可在執行桌上出版 Windows 10 的裝置上運作，不過這些新的 Windows Api 在下一個主要版本更新之前，將不會新增至桌上出版的 Windows 10。 就像您開發的應用程式在多個版本的桌上型電腦上所支援的一樣 Windows 10，請遵循 [適應性編碼的最佳作法](/windows/uwp/debug-test-perf/version-adaptive-code) ，以確保您的應用程式在10倍和 Windows 10 桌上型電腦上都能正常運作。

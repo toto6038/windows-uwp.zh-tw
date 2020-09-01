@@ -6,18 +6,18 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: aa6e93196d30c15374129eee7714604cfab7b82e
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 88bcd5d6ce59d0561e76f46f6291f58ad03ddf3c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601473"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156732"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>對語言、縮放比例及高對比的磚和快顯通知支援
 
-您的磚和快顯通知可以載入針對顯示語言、[顯示縮放比例](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高對比及其他執行階段內容量身訂做的文字與影像。 如需有關如何使用限定詞的資源檔名稱中的背景，請參閱[量身訂做您的資源語言、 小數位數和其他限定詞](../../../app-resources/tailor-resources-lang-scale-contrast.md)並[應用程式圖示和標誌](/windows/uwp/design/style/app-icons-and-logos)。
+您的磚和快顯通知可以載入針對顯示語言、 [顯示比例因數](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高對比和其他執行時間內容量身打造的字串和影像。 如需有關如何在資源檔名稱中使用限定詞的背景資訊，請參閱 [針對語言、規模和其他](../../../app-resources/tailor-resources-lang-scale-contrast.md) 辨識符號和 [應用程式圖示和標誌](../../style/app-icons-and-logos.md)量身打造資源。
 
-如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../../globalizing/globalizing-portal.md)。
+如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../../globalizing/globalizing-portal.md)。
 
 ## <a name="refer-to-a-string-resource-from-a-template"></a>從範本參考字串資源
 
@@ -66,14 +66,14 @@ ms.locfileid: "57601473"
 
 然後在提供影像的應用程式服務中實作 HTTP 處理常式，在其中檢查和使用查詢字串來判斷要傳回哪一個影像。
 
-您也必須在[磚](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)或[快顯通知](/uwp/schemas/tiles/toastschema/schema-root?branch=live) XML 承載中，將 [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) 屬性設定為 `true`。 **addImageQuery** 屬性會在磚和快顯通知結構描述的 `visual`、`binding` 及 `image` 元素中出現。 明確設定元素上的 **addImageQuery** 會覆寫上階設定的任何值。 例如，`image` 元素的 **addImageQuery** 值 `true` 會覆寫其上層 `binding` 元素的 **addImageQuery** 值 `false`。
+您也必須在[磚](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)或[快顯通知](/uwp/schemas/tiles/toastschema/schema-root?branch=live) XML 承載中，將 [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) 屬性設定為 `true`。 **AddImageQuery**屬性會出現在圖格和快顯快顯 `visual` 架構的、 `binding` 和元素中 `image` 。 明確設定元素上的 **addImageQuery** 會覆寫上階設定的任何值。 例如，`image` 元素的 **addImageQuery** 值 `true` 會覆寫其上層 `binding` 元素的 **addImageQuery** 值 `false`。
 
 以下是您可以使用的查詢字串。
 
-| 限定詞 | 查詢字串 | 範例 |
+| Qualifier | 查詢字串 | 範例 |
 | --------- | ------------ | ------- |
-| 縮放比例 | ms-scale | ?ms-scale=400 |
-| 語言 | ms-lang | ?ms-lang=en-US |
+| 調整 | ms-scale | ?ms-scale=400 |
+| Language | ms-lang | ?ms-lang=en-US |
 | 這個 | ms-contrast | ?ms-contrast=high |
 
 如需所有可在查詢字串中使用之可能限定詞值的參考表，請參閱 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)。
@@ -84,12 +84,12 @@ ms.locfileid: "57601473"
 
 ## <a name="related-topics"></a>相關主題
 
-* [螢幕大小和中斷點的回應式設計](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-* [量身打造您的語言、 規模和其他辨識符號的資源](../../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [磚和圖示資產的指導方針](app-assets.md)。
+* [回應式設計的螢幕大小與中斷點](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)
+* [針對語言、縮放比例及其他限定詞量身打造您的資源](../../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [磚和圖示資產的指導方針](../../style/app-icons-and-logos.md)。
 * [全球化和當地語系化](../../globalizing/globalizing-portal.md)
-* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../../app-resources/localize-strings-ui-manifest.md)
-* [從 XAML 標記和程式碼參考映像或其他資產](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
-* [AddImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
-* [並排顯示結構描述](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
-* [快顯通知的結構描述](/uwp/schemas/tiles/toastschema/schema-root?branch=live)
+* [當地語系化您的 UI 及應用程式套件資訊清單中的字串](../../../app-resources/localize-strings-ui-manifest.md)
+* [從 XAML 標記和程式碼參考影像或其他資產](../../../app-resources/images-tailored-for-scale-theme-contrast.md)
+* [addImageQuery](/uwp/schemas/tiles/tilesschema/element-visual?branch=live)
+* [磚結構描述](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)
+* [快顯通知結構描述](/uwp/schemas/tiles/toastschema/schema-root?branch=live)

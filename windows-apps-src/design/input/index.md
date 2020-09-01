@@ -1,5 +1,5 @@
 ---
-description: 針對手寫筆、Surface Dial 和其他輸入類型最佳化您的應用程式。
+description: 深入了解如何自訂您的通用 Windows 平台 (UWP) 應用程式，以便與特定輸入類型 (包括手寫筆、Surface Dial 及語音) 互動。
 title: 輸入與互動
 keywords: 應用程式輸入, 自訂 UWP 應用程式
 label: Input and interactions
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c54101306d2382a4e0301e89410d58abfb87743
-ms.sourcegitcommit: dccba7256765116f06cf96143eb3cbaa12d7fe0b
+ms.openlocfilehash: 4fc0fa50bbf015c32934785e96b59924889d2f45
+ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87523534"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89094765"
 ---
 # <a name="input-and-interactions"></a>輸入與互動
 

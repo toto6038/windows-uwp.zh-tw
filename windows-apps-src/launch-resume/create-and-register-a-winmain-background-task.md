@@ -1,51 +1,51 @@
 ---
 title: 建立並註冊 winmain 背景工作
-description: 建立可在您的主要進程中執行的 COM 背景工作，或在您的封裝 winmain 應用程式可能不在執行時跨進程執行的作業。
+description: 建立可在您的主要進程或跨進程執行的 COM 背景工作（當封裝的 winmain 應用程式可能未執行時）。
 ms.assetid: 8CBD4986-6E65-4374-BC7C-C38908E417E1
 ms.date: 03/27/2020
 ms.topic: article
-keywords: windows 10，桌面橋接器，sparse 已簽署的封裝，winmain，背景工作
+keywords: windows 10、desktop bridge、sparse 已簽署套件、winmain、背景工作
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 1e06a87ce771f603721c928b984d0f57d8e45013
-ms.sourcegitcommit: 1d53d89bd3d044f4a2dc290b93c1ad15a088b361
+ms.openlocfilehash: 72b6196f0b4607f2414eb94220dd31190ef93245
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87547310"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156012"
 ---
 # <a name="create-and-register-a-winmain-com-background-task"></a>建立並註冊 winmain COM 背景工作
 
 > [!TIP]
-> 從 Windows 10 版本2004開始提供 BackgroundTaskBuilder. SetTaskEntryPointClsid 方法。
+> BackgroundTaskBuilder. SetTaskEntryPointClsid 方法是從 Windows 10 2004 版開始提供。
 
 > [!NOTE]
-> 此案例僅適用于已封裝的 WinMain 應用程式。 UWP 應用程式會在嘗試執行此案例時遇到錯誤。
+> 此案例僅適用于已封裝的 WinMain 應用程式。 UWP 應用程式將會在嘗試執行此案例時發生錯誤。
 
 **重要 API**
 
--   [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
--   [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
+-   [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)
+-   [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)
 
-建立 COM 背景工作類別，並在您的完全信任封裝 winmain 應用程式中加以註冊，以回應觸發程式。 您可以使用背景工作，在 app 被暫停或未執行時提供功能。 本主題示範如何建立和註冊可在前景應用程式進程或其他進程中執行的背景工作。
+建立 COM 背景工作類別，並將其註冊為在完全信任的已封裝 winmain 應用程式中執行，以回應觸發程式。 您可以使用背景工作，在 app 被暫停或未執行時提供功能。 本主題將示範如何建立和註冊可在前景應用程式進程或另一個進程中執行的背景工作。
 
 ## <a name="create-the-background-task-class"></a>建立背景工作類別
 
-您可以撰寫實作 [**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 介面的類別，在背景執行程式碼。 當使用觸發特定事件（例如[**SystemTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType)或[**TimeTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.TimeTrigger)）時，就會執行此程式碼。
+您可以撰寫實作 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 介面的類別，在背景執行程式碼。 此程式碼會在使用觸發特定事件時執行，例如 [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 或 [**TimeTrigger**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger)。
 
-下列步驟示範如何撰寫新的類別來執行[**IBackgroundTask**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面，並將它新增至您的主要進程。
+下列步驟示範如何撰寫新的類別來執行 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 介面，並將它新增至您的主要進程。
 
-1.  [**請參閱這些指示**](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-enhance)，以在您的封裝 WinMain 應用程式解決方案中參考 WinRT api。 這是使用 IBackgroundTask 和相關 Api 的必要條件。
-2.  在該新類別中，執行[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面。 [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是必要的進入點，會在觸發指定的事件時呼叫;這是每個背景工作中的必要方法。
+1.  [**請參閱下列指示**](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) ，以參考封裝 WinMain 應用程式解決方案中的 WinRT api。 這是使用 IBackgroundTask 和相關 Api 的必要項。
+2.  在這個新類別中，請執行 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 介面。 [**IBackgroundTask**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是所需的進入點，會在觸發指定的事件時呼叫;每個背景工作都必須要有這個方法。
 
 > [!NOTE]
-> 背景工作類別本身 &mdash; 和背景工作專案中的所有其他類別都 &mdash; 必須是**公用**的。
+> 背景工作專案類別本身 &mdash; 以及背景工作專案中的所有其他類別都 &mdash; 必須是 **公用**的。
 
-下列範例程式碼顯示的是一個基本的背景工作類別，它會計算質數，並將它寫入檔案，直到要求取消為止。
+下列範例程式碼顯示基本的背景工作類別，其會計算質數並將它寫入檔案，直到要求取消為止。
 
-C + +/WinRT 範例會將背景工作類別實作為[**COM coclass**](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory)。
+C + +/WinRT 範例會將背景工作類別實作為 [**COM coclass**](../cpp-and-winrt-apis/author-coclasses.md#implement-the-coclass-and-class-factory)。
 
 
 <details>
@@ -264,9 +264,9 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ## <a name="add-the-support-code-to-instantiate-the-com-class"></a>新增支援程式碼以具現化 COM 類別
 
-為了讓背景工作啟用到完全信任的 winmain 應用程式中，背景工作類別必須具有支援程式碼，如此一來，COM 才會瞭解如何啟動應用程式進程（如果它不在執行中），然後瞭解進程的哪個實例目前是伺服器，以處理該背景工作的新啟用。
+為了讓背景工作啟動至完全信任的 winmain 應用程式，背景工作類別必須有支援的程式碼，如此一來，該 COM 就能瞭解如何啟動應用程式進程（如果未執行），然後瞭解哪個進程實例目前是伺服器來處理該背景工作的新啟用。
 
-1.  COM 必須瞭解如何啟動應用程式進程（如果尚未執行）。 裝載背景工作程式碼的應用程式進程必須在封裝資訊清單中宣告。 下列範例程式碼示範如何在**SampleBackgroundApp.exe**內裝載**SampleTask** 。 當背景工作在沒有執行中的進程時啟動時， **SampleBackgroundApp.exe**將會以處理常式引數 **"-StartSampleTaskServer"** 啟動。
+1.  COM 需要瞭解如何啟動尚未執行的應用程式進程。 裝載背景工作程式碼的應用程式進程必須在封裝資訊清單中宣告。 下列範例程式碼示範如何將 **SampleTask** 裝載于 **SampleBackgroundApp.exe**內。 當背景工作在沒有進程正在執行時啟動時， **SampleBackgroundApp.exe** 將會以進程引數 **"-StartSampleTaskServer"** 啟動。
 
 ```xml
 
@@ -282,7 +282,7 @@ namespace PackagedWinMainBackgroundTaskSample {
 
 ```
 
-2.  當您的進程以正確的引數啟動時，它應該告訴 COM 它是 SampleTask 新實例的目前 COM 伺服器。 下列範例程式碼示範應用程式進程應該如何向 COM 註冊它自己。 請注意，這些範例會指出程式如何將自己宣告為 SampleTask 的 COM 伺服器，讓至少一個實例在結束之前完成。 這是選擇性的，而且處理背景工作可能會啟動您的主要進程函式。
+2.  當您的進程使用正確的引數開始時，它應該告訴 COM 它是 SampleTask 新實例的目前 COM 伺服器。 下列範例程式碼顯示應用程式進程如何向 COM 註冊本身。 請注意，這些範例指出程式如何將本身宣告為至少一個實例的 COM 伺服器，以便在結束之前完成至少一個實例的 SampleTask。 這是選擇性的，而處理背景工作可能會啟動您的主要進程函式。
 
 ```csharp
 
@@ -391,9 +391,9 @@ sampleTaskServer.Start();
 
 ## <a name="register-the-background-task-to-run"></a>註冊要執行的背景工作
 
-1.  藉由逐一查看[**BackgroundTaskRegistration. AllTasks**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks)屬性，找出背景工作是否已註冊。 *此步驟很重要*;如果您的應用程式不會檢查是否有現有的背景工作註冊，它可以輕鬆地多次註冊工作，而造成效能問題，並在工作可以完成之前提高工作的可用 CPU 時間。 應用程式可以自由地使用相同的進入點來處理所有背景工作，並使用其他屬性（例如指派給[**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration)的[**名稱**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name)或[**TaskId**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) ）來決定應執行的工作。
+1.  逐一查看 [**BackgroundTaskRegistration. AllTasks**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.alltasks) 屬性，以瞭解背景工作是否已註冊。 *此步驟很重要*;如果您的應用程式不會檢查是否有現有的背景工作註冊，它可以輕鬆地多次註冊工作，進而導致效能問題，並在工作完成前提高工作的可用 CPU 時間。 應用程式可自由使用相同的進入點來處理所有背景工作，並使用其他屬性（例如指派給[**BackgroundTaskRegistration**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration)的[**名稱**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.name#Windows_ApplicationModel_Background_BackgroundTaskRegistration_Name)或[**TaskId**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.taskid#Windows_ApplicationModel_Background_BackgroundTaskRegistration_TaskId) ）來決定應完成的工作。
 
-下列範例會逐一查看**AllTasks**屬性，並將旗標變數設定為 true （如果工作已註冊）。
+下列範例會逐一查看 **AllTasks** 屬性，並將旗標變數設定為 true （如果工作已經註冊）。
 
 ```csharp
 
@@ -432,14 +432,14 @@ for (auto const& task : allTasks)
 
 ```
 
-1.  如果應用程式工作尚未登錄，則使用 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 建立您背景工作的執行個體。 工作進入點應該是您的背景工作類別名稱，並以命名空間為前置詞。
+1.  如果應用程式工作尚未登錄，則使用 [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 建立您背景工作的執行個體。 工作進入點應該是您的背景工作類別名稱，並以命名空間為前置詞。
 
-背景工作觸發程序會控制背景工作將在何時執行。 如需可能的觸發程式清單，請參閱[**ApplicationModel. Background**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background)命名空間。
+背景工作觸發程序會控制背景工作將在何時執行。 如需可能觸發程式的清單，請參閱 [**ApplicationModel。背景**](/uwp/api/windows.applicationmodel.background) 命名空間。
 
 > [!NOTE]
-> 封裝的 winmain 背景工作只支援一部分的觸發程式。
+> 封裝的 winmain 背景工作只支援觸發程式的子集。
 
-例如，此程式碼會建立新的背景工作，並將它設定為在15分鐘的週期性[**TimeTrigger**]()上執行：
+例如，此程式碼會建立新的背景工作，並將它設定為在15分鐘的週期性 [**TimeTrigger**]()上執行：
 
 ```csharp
 
@@ -471,7 +471,7 @@ if (!taskRegistered)
 
 ```
 
-1.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您不想讓工作執行直到網際網路可供使用，請使用 [條件] **InternetAvailable**。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
+1.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您不想要在網際網路可用之前執行此工作，請使用 [條件] **InternetAvailable**。 如需可用條件的清單，請參閱 [**SystemConditionType**](/uwp/api/Windows.ApplicationModel.Background.SystemConditionType)。
 
 下列範例程式碼會指派條件，要求必須要有使用者：
 
@@ -485,7 +485,7 @@ builder.AddCondition(SystemCondition{ SystemConditionType::InternetAvailable });
 // The code in the next step goes here.
 ```
 
-4.  透過呼叫 [**BackgroundTaskBuilder**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 物件的 Register 方法來註冊背景工作。 儲存 [**BackgroundTaskRegistration**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 結果以便在下一個步驟使用。 請注意，register 函數可能會以例外狀況的形式傳回錯誤。 請務必在 try-catch 中呼叫 Register。
+4.  透過呼叫 [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 物件的 Register 方法來註冊背景工作。 儲存 [**BackgroundTaskRegistration**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration) 結果以便在下一個步驟使用。 請注意，register 函數可能會以例外狀況的形式傳回錯誤。 請務必在 try-catch 中呼叫 Register。
 
 下列程式碼會註冊背景工作並儲存結果：
 
@@ -515,7 +515,7 @@ catch (...)
 
 ```
 
-## <a name="bringing-it-all-together"></a>整合在一起
+## <a name="bringing-it-all-together"></a>全部整合
 
 下列程式碼範例顯示執行和註冊您的 COM winmain 背景工作所需的完整程式碼：
 
@@ -1045,7 +1045,7 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 
 ## <a name="remarks"></a>備註
 
-不同于可在新式待命中執行背景工作的 UWP 應用程式，WinMain apps 無法從新式待命的較低電源階段執行程式碼。 若要深入瞭解，請參閱[新式待命](https://docs.microsoft.com/windows-hardware/design/device-experiences/modern-standby)。
+不同于可在新式待命中執行背景工作的 UWP 應用程式，WinMain apps 無法從新式待命的較低電源階段執行程式碼。 若要深入瞭解，請參閱 [新式待命](/windows-hardware/design/device-experiences/modern-standby) 。
 
 請參閱下列 API 參考的相關主題、背景工作概念指引，以及撰寫使用背景工作之 app 的更詳細說明。
 
@@ -1058,15 +1058,15 @@ int wmain(_In_ int argc, _In_reads_(argc) const wchar** argv)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [建立並註冊同進程背景](create-and-register-an-inproc-background-task.md)工作。
+* [建立並註冊同進程的背景](create-and-register-an-inproc-background-task.md)工作。
 * [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)
 
 **背景工作指引**
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://msdn.microsoft.com/library/windows/apps/hh974425(v=vs.110).aspx)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](/previous-versions/hh974425(v=vs.110))
 
 **背景工作 API 參考**
 
-* [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background)
+* [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background)

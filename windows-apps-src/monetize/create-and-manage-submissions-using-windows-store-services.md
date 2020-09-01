@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 38a59db4115332a374c96c8a4400dbaccff9cd82
-ms.sourcegitcommit: 720413d2053c8d5c5b34d6873740be6e913a4857
+ms.openlocfilehash: af0d36f2fa76fe9bb5bd253436f3d434a860e7ec
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88846818"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155622"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 
@@ -40,21 +40,21 @@ ms.locfileid: "88846818"
 
 開始撰寫程式碼以呼叫 Microsoft Store 提交 API 之前，請先確定您已完成下列先決條件。
 
-* 您 (或您的組織) 必須具有 Azure AD 目錄，且您必須具備該目錄的[全域管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) \(部分機器翻譯\) 權限。 如果您已經使用 Microsoft 365 或 Microsoft 的其他商務服務，則您已經有 Azure AD 目錄。 否則，您可以 [在合作夥伴中心中建立新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，而不需要額外收費。
+* 您 (或您的組織) 必須具有 Azure AD 目錄，且您必須具備該目錄的[全域管理員](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) \(部分機器翻譯\) 權限。 如果您已經使用 Microsoft 365 或 Microsoft 的其他商務服務，則您已經有 Azure AD 目錄。 否則，您可以 [在合作夥伴中心中建立新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，而不需要額外收費。
 
 * 您必須[將 Azure AD 應用程式與您的合作夥伴中心帳戶建立關聯](#associate-an-azure-ad-application-with-your-windows-partner-center-account) \(部分機器翻譯\)，並取得您的租用戶識別碼、用戶端識別碼及金鑰。 您需要這些值才能取得 Azure AD 存取權杖，而您將會在呼叫 Microsoft Store 提交 API 時使用該權杖。
 
 * 準備您的 App 與 Microsoft Store 提交 API 搭配使用︰
 
-  * 如果合作夥伴中心中還沒有您的應用程式，您必須 [在合作夥伴中心中保留應用程式的名稱，以建立您的應用程式](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 您無法使用 Microsoft Store 提交 API 在合作夥伴中心中建立應用程式;您必須使用合作夥伴中心來建立它，然後您可以使用 API 來存取應用程式，並以程式設計方式為它建立提交。 不過，您可以使用 API 以程式設計方式建立附加元件和套件正式發行前小眾測試版，再建立提交。
+  * 如果合作夥伴中心中還沒有您的應用程式，您必須 [在合作夥伴中心中保留應用程式的名稱，以建立您的應用程式](../publish/create-your-app-by-reserving-a-name.md)。 您無法使用 Microsoft Store 提交 API 在合作夥伴中心中建立應用程式;您必須使用合作夥伴中心來建立它，然後您可以使用 API 來存取應用程式，並以程式設計方式為它建立提交。 不過，您可以使用 API 以程式設計方式建立附加元件和套件正式發行前小眾測試版，再建立提交。
 
-  * 您必須先 [針對合作夥伴中心中的應用程式建立一個提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，包括回答 [年齡分級](https://docs.microsoft.com/windows/uwp/publish/age-ratings) 問卷，才能使用此 API 來建立指定應用程式的提交。 執行這個動作之後，您就能夠使用 API 以程式設計方式建立此 App 的新提交。 您不需要先建立附加元件提交或套件正式發行前小眾測試版提交，才能使用 API 進行這些類型的提交。
+  * 您必須先 [針對合作夥伴中心中的應用程式建立一個提交](../publish/app-submissions.md)，包括回答 [年齡分級](../publish/age-ratings.md) 問卷，才能使用此 API 來建立指定應用程式的提交。 執行這個動作之後，您就能夠使用 API 以程式設計方式建立此 App 的新提交。 您不需要先建立附加元件提交或套件正式發行前小眾測試版提交，才能使用 API 進行這些類型的提交。
 
-  * 如果您要建立或更新 App 提交，而且必須包含 App 套件，請[準備 App 套件](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。
+  * 如果您要建立或更新 App 提交，而且必須包含 App 套件，請[準備 App 套件](../publish/app-package-requirements.md)。
 
-  * 如果您要建立或更新 App 提交，而且必須包含 Store 清單的螢幕擷取畫面或影像，請[準備 App 螢幕擷取畫面與影像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)。
+  * 如果您要建立或更新 App 提交，而且必須包含 Store 清單的螢幕擷取畫面或影像，請[準備 App 螢幕擷取畫面與影像](../publish/app-screenshots-and-images.md)。
 
-  * 如果您要建立或更新附加元件提交，而且必須包含圖示，請[準備圖示](https://docs.microsoft.com/windows/uwp/publish/create-iap-descriptions)。
+  * 如果您要建立或更新附加元件提交，而且必須包含圖示，請[準備圖示](../publish/create-add-on-store-listings.md)。
 
 <span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
@@ -79,7 +79,7 @@ ms.locfileid: "88846818"
 
 在 Microsoft Store 提交 API 中呼叫任何方法之前，您必須先取得傳遞至 API 中每個方法的 **Authorization** 標頭的 Azure AD 存取權杖。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以重新整理權杖以便在後續呼叫 API 時繼續使用。
 
-若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/)中的指示，將 HTTP POST 傳送至 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 端點。 以下是範例要求。
+若要取得存取權杖，請按照[使用用戶端認證的服務對服務呼叫](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow)中的指示，將 HTTP POST 傳送至 ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` 端點。 以下是範例要求。
 
 ```json
 POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
@@ -94,7 +94,7 @@ grant_type=client_credentials
 
 針對 POST URI 中的 *租使用者 \_ 識別碼* 值，以及 *客戶 \_ 端識別碼* 和用戶端 * \_ 密碼* 參數，指定您的應用程式的租使用者識別碼、用戶端識別碼和金鑰，並從上一節的合作夥伴中心中取出。 針對 *resource* 參數，您必須指定 ```https://manage.devcenter.microsoft.com```。
 
-存取權杖到期之後，您可以按照[這裡](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens)的指示，重新整理權杖。
+存取權杖到期之後，您可以按照[這裡](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的指示，重新整理權杖。
 
 如需示範如何使用 C#、Java 或 Python 程式碼來取得存取權杖的範例，請參閱 Microsoft Store 提交 API [程式碼範例](#code-examples)。
 
@@ -107,7 +107,7 @@ grant_type=client_credentials
 > [!NOTE]
 > 取得存取權杖之後，在權杖到期之前，您有 60 分鐘的時間可以呼叫 Microsoft Store 提交 API 中的方法。
 
-| 狀況       | 描述                                                                 |
+| 案例       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
 | 應用程式 |  針對已向合作夥伴中心帳戶註冊的所有應用程式取出資料，並建立應用程式的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得應用程式資料](get-app-data.md)</li><li>[管理應用程式提交](manage-app-submissions.md)</li></ul> |
 | 附加元件 | 取得、建立或刪除您 App 的附加元件，然後取得、建立或刪除附加元件的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[管理附加元件](manage-add-ons.md)</li><li>[管理附加元件提交](manage-add-on-submissions.md)</li></ul> |
@@ -136,7 +136,7 @@ grant_type=client_credentials
 
 | 問題      | 解決方案                                          |
 |---------------|---------------------------------------------|
-| 從 PowerShell 呼叫 Microsoft Store 提交 API 之後，如果您使用 [ConvertFrom-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) Cmdlet 從 JSON 格式轉換為 PowerShell 物件，然後使用 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) Cmdlet 轉換回 JSON 格式，API 的回應資料會損毀。 |  [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) Cmdlet 的 *-Depth* 參數預設是設為 2 層物件，這對於 Microsoft Store 提交 API 傳回的大部分 JSON 物件來說太淺。 當您呼叫 [ConvertTo-Json](https://docs.microsoft.com/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) Cmdlet 時，請將 *-Depth* 參數設為較大的數字，例如 20。 |
+| 從 PowerShell 呼叫 Microsoft Store 提交 API 之後，如果您使用 [ConvertFrom-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertFrom-Json) Cmdlet 從 JSON 格式轉換為 PowerShell 物件，然後使用 [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) Cmdlet 轉換回 JSON 格式，API 的回應資料會損毀。 |  [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) Cmdlet 的 *-Depth* 參數預設是設為 2 層物件，這對於 Microsoft Store 提交 API 傳回的大部分 JSON 物件來說太淺。 當您呼叫 [ConvertTo-Json](/powershell/module/5.1/microsoft.powershell.utility/ConvertTo-Json) Cmdlet 時，請將 *-Depth* 參數設為較大的數字，例如 20。 |
 
 ## <a name="additional-help"></a>其他說明
 

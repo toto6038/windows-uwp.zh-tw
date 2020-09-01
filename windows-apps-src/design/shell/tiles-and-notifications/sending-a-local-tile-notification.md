@@ -5,19 +5,19 @@ ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a6b61463204b4ae60fbb853cd00a10c7185a084
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: a8e3bee4a32c4a66ece5f486386340e9f9122f87
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66362695"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156802"
 ---
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
  
 
-雖然次要磚以程式設計方式建立及定義您的應用程式程式碼中您應用程式資訊清單中定義 Windows 10 中的主要應用程式磚。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
+Windows 10 中的主要應用程式磚定義在您的應用程式資訊清單中，次要磚則是以程式設計方式建立，而且是由您的應用程式程式碼定義。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
 
 ![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
@@ -26,17 +26,17 @@ ms.locfileid: "66362695"
 
  
 
-## <a name="install-the-nuget-package"></a>安裝 NuGet 套件
+## <a name="install-the-nuget-package"></a>安裝 NuGet 封裝
 
 
 我們建議您安裝 [Notifications 程式庫 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以物件 (而非原始 XML) 來產生磚承載，讓事情較為簡化。
 
 此文章中的內嵌程式碼範例適用於使用 Notifications 程式庫的 C#。 (如果您想要建立您自己的 XML，您可以在文章後面找到不含 Notifications 程式庫的程式碼範例。)
 
-## <a name="add-namespace-declarations"></a>加入命名空間宣告
+## <a name="add-namespace-declarations"></a>新增命名空間宣告
 
 
-若要存取磚 API，請包含 [**Windows.UI.Notifications**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications) 命名空間。 我們也建議您包含 **Microsoft.Toolkit.Uwp.Notifications** 命名空間，這樣您就能利用我們的磚協助程式 API (您必須安裝 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 套件才能存取這些 API)。
+若要存取磚 API，請包含 [**Windows.UI.Notifications**](/uwp/api/Windows.UI.Notifications) 命名空間。 我們也建議您包含 **Microsoft.Toolkit.Uwp.Notifications** 命名空間，這樣您就能利用我們的磚協助程式 API (您必須安裝 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 套件才能存取這些 API)。
 
 ```csharp
 using Windows.UI.Notifications;
@@ -46,7 +46,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>建立通知內容
 
 
-在 Windows 10 中，磚承載被定義使用調適性磚範本，可讓您建立自訂的視覺化版面配置，您的通知。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](create-adaptive-tiles.md)。)
+在 Windows 10 中，磚承載是彈性磚範本定義的，可讓您為您的通知建立自訂的視覺配置。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](create-adaptive-tiles.md)。)
 
 這個程式碼範例會建立中型和寬形磚的彈性磚內容。
 
@@ -125,7 +125,7 @@ TileContent content = new TileContent()
 ## <a name="create-the-notification"></a>建立通知
 
 
-擁有通知內容後，您需要建立一個新的 [**TileNotification**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileNotification)。 **TileNotification** 建構函式採用 Windows 執行階段 [**XmlDocument**](https://docs.microsoft.com/uwp/api/windows.data.xml.dom.xmldocument) 物件，如果您使用 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，即可透過 **TileContent.GetXml** 方法取得。
+擁有通知內容後，您需要建立一個新的 [**TileNotification**](/uwp/api/Windows.UI.Notifications.TileNotification)。 **TileNotification** 建構函式採用 Windows 執行階段 [**XmlDocument**](/uwp/api/windows.data.xml.dom.xmldocument) 物件，如果您使用 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，即可透過 **TileContent.GetXml** 方法取得。
 
 這個程式碼範例會為新的磚建立通知。
 
@@ -150,9 +150,9 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 
 雖然在本機傳送磚通知很簡單，但傳送通知到主要或次要磚則稍有不同。
 
-**主要的圖格**
+**主要磚**
 
-若要將通知傳送到主要磚，請使用 [**TileUpdateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdateManager) 為主要磚建立磚更新程式，並呼叫 "Update" 來傳送通知。 無論是否可見，您的應用程式主要磚一律會存在，因此即使未釘選它，也可以傳送通知給它。 如果使用者之後釘選您的主要磚，屆時就會顯示您傳送的通知。
+若要將通知傳送到主要磚，請使用 [**TileUpdateManager**](/uwp/api/Windows.UI.Notifications.TileUpdateManager) 為主要磚建立磚更新程式，並呼叫 "Update" 來傳送通知。 無論是否可見，您的應用程式主要磚一律會存在，因此即使未釘選它，也可以傳送通知給它。 如果使用者之後釘選您的主要磚，屆時就會顯示您傳送的通知。
 
 這個程式碼範例會傳送通知到主要磚。
 
@@ -164,7 +164,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 **次要磚**
 
-若要傳送通知到次要磚，請先確定次要磚已經存在。 如果您嘗試為不存在的次要磚建立磚更新程式 (例如，如果使用者取消釘選次要磚) ，就會擲回例外狀況。 您可以使用 [**SecondaryTile.Exists**](https://docs.microsoft.com/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) 探索您的次要磚是否已釘選，然後再為次要磚建立磚更新程式並傳送通知。
+若要傳送通知到次要磚，請先確定次要磚已經存在。 如果您嘗試為不存在的次要磚建立磚更新程式 (例如，如果使用者取消釘選次要磚) ，就會擲回例外狀況。 您可以使用 [**SecondaryTile.Exists**](/uwp/api/Windows.UI.StartScreen.SecondaryTile#Windows_UI_StartScreen_SecondaryTile_Exists_System_String_)(tileId) 探索您的次要磚是否已釘選，然後再為次要磚建立磚更新程式並傳送通知。
 
 這個程式碼範例會傳送通知到次要磚。
 
@@ -204,7 +204,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 
 **使用通知佇列**
 
-您已經完成第一次的磚更新，現在可以透過啟用[通知佇列](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))來擴充磚的功能。
+您已經完成第一次的磚更新，現在可以透過啟用[通知佇列](/previous-versions/windows/apps/hh868234(v=win.10))來擴充磚的功能。
 
 **其他通知傳遞方法**
 
@@ -233,7 +233,7 @@ public string XmlEncode(string text)
 
 如果您偏好使用原始的 XML 而非 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet 套件，請將這些替代程式碼範例運用到本文的前三個範例。 其餘的程式碼範例則可搭配 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)或原始 XML 使用。
 
-加入命名空間宣告
+新增命名空間宣告
 
 ```csharp
 using Windows.UI.Notifications;
@@ -286,17 +286,13 @@ var notification = new TileNotification(doc);
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立自動調整圖格](create-adaptive-tiles.md)
+* [建立彈性磚](create-adaptive-tiles.md)
 * [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
-* [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications 命名空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [如何使用通知佇列 (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))
+* [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [**Windows.UI.Notifications 命名空間**](/uwp/api/Windows.UI.Notifications)
+* [如何使用通知佇列 (XAML)](/previous-versions/windows/apps/hh868234(v=win.10))
 * [傳遞通知](choosing-a-notification-delivery-method.md)
  
 
  
-
-
-
-

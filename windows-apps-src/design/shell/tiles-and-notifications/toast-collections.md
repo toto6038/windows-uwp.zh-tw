@@ -7,18 +7,18 @@ ms.date: 05/16/2018
 ms.topic: article
 keywords: Windows 10, uwp, 通知, 集合, 集合, 群組通知, 群組通知, 群組, 組織, 重要訊息中心, 快顯通知
 ms.localizationpriority: medium
-ms.openlocfilehash: aff6b933e04611013761c10ad7a76824f7347855
-ms.sourcegitcommit: eb725a47c700131f5975d737bd9d8a809e04943b
+ms.openlocfilehash: 7cd99519f7213f85c50a14db0597daa4e10f8360
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970066"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156752"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>使用集合來群組快顯通知
 使用集合來組織應用程式在重要訊息中心的快顯通知。 集合有助於使用者更容易在重要訊息中心找出資訊，並讓開發人員更好管理他們的通知。  下列 API 允許移除、建立和更新通知集合。
 
 > [!IMPORTANT]
-> **需要 Creators Update**：您必須以 SDK 15063 為目標並執行組建 15063 或更新版本，才能使用快顯通知集合。 相關 API 包含 [Windows.UI.Notifications.ToastCollection](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollection)，以及 [Windows.UI.Notifications.ToastCollectionManager](https://docs.microsoft.com/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **需要 Creators Update**：您必須以 SDK 15063 為目標並執行組建 15063 或更新版本，才能使用快顯通知集合。 相關 API 包含 [Windows.UI.Notifications.ToastCollection](/uwp/api/windows.ui.notifications.toastcollection)，以及 [Windows.UI.Notifications.ToastCollectionManager](/uwp/api/windows.ui.notifications.toastcollectionmanager)
 
 您可以參閱以下訊息中心應用程式的範例，根據聊天群組分隔通知；每一個標題（Comp Sci 160A 聊天專案、直接訊息、Lacrosse 小組聊天）皆為個別的集合。  請注意如何群組不同的通知就像來自個別的應用程式一樣，即使這些通知皆來自相同的應用程式。  如果您要尋找更精細的方式組織您的通知，請參閱 [快顯通知標頭](toast-headers.md)。  
 ![有兩個不同通知群組的集合範例](images/toast-collection-example.png)

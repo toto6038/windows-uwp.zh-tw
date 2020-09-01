@@ -1,18 +1,18 @@
 ---
 title: 頂點緩衝區檢視 (VBV) 和索引緩衝區檢視 (IBV)
-description: 頂點緩衝區保留頂點清單的資料。
+description: 深入瞭解頂點緩衝區視圖 (VBV) 和索引緩衝區視圖 (IBV) ，其中保存 Direct3D 轉譯中頂點的資料和整數索引。
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
 keywords:
 - 頂點緩衝區檢視 (VBV)
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cfb92c4f876d85388ce325f151408fe7b9e8d8b4
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a616f2bad8f478b2d20e96b183ba944950fef8a8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57636243"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156092"
 ---
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>頂點緩衝區檢視 (VBV) 和索引緩衝區檢視 (IBV)
 

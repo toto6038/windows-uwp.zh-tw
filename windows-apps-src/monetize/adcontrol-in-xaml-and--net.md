@@ -6,24 +6,24 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10 , UWP, 廣告, AdControl, 廣告控制項, XAML, .NET, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 7472343dcff4ac7f80d3bcea917e38849f513be6
-ms.sourcegitcommit: 71f9013c41fc1038a9d6c770cea4c5e481c23fbc
+ms.openlocfilehash: 8d1d1e75754bc9f3bed0be862a38ede43d55ad52
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77507202"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155662"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-本文會逐步說明如何在使用 C# 實作的適用於 Windows 10 的通用 Windows 平台 (UWP) XAML 應用程式中，使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別來顯示橫幅廣告。
+本文會逐步說明如何在使用 C# 實作的適用於 Windows 10 的通用 Windows 平台 (UWP) XAML 應用程式中，使用 [AdControl](/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別來顯示橫幅廣告。
 
 > [!NOTE]
 > Microsoft Advertising SDK 也支援使用 C++ 實作的 XAML 應用程式。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 * 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
@@ -34,13 +34,13 @@ ms.locfileid: "77507202"
     > [!NOTE]
     > 如果您正在使用現有的專案，請在專案中開啟 Package.appxmanifest 檔案，並確保選取 **\[網際網路 (用戶端)\]** 功能。 您的應用程式需要這項功能來接收測試廣告和即時廣告。
 
-2. 如果專案的目標是 **\[任何 CPU\]** ，請將您的專案更新成使用架構特定的建置輸出 (例如， **\[x86\]** )。 如果專案的目標是 **\[任何 CPU\]** ，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]**，請將您的專案更新成使用架構特定的建置輸出 (例如，**\[x86\]**)。 如果專案的目標是 **\[任何 CPU\]**，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：
 
-    1. 在 [方案總管] 視窗中的 [參考] 上按一下滑鼠右鍵，然後選取 [加入參考]。
-    2.  在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** 、按一下 **\[擴充功能\]** ，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
-    3.  在 [參考管理員] 中，按一下 [確定]。
+    1. 在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
+    2.  在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**、按一下 **\[擴充功能\]**，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
+    3.  在 [參考管理員]**** 中，按一下 [確定]。
 
 4.  於內嵌 **Microsoft.Advertising.WinRT.UI** 命名空間的頁面修改 XAML。 例如，在 Visual Studio 產生的預設範例應用程式 (同此應用程式中的 MyAdFundedWindows10AppXAML)，該 XAML 頁面是 **MainPage.XAML**。
 
@@ -77,10 +77,10 @@ ms.locfileid: "77507202"
     </Page>
     ```
 
-5. 在 **Grid** 標籤中，加入 **AdControl** 程式碼。 將 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 屬性指派給[測試廣告單元值](set-up-ad-units-in-your-app.md#test-ad-units)。 同時調整控制項的**高度**與**寬度**，使其成為[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
+5. 在 **Grid** 標籤中，加入 **AdControl** 程式碼。 將 [AdUnitId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [ApplicationId](/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 屬性指派給[測試廣告單元值](set-up-ad-units-in-your-app.md#test-ad-units)。 此外，也請調整控制項的 **高度** 和 **寬度** ，使其成為 [橫幅廣告支援](supported-ad-sizes-for-banner-ads.md)的其中一個廣告大小。
 
     > [!NOTE]
-    > 每個 **AdControl** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 將應用程式發行至存放區之前，您必須將[這些測試值取代為](#release)來自合作夥伴中心的即時值。
+    > 每個 **AdControl** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 將您的應用程式發行至存放區之前，您必須將 [這些測試值取代](#release) 為合作夥伴中心的即時值。
 
     完整的 **Grid** 標籤就像這個程式碼。
 
@@ -126,17 +126,17 @@ ms.locfileid: "77507202"
 
 1. 請確定您在應用程式中使用橫幅廣告的方式遵循我們的[橫幅廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)。
 
-2.  在合作夥伴中心，移至 [[應用程式內廣告](../publish/in-app-ads.md)] 頁面，並[建立一個 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[橫幅\]** 。 記下廣告單元識別碼與應用程式識別碼。
+2.  在合作夥伴中心中，移至 [應用程式內的 ads](../publish/in-app-ads.md) 頁面，並 [建立 ad 單位](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[橫幅\]**。 記下廣告單元識別碼與應用程式識別碼。
     > [!NOTE]
-    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP ad 單位時，ad 單位的 [應用程式識別碼] 值一律會符合應用程式的商店識別碼（範例存放區識別碼值看起來像9NBLGGH4R315）。
+    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心中建立 live UWP ad 單位時，ad 單位的應用程式識別碼值一律符合您應用程式的 Store 識別碼 (範例 Store 識別碼值看起來像是 9NBLGGH4R315) 。
 
-3. 您可以選擇為 **AdControl** 啟用廣告流量分配，方法是在 [\[應用程式內廣告\]](../publish/in-app-ads.md#mediation) 頁面的 [\[利用廣告獲利\]](../publish/in-app-ads.md) 區段進行設定。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路如 Taboola 和 Smaato 的廣告，以及 Microsoft 應用程式促銷活動廣告。
+3. 您可以選擇為 **AdControl** 啟用廣告流量分配，方法是在 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面的 [\[利用廣告獲利\]](../publish/in-app-ads.md#mediation) 區段進行設定。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路如 Taboola 和 Smaato 的廣告，以及 Microsoft 應用程式促銷活動廣告。
 
-4.  在您的程式碼中，使用您在合作夥伴中心內產生的即時值來取代測試 ad 單位值（**ApplicationId**和**AdUnitId**）。
+4.  在您的程式碼中，以您在合作夥伴中心中產生的即時值取代測試 ad 單位值 (**ApplicationId** 和 **AdUnitId**) 。
 
-5.  使用合作夥伴中心將[您的應用程式提交](../publish/app-submissions.md)到商店。
+5.  使用合作夥伴中心將[應用程式提交](../publish/app-submissions.md)至商店。
 
-6.  在合作夥伴中心檢查您的[廣告效能報告](../publish/advertising-performance-report.md)。
+6.  請參閱合作夥伴中心中的 [廣告效能報告](../publish/advertising-performance-report.md) 。
 
 <span id="manage" />
 
@@ -149,7 +149,7 @@ ms.locfileid: "77507202"
 
 ## <a name="related-topics"></a>相關主題
 
-* [橫幅廣告的指導方針](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
+* [橫幅廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
+* [XAML/c # 逐步解說中的錯誤處理](error-handling-in-xamlc-walkthrough.md)。
 * [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)
-* [設定應用程式的 ad 單位](set-up-ad-units-in-your-app.md)
+* [為您的 App 設定廣告單元](set-up-ad-units-in-your-app.md)

@@ -6,28 +6,28 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 紋理, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c1412029b20ffded0d33567713e969bc0fd5dc5
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: 349dcc4e8cc65a6265579e84c6810dcac79938a1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66369122"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156482"
 ---
 # <a name="apply-textures-to-primitives"></a>將紋理套用到基本型別
 
 以下我們將使用[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 基本型別。 我們還會介紹一個簡單的內積光源模型，其中立方體的表面會根據它們與光源的相對距離和角度呈現較淺或較深的顏色。
 
-**目標：** 將紋理套用至基本項目中。
+**目標：** 將紋理套用到基本型別。
 
 ## <a name="prerequisites"></a>先決條件
 
-若要充分利用本主題，您必須先熟悉C++。 您也需要基本的經驗與圖形程式設計概念。 而且，在理想情況下，您必須已經依照連同[快速入門： 設定 DirectX 資源，並顯示影像](setting-up-directx-resources.md)，[建立著色器和繪圖基本](creating-shaders-and-drawing-primitives.md)，和[使用深度和原始物件的效果](using-depth-and-effects-on-primitives.md)。
+若要充分利用本主題，您需要熟悉 c + +。 您也需要圖形程式設計概念的基本體驗。 而且，在理想的情況下，您必須已經遵循 [快速入門：設定 DirectX 資源和顯示影像](setting-up-directx-resources.md)、 [建立著色器和繪製基本](creating-shaders-and-drawing-primitives.md)專案，以及 [使用基本專案的深度和效果](using-depth-and-effects-on-primitives.md)。
 
-**完成時間：** 20 分鐘的時間。
+**完成所需的時間：** 20 分鐘。
 
-<a name="instructions"></a>指示
+<a name="instructions"></a>Instructions
 ------------
-### <a name="1-defining-variables-for-a-textured-cube"></a>1.材質的 cube 定義的變數
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. 為紋理立方體定義變數
 
 首先，我們需要為紋理立方體定義 **BasicVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置、方向及紋理，以及檢視立方體的方式。 否則，我們就需要使用類似先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中的方式宣告變數。
 
@@ -60,19 +60,19 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2.使用介面和紋理的項目建立頂點和像素著色器
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. 使用表面和紋理元素建立頂點和像素著色器
 
 以下我們將建立比先前 [在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中還要複雜的頂點和像素著色器。 這個 app 的頂點著色器會將每個頂點位置轉換成投影空間，並將頂點紋理座標傳遞給像素著色器。
 
-應用程式的一連串[ **D3D11\_輸入\_項目\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc)結構描述的頂點著色器程式碼配置有三種版面配置項目： 一個項目定義頂點位置，另一個項目定義介面的法向量 （方向介面通常面臨），而第三個項目定義材質座標。
+描述端點著色器程式碼配置的應用程式 [**D3D11 \_ 輸入 \_ 元素 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_input_element_desc) 結構的陣列有三個配置元素：一個元素定義頂點位置，另一個專案則定義介面法線向量， (介面通常臉部) 的方向，而第三個元素則定義材質座標。
 
 我們會建立頂點緩衝區、索引緩衝區及常數緩衝區來定義環繞移動的紋理立方體。
 
-**若要定義這顆恆材質 cube**
+**定義環繞移動的紋理立方體**
 
 1.  首先，我們定義立方體。 每個頂點都會被指派一個位置、表面法線向量及紋理座標。 我們會針對每個角落使用多個頂點，以允許為每個面定義不同的法線向量和紋理座標。
-2.  接下來，我們會說明端點和索引緩衝區 ([**D3D11\_緩衝區\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)並[ **D3D11\_SUBRESOURCE\_資料**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) 使用的 cube 定義。 我們會為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 一次。
-3.  接下來，我們建立常數緩衝區 ([**D3D11\_緩衝區\_DESC**](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) 將傳給端點著色器模型、 檢視和投影矩陣。 我們可以稍後使用常數緩衝區來旋轉立方體，並在立方體上套用透視投影。 我們會呼叫 [**ID3D11Device::CreateBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 來建立常數緩衝區。
+2.  接下來，我們會說明頂點和索引緩衝區 ([**D3D11 \_ BUFFER \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc) 和 [**D3D11 \_ SUBRESOURCE \_ DATA**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)) 使用 cube 定義。 我們會為每個緩衝區呼叫 [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 一次。
+3.  接下來，我們會建立常數緩衝區 ([**D3D11 \_ 緩衝區 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_buffer_desc)) ，以便將模型、視圖和投射矩陣傳遞給頂點著色器。 我們可以稍後使用常數緩衝區來旋轉立方體，並在立方體上套用透視投影。 我們會呼叫 [**ID3D11Device::CreateBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createbuffer) 來建立常數緩衝區。
 4.  最後，我們會指定對應 X = 0、Y = 1、Z = 2 相機位置的檢視轉換。
 
 ```cppcx
@@ -261,19 +261,19 @@ auto createCubeTask = (createPSTask && createVSTask).then([this]()
 });
 ```
 
-### <a name="3-creating-textures-and-samplers"></a>3.建立的紋理和取樣器
+### <a name="3-creating-textures-and-samplers"></a>3. 建立紋理和取樣器
 
 以下我們會將紋理資料套用到立方體，而不是像在先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中那樣套用色彩。
 
 我們會使用原始紋理資料來建立紋理。
 
-**若要建立的紋理和取樣器**
+**建立紋理和取樣器**
 
 1.  首先，我們會從磁碟上的 texturedata.bin 檔案讀取原始紋理資料。
-2.  接下來，我們建構[ **D3D11\_SUBRESOURCE\_DATA** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)參考原始的紋理資料結構。
-3.  然後，我們會填入[ **D3D11\_TEXTURE2D\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc)結構描述的紋理。 我們再傳遞[ **D3D11\_SUBRESOURCE\_DATA** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)並**D3D11\_TEXTURE2D\_DESC**中結構若要呼叫[ **ID3D11Device::CreateTexture2D** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d)來建立紋理。
-4.  接著，我們會建立紋理的著色器資源檢視，以便讓著色器能夠使用紋理。 若要建立著色器資源檢視，我們會填入[ **D3D11\_著色器\_資源\_檢視\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_shader_resource_view_desc)來描述著色器資源檢視與傳遞的著色器資源檢視描述和紋理[ **ID3D11Device::CreateShaderResourceView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createshaderresourceview)。 一般而言，您會讓檢視描述與紋理描述相符。
-5.  接著，我們會建立紋理的取樣器狀態。 這個取樣器狀態會使用相關的紋理資料，以定義如何判斷特定紋理座標的色彩。 我們會填入[ **D3D11\_取樣器\_DESC** ](https://docs.microsoft.com/windows/desktop/api/d3d11/ns-d3d11-d3d11_sampler_desc)結構描述的取樣器狀態。 我們再傳遞**D3D11\_取樣\_DESC**結構在呼叫[ **ID3D11Device::CreateSamplerState** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createsamplerstate)建立取樣器狀態。
+2.  接下來，我們會建立參考該原始材質資料的 [**D3D11 \_ SUBRESOURCE \_ 資料**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data) 結構。
+3.  然後，我們會填入 [**D3D11 \_ TEXTURE2D \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_texture2d_desc) 結構來描述材質。 接著，我們會在[**ID3D11Device：： CreateTexture2D**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createtexture2d)的呼叫中傳遞[**D3D11 \_ SUBRESOURCE \_ 資料**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_subresource_data)和**D3D11 \_ TEXTURE2D \_ DESC**結構，以建立紋理。
+4.  接著，我們會建立紋理的著色器資源檢視，以便讓著色器能夠使用紋理。 為了建立著色器資源檢視，我們會填入 [**D3D11 \_ 著色器 \_ 資源 \_ 視圖 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_shader_resource_view_desc) ，以描述著色器資源檢視，並將著色器資源檢視描述和材質傳遞至 [**ID3D11Device：： CreateShaderResourceView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createshaderresourceview)。 一般而言，您會讓檢視描述與紋理描述相符。
+5.  接著，我們會建立紋理的取樣器狀態。 這個取樣器狀態會使用相關的紋理資料，以定義如何判斷特定紋理座標的色彩。 我們會填入 [**D3D11 \_ 取樣器 \_ DESC**](/windows/desktop/api/d3d11/ns-d3d11-d3d11_sampler_desc) 結構來描述取樣器狀態。 接著，我們會在[**ID3D11Device：： CreateSamplerState**](/windows/desktop/api/d3d11/nf-d3d11-id3d11device-createsamplerstate)的呼叫中傳遞**D3D11 \_ 取樣器 \_ DESC**結構，以建立取樣器狀態。
 6.  最後，我們會宣告一個 *degree* 變數，我們將使用這個變數藉由在每個畫面旋轉立方體來製作動畫。
 
 ```cppcx
@@ -384,24 +384,24 @@ auto constructSubresourceTask = loadTDTask.then([this](const std::vector<byte>& 
 float degree = 0.0f;
 ```
 
-### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4.旋轉和繪製的材質的 cube 和呈現所呈現的影像
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. 旋轉及繪製紋理立方體並呈現轉譯的影像
 
-如先前教學課程所示，我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) 來更新常數緩衝區並旋轉立方體模型。 接著，我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 來指定轉譯目標和深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) 來清除深度緩衝區。
+如先前教學課程所示，我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-updatesubresource) 來更新常數緩衝區並旋轉立方體模型。 接著，我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-omsetrendertargets) 來指定轉譯目標和深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-clearrendertargetview) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-cleardepthstencilview) 來清除深度緩衝區。
 
 在無限迴圈中，我們也會在藍色表面上繪製紋理立方體。
 
-**若要繪製的材質的立方體**
+**繪製紋理立方體**
 
-1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
-2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) 來將頂點和索引緩衝區繫結到輸入組合階段。
-3.  接下來，我們會呼叫[ **ID3D11DeviceContext::IASetPrimitiveTopology** ](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology)具有[ **D3D11\_基本\_拓樸\_TRIANGLESTRIP** ](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))值來指定輸入組譯工具階段解譯為三角形區域的頂點資料。
-4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) 以使用像素著色器程式碼起始像素著色階段。
-5.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetConstantBuffers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) 來設定頂點著色器管線階段所使用的常數緩衝區。
-6.  接著，我們會呼叫 [**PSSetShaderResources**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshaderresources) 來將紋理的著色器資源檢視繫結到像素著色器管線階段。
-7.  接著，我們會呼叫 [**PSSetSamplers**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetsamplers) 來將取樣器狀態設成像素著色器管線階段。
-8.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 來繪製立方體並將它提交給轉譯管線。
+1.  首先，我們會呼叫 [**ID3D11DeviceContext::IASetInputLayout**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetinputlayout) 來描述頂點緩衝區資料如何串流處理到輸入組合器階段。
+2.  接著，我們會呼叫 [**ID3D11DeviceContext::IASetVertexBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetvertexbuffers) 和 [**ID3D11DeviceContext::IASetIndexBuffer**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetindexbuffer) 來將頂點和索引緩衝區繫結到輸入組合階段。
+3.  接下來，我們使用[**D3D11 \_ 基本 \_ 拓撲 \_ TRIANGLESTRIP**](/previous-versions/windows/desktop/legacy/ff476189(v=vs.85))值來呼叫[**>id3d11devicecoNtext：： IASetPrimitiveTopology**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-iasetprimitivetopology) ，以指定輸入組合語言階段，以將頂點資料解讀為三角形帶。
+4.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetshader) 以使用頂點著色器程式碼起始頂點著色階段，並且呼叫 [**ID3D11DeviceContext::PSSetShader**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshader) 以使用像素著色器程式碼起始像素著色階段。
+5.  接著，我們會呼叫 [**ID3D11DeviceContext::VSSetConstantBuffers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-vssetconstantbuffers) 來設定頂點著色器管線階段所使用的常數緩衝區。
+6.  接著，我們會呼叫 [**PSSetShaderResources**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetshaderresources) 來將紋理的著色器資源檢視繫結到像素著色器管線階段。
+7.  接著，我們會呼叫 [**PSSetSamplers**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-pssetsamplers) 來將取樣器狀態設成像素著色器管線階段。
+8.  最後，我們會呼叫 [**ID3D11DeviceContext::DrawIndexed**](/windows/desktop/api/d3d11/nf-d3d11-id3d11devicecontext-drawindexed) 來繪製立方體並將它提交給轉譯管線。
 
-如先前教學課程中所示，我們會呼叫 [**IDXGISwapChain::Present**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 來將轉譯的影像呈現到視窗。
+如先前教學課程中所示，我們會呼叫 [**IDXGISwapChain::Present**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-present) 來將轉譯的影像呈現到視窗。
 
 ```cppcx
 // Update the constant buffer to rotate the cube model.
@@ -505,6 +505,6 @@ DX::ThrowIfFailed(
 );
 ```
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>[摘要]
 
-本主題中，我們載入原始的紋理資料，並將基本的 3d 套用該資料。
+在本主題中，我們已載入原始材質資料，並將該資料套用至3D 基本。

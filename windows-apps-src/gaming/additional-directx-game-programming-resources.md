@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 程式設計
 ms.localizationpriority: medium
-ms.openlocfilehash: a87b979dc48f8977047599cac6a32ba0d901bd63
-ms.sourcegitcommit: 2571af6bf781a464a4beb5f1aca84ae7c850f8f9
+ms.openlocfilehash: 6c1da82eaff074dfd3e925c298f9839dbb70ee3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82606357"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156502"
 ---
 # <a name="game-programming-resources"></a>遊戲程式設計資源
 
@@ -23,13 +23,13 @@ ms.locfileid: "82606357"
 ## <a name="game-programming-reference"></a>遊戲程式設計參考資料
 
 
--   [圖形和遊戲](https://docs.microsoft.com/windows/desktop/graphics-and-multimedia)
+-   [圖形與遊戲](/windows/desktop/graphics-and-multimedia)
 -   [OpenGL 參考資料](https://www.opengl.org/sdk/docs/man4/)
 
 ## <a name="game-design-guidance"></a>遊戲設計指引
 
 
--   [UWP 應用程式的 UX 指導方針索引](https://developer.microsoft.com/windows/apps/design)
+-   [UWP 應用程式 UX 指導方針的索引](https://developer.microsoft.com/windows/apps/design)
 
 ## <a name="blogs"></a>部落格
 
@@ -43,9 +43,9 @@ ms.locfileid: "82606357"
 
 -   [DirectX 工具組](  https://github.com/Microsoft/DirectXTK)
 -   [DirectXTex 紋理處理程式庫](  https://github.com/Microsoft/DirectXTex)
--   Microsoft Visual Studio [圖形診斷](https://docs.microsoft.com/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
+-   Microsoft Visual Studio [圖形診斷](/visualstudio/debugger/overview-of-visual-studio-graphics-diagnostics?view=vs-2015)
 -   [Win2D](https://github.com/Microsoft/Win2D) - 方便使用的 Windows 執行階段 API，適用於搭配 GPU 加速的直接模式 2D 圖形轉譯。
--   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki)-藉由將 OPENGL es api 呼叫轉譯為 DIRECTX 11 api 呼叫，在 Windows 上執行 opengl es 內容。
+-   [Microsoft Store 的角度](https://github.com/microsoft/angle/wiki) ：將 OPENGL es api 呼叫轉譯為 DIRECTX 11 api 呼叫，以在 Windows 上執行 opengl es 內容。
 
 ## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 遊戲開發課程影片
 
@@ -81,7 +81,3 @@ ms.locfileid: "82606357"
  
 
  
-
-
-
-

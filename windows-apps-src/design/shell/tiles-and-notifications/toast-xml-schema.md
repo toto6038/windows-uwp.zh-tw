@@ -6,14 +6,14 @@ label: Toast content XML schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 33244391ca9f2ffcba21adacccebf2e9b1d73419
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: cf3bf3733e17312ee0750006d2b8f94c70dbbd43
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66363354"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156652"
 ---
 # <a name="toast-content-xml-schema"></a>快顯通知內容 XML 結構描述
 
@@ -43,7 +43,7 @@ ms.locfileid: "66363354"
 </toast>
 ```
 
-**中的屬性&lt;快顯通知&gt;**
+**快顯 &lt; 中的屬性&gt;**
 
 launch?
 
@@ -75,88 +75,88 @@ scenario?
 -   除非您的案例是要快顯鬧鐘、提醒或來電，否則您不需要使用此屬性。
 -   不要只為了要讓通知在螢幕上持續顯示而使用此屬性。
 
-**中的屬性&lt;視覺化&gt;**
+**視覺效果中的屬性 &lt;&gt;**
 
 lang?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 baseUri?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
-**中的屬性&lt;繫結&gt;**
+**系結 &lt; 中的屬性&gt;**
 
 template?
 
--   \[重要\]範本嗎？ = "ToastGeneric"
+-   \[重要 \] 範本？ = "ToastGeneric"
 -   如果您使用新的調適型和互動式通知，請確定您是從使用 "ToastGeneric" 範本開始，而非使用舊版範本。
 -   目前可能可以搭配新動作使用舊版範本，但那並非預期的使用情況，因此我們無法保證該使用方式將會持續有效。
 
 lang?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 baseUri?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
-**中的屬性&lt;文字&gt;**
+**文字中的屬性 &lt;&gt;**
 
 lang?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-visual)，以了解此選擇性屬性的詳細資料。
 
-**中的屬性&lt;映像&gt;**
+**影像中的屬性 &lt;&gt;**
 
 src
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)，以了解此必要屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-image)，以了解此必要屬性的詳細資料。
 
 placement?
 
 -   placement? = "inline" | "appLogoOverride"
--   這是選擇性屬性。
+-   此屬性是選擇性的。
 -   此屬性可指定將顯示影像的位置。
 -   "inline" 表示位於快顯通知內文內部、文字下方; "appLogoOverride" 表示取代應用程式圖示 (顯示於快顯通知左上角)。
 -   您可以為每個位置值最多提供一個影像。
 
 alt?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-image)，以了解此選擇性屬性的詳細資料。
 
 addImageQuery?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-image)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-image)，以了解此選擇性屬性的詳細資料。
 
 hint-crop?
 
 -   hint-crop? = "none" | "circle"
--   這是選擇性屬性。
+-   此屬性是選擇性的。
 -   "none" 為預設值，表示沒有裁剪。
 -   "circle" 會將影像裁剪為圓形。 請針對連絡人設定檔影像、人員影像等項目使用此屬性。
 
-**中的屬性&lt;音訊&gt;**
+**音訊中的屬性 &lt;&gt;**
 
 src?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
 
 loop?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
 
 silent?
 
--   請參閱[此元素結構描述文章](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
+-   請參閱[此元素結構描述文章](/uwp/schemas/tiles/toastschema/element-audio)，以了解此選擇性屬性的詳細資料。
 
 ## <a name="schemas-ltactiongt"></a>結構描述：&lt;action&gt;
 
@@ -177,7 +177,7 @@ silent?
 </toast>
 ```
 
-**中的屬性&lt;輸入&gt;**
+**輸入中的屬性 &lt;&gt;**
 
 id
 
@@ -185,7 +185,7 @@ id
 -   這是必要屬性。
 -   id 是必要屬性，並且是由開發人員用來在應用程式啟用之後抓取使用者輸入 (於前景或背景)。
 
-type
+類型
 
 -   type = "text | selection"
 -   這是必要屬性。
@@ -210,24 +210,24 @@ defaultInput?
 -   如果輸入類型是 "text"，此屬性將被視為字串輸入。
 -   如果輸入類型是 "selection"，此屬性預期為此輸入元素內部其中一個可用選取項目的 id。
 
-**中的屬性&lt;選取項目&gt;**
+**選取專案中的屬性 &lt;&gt;**
 
 id
 
 -   這是必要屬性。 這個屬性是用來識別使用者選取項目。 會傳回 id 給您的應用程式。
 
-content
+內容
 
 -   這是必要屬性。 這個屬性可為此選取項目元素提供字串以供顯示。
 
-**中的屬性&lt;動作&gt;**
+**作用中的屬性 &lt;&gt;**
 
-content
+內容
 
 -   content = string
 -   content 是必要屬性。 它會提供在按鈕上顯示的文字字串。
 
-arguments
+引數
 
 -   arguments = string
 -   arguments 是必要屬性。 這個屬性描述使用者採取此動作以啟用應用程式之後，應用程式可抓取之應用程式定義的資料。

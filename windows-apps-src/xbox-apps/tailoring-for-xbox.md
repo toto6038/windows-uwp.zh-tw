@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aaf8759b59c8ccbb5b09ba969675096700ce9e8
-ms.sourcegitcommit: 45dec3dc0f14934b8ecf1ee276070b553f48074d
+ms.openlocfilehash: 01ae58b7422215a0e4f90c5b3f59819d9a24fa36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89094455"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157772"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -30,7 +30,7 @@ Xbox 使用者喜歡其控制器。 若要優化控制器輸入，請 [停用滑
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*請務必：* 整合 SystemMediaTransportControls 類別
 
-Xbox 使用者希望透過 Xbox Media Remote、Cortana (特別是「播放」和「暫停」語音命令) 及 Xbox SmartGlass 控制媒體 App。 若要免費取得這些功能，您的 App 應該使用 [SystemMediaTransportControls](https://docs.microsoft.com/uwp/api/windows.media.systemmediatransportcontrols) 類別，這個類別會自動包含在 Xbox 媒體控制項中。 如果您的 App 有自訂的媒體控制項，請務必整合 **SystemMediaTransportControls** 類別以將這些功能提供給您的使用者。 如果您正在建立背景音樂 App，請整合 **SystemMediaTransportControls** 類別以確保背景音樂控制項在 Xbox 多工處理索引標籤中能正常運作。
+Xbox 使用者希望透過 Xbox Media Remote、Cortana (特別是「播放」和「暫停」語音命令) 及 Xbox SmartGlass 控制媒體 App。 若要免費取得這些功能，您的 App 應該使用 [SystemMediaTransportControls](/uwp/api/windows.media.systemmediatransportcontrols) 類別，這個類別會自動包含在 Xbox 媒體控制項中。 如果您的 App 有自訂的媒體控制項，請務必整合 **SystemMediaTransportControls** 類別以將這些功能提供給您的使用者。 如果您正在建立背景音樂 App，請整合 **SystemMediaTransportControls** 類別以確保背景音樂控制項在 Xbox 多工處理索引標籤中能正常運作。
 
 <!-- ### *Do:* Use adaptive UI to account for snapped apps
 One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it. -->
@@ -74,4 +74,4 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 
 - [Xbox One 上的 UWP](index.md)
 - [針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md)
-- [適用於 Xbox One 的漸進式 Web 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/xbox-considerations)
+- [適用於 Xbox One 的漸進式 Web 應用程式](/microsoft-edge/progressive-web-apps/xbox-considerations)

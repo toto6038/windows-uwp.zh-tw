@@ -7,19 +7,19 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e3614b7bde3a87c8f5fa6fdc0eada560fd7bbcdc
-ms.sourcegitcommit: ac7f3422f8d83618f9b6b5615a37f8e5c115b3c4
+ms.openlocfilehash: f56036ecc083d72f552954860d04750c1c83b8b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66370948"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156202"
 ---
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 
 
 資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段輸出（串流）到記憶體中的一或多個緩衝區。 串流輸出到記憶體的資料可重新循環回到管線做為輸入資料，或從 CPU 讀回。
 
-## <a name="span-idpurposeandusesspanspan-idpurposeandusesspanspan-idpurposeandusesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途和用法
+## <a name="span-idpurpose_and_usesspanspan-idpurpose_and_usesspanspan-idpurpose_and_usesspanpurpose-and-uses"></a><span id="Purpose_and_uses"></span><span id="purpose_and_uses"></span><span id="PURPOSE_AND_USES"></span>用途及用途
 
 
 ![在管線中資料流輸出階段的位置圖](images/d3d10-pipeline-stages-so.png)
@@ -31,17 +31,17 @@ ms.locfileid: "66370948"
 有兩種方式可將資料流輸出資料饋送至管線：
 
 -   資料流輸出資料可以饋送回到輸入組合語言 (IA) 階段。
--   使用 [Load](https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) 函式，可程式化的著色器可讀取資料流輸出資料。
+-   使用 [Load](/windows/desktop/direct3dhlsl/dx-graphics-hlsl-to-load) 函式，可程式化的著色器可讀取資料流輸出資料。
 
 ## <a name="span-idinputspanspan-idinputspanspan-idinputspaninput"></a><span id="Input"></span><span id="input"></span><span id="INPUT"></span>輸入
 
 
 來自上一個著色器階段的頂點資料。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
-資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果非作用中的幾何著色器 (GS) 階段，Stream 輸出 (SO) 階段持續輸出緩衝區的記憶體 （或如果 DS 也是作用中，從 頂點著色器 (VS) 階段） 中的頂點資料來自網域著色器 (DS) 階段。
+資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果幾何著色器 (GS) 階段處於非使用中狀態，則資料流程輸出 (因此) 階段會持續從網域著色器將頂點資料輸出到記憶體中的緩衝區 (，或如果 DS 也非使用中，則是從頂點著色器) 與 (階段 (。
 
 當三角形或帶狀線繫結至輸入組合語言 (IA) 階段時，每一個區域在串流輸出之前會先轉換為清單。頂點永遠寫出為完整的基本類型（例如，對於三角形，一次 3 個頂點）。不完整的基本類型永遠不會串流輸出。相鄰基本類型在串流輸出資料之前會先捨棄相鄰資料。
 
@@ -58,7 +58,3 @@ ms.locfileid: "66370948"
  
 
  
-
-
-
-

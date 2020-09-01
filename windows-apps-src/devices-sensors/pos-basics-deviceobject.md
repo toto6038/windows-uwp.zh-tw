@@ -5,18 +5,18 @@ ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c9a5008756831eed9819a3b323d167dcc4b2744
-ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
+ms.openlocfilehash: db6b47a29e302cb962e5b91cfba823eb7f89db81
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89043400"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156602"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService device objects
 
 ## <a name="creating-a-device-object"></a>建立裝置物件
 
-一旦您識別出您想要使用的 PointOfService 裝置，您只要使用以程式設計方式選擇的 [**DeviceID**](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)，從最新的列舉或儲存的 DeviceID 呼叫 [**FromIdAsync**](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync)，或者使用者已選取來建立新的服務點裝置物件。
+一旦您識別出您想要使用的 PointOfService 裝置，您只要使用以程式設計方式選擇的 [**DeviceID**](/uwp/api/windows.devices.enumeration.deviceinformation.id)，從最新的列舉或儲存的 DeviceID 呼叫 [**FromIdAsync**](/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync)，或者使用者已選取來建立新的服務點裝置物件。
 
 這個範例嘗試使用 DeviceID 以 FromIdAsync 建立新的 BarcodeScanner 物件。 如果建立物件時失敗，會寫入偵錯的訊息。
 

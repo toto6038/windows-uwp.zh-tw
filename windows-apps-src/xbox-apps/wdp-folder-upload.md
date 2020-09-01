@@ -1,17 +1,17 @@
 ---
 title: 裝置入口網站資料夾上傳 API 參考
-description: 了解如何以程式設計方式存取資料夾上傳 API。
+description: 瞭解如何使用 Xbox 裝置入口網站 REST API 將資料夾上傳至開發目錄。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 870d203271cb75ecf5531106bb2c10b3736db9b9
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: b71f60350bf5c8318adb2a4741bb1a275a4b0276
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244044"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157752"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>將資料夾上傳到開發目錄
 
@@ -27,14 +27,14 @@ POST | /api/app/packagemanager/upload
 
 您可以在要求 URI 上指定下列其他參數：
 
-URI 參數      | 描述
+URI 參數      | 說明
 :------     | :-----
 destinationFolder (必要) | 上傳資料夾的目的地資料夾名稱。 這個資料夾會放置在主機上的 d:\developmentfiles\LooseApps 底下。 這個資料夾名稱必須是 base64 編碼，因為它可能包含路徑分隔符號 (如果該資料夾是 LooseApps 下的子資料夾)。
 
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
@@ -48,7 +48,7 @@ destinationFolder (必要) | 上傳資料夾的目的地資料夾名稱。 這�
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 | 成功
+200 | Success
 4XX | 錯誤碼
 5XX | 錯誤碼
 
