@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 7beee974bceceab02984ae6499a9c5db0b0281b9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: dd6262677cd548fa8e690fde5a90ab1f2662ea2a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74259295"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89155642"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 
@@ -49,7 +49,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 :::row:::
     :::column:::
-        ![在應用程式內購買](images/pricing-in-app-purchases.png)
+        ![應用程式內建購買功能](images/pricing-in-app-purchases.png)
     :::column-end:::
     :::column span="2":::
 **在應用程式內購買**
@@ -108,16 +108,16 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 尋找其他能讓您提高獲利的方法嗎？ 請考慮採用下列選項。
 
- 主題                | 說明                 |
+ 主題                | 描述                 |
 |--------------------|-----------------------------|
 | [Microsoft 聯盟計畫](https://www.microsoftaffiliates.com/) | 從您的應用程式、部落格、網頁或其他通訊設備連結至 Microsoft 產品以賺取佣金。 您可以連結至 Microsoft Store 中銷售的應用程式、遊戲、音樂、電影、硬體、配件及其他商品。
-| [A/B 實驗](https://docs.microsoft.com/windows/uwp/monetize/run-app-experiments-with-a-b-testing) | 在您為所有使用者啟用變更前，以部分客戶為對象，由應用程式中執行 A/B 測試來衡量功能變更的有效性。
+| [A/B 實驗](./run-app-experiments-with-a-b-testing.md) | 在您為所有使用者啟用變更前，以部分客戶為對象，由應用程式中執行 A/B 測試來衡量功能變更的有效性。
 | [透過 Microsoft Store Services SDK 與客戶互動](microsoft-store-services-sdk.md) | Microsoft Store Services SDK 提供一些可讓您在應用程式中新增功能的程式庫和工具，以協助您吸引客戶。 這些功能包括目標式通知、A/B 測試，以及從您的應用程式啟動「意見反應中樞」。
-| [從您的 App 啟動意見反應中樞](launch-feedback-hub-from-your-app.md) | 在您的 UWP 應用程式中新增程式碼來將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「合作夥伴中心」的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 這個功能需要 Microsoft Store Services SDK。 
+| [從您的應用程式啟動意見反應中樞](launch-feedback-hub-from-your-app.md) | 在您的 UWP 應用程式中新增程式碼來將您的 Windows 10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「合作夥伴中心」的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 這個功能需要 Microsoft Store Services SDK。 
 | [設定您的應用程式以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md) | 為您的 UWP 應用程式註冊通知通道，以便讓應用程式能夠接收[合作夥伴中心推播通知](../publish/send-push-notifications-to-your-apps-customers.md)，以及追蹤由推播通知產生的應用程式啟動率。 這個功能需要 Microsoft Store Services SDK。
 | [記錄合作夥伴中心的自訂事件](log-custom-events-for-dev-center.md) | 記錄來自您 UWP 應用程式的自訂事件，然後在「合作夥伴中心」的[使用報告](../publish/usage-report.md)中檢閱這些事件。 這個功能需要 Microsoft Store Services SDK。
 | [要求評分與評論](request-ratings-and-reviews.md) | 歡迎您的客戶透過程式設計方式顯示評分和評論 UI 來對您的應用程式進行評分或評論。
-| [Microsoft Store 服務](using-windows-store-services.md) | 了解如何使用 RESTful API 來自動化提交至市集，存取您的應用程式的分析資料以及自動化與市集相關的其他工作。
+| [Microsoft Store 服務](using-windows-store-services.md) | 了解如何使用 RESTful API 來自動化提交至 Microsoft Store，存取您的應用程式的分析資料以及自動化與 Microsoft Store 相關的其他工作。
 | [將零售示範 (RDX) 功能新增至您的應用程式](retail-demo-experience.md) | 在您的 Windows 應用程式中加入零售示範模式，讓在銷售場所試用電腦和裝置的客戶可以直接開始試用。
 
 ## <a name="monetization-analytics"></a>創造營收分析
@@ -126,11 +126,11 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 利用下列報告，追蹤您的應用程式在 Microsoft Store 內的成效表現。
 
-- [支出摘要](../publish/payout-summary.md)
+- [支付摘要](../publish/payout-summary.md)
 - [下載數報告](../publish/acquisitions-report.md)
 - [附加元件下載數報告](../publish/add-on-acquisitions-report.md)
 - [廣告績效報告](../publish/advertising-performance-report.md)
 - [使用 REST API 取得分析資料](access-analytics-data-using-windows-store-services.md)
 - [建立客戶區隔](../publish/create-customer-segments.md)
 - [意見反應報告](../publish/feedback-report.md)
-- [使用報告](../publish/usage-report.md)
+- [使用方式報告](../publish/usage-report.md)

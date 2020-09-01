@@ -3,12 +3,12 @@ title: WinUI 3 預覽版 2 (2020 年 7 月)
 description: WinUI 3 預覽版 2 的概觀。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 0acea4520f10d5f64baa29cb64fdf0ba1cc4552e
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 4d971ffd3ec44ab766122dbb80847b9c2ccfc891
+ms.sourcegitcommit: e6b1ed3c9ddcf650e2f71c29d81bffac6ab292f4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997955"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89116803"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)
 
@@ -34,7 +34,7 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 
 1. 確定您的開發電腦已安裝 Windows 10 1803 (組建 17134) 或較新版本。
 
-2. 安裝 [Visual Studio 2019 (16.7 預覽版 3 版本)](https://visualstudio.microsoft.com/vs/preview)
+2. 安裝 [Visual Studio 2019 (16.7.2 版本)](https://visualstudio.microsoft.com/vs/)
 
     安裝 Visual Studio 時，您必須包含下列工作負載：
     - .NET 桌面開發
@@ -44,7 +44,10 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
     - 使用 C++ 的傳統型開發
     - *C++ (v142) 通用 Windows 平台工具*，通用 Windows 平台工作負載的選用元件 (請參閱右側窗格中 [通用 Windows 平台開發] 區段底下的 [安裝詳細資料])
 
-3. 如果您想要建立適用於 C#/.NET 5 和 C++/Win32 應用程式的桌面 WinUI 專案，您也必須同時安裝 x64 和 x86 版本的 .NET 5 預覽版 5：
+    下載 Visual Studio 之後，請確保在程式中啟用 .NET 預覽： 
+    - 移至 [工具] > [選項] > [預覽功能] > 選取 [使用 .NET Core SDK 的預覽 (需要重新開機)]。 
+
+3. 如果想要建立適用於 C#/.NET 5 和 C++/Win32 應用程式的桌面 WinUI 專案，您也必須同時安裝 x64 和 x86 版本的 .NET 5 預覽版 5： **請注意，.NET 5 預覽版 5 目前僅支援 WinUI 3 的 .NET 5 預覽**：
 
     - x64：[https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
     - x86：[https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
@@ -52,6 +55,7 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 4. 下載及安裝 [WinUI 3 預覽版 2 VSIX 套件](https://aka.ms/winui3/previewdownload)。 此 VSIX 套件會將 WinUI 3 專案範本和 NuGet 套件 (包含 WinUI 3 程式庫) 新增至 Visual Studio 2019。
 
     如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
+
 
 ## <a name="create-winui-projects"></a>建立 WinUI 專案
 
@@ -211,8 +215,23 @@ WinUI 3 預覽版 2 可與執行 Windows 10 2018 年 4 月更新 (版本 1803 - 
 
 ### <a name="known-issues"></a>已知問題
 
-- 在 C# 傳統型應用程式中：
-  - 對於 Windows 物件的弱式參考 (包含 XAML 物件)，您必須使用 `WinRT.WeakReference<T>`，而不是 `System.WeakReference<T>`。
+
+- C# UWP 應用程式：
+
+  WinUI 3 架構是一組 WinRT 元件，然而即使 WinRT 具有與 .NET 中類似的類型和物件，它們原本也不是相容的。  C#/WinRT 投影會處理.NET 5 中 .NET 與 WinRT 之間的互通性，讓您可以立即在 .NET 5 應用程式中自由使用 .NET 介面。 
+  
+  不過，C#/WinRT 無法處理 .NET Native 應用程式中的互通性，因此 WinUI 3 API 會直接在 UWP 應用程式中投影。 因此，您無法再使用這些相同的 .NET 介面。 **一旦 UWP 應用程式不再使用 .NET Native，則這項限制將不再存在**。
+
+  例如，`INotifyPropertyChanged`API 會投影在桌面應用程式中 WinUI3 的 `System.ComponentModel` 命名空間中，但其會出現在 UWP 應用程式 (和所有 C++ 應用程式) 中 WinUI3 的 `Microsoft.UI.Xaml.Data` 命名空間中。 
+  
+  此問題適用於：
+    - `INotifyPropertyChanged` (和相關的類型)
+    - `INotifyCollectionChanged`
+    - `ICommand`
+
+> [!Note] 
+> 在 `INotifyPropertyChanged` 和 `INotifyCollectionChanged` 無法正常運作時，`ObservableCollection<T>` 類別也會受到影響。 如需實作自己的 `ObservableCollection<T>` 版本範例，請參閱[此範例](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs)。 
+
 
 ## <a name="xaml-controls-gallery-winui-3-preview-2-branch"></a>XAML 控制項庫 (WinUI 3 預覽版 2 分支)
 
