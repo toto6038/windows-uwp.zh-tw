@@ -3,12 +3,12 @@ title: WinUI 3 預覽版 2 (2020 年 7 月)
 description: WinUI 3 預覽版 2 的概觀。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 4d971ffd3ec44ab766122dbb80847b9c2ccfc891
-ms.sourcegitcommit: e6b1ed3c9ddcf650e2f71c29d81bffac6ab292f4
+ms.openlocfilehash: c57132ec5219ef32f2b2b69168592e07f49d904b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89116803"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168772"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)
 
@@ -54,7 +54,7 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 
 4. 下載及安裝 [WinUI 3 預覽版 2 VSIX 套件](https://aka.ms/winui3/previewdownload)。 此 VSIX 套件會將 WinUI 3 專案範本和 NuGet 套件 (包含 WinUI 3 程式庫) 新增至 Visual Studio 2019。
 
-    如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](https://docs.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
+    如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
 
 
 ## <a name="create-winui-projects"></a>建立 WinUI 專案
@@ -99,10 +99,10 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 |----------|----------|-------------|
 | 空白頁面 (WinUI) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，該檔案會定義衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Controls.Page** 類別的新頁面。 |
 | 空白視窗 (WinUI in Desktop) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，該檔案會定義衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Window** 類別的新視窗。 |
-| 自訂控制項 (WinUI) | C# 和 C++ | 新增程式碼檔案，以使用預設樣式建立樣板化控制項。 樣板化控制項衍生自 WinUI 程式庫中的 **Microsoft.UI.Xaml.Controls.Control** 類別。<p></p>如需示範如何使用這個項目範本的逐步解說，請參閱 [使用 C++/WinRT 製作，適用於 UWP 和 WinUI 3 應用程式的樣板化 XAML 控制項](xaml-templated-controls-cppwinrt-winui3.md)。 如需樣板化控制項的詳細資訊，請參閱[自訂 XAML 控制項](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+| 自訂控制項 (WinUI) | C# 和 C++ | 新增程式碼檔案，以使用預設樣式建立樣板化控制項。 樣板化控制項衍生自 WinUI 程式庫中的 **Microsoft.UI.Xaml.Controls.Control** 類別。<p></p>如需示範如何使用這個項目範本的逐步解說，請參閱 [使用 C++/WinRT 製作，適用於 UWP 和 WinUI 3 應用程式的樣板化 XAML 控制項](xaml-templated-controls-cppwinrt-winui3.md)。 如需樣板化控制項的詳細資訊，請參閱[自訂 XAML 控制項](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
 | 資源字典 (WinUI) | C# 和 C++ | 新增 XAML 資源的空白索引鍵集合。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。 |
 | 資源檔 (WinUI) | C# 和 C++ | 新增檔案，用於儲存應用程式的字串和條件式資源。 您可以使用此項目來協助將您的應用程式當地語系化。 如需詳細資料，請參閱[將您 UI 和應用程式套件資訊清單中的字串當地語系化](/windows/uwp/app-resources/localize-strings-ui-manifest)。 |
-| 使用者控制項 (WinUI) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，以建立衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Controls.UserControl** 類別的使用者控制項。 一般而言，使用者控制項會封裝相關的現有控制項，並提供自己的邏輯。<p></p>如需使用者控制項的詳細資訊，請參閱[自訂 XAML 控制項](https://docs.microsoft.com/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
+| 使用者控制項 (WinUI) | C# 和 C++ | 新增 XAML 檔案和程式碼檔案，以建立衍生自 WinUI 程式庫中 **Microsoft.UI.Xaml.Controls.UserControl** 類別的使用者控制項。 一般而言，使用者控制項會封裝相關的現有控制項，並提供自己的邏輯。<p></p>如需使用者控制項的詳細資訊，請參閱[自訂 XAML 控制項](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls)。 |
 
 ## <a name="bug-fixes-and-other-improvements-in-winui-3-preview-2"></a>WinUI 3 預覽版 2 中的錯誤修正和其他改良功能
 
@@ -111,10 +111,10 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 > [!NOTE]
 > WinUI 3 預覽版 2 使用 WinUI 2 程式庫的 2.4.2 版。 
 
-- [INotifyCollectionChanged](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 現在會如預期般的在 C# 桌面應用程式中運作
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 現在會如預期般的在 C# 桌面應用程式中運作
   - 這會清除在後端中更新時未在 UI 中更新的集合控制項相關其他問題。
   - *感謝 @hshristov 在 GitHub 上提出[類似的問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2490)！*
-- 預覽版 2 現在與適用於桌面應用程式的 [.NET 5 預覽版 5](https://docs.microsoft.com/dotnet/api/?view=net-5.0) 相容
+- 預覽版 2 現在與適用於桌面應用程式的 [.NET 5 預覽版 5](/dotnet/api/?view=net-5.0) 相容
 - WinUI 3 現在與 [WinUI 2.4](../winui2/release-notes/winui-2.4.md) 同位，其中包含新的控制項和功能，例如[階層式 NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) 和 [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring)。
 - 損毀已修正：搭配觸控使用 [TabView](/windows/uwp/design/controls-and-patterns/tab-view)
 - [XAML 控制項庫範例](#xaml-controls-gallery-winui-3-preview-2-branch)中的 [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) 現在使用左側模式，而不是左側精簡模式
@@ -122,7 +122,7 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
   - *感謝 @paulovilla 在 GitHub 上提出[這個問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2563)！*
 - 損毀已修正：當 [TextBox](/windows/uwp/design/controls-and-patterns/text-box) 功能表開啟時，與 XAML UI 互動
 - 在瀏覽至多個頁面之後，[XAML 控制項庫範例](#xaml-controls-gallery-winui-3-preview-2-branch)標題文字已不再變得混亂
-- 搭配觸控使用 [WebView2](https://docs.microsoft.com/microsoft-edge/webview2/) 不再讓您在位置上有些微位移
+- 搭配觸控使用 [WebView2](/microsoft-edge/webview2/) 不再讓您在位置上有些微位移
 - WinUIEdit.dll 中的類別已從 Windows.UI.Text 命名空間移至 Microsoft.UI.Text 命名空間
 - 損毀已修正：在多重選取模式 (Windows 10 版本 1803) 中選取 [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) 中的項目
 - 點、矩形和大小成員現在會在適用於桌面應用程式的 API C# 投影中進行雙重輸入。
@@ -152,7 +152,7 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 - [RadialGradientBrush](/windows/uwp/design/style/brushes#radial-gradient-brushes)
 - [TabView 更新](/windows/uwp/design/controls-and-patterns/tab-view)
 - 深色主題更新
-- [WebView2](https://docs.microsoft.com/microsoft-edge/hosting/webview2) 的改良和更新
+- [WebView2](/microsoft-edge/hosting/webview2) 的改良和更新
   - 高 DPI 的支援
   - 支援視窗的大小調整和移動
   - 已更新為以較新版本的 Edge 為目標
