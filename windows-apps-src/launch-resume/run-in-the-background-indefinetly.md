@@ -6,12 +6,12 @@ keywords: 背景工作、延伸執行、資源、限制、背景工作
 ms.date: 10/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec77b0f4777f12d20ec13bcfbac864993afd441
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33b41c432edde42bc31daa1d5631f60fb38d8397
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175112"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304500"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 
@@ -27,9 +27,14 @@ UWP app 不在前景執行時，會進入暫停狀態。 在桌面上，當使�
 
 `extendedExecutionUnconstrained` 功能在應用程式資訊清單中會當做受限功能加入。 如需受限功能的詳細資訊，請參閱[應用程式功能宣告](../packaging/app-capability-declarations.md)。
 
-> **注意：** 加入 *xmlns： rescap* XML 命名空間宣告，並使用 *rescap* 前置詞來宣告功能。
+> [!NOTE]
+> 加入 *xmlns： rescap* XML 命名空間宣告，並使用 *rescap* 前置詞來宣告功能。
+>
+> 如需詳細資訊，請參閱 [應用程式功能聲明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)的限制功能一節。
+>
 
 「Package.appxmanifest」
+
 ```xml
 <Package
     ...
@@ -71,9 +76,14 @@ switch (result)
 
 在通用 Windows 平台中，背景工作是不使用任何形式的使用者介面在背景中執行的處理序。 背景工作在遭到取消後，通常可能最多再執行 25 秒。 有些執行較久的工作還會進行檢查以確保背景工作不會閒置或佔用記憶體。 在 Windows Creators Update (版本 1703) 中，引進了 [extendedBackgroundTaskTime](../packaging/app-capability-declarations.md) 受限功能來移除這些限制。 **extendedBackgroundTaskTime** 功能在應用程式資訊清單中會當做受限功能加入。
 
-> **注意：** 加入 *xmlns： rescap* XML 命名空間宣告，並使用 *rescap* 前置詞來宣告功能。
+> [!NOTE]
+> 加入 *xmlns： rescap* XML 命名空間宣告，並使用 *rescap* 前置詞來宣告功能。
+>
+> 如需詳細資訊，請參閱 [應用程式功能聲明](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)的限制功能一節。
+>
 
 「Package.appxmanifest」
+
 ```xml
 <Package
     ... 

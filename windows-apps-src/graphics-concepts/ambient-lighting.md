@@ -1,18 +1,18 @@
 ---
 title: 環境光源
-description: 環境光線為場景提供定值光線。
+description: 瞭解環境光源如何為場景提供常數光源，以及瞭解如何使用 c + + 在 Direct3D 中設定環境光源。
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
 keywords:
 - 環境光源
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac958a93fcafbb33a9025196b49398e2e3269e55
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c21a674b0961836752c879bcea681b568f31053c
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291836"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304460"
 ---
 # <a name="ambient-lighting"></a>環境光源
 
@@ -22,38 +22,38 @@ ms.locfileid: "58291836"
 
 場景的環境光線由下列方程式描述。
 
-環境光源 = Cₐ\*\[Gₐ + sum (Atten<sub>我</sub>\*點<sub>我</sub>\*L<sub>ai</sub>)\]
+環境光源 = C ₐ \* \[ g ₐ + Sum (Atten<sub>我</sub> \* 找<sub>i</sub>出 \* <sub>ai</sub>) \]
 
 其中：
 
-| 參數         | 預設值 | 類型          | 描述                                                                                                       |
+| 參數         | 預設值 | 類型          | 說明                                                                                                       |
 |-------------------|---------------|---------------|-------------------------------------------------------------------------------------------------------------------|
 | Cₐ                | (0,0,0,0)     | D3DCOLORVALUE | 材料環境色彩                                                                                            |
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | 全域環境色彩                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | 第 i 個光線的光衰減。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。 |
-| Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的聚光燈係數。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。  |
-| 總和               | N/A           | N/A           | 環境光線的加總                                                                                          |
+| 找<sub>我</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的聚光燈係數。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。  |
+| Sum               | N/A           | N/A           | 環境光線的加總                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的環境光線色彩                                                                              |
 
  
 
 Cₐ 的值為︰
 
--   頂點 color1 如果 AMBIENTMATERIALSOURCE = D3DMCS\_COLOR1，與第一個頂點色彩頂點宣告中提供。
--   頂點色 2，如果 AMBIENTMATERIALSOURCE = D3DMCS\_頂點宣告中提供色 2，與第二個頂點的色彩。
+-   頂點 color1 （如果 AMBIENTMATERIALSOURCE = D3DMCS \_ color1）和第一個頂點色彩是在頂點宣告中提供。
+-   頂點 color2 （如果 AMBIENTMATERIALSOURCE = D3DMCS \_ color2），而第二個頂點色彩則是在頂點宣告中提供。
 -   材料環境色彩。
 
-**附註**  如果使用任一 AMBIENTMATERIALSOURCE 選項時，而且未提供的端點色彩，則材料的環境色彩會在使用。
+**注意**   如果使用任一個 AMBIENTMATERIALSOURCE 選項，而且未提供頂點色彩，則會使用材質環境色彩。
 
  
 
 若要使用材料環境色彩，請使用下方範例程式碼所示的 SetMaterial。
 
-Gₐ 是全域環境色彩。 它會設定使用 Graphicsdevice (D3DRS\_AMBIENT)。 Direct3D 場景中有一個全域環境色彩。 此參數與 Direct3D 光線物件無關聯。
+Gₐ 是全域環境色彩。 它是使用 Graphicsdevice (D3DRS \_ 環境) 來設定。 Direct3D 場景中有一個全域環境色彩。 此參數與 Direct3D 光線物件無關聯。
 
 L<sub>ai</sub> 是場景中第 i 個光線的環境色彩。 每個 Direct3D 光線都有一組屬性，其中一項是環境色彩。 sum(L<sub>ai</sub>) 這項字詞是場景中所有環境色彩的加總。
 
-## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
+## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例子
 
 
 在此範例中，物件使用場景環境光線和材料環境色彩上色。
@@ -82,7 +82,7 @@ Ambient.a = 0.0f;
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源的數學運算](mathematics-of-lighting.md)
+[光源的數學計算](mathematics-of-lighting.md)
 
  
 

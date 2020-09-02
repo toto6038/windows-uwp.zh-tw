@@ -10,12 +10,12 @@ ms.custom: 19H1
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 5f62fa915c7a00d2e359989e6e10718f704854ab
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d90669e03ae15acdc826d9e0b227f12d4ecf3cbc
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173002"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304710"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "89173002"
 -   [**PreferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 -   [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-了解如何啟動 Windows 設定應用程式。 本主題描述 **ms-settings:** URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。
+了解如何啟動 Windows 設定應用程式。 本主題說明 **ms 設定：** URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。
 
 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 如需詳細資訊，請參閱[隱私權感知 app 的指導方針](../security/index.md)。
 
@@ -122,7 +122,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 |設定頁面| URI |
 |-------------|-----|
 | 自動播放 | ms-settings:autoplay |
-| Bluetooth | ms-settings:bluetooth |
+| 藍牙 | ms-settings:bluetooth |
 | 已連線的裝置 | ms-settings:connecteddevices |
 | 預設相機 | ms 設定： **Windows 10 版本1809和更新版本中的** 相機 (已淘汰)  |
 | 滑鼠與觸控板 | ms-settings:mousetouchpad (觸控板設定僅適用於具有觸控板的裝置上) |
@@ -168,7 +168,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 遊戲 DVR | ms-settings:gaming-gamedvr |
 | 遊戲模式 | ms-settings:gaming-gamemode |
 | 玩遊戲全螢幕 | ms-settings:quietmomentsgame |
-| TruePlay | ms 設定： **Windows 10 版本1809和更新版本中已淘汰** 的遊戲 trueplay ()  |
+| TruePlay | ms 設定： **Windows 10 版本 1809 (10.0; 的遊戲 trueplay (組建 17763) ，這項功能已從 Windows 移除**)  |
 | Xbox 網路 | ms-settings:gaming-xboxnetworking |
 
 ## <a name="home-page"></a>首頁
@@ -219,7 +219,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 鎖定畫面 | ms-settings:lockscreen |
 | 導覽列 | ms 設定：個人化導覽列 (**在 Windows 10 版本1809和更新版本中已被取代**)  |
 | 個人化 (類別) | ms-settings:personalization |
-| 開始 | ms-settings:personalization-start |
+| Start | ms-settings:personalization-start |
 | 工作列 | ms-settings:taskbar |
 | 佈景主題 | ms-settings:themes |
 
@@ -251,7 +251,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 檔案系統 | ms-settings:privacy-broadfilesystemaccess |
 | 一般 | ms 設定：隱私權或 ms 設定：隱私權-一般 |
 | 筆跡 & 鍵入 |ms-settings:privacy-speechtyping |
-| Location | ms-settings:privacy-location |
+| 位置 | ms-settings:privacy-location |
 | Messaging (傳訊) | ms-settings:privacy-messaging |
 | 麥克風 | ms-settings:privacy-microphone |
 | 動作 | ms-settings:privacy-motion |
@@ -262,7 +262,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 無線通訊 | ms-settings:privacy-radios |
 | 語音 | ms-設定：隱私權-語音 |
 | 工作 | ms-settings:privacy-tasks |
-| 視訊 | ms-settings:privacy-videos |
+| 影片 | ms-settings:privacy-videos |
 | 語音啟用 | ms-設定：隱私權-voiceactivation |
 
 ## <a name="surface-hub"></a>Surface Hub
@@ -317,7 +317,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 日期與時間 | ms-settings:dateandtime |
 | 日文 IME 設定 | ms-settings:regionlanguage-jpnime (適用於 Microsoft 日文輸入法編輯器有安裝時) |
 | 區域 | ms-settings： regionformatting |
-| Language | ms 設定：鍵盤<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-拼音-domainlexicon<br/>ms-settings： regionlanguage-chsime-拼音-keyconfig<br/>ms-settings： regionlanguage-chsime-拼音-udp<br/>ms-settings： regionlanguage-chsime-wubi-udp<br/>ms-settings： regionlanguage-quickime |
+| 語言 | ms 設定：鍵盤<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-拼音-domainlexicon<br/>ms-settings： regionlanguage-chsime-拼音-keyconfig<br/>ms-settings： regionlanguage-chsime-拼音-udp<br/>ms-settings： regionlanguage-chsime-wubi-udp<br/>ms-settings： regionlanguage-quickime |
 | 拼音輸入法設定 | ms-settings:regionlanguage-chsime-pinyin (適用於 Microsoft 拼音輸入法編輯器有安裝時) |
 | 語音 | ms-settings:speech |
 | 五筆輸入法設定  | ms-settings:regionlanguage-chsime-wubi (適用於 Microsoft 五筆輸入法編輯器有安裝時) |
@@ -327,11 +327,11 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 |設定頁面| URI |
 |-------------|-----|
 | 啟用 | ms-settings:activation |
-| 備份 | ms-settings:backup |
+| Backup | ms-settings:backup |
 | 傳遞最佳化 | ms-settings:delivery-optimization |
 | 尋找我的裝置 | ms-settings:findmydevice |
 | 開發人員 | ms-settings:developers |
-| 復原 | ms-settings:recovery |
+| 修復 | ms-settings:recovery |
 | 疑難排解 | ms-settings:troubleshoot |
 | Windows 安全性 | ms-settings:windowsdefender |
 | Windows 測試人員計畫 | ms-settings:windowsinsider (僅適用於使用者已在 WIP 中註冊時)<br/>ms-settings： windowsinsider-optin |

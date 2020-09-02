@@ -1,15 +1,15 @@
 ---
 title: 裝置入口網站 HTTP 監視 API 參考
-description: 了解如何在 Xbox 主機上存取來自焦點應用程式的 HTTP 流量。
+description: 瞭解如何使用/ext/HTTPmonitor/sessions Xbox 裝置入口網站 REST API，從 Xbox 上的焦點應用程式存取即時 HTTP 流量。
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 1e7c07c92c1671cd9051393586e1e8562fa756d0
-ms.sourcegitcommit: bad7ed6def79acbb4569de5a92c0717364e771d9
+ms.openlocfilehash: 6ea53f6356aa89a83f3b267a65f65b32aad5749d
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2019
-ms.locfileid: "59244094"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304530"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 監視 API 參考   
 您可以使用此 API 存取焦點應用程式的即時 HTTP 流量，如果 Xbox 主機上已啟用 HTTP 監視 (開發人員首頁中核取方塊)。
@@ -26,15 +26,15 @@ GET | /ext/httpmonitor/sessions
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**   
 JSON 物件，包含下列欄位：
@@ -63,15 +63,15 @@ Websocket | /ext/httpmonitor/sessions
 
 **URI 參數**
 
-- None
+- 無
 
 **要求標頭**
 
-- None
+- 無
 
 **要求本文**
 
-- None
+- 無
 
 **回應**   
 JSON 物件，包含下列欄位：

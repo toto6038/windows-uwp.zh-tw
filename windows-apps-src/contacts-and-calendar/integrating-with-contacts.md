@@ -1,5 +1,5 @@
 ---
-description: 說明如何在連絡人卡片中動作的旁邊新增您的 app
+description: 瞭解如何將您的應用程式連線至連絡人卡片上的動作，讓使用者可以選擇您的應用程式來開啟設定檔頁面面、撥打電話或傳送訊息。
 MSHAttr: PreferredLib:/library/windows/apps
 title: 將應用程式連結到連絡人卡片上的動作
 ms.date: 02/08/2017
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, UWP, 連絡人, 連絡人卡片, 註解
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
-ms.openlocfilehash: 246a74ca008e1b8c89460aabb652accf35c842b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92c8517bca9bdfda9e8f8d01e07e4ca3918d03a1
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154712"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304750"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>將應用程式連結到連絡人卡片上的動作
 

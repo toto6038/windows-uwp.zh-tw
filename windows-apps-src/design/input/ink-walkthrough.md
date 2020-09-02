@@ -1,17 +1,17 @@
 ---
 ms.assetid: ''
 title: 在您的 Windows 應用程式中支援筆跡
-description: 在您的 Windows 應用程式中新增筆跡支援的逐步教學課程。
-keywords: 筆跡, 教學
+description: 依照此逐步教學課程，瞭解如何在基本通用 Windows 平臺 (UWP) 應用程式中支援 Windows Ink 撰寫和繪製。
+keywords: 筆跡、筆跡、教學課程
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1972a266297d41e357bd2086f8485c154153d582
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0ed230fc9beb158df050f314a0142f250c2a8691
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157032"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304600"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教學課程：在您的 Windows 應用程式中支援筆墨
 
@@ -33,7 +33,7 @@ ms.locfileid: "89157032"
 
 您可以藉由 Windows Ink 提供客戶幾乎相當於可想像的所有紙筆體驗的數位手寫功能，從快速的手寫筆記和註解到白板示範，以及從架構和工程繪圖到個人傑作。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>Prerequisites
 
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
 * [Visual Studio 2019 與 RS2 SDK](https://developer.microsoft.com/windows/downloads)
@@ -119,7 +119,7 @@ ms.locfileid: "89157032"
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-就這麼簡單！ 
+這樣就完成了！ 
 
 現在，再次執行應用程式。 請繼續進行並徒手畫、撰寫您的名稱或者 (如果您有一面鏡子或者記性很好) 繪製您自己的自畫像。
 
@@ -458,7 +458,7 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 </tr>
 </table>
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>總結
 
 恭喜，您已完成 **輸入： Windows 應用程式中的支援筆墨** 教學課程！ 我們向您示範在您的 Windows 應用程式中支援筆墨所需的基本程式碼，以及如何提供 Windows Ink 平臺支援的一些更豐富使用者體驗。
 

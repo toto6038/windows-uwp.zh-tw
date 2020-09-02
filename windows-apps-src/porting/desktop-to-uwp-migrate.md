@@ -1,16 +1,16 @@
 ---
-Description: 在傳統型應用程式與 UWP 應用程式之間共用程式碼
 title: 在傳統型應用程式與 UWP 應用程式之間共用程式碼
+description: 瞭解如何使用 WPF 和 Windows Forms) 或 c + + Win32 Api 將桌面應用程式移至 .NET Framework (，以通用 Windows 平臺 UWP (和) 。
 ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e13c656f02531d500a72aa74b2d3c5d6cc29aa4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174932"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304680"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>從桌面應用程式移至 UWP
 

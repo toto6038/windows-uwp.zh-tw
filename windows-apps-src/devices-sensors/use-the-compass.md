@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: 使用指南針
-description: 了解如何使用指南針來判斷目前朝向何方。
+description: 瞭解如何使用通用 Windows 平臺 (UWP) 羅盤 API 來判斷導覽應用程式中目前的標題。
 ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 143d83a0c1257cf662fb686a5e0620db5cc6fb68
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bc0365ced06e85a99fa063c86cad0946526b3f26
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159522"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304660"
 ---
 # <a name="use-the-compass"></a>使用指南針
 
@@ -29,7 +29,7 @@ ms.locfileid: "89159522"
 
 應用程式可以根據磁極或正北方來擷取目前所朝向的方向。 導航應用程式會使用指南針來判斷裝置所朝向的方向，然後據此設定地圖方位。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>Prerequisites
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 

@@ -1,17 +1,17 @@
 ---
-description: 當您開始移植程序時，會有兩個選項。
+description: 瞭解如何在 Windows 10 上將 Windows 執行階段8.x 專案移植至通用 Windows 平臺 (UWP) 專案。
 title: 將 Windows 執行階段 8.x 專案移植到 UWP 專案
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cac5e66fe6d940ec73cc0e898924b4398382466
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aded2752db5328ea101ee78c681cd4697bd39242
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174832"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304580"
 ---
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>將 Windows 執行階段 8.x 專案移植到 UWP 專案
 
