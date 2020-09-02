@@ -6,12 +6,12 @@ keywords: UWP, 消費性, 附加元件, app 內購買, IAP, Windows.ApplicationM
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fd4bc4d21a5f292cd50655c452522e07424f920
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb4119296b11e805fa72ff027383d13e6fb43818
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172922"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363691"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>啟用消費性應用程式內產品購買
 
@@ -33,7 +33,7 @@ ms.locfileid: "89172922"
 下列範例示範消費性應用程式內產品購買要求。 您會注意到程式碼註解指出在下列兩種不同的情況下，App 應該於何時在本機履行消費性應用程式內產品，一是在要求成功的情況，二是在因為購買尚未履行的相同產品而導致要求失敗的情況。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="MakePurchaseRequest":::
 
 ## <a name="step-2-tracking-local-fulfillment-of-the-consumable"></a>步驟 2：追蹤消費性產品的本機履行
 
@@ -45,7 +45,7 @@ ms.locfileid: "89172922"
 下列範例示範如何使用上一個步驟之 [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 呼叫中的 [PurchaseResults](/uwp/api/Windows.ApplicationModel.Store.PurchaseResults) 屬性，來識別購買的產品是否已經履行。 此範例使用集合將產品資訊儲存在可供參照的位置，以便稍後確認是否已在本機順利履行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GrantFeatureLocally)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="GrantFeatureLocally":::
 
 下個範例說明將履行回報給 Microsoft Store 後，如何使用上個範例的陣列來存取之後要使用的產品識別碼/交易識別碼。
 
@@ -53,7 +53,7 @@ ms.locfileid: "89172922"
 > 無論您的 App 使用哪種方法來追蹤和確認履行，都必須提供審查評鑑，以確保不會針對客戶尚未收到的項目向客戶收費。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="IsLocallyFulfilled":::
 
 ## <a name="step-3-reporting-product-fulfillment-to-the-store"></a>步驟 3：將產品履行回報給 Microsoft Store 
 
@@ -63,7 +63,7 @@ ms.locfileid: "89172922"
 > 若未將已履行的消費性應用程式內產品報告給 Microsoft Store，將導致使用者無法再次購買該產品，必須等到回報已履行上次的購買後才能再購買。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="ReportFulfillment":::
 
 ## <a name="step-4-identifying-unfulfilled-purchases"></a>步驟 4：識別未履行的購買
 
@@ -72,7 +72,7 @@ ms.locfileid: "89172922"
 下列範例示範如何使用 [GetUnfulfilledConsumablesAsync](/uwp/api/windows.applicationmodel.store.currentapp.getunfulfilledconsumablesasync) 列舉未履行的消費性產品，以及您的 App 如何重複此清單來完成本機履行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#GetUnfulfilledConsumables)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs" id="GetUnfulfilledConsumables":::
 
 ## <a name="related-topics"></a>相關主題
 

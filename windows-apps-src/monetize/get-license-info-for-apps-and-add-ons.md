@@ -6,12 +6,12 @@ ms.date: 12/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, 授權, 應用程式, 附加元件, App 內購買, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c83ecc7b5bfc8158d80469eab12710719fa0834
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 29f2e5ceee6d7d9c779c7fb544d507e31456b3fd
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164672"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363161"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的授權資訊
 
@@ -42,7 +42,7 @@ ms.locfileid: "89164672"
 若要存取使用者具有使用權利的目前應用程式的持久附加元件授權，請使用 [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense)物件的 [AddOnLicenses](/uwp/api/windows.services.store.storeapplicense.addonlicenses) 屬性。 此屬性會傳回代表附加元件授權的集合 [StoreLicense](/uwp/api/windows.services.store.storelicense) 物件。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[GetLicenseInfo](./code/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs#GetLicenseInfo)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/GetLicenseInfoPage.xaml.cs" id="GetLicenseInfo":::
 
 如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 

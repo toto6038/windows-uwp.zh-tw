@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3271d6ff787672917b8ab4acf3b660421491d371
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b53103f0d0c67bd18b71ac94812f4cef53ca8ac0
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173682"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363811"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -41,12 +41,12 @@ ms.locfileid: "89173682"
 
 除了預設專案範本所包含的 API 以外，這篇文章中的範例程式碼還會使用下列命名空間的 API。
 
-[!code-cs[FramesUsing](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFramesUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetFramesUsing":::
 
 ## <a name="select-frame-sources-and-frame-source-groups"></a>選取畫面來源和畫面來源群組
 許多處理媒體畫面的 App 需要一次從多個來源取得畫面，例如裝置的彩色和景深相機。 [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)物件代表一組可同時使用的媒體框架來源。 呼叫靜態方法 [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync)，以取得目前裝置所支援之所有畫面來源群組的清單。
 
-[!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetFindAllAsync":::
 
 您也可以使用[**DeviceInformation**](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher)建立[**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) ，以及在裝置上的可用畫面格來源群組變更時接收通知，例如當外部相機插入[**時。**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) 如需詳細資訊，請參閱[**列舉裝置**](../devices-sensors/enumerate-devices.md)。
 
@@ -54,7 +54,7 @@ ms.locfileid: "89173682"
 
 下列範例示範選取畫面來源群組最簡單的方式。 這個程式碼僅重複查看所有可用的群組，然後重複查看 [**SourceInfos**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.sourceinfos) 集合中的每個項目。 每個 **MediaFrameSourceInfo** 都會被檢查，以查看是否支援我們要尋找的功能。 在這個案例中，會針對值 [**VideoPreview**](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) 檢查 [**MediaStreamType**](/uwp/api/Windows.Media.Capture.MediaStreamType) 屬性，表示裝置提供一個視訊預覽資料流，以及針對值 [**Color**](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.sourcekind) 檢查 [**SourceKind**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceKind) 屬性，指示來源提供色彩畫面。
 
-[!code-cs[SimpleSelect](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSimpleSelect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetSimpleSelect":::
 
 這個識別想要的畫面來源群組和畫面來源的方法，適用於簡單的案例，但是如果您想要根據更複雜的條件來選取畫面來源，它可能很快就會變得很麻煩。 另一種方法是使用 Linq 語法和匿名物件來選取項目。 下列範例使用 **Select** 延伸方法，來將 *frameSourceGroups* 清單中的 **MediaFrameSourceGroup** 物件轉換為包含兩個欄位的匿名物件：*sourceGroup*，代表群組本身，以及 *colorSourceInfo*，代表群組中的色彩畫面來源。 *colorSourceInfo* 欄位會設定為 **FirstOrDefault** 的結果，這會選取所提供述詞解析為 true 的第一個物件。 在這個案例中，如果資料流類型為 **VideoPreview**、來源種類為 **Color**，且相機位於裝置的前方面板上，述詞為 true。
 
@@ -62,11 +62,11 @@ ms.locfileid: "89173682"
 
 現在您可以使用已選取物件的欄位來取得對已選取的 **MediaFrameSourceGroup** 和代表色彩相機之 **MediaFrameSourceInfo** 物件的參考。 這些稍後將會用來初始化 **MediaCapture** 物件，並針對已選取的來源建立 **MediaFrameReader**。 最後，您應該測試以查看來源群組是否為 null，這表示目前的裝置沒有您要求的擷取來源。
 
-[!code-cs[SelectColor](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetSelectColor":::
 
 下列範例使用上述類似技術，來選取包含彩色、景深與紅外線相機的來源群組。
 
-[!code-cs[ColorInfraredDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetColorInfraredDepth)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetColorInfraredDepth":::
 
 > [!NOTE]
 > 從 Windows 10 版本 1803 開始，您可以使用 [**MediaCaptureVideoProfile**](/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfile) 類別來選取具有一組所需功能的媒體畫面來源。 如需詳細資訊，請參閱本文稍後的**選取畫面來源使用影片的設定檔**章節。
@@ -77,7 +77,7 @@ ms.locfileid: "89173682"
 
 **MediaCapture** 物件通常會在您 App 內部的多個位置使用，因此您應該宣告一個類別成員變數來保存它。
 
-[!code-cs[DeclareMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
 藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接著，建立將用來初始化**MediaCapture**物件的[**MediaCaptureInitializationSettings**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings)物件。 在這個範例中，會使用下列設定︰
 
@@ -88,19 +88,19 @@ ms.locfileid: "89173682"
 
 呼叫 [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync)，以使用您想要的設定將 **MediaCapture** 初始化。 請務必在 *try* 區塊中呼叫，以防初始化失敗。
 
-[!code-cs[InitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetInitMediaCapture":::
 
 ## <a name="set-the-preferred-format-for-the-frame-source"></a>針對畫面來源設定慣用的格式
 若要設定畫面來源的慣用格式，您必須取得代表來源的 [**MediaFrameSource**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 物件。 您可以透過存取已初始化 **MediaCapture** 物件的 [**Frames**](/previous-versions/windows/apps/phone/jj207578(v=win.10)) 字典，指定您想要使用的畫面來源的識別碼來取得此物件。 這就是為什麼我們在選取畫面來源群組時會儲存 [**MediaFrameSourceInfo**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的原因。
 
 [**MediaFrameSource.SupportedFormats**](/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 屬性包含一份 [**MediaFrameFormat**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) 物件的清單，其中說明了畫面來源的支援格式。 使用 **Where** Linq 延伸方法，根據所需的屬性選取格式。 在這個範例中，會選取一個寬度為 1080 像素，並且可提供 32 位元 RGB 格式畫面的格式。 **FirstOrDefault** 延伸方法會選取清單中的第一個項目。 如果選取的格式為 null，那麼畫面來源就不支援要求的格式。 如果是支援的格式，您可透過呼叫 [**SetFormatAsync**](../develop/index.md)，要求來源使用此格式。
 
-[!code-cs[GetPreferredFormat](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetPreferredFormat)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetGetPreferredFormat":::
 
 ## <a name="create-a-frame-reader-for-the-frame-source"></a>建立畫面來源的畫面讀取程式
 若要接收媒體畫面來源的畫面，請使用 [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader)。
 
-[!code-cs[DeclareMediaFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareMediaFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetDeclareMediaFrameReader":::
 
 藉由呼叫已初始化 **MediaCapture** 物件上的[**CreateFrameReaderAsync**](/uwp/api/windows.media.capture.mediacapture.createframereaderasync) 將畫面讀取程式具現化。 這個方法的第一個引數是您想要接收畫面的畫面來源。 您可以針對每個想要使用的畫面來源建立個別的畫面讀取程式。 第二個引數會告訴系統您想要畫面到達時使用的輸出格式。 這可以幫助您避免在畫面到達時必須自行轉換。 請注意，如果您指定畫面來源不支援的格式，會擲回例外狀況，因此請確定此值存在於 [**SupportedFormats**](/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) 集合中。  
 
@@ -108,22 +108,22 @@ ms.locfileid: "89173682"
 
 透過呼叫 [**StartAsync**](/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 告訴系統開始從來源讀取畫面。
 
-[!code-cs[CreateFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetCreateFrameReader":::
 
 ## <a name="handle-the-frame-arrived-event"></a>處理畫面已到達事件
 當有新畫面可用時，就會引發 [**MediaFrameReader.FrameArrived**](/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件。 您可以選擇處理每一個到達的畫面，或者僅在您需要時使用畫面。 因為畫面讀取程式會引發其本身執行緒上的事件，您可能需要實作部分同步邏輯來確定您沒有嘗試從多個執行緒存取相同的資料。 本節說明如何將繪圖色彩畫面同步到 XAML 頁面中的影像控制項。 本案例會解決要求在 UI 執行緒上執行所有 XAML 控制項更新的其他同步限制式。
 
 在 XAML 中顯示畫面的第一步是建立影像控制項。 
 
-[!code-xml[ImageElementXAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetImageElementXAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml" id="SnippetImageElementXAML":::
 
 在程式碼後置頁面中，宣告 **SoftwareBitmap** 類型的類別成員變數，這會做為後端緩衝區，以暫存所有複製的傳入影像。 請注意，影像資料本身不會複製，只會複製物件參考。 此外，請宣告布林值以追蹤我們的 UI 作業目前是否正在執行。
 
-[!code-cs[DeclareBackBuffer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetDeclareBackBuffer)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetDeclareBackBuffer":::
 
 因為畫面會以 **SoftwareBitmap** 物件的方式到達，所以您必須建立 [**SoftwareBitmapSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件，它可讓您使用 **SoftwareBitmap** 做為 XAML **控制項**的來源。 在您啟動畫面讀取程式之前，您應該在您程式碼中某處設定影像來源。
 
-[!code-cs[ImageElementSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetImageElementSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetImageElementSource":::
 
 現在就可以實作 **FrameArrived** 事件處理常式。 呼叫這個處理常式時，*sender* 參數包含對引發事件的 **MediaFrameReader** 物件的參考。 在此物件上呼叫 [**TryAcquireLatestFrame**](/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) 以嘗試取得最新畫面。 如同名稱所示，**TryAcquireLatestFrame** 可能無法成功傳回畫面。 因此，當您存取 VideoMediaFrame 和 SoftwareBitmap 屬性時，請確定針對 null 進行測試。 這個範例是 null 條件式運算子嗎 ?  是用來存取 **SoftwareBitmap**，然後會檢查擷取的物件是否為 null。
 
@@ -141,12 +141,12 @@ ms.locfileid: "89173682"
 > 如果您要存取 [**MediaFrameReference**](/uwp/api/windows.media.capture.frames.videomediaframe.softwarebitmap) 的 [**VideoMediaFrame**](/uwp/api/windows.media.capture.frames.videomediaframe.direct3dsurface) 屬性提供的 [**SoftwareBitmap**](/uwp/api/windows.media.capture.frames.mediaframereference.videomediaframe) 或 [**Direct3DSurface**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference) 物件，則系統會建立這些物件的強式參考，這表示當您在包含的 **MediaFrameReference** 上呼叫 [**Dispose**](/uwp/api/windows.media.capture.frames.mediaframereference.close) 時，他們不會被處置。 您必須針對要立即處置的物件明確地直接呼叫 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否則，記憶體回收行程最終會釋放這些物件的記憶體，但您無法得知何時會釋放，而且如果配置的點陣圖或表面的數量超過系統允許的數量上限，新畫面的資料流就會停止。 您可以複製擷取的畫面 (例如使用 [**SoftwareBitmap.Copy**](/uwp/api/windows.graphics.imaging.softwarebitmap.copy) 方法)，然後釋出原始畫面來克服這項限制。 此外，如果您使用多載 [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)](/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_Windows_Graphics_Imaging_BitmapSize_) 或 [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype)](/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_System_String_) 建立 **MediaFrameReader**，傳回的畫面會是原始畫面資料的複本，因此在保留畫面時不會造成畫面擷取停止。 
 
 
-[!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetFrameArrived":::
 
 ## <a name="cleanup-resources"></a>清除資源
 當您完成後讀取畫面時，請確定有透過呼叫 [**StopAsync**](/uwp/api/windows.media.capture.frames.mediaframereader.stopasync)、取消登錄 **FrameArrived** 處理常式，並處置 **MediaCapture** 物件，來停止媒體畫面讀取程式。
 
-[!code-cs[Cleanup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCleanup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetCleanup":::
 
 如需有關在您的應用程式暫停時清理媒體擷取物件的詳細資訊，請參閱[**顯示相機預覽**](simple-camera-preview-access.md)。
 
@@ -162,34 +162,34 @@ ms.locfileid: "89173682"
 > [!NOTE] 
 > 為了在 **SoftwareBitmap** 影像上執行像素操作，您必須存取原生記憶體緩衝區。 若要這樣做，您必須使用包含於下面所列程式碼中的 IMemoryBufferByteAccess COM 介面，且您必須更新您的專案屬性，以允許編譯不安全的程式碼。 如需詳細資訊，請參閱[建立、編輯及儲存點陣圖影像](imaging.md)。
 
-[!code-cs[IMemoryBufferByteAccess](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetIMemoryBufferByteAccess)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/FrameRenderer.cs" id="SnippetIMemoryBufferByteAccess":::
 
-[!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/FrameRenderer.cs" id="SnippetFrameRenderer":::
 
 ## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>使用 MultiSourceMediaFrameReader 從多個來源取得與時間相互關聯的畫面
 從 Windows 10 版本 1607 開始，您可以使用 [**MultiSourceMediaFrameReader**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader)，從多個來源接收與時間相互關聯的畫面。 此 API 可讓您更容易進行需要來自多個拍攝時間相近來源之畫面的處理，例如使用 [**DepthCorrelatedCoordinateMapper**](/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper) 類別。 使用這個新方法有一項限制，就是只能以最慢擷取來源的速率來引發畫面已到達事件。 將會捨棄較快速來源的額外畫面。 此外，由於系統預期畫面以不同的速率從不同的來源抵達，因此也無法自動辨識來源是否已完全停止產生畫面。 本節的範例程式碼示範如何使用事件建立您自己的逾時邏輯，只要相互關聯的畫面未在應用程式定義的時間限制內抵達，就會叫用此邏輯。
 
 使用 [**MultiSourceMediaFrameReader**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 的步驟和使用本文之前所述 [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) 的步驟相似。 此範例將會使用色彩來源和深度來源。 宣告一些字串變數來儲存媒體畫面來源識別碼，這些識別碼將用來選取每個來源的畫面。 接下來，宣告用於實作範例逾時邏輯的 [**ManualResetEventSlim**](/dotnet/api/system.threading.manualreseteventslim)、[**CancellationTokenSource**](/dotnet/api/system.threading.cancellationtokensource) 和 [**EventHandler**](/dotnet/api/system.eventhandler)。 
 
-[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetMultiFrameDeclarations":::
 
 使用本文先前所述的技術，查詢包含此範例案例所需色彩及深度來源的 [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup)。 選取所要的畫面來源群組之後，取得每個畫面來源的 [**MediaFrameSourceInfo**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo)。
 
-[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetSelectColorAndDepth":::
 
 將選取的畫面來源群組傳入初始化設定，建立和初始化 **MediaCapture** 物件。
 
-[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetMultiFrameInitMediaCapture":::
 
 初始化 **MediaCapture** 物件後，擷取彩色攝影機和景深相機的 [**MediaFrameSource**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 物件。 儲存每個來源的識別碼，這樣您就可以選取對應來源的到達畫面。
 
-[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetGetColorAndDepthSource":::
 
 呼叫 [**CreateMultiSourceFrameReaderAsync**](/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync) 並傳遞讀取器使用的畫面來源陣列，以建立和初始化 **MultiSourceMediaFrameReader**。 註冊 [**FrameArrived**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived) 事件的事件處理常式。 此範例會建立本文之前所述 **FrameRenderer** 協助程式類別的執行個體，將畫面呈現至 **Image** 控制項。 呼叫 [**StartAsync**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync) 以啟動畫面讀取器。
 
 註冊範例先前宣告之 **CorellationFailed** 事件的事件處理常式。 我們會通知這個事件，正在使用的其中一個畫面來源是否停止產生畫面。 最後，呼叫 [**Task.Run**](/dotnet/api/system.threading.tasks.task.run#System_Threading_Tasks_Task_Run_System_Action_) 以呼叫不同執行緒上的逾時協助程式方法 **NotifyAboutCorrelationFailure**。 本文稍後會示範此方法的實作。
 
-[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetInitMultiFrameReader":::
 
 每當所有由 **MultiSourceMediaFrameReader** 管理的媒體畫面來源有新的畫面時，都會引發 **FrameArrived** 事件。 這表示將會按照最慢媒體來源的頻率引發事件。 如果某個來源在較慢來源產生一個畫面的同時產生多個畫面，將會捨棄該快速來源的額外畫面。 
 
@@ -199,18 +199,18 @@ ms.locfileid: "89173682"
 
 最後，在與時間相互關聯的媒體畫面上執行任何處理。 此範例只是顯示來自深度來源的畫面。
 
-[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetMultiFrameArrived":::
 
 啟動畫面讀取器後，**NotifyCorrelationFailure** 協助程式方法已在不同的執行緒中執行。 在此方法中，檢查是否發出了畫面已收到事件的通知訊號。 請記住，在 **FrameArrived** 處理常式中，只要有一組相互關聯的畫面到達，我們就設定此事件。 如果事件有一段應用程式定義的時間 (5 秒為合理值) 沒有收到通知訊號，而且使用 **CancellationToken** 並未取消工作，那麼很可能其中一個媒體畫面來源已停止讀取畫面。 在這種情況下，您通常需要關閉畫面讀取器，以便引發應用程式定義的 **CorrelationFailed** 事件。 在此事件的處理常式中，您可以依照本文先前所述的方式，停止畫面讀取器並清理其相關聯的資源。
 
-[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetNotifyCorrelationFailure":::
 
-[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetCorrelationFailure":::
 
 ## <a name="use-buffered-frame-acquisition-mode-to-preserve-the-sequence-of-acquired-frames"></a>使用緩衝的畫面擷取模式來保留取得框架的順序
 從 Windows 10 版本 1709 開始，您可以設定 **MediaFrameReader** 或 **MultiSourceMediaFrameReader**  的 **[AcquisitionMode](/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** 屬性為 **Buffered**，來保留從畫面來源傳遞至您應用程式的畫面順序。
 
-[!code-cs[SetBufferedFrameAcquisitionMode](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSetBufferedFrameAcquisitionMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetSetBufferedFrameAcquisitionMode":::
 
 在預設擷取模式 **Realtime** 中，如果您的應用程式仍在處理先前畫面的 **FrameArrived** 時從來源取得多個畫面，系統會將最近取得的畫面傳送給您的應用程式，並捨棄緩衝中等待的其他畫面。 這樣可隨時提供最新的可用畫面給您的應用程式。 這通常是適用於即時視覺電腦應用程式的最有用模式。 
 
@@ -223,21 +223,21 @@ ms.locfileid: "89173682"
 
 首先，新增兩個 **MediaPlayerElement** 控制項到您的 XAML 頁面。
 
-[!code-xml[MediaPlayerElement1XAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetMediaPlayerElement1XAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml" id="SnippetMediaPlayerElement1XAML":::
 
-[!code-xml[MediaPlayerElement2XAML](./code/Frames_Win10/Frames_Win10/MainPage.xaml#SnippetMediaPlayerElement2XAML)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml" id="SnippetMediaPlayerElement2XAML":::
 
 接下來，使用本文先前章節所述的技術，為前端面板和背面面板上的彩色相機選取包含 **MediaFrameSourceInfo** 物件的 **MediaFrameSourceGroup**。 請注意，**MediaPlayer** 不會自動將畫面的非色彩格式 (例如景深或紅外線資料) 轉換成色彩資料。 使用其他感應器類型可能會產生無法預期的結果。 
 
-[!code-cs[MediaSourceSelectGroup](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceSelectGroup)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetMediaSourceSelectGroup":::
 
 初始化 **MediaCapture** 物件，以使用所選的 **MediaFrameSourceGroup**。
 
-[!code-cs[MediaSourceInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetMediaSourceInitMediaCapture":::
 
 最後，使用相關 **MediaFrameSourceInfo** 物件的 **[Id](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** 屬性來選取 **MediaCapture** 物件之 **[FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** 集合中的其中一個畫面來源，以呼叫 **[MediaSource.CreateFromMediaFrameSource](/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** 來為每個畫面來源建立 **MediaSource**。 透過呼叫 **[SetMediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)**，初始化新的 **MediaPlayer** 物件，並將它指派給 **MediaPlayerElement**。 然後設定 **[Source](/uwp/api/windows.media.playback.mediaplayer.Source)** 屬性為新建立的 **MediaSource** 物件。
 
-[!code-cs[MediaSourceMediaPlayer](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMediaSourceMediaPlayer)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetMediaSourceMediaPlayer":::
 
 ## <a name="use-video-profiles-to-select-a-frame-source"></a>使用視訊設定檔來選取畫面來源
 
@@ -245,7 +245,7 @@ ms.locfileid: "89173682"
 
 首先，呼叫 [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) 以取得目前裝置上可用的所有媒體畫面來源群組清單。 循環顯示每個來源群組並呼叫 [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) 以取得支援所指定設定檔之目前來源群組的所有視訊設定檔清單，在此例中是 HDR 含 WCG 相片。 如果找到符合條件的設定檔，則建立新的 **MediaCaptureInitializationSettings** 物件，並將 **VideoProfile** 設定為所選設定檔以及將 **VideoDeviceId** 設定為目前媒體畫面來源群組的 **Id** 屬性。
 
-[!code-cs[GetSettingsWithProfile](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetSettingsWithProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetGetSettingsWithProfile":::
 
 如需使用相機設定檔的詳細資訊，請參閱[相機設定檔](camera-profiles.md)。
 

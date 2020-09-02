@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 廣告控制項, JavaScript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: d770e8a9a15835d7fab52e7383acca3a3df6c6cd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b99432c40bf2b4633e8902a5bb7b7eedab3119dc
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155672"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364051"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
@@ -103,7 +103,7 @@ ms.locfileid: "89155672"
 上述步驟顯示如何在您的 HTML 標記中宣告 **AdControl**。 或者，您也可以以程式設計方式，使用 JavaScript 建立 **AdControl**。 此範例假設您透過識別碼 **myAd**，在 HTML 中使用現有的 **div**。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
+:::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/js/main.js" id="DeclareAdControl":::
 
 此範例假設您已宣告名為 **myAdError**、**myAdRefreshed** 和 **myAdEngagedChanged** 的事件處理常式方法。
 

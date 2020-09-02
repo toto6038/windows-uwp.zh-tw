@@ -5,12 +5,12 @@ ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 產品, 結構描述
 ms.localizationpriority: medium
-ms.openlocfilehash: 46feac06745cd875aaf99985d45ea1b5b126b540
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e09e02d12afc436f5d22d11fad85fb0bad3507f6
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175092"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363181"
 ---
 # <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
@@ -37,7 +37,7 @@ ms.locfileid: "89175092"
 
 如需 [StoreProduct.ExtendedJsonData](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) 所傳回 JSON 格式字串的範例，請參閱[本節](#product-example)。
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json#L1-L729)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonData.json" range="1-729":::
 
 <span id="product-example" />
 
@@ -45,7 +45,7 @@ ms.locfileid: "89175092"
 
 下例範例示範應用程式的 [StoreProduct.ExtendedJsonData](/uwp/api/windows.services.store.storeproduct.ExtendedJsonData) 屬性傳回的 JSON 格式字串。
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json#L1-L268)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreProduct.ExtendedJsonDataExample.json" range="1-268":::
 
 ## <a name="schema-for-storeapplicense-and-storelicense"></a>StoreAppLicense 和 StoreLicense 的結構描述
 
@@ -53,7 +53,7 @@ ms.locfileid: "89175092"
 
 如需 [StoreAppLicense.ExtendedJsonData](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) 所傳回 JSON 格式字串的範例，請參閱[本節](#license-example)。
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json#L1-L80)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonData.json" range="1-80":::
 
 <span id="license-example" />
 
@@ -61,13 +61,13 @@ ms.locfileid: "89175092"
 
 下例範例示範應用程式的 [StoreAppLicense.ExtendedJsonData](/uwp/api/windows.services.store.storeapplicense.ExtendedJsonData) 屬性傳回的 JSON 格式字串。
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json#L1-L28)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StoreAppLicense.ExtendedJsonDataExample.json" range="1-28":::
 
 ## <a name="schema-for-storepurchaseproperties"></a>StorePurchaseProperties 的結構描述
 
 下列結構描述說明 [StorePurchaseProperties.ExtendedJsonData](/uwp/api/windows.services.store.storepurchaseproperties.ExtendedJsonData) 傳回的 JSON 格式字串。
 
-[!code-json[ExtendedJsonDataSchema](./code/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json#L1-L12)]
+:::code language="json" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/json/StorePurchaseProperties.ExtendedJsonData.json" range="1-12":::
 
 ## <a name="related-topics"></a>相關主題
 

@@ -5,12 +5,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 弱光融合, 點陣圖, 影像處理
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1ae98b12d9ddb83f5109212d91ae2aa804e32a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4e82eb780efe83125a09417f349f84ee9451c1f0
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163642"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363831"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>使用 LowLightFusion API 處理點陣圖
 
@@ -26,26 +26,26 @@ ms.locfileid: "89163642"
 
 首先，我們需要判斷演算法可接受多少影像 (也稱為畫面)，並建立保有這些畫面的清單。
 
-[!code-cs[SnippetGetMaxLLFFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetGetMaxLLFFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/LowLightFusionSample/cs/MainPage.xaml.cs" id="SnippetGetMaxLLFFrames":::
 
 確定弱光融合演算法可接受多少畫面後，我們可以使用 [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 來允許使用者選擇演算法中應該使用哪些影像。
 
-[!code-cs[SnippetGetFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetGetFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/LowLightFusionSample/cs/MainPage.xaml.cs" id="SnippetGetFrames":::
 
 現在我們已經選取正確的畫面數，我們需要將畫面解碼至 [SoftwareBitmaps](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 並確保 SoftwareBitmaps 針對 LowLightFusion 使用正確格式。
 
-[!code-cs[SnippetDecodeFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetDecodeFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/LowLightFusionSample/cs/MainPage.xaml.cs" id="SnippetDecodeFrames":::
 
 
 ## <a name="fuse-the-bitmaps-into-a-single-bitmap"></a>將點陣圖合成為單一點陣圖
 
 現在，我們擁有可接受格式的正確畫面數，可以使用 **[FuseAsync](/uwp/api/windows.media.core.lowlightfusion.fuseasync)** 方法來套用弱光融合演算法。 我們的結果會是 SoftwareBitmap 形式的處理過影像，並已改善清晰度。 
 
-[!code-cs[SnippetFuseFrames](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetFuseFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/LowLightFusionSample/cs/MainPage.xaml.cs" id="SnippetFuseFrames":::
 
 最後，我們要清理產生的 SoftwareBitmap，將其編碼並儲存為方便使用的「一般」影像，類似於我們一開始使用的輸入影像。
 
-[!code-cs[SnippetEncodeFrame](./code/LowLightFusionSample/cs/MainPage.xaml.cs#SnippetEncodeFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/LowLightFusionSample/cs/MainPage.xaml.cs" id="SnippetEncodeFrame":::
 
 
 ## <a name="before-and-after"></a>處理前和處理後

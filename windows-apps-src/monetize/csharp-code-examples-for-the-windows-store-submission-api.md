@@ -6,21 +6,21 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: b3073e2a5ffa445a39bdf6d54dd288be97c88207
-ms.sourcegitcommit: 6a7dd4da2fc31ced7d1cdc6f7cf79c2e55dc5833
+ms.openlocfilehash: ac16d6932a2f20e701d7446ac8c21c316cfe5d4a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58334966"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364121"
 ---
-# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\#範例： 應用程式、 附加元件和航班的提交內容
+# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C \# 範例：提交應用程式、附加元件和航班
 
 本文提供 C# 程式碼範例，示範如何使用 [Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md)來執行這些任務：
 
 * [建立應用程式提交](#create-app-submission)
 * [建立附加元件提交](#create-add-on-submission)
 * [更新附加元件提交](#update-add-on-submission)
-* [建立套件飛行提交](#create-flight-submission)
+* [建立套件正式發行前小眾測試版提交](#create-flight-submission)
 
 您可以檢閱每個範例以深入了解示範的工作，或者您可以將本篇文章中的所有程式碼範例建置到主控台應用程式。 若要建置範例，請在 Visual Studio 中建立名為 **DeveloperApiCSharpSample** 的 C# 主控台應用程式，分別將每個範例複製到專案中單獨的程式碼檔案，然後建置專案。
 
@@ -36,10 +36,10 @@ ms.locfileid: "58334966"
 下列範例實作的命令列程式會呼叫本文中的其他範例方法，示範使用 Microsoft Store 提交 API 的不同方式。 若要自行調整這個程式：
 
 * 將 ```ApplicationId```、```InAppProductId``` 和 ```FlightId``` 屬性指派給您想要管理之應用程式、附加元件和套件正式發行前小眾測試版的識別碼。
-* 將 ```ClientId``` 和 ```ClientSecret``` 屬性指派給應用程式的用戶端識別碼和金鑰，並使用應用程式的租用戶識別碼來取代 ```TokenEndpoint``` URL 中的 *tenantid* 字串。 如需詳細資訊，請參閱[如何與您的合作夥伴中心帳戶相關聯的 Azure AD 應用程式](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* 將 ```ClientId``` 和 ```ClientSecret``` 屬性指派給應用程式的用戶端識別碼和金鑰，並使用應用程式的租用戶識別碼來取代 ```TokenEndpoint``` URL 中的 *tenantid* 字串。 如需詳細資訊，請參閱 [如何將 Azure AD 應用程式與您的合作夥伴中心帳戶建立關聯](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/Program.cs#Main)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/Program.cs" id="Main":::
 
 <span id="clientconfiguration" />
 
@@ -48,23 +48,23 @@ ms.locfileid: "58334966"
 範例應用程式使用 ```ClientConfiguration``` 協助程式類別，將 Azure Active Directory 資料和應用程式資料傳遞給每個使用 Microsoft Store 提交 API 的範例方法。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/ClientConfiguration.cs" id="ClientConfiguration":::
 
 <span id="create-app-submission" />
 
 ## <a name="create-an-app-submission"></a>建立應用程式提交
 
-下列範例所實作的類別使用 Microsoft Store 提交 API 中的幾個方法來更新應用程式提交。 ```RunAppSubmissionUpdateSample```類別中的方法建立的最後一個已發佈的提交，就像是複製新送出，然後更新和認可複製到合作夥伴中心提交。 具體來說，```RunAppSubmissionUpdateSample``` 方法會執行以下工作：
+下列範例所實作的類別使用 Microsoft Store 提交 API 中的幾個方法來更新應用程式提交。 ```RunAppSubmissionUpdateSample```類別中的方法會建立新提交做為上次發佈提交的複製品，然後它會更新並認可複製的提交至合作夥伴中心。 具體來說，```RunAppSubmissionUpdateSample``` 方法會執行以下工作：
 
 1. 一開始，此方法[為指定的應用程式取得資料](get-an-app.md)。
 2. 接下來，它會[刪除應用程式的擱置中提交](delete-an-app-submission.md) (如果有的話)。
 3. 然後它會[為此應用程式建立新的提交](create-an-app-submission.md) (新的提交是最後一個已發佈提交的複本)。
 4. 它會變更新提交的部分詳細資料，並將此提交的新套件上傳到 Azure Blob 儲存體。
-5. 接下來，它[更新](update-an-app-submission.md)，然後[認可](commit-an-app-submission.md)新提交到合作夥伴中心。
+5. [接著，](commit-an-app-submission.md)它會[更新](update-an-app-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-app-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs" id="AppSubmissionUpdateSample":::
 
 <span id="create-add-on-submission" />
 
@@ -75,42 +75,42 @@ ms.locfileid: "58334966"
 1. 一開始，此方法會[建立新的附加元件](create-an-add-on.md)。
 2. 接下來，它會[建立附加元件的新提交](create-an-add-on-submission.md)。
 3. 它會將包含此提交圖示的 ZIP 封存上傳到 Azure Blob 儲存體。
-4. 接下來，它[認可新提交到合作夥伴中心](commit-an-add-on-submission.md)。
+4. 接下來，它會 [將新提交認可至合作夥伴中心](commit-an-add-on-submission.md)。
 5. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs#InAppProductSubmissionCreateSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/InAppProductSubmissionCreateSample.cs" id="InAppProductSubmissionCreateSample":::
 
 <span id="update-add-on-submission" />
 
 ## <a name="update-an-add-on-submission"></a>更新附加元件提交
 
-下列範例所實作的類別使用 Microsoft Store 提交 API 中的幾個方法來更新現有的附加元件提交。 ```RunInAppProductSubmissionUpdateSample```類別中的方法建立的最後一個已發佈的提交，就像是複製新送出，然後更新和認可複製到合作夥伴中心提交。 具體來說，```RunInAppProductSubmissionUpdateSample``` 方法會執行以下工作：
+下列範例所實作的類別使用 Microsoft Store 提交 API 中的幾個方法來更新現有的附加元件提交。 ```RunInAppProductSubmissionUpdateSample```類別中的方法會建立新提交做為上次發佈提交的複製品，然後它會更新並認可複製的提交至合作夥伴中心。 具體來說，```RunInAppProductSubmissionUpdateSample``` 方法會執行以下工作：
 
 1. 一開始，此方法會[針對指定的附加元件取得資料](get-an-add-on.md)。
 2. 接下來，它會[刪除附加元件的擱置中提交](delete-an-add-on-submission.md) (如果有的話)。
 3. 然後它會[為此附加元件建立新的提交](create-an-add-on-submission.md) (新的提交是最後一個已發佈提交的複本)。
-5. 接下來，它[更新](update-an-add-on-submission.md)，然後[認可](commit-an-add-on-submission.md)新提交到合作夥伴中心。
+5. [接著，](commit-an-add-on-submission.md)它會[更新](update-an-add-on-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs" id="InAppProductSubmissionUpdateSample":::
 
 <span id="create-flight-submission" />
 
 ## <a name="create-a-package-flight-submission"></a>建立套件正式發行前小眾測試版提交
 
-下列範例所實作的類別使用 Microsoft Store 提交 API 中的幾個方法來更新套件正式發行前小眾測試版提交。 ```RunFlightSubmissionUpdateSample```類別中的方法建立的最後一個已發佈的提交，就像是複製新送出，然後更新和認可複製到合作夥伴中心提交。 具體來說，```RunFlightSubmissionUpdateSample``` 方法會執行以下工作：
+下列範例所實作的類別使用 Microsoft Store 提交 API 中的幾個方法來更新套件正式發行前小眾測試版提交。 ```RunFlightSubmissionUpdateSample```類別中的方法會建立新提交做為上次發佈提交的複製品，然後它會更新並認可複製的提交至合作夥伴中心。 具體來說，```RunFlightSubmissionUpdateSample``` 方法會執行以下工作：
 
 1. 一開始，此方法會[為指定的套件正式發行前小眾測試版取得資料](get-a-flight.md)。
 2. 接下來，它會[刪除套件正式發行前小眾測試版的擱置中提交](delete-a-flight-submission.md) (如果有的話)。
 3. 然後它會[為套件正式發行前小眾測試版建立新的提交](create-a-flight-submission.md) (新的提交是最後一個已發佈提交的複本)。
 4. 它會將此提交的新套件上傳到 Azure Blob 儲存體。
-5. 接下來，它[更新](update-a-flight-submission.md)，然後[認可](commit-a-flight-submission.md)新提交到合作夥伴中心。
+5. [接著，](commit-a-flight-submission.md)它會[更新](update-a-flight-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-a-flight-submission.md)，直到此提交認可成功為止。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs#FlightSubmissionUpdateSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/FlightSubmissionUpdateSample.cs" id="FlightSubmissionUpdateSample":::
 
 <span id="ingestionclient" />
 
@@ -123,8 +123,8 @@ ms.locfileid: "58334966"
 * 處理 Microsoft Store 提交 API 的 HTTP 要求。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[SubmissionApi](./code/StoreServicesExamples_Submission/cs/IngestionClient.cs#IngestionClient)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/cs/IngestionClient.cs" id="IngestionClient":::
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)

@@ -6,12 +6,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: windows 10, uwp, 擷取, 視訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f12137bcb6dbb9984648ce141b4351d592902b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6d40e75dd88b84eb5d7244a2ad3ed3d605c17e0b
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160912"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362872"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>使用 MediaFrameSourceGroup 從多個來源擷取
 
@@ -28,14 +28,14 @@ ms.locfileid: "89160912"
 
 請注意，並非每個裝置都包含有兩部彩色相機的來源群組，因此您應該要檢查以確認有找到來源群組，然後再擷取視訊。
 
-[!code-cs[MultiRecordFindSensorGroups](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordFindSensorGroups)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordFindSensorGroups":::
 
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 物件
 **[MediaCapture](/uwp/api/windows.media.capture.mediacapture)** 類別是 UWP app 中用於大部分音訊、視訊和相片擷取作業的主要類別。 透過呼叫 **[InitializeAsync](/uwp/api/windows.media.capture.mediacapture.InitializeAsync)**、傳遞 **[MediaCaptureInitializationSettings](/uwp/api/windows.media.capture.mediacaptureinitializationsettings)** 包含初始化參數的物件，來初始化物件。 在此範例中，指定的唯一設定是 **[SourceGroup](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.SourceGroup)** 屬性，設為上一個程式碼範例中擷取的 **MediaFrameSourceGroup**。
 
 如需您可搭配 **MediaCapture** 執行的其他作業以及擷取媒體的其他 UWP app 功能的相關資訊，請參閱[相機](camera.md)。
 
-[!code-cs[MultiRecordInitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordInitMediaCapture":::
 
 ## <a name="create-a-mediaencodingprofile"></a>建立 MediaEncodingProfile
 **[MediaEncodingProfile](/uwp/api/windows.media.mediaproperties.mediaencodingprofile)** 類別會告知媒體擷取管線在將擷取到的音訊和視訊寫入檔案時，應該如何編碼。 對於一般擷取和轉碼案例，此類別提供一組靜態方法來建立常見的設定檔，例如 **[CreateAvi](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createavi)** 和 **[CreateMp3](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3)**。 針對此範例，將使用 Mpeg4 容器和 H264 視訊編碼來手動建立編碼設定檔。 使用 **[VideoEncodingProperties](/uwp/api/windows.media.mediaproperties.videoencodingproperties)** 物件來指定視訊編碼設定。 針對本案例中使用的每部彩色相機，會設定 **VideoStreamDescriptor** 物件。 使用 **VideoEncodingProperties** 物件建構描述元，指定編碼。 **VideoStreamDescriptor** 的 **[Label](/uwp/api/windows.media.core.videostreamdescriptor.Label)** 屬性必須設成要擷取至串流的媒體畫面來源的識別碼。 擷取管線透過此方法得知哪一個串流描述元與編碼屬性應用於每個相機。 畫面來源的識別碼由 **[MediaFrameSourceInfo](/uwp/api/windows.media.capture.frames.mediaframesourceinfo)** 物件公開，選取 **MediaFrameSourceGroup** 時可在上一區段找到此物件。
@@ -44,7 +44,7 @@ ms.locfileid: "89160912"
 從 Windows 10 版本 1709 開始，您可以透過呼叫 **[SetVideoTracks](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.setvideotracks)**，在 **MediaEncodingProfile** 上設定多個編碼屬性。 您可以呼叫 **[GetVideoTracks](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.GetVideoTracks)** 來擷取視訊串流描述元的清單。 請注意，如果您設定 **[Video](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.Video)** 屬性 (用於儲存單一串流描述元)，則您透過呼叫 **SetVideoTracks** 設定的描述元清單會更換為包含您所指定之單一描述元的清單。
 
 
-[!code-cs[MultiRecordMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordMediaEncodingProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordMediaEncodingProfile":::
 
 ### <a name="encode-timed-metadata-in-media-files"></a>編碼媒體檔案中的定時中繼資料
 
@@ -54,16 +54,16 @@ ms.locfileid: "89160912"
 
 下列範例示範如何初始化 **TimedMetadataStreamDescriptor** 物件。 首先，會建立 **TimedMetadataEncodingProperties** 物件並將 **Subtype** 設定為用於識別將包含於串流中之中繼資料類型的 GUID。 此範例使用 GoPro 中繼資料 (gpmd) 的 GUID。 呼叫 [**SetFormatUserData**](/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata) 方法來設定格式特定資料。 對於 MP4 檔案，格式特定資料儲存在 SampleDescription 方塊 (stsd) 中。 接著，從編碼屬性建立新的 **TimedMetadataStreamDescriptor**。 設定 **Label** 和 **Name** 屬性來識別要編碼的串流。 
 
-[!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetGetStreamDescriptor":::
 
 呼叫 [**MediaEncodingProfile. SetTimedMetadataTracks**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) ，將中繼資料資料流程描述元加入至編碼設定檔。 下列範例顯示的協助程式方法會取得兩個視訊串流描述項、一個音訊串流描述項與一個定時中繼資料串流描述項，並傳回可用於編碼串流的 **MediaEncodingProfile**。
 
-[!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetGetMediaEncodingProfile":::
 
 ## <a name="record-using-the-multi-stream-mediaencodingprofile"></a>使用多串流 MediaEncodingProfile 錄製
 此範例的最後一個步驟是透過呼叫 **[StartRecordToStorageFileAsync](/uwp/api/windows.media.capture.mediacapture.startrecordtostoragefileasync)**、傳遞 **StorageFile** 至所擷取媒體的寫入目的，以及在前一個程式碼範例中建立的 **MediaEncodingProfile**，來起始視訊擷取功能。 等候幾秒後，呼叫 **[StopRecordAsync](/uwp/api/windows.media.capture.mediacapture.StopRecordAsync)** 來停止錄製。
 
-[!code-cs[MultiRecordToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetMultiRecordToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs" id="SnippetMultiRecordToFile":::
 
 作業完成時，會建立視訊檔案，其中包含從每部相機擷取的視訊，並編碼為檔案中的個別串流。 如需播放包含多個視訊播放軌之媒體檔案的相關資訊，請參閱[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9958aab20c13f0104ca1a52c6fccda33c00f6281
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e661eb0859e9720e31fabb6e5a7b33857de28b7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159962"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363671"
 ---
 # <a name="drag-and-drop"></a>拖放
 
@@ -43,7 +43,7 @@ ms.locfileid: "89159962"
 
 以下是如何設定 [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) 的方式。
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDragArea":::
 
 您不需要進行任何其他工作即可允許拖曳，除非您希望自訂 UI (本文章稍後將會說明)。 置放則需要較多的步驟。
 
@@ -51,7 +51,7 @@ ms.locfileid: "89159962"
 
 在大部分的案例中，系統會為您建構資料套件。 系統會自動處理：
 * 影像
-* 文字 
+* Text 
 
 針對其他內容，您將需要處理 **DragStarted** 和 **DragCompleted** 事件，然後使用他們建構您自己的 [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)。
 
@@ -59,14 +59,14 @@ ms.locfileid: "89159962"
 
 下列標記示範如何使用 XAML 中的 [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) 將應用程式的特定區域設為有效的置放區域。 如果使用者嘗試在其他地方放下，系統將不會允許這麼做。 如果您希望使用者可以在 app 中的任何位置放下項目，請將整個背景設定為放下目標。
 
-[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml" id="SnippetDropArea":::
 
 
 ## <a name="handle-the-dragover-event"></a>處理 DragOver 事件
 
 當使用者拖曳項目到您的 App 上，但尚未放下時，會引發 [**DragOver**](/uwp/api/windows.ui.xaml.uielement.dragover) 事件。 在這個處理常式中，您需要使用 [**AcceptedOperation**](/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation) 屬性指定 app 支援何種類型的作業。 最常見的是複製。
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOver":::
 
 ## <a name="process-the-drop-event"></a>處理 Drop 事件
 
@@ -74,13 +74,13 @@ ms.locfileid: "89159962"
 
 為了簡單起見，下面的範例假設使用者置放單一相片並直接存取。 事實上，使用者可以同時置放多個不同格式的項目。 您的應用程式應該檢查置放了什麼類型的檔案，以及其中有多少檔案，以便處理這種可能情況，然後相應處理每個項目。 您也應該考慮通知使用者是否要嘗試執行您的應用程式不支援的動作。
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_Drop":::
 
 ## <a name="customize-the-ui"></a>自訂 UI
 
 系統會提供用於拖放的預設 UI。 不過，您也可以選擇透過設定自訂標題與字符來自訂 UI 的各個部分，或選擇完全不顯示 UI。 若要自訂 UI，請使用 [**DragEventArgs.DragUIOverride**](/uwp/api/windows.ui.xaml.drageventargs.draguioverride) 屬性。
 
-[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/design/input/drag_drop/cs/MainPage.xaml.cs" id="SnippetGrid_DragOverCustom":::
 
 ## <a name="open-a-context-menu-on-an-item-you-can-drag-with-touch"></a>在您可以使用觸控方式拖曳的項目上開啟操作功能表
 

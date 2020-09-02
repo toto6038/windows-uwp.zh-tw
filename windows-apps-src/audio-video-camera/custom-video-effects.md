@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 89bb542e0da8249253e40085163defe3ac24e805
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a80e00a44bbb1c401811f72eb7024aef25013f29
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170602"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363951"
 ---
 # <a name="custom-video-effects"></a>自訂視訊效果
 
@@ -38,12 +38,12 @@ ms.locfileid: "89170602"
 6.  將檔案重新命名為 *ExampleVideoEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]  。
 7.  開啟 **ExampleVideoEffect.cs** ，並更新類別定義以執行 [**IBasicVideoEffect**](/uwp/api/Windows.Media.Effects.IBasicVideoEffect) 介面。
 
-[!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetImplementIBasicVideoEffect":::
 
 
 您必須在您的效果類別檔案中包含下列命名空間，以存取本文章的範例中所使用的所有類型。
 
-[!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetEffectUsing":::
 
 
 ## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>使用軟體處理實作 IBasicVideoEffect 介面
@@ -55,7 +55,7 @@ ms.locfileid: "89170602"
 
 系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect.close) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](/uwp/api/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
 
-[!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetClose":::
 
 
 ### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames 方法
@@ -63,7 +63,7 @@ ms.locfileid: "89170602"
 在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](/uwp/api/windows.media.effects.ibasicvideoeffect.discardqueuedframes) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的畫面組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
 
 
-[!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetDiscardQueuedFrames":::
 
 
 
@@ -75,13 +75,13 @@ ms.locfileid: "89170602"
 > 當 [**IsReadOnly**](/uwp/api/windows.media.effects.ibasicvideoeffect.isreadonly) 屬性設定為 true 時，系統會在呼叫 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 之前將輸入畫面複製到輸出畫面。 將 **IsReadOnly** 屬性設定為 true 並不會限制您在 **ProcessFrame** 中寫入至效果的輸出畫面。
 
 
-[!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetIsReadOnly":::
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
 系統會在您的效果上呼叫 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 來讓您知道效果正在運作之視訊串流的編碼屬性。 此方法也能夠提供用於硬體轉譯之 Direct3D 裝置的參照。 此裝置的使用方式將會在本文章稍後的硬體處理範例中提供。
 
-[!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSetEncodingProperties":::
 
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties 屬性
@@ -89,7 +89,7 @@ ms.locfileid: "89170602"
 系統將會檢查 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) 屬性來判斷您效果所支援的編碼屬性。 請注意，如果您效果的取用者無法使用您所指定的屬性來編碼視訊，它將會在您的效果上呼叫 [**Close**](/uwp/api/windows.media.effects.ibasicvideoeffect.close) 並將您的效果從視訊管線中移除。
 
 
-[!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedEncodingProperties":::
 
 
 > [!NOTE] 
@@ -101,7 +101,7 @@ ms.locfileid: "89170602"
 
 系統會檢查 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 屬性以判斷您的效果會存取軟體記憶體中的視訊畫面格，或是硬體 (GPU) 記憶體中的視訊畫面格。 如果您回傳 [**MediaMemoryTypes.Cpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)，您的效果將會被傳遞包含 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 物件中之影像資料的輸入和輸出畫面格。 如果您回傳 **MediaMemoryTypes.Gpu**，您的效果將會被傳遞包含 [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件中之影像資料的輸入和輸出畫面格。
 
-[!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSupportedMemoryTypes":::
 
 
 > [!NOTE]
@@ -113,19 +113,19 @@ ms.locfileid: "89170602"
 
 [**TimeIndependent**](/uwp/api/windows.media.effects.ibasicvideoeffect.timeindependent) 屬性能讓系統知道您的效果不需要統一計時。 當設定為 true 時，系統將可以使用能增強效果效能的最佳化功能。
 
-[!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetTimeIndependent":::
 
 ### <a name="setproperties-method"></a>SetProperties 方法
 
 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 方法允許使用您效果的 App 調整效果參數。 屬性將會以包含屬性名稱和值的 [**IPropertySet**](/uwp/api/Windows.Foundation.Collections.IPropertySet) 對應進行傳遞。
 
 
-[!code-cs[SetProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetSetProperties":::
 
 
 此簡單範例會根據指定值使每個視訊畫面格中的像素變暗。 將會宣告屬性，並使用 TryGetValue 來取得由呼叫 App 所設定的值。 如果沒有設定任何值，將會使用 0.5 的預設值。
 
-[!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetFadeValue":::
 
 
 ### <a name="processframe-method"></a>ProcessFrame 方法
@@ -136,12 +136,12 @@ ms.locfileid: "89170602"
 
 存取 **SoftwareBitmap** 的資料緩衝區需要 COM interop，因此您應該將 **System.Runtime.InteropServices** 命名空間包含在您的效果類別檔案中。
 
-[!code-cs[COMUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetCOMUsing":::
 
 
 將下列程式碼新增到您效果的命名空間內，以匯入存取影像緩衝區的介面。
 
-[!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetCOMImport":::
 
 
 > [!NOTE]
@@ -156,7 +156,7 @@ ms.locfileid: "89170602"
 
 現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 緩衝區的配置是透過呼叫 [**GetPlaneDescription**](/uwp/api/windows.graphics.imaging.bitmapbuffer.getplanedescription) 取得，這將能提供緩衝區寬度、Stride 及初始位移的資訊。 「每一像素位元數」是由先前透過 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 方法所設定的編碼屬性所決定。 緩衝區格式資訊是用來找出每個像素之緩衝區的索引。 來源緩衝區的像素值會被複製到目標緩衝區中，其色彩值會被乘以針對此效果定義的 FadeValue 屬性，來以指定的量將它們變暗。
 
-[!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs" id="SnippetProcessFrameSoftwareBitmap":::
 
 
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬體處理實作 IBasicVideoEffect 介面
@@ -177,36 +177,36 @@ ms.locfileid: "89170602"
 
 除了包含在基本專案設定中的命名空間之外，您將需要包含下列由 Win2D 提供的命名空間。
 
-[!code-cs[UsingWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetUsingWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetUsingWin2D":::
 
 
 由於此效果會使用 GPU 記憶體來在影像資料上運作，您應該要從 [**SupportedMemoryTypes**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedmemorytypes) 參數回傳 [**MediaMemoryTypes.Gpu**](/uwp/api/Windows.Media.Effects.MediaMemoryTypes)。
 
-[!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSupportedMemoryTypesWin2D":::
 
 
 使用 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.supportedencodingproperties) 屬性來設定您效果會支援的編碼屬性。 使用 Win2D 時，您必須使用 ARGB32 編碼。
 
-[!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSupportedEncodingPropertiesWin2D":::
 
 
 使用 [**SetEncodingProperties**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 方法來從傳遞到方法中的 [**IDirect3DDevice**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DDevice) 建立新的 Win2D **CanvasDevice** 物件。
 
-[!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSetEncodingPropertiesWin2D":::
 
 
 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 實作和先前的軟體處理範例相同。 此範例使用 **BlurAmount** 參數來設定 Win2D 模糊效果。
 
-[!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetSetPropertiesWin2D":::
 
-[!code-cs[BlurAmountWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetBlurAmountWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetBlurAmountWin2D":::
 
 
 最後一個步驟為實作實際處理影像資料的 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicvideoeffect.processframe) 方法。
 
 透過使用 Win2D API，將會從輸入畫面格的 [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface) 參數建立 **CanvasBitmap**。 **CanvasRenderTarget** 會從輸出畫面格的 **Direct3DSurface** 建立，而 **CanvasDrawingSession** 將會從此轉譯目標建立。 新的 Win2D **GaussianBlurEffect** 將會使用效果透過 [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) 公開的 **BlurAmount** 參數進行初始化。 最後，將會呼叫 **CanvasDrawingSession.DrawImage** 方法來使用模糊效果將輸入點陣圖繪製到轉譯目標上。
 
-[!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs" id="SnippetProcessFrameWin2D":::
 
 
 ## <a name="adding-your-custom-effect-to-your-app"></a>將您的自訂效果新增到您的 App
@@ -226,7 +226,7 @@ ms.locfileid: "89170602"
 
 新增效果之後，將會呼叫 [**StartPreviewAsync**](/uwp/api/windows.media.capture.mediacapture.startpreviewasync) 以開始預覽串流。
 
-[!code-cs[AddVideoEffectAsync](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddVideoEffectAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddVideoEffectAsync":::
 
 
 
@@ -235,7 +235,7 @@ ms.locfileid: "89170602"
 如需從視訊短片建立媒體組合的一般指導方針，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。 下列程式碼片段示範具有自訂視訊效果之簡單媒體組合的建立方式。 透過呼叫 [**CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync) 來建立 [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) 物件，傳遞使用者透過 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 所選取的視訊檔案，該短片則新增到新的 [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition)。 接著將會建立新的 [**VideoEffectDefinition**](/uwp/api/Windows.Media.Effects.VideoEffectDefinition) 物件，並將您效果的命名空間和類別名稱傳遞給建構函式。 最後，將效果定義新增到 **MediaClip** 物件的 [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) 集合。
 
 
-[!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs" id="SnippetAddEffectToComposition":::
 
 
 ## <a name="related-topics"></a>相關主題

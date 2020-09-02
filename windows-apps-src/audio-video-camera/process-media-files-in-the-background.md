@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 38261e8f6a03e17ba94a064b8e475503414e91d6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b7f726365a2e476e650f4b66d484840c0efabda5
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174632"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363821"
 ---
 # <a name="process-media-files-in-the-background"></a>在背景處理媒體檔案
 
@@ -40,11 +40,11 @@ ms.locfileid: "89174632"
 
 在重新命名的類別檔案中，新增下列 **using** 指示詞，在專案中包含這些命名空間。
                                   
-[!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetBackgroundUsing":::
 
 更新您的類別宣告，讓您的類別繼承自 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)。
 
-[!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetBackgroundClass":::
 
 將下列成員變數新增到您的類別：
 
@@ -53,7 +53,7 @@ ms.locfileid: "89174632"
 -   **CancellationTokenSource** 物件，可用來取消非同步轉碼作業。
 -   [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder) 物件，用來轉碼媒體檔案。
 
-[!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetBackgroundMembers":::
 
 當背景工作啟動時，系統會呼叫背景工作的 [**Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法。 將傳入方法的 [**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask) 物件設定為對應的成員變數。 登錄 [**Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) 事件的處理常式，這會在系統需要關閉背景工作時引發。 然後，將 [**Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.progress) 屬性設定為零。
 
@@ -63,7 +63,7 @@ ms.locfileid: "89174632"
 
 在 **Run** 方法的最後，在延遲的物件上呼叫 [**Complete**](/uwp/api/windows.applicationmodel.background.backgroundtaskdeferral.complete)，讓系統知道您的背景工作已完成且可終止。
 
-[!code-cs[Run](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetRun":::
 
 在 **TranscodeFileAsync** 協助程式方法中，轉碼作業的輸入檔案與輸出檔案的檔案名稱會從您 app 的 [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) 擷取。 這些值將由您的前景 app 設定。 建立輸入檔案與輸出檔案的 [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) 物件，然後建立要用於轉碼的編碼設定檔。
 
@@ -71,19 +71,19 @@ ms.locfileid: "89174632"
 
 **AsTask** 方法可讓您追蹤非同步作業的進度或取消作業。 建立新的 **Progress** 物件，指定您想要的進度單位，以及要呼叫來通知您目前工作進度的方法名稱。 將 **Progress** 物件連同可讓您取消工作的取消權杖傳入 **AsTask** 方法。
 
-[!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetTranscodeFileAsync":::
 
 在您於上一個步驟中用來建立 Progress 物件的方法 **Progress** 中，設定背景工作執行個體的進度。 這會將進度傳入前景 app (如果正在執行)。
 
-[!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetProgress":::
 
 **SendToastNotification** 協助程式方法會取得只有文字內容的快顯通知的範本 XML 文件，建立新的快顯通知。 此時會設定快顯通知 XML 的文字項目，然後從 XML 文件建立新的 [**ToastNotification**](/uwp/api/Windows.UI.Notifications.ToastNotification) 物件。 最後，呼叫 [**ToastNotifier.Show**](/uwp/api/windows.ui.notifications.toastnotifier.show) 對使用者顯示快顯通知。
 
-[!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetSendToastNotification":::
 
 在 [**Canceled**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.canceled) 事件 (這會在系統取消您背景工作時呼叫) 的處理常式中，您可以針對遙測用途記錄錯誤。
 
-[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs" id="SnippetOnCanceled":::
 
 ## <a name="register-and-launch-the-background-task"></a>註冊和啟動背景工作
 
@@ -104,17 +104,17 @@ ms.locfileid: "89174632"
 
 此範例中的其餘程式碼，應該新增到您的前景 App。 首先，您必須將下列命名空間新增到專案。
 
-[!code-cs[ForegroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetForegroundUsing":::
 
 接著，新增登錄背景工作所需的下列成員變數。
 
-[!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetForegroundMembers":::
 
 **PickFilesToTranscode** 協助程式方法使用 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker)，開啟轉碼的輸入檔案與輸出檔案。 使用者可能會選取您的 app 無法存取的位置中的檔案。 若要確定您的背景工作可以開啟檔案，請將這些檔案新增到您的 App 的 [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist)。
 
 最後，在您 app 的 [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) 中設定輸入檔案與輸出檔案名稱的項目。 背景工作會擷取這個位置中的檔案名稱。
 
-[!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetPickFilesToTranscode":::
 
 若要登錄背景工作，請建立新的 [**MediaProcessingTrigger**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) 和新的 [**BackgroundTaskBuilder**](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)。 設定背景工作建立器的名稱，讓您可以在稍後識別。 將 [**TaskEntryPoint**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.taskentrypoint) 設定為與資訊檔案清單中相同的命名空間和類別名稱字串。 將 [**Trigger**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.trigger) 屬性設定為 **MediaProcessingTrigger** 執行個體。
 
@@ -122,23 +122,23 @@ ms.locfileid: "89174632"
 
 呼叫 [**Register**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.register) 登錄背景工作。 註冊 [**Completed**](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration.completed) 和 [**Progress**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskregistration.progress) 事件的處理常式。
 
-[!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetRegisterBackgroundTask":::
 
 一般的應用程式會在應用程式一開始啟動時（例如在 **OnNavigatedTo** 事件中）註冊其背景工作。
 
 呼叫 **MediaProcessingTrigger** 物件的 [**RequestAsync**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger.requestasync) 方法來啟動背景工作。 這個方法所傳回的 [**MediaProcessingTriggerResult**](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTriggerResult) 物件可讓您知道背景工作是否已順利啟動，如果沒有，則可讓您知道背景工作為什麼沒有啟動。 
 
-[!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetLaunchBackgroundTask":::
 
 一般的應用程式會啟動背景工作以回應使用者互動，例如在 UI 控制項的 **Click** 事件中。
 
 背景工作更新作業的進度時，會呼叫 **OnProgress** 事件處理常式。 您可以利用這個機會以進度資訊更新您的 UI。
 
-[!code-cs[OnProgress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetOnProgress":::
 
 背景工作執行完成時，會呼叫 **OnCompleted** 事件處理常式。 這是另一個可以更新 UI 以提供狀態資訊給使用者的機會。
 
-[!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs" id="SnippetOnCompleted":::
 
 
  

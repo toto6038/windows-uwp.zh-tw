@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6baf26b083cce08557a9b09f2ba95d5ad889f4a4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9d1a5c08d9965422d6fcd543ee38d3e628be8432
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175102"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364061"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 
@@ -44,7 +44,7 @@ ms.locfileid: "89175102"
 
   下列範例顯示如何在 JavaScript 程式碼中建立 [MediaPlayer](https://github.com/Microsoft/TVHelpers/wiki/MediaPlayer-Overview)。
 
-  [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet1)]
+  :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet1":::
 
 ## <a name="how-to-use-the-adscheduler-class-in-your-code"></a>如何在您的程式碼中使用 AdScheduler 類別
 
@@ -75,7 +75,7 @@ ms.locfileid: "89175102"
 
 6.  在專案的 main.js 檔案中，新增建立新 **AdScheduler** 物件的程式碼。 傳入裝載影片內容的 **MediaPlayer**。 程式碼必須放在 [WinJS.UI.processAll](/previous-versions/windows/apps/hh440975) 後面執行。
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet2)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet2":::
 
 7.  使用 **AdScheduler** 物件的 **requestSchedule** 或 **requestScheduleByUrl** 方法向伺服器要求廣告排程，並將它插入 **MediaPlayer** 時間軸，然後播放影片媒體。
 
@@ -83,18 +83,18 @@ ms.locfileid: "89175102"
 
         這個方法採用[承諾](../threading-async/asynchronous-programming-universal-windows-platform-apps.md#asynchronous-patterns-in-uwp-using-javascript) 形式，它是一種非同步建構，其中傳遞了兩個功能指標：一個指標在承諾成功完成時呼叫**onComplete** 函數，另一個指標在遇到錯誤時呼叫 **onError** 函數。 在 **onComplete** 函數中，開始播放視訊內容。 廣告將在已排程的時間開始播放。 在您 **onError** 函數中，處理錯誤，然後開始播放視訊。 您的視訊內容在播放時不會有廣告。 **onError** 函數的引數包含下列成員的物件。
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet3)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet3":::
 
     * 若要向非 Microsoft 廣告伺服器要求廣告排程，請使用 **requestScheduleByUrl**，然後傳入伺服器 URI。 這種方法也採用 **Promise** 的形式，它接受 **onComplete** 和 **onError** 函數的指標。 從伺服器傳回的廣告承載必須符合視訊廣告服務樣板 (VAST) 或視訊多廣告播放列表 (VMAP) 承載格式。
 
-        [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet4)]
+        :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet4":::
 
     > [!NOTE]
     > 在開始播放 **MediaPlayer** 中的主要返回。內容之前，您應該等待 **requestSchedule** 或 **requestScheduleByUrl** 傳回。 在 **requestSchedule** 傳回之前開始播放媒體 (在預載廣告的情况下) 將導致預載中斷主視訊內容。 即使函數失敗，您還是必須呼叫 **play**，因為 **AdScheduler** 會告訴 **MediaPlayer** 略過廣告並直接移動到內容。 您可能有不同的商務需求，例如若無法從遠端成功擷取廣告，則插入內建的廣告。
 
 8.  在播放時，您可以處理其他事件，這些事件可讓您的應用程式追蹤進度和/或初始廣告符合處理程序之後可能發生的錯誤。 下列程式碼顯示其中一部分事件，包含 **onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete** 和 **onErrorOccurred**。
 
-    [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdSchedulerSamples/js/js/main.js" id="Snippet5":::
 
 ## <a name="adscheduler-members"></a>AdScheduler 成員
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, C#, Visual Basic, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 67037395e0505c0fce22da5ed8f5fe62a39340e2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 07813404abb4765b3e1d15bd76082a90da0f40de
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155272"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362521"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 
@@ -33,8 +33,8 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 下列範例會呼叫非同步方法 [**SyndicationClient.RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 並等待結果，以從部落格取得部落格文章清單。
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/cs/MainPage.xaml.cs" id="SnippetDownloadRSS":::
+:::code language="vb" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/vb/MainPage.xaml.vb" id="SnippetDownloadRSS":::
 
 這個範例有幾個重點。 首先，`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 程式行使用 **await** 運算子搭配對非同步方法 [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync) 的呼叫。 您可以想像成 **await** 運算子告知編譯器您正在呼叫非同步方法，因而使編譯器代替您執行一些額外的工作。 其次，事件處理常式的宣告包含 **async** 關鍵字。 您必須在您使用 **await** 運算子的任何方法的方法宣告中包含這個關鍵字。
 

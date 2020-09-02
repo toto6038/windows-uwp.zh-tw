@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, 試用版, app 內購買, IAP, Windows.ApplicationMod
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 73ab8c2a525e741695051025f46da9a98c765a84
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a0ecc6a6d219262513508114cee226d72d91e386
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162482"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362741"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
@@ -66,12 +66,12 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 現在，您將要使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 取得模擬的授權資訊。 將 App 的發行版本提交到** Microsoft Store **之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp**。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
 
 接下來新增事件處理常式，以在 App 執行時接收授權變更的通知。 例如，如果試用期到期，或是客戶透過 Microsoft Store 購買 App，則 App 的授權會有所變更。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTestWithEvent":::
 
 ## <a name="step-3-code-the-features-in-conditional-blocks"></a>步驟 3：以條件性區塊撰寫功能程式碼
 
@@ -80,7 +80,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 此範例顯示如何評估 App 的授權狀態，據以啟用或停用您 App 的功能。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="ReloadLicense":::
 
 ## <a name="step-4-get-an-apps-trial-expiration-date"></a>步驟 4：取得 App 的試用版到期日
 
@@ -89,7 +89,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 此範例中的程式碼定義的函式可以取得應用程式試用版授權的到期日。 如果授權仍然有效，就會顯示到期日與試用版到期之前的剩餘天數。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="DisplayTrialVersionExpirationTime":::
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>步驟 5：透過模擬呼叫授權 API 來測試功能
 
@@ -105,7 +105,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 > 在將您的 App 提交至 Microsoft Store 時，該 App 必須使用 **CurrentApp** 物件，否則將無法通過認證。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseRetailWithEvent":::
 
 ## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>步驟 7：為客戶說明免費試用版的運作方式
 

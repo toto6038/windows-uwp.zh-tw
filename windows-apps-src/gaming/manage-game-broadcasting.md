@@ -6,12 +6,12 @@ ms.date: 09/27/2017
 ms.topic: article
 keywords: Windows 10, 遊戲, 廣播
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cfa40c54511a411025d2d1c3be056dd0209865e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 87c35bb4612ad970f01853b2ace46b44b1882781
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172002"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362491"
 ---
 # <a name="manage-game-broadcasting"></a>管理遊戲廣播
 本文顯示如何管理 UWP app 的遊戲廣播。 使用者必須使用內建到 Windows 的系統 UI 起始遊戲廣播，但是開始使用 Windows 10 版本 1709，App 可以啟動系統廣播 UI 並且可以在廣播開始和停止時收到通知。
@@ -31,23 +31,23 @@ ms.locfileid: "89172002"
 
 **AppBroadcastingStatus** 類別的 **[CanStartBroadcast](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.CanStartBroadcast)** 屬性會告訴您 App 目前是否可以開始廣播。 如果不行，您可以檢查 **[Details](/uwp/api/windows.media.appbroadcasting.appbroadcastingstatus.Details)** 屬性來判斷廣播無法使用的原因。 根據原因而定，您可能想要對使用者顯示狀態，或顯示啟用廣播的指示。
 
-[!code-cpp[CanStartBroadcast](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetCanStartBroadcast)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetCanStartBroadcast":::
 
 藉由呼叫 **[ShowBroadcastUI](/uwp/api/windows.media.appbroadcasting.appbroadcastingui.ShowBroadcastUI)** 來要求系統顯示 App 廣播 UI。
 
 > [!NOTE] 
 > 根據系統的目前狀態，**ShowBroadcastUI** 方法代表要求可能不會成功。 您的 App 不應該假設廣播已在呼叫此方法之後開始。 使用 **[IsCurrentAppBroadcastingChanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** 事件在廣播開始或停止收到通知。
 
-[!code-cpp[LaunchBroadcastUI](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetLaunchBroadcastUI)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetLaunchBroadcastUI":::
 
 ## <a name="receive-notifications-when-broadcasting-starts-and-stops"></a>廣播開始和停止時接收通知
 透過初始化 **[AppBroadcastingMonitor](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor)** 類別的執行個體，以及註冊 **[IsCurrentAppBroadcastingChanged](/uwp/api/windows.media.appbroadcasting.appbroadcastingmonitor.IsCurrentAppBroadcastingChanged)** 事件的處理常式，註冊在使用者使用系統 UI 開始或停止廣播您的 App 時收到通知。 如上一節所述，請務必在某些點使用 **[ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent)** 來確認在嘗試使用廣播 API 之前其已存在裝置上。 
 
-[!code-cpp[AppBroadcastingRegisterChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingRegisterChangedHandler)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetAppBroadcastingRegisterChangedHandler":::
 
 在 **IsCurrentAppBroadcastingChanged** 事件的處理常式中，您可能想要更新您的 App UI 以反映目前的廣播狀態。
 
-[!code-cpp[AppBroadcastingChangedHandler](./code/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp#SnippetAppBroadcastingChangedHandler)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/gaming/AppBroadcast/cpp/AppBroadcastExampleApp/App.cpp" id="SnippetAppBroadcastingChangedHandler":::
 
 ## <a name="related-topics"></a>相關主題
 

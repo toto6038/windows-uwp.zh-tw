@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 388d1bc2af9d39d08087c7ec5b9dcbc710e74bba
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b847b7162de19b81c83be2f3769042a5acc8a3a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163572"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363791"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>設定 MediaCapture 的格式、解析度和畫面播放速率
 
@@ -36,15 +36,15 @@ ms.locfileid: "89163572"
 
 您必須在 Helper 類別的來源檔案中包含 [**Windows.Media.MediaProperties**](/uwp/api/Windows.Media.MediaProperties) 命名空間。
 
-[!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMediaEncodingPropertiesUsing":::
 
-[!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs" id="SnippetStreamPropertiesHelper":::
 
 ## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>判斷預覽資料流和擷取資料流是否為各自獨立
 
 在某些裝置上，會針對預覽資料流和擷取資料流使用相同的硬體 pin。 在這些裝置上，設定其中一個的編碼屬性，也會設定另一個的編碼屬性。 在使用不同的硬體 pin 進行擷取和預覽的裝置上，可以為每個資料流個別設定屬性。 使用下列程式碼，來判斷預覽資料流和擷取資料流是否為各自獨立。 您應該調整 UI，根據這個測試的結果個別啟用或停用資料流設定。
 
-[!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCheckIfStreamsAreIdentical":::
 
 ## <a name="get-a-list-of-available-stream-properties"></a>取得可用的資料流屬性清單
 
@@ -52,17 +52,17 @@ ms.locfileid: "89163572"
 
 如果您的 App 具有特定的解析度或畫面播放速率需求，您可以透過程式設計方式選取一組媒體編碼屬性。 典型的相機 app 將改為公開 UI 中可用屬性的清單，並允許使用者選取他們想要的設定。 **ComboBoxItem** 是在清單中，針對 **StreamPropertiesHelper** 物件清單中的每一個項目來建立。 內容已設定為 Helper 類別所傳回的易記名稱，且標籤已設定為 Helper 類別本身，如此一來，稍後便能使用它來擷取相關聯的編碼屬性。 每個 **ComboBoxItem** 會接著新增到傳遞給方法的 **ComboBox**。
 
-[!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPopulateStreamPropertiesUI":::
 
 ## <a name="set-the-desired-stream-properties"></a>設定所需的串流屬性
 
 請透過呼叫 [**SetMediaStreamPropertiesAsync**](/uwp/api/windows.media.devices.videodevicecontroller.setmediastreampropertiesasync)、傳入 **MediaStreamType** 值、指出是否應設定相片、視訊或預覽屬性，以告知視訊裝置控制器使用您所需的編碼屬性。 這個範例會在使用者於利用 **PopulateStreamPropertiesUI** Helper 方法填入的其中一個 **ComboBox** 物件中選取項目時，設定要求的編碼屬性 。
 
-[!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPreviewSettingsChanged":::
 
-[!code-cs[PhotoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhotoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPhotoSettingsChanged":::
 
-[!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetVideoSettingsChanged":::
 
 ## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>讓預覽串流與擷取串流的外觀比例相符
 
@@ -79,7 +79,7 @@ ms.locfileid: "89163572"
 
 為了確保相片或視訊擷取資料流符合預覽串流的外觀比例，這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) 並傳入 **VideoPreview** 列舉值，以要求預覽資料流目前的資料流屬性。 接著會定義一個小型外觀比例的容錯視窗，讓我們能夠包含未與預覽資料流完全相同的外觀比例 (儘管它們非常相近)。 接下來，會使用 Linq 擴充方法，僅選取外觀比例在已定義的預覽資料流容許範圍內的 **StreamPropertiesHelper** 物件。
 
-[!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetMatchPreviewAspectRatio":::
 
  
 

@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d1d4f7e24caf50db41851e237a832301df75cd0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 18ef0ee1efb7a69a8b305c9b95e84938fe6fde32
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163652"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363891"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
@@ -43,7 +43,7 @@ ms.locfileid: "89163652"
 
 如果查詢傳回一或多個框架來源，您可以檢查 [**CurrentFormat**](/uwp/api/windows.media.capture.frames.mediaframesource.currentformat) 屬性以查看來源是否支援您想要的音訊格式，在此範例中，是浮動音訊資料。 查看 [**AudioEncodingProperties**](/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties) 以確定來源支援您想要的音訊編碼。
 
-[!code-cs[InitAudioFrameSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitAudioFrameSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetInitAudioFrameSource":::
 
 ## <a name="create-and-start-the-mediaframereader"></a>建立並開始 MediaFrameReader
 
@@ -51,7 +51,7 @@ ms.locfileid: "89163652"
 
 註冊 [**MediaFrameReader.FrameArrived**](/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件的處理常式，只要有可用的新音訊資料框架時就會引發該事件。 呼叫 [**StartAsync**](/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 來開始擷取音訊框架。 如果畫面讀取程式無法開始，呼叫傳回的狀態值會具有 [**Success**](/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
 
-[!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetCreateAudioFrameReader":::
 
 在 **FrameArrived** 事件處理常式中，在 **MediaFrameReader** 物件上呼叫以傳送者傳遞給處理常式的 [**TryAcquireLatestFrame**](/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe)，以嘗試擷取最新媒體畫面的參考。 請注意，此物件可能是 null，因此您在使用物件前應該一律先檢查。 從 **TryAcquireLatestFrame** 傳回包裝在 **MediaFrameReference** 中的媒體畫面類型，取決於您設定畫面讀取程式去取得何種類型的框架來源或來源。 由於此範例中的畫面讀取程式設定為取得音訊框架，因此它會使用 [**AudioMediaFrame**](/uwp/api/windows.media.capture.frames.mediaframereference.audiomediaframe) 屬性取得基礎框架。 
 
@@ -59,18 +59,18 @@ ms.locfileid: "89163652"
 
 資料的格式取決於框架來源。 在此範例中，選取媒體框架來源時，我們明確地確定所選取的框架來源使用浮動資料的單一頻道。 範例程式碼的其餘部分示範如何判斷框架中音訊資料的持續時間和取樣計數。  
 
-[!code-cs[ProcessAudioFrame](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetProcessAudioFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetProcessAudioFrame":::
 
 > [!NOTE] 
 > 為了對音訊資料進行操作，您必須存取原生記憶體緩衝。 若要這麼做，您必須包含下列程式碼清單，來使用 **IMemoryBufferByteAccess** COM 介面。 對原生緩衝區的作業必須在 **unsafe** 關鍵字的方法中執行。 您也需要在 **\[專案\] -> \[屬性\]** 對話方塊的 **\[組建\]** 索引標籤中勾選核取方塊，以允許不安全的程式碼。
 
-[!code-cs[IMemoryBufferByteAccess](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetIMemoryBufferByteAccess)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/FrameRenderer.cs" id="SnippetIMemoryBufferByteAccess":::
 
 ## <a name="additional-information-on-using-mediaframereader-with-audio-data"></a>使用 MediaFrameReader 搭配音訊資料的其他資訊
 
 您可以存取 [**MediaFrameSource.Controller**](/uwp/api/windows.media.capture.frames.mediaframesource.controller) 屬性來擷取與音訊框架來源相關聯的 [**AudioDeviceController**](/uwp/api/Windows.Media.Devices.AudioDeviceController)。 此物件可用來取得或設定擷取裝置的串流屬性或控制擷取層級。 下列範例將音訊裝置設為靜音，以便畫面讀取程式可以持續取得框架，但所有樣本都具有 0 的值。
 
-[!code-cs[AudioDeviceControllerMute](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetAudioDeviceControllerMute)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.xaml.cs" id="SnippetAudioDeviceControllerMute":::
 
 您可以使用 [**AudioFrame**](/uwp/api/windows.media.audioframe) 物件來將媒體畫面來源擷取的音訊資料傳遞至 [**AudioGraph**](/uwp/api/windows.media.audio.audiograph)。 將框架傳遞至 [**AudioFrameInputNode**](/uwp/api/windows.media.audio.audioframeinputnode) 的 [**AddFrame**](/uwp/api/windows.media.audio.audioframeinputnode.addframe) 方法。 如需使用音訊圖來擷取、處理和混合音訊訊號的詳細資訊，請參閱[音訊圖](audio-graphs.md)。
 

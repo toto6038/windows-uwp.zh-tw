@@ -6,12 +6,12 @@ keywords: UWP, 附加元件, app 內購買, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ab2b5937746f006c0f5efd296e9b4a4f3cb82696
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171572"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364111"
 ---
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 
@@ -34,7 +34,7 @@ ms.locfileid: "89171572"
 在您的 App 進行初始化時，請透過初始化 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 或 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 來為應用程式取得 [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) 物件，以啟用購買應用程式內產品的功能。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="InitializeLicenseTest":::
 
 ## <a name="step-2-add-the-in-app-offers-to-your-app"></a>步驟 2：在您的 App 新增應用程式內的購買選項
 
@@ -61,7 +61,7 @@ ms.locfileid: "89171572"
     下列範例示範如何在授權專屬的條件性區塊中，撰寫 **featureName** 產品功能的程式碼。 **featureName** 字串是可在 App 內唯一識別這個產品的權杖，同時也可用來在市集中識別此產品。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="CodeFeature":::
 
 3.  **新增此功能的購買 UI**
 
@@ -70,7 +70,7 @@ ms.locfileid: "89171572"
     以下是如何測試以查看客戶是否已經擁有應用程式內產品，如果沒有，就顯示購買對話方塊來讓客戶購買。 請以您為購買對話方塊自訂的程式碼取代 "show the purchase dialog" 註解 (例如提供一個含有親切提醒「購買此應用程式！」 按鈕的頁面)。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs" id="BuyFeature":::
 
 ## <a name="step-3-change-the-test-code-to-the-final-calls"></a>步驟 3：將測試程式碼變更成最後呼叫
 

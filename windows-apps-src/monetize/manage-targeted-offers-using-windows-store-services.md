@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 針對性優惠
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cb429168e82419223f354bdb6548ab9a9e60dd1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 836ef99f827eba52699663d4a24ea58598fe3400
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155482"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363841"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用Microsoft Store 服務管理針對性優惠
 
@@ -33,7 +33,7 @@ ms.locfileid: "89155482"
 
 若要取得 MSA 權杖，請使用[WebAuthenticationCoreManager](/uwp/api/windows.security.authentication.web.core.webauthenticationcoremanager) 類別來要求使用範圍 ```devcenter_implicit.basic,wl.basic``` 的權杖。 下列範例示範如何進行這項操作。 此範例是[完整範例](#code-example)的摘要，並需要完整範例中提供的 **using** 陳述式。
 
-[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetMSAToken)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs" id="GetMSAToken":::
 
 如需有關如何取得 MSA 權杖的詳細資訊，請[Web 帳戶管理員](../security/web-account-manager.md)。
 
@@ -47,7 +47,7 @@ ms.locfileid: "89155482"
 
 下列範例示範如何取得適用於目前使用者的針對性優惠。 此範例是[完整範例](#code-example)的摘要。 它需要 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 程式庫和其他類別，以及完整範例中提供的 **using** 陳述式。
 
-[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs" id="GetTargetedOffers":::
 
 <span id="code-example" />
 
@@ -61,7 +61,7 @@ ms.locfileid: "89155482"
 
 此範例需要來自 Newtonsoft 的 [Json.NET](https://www.newtonsoft.com/json) 程式庫。 範例使用此程式庫來序列化和還原序列化 JSON 格式的資料。
 
-[!code-csharp[TargetedOffers](./code/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs#GetTargetedOffersSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_TargetedOffers/cs/TargetedOffers.cs" id="GetTargetedOffersSample":::
 
 ## <a name="related-topics"></a>相關主題
 

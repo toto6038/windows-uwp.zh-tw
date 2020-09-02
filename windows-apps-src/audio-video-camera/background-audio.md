@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72687db5bed8303b672ed8ed009108708cb126be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a0c816470f4a6caf79cb3370a39bc76abb7ef878
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161182"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364031"
 ---
 # <a name="play-media-in-the-background"></a>在背景播放媒體
 本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
@@ -68,19 +68,19 @@ ms.locfileid: "89161182"
 ## <a name="handle-transitioning-between-foreground-and-background"></a>處理前景與背景之間的轉換
 當您的 app 從前景移到背景時，會引發 [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 事件。 當您的 app 回到前景時，會引發 [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) 事件。 因為這些是應用程式週期事件，您應該在建立 app 時登錄這些事件的處理常式。 在預設專案範本中，這表示將它新增到 App.xaml.cs 中的 **App** 類別建構函式。 
 
-[!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetRegisterEvents":::
 
 建立變數以追蹤您目前是否正在背景中執行。
 
-[!code-cs[DeclareBackgroundMode](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetDeclareBackgroundMode)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetDeclareBackgroundMode":::
 
 引發 [**EnteredBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.enteredbackground) 事件時，請設定追蹤變數，以指出您目前正在背景中執行。 您不應該在 **EnteredBackground** 事件中執行長時間執行的工作，因為這會在轉換到背景時導致使用者看見緩慢的轉換過程。
 
-[!code-cs[EnteredBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetEnteredBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetEnteredBackground":::
 
 在 [**LeavingBackground**](/uwp/api/windows.applicationmodel.core.coreapplication.leavingbackground) 事件處理常式中，您應該設定追蹤變數，以指出您的 App 已不在背景執行。
 
-[!code-cs[LeavingBackground](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetLeavingBackground)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BackgroundAudio_RS1/cs/App.xaml.cs" id="SnippetLeavingBackground":::
 
 ### <a name="memory-management-requirements"></a>記憶體管理需求
 處理前景和背景之間轉換最重要的部分，便是管理 App 使用的記憶體。 因為在背景中執行將會減少系統允許您 App 保留的記憶體資源，所以，您也應該註冊 [**AppMemoryUsageIncreased**](/uwp/api/windows.system.memorymanager.appmemoryusageincreased) 和 [**AppMemoryUsageLimitChanging**](/uwp/api/windows.system.memorymanager.appmemoryusagelimitchanging) 事件。 引發這些事件時，您應該檢查 App 目前的記憶體使用量與目前的限制，然後視需求降低記憶體使用量。 如需降低在背景執行時的記憶體使用量，請參閱[當 App 移至背景時釋出記憶體](../launch-resume/reduce-memory-usage.md)。

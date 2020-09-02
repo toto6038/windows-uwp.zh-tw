@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b1808c6940cbfc03c2572bd72ecf0c57cfd5010
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a917c4efc8da8fbdabbdc753aacf23724ae17055
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173672"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363801"
 ---
 # <a name="process-bitmaps-with-opencv"></a>使用 OpenCV 處理點陣圖
 
@@ -51,21 +51,21 @@ ms.locfileid: "89173672"
 
 將下列程式碼貼到 OpenCVHelper.h 標頭檔中。 此程式碼包含我們安裝的 *Core* 和 *ImgProc* 套件的 OpenCV 標頭檔，並宣告將顯示在下列步驟中的三個方法。
 
-[!code-cpp[OpenCVHelperHeader](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.h#SnippetOpenCVHelperHeader)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.h" id="SnippetOpenCVHelperHeader":::
 
 刪除 OpenCVHelper.cpp 檔案的現有內容，然後新增下列 include 指示詞。 
 
-[!code-cpp[OpenCVHelperInclude](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperInclude)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperInclude":::
 
 在 include 指示詞後面，新增下列 **using** 指示詞。 
 
-[!code-cpp[OpenCVHelperUsing](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperUsing)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperUsing":::
 
 接下來，新增方法 **GetPointerToPixelData** 至 OpenCVHelper.cpp。 此方法接受 **[SoftwareBitmap](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap)** 並透過一系列轉換取得像素資料的 COM 介面表示法，我們可以透過此方法以 **char** 陣列取得指向基礎影像資料緩衝區的指標。 
 
 首先，透過呼叫 **[LockBuffer](/uwp/api/windows.graphics.imaging.softwarebitmap.lockbuffer)** 取得包含像素資料的 **[BitmapBuffer](/uwp/api/windows.graphics.imaging.bitmapbuffer)**，要求讀取/寫入緩衝區以讓 OpenCV 程式庫可以修改像素資料。  呼叫 **[CreateReference](/uwp/api/windows.graphics.imaging.bitmapbuffer.CreateReference)** 以取得 **[IMemoryBufferReference](/uwp/api/windows.foundation.imemorybufferreference)** 物件。 接下來，將 **IMemoryBufferByteAccess** 介面轉換成 **IInspectable** (這是所有 Windows 執行階段類別的基底介面)，並呼叫 **[QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))** 以取得 **[IMemoryBufferByteAccess](/previous-versions/mt297505(v=vs.85))** COM 介面，可讓我們透過 **char** 陣列取得像素資料緩衝區。 最後，呼叫 **[IMemoryBufferByteAccess::GetBuffer](/windows/desktop/WinRT/imemorybufferbyteaccess-getbuffer)** 填入 **char** 陣列。 如果此方法中的任一轉換步驟失敗，方法會傳回 **false**，指出無法繼續進一步處理。
 
-[!code-cpp[OpenCVHelperGetPointerToPixelData](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperGetPointerToPixelData)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperGetPointerToPixelData":::
 
 接下來，新增方法 **TryConvert**，如下所示。 此方法接受 **SoftwareBitmap**，並嘗試將它轉換成 **Mat** 物件，矩陣物件 OpenCV 用來代表影像資料緩衝區。 此方法會呼叫上述定義的 **GetPointerToPixelData** 方法以取得代表像素資料緩衝區的 **char**陣列。 如果此作業成功，則會呼叫 **Mat** 類別的建構函式，傳遞從來源 **SoftwareBitmap** 物件取得的像素寬度與高度。 
 
@@ -74,11 +74,11 @@ ms.locfileid: "89173672"
 
 方法會傳回所建立 **Mat** 物件的淺層複製，以便對 **SoftwareBitmap** 參考的相同資料像素資料緩衝區進行進一步處理，而非對此緩衝區複本進行處理。
 
-[!code-cpp[OpenCVHelperTryConvert](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperTryConvert)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperTryConvert":::
 
 最後，此範例協助程式類別會實作單一影像處理方法 **Blur**，只使用上述定義的 **TryConvert** 方法來擷取代表來源點陣圖的 **Mat** 物件和模糊作業的目標，接著從 OpenCV ImgProc 程式庫呼叫 **blur** 方法。 **blur** 的另一個參數以 X 和 Y 方向指定模糊效果的大小。
 
-[!code-cpp[OpenCVHelperBlur](./code/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp#SnippetOpenCVHelperBlur)]
+:::code language="cpp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/OpenCVBridge/OpenCVHelper.cpp" id="SnippetOpenCVHelperBlur":::
 
 
 ## <a name="a-simple-softwarebitmap-opencv-example-using-the-helper-component"></a>使用協助程式元件的簡單 SoftwareBitmap OpenCV 範例
@@ -94,9 +94,9 @@ ms.locfileid: "89173672"
 
 此範例程式碼會使用下列命名空間中的 Api，以及預設專案範本所包含的命名空間。
 
-[!code-cs[OpenCVMainPageUsing](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVMainPageUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVMainPageUsing":::
 
-[!code-cs[OpenCVBlur](./code/ImagingWin10/cs/MainPage.OpenCV.xaml.cs#SnippetOpenCVBlur)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ImagingWin10/cs/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVBlur":::
 
 ## <a name="related-topics"></a>相關主題
 

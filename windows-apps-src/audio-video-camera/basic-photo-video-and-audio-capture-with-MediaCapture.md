@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a1bdb033d9c0d47973c26b28dc357a4000d4099
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aecd25eb7f3d9c9f08e2b07d6bd425a00686e0ea
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161122"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362951"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 
@@ -37,9 +37,9 @@ ms.locfileid: "89161122"
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 物件
 本文所述的所有擷取方法所需的第一個步驟是藉由呼叫建構函式，然後呼叫 [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync)，來初始化 [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) 物件。 由於 **MediaCapture** 物件將可從您 app 內的多個位置中存取，因此，請宣告類別變數來保存此物件。  實作適用於 **MediaCapture** 物件的 [**Failed**](/uwp/api/windows.media.capture.mediacapture.failed) 事件的處理常式，以便在擷取作業失敗時收到通知。
 
-[!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
-[!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetInitMediaCapture":::
 
 ## <a name="set-up-the-camera-preview"></a>設定相機預覽
 您能夠使用 **MediaCapture** 來擷取相片、視訊及音訊，而不需顯示相機預覽，但通常您會想要顯示預覽資料流，讓使用者可以看到擷取到的內容。 此外，有一些 **MediaCapture** 功能需要預覽資料流處於執行狀態，才能夠啟用它們，包括自動對焦、自動曝光及自動白平衡。 若要了解如何設定相機預覽，請參閱[**顯示相機預覽**](simple-camera-preview-access.md)。
@@ -51,7 +51,7 @@ ms.locfileid: "89161122"
 
 您可以視需要重複呼叫 **CaptureAsync** 來擷取多張相片。 完成擷取時，呼叫 [**FinishAsync**](/uwp/api/windows.media.capture.advancedphotocapture.finishasync) 來關閉 **LowLagPhotoCapture** 工作階段，並釋放相關聯的資源。 呼叫 **FinishAsync** 之後，若要再次開始擷取相片，您將需要再次呼叫 [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) 來將擷取工作階段重新初始化，然後再呼叫 [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync)。
 
-[!code-cs[CaptureToSoftwareBitmap](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToSoftwareBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCaptureToSoftwareBitmap":::
 
 從 Windows 版本 1803 開始，您可以存取從 **CaptureAsync** 傳回之 **CapturedFrame** 類別的 [**BitmapProperties**](/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 屬性，以擷取被擷取相片的相關中繼資料。 您可以將此資料傳遞至 **BitmapEncoder** 以將中繼資料儲存到檔案。 以前沒有方法存取未壓縮影像格式的此項資料。 您也可以存取 [**ControlValues**](/uwp/api/windows.media.capture.capturedframe.controlvalues) 屬性來擷取 [**CapturedFrameControlValues**](/uwp/api/windows.media.capture.capturedframecontrolvalues) 物件，此物件描述所擷取畫面的控制項值，例如曝光及白平衡。
 
@@ -72,34 +72,34 @@ ms.locfileid: "89161122"
 
 最後，在編碼器物件上呼叫 [**FlushAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync)，將相片從記憶體內部的資料流轉碼為檔案。
 
-[!code-cs[CaptureToFile](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCaptureToFile":::
 
 如需使用檔案和資料夾的詳細資訊，請參閱[**檔案、資料夾和媒體櫃**](../files/index.md)。
 
 ## <a name="capture-a-video"></a>擷取視訊
 使用 [**LowLagMediaRecording**](/uwp/api/Windows.Media.Capture.LowLagMediaRecording) 類別，快速地將視訊擷取新增到您的 app。 首先，宣告物件的類別變數。
 
-[!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetLowLagMediaRecording":::
 
 接下來，建立將儲存視訊的 **StorageFile** 物件。 請注意，若要儲存到使用者的視訊媒體櫃 (如此範例所示)，您必須將**視訊媒體櫃**功能新增到您的應用程式資訊清單。 呼叫 [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) 來初始化媒體錄製，其會傳入存放檔案和 [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) 物件，以指定視訊的編碼方式。 此類別提供靜態方法 (例如 [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4))，來建立常見的視訊編碼設定檔。
 
 最後，呼叫 [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync) 開始擷取視訊。
 
-[!code-cs[StartVideoCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartVideoCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartVideoCapture":::
 
 若要停止錄製視訊，請呼叫 [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync)。
 
-[!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStopRecording":::
 
 您可以繼續呼叫 **StartAsync** 和 **StopAsync** 來擷取其他視訊。 當您完成擷取視訊時，呼叫 [**FinishAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 來處置擷取工作階段，並清除相關聯的資源。 在這個呼叫之後，您必須再次呼叫 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化拍攝工作階段，然後再呼叫 **StartAsync**。
 
-[!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetFinishAsync":::
 
 擷取視訊時，您應該登錄適用於 **MediaCapture** 物件的 [**RecordLimitationExceeded**](/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded) 事件的處理常式，如果您超過單一錄製的限制 (目前為三小時)，則作業系統將會觸發此處理常式。 在事件的處理常式中，您應該藉由呼叫 [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) 來完成錄製。
 
-[!code-cs[RecordLimitationExceeded](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRecordLimitationExceeded":::
 
-[!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRecordLimitationExceededHandler":::
 
 ### <a name="play-and-edit-captured-video-files"></a>播放和編輯擷取的視訊檔案
 您將視訊擷取至檔案後，可能會想要載入檔案並在應用程式的 UI 中播放。 您可以使用 **[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML 控制項和相關 **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)** 進行這項作業。 如需在 XAML 頁面中播放媒體的相關資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。
@@ -109,19 +109,19 @@ ms.locfileid: "89161122"
 ## <a name="pause-and-resume-video-recording"></a>暫停和繼續視訊錄製
 您可以藉由呼叫 [**PauseAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync)，然後呼叫 [**ResumeAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync)，來暫停視訊錄製，然後再繼續錄製，而不需建立個別的輸出檔案。
 
-[!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetPauseRecordingSimple":::
 
-[!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetResumeRecordingSimple":::
 
 從 Windows 10 版本 1607 開始，您可以暫停視訊錄製，並且會接收到在暫停錄製之前所擷取到的最後一個畫面。 然後，您可以在相機預覽中重疊此畫面，讓使用者能夠在繼續錄製之前，使用暫停的畫面來校準相機。 呼叫 [**PauseWithResultAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) 會傳回 [**MediaCapturePauseResult**](/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) 物件。 [**LastFrame**](/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) 屬性是代表最後一個畫面的 [**VideoFrame**](/uwp/api/Windows.Media.VideoFrame) 物件。 若要在 XAML 中顯示此畫面，請取得視訊畫面的 **SoftwareBitmap** 表示法。 目前，僅支援含有預乘或空的 Alpha 色板且格式為 BGRA8 的影像，因此，請視需要呼叫 [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) 來取得正確的格式。  建立新的 [**SoftwareBitmapSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) 物件並呼叫 [**SetBitmapAsync**](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) 進行初始化。 最後，設定 XAML [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) 控制項的 **Source** 屬性來顯示影像。 若要使用這個祕訣，您的影像必須與 **CaptureElement** 控制項對齊，而且透明度值應小於 1。 別忘了，您只能修改 UI 執行緒上的 UI，因此請在 [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) 內部進行此呼叫。
 
 **PauseWithResultAsync** 也會傳回前一段錄製的視訊持續時間，以防您需要追蹤總錄製時間。
 
-[!code-cs[PauseCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseCaptureWithResult)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetPauseCaptureWithResult":::
 
 當您繼續錄製時，您可以將影像來源設為 null 加以隱藏。
 
-[!code-cs[ResumeCaptureWithResult](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeCaptureWithResult)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetResumeCaptureWithResult":::
 
 請注意，您也可以在停止視訊時，呼叫 [**StopWithResultAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync) 來取得結果畫面。
 
@@ -129,7 +129,7 @@ ms.locfileid: "89161122"
 ## <a name="capture-audio"></a>擷取音訊 
 您可以使用上述用來擷取視訊的相同技術，快速地將音訊擷取新增到您的 app。 下列範例會在應用程式資料資料夾中建立 **StorageFile**。 呼叫 [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) 來將擷取工作階段初始化，其會傳入檔案和 [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)，在這個範例中這是透過 [**CreateMp3**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3) 靜態方法所產生。 若要開始錄製，請呼叫 [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync)。
 
-[!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartAudioCapture":::
 
 
 呼叫 [**StopAsync**](/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync) 以停止音訊錄製。
@@ -137,29 +137,29 @@ ms.locfileid: "89161122"
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)  
-[!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStopRecording":::
 
 您可以多次呼叫 **StartAsync** 和 **StopAsync** 來錄製數個音訊檔。 當您完成擷取音訊時，呼叫 [**FinishAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) 來處置擷取工作階段，並清除相關聯的資源。 在這個呼叫之後，您必須再次呼叫 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化拍攝工作階段，然後再呼叫 **StartAsync**。
 
-[!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetFinishAsync":::
 
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>偵測及回應系統進行的音量變更
 從 Windows 10 版本 1803 開始，您的應用程式可偵測系統何時將應用程式音訊擷取和音訊轉譯串流的音量降低或設為靜音。 例如，系統可能會在您的應用程式進入背景時，將其串流設為靜音。 [**AudioStateMonitor**](/uwp/api/windows.media.audio.audiostatemonitor) 類別可讓您註冊以在系統修改音訊資料流的音量時接收事件。 透過呼叫 [**CreateForCaptureMonitoring**](/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring)，取得 **AudioStateMonitor** 的執行個體以監控音訊擷取串流。 透過呼叫 [**CreateForRenderMonitoring**](/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring)，取得用於監控音訊轉譯串流的執行個體。 註冊每個監視器的 [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件處理常式，以在系統變更對應串流類別的音訊時收到通知。
 
-[!code-cs[AudioStateMonitorUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateMonitorUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetAudioStateMonitorUsing":::
 
-[!code-cs[AudioStateVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetAudioStateVars":::
 
-[!code-cs[RegisterAudioStateMonitor](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
 
 在擷取串流的 **SoundLevelChanged** 事件處理常式中，您可以檢查 **AudioStateMonitor** 傳送者的 [**SoundLevel**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) 屬性來判斷新的音量大小。 請注意，擷取串流永遠不應由系統降低。 它應該只能設為靜音或切換回最大音量。 如果音訊被設為靜音，您可以停止進行中的擷取。 如果音訊還原為最大音量，您可以再次開始擷取。 下列範例使用一些布林值類別變數來追蹤應用程式目前是否正在擷取音訊，以及是否因為音訊狀態變更而停止擷取。 這些變數可用來判斷何時適合以程式設計方式停止或開始擷取音訊。
 
-[!code-cs[CaptureSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureSoundLevelChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCaptureSoundLevelChanged":::
 
 下列程式碼範例示範實作音訊轉譯的 **SoundLevelChanged**處理常式。 根據您的應用程式案例，以及您正在播放的內容類型，您可以在音量降低時暫停音訊播放。 如需處理媒體播放之音量變更的詳細資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。
 
-[!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRenderSoundLevelChanged":::
 
 
 * [使用 Windows 內建相機 UI 來擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md)

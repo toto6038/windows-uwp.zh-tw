@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 719e05d67d68627fcd631edfd6c688b17f8507bd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: db1f1b7c3a60aa651cce5ada4200ddf3e249c72f
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164382"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363021"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 
@@ -174,7 +174,7 @@ ms.locfileid: "89164382"
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 未具現化，將無法使用。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet1":::
 
 3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合您在合作夥伴中心中取得的應用程式識別碼和 ad 單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
@@ -239,7 +239,7 @@ ms.locfileid: "89164382"
     這個 C# 程式碼會擷取錯誤訊息並在 **TextBlock** 中顯示。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet2":::
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
@@ -256,7 +256,7 @@ ms.locfileid: "89164382"
     下列範例示範如何呼叫 **Refresh** 方法。
 
     > [!div class="tabbedCodeSnippets"]
-    [!code-csharp[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs" id="Snippet3":::
 
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 

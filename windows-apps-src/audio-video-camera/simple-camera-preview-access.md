@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f30611d649e0485a9cc89a162ae49768b05e00d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3487e79b689e5c47cc94ffc29a559a333fe66f47
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174502"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363771"
 ---
 # <a name="display-the-camera-preview"></a>顯示相機預覽
 
@@ -34,7 +34,7 @@ ms.locfileid: "89174502"
 
 使用 [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) 在您的 XAML 頁面中顯示預覽串流。
 
-[!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml" id="SnippetCaptureElement":::
 
 
 
@@ -44,15 +44,15 @@ ms.locfileid: "89174502"
 
 新增 using 指示詞，在您的頁面的 .cs 檔案中包含下列命名空間。
 
-[!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSimpleCameraPreviewUsing":::
 
 宣告 **MediaCapture** 物件的類別成員變數，以及追蹤相機目前是否正在預覽的布林值。 
 
-[!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareMediaCapture":::
 
 宣告將用來確定顯示器不會在執行預覽時關閉的 [**DisplayRequest**](/uwp/api/Windows.System.Display.DisplayRequest) 類型的變數。
 
-[!code-cs[DeclareDisplayRequest](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareDisplayRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetDeclareDisplayRequest":::
 
 建立 Helper 方法來啟動相機預覽，在此範例中稱為 **StartPreviewAsync**。 根據您的應用程式案例，您可能會想從載入頁面時呼叫的 **OnNavigatedTo** 事件處理常式呼叫此方法，或是等待並在回應 UI 事件時啟動預覽。
 
@@ -64,12 +64,12 @@ ms.locfileid: "89174502"
 
 呼叫 [**RequestActive**](/uwp/api/windows.system.display.displayrequest.requestactive) 以確定裝置不會在預覽時進入睡眠。 最後，將 [**DisplayInformation.AutoRotationPreferences**](/uwp/api/windows.graphics.display.displayinformation.autorotationpreferences) 屬性設定為 [**Landscape**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) 以防止 UI 與 **CaptureElement** 在使用者變更裝置方向時旋轉。 如需處理裝置方向變更的詳細資訊，請參閱[**使用 MediaCapture 處理裝置方向**](handle-device-orientation-with-mediacapture.md)。  
 
-[!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetStartPreviewAsync":::
 
 ## <a name="handle-changes-in-exclusive-control"></a>處理專屬控制項中的變更
 如上節所述，如果其他的應用程式具有擷取裝置的專屬控制項，**StartPreviewAsync**將會擲回**FileLoadException**。 從 Windows 10 版本 1703 開始，您可以註冊[MediaCapture.CaptureDeviceExclusiveControlStatusChanged](/uwp/api/Windows.Media.Capture.MediaCapture.CaptureDeviceExclusiveControlStatusChanged)事件的處理常式，只要裝置的專屬控制項狀態變更，就會引發這個事件。 在這個事件的處理常式中，檢查[MediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Status](/uwp/api/windows.media.capture.mediacapturedeviceexclusivecontrolstatuschangedeventargs.Status)屬性，以查看目前狀態。 如果新的狀態是**SharedReadOnlyAvailable**，您就會知道目前無法啟動預覽，而且您可能會想要更新 UI 以提醒使用者。 如果新的狀態是**ExclusiveControlAvailable**，則可以嘗試重新啟動相機預覽。
 
-[!code-cs[ExclusiveControlStatusChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetExclusiveControlStatusChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetExclusiveControlStatusChanged":::
 
 ## <a name="shut-down-the-preview-stream"></a>關閉預覽串流
 
@@ -81,19 +81,19 @@ ms.locfileid: "89174502"
 -   將 **MediaCapture** 成員變數設為 Null。
 -   呼叫 [**RequestRelease**](/uwp/api/windows.system.display.displayrequest.requestrelease) 以允許螢幕在非使用中時關閉。
 
-[!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetCleanupCameraAsync":::
 
 當使用者離開您的頁面時，您應該藉由覆寫 [**OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom) 方法關閉預覽串流。
 
-[!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetOnNavigatedFrom":::
 
 當 app 暫停時，您也應該正確地關閉預覽串流。 若要這樣做，請在您頁面的建構函式中登錄 [**Application.Suspending**](/uwp/api/windows.applicationmodel.core.coreapplication.suspending) 事件的處理常式。
 
-[!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetRegisterSuspending":::
 
 在 **Suspending** 事件處理常式中，藉由比較頁面類型與 [**CurrentSourcePageType**](/uwp/api/windows.ui.xaml.controls.frame.currentsourcepagetype) 屬性，可先檢查以確保頁面已顯示 app 的 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)。 如果目前沒有顯示頁面，則應該已經引發 **OnNavigatedFrom** 事件，並關閉預覽串流。 如果目前正在顯示頁面，則從傳入處理常式的事件引數中取得 [**SuspendingDeferral**](/uwp/api/Windows.ApplicationModel.SuspendingDeferral) 物件，確保系統不會在預覽串流關閉之前暫停您的 app。 關閉串流之後，呼叫延遲的 [**Complete**](/uwp/api/windows.applicationmodel.suspendingdeferral.complete) 方法，讓系統繼續暫停您的 app。
 
-[!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs" id="SnippetSuspendingHandler":::
 
 
 ## <a name="related-topics"></a>相關主題

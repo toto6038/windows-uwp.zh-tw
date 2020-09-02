@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 871a8d1d8458decbd0b398847d7d9de57234ee3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 26026a0aadb52de27f98dea8a7c21bdc2d1c44f1
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163762"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363851"
 ---
 # <a name="midi"></a>MIDI
 
@@ -23,19 +23,19 @@ ms.locfileid: "89163762"
 
 列舉和使用 MIDI 裝置之前，請將下列命名空間新增至您的專案。
 
-[!code-cs[Using](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 將 [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 控制項新增至您的 XAML 頁面，讓使用者選取其中一個要附加至系統的 MIDI 輸入裝置。 新增另一個以列出 MIDI 輸出裝置。
 
-[!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml" id="SnippetMidiListBoxes":::
 
 [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 方法 [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) 類別是用來列舉 Windows 可辨識的許多不同類型的裝置。 若要指定您只想要方法可尋找 MIDI 輸入裝置，請使用 [**MidiInPort.GetDeviceSelector**](/uwp/api/windows.devices.midi.midiinport.getdeviceselector) 傳回的選取器字串。 **FindAllAsync** 會傳回 [**DeviceInformationCollection**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationCollection)，包含向系統登錄之每個 MIDI 輸入裝置的 **DeviceInformation**。 如果傳回的集合不包含任何項目，則沒有可用的 MIDI 輸入裝置。 如果集合中有項目，循環顯示 **DeviceInformation** 物件並且將每個裝置的名稱新增至 MIDI 輸入裝置 **ListBox**。
 
-[!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetEnumerateMidiInputDevices":::
 
 列舉 MIDI 輸出裝置的運作方式與列舉輸入裝置的方式完全相同，不同的是您應該指定在呼叫 **FindAllAsync** 時 [**MidiOutPort.GetDeviceSelector**](/uwp/api/windows.devices.midi.midioutport.getdeviceselector) 傳回的選取器字串。
 
-[!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetEnumerateMidiOutputDevices":::
 
 
 
@@ -52,11 +52,11 @@ ms.locfileid: "89163762"
 -   [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 控制項，該控制項會填入可用裝置的名稱。
 -   [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher)，這是從 UI 執行緒以外的執行緒更新 UI 的必要項目。
 
-[!code-cs[WatcherVariables](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherVariables)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherVariables":::
 
 新增 [**DeviceInformationCollection**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationCollection) 屬性，該屬性是用來存取來自協助程式類別外部的目前裝置清單。
 
-[!code-cs[DeclareDeviceInformationCollection](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetDeclareDeviceInformationCollection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetDeclareDeviceInformationCollection":::
 
 在類別建構函式中，呼叫者傳入 MIDI 裝置選取器字串，用來列出裝置的 **ListBox**，和更新 UI 所需的 **Dispatcher**。
 
@@ -64,7 +64,7 @@ ms.locfileid: "89163762"
 
 針對監控程式的事件處理常式登錄處理常式。
 
-[!code-cs[WatcherConstructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherConstructor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherConstructor":::
 
 **DeviceWatcher** 具有下列事件：
 
@@ -75,31 +75,31 @@ ms.locfileid: "89163762"
 
 在每個事件的事件處理常式中，會呼叫協助程式方法 **UpdateDevices**，以使用目前的裝置清單更新 **ListBox**。 因為 **UpdateDevices** 更新 UI 元素與這些事件處理常式不是在 UI 執行緒上呼叫，每個呼叫必須包裝於對 [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) 的呼叫中，這會使指定的程式碼在 UI 執行緒上執行。
 
-[!code-cs[WatcherEventHandlers](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherEventHandlers":::
 
 **UpdateDevices** 協助程式方法會呼叫 [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)，以及使用本文先前所述的已傳回裝置的名稱更新 **ListBox**。
 
-[!code-cs[WatcherUpdateDevices](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherUpdateDevices)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherUpdateDevices":::
 
 使用 **DeviceWatcher** 物件的 [**Start**](/uwp/api/windows.devices.enumeration.devicewatcher.start) 方法，新增方法以啟動監控程式，以及使用 [**Stop**](/uwp/api/windows.devices.enumeration.devicewatcher.stop) 方法，停止監控程式。
 
-[!code-cs[WatcherStopStart](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherStopStart)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherStopStart":::
 
 提供解構函式以取消註冊監控程式事件處理常式，並且將裝置監控程式設為 Null。
 
-[!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MyMidiDeviceWatcher.cs" id="SnippetWatcherDestructor":::
 
 ## <a name="create-midi-ports-to-send-and-receive-messages"></a>建立 MIDI 連接埠以傳送和接收訊息
 
 在您的頁面背後的程式碼中，宣告成員變數來保存 **MyMidiDeviceWatcher** 協助程式類別的兩個執行個體，一個用於輸入裝置，另一個用於輸出裝置。
 
-[!code-cs[DeclareDeviceWatchers](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatchers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetDeclareDeviceWatchers":::
 
 建立監控程式協助程式類別的新執行個體，傳入裝置選取器字串、要填入的 **ListBox** 和可以透過頁面的 **Dispatcher** 屬性存取的 **CoreDispatcher** 物件。 然後，呼叫方法以啟動每個物件的 **DeviceWatcher**。
 
 在啟動每個 **DeviceWatcher** 之後不久，它會完成列舉連接到系統的目前裝置，並且引發其 [**EnumerationCompleted**](/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted) 事件，這會導致每個 **ListBox** 以目前的 MIDI 裝置進行更新。
 
-[!code-cs[StartWatchers](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetStartWatchers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetStartWatchers":::
 
 當使用者在 MIDI 輸入 **ListBox** 中選取項目時，會引發 [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 事件。 在這個事件的處理常式中，存取協助程式類別的 **DeviceInformationCollection** 屬性以取得目前的裝置清單。 如果清單中有項目，選取具有對應至 **ListBox** 控制項的 [**SelectedIndex**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) 之索引的 **DeviceInformation** 物件。
 
@@ -107,25 +107,25 @@ ms.locfileid: "89163762"
 
 登錄 [**MessageReceived**](/uwp/api/windows.devices.midi.midiinport.messagereceived) 事件的處理常式，它會在每當透過指定的裝置接收 MIDI 訊息時引發。
 
-[!code-cs[DeclareMidiPorts](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetDeclareMidiPorts)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetDeclareMidiPorts":::
 
-[!code-cs[InPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetInPortSelectionChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetInPortSelectionChanged":::
 
 當呼叫 **MessageReceived** 處理常式時，訊息會包含在 **MidiMessageReceivedEventArgs** 的 [**Message**](/uwp/api/Windows.Devices.Midi.MidiMessageReceivedEventArgs) 屬性中。 訊息物件的 [**Type**](/uwp/api/windows.devices.midi.imidimessage.type) 是來自 [**MidiMessageType**](/uwp/api/Windows.Devices.Midi.MidiMessageType) 列舉的值，指出已收到之訊息的類型。 訊息的資料取決於訊息類型。 這個範例會查看訊息是否為訊息的附註，若是如此，會輸出 midi 通道、附註和訊息的速度。
 
-[!code-cs[MessageReceived](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetMessageReceived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetMessageReceived":::
 
 輸出裝置 **ListBox** 的 [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) 處理常式的運作方式與輸入裝置的處理常式運作方式相同，不同的是不會註冊事件處理常式。
 
-[!code-cs[OutPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetOutPortSelectionChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetOutPortSelectionChanged":::
 
 建立輸出裝置之後，您可以傳送訊息，方法是針對您要傳送的訊息類型建立新的 [**IMidiMessage**](/uwp/api/Windows.Devices.Midi.IMidiMessage)。 在此範例中，訊息是 [**NoteOnMessage**](/uwp/api/Windows.Devices.Midi.MidiNoteOnMessage)。 會呼叫 [**IMidiOutPort**](/uwp/api/Windows.Devices.Midi.IMidiOutPort) 物件的 [**SendMessage**](/uwp/api/windows.devices.midi.imidioutport.sendmessage) 方法以傳送訊息。
 
-[!code-cs[SendMessage](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetSendMessage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetSendMessage":::
 
 當您的 app 停用時，請務必清除您的 app 資源。 取消註冊事件處理常式並且將 MIDI 輸入連接埠和輸出連接埠物件設為 Null。 停止裝置監控程式並且將它們設為 Null。
 
-[!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MIDIWin10/cs/MainPage.xaml.cs" id="SnippetCleanUp":::
 
 ## <a name="using-the-built-in-windows-general-midi-synth"></a>使用內建的 Windows General MIDI 合成
 

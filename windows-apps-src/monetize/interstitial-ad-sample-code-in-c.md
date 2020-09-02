@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, c#, 範例程式碼
 ms.localizationpriority: medium
-ms.openlocfilehash: 63804fea6fc1657ead6c658814dfc7e0694f114f
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 3d80e53fd8d122e01588ffcbd16f487e1526c08d
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304730"
+ms.locfileid: "89363681"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>C 中的插入式 ad 範例程式碼\# #  
 
@@ -32,12 +32,12 @@ ms.locfileid: "89304730"
 ### <a name="mainpagexaml"></a>MainPage.xaml
 
 > [!div class="tabbedCodeSnippets"]
-[!code-xml[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml#L1-L13)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml" range="1-13":::
 
 ### <a name="mainpagexamlcs"></a>MainPage.xaml.cs
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#CompleteSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="CompleteSample":::
 
  
 ## <a name="related-topics"></a>相關主題

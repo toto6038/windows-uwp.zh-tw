@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、uwp、Microsoft Store Services SDK、目標推播通知合作夥伴中心
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: d6a420befac980574cf64e8a599d122df4c99ef4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155652"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364131"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>設定您的應用程式以接收目標式推播通知
 
@@ -36,19 +36,19 @@ ms.locfileid: "89155652"
 1. 在您的專案中，找出在啟動時執行的程式碼區段，您可以在其中登錄您的 App 以接收通知。
 2. 將下列陳述式新增到程式碼檔案頂端。
 
-    [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#EngagementNamespace)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="EngagementNamespace":::
 
 3. 取得 [StoreServicesEngagementManager](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) 物件，然後呼叫您稍早所識別之啟動程式碼中的其中一個 [RegisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) 多載。 每次啟動您的 App 時，都應該呼叫此方法。
 
   * 如果您想要合作夥伴中心建立自己的通知通道 URI，請呼叫 [RegisterNotificationChannelAsync ( # B1 ](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) 多載。
 
-      [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync1)]
+      :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="RegisterNotificationChannelAsync1":::
       > [!IMPORTANT]
       > 如果您的 App 也會呼叫 [CreatePushNotificationChannelForApplicationAsync](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) 來建立 WNS 的通知通道，請確定您的程式碼不會同時呼叫 [CreatePushNotificationChannelForApplicationAsync](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanager.createpushnotificationchannelforapplicationasync) 和 [RegisterNotificationChannelAsync()](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) 多載。 如果您需要呼叫這兩種方法，請務必依序呼叫它們，然後等待一個方法傳回後，再呼叫另一個方法。
 
   * 如果您想要指定要用於來自合作夥伴中心之目標推播通知的通道 URI，請呼叫 [RegisterNotificationChannelAsync (StoreServicesNotificationChannelParameters) ](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) 多載。 例如，如果您的 App 已經使用「Windows 推播通知服務」(WNS)，而您想要使用相同的通道 URI，您可能就會想要這麼做。 您必須先建立一個 [StoreServicesNotificationChannelParameters](/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters) 物件，並指派 [CustomNotificationChannelUri](/uwp/api/microsoft.services.store.engagement.storeservicesnotificationchannelparameters.customnotificationchanneluri) 屬性給您的通道 URI。
 
-      [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#RegisterNotificationChannelAsync2)]
+      :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="RegisterNotificationChannelAsync2":::
 
 > [!NOTE]
 > 在您呼叫 **RegisterNotificationChannelAsync** 方法時，會在 App 的本機應用程式資料存放區中建立名為 MicrosoftStoreEngagementSDKId.txt 的檔案 (位於 [ApplicationData.LocalFolder](/uwp/api/Windows.Storage.ApplicationData.LocalFolder) 屬性傳回的資料夾)。 此檔案包含目標式推播通知基礎結構所使用的識別碼。 請確定您的 App 不會修改或刪除此檔案。 否則，您的使用者可能會收到多次通知，或通知可能無法以其他方式正常運作。
@@ -81,11 +81,11 @@ ms.locfileid: "89155652"
 
 * 如果推播通知具有前景啟用類型，請從您 App 中的 [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated) 方法覆寫呼叫此方法，然後將已傳遞的 [ToastNotificationActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs) 物件中所提供的引數傳遞給此方法。 下列程式碼範例假設您的程式碼檔案有 **Microsoft.Services.Store.Engagement** 和 **Windows.ApplicationModel.Activation** 命名空間的 **using** 陳述式。
 
-  [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/App.xaml.cs#OnActivated)]
+  :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
 * 如果推播通知具有背景啟用類型，請從您[背景工作](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法呼叫此方法，然後將已傳遞的 [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) 物件中所提供的引數傳遞給此方法。 下列程式碼範例假設您的程式碼檔案有 **Microsoft.Services.Store.Engagement**、**Windows.ApplicationModel.Background** 及 **Windows.UI.Notifications** 命名空間的 **using** 陳述式。
 
-  [!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#Run)]
+  :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 
 <span id="unregister" />
 
@@ -93,7 +93,7 @@ ms.locfileid: "89155652"
 
 如果您想要讓應用程式停止從合作夥伴中心接收目標推播通知，請呼叫 [UnregisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) 方法。
 
-[!code-csharp[DevCenterNotifications](./code/StoreSDKSamples/cs/DevCenterNotifications.cs#UnregisterNotificationChannelAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="UnregisterNotificationChannelAsync":::
 
 請注意，此方法會使用於通知的通道失效，因此應用程式不會再從 *任何* 服務接收推播通知。 在關閉之後，就無法再次針對任何服務使用通道，包括來自合作夥伴中心的目標推播通知，以及使用 WNS 的其他通知。 若要繼續將推播通知傳送給此 App，此 App 必須要求新通道。
 

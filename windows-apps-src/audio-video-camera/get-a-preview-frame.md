@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 235a5e06a8483599b8fbf29e866e990456c1f1f1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a688ade1e8907cb0de0683df0751d1eebef4ed7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163942"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362621"
 ---
 # <a name="get-a-preview-frame"></a>取得預覽畫面
 
@@ -23,23 +23,23 @@ ms.locfileid: "89163942"
 
 除了基本媒體擷取所需的命名空間，擷取預覽畫面還需要下列命名空間。
 
-[!code-cs[PreviewFrameUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetPreviewFrameUsing":::
 
 當您要求預覽框架時，您可以使用想要的格式建立 [**VideoFrame**](/uwp/api/Windows.Media.VideoFrame) 物件，以指定您要用來接收框架的格式。 這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties) 並指定 [**MediaStreamType.VideoPreview**](/uwp/api/Windows.Media.Capture.MediaStreamType) 來要求預覽資料流的屬性，以建立與預覽資料流解析度相同的視訊框架。 預覽串流的寬度和高度將用來建立新的視訊框架。
 
-[!code-cs[CreateFormatFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCreateFormatFrame":::
 
 如果您的 [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) 物件已初始化，而且您有使用中的預覽串流，請呼叫 [**GetPreviewFrameAsync**](/uwp/api/windows.media.capture.mediacapture.getpreviewframeasync) 取得預覽串流。 傳入上一個步驟中建立的視訊框架，以指定傳回框架的格式。
 
-[!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetPreviewFrameAsync":::
 
 存取 [**VideoFrame**](/uwp/api/Windows.Media.VideoFrame) 物件的 [**SoftwareBitmap**](/uwp/api/windows.media.videoframe.softwarebitmap) 屬性，以取得預覽畫面的 [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) 表示。 如需有關儲存、載入和修改軟體點陣圖的資訊，請參閱[影像處理](imaging.md)。
 
-[!code-cs[GetPreviewBitmap](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetPreviewBitmap":::
 
 如果您想要透過 Direct3D API 使用影像，您也可以取得預覽框架的 [**IDirect3DSurface**](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 表示。
 
-[!code-cs[GetPreviewSurface](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewSurface)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetGetPreviewSurface":::
 
 > [!IMPORTANT]
 > 無論是傳回之 **VideoFrame** 的 [**SoftwareBitmap**](/uwp/api/windows.media.videoframe.softwarebitmap) 屬性或 [**Direct3DSurface**](/uwp/api/windows.media.videoframe.direct3dsurface) 屬性，根據您如何呼叫 **GetPreviewFrameAsync** 以及根據正在執行您 app 的裝置，這些屬性可能會是 Null。
@@ -52,7 +52,7 @@ ms.locfileid: "89163942"
 
 預覽框架使用完畢後，請務必呼叫其 [**Close**](/uwp/api/windows.media.videoframe.close) 方法 (對應於 C# 中的 Dispose)，以釋放框架使用的資源。 或者，使用 **using** 模式來自動處置物件。
 
-[!code-cs[CleanUpPreviewFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpPreviewFrame)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/BasicMediaCaptureWin10/cs/MainPage.xaml.cs" id="SnippetCleanUpPreviewFrame":::
 
 ## <a name="related-topics"></a>相關主題
 

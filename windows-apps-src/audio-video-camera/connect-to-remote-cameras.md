@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5924ad4b969fbf29021b2b48440ce071a516fe09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c0e94e0ddaba027b38ecc76b1c97126204990f1a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175722"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363981"
 ---
 # <a name="connect-to-remote-cameras"></a>連線到遠端照相機
 
@@ -43,7 +43,7 @@ ms.locfileid: "89175722"
 
 此外，這個範例也會處理已**加入**和**移除**的事件以外的[**DeviceWatcher**](/uwp/api/windows.devices.enumeration.devicewatcher.updated)事件。 在 **更新** 的處理常式中，會從移除相關聯的遠端相機裝置，然後將其新增回集合。
 
-[!code-cs[SnippetRemoteCameraPairingHelper](./code/Frames_Win10/Frames_Win10/RemoteCameraPairingHelper.cs#SnippetRemoteCameraPairingHelper)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/RemoteCameraPairingHelper.cs" id="SnippetRemoteCameraPairingHelper":::
 
 
 ## <a name="related-topics"></a>相關主題

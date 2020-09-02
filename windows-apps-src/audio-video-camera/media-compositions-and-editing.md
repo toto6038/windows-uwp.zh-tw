@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b1ae11d8f065cf72202365c36a9d69164fc2daa3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 91b0418555e4d46c15bd43816ec6b01ebbd27d8b
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163872"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363871"
 ---
 # <a name="media-compositions-and-editing"></a>媒體組合和編輯
 
@@ -23,22 +23,22 @@ ms.locfileid: "89163872"
 
 [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](/uwp/api/Windows.Media.Editing) 命名空間以及 [**Windows.Media.Core**](/uwp/api/Windows.Media.Core) 命名空間，該命名空間提供您需要的相關 API。
 
-[!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetNamespace1":::
 
 
 將會從您的程式碼的多個點存取 **MediaComposition** 物件，因此通常您會宣告其中的成員變數以儲存它。
 
-[!code-cs[DeclareMediaComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetDeclareMediaComposition":::
 
 **MediaComposition** 的建構函式沒有引數。
 
-[!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetMediaCompositionConstructor":::
 
 ## <a name="add-media-clips-to-a-composition"></a>將媒體剪輯新增至組合
 
 媒體組合通常包含一或多個視訊剪輯。 您可以使用 [**FileOpenPicker**](/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker) 以允許使用者選取視訊檔案。 一旦選取檔案，建立新的 [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) 物件以包含視訊剪輯，方法是呼叫 [**MediaClip.CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync)。 接著您將剪輯新增至 **MediaComposition** 物件的 [**Clips**](/uwp/api/windows.media.editing.mediacomposition.clips) 清單。
 
-[!code-cs[PickFileAndAddClip](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetPickFileAndAddClip)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetPickFileAndAddClip":::
 
 -   媒體剪輯會以在 [**Clips**](/uwp/api/windows.media.editing.mediacomposition.clips) 清單中顯示的相同順序出現在 **MediaComposition** 中。
 
@@ -60,17 +60,17 @@ ms.locfileid: "89163872"
 
 若要讓使用者檢視媒體組合，請將 [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 新增至定義您 UI 的 XAML 檔案。
 
-[!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
+:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml" id="SnippetMediaElement":::
 
 宣告類型 [**MediaStreamSource**](/uwp/api/Windows.Media.Core.MediaStreamSource) 的成員變數。
 
 
-[!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetDeclareMediaStreamSource":::
 
 呼叫 **MediaComposition** 物件的 [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.media.editing.mediacomposition.generatepreviewmediastreamsource) 方法來建立組合的 **MediaStreamSource**。 透過呼叫 Factory 方法 [**CreateFromMediaStreamSource**](/uwp/api/windows.media.core.mediasource.createfrommediastreamsource)，並將它指派給 **MediaPlayerElement** 的 [**Source**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 參數，來建立 [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 物件。 現在可以在 UI 中檢視組合。
 
 
-[!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetUpdateMediaElementSource":::
 
 -   **MediaComposition** 必須包含至少一個媒體剪輯，然後才能呼叫 [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.media.editing.mediacomposition.generatepreviewmediastreamsource)，否則傳回的物件將會是 Null。
 
@@ -78,17 +78,17 @@ ms.locfileid: "89163872"
 
 當使用者離開頁面以釋放相關聯的資源時，建議您將 **MediaStreamSource** 物件和 **MediaPlayerElement** 的 [**Source**](/uwp/api/windows.ui.xaml.controls.mediaelement.source) 屬性設為 Null。
 
-[!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetOnNavigatedFrom":::
 
 ## <a name="render-the-composition-to-a-video-file"></a>將組合轉譯為視訊檔案
 
 若要將媒體組合轉譯為一般視訊檔案，以便共用及在其他裝置上檢視，您需要使用 [**Windows.Media.Transcoding**](/uwp/api/Windows.Media.Transcoding) 命名空間的 API。 若要更新非同步作業進度的 UI，您也需要 [**Windows.UI.Core**](/uwp/api/Windows.UI.Core) 命名空間的 API。
 
-[!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetNamespace2":::
 
 在允許使用者使用 [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) 選取輸出檔案之後，藉由呼叫 **MediaComposition** 物件的 [**RenderToFileAsync**](/uwp/api/windows.media.editing.mediacomposition.rendertofileasync)，將組合轉譯為選取的檔案。 下列範例中的其他程式碼只是遵循處理 [**AsyncOperationWithProgress**](/previous-versions/br205807(v=vs.85)) 的模式。
 
-[!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetRenderCompositionToFile":::
 
 -   [**MediaTrimmingPreference**](/uwp/api/Windows.Media.Editing.MediaTrimmingPreference) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
 
@@ -96,7 +96,7 @@ ms.locfileid: "89163872"
 
 修剪組合中視訊剪輯的持續時間，方法是設定 [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) 物件的 [**TrimTimeFromStart**](/uwp/api/windows.media.editing.mediaclip.trimtimefromstart) 屬性、[**TrimTimeFromEnd**](/uwp/api/windows.media.editing.mediaclip.trimtimefromend) 屬性，或兩者同時設定。
 
-[!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetTrimClipBeforeCurrentPosition":::
 
 -   您可以使用任何您想要的 UI 讓使用者指定開始和結束修剪值。 上述範例使用與 **MediaPlayerElement** 相關聯之 [**MediaPlaybackSession**](/uwp/api/Windows.Media.Playback.MediaPlaybackSession) 的 [**Position**](/uwp/api/windows.media.playback.mediaplaybacksession.position) 屬性，藉由檢查 [**StartTimeInComposition**](/uwp/api/windows.media.editing.mediaclip.starttimeincomposition) 和 [**EndTimeInComposition**](/uwp/api/windows.media.editing.mediaclip.endtimeincomposition)，先決定要在組合中的目前位置播放哪個 **MediaClip**。 然後再次使用 **Position** 和 **StartTimeInComposition** 屬性，計算從剪輯開頭修剪的時間量。 **FirstOrDefault** 方法是 **System.Linq** 命名空間的擴充方法，可簡化從清單中選取項目的程式碼。
 -   **MediaClip** 物件的 [**OriginalDuration**](/uwp/api/windows.media.editing.mediaclip.originalduration) 屬性可讓您知道未套用任何剪輯的媒體剪輯的持續時間。
@@ -107,7 +107,7 @@ ms.locfileid: "89163872"
 
 若要將背景曲目新增至組合，載入音訊檔案然後建立 [**BackgroundAudioTrack**](/uwp/api/Windows.Media.Editing.BackgroundAudioTrack) 物件，方法是呼叫 Factory 方法 [**BackgroundAudioTrack.CreateFromFileAsync**](/uwp/api/windows.media.editing.backgroundaudiotrack.createfromfileasync)。 接著將 **BackgroundAudioTrack** 新增至組合的 [**BackgroundAudioTracks**](/uwp/api/windows.media.editing.mediacomposition.backgroundaudiotracks) 屬性。
 
-[!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetAddBackgroundAudioTrack":::
 
 -   **MediaComposition** 支援下列格式的背景曲目：MP3、WAV、FLAC
 
@@ -123,7 +123,7 @@ ms.locfileid: "89163872"
 
 重疊可讓您在組合中每個視訊層上方堆疊多個視訊層。 組合可以包含多個重疊層，每一個可以包含多個重疊。 將 **MediaClip** 傳遞到其建構函式，以建立 [**MediaOverlay**](/uwp/api/Windows.Media.Editing.MediaOverlay) 物件。 設定重疊的位置和不透明度，然後建立新的 [**MediaOverlayLayer**](/uwp/api/Windows.Media.Editing.MediaOverlayLayer)，並將 **MediaOverlay** 新增至其 [**Overlays**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays) 清單。 最後，將 **MediaOverlayLayer** 新增至組合的 [**OverlayLayers**](/uwp/api/windows.media.editing.mediacomposition.overlaylayers) 清單。
 
-[!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetAddOverlay":::
 
 -   視訊層內的重疊是根據其包含層之 **Overlays** 清單的順序進行 z 排序。 清單中具有較高索引的項目會轉譯在較低索引項目的上方。 組合中的重疊層也是如此。 在組合的 **OverlayLayers** 清單中具有較高索引的視訊層會轉譯在較低索引視訊層的上方。
 
@@ -133,19 +133,19 @@ ms.locfileid: "89163872"
 
 組合中的每個 **MediaClip** 都有一份可以加入多個效果的音訊與視訊效果清單。 效果必須分別實作 [**IAudioEffectDefinition**](/uwp/api/Windows.Media.Effects.IAudioEffectDefinition) 和 [**IVideoEffectDefinition**](/uwp/api/Windows.Media.Effects.IVideoEffectDefinition)。 下列範例會使用目前的 **MediaPlayerElement** 位置以選擇目前檢視的 **MediaClip**，然後建立 [**VideoStabilizationEffectDefinition**](/uwp/api/Windows.Media.Core.VideoStabilizationEffectDefinition) 的新執行個體，並將它附加到媒體剪輯的 [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) 清單。
 
-[!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetAddVideoEffect":::
 
 ## <a name="save-a-composition-to-a-file"></a>將組合儲存至檔案
 
 媒體組合稍後可以序列化至檔案以進行修改。 挑選輸出檔案，然後呼叫 [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) 方法 [**SaveAsync**](/uwp/api/windows.media.editing.mediacomposition.saveasync) 以儲存組合。
 
-[!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetSaveComposition":::
 
 ## <a name="load-a-composition-from-a-file"></a>從檔案載入組合
 
 可以從檔案還原序列化媒體組合，讓使用者檢視和修改組合。 挑選組合檔案，然後呼叫 [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) 方法 [**LoadAsync**](/uwp/api/windows.media.editing.mediacomposition.loadasync) 以載入組合。
 
-[!code-cs[OpenComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaEditing/cs/MainPage.xaml.cs" id="SnippetOpenComposition":::
 
 -   如果組合中的媒體檔案不是在您 app 可存取的位置，且不是在 app 的 [**StorageApplicationPermissions**](/uwp/api/Windows.Storage.AccessCache.StorageApplicationPermissions) 類別 [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) 屬性中，則在載入組合時會擲回錯誤。
 

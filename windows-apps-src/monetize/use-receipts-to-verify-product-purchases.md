@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bbdaa8164e5d3a7e660fc4667b7cfe3c090bc10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ba818ffbe748a20491557f7404e3f06e10fd628a
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171322"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363031"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
@@ -92,7 +92,7 @@ App 收據看起來如下。
 以下是該驗證程序的範例。 這個程式碼會在包含 **System.Security** 組件之參考的 .NET Framework 主控台應用程式中執行。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/ReceiptVerificationSample/cs/Program.cs" id="ReceiptVerificationSample":::
 
 <span id="receipt-descriptions" />
 
@@ -104,7 +104,7 @@ App 收據看起來如下。
 
 此檔案的根元素是 **Receipt** 元素，其中包含 App 與 App 內購買的相關資訊。 此元素包含下列子項元素。
 
-|  元素  |  必要  |  數量  |  說明   |
+|  元素  |  必要  |  數量  |  描述   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
 |  [ProductReceipt](#productreceipt)  |     否       |  0 或更多    |   包含目前 App 之 App 內購買的相關資訊。     |

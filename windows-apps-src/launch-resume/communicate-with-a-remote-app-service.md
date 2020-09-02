@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，連接的裝置，遠端系統，羅馬，專案羅馬，背景工作，app service
 ms.localizationpriority: medium
-ms.openlocfilehash: ccd0de91279b4466b662a5b5e85bbab55d0f7712
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 779205a47b85cf9f9a0aec9db910b97995dc2cd8
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156042"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363911"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>與遠端應用程式服務通訊
 
@@ -60,7 +60,7 @@ ms.locfileid: "89156042"
 
 本節的程式碼需要下列 **using** 陳述式，才能依現況執行：
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetUsings)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetUsings":::
 
 
 您必須先將 [**AppServiceConnection**](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) 物件具現化，就如同您在本機呼叫應用程式服務一樣。 [建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)中提供更多關於此處理序的詳細資料。 在這個範例中，當成目標的 app 服務是隨機數字產生器服務。
@@ -68,11 +68,11 @@ ms.locfileid: "89156042"
 > [!NOTE]
 > 其中假設您已經在會呼叫下列方法的程式碼內，利用一些方法取得 [RemoteSystem](/uwp/api/Windows.System.RemoteSystems.RemoteSystem) 物件。 如需這要如何設定的指示，請參閱[啟動遠端應用程式](launch-a-remote-app.md)。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetAppService)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetAppService":::
 
 接下來，為預定的遠端裝置建立 [**RemoteSystemConnectionRequest**](/uwp/api/Windows.System.RemoteSystems.RemoteSystemConnectionRequest) 物件。 然後用它針對該裝置開啟 **AppServiceConnection**。 請注意，為求簡潔，下列範例已大幅簡化錯誤處理和報告。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetRemoteConnection)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetRemoteConnection":::
 
 此時，您應該針對遠端電腦上的應用程式服務開啟連線。
 
@@ -80,7 +80,7 @@ ms.locfileid: "89156042"
 
 接下來，您能以 [**ValueSet**](/uwp/api/windows.foundation.collections.valueset) 物件的形式，對服務傳送訊息和接收和接收服務的訊息 (如需詳細資訊，請參閱[建立和取用應用程式服務](how-to-create-and-consume-an-app-service.md))。 隨機數字產生器服務會利用索引鍵 `"minvalue"` 與 `"maxvalue"`，取得兩個整數做為輸入，隨機選取其範圍內的整數，然後以索引鍵 `"Result"` 將值傳回呼叫的處理序。
 
-[!code-cs[Main](./code/RemoteAppService/MainPage.xaml.cs#SnippetSendMessage)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteAppService/cs/MainPage.xaml.cs" id="SnippetSendMessage":::
 
 現在您已連線到目標主機裝置上的 app 服務、在該裝置上執行操作，然後接收到送至用戶端裝置的回應資料。
 

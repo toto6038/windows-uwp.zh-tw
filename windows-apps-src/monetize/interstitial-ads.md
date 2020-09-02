@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ada6ad04150d6a0f20e9286122ce02933091236
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: eedb3f12bfc9da51afb2d5205122cbd42d7b31bf
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174972"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363091"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
@@ -69,22 +69,22 @@ ms.locfileid: "89174972"
 
 3.  在您的應用程式的適當程式碼檔案中 (例如在 MainPage.xaml.cs 中，或部分其他頁面的程式碼檔案)，新增下列命名空間參考。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet1)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet1":::
 
 4.  在您的應用程式的適當位置中 (例如，在 ```MainPage``` 中或部分其他頁面)，為您的插播式廣告宣告 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 物件和代表應用程式識別碼和單位識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至插播式廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
     > 每個 **InterstitialAd** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元識別碼*和*應用程式識別碼*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 將您的應用程式發行至存放區之前，您必須將 [這些測試值取代](#release) 為合作夥伴中心的即時值。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet2)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet2":::
 
 5.  在啟動時執行的程式碼中 (例如，頁面的建構函式中)，起始 **InterstitialAd** 物件並為物件的事件連結事件處理常式。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet3)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet3":::
 
 6.  若要顯示*插播式影片廣告*：在您需要起始廣告前約 30-60 秒，使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法預先擷取廣告。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 AdType ad 類型的 **影片** 。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet4)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet4":::
 
     若要顯示*插播式橫幅廣告*：在您需要起始廣告前約 5-8 秒，使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法預先擷取廣告。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 AdType ad 類型的 [ **顯示** ]。
 
@@ -94,11 +94,11 @@ ms.locfileid: "89174972"
 
 6.  在您要顯示插播式影片廣告或插播式橫幅廣告的程式碼中的某個點，確認 **InterstitialAd** 已就緒可供顯示，然後使用 [Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示廣告。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet5)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet5":::
 
 7.  為 **InterstitialAd** 物件定義事件處理常式。
 
-    [!code-csharp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs#Snippet6)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cs/MainPage.xaml.cs" id="Snippet6":::
 
 8.  建置並測試您的應用程式以確認它會顯示測試廣告。
 
@@ -129,15 +129,15 @@ ms.locfileid: "89174972"
     > [!NOTE]
     > 每個 **InterstitialAd** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元識別碼*和*應用程式識別碼*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 將您的應用程式發行至存放區之前，您必須將 [這些測試值取代](#release) 為合作夥伴中心的即時值。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet1)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="Snippet1":::
 
 5.  在啟動時執行的程式碼中 (例如，頁面的建構函式中)，起始 **InterstitialAd** 物件並為物件連結事件處理常式。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet2)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="Snippet2":::
 
 5. 若要顯示*插播式影片廣告*：在您需要起始廣告前約 30-60 秒，使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法預先擷取廣告。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 **InterstitialAdType.video** 做為廣告類型。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/script.js#Snippet3)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/script.js" id="Snippet3":::
 
     若要顯示*插播式橫幅廣告*：在您需要起始廣告前約 5-8 秒，使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法預先擷取廣告。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 **InterstitialAdType.display** 做為廣告類型。
 
@@ -149,11 +149,11 @@ ms.locfileid: "89174972"
 
 6.  在您要顯示廣告的程式碼中的某個點，確認 **InterstitialAd** 已就緒可供顯示，然後使用 [Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示廣告。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet4)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/samples.js" id="Snippet4":::
 
 7.  為 **InterstitialAd** 物件定義事件處理常式。
 
-    [!code-javascript[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/js/samples.js#Snippet5)]
+    :::code language="javascript" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/js/samples.js" id="Snippet5":::
 
 9.  建置並測試您的應用程式以確認它會顯示測試廣告。
 
@@ -173,26 +173,26 @@ ms.locfileid: "89174972"
 
 2.  在應用程式適當的標頭檔 (例如，DirectXPage.xaml.h) 中，宣告 [InterstitialAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 物件和相關的事件處理常式方法。  
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet1)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h" id="Snippet1":::
 
 3.  在相同標頭檔中，為您的插播式廣告宣告代表應用程式識別碼和單位識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至插播式廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
 
     > [!NOTE]
     > 每個 **InterstitialAd** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元識別碼*和*應用程式識別碼*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 將您的應用程式發行至存放區之前，您必須將 [這些測試值取代](#release) 為合作夥伴中心的即時值。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h#Snippet2)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.h" id="Snippet2":::
 
 4.  在您要新增程式碼以顯示插播式廣告的 .cpp 檔中，新增下列命名空間參考。 下列範例假設您在應用程式中新增程式碼到 DirectXPage.xaml.cpp 檔案中。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet3)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet3":::
 
 6.  在啟動時執行的程式碼中 (例如，頁面的建構函式中)，起始 **InterstitialAd** 物件並為物件的事件連結事件處理常式。 在下列範例中，```InterstitialAdSamplesCpp``` 是您專案的命名空間，依您程式碼的需要變更此名稱。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet4)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet4":::
 
 7. 若要顯示*插播式影片廣告*：在您需要插播式廣告前約 30-60 秒，使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法預先擷取廣告。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 **AdType::Video**做為廣告類型。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet5)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet5":::
 
     若要顯示*插播式橫幅廣告*：在您需要起始廣告前約 5-8 秒，使用 [RequestAd](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法預先擷取廣告。 這可讓您有足夠的時間在其顯示前請求和準備廣告。 請務必指定 **AdType::Display**做為廣告類型。
 
@@ -202,11 +202,11 @@ ms.locfileid: "89174972"
 
 7.  在您要顯示廣告的程式碼中的某個點，確認 **InterstitialAd** 已就緒可供顯示，然後使用 [Show](/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示廣告。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet6)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet6":::
 
 8.  為 **InterstitialAd** 物件定義事件處理常式。
 
-    [!code-cpp[InterstitialAd](./code/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp#Snippet7)]
+    :::code language="cpp" source="~/../snippets-windows/windows-uwp/monetize/AdvertisingSamples/InterstitialAdSamples/cpp/DirectXPage.xaml.cpp" id="Snippet7":::
 
 9. 建置並測試您的應用程式以確認它會顯示測試廣告。
 

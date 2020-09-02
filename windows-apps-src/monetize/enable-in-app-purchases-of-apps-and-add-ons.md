@@ -6,12 +6,12 @@ keywords: Windows 10, UWP, 附加元件, App 內購買, IAP, Windows.Services.St
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 36140b18c2358bf0b7ed497138ca7f9059900736
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3064a651715329a3602c0c3539394d2ce72f90a7
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171562"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362811"
 ---
 # <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>啟用應用程式和附加元件的應用程式內購買
 
@@ -46,7 +46,7 @@ ms.locfileid: "89171562"
 此範例示範如何使用 [StoreContext](/uwp/api/windows.services.store.storecontext) 類別的 [RequestPurchaseAsync](/uwp/api/windows.services.store.storecontext.requestpurchaseasync) 方法來購買已知其[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)的 App 或附加元件。 如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[EnablePurchases](./code/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs#PurchaseAddOn)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses_RS1/cs/PurchaseAddOnPage.xaml.cs" id="PurchaseAddOn":::
 
 ## <a name="video"></a>影片
 

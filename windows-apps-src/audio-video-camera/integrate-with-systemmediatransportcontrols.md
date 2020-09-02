@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 449c8b445e70ffb68d0bc95f96e2b33c57e3b38f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1e443c87e9bc20de5c5ce9bc8486f760df6b312c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163932"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362631"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>與系統媒體傳輸控制項整合
 
@@ -36,9 +36,9 @@ ms.locfileid: "89163932"
 ## <a name="add-metadata-to-be-displayed-by-the-smtc"></a>新增由 SMTC 顯示的中繼資料
 如果您想要針對您在 SMTC 中顯示的媒體項目新增或修改中繼資料 (例如影片或歌曲標題)，您必須更新代表您媒體項目的 **MediaPlaybackItem** 的顯示屬性。 首先，透過呼叫 [**GetDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.getdisplayproperties) 取得 [**MediaItemDisplayProperties**](/uwp/api/Windows.Media.Playback.MediaItemDisplayProperties) 物件的參考。 接著，設定媒體、音樂或影片的類型 (針對具有 [**Type**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) 屬性的項目)。 然後您可以根據您所指定的媒體類型，填入 [**MusicProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.musicproperties) 或 [**VideoProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.videoproperties) 的欄位。 最後，透過呼叫 [**ApplyDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.applydisplayproperties) 來更新媒體項目的中繼資料。
 
-[!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetSetVideoProperties":::
 
-[!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetSetMusicProperties":::
 
 
 > [!Note]
@@ -52,25 +52,25 @@ ms.locfileid: "89163932"
 
 下列範例會針對 **NextReceived** 事件以及 **NextBehavior** 的 [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) 事件登錄一個處理常式。
 
-[!code-cs[AddNextHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddNextHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetAddNextHandler":::
 
 下列範例說明應用程式想要在使用者點按播放清單中五個項目之後，停用 *Next* 命令的情況，也許在繼續播放內容之前需要一些使用者互動。 引發每個 ## **NextReceived** 事件，計數器都會增加。 一旦計數器達到目標數，*Next* 命令的[**EnablingRule**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.enablingrule) 會設定為 [**Never**](/uwp/api/Windows.Media.Playback.MediaCommandEnablingRule)，這會停用該命令。 
 
-[!code-cs[NextReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetNextReceived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetNextReceived":::
 
 您也可以將命令設定為 **Always**，這表示命令一律會啟用，即使播放清單中沒有項目時也是如此 (適用於 *Next* 命令範例)。 或者您可以將命令設定為 **Auto**，其中系統會根據目前播放的內容決定是否啟用命令。
 
 針對上述案例，在某些時候應用程式會想要透過將 **EnablingRule** 設定為 **Auto**，重新啟用 *Next* 命令。
 
-[!code-cs[EnableNextButton](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetEnableNextButton)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetEnableNextButton":::
 
 因為您的應用程式在前景中時，可能有自己用來控制播放的 UI，您可以使用 [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) 事件更新您自己的 UI 以符合 SMTC，因為命令已透過存取已傳入到處理常式之[**MediaPlaybackCommandManagerCommandBehavior**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior) 的 [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabled) 來啟用或停用。
 
-[!code-cs[IsEnabledChanged](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetIsEnabledChanged)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetIsEnabledChanged":::
 
 在某些情況下，您可能想要完全覆寫 SMTC 命令的行為。 下列範例說明應用程式使用 *Next* 和 *Previous* 命令在網際網路廣播電台之間切換，而不是在目前播放清單中的曲目之間切換的情況。 如同先前的範例中，在收到命令時會登錄處理常式，此範例中則是 [**PreviousReceived**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.previousreceived) 事件。
 
-[!code-cs[AddPreviousHandler](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetAddPreviousHandler)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetAddPreviousHandler":::
 
 在 **PreviousReceived** 處理常式中，透過呼叫已傳入到處理常式之 [**MediaPlaybackCommandManagerPreviousReceivedEventArgs**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) 的 [**GetDeferral**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs.getdeferral)，會先取得 [**Deferral**](/uwp/api/Windows.Foundation.Deferral)。 這會告訴系統等待延期完成才執行命令。 如果您要在處理常式中進行非同步呼叫，這非常重要。 到目前為止，範例呼叫的自訂方法會傳回代表先前的廣播電台的 **MediaPlaybackItem**。
 
@@ -78,7 +78,7 @@ ms.locfileid: "89163932"
 
 最後，會在延期物件上呼叫 [**Complete**](/uwp/api/windows.foundation.deferral.complete)，讓系統知道您已經完成處理命令。
 
-[!code-cs[PreviousReceived](./code/SMTC_RS1/cs/MainPage.xaml.cs#SnippetPreviousReceived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTC_RS1/cs/MainPage.xaml.cs" id="SnippetPreviousReceived":::
                  
 ## <a name="manual-control-of-the-smtc"></a>手動控制 SMTC
 如本文先前所提及，SMTC 會自動偵測與顯示您應用程式所建立之每個 **MediaPlayer** 執行個體的資訊。 如果您想要使用多個 **MediaPlayer** 執行個體但希望 SMTC 針對您的應用程式提供單一項目，則您必須手動控制 SMTC 的行為，而非仰賴自動整合。 此外，如果您使用 [**MediaTimelineController**](/uwp/api/Windows.Media.MediaTimelineController) 來控制一或多個媒體播放程式，您必須使用手動 SMTC 整合。 此外，如果您的應用程式使用 API 而不是 **MediaPlayer** (例如 [**AudioGraph**](/uwp/api/Windows.Media.Audio.AudioGraph) 類別) 來播放媒體，您必須實作手動 SMTC 整合，讓使用者使用 SMTC 來控制您的應用程式。 如需如何手動控制 SMTC 的詳細資訊，請參閱[系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)。

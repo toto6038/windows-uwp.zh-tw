@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: 2128313c48f8d279a23cf63278b3e853c00348e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f78197b6108a81f3335dc202585127105bd94339
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175652"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363720"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
@@ -37,7 +37,7 @@ ms.locfileid: "89175652"
 ## <a name="find-available-frame-source-groups"></a>尋找可用的畫面來源群組
 首先，您需要尋找可從哪個畫面來源群組取得媒體畫面。 藉由呼叫 **[MediaFrameSourceGroup.FindAllAsync](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.FindAllAsync)**，取得目前裝置上可用的來源群組清單。 然後選取可提供您 app 案例所需感應器類型的來源群組。 針對此範例，我們只需要能從 RGB 相機提供畫面的來源群組。
 
-[!code-cs[OpenCVFrameSourceGroups](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameSourceGroups)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVFrameSourceGroups":::
 
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 物件
 接下來，您需要透過設定 **MediaCaptureInitializationSettings** 的 **[SourceGroup](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.SourceGroup)** 屬性來初始化 **MediaCapture** 物件，以使用上一個步驟中選取的畫面來源群組。
@@ -47,20 +47,20 @@ ms.locfileid: "89175652"
 
 初始化 **MediaCapture** 物件後，存取 **[MediaCapture.FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** 屬性以取得 RGB 框架來源的參考。
 
-[!code-cs[OpenCVInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVInitMediaCapture)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVInitMediaCapture":::
 
 ## <a name="initialize-the-mediaframereader"></a>初始化 MediaFrameReader
 接下來，為上一個步驟中擷取的 RGB 畫面來源建立 [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader)。 為了維持良好的畫面播放速率，您可能會想讓所處理畫面的解析度低於感應器的解析度。 此範例提供 **[MediaCapture.CreateFrameReaderAsync](/uwp/api/windows.media.capture.mediacapture.createframereaderasync)** 方法的選用 **[BitmapSize](/uwp/api/windows.graphics.imaging.bitmapsize)** 引數，要求將畫面讀取程式提供的畫面大小調整為 640 x 480 像素。
 
 建立畫面讀取程式之後，登錄 **[FrameArrived](/uwp/api/windows.media.capture.frames.mediaframereader.FrameArrived)** 事件的處理常式。 接著建立新的 **[SoftwareBitmapSource](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource)** 物件，讓 **FrameRenderer** 協助程式類別用來呈現處理後的影像。 然後呼叫 **FrameRenderer** 的建構函式。 初始化 OpenCVBridge Windows 執行階段元件中定義之 **OpenCVHelper** 類別的實例。 此協助程式類別用於 **FrameArrived** 處理常式中，用來處理每個畫面。 最後，呼叫 **[StartAsync](/uwp/api/windows.media.capture.frames.mediaframereader.StartAsync)** 以啟動畫面讀取程式。
 
-[!code-cs[OpenCVFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameReader)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVFrameReader":::
 
 
 ## <a name="handle-the-framearrived-event"></a>處理 FrameArrived 事件
 當有來自畫面讀取程式的可用新畫面時，就會引發 **FrameArrived** 事件。 呼叫 **[TryAcquireLatestFrame](/uwp/api/windows.media.capture.frames.mediaframereader.TryAcquireLatestFrame)** 以取得畫面，如果有的話。 從 **[MediaFrameReference](/uwp/api/windows.media.capture.frames.mediaframereference)** 取得 **SoftwareBitmap**。 請注意，此範例中使用的 **CVHelper** 類別，需要影像使用搭配預乘 Alpha 的 BRGA8 像素格式。 如果傳遞至事件的畫面具有不同的格式，請將 **SoftwareBitmap** 轉換為正確的格式。 接下來，建立 **SoftwareBitmap** 以做為模糊作業的目標。 將使用來源影像屬性做為建構函式的引數，來建立具備相符格式的點陣圖。 呼叫協助程式類別 **Blur** 方法來處理畫面。 最後，將模糊作業的輸出影像傳遞至 **FrameRenderer** 協助程式類別的 **PresentSoftwareBitmap** 方法，以在其初始化的 XAML **Image** 控制項中顯示影像。
 
-[!code-cs[OpenCVFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.OpenCV.xaml.cs#SnippetOpenCVFrameArrived)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/MainPage.OpenCV.xaml.cs" id="SnippetOpenCVFrameArrived":::
 
 ## <a name="related-topics"></a>相關主題
 

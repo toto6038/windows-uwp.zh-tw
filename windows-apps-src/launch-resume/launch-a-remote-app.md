@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、uwp、connected 裝置、遠端系統、羅馬、project 羅馬
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: 784403ede6b21b79dcb14d1da6dde22df68c410e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4163106c5439ec8881c1b5042f63fb7abf4fd668
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158782"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89362501"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的應用程式
 
@@ -45,18 +45,18 @@ ms.locfileid: "89158782"
 
 這些範例的程式碼要求您的類別檔案中必須有 `using Windows.System.RemoteSystems` 陳述式。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetBuildDeviceList":::
 
 進行遠端啟動之前的第一件事，就是您必須執行呼叫 `RemoteSystem.RequestAccessAsync()`。 檢查傳回值，以確定您的 app 能夠存取遠端裝置。 這項檢查失敗的可能原因之一是，您可能還沒有將 `remoteSystem` 功能新增到您的 app。
 
 在發現到我們能夠連線的裝置或其不再可用時，都會呼叫系統監控程式事件處理常式。 我們將使用這些事件處理常式，不時更新一份可連線裝置的清單。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetEventHandlers":::
 
 
 我們會使用**字典**，利用遠端系統識別碼來追蹤裝置。 使用 **ObservableCollection** 來保留我們可列舉的裝置清單。 **ObservableCollection** 也能更容易將裝置清單繫結到 UI，但在這個範例中將不會這樣做。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetMembers":::
 
 在您的應用程式啟動程式碼中新增對 `BuildDeviceList()` 的呼叫後，再嘗試啟動遠端應用程式。
 
@@ -68,7 +68,7 @@ ms.locfileid: "89158782"
 
 在實際案例中，您可能會提供 UI 來選擇想要設為目標的裝置。 但為了簡化這個範例，我們只會使用清單中的第一部裝置。
 
-[!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/launch-resume/RemoteLaunchScenario/cs/MainPage.xaml.cs" id="SnippetRemoteUriLaunch":::
 
 從 **RemoteLauncher.LaunchUriAsync()** 傳回的 [**RemoteLaunchUriStatus**](/uwp/api/windows.system.remotelaunchuristatus) 物件，會提供遠端啟動是否成功以及為什麼不成功的相關資訊。
 

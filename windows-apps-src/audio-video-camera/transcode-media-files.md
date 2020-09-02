@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 927ff8ceb8dc29400f5a7d0ede42b3ee8b703efb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 28ed15ab49f3ec33e382d28c14ffd43bb5c8779d
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175662"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363741"
 ---
 # <a name="transcode-media-files"></a>轉碼媒體檔案
 
@@ -25,13 +25,13 @@ ms.locfileid: "89175662"
 
 除了預設專案範本所參考的命名空間之外，您需要參考這些命名空間，以使用本文中的程式碼轉碼媒體檔案。
 
-[!code-cs[Using](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetUsing":::
 
 ## <a name="select-source-and-destination-files"></a>選取來源和目的地檔案
 
 您的 app 判斷轉碼的來源和目的地檔案的方式取決於您的實作。 這個範例使用 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 和 [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) 讓使用者挑選來源和目的地檔案。
 
-[!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeGetFile":::
 
 ## <a name="create-a-media-encoding-profile"></a>建立媒體編碼設定檔
 
@@ -62,7 +62,7 @@ ms.locfileid: "89175662"
 
 下列程式碼會建立 MP4 視訊的設定檔。
 
-[!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeMediaProfile":::
 
 靜態 [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) 方法會建立 MP4 編碼設定檔。 這個方法的參數會提供影片的目標解析度。 在這種情況下，[**VideoEncodingQuality.hd720p**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingQuality) 表示 1280 x 720 個像素，每秒 30 個畫面。 (「720p」表示每一個畫面有 720 條漸進式掃描線。) 預先定義設定檔的其他方法都是沿用這個模式。
 
@@ -72,10 +72,10 @@ ms.locfileid: "89175662"
 
 若要進行檔案的轉碼，請建立新的 [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder) 物件並呼叫 [**MediaTranscoder.PrepareFileTranscodeAsync**](/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) 方法。 傳入來源檔案、目的地檔案，然後進行設定檔的編碼。 再呼叫 [**PrepareTranscodeResult**](/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) 物件上的 [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 方法，該物件是從非同步轉碼作業傳回的物件。
 
-[!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeTranscodeFile":::
 
 ## <a name="respond-to-transcoding-progress"></a>回應轉碼進度
 
 您可以註冊事件在非同步進度 [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 的進度變更時回應。 這些事件屬於通用 Windows 平台 (UWP) app 的非同步程式設計架構，而不是只屬於轉碼 API。
 
-[!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/TranscodeWin10/cs/MainPage.xaml.cs" id="SnippetTranscodeCallbacks":::

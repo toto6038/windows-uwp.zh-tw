@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a7709311539d3f9c50f600f617c211f99c7b507
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dbdd95ab0d4ecde5fbe5cfb8d84d2d328b4c5a24
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171672"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89363661"
 ---
 # <a name="code-your-app-for-experimentation"></a>編寫實驗用的應用程式程式碼
 
@@ -46,43 +46,43 @@ ms.locfileid: "89171672"
 
 您所需的特定程式碼將取決於您的 App，但以下範例將示範基本程序。 如需完整的程式碼範例，請參閱[使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
-[!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#ExperimentCodeSample)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="ExperimentCodeSample":::
 
 下列步驟詳細說明此程序的重要部分。
 
 1. 宣告 [StoreServicesExperimentVariation](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 物件，該物件表示目前的變異指派和 [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) 物件，您將使用此物件將視圖和轉換事件記錄至合作夥伴中心。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet1":::
 
 2. 宣告一個指派給您所要擷取的實驗之[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)的字串變數。
     > [!NOTE]
     > 當您 [在合作夥伴中心中建立專案](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)時，您會取得專案識別碼。 以下所示的專案識別碼僅供範例用途使用。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet2":::
 
 3. 呼叫靜態的 [GetCachedVariationAsync](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getcachedvariationasync) 方法來取得實驗目前快取的變化指派，然後將實驗的專案識別碼傳遞給此方法。 這個方法會傳回 [StoreServicesExperimentVariationResult](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariationresult) 物件，此物件會透過 [ExperimentVariation](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariationresult.experimentvariation) 屬性提供對變化指派的存取權。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet3)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet3":::
 
 4. 檢查 [IsStale](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.isstale) 屬性，以判斷是否需要使用來自伺服器的遠端變化指派來重新整理快取的變化指派。 如果需要重新整理，請呼叫靜態的 [GetRefreshedVariationAsync](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getrefreshedvariationasync) 方法，以檢查是否有來自伺服器的更新變化指派，並重新整理本機快取變化。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet4)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet4":::
 
 5. 使用 [StoreServicesExperimentVariation](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 物件的 [GetBoolean](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getboolean)、[GetDouble](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getdouble)、[GetInt32](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getint32) 或 [GetString](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 方法，取得變化指派的值。 在每個方法中，第一個參數是您想要抓取的變化名稱 (這與您在合作夥伴中心) 中輸入的變化名稱相同。 第二個參數是方法應該會傳回的預設值（如果無法從合作夥伴中心抓取指定的值） (例如，如果沒有網路連線) ，而且無法使用變更的快取版本。
 
     下列範例使用 [GetString](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation.getstring) 取得名為 *buttonText* 的變數，並指定 **Grey Button** 的預設變數值。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet5)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet5":::
 
 6. 在您的程式碼中，使用變數值來修改您要測試之功能的行為。 例如，下列程式碼會將 *buttonText* 值指派給您 App 中某個按鈕的內容。 此範例假設您已經在專案中的其他地方定義這個按鈕。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet6)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet6":::
 
 7. 最後，將實驗的 [view 事件](run-app-experiments-with-a-b-testing.md#terms) 記錄到合作夥伴中心中 A/B 測試服務。 請將 ```logger``` 欄位初始化為 [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger) 物件，並呼叫 [LogForVariation](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) 方法。 傳遞代表目前 (變異指派的 [StoreServicesExperimentVariation](/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 物件，此物件會提供事件的相關內容，以合作夥伴中心) 和您實驗的 view 事件名稱。 這必須符合您在合作夥伴中心中為實驗輸入的 view 事件名稱。 您的程式碼應該在使用者開始檢視屬於實驗一部分的變化時記錄檢視事件。
 
     下列範例說明如何記錄名為 **userViewedButton** 的檢視事件。 在此範例中，實驗的目標是讓使用者按一下 App 中的按鈕，以便在 App 擷取到變化資料 (在此案例中為按鈕文字) 之後記錄檢視事件，然後將它指派給按鈕的內容。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet7)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet7":::
 
 ## <a name="log-conversion-events-to-partner-center"></a>記錄轉換事件至合作夥伴中心
 
@@ -92,7 +92,7 @@ ms.locfileid: "89171672"
 
     下列範例會記錄來自按鈕之 **Click** 事件處理常式且名為 **userClickedButton** 的轉換事件。 在此範例中，實驗的目標是讓使用者按一下按鈕。
 
-    [!code-csharp[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet8)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/ExperimentExamples.cs" id="Snippet8":::
 
 ## <a name="next-steps"></a>後續步驟
 

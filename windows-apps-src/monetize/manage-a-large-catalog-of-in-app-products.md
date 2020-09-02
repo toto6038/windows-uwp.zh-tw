@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: Windows 10, UWP, app 內購買, IAP, 附加元件, 目錄, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: a6bd4d95365e33ee30df87247b3aec72f70fc5b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e3eb35e2fccede9dc6f0412a3762d3d6245847c0
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158422"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364091"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的應用程式內產品型錄
 
@@ -35,7 +35,7 @@ Microsoft Store 只會使用產生的 [PurchaseResults](/uwp/api/Windows.Applica
 處理針對大型型錄內特定產品的購買要求時，方式與處理 App 內的任何其他購買要求大致相同。 您的 App 在呼叫新的 [RequestProductPurchaseAsync](/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync) 方法多載時，會提供 *OfferId*，以及當中已填入應用程式內產品名稱的 [ProductPurchaseDisplayProperties](/uwp/api/windows.applicationmodel.store.productpurchasedisplayproperties) 物件。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="MakePurchaseRequest":::
 
 ## <a name="report-fulfillment-of-the-in-app-offer"></a>回報 App 內購買選項的履行
 
@@ -46,7 +46,7 @@ Microsoft Store 只會使用產生的 [PurchaseResults](/uwp/api/Windows.Applica
 下列程式碼會示範履行呼叫，並示範當中插入特定購買選項資訊的 UI 訊息模式。 如果沒有該特定產品資訊，此範例就會使用來自產品 [ListingInformation](/uwp/api/Windows.ApplicationModel.Store.ListingInformation) 的資訊。
 
 > [!div class="tabbedCodeSnippets"]
-[!code-csharp[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/ManageCatalog.cs" id="ReportFulfillment":::
 
 ## <a name="related-topics"></a>相關主題
 

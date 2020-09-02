@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, 記錄事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: ec4bee888d055b5331252e91bfd979d81b976f3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5a1df08b62199bf1249af8bfbbb00921874a671c
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158432"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364101"
 ---
 # <a name="log-custom-events-for-partner-center"></a>記錄合作夥伴中心的自訂事件
 
@@ -39,10 +39,10 @@ ms.locfileid: "89158432"
 5. 在 Sdk 清單中，按一下 [ **Microsoft Engagement 架構** ] 旁的核取方塊，然後按一下 **[確定]**。
 
 6. 將下列陳述式新增到您要記錄自訂事件的每個程式碼檔案頂端。
-    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#EngagementNamespace)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/LogEvents.cs" id="EngagementNamespace":::
 
 7. 在您要記錄自訂事件的每個程式碼區段中，取得 [StoreServicesCustomEventLogger](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 物件，然後呼叫 [Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 將您的自訂事件字串傳送給該方法。
-    [!code-csharp[EventLogger](./code/StoreSDKSamples/cs/LogEvents.cs#Log)]
+    :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/LogEvents.cs" id="Log":::
 
     > [!NOTE]
     > 如果您的應用程式使用長名稱記錄許多自訂事件，[使用報告](../publish/usage-report.md)可能需要很長的時間來載入。 建議讓您的自訂事件使用簡短名稱。 

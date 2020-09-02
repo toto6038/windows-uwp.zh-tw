@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c11c4b630e6b38dd567fece782686743925e214
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4ed74149552e6582bf133550d4db1a45625e8c39
+ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161322"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89364041"
 ---
 # <a name="share-data"></a>共用資料
 
@@ -25,11 +25,11 @@ ms.locfileid: "89161322"
 
 新增要在每次使用者叫用分享時呼叫的 [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件處理常式。 這會在使用者點選 app 中的控制項 (例如按鈕或是應用程式列命令) 時發生，或是在特定的情況下 (例如使用者完成了關卡並取得高分) 自動發生。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetPrepareToShare":::
 
 當 [**DataRequested**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件發生時，您的 App 會收到 [**DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest) 物件。 這個物件包含一個 [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage)，可以用來提供使用者想分享的內容。 您必須提供標題和資料才能分享。 描述是選擇性的，但建議使用。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetCreateRequest":::
 
 ## <a name="choose-data"></a>選擇資料
 
@@ -45,7 +45,7 @@ ms.locfileid: "89161322"
 
 [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) 物件可以包含其中的一或多種格式，任何組合皆可。 下列範例示範分享文字。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetContent":::
 
 ## <a name="set-properties"></a>設定屬性
 
@@ -53,13 +53,13 @@ ms.locfileid: "89161322"
 
 除了 title 之外所有的屬性都是選擇性的。 title 屬性是必須設定的強制性屬性。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetProperties":::
 
 ## <a name="launch-the-share-ui"></a>啟動分享 UI
 
 分享的 UI 是由系統所提供。 若要啟動它，請呼叫 [**ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) 方法。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+:::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetShowUI":::
 
 ## <a name="handle-errors"></a>處理錯誤
 
