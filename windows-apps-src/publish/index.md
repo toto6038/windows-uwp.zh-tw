@@ -1,17 +1,17 @@
 ---
-Description: 了解如何將您的 Windows 應用程式發佈到 Microsoft Store。
-title: 發行 Windows 應用程式
+description: 了解如何登入並使用「合作夥伴中心」將 Windows 應用程式與遊戲發佈到 Microsoft Store。
+title: 發佈 Windows 應用程式
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d30eb37e9633496e510a2e05ec48cc819bd51c9
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 19607823ce98aa71a8e3abecb94b82ff06a08352
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614970"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89164122"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
 
@@ -33,7 +33,7 @@ ms.locfileid: "80614970"
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/bcs-partner-advanced-management- billing-7.svg" alt="Pricing illustration" />
-        <h3 style="margin-top: 10px; margin-bottom: 0px">定價和可用性</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">價格與可用性</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">透過每個市場的定價與排程、可見性選項、銷售定價以及其他選項，來自訂您應用程式的可用性。</p>
         <br>
         <a href="define-pricing-and-market-selection.md">選擇您的市場</a><br/>
@@ -65,7 +65,7 @@ ms.locfileid: "80614970"
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/ms365enterprise-partner-news-2.svg" alt="Promote icon" />
-        <h3 style="margin-top: 10px; margin-bottom: 0px">促銷您的應用程式</h3>
+        <h3 style="margin-top: 10px; margin-bottom: 0px">推銷您的應用程式</h3>
         <a href="create-an-ad-campaign-for-your-app.md">建立廣告活動</a><br/>
         <a href="generate-promotional-codes.md">產生促銷碼</a><br/>
         <a href="put-apps-and-add-ons-on-sale.md">提供銷售定價</a><br/>

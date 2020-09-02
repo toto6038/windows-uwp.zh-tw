@@ -1,18 +1,18 @@
 ---
 title: Direct3D 圖形詞彙
-description: 定義 Microsoft Direct3D 所使用的圖形詞彙。
+description: 請參閱詞彙，其以高階定義 Direct3D 遊戲和應用程式開發中所使用的一般 3D 電腦圖形詞彙。
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
 keywords:
 - Direct3D 圖形詞彙
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb6a2466ea201c9b5047f7eb159477a0d584429
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 3359b81c6932bfc63c3939d2f857aaef9248e52f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63805640"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173072"
 ---
 # <a name="direct3d-graphics-glossary"></a>Direct3D 圖形詞彙
 
@@ -30,7 +30,7 @@ ms.locfileid: "63805640"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
