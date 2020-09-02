@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: 829b99932c8035c2e9d493ed7319f640386f88ed
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
+ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163622"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89310069"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -24,6 +24,8 @@ ms.locfileid: "89163622"
 
 > [!NOTE]
 > 只有桌上型電腦和 Windows Mixed Reality 沉浸式耳機才支援螢幕擷取畫面 Api。
+
+本文說明如何捕捉顯示或應用程式視窗的單一影像。 如需將螢幕上所捕獲的編碼畫面格編碼至影片檔案的詳細資訊，請參閱 [螢幕擷取畫面至影片](screen-capture-video.md)
 
 ## <a name="add-the-screen-capture-capability"></a>新增螢幕擷取功能
 
@@ -686,8 +688,9 @@ End Class
 
 ## <a name="record-a-video"></a>錄製影片
 
-如果您想要錄製應用程式的影片，您可以更輕鬆地使用 [AppRecording 命名空間](/uwp/api/windows.media.apprecording)。 這是桌面擴充功能 SDK 的一部分，因此它只適用于桌上型電腦，而且需要您從專案新增對它的參考。 如需詳細資訊，請參閱 [裝置系列總覽](/uwp/extension-sdks/device-families-overview) 。
+如果您想要錄製應用程式的影片，您可以依照文章螢幕擷取畫面中所示的逐步解說 [來觀看影片](screen-capture-video.md)。 或者，您也可以使用 [AppRecording 命名空間](/uwp/api/windows.media.apprecording)。 這是桌面擴充功能 SDK 的一部分，因此它只適用于桌上型電腦，而且需要您從專案新增對它的參考。 如需詳細資訊，請參閱 [裝置系列總覽](/uwp/extension-sdks/device-families-overview) 。
 
 ## <a name="see-also"></a>另請參閱
 
-* [Windows.Graphics.Capture 命名空間](/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [螢幕捕捉至影片](screen-capture-video.md)
