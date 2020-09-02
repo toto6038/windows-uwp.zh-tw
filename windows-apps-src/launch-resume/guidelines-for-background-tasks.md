@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: fb585b46399d7b24eaafa531b2aae34f397dbeb2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
+ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155842"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89285449"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -61,7 +61,7 @@ ms.locfileid: "89155842"
 
 > **重要**   從 Windows 10 開始，不再需要在鎖定畫面上將應用程式作為執行背景工作的先決條件。
 
-通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 確認 [**GetAccessStatus**] 不會傳回其中一個已拒絕的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉。 例如， https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundAccessStatus) 如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回 (。
+通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 確定 **GetAccessStatus** 不會傳回其中一個已拒絕的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉。 例如，如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回**BackgroundAccessStatus DeniedByUser。**
 
 如果您的應用程式在背景中被拒絕執行，您的應用程式應該呼叫 [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並確保在註冊背景工作之前，不會拒絕回應。
 
