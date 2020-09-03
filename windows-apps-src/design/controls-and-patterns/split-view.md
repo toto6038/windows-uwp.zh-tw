@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e5df29f4ce91bd272fd921b23b5fc05b6655d4c0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4c942c5748ef1d62dc86f6fa3d041bae651167f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081544"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173902"
 ---
 # <a name="split-view-control"></a>分割檢視控制項
 
 分割檢視控制項有一個可展開/可摺疊的窗格和內容區域。
 
-> **重要 API**：[SplitView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.SplitView)
+> **重要 API**：[SplitView 類別](/uwp/api/Windows.UI.Xaml.Controls.SplitView)
 
 以下是 Microsoft Edge app 使用 SplitView 顯示其「中心」的範例。
 

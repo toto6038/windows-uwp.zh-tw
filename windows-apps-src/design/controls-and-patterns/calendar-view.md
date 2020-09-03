@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8536446cb3406420b75da163f1479c027a3fba36
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9c4c1dfa6bf4a92b7f8da177b749dfd861d93338
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968973"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173552"
 ---
 # <a name="calendar-view"></a>行事曆檢視
 
@@ -27,9 +27,9 @@ ms.locfileid: "82968973"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API：** [CalendarView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[SelectedDatesChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
+> **平台 API：** [CalendarView 類別](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[SelectedDatesChanged 事件](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 您可以使用行事曆檢視，讓使用者從一律顯示的行事曆中選取單一日期或日期範圍。
@@ -54,7 +54,7 @@ ms.locfileid: "82968973"
 </tr>
 </table>
 
-行事曆檢視是由 3 個個別檢視所組成：月份檢視、年份檢視和十年份檢視。 根據預設，開啟時會顯示月份檢視。 您可以設定 [DisplayMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.displaymode) 屬性，以指定啟動檢視。
+行事曆檢視是由 3 個個別檢視所組成：月份檢視、年份檢視和十年份檢視。 根據預設，開啟時會顯示月份檢視。 您可以設定 [DisplayMode](/uwp/api/windows.ui.xaml.controls.calendarview.displaymode) 屬性，以指定啟動檢視。
 
 ![行事曆檢視的 3 個檢視](images/calendar-view-3-views.png)
 
@@ -74,9 +74,9 @@ ms.locfileid: "82968973"
 
 ### <a name="selecting-dates"></a>選取日期
 
-根據預設，[SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 屬性是設定為 **Single**。 這可讓使用者在行事曆中挑選單一日期。 將 SelectionMode 設定為 **None** 以停用日期選取功能。
+根據預設，[SelectionMode](/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 屬性是設定為 **Single**。 這可讓使用者在行事曆中挑選單一日期。 將 SelectionMode 設定為 **None** 以停用日期選取功能。
 
-將 SelectionMode 設定為 **Multiple** 以讓使用者選取多個日期。 您可以將 [DateTime](https://docs.microsoft.com/dotnet/api/system.datetime)/[DateTimeOffset](https://docs.microsoft.com/dotnet/api/system.datetimeoffset) 物件新增至 [SelectedDates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates)集合，以選取多個日期，如下所示︰
+將 SelectionMode 設定為 **Multiple** 以讓使用者選取多個日期。 您可以將 [DateTime](/dotnet/api/system.datetime)/[DateTimeOffset](/dotnet/api/system.datetimeoffset) 物件新增至 [SelectedDates](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates)集合，以選取多個日期，如下所示︰
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
@@ -85,7 +85,7 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 使用者可以按一下或點選行事曆格線，以取消選取已選取的日期。
 
-您可以處理 [SelectedDatesChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged) 事件，以在 [SelectedDates](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates) 集合變更時接收通知。
+您可以處理 [SelectedDatesChanged](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged) 事件，以在 [SelectedDates](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates) 集合變更時接收通知。
 
 > [!NOTE]
 > 如需日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
@@ -94,9 +94,9 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 行事曆檢視是由兩個部分所組成：ControlTemplate 中定義的 XAML 元素，以及控制項直接呈現的視覺元素。
 - 控制項範本中定義的 XAML 元素包括控制項周圍的框線、標頭、[上一步] 和 [下一步] 按鈕以及 DayOfWeek 元素。 與任何 XAML 控制項一樣，您可以設定這些元素的樣式以及重新套用範本。
-- 行事曆格線是由 [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 物件所組成。 您無法設定這些元素的樣式或重新套用範本，但我們提供不同的屬性，讓您可以自訂它們的外觀。
+- 行事曆格線是由 [CalendarViewDayItem](/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 物件所組成。 您無法設定這些元素的樣式或重新套用範本，但我們提供不同的屬性，讓您可以自訂它們的外觀。
 
-下圖顯示行事曆月份檢視的組成元素。 如需詳細資訊，請參閱 [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 類別的「備註」。
+下圖顯示行事曆月份檢視的組成元素。 如需詳細資訊，請參閱 [CalendarViewDayItem](/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 類別的「備註」。
 
 ![行事曆月份檢視的元素](images/calendar-view-month-elements.png)
 
@@ -104,19 +104,19 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 元素 | [內容]
 --------|-----------
-DayOfWeek | [DayOfWeekFormat](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayofweekformat)
-CalendarItem | [CalendarItemBackground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritembackground)、[CalendarItemBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderbrush)、[CalendarItemBorderThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderthickness)、[CalendarItemForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemforeground)
-DayItem | [DayItemFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontfamily)、[DayItemFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontsize)、[DayItemFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontstyle)、[DayItemFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontweight)、[HorizontalDayItemAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.horizontaldayitemalignment)、[VerticalDayItemAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.verticaldayitemalignment)、[CalendarViewDayItemStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemstyle)
-MonthYearItem (在年份和十年份檢視中，相當於 DayItem) | [MonthYearItemFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontfamily)、[MonthYearItemFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontsize)、[MonthYearItemFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontstyle)、[MonthYearItemFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontweight)
-FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily)、[FirstOfMonthLabelFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontsize)、[FirstOfMonthLabelFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle)、[FirstOfMonthLabelFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontweight)、[HorizontalFirstOfMonthLabelAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment)、[VerticalFirstOfMonthLabelAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment)、[IsGroupLabelVisible](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.isgrouplabelvisible)
-FirstofYearDecadeLabel (在年份和十年份檢視中，相當於 FirstOfMonthLabel) | [FirstOfYearDecadeLabelFontFamily](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily)、[FirstOfYearDecadeLabelFontSize](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize)、[FirstOfYearDecadeLabelFontStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle)、[FirstOfYearDecadeLabelFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)
-Visual State Manager | [FocusBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.focusborderbrush)、[HoverBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.hoverborderbrush)、[PressedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.pressedborderbrush)、[SelectedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedborderbrush)、[SelectedForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedforeground)、[SelectedHoverBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedhoverborderbrush)、[SelectedPressedBorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectedpressedborderbrush)
-OutofScope | [IsOutOfScopeEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.isoutofscopeenabled)、[OutOfScopeBackground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.outofscopebackground)、[OutOfScopeForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.outofscopeforeground)
-今天 | [IsTodayHighlighted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.istodayhighlighted)、[TodayFontWeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.todayfontweight)、[TodayForeground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.todayforeground)
+DayOfWeek | [DayOfWeekFormat](/uwp/api/windows.ui.xaml.controls.calendarview.dayofweekformat)
+CalendarItem | [CalendarItemBackground](/uwp/api/windows.ui.xaml.controls.calendarview.calendaritembackground)、[CalendarItemBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderbrush)、[CalendarItemBorderThickness](/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemborderthickness)、[CalendarItemForeground](/uwp/api/windows.ui.xaml.controls.calendarview.calendaritemforeground)
+DayItem | [DayItemFontFamily](/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontfamily)、[DayItemFontSize](/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontsize)、[DayItemFontStyle](/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontstyle)、[DayItemFontWeight](/uwp/api/windows.ui.xaml.controls.calendarview.dayitemfontweight)、[HorizontalDayItemAlignment](/uwp/api/windows.ui.xaml.controls.calendarview.horizontaldayitemalignment)、[VerticalDayItemAlignment](/uwp/api/windows.ui.xaml.controls.calendarview.verticaldayitemalignment)、[CalendarViewDayItemStyle](/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemstyle)
+MonthYearItem (在年份和十年份檢視中，相當於 DayItem) | [MonthYearItemFontFamily](/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontfamily)、[MonthYearItemFontSize](/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontsize)、[MonthYearItemFontStyle](/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontstyle)、[MonthYearItemFontWeight](/uwp/api/windows.ui.xaml.controls.calendarview.monthyearitemfontweight)
+FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily)、[FirstOfMonthLabelFontSize](/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontsize)、[FirstOfMonthLabelFontStyle](/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle)、[FirstOfMonthLabelFontWeight](/uwp/api/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontweight)、[HorizontalFirstOfMonthLabelAlignment](/uwp/api/windows.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment)、[VerticalFirstOfMonthLabelAlignment](/uwp/api/windows.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment)、[IsGroupLabelVisible](/uwp/api/windows.ui.xaml.controls.calendarview.isgrouplabelvisible)
+FirstofYearDecadeLabel (在年份和十年份檢視中，相當於 FirstOfMonthLabel) | [FirstOfYearDecadeLabelFontFamily](/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily)、[FirstOfYearDecadeLabelFontSize](/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize)、[FirstOfYearDecadeLabelFontStyle](/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle)、[FirstOfYearDecadeLabelFontWeight](/uwp/api/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight)
+Visual State Manager | [FocusBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.focusborderbrush)、[HoverBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.hoverborderbrush)、[PressedBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.pressedborderbrush)、[SelectedBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.selectedborderbrush)、[SelectedForeground](/uwp/api/windows.ui.xaml.controls.calendarview.selectedforeground)、[SelectedHoverBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.selectedhoverborderbrush)、[SelectedPressedBorderBrush](/uwp/api/windows.ui.xaml.controls.calendarview.selectedpressedborderbrush)
+OutofScope | [IsOutOfScopeEnabled](/uwp/api/windows.ui.xaml.controls.calendarview.isoutofscopeenabled)、[OutOfScopeBackground](/uwp/api/windows.ui.xaml.controls.calendarview.outofscopebackground)、[OutOfScopeForeground](/uwp/api/windows.ui.xaml.controls.calendarview.outofscopeforeground)
+今天 | [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendarview.istodayhighlighted)、[TodayFontWeight](/uwp/api/windows.ui.xaml.controls.calendarview.todayfontweight)、[TodayForeground](/uwp/api/windows.ui.xaml.controls.calendarview.todayforeground)
 
- 根據預設，月份檢視一次會顯示 6 週。 您可以設定 [NumberOfWeeksInView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.numberofweeksinview) 屬性，以變更顯示的週數。 顯示的週數最小值是 2；最大值是 8。
+ 根據預設，月份檢視一次會顯示 6 週。 您可以設定 [NumberOfWeeksInView](/uwp/api/windows.ui.xaml.controls.calendarview.numberofweeksinview) 屬性，以變更顯示的週數。 顯示的週數最小值是 2；最大值是 8。
 
-根據預設，年份和十年份檢視會顯示在 4x4 方格中。 若要變更列數或欄數，請呼叫 [SetYearDecadeDisplayDimensions](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions) 並指定您需要的列數與欄數。 這樣會變更年份和十年份檢視的方格。
+根據預設，年份和十年份檢視會顯示在 4x4 方格中。 若要變更列數或欄數，請呼叫 [SetYearDecadeDisplayDimensions](/uwp/api/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions) 並指定您需要的列數與欄數。 這樣會變更年份和十年份檢視的方格。
 
 在這裡，年份和十年份檢視會設定成顯示在 3x4 方格中。
 
@@ -124,7 +124,7 @@ OutofScope | [IsOutOfScopeEnabled](https://docs.microsoft.com/uwp/api/windows.ui
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-根據預設，行事曆檢視中最小的顯示日期為目前日期前 100 年，最大的顯示日期為目前日期的後 100 年。 您可以設定 [MinDate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.mindate) 和 [MaxDate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.maxdate) 屬性，以變更行事曆的最小和最大顯示日期。
+根據預設，行事曆檢視中最小的顯示日期為目前日期前 100 年，最大的顯示日期為目前日期的後 100 年。 您可以設定 [MinDate](/uwp/api/windows.ui.xaml.controls.calendarview.mindate) 和 [MaxDate](/uwp/api/windows.ui.xaml.controls.calendarview.maxdate) 屬性，以變更行事曆的最小和最大顯示日期。
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
@@ -133,11 +133,11 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ### <a name="updating-calendar-day-items"></a>更新行事曆日期項目
 
-行事曆中的每一天都是由 [CalendarViewDayItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 物件來表示。 若要存取個別的日期項目，並使用它的屬性和方法，請處理 [CalendarViewDayItemChanging](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging) 事件並使用事件引數的 Item 屬性來存取 CalendarViewDayItem。
+行事曆中的每一天都是由 [CalendarViewDayItem](/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 物件來表示。 若要存取個別的日期項目，並使用它的屬性和方法，請處理 [CalendarViewDayItemChanging](/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging) 事件並使用事件引數的 Item 屬性來存取 CalendarViewDayItem。
 
-您可以將 [CalendarViewDayItem.IsBlackout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.isblackout) 屬性設定為 **true**，以將行事曆中的某一個日期設定為無法選取。
+您可以將 [CalendarViewDayItem.IsBlackout](/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.isblackout) 屬性設定為 **true**，以將行事曆中的某一個日期設定為無法選取。
 
-您可以呼叫 [CalendarViewDayItem.SetDensityColors](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.setdensitycolors) 方法，以顯示一天中活動密度的內容相關資訊。 您可以為每一天顯示 0 到 10 個密度列，並設定每一列的色彩。
+您可以呼叫 [CalendarViewDayItem.SetDensityColors](/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.setdensitycolors) 方法，以顯示一天中活動密度的內容相關資訊。 您可以為每一天顯示 0 到 10 個密度列，並設定每一列的色彩。
 
 以下是行事曆中的某些日期項目。 第 1 天和第 2 天被封鎖。第 2 天、第 3 天和第 4 天設定了不同的密度列。
 

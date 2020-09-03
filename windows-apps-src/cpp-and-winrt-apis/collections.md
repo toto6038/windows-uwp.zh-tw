@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 集合
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4f1b15ec377b030a467dded634abe3fdde717896
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 886086dbc9e39490c87ee289623d9540910cf08d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270140"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170402"
 ---
 # <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 
-就內部而言，Windows 執行階段集合有許多複雜的移動組件。 但是，當想要將集合物件傳遞至 Windows 執行階段函式，或是要實作您自己的集合屬性和集合型別的時候，[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 有一些函數和基底類別可提供支援。 這些功能可以降低複雜度，省下對時間和精力的額外負荷。
+就內部而言，Windows 執行階段集合有許多複雜的移動組件。 但是，當想要將集合物件傳遞至 Windows 執行階段函式，或是要實作您自己的集合屬性和集合型別的時候，[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 有一些函數和基底類別可提供支援。 這些功能可以降低複雜度，省下對時間和精力的額外負荷。
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) 是藉由項目的任何隨機存取集合實作的 Windows 執行階段介面。 如果您要自行實作 **IVector**，也需要實作 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、[**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_) 和 [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)。 即使您需要  自訂集合類型，也有許多作業需要進行。 但是，如果您在 **std::vector** (或 **std::map**，或 **std::unordered_map**) 之中有資料，而且要傳遞到 Windows 執行階段 API，則建議盡可能避免進行這類作業。 而且避免這些作業確實  可行，因為 C++/WinRT 可協助您有效地輕鬆建立集合。
 

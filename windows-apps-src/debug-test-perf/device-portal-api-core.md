@@ -7,12 +7,12 @@ ms.date: 04/19/2019
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e091cc7ad62f69b9e76541101555493609b8a06
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75955315"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173612"
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
@@ -73,7 +73,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-您可以使用下列要求格式來安裝[相關集合](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
+您可以使用下列要求格式來安裝[相關集合](/windows/msix/)。
 
 | 方法      | 要求 URI |
 | :------     | :------ |
@@ -174,7 +174,7 @@ ms.locfileid: "75955315"
 
 **要求**
 
-您可以使用下列要求格示，在鬆散資料夾中登錄[相關集合](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)。
+您可以使用下列要求格示，在鬆散資料夾中登錄[相關集合](/windows/msix/)。
 
 | 方法      | 要求 URI |
 | :------     | :----- |
@@ -1373,7 +1373,7 @@ ms.locfileid: "75955315"
 | URI 參數 | 說明 |
 | :---          | :--- |
 | autoreboot   | (**選用**) True 或 False。 這指出系統失敗或遭鎖定之後，是否會自動重新啟動。 |
-| dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](https://docs.microsoft.com/previous-versions/azure/reference/dn802457(v=azure.100))。|
+| dumptype   | (**選用**) 傾印類型。 如需支援的值，請參閱 [CrashDumpType 列舉](/previous-versions/azure/reference/dn802457(v=azure.100))。|
 | maxdumpcount   | (**選用**) 要儲存的傾印數目上限。 |
 | overwrite   | (**選用**) True 或 False。 這指出在達到 *maxdumpcount* 指定的傾印計數器限制時，是否會覆寫舊的傾印。 |
 

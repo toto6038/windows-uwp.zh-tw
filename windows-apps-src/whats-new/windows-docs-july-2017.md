@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65c3c2fb4b7a5a7f0b5f4b3c89773f3e21bd654d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: acec4384b5ce04548818a512270e66d7b4500e16
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684744"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174402"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的新增功能
 
@@ -98,21 +98,21 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ### <a name="media-playback"></a>媒體播放
 
-媒體播放文章[使用 MediaPlayer 播放音訊和視訊](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)中加入了新章節。 [使用 MediaPlayer 播放球面視訊](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)小節告訴您如何播放球面編碼視訊，包括針對支援的格式調整視野及觀看方向。 [以畫面伺服器模式使用 MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) 告訴您如何從使用 [MediaPlayer](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlayer) 播放的媒體將畫面複製到 Direct3D 表面。 這會啟用像使用像素著色器套用即時效果這樣的案例。 範例程式碼示範使用 Win2D 快速實作視訊播放模糊效果。
+媒體播放文章[使用 MediaPlayer 播放音訊和視訊](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)中加入了新章節。 [使用 MediaPlayer 播放球面視訊](../audio-video-camera/play-audio-and-video-with-mediaplayer.md)小節告訴您如何播放球面編碼視訊，包括針對支援的格式調整視野及觀看方向。 [以畫面伺服器模式使用 MediaPlayer](../audio-video-camera/play-audio-and-video-with-mediaplayer.md#use-mediaplayer-in-frame-server-mode) 告訴您如何從使用 [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer) 播放的媒體將畫面複製到 Direct3D 表面。 這會啟用像使用像素著色器套用即時效果這樣的案例。 範例程式碼示範使用 Win2D 快速實作視訊播放模糊效果。
 
 ### <a name="media-capture"></a>媒體擷取
 
-已更新[使用 MediaFrameReader 處理媒體畫面](../audio-video-camera/process-media-frames-with-mediaframereader.md)文章來說明如何使用新的 [MultiSourceMediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 類別，這個類別可讓您從多個媒體來源取得與時間相互關聯的畫面。 如果您需要處理不同來源的畫面，例如景深相機和彩色攝影機，而您需要確定每個來源的畫面的擷取時間彼此接近，這就會很實用。 如需詳細資訊，請參閱[使用 MultiSourceMediaFrameReader 從多個來源取得與時間相互關聯的畫面](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources)。
+已更新[使用 MediaFrameReader 處理媒體畫面](../audio-video-camera/process-media-frames-with-mediaframereader.md)文章來說明如何使用新的 [MultiSourceMediaFrameReader](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 類別，這個類別可讓您從多個媒體來源取得與時間相互關聯的畫面。 如果您需要處理不同來源的畫面，例如景深相機和彩色攝影機，而您需要確定每個來源的畫面的擷取時間彼此接近，這就會很實用。 如需詳細資訊，請參閱[使用 MultiSourceMediaFrameReader 從多個來源取得與時間相互關聯的畫面](../audio-video-camera/process-media-frames-with-mediaframereader.md#use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources)。
 
 ### <a name="scoped-search"></a>限定範圍的搜尋
 
-「UWP」範圍已新增至 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 參考](https://docs.microsoft.com/uwp/api/)文件。 除非停用這個範圍，否則從這些區域中進行的搜尋只會傳回 UWP 文件。
+「UWP」範圍已新增至 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 參考](/uwp/api/)文件。 除非停用這個範圍，否則從這些區域中進行的搜尋只會傳回 UWP 文件。
 
 ![限定範圍的搜尋](images/scoped-search.png)
 
 ### <a name="test-your-windows-app-for-windows-10-s"></a>針對 Windows 10 S 測試您的 Windows 應用程式
 
-測試您的 Windows 應用程式，以確定此應用程式會在執行 Windows S 的裝置上正常運作。使用[這份新指南](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-test-windows-s)了解做法。
+測試您的 Windows 應用程式，以確定此應用程式會在執行 Windows S 的裝置上正常運作。使用[這份新指南](/windows/msix/desktop/desktop-to-uwp-test-windows-s)了解做法。
 
 ## <a name="samples"></a>範例
 
@@ -124,7 +124,7 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ### <a name="shopping-app-sample"></a>Shopping Cart (購物車) 範例
 
-[一個展示使用者可以購買 Emoji 之基本購物體驗的迷你應用程式範例](https://github.com/Microsoft/Windows-appsample-shopping)。 此應用程式如何使用[付款要求 API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.payments) 來實作結帳體驗。
+[一個展示使用者可以購買 Emoji 之基本購物體驗的迷你應用程式範例](https://github.com/Microsoft/Windows-appsample-shopping)。 此應用程式如何使用[付款要求 API](/uwp/api/windows.applicationmodel.payments) 來實作結帳體驗。
 
 ![購物應用程式範例的螢幕擷取畫面](images/shoppingcart.png)  
 

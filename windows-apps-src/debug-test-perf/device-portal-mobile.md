@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9cd2861fe826d9e8d112f2729d2922c68194ce
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72281887"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173592"
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
@@ -84,4 +84,4 @@ ms.locfileid: "72281887"
 ## <a name="see-also"></a>另請參閱
 
 * [Windows 裝置入口網站概觀](device-portal.md)
-* [裝置入口網站核心 API 參考資料](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [裝置入口網站核心 API 參考資料](./device-portal-api-core.md)

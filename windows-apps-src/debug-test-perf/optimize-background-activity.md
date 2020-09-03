@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: eb3ff12e4b616edd7b87cab7f13aa060f301fc52
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5da6dcced0dfa563b5baf69d2b2cb1f64843af1b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683831"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173572"
 ---
 # <a name="optimize-background-activity"></a>最佳化背景活動
 
 通用 Windows app 應該以一致的方式在所有裝置系列上正常執行。 在電池供電的裝置上，耗用電力是影響使用者對您 app 整體體驗的重要因素。 全天候的電池使用時間對每位使用者而言是令人滿意的功能，但還是需要裝置上安裝的所有軟體 (包括您自己的軟體) 所提供的效率。 
 
-在應用程式的總能源成本方面，背景工作行為可以說是最重要的因素。 背景工作是任何已向系統註冊且不需開啟 app 就能執行的程式活動。 如需詳細資訊，請參閱[建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)。
+在應用程式的總能源成本方面，背景工作行為可以說是最重要的因素。 背景工作是任何已向系統註冊且不需開啟 app 就能執行的程式活動。 如需詳細資訊，請參閱[建立及註冊跨處理序的背景工作](../launch-resume/create-and-register-a-background-task.md)。
 
 ## <a name="background-activity-permissions"></a>背景活動權限
 
@@ -39,23 +39,23 @@ ms.locfileid: "75683831"
 
 ![關閉背景工作權限](images/background-task-permissions-off.png)
 
-在您的應用程式中，您可以使用 [**BackgroundExecutionManager.RequestAccessAsync()** ](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 方法呼叫傳回的 [**BackgroundAccessStatus**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉值，以判斷其目前的背景活動權限設定。
+在您的應用程式中，您可以使用 [**BackgroundExecutionManager.RequestAccessAsync()** ](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) 方法呼叫傳回的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉值，以判斷其目前的背景活動權限設定。
 
-總括來說，如果您的 app 未實作負責任的背景活動管理，使用者可能會一併拒絕您 app 的背景權限，而這並非任一方樂意見到的。 如果已拒絕您的應用程式在背景執行的權限，但需要背景活動以完成使用者的動作，則可以通知使用者，並將他們指向 [設定] 應用程式。 這項作業可透過[啟動設定應用程式](https://docs.microsoft.com/windows/uwp/launch-resume/launch-settings-app)，到 [背景應用程式] 或 [電池使用量詳細資料] 頁面來完成此操作。
+總括來說，如果您的 app 未實作負責任的背景活動管理，使用者可能會一併拒絕您 app 的背景權限，而這並非任一方樂意見到的。 如果已拒絕您的應用程式在背景執行的權限，但需要背景活動以完成使用者的動作，則可以通知使用者，並將他們指向 [設定] 應用程式。 這項作業可透過[啟動設定應用程式](../launch-resume/launch-settings-app.md)，到 [背景應用程式] 或 [電池使用量詳細資料] 頁面來完成此操作。
 
 ## <a name="work-with-the-battery-saver-feature"></a>使用省電模式功能
 省電模式是使用者可在 \[設定\] 中設定的系統層級功能。 它會在電池電量低於使用者定義的閾值時，截斷所有應用程式的所有背景活動，但已設定為 [一律允許] 的應用程式的背景活動*除外*。
 
-藉由參考 [**PowerManager.EnergySaverStatus**](https://docs.microsoft.com/uwp/api/windows.system.power.energysaverstatus) 屬性，從您的應用程式中檢查省電模式的狀態。 這是列舉值：**EnergySaverStatus.Disabled**, **EnergySaverStatus.Off** 或 **EnergySaverStatus.On**。 如果您的應用程式需要背景活動，而且未設定為 [一律允許]，然應該處理 **EnergySaverStatus.On**，方法是通知使用者，在省電模式關閉之前，不會執行指定的背景工作。 儘管背景活動管理是省電模式功能的主要目的，您的 app 還是可以進行額外調整，進一步在省電模式開啟時節省能源。  在省電模式開啟的情況下，您的 app 可以減少其對於動畫的使用、停止位置輪詢，或延遲同步和備份。 
+藉由參考 [**PowerManager.EnergySaverStatus**](/uwp/api/windows.system.power.energysaverstatus) 屬性，從您的應用程式中檢查省電模式的狀態。 這是列舉值：**EnergySaverStatus.Disabled**, **EnergySaverStatus.Off** 或 **EnergySaverStatus.On**。 如果您的應用程式需要背景活動，而且未設定為 [一律允許]，然應該處理 **EnergySaverStatus.On**，方法是通知使用者，在省電模式關閉之前，不會執行指定的背景工作。 儘管背景活動管理是省電模式功能的主要目的，您的 app 還是可以進行額外調整，進一步在省電模式開啟時節省能源。  在省電模式開啟的情況下，您的 app 可以減少其對於動畫的使用、停止位置輪詢，或延遲同步和備份。 
 
 ## <a name="further-optimize-background-tasks"></a>進一步最佳化背景工作
 以下是您可以在登錄背景工作時採取的額外步驟，以使其更省電。
 
 ### <a name="use-a-maintenance-trigger"></a>使用維護觸發程序 
-不使用 [**SystemTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.systemtrigger) 物件，改用 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.maintenancetrigger) 物件來判斷背景工作啟動時機。 使用維護觸發程序的工作只有在裝置連接上 AC 電源時才能執行，並且能讓它們執行更長的時間。 如需指示，請參閱[使用維護觸發程序](https://docs.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
+不使用 [**SystemTrigger**](/uwp/api/windows.applicationmodel.background.systemtrigger) 物件，改用 [**MaintenanceTrigger**](/uwp/api/windows.applicationmodel.background.maintenancetrigger) 物件來判斷背景工作啟動時機。 使用維護觸發程序的工作只有在裝置連接上 AC 電源時才能執行，並且能讓它們執行更長的時間。 如需指示，請參閱[使用維護觸發程序](../launch-resume/use-a-maintenance-trigger.md)。
 
 ### <a name="use-the-backgroundworkcostnothigh-system-condition-type"></a>使用 **BackgroundWorkCostNotHigh** 系統條件類型
-必須符合系統條件，才能執行背景工作 (如需詳細資訊，請參閱[設定執行背景工作的條件](https://docs.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task))。 背景工作成本是一種度量單位，可代表執行背景工作的*相對*能源影響。 將裝置接上 AC 電源時正在執行的工作會標示為**低** (對電腦有一些/沒有影響)。 當裝置是以電池電力執行且螢幕為關閉狀態時正在執行的工作會標示為**高**，因為想必當時在裝置上執行的程式活動應該很少，所以背景工作會有更大的相對成本。 當裝置是由電池供電，且螢幕為*開啟*狀態時，正在執行的工作會標示為**中**，因為想必當時已經有一些程式活動正在執行，而背景工作會增加一些能源成本。 **BackgroundWorkCostNotHigh** 系統條件只會延遲您工作的執行功能，直到螢幕開啟或裝置已連接上 AC 電源為止。
+必須符合系統條件，才能執行背景工作 (如需詳細資訊，請參閱[設定執行背景工作的條件](../launch-resume/set-conditions-for-running-a-background-task.md))。 背景工作成本是一種度量單位，可代表執行背景工作的*相對*能源影響。 將裝置接上 AC 電源時正在執行的工作會標示為**低** (對電腦有一些/沒有影響)。 當裝置是以電池電力執行且螢幕為關閉狀態時正在執行的工作會標示為**高**，因為想必當時在裝置上執行的程式活動應該很少，所以背景工作會有更大的相對成本。 當裝置是由電池供電，且螢幕為*開啟*狀態時，正在執行的工作會標示為**中**，因為想必當時已經有一些程式活動正在執行，而背景工作會增加一些能源成本。 **BackgroundWorkCostNotHigh** 系統條件只會延遲您工作的執行功能，直到螢幕開啟或裝置已連接上 AC 電源為止。
 
 ## <a name="test-battery-efficiency"></a>測試電池效率
 
@@ -63,6 +63,5 @@ ms.locfileid: "75683831"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
-* [規劃效能](https://docs.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
+* [建立及註冊跨處理序的背景工作](../launch-resume/create-and-register-a-background-task.md)  
+* [規劃效能](./planning-and-measuring-performance.md)

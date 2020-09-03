@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f785ad5d7898f838435e0a05cf8dea5c778e70f3
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8d58fe1662c5ba13c2952fbd96414ab201f5ba27
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684756"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174382"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的新增功能
 
@@ -22,7 +22,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：愛好者指南
 
-以深入混合實境世界的高科技愛好者為目標對象，[愛好者指南](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/)回答大家對於 Windows Mixed Reality Windows 最常問的問題。 
+以深入混合實境世界的高科技愛好者為目標對象，[愛好者指南](/windows/mixed-reality/enthusiast-guide/)回答大家對於 Windows Mixed Reality Windows 最常問的問題。 
 
 本指南提供下列內容： 
 - 購買之前常見問題集 
@@ -38,13 +38,13 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 設計和最佳化您的 UWP 應用程式，透過更新的[鍵盤互動](../design/input/keyboard-interactions.md)提供可存取體驗和功能給進階使用者。 我們已更新我們的建議和指引，以反映 Fall Creators Update 中新增的全新互動改良功能。
 
-請參閱[鍵盤快速鍵](../design/input/keyboard-accelerators.md)和[自訂鍵盤互動](../design/input/custom-keyboard-interactions.md)以擴充您應用程式的鍵盤功能。
+請參閱[鍵盤快速鍵](../design/input/keyboard-accelerators.md)和[自訂鍵盤互動](../design/input/focus-navigation.md)以擴充您應用程式的鍵盤功能。
 
 在支援觸控互動的裝置上，運用[回應觸控式鍵盤的出現](../design/input/respond-to-the-presence-of-the-touch-keyboard.md)和[使用輸入範圍來變更觸控式鍵盤](../design/input/use-input-scope-to-change-the-touch-keyboard.md)文章來新增鍵盤功能。
 
 ### <a name="microsoft-collaborate"></a>Microsoft Collaborate
 
-Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [深入了解](https://docs.microsoft.com/collaborate/)。
+Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [深入了解](/collaborate/)。
 
 ![在合作夥伴中心的 Microsoft 共同作業](images/microsoft_collaborate_screenshot.PNG)
 
@@ -52,9 +52,9 @@ Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系�
 
 Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**範本，現在納入 UWP 專案更簡單。 您不再需要使用 JavaScript 型封裝專案，接著還要手動調整套件資訊清單。  
 
-如需如何使用這個新範本來封裝傳統型應用程式的指引，請參閱[使用 Visual Studio 封裝應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
+如需如何使用這個新範本來封裝傳統型應用程式的指引，請參閱[使用 Visual Studio 封裝應用程式](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
 
-如需如何將 UWP 專案加入套件的指引，請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)。
+如需如何將 UWP 專案加入套件的指引，請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](/windows/apps/desktop/modernize/desktop-to-uwp-extend)。
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>訂閱附加元件現已在 Windows 開發人員中心測試人員計畫開放給測試人員取得
 
@@ -97,4 +97,4 @@ Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**
 
 ### <a name="package-a-net-app-in-visual-studio"></a>在 Visual Studio 中封裝 .NET 應用程式
 
-比以往更輕鬆地將您的傳統型應用程式攜入通用 Windows 平台。 [觀賞影片](https://www.youtube.com/watch?v=fJkbYPyd08w)以了解如何封裝您的 .NET 應用程式以供發佈，接著[查看這個頁面](../porting/desktop-to-uwp-packaging-dot-net.md)以取得詳細資訊。
+比以往更輕鬆地將您的傳統型應用程式攜入通用 Windows 平台。 [觀賞影片](https://www.youtube.com/watch?v=fJkbYPyd08w)以了解如何封裝您的 .NET 應用程式以供發佈，接著[查看這個頁面](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)以取得詳細資訊。

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 8c2133c4f1132b55d62149ad5aaf42e04fc5da5b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d61abe8b59f916ed56c1fefe0bda4b9f25b673a4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493316"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173722"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -29,7 +29,7 @@ ms.locfileid: "86493316"
 
 * Visual Studio 2019 16.4.3 版或更新版本。
 * Windows 10 1903 版 SDK (10.0.18362 版) 或更新版本。
-* 使用 Visual Studio 安裝的 [C++/WinRT Visual Studio 延伸模組 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) \(英文\)。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 如需詳細資訊，請參閱 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)。
+* 使用 Visual Studio 安裝的 [C++/WinRT Visual Studio 延伸模組 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) \(英文\)。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 如需詳細資訊，請參閱 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)。
 
 ## <a name="create-a-desktop-application-project"></a>建立傳統型應用程式專案
 
@@ -176,7 +176,7 @@ ms.locfileid: "86493316"
 
 ### <a name="define-a-xamlapplication-class"></a>定義 XamlApplication 類別
 
-接著，修訂 **MyUWPApp** 專案中預設的 [應用程式]  類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadaraProvider](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 稍後在本逐步解說中，您會更新傳統型專案以建立此類別的執行個體。
+接著，修訂 **MyUWPApp** 專案中預設的 [應用程式]  類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 稍後在本逐步解說中，您會更新傳統型專案以建立此類別的執行個體。
 
   > [!NOTE]
   > 每個使用 XAML Islands 的解決方案只能包含一個定義 `XamlApplication` 物件的專案。 您應用程式中的所有自訂 UWP XAML 控制項都會共用相同的 `XamlApplication` 物件。 
@@ -307,19 +307,19 @@ ms.locfileid: "86493316"
 
 ### <a name="option-1-package-the-app-using-msix"></a>選項 1：使用 MSIX 封裝應用程式
 
-您可以在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以供部署。 MSIX 是 Windows 的新式應用程式封裝技術，以 MSI、.appx、App-V 和 ClickOnce 安裝技術的組合為基礎。
+您可以在 [MSIX 套件](/windows/msix)中封裝應用程式以供部署。 MSIX 是 Windows 的新式應用程式封裝技術，以 MSI、.appx、App-V 和 ClickOnce 安裝技術的組合為基礎。
 
-1. 將新的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的解決方案。 當您建立專案時，將其命名為 **MyDesktopWin32Project**，然後針對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
+1. 將新的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的解決方案。 當您建立專案時，將其命名為 **MyDesktopWin32Project**，然後針對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後選擇 [新增參考]  。 在專案清單中，選取 **MyDesktopWin32App** 專案旁的核取方塊，然後按一下 [確定]  。
     ![參考專案](images/xaml-islands/xaml-island-cpp-6.png)
 
 > [!NOTE]
-> 如果您選擇不要在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ 執行階段](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
+> 如果您選擇不要在 [MSIX 套件](/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ 執行階段](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
 ### <a name="option-2-create-an-application-manifest"></a>選項 2：建立應用程式資訊清單
 
-您可以將[應用程式資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) \(英文\) 新增至應用程式。
+您可以將[應用程式資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 新增至應用程式。
 
 1. 以滑鼠右鍵按一下 [MyDesktopWin32App]  專案，然後選取 [新增]   -> [新增項目]  。 
 2. 在 [新增項目]  對話方塊中，按一下左窗格中的 [Web]  ，然後選取 [XML 檔案 (.xml)]  。 
@@ -514,16 +514,16 @@ ms.locfileid: "86493316"
 
 ## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>將控制項從 WinUI 程式庫新增至自訂控制項
 
-習慣上，UWP 控制項已當作 Windows 10 OS 的一部分發行，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是替代方法，其中 Windows SDK 中已更新的 UWP 控制項版本會在未繫結至 Windows SDK 版本的 NuGet 套件中散發。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平台的新控制項。 如需詳細資訊，請參閱我們的 [WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+習慣上，UWP 控制項已當作 Windows 10 OS 的一部分發行，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](/uwp/toolkits/winui/)是替代方法，其中 Windows SDK 中已更新的 UWP 控制項版本會在未繫結至 Windows SDK 版本的 NuGet 套件中散發。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平台的新控制項。 如需詳細資訊，請參閱我們的 [WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
 本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項。
 
 1. 在 **MyUWPApp** 專案中，安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的最新發行前或發行版本。
 
     > [!NOTE]
-    > 如果您的傳統型應用程式封裝在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中，您可使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 套件的發行前或發行版本。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的發行前版本。
+    > 如果您的傳統型應用程式封裝在 [MSIX 套件](/windows/msix)中，您可使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 套件的發行前或發行版本。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的發行前版本。
 
-2. 在此專案的 pch.h 檔案中，新增下列 `#include` 陳述式並儲存您所做的變更。 這些陳述式會從 WinUI 程式庫將所需的投影標頭集合帶入您的專案中。 任何使用 WinUI 程式庫的 C++/WinRT 專案都需要執行此步驟。 如需詳細資訊，請參閱[這篇文章](https://docs.microsoft.com/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)。
+2. 在此專案的 pch.h 檔案中，新增下列 `#include` 陳述式並儲存您所做的變更。 這些陳述式會從 WinUI 程式庫將所需的投影標頭集合帶入您的專案中。 任何使用 WinUI 程式庫的 C++/WinRT 專案都需要執行此步驟。 如需詳細資訊，請參閱[這篇文章](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)。
 
     ```cpp
     #include "winrt/Microsoft.UI.Xaml.Automation.Peers.h"

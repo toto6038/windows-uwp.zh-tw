@@ -14,22 +14,22 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: d5308f49499f4bdec9db0087cef54ac2fa0bb805
-ms.sourcegitcommit: 69b7fe203d8384d0ade37122ae9d2c4568f6d168
+ms.openlocfilehash: 0d13572d5fabea14090c4908442355491623cbde
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85267165"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173872"
 ---
 # <a name="treeview"></a>TreeView
 
-XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
+XAML [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
 
 **TreeView** API 支援下列功能：
 
 - N 層巢狀結構
 - 選取單一節點或多個節點
-- 資料繫結至 **TreeView** 和 [TreeViewItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewitem) 的 **ItemsSource** 屬性
+- 資料繫結至 **TreeView** 和 [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) 的 **ItemsSource** 屬性
 - **TreeViewItem** 作為 **TreeView** 項目範本的根
 - **TreeViewItem** 中內容的任意類型
 - 在樹狀檢視之間拖放
@@ -38,14 +38,14 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **TreeView** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TreeView** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [TreeView 類別](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >
 > **平台 API：** [TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/windows.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
 
 > [!TIP]
-> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -85,12 +85,12 @@ XAML [TreeView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.tree
 
 您可以將 [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) 繫結至階層式資料來源以建立樹狀檢視，也可以自行建立及管理 **TreeViewNode** 物件。
 
-若要建立樹狀檢視，請使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 物件階層。 您可以將一個或多個根節點新增至 **TreeView** 控制項的 [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) 集合，來建立節點階層。 然後，每個 **TreeViewNode** 都可以有更多新增至其 [Children](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeviewnode.children) 集合的節點。 您可以將樹狀檢視節點巢狀化到您需要的任何深度。
+若要建立樹狀檢視，請使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 物件階層。 您可以將一個或多個根節點新增至 **TreeView** 控制項的 [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) 集合，來建立節點階層。 然後，每個 **TreeViewNode** 都可以有更多新增至其 [Children](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) 集合的節點。 您可以將樹狀檢視節點巢狀化到您需要的任何深度。
 
-您可以將階層式資料來源繫結至 [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) 屬性，以提供樹狀檢視內容，就如同處理 [ListView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemsSource** 一樣。 同樣地，使用 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (及選擇性 [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate))，以提供可呈現項目的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)。
+您可以將階層式資料來源繫結至 [ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) 屬性，以提供樹狀檢視內容，就如同處理 [ListView](/uwp/api/windows.ui.xaml.controls.listview) 的 **ItemsSource** 一樣。 同樣地，使用 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) (及選擇性 [ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate))，以提供可呈現項目的 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)。
 
 > [!IMPORTANT]
-> **ItemsSource** 及其相關 API 都需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk) 或更新版本)，或 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> **ItemsSource** 及其相關 API 都需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk) 或更新版本)，或 [Windows UI 程式庫](/uwp/toolkits/winui/)。
 >
 > **ItemsSource** 是 **TreeView.RootNodes** 用於將內容放入 **TreeView** 控制項的替代機制。 您無法同時設定 **ItemsSource** 與 **RootNodes**。 當您使用 **ItemsSource** 時，系統會為您建立節點，您可以從 **TreeView.RootNodes** 屬性存取它們。
 
@@ -211,7 +211,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> 若要取得 [圖片] 資料夾的存取權，您必須在應用程式資訊清單中指定**圖片媒體櫃**功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) \(部分機器翻譯\)。
+> 若要取得 [圖片] 資料夾的存取權，您必須在應用程式資訊清單中指定**圖片媒體櫃**功能。 如需詳細資訊，請參閱[應用程式功能宣告](../../packaging/app-capability-declarations.md) \(部分機器翻譯\)。
 
 您可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 來指定資料項目在樹狀檢視中的顯示方式。
 
@@ -220,7 +220,7 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 
 ### <a name="item-container-style"></a>項目容器樣式
 
-不論您使用 **ItemsSource** 或 **RootNodes**，用來顯示每個節點的實際元素 (稱為「容器」) 是 [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) 物件。 您可以使用 **TreeView** 的 [ItemContainerStyle](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyle) 或 [ItemContainerStyleSelector](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyleselector) 屬性，修改 **TreeViewItem** 屬性以設定容器的樣式。
+不論您使用 **ItemsSource** 或 **RootNodes**，用來顯示每個節點的實際元素 (稱為「容器」) 是 [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) 物件。 您可以使用 **TreeView** 的 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyle) 或 [ItemContainerStyleSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemcontainerstyleselector) 屬性，修改 **TreeViewItem** 屬性以設定容器的樣式。
 
 這個範例示範如何將展開/摺疊的字符變更為橘色 +/- 符號。 在預設 **TreeViewItem**範本中，字符會設定為使用 `Segoe MDL2 Assets` 字型。 您可以設定 **Setter.Value** 屬性，作法是以 XAML 使用的格式提供 Unicode 字元值，如下所示：`Value="&#xE948;"`。
 
@@ -1349,6 +1349,6 @@ namespace TreeViewTest
 
 ## <a name="related-articles"></a>相關文章
 
-- [TreeView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.treeview)
-- [ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
+- [TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)
+- [ListView 類別](/uwp/api/windows.ui.xaml.controls.listview)
 - [ListView 和 GridView](listview-and-gridview.md)

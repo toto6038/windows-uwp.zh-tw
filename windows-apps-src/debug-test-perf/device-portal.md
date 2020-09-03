@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 2292d97166d34905bb895aa3f53f864510a21f46
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a4fc5cc5b8bc99e830d3c31604e581f8e57c1007
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74254766"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173632"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -45,8 +45,8 @@ Xbox | 在開發人員模式內啟用 | 停用 | 11443 | 不適用
 
 如需裝置特定的安裝指示，請參閱︰
 
-- [HoloLens 的裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
-- [IoT 的裝置入口網站](https://docs.microsoft.com/windows/iot-core/manage-your-device/DevicePortal)
+- [HoloLens 的裝置入口網站](./device-portal-hololens.md)
+- [IoT 的裝置入口網站](/windows/iot-core/manage-your-device/DevicePortal)
 - [行動裝置的行動裝置](device-portal-mobile.md)
 - [Xbox 的裝置入口網站](../xbox-apps/device-portal-xbox.md)
 - [傳統型裝置的裝置入口網站](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -169,7 +169,7 @@ ETW 記錄頁面會管理裝置上的即時 Windows 事件追蹤 (ETW) 資訊。
 
 ### <a name="performance-tracing"></a>效能追蹤
 
-[效能追蹤] 頁面可供檢視來自主機裝置的 [Windows Performance Recorder (WPR)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) 追蹤。
+[效能追蹤] 頁面可供檢視來自主機裝置的 [Windows Performance Recorder (WPR)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448205(v=win.10)) 追蹤。
 
 ![裝置入口網站效能追蹤頁面](images/device-portal/mob-device-portal-perf-tracing.png)
 
@@ -178,7 +178,7 @@ ETW 記錄頁面會管理裝置上的即時 Windows 事件追蹤 (ETW) 資訊。
 
 若要停止追蹤，請按一下 [停止]  。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
 
-擷取的 ETL 檔案可以在 [Windows 效能分析器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))中開啟以進行分析。
+擷取的 ETL 檔案可以在 [Windows 效能分析器](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))中開啟以進行分析。
 
 ### <a name="device-manager"></a>裝置管理員
 

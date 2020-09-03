@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fd561096dc53f85186698c981693693a6d3b9e64
-ms.sourcegitcommit: d95ccb47c616bd32c56e491490a6baf30185c8c5
+ms.openlocfilehash: 5a7c77f6c553408d2631fb3e324e67d79318f9b4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295535"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170692"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 Windows 執行階段 API
 
@@ -36,7 +36,7 @@ ms.locfileid: "85295535"
 
 #### <a name="to-use-the-nuget-option"></a>使用 NuGet 選項
 
-1. 請確定已啟用[套件參考](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files)：
+1. 請確定已啟用[套件參考](/nuget/consume-packages/package-references-in-project-files)：
 
     1. 在 Visual Studio 中，按一下 [工具] -> [NuGet 套件管理員]-> [套件管理員設定]。
     2. 確定已針對 [預設套件管理格式] 選取 [PackageReference]。
@@ -76,7 +76,7 @@ ms.locfileid: "85295535"
 
 ### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 專案以使用 Windows 執行階段 API
 
-使用 [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) 來取用 Windows 執行階段 API。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
+使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 來取用 Windows 執行階段 API。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
 
 設定專案使其適用於 C++/WinRT：
 
@@ -186,7 +186,7 @@ void UWP::ShowToast()
 }
 ```
 
-若要深入了解通知，請參閱[調適型和互動式快顯通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
+若要深入了解通知，請參閱[調適型和互動式快顯通知](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts)。
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支援 Windows XP、Windows Vista 和 Windows 7/8 安裝基礎
 
@@ -243,7 +243,7 @@ void UWP::ShowToast()
 
 您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 只有當使用者以 Windows 10 上的封裝應用程式執行您的應用程式時，您的應用程式才會呼叫 Windows 執行階段 API。
 
-將執行階段檢查新增至程式碼的最簡單方式，就是安裝此 Nuget 套件：[Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然後使用 ``IsRunningAsUWP()`` 方法來關閉所有會呼叫 Windows 執行階段 API 的程式碼。 如需更多詳細資料，請參閱此部落格文章：[傳統型橋接器 - 識別應用程式的內容](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/)。
+將執行階段檢查新增至程式碼的最簡單方式，就是安裝此 Nuget 套件：[Desktop Bridge Helpers](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然後使用 ``IsRunningAsUWP()`` 方法來關閉所有會呼叫 Windows 執行階段 API 的程式碼。 如需更多詳細資料，請參閱此部落格文章：[傳統型橋接器 - 識別應用程式的內容](/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context)。
 
 ## <a name="related-samples"></a>相關範例
 

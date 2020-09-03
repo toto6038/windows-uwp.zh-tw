@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a51bfb262e81668d167a380a9f3572011dbf7e2c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 484fb64497443708ec80f3d6ad80b40d14371af5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943098"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173912"
 ---
 # <a name="sliders"></a>滑桿
 
@@ -29,9 +29,9 @@ ms.locfileid: "88943098"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[Slider 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider)、[Value 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
+> **平台 API**：[Slider 類別](/uwp/api/windows.ui.xaml.controls.slider)、[Value 屬性](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value)、[ValueChanged 事件](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -99,7 +99,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-您要從 [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) 屬性取得並設定滑桿的值。 若要回應值變更，您可以使用資料繫結來繫結 Value 屬性，或處理 [ValueChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件。
+您要從 [Value](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value) 屬性取得並設定滑桿的值。 若要回應值變更，您可以使用資料繫結來繫結 Value 屬性，或處理 [ValueChanged](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) 事件。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -191,4 +191,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="related-topics"></a>相關主題
 - [切換開關](toggles.md)
-- [Slider 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Slider)
+- [Slider 類別](/uwp/api/Windows.UI.Xaml.Controls.Slider)

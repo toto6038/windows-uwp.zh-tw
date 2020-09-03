@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 1708
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 824cdb74a809ae3f9ae2ed202a9889535021f711
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: cbaf2726e8f3e517fd0664c3d00b9a82ca018fbc
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684718"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174412"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的新增功能
 
@@ -32,7 +32,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="game-mode"></a>遊戲模式
 
-通用 Windows 平台 (UWP) 的[遊戲模式](https://docs.microsoft.com/previous-versions/windows/desktop/gamemode/game-mode-portal) API 可讓您利用 Windows 10 中的遊戲模式產生最佳化的遊戲體驗。 這些 API 位於 **&lt;expandedresources.h&gt;** 標頭檔中。
+通用 Windows 平台 (UWP) 的[遊戲模式](/previous-versions/windows/desktop/gamemode/game-mode-portal) API 可讓您利用 Windows 10 中的遊戲模式產生最佳化的遊戲體驗。 這些 API 位於 **&lt;expandedresources.h&gt;** 標頭檔中。
 
 ![遊戲模式](images/game-mode.png)
 
@@ -45,29 +45,29 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 
-我們新增了 [Store 產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中的幾個物件 (包括 [StoreProduct](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](https://docs.microsoft.com/uwp/api/windows.services.store.storeapplicense)) 提供其 Store 相關資料的結構描述。
+我們新增了 [Store 產品的資料結構描述](../monetize/data-schemas-for-store-products.md)文章。 此文章針對 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間中的幾個物件 (包括 [StoreProduct](/uwp/api/windows.services.store.storeproduct) 和 [StoreAppLicense](/uwp/api/windows.services.store.storeapplicense)) 提供其 Store 相關資料的結構描述。
 
 ### <a name="desktop-bridge"></a>傳統型橋接器
 
 我們新增了兩份指南，可協助您加入讓 Windows 10 使用者耳目一新的現代化體驗。
 
-請參閱[增強您的 Windows 10 傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance)以尋找和參考正確的檔案，然後撰寫程式碼來增強 UWP 體驗，讓 Windows 10 使用者眼睛為之一亮。  
+請參閱[增強您的 Windows 10 傳統型應用程式](/windows/apps/desktop/modernize/desktop-to-uwp-enhance)以尋找和參考正確的檔案，然後撰寫程式碼來增強 UWP 體驗，讓 Windows 10 使用者眼睛為之一亮。  
 
-請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-extend)，以結合現代化 XAML UI 與其他必須在 UWP 應用程式容器中執行的 UWP 體驗。
+請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](/windows/apps/desktop/modernize/desktop-to-uwp-extend)，以結合現代化 XAML UI 與其他必須在 UWP 應用程式容器中執行的 UWP 體驗。
 
 ### <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
-我們加入了新的指南，可協助您[開始使用點服務裝置](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-get-started)。 內容涵蓋裝置列舉、檢查裝置功能、宣告裝置和裝置共用等主題。 
+我們加入了新的指南，可協助您[開始使用點服務裝置](../devices-sensors/pos-get-started.md)。 內容涵蓋裝置列舉、檢查裝置功能、宣告裝置和裝置共用等主題。 
 
 ### <a name="xbox-live"></a>Xbox Live
 
 我們已經為 Xbox Live 開發人員新增關於 UWP 遊戲和 Xbox 開發人員套件 (XDK) 遊戲的文件。
 
-請參閱 [Xbox Live 開發人員指南](https://docs.microsoft.com//gaming/xbox-live/index)，以了解如何使用 Xbox Live API 將您的遊戲連線至 Xbox Live 社交遊戲網路。
+請參閱 [Xbox Live 開發人員指南](//gaming/xbox-live/index)，以了解如何使用 Xbox Live API 將您的遊戲連線至 Xbox Live 社交遊戲網路。
 
-任何 UWP 遊戲開發人員都可以利用 [Xbox Live 創作者計畫](https://docs.microsoft.com//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)，在電腦和 Xbox One 上開發並發行支援 Xbox Live 的遊戲。
+任何 UWP 遊戲開發人員都可以利用 [Xbox Live 創作者計畫](//gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)，在電腦和 Xbox One 上開發並發行支援 Xbox Live 的遊戲。
 
-請參閱 [Xbox Live 開發人員計畫概觀](https://docs.microsoft.com//gaming/xbox-live/developer-program-overview)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
+請參閱 [Xbox Live 開發人員計畫概觀](//gaming/xbox-live/developer-program-overview)，以取得提供給 Xbox Live 開發人員的程式和功能的相關資訊。
 
 ## <a name="videos"></a>視訊
 

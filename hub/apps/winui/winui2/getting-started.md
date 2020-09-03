@@ -4,12 +4,12 @@ description: 如何安裝及使用 Windows UI 程式庫。
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: 336439d35c74073db490772dbfdae4ca3e580625
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492953"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174132"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>開始使用 Windows UI 2.x 程式庫
 
@@ -64,7 +64,7 @@ ms.locfileid: "86492953"
     ```
 
     > [!IMPORTANT]
-    > 資源新增至 ResourceDictionary 的順序會影響其套用順序。 `XamlControlsResources` 字典會覆寫許多預設的資源索引鍵，因此應先將其新增至 `Application.Resources`，以免其覆寫您應用程式中的任何其他自訂樣式或資源。 如需如何載入資源的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
+    > 資源新增至 ResourceDictionary 的順序會影響其套用順序。 `XamlControlsResources` 字典會覆寫許多預設的資源索引鍵，因此應先將其新增至 `Application.Resources`，以免其覆寫您應用程式中的任何其他自訂樣式或資源。 如需如何載入資源的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 
 5. 將工具組的參考新增至 XAML 頁面和程式碼後置頁面。
 

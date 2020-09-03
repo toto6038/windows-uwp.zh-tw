@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 9de761a0b127d7218c7dc2bb4c6862626b7c60e4
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089424"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174012"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
@@ -34,7 +34,7 @@ ms.locfileid: "77089424"
 
 我們會透過認證測試來測試 app 的復原能力和穩定性。
 
-Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 以啟動 app。 為了讓 **ActivateApplication** 啟動 app，必須啟用使用者帳戶控制 (UAC)，而且螢幕解析度至少必須為 1024 x 768 或 768 x 1024。 如果任一條件不符合，您的 app 就無法通過這個測試。
+Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 以啟動 app。 為了讓 **ActivateApplication** 啟動 app，必須啟用使用者帳戶控制 (UAC)，而且螢幕解析度至少必須為 1024 x 768 或 768 x 1024。 如果任一條件不符合，您的 app 就無法通過這個測試。
 
 ### <a name="corrective-actions"></a>修正動作
 
@@ -42,7 +42,7 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 
 確定您在螢幕夠大的電腦上執行測試。
 
-如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
+如果您的 app 無法啟動，但測試平台符合 [**ActivateApplication**](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) 的先決條件，則您可以檢閱啟用事件記錄檔以疑難排解問題。 在事件記錄檔中找到這些項目：
 
 1.  開啟 eventvwr.exe，並瀏覽至 [應用程式及服務記錄檔]\\Microsoft\\Windows\\Immersive-Shell 資料夾。
 2.  篩選檢視，顯示事件識別碼：5900-6000。
@@ -64,7 +64,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="corrective-action"></a>修正動作
 
-應用程式應該使用「版本 API」協助程式函式進行檢查。 如需詳細資訊，請參閱[作業系統版本](https://docs.microsoft.com/windows/desktop/SysInfo/operating-system-version)。
+應用程式應該使用「版本 API」協助程式函式進行檢查。 如需詳細資訊，請參閱[作業系統版本](/windows/desktop/SysInfo/operating-system-version)。
 
 ## <a name="background-tasks-cancellation-handler-validation"></a>背景工作取消處理常式驗證
 
@@ -80,7 +80,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="corrective-action"></a>修正動作
 
-新增取消處理常式到 app。 如需詳細資訊，請參閱[使用背景工作支援 app](https://docs.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+新增取消處理常式到 app。 如需詳細資訊，請參閱[使用背景工作支援 app](../launch-resume/support-your-app-with-background-tasks.md)。
 
 ## <a name="app-count"></a>應用程式計數
 
@@ -110,7 +110,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 ### <a name="test-details"></a>測試詳細資料
 
-檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。
+檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](../publish/app-package-requirements.md)中所述。
 
 -   **副檔名與通訊協定**
 
@@ -124,11 +124,11 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 -   **處理序間通訊 (IPC) 驗證**
 
-    這個測試強制要求 UWP 應用程式不會在應用程式容器外部與桌面元件進行通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
+    這個測試強制要求 UWP 應用程式不會在應用程式容器外部與桌面元件進行通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
 
 ### <a name="corrective-action"></a>修正動作
 
-按照 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
+按照 [App 套件需求](../publish/app-package-requirements.md)中所述的需求來檢閱 App 的資訊清單。
 
 ## <a name="windows-security-features-test"></a>Windows 安全性功能測試
 
@@ -224,11 +224,11 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 **Windows 應用程式認證套件錯誤訊息：** SharedSectionsCheck 測試失敗。
 
-含有標示為共用可寫入區段的二進位檔便是一個安全性威脅。 除非必要，否則不要建置含有共用可寫入區段的應用程式。 使用 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 建立有適當安全保護的共用記憶體物件。
+含有標示為共用可寫入區段的二進位檔便是一個安全性威脅。 除非必要，否則不要建置含有共用可寫入區段的應用程式。 使用 [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 建立有適當安全保護的共用記憶體物件。
 
 **如果您的應用程式未通過這個測試，應該怎麼辦**
 
-從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](https://docs.microsoft.com/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 以建立共用的記憶體物件，然後重新建置您的 app。
+從 app 中移除任何共用的區段，然後搭配適當的安全性屬性來呼叫 [**CreateFileMapping**](/windows/desktop/api/winbase/nf-winbase-createfilemappinga) 或 [**MapViewOfFile**](/windows/desktop/api/memoryapi/nf-memoryapi-mapviewoffile) 以建立共用的記憶體物件，然後重新建置您的 app。
 
 **備註**
 
@@ -315,11 +315,11 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **注意**  應用程式的偵錯組建即使僅使用[適用於 UWP 應用程式的 API](https://docs.microsoft.com/uwp/)，還是無法通過這個測試。
+> **注意**  應用程式的偵錯組建即使僅使用[適用於 UWP 應用程式的 API](/uwp/)，還是無法通過這個測試。
 
-檢閱錯誤訊息，以識別應用程式使用的 API 有哪些不屬於[適用於 UWP 應用程式的 API](https://docs.microsoft.com/uwp/)。
+檢閱錯誤訊息，以識別應用程式使用的 API 有哪些不屬於[適用於 UWP 應用程式的 API](/uwp/)。
 
-> **注意**  即使偵錯組態只使用來自適用於 UWP 應用程式的 Windows SDK 的 API，該設定內建的 C++ app 也無法通過這個測試。 如需詳細資訊，請參閱 [UWP 應用程式中 Windows API 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
+> **注意**  即使偵錯組態只使用來自適用於 UWP 應用程式的 Windows SDK 的 API，該設定內建的 C++ app 也無法通過這個測試。 如需詳細資訊，請參閱 [UWP 應用程式中 Windows API 的替代方法](/uwp/win32-and-com/win32-and-com-for-uwp-apps)。
 
 ## <a name="performance-tests"></a>效能測試
 
@@ -543,7 +543,7 @@ Microsoft Store 要求使用 Direct3D 的所有應用程式都能在功能層級
 
 ### <a name="corrective-action"></a>修正動作
 
-請確保您的應用程式正確顯示在 Direct3D 功能層級 9\-1 上，即使您希望它在更高層級上執行。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](https://msdn.microsoft.com/library/windows/apps/hh994923.aspx)。
+請確保您的應用程式正確顯示在 Direct3D 功能層級 9\-1 上，即使您希望它在更高層級上執行。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](/previous-versions/windows/apps/hh994923(v=win.10))。
 
 ### <a name="direct3d-trim-after-suspend"></a>暫停後的 Direct3D 修剪
 
@@ -551,15 +551,15 @@ Microsoft Store 要求使用 Direct3D 的所有應用程式都能在功能層級
 
 ### <a name="background"></a>背景
 
-如果 app 未在本身的 Direct3D 裝置上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，該 app 就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
+如果 app 未在本身的 Direct3D 裝置上呼叫 [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim)，該 app 就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
 
 ### <a name="test-details"></a>測試詳細資料
 
-檢查 app 是否符合 d3d 需求，確保 app 在暫停回呼時，呼叫新的 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+檢查 app 是否符合 d3d 需求，確保 app 在暫停回呼時，呼叫新的 [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ### <a name="corrective-action"></a>修正動作
 
-每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 介面上呼叫 [**Trim**](https://docs.microsoft.com/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
+每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](/windows/desktop/api/dxgi1_3/nn-dxgi1_3-idxgidevice3) 介面上呼叫 [**Trim**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgidevice3-trim) API。
 
 ## <a name="app-capabilities-test"></a>App 功能測試
 
@@ -668,5 +668,5 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
 ## <a name="related-topics"></a>相關主題
 
 * [Windows 傳統型橋接器應用程式測試](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+* [Microsoft Store 原則](/legal/windows/agreements/store-policies)
  

@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: ff00264d0806e7fbdfcabd000ec68857b1485dcd
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e916465d664b5658eeb155874dfa00795a772622
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296150"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170392"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 
@@ -24,7 +24,7 @@ ms.locfileid: "87296150"
 
 因此，您在協同程式中進行計算繫結工作之前，必須先將執行傳回給呼叫者 (亦即，引入暫停點)，呼叫者才不會遭到封鎖。 如果您尚未透過對一些其他作業進行 `co_await` 來做到這一點，則可以對 [**winrt::resume_background**](/uwp/cpp-ref-for-winrt/resume-background) 函式進行 `co_await`。 其將控制項傳回給呼叫者，並立即恢復執行緒集區執行緒的執行。
 
-實作中使用的執行緒集區是低層級的 [Windows 執行緒集區](https://docs.microsoft.com/windows/desktop/ProcThread/thread-pool-api)，所以是最有效的。
+實作中使用的執行緒集區是低層級的 [Windows 執行緒集區](/windows/desktop/ProcThread/thread-pool-api)，所以是最有效的。
 
 ```cppwinrt
 IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
@@ -639,7 +639,7 @@ int main()
 }
 ```
 
-當您要在事件處理常式中執行非同步作業時，**winrt::fire_and_forget** 也適合用來作為事件處理常式的傳回類型。 以下是一個範例 (也請參閱 [C++/WinRT 中的強式和弱式參考](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine))。
+當您要在事件處理常式中執行非同步作業時，**winrt::fire_and_forget** 也適合用來作為事件處理常式的傳回類型。 以下是一個範例 (也請參閱 [C++/WinRT 中的強式和弱式參考](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine))。
 
 ```cppwinrt
 winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, MediaBindingEventArgs args)

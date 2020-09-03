@@ -6,12 +6,12 @@ ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: B15D4F19-4E6A-4C27-AD64-F03014D11BA9
-ms.openlocfilehash: d093a7b49a8c5ac00ca927614365d1b548e2f63a
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: ae4ade3cd7bef5434c8f5c9d9c6905c039e7e806
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77607247"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172842"
 ---
 # <a name="app-quality"></a>應用程式品質
 
@@ -42,7 +42,7 @@ Microsoft Store 頁面的中繼資料 (圖示、標題、螢幕擷取畫面及�
 
 - 具原創性和特色。 例如，沿用其他應用程式的標題，只是在拼字上有所改動，可能會造成混淆，唯有獨樹一幟的標題才能幫助您的應用程式異軍突起。
 - 選擇蘊含充分資訊的標題。 例如，「我的第一個應用程式」或「顧客的應用程式」太籠統。
-- 看看[選擇應用程式的名稱](https://docs.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name#choosing-your-apps-name)這篇文章有沒有較實用的標題構想。
+- 看看[選擇應用程式的名稱](./create-your-app-by-reserving-a-name.md#choosing-your-apps-name)這篇文章有沒有較實用的標題構想。
 
 **描述**可讓您說明應用程式的主要功能。 要盡量清楚、明瞭且引人注目。
 
@@ -51,7 +51,7 @@ Microsoft Store 頁面的中繼資料 (圖示、標題、螢幕擷取畫面及�
 - 在中繼資料的功能區段列出應用程式功能，並於應用程式描述中彙總您的最佳功能，讓客戶知道會獲得哪些效益。 例如，描述天文學應用程式時，可別只是列出行星；還要告訴客戶您的應用程式會提供特殊衛星追蹤功能。 在產品充斥的 Microsoft Store 類別中，得多費心思，設法讓客戶明白您的應用程式很不一樣，而且更好用。
 - 告知客戶事實。 描述應用程式的實際內容。 例如，別向客戶吹噓應用程式還沒有的功能 (除非您表明這些功能是在預定規劃中)。
 - 如果您的應用程式運作依存於其他應用程式，您的描述從一開始就要告知此情況。 這樣客戶才會知道需要準備哪些其他軟體和應用程式來使用您的應用程式。
-- 如需獲得一些好用的秘訣，請參閱[撰寫一份出色的應用程式介紹](https://docs.microsoft.com/windows/uwp/publish/write-a-great-app-description)這篇文章。
+- 如需獲得一些好用的秘訣，請參閱[撰寫一份出色的應用程式介紹](./write-a-great-app-description.md)這篇文章。
 
 **螢幕擷取畫面**和**預告片**可讓客戶預覽您應用程式的出色功能。 請有技巧地使用它們來凸顯應用程式特性：
 
@@ -88,4 +88,4 @@ Microsoft Store 頁面的中繼資料 (圖示、標題、螢幕擷取畫面及�
 ### <a name="see-also"></a>另請參閱
 
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
-- [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement)

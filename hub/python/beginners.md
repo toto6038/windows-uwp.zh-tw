@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 學習 python, windows 上適用於初學者的 python, 利用 microsoft store 安裝 python, python 搭配 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 5dee553fedc81f0b482d4b79f4d7d8be3a7bb106
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493493"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174142"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>開始在 Windows 上使用適用於初學者的 Python
 
@@ -190,7 +190,7 @@ Pygame 是用於撰寫遊戲的熱門 Python 套件 - 鼓勵學生學習程式�
 
 ### <a name="online-courses-for-learning-python"></a>學習 Python 的線上課程
 
-- [Microsoft Learn 上的 Python 簡介](https://docs.microsoft.com/learn/modules/intro-to-python/)：試用互動式 Microsoft Learn 平台，並獲得完成此模組的體驗點數，其中涵蓋如何撰寫基本 Python 程式碼、宣告變數，以及使用主控台輸入和輸出的基本概念。 互動式沙箱環境讓此平台成為尚未設定 Python 開發環境的人員開始的絕佳位置。
+- [Microsoft Learn 上的 Python 簡介](/learn/modules/intro-to-python/)：試用互動式 Microsoft Learn 平台，並獲得完成此模組的體驗點數，其中涵蓋如何撰寫基本 Python 程式碼、宣告變數，以及使用主控台輸入和輸出的基本概念。 互動式沙箱環境讓此平台成為尚未設定 Python 開發環境的人員開始的絕佳位置。
 
 - [Pluralsight 上的 Python：8堂課程，29 小時](https://app.pluralsight.com/paths/skills/python)：Pluralsight 上的 Python 學習路徑提供線上課程，其中涵蓋各種與 Python 相關的主題，包括測量您技能及找出差距的工具。
 
@@ -208,4 +208,4 @@ Pygame 是用於撰寫遊戲的熱門 Python 套件 - 鼓勵學生學習程式�
 
 - [偵錯 Python](https://code.visualstudio.com/docs/python/debugging)：偵錯工具是指從電腦程式識別及移除錯誤的過程。 本文涵蓋如何使用 VS Code 初始化和設定 Python 的偵錯、如何設定和驗證中斷點、附加本機指令碼、針對不同的應用程式類型或在遠端電腦上執行偵錯，以及一些基本的疑難排解。
 
-- [對 Python 進行單元測試](https://code.visualstudio.com/docs/python/unit-testing)：涵蓋部分背景，說明單元測試的意義、範例逐步解說、啟用測試架構、建立和執行測試、偵錯測試，以及測試組態設定。 
+- [對 Python 進行單元測試](https://code.visualstudio.com/docs/python/unit-testing)：涵蓋部分背景，說明單元測試的意義、範例逐步解說、啟用測試架構、建立和執行測試、偵錯測試，以及測試組態設定。

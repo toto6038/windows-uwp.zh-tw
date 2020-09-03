@@ -6,12 +6,12 @@ ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: a68247637395c3f68bf1140479bc94cb8e0fcc33
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 4d7c30b49ea0e6276e1d7959a17086f7ff829915
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79209353"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170908"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 原則
 
@@ -113,7 +113,7 @@ ms.locfileid: "79209353"
 
 **10.2.3**
 
-您的產品不得包含或啟用由 Microsoft [垃圾與惡意軟體](https://docs.microsoft.com/windows/security/threat-protection/intelligence/criteria)條件所定義的惡意程式碼。
+您的產品不得包含或啟用由 Microsoft [垃圾與惡意軟體](/windows/security/threat-protection/intelligence/criteria)條件所定義的惡意程式碼。
 
 **10.2.4**
 
@@ -296,7 +296,7 @@ ms.locfileid: "79209353"
 
 產品顯示的任何廣告內容必須符合 Microsoft 的[創意承認原則](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies)。
 
-如果您的產品必須符合 [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的廣告需求，包含下列需求：
+如果您的產品必須符合 [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement)的廣告需求，包含下列需求：
 
 **10.10.4**
 
@@ -355,7 +355,7 @@ Xbox One 上的遊戲產品不得顯示自 Xbox Live 以外取得的其他好友
 
 使用 Xbox Live 以及提供多人遊戲、使用者產生內容或使用者通訊的遊戲產品：
 - 在使用者登入 Xbox Live 之前，不得允許進行遊戲。
-- 必須遵守[家長監護和服務控制項](https://docs.microsoft.com/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
+- 必須遵守[家長監護和服務控制項](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity)。
 
 **10.13.7**
 
@@ -477,4 +477,4 @@ Xbox Live 遊戲產品必須符合下列服務使用方式的需求︰
 
 - [Microsoft Store 原則變更歷程記錄](store-policies-change-history.md)
 - [Microsoft Store 原則與管理辦法](store-policies-and-code-of-conduct.md)
-- [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)
+- [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement)

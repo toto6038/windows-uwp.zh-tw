@@ -8,12 +8,12 @@ ms.date: 08/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 418c33952c4be6be08683b5e396f423f771bb997
-ms.sourcegitcommit: 99100b58a5b49d8ba78905b15b076b2c5cffbe49
+ms.openlocfilehash: e3fcbcaa88fa39795ac078617c9a958ff3a997ac
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88502375"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173982"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
@@ -27,7 +27,7 @@ ms.locfileid: "88502375"
 - 取決於使用者偏好的選項，例如音樂、音效或色彩佈景主題。
 - 不常存取的應用程式資訊 (像是隱私權原則、說明、應用程式版本或版權資訊)。
 
-作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 若要深入了解命令的放置位置，請參閱[命令設計基本知識](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)。
+作為一般工作流程一部分的命令 (例如，變更美術應用程式的筆刷大小) 不應在設定頁面中。 若要深入了解命令的放置位置，請參閱[命令設計基本知識](../basics/commanding-basics.md)。
 
 ## <a name="general-recommendations"></a>一般建議
 
@@ -125,17 +125,17 @@ Detailed redlines showing preferred text strings for the "Choose a mode" section
     - [超連結](../controls-and-patterns/hyperlinks.md)：將使用者帶到應用程式內的其他頁面或帶到外部網站。 當使用者按一下超連結的時候，[設定] 飛出視窗會關閉。
     - [按鈕](../controls-and-patterns/buttons.md)：讓使用者立即起始動作，而不需要關閉目前的 [設定] 飛出視窗。
 - 如果停用其中一個控制項，請新增描述訊息。 請將此訊息置於已停用控制項的上方。
-- 完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](https://docs.microsoft.com/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
+- 完成 [設定] 飛出視窗和標頭的動畫之後，以單一區塊的方式產生內容和控制項的動畫。 使用向左偏移 100px 的 [**enterPage**](/previous-versions/windows/apps/br212672(v=win.10)) 或 [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 動畫，產生內容的動畫。
 - 視需要使用區段標頭、段落及標籤協助整理及釐清內容。
 - 如果您需要重複設定，可使用額外的 UI 層級或展開/摺疊模式，但避免使用超過兩層的階層。 例如，提供每個城市設定的氣象應用程式可列出城市，然後讓使用者點選城市以開啟新的飛出視窗或展開以顯示設定選項。
-- 如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)。
+- 如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](../controls-and-patterns/progress-controls.md)。
 - 不要使用按鈕瀏覽或認可變更。 使用超連結瀏覽到其他頁面。與其使用按鈕來確認變更，不如在使用者關閉 [設定] 飛出視窗時，自動儲存對應用程式設定所做的變更。
 
 
 
 ## <a name="related-articles"></a>相關文章
 
-* [命令設計基本知識](https://docs.microsoft.com/windows/uwp/layout/commanding-basics)
-* [進度控制項的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/progress-controls)
-* [儲存和擷取應用程式資料](https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data)
-* [**EntranceThemeTransition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [命令設計基本知識](../basics/commanding-basics.md)
+* [進度控制項的指導方針](../controls-and-patterns/progress-controls.md)
+* [儲存和擷取應用程式資料](./store-and-retrieve-app-data.md)
+* [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)

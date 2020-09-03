@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b642f1d6c3f2a04bacdf293858492ea095af1a8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 68b062dc4bd70c81b1b8b57808fad8e9c7498d75
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67319524"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172612"
 ---
 # <a name="labels"></a>標籤
 
@@ -24,9 +24,9 @@ ms.locfileid: "67319524"
 
 標籤是控制項或一組相關控制項的名稱或標題。
 
-> **重要 API**：Header 屬性、[TextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+> **重要 API**：Header 屬性、[TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
-在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 ![說明標準標籤控制項的螢幕擷取畫面](images/label-standard.png)
 
@@ -43,20 +43,16 @@ ms.locfileid: "67319524"
 
 ## <a name="related-topics"></a>相關主題
 * [文字控制項](text-controls.md)
-* [TextBox.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.header)
-* [PasswordBox.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header)
-* [ToggleSwitch.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
-* [DatePicker.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepicker.header)
-* [TimePicker.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepicker.header)
-* [Slider.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.slider.header)
-* [ComboBox.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox.header)
-* [RichEditBox.Header 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.header)
-* [TextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+* [TextBox.Header 屬性](/uwp/api/windows.ui.xaml.controls.textbox.header)
+* [PasswordBox.Header 屬性](/uwp/api/windows.ui.xaml.controls.passwordbox.header)
+* [ToggleSwitch.Header 屬性](/uwp/api/windows.ui.xaml.controls.toggleswitch.header)
+* [DatePicker.Header 屬性](/uwp/api/windows.ui.xaml.controls.datepicker.header)
+* [TimePicker.Header 屬性](/uwp/api/windows.ui.xaml.controls.timepicker.header)
+* [Slider.Header 屬性](/uwp/api/windows.ui.xaml.controls.slider.header)
+* [ComboBox.Header 屬性](/uwp/api/windows.ui.xaml.controls.combobox.header)
+* [RichEditBox.Header 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
+* [TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
  
 
  
-
-
-
-

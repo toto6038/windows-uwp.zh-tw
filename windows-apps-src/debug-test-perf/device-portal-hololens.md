@@ -6,12 +6,12 @@ ms.date: 01/03/2019
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 059ce14f85ebe7d955ba2da8897ab47109f74a72
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5cf8dc0912420895091815e54f6399235fca552f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79401967"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173582"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的 Device Portal
 
@@ -21,8 +21,8 @@ ms.locfileid: "79401967"
 ### <a name="enable-device-portal"></a>啟用 Device Portal
 
 1. 開啟您的 HoloLens 並將裝置戴上。
-2. 執行 HoloLens (第 1 代) 的[開始手勢](https://docs.microsoft.com/hololens/hololens2-basic-usage#start-gesture)或[綻開](https://developer.microsoft.com/mixed-reality#Bloom)手勢以啟動主功能表。
-3. 看一下 [設定]  磚，然後執行 HoloLens (第 1 代) 的[點選](https://developer.microsoft.com/mixed-reality#Press_and_release)手勢，或是在 HoloLens 2 上[觸碰或使用手部射線](https://docs.microsoft.com/hololens/hololens2-basic-usage)進行選取。 [設定] 應用程式會在您選取之後啟動。
+2. 執行 HoloLens (第 1 代) 的[開始手勢](/hololens/hololens2-basic-usage#start-gesture)或[綻開](https://developer.microsoft.com/mixed-reality#Bloom)手勢以啟動主功能表。
+3. 看一下 [設定]  磚，然後執行 HoloLens (第 1 代) 的[點選](https://developer.microsoft.com/mixed-reality#Press_and_release)手勢，或是在 HoloLens 2 上[觸碰或使用手部射線](/hololens/hololens2-basic-usage)進行選取。 [設定] 應用程式會在您選取之後啟動。
 4. 選取 [更新]  功能表項目。
 5. 選取 [適用於開發人員]  功能表項目。
 6. 啟用 [開發人員模式]  。
@@ -177,5 +177,5 @@ HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。
 ## <a name="see-also"></a>另請參閱
 
 * [Windows 裝置入口網站概觀](device-portal.md)
-* [裝置入口網站核心 API 參考](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core) (所有 Windows 10 裝置通用的 API)
-* [裝置入口網站混合實境 API 參考](https://docs.microsoft.com/windows/mixed-reality/device-portal-api-reference) (適用於 HoloLens 的所有 REST API 的更詳盡清單)
+* [裝置入口網站核心 API 參考](./device-portal-api-core.md) (所有 Windows 10 裝置通用的 API)
+* [裝置入口網站混合實境 API 參考](/windows/mixed-reality/device-portal-api-reference) (適用於 HoloLens 的所有 REST API 的更詳盡清單)

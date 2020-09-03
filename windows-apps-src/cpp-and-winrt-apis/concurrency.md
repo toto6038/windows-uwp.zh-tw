@@ -5,19 +5,19 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 048d6fe455f7c3e77922ef8b937a9cb1d6cbb21c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a10962740d3f723a855914595ea02d0688ff9707
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81266896"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170372"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
 > [!IMPORTANT]
 > 本主題介紹*協同程式* 和 `co_await` 的概念，建議您在 UI *和*非 UI 應用程式中均應加以使用。 為了簡單起見，本簡介主題中大部分的程式碼範例均說明 **Windows 主控台應用程式 (C++/WinRT)** 專案。 本主題中後續的程式碼範例會使用協同程式，但為了方便起見，主控台應用程式範例仍會繼續在結束之前使用封鎖 **get** 函式呼叫，以免應用程式在完成其輸出的列印之前結束。 您不應從 UI 執行緒執行此動作 (呼叫封鎖 **get** 函式)。 您應使用 `co_await` 陳述式。 [更進階的並行和非同步](concurrency-2.md)主題會說明您將在 UI 應用程式中使用的技術。
 
-本簡介主題說明您如何使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 同時建立及使用 Windows 執行階段非同步物件。 閱讀本主題之後 (特別是針對您將在 UI 應用程式中使用的技術)，另請參閱[更進階的並行和非同步](concurrency-2.md)。
+本簡介主題說明您如何使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 同時建立及使用 Windows 執行階段非同步物件。 閱讀本主題之後 (特別是針對您將在 UI 應用程式中使用的技術)，另請參閱[更進階的並行和非同步](concurrency-2.md)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>非同步作業與 Windows 執行階段 "Async" 函式
 
@@ -30,7 +30,7 @@ ms.locfileid: "81266896"
 
 這些非同步作業類型的每一個皆投影到 **winrt::Windows::Foundation** C++/WinRT 命名空間中的對應類型。 C++/WinRT 也包含內部等待配接器結構。 您不會直接使用它，但多虧了該結構，您可以撰寫 `co_await` 陳述式，合作等待傳回這些非同步作業類型之一的任何函式結果。 且您可以撰寫自己的協同程式，傳回這些類型。
 
-非同步 Windows 函式的範例是 [**SyndicationClient::RetrieveFeedAsync**](https://docs.microsoft.com/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其傳回類型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2) 的非同步作業物件。
+非同步 Windows 函式的範例是 [**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)，其傳回類型 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2) 的非同步作業物件。
 
 讓我們看一些使用 C++/WinRT 來呼叫這類 API 的方式 (先看封鎖，再看非封鎖)。 我們將在以下幾個程式碼範例中使用 **Windows 主控台應用程式 (C++/WinRT)** 專案，以便說明基本概念。 [更進階的並行和非同步](concurrency-2.md)會討論更適合 UI 應用程式使用的技術。
 
@@ -287,7 +287,7 @@ IASyncAction DoWorkAsync(Param const& value)
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取類別成員協同程式中的 this  指標
 
-請參閱 [C++/WinRT 中的強式和弱式參考](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
+請參閱 [C++/WinRT 中的強式和弱式參考](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)。
 
 ## <a name="important-apis"></a>重要 API
 * [concurrency::task 類別](/cpp/parallel/concrt/reference/task-class)

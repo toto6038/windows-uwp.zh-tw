@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 24669b81c244339509e30a43a0da8a2b27e67eeb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b1ffa6374753343321f34d388eb994a62614cb15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75302652"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172601"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>透過使用者輸入篩選集合和清單
-如果集合顯示許多項目，或高度繫結至使用者互動，則篩選是一項可實作的實用功能。 使用本文所述的方法進行篩選可對大部分的集合控制項實作，包括 [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)。 許多類型的使用者輸入都可以用來篩選集合 (例如核取方塊、選項按鈕和滑杆)，但本文將著重於採用以文字為基礎的使用者輸入，並根據使用者的搜尋，將其用於即時更新 ListView。 
+如果集合顯示許多項目，或高度繫結至使用者互動，則篩選是一項可實作的實用功能。 使用本文所述的方法進行篩選可對大部分的集合控制項實作，包括 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)。 許多類型的使用者輸入都可以用來篩選集合 (例如核取方塊、選項按鈕和滑杆)，但本文將著重於採用以文字為基礎的使用者輸入，並根據使用者的搜尋，將其用於即時更新 ListView。 
 
 > [!NOTE]
 > 本文將著重於使用 ListView 進行篩選。 請注意，此篩選方法也可套用至其他集合控制項，例如 GridView、ItemsRepeater 或 TreeView。
@@ -64,7 +64,7 @@ ms.locfileid: "75302652"
 </Grid>
 ```
 ## <a name="filtering-the-data"></a>篩選資料
-[Linq](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) 查詢可讓您對集合中的特定項目進行分組、排序和選取。 為了篩選清單，我們會建立一個 Linq 查詢，其只會選取符合使用者輸入搜尋查詢/篩選字詞 (在 `FilterByLName` TextBox 中輸入) 的字詞。 您可將查詢結果指派給 [IEnumerable<T>](https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1) 集合物件。 一旦擁有這個集合，我們就可以使用它來與原始清單進行比較，移除不相符的項目並加回相符的項目 (如果是退格鍵)。
+[Linq](/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries) 查詢可讓您對集合中的特定項目進行分組、排序和選取。 為了篩選清單，我們會建立一個 Linq 查詢，其只會選取符合使用者輸入搜尋查詢/篩選字詞 (在 `FilterByLName` TextBox 中輸入) 的字詞。 您可將查詢結果指派給 [IEnumerable<T>](/dotnet/api/system.collections.generic.ienumerable-1) 集合物件。 一旦擁有這個集合，我們就可以使用它來與原始清單進行比較，移除不相符的項目並加回相符的項目 (如果是退格鍵)。
 
 > [!NOTE]
 > 為了讓 ListView 在增減項目時以最直覺的方式動畫呈現，請務必移除項目並將其新增至 ListView 的 ItemsSource 集合本身，而不是建立新的篩選後物件集合，並將其指派給ListView 的 ItemsSource 屬性。

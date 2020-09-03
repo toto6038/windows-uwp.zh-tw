@@ -8,23 +8,23 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: fb1daddeb743909417d6483223d5386e64ca5241
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: b18afdeecb3e70f958b3d8908027e59f8c4c1f9e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942778"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172722"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
-如果您的傳統型應用程式具備[套件識別資料](modernize-packaged-apps.md)，您可以使用延伸模組，藉由使用[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中預先定義的延伸模組，將您的應用程式與 Windows 10 整合。
+如果您的傳統型應用程式具備[套件識別資料](modernize-packaged-apps.md)，您可以使用延伸模組，藉由使用[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中預先定義的延伸模組，將您的應用程式與 Windows 10 整合。
 
 例如：使用延伸模組建立防火牆例外，讓您的應用程式成為某一種檔案類型的預設應用程式，或將開始畫面磚指向您的應用程式。 若要使用延伸模組，您只需要將一些 XML 加入應用程式的封裝資訊清單檔案。 不需要程式碼。
 
 本文會描述這些延伸模組，以及您可以使用這些延伸模組執行的工作。
 
 > [!NOTE]
-> 傳統型應用程式需要具備[套件識別資料](modernize-packaged-apps.md)，才能使用本文所述的功能。可選擇[將傳統型應用程式封裝在 MSIX 套件中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，或是[使用剖析套件授與應用程式識別資料](grant-identity-to-nonpackaged-apps.md)。
+> 傳統型應用程式需要具備[套件識別資料](modernize-packaged-apps.md)，才能使用本文所述的功能。可選擇[將傳統型應用程式封裝在 MSIX 套件中](/windows/msix/desktop/desktop-to-uwp-root)，或是[使用剖析套件授與應用程式識別資料](grant-identity-to-nonpackaged-apps.md)。
 
 ## <a name="transition-users-to-your-app"></a>將使用者轉換至您的應用程式
 
@@ -57,7 +57,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)找到完整的結構描述參考。
 
 |名稱 | 說明 |
 |-------|-------------|
@@ -98,7 +98,7 @@ ms.locfileid: "88942778"
 
 您可以確保使用者預設使用您新的已封裝應用程式開啟特定類型的檔案，而非使用您傳統型版本的應用程式開啟。
 
-若要完成這項工作，您可以針對想要繼承檔案關聯的每個應用程式，為其指定[程式設計識別碼 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids)。
+若要完成這項工作，您可以針對想要繼承檔案關聯的每個應用程式，為其指定[程式設計識別碼 (ProgID)](/windows/desktop/shell/fa-progids)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -117,13 +117,13 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |說明 |
 |-------|-------------|
 |類別 |一律為 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織檔案類型，並將其分組。 名稱必須全部是小寫，而且沒有任何空格。 |
-|MigrationProgId |[程式設計識別碼 (ProgID)](https://docs.microsoft.com/windows/desktop/shell/fa-progids) 針對您想要繼承檔案關聯的傳統型應用程式，描述其應用程式、元件，以及版本。|
+|MigrationProgId |[程式設計識別碼 (ProgID)](/windows/desktop/shell/fa-progids) 針對您想要繼承檔案關聯的傳統型應用程式，描述其應用程式、元件，以及版本。|
 
 #### <a name="example"></a>範例
 
@@ -176,7 +176,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |說明 |
 |-------|-------------|
@@ -237,7 +237,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |說明 |
 |-------|-------------|
@@ -301,7 +301,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |說明 |
 |-------|-------------|
@@ -367,7 +367,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)找到完整的結構描述參考。
 
 |名稱 |說明 |
 |-------|-------------|
@@ -406,15 +406,15 @@ ms.locfileid: "88942778"
 
 ### <a name="place-your-dll-files-into-any-folder-of-the-package"></a>將 DLL 檔案放置在套件的任何資料夾
 
-使用 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 擴充功能，在應用程式套件中宣告最多五個資料夾路徑 (相對於應用程式套件根路徑)，以用於應用程式程序的載入器搜尋路徑。
+使用 [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 擴充功能，在應用程式套件中宣告最多五個資料夾路徑 (相對於應用程式套件根路徑)，以用於應用程式程序的載入器搜尋路徑。
 
-如果套件具有執行權限，Windows 應用程式的 [DLL 搜尋順序](https://docs.microsoft.com/windows/win32/dlls/dynamic-link-library-search-order)會在套件相依性圖形中包含套件。 根據預設，這會包含主要、選擇性和架構套件，不過，封裝資訊清單中的 [uap6:AllowExecution](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) 元素可以覆寫此設定。
+如果套件具有執行權限，Windows 應用程式的 [DLL 搜尋順序](/windows/win32/dlls/dynamic-link-library-search-order)會在套件相依性圖形中包含套件。 根據預設，這會包含主要、選擇性和架構套件，不過，封裝資訊清單中的 [uap6:AllowExecution](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution) 元素可以覆寫此設定。
 
-依預設，包含在 DLL 搜尋順序中的套件會包含其「有效路徑」。 如需有效路徑的詳細資訊，請參閱 [EffectivePath](https://docs.microsoft.com/uwp/api/windows.applicationmodel.package.effectivepath) 屬性 (WinRT) 和 [PackagePathType](https://docs.microsoft.com/windows/win32/api/appmodel/ne-appmodel-packagepathtype) 列舉 (Win32)。
+依預設，包含在 DLL 搜尋順序中的套件會包含其「有效路徑」。 如需有效路徑的詳細資訊，請參閱 [EffectivePath](/uwp/api/windows.applicationmodel.package.effectivepath) 屬性 (WinRT) 和 [PackagePathType](/windows/win32/api/appmodel/ne-appmodel-packagepathtype) 列舉 (Win32)。
 
-如果套件指定 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride)，則會使用這項資訊，而不是套件的有效路徑。
+如果套件指定 [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride)，則會使用這項資訊，而不是套件的有效路徑。
 
-每個套件只能包含一個 [uap6:LoaderSearchPathOverride](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 擴充功能。 這表示您可以將其中一個新增到您的主要套件，並在每個[選用套件及相關集合](/windows/msix/package/optional-packages)中新增一個。
+每個套件只能包含一個 [uap6:LoaderSearchPathOverride](/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride) 擴充功能。 這表示您可以將其中一個新增到您的主要套件，並在每個[選用套件及相關集合](/windows/msix/package/optional-packages)中新增一個。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -496,7 +496,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
@@ -571,7 +571,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
@@ -633,7 +633,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
@@ -676,7 +676,7 @@ ms.locfileid: "88942778"
 
 在檔案總管中，使用者可以使用該欄位群組這些檔案。 系統元件也會根據不同用途使用此欄位，例如：編製索引。
 
-如需有關**種類**欄位以及您可以使用於此欄位中的詳細資訊，請參閱[使用種類名稱](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
+如需有關**種類**欄位以及您可以使用於此欄位中的詳細資訊，請參閱[使用種類名稱](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -698,14 +698,14 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
 |類別 |一定是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織檔案類型，並將其分組。 名稱必須全部是小寫，而且沒有任何空格。 |
 |FileType |相關的檔案副檔名。 |
-|value |一個有效的 [Kind 值](https://docs.microsoft.com/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
+|value |一個有效的 [Kind 值](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names) |
 
 #### <a name="example"></a>範例
 
@@ -759,7 +759,7 @@ ms.locfileid: "88942778"
 </uap:Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
@@ -797,7 +797,7 @@ ms.locfileid: "88942778"
 
 ### <a name="specify-a-context-menu-handler-for-a-file-type"></a>為檔案類型指定操作功能表處理常式
 
-如果您的傳統型應用程式定義[操作功能表處理常式](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)，請使用此延伸模組來登錄功能表處理常式。
+如果您的傳統型應用程式定義[操作功能表處理常式](/windows/desktop/shell/context-menu-handlers)，請使用此延伸模組來登錄功能表處理常式。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -825,19 +825,19 @@ ms.locfileid: "88942778"
 </Extensions>
 ```
 
-您可以在這裡找到完整的結構描述參考：[com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 和 [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)。
+您可以在這裡找到完整的結構描述參考：[com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 和 [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus)。
 
 #### <a name="instructions"></a>Instructions
 
 若要登錄您的操作功能表處理常式，請遵循下列指示。
 
-1. 在您的傳統型應用程式中，藉由實作 [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) 或 [IExplorerCommandState](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) 介面，來實作[操作功能表處理常式](https://docs.microsoft.com/windows/desktop/shell/context-menu-handlers)。 如需範例，請參閱 [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) 程式碼範例。 確保為每個實作物件定義類別 GUID。 例如，下列程式碼會定義類別識別碼以實作 [IExplorerCommand](https://docs.microsoft.com/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand)。
+1. 在您的傳統型應用程式中，藉由實作 [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) 或 [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) 介面，來實作[操作功能表處理常式](/windows/desktop/shell/context-menu-handlers)。 如需範例，請參閱 [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) 程式碼範例。 確保為每個實作物件定義類別 GUID。 例如，下列程式碼會定義類別識別碼以實作 [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand)。
 
     ```cpp
     class __declspec(uuid("d0c8bceb-28eb-49ae-bc68-454ae84d6264")) CExplorerCommandVerb;
     ```
 
-2. 在您的封裝資訊清單中，指定 [com:ComServer](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 應用程式延伸模組，該延伸模組使用操作功能表處理常式實作的類別識別碼，登錄 COM 代理伺服器。
+2. 在您的封裝資訊清單中，指定 [com:ComServer](/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver) 應用程式延伸模組，該延伸模組使用操作功能表處理常式實作的類別識別碼，登錄 COM 代理伺服器。
 
     ```xml
     <com:Extension Category="windows.comServer">
@@ -849,7 +849,7 @@ ms.locfileid: "88942778"
     </com:Extension>
     ```
 
-2. 在您的封裝資訊清單中，指定 [desktop4:FileExplorerContextMenus](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) 應用程式延伸模組，以登錄操作功能表處理常式實作。
+2. 在您的封裝資訊清單中，指定 [desktop4:FileExplorerContextMenus](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus) 應用程式延伸模組，以登錄操作功能表處理常式實作。
 
     ```xml
     <desktop4:Extension Category="windows.fileExplorerContextMenus">
@@ -985,7 +985,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
@@ -1069,7 +1069,7 @@ ms.locfileid: "88942778"
 </Package>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
 <a id="executable"></a>
 
@@ -1106,7 +1106,7 @@ ms.locfileid: "88942778"
 |-------|-------------|
 |類別 |一定是 ``windows.startupTask``。|
 |可執行檔 |欲啟動之可執行檔檔案的相對路徑。 |
-|TaskId |您工作的唯一識別碼。 應用程式可使用此識別碼呼叫 [Windows.ApplicationModel.StartupTask](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.StartupTask) 類別中的 API，運用程式設計方式，啟用或停用啟動工作。 |
+|TaskId |您工作的唯一識別碼。 應用程式可使用此識別碼呼叫 [Windows.ApplicationModel.StartupTask](/uwp/api/Windows.ApplicationModel.StartupTask) 類別中的 API，運用程式設計方式，啟用或停用啟動工作。 |
 |已啟用 |指出工作第一次啟動時會是啟用或停用。 下次使用者登入時，將會執行已啟用的工作 (除非使用者將其停用)。 |
 |DisplayName |出現在工作管理員中工作的名稱。 您可以透過使用 ```ms-resource``` 來當地語系化此字串。 |
 
@@ -1162,13 +1162,13 @@ ms.locfileid: "88942778"
 |類別 |一定是 ``windows.autoPlayHandler``。
 |ActionDisplayName |字串，表示使用者可以在連接到電腦的裝置上執行的動作 (例如：「匯入檔案」或「播放影片」)。 |
 |ProviderDisplayName | 此字串表示您的應用程式或服務 (例如：「Contoso 影片播放程式」)。 |
-|ContentEvent |內容事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將磁碟區裝置 (例如，相機記憶卡、隨身碟或 DVD) 插入電腦時，就會引發內容事件。 您可以在[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到那些事件的完整清單。  |
+|ContentEvent |內容事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將磁碟區裝置 (例如，相機記憶卡、隨身碟或 DVD) 插入電腦時，就會引發內容事件。 您可以在[這裡](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到那些事件的完整清單。  |
 |動詞命令 |[動詞] 設定會識別針對選取的選項而傳遞至應用程式的值。 您可以為自動播放事件指定多個啟動動作，並使用 \[動詞\] 設定判斷使用者為您 app 選取的選項。 您可以檢查傳遞至 app 啟動事件引數的 verb 屬性，以判斷使用者選取的選項。 您可以在 \[動詞\] 設定使用保留字 open 以外的任何值。 |
-|DropTargetHandler |實作 [IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 介面的應用程式類別識別碼。 抽取式媒體中的檔案將會傳遞至[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)實作的[Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)方法。  |
-|參數 |您不需要為所有內容事件實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於任何內容事件，您可以提供命令列參數，而不實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於這些事件，自動播放會使用這些命令列參數啟動您的應用程式。 您可以在應用程式的初始化程式碼中剖析這些參數，以判斷自動播放是否啟動應用程式，然後提供您的自訂實作。 |
-|DeviceEvent |裝置事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將裝置連接到電腦時，就會引發裝置事件。 裝置事件以字串``WPD``開頭，[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)列出這些裝置事件。 |
-|HWEventHandler |實作 [IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 介面的應用程式類別識別碼。 |
-|InitCmdLine |您想要傳遞到[IHWEventHandler](https://docs.microsoft.com/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)介面的[Initialize](https://docs.microsoft.com/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)方法的字串參數。 |
+|DropTargetHandler |實作 [IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017) 介面的應用程式類別識別碼。 抽取式媒體中的檔案將會傳遞至[IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)實作的[Drop](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)方法。  |
+|參數 |您不需要為所有內容事件實作[IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於任何內容事件，您可以提供命令列參數，而不實作[IDropTarget](/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於這些事件，自動播放會使用這些命令列參數啟動您的應用程式。 您可以在應用程式的初始化程式碼中剖析這些參數，以判斷自動播放是否啟動應用程式，然後提供您的自訂實作。 |
+|DeviceEvent |裝置事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將裝置連接到電腦時，就會引發裝置事件。 裝置事件以字串``WPD``開頭，[這裡](/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)列出這些裝置事件。 |
+|HWEventHandler |實作 [IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler) 介面的應用程式類別識別碼。 |
+|InitCmdLine |您想要傳遞到[IHWEventHandler](/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler)介面的[Initialize](/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize)方法的字串參數。 |
 
 ### <a name="example"></a>範例
 
@@ -1199,14 +1199,14 @@ ms.locfileid: "88942778"
 
 如果您的應用程式在使用者安裝更新時已開啟，則會關閉應用程式。
 
-如果您希望完成更新後該應用程式重新啟動，請在每個您想要重新啟動的處理程序中呼叫 [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函式。
+如果您希望完成更新後該應用程式重新啟動，請在每個您想要重新啟動的處理程序中呼叫 [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函式。
 
-應用程式中的每個使用中視窗都會收到 [WM_QUERYENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-queryendsession) 訊息。 此時，如有需要，您的應用程式可以再次呼叫 [RegisterApplicationRestart](https://docs.microsoft.com/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函式，以更新命令列。
+應用程式中的每個使用中視窗都會收到 [WM_QUERYENDSESSION](/windows/desktop/Shutdown/wm-queryendsession) 訊息。 此時，如有需要，您的應用程式可以再次呼叫 [RegisterApplicationRestart](/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart) 函式，以更新命令列。
 
-當應用程式中的每個使用中視窗收到 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 訊息時，您的應用程式應該會儲存資料並關閉。
+當應用程式中的每個使用中視窗收到 [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) 訊息時，您的應用程式應該會儲存資料並關閉。
 
 >[!NOTE]
-> 使用中視窗也會收到 [WM_CLOSE](https://docs.microsoft.com/windows/desktop/winmsg/wm-close) 訊息，以防應用程式未處理 [WM_ENDSESSION](https://docs.microsoft.com/windows/desktop/Shutdown/wm-endsession) 訊息。
+> 使用中視窗也會收到 [WM_CLOSE](/windows/desktop/winmsg/wm-close) 訊息，以防應用程式未處理 [WM_ENDSESSION](/windows/desktop/Shutdown/wm-endsession) 訊息。
 
 此時，您的應用程式有 30 秒的時間可以關閉本身的處理程序，否則平台會強制終止。
 
@@ -1242,7 +1242,7 @@ ms.locfileid: "88942778"
 </Extension>
 ```
 
-您可以在[這裡](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|
@@ -1375,7 +1375,7 @@ ms.locfileid: "88942778"
 
 如果要建立在所有裝置上執行的通用 Windows 平台使用者介面，但希望 Win32 應用程式的元件能繼續在完全信任的情況下執行，此延伸模組非常有用。
 
-您只需要為 Win32 應用程式建立 Windows 應用程式套件。 然後，將此延伸模組新增至您 UWP app 的套件檔案。 此延伸模組表示您想要在 Windows 應用程式套件中啟動可執行檔。  若您想要讓您的 UWP app 和 Win32 應用程式互相通訊，您可以設定一或多個[應用程式服務](/windows/uwp/launch-resume/app-services)。 您可以在[這裡](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)閱讀更多關於此案例的資訊。
+您只需要為 Win32 應用程式建立 Windows 應用程式套件。 然後，將此延伸模組新增至您 UWP app 的套件檔案。 此延伸模組表示您想要在 Windows 應用程式套件中啟動可執行檔。  若您想要讓您的 UWP app 和 Win32 應用程式互相通訊，您可以設定一或多個[應用程式服務](/windows/uwp/launch-resume/app-services)。 您可以在[這裡](/archive/blogs/appconsult/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app)閱讀更多關於此案例的資訊。
 
 ## <a name="next-steps"></a>接下來的步驟
 

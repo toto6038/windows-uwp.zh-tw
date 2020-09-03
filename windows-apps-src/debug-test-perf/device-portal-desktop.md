@@ -6,12 +6,12 @@ ms.date: 08/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: dc3ca2379ae7dd704d96e383cc02314ee9423fb7
-ms.sourcegitcommit: 508fb9e763aa5967beebf7bf5e77d7ad12baa566
+ms.openlocfilehash: e485fcb5d6ca6ecf8c19124c482492ddfb2c5233
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88714485"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173602"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
@@ -34,7 +34,7 @@ Windows 裝置入口網站是一種偵錯工具，可讓您從網頁瀏覽器檢
 從 Windows 10 版本 1607 開始，某些適用於桌上型電腦的新功能只有在啟用開發人員模式時才提供。 如需有關如何啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](../get-started/enable-your-device-for-development.md)。
 
 > [!IMPORTANT]
-> 有時會因網路或相容性問題，致使開發人員模式無法正確安裝在您的裝置上。 如需協助進行這些問題的疑難排解，請參閱[相關的＜啟用您的裝置以用於開發＞一節](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)。
+> 有時會因網路或相容性問題，致使開發人員模式無法正確安裝在您的裝置上。 如需協助進行這些問題的疑難排解，請參閱[相關的＜啟用您的裝置以用於開發＞一節](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package)。
 
 ### <a name="turn-on-device-portal"></a>開啟裝置入口網站
 
@@ -117,11 +117,11 @@ Windows 桌面上的裝置入口網站將會顯示 [Windows 裝置入口網站�
 - `-DeleteSSL` 
     - 這樣會重設用於 HTTPS 連線的 SSL 憑證快取。 如果您遇到 TLS 連線錯誤，而無法略過 (與預期的憑證警告不同)，此選項可修正問題。 
 - `-SetCert <pfxPath> <pfxPassword>`
-    - 如需詳細資料，請參閱[使用自訂 SSL 憑證佈建裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-ssl)。  
+    - 如需詳細資料，請參閱[使用自訂 SSL 憑證佈建裝置入口網站](./device-portal-ssl.md)。  
     - 這可讓您安裝自己的 SSL 憑證，以修正通常在裝置入口網站中看見的 SSL 警告頁面。 
 - `-Debug <various options for authentication, port selection, and tracing level>`
-    - 執行具有特定組態並且會顯示偵錯訊息的單機版裝置入口網站。 這對於建置[封裝外掛程式](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)來說最實用。 
-    - 如需如何以 System 身分執行此操作以完整測試封裝外掛程式的詳細資料，請參閱 [MSDN Magazine 文章](https://msdn.microsoft.com/magazine/mt826332.aspx)。
+    - 執行具有特定組態並且會顯示偵錯訊息的單機版裝置入口網站。 這對於建置[封裝外掛程式](./device-portal-plugin.md)來說最實用。 
+    - 如需如何以 System 身分執行此操作以完整測試封裝外掛程式的詳細資料，請參閱 [MSDN Magazine 文章](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in)。
 
 ## <a name="troubleshooting"></a>疑難排解
 
@@ -150,4 +150,4 @@ Windows 桌面上的裝置入口網站將會顯示 [Windows 裝置入口網站�
 ## <a name="see-also"></a>另請參閱
 
 * [Windows 裝置入口網站概觀](device-portal.md)
-* [裝置入口網站核心 API 參考資料](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core)
+* [裝置入口網站核心 API 參考資料](./device-portal-api-core.md)

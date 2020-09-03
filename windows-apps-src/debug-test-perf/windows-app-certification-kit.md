@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 174ff4e588d75293ecb729312883f4792196c87a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79110101"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174022"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
-若要讓您的應用程式取得 [Windows 認證](/windows/win32/win_cert/windows-certification-portal)或做好[發行到 Microsoft Store](/windows/uwp/publish/app-submissions) 的準備，您應該先在本機進行驗證和測試。 本主題說明如何安裝和執行 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)，以確保您的應用程式安全且有效率。
+若要讓您的應用程式取得 [Windows 認證](/windows/win32/win_cert/windows-certification-portal)或做好[發行到 Microsoft Store](../publish/app-submissions.md) 的準備，您應該先在本機進行驗證和測試。 本主題說明如何安裝和執行 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)，以確保您的應用程式安全且有效率。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -23,7 +23,7 @@ ms.locfileid: "79110101"
 
 - 您必須安裝和執行 Windows 10。
 - 您必須安裝 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
-- 您必須[啟用您的裝置以進行開發](/windows/uwp/get-started/enable-your-device-for-development)。
+- 您必須[啟用您的裝置以進行開發](../get-started/enable-your-device-for-development.md)。
 - 您必須將要測試的 Windows App 部署至電腦。
 
 > [!NOTE]
@@ -83,11 +83,11 @@ ms.locfileid: "79110101"
 
 Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效能為基礎。
 
-執行測試之電腦的特性會影響測試結果。 若要判斷您應用程式的效能是否符合 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)，建議您在低功率電腦上測試應用程式，例如 Intel Atom 處理器電腦搭配使用 1366x768 (或更高) 的螢幕解析度與旋轉式硬碟 (而非固態硬碟)。
+執行測試之電腦的特性會影響測試結果。 若要判斷您應用程式的效能是否符合 [Microsoft Store 原則](/legal/windows/agreements/store-policies)，建議您在低功率電腦上測試應用程式，例如 Intel Atom 處理器電腦搭配使用 1366x768 (或更高) 的螢幕解析度與旋轉式硬碟 (而非固態硬碟)。
 
-隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)，並使用最新版的 Windows 應用程式認證套件來測試應用程式，以確保您的應用程式符合最新的效能需求。
+隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的 [Microsoft Store 原則](/legal/windows/agreements/store-policies)，並使用最新版的 Windows 應用程式認證套件來測試應用程式，以確保您的應用程式符合最新的效能需求。
 
 ## <a name="related-topics"></a>相關主題
 
 - [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)
-- [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+- [Microsoft Store 原則](/legal/windows/agreements/store-policies)

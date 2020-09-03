@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 7 月
 ms.date: 07/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f4e9ce391aa485e681fc198e14fe3374edb72aa1
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 375cd903a0711a1493930567f557992c0bba46b7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684711"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174342"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>2018 年 7 月 Windows 開發人員文件的新增功能
 
@@ -22,15 +22,15 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="progressive-web-apps-on-windows"></a>Windows 上的漸進式 Web 應用程式
 
-[漸進式 Web 應用程式 (PWA)](https://developer.microsoft.com/windows/pwa) 只是在支援平台和瀏覽器引擎上，使用類似原生應用程式功能 (例如從主螢幕安裝啟動、離線支援與推播通知) [漸進式增強](https://www.wikipedia.org/wiki/Progressive_enhancement)的 Web 應用程式。 在使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10上，PWA 享有額外的優點，即[作為 UWP 應用程式獨立於瀏覽器視窗以外執行](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)。
+[漸進式 Web 應用程式 (PWA)](https://developer.microsoft.com/windows/pwa) 只是在支援平台和瀏覽器引擎上，使用類似原生應用程式功能 (例如從主螢幕安裝啟動、離線支援與推播通知) [漸進式增強](https://www.wikipedia.org/wiki/Progressive_enhancement)的 Web 應用程式。 在使用 Microsoft Edge (EdgeHTML) 引擎的 Windows 10上，PWA 享有額外的優點，即[作為 UWP 應用程式獨立於瀏覽器視窗以外執行](/microsoft-edge/progressive-web-apps/windows-features)。
 
 ![作用中 PWA 的影像](images/progressive-web-apps.jpg)
 
 請查看我們的 PWA 指南，以：
 
-* [建置簡單的 Web 應用程序作為 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started) \(英文\)
-* [使用 Windows 執行階段增強您的 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features) \(英文\)
-* [將您的 PWA 發佈到 Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store) \(英文\)
+* [建置簡單的 Web 應用程序作為 PWA](/microsoft-edge/progressive-web-apps/get-started) \(英文\)
+* [使用 Windows 執行階段增強您的 PWA](/microsoft-edge/progressive-web-apps/windows-features) \(英文\)
+* [將您的 PWA 發佈到 Microsoft Store](/microsoft-edge/progressive-web-apps/microsoft-store) \(英文\)
 
 ### <a name="notepad"></a>記事本
 
@@ -48,29 +48,29 @@ Adobe XD 和 Adobe Illustrator 工具組已更新了新功能。 這些設計工
 
 ### <a name="webvr"></a>WebVR
 
-我們在 [WebVR 文件](https://docs.microsoft.com/microsoft-edge/webvr/)中新增了幾個新主題：
+我們在 [WebVR 文件](/microsoft-edge/webvr/)中新增了幾個新主題：
 
-* [什麼是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) \(英文\) 說明何謂 WebVR、為什麼您應該使用它，以及如何開始針對它進行開發。
+* [什麼是 WebVR？](/microsoft-edge/webvr/what-is-webvr) \(英文\) 說明何謂 WebVR、為什麼您應該使用它，以及如何開始針對它進行開發。
 
-* [漸進式 Web 應用程式中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas) \(英文\)：了解如何將 WebVR 新增至漸進式 Web 應用程式 (PWA)。
+* [漸進式 Web 應用程式中的 WebVR](/microsoft-edge/webvr/webvr-in-pwas) \(英文\)：了解如何將 WebVR 新增至漸進式 Web 應用程式 (PWA)。
 
-* [WebView 中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview) \(英文\)：了解如何將 WebVR 新增至 Windows 10 應用程式中的 WebView 控制項。
+* [WebView 中的 WebVR](/microsoft-edge/webvr/webvr-in-webview) \(英文\)：了解如何將 WebVR 新增至 Windows 10 應用程式中的 WebView 控制項。
 
-* [WebVR 示範](https://docs.microsoft.com/microsoft-edge/webvr/demos) \(英文\)：請參閱一些使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式頭戴裝置的 WebVR 示範。
+* [WebVR 示範](/microsoft-edge/webvr/demos) \(英文\)：請參閱一些使用 Microsoft Edge 和 Windows Mixed Reality 沉浸式頭戴裝置的 WebVR 示範。
 
 此外，我們對現有的頁面進行了一些更新：
 
 * 現在，目錄更妥善地分成四個不同的最上層貯體：**基本概念**、**開發**、**資源**和**示範**。
 
-* [WebVR 開發人員指南 (登陸頁面)](https://docs.microsoft.com/microsoft-edge/webvr/) \(英文\)：更新的外觀與風格，包含較大的影像和圖示與新的示範。
+* [WebVR 開發人員指南 (登陸頁面)](/microsoft-edge/webvr/) \(英文\)：更新的外觀與風格，包含較大的影像和圖示與新的示範。
 
-* [將 WebVR 與 Microsoft Edge 搭配使用](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge) \(英文\)：已更新，其中包含有關 Windows 10 2018 年 4 月更新的資訊。
+* [將 WebVR 與 Microsoft Edge 搭配使用](/microsoft-edge/webvr/webvr-with-edge) \(英文\)：已更新，其中包含有關 Windows 10 2018 年 4 月更新的資訊。
 
 ## <a name="videos"></a>視訊
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開發人員入門：在 Window 10 上建立和自訂表單
 
-我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](https://docs.microsoft.com/windows/uwp/get-started/construct-form-learning-track) \(部分機器翻譯\)。
+我們針對 Windows 開發人員的[入門文件](../get-started/index.md)現在提供了基本應用程式開發工作的實際操作經驗。 這段影片將向您逐步說明其中一個主題，並說明如何在您的應用程式中建立表單 UI 的基本概念。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看實際操作的程式碼，然後[自行查看主題](../get-started/construct-form-learning-track.md) \(部分機器翻譯\)。
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>使用個人化聊天專案增強您的機器人
 

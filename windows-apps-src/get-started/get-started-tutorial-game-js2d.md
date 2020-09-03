@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ef4255c8ea1eb9db34f652e5974a4f341e5500d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ac9e572da995da644cab1fbc997ee79fc3a11560
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80759447"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172012"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -52,7 +52,7 @@ ms.locfileid: "80759447"
 
 ![複製存放庫](images/JS2D_2.png)
 
-您也可以下載專案為 zip 檔案，或使用任何可搭配 [GitHub 專案](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)的其他標準方式。
+您也可以下載專案為 zip 檔案，或使用任何可搭配 [GitHub 專案](./get-app-samples.md)的其他標準方式。
 
 一旦方案載入到 Visual Studio 之後，您會看到數個檔案，包括：
 
@@ -261,10 +261,10 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 程序有幾個步驟。
 
 1. 您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
-2. 您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-3. 必須提交應用程式以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
+2. 您必須使用應用程式提交[檢查清單](../publish/app-submissions.md)。
+3. 必須提交應用程式以取得[認證](../publish/the-app-certification-process.md)。
 
-如需詳細資訊，請參閱[發佈 UWP 應用程式](https://docs.microsoft.com/windows/uwp/publish/)。
+如需詳細資訊，請參閱[發佈 UWP 應用程式](../publish/index.md)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能的建議。
 

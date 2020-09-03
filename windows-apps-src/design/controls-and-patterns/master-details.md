@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ae8094ac3fbb1de8958b1cc138953d3e1b887cc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b414a1177bbfad670e3b623babce068a299a713e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970383"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172592"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "82970383"
 
 主要/詳細資料模式具有一個主要窗格 (通常會有一個[清單檢視](lists.md)) 和內容的詳細資料窗格。 當選取主要清單中的項目時，會更新詳細資料窗格。 這個模式經常用於電子郵件和通訊錄。
 
-> **重要 API**：[ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要 API**：[ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
@@ -91,7 +91,7 @@ ms.locfileid: "82970383"
 ![調適型主要/詳細資料配置](images/patterns_masterdetail.png)
 
 ### <a name="create-an-adaptive-masterdetails-pattern"></a>建立調適型主要/詳細資料模式
-若要建立調適型配置，請針對您的 UI 定義不同的 [**VisualStates**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate)，並使用 [**AdaptiveTriggers**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 宣告不同狀態的中斷點。
+若要建立調適型配置，請針對您的 UI 定義不同的 [**VisualStates**](/uwp/api/windows.ui.xaml.visualstate)，並使用 [**AdaptiveTriggers**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 宣告不同狀態的中斷點。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
@@ -110,5 +110,5 @@ ms.locfileid: "82970383"
 - [清單](lists.md)
 - [搜尋](search.md)
 - [應用程式列和命令列](app-bars.md)
-- [ListView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)
-- [SplitView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.splitview)
+- [ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)
+- [SplitView 類別](/uwp/api/windows.ui.xaml.controls.splitview)

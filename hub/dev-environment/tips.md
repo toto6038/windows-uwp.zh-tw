@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 開發人員, 秘訣, 效能, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 8c094e7871e9de4fdf7eca2e0e1b425af295f252
-ms.sourcegitcommit: 5ba2524d237be82d3621551e48cac938fe81d2ea
+ms.openlocfilehash: 1135be4797893a74e398e69fcbc1c43d60e9fdb9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87255023"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172662"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>改善效能和開發工作流程的秘訣
 
@@ -28,7 +28,7 @@ ms.locfileid: "87255023"
 
 ## <a name="use-the-credential-manager-to-your-streamline-authentication-process"></a>使用認證管理員以簡化您的驗證程序
 
-如果您是使用 Git 進行版本控制和協同作業，您可以[設定 Git 認證管理員](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)，將您的權杖儲存在 Windows 認證管理員中，藉此簡化您的驗證程序。 我們也建議[新增 .gitignore 檔案](https://docs.microsoft.com/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file)至您的專案。
+如果您是使用 Git 進行版本控制和協同作業，您可以[設定 Git 認證管理員](/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)，將您的權杖儲存在 Windows 認證管理員中，藉此簡化您的驗證程序。 我們也建議[新增 .gitignore 檔案](/windows/wsl/tutorials/wsl-git#adding-a-git-ignore-file)至您的專案。
 
 ## <a name="use-wsl-for-testing-your-production-pipeline-before-deploying-to-the-cloud"></a>在部署至雲端之前，先使用 WSL 來測試您的生產管線
 
@@ -40,17 +40,17 @@ WSL 是以開發人員對象為目標，旨在將開發人員做為內部開發�
 
 ## <a name="improve-performance-speed-for-wsl-by-not-crossing-over-file-systems"></a>透過不跨越檔案系統來改善 WSL 的效能速度
 
-如果您是同時使用 Windows 和 Windows 子系統 Linux 版，則已安裝兩個檔案系統：NTSF (Windows) 和 WSL (您的 Linux 發行版本)。 若要快速執行，請確定您的專案檔與您要使用的工具儲存在同一個系統中。 深入了解[選擇正確的檔案系統以加快執行速度](https://docs.microsoft.com/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance)。
+如果您是同時使用 Windows 和 Windows 子系統 Linux 版，則已安裝兩個檔案系統：NTSF (Windows) 和 WSL (您的 Linux 發行版本)。 若要快速執行，請確定您的專案檔與您要使用的工具儲存在同一個系統中。 深入了解[選擇正確的檔案系統以加快執行速度](/windows/wsl/compare-versions#use-the-linux-file-system-for-faster-performance)。
 
 ## <a name="improve-build-speeds-by-adding-windows-defender-exclusions"></a>透過新增 Windows Defender 排除項目來改善建置速度
 
-您可以改善組建速度，方法是更新您的 Windows Defender 設定，為您足夠信任的專案資料夾或檔案類型新增排除範圍，以避免掃描出安全性威脅。 深入了解如何[更新 Windows Defender 設定來改善效能](https://docs.microsoft.com/windows/android/defender-settings)。
+您可以改善組建速度，方法是更新您的 Windows Defender 設定，為您足夠信任的專案資料夾或檔案類型新增排除範圍，以避免掃描出安全性威脅。 深入了解如何[更新 Windows Defender 設定來改善效能](../android/defender-settings.md)。
 
 ![Windows Defender 螢幕擷取畫面](../images/windows-defender-exclusions.png)
 
 ## <a name="launch-all-your-command-lines-in-windows-terminal-at-once"></a>一次在 Windows 終端機中啟動所有命令列
 
-* 您可以使用 [Windows 終端機命令列引數](https://docs.microsoft.com/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes)，將多個命令列 (例如 PowerShell、Ubuntu 和 Azure CLI) 啟動到具有多個窗格的單一視窗。 在安裝 [Windows 終端機](https://docs.microsoft.com/windows/terminal/get-started)、[WSL/Ubuntu](https://docs.microsoft.com/windows/wsl/install-win10), 和 [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) 之後，請在 PowerShell 輸入下列命令，以開啟具有全部三個的全新多窗格視窗：
+* 您可以使用 [Windows 終端機命令列引數](/windows/terminal/command-line-arguments?tabs=powershell#multiple-panes)，將多個命令列 (例如 PowerShell、Ubuntu 和 Azure CLI) 啟動到具有多個窗格的單一視窗。 在安裝 [Windows 終端機](/windows/terminal/get-started)、[WSL/Ubuntu](/windows/wsl/install-win10), 和 [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) 之後，請在 PowerShell 輸入下列命令，以開啟具有全部三個的全新多窗格視窗：
 
     ```powershell
     wt -p "Command Prompt" `; split-pane -p "Windows PowerShell" `; split-pane -H wsl.exe

@@ -6,17 +6,17 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 79022d1be13b98be4b086cbe452e55767ca0cedc
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: acdc8d5bb9a73bf5851dfd8f75f777c2a13bcdb1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492899"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173132"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>使用 C++/CX 建立 "Hello, World!" 應用程式
 
 > [!IMPORTANT]
-> 本教學課程使用 C++/CX。 Microsoft 已發生 C++/WinRT：Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語言投影。 如需有關此語言的詳細資訊，請參閱 [ C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)。
+> 本教學課程使用 C++/CX。 Microsoft 已發生 C++/WinRT：Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語言投影。 如需有關此語言的詳細資訊，請參閱 [ C++/WinRT](../cpp-and-winrt-apis/index.md)。
 
 在 Microsoft Visual Studio 2017，您可以使用 C++/CX 開發在 Windows 10 上執行且具有使用 Extensible Application Markup Language (XAML) 定義之 UI 的應用程式。
 
@@ -26,7 +26,7 @@ ms.locfileid: "86492899"
 ## <a name="before-you-start"></a>開始之前
 
 -   若要完成這個教學課程，您必須在執行 Windows 10 的電腦上，使用 Visual Studio Community，或是某一個非 Community 版本的 Visual Studio。 若要下載，請參閱[取得工具](https://visualstudio.microsoft.com/downloads/)。
--   我們假設您對 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)中的 C++/CX、XAML 及概念有基本的了解。
+-   我們假設您對 [XAML 概觀](../xaml-platform/xaml-overview.md)中的 C++/CX、XAML 及概念有基本的了解。
 -   我們假設您在 Visual Studio 中使用預設的視窗配置。 若要重設為預設配置，在功能表列上選擇 [視窗] >  [重設視窗配置]。
 
 ## <a name="comparing-c-desktop-apps-to-windows-apps"></a>比較 C++ 傳統型應用程式和 Windows 應用程式
@@ -53,7 +53,7 @@ ms.locfileid: "86492899"
 
 -   雖然您仍然可以在 Windows 裝置上使用 Win32 的部分功能，不過主要是使用全新、易於瀏覽、物件導向的 API (Windows 執行階段) 來設計程式。
 
--   您使用 C++/CX 來取用和建立 Windows 執行階段物件。 C++/CX 可啟用動態建立物件的 C++ 例外狀況處理、委派、事件及自動參考計數。 當您使用 C++/CX 時，應用程式程式碼會隱藏基礎 COM 和 Windows 結構的詳細資訊。 如需相關資訊，請參閱 [C++/CX 語言參考](https://docs.microsoft.com/cpp/cppcx/visual-c-language-reference-c-cx)。
+-   您使用 C++/CX 來取用和建立 Windows 執行階段物件。 C++/CX 可啟用動態建立物件的 C++ 例外狀況處理、委派、事件及自動參考計數。 當您使用 C++/CX 時，應用程式程式碼會隱藏基礎 COM 和 Windows 結構的詳細資訊。 如需相關資訊，請參閱 [C++/CX 語言參考](/cpp/cppcx/visual-c-language-reference-c-cx)。
 
 -   您的應用程式會編譯成一個套件，其中包括應用程式包含之類型的中繼資料、應用程式使用的資源以及需要的功能 (檔案存取、網際網路存取、相機存取等等)。
 
@@ -205,7 +205,7 @@ MainPage::MainPage()
 **步驟 1：修改起始頁**
 
 1.  在 [方案總管] 中，開啟 MainPage.xaml。
-2.  將下列 XAML 新增到根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) (在其結束標記的正前方)，以建立 UI 的控制項。 它包含一個 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)，其中有會詢問使用者名稱的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、會接受使用者名稱的 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 元素、一個 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)，以及另一個 **TextBlock** 元素。
+2.  將下列 XAML 新增到根 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) (在其結束標記的正前方)，以建立 UI 的控制項。 它包含一個 [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)，其中有會詢問使用者名稱的 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、會接受使用者名稱的 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 元素、一個 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)，以及另一個 **TextBlock** 元素。
 
     ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -221,7 +221,7 @@ MainPage::MainPage()
 
 3.  到目前為止，您已建立一個非常基本的通用 Windows app。 若要查看該 UWP app 的外觀，可按 F5 在偵錯模式中建置、部署及執行該 app。
 
-預設啟動顯示畫面最先顯示。 它有應用程式資訊清單檔案中指定的影像—Assets\\SplashScreen.scale-100.png—及背景色彩。 若要了解如何自訂啟動顯示畫面，請參閱[新增啟動顯示畫面](https://docs.microsoft.com/previous-versions/windows/apps/hh465332(v=win.10))。
+預設啟動顯示畫面最先顯示。 它有應用程式資訊清單檔案中指定的影像—Assets\\SplashScreen.scale-100.png—及背景色彩。 若要了解如何自訂啟動顯示畫面，請參閱[新增啟動顯示畫面](/previous-versions/windows/apps/hh465332(v=win.10))。
 
 當啟動顯示畫面消失後，您的 app 便會出現。 它會顯示 app 的主頁面。
 
@@ -231,21 +231,21 @@ MainPage::MainPage()
 
 若要停止偵錯並關閉 app，請返回 Visual Studio 並按 Shift+F5。
 
-如需詳細資訊，請參閱[從 Visual Studio 執行市集 app](https://msdn.microsoft.com/library/windows/apps/xaml/Hh441477(v=VS.140).aspx)。
+如需詳細資訊，請參閱[從 Visual Studio 執行市集 app](/visualstudio/debugger/run-store-apps-from-visual-studio)。
 
-您可以在應用程式的 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 輸入文字，但按一下 [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 不會有任何反應。 在之後的步驟中，您要為按鈕的 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件建立事件處理常式，以顯示個人化的問候語。
+您可以在應用程式的 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 輸入文字，但按一下 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 不會有任何反應。 在之後的步驟中，您要為按鈕的 [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件建立事件處理常式，以顯示個人化的問候語。
 
 ## <a name="step-2-create-an-event-handler"></a>步驟 2：建立事件處理常式
 
-1.  在 MainPage.xaml 的 XAML 或設計檢視中，於 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 選取您之前新增的 "Say Hello" [**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。
+1.  在 MainPage.xaml 的 XAML 或設計檢視中，於 [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 選取您之前新增的 "Say Hello" [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)。
 2.  按 F4 開啟 [屬性視窗]，然後選擇 [事件] 按鈕 (![事件按鈕](images/eventsbutton.png))。
-3.  找尋 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 在文字方塊中，輸入處理 **Click** 事件的函式名稱。 在這個範例中，輸入 "Button\_Click"。
+3.  找尋 [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。 在文字方塊中，輸入處理 **Click** 事件的函式名稱。 在這個範例中，輸入 "Button\_Click"。
 
     ![屬性視窗、事件檢視](images/xaml-hw-event.png)
 
 4.  按 Enter 鍵。 這時候會在 MainPage.xaml.cpp 中建立事件處理常式方法並開啟它，這樣您就可以新增要在事件發生時執行的程式碼。
 
-   同時，在 MainPage.xaml 中，[**Button**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的 XAML 已更新，以宣告 [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件處理常式，就像這樣：
+   同時，在 MainPage.xaml 中，[**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 的 XAML 已更新，以宣告 [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件處理常式，就像這樣：
 
 ```xaml
 <Button Content="Say &quot;Hello&quot;" Click="Button_Click"/>
@@ -255,7 +255,7 @@ MainPage::MainPage()
 
    如果在轉譯期間發生無法處理的例外狀況，設計工具會無法載入。 在設計工具中的轉譯涉及了執行頁面的設計階段版本。 停用執行中的使用者程式碼會很有幫助。 您可以藉由在 [工具]、[選項] 對話方塊變更設定來執行此動作。 在 [XAML 設計工具] 下，取消核取 [在 XAML 設計工具中執行專案程式碼 (如果支援)]。
 
-5.  在 MainPage.xaml.cpp 中，將下列程式碼新增到您剛才建立的 **Button\_Click** 事件處理常式。 此程式碼會從 `nameInput` [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項擷取使用者的名稱，並用其來建立問候語。 `greetingOutput` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 會顯示結果。
+5.  在 MainPage.xaml.cpp 中，將下列程式碼新增到您剛才建立的 **Button\_Click** 事件處理常式。 此程式碼會從 `nameInput` [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項擷取使用者的名稱，並用其來建立問候語。 `greetingOutput` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 會顯示結果。
 
 ```cpp
 void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -277,13 +277,13 @@ void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::X
 **切換至深色佈景主題**
 
 1.  開啟 App.xaml。
-2.  在開頭的 [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) 標記中，編輯 [**RequestedTheme**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme) 屬性並將其值設定為 **Dark**：
+2.  在開頭的 [**Application**](/uwp/api/Windows.UI.Xaml.Application) 標記中，編輯 [**RequestedTheme**](/uwp/api/windows.ui.xaml.application.requestedtheme) 屬性並將其值設定為 **Dark**：
 
 ```xaml
 RequestedTheme="Dark"
 ```
 
-    Here's the full [**Application**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
+    Here's the full [**Application**](/uwp/api/Windows.UI.Xaml.Application) tag with the dark theme :
 
 ```xaml
     <Application
@@ -309,25 +309,25 @@ RequestedTheme="Dark"
 **變更元素的樣式**
 
 1.  在 Windows 專案中開啟 MainPage.xaml。
-2.  在 XAML 或設計檢視中，選取之前新增的 [What's your name?] [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+2.  在 XAML 或設計檢視中，選取之前新增的 [What's your name?] [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 3.  在 [屬性]  視窗 (**F4**)，選擇右上角的 [屬性] 按鈕 (![屬性按鈕](images/propertiesbutton.png))。
 4.  展開 [文字]  群組並將字型大小設定為 18 像素。
 5.  展開 [其他]  群組，找到 [樣式]  屬性。
 6.  按一下屬性標記 ([樣式]  屬性右側的綠色方塊)，然後在功能表上，選擇 [系統資源]   > [BaseTextBlockStyle]  。
 
-     **BaseTextBlockStyle** 是在 <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 的 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定義的資源。
+     **BaseTextBlockStyle** 是在 <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 的 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中定義的資源。
 
     ![屬性視窗、屬性檢視](images/xaml-hw-style-cpp.png)
 
-     在 XAML 設計表面中，文字的外觀改變了。 在 XAML 編輯器中，[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 的 XAML 已更新：
+     在 XAML 設計表面中，文字的外觀改變了。 在 XAML 編輯器中，[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 的 XAML 已更新：
 
 ```xaml
 <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
 ```
 
-7.  重複上述程序來設定字型大小，並將 **BaseTextBlockStyle** 指派給 `greetingOutput`[**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素。
+7.  重複上述程序來設定字型大小，並將 **BaseTextBlockStyle** 指派給 `greetingOutput`[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素。
 
-    **提示**  雖然這個 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 沒有任何文字，但是當您將指標移至 XAML 設計表面上時，會以藍色外框顯示其位置，讓您可以選取它。  
+    **提示**  雖然這個 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 沒有任何文字，但是當您將指標移至 XAML 設計表面上時，會以藍色外框顯示其位置，讓您可以選取它。  
 
     您的 XAML 現在看起來應該會像這樣：
 
@@ -348,11 +348,11 @@ RequestedTheme="Dark"
 
 ### <a name="step-4-adapt-the-ui-to-different-window-sizes"></a>步驟 4：隨著不同的視窗大小調整 UI
 
-現在要讓 UI 可隨著不同的螢幕大小進行調整，使其在行動裝置上看起來很美觀。 若要這樣做，您要新增 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)，並設定不同視覺狀態套用的屬性。
+現在要讓 UI 可隨著不同的螢幕大小進行調整，使其在行動裝置上看起來很美觀。 若要這樣做，您要新增 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager)，並設定不同視覺狀態套用的屬性。
 
 **調整 UI 配置**
 
-1.  在 XAML 編輯器中，將 XAML 的這個區塊新增到根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 元素的開頭標記之後。
+1.  在 XAML 編輯器中，將 XAML 的這個區塊新增到根 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 元素的開頭標記之後。
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -381,14 +381,14 @@ RequestedTheme="Dark"
 
 ![已設定文字樣式的行動應用程式畫面](images/hw10-screen2-mob.png)
 
-如果您已在舊版的 XAML 中使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager)，您可能會注意到這裡的 XAML 使用簡化的語法。
+如果您已在舊版的 XAML 中使用 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager)，您可能會注意到這裡的 XAML 使用簡化的語法。
 
-名為 `wideState` 的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 有一個 [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的[**MinWindowWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 641。 這表示只有在視窗寬度不小於最小值 641 DIP 時才會套用狀態。 您不需為此狀態定義任何 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 物件，因此它會使用您在頁面內容的 XAML 中定義的配置屬性。
+名為 `wideState` 的 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 有一個 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的[**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 641。 這表示只有在視窗寬度不小於最小值 641 DIP 時才會套用狀態。 您不需為此狀態定義任何 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 物件，因此它會使用您在頁面內容的 XAML 中定義的配置屬性。
 
-第二個 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) (`narrowState`) 有一個 [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的 [**MinWindowWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 0。 當視窗寬度大於 0 但小於 641 DIP 時，會套用這個狀態。 (在 641 DIP 時，會套用 `wideState`)。在這個狀態中，您要定義一些 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 物件，以變更 UI 中的控制項配置屬性：
+第二個 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) (`narrowState`) 有一個 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的 [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 0。 當視窗寬度大於 0 但小於 641 DIP 時，會套用這個狀態。 (在 641 DIP 時，會套用 `wideState`)。在這個狀態中，您要定義一些 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 物件，以變更 UI 中的控制項配置屬性：
 
 -   將 `contentPanel` 元素的左邊界從 120 減少至 20。
--   將 `inputPanel` 元素的 [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 從 **Horizontal** 變更為 **Vertical**。
+-   將 `inputPanel` 元素的 [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 從 **Horizontal** 變更為 **Vertical**。
 -   新增 4 個 DIP 的上邊界至 `inputButton` 元素。
 
 ### <a name="summary"></a>摘要
@@ -397,6 +397,6 @@ RequestedTheme="Dark"
 
 ## <a name="next-steps"></a>接下來的步驟
 
-如果您擁有目標為 Windows 8.1 和 (或) Windows Phone 8.1 的 Windows 通用應用程式專案時，可將它移植到 Windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](https://docs.microsoft.com/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project)和[移植到通用 Windows 平台 (C++)](https://msdn.microsoft.com/library/mt186164.aspx)。
+如果您擁有目標為 Windows 8.1 和 (或) Windows Phone 8.1 的 Windows 通用應用程式專案時，可將它移植到 Windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](../porting/w8x-to-uwp-porting-to-a-uwp-project.md)和[移植到通用 Windows 平台 (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp)。
 
-如果您有想要與 UWP 應用程式整合的現有 C++ 程式碼，例如為現有應用程式建立新的 UWP UI，請參閱[如何：在通用 Windows 專案中使用現有的 C++ 程式碼](https://msdn.microsoft.com/library/mt186162.aspx)。
+如果您有想要與 UWP 應用程式整合的現有 C++ 程式碼，例如為現有應用程式建立新的 UWP UI，請參閱[如何：在通用 Windows 專案中使用現有的 C++ 程式碼](/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app)。

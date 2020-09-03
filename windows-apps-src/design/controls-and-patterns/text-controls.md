@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f2421316be30d24ef44784974fc2c6c199a6570
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081491"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173882"
 ---
 # <a name="text-controls"></a>文字控制項
 
@@ -25,7 +25,7 @@ ms.locfileid: "80081491"
 - 顯示唯讀文字的控制項是 [TextBlock](text-block.md) 與 [RichTextBlock](rich-text-block.md)。
 - 文字輸入和編輯的控制項為：[TextBox](text-box.md)、[RichEditBox](rich-edit-box.md)、[AutoSuggestBox](auto-suggest-box.md) 和 [PasswordBox](password-box.md)。
 
-> **重要 API**：[TextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **重要 API**：[TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox 類別](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox 類別](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -35,17 +35,17 @@ ms.locfileid: "80081491"
 
 使用 **TextBlock** 可在您的應用程式中顯示大部分的唯讀文字。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。
 
-TextBlock 通常很容易使用，並且提供較 RichTextBlock 更優異的文字轉譯效能，因此使其成為大部分應用程式 UI 文字的首選。 您可取得 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性值，以在您的 app 中透過 TextBlock 輕鬆存取和使用文字。
+TextBlock 通常很容易使用，並且提供較 RichTextBlock 更優異的文字轉譯效能，因此使其成為大部分應用程式 UI 文字的首選。 您可取得 [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性值，以在您的 app 中透過 TextBlock 輕鬆存取和使用文字。
 
 其還提供許多可用來自訂您文字轉譯方式的相同格式設定選項。 儘管您可以在文字中放置分行符號，但 TextBlock 是針對顯示單一段落而設計，不支援文字縮排。
 
 當您需要支援多個段落、多欄文字或其他複雜的文字配置，或是內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock**。 RichTextBlock 提供數項適用於進階文字配置的功能。
 
-RichTextBlock 的內容屬性是 [Blocks](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 屬性，此屬性透過 [Paragraph](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 元素支援以段落為基礎的文字。 它沒有您可以用來輕鬆存取 app 中控制項文字內容的 **Text** 屬性。  
+RichTextBlock 的內容屬性是 [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 屬性，此屬性透過 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 元素支援以段落為基礎的文字。 它沒有您可以用來輕鬆存取 app 中控制項文字內容的 **Text** 屬性。  
 
 ### <a name="text-input"></a>文字輸入
 
-使用者可使用 **TextBox** 控制項來輸入和編輯未格式化的文字 (例如在表單中)。 您可以使用 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.text) 屬性來取得 TextBox 中的文字，並在其中設定文字。
+使用者可使用 **TextBox** 控制項來輸入和編輯未格式化的文字 (例如在表單中)。 您可以使用 [Text](/uwp/api/windows.ui.xaml.controls.textbox.text) 屬性來取得 TextBox 中的文字，並在其中設定文字。
 
 您可將 TextBox 設為唯讀，但此應為暫時性的條件狀態。 若該文字永遠無法編輯，請考慮改用 TextBlock。
 
@@ -64,7 +64,7 @@ RichTextBlock 的內容屬性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 -   **有效率地列舉所有有效的值是否實際？** 如果是，請考慮使用其中一個選取控制項，如[核取方塊](checkbox.md)、[下拉式清單](lists.md)、清單方塊、[選項按鈕](radio-button.md)、[滑桿](slider.md)、[切換開關](toggles.md)、[日期選擇器](date-and-time.md)或時間選擇器。
 -   **是否有一組相對小的有效值？** 如果是，請考慮使用[下拉式清單](lists.md)或清單方塊，特別是如果這些值大於幾個字元的長度。
 -   **有效資料是否完全不受限制？或有效資料是否只有格式上的限制 (受限制的長度或字元類型)？** 如果是，請使用文字輸入控制項。 您可以限制能輸入的字元數，此外還可在應用程式程式碼中驗證格式。
--   **該值代表的資料類型是否已經有特殊的通用控制項？** 如果是，請使用適當的控制項而不是文字輸入控制項。 例如，使用 [DatePicker](https://docs.microsoft.com/previous-versions/windows/apps/br211681(v=win.10)) 接受日期輸入，不要使用文字輸入控制項。
+-   **該值代表的資料類型是否已經有特殊的通用控制項？** 如果是，請使用適當的控制項而不是文字輸入控制項。 例如，使用 [DatePicker](/previous-versions/windows/apps/br211681(v=win.10)) 接受日期輸入，不要使用文字輸入控制項。
 -   如果資料只能是數值：
     -   **輸入的值是否為近似和 (或) 相對於相同頁面上的其他數量？** 如果是，請使用[滑桿](slider.md)。
     -   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用[滑桿](slider.md)，以及可能伴隨的控制項。
@@ -135,12 +135,12 @@ RichTextBlock 的內容屬性是 [Blocks](https://docs.microsoft.com/uwp/api/win
 
 當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 TextBox 或 RichEditBox) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
-例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
+例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
 
 >重要  
 >輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 
-如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
+如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](../input/use-input-scope-to-change-the-touch-keyboard.md)。
 
 ## <a name="color-fonts"></a>色彩字型
 
@@ -158,7 +158,7 @@ Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Em
 
 ![使用色彩字型的文字區塊](images/text-block-color-fonts.png)
 
-如需詳細資訊，請參閱 [IsColorFontEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled) 屬性。
+如需詳細資訊，請參閱 [IsColorFontEnabled](/uwp/api/windows.ui.xaml.controls.textblock.iscolorfontenabled) 屬性。
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行與段落分隔字元的指導方針
 
@@ -203,9 +203,9 @@ TextBox 和 RichEditBox 控制項預設會開啟拼字檢查。 您可以將 **I
 **適用於設計人員**
 - [印刷格式指導方針](../style/typography.md)
 - [Segoe MDL2 圖示清單與指導方針](../style/segoe-ui-symbol-font.md)
-- [新增搜尋](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [新增搜尋](/previous-versions/windows/apps/hh465231(v=win.10))
 
 **適用於開發人員 (XAML)**
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 屬性](/dotnet/api/system.string.length)

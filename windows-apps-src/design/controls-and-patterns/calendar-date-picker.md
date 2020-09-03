@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bc62a70b3dc52440e88652cd2d1eec3d01f97cc
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8e5ddaf909119830bd8c75c698396c08a7a98427
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968993"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173532"
 ---
 # <a name="calendar-date-picker"></a>行事曆日期選擇器
 
@@ -27,9 +27,9 @@ ms.locfileid: "82968993"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[CalendarDatePicker 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[Date 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)、[DateChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
+> **平台 API**：[CalendarDatePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[Date 屬性](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)、[DateChanged 事件](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -74,13 +74,13 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 ![行事曆日期選擇器的範例](images/calendar-date-picker-closed.png)
 
-行事曆日期選擇器有一個內部 [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView)，可用來挑選日期。 CalendarView 屬性的子集 (例如 [IsTodayHighlighted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) 和 [FirstDayOfWeek](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek)) 存在於 CalendarDatePicker 上面，而且會被轉送到內部 CalendarView 供您修改。 
+行事曆日期選擇器有一個內部 [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)，可用來挑選日期。 CalendarView 屬性的子集 (例如 [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) 和 [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek)) 存在於 CalendarDatePicker 上面，而且會被轉送到內部 CalendarView 供您修改。 
 
-不過，您無法變更內部 CalendarView 的 [SelectionMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 以允許複選。 如果您想讓使用者挑選多個日期或一律顯示行事曆，請考慮使用行事曆檢視，而不要使用行事曆日期選擇器。 請參閱[行事曆檢視](calendar-view.md)文章，以取得有關如何修改行事曆顯示方式的詳細資訊。
+不過，您無法變更內部 CalendarView 的 [SelectionMode](/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 以允許複選。 如果您想讓使用者挑選多個日期或一律顯示行事曆，請考慮使用行事曆檢視，而不要使用行事曆日期選擇器。 請參閱[行事曆檢視](calendar-view.md)文章，以取得有關如何修改行事曆顯示方式的詳細資訊。
 
 ### <a name="selecting-dates"></a>選取日期
 
-使用 [Date](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.date) 屬性來取得日期或設定選取的日期。 根據預設，Date 屬性是 **null**。 當使用者在行事曆檢視中選取一個日期時，便會更新這個屬性。 使用者可以按一下行事曆檢視中選取的日期，以取消選取該日期。 
+使用 [Date](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date) 屬性來取得日期或設定選取的日期。 根據預設，Date 屬性是 **null**。 當使用者在行事曆檢視中選取一個日期時，便會更新這個屬性。 使用者可以按一下行事曆檢視中選取的日期，以取消選取該日期。 
 
 您可以在程式碼中按照以下方式設定日期。
 
@@ -88,18 +88,18 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 ```
 
-當您在程式碼中設定日期時，值會受到 [MinDate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.mindate) 和 [MaxDate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.maxdate) 屬性的約束。
+當您在程式碼中設定日期時，值會受到 [MinDate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.mindate) 和 [MaxDate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.maxdate) 屬性的約束。
 - 如果 **Date** 小於 **MinDate**，值會設定為 **MinDate**。
 - 如果 **Date** 大於 **MaxDate**，值會設定為 **MaxDate**。
 
-您可以處理 [DateChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged) 事件，以便在 Date 值變更時收到通知。
+您可以處理 [DateChanged](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged) 事件，以便在 Date 值變更時收到通知。
 
 > [!NOTE]
 > 如需日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
 ### <a name="setting-a-header-and-placeholder-text"></a>設定標頭與預留位置文字
 
-您可以新增 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.header) (或標籤) 與 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.placeholdertext) (或浮水印) 到行事曆日期選擇器，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.calendardatepicker.headertemplate) 屬性，而不是 Header。
+您可以新增 [Header](/uwp/api/windows.ui.xaml.controls.calendardatepicker.header) (或標籤) 與 [PlaceholderText](/uwp/api/windows.ui.xaml.controls.calendardatepicker.placeholdertext) (或浮水印) 到行事曆日期選擇器，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.calendardatepicker.headertemplate) 屬性，而不是 Header。
 
 預設預留位置文字是「選取日期」。 您可以將 PlaceholderText 屬性設定為空字串以移除預設文字，或者您可以提供自訂文字，如下所示。
 

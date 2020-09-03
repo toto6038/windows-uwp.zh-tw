@@ -6,21 +6,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3114bc7a86f7f7f4d22c69c814735c146352efbd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d99c3f55848122b123de160b413138f09f48f215
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75681949"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173542"
 ---
 # <a name="optimize-file-access"></a>最佳化檔案存取
 
 
 建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
 
-當您想要存取大量的檔案，而且想要存取一般 Name、FileType 以及 Path 屬性以外的屬性值時，請透過建立 [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) 存取屬性，並呼叫 [**SetPropertyPrefetch**](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch)。 **SetPropertyPrefetch** 方法可以動態改善 app 的效能，以顯示從檔案系統取得的項目集合，例如影像的集合。 下一組範例顯示一些存取多個檔案的方法。
+當您想要存取大量的檔案，而且想要存取一般 Name、FileType 以及 Path 屬性以外的屬性值時，請透過建立 [**QueryOptions**](/uwp/api/Windows.Storage.Search.QueryOptions) 存取屬性，並呼叫 [**SetPropertyPrefetch**](/uwp/api/windows.storage.search.queryoptions.setpropertyprefetch)。 **SetPropertyPrefetch** 方法可以動態改善 app 的效能，以顯示從檔案系統取得的項目集合，例如影像的集合。 下一組範例顯示一些存取多個檔案的方法。
 
-第一個範例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync) 來為一組檔案抓取名稱資訊。 這個方法提供良好的效能，因為這個範例只存取 name 屬性。
+第一個範例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) 來為一組檔案抓取名稱資訊。 這個方法提供良好的效能，因為這個範例只存取 name 屬性。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -44,7 +44,7 @@ ms.locfileid: "75681949"
 > Next i
 > ```
 
-第二個範例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfilesasync)，然後抓取每個檔案的影像屬性。 這個方法提供不佳的效能。
+第二個範例使用 [**Windows.Storage.StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)，然後抓取每個檔案的影像屬性。 這個方法提供不佳的效能。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -70,7 +70,7 @@ ms.locfileid: "75681949"
 > Next i
 > ```
 
-第三個範例使用 [**QueryOptions**](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions) 來取得關於一組檔案的資訊。 這個方法提供比上一個範例更好的效能。
+第三個範例使用 [**QueryOptions**](/uwp/api/Windows.Storage.Search.QueryOptions) 來取得關於一組檔案的資訊。 這個方法提供比上一個範例更好的效能。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -133,7 +133,7 @@ ms.locfileid: "75681949"
 
 ### <a name="buffering-between-uwp-and-net-streams"></a>UWP 與 .NET 資料流之間的緩衝
 
-在許多情況下，您可能想要將 UWP 資料流 (例如 [**Windows.Storage.Streams.IInputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IInputStream) 或 [**IOutputStream**](https://docs.microsoft.com/uwp/api/Windows.Storage.Streams.IOutputStream)) 轉換為 .NET 資料流 ([**System.IO.Stream**](https://docs.microsoft.com/dotnet/api/system.io.stream))。 例如，當您在撰寫 UWP app 並希望使用 UWP 檔案系統搭配運行資料流的現有 .NET 程式碼時，這個做法很實用。 若要啟用此功能，適用於 UWP 應用程式的 .NET API 會提供延伸方法，讓您在 .NET 與 UWP 資料流類型之間進行轉換。 如需詳細資訊，請參閱 [**WindowsRuntimeStreamExtensions**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions)。
+在許多情況下，您可能想要將 UWP 資料流 (例如 [**Windows.Storage.Streams.IInputStream**](/uwp/api/Windows.Storage.Streams.IInputStream) 或 [**IOutputStream**](/uwp/api/Windows.Storage.Streams.IOutputStream)) 轉換為 .NET 資料流 ([**System.IO.Stream**](/dotnet/api/system.io.stream))。 例如，當您在撰寫 UWP app 並希望使用 UWP 檔案系統搭配運行資料流的現有 .NET 程式碼時，這個做法很實用。 若要啟用此功能，適用於 UWP 應用程式的 .NET API 會提供延伸方法，讓您在 .NET 與 UWP 資料流類型之間進行轉換。 如需詳細資訊，請參閱 [**WindowsRuntimeStreamExtensions**](/dotnet/api/system.io.windowsruntimestreamextensions)。
 
 將 UWP 資料流轉換為 .NET 資料流時，您實際上建立了基礎 UWP 資料流的配接器。 在某些情況下，會有與 UWP 資料流叫用方法相關的執行階段成本。 這可能會影響 app 的速度，尤其是在執行許多小型且經常性讀取或寫入作業的情況中更是如此。
 
@@ -194,7 +194,7 @@ ms.locfileid: "75681949"
 
 ### <a name="working-with-large-data-sets"></a>使用大型資料集
 
-在轉譯或撰寫較大型資料集時，您可以在 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法提供大型緩衝區大小，增加讀取或寫入傳送量。 這可以提供資料流配接器較大的內部緩衝區大小。 例如，將大型檔案的資料流傳送到 XML 剖析器時，剖析器可對資料流進行許多循序的小型讀取。 大型緩衝區可以減少對基礎 UWP 資料流的呼叫數，並提升效能。
+在轉譯或撰寫較大型資料集時，您可以在 [**AsStreamForRead**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法提供大型緩衝區大小，增加讀取或寫入傳送量。 這可以提供資料流配接器較大的內部緩衝區大小。 例如，將大型檔案的資料流傳送到 XML 剖析器時，剖析器可對資料流進行許多循序的小型讀取。 大型緩衝區可以減少對基礎 UWP 資料流的呼叫數，並提升效能。
 
 > **注意**   在設定大於約 80 KB 的緩衝區大小時，請務必謹慎，因為這可能導致記憶體回收行程堆積分散 (請參閱[改善記憶體回收效能](improve-garbage-collection-performance.md))。 下列程式碼範例會建立具有 81,920 位元組緩衝區的管理資料流配接器。
 
@@ -208,7 +208,7 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-[  **Stream.CopyTo**](https://docs.microsoft.com/dotnet/api/system.io.stream.copyto) 和 [**CopyToAsync**](https://docs.microsoft.com/dotnet/api/system.io.stream.copytoasync) 方法也會配置本機緩衝區，以便在資料流之間進行複製。 對於 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0) 延伸方法，您可以覆寫預設的緩衝區大小，讓大型資料流複本獲得較佳效能。 下列程式碼範例會示範變更 **CopyToAsync** 呼叫的預設緩衝區大小。
+[  **Stream.CopyTo**](/dotnet/api/system.io.stream.copyto) 和 [**CopyToAsync**](/dotnet/api/system.io.stream.copytoasync) 方法也會配置本機緩衝區，以便在資料流之間進行複製。 對於 [**AsStreamForRead**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0) 延伸方法，您可以覆寫預設的緩衝區大小，讓大型資料流複本獲得較佳效能。 下列程式碼範例會示範變更 **CopyToAsync** 呼叫的預設緩衝區大小。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -236,6 +236,4 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 如果您需要低延遲的讀取和寫入，而且不希望在基礎 UWP 資料流讀取大型區塊時，也要避免緩衝。 例如，如果您使用網路通訊資料流，可能需要低延遲讀取和寫入。
 
-在聊天應用程式中，您可在網路介面上使用資料流來回傳送訊息。 在此情況下，您要在訊息完成後立即傳送出去，而不是等到緩衝區滿了才傳送。 呼叫 [**AsStreamForRead**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](https://docs.microsoft.com/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法時，如果將緩衝區大小設定為 0，則產生的配接器將不會配置緩衝區，所有呼叫都會直接操作基礎 UWP 資料流。
-
-
+在聊天應用程式中，您可在網路介面上使用資料流來回傳送訊息。 在此情況下，您要在訊息完成後立即傳送出去，而不是等到緩衝區滿了才傳送。 呼叫 [**AsStreamForRead**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforread?view=dotnet-uwp-10.0)、[**AsStreamForWrite**](/dotnet/api/system.io.windowsruntimestreamextensions.asstreamforwrite?view=dotnet-uwp-10.0) 及 [**AsStream**](/dotnet/api/system.io.windowsruntimestreamextensions.asstream?view=dotnet-uwp-10.0) 延伸方法時，如果將緩衝區大小設定為 0，則產生的配接器將不會配置緩衝區，所有呼叫都會直接操作基礎 UWP 資料流。

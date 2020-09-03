@@ -10,12 +10,12 @@ label: XAML styles
 template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a2f73fe6280d3a86510ce48f47017dd4897139a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6dfb9c73eb6db0bb948714e1ce5e99a185b8dd3d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79208983"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173862"
 ---
 # <a name="xaml-styles"></a>XAML 樣式
 
@@ -27,15 +27,15 @@ ms.locfileid: "79208983"
 
 ## <a name="style-basics"></a>樣式基本知識
 
-使用樣式擷取視覺屬性設定，再放入可重複使用的資源中。 以下是一個顯示 3 個按鈕的範例，其中使用一個設定 [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush)、[BorderThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderthickness) 及 [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性的樣式。 透過套用樣式，您可以讓控制項擁有相同的外觀，而不需在每個控制項上個別設定這些屬性。
+使用樣式擷取視覺屬性設定，再放入可重複使用的資源中。 以下是一個顯示 3 個按鈕的範例，其中使用一個設定 [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush)、[BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) 及 [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性的樣式。 透過套用樣式，您可以讓控制項擁有相同的外觀，而不需在每個控制項上個別設定這些屬性。
 
 ![已設定樣式的按鈕](images/styles-rainbow-buttons.png)
 
 您可以在 XAML 中定義控制項的樣式內崁，或當作可重複使用的資源。 在個別頁面的 XAML 檔案、在 App.xaml 檔案或在另一個資源字典 XAML 檔案中定義資源。 資源字典 XAML 檔案可以跨應用程式共用，而且一個以上的資源字典可以合併成一個應用程式。 定義資源的位置會決定資源可使用的範圍。 只有定義這些資源的頁面才可以使用頁面層級資源。 如果將包含相同索引鍵的資源定義在 App.xaml 和頁面中，則頁面中的資源會覆寫 App.xaml 中的資源。 如果資源是在不同的資源字典檔案中定義，則其範圍由資源字典的參照位置決定。
 
-在 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 定義中，您需要一個 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 屬性以及包含一或多個 [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 元素的集合。 **TargetType** 屬性是一個字串，會指定要套用樣式的 [FrameworkElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 類型。 **TargetType** 值必須指定 Windows 執行階段定義的 **FrameworkElement** 衍生類型，或是可在參考組件中取得的自訂類型。 如果您嘗試將樣式套用到控制項，但控制項的類型不符合您嘗試套用之樣式的 **TargetType** 屬性，就會發生例外狀況。
+在 [Style](/uwp/api/Windows.UI.Xaml.Style) 定義中，您需要一個 [TargetType](/uwp/api/windows.ui.xaml.style.targettype) 屬性以及包含一或多個 [Setter](/uwp/api/Windows.UI.Xaml.Setter) 元素的集合。 **TargetType** 屬性是一個字串，會指定要套用樣式的 [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) 類型。 **TargetType** 值必須指定 Windows 執行階段定義的 **FrameworkElement** 衍生類型，或是可在參考組件中取得的自訂類型。 如果您嘗試將樣式套用到控制項，但控制項的類型不符合您嘗試套用之樣式的 **TargetType** 屬性，就會發生例外狀況。
 
-每個 [Setter](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 元素都需要 [Property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.property) 與 [Value](https://docs.microsoft.com/uwp/api/windows.ui.xaml.setter.value)。 這些屬性設定會指出該設定套用了什麼控制項屬性，以及為該屬性設定的值。 您可以利用屬性 (Attribute) 或屬性 (Property) 元素語法來設定 **Setter.Value**。 這裡的 XAML 說明套用至先前所示的按鈕的樣式。 這個 XAML 的前兩個 **Setter** 元素使用屬性 (Attribute) 語法，而最後一個用於 [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush) 屬性的 **Setter** 則是使用屬性 (Property) 元素語法。 此範例並未使用 [x:Key](../../xaml-platform/x-key-attribute.md) 屬性，因此樣式會以隱含方式套用至按鈕。 下一節將說明如何以隱含或明確方式套用樣式。
+每個 [Setter](/uwp/api/Windows.UI.Xaml.Setter) 元素都需要 [Property](/uwp/api/windows.ui.xaml.setter.property) 與 [Value](/uwp/api/windows.ui.xaml.setter.value)。 這些屬性設定會指出該設定套用了什麼控制項屬性，以及為該屬性設定的值。 您可以利用屬性 (Attribute) 或屬性 (Property) 元素語法來設定 **Setter.Value**。 這裡的 XAML 說明套用至先前所示的按鈕的樣式。 這個 XAML 的前兩個 **Setter** 元素使用屬性 (Attribute) 語法，而最後一個用於 [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush) 屬性的 **Setter** 則是使用屬性 (Property) 元素語法。 此範例並未使用 [x:Key](../../xaml-platform/x-key-attribute.md) 屬性，因此樣式會以隱含方式套用至按鈕。 下一節將說明如何以隱含或明確方式套用樣式。
 
 ```XAML
 <Page.Resources>
@@ -66,16 +66,16 @@ ms.locfileid: "79208983"
 
 如果您將樣式定義成資源，則將它套用至控制項的方式有兩種：
 
--   隱含樣式，只為 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 指定 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype)。
--   明確樣式，為 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 指定 [TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.targettype) 和 [x:Key 屬性](../../xaml-platform/x-key-attribute.md)，然後透過使用此明確索引鍵的 [{StaticResource} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/staticresource-markup-extension)參考來設定目標控制項的 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性。
+-   隱含樣式，只為 [Style](/uwp/api/Windows.UI.Xaml.Style) 指定 [TargetType](/uwp/api/windows.ui.xaml.style.targettype)。
+-   明確樣式，為 [Style](/uwp/api/Windows.UI.Xaml.Style) 指定 [TargetType](/uwp/api/windows.ui.xaml.style.targettype) 和 [x:Key 屬性](../../xaml-platform/x-key-attribute.md)，然後透過使用此明確索引鍵的 [{StaticResource} 標記延伸](../../xaml-platform/staticresource-markup-extension.md)參考來設定目標控制項的 [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性。
 
-如果樣式內含 [x:Key 屬性](../../xaml-platform/x-key-attribute.md)，則您必須對這種索引鍵樣式設定控制項的 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性，才能將該樣式套用至控制項。 反之，無 x:Key 屬性的樣式就會自動套用至其目標類型的每個控制項，否則不會有明確的樣式設定。
+如果樣式內含 [x:Key 屬性](../../xaml-platform/x-key-attribute.md)，則您必須對這種索引鍵樣式設定控制項的 [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性，才能將該樣式套用至控制項。 反之，無 x:Key 屬性的樣式就會自動套用至其目標類型的每個控制項，否則不會有明確的樣式設定。
 
 以下兩個按鈕示範隱含與明確的樣式。
 
 ![隱含樣式與明確樣式設定的按鈕。](images/styles-buttons-implicit-explicit.png)
 
-在這個範例中，第一個樣式具有 [x:Key](../../xaml-platform/x-key-attribute.md) 屬性，其目標類型為 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 第一個按鈕的 [Style](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性設為此索引鍵，所以是明確套用此樣式。 第二種樣式是以隱含方式套用至第二個按鈕，因為其目標類型是 **Button**，而該樣式並沒有 x:Key 屬性。
+在這個範例中，第一個樣式具有 [x:Key](../../xaml-platform/x-key-attribute.md) 屬性，其目標類型為 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。 第一個按鈕的 [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) 屬性設為此索引鍵，所以是明確套用此樣式。 第二種樣式是以隱含方式套用至第二個按鈕，因為其目標類型是 **Button**，而該樣式並沒有 x:Key 屬性。
 
 ```XAML
 <Page.Resources>
@@ -107,11 +107,11 @@ ms.locfileid: "79208983"
 
 ## <a name="use-based-on-styles"></a>使用根據樣式
 
-為了更容易維持樣式，並將樣式重複使用率提升到最高，您可以建立會從其他樣式繼承的樣式。 您可以使用 [BasedOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.style.basedon) 屬性建立繼承樣式。 繼承自其他樣式的樣式必須用在相同類型的控制項，或是基礎樣式之目標類型所衍生的控制項。 例如，如果基礎樣式的目標是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，則以此樣式為基礎樣式的目標可以是 **ContentControl**，或是 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 和 [ScrollViewer](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 這類衍生自 **ContentControl** 的類型。 如果根據樣式中沒有設定某個值，則該值就會繼承自基礎樣式。 若是變更基礎樣式的值，則根據樣式會覆寫該值。 在下一個範例中，**Button** 與 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的樣式是繼承自同一個基礎樣式。
+為了更容易維持樣式，並將樣式重複使用率提升到最高，您可以建立會從其他樣式繼承的樣式。 您可以使用 [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) 屬性建立繼承樣式。 繼承自其他樣式的樣式必須用在相同類型的控制項，或是基礎樣式之目標類型所衍生的控制項。 例如，如果基礎樣式的目標是 [ContentControl](/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，則以此樣式為基礎樣式的目標可以是 **ContentControl**，或是 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 和 [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 這類衍生自 **ContentControl** 的類型。 如果根據樣式中沒有設定某個值，則該值就會繼承自基礎樣式。 若是變更基礎樣式的值，則根據樣式會覆寫該值。 在下一個範例中，**Button** 與 [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的樣式是繼承自同一個基礎樣式。
 
 ![使用根據樣式來設定樣式的按鈕。](images/styles-buttons-based-on.png)
 
-基礎樣式的目標是 [ContentControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，並設定 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 與 [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 屬性。 以此樣式為基礎的樣式目標是 **ContentControl** 所衍生的 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 和 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)。 根據樣式可為 [BorderBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.borderbrush) 與 [Foreground](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性設定不同色彩。 (您通常不會在 **CheckBox** 周圍設定邊界。 我們在這裡這樣做是為了顯示樣式的效果。)
+基礎樣式的目標是 [ContentControl](/uwp/api/Windows.UI.Xaml.Controls.ContentControl)，並設定 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 與 [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 屬性。 以此樣式為基礎的樣式目標是 **ContentControl** 所衍生的 [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 和 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。 根據樣式可為 [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush) 與 [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性設定不同色彩。 (您通常不會在 **CheckBox** 周圍設定邊界。 我們在這裡這樣做是為了顯示樣式的效果。)
 
 ```XAML
 <Page.Resources>
@@ -208,4 +208,4 @@ ms.locfileid: "79208983"
 
 ## <a name="the-template-property"></a>Template (範本) 屬性
 
-Style Setter 可以用於 [Control](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control) 的 [Template](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 屬性，事實上，大多數的典型 XAML 樣式和應用程式 XAML 資源都是由此組成。 這部分內容將在[控制項範本](control-templates.md)主題中深入討論。
+Style Setter 可以用於 [Control](/uwp/api/Windows.UI.Xaml.Controls.Control) 的 [Template](/uwp/api/windows.ui.xaml.controls.control.template) 屬性，事實上，大多數的典型 XAML 樣式和應用程式 XAML 資源都是由此組成。 這部分內容將在[控制項範本](control-templates.md)主題中深入討論。

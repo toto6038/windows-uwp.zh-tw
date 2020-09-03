@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 8 月
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 723cae783ba16fe5be9bb2076f96d4a5f823d733
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258840"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174392"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 開發人員文件的新增功能
 
@@ -24,7 +24,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 Windows Insider Preview 組建中已加入下列功能，可透過 [Windows 測試人員](https://insider.windows.com/)程式取得。
 
-* [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。
+* [Windows UI 程式庫](/uwp/toolkits/winui/)是一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、[SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button) 和 [ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button) 提供了具有專門功能的按鈕控制項，以增強您的應用程式使用者介面。
 
@@ -38,7 +38,7 @@ Windows Insider Preview 組建中已加入下列功能，可透過 [Windows 測�
 
 套件支援架構是開放原始碼套件，可在您無法存取原始碼時，協助將修正程式套用到 win32 應用程式，使其可以在 MSIX 容器中執行。
 
-若要深入了解，請參閱[使用套件支援架構將執行階段修正程式套用到 MSIX 套件](../porting/package-support-framework.md)。
+若要深入了解，請參閱[使用套件支援架構將執行階段修正程式套用到 MSIX 套件](/windows/msix/psf/package-support-framework)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
@@ -52,7 +52,7 @@ Mozilla Developer Network 文件中新增了[舊版 Microsoft API 擴充功能](
 
 ### <a name="project-rome"></a>Project Rome
 
-[Project Rome 文件](https://docs.microsoft.com/windows/project-rome/)網站已經重新整理為功能優先的方法。 這應該會讓開發人員更容易找到他們正在尋找的東西，並跨多個平台實作他們選擇的功能。
+[Project Rome 文件](/windows/project-rome/)網站已經重新整理為功能優先的方法。 這應該會讓開發人員更容易找到他們正在尋找的東西，並跨多個平台實作他們選擇的功能。
 
 ## <a name="videos"></a>視訊
 

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 08308c7bca3cd7f39b08c836e43d791a3fda048f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0842046419402bbfacc24331d0521efa9510153a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80226272"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174192"
 ---
 # <a name="host-a-standard-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 UWP 控制項
 
@@ -41,7 +41,7 @@ ms.locfileid: "80226272"
     1. 在 [NuGet 套件管理員]  視窗中，確定已選取 [包含發行前版本]  。
     2. 選取 [瀏覽]  索引標籤、搜尋 **Microsoft.Toolkit.Win32.UI.SDK** 套件，然後安裝此套件的 v6.0.0 版 (或更新版本)。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
 
-5. 在您的[應用程式資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) \(英文\) 中設定 `maxVersionTested` 值，以指定您的應用程式與 Windows 10 1903 版或更新版本相容。
+5. 在您的[應用程式資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 中設定 `maxVersionTested` 值，以指定您的應用程式與 Windows 10 1903 版或更新版本相容。
 
     1. 如果您的專案中還沒有應用程式資訊清單，請將新的 XML 檔案新增至您的專案並命名為 **app.manifest**。
     2. 在您的應用程式資訊清單中，包含下列範例所示的 **compatibility** 元素及子元素。 以您要設為目標的 Windows 10 版本號碼 (必須是 Windows 10 1903 版或更新版本) 來取代 **maxVersionTested** 元素的 **Id** 屬性。
@@ -63,16 +63,16 @@ ms.locfileid: "80226272"
 
 使用 XAML 裝載 API 來裝載 UWP 控制項的基本程序會遵循下列一般步驟：
 
-1. 針對目前執行緒來將 UWP XAML 架構初始化，然後您的應用程式才會建立任何其將裝載的 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) \(英文\) 物件。 根據您打算建立將裝載控制項之 [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) \(英文\) 物件的時機而定，有數種方式可執行此操作。
+1. 針對目前執行緒來將 UWP XAML 架構初始化，然後您的應用程式才會建立任何其將裝載的 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) \(英文\) 物件。 根據您打算建立將裝載控制項之 [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) \(英文\) 物件的時機而定，有數種方式可執行此操作。
 
     * 如果您的應用程式在建立任何其將裝載的 **Windows.UI.Xaml.UIElement** 物件之前先建立 **DesktopWindowXamlSource** 物件，則會在您將 **DesktopWindowXamlSource** 物件具現化時，將此架構初始化。 在此案例中，您不需要新增自己的任何程式碼來將架構初始化。
 
-    * 不過，如果您的應用程式在建立將裝載 **Windows.UI.Xaml.UIElement** 物件的 **DesktopWindowXamlSource** 物件之前先建立了前者物件，則您的應用程式必須先呼叫靜態的 [WindowsXamlManager.InitializeForCurrentThread](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) 方法，明確地將 UWP XAML 架構初始化，然後再將 **Windows.UI.Xaml.UIElement** 物件具現化。 將裝載 **DesktopWindowXamlSource** 的父 UI 元素具現化時，您的應用程式通常應該會呼叫此方法。
+    * 不過，如果您的應用程式在建立將裝載 **Windows.UI.Xaml.UIElement** 物件的 **DesktopWindowXamlSource** 物件之前先建立了前者物件，則您的應用程式必須先呼叫靜態的 [WindowsXamlManager.InitializeForCurrentThread](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread) 方法，明確地將 UWP XAML 架構初始化，然後再將 **Windows.UI.Xaml.UIElement** 物件具現化。 將裝載 **DesktopWindowXamlSource** 的父 UI 元素具現化時，您的應用程式通常應該會呼叫此方法。
 
     > [!NOTE]
-    > 此方法會傳回包含 UWP XAML 架構參考的 [WindowsXamlManager](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) \(英文\) 物件。 您可以視需要在指定的執行緒上建立多個 **WindowsXamlManager** 物件。 不過，由於每個物件都持有 UWP XAML 架構的參考，因此，您應該處置物件，以確保最終會釋放 XAML 資源。
+    > 此方法會傳回包含 UWP XAML 架構參考的 [WindowsXamlManager](/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager) \(英文\) 物件。 您可以視需要在指定的執行緒上建立多個 **WindowsXamlManager** 物件。 不過，由於每個物件都持有 UWP XAML 架構的參考，因此，您應該處置物件，以確保最終會釋放 XAML 資源。
 
-2. 建立 [DesktopWindowXamlSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) \(英文\) 物件，並將其附加至與視窗控制碼相關聯之應用程式中的父 UI 元素。
+2. 建立 [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) \(英文\) 物件，並將其附加至與視窗控制碼相關聯之應用程式中的父 UI 元素。
 
     若要這樣做，您必須遵循下列步驟：
 
@@ -84,7 +84,7 @@ ms.locfileid: "80226272"
 
     3. 設定 **DesktopWindowXamlSource** 中所含之內部子視窗的初始大小。 根據預設，這個內部子視窗的寬度和高度均設為 0。 如果您未設定視窗的大小，則您新增至 **DesktopWindowXamlSource** 的任何 UWP 控制項都不會顯示。 若要存取 **DesktopWindowXamlSource** 中的內部子視窗，請使用 **IDesktopWindowXamlSourceNative** 或 **IDesktopWindowXamlSourceNative2** 介面的 **WindowHandle** 屬性。
 
-3. 最後，將您想要裝載的 **Windows.UI.Xaml.UIElement** 指派給 **DesktopWindowXamlSource** 物件的 [Content](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) \(英文\) 屬性。
+3. 最後，將您想要裝載的 **Windows.UI.Xaml.UIElement** 指派給 **DesktopWindowXamlSource** 物件的 [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) \(英文\) 屬性。
 
 下列步驟和程式碼範例示範如何實作上述程序：
 
@@ -215,7 +215,7 @@ ms.locfileid: "80226272"
     }
     ```
 
-4. 將下列程式碼複製到上一個區段之後。 這段程式碼會定義視窗的[視窗程序](https://docs.microsoft.com/windows/win32/learnwin32/writing-the-window-procedure) \(英文\)。
+4. 將下列程式碼複製到上一個區段之後。 這段程式碼會定義視窗的[視窗程序](/windows/win32/learnwin32/writing-the-window-procedure) \(英文\)。
 
     ```cppwinrt
     LRESULT CALLBACK WindowProc(HWND hWnd, UINT messageCode, WPARAM wParam, LPARAM lParam)
@@ -280,14 +280,14 @@ ms.locfileid: "80226272"
 
 ## <a name="package-the-app"></a>封裝應用程式
 
-您可以選擇性地在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以供部署。 MSIX 是 Windows 的新式應用程式封裝技術，以 MSI、.appx、App-V 和 ClickOnce 安裝技術的組合為基礎。
+您可以選擇性地在 [MSIX 套件](/windows/msix)中封裝應用程式以供部署。 MSIX 是 Windows 的新式應用程式封裝技術，以 MSI、.appx、App-V 和 ClickOnce 安裝技術的組合為基礎。
 
-下列指示說明如何使用 Visual Studio 2019 中的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，將解決方案中的所有元件封裝在 MSIX 套件中。 只有當您想要在 MSIX 套件中封裝應用程式時，才需要執行這些步驟。
+下列指示說明如何使用 Visual Studio 2019 中的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，將解決方案中的所有元件封裝在 MSIX 套件中。 只有當您想要在 MSIX 套件中封裝應用程式時，才需要執行這些步驟。
 
 > [!NOTE]
-> 如果您選擇不要在 [MSIX 套件](https://docs.microsoft.com/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ 執行階段](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
+> 如果您選擇不要在 [MSIX 套件](/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ 執行階段](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
-1. 將新的 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
+1. 將新的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後選擇 [新增參考]  。 在專案清單中，選取您解決方案中的 C++/Win32 傳統型應用程式專案，然後按一下 [確定]  。
 

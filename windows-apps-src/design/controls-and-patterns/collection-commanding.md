@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b97041e305cfaac2a5fe202212741a282dccdb54
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 8138256dbde751768e5d9a707ffc1ad23ace7494
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968873"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173522"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>集合和清單的關聯式命令功能
 
@@ -25,7 +25,7 @@ ms.locfileid: "82968873"
 
 許多應用程式含有內容的集合，以表單、格線和樹狀目錄這類可由使用者操縱的形式存在。 例如，使用者可以刪除、重新命名或重新整理項目，也可以加上旗標。 本文會說明如何使用關聯式命令來實作這類動作，盡可能在所有輸入類型上提供最佳體驗。  
 
-> **重要 API**：[ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged 介面](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
+> **重要 API**：[ICommand 介面](/uwp/api/Windows.UI.Xaml.Input.ICommand)、[UIElement.ContextFlyout 屬性](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)、[INotifyPropertyChanged 介面](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)
 
 ![使用各種不同的輸入方式來執行 [我的最愛] 命令](images/ContextualCommand_AddFavorites.png)
 
@@ -94,13 +94,13 @@ public class PodcastObject : INotifyPropertyChanged
 }
 ```
 
-請注意，PodcastObject 會實作 [INotifyPropertyChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged)，以回應使用者切換 IsFavorite 屬性時的屬性變化。
+請注意，PodcastObject 會實作 [INotifyPropertyChanged](/uwp/api/Windows.UI.Xaml.Data.INotifyPropertyChanged)，以回應使用者切換 IsFavorite 屬性時的屬性變化。
 
 ## <a name="defining-commands-with-the-icommand-interface"></a>以 ICommand 介面來定義命令
 
-[ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) 可協助定義適用於多種輸入類型的命令。 例如，兩個不同事件處理常式內並不需要編寫相同的代碼 (一個處理常式是於使用者按下 Delete 鍵時使用，另一個則是用於使用者以滑鼠右鍵按下操作功能表中的 [刪除] 時)，而只需要將您的刪除邏輯實作為 [ICommand](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) 一次，再提供給不同的輸入類型使用。
+[ICommand 介面](/uwp/api/Windows.UI.Xaml.Input.ICommand) 可協助定義適用於多種輸入類型的命令。 例如，兩個不同事件處理常式內並不需要編寫相同的代碼 (一個處理常式是於使用者按下 Delete 鍵時使用，另一個則是用於使用者以滑鼠右鍵按下操作功能表中的 [刪除] 時)，而只需要將您的刪除邏輯實作為 [ICommand](/uwp/api/Windows.UI.Xaml.Input.ICommand) 一次，再提供給不同的輸入類型使用。
 
-我們需要定義代表「加入我的最愛」動作的 ICommand。 接下來會使用命令的 [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法，將播客節目加入我的最愛。 將會透過該命令的參數，將特定播客提供給 execute 方法，而這個參數可以使用 CommandParameter 屬性來繫結。
+我們需要定義代表「加入我的最愛」動作的 ICommand。 接下來會使用命令的 [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法，將播客節目加入我的最愛。 將會透過該命令的參數，將特定播客提供給 execute 方法，而這個參數可以使用 CommandParameter 屬性來繫結。
 
 ```csharp
 public class FavoriteCommand: ICommand
@@ -127,7 +127,7 @@ public class FavoriteCommand: ICommand
 </Application.Resources>
 ```
 
-若要執行命令，請呼叫 [Execute](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法。
+若要執行命令，請呼叫 [Execute](/uwp/api/Windows.UI.Xaml.Input.ICommand.Execute) 方法。
 
 ```csharp
 // Favorite the item using the defined command
@@ -138,7 +138,7 @@ favoriteCommand.Execute(PodcastObject);
 
 ## <a name="creating-a-usercontrol-to-respond-to-a-variety-of-inputs"></a>建立 UserControl 以回應各種輸入類型
 
-如果有個項目清單，而其中每個項目都需要回應多種輸入類型時，只要定義該項目的 [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)，再用來定義項目的操作功能表及事件處理常式，就能簡化程式碼。 
+如果有個項目清單，而其中每個項目都需要回應多種輸入類型時，只要定義該項目的 [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl)，再用來定義項目的操作功能表及事件處理常式，就能簡化程式碼。 
 
 如何在 Visual Studio 中建立 UserControl：
 1. 在 [方案總管] 中，以滑鼠右鍵按一下專案。 操作功能表即會出現。
@@ -151,7 +151,7 @@ favoriteCommand.Execute(PodcastObject);
 - 顯示暫留按鈕
 - 執行撥動手勢
 
-為了封裝這些行為並使用 FavoriteCommand，我們要來建立一個名為「PodcastUserControl」的新 [UserControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.UserControl)，用來表示清單中的播客節目。
+為了封裝這些行為並使用 FavoriteCommand，我們要來建立一個名為「PodcastUserControl」的新 [UserControl](/uwp/api/Windows.UI.Xaml.Controls.UserControl)，用來表示清單中的播客節目。
 
 PodcastUserControl 會將 PodcastObject 的欄位顯示為 TextBlock，並回應各種不同的使用者互動。 本篇文章會時常參照 PodcastUserControl 並加以說明。
 
@@ -246,7 +246,7 @@ public sealed partial class PodcastUserControl : UserControl
 
 ### <a name="contextflyout"></a>ContextFlyout
 
-UIElement 類別所定義的 [ContextFlyout 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)，可輕鬆建立適用於所有輸入類型的操作功能表。 可使用 MenuFlyout 來提供用於顯示操作功能表的飛出視窗，並在使用者執行上述的「操作動作」時，顯示與該項目對應的 MenuFlyout。
+UIElement 類別所定義的 [ContextFlyout 屬性](/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout)，可輕鬆建立適用於所有輸入類型的操作功能表。 可使用 MenuFlyout 來提供用於顯示操作功能表的飛出視窗，並在使用者執行上述的「操作動作」時，顯示與該項目對應的 MenuFlyout。
 
 我們會將 ContextFlyout 新增至 PodcastUserControl。 指定為 ContextFlyout 的 MenuFlyout 內有一個項目，可用來將播客節目加入我的最愛。 請注意，此 MenuFlyoutItem 會使用定義如上的 favoriteCommand，並將 CommandParamter 繫結至 PodcastObject。
 
@@ -265,7 +265,7 @@ UIElement 類別所定義的 [ContextFlyout 屬性](https://docs.microsoft.com/u
 
 ```
 
-請注意，您也可以使用 [ContextRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested)來回應操作動作。 如果已指定 ContextFlyout，則不會引發 ContextRequested 事件。
+請注意，您也可以使用 [ContextRequested 事件](/uwp/api/Windows.UI.Xaml.UIElement.ContextRequested)來回應操作動作。 如果已指定 ContextFlyout，則不會引發 ContextRequested 事件。
 
 ## <a name="creating-input-accelerators"></a>建立輸入快速操作
 
@@ -281,7 +281,7 @@ UIElement 類別所定義的 [ContextFlyout 屬性](https://docs.microsoft.com/u
 
 視內容類型的不同，您可能會發現，有特定的鍵盤快速鍵應會執行某個動作。 例如，在電子郵件應用程式中，可能會使用 DEL 鍵來刪除選取的電子郵件。 在播客應用程式中，Ctrl+S 或 F 鍵則會將播客加入我的最愛，以便稍後觀看。 某些命令具有眾所周知的常用鍵盤快速鍵 (像是 DEL 可執行刪除)，而其他命令則有在應用程式專用或領域專用的快速鍵。 請盡可能使用眾所周知的快速鍵，或考慮在工具提示中加上提醒文字，協助使用者認識快速鍵命令。
 
-當使用者按下按鍵時，您的應用程式可以使用 [KeyDown](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) 事件來回應。 使用者通常希望應用程式在第一次按下按鍵時，就會做出回應，而不是等到放開按鍵才回應。
+當使用者按下按鍵時，您的應用程式可以使用 [KeyDown](/uwp/api/Windows.UI.Xaml.UIElement.KeyDownEvent) 事件來回應。 使用者通常希望應用程式在第一次按下按鍵時，就會做出回應，而不是等到放開按鍵才回應。
 
 此範例會逐步解說如何將 KeyDown 處理常式新增至 PodcastUserControl，以在使用者按下 Ctrl+S 或 F 時，將播客加入我的最愛。範例使用的命令與之前所述相同。
 
@@ -343,7 +343,7 @@ protected override void OnKeyDown(KeyRoutedEventArgs e)
 </UserControl>
 ```
 
-暫留按鈕應會在滑鼠指標滑鼠進入和離開項目時出現和消失。 若要回應滑鼠事件，您可以使用 PodcastUserControl 上的 [PointerEntered](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) 和 [PointerExited](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) 事件。
+暫留按鈕應會在滑鼠指標滑鼠進入和離開項目時出現和消失。 若要回應滑鼠事件，您可以使用 PodcastUserControl 上的 [PointerEntered](/uwp/api/Windows.UI.Xaml.UIElement.PointerEnteredEvent) 和 [PointerExited](/uwp/api/Windows.UI.Xaml.UIElement.PointerExitedEvent) 事件。
 
 **PodcastUserControl.xaml.cs**
 ```csharp
@@ -448,10 +448,10 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 * 請確定使用者可以用所有類型的 Windows 裝置存取全部的命令。
 * 請務必加入操作功能表，讓使用者得以存取集合項目的所有可用命令。 
 * 請務必提供常用命令的輸入快速操作功能。 
-* 請務必使用 [ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand)來實作命令。 
+* 請務必使用 [ICommand 介面](/uwp/api/Windows.UI.Xaml.Input.ICommand)來實作命令。 
 
 ## <a name="related-topics"></a>相關主題
-* [ICommand 介面](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.ICommand) (英文)
+* [ICommand 介面](/uwp/api/Windows.UI.Xaml.Input.ICommand) (英文)
 * [功能表和操作功能表](menus.md)
 * [Swipe](swipe.md)
 * [拖動以重新整理](pull-to-refresh.md)

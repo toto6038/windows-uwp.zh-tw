@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bdd18fea2fe563fcee835e6b61e24d6a9b03d029
-ms.sourcegitcommit: f945df77f8a19961ba053ee62e593ec8e015038f
+ms.openlocfilehash: f7f273f3eb92efd30b432691f9faa05db0d6d013
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82989804"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173502"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -36,13 +36,13 @@ ms.locfileid: "82989804"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **CommandBarFlyout** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | 此 **CommandBarFlyout** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
 >**Windows UI 程式庫 API**：[CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
 >**平台 API**：[CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
-> CommandBarFlyout 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> CommandBarFlyout 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](/uwp/toolkits/winui/)。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -160,7 +160,7 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性：[Pr
 
 ### <a name="app-bar-buttons"></a>應用程式列按鈕
 
-您可直接以 [AppBarButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[AppBarToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 和 [AppBarSeparator](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 控制項填入 PrimaryCommands 和 SecondaryCommands。
+您可直接以 [AppBarButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton)、[AppBarToggleButton](/uwp/api/Windows.UI.Xaml.Controls.AppBarToggleButton) 和 [AppBarSeparator](/uwp/api/Windows.UI.Xaml.Controls.AppBarSeparator) 控制項填入 PrimaryCommands 和 SecondaryCommands。
 
 應用程式列按鈕控制項可依圖示和文字標籤加以區分。 這些控制項最適合在命令列中使用，其外觀會改變，取決於控制項是顯示在命令列還是溢位功能表中。
 
@@ -181,7 +181,7 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性：[Pr
 > [!TIP]
 > 根據預設，專為應用程式畫布設計的元素在命令列中可能看起來不太合適。 當您使用 AppBarElementContainer 新增元素時，您應該採取一些步驟，讓該元素符合其他命令列元素：
 >
-> - 以[輕量級樣式](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)覆寫預設筆刷，讓此元素的背景和框線符合應用程式列按鈕。
+> - 以[輕量級樣式](./xaml-styles.md#lightweight-styling)覆寫預設筆刷，讓此元素的背景和框線符合應用程式列按鈕。
 > - 調整元素的大小和位置。
 > - 在寬度和高度均為 16px 的 Viewbox 中包裝圖示。
 
@@ -418,4 +418,4 @@ TextCommandBarFlyout 無法加以自訂，並由每個文字控制項自動管�
 ## <a name="related-articles"></a>相關文章
 
 - [Windows 應用程式的命令設計基本知識](../basics/commanding-basics.md)
-- [CommandBar 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
+- [CommandBar 類別](/uwp/api/Windows.UI.Xaml.Controls.CommandBar)
