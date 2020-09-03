@@ -5,26 +5,26 @@ ms.date: 07/11/2020
 ms.topic: article
 keywords: windows 10, uwp, cppwinrt, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f4e6b808d0169f4c9f8f7142f218c00f124ae3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: bb6a76f2e8096d63907daf5ededdb6a22eb72a6c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493712"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175202"
 ---
 # <a name="create-a-hello-world-app-using-cwinrt"></a>使用 C++/WinRT 建立 "Hello, World!" 應用程式
 
 本主題將逐步引導您使用 C++/WinRT 建立 Windows 10 通用 Windows 平台 (UWP) "Hello, World!" 應用程式。 應用程式的使用者介面 (UI) 是使用可延伸應用程式標記語言 (XAML) 定義的。
 
-C++/WinRT 是 Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語言投影。 如需詳細資訊以及更多逐步解說和程式碼範例，請參閱 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 文件。 [開始使用 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started)是很好的起始主題。
+C++/WinRT 是 Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語言投影。 如需詳細資訊以及更多逐步解說和程式碼範例，請參閱 [C++/WinRT](../cpp-and-winrt-apis/index.md) 文件。 [開始使用 C++/WinRT](../cpp-and-winrt-apis/get-started.md)是很好的起始主題。
 
 ## <a name="set-up-visual-studio-for-cwinrt"></a>設定適用於 C++/WinRT 的 Visual Studio
 
-如需安裝和為 C++/WinRT 開發設定 Visual Studio 的相關資訊&mdash;包括如何安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援)&mdash;，請參閱 [C++/WinRT 的 Visual Studio 支援](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+如需安裝和為 C++/WinRT 開發設定 Visual Studio 的相關資訊&mdash;包括如何安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援)&mdash;，請參閱 [C++/WinRT 的 Visual Studio 支援](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 若要下載 Visual Studio，請參閱[下載](https://visualstudio.microsoft.com/downloads/)。
 
-如需 XAML 簡介，請參閱 [XAML 概觀](/windows/uwp/xaml-platform/xaml-overview)
+如需 XAML 簡介，請參閱 [XAML 概觀](../xaml-platform/xaml-overview.md)
 
 ## <a name="create-a-blank-app-helloworldcppwinrt"></a>建立空白應用程式 (HelloWorldCppWinRT)
 
@@ -38,7 +38,7 @@ C++/WinRT 是 Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語�
 
 一般來說，在專案資料夾中，每個 `.xaml` (XAML 標記) 檔案都有對應的 `.idl`、`.h` 和 `.cpp` 檔案。 這些檔案會一起編譯成 XAML 頁面類型。
 
-您可以修改 XAML 標記檔案來建立 UI 元素，也可以將這些元素繫結至資料來源 (這項工作稱為 [資料繫結](/windows/uwp/data-binding/))。 例如，您可以修改 `.h` 和 `.cpp` 檔案 (有時也會修改 `.idl` 檔案)，為您的 XAML 頁面事件處理常式新增自訂邏輯。
+您可以修改 XAML 標記檔案來建立 UI 元素，也可以將這些元素繫結至資料來源 (這項工作稱為 [資料繫結](../data-binding/index.md))。 例如，您可以修改 `.h` 和 `.cpp` 檔案 (有時也會修改 `.idl` 檔案)，為您的 XAML 頁面事件處理常式新增自訂邏輯。
 
 讓我們查看一些專案檔案。
 
@@ -52,7 +52,7 @@ C++/WinRT 是 Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語�
 
 如您所知，在以 C# 撰寫的通用 Windows 平台 (UWP) 應用程式中，其所有類別都是 Windows 執行階段類型。 但是當您在 C++/WinRT 應用程式中撰寫類型時，可以選擇該類型為 Windows 執行階段類型，還是一般 C++ 類別/結構/列舉。
 
-您專案中的任何 XAML 頁面類型都必須是 Windows 執行階段類型。 因此，**MainPage** 是 Windows 執行階段類型。 具體而言，這是*執行階段類別*。 XAML 頁面所取用的任何類型也必須是 Windows 執行階段類型。 當您撰寫 [Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)，且想要撰寫可從另一個應用程式取用的類型時，將會撰寫 Windows 執行階段類型。 在其他情況下，您的類型可以是一般 C++ 類型。 一般來說，您可以使用任何 Windows 執行階段語言來取用 Windows 執行階段類型。
+您專案中的任何 XAML 頁面類型都必須是 Windows 執行階段類型。 因此，**MainPage** 是 Windows 執行階段類型。 具體而言，這是*執行階段類別*。 XAML 頁面所取用的任何類型也必須是 Windows 執行階段類型。 當您撰寫 [Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)，且想要撰寫可從另一個應用程式取用的類型時，將會撰寫 Windows 執行階段類型。 在其他情況下，您的類型可以是一般 C++ 類型。 一般來說，您可以使用任何 Windows 執行階段語言來取用 Windows 執行階段類型。
 
 若要適當地指出類型為 Windows 執行階段類型，請在介面定義語言 (`.idl`) 檔案內的 [Microsoft 介面定義語言 (MIDL)](/uwp/midl-3/) 中定義該類型。 讓我們以 **MainPage** 做為範例。
 
@@ -94,7 +94,7 @@ namespace winrt::HelloWorldCppWinRT::factory_implementation
 }
 ```    
 
-如需有關是否要撰寫特定類別之執行階段類別的詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 主題。 如需有關執行階段類別與 IDL (`.idl` 檔案) 之間連線的詳細資訊，請閱讀並遵循 [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)主題。 該主題會逐步解說撰寫新執行階段類別的程序，其第一步是要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。
+如需有關是否要撰寫特定類別之執行階段類別的詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](../cpp-and-winrt-apis/author-apis.md) 主題。 如需有關執行階段類別與 IDL (`.idl` 檔案) 之間連線的詳細資訊，請閱讀並遵循 [XAML 控制項；繫結至一個 C++/WinRT 屬性](../cpp-and-winrt-apis/binding-property.md)主題。 該主題會逐步解說撰寫新執行階段類別的程序，其第一步是要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。
 
 現在讓我們新增一些功能至 **HelloWorldCppWinRT** 專案。
 
@@ -159,7 +159,7 @@ namespace winrt::HelloWorldCppWinRT::implementation
 }
 ```
 
-如需詳細資訊，請參閱[使用委派來處理事件](/windows/uwp/cpp-and-winrt-apis/handle-events)。
+如需詳細資訊，請參閱[使用委派來處理事件](../cpp-and-winrt-apis/handle-events.md)。
 
 實作會從文字方塊中擷取使用者的名稱、將其用來建立問候語，然後在 *greetingOutput* 文字區塊中顯示此問候語。
 

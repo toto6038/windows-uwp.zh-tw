@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a5b6df7a5d8333e0f4834c256a38fc912f8f51e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970623"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175512"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 應用程式中的印刷樣式
 
@@ -106,7 +106,7 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 ## <a name="alignment"></a>對應項目
 
-預設 [TextAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) 是 Left，而在大部分情況下，靠左和不齊右方法可提供一致的內容錨定與統一的配置。 對於 RTL 語言，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
+預設 [TextAlignment](/uwp/api/windows.ui.xaml.textalignment) 是 Left，而在大部分情況下，靠左和不齊右方法可提供一致的內容錨定與統一的配置。 對於 RTL 語言，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
 ![顯示靠左文字。](images/type/alignment.svg)
 
@@ -152,7 +152,7 @@ Segoe UI 是我們的英文、歐洲語言、希臘文、希伯來文、亞美�
 
 ### <a name="globalizinglocalizing-fonts"></a>將字型全球化/當地語系化
 
-您可以使用 [LanguageFont 字型對應 API](https://docs.microsoft.com/uwp/api/Windows.Globalization.Fonts.LanguageFont)，以程式設計方式存取特定語言的建議字型系列、大小、粗細及樣式。 LanguageFont 物件會針對各種內容類別 (包括 UI 標頭、通知、內文，以及使用者可以編輯的文件內文字型)，提供正確字型資訊的存取權。 如需詳細資訊，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
+您可以使用 [LanguageFont 字型對應 API](/uwp/api/Windows.Globalization.Fonts.LanguageFont)，以程式設計方式存取特定語言的建議字型系列、大小、粗細及樣式。 LanguageFont 物件會針對各種內容類別 (包括 UI 標頭、通知、內文，以及使用者可以編輯的文件內文字型)，提供正確字型資訊的存取權。 如需詳細資訊，請參閱[調整配置和字型以支援全球化](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)。
 
 ### <a name="fonts-for-non-latin-languages"></a>非拉丁語言的字型
 
@@ -340,4 +340,4 @@ Serif 字型適合呈現大量的文字。
 * [文字控制項](../controls-and-patterns/text-controls.md)
 * [XAML 佈景主題資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)
 * [XAML 樣式](../controls-and-patterns/xaml-styles.md)
-* [Microsoft Typography](https://docs.microsoft.com/typography/)
+* [Microsoft Typography](/typography/)

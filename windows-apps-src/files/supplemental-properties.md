@@ -5,12 +5,12 @@ ms.date: 01/10/2017
 ms.topic: article
 keywords: windows 10, uwp, WinRT API, 索引編製程式, 搜尋
 localizationpriority: medium
-ms.openlocfilehash: 2a77bfc37d853efd28bde9bc3043d072888822f2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3103074e7d691897e9a8982a254ba36ee331a2b6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66369259"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175392"
 ---
 # <a name="using-supplemental-properties"></a>使用補充屬性  
 
@@ -27,7 +27,7 @@ ms.locfileid: "66369259"
 在過去數十年來，索引編製程式一直都是在 Windows 上快速搜尋的解決方案；而在 Creators Update 中，它已被更新以支援這些新的案例。 除了由系統所擷取的屬性之外，應用程式現在可以搭配其他屬性來標記檔案。 這些屬性會被視為第一級公民  
 
 ## <a name="windows-properties"></a>Windows 屬性 
-[Windows 屬性系統](https://docs.microsoft.com/windows/desktop/properties/windows-properties-system) \(英文\) 多年來一直都是與檔案互動的重要部分。 它允許應用程式從檔案讀取屬性，而不需要了解各種不同的檔案格式或語言。 身為開發人員，系統會為您將那些資訊都抽象化；您只需要要求清單並指定要依遞增還是遞減排序。  
+[Windows 屬性系統](/windows/desktop/properties/windows-properties-system) \(英文\) 多年來一直都是與檔案互動的重要部分。 它允許應用程式從檔案讀取屬性，而不需要了解各種不同的檔案格式或語言。 身為開發人員，系統會為您將那些資訊都抽象化；您只需要要求清單並指定要依遞增還是遞減排序。  
 
 屬性系統與 Windows 索引編製程式密不可分。Windows 索引編製程式會從檔案讀取位於其範圍內的所有屬性並儲存它們。 之後，當某個應用程式要求包含某個資料夾中的所有 .docx 檔案、依修改日期排序，且排除作者為 John Smith 之所有檔案的清單時，索引編製程式便能立即傳回該清單。  
 
@@ -158,4 +158,4 @@ UWP 變更通知和變更追蹤將能繼續搭配補充屬性運作，如同其�
 ## <a name="conclusions"></a>結論 
 就這樣，補充屬性是在系統中儲存更多檔案屬性的簡單方式。 它們的使用當然是選擇性的，但可以讓您的應用程式比起其他無法如此快速地排序及搜尋其資料的應用程式來得更加有效率。 
 
-我們很期待看到應用程式開始使用這些屬性。 如果您對於使用標頭的方式有任何疑問，請在下方留言來讓我們知道 
+我們很期待看到應用程式開始使用這些屬性。 如果您對於使用標頭的方式有任何疑問，請在下方留言來讓我們知道

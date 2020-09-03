@@ -6,12 +6,12 @@ ms.date: 04/26/2019
 ms.topic: article
 keywords: windows 10, uwp, 是否可本地化, 當地語系化, 日文, 紀元
 ms.localizationpriority: high
-ms.openlocfilehash: 7e8250ccae96ed835aba2a2a993fdde9ae31a884
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: 367dbf3b3ea1ef5f2853820f617f3a484ef863cf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67714114"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174432"
 ---
 # <a name="prepare-your-application-for-the-japanese-era-change"></a>針對日本紀元變更準備您的應用程式
 
@@ -37,7 +37,7 @@ ms.locfileid: "67714114"
 3. 以滑鼠右鍵按一下機碼，然後按一下 [修改]  。
 4. 在 [值資料]  欄位中，輸入**令和_令_Reiwa_R** (您從這裡複製後再貼上，會變得容易些)。
 
-如需深入了解這些登錄機碼的格式，請參閱[日本曆的紀元處理方式](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)。
+如需深入了解這些登錄機碼的格式，請參閱[日本曆的紀元處理方式](/windows/desktop/Intl/era-handling-for-the-japanese-calendar)。
 
 新的紀元年號已在 2019 年 4 月 1 日宣布。 在 4 月 25 日，針對包含此年號的支援 Windows 版本發行了具有新登錄機碼的更新，讓您驗證您的應用程式是否能適當地處理它。 這項更新正傳播至支援的舊版 Windows 10，以及 Windows 8 和 7。
 
@@ -91,60 +91,60 @@ ms.locfileid: "67714114"
 
 ### <a name="winrt"></a>WinRT
 
-* [Windows.Globalization 命名空間](https://docs.microsoft.com/uwp/api/windows.globalization)
-  * [Calendar 類別](https://docs.microsoft.com/uwp/api/windows.globalization.calendar)
-    * [AddDays 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.adddays)
-    * [AddEras 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.adderas)
-    * [AddHours 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addhours)
-    * [AddMinutes 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addminutes)
-    * [AddMonths 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addmonths)
-    * [AddNanoseconds 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addnanoseconds)
-    * [AddPeriods 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addperiods)
-    * [AddSeconds 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addseconds)
-    * [AddWeeks 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addweeks)
-    * [AddYears 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.addyears)
-    * [Era 屬性](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.era)
-    * [EraAsString 方法](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.eraasstring)
-    * [FirstYearInThisEra 屬性](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.firstyearinthisera)
-    * [LastEra 屬性](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.lastera)
-    * [LastYearInThisEra 屬性](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.lastyearinthisera)
-    * [NumberOfYearsInThisEra 屬性](https://docs.microsoft.com/uwp/api/windows.globalization.calendar.numberofyearsinthisera)
-* [Windows.Globalization.DateTimeFormatting 命名空間](https://docs.microsoft.com/uwp/api/windows.globalization.datetimeformatting)
-  * [DateTimeFormatter 類別](https://docs.microsoft.com/uwp/api/windows.globalization.datetimeformatting.datetimeformatter)
-    * [Format 方法](https://docs.microsoft.com/uwp/api/windows.globalization.datetimeformatting.datetimeformatter.format)
+* [Windows.Globalization 命名空間](/uwp/api/windows.globalization)
+  * [Calendar 類別](/uwp/api/windows.globalization.calendar)
+    * [AddDays 方法](/uwp/api/windows.globalization.calendar.adddays)
+    * [AddEras 方法](/uwp/api/windows.globalization.calendar.adderas)
+    * [AddHours 方法](/uwp/api/windows.globalization.calendar.addhours)
+    * [AddMinutes 方法](/uwp/api/windows.globalization.calendar.addminutes)
+    * [AddMonths 方法](/uwp/api/windows.globalization.calendar.addmonths)
+    * [AddNanoseconds 方法](/uwp/api/windows.globalization.calendar.addnanoseconds)
+    * [AddPeriods 方法](/uwp/api/windows.globalization.calendar.addperiods)
+    * [AddSeconds 方法](/uwp/api/windows.globalization.calendar.addseconds)
+    * [AddWeeks 方法](/uwp/api/windows.globalization.calendar.addweeks)
+    * [AddYears 方法](/uwp/api/windows.globalization.calendar.addyears)
+    * [Era 屬性](/uwp/api/windows.globalization.calendar.era)
+    * [EraAsString 方法](/uwp/api/windows.globalization.calendar.eraasstring)
+    * [FirstYearInThisEra 屬性](/uwp/api/windows.globalization.calendar.firstyearinthisera)
+    * [LastEra 屬性](/uwp/api/windows.globalization.calendar.lastera)
+    * [LastYearInThisEra 屬性](/uwp/api/windows.globalization.calendar.lastyearinthisera)
+    * [NumberOfYearsInThisEra 屬性](/uwp/api/windows.globalization.calendar.numberofyearsinthisera)
+* [Windows.Globalization.DateTimeFormatting 命名空間](/uwp/api/windows.globalization.datetimeformatting)
+  * [DateTimeFormatter 類別](/uwp/api/windows.globalization.datetimeformatting.datetimeformatter)
+    * [Format 方法](/uwp/api/windows.globalization.datetimeformatting.datetimeformatter.format)
 
 ### <a name="net"></a>.NET
 
-* [System 命名空間](https://docs.microsoft.com/dotnet/api/system)
-  * [DateTime 結構](https://docs.microsoft.com/dotnet/api/system.datetime)
-  * [DateTimeOffset 結構](https://docs.microsoft.com/dotnet/api/system.datetimeoffset)
-* [System.Globalization 命名空間](https://docs.microsoft.com/dotnet/api/system.globalization)
-  * [Calendar 類別](https://docs.microsoft.com/dotnet/api/system.globalization.calendar)
-  * [DateTimeFormatInfo 類別](https://docs.microsoft.com/dotnet/api/system.globalization.datetimeformatinfo)
-  * [JapaneseCalendar 類別](https://docs.microsoft.com/dotnet/api/system.globalization.japanesecalendar)
-  * [JapaneseLunisolarCalendar 類別](https://docs.microsoft.com/dotnet/api/system.globalization.japaneselunisolarcalendar)
+* [System 命名空間](/dotnet/api/system)
+  * [DateTime 結構](/dotnet/api/system.datetime)
+  * [DateTimeOffset 結構](/dotnet/api/system.datetimeoffset)
+* [System.Globalization 命名空間](/dotnet/api/system.globalization)
+  * [Calendar 類別](/dotnet/api/system.globalization.calendar)
+  * [DateTimeFormatInfo 類別](/dotnet/api/system.globalization.datetimeformatinfo)
+  * [JapaneseCalendar 類別](/dotnet/api/system.globalization.japanesecalendar)
+  * [JapaneseLunisolarCalendar 類別](/dotnet/api/system.globalization.japaneselunisolarcalendar)
 
 ### <a name="win32"></a>Win32
 
-* [datetimeapi.h header](https://docs.microsoft.com/windows/desktop/api/datetimeapi/)
-  * [GetDateFormatA 函式](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
-  * [GetDateFormatEx 函式](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
-  * [GetDateFormatW 函式](https://docs.microsoft.com/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)
-* [winnls.h 標頭](https://docs.microsoft.com/windows/desktop/api/winnls/)
-  * [EnumDateFormatsA 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsa)
-  * [EnumDateFormatsExA 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexa)
-  * [EnumDateFormatsExEx 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexex)
-  * [EnumDateFormatsExW 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsexw)
-  * [EnumDateFormatsW 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-enumdateformatsw)
-  * [GetCalendarInfoA 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoa)
-  * [GetCalendarInfoEx 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex)
-  * [GetCalendarInfoW 函式](https://docs.microsoft.com/windows/desktop/api/winnls/nf-winnls-getcalendarinfow)
+* [datetimeapi.h header](/windows/desktop/api/datetimeapi/)
+  * [GetDateFormatA 函式](/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata)
+  * [GetDateFormatEx 函式](/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex)
+  * [GetDateFormatW 函式](/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw)
+* [winnls.h 標頭](/windows/desktop/api/winnls/)
+  * [EnumDateFormatsA 函式](/windows/desktop/api/winnls/nf-winnls-enumdateformatsa)
+  * [EnumDateFormatsExA 函式](/windows/desktop/api/winnls/nf-winnls-enumdateformatsexa)
+  * [EnumDateFormatsExEx 函式](/windows/desktop/api/winnls/nf-winnls-enumdateformatsexex)
+  * [EnumDateFormatsExW 函式](/windows/desktop/api/winnls/nf-winnls-enumdateformatsexw)
+  * [EnumDateFormatsW 函式](/windows/desktop/api/winnls/nf-winnls-enumdateformatsw)
+  * [GetCalendarInfoA 函式](/windows/desktop/api/winnls/nf-winnls-getcalendarinfoa)
+  * [GetCalendarInfoEx 函式](/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex)
+  * [GetCalendarInfoW 函式](/windows/desktop/api/winnls/nf-winnls-getcalendarinfow)
 
 ## <a name="see-also"></a>另請參閱
 
-* [日本曆的紀元處理方式](https://docs.microsoft.com/windows/desktop/Intl/era-handling-for-the-japanese-calendar)
-* [日本曆的千禧年 (Y2K) 時刻](https://blogs.msdn.microsoft.com/shawnste/2018/04/12/the-japanese-calendars-y2k-moment/)
-* [使用登錄來測試 Windows 上的新日本紀元](https://blogs.msdn.microsoft.com/shawnste/2018/08/07/using-the-registry-to-test-the-new-japanese-era-on-windows/)
-* [元年與第一年](https://blogs.msdn.microsoft.com/shawnste/2018/11/12/gannen-vs-ichinen/)
+* [日本曆的紀元處理方式](/windows/desktop/Intl/era-handling-for-the-japanese-calendar)
+* [日本曆的千禧年 (Y2K) 時刻](/archive/blogs/shawnste/the-japanese-calendars-y2k-moment)
+* [使用登錄來測試 Windows 上的新日本紀元](/archive/blogs/shawnste/using-the-registry-to-test-the-new-japanese-era-on-windows)
+* [元年與第一年](/archive/blogs/shawnste/gannen-vs-ichinen)
 * [因應日本紀元於 2019 年 5 月變更的更新](https://support.microsoft.com/help/4470918/updates-for-may-2019-japan-era-change)
 * [在 .NET 中處理日本曆的新紀元](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/)

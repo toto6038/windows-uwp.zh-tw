@@ -4,12 +4,12 @@ description: 建立描述應用程式的封裝資訊清單之後，您就可以�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 19a66b2d0724eb0f4f8c3f171033e4e616751717
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334593"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166502"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>將您的資訊清單提交至存放庫
 
@@ -122,7 +122,7 @@ winget validate \<manifest-file>
 
 * **Needs: author feedback**：提交失敗。 我們會將提取要求重新指派給您。 如果您未在 10 天內解決此問題，我們將會關閉提取要求。
 * **Manifest-Validation-Error**：提交的資訊清單包含語法錯誤。
-* **URL-Validation-Error**：提交中的一或多個 URL 未通過 [SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) 驗證。
+* **URL-Validation-Error**：提交中的一或多個 URL 未通過 [SmartScreen](/windows/security/threat-protection/microsoft-defender-smartscreen/microsoft-defender-smartscreen-overview) 驗證。
 * **Binary-Validation-Error**：已提交的應用程式安裝程式未通過病毒掃描測試，或是雜湊不相符。
 * **Pull-Request-Error**:提取要求發生問題。 例如，資料夾結構不是[所需的格式](#step-3-add-your-manifest-to-the-local-repository)。
 * **Validation-Error**：已提交的應用程式無法通過一般驗證測試。

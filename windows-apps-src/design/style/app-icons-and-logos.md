@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0ad8b78538a2b047501361072a017658ba152e73
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5c39ded4157181581412f01e54772db2bf9a1732
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971003"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174622"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -52,7 +52,7 @@ ms.locfileid: "82971003"
 | 徽章標誌 | 您的應用程式磚 | BadgeLogo.png  |
 | 套件標誌/Store 標誌 | 應用程式安裝程式、合作夥伴中心、Store 中的 [回報應用程式] 選項、Store 中的 [撰寫評論] 選項 | StoreLogo.png  |
 
-除非您選擇[僅顯示 Store 中上傳的影像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)，否則將使用 \*。 
+除非您選擇[僅顯示 Store 中上傳的影像](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store)，否則將使用 \*。 
 
 若要確保這些圖示在每個畫面上看起來清晰，您可以為不同的顯示縮放比例建立相同圖示的多個版本。 
 
@@ -75,13 +75,13 @@ ms.locfileid: "82971003"
 
 「如何在 Microsoft Store 中為我的應用程式清單指定影像？」
 
-根據預設，我們會使用 Store 中來自您的套件中的一些影像，如本頁頂端表格中所述 (以及您在提交程序期間所提供的其他[影像](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images) \(英文\))。 不過，您也可以選擇性地為 Windows 10 (包含 Xbox) 客戶顯示清單時，防止 Microsoft Store 使用您應用程式套件中的標誌影像，指定讓 Microsoft Store 只使用您上傳的影像。 如此您更能在整個 Store 中掌控各種不同顯示的應用程式外觀。 (請注意，如果您的產品支援舊版的作業系統版本，那麼即使您使用此選項，這些客戶仍可能會看到套件中的影像。)您可以在提交程序的 [Store 清單]  步驟的 [Store 標誌]  區段執行此操作。
+根據預設，我們會使用 Store 中來自您的套件中的一些影像，如本頁頂端表格中所述 (以及您在提交程序期間所提供的其他[影像](../../publish/app-screenshots-and-images.md) \(英文\))。 不過，您也可以選擇性地為 Windows 10 (包含 Xbox) 客戶顯示清單時，防止 Microsoft Store 使用您應用程式套件中的標誌影像，指定讓 Microsoft Store 只使用您上傳的影像。 如此您更能在整個 Store 中掌控各種不同顯示的應用程式外觀。 (請注意，如果您的產品支援舊版的作業系統版本，那麼即使您使用此選項，這些客戶仍可能會看到套件中的影像。)您可以在提交程序的 [Store 清單]  步驟的 [Store 標誌]  區段執行此操作。
 
 ![在應用程式提交程序中指定 Store 標誌](images/app-icons/storelogodisplay.png)
 
 勾選此方塊時，就會出現稱為 [Store 顯示影像]  的新區段。 在這裡，您可以上傳 Store 將使用的 3 種圖片尺寸來取代應用程式套件中的標誌影像：300 x 300、150 x 150 和 71 x 71 像素。 雖然我們建議提供所有 3 種大小，但僅需要 300 x 300 大小。
 
-如需詳細資訊，請參閱[僅顯示 Store 中上傳的標誌影像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。
+如需詳細資訊，請參閱[僅顯示 Store 中上傳的標誌影像](../../publish/app-screenshots-and-images.md#display-only-uploaded-logo-images-in-the-store)。
 
 <!-- ### Fallback images for the Store
 
@@ -96,7 +96,7 @@ If these images aren't provided, the Store will search all matching images of th
 
 The Store may also use your app's tile and other images that you include in your app's package. 
 
-For more information, see [App screenshots, images, and trailers in the Microsoft Store](/windows/uwp/publish/app-screenshots-and-images). -->
+For more information, see [App screenshots, images, and trailers in the Microsoft Store](../../publish/app-screenshots-and-images.md). -->
 
 
 ## <a name="managing-app-icons-with-the-visual-studio-manifest-designer"></a>使用 Visual Studio 資訊清單設計工具管理應用程式圖示
@@ -185,7 +185,7 @@ Visual Studio 會產生您的影像檔，並將它們新增至專案中。 如�
 
 Square150x150Logo-scale-100.png、Square150x150Logo-scale-200.png、Square150x150Logo-scale-400.png
 
-請注意，Visual Studio 預設不會產生徽章標誌。 這是因為您的徽章標誌是獨一無二的，可能與您的其他應用程式圖示不符合。 如需詳細資訊，請參閱 [Windows 應用程式的徽章通知](/windows/uwp/design/shell/tiles-and-notifications/badges)一文。 
+請注意，Visual Studio 預設不會產生徽章標誌。 這是因為您的徽章標誌是獨一無二的，可能與您的其他應用程式圖示不符合。 如需詳細資訊，請參閱 [Windows 應用程式的徽章通知](../shell/tiles-and-notifications/badges.md)一文。 
 
 
 ## <a name="more-about-app-icon-assets"></a>深入了解應用程式圖示資產
@@ -253,13 +253,13 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 
 
 ## <a name="more-about-splash-screen-assets"></a>深入了解啟動顯示畫面資產
-如需啟動顯示畫面的詳細資訊，請參閱 [Windows 應用程式啟動顯示畫面](/windows/uwp/launch-resume/splash-screens)一文。
+如需啟動顯示畫面的詳細資訊，請參閱 [Windows 應用程式啟動顯示畫面](../../launch-resume/splash-screens.md)一文。
 
 ## <a name="more-about-badge-logo-assets"></a>深入了解徽章標誌資產
 
 當您使用資產產生器來產生所需的所有資產時，預設情況下它不會產生徽章標誌的原因是：它們與其他應用程式資產非常不同。 徽章標誌會出現在通知和應用程式磚上的狀態影像。 
 
-如需詳細資訊，請參閱 [Windows 應用程式的徽章通知](/windows/uwp/design/shell/tiles-and-notifications/badges)。
+如需詳細資訊，請參閱 [Windows 應用程式的徽章通知](../shell/tiles-and-notifications/badges.md)。
 
 
 ## <a name="customizing-asset-padding"></a>自訂資產邊框間距
@@ -313,16 +313,3 @@ Visual Studio 會產生專案所需的所有應用程式圖示資產，但如果
 本文說明如何為特定的縮放比例建立資產，但您也可以建立各種不同條件及條件組合的資產。 例如，您可以針對高對比度顯示器或淺色佈景主題和深色佈景主題建立圖示。 您甚至可以為特定語言建立資產。
 
 如需相關指示，請參閱[針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md))。
-
-
-
-
-
-
-
-
-
-
-
-
-

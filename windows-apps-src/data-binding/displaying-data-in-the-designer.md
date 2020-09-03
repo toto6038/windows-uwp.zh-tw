@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c717a74824db43984794b67638dd19b51b5dacd
-ms.sourcegitcommit: 83225cd9f3ef184277fc293d09982ecd511cc088
+ms.openlocfilehash: 84e11bc2a17039b65ae1282531af4b92240f4069
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87160877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170072"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================
 
 
 
-**注意**  您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)或 [{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。 本主題中所述的技術是以 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用方式為依據，因此，它們只適用於 **{Binding}** 。 但是，如果您使用的是 **{x:Bind}** ，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
+**注意**  您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](../xaml-platform/binding-markup-extension.md)或 [{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)。 本主題中所述的技術是以 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 的使用方式為依據，因此，它們只適用於 **{Binding}** 。 但是，如果您使用的是 **{x:Bind}** ，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
 
 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。 為了讓您的控制項能夠填入資料 (讓您能夠在 app 的配置、範本及其他視覺化屬性上運作)，系統提供了各種不同方式，讓您可以使用設計階段的範例資料。 如果您正在建置草圖 (或原型) app，則範例資料也可以是非常實用且省時的。 您可以在執行階段於草圖或原型中使用範例資料來說明您的想法，而不需連線到實際的即時資料。
 
@@ -34,7 +34,7 @@ ms.locfileid: "87160877"
 <a name="setting-datacontext-in-markup"></a>在標記中設定 DataContext
 -----------------------------
 
-有一個相當常見的開發人員做法是，使用命令式程式碼 (在程式碼後置中) 來設定頁面或使用者控制項的 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext)，以檢視模型執行個體。
+有一個相當常見的開發人員做法是，使用命令式程式碼 (在程式碼後置中) 來設定頁面或使用者控制項的 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext)，以檢視模型執行個體。
 
 ``` csharp
 public MainPage()
@@ -99,11 +99,11 @@ else
 </Page>
 ```
 
-各種不同的 xmlns 宣告表示，只有在設計階段才會解譯具有 **d:** 首碼的屬性，在執行階段則會略過。 因此，**d:DataContext** 屬性只會在設計階段影響 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 屬性的值，在執行階段則沒有任何作用。 如有需要，您甚至可以在標記中同時設定 **d:DataContext** 和 **DataContext**。 **d:DataContext** 將會在設計階段覆寫，而 **DataContext** 將會在執行階段覆寫。 這些相同的覆寫規則適用於所有的設計階段和執行階段屬性。
+各種不同的 xmlns 宣告表示，只有在設計階段才會解譯具有 **d:** 首碼的屬性，在執行階段則會略過。 因此，**d:DataContext** 屬性只會在設計階段影響 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 屬性的值，在執行階段則沒有任何作用。 如有需要，您甚至可以在標記中同時設定 **d:DataContext** 和 **DataContext**。 **d:DataContext** 將會在設計階段覆寫，而 **DataContext** 將會在執行階段覆寫。 這些相同的覆寫規則適用於所有的設計階段和執行階段屬性。
 
-**d:DataContext** 屬性及其他所有設計階段屬性都記載於[設計階段屬性](https://msdn.microsoft.com/library/ff602277(v=VS.95).aspx)主題中，其仍適用於通用 Windows 平台 (UWP) app。
+**d:DataContext** 屬性及其他所有設計階段屬性都記載於[設計階段屬性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95))主題中，其仍適用於通用 Windows 平台 (UWP) app。
 
-[**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 沒有 **DataContext** 屬性，但具有 **Source** 屬性。 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
+[**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 沒有 **DataContext** 屬性，但具有 **Source** 屬性。 因此，您可以使用 **d:Source** 屬性，在 **CollectionViewSource** 上設定僅限設計階段的範例資料。
 
 ``` xaml
     <Page.Resources>
@@ -152,6 +152,6 @@ else
 
 您可以在 [資料] 面板中直接實際設計範例資料的結構描述，而不需指定類別。 您也可以在 **\[資料\]** 面板中編輯範例資料值：不需開啟和編輯檔案 (儘管如此，如有需要，您仍然可以執行該動作)。
 
-**\[新增範例資料\]** 功能會使用 [**DataContext**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外，[資料] 面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 **\[資料\]** 面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
+**\[新增範例資料\]** 功能會使用 [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外，[資料] 面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 **\[資料\]** 面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
 
 ![適用於原型設計的範例資料。](images/displaying-data-in-the-designer-04.png)

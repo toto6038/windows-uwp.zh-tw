@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, 適合初學者在 windows 上使用 node, 使用 windows 上的 node 進行開發, 在 windows 上使用 nodejs 的開發人員
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: d40d701dc3ae973e0834d0b329527e69854b9e36
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5737316ae2de0520e5443f69cefaec25679a228f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492863"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166632"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>適合初學者在 Windows 上開始使用 Node.js
 
@@ -148,5 +148,5 @@ Node.js 具有可協助您開發伺服器端 Web 應用程式的工具，部分�
 在本指南中，您已了解如何使用 Node.js 來執行的一些基本事項、嘗試使用 VS Code 中的 Node.js 命令列、使用 Express.js 建立簡單的 Web 應用程式並在網頁瀏覽器中本機執行，然後嘗試使用一些內建的 Node.js 模組。 若要深入了解如何安裝及使用一些熱門的 Node.js Web 架構，請繼續進行下一份指南，其中涵蓋 Next.js (以 React 為基礎的伺服器轉譯 Web 架構)、Nuxt.js (以 Vue 為基礎的伺服器轉譯 Web 架構)，以及 Gatsby (以 React 為基礎的靜態轉譯 Web 架構)。 您也可以跳到了解如何使用 MongoDB 或 PostgreSQL 資料庫或 Docker 容器。
 
 - [開始使用 Windows 上的 Node.js Web 架構](./web-frameworks.md)
-- [開始將 Node.js 應用程式連線到資料庫](https://docs.microsoft.com/windows/wsl/tutorials/wsl-database)
+- [開始將 Node.js 應用程式連線到資料庫](/windows/wsl/tutorials/wsl-database)
 - [開始在 Node.js 中使用 Docker 容器](./containers.md)

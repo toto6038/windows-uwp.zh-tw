@@ -7,16 +7,16 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 705b0ecb474c0bb821c3a21f4b8b66073984827f
-ms.sourcegitcommit: 015291bdf2e7d67076c1c85fc025f49c840ba475
+ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469573"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174512"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 應用程式的瀏覽歷程記錄和向後瀏覽
 
-> **重要 API**：[BackRequested 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **重要 API**：[BackRequested 事件](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 類別](/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Windows 應用程式提供一致的返回瀏覽系統，以周遊使用者在應用程式內及應用程式之間 (視裝置而定) 的瀏覽歷程記錄。
 
@@ -74,7 +74,7 @@ Windows 應用程式提供一致的返回瀏覽系統，以周遊使用者在應
 
 ## <a name="code-example"></a>程式碼範例
 
-下列程式碼範例示範如何使用返回按鈕實作向後瀏覽行為。 程式碼對應至 Button [**Click**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件，並在瀏覽至新頁面時呼叫的 [**OnNavigatedTo**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_) 中停用/啟用按鈕可見度。 程式碼範例也會處理來自硬體和軟體系統返回按鍵的輸入，方法是登錄 [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件的接聽程式。
+下列程式碼範例示範如何使用返回按鈕實作向後瀏覽行為。 程式碼對應至 Button [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.Click) 事件，並在瀏覽至新頁面時呼叫的 [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_) 中停用/啟用按鈕可見度。 程式碼範例也會處理來自硬體和軟體系統返回按鍵的輸入，方法是登錄 [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件的接聽程式。
 
 ```xaml
 <!-- MainPage.xaml -->
@@ -194,7 +194,7 @@ namespace winrt::PageNavTest::implementation
 
 以上所述，我們會處理單頁的向後瀏覽。 如果某些頁面不要有返回瀏覽，或者您想要在顯示頁面之前執行頁面層級的程式碼，可以在每個頁面中處理瀏覽。
 
-為了處理整個應用程式的向後瀏覽，您會在 `App.xaml`程式碼後置檔案中針對 [**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件註冊全域接聽程式。
+為了處理整個應用程式的向後瀏覽，您會在 `App.xaml`程式碼後置檔案中針對 [**BackRequested**](/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested) 事件註冊全域接聽程式。
 
 App.xaml 程式碼後置：
 
@@ -307,9 +307,9 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>提供回溯相容性的系統返回行為
 
-之前UWP 應用程式使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 提供向後瀏覽。 API 將繼續受到支援以確保回溯相容性，但我們不再建議依賴 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 您的應用程式應設置自己的應用程式內返回按鈕。
+之前UWP 應用程式使用 [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 提供向後瀏覽。 API 將繼續受到支援以確保回溯相容性，但我們不再建議依賴 [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 您的應用程式應設置自己的應用程式內返回按鈕。
 
-如果您的應用程式繼續使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，則系統 UI 會呈現標題列內部的系統上一頁按鈕的。 (返回按鈕的外觀和使用者互動方式與先前的組建相同)。
+如果您的應用程式繼續使用 [AppViewBackButtonVisibility](/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，則系統 UI 會呈現標題列內部的系統上一頁按鈕的。 (返回按鈕的外觀和使用者互動方式與先前的組建相同)。
 
 ![標題列返回按鈕](images/nav-back-pc.png)
 

@@ -4,12 +4,12 @@ description: 如果您想要將軟體封裝提交至 Windows 封裝管理員存�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 960caede306228c492bc88c81ac3c1c841b6c18c
-ms.sourcegitcommit: 9c2b21081158e712a856158d25dce76b3e213a9c
+ms.openlocfilehash: 4b2c42fb8a9f8eb741ce253c3ea110fe4eeb10a3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88129745"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166492"
 ---
 # <a name="create-your-package-manifest"></a>建立封裝資訊清單
 
@@ -169,7 +169,7 @@ ManifestVersion: 0.1.0
 
 | 安裝程式 | 命令  | 文件 |  
 | :--- | :-- | :--- |  
-| MSI | `/q` | [MSI 錄製進行](https://docs.microsoft.com/windows/win32/msi/command-line-options) |
+| MSI | `/q` | [MSI 錄製進行](/windows/win32/msi/command-line-options) |
 | InstallShield | `/s`  | [InstallShield 命令列參數](https://docs.flexera.com/installshield19helplib/helplibrary/IHelpSetup_EXECmdLine.htm) |
 | Inno 設定 | `/SILENT or /VERYSILENT` | [Inno 安裝文件](https://jrsoftware.org/ishelp/) |
 | Nullsoft | `/S` | [Nullsoft 無訊息安裝程式/解除安裝程式](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |

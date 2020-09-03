@@ -5,16 +5,16 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: db66e276ffa0337da943917543a0065ac160e468
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: 71ae6245fe217277c7408a7eb6b5150900cc45d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296174"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170172"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
-本主題示範如何在 SDK 應用程式二進位介面 (ABI) 與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 物件之間轉換。 您可以使用這些技術，在搭配使用這兩種程式設計方式與 Windows 執行階段的程式碼之間進行互通，也可以在將程式碼從 ABI 逐漸移動到 C++/WinRT 時，使用這些技術。
+本主題示範如何在 SDK 應用程式二進位介面 (ABI) 與 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 物件之間轉換。 您可以使用這些技術，在搭配使用這兩種程式設計方式與 Windows 執行階段的程式碼之間進行互通，也可以在將程式碼從 ABI 逐漸移動到 C++/WinRT 時，使用這些技術。
 
 一般情況下，C++/WinRT 會將 ABI 類型公開為 **void\*** ，讓您不需要包含平台標頭檔。
 
@@ -106,7 +106,7 @@ int main()
 }
 ```
 
-**as** 函式的實作會呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果您想要僅呼叫 [**AddRef**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的較低層級轉換，您可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 輔助函式。 下一個程式碼範例將這些較低層級轉換新增至上述的程式碼範例。
+**as** 函式的實作會呼叫 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))。 如果您想要僅呼叫 [**AddRef**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref) 的較低層級轉換，您可以使用 [**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-to-abi) 和 [**winrt::copy_from_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 輔助函式。 下一個程式碼範例將這些較低層級轉換新增至上述的程式碼範例。
 
 > [!IMPORTANT]
 > 與 ABI 類型交互操作時，所使用的 ABI 類型務必對應至 C++/WinRT 物件的預設介面。 否則，ABI 類型的方法叫用，實際上會在預設介面上的相同 vtable 位置中呼叫方法，並產生意料之外的結果。 請注意，[**winrt::copy_to_abi**](/uwp/cpp-ref-for-winrt/copy-from-abi) 不會在編譯時期防範此種情形，因為其會針對所有 ABI 類型使用 **void\*** ，並假設呼叫端已小心翼翼避免不符合類型。 這是為了避免在可能從未使用 ABI 類型的情況下，要求 C++/WinRT 標頭參考 ABI 標頭。
@@ -180,7 +180,7 @@ T convert_from_abi(::IUnknown* from)
 }
 ```
 
-函式只需呼叫 [**QueryInterface**](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))，來查詢要求 C++/WinRT 類型的預設介面。
+函式只需呼叫 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))，來查詢要求 C++/WinRT 類型的預設介面。
 
 如我們所了解，輔助函式不需要從 C++/WinRT 物件轉換至對等 ABI 介面指標。 只要使用 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (或 [**try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) 成員函式為要求的介面詢問。 **as** 和 **try_as** 函式傳回包裝要求 ABI 類型的 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) 物件。
 
@@ -286,7 +286,7 @@ To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
 }
 ```
 
-另請參閱[使用 C++/WinRT 取用 COM 元件](/windows/uwp/cpp-and-winrt-apis/consume-com)。
+另請參閱[使用 C++/WinRT 取用 COM 元件](./consume-com.md)。
 
 ### <a name="unsafe-interop-with-abi-com-interface-pointers"></a>不安全的 ABI COM 介面指標交互操作
 
@@ -364,8 +364,8 @@ void GetString(_Out_ HSTRING* value);
 | 將 **hstring**複製到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | h 會接收字串的複本。 h 先前擁有的所有字串都會流失。 |
 
 ## <a name="important-apis"></a>重要 API
-* [AddRef 函式](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
-* [QueryInterface 函式](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
+* [AddRef 函式](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
+* [QueryInterface 函式](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_))
 * [winrt::attach_abi 函式](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::copy_from_abi 函式](/uwp/cpp-ref-for-winrt/copy-from-abi)

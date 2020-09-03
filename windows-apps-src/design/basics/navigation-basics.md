@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ed38be070263bbd619e44daf5c747a97299b3cf7
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 01ccd7a7ead6bd79b79e8beb3de7f3208b616b7c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233851"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174532"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 
@@ -168,7 +168,7 @@ ms.locfileid: "83233851"
         ![框架影像](images/nav/thumbnail-frame.svg)
     :::column-end:::
     :::column span="2":::
-        [**框架**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+        [**框架**](/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
 有幾個例外，即任何有多個頁面的應用程式都會使用框架。 一般來說，應用程式會有主要頁面，包含框架和主要瀏覽元素，例如瀏覽檢視控制項。 當使用者選取頁面時，框架會載入並且顯示。
 :::row-end:::

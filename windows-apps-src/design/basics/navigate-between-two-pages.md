@@ -13,18 +13,18 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 50211600931fc67c43aa577fabe23f1277a0e897
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 99d3084827e8c5b42ee1b413639300097b82a518
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233828"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174492"
 ---
 # <a name="implement-navigation-between-two-pages"></a>兩個頁面之間的實作瀏覽
 
 了解如何使用框架和頁面，以便在您的應用程式中能夠進行基本的對等瀏覽。 
 
-> **重要 API**：[**Windows.UI.Xaml.Controls.Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別、[**Windows.UI.Xaml.Controls.Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 類別、[**Windows.UI.Xaml.Navigation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation) 命名空間
+> **重要 API**：[**Windows.UI.Xaml.Controls.Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) 類別、[**Windows.UI.Xaml.Controls.Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) 類別、[**Windows.UI.Xaml.Navigation**](/uwp/api/Windows.UI.Xaml.Navigation) 命名空間
 
 ![對等瀏覽](images/peertopeer.png)
 
@@ -82,19 +82,19 @@ ms.locfileid: "83233828"
 
 在 Page1.xaml 中，新增下列內容：
 
--   名為 `pageTitle` 的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素，做為根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素。 將 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性變更為 `Page 1`。
+-   名為 `pageTitle` 的 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素，做為根 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素。 將 [**Text**](/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性變更為 `Page 1`。
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素，做為根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素，並位於 `pageTitle` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之後。
+-   [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素，做為根 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素，並位於 `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之後。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
                  HorizontalAlignment="Center"/>
 ```
 
-在 Page1.xaml 程式碼後置檔案中，新增下列程式碼以處理您先前新增之 [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件，以瀏覽至 Page2.xaml。
+在 Page1.xaml 程式碼後置檔案中，新增下列程式碼以處理您先前新增之 [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件，以瀏覽至 Page2.xaml。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -119,19 +119,19 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 在 Page2.xaml 中，新增下列內容：
 
--   名為 `pageTitle` 的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素，做為根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素。 將 [**Text**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性的值變更為 `Page 2`。
+-   名為 `pageTitle` 的 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素，做為根 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素。 將 [**Text**](/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性的值變更為 `Page 2`。
 ```xaml
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素，做為根 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素，並位於 `pageTitle` [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之後。
+-   [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 元素，做為根 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 的子元素，並位於 `pageTitle` [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 元素之後。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
                  HorizontalAlignment="Center"/>
 ```
 
-在 Page2.xaml 程式碼後置檔案中，新增下列程式碼來處理您先前新增之 [**HyperlinkButton**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件，以瀏覽至 Page1.xaml。
+在 Page2.xaml 程式碼後置檔案中，新增下列程式碼來處理您先前新增之 [**HyperlinkButton**](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的 `Click` 事件，以瀏覽至 Page1.xaml。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -161,7 +161,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 開啟 App.xaml 程式碼後置檔案，並變更 `OnLaunched` 處理常式。
 
-在此，我們要在 [**Frame.Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 的呼叫中指定 `Page1`，而不是 `MainPage`。
+在此，我們要在 [**Frame.Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate) 的呼叫中指定 `Page1`，而不是 `MainPage`。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -296,7 +296,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 如果瀏覽到應用程式的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)，以擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
+> 如果瀏覽到應用程式的初始視窗框架失敗，這裡的程式碼就會使用傳回值 [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate)，以擲回應用程式例外狀況。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
 
 現在，建置並執行 app。 按一下顯示為 [按一下以移至頁面 2] 的連結。 最上方顯示 [第 2 頁] 的第二頁應該會載入並顯示在框架中。
 
@@ -304,21 +304,21 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 將更多功能新增到應用程式之前，我們先來看看前面新增的頁面如何在應用程式中提供瀏覽。
 
-首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為應用程式建立 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)，稱為 `rootFrame`。 **Frame** 類別支援不同的瀏覽方法，例如 [**Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate)[**GoBack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goback)，以及 [**GoForward**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.goforward)，也支援不同的各種屬性，例如 [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack)、[**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack)，以及 [**BackStackDepth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstackdepth)。
+首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為應用程式建立 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame)，稱為 `rootFrame`。 **Frame** 類別支援不同的瀏覽方法，例如 [**Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate)[**GoBack**](/uwp/api/windows.ui.xaml.controls.frame.goback)，以及 [**GoForward**](/uwp/api/windows.ui.xaml.controls.frame.goforward)，也支援不同的各種屬性，例如 [**BackStack**](/uwp/api/windows.ui.xaml.controls.frame.backstack)、[**ForwardStack**](/uwp/api/windows.ui.xaml.controls.frame.forwardstack)，以及 [**BackStackDepth**](/uwp/api/windows.ui.xaml.controls.frame.backstackdepth)。
  
-[  **Navigate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法是用來顯示這個 **Frame** 中的內容。 根據預設，此方法會載入 MainPage.xaml。 在我們的範例中，`Page1` 會傳遞至 **Navigate** 方法，此方法就會在 **Frame** 中載入 `Page1`。 
+[  **Navigate**](/uwp/api/windows.ui.xaml.controls.frame.navigate) 方法是用來顯示這個 **Frame** 中的內容。 根據預設，此方法會載入 MainPage.xaml。 在我們的範例中，`Page1` 會傳遞至 **Navigate** 方法，此方法就會在 **Frame** 中載入 `Page1`。 
 
-`Page1` 是 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 類別的子類別。 **Page** 類別具有唯讀的 **Frame** 屬性，這個屬性會取得包含 **Page** 的 **Frame**。 當 `Page1` 中 **HyperlinkButton** 的 **Click** 事件處理常式呼叫 `this.Frame.Navigate(typeof(Page2))` 時，**Frame** 會顯示 Page2.xaml 的內容。
+`Page1` 是 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) 類別的子類別。 **Page** 類別具有唯讀的 **Frame** 屬性，這個屬性會取得包含 **Page** 的 **Frame**。 當 `Page1` 中 **HyperlinkButton** 的 **Click** 事件處理常式呼叫 `this.Frame.Navigate(typeof(Page2))` 時，**Frame** 會顯示 Page2.xaml 的內容。
 
-最後，每當頁面載入框架時，該頁面就會做為 [**PageStackEntry**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) 新增到 [**Frame**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.frame) 的 [**BackStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.backstack) 或 [**ForwardStack**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.forwardstack)，以便進行[歷程記錄和向後瀏覽](navigation-history-and-backwards-navigation.md)。
+最後，每當頁面載入框架時，該頁面就會做為 [**PageStackEntry**](/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) 新增到 [**Frame**](/uwp/api/windows.ui.xaml.controls.page.frame) 的 [**BackStack**](/uwp/api/windows.ui.xaml.controls.frame.backstack) 或 [**ForwardStack**](/uwp/api/windows.ui.xaml.controls.frame.forwardstack)，以便進行[歷程記錄和向後瀏覽](navigation-history-and-backwards-navigation.md)。
 
 ## <a name="3-pass-information-between-pages"></a>3.在頁面之間傳送資訊
 
 我們的 app 可以在兩個頁面之間瀏覽，但這只是最基本的功能。 通常，當應用程式有多個頁面時，這些頁面需要共用資訊。 讓我們將一些資訊從第一頁傳送到第二頁。
 
-在 Page1.xaml 中，使用下列 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 取代您稍早新增的 **HyperlinkButton**。
+在 Page1.xaml 中，使用下列 [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 取代您稍早新增的 **HyperlinkButton**。
 
-在此，我們新增 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 標籤和 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) `name` 以輸入文字字串。
+在此，我們新增 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 標籤和 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) `name` 以輸入文字字串。
 
 ```xaml
 <StackPanel>
@@ -355,7 +355,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 在 Page2.xaml 中，使用下列 **StackPanel** 取代您稍早新增的 **HyperlinkButton**。
 
-在此，我們新增 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 以顯示從 Page1 傳來的文字字串。
+在此，我們新增 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 以顯示從 Page1 傳來的文字字串。
 
 ```xaml
 <StackPanel>
@@ -422,9 +422,9 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 
 預設不會快取頁面內容和狀態，因此，若您想要快取資訊，就必須在 App 的每個頁面中啟用。
 
-在基本對等範例中沒有返回按鈕 (我們會在[向後瀏覽](navigation-history-and-backwards-navigation.md)中示範返回瀏覽)，但如果您真的在 `Page2` 上按一下返回按鈕，`Page1` 上的 **TextBox** (以及任何其他欄位) 會設為其預設狀態。 解決此問題的方式之一，是使用 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 屬性來指定頁面要新增至框架的頁面快取。 
+在基本對等範例中沒有返回按鈕 (我們會在[向後瀏覽](navigation-history-and-backwards-navigation.md)中示範返回瀏覽)，但如果您真的在 `Page2` 上按一下返回按鈕，`Page1` 上的 **TextBox** (以及任何其他欄位) 會設為其預設狀態。 解決此問題的方式之一，是使用 [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 屬性來指定頁面要新增至框架的頁面快取。 
 
-在 `Page1` 的建構函式中，您可以將 **NavigationCacheMode** 設定為**已啟用**，以保留頁面的所有內容和狀態值，直到超過框架的頁面快取。 如果您想要略過 [**CacheSize**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.frame.cachesize) 限制，可將 [**NavigationCacheMode**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 設為[**必要**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode)，這樣就會指定瀏覽歷史記錄中可針對框架快取的頁數。 不過，務必記住，根據裝置的記憶體限制，快取大小限制可能會非常重要。
+在 `Page1` 的建構函式中，您可以將 **NavigationCacheMode** 設定為**已啟用**，以保留頁面的所有內容和狀態值，直到超過框架的頁面快取。 如果您想要略過 [**CacheSize**](/uwp/api/windows.ui.xaml.controls.frame.cachesize) 限制，可將 [**NavigationCacheMode**](/uwp/api/windows.ui.xaml.controls.page.navigationcachemode) 設為[**必要**](/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode)，這樣就會指定瀏覽歷史記錄中可針對框架快取的頁數。 不過，務必記住，根據裝置的記憶體限制，快取大小限制可能會非常重要。
 
 ```csharp
 public Page1()
@@ -451,6 +451,6 @@ Page1::Page1()
 ```
 
 ## <a name="related-articles"></a>相關文章
-* [Windows 應用程式的瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)
+* [Windows 應用程式的瀏覽設計基本知識](./navigation-basics.md)
 * [樞紐分析](../controls-and-patterns/pivot.md)
 * [瀏覽檢視](../controls-and-patterns/navigationview.md)

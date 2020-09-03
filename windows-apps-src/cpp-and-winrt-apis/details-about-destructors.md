@@ -5,16 +5,16 @@ ms.date: 09/26/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c+ +, cpp, winrt, 投影, 延遲解構, 安全查詢
 ms.localizationpriority: medium
-ms.openlocfilehash: 76068ffc655c20aa13b50cce9ac49af9afd50805
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6b15c32bb35bec1f6a8e8d59e6aefe17ebf74b5d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71329563"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170325"
 ---
 # <a name="extension-points-for-your-implementation-types"></a>適用於實作類型的擴充點
 
-[winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)是您自己的 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 實作 (執行時間類別和啟用 Factory) 的直接或間接衍生基底。
+[winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)是您自己的 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 實作 (執行時間類別和啟用 Factory) 的直接或間接衍生基底。
 
 本主題討論 C++/WinRT 2.0 中 **winrt::implements** 的擴充點。 您可以選擇在執行類型上執行這些擴充點，以自訂可檢查物件的預設行為 ([IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 介面意義中的 *inspectable*)。
 
@@ -22,7 +22,7 @@ ms.locfileid: "71329563"
 
 ## <a name="deferred-destruction"></a>延遲解構
 
-在[診斷直接配置](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)主題中，我們提到您的實作類型不能有私人解構函式。
+在[診斷直接配置](./diag-direct-alloc.md)主題中，我們提到您的實作類型不能有私人解構函式。
 
 擁有公用解構函式的優點在於它能夠延遲解構，此功能可在物件上偵測最終 [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) 呼叫，然後取得該物件的擁有權來無限期延遲其解構。
 

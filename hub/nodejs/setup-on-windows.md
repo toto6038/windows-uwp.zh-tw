@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js, windows 10, 原生 windows, 直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: fe1943da8c1de4f4fced5dec67079522d83f9a19
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8c865610ba2678c1c5ab1b25ff7a2c7410d11f15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82173464"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166582"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上設定您的 Node.js 開發環境
 
@@ -64,7 +64,7 @@ ms.locfileid: "82173464"
 若要將 Volta 安裝為版本管理員 (而非 windows-nvm)，請移至其[入門指南](https://docs.volta.sh/guide/getting-started) \(英文\) 的 **Windows 安裝**小節，然後下載並執行其 Windows 安裝程式，並遵循安裝指示。
 
 > [!IMPORTANT]
-> 安裝 Volta 之前，您必須確定已在 Windows 電腦上啟用[開發人員模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
+> 安裝 Volta 之前，您必須確定已在 Windows 電腦上啟用[開發人員模式](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers)。
 
 若要深入了解如何使用 Volta 在 Windows 上安裝多個 Node.js 版本，請參閱 [Volta 文件](https://docs.volta.sh/guide/understanding#managing-your-toolchain) \(英文\)。
 
@@ -101,4 +101,4 @@ ms.locfileid: "82173464"
 直接在 Windows 上使用 Node.js，非常適合用來了解及實驗您可以執行的作業。 當您準備好建置可供實際執行環境使用的 Web 應用程式 (通常會部署到 Linux 型伺服器) 時，建議您使用 Windows 子系統 Linux 版第 2 版 (WSL 2) 來開發 Node.js Web 應用程式。 許多 Node.js 套件和架構都是以 *nix 環境作為考量，而且大部分的 Node.js 應用程式都部署於 Linux 上，因此，在 WSL 上進行開發，可確保在您的開發與實際執行環境之間具有一致性。 若要設定 WSL 開發環境，請參閱[使用 WSL 2 設定您的 Node.js 開發環境](./setup-on-wsl2.md)。
 
 > [!NOTE]
-> 如果您處於需要在 Windows 伺服器上裝載 Node.js 應用程式的 (有點罕見) 情況下，最常見的案例似乎是[使用反向 Proxy](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca) \(英文\)。 有兩種方式可以達成這個目的：1) [使用 iisnode](https://harveywilliams.net/blog/installing-iisnode) \(英文\) 或[直接](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b) \(英文\)。 我們不會維護這些資源，建議[使用 Linux 伺服器來裝載您的 Node.js 應用程式](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs)。
+> 如果您處於需要在 Windows 伺服器上裝載 Node.js 應用程式的 (有點罕見) 情況下，最常見的案例似乎是[使用反向 Proxy](https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca) \(英文\)。 有兩種方式可以達成這個目的：1) [使用 iisnode](https://harveywilliams.net/blog/installing-iisnode) \(英文\) 或[直接](https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b) \(英文\)。 我們不會維護這些資源，建議[使用 Linux 伺服器來裝載您的 Node.js 應用程式](/azure/app-service/app-service-web-get-started-nodejs)。

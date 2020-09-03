@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception, 標準, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
-ms.openlocfilehash: 1092427659cfbf2fb7d1b5dbfc9cb8802dcfeccd
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: c721c70f19533053821139429b9bbd8bcd17f68a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296165"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170222"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 處理錯誤
 
-本主題討論使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 進行程式設計時處理錯誤的策略。 如需更多一般資訊及背景，請參閱[錯誤和例外狀況處理 (新式 C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
+本主題討論使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 進行程式設計時處理錯誤的策略。 如需更多一般資訊及背景，請參閱[錯誤和例外狀況處理 (新式 C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp)。
 
 ## <a name="avoid-catching-and-throwing-exceptions"></a>避免攔截和擲回例外狀況
 我們建議您繼續撰寫[異常安全程式碼](/cpp/cpp/how-to-design-for-exception-safety)，但您想要盡可能避免攔截和擲回例外狀況。 如果沒有例外狀況的處理常式，則 Windows 會自動產生錯誤報告 (包括損毀的小型傾印)，這有助於您追蹤問題出在哪裡。
@@ -70,7 +70,7 @@ IAsyncAction MakeThumbnailsAsync()
 若您只是要查看 HRESULT 程式碼，建議使用 [**winrt::hresult_error::code**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function)。 [**winrt::hresult_error::to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) 函式另一方面會轉換為 COM 錯誤物件，並將狀態推送至 COM 執行緒本機存放區。
 
 ## <a name="throwing-exceptions"></a>擲回例外狀況
-在某些情況下，如果您決定指定函式的呼叫失敗，則您的應用程式將無法復原 (您將無法如預期般再依賴它來運作)。 下列程式碼範例使用 [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) 值作為從 [**CreateEvent**](https://docs.microsoft.com/windows/desktop/api/synchapi/nf-synchapi-createeventa) 傳回的 HANDLE 包裝函式。 然後將控制代碼 (從它建立 `bool` 值) 傳遞至 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 函式範本。 **winrt::check_bool** 處理 `bool`，或任何可轉換為 `false` (錯誤狀況)，或 `true` (成功狀況) 的值。
+在某些情況下，如果您決定指定函式的呼叫失敗，則您的應用程式將無法復原 (您將無法如預期般再依賴它來運作)。 下列程式碼範例使用 [**winrt::handle**](/uwp/cpp-ref-for-winrt/handle) 值作為從 [**CreateEvent**](/windows/desktop/api/synchapi/nf-synchapi-createeventa) 傳回的 HANDLE 包裝函式。 然後將控制代碼 (從它建立 `bool` 值) 傳遞至 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 函式範本。 **winrt::check_bool** 處理 `bool`，或任何可轉換為 `false` (錯誤狀況)，或 `true` (成功狀況) 的值。
 
 ```cppwinrt
 winrt::handle h{ ::CreateEvent(nullptr, false, false, nullptr) };
@@ -81,7 +81,7 @@ winrt::check_bool(::SetEvent(h.get()));
 如果您傳遞至 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 的值是 false，則執行下列一系列動作。
 
 - **winrt::check_bool** 呼叫 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 函式。
-- **winrt::throw_last_error** 呼叫 [**GetLastError**](https://docs.microsoft.com/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 來擷取呼叫執行緒的最後一個錯誤碼值，並再呼叫 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) 函式。
+- **winrt::throw_last_error** 呼叫 [**GetLastError**](/windows/desktop/api/errhandlingapi/nf-errhandlingapi-getlasterror) 來擷取呼叫執行緒的最後一個錯誤碼值，並再呼叫 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) 函式。
 - **winrt::throw_hresult** 使用代表該錯誤碼的 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 物件 (或標準物件) 擲回例外狀況。
 
 因為 Windows API 報告執行階段錯誤使用各種傳回值型別，所以除了 **winrt::check_bool** 之外，還有許多其他實用的協助程式函式，適用於檢查值與擲回例外狀況。

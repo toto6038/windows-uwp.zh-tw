@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world, 第一個應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c4d4ba374c68509c0378e769262afda0dae7422
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492833"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175252"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 "Hello, World!" 應用程式 (XAML)
 
@@ -74,7 +74,7 @@ ms.locfileid: "86492833"
 
 若要檢視和編輯專案中的檔案，請在 [方案總管] 中按兩下該檔案。 像展開資料夾一樣展開 XAML 檔案，以檢視它的關聯程式碼檔案。 XAML 檔案會在分割檢視中開啟，同時顯示設計介面與 XAML 編輯器。
 > [!NOTE]
-> 什麼是 XAML？ Extensible Application Markup Language (XAML) 是一種用來定義您 App 使用者介面的語言。 您可以手動輸入它，或使用 Visual Studio 設計工具來建立它。 .xaml 檔案具有一個包含邏輯的 .xaml.cs 程式碼後置檔案。 XAML 與程式碼後置一起構成完整的類別。 如需詳細資訊，請參閱 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)。
+> 什麼是 XAML？ Extensible Application Markup Language (XAML) 是一種用來定義您 App 使用者介面的語言。 您可以手動輸入它，或使用 Visual Studio 設計工具來建立它。 .xaml 檔案具有一個包含邏輯的 .xaml.cs 程式碼後置檔案。 XAML 與程式碼後置一起構成完整的類別。 如需詳細資訊，請參閱 [XAML 概觀](../xaml-platform/xaml-overview.md)。
 
 「App.xaml 和 App.xaml.cs」
 
@@ -87,7 +87,7 @@ ms.locfileid: "86492833"
 
 -   MainPage.xaml 是您為 App 定義 UI 的地方。 您可以使用 XAML 標記直接新增元素，或是使用 Visual Studio 提供的設計工具。
 -   MainPage.xaml.cs 是 MainPage.xaml 的程式碼後置頁面。 其正是您新增應用程式邏輯和事件處理常式的位置。
--   這兩個檔案一起定義名為 `MainPage` 的新類別，這是繼承自 `HelloWorld` 命名空間中的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page)。
+-   這兩個檔案一起定義名為 `MainPage` 的新類別，這是繼承自 `HelloWorld` 命名空間中的 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)。
 
 「Package.appxmanifest」
 -   一個描述您 App 的資訊清單檔案：其名稱、描述、磚、開始頁面等。
@@ -224,7 +224,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="what-did-we-just-do"></a>我們剛才做了什麼？
 
-這個程式碼使用一些 Windows API 來建立語音合成物件，然後提供一些讓它說出的文字。 (如需有關使用 SpeechSynthesis 的詳細資訊，請參閱 [SpeechSynthesis 命名空間](https://docs.microsoft.com/uwp/api/windows.media.speechsynthesis)文件)。
+這個程式碼使用一些 Windows API 來建立語音合成物件，然後提供一些讓它說出的文字。 (如需有關使用 SpeechSynthesis 的詳細資訊，請參閱 [SpeechSynthesis 命名空間](/uwp/api/windows.media.speechsynthesis)文件)。
 
 當您執行 App 並按一下按鈕時，您的電腦 (或手機) 就會逐字說出 "Hello, World!"。
 
@@ -233,13 +233,13 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 恭喜！您已經建立您的第一個適用於 Windows 10 和 UWP 的應用程式！
 
-若要了解如何使用 XAML 來配置應用程式將使用的控制項，請嘗試進行[格線教學課程](../design/layout/grid-tutorial.md)，或是直接進行[後續步驟](learn-more.md)？
+若要了解如何使用 XAML 來配置應用程式將使用的控制項，請嘗試進行[格線教學課程](../design/layout/grid-tutorial.md)，或是直接進行[後續步驟](./create-uwp-apps.md)？
 
 ## <a name="see-also"></a>另請參閱
 
 * [您的第一個應用程式](your-first-app.md)
-* [發佈您的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/publish/)。
-* [開發 UWP 應用程式的操作說明文章](https://docs.microsoft.com/windows/uwp/develop/)
+* [發佈您的 UWP 應用程式](../publish/index.md)。
+* [開發 UWP 應用程式的操作說明文章](../develop/index.md)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 Windows 通用應用程式？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

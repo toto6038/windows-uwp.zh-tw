@@ -10,16 +10,16 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: bb3d8fc251a357f4251552ba80e4c922878fe805
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: a927e7fa81499ef9eb5a8b798679f13b6d838d17
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970813"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174452"
 ---
 # <a name="pivot"></a>樞紐分析
 
-[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\) 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
+[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\) 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
 
 ![預設焦點底線選取的標頭](images/pivot_focus_selectedHeader.png)
 
@@ -27,9 +27,9 @@ ms.locfileid: "82970813"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
+> **平台 API**：[Pivot 類別](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
 
 ## <a name="examples"></a>範例
 
@@ -145,15 +145,15 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 
 ### <a name="pivot-items"></a>Pivot 項目
 
-Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)，因此可以包含任何型別的項目集合。 所有新增到 Pivot 且不是明確為 [PivotItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PivotItem) 的項目，都會隱含地包裝在 PivotItem 中。 因為 Pivot 通常是用來在頁面內容之間瀏覽，所以通常會直接使用 XAML UI 元素填入 [Items](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 或者，您可以將 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設為資料來源。 ItemsSource 中繫結的項目可以是任何型別，但如果它們不是明確為 PivotItems，則您必須定義 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 和 [HeaderTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.headertemplate) 來指定如何顯示這些項目。
+Pivot 是一種 [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)，因此可以包含任何型別的項目集合。 所有新增到 Pivot 且不是明確為 [PivotItem](/uwp/api/Windows.UI.Xaml.Controls.PivotItem) 的項目，都會隱含地包裝在 PivotItem 中。 因為 Pivot 通常是用來在頁面內容之間瀏覽，所以通常會直接使用 XAML UI 元素填入 [Items](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 或者，您可以將 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設為資料來源。 ItemsSource 中繫結的項目可以是任何型別，但如果它們不是明確為 PivotItems，則您必須定義 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 和 [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.pivot.headertemplate) 來指定如何顯示這些項目。
 
-您可以使用 [SelectedItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) 屬性擷取或設定選取的項目。 使用 [SelectedIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) 屬性擷取或設定選取的項目。
+您可以使用 [SelectedItem](/uwp/api/windows.ui.xaml.controls.pivot.selecteditem) 屬性擷取或設定選取的項目。 使用 [SelectedIndex](/uwp/api/windows.ui.xaml.controls.pivot.selectedindex) 屬性擷取或設定選取的項目。
 
 ### <a name="pivot-headers"></a>樞紐標頭
 
-您可以使用 [LeftHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 屬性來將其他控制項新增到樞紐標頭。
+您可以使用 [LeftHeader](/uwp/api/windows.ui.xaml.controls.pivot.leftheader) 和 [RightHeader](/uwp/api/windows.ui.xaml.controls.pivot.rightheader) 屬性來將其他控制項新增到樞紐標頭。
 
-例如，您可以在 Pivot 的 RightHeader 中加入 [CommandBar](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/app-bars)。
+例如，您可以在 Pivot 的 RightHeader 中加入 [CommandBar](./app-bars.md)。
 
 ```xaml
 <Pivot>
@@ -191,7 +191,7 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 - 點選樞紐標籤會瀏覽到對應的頁面，且使用中的樞紐標籤會浮動切換到第一個位置。
 - 各樞紐項目會浮動循環切換，從最後一個接到第一個樞紐區段。
 
-> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false**。
+> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false**。
 
 ## <a name="recommendations"></a>建議
 
@@ -203,5 +203,5 @@ Pivot 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xam
 
 ## <a name="related-topics"></a>相關主題
 
-- [Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)
+- [Pivot 類別](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)
 - [瀏覽設計基本知識](../basics/navigation-basics.md)

@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, COM, 元件, 類別, 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: d5fae09192262b63b11175bf08e7a2c522b31abd
-ms.sourcegitcommit: 82d441e3b9da920cf860fad6b59d6b848466c90f
+ms.openlocfilehash: 6ccd196b2cd571cc66523b34427ca17acd73388a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84271877"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170342"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 取用 COM 元件
 
-您可以使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 程式庫的設備來取用 COM 元件，例如 DirectX API 的高效能 2D 和 3D 圖形。 C++/ WinRT 是使用 DirectX 最簡單的方式，而且不會影響效能。 本主題會 Direct2D 程式碼範例來示範如何使用 C++/WinRT 來取用 COM 類別和介面。 當然，您可以在相同的 C++/WinRT 專案中混合使用 COM 和 Windows 執行階段的程式設計功能。
+您可以使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 程式庫的設備來取用 COM 元件，例如 DirectX API 的高效能 2D 和 3D 圖形。 C++/ WinRT 是使用 DirectX 最簡單的方式，而且不會影響效能。 本主題會 Direct2D 程式碼範例來示範如何使用 C++/WinRT 來取用 COM 類別和介面。 當然，您可以在相同的 C++/WinRT 專案中混合使用 COM 和 Windows 執行階段的程式設計功能。
 
 在本主題結束時，您將可看到極簡 Direct2D 應用程式的完整原始程式碼清單。 我們將摘要選取該程式碼，並使用這些程式碼說明如何透過 C++/WinRT 使用 C++/WinRT 程式庫的各種設備來取用 COM 元件。
 
@@ -131,9 +131,9 @@ winrt::check_hresult(D2D1CreateFactory(
 
 您可以使用 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown) 免費函式，傳回投影類型物件的基礎原始 [IUnknown 介面](/windows/win32/api/unknwn/nn-unknwn-iunknown) 位址 (換句話說，就是指標)。 然後，將該位址傳遞給採用 **IUnknown** 介面指標的函式。
 
-如需「投影類型」相關資訊，請參閱[使用 C++/WinRT 取用 API](/windows/uwp/cpp-and-winrt-apis/consume-apis)。
+如需「投影類型」相關資訊，請參閱[使用 C++/WinRT 取用 API](./consume-apis.md)。
 
-如需 **get_unknown** 的程式碼範例，請參閱 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown)，或本主題中[極簡 Direct2D 應用程式的完整原始程式碼清單](/windows/uwp/cpp-and-winrt-apis/consume-com#full-source-code-listing-of-a-minimal-direct2d-application)。
+如需 **get_unknown** 的程式碼範例，請參閱 [**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/get-unknown)，或本主題中[極簡 Direct2D 應用程式的完整原始程式碼清單](#full-source-code-listing-of-a-minimal-direct2d-application)。
 
 ## <a name="passing-and-returning-com-smart-pointers"></a>傳遞及傳回 COM 智慧型指標
 

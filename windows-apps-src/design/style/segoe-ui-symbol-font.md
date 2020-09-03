@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c91053197cff231ec9fac85263b33306a3735ccd
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0663f9947249f54a888bf2d3f52f522ceb885604
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82034212"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175782"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 圖示
 
@@ -22,7 +22,7 @@ ms.locfileid: "82034212"
 
 本文列出 Segoe MDL2 Assets 字型所提供的圖示。 
 
-> **重要 API**：[**Symbol 列舉**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)、[**FontIcon 類別**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
+> **重要 API**：[**Symbol 列舉**](/uwp/api/windows.ui.xaml.controls.symbol)、[**FontIcon 類別**](/uwp/api/windows.ui.xaml.controls.fonticon)
 
 ## <a name="about-segoe-mdl2-assets"></a>關於 Segoe MDL2 Assets
 
@@ -43,13 +43,13 @@ ms.locfileid: "82034212"
 許多圖示也提供鏡像的形式，可在文字方向由右至左的語言 (例如阿拉伯文、波斯文及希伯來文) 中使用。
 
 ## <a name="using-the-icons"></a>使用圖示
-如果您使用 C#/VB/C++ 和 XAML 來開發應用程式，您可以使用 [Symbol 列舉](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol) 來使用來自 Segoe MDL2 Assets 的指定字符。 
+如果您使用 C#/VB/C++ 和 XAML 來開發應用程式，您可以使用 [Symbol 列舉](/uwp/api/windows.ui.xaml.controls.symbol) 來使用來自 Segoe MDL2 Assets 的指定字符。 
 
 ```xaml
 <SymbolIcon Symbol="GlobalNavigationButton"/>
 ```
 
-如果您想使用來自 **Segoe MDL2 Assets** 字型不包含在 Symbol 列舉中的字符，請使用 [**FontIcon**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)。
+如果您想使用來自 **Segoe MDL2 Assets** 字型不包含在 Symbol 列舉中的字符，請使用 [**FontIcon**](/uwp/api/windows.ui.xaml.controls.fonticon)。
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
@@ -5521,7 +5521,5 @@ ms.locfileid: "82034212"
 ## <a name="related-articles"></a>相關文章
 
 * [圖示的指導方針](../style/icons.md)
-* [Symbol 列舉](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Symbol)
-* [FontIcon 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)
-
-
+* [Symbol 列舉](/uwp/api/Windows.UI.Xaml.Controls.Symbol)
+* [FontIcon 類別](/uwp/api/windows.ui.xaml.controls.fonticon)

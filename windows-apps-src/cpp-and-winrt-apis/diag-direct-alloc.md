@@ -5,16 +5,16 @@ ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 直接, 堆疊, 配置, 已投影, 實作
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fe8ff6653b8655ee25cd9adc0c11acb22d42a11
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 199b62d96685e207e55e6dff7cd310752617d1d2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68372789"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170252"
 ---
 # <a name="diagnosing-direct-allocations"></a>診斷直接配置
 
-如[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 所述，當您建立執行類型的物件時，您應該使用協助程式的 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 系列來執行這項操作。 本主題深入探討 C++/WinRT 2.0 功能，該功能可協助您診斷堆疊上實作類型的直接配置物件錯誤。
+如[使用 C++/WinRT 撰寫 API](./author-apis.md) 所述，當您建立執行類型的物件時，您應該使用協助程式的 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 系列來執行這項操作。 本主題深入探討 C++/WinRT 2.0 功能，該功能可協助您診斷堆疊上實作類型的直接配置物件錯誤。
 
 這類錯誤可能會變成不可思議的損毀，而這種情況難以偵錯且相當耗時。 這是一項重要功能，值得您瞭解背景。
 
@@ -138,4 +138,4 @@ auto stringable{ std::make_unique<MyStringable>() }; // Highly dubious.
 
 ## <a name="related-topics"></a>相關主題
 * [使用 C++/WinRT 取用 API](consume-apis.md)
-* [使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 C++/WinRT 撰寫 API](./author-apis.md)

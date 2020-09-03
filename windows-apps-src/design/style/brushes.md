@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 350b07e96d95b043116f2eb8029a2352360c50d6
-ms.sourcegitcommit: 490b563462853f10f14825f2358e4852ee1011fb
+ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82633006"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89175522"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用筆刷來繪製背景、前景和外框
 
@@ -50,7 +50,7 @@ ms.locfileid: "82633006"
 
 套用至矩形的 SolidColorBrush 
 
-如果您使用程式碼定義 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 而不是使用 XAML，則每個命名色彩就是 [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) 類別的靜態屬性值。 例如，若要宣告 **SolidColorBrush** 的 [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) 值以代表命名色彩 "Orchid"，請將 **Color** 值設為靜態值 [**Colors.Orchid**](/uwp/api/windows.ui.colors.orchid)。
+如果您使用程式碼定義 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 而不是使用 XAML，則每個命名色彩就是 [**Colors**](/uwp/api/windows.ui.colors) 類別的靜態屬性值。 例如，若要宣告 **SolidColorBrush** 的 [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) 值以代表命名色彩 "Orchid"，請將 **Color** 值設為靜態值 [**Colors.Orchid**](/uwp/api/windows.ui.colors.orchid)。
 
 ### <a name="hexadecimal-color-values"></a>十六進位色彩值
 
@@ -66,7 +66,7 @@ ms.locfileid: "82633006"
 
 ### <a name="property-element-syntax"></a>屬性 (Property) 元素語法
 
-您可以使用屬性 (Property) 元素語法來定義 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)。 這個語法比之前的方法更複雜，但是您可以在元素中指定其他屬性值，例如 [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity)。 如需 XAML 語法的詳細資訊 (包括屬性 (Property) 元素語法)，請參閱 [XAML 概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-overview)和 [XAML 語法指南](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-syntax-guide)。
+您可以使用屬性 (Property) 元素語法來定義 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush)。 這個語法比之前的方法更複雜，但是您可以在元素中指定其他屬性值，例如 [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity)。 如需 XAML 語法的詳細資訊 (包括屬性 (Property) 元素語法)，請參閱 [XAML 概觀](../../xaml-platform/xaml-overview.md)和 [XAML 語法指南](../../xaml-platform/xaml-syntax-guide.md)。
 
 在先前的範例中，建立的筆刷是經由隱含方式自動建立的，這是在多數常見案例中為協助保持簡單的 UI 定義而刻意使用的 XAML 語言簡略格式。 以下範例建立一個 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，並明確地建立 [**SolidColorBrush**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush) 做為 [**Rectangle.Fill**](/uwp/api/windows.ui.xaml.shapes.shape.fill) 屬性的元素值。 **SolidColorBrush** 的 [**Color**](/uwp/api/windows.ui.xaml.media.solidcolorbrush.color) 設為 [**Blue**](/uwp/api/windows.ui.colors.blue)，而 [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) 設為 0.5。
 
@@ -184,7 +184,7 @@ ms.locfileid: "82633006"
 
 經過轉譯的 ImageBrush 
 
-[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 與 [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) \(英文\) 會以統一資源識別項 (URI) 來參考影像來源檔案，而該影像來源檔案會使用數個可能的影像格式。 這些影像來源檔案是以 URI 來指定。 如需指定影像來源、可使用的影像格式，以及將影像來源封裝在應用程式中的相關資訊，請參閱 [Image 和 ImageBrush](https://docs.microsoft.com/windows/uwp/controls-and-patterns/images-imagebrushes)。
+[**ImageBrush**](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) \(英文\) 與 [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) \(英文\) 會以統一資源識別項 (URI) 來參考影像來源檔案，而該影像來源檔案會使用數個可能的影像格式。 這些影像來源檔案是以 URI 來指定。 如需指定影像來源、可使用的影像格式，以及將影像來源封裝在應用程式中的相關資訊，請參閱 [Image 和 ImageBrush](../controls-and-patterns/images-imagebrushes.md)。
 
 ## <a name="brushes-and-text"></a>筆刷與文字
 
@@ -198,9 +198,9 @@ ms.locfileid: "82633006"
 
 ## <a name="xamlcompositionbrushbase"></a>XamlCompositionBrushBase
 
-[**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 是用來建立使用 [**CompositionBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionBrush) \(英文\) 繪製 XAML UI 元素之自訂筆刷的基底類別。
+[**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) \(英文\) 是用來建立使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) \(英文\) 繪製 XAML UI 元素之自訂筆刷的基底類別。
 
-這可促成 Windows.UI.Xaml 與 Windows.UI.Composition 層之間的「下拉式清單」交互操作，如[**視覺層概觀**](/windows/uwp/composition/visual-layer)中所述。 
+這可促成 Windows.UI.Xaml 與 Windows.UI.Composition 層之間的「下拉式清單」交互操作，如[**視覺層概觀**](../../composition/visual-layer.md)中所述。 
 
 若要建立自訂筆刷，請建立繼承自 XamlCompositionBrushBase 並能實作所需方法的新類別。
 
@@ -243,7 +243,3 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
  
 
  
-
-
-
-

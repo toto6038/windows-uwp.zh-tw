@@ -5,15 +5,15 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f1733f5710d86c8481899f5865d0c190e21885
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: e37f5b585554f4ec214f7f72a896545d66dde3d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296196"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170202"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
-有關於使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
+有關於使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
 
 > [!IMPORTANT]
 > 如需 C++/WinRT 的版本資訊，請參閱 [C++/WinRT 2.0 的新聞和變更](news.md#news-and-changes-in-cwinrt-20)。
@@ -54,7 +54,7 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>為何連結器給我「LNK2019:無法解析的外部符號」錯誤？
 如果無法解析的符號是來自 C++/WinRT 投影的 Windows 命名空間標頭的 API (在 **winrt** 命名空間中)，則 API 在您已包含的標頭中是向前宣告，但其定義是在您尚未包含的標頭中。 包含為 API 命名空間命名的標頭，並且重新建置。 如需詳細資訊，請參閱 [C++/WinRT 投影標頭](consume-apis.md#cwinrt-projection-headers)。
 
-如果無法解析的符號是 Windows 執行階段可用函式，例如 [RoInitialize](https://docs.microsoft.com/windows/desktop/api/roapi/nf-roapi-roinitialize)，您便需要在專案中明確連結 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 傘程式庫。 C++/WinRT 投影仰賴部分這些免費 (非成員) 函式和進入點。 如果您使用其中一個 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 專案範本來供應用程式使用，則系統會自動為您連結 `WindowsApp.lib`。 否則，您也可以使用專案連結設定來包括它，或在原始程式碼中執行它。
+如果無法解析的符號是 Windows 執行階段可用函式，例如 [RoInitialize](/windows/desktop/api/roapi/nf-roapi-roinitialize)，您便需要在專案中明確連結 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 傘程式庫。 C++/WinRT 投影仰賴部分這些免費 (非成員) 函式和進入點。 如果您使用其中一個 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) 專案範本來供應用程式使用，則系統會自動為您連結 `WindowsApp.lib`。 否則，您也可以使用專案連結設定來包括它，或在原始程式碼中執行它。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
@@ -70,7 +70,7 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 
 ### <a name="uniform-construction"></a>統一建構
 
-如果您嘗試透過任何投影類型的建構函式(而非其 **std::nullptr_t** 建構函式) 具現化本機上實作的執行階段類別，也可能會發生此錯誤。 若要執行此操作，您將需要通常稱為統一建構的 C++/WinRT 2.0 功能。 如果您想要加入這項功能，請參閱[加入統一建構和直接實作存取。](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)，以取得詳細資訊和程式碼範例。
+如果您嘗試透過任何投影類型的建構函式(而非其 **std::nullptr_t** 建構函式) 具現化本機上實作的執行階段類別，也可能會發生此錯誤。 若要執行此操作，您將需要通常稱為統一建構的 C++/WinRT 2.0 功能。 如果您想要加入這項功能，請參閱[加入統一建構和直接實作存取。](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)，以取得詳細資訊和程式碼範例。
 
 如您想以「不」需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
 
@@ -177,7 +177,7 @@ a.f();
 如上所示的建議模式不只適用於 C++/WinRT，還適用於所有 Windows 執行階段語言投影。
 
 ## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何讓字串變為類型 &mdash; 舉例來說，為了瀏覽？
-[瀏覽檢視程式碼範例](/windows/uwp/design/controls-and-patterns/navigationview#code-example) (大部分使用 C#) 結尾有 C++/WinRT 程式碼片段會示範如何執行這項操作。
+[瀏覽檢視程式碼範例](../design/controls-and-patterns/navigationview.md#code-example) (大部分使用 C#) 結尾有 C++/WinRT 程式碼片段會示範如何執行這項操作。
 
 ## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？
 
