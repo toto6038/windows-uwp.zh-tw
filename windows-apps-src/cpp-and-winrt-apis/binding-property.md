@@ -5,16 +5,16 @@ ms.date: 06/21/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ba06ece905e6a91a2279f0fe78e867a8f943bb3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: b6e663ec77c66d4a018d388da350794771312b77
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492933"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154382"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
 
-可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
+可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 這個主意是以軟體設計模式為基礎稱為「觀察者模式」。 本主題顯示在 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 中實作可觀察屬性，以及將 XAML 控制項繫結至這些屬性的方法 (如需背景資訊，請參閱[資料繫結](../data-binding/index.md))。
 
 > [!IMPORTANT]
 > 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
@@ -136,7 +136,7 @@ namespace winrt::Bookstore::implementation
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>宣告和實作 **BookstoreViewModel**
 我們的主要 XAML 頁面會繫結至主要檢視模型。 且檢視模型會有幾個屬性，包括類型之一的 **BookSku**。 在此步驟，我們會宣告並實作主要檢視模型執行階段類別。
 
-新增一個 **Midl 檔案 (.idl)** 項目名為 `BookstoreViewModel.idl`。 另請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl)。
+新增一個 **Midl 檔案 (.idl)** 項目名為 `BookstoreViewModel.idl`。 另請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl)。
 
 ```idl
 // BookstoreViewModel.idl
@@ -306,11 +306,11 @@ runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
 }
 ```
 
-以下是這項必要性的原因。 所有 XAML 編譯器需要驗證的類型 (包括用於 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 的類型)，都會從 Windows 中繼資料 (WinMD) 進行讀取。 您只需要將唯讀屬性新增至 Midl 檔即可。 無須進行實作，因為自動產生的 XAML 後方程式碼會為您提供實作。
+以下是這項必要性的原因。 所有 XAML 編譯器需要驗證的類型 (包括用於 [{x:Bind}](../xaml-platform/x-bind-markup-extension.md) 的類型)，都會從 Windows 中繼資料 (WinMD) 進行讀取。 您只需要將唯讀屬性新增至 Midl 檔即可。 無須進行實作，因為自動產生的 XAML 後方程式碼會為您提供實作。
 
 ## <a name="consuming-objects-from-xaml-markup"></a>取用 XAML 標記中的物件
 
-使用 XAML [ **{x:Bind} 標記延伸**](/windows/uwp/xaml-platform/x-bind-markup-extension) 取用的所有實體都必須公開於 IDL 中。 此外，如果 XAML 標記包含另一個也在標記中的元素參考，則該標記的 getter 必須存在於 IDL 中。
+使用 XAML [ **{x:Bind} 標記延伸**](../xaml-platform/x-bind-markup-extension.md) 取用的所有實體都必須公開於 IDL 中。 此外，如果 XAML 標記包含另一個也在標記中的元素參考，則該標記的 getter 必須存在於 IDL 中。
 
 ```xaml
 <Page x:Name="MyPage">

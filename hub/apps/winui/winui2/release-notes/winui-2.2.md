@@ -3,12 +3,12 @@ title: WinUI 2.2 版本資訊
 description: WinUI 2.2 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 6706b0202057b9a3419ec45a43a5f6d4d574327b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 4c200701e0d845d6c9b9f8797899d88cc72d8c1c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493093"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154902"
 ---
 # <a name="windows-ui-library-22"></a>Windows UI 程式庫 2.2
 
@@ -158,7 +158,7 @@ API 參照文件位於此處：[Windows UI 程式庫 API](/uwp/api/overview/winu
 
 ### <a name="experimental-feature"></a>實驗性功能
 
-* [TabView](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
+* [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview?view=winui-2.2)
 
 ### <a name="microsoftuixaml-2220190416001-prerelease"></a>Microsoft.UI.Xaml 2.2.20190416001-prerelease
 
@@ -170,10 +170,10 @@ API 參照文件位於此處：[Windows UI 程式庫 API](/uwp/api/overview/winu
 
 #### <a name="experimental-features"></a>實驗性功能
 
-* [FlowLayout](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.flowlayout)
+* [FlowLayout](/uwp/api/microsoft.ui.xaml.controls.flowlayout)
 
-* [LayoutPanel](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.layoutpanel)
+* [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel)
 
-* [RadioButtons](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
+* [RadioButtons](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
 
-* [ScrollViewer](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.scrollviewer)
+* [ScrollViewer](/uwp/api/microsoft.ui.xaml.controls.scrollviewer)

@@ -5,18 +5,18 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 資料, 類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cb62f8386798fcb78a11be35ba951616c47039c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68270079"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154332"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>標準 C++ 資料類型與 C++/WinRT
 
-使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 API (請參閱 [C++/WinRT 中的字串處理](strings.md))，而且您可以將初始設定式清單和標準容器傳遞至預期語意相等集合的 API。
+使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md)，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 API (請參閱 [C++/WinRT 中的字串處理](strings.md))，而且您可以將初始設定式清單和標準容器傳遞至預期語意相等集合的 API。
 
-另請參閱[將參數傳入 ABI 界限](/windows/uwp/cpp-and-winrt-apis/pass-parms-to-abi)。
+另請參閱[將參數傳入 ABI 界限](./pass-parms-to-abi.md)。
 
 ## <a name="standard-initializer-lists"></a>標準初始設定式清單
 初始設定式清單 (**std::initializer_list**) 是 C++ 標準程式庫建構。 您呼叫某些 Windows 執行階段建構函式與方法時，可以使用初始設定式清單。 例如，您可以使用一個來呼叫 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。

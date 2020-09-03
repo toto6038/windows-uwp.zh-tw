@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 網路功能, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: 221ab5e0647fe95e8d715fc320ba2b9c1bee2dfe
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e4ae1663861ac1368d92ad972574d300dfefe135
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684964"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158172"
 ---
 # <a name="websockets"></a>WebSocket
 WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 HTTP(S) 的 Web 快速且安全地進行雙向通訊，並支援 UTF-8 和二進位訊息。
@@ -298,7 +298,7 @@ private:
 收到資料時會引發 **MessageReceived**。 可以透過 [**MessageWebSocketMessageReceivedEventArgs**](/uwp/api/windows.networking.sockets.messagewebsocketmessagereceivedeventargs) 存取資料。 當用戶端或伺服器關閉通訊端時會引發 **Closed**。
  
 ### <a name="send-data-on-a-messagewebsocket"></a>在 MessageWebSocket 上傳送資料
-建立連線後，您可將資料傳送至伺服器。 可以藉由使用 [**MessageWebSocket.OutputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 屬性執行此動作，並使用 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 來將資料寫入。 
+建立連線後，您可將資料傳送至伺服器。 可以藉由使用 [**MessageWebSocket.OutputStream**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream) 屬性執行此動作，並使用 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 來將資料寫入。 
 
 **注意** **DataWriter** 擁有輸出資料流。 當 **DataWriter** 超出範圍時，如果它有附加的輸出資料流，**DataWriter** 會解除配置輸出資料流。 之後，使用輸出資料流的後續嘗試皆失敗，並出現 HRESULT 值 0x80000013。 但您可以呼叫 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) 中斷輸出資料流與 **DataWriter** 的連結，並將資料流擁有權傳回給 **MessageWebSocket**。
 
@@ -564,12 +564,12 @@ private:
 使用 **StreamWebSocket** 連線並傳送資料之前，您應該訂閱 [**StreamWebSocket.Closed**](/uwp/api/windows.networking.sockets.streamwebsocket.Closed) 事件。 當用戶端或伺服器關閉通訊端時會引發 **Closed**。
  
 ### <a name="send-data-on-a-streamwebsocket"></a>在 StreamWebSocket 上傳送資料
-建立連線後，您可將資料傳送至伺服器。 可以藉由使用 [**StreamWebSocket.OutputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 屬性執行此動作，並使用 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 來將資料寫入。
+建立連線後，您可將資料傳送至伺服器。 可以藉由使用 [**StreamWebSocket.OutputStream**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) 屬性執行此動作，並使用 [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) 來將資料寫入。
 
 **注意** 如果您想要在相同的通訊端上寫入更多資料，請務必在 **DataWriter** 超出範圍之前，呼叫 [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) 中斷輸出資料流與 **DataWriter** 的連結。 這會將資料流的擁有權傳回給 **MessageWebSocket**。
 
 ### <a name="receive-data-on-a-streamwebsocket"></a>在 StreamWebSocket 上接收資料
-使用 [**StreamWebSocket.InputStream**](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 屬性，並使用 [**DataReader**](/uwp/api/windows.storage.streams.datareader) 來讀取資料。
+使用 [**StreamWebSocket.InputStream**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) 屬性，並使用 [**DataReader**](/uwp/api/windows.storage.streams.datareader) 來讀取資料。
 
 ## <a name="advanced-options-for-messagewebsocket-and-streamwebsocket"></a>MessageWebSocket 和 StreamWebSocket 的進階選項
 連線之前，您可以透過在 [**MessageWebSocketControl**](/uwp/api/windows.networking.sockets.messagewebsocketcontrol) 或 [**StreamWebSocketControl**](/uwp/api/windows.networking.sockets.streamwebsocketcontrol) 上設定屬性，設定通訊端的進階選項。 從通訊端物件本身存取這些類別的執行個體 (視需要透過其 [**MessageWebSocket.Control**](/uwp/api/windows.networking.sockets.messagewebsocket.control) 屬性或 [**StreamWebSocket.Control**](/uwp/api/windows.networking.sockets.streamwebsocket.control) 屬性)。
@@ -814,7 +814,7 @@ protected:
 * [MessageWebSocket.Control](/uwp/api/windows.networking.sockets.messagewebsocket.control)
 * [MessageWebSocket.Information](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.Information)
 * [MessageWebSocket.MessageReceived](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.MessageReceived)
-* [MessageWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
+* [MessageWebSocket.OutputStream](/uwp/api/Windows.Networking.Sockets.MessageWebSocket.OutputStream)
 * [MessageWebSocketControl](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl)
 * [MessageWebSocketControl.MessageType](/uwp/api/Windows.Networking.Sockets.MessageWebSocketControl.MessageType)
 * [MessageWebSocketInformation](/uwp/api/Windows.Networking.Sockets.MessageWebSocketInformation)
@@ -825,8 +825,8 @@ protected:
 * [StreamSocket.ConnectAsync](/uwp/api/windows.networking.sockets.streamsocket.connectasync)
 * [StreamWebSocket.Control](/uwp/api/windows.networking.sockets.streamwebsocket.control)
 * [StreamWebSocket.Information](/uwp/api/windows.networking.sockets.streamwebsocket.Information)
-* [StreamWebSocket.InputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
-* [StreamWebSocket.OutputStream](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
+* [StreamWebSocket.InputStream](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream)
+* [StreamWebSocket.OutputStream](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream)
 * [StreamWebSocketControl](/uwp/api/Windows.Networking.Sockets.StreamWebSocketControl)
 * [StreamWebSocketInformation](/uwp/api/Windows.Networking.Sockets.StreamWebSocketInformation)
 * [WebErrorStatus](/uwp/api/Windows.Web.WebErrorStatus) 

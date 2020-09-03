@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: d948af1ce10b3752ba9f20454d8dea72916de692
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75683851"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157257"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
@@ -92,13 +92,13 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 若要這樣做，請在 [開始]  功能表中搜尋 [遠端偵錯工具]  、開啟它，如果出現提示，請允許偵錯工具設定您的防火牆設定。 偵錯工具預設會使用 Windows 驗證啟動。 如果兩部電腦上的登入使用者不相同，這將會要求提供使用者認證。
 
-若要將它變更為 [無驗證]  ，請在 [遠端偵錯工具]  中移至 [工具]   -&gt; [選項]  ，然後將它設定為 [無驗證]  。 設定遠端偵錯工具之後，您也必須確定已將主機裝置設定為 [開發人員模式](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。 之後，您便可以從您的開發電腦進行部署。
+若要將它變更為 [無驗證]  ，請在 [遠端偵錯工具]  中移至 [工具]   -&gt; [選項]  ，然後將它設定為 [無驗證]  。 設定遠端偵錯工具之後，您也必須確定已將主機裝置設定為 [開發人員模式](../get-started/enable-your-device-for-development.md)。 之後，您便可以從您的開發電腦進行部署。
 
 如需詳細資訊，請參閱 [Visual Studio 下載中心](https://visualstudio.microsoft.com/downloads/)頁面。
 
 ## <a name="passing-command-line-debug-arguments"></a>傳遞命令列偵錯引數
 
-在 Visual Studio 2019 中，您可以在開始偵錯 UWP應用程式時傳遞命令列偵錯引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於 [**Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application) 類別的 **OnLaunched** 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 [偵錯]  索引標籤。
+在 Visual Studio 2019 中，您可以在開始偵錯 UWP應用程式時傳遞命令列偵錯引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於 [**Application**](/uwp/api/windows.ui.xaml.application) 類別的 **OnLaunched** 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 [偵錯]  索引標籤。
 
 > [!NOTE]
 > 這是在 Visual Studio 2017 (版本 15.1) 中提供，適用於 C#、VB、C++ 。 JavaScript 會在較新版本中提供。 命令列偵錯引數適用於所有部署類型，但模擬器除外。
@@ -111,7 +111,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ![命令列引數 C++ 和 JS](images/command-line-arguments-cpp.png)
 
-指定命令列引數之後，即可存取應用程式 **OnLaunched** 方法中的引數值。 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 物件 *args* 的 **Arguments** 屬性值會設為 [命令列引數]  欄位中的文字。
+指定命令列引數之後，即可存取應用程式 **OnLaunched** 方法中的引數值。 [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 物件 *args* 的 **Arguments** 屬性值會設為 [命令列引數]  欄位中的文字。
 
 ![命令列引數 C++ 和 JS](images/command-line-arguments-debugging.png)
 
@@ -189,7 +189,7 @@ C++ UWP app 的屬性頁面會看起來如下。
 
 ## <a name="debugging-options"></a>偵錯選項
 
-在 Windows 10 上，藉由使用稱為[預先啟動](https://docs.microsoft.com/windows/uwp/launch-resume/handle-app-prelaunch)的技術，先主動啟動應用程式再予以暫停，讓 UWP 應用程式的啟動效能獲得提升。 許多 App 將不需要特別執行任何動作即可在此模式下工作，但某些 App 可能需要調整它們的行為。 若要協助針對這些程式碼路徑中的任何問題進行偵錯，您可以在預先啟動模式下，從 Visual Studio 開始針對 App 進行偵錯。
+在 Windows 10 上，藉由使用稱為[預先啟動](../launch-resume/handle-app-prelaunch.md)的技術，先主動啟動應用程式再予以暫停，讓 UWP 應用程式的啟動效能獲得提升。 許多 App 將不需要特別執行任何動作即可在此模式下工作，但某些 App 可能需要調整它們的行為。 若要協助針對這些程式碼路徑中的任何問題進行偵錯，您可以在預先啟動模式下，從 Visual Studio 開始針對 App 進行偵錯。
 
 Visual Studio 專案以及已安裝在電腦上的應用程式皆支援偵錯，前者是從 [偵錯]   -&gt; [其他偵錯目標]   -&gt; [偵錯通用 Windows 應用程式預先啟動]  進行設定，後者則是要選取 [使用「預先啟動」啟用應用程式]  核取方塊，並從 [偵錯]   -&gt; [其他偵錯目標]   -&gt; [偵錯已安裝的應用程式套件]  進行設定。 如需詳細資訊，請參閱[偵錯 UWP 預先啟動](https://blogs.msdn.com/b/visualstudioalm/archive/2015/11/30/debug-uwp-prelaunch-with-vs2015.aspx)。
 
@@ -213,7 +213,7 @@ Visual Studio 專案以及已安裝在電腦上的應用程式皆支援偵錯，
 
 ## <a name="symbols"></a>符號
 
-偵錯程式碼時，符號檔案包含各種非常有用的資料，例如變數、函式名稱和進入點位址，可讓您更清楚地了解意外狀況和呼叫堆疊執行順序。 大多數各種不同 Windows 版本的符號您都可以透過 [Microsoft 符號伺服器](https://msdl.microsoft.com/download/symbols)取得，或從[下載 Windows 符號套件](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-download-symbols)下載以進行更快速的離線查閱。
+偵錯程式碼時，符號檔案包含各種非常有用的資料，例如變數、函式名稱和進入點位址，可讓您更清楚地了解意外狀況和呼叫堆疊執行順序。 大多數各種不同 Windows 版本的符號您都可以透過 [Microsoft 符號伺服器](https://msdl.microsoft.com/download/symbols)取得，或從[下載 Windows 符號套件](/windows-hardware/drivers/debugger/debugger-download-symbols)下載以進行更快速的離線查閱。
 
 若要設定 Visual Studio 的符號選項，請選取 [工具] > [選項]  ，然後在對話方塊視窗中移至 [偵錯] > [符號]  。
 
@@ -226,7 +226,7 @@ Visual Studio 專案以及已安裝在電腦上的應用程式皆支援偵錯，
 .reload
 ```
 
-您可以利用 `‘;’` 分隔符號，或使用 `.sympath+` 命令來新增更多路徑。 如需了解其他使用 WinDbg 的進階符號作業，請參閱[公用與專用符號](https://docs.microsoft.com/windows-hardware/drivers/debugger/public-and-private-symbols)。
+您可以利用 `‘;’` 分隔符號，或使用 `.sympath+` 命令來新增更多路徑。 如需了解其他使用 WinDbg 的進階符號作業，請參閱[公用與專用符號](/windows-hardware/drivers/debugger/public-and-private-symbols)。
 
 ## <a name="windbg"></a>WinDbg
 
@@ -246,7 +246,7 @@ WinDbg 當中最常用的其中一個命令是 `!analyze -v`，這是用來擷�
 - EXCEPTION_RECORD：目前例外狀況的位址、程式碼和旗標
 - STACK_TEXT：例外狀況之前的堆疊追蹤
 
-如需所有 WinDbg 命令的完整清單，請參閱[偵錯工具命令](https://docs.microsoft.com/windows-hardware/drivers/debugger/debugger-commands)。
+如需所有 WinDbg 命令的完整清單，請參閱[偵錯工具命令](/windows-hardware/drivers/debugger/debugger-commands)。
 
 ## <a name="related-topics"></a>相關主題
 

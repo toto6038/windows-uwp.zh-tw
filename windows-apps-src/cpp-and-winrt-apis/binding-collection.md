@@ -5,16 +5,16 @@ ms.date: 04/24/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 388e8ebb062dbbb33ffb269f2adcced34a7e577c
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: c87fcec62c9177ddfccaa14e97294ebcd78ded5f
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493643"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154512"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 項目控制項；繫結至一個 C++/WinRT 集合
 
-可有效地繫結至 XAML 項目控制項的集合稱為「可觀察的」  集合。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中實作可觀察集合，以及將 XAML 項目繫結至這些集合的方法 (如需背景資訊，請參閱[資料繫結](/windows/uwp/data-binding))。
+可有效地繫結至 XAML 項目控制項的集合稱為「可觀察的」  集合。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 中實作可觀察集合，以及將 XAML 項目繫結至這些集合的方法 (如需背景資訊，請參閱[資料繫結](../data-binding/index.md))。
 
 如果您想要按照本主題的步驟進行，建議先建立 [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md)一文所述的專案。 本主題會將更多程式碼加入至該專案，且能進一步輔助本主題所介紹的概念。
 

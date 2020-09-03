@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 479a289ff15ab6a3db7a51d52f4bf3b075e8a64b
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968773"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160352"
 ---
 # <a name="teaching-tip"></a>教學提示
 
@@ -27,12 +27,12 @@ ms.locfileid: "82968773"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](../images/winui-logo-64x64.png) | **TeachingTip** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](../images/winui-logo-64x64.png) | **TeachingTip** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [TeachingTip 類別](/uwp/api/microsoft.ui.xaml.controls.teachingtip)
 
 > [!TIP]
-> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -125,9 +125,9 @@ public MainPage()
 
 ### <a name="preferred-placement"></a>慣用位置
 
-教學提示使用 TeachingTipPlacementMode 屬性，複寫 Flyout 的[FlyoutPlacementMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行為。 預設放置模式會嘗試將有目標教學提示放置在其目標上方，並將無目標教學提示置中在 XAML 根底部。 和 Flyout 一樣，如果慣用放置模式會沒有空間顯示教學提示，系統會自動選擇其他放置模式。
+教學提示使用 TeachingTipPlacementMode 屬性，複寫 Flyout 的[FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行為。 預設放置模式會嘗試將有目標教學提示放置在其目標上方，並將無目標教學提示置中在 XAML 根底部。 和 Flyout 一樣，如果慣用放置模式會沒有空間顯示教學提示，系統會自動選擇其他放置模式。
 
-對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
+對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
 
 PreferredPlacement 設定為 "BottomLeft" 的有目標教學提示會顯示為尾端置中在其目標底部，且提示的主體會向右位移。
 
@@ -168,7 +168,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="add-a-placement-margin"></a>新增放置邊界
 
-您可以使用 PlacementMargin 屬性來控制有目標教學提示與其目標的距離，也可控制無目標教學提示與 XAML 根邊緣的距離。 和 [Margin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.margin) 一樣，PlacementMargin 有四個值 (左、右、上和下)，因此只會使用相關的值。 例如，PlacementMargin.Left 適用於提示是在目標左側時，或是在 XAML 根的左側邊緣時。
+您可以使用 PlacementMargin 屬性來控制有目標教學提示與其目標的距離，也可控制無目標教學提示與 XAML 根邊緣的距離。 和 [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin) 一樣，PlacementMargin 有四個值 (左、右、上和下)，因此只會使用相關的值。 例如，PlacementMargin.Left 適用於提示是在目標左側時，或是在 XAML 根的左側邊緣時。
 
 下列範例顯示 PlacementMargin 的 Left/Top/Right/Bottom 都設定為 80 的無目標提示。
 
@@ -357,7 +357,7 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 * 提示是暫時的，所以不應該包含對應用程式體驗影響重大的資訊或選項。
 * 請盡量避免太頻繁顯示教學提示。 當教學提示是在長工作階段或多個工作階段之間交錯顯示時，最有可能個別受到注意。
 * 保持提示簡潔且其主題明確。 研究顯示使用者在決定是否要與提示互動之前，平均只讀 3-5 個字，且只理解 2-3 個字。
-* 不保證教學提示的遊戲台協助工具。 對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
+* 不保證教學提示的遊戲台協助工具。 對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
 * 啟用讓叫學提示逸出 XAML 根之後，建議您也啟用 IsLightDismissEnabled 屬性，並將 PreferredPlacement 模式設定在最接近 XAML 根中央的位置。
 
 ## <a name="reconfiguring-an-open-teaching-tip"></a>重新設定開啟的教學提示
@@ -366,4 +366,4 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 
 ## <a name="related-articles"></a>相關文章
 
-* [對話方塊和飛出視窗](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/index)
+* [對話方塊和飛出視窗](./index.md)

@@ -6,12 +6,12 @@ ms.date: 06/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c75bd62fb5548cc03247772427fb5aabac4fb5a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: da3e5e74ae1e4e72b47cf80c3a5dfac4d2c6d3ef
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74735073"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156522"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
 
@@ -24,7 +24,7 @@ ms.locfileid: "74735073"
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 -   **位置的存取權限**
 
@@ -39,14 +39,14 @@ ms.locfileid: "74735073"
 ## <a name="get-a-reference-to-a-library"></a>取得對媒體櫃的參考
 
 > [!NOTE]
-> 請記得宣告適當的功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) \(部分機器翻譯\)。
+> 請記得宣告適當的功能。 如需詳細資訊，請參閱[應用程式功能宣告](../packaging/app-capability-declarations.md) \(部分機器翻譯\)。
  
 
-若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.getlibraryasync) 方法。 從 [**KnownLibraryId**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownLibraryId) 列舉提供對應的值。
+若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](/uwp/api/windows.storage.storagelibrary.getlibraryasync) 方法。 從 [**KnownLibraryId**](/uwp/api/Windows.Storage.KnownLibraryId) 列舉提供對應的值。
 
--   [**KnownLibraryId.Music**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.musiclibrary) \(英文\)
--   [**KnownLibraryId.Pictures**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.pictureslibrary) \(英文\)
--   [**KnownLibraryId.Videos**](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders.videoslibrary) \(英文\)
+-   [**KnownLibraryId.Music**](/uwp/api/windows.storage.knownfolders.musiclibrary) \(英文\)
+-   [**KnownLibraryId.Pictures**](/uwp/api/windows.storage.knownfolders.pictureslibrary) \(英文\)
+-   [**KnownLibraryId.Videos**](/uwp/api/windows.storage.knownfolders.videoslibrary) \(英文\)
 
 ```cs
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
@@ -55,7 +55,7 @@ var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.St
 ## <a name="get-the-list-of-folders-in-a-library"></a>取得媒體櫃中資料夾的清單
 
 
-若要取得媒體櫃中資料夾的清單，請取得 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性的值。
+若要取得媒體櫃中資料夾的清單，請取得 [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders) 屬性的值。
 
 ```cs
 using Windows.Foundation.Collections;
@@ -65,7 +65,7 @@ IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.F
 ## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>取得媒體櫃中預設儲存新檔案的資料夾
 
 
-若要取得媒體櫃中預設儲存新檔案的資料夾，請取得 [**StorageLibrary.SaveFolder**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.savefolder) 屬性的值。
+若要取得媒體櫃中預設儲存新檔案的資料夾，請取得 [**StorageLibrary.SaveFolder**](/uwp/api/windows.storage.storagelibrary.savefolder) 屬性的值。
 
 ```cs
 Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
@@ -73,7 +73,7 @@ Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 
 ## <a name="add-an-existing-folder-to-a-library"></a>將現有的資料夾新增到媒體櫃
 
-若要將資料夾新增至媒體櫃，您可以呼叫 [**StorageLibrary.RequestAddFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestaddfolderasync)。 以圖片媒體櫃為例，呼叫此方法時會隨即對使用者顯示資料夾選擇器，並出現 [**將此資料夾新增至圖片**] 按鈕。 如果使用者挑選一個資料夾，則該資料夾會保留在磁碟的原始位置上，且成為 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性 (和內建的 [相片] app) 中的項目，但是該資料夾不會顯示為檔案總管中 [圖片] 資料夾的子項。
+若要將資料夾新增至媒體櫃，您可以呼叫 [**StorageLibrary.RequestAddFolderAsync**](/uwp/api/windows.storage.storagelibrary.requestaddfolderasync)。 以圖片媒體櫃為例，呼叫此方法時會隨即對使用者顯示資料夾選擇器，並出現 [**將此資料夾新增至圖片**] 按鈕。 如果使用者挑選一個資料夾，則該資料夾會保留在磁碟的原始位置上，且成為 [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders) 屬性 (和內建的 [相片] app) 中的項目，但是該資料夾不會顯示為檔案總管中 [圖片] 資料夾的子項。
 
 
 ```cs
@@ -82,11 +82,11 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## <a name="remove-a-folder-from-a-library"></a>從媒體櫃中移除資料夾
 
-若要從媒體櫃中移除資料夾，請呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 方法，並指定要移除的資料夾。 您可以使用 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 和 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項 (或類似項目)，讓使用者選取要移除的資料夾。
+若要從媒體櫃中移除資料夾，請呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 方法，並指定要移除的資料夾。 您可以使用 [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders) 和 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項 (或類似項目)，讓使用者選取要移除的資料夾。
 
-當您呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 [圖片] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 [**StorageLibrary.Folders**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.folders) 屬性中移除，且將不再包含在內建的 [相片] app 中。
+當您呼叫 [**StorageLibrary.RequestRemoveFolderAsync**](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) 時，使用者會看到確認對話方塊，指出資料夾「不會再出現在 [圖片] 中，但也不會被刪除」。 這表示，資料夾仍保留在磁碟的原始位置上、已從 [**StorageLibrary.Folders**](/uwp/api/windows.storage.storagelibrary.folders) 屬性中移除，且將不再包含在內建的 [相片] app 中。
 
-下列範例假設使用者已從名為 **lvPictureFolders** 的 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項中選取要移除的資料夾。
+下列範例假設使用者已從名為 **lvPictureFolders** 的 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項中選取要移除的資料夾。
 
 
 ```cs
@@ -96,7 +96,7 @@ bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>取得媒體櫃中資料夾清單變更的通知
 
 
-若要取得與媒體櫃中資料夾清單變更相關的通知，請為媒體櫃的 [**StorageLibrary.DefinitionChanged**](https://docs.microsoft.com/uwp/api/windows.storage.storagelibrary.definitionchanged) 事件註冊一個處理常式。
+若要取得與媒體櫃中資料夾清單變更相關的通知，請為媒體櫃的 [**StorageLibrary.DefinitionChanged**](/uwp/api/windows.storage.storagelibrary.definitionchanged) 事件註冊一個處理常式。
 
 
 ```cs
@@ -158,7 +158,7 @@ private async void getSongs()
 
 使用者可以選擇預設將檔案儲存到選用的 SD 記憶卡。 不過，應用程式可以選擇不允許將檔案儲存到 SD 記憶卡。 因此，媒體櫃可以分割到裝置的內部儲存空間及 SD 記憶卡上。
 
-您不需要編寫其他程式碼即可處理這項操作。 [  **Windows.Storage**](https://docs.microsoft.com/uwp/api/Windows.Storage) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
+您不需要編寫其他程式碼即可處理這項操作。 [  **Windows.Storage**](/uwp/api/Windows.Storage) 命名空間中明確查詢已知資料夾的方法會結合來自這兩個位置的查詢結果。 您不需要在 app 資訊清單檔案中指定 **removableStorage** 功能，即可取得這些結合的結果。
 
 考量下圖中裝置儲存空間的狀態：
 
@@ -175,7 +175,7 @@ private async void getSongs()
 
 **在拍攝相片的應用程式中開啟該相片**
 
-如果您想要讓使用者稍後可以在拍攝相片的 app 中再次開啟該相片，您可以使用與下列範例類似的程式碼，將 **CreatorAppId** 與相片的中繼資料儲存在一起。 在此範例中，**testPhoto** 是 [**StorageFile**](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile)。
+如果您想要讓使用者稍後可以在拍攝相片的 app 中再次開啟該相片，您可以使用與下列範例類似的程式碼，將 **CreatorAppId** 與相片的中繼資料儲存在一起。 在此範例中，**testPhoto** 是 [**StorageFile**](/uwp/api/Windows.Storage.StorageFile)。
 
 ```cs
 IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();

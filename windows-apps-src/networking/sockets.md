@@ -6,20 +6,20 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42913aae69e5d049530d649c031351f4f3ab9ace
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6ccf994e273c683ec458b9a2eded0b13cb58c41c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684968"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158212"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
 
-本主題著重於如何使用 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間中的通用 Windows 平台 (UWP) 通訊端類別。 但您也可以在 UWP 應用程式使用 [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)。
+本主題著重於如何使用 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間中的通用 Windows 平台 (UWP) 通訊端類別。 但您也可以在 UWP 應用程式使用 [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)。
 
 > [!NOTE]
-> 因為[網路隔離](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))的關係，所以 Windows 禁止在同一部電腦上執行的兩個 UWP app 之間建立通訊端連線 (Sockets 或 WinSock)，不論是透過本機迴路位址 (127.0.0.0) 或是透過明確指定本機 IP 位址。 如需 UWP app 通訊機制的詳細資訊，請查看[應用程式間通訊](/windows/uwp/app-to-app/index)。
+> 因為[網路隔離](/previous-versions/windows/apps/hh770532(v=win.10))的關係，所以 Windows 禁止在同一部電腦上執行的兩個 UWP app 之間建立通訊端連線 (Sockets 或 WinSock)，不論是透過本機迴路位址 (127.0.0.0) 或是透過明確指定本機 IP 位址。 如需 UWP app 通訊機制的詳細資訊，請查看[應用程式間通訊](../app-to-app/index.md)。
 
 ## <a name="build-a-basic-tcp-socket-client-and-server"></a>建置基本 TCP 通訊端用戶端和伺服器
 TCP (傳輸控制通訊協定) 通訊端為長期連線提供雙向的低階網路資料傳輸。 TCP 通訊端是網際網路上大多數網路通訊協定所使用的基本功能。 為了示範基本 TCP 作業，以下範例程式碼示範 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 和 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 透過 TCP 傳送和接收資料，形成 echo 用戶端和伺服器。
@@ -503,7 +503,7 @@ private:
 
 ## <a name="references-to-streamsockets-in-c-ppl-continuations-applies-to-ccx-primarily"></a>C++ PPL 接續中的 StreamSockets 參考 (主要套用至 C++/CX)
 > [!NOTE]
-> 如果您使用 C++/WinRT 協同程式，並且傳送參數值，那麼此議題不適用。 如需參數傳遞推薦的詳細資訊，請參閱[並行和使用 C++/WinRT 的非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)。
+> 如果您使用 C++/WinRT 協同程式，並且傳送參數值，那麼此議題不適用。 如需參數傳遞推薦的詳細資訊，請參閱[並行和使用 C++/WinRT 的非同步作業](../cpp-and-winrt-apis/concurrency.md#parameter-passing)。
 
 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) 會維持作用，只要其輸入/輸出串流上有作用中的讀取/寫入 (例如，可以存取 [**StreamSocketListener.ConnectionReceived**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) 事件處理常式中的 [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived))。 當您呼叫 [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (或 `ReadAsync/WriteAsync/StoreAsync`)，它會有該通訊端的參考 (透過通訊端的輸入串流)，直到 **LoadAsync** 的 **Completed** 處理常式完成執行為止。
 
@@ -1277,7 +1277,7 @@ private:
 -   在同步寫入完成之前，您無法對正在寫入的 **IBuffer** 執行個體修改內容。
 -   **FlushAsync** 模式只適用於 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
 -   **FlushAsync** 模式只適用於 Windows 10 和後續版本。
--   在其他情況下，請改用 [**Task.WaitAll**](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___)，而不要使用 **FlushAsync** 模式。
+-   在其他情況下，請改用 [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___)，而不要使用 **FlushAsync** 模式。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的連接埠共用
 您可以設定 [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) 與繫結至相同地址/連接埠的其他 Win32 或 UWP 多點傳送通訊端並存。 在繫結或連接通訊端之前將 [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 設定為 `true`，執行此動作。 您可以從 **DatagramSocket** 物件本身存取 **DatagramSocketControl** 執行個體 (透過其 [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) 屬性)。
@@ -1378,10 +1378,10 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相關主題
-* [應用程式間通訊](/windows/uwp/app-to-app/index)
-* [透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [如何設定網路功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-* [Windows Sockets 2 (Winsock)](https://docs.microsoft.com/windows/desktop/WinSock/windows-sockets-start-page-2)
+* [應用程式間通訊](../app-to-app/index.md)
+* [透過 C++/WinRT 的並行和非同步作業](../cpp-and-winrt-apis/concurrency.md)
+* [如何設定網路功能](/previous-versions/windows/apps/hh770532(v=win.10))
+* [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## <a name="samples"></a>範例
 * [StreamSocket 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)

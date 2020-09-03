@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed1344b5ee49244a6c1afcbb873b54fcc28624f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684879"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159872"
 ---
 # <a name="sound"></a>音效
 
@@ -45,7 +45,7 @@ ms.locfileid: "75684879"
 
 UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，即可在整個應用程式體驗沈浸式音訊。
 
-[**ElementSoundPlayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
+[**ElementSoundPlayer**](/uwp/api/windows.ui.xaml.elementsoundplayer) 是 XAML 中的整合式音效系統，當開啟所有預設控制項時，就會自動播放音效。
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -64,12 +64,12 @@ ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 - **Off**：空間音訊一律關閉 (即使音訊開啟)。
 - **On**：一律播放空間音訊。
 
-若要深入了解空間音訊，以及 XAML 如何處理此功能，請參閱 [AudioGraph - 空間音訊](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio)。
+若要深入了解空間音訊，以及 XAML 如何處理此功能，請參閱 [AudioGraph - 空間音訊](../../audio-video-camera/audio-graphs.md#spatial-audio)。
 
 ### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
 音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 **Auto**，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
-若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
+若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](../devices/designing-for-tv.md)。
 
 ## <a name="sound-volume-override"></a>音效音量覆寫
 
@@ -173,5 +173,5 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 
 ## <a name="related-articles"></a>相關文章
 
-* [針對 Xbox 和電視進行設計](/windows/uwp/design/devices/designing-for-tv)
+* [針對 Xbox 和電視進行設計](../devices/designing-for-tv.md)
 * [ElementSoundPlayer 類別文件](/uwp/api/windows.ui.xaml.elementsoundplayer)

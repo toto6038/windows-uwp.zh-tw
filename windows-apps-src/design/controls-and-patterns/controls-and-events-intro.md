@@ -11,18 +11,18 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: addb4e7d929fb0222deda63494546d731f01cecd
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: ae53810dee72638eb89467098000988c3baaf047
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775799"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160532"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
 在 Windows 應用程式開發中，「控制項」  是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
 
-> **重要 API**：[Windows.UI.Xaml.Controls 命名空間](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+> **重要 API**：[Windows.UI.Xaml.Controls 命名空間](/uwp/api/windows.ui.xaml.controls)
 
 「模式」  是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[主版/詳細資料](master-details.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽應用程式的方式。 同樣地，您可以自訂 [NavigationView](navigationview.md) 控制項的範本來實作索引標籤模式。
 
@@ -169,7 +169,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 ## <a name="related-topics"></a>相關主題
 
 -   [依功能排序的控制項索引](controls-by-function.md)
--   [Windows.UI.Xaml.Controls 命名空間](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls)
+-   [Windows.UI.Xaml.Controls 命名空間](/uwp/api/windows.ui.xaml.controls)
 -   [配置](../layout/index.md)
 -   [樣式](../style/index.md)
 -   [可用性](../usability/index.md)

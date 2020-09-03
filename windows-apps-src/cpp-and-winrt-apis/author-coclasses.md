@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, COM, 元件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5ff3677c3624974759d1f6ff21d6e53cf9d33144
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 83ea8b5cea95f034b5cdfe4f1750a0ffd0166f49
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71344515"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154572"
 ---
 # <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
-[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 可協助您撰寫傳統的元件物件模型 (COM) 元件 (或 coclass)，因為有助於撰寫 Windows 執行階段類別。 本主題會說明作法。
+[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 可協助您撰寫傳統的元件物件模型 (COM) 元件 (或 coclass)，因為有助於撰寫 Windows 執行階段類別。 本主題會說明作法。
 
 ## <a name="how-cwinrt-behaves-by-default-with-respect-to-com-interfaces"></a>搭配 COM 介面的 C++/WinRT 有什麼預設行為
 
@@ -118,7 +118,7 @@ int main()
 
 本主題接下來的部分，會介紹如何建立一個最小型的主控台應用程式專案，該專案會使用 C++/WinRT，實作基本的 coclass (COM 元件或 COM 類別) 和 Class Factory。 應用程式範例會示範如何使用回呼按鈕來提供快顯通知，而且 coclass (其會實作 **INotificationActivationCallback** COM 介面) 可在使用者點擊快顯通知上的按鈕時，啟動並回呼應用程式。
 
-關於快顯通知功能區域的更多背景資訊，請參閱[傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)。 但是，文件中該章節的程式碼範例皆未使用 C++/WinRT，因此，建議您使用本主題所列的程式碼。
+關於快顯通知功能區域的更多背景資訊，請參閱[傳送本機快顯通知](../design/shell/tiles-and-notifications/send-local-toast.md)。 但是，文件中該章節的程式碼範例皆未使用 C++/WinRT，因此，建議您使用本主題所列的程式碼。
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>建立 Windows Console Application 專案 (ToastAndCallback)
 
@@ -220,7 +220,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上面的 coclass 的實作遵循的是[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class) 中示範的模式。 因此，您可以使用相同的技巧來實作 COM 介面以及 Windows 執行階段介面。 COM 元件和 Windows 執行階段類別會透過介面公開其功能。 每個 COM 介面最終都是衍生自 [**IUnknown 介面**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)介面。 Windows 執行階段是以 COM 為基礎 &mdash; 差別在於 Windows 執行階段介面最終是衍生自 [**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (而 **IInspectable** 衍生自 **IUnknown**)。
+上面的 coclass 的實作遵循的是[使用 C++/WinRT 撰寫 API](./author-apis.md#if-youre-not-authoring-a-runtime-class) 中示範的模式。 因此，您可以使用相同的技巧來實作 COM 介面以及 Windows 執行階段介面。 COM 元件和 Windows 執行階段類別會透過介面公開其功能。 每個 COM 介面最終都是衍生自 [**IUnknown 介面**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)介面。 Windows 執行階段是以 COM 為基礎 &mdash; 差別在於 Windows 執行階段介面最終是衍生自 [**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (而 **IInspectable** 衍生自 **IUnknown**)。
 
 在上述程式碼的 coclass 中，要實作 **INotificationActivationCallback::Activate** 方法，使用者在快顯通知上點擊回呼按鈕時，所呼叫的函式即是該方法。 但是在呼叫該函式之前，需要先建立一個 coclass 執行個體，這是 **IClassFactory::CreateInstance** 函式的工作。
 
@@ -481,7 +481,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 您可以在 Microsoft Visual Studio 中建立新專案，藉此開始建立同處理序 COM 伺服器的任務。 建立 **Visual C++**  > **Windows 桌面** > **動態連結程式庫 (DLL)** 專案。
 
-若要將 C++/WinRT 支援新增至新專案，請依照[修改 Windows 傳統型應用程式專案以新增 C++/WinRT 支援](/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)所述的步驟進行。
+若要將 C++/WinRT 支援新增至新專案，請依照[修改 Windows 傳統型應用程式專案以新增 C++/WinRT 支援](./get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)所述的步驟進行。
 
 ### <a name="implement-the-coclass-class-factory-and-in-proc-server-exports"></a>實作 coclass、class factory 以及同處理序伺服器的匯出
 
@@ -586,10 +586,10 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="important-apis"></a>重要 API
 * [IInspectable 介面](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)
-* [IUnknown 介面](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)
+* [IUnknown 介面](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 C++/WinRT 撰寫 API](./author-apis.md)
 * [使用 C++/WinRT 取用 COM 元件](consume-com.md)
-* [傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)
+* [傳送本機快顯通知](../design/shell/tiles-and-notifications/send-local-toast.md)

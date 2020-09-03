@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 70415c9f3d58625cfdc651ec67c8a9f37c23cffa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77089494"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158222"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP 應用程式的自動化組建
 
@@ -19,9 +19,9 @@ ms.locfileid: "77089494"
 
 ## <a name="create-a-new-azure-pipeline"></a>建立新的 Azure 管線
 
-先從[註冊 Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/get-started/pipelines-sign-up) 開始 (如果尚未這樣做)。
+先從[註冊 Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-sign-up) 開始 (如果尚未這樣做)。
 
-接下來，建立一條您可以用來建立原始程式碼的管線。 如需建置管線以建置 GitHub 存放庫的教學課程，請參閱[建立您的第一條管線](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支援[這篇文章](https://docs.microsoft.com/azure/devops/pipelines/repos)中列出的存放庫類型。
+接下來，建立一條您可以用來建立原始程式碼的管線。 如需建置管線以建置 GitHub 存放庫的教學課程，請參閱[建立您的第一條管線](/azure/devops/pipelines/get-started-yaml)。 Azure Pipelines 支援[這篇文章](/azure/devops/pipelines/repos)中列出的存放庫類型。
 
 ## <a name="set-up-an-automated-build"></a>設定自動化組建
 
@@ -66,7 +66,7 @@ steps:
 
 ## <a name="add-your-project-certificate-to-the-secure-files-library"></a>將您的專案憑證新增至安全檔案程式庫
 
-您應該儘可能避免將憑證提交至存放庫，而且 git 依預設則會忽略。 為了管理敏感檔案 (例如憑證) 的安全處理，Azure DevOps 支援[安全檔案](https://docs.microsoft.com/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
+您應該儘可能避免將憑證提交至存放庫，而且 git 依預設則會忽略。 為了管理敏感檔案 (例如憑證) 的安全處理，Azure DevOps 支援[安全檔案](/azure/devops/pipelines/library/secure-files?view=azure-devops)功能。
 
 若要上傳憑證進行自動化建置：
 
@@ -80,7 +80,7 @@ steps:
 
     ![如何上傳安全檔案](images/secure-file2.png)
 
-5. 如果憑證中的私密金鑰有密碼，建議您將密碼儲存在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)，然後將密碼連結到[變數群組](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以使用變數來存取管線中的密碼。 請注意，只有私密金鑰才支援密碼；目前不支援使用本身受到密碼保護的憑證檔案。
+5. 如果憑證中的私密金鑰有密碼，建議您將密碼儲存在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates)，然後將密碼連結到[變數群組](/azure/devops/pipelines/library/variable-groups)。 您可以使用變數來存取管線中的密碼。 請注意，只有私密金鑰才支援密碼；目前不支援使用本身受到密碼保護的憑證檔案。
 
 > [!NOTE]
 > 從 Visual Studio 2019 開始，UWP 專案中不會再產生暫時憑證。 若要建立或匯出憑證，請使用[這篇文章](/windows/msix/package/create-certificate-package-signing)所述的 PowerShell Cmdlet。
@@ -100,7 +100,7 @@ steps:
 | AppxPackageSigningEnabled | true | 啟用套件簽署。 |
 | PackageCertificateThumbprint | 憑證指紋 | 此值**必須**符合簽署憑證中的指紋，或為空字串。 |
 | PackageCertificateKeyFile | 路徑 | 要使用的憑證路徑。 這是從安全檔案中繼資料中擷取的。 |
-| PackageCertificatePassword | 密碼 | 憑證中私密金鑰的密碼。 建議您將密碼儲存在 [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/about-keys-secrets-and-certificates)，並將密碼連結到[變數群組](https://docs.microsoft.com/azure/devops/pipelines/library/variable-groups)。 您可以將變數傳遞給這個引數。 |
+| PackageCertificatePassword | 密碼 | 憑證中私密金鑰的密碼。 建議您將密碼儲存在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates)，並將密碼連結到[變數群組](/azure/devops/pipelines/library/variable-groups)。 您可以將變數傳遞給這個引數。 |
 
 ### <a name="configure-the-build"></a>設定組建
 
@@ -152,7 +152,7 @@ steps:
 
 ![預設變數](images/building-screen5.png)
 
-若要檢視所有預先定義的變數，請參閱[預先定義的建置變數](https://docs.microsoft.com/azure/devops/pipelines/build/variables)。
+若要檢視所有預先定義的變數，請參閱[預先定義的建置變數](/azure/devops/pipelines/build/variables)。
 
 ## <a name="configure-the-publish-build-artifacts-task"></a>設定發佈建置成品工作
 
@@ -195,7 +195,7 @@ steps:
 
 ## <a name="related-topics"></a>相關主題
 
-- [建置適用於 Windows 的 .NET 應用程式](https://docs.microsoft.com/vsts/build-release/get-started/dot-net) \(英文\)
+- [建置適用於 Windows 的 .NET 應用程式](/vsts/build-release/get-started/dot-net) \(英文\)
 - [封裝 UWP 應用程式](/windows/msix/package/packaging-uwp-apps)
-- [在 Windows 10 中側載 LOB 應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10) \(部分機器翻譯\)
+- [在 Windows 10 中側載 LOB 應用程式](/windows/deploy/sideload-apps-in-windows-10) \(部分機器翻譯\)
 - [建立套件簽署的憑證](/windows/msix/package/create-certificate-package-signing)

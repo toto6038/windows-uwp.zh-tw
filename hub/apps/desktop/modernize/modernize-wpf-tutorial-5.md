@@ -8,18 +8,18 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 27906d9d389c065ab1fdf7124151cd1915f850eb
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 18b89caa0de947d2b95b46c3deb11378912b6012
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "76726011"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161422"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>第 5 部分：使用 MSIX 封裝和部署
 
 這是教學課程的最後一個部分，示範如何讓名為 Contoso Expenses 的範例 WPF 傳統型應用程式現代化。 如需教學課程概觀、必要條件和下載範例應用程式的指示，請參閱[教學課程：讓 WPF 應用程式現代化](modernize-wpf-tutorial.md)。 本文假設您已經完成[第 4 部分](modernize-wpf-tutorial-4.md)。
 
-在[第 4 部分](modernize-wpf-tutorial-4.md)中，您已了解有些 WinRT API (包括通知 API) 必須先具備套件識別資料，才能在應用程式中使用。 您可以使用 [MSIX](https://docs.microsoft.com/windows/msix) (Windows 10 引進的封裝格式，用於封裝和部署 Windows 應用程式) 來封裝 Contoso Expenses，藉此取得套件識別資料。 MSIX 為開發人員和 IT 專業人員提供的優點包括：
+在[第 4 部分](modernize-wpf-tutorial-4.md)中，您已了解有些 WinRT API (包括通知 API) 必須先具備套件識別資料，才能在應用程式中使用。 您可以使用 [MSIX](/windows/msix) (Windows 10 引進的封裝格式，用於封裝和部署 Windows 應用程式) 來封裝 Contoso Expenses，藉此取得套件識別資料。 MSIX 為開發人員和 IT 專業人員提供的優點包括：
 
 - 最佳化的網路使用量和儲存空間。
 - 完全乾淨的解除安裝，多虧了應用程式執行所在的輕量型容器。 系統上不會保留任何登錄機碼和暫存檔案。
@@ -44,7 +44,7 @@ Visual Studio 2019 提供簡單的方法，讓您使用 Windows 應用程式封�
 
 5. 同時對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本1903 (10.0；組建 18362)]  ，然後按一下 [確定]  。
 
-    **ContosoExpenses.Package** 專案會新增至 **ContosoExpenses** 方案。 此專案包含[套件資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root) (用以描述應用程式)，以及一些用於項目的預設資產，例如 [程式] 功能表中的圖示和 [開始] 畫面中的磚。 不過，與 UWP 專案不同，封裝專案不包含程式碼。 其目的是要封裝現有的傳統型應用程式。
+    **ContosoExpenses.Package** 專案會新增至 **ContosoExpenses** 方案。 此專案包含[套件資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) (用以描述應用程式)，以及一些用於項目的預設資產，例如 [程式] 功能表中的圖示和 [開始] 畫面中的磚。 不過，與 UWP 專案不同，封裝專案不包含程式碼。 其目的是要封裝現有的傳統型應用程式。
 
 6. 在 **ContosoExpenses.Package** 專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後選擇 [新增參考]  。 這個節點會指定套件中將會包含方案中的哪些應用程式。
 

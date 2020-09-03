@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ad0595fa070a1970e4890ce7e95627c06385ba6a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63798102"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154212"
 ---
 # <a name="data-binding-and-mvvm"></a>資料繫結和 MVVM
 
@@ -35,7 +35,7 @@ Model-View-ViewModel (MVVM) 是分離 UI 和非 UI 程式碼的 UI 架構設計�
 使用 MVVM 模式時，應用程式會分成下列各層：
 
 * **模型**層定義類型，用來代表您的商務資料。 這包括建立核心應用程式域模型所需的所有東西，而且通常包含核心應用程式邏輯。 這一層完全獨立於「檢視」和「檢視-模型」層，而且通常部分在雲端。 有了完全實作的模型層，您可以建立多個不同的用戶端應用程式 (如果您選擇這麼做)，例如 UWP、使用相同基礎資料的 Web 應用程式。
-* **檢視**層使用 XAML 標記來定義 UI。 標記包含的資料繫結運算式 (例如 [x:Bind](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)) 可定義特定 UI 元件和各種「檢視-模型」和模型成員之間的連線。 程式碼後置檔案有時會當做檢視層的一部分使用，以包含自訂或操作 UI 所需的額外程式碼，或是在呼叫執行工作的「檢視-模型」方法之前，從事件處理常式引數中解壓縮資料。 
+* **檢視**層使用 XAML 標記來定義 UI。 標記包含的資料繫結運算式 (例如 [x:Bind](../xaml-platform/x-bind-markup-extension.md)) 可定義特定 UI 元件和各種「檢視-模型」和模型成員之間的連線。 程式碼後置檔案有時會當做檢視層的一部分使用，以包含自訂或操作 UI 所需的額外程式碼，或是在呼叫執行工作的「檢視-模型」方法之前，從事件處理常式引數中解壓縮資料。 
 * **檢視-模型**層提供檢視的資料繫結目標。 在許多情況下，檢視-模型會直接公開模型，或提供包裝特定模型成員的成員。 檢視-模型也可以定義成員，以便追蹤與 UI 相關但與模型無關的資料，例如項目清單的顯示順序。 檢視-模型也可做為與其他服務 (例如資料庫存取程式碼) 的整合點。 就簡單的專案來說，您可能不需要個別的模型層，只需要會封裝您所需之所有資料的檢視-模型層。 
 
 ## <a name="basic-and-advanced-mvvm"></a>基本和進階 MVVM
@@ -44,7 +44,7 @@ Model-View-ViewModel (MVVM) 是分離 UI 和非 UI 程式碼的 UI 架構設計�
 
 雖然精密的 MVVM 架構很有用，特別是針對企業規模的專案，但通常會伴隨採用任何特定模式或技術的相關成本，而且優點不一定清楚，視您的專案規模和大小而定。 幸運的是，您可以只採用能提供清楚明確優點的技術，略過其他技術，直到您需要它們。 
 
-特別是，您只要瞭解並套用資料繫結的完整功能，並將您的應用程式邏輯分成稍早所述的各層，即可獲得很大的好處。 這只要使用 Windows SDK 所提供的功能就能達成，不需任何外部架構。 尤其是，[{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)讓資料繫結比之前在 XAML 平台中更容易、執行更高效能，不再像以前一樣需要許多模板程式碼。
+特別是，您只要瞭解並套用資料繫結的完整功能，並將您的應用程式邏輯分成稍早所述的各層，即可獲得很大的好處。 這只要使用 Windows SDK 所提供的功能就能達成，不需任何外部架構。 尤其是，[{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)讓資料繫結比之前在 XAML 平台中更容易、執行更高效能，不再像以前一樣需要許多模板程式碼。
 
 如需使用基本、現成 MVVM 的更多指引，請參閱 GitHub 上的[客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)。 許多其他 [UWP 應用程式範例](https://github.com/Microsoft?q=windows-appsample
 )也使用基本的 MVVM 架構，[流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)同時包含程式碼後置和 MVVM 版本，並附上描述 [MVVM 轉換](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md)的筆記。 
@@ -53,11 +53,11 @@ Model-View-ViewModel (MVVM) 是分離 UI 和非 UI 程式碼的 UI 架構設計�
 
 ### <a name="topics"></a>主題
 
-[深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)  
-[{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)  
+[深入了解資料繫結](./data-binding-in-depth.md)  
+[{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)  
 
 ### <a name="samples"></a>範例
 
 [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)  
 [VanArsdel 清查範例](https://github.com/Microsoft/InventorySample)  
-[流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)  
+[流量應用程式範例](https://github.com/Microsoft/Windows-appsample-trafficapp)

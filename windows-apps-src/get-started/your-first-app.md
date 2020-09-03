@@ -6,12 +6,12 @@ ms.date: 01/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: d1731ec0a2b2df247d88be008af2cc6647a3bd6b
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: dba3541c5c7e942b4d157d5d7a331f2cb6c93c38
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493373"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158902"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個應用程式
 
@@ -28,18 +28,18 @@ ms.locfileid: "86493373"
 如果您想要了解基本概念，或只是恢復您的學習記憶，請嘗試下列資料︰
 
 * [適用於初學者的 C# 基礎知識](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
-* [適用於初學者的 VB 基礎知識](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
-* [Windows 10 開發人員指南](https://docs.microsoft.com/learn/)
+* [適用於初學者的 VB 基礎知識](/learn/?l=jqMOvLKbC_9206218965)
+* [Windows 10 開發人員指南](/learn/)
 
 ## <a name="cwinrt-and-xaml"></a>C++/WinRT 和 XAML
 
 運用您在標準 C++ 中的程式設計專長，使用 C++/WinRT 搭配可延伸應用程式標記語言 (XAML) 來建置應用程式。
 
-* [使用 C++/WinRT 來建立 "Hello, World!" 應用程式](/windows/uwp/get-started/create-a-basic-windows-10-app-in-cppwinrt)
+* [使用 C++/WinRT 來建立 "Hello, World!" 應用程式](./create-a-basic-windows-10-app-in-cppwinrt.md)
 
 深入了解 C++/WinRT。
 
-* [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)
+* [C++/WinRT](../cpp-and-winrt-apis/index.md)
 
 ## <a name="visualc-component-extensions-ccx-and-xaml"></a>Visual C++ 元件擴充功能 (C++/CX) 和 XAML
 
@@ -49,8 +49,8 @@ ms.locfileid: "86493373"
 
 在這裡深入了解 C++。
 
-* [適用於 UWP 應用程式的 C++](https://docs.microsoft.com/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
-* [適用於傳統型應用程式的 C++](https://docs.microsoft.com/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
+* [適用於 UWP 應用程式的 C++](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
+* [適用於傳統型應用程式的 C++](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
 ## <a name="javascript-and-html"></a>JavaScript 和 HTML
 
@@ -60,19 +60,19 @@ ms.locfileid: "86493373"
 
 將您的 JavaScript 和 HTML 技能擴展到 UWP 之外以建立 Web 應用程式，或在網站上透過 WebVR 探索虛擬實境。
 
-* [Microsoft Edge 開發人員文件](https://docs.microsoft.com/microsoft-edge/)
-* [將 WebVR 與 Microsoft Edge 搭配使用](https://docs.microsoft.com/microsoft-edge/webvr/)
+* [Microsoft Edge 開發人員文件](/microsoft-edge/)
+* [將 WebVR 與 Microsoft Edge 搭配使用](/microsoft-edge/webvr/)
 
 Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，並在 Microsoft Store 上推廣。
 
 * [託管的 Web 應用程式](https://developer.microsoft.com/windows/pwa)
-* [將您的 Web 應用程式轉換成 UWP 應用程式](../porting/hwa-create-windows.md)
+* [將您的 Web 應用程式轉換成 UWP 應用程式](/microsoft-edge/progressive-web-apps-chromium/)
 
 ## <a name="next-steps"></a>接下來的步驟
 
 當您準備好要嘗試比 "Hello, World!" 更有趣的內容時，請嘗試下列教學課程。
 
-* [教學課程：建立使用者介面](/windows/uwp/design/basics/xaml-basics-ui)
+* [教學課程：建立使用者介面](../design/basics/xaml-basics-ui.md)
 * [適用於 Microsoft Store 的簡單 2D UWP 遊戲，以 C# 和 MonoGame 撰寫](get-started-tutorial-game-mg2d.md)
 
 ## <a name="see-also"></a>另請參閱

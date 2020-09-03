@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 07d94f5b11acfe14bf55392c5cbf2c1b7bcfbeef
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: ab20d350372ec9dd0a755e76393a97a680949979
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66369390"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156563"
 ---
 # <a name="accessing-homegroup-content"></a>存取 HomeGroup 內容
 
@@ -19,7 +19,7 @@ ms.locfileid: "66369390"
 
 **重要 API**
 
--   [**Windows.Storage.KnownFolders 類別**](https://docs.microsoft.com/uwp/api/Windows.Storage.KnownFolders) \(英文\)
+-   [**Windows.Storage.KnownFolders 類別**](/uwp/api/Windows.Storage.KnownFolders) \(英文\)
 
 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。
 
@@ -27,7 +27,7 @@ ms.locfileid: "66369390"
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 -   **App 功能宣告**
 
@@ -50,7 +50,7 @@ ms.locfileid: "66369390"
 
 1.  **建立和自訂檔案選擇器**
 
-    使用 [**FileOpenPicker**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 建立檔案選擇器，然後將選擇器的 [**SuggestedStartLocation**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 設定成 [**PickerLocationId.HomeGroup**](https://docs.microsoft.com/uwp/api/Windows.Storage.Pickers.PickerLocationId)。 或者，設定與您的使用者和 app 相關的其他屬性。 如需協助您決定如何自訂檔案選擇器的指導方針，請參閱[檔案選擇器的指導方針和檢查清單](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers)。
+    使用 [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 建立檔案選擇器，然後將選擇器的 [**SuggestedStartLocation**](/uwp/api/windows.storage.pickers.fileopenpicker.suggestedstartlocation) 設定成 [**PickerLocationId.HomeGroup**](/uwp/api/Windows.Storage.Pickers.PickerLocationId)。 或者，設定與您的使用者和 app 相關的其他屬性。 如需協助您決定如何自訂檔案選擇器的指導方針，請參閱[檔案選擇器的指導方針和檢查清單](./quickstart-using-file-and-folder-pickers.md)。
 
     這個範例會建立在 HomeGroup 開啟的檔案選擇器 (包含任何檔案類型)，並以縮圖影像顯示檔案：
     ```cs
@@ -63,7 +63,7 @@ ms.locfileid: "66369390"
 
 2.  **顯示檔案選擇器並處理被挑選的檔案。**
 
-    建立和自訂檔案選擇器後，讓使用者呼叫 [**FileOpenPicker.PickSingleFileAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) 以挑選一個檔案，或呼叫 [**FileOpenPicker.PickMultipleFilesAsync**](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 以挑選多個檔案。
+    建立和自訂檔案選擇器後，讓使用者呼叫 [**FileOpenPicker.PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) 以挑選一個檔案，或呼叫 [**FileOpenPicker.PickMultipleFilesAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) 以挑選多個檔案。
 
     這個範例顯示讓使用者挑選一個檔案的檔案選擇器：
     ```cs
@@ -85,7 +85,7 @@ ms.locfileid: "66369390"
 
 1.  **從使用者取得查詢字詞。**
 
-    在這裡我們要取得使用者在名為 `searchQueryTextBox` 的 [**TextBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項中輸入的查詢字詞：
+    在這裡我們要取得使用者在名為 `searchQueryTextBox` 的 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項中輸入的查詢字詞：
     ```cs
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
@@ -128,7 +128,7 @@ ms.locfileid: "66369390"
 
 1.  **取得 HomeGroup 使用者的集合。**
 
-    HomeGroup 中的每個第一層資料夾都代表不同的 HomeGroup 使用者。 因此，若要取得 HomeGroup 使用者的集合，請呼叫 [**GetFoldersAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder.getfoldersasync) 擷取最上層 HomeGroup 資料夾。
+    HomeGroup 中的每個第一層資料夾都代表不同的 HomeGroup 使用者。 因此，若要取得 HomeGroup 使用者的集合，請呼叫 [**GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) 擷取最上層 HomeGroup 資料夾。
     ```cs
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
@@ -173,7 +173,7 @@ ms.locfileid: "66369390"
 
 1.  **在應用程式中包含 MediaElement。**
 
-    [  **MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 可以讓您在 app 中播放音訊和視訊內容。 如需音訊和視訊播放的詳細資訊，請參閱[建立自訂傳輸控制項](https://docs.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls)與[音訊、視訊和相機](https://docs.microsoft.com/windows/uwp/audio-video-camera/index)。
+    [  **MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 可以讓您在 app 中播放音訊和視訊內容。 如需音訊和視訊播放的詳細資訊，請參閱[建立自訂傳輸控制項](../design/controls-and-patterns/custom-transport-controls.md)與[音訊、視訊和相機](../audio-video-camera/index.md)。
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
@@ -193,7 +193,7 @@ ms.locfileid: "66369390"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **開啟使用者的檔案選取項目以取得讀取權限，並將檔案資料流設定為** [**MediaElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaElement) \(英文\) 的來源，然後播放該檔案。
+3.  **開啟使用者的檔案選取項目以取得讀取權限，並將檔案資料流設定為** [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) \(英文\) 的來源，然後播放該檔案。
     ```cs
     if (file != null)
     {

@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 自訂, 範本, 控制
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2bd71e5ec78f3e0d1317c4e69ecd234985b2d8ab
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 805e9db834e4428f8db5815b54b8d1d669310611
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492843"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154222"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項
 
 > [!IMPORTANT]
-> 如需一些基本概念和詞彙，以協助了解如何以 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+> 如需一些基本概念和詞彙，以協助了解如何以 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
-通用 Windows 平台 (UWP) 最強大的功能之一，即是使用者介面 (UI) 堆疊提供的彈性，能夠按照 XAML [**控制項**](/uwp/api/windows.ui.xaml.controls.control)類型建立自訂控制項。 XAML UI 架構提供的功能包括[自訂相依性屬性](/windows/uwp/xaml-platform/custom-dependency-properties)和[附加屬性](/windows/uwp/xaml-platform/custom-attached-properties)，以及[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)，可用來輕鬆建立功能豐富的自訂控制項。 本主題會逐步說明如何使用 C++/WinRT 建立自訂 (範本) 控制項。
+通用 Windows 平台 (UWP) 最強大的功能之一，即是使用者介面 (UI) 堆疊提供的彈性，能夠按照 XAML [**控制項**](/uwp/api/windows.ui.xaml.controls.control)類型建立自訂控制項。 XAML UI 架構提供的功能包括[自訂相依性屬性](../xaml-platform/custom-dependency-properties.md)和[附加屬性](../xaml-platform/custom-attached-properties.md)，以及[控制項範本](../design/controls-and-patterns/control-templates.md)，可用來輕鬆建立功能豐富的自訂控制項。 本主題會逐步說明如何使用 C++/WinRT 建立自訂 (範本) 控制項。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>建立空白應用程式 (BgLabelControlApp)
 
@@ -46,7 +46,7 @@ namespace BgLabelControlApp
 }
 ```
 
-上列清單顯示的是在宣告相依性屬性 (DP) 時所遵循的模式。 每個 DP 都有兩個物件。 首先要宣告 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) 類型的唯讀靜態屬性。 其名稱是您的 DP 加上*屬性*。 在實作中，要使用這個靜態屬性。 再來請使用您的 DP 類型和名稱，來宣告讀寫執行個體的屬性。 如果想要撰寫*附加屬性* (而非 DP)，請參閱[自訂附加屬性](/windows/uwp/xaml-platform/custom-attached-properties)中的程式碼範例。
+上列清單顯示的是在宣告相依性屬性 (DP) 時所遵循的模式。 每個 DP 都有兩個物件。 首先要宣告 [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty) 類型的唯讀靜態屬性。 其名稱是您的 DP 加上*屬性*。 在實作中，要使用這個靜態屬性。 再來請使用您的 DP 類型和名稱，來宣告讀寫執行個體的屬性。 如果想要撰寫*附加屬性* (而非 DP)，請參閱[自訂附加屬性](../xaml-platform/custom-attached-properties.md)中的程式碼範例。
 
 > [!NOTE]
 > 如果需要具有浮點類型的 DP，可將其設定為 `double` ([MIDL 3.0](/uwp/midl-3/) 中的 `Double`)。 若宣告並實作 `float` 類型的 DP (MIDL 中的 `Single`)，然後設定 XAML 標記內該 DP 的值，則會導致「Failed to create a 'Windows.Foundation.Single' from the text」 *<NUMBER>的錯誤*。
@@ -217,5 +217,5 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 * [UIElement 類別](/uwp/api/windows.ui.xaml.uielement) (英文)
 
 ## <a name="related-topics"></a>相關主題
-* [控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)
-* [自訂相依性屬性](/windows/uwp/xaml-platform/custom-dependency-properties)
+* [控制項範本](../design/controls-and-patterns/control-templates.md)
+* [自訂相依性屬性](../xaml-platform/custom-dependency-properties.md)

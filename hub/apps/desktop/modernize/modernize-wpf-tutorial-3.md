@@ -8,25 +8,25 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 830c1cdf2e24e716d51642bc65b5b6783d0d784a
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: e7e09069e11fc14d0a47086bc2594edc975c11d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "69643367"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161452"
 ---
 # <a name="part-3-add-a-uwp-calendarview-control-using-xaml-islands"></a>第 3 部分：使用 XAML Islands 新增 UWP CalendarViews 控制項
 
 這是教學課程的第三部分，示範如何讓名為 Contoso Expenses 的範例 WPF 傳統型應用程式現代化。 如需教學課程概觀、必要條件和下載範例應用程式的指示，請參閱[教學課程：讓 WPF 應用程式現代化](modernize-wpf-tutorial.md)。 本文假設您已經完成[第 2 部分](modernize-wpf-tutorial-2.md)。
 
-在本教學課程的虛構案例中，Contoso 開發小組想要讓您更輕鬆地在已啟用觸控功能的裝置上選擇費用報表的日期。 在本教學課程的這個部分中，您會將 UWP [CalendarView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/calendar-view) 控制項新增至應用程式。 這是在工作列上的 Windows 10 日期和時間功能中使用的相同控制項。
+在本教學課程的虛構案例中，Contoso 開發小組想要讓您更輕鬆地在已啟用觸控功能的裝置上選擇費用報表的日期。 在本教學課程的這個部分中，您會將 UWP [CalendarView](/windows/uwp/design/controls-and-patterns/calendar-view) 控制項新增至應用程式。 這是在工作列上的 Windows 10 日期和時間功能中使用的相同控制項。
 
 ![CalendarViewControl 映像](images/wpf-modernize-tutorial/CalendarViewControl.png)
 
-不同於您在[第 2 部分](modernize-wpf-tutorial-2.md)新增的 **InkCanvas** 控制項，Windows 社群工具組不會提供可在 WPF 應用程式中使用的 UWP **CalendarView** 包裝版本。 或者，您將在泛型 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項中裝載 **InkCanvas**。 您可使用此控制項來裝載 Windows SDK 或 WinUI 程式庫所提供的任何第一方 UWP 控制項，或由第三方所建立的任何自訂 UWP 控制項。 **WindowsXamlHost** 控制項是由 `Microsoft.Toolkit.Wpf.UI.XamlHost` NuGet 套件所提供。 此套件隨附於您在[第 2 部分](modernize-wpf-tutorial-2.md)安裝的 `Microsoft.Toolkit.Wpf.UI.Controls` NuGet 套件。
+不同於您在[第 2 部分](modernize-wpf-tutorial-2.md)新增的 **InkCanvas** 控制項，Windows 社群工具組不會提供可在 WPF 應用程式中使用的 UWP **CalendarView** 包裝版本。 或者，您將在泛型 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項中裝載 **InkCanvas**。 您可使用此控制項來裝載 Windows SDK 或 WinUI 程式庫所提供的任何第一方 UWP 控制項，或由第三方所建立的任何自訂 UWP 控制項。 **WindowsXamlHost** 控制項是由 `Microsoft.Toolkit.Wpf.UI.XamlHost` NuGet 套件所提供。 此套件隨附於您在[第 2 部分](modernize-wpf-tutorial-2.md)安裝的 `Microsoft.Toolkit.Wpf.UI.Controls` NuGet 套件。
 
 > [!NOTE]
-> 本教學課程只會示範如何使用 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 來裝載 Windows SDK 所提供的第一方 **CalendarView** 控制項。 如需示範如何裝載自訂控制項的逐步解說，請參閱[使用 XAML Islands 在 WPF 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands.md)。
+> 本教學課程只會示範如何使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 來裝載 Windows SDK 所提供的第一方 **CalendarView** 控制項。 如需示範如何裝載自訂控制項的逐步解說，請參閱[使用 XAML Islands 在 WPF 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands.md)。
 
 若要使用 **WindowsXamlHost** 控制項，您必須直接從 WPF 應用程式中的程式碼呼叫 WinRT API。 `Microsoft.Windows.SDK.Contracts` NuGet 套件包含可讓您從應用程式呼叫 WinRT API 所需的參考。 此套件也包含於您在[第 2 部分](modernize-wpf-tutorial-2.md)安裝的 `Microsoft.Toolkit.Wpf.UI.Controls` NuGet 套件。
 
@@ -94,7 +94,7 @@ ms.locfileid: "69643367"
 
 接下來，您將會更新應用程式以處理所選的日期、將其顯示在畫面上，然後填入要儲存在資料庫中的 **Expense** 物件。
 
-UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 包含與此案例相關的兩個成員：
+UWP [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView) 包含與此案例相關的兩個成員：
 
 - **SelectedDates** 屬性包含使用者所選取的日期。
 - 當使用者選取日期時，就會引發 **SelectedDatesChanged** 事件。
@@ -230,6 +230,6 @@ UWP [CalendarView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.C
 
 ## <a name="next-steps"></a>接下來的步驟
 
-目前在此教學課程中，您已成功將 WPF 日期時間控制項取代為 UWP **CalendarView** 控制項，除了滑鼠和鍵盤輸入之外，該控制項還支援觸控筆和數位筆。 雖然 Windows 社群工具組不提供 UWP **CalendarView** 控制項的包裝版本 (可直接在 WPF 應用程式中使用)，但您可使用泛型 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載此控制項。
+目前在此教學課程中，您已成功將 WPF 日期時間控制項取代為 UWP **CalendarView** 控制項，除了滑鼠和鍵盤輸入之外，該控制項還支援觸控筆和數位筆。 雖然 Windows 社群工具組不提供 UWP **CalendarView** 控制項的包裝版本 (可直接在 WPF 應用程式中使用)，但您可使用泛型 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載此控制項。
 
 您現在已準備好開始進行[第 4 部分：新增 Windows 10 使用者活動及通知](modernize-wpf-tutorial-4.md)。

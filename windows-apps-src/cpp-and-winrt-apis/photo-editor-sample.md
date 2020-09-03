@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 範例, 應用程式, 相片, 編輯器
 ms.localizationpriority: medium
-ms.openlocfilehash: dcefe2ad8321ae85fcb814bbaead0bb0e5373300
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fb89deaef8c221df9a28f0350f0c860e8da3802d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81266906"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154409"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Photo Editor C++/WinRT 範例應用程式
 
@@ -26,5 +26,5 @@ Photo Editor 應用程式是通用 Windows 平台 (UWP) UWP 範例應用程式�
 - 建立和使用自訂的 Windows 執行階段類別 (執行階段類別) 投影類型及實作類型。 如需有觀這些條款的詳細資訊，請參閱[使用 API 與 C++/WinRT](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 - [事件處理](handle-events.md)，包括使用自動撤銷事件語彙基元。
 - 針對影像效果，使用外部 Win2D NuGet 套件和 [Windows::UI::Composition](/uwp/api/windows.ui.composition)。
-- XAML 資料繫結，包括 [{X:bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。
+- XAML 資料繫結，包括 [{X:bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)。
 - XAML 樣式和 UI 自訂，包括[連接動畫](../design/motion/connected-animation.md)。

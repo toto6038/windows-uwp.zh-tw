@@ -5,30 +5,30 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 980f39f20de369bce226c4d8c1070bda851480c2
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f1500ab9999d4689385a9f7edce33253c385c0d0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493653"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154562"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
-本主題係根據 Windows 執行階段元件和使用中應用程式建置的，而[使用 C++/WinRT 的 Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)主題會向您示範建置方式。
+本主題係根據 Windows 執行階段元件和使用中應用程式建置的，而[使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主題會向您示範建置方式。
 
 以下是本主題新增的功能。
 - 更新銀行帳戶執行階段類別，以在其餘額進行扣款時引發事件。
 - 更新使用銀行帳戶執行階段類別的核心應用程式，使其能夠處理該事件。
 
 > [!NOTE]
-> 如需安裝和使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 > [!IMPORTANT]
 > 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="create-bankaccountwrc-and-bankaccountcoreapp"></a>建立 **BankAccountWRC** 和 **BankAccountCoreApp**
 
-如果您想要遵循本主題所示的更新，讓您可以建置和執行程式碼，則第一個步驟是遵循[使用 C++/WinRT 的 Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)主題中的逐步解說。 如此一來，您將會有 **BankAccountWRC** Windows 執行階段元件，以及使用其的 **BankAccountCoreApp** 核心應用程式。
+如果您想要遵循本主題所示的更新，讓您可以建置和執行程式碼，則第一個步驟是遵循[使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主題中的逐步解說。 如此一來，您將會有 **BankAccountWRC** Windows 執行階段元件，以及使用其的 **BankAccountCoreApp** 核心應用程式。
 
 ## <a name="update-bankaccountwrc-to-raise-an-event"></a>更新 **BankAccountWRC** 以引發事件
 
@@ -390,4 +390,4 @@ logCallback(L"Hello, World!");
 * [使用 C++/WinRT 撰寫 API](author-apis.md)
 * [使用 C++/WinRT 取用 API](consume-apis.md)
 * [藉由在 C++/WinRT 使用委派來處理事件](handle-events.md)
-* [使用 C++/WinRT 的 Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
+* [使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)

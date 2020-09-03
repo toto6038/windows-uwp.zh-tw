@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 21049c995d467209b22fe8ea5c40d303911f2c2c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: aa8991e7fd0bbb825ff5280f01693f092125f573
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "77521276"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161372"
 ---
 # <a name="tutorial-modernize-a-wpf-app"></a>教學課程：將 WPF 應用程式現代化 
 
@@ -111,13 +111,13 @@ Contoso 想要使用新的 Windows 功能來將此應用程式現代化，讓員
 
 如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項 (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls)。 此教學課程會引導您完成使用兩種不同類型 XAML Island 控制項的程序：
 
-* Windows 社群工具組中的 [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) \(英文\) 和 [MapControl](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) \(英文\)。 這些 WPF 控制項會包裝對應 UWP 控制項的介面和功能，而且可以像 Visual Studio 設計工具中的任何其他 WPF 控制項一樣使用。
+* Windows 社群工具組中的 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) \(英文\) 和 [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) \(英文\)。 這些 WPF 控制項會包裝對應 UWP 控制項的介面和功能，而且可以像 Visual Studio 設計工具中的任何其他 WPF 控制項一樣使用。
 
-* UWP [行事曆檢視](/windows/uwp/design/controls-and-patterns/calendar-view)控制項。 這是您將使用 Windows 社群工具組中的 [WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) \(英文\) 控制項裝載的標準 UWP 控制項。
+* UWP [行事曆檢視](/windows/uwp/design/controls-and-patterns/calendar-view)控制項。 這是您將使用 Windows 社群工具組中的 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) \(英文\) 控制項裝載的標準 UWP 控制項。
 
 ### <a name="net-core-3"></a>.NET Core 3
 
-[.NET Core](https://docs.microsoft.com/dotnet/core/) \(部分機器翻譯\) 是一個開放原始碼架構，可實作跨平台、輕量且易於擴充的完整 .NET Framework 版本。 相較於完整的 .NET Framework，.NET Core 啟動時間更快速，而且許多 API 都已經過最佳化。
+[.NET Core](/dotnet/core/) \(部分機器翻譯\) 是一個開放原始碼架構，可實作跨平台、輕量且易於擴充的完整 .NET Framework 版本。 相較於完整的 .NET Framework，.NET Core 啟動時間更快速，而且許多 API 都已經過最佳化。
 
 透過其前幾個版本，.NET Core 的重點在於支援 Web 或後端應用程式。 有了 .NET Core，您就可以輕鬆地建置可調整的 Web 應用程式或 API，其可裝載於 Windows、Linux 或 Docker 容器之類的微服務架構中。
 
@@ -126,4 +126,4 @@ Contoso 想要使用新的 Windows 功能來將此應用程式現代化，讓員
 > [!NOTE]
 > WPF 和 Windows Forms 不會變成跨平台，而且您無法在 Linux 和 MacOS 上執行 WPF 或 Windows Forms。 WPF 和 Windows Forms 的 UI 元件仍然具有 Windows 轉譯系統的相依性。
 
-如需詳細資訊，請參閱 [.NET Core 3.0 的新功能](https://docs.microsoft.com/dotnet/core/whats-new/dotnet-core-3-0)。
+如需詳細資訊，請參閱 [.NET Core 3.0 的新功能](/dotnet/core/whats-new/dotnet-core-3-0)。

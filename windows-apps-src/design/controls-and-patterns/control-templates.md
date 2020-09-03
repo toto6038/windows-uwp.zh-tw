@@ -11,49 +11,49 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ed4515a90df50a1ff8c0d6b82eb8cda5a4a78c9
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 04c219b02f0a4220619e082916caa058d600cf62
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968743"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160522"
 ---
 # <a name="control-templates"></a>控制項範本
 
-您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.background)、[**Foreground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.foreground) 及 [**FontFamily**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.fontfamily))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控制項的外觀。
+您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](/uwp/api/windows.ui.xaml.controls.control.background)、[**Foreground**](/uwp/api/windows.ui.xaml.controls.control.foreground) 及 [**FontFamily**](/uwp/api/windows.ui.xaml.controls.control.fontfamily))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控制項的外觀。
 
-> **重要 API**：[**ControlTemplate 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)、[**Control.Template 屬性**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template)
+> **重要 API**：[**ControlTemplate 類別**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)、[**Control.Template 屬性**](/uwp/api/windows.ui.xaml.controls.control.template)
 
 ## <a name="custom-control-template-example"></a>自訂控制項範本的範例
 
-根據預設，[**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控制項會將其內容 (**CheckBox** 旁邊的字串或物件) 放到選取方塊的右側，而核取記號則表示使用者已選取 **CheckBox**。 這些特性代表 **CheckBox** 的視覺結構和視覺行為。
+根據預設，[**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控制項會將其內容 (**CheckBox** 旁邊的字串或物件) 放到選取方塊的右側，而核取記號則表示使用者已選取 **CheckBox**。 這些特性代表 **CheckBox** 的視覺結構和視覺行為。
 
-以下是使用預設 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 在 `Unchecked`、`Checked` 以及 `Indeterminate` 狀態時所顯示的樣子。
+以下是使用預設 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 在 `Unchecked`、`Checked` 以及 `Indeterminate` 狀態時所顯示的樣子。
 
 ![預設的 CheckBox 範本](images/templates-checkbox-states-default.png)
 
-您可以為 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 建立 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 來變更這些特性。 舉例來說，如果您希望核取方塊的內容出現在選取方塊的下方，而且想要使用 **X** 來表示使用者已選取核取方塊。 可以在 **CheckBox** 的 **ControlTemplate** 中變更這些特性。
+您可以為 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 建立 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 來變更這些特性。 舉例來說，如果您希望核取方塊的內容出現在選取方塊的下方，而且想要使用 **X** 來表示使用者已選取核取方塊。 可以在 **CheckBox** 的 **ControlTemplate** 中變更這些特性。
 
-若要使用自訂範本搭配控制項，請將 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 指派給控制項的 [**Template**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.template) 屬性。 以下是使用名為 `CheckBoxTemplate1` 之 **ControlTemplate** 的 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)。 下一節將會說明 **ControlTemplate** 的 Extensible Application Markup Language (XAML)。
+若要使用自訂範本搭配控制項，請將 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 指派給控制項的 [**Template**](/uwp/api/windows.ui.xaml.controls.control.template) 屬性。 以下是使用名為 `CheckBoxTemplate1` 之 **ControlTemplate** 的 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)。 下一節將會說明 **ControlTemplate** 的 Extensible Application Markup Language (XAML)。
 
 ```XAML
 <CheckBox Content="CheckBox" Template="{StaticResource CheckBoxTemplate1}" IsThreeState="True" Margin="20"/>
 ```
 
-以下是套用範本之後，[**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 在 `Unchecked`、`Checked` 以及 `Indeterminate` 狀態下的外觀。
+以下是套用範本之後，[**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 在 `Unchecked`、`Checked` 以及 `Indeterminate` 狀態下的外觀。
 
 ![自訂核取方塊的範本](images/templates-checkbox-states.png)
 
 ## <a name="specify-the-visual-structure-of-a-control"></a>指定控制項的視覺結構
 
-在建立 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 時，您可以合併各個 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 物件來建置單一控制項。 **ControlTemplate** 只能有一個 **FrameworkElement** 做為其根元素。 根元素通常包含其他 **FrameworkElement** 物件。 物件組合起來就形成控制項的視覺結構。
+在建立 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 時，您可以合併各個 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 物件來建置單一控制項。 **ControlTemplate** 只能有一個 **FrameworkElement** 做為其根元素。 根元素通常包含其他 **FrameworkElement** 物件。 物件組合起來就形成控制項的視覺結構。
 
-這個 XAML 為 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 建立一個 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，指出控制項的內容位於選取方塊的下方。 根元素是 [**Border**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border)。 此範例指定 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 建立 **X**，指出使用者已選取 **CheckBox**，並建立 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 指出尚未決定的狀態。 請注意，**Path** 與 **Ellipse** 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 都是設定為 0，因此預設兩者都不會顯示。
+這個 XAML 為 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 建立一個 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，指出控制項的內容位於選取方塊的下方。 根元素是 [**Border**](/uwp/api/Windows.UI.Xaml.Controls.Border)。 此範例指定 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 建立 **X**，指出使用者已選取 **CheckBox**，並建立 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 指出尚未決定的狀態。 請注意，**Path** 與 **Ellipse** 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 都是設定為 0，因此預設兩者都不會顯示。
 
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 是特殊的繫結，這會將控制項範本中的屬性值連結至範本化控制項上一些其他已公開屬性的值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
 
 > [!NOTE]
-> 從 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 起，您可以使用 [**x:Bind**](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)標記延伸來取代您使用的 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
+> 從 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 起，您可以使用 [**x:Bind**](../../xaml-platform/x-bind-markup-extension.md)標記延伸來取代您使用的 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -91,9 +91,9 @@ ms.locfileid: "82968743"
 
 ## <a name="specify-the-visual-behavior-of-a-control"></a>指定控制項的視覺行為
 
-視覺行為會指定控制項處於特定狀態時的外觀。 [  **CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控制項有 3 種核取狀態：`Checked`、`Unchecked` 以及 `Indeterminate`。 [  **IsChecked**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 屬性的值決定 **CheckBox** 的狀態，而其狀態決定方塊中顯示的項目。
+視覺行為會指定控制項處於特定狀態時的外觀。 [  **CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 控制項有 3 種核取狀態：`Checked`、`Unchecked` 以及 `Indeterminate`。 [  **IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 屬性的值決定 **CheckBox** 的狀態，而其狀態決定方塊中顯示的項目。
 
-這個表格列出 [**IsChecked**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 的可能值、[**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的對應狀態，以及 **CheckBox** 的外觀。
+這個表格列出 [**IsChecked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked) 的可能值、[**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 的對應狀態，以及 **CheckBox** 的外觀。
 
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
@@ -103,9 +103,9 @@ ms.locfileid: "82968743"
 | **null**            | `Indeterminate`    | 包含一個圓形。      |
 
 
-您可以使用 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 中元素外觀的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 當控制項進入 [**VisualState.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.visualstate.name) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateGroup) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.FrameworkElement) 上設定)。
+您可以使用 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Setter) 中元素外觀的 [**Setter**](/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard) 或 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate)。 當控制項進入 [**VisualState.Name**](/uwp/api/windows.ui.xaml.visualstate.name) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](/dotnet/api/system.windows.visualstatemanager) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](/uwp/api/Windows.UI.Xaml.FrameworkElement) 上設定)。
 
-下列 XAML 顯示 `Checked`、`Unchecked` 以及 `Indeterminate` 狀態的 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 物件。 此範例會設定在 [**Border**](https://docs.microsoft.com/dotnet/api/system.windows.visualstatemanager) ([**ControlTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Border) 的根元素) 上的 [**VisualStateManager.VisualStateGroups**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 附加屬性。 `Checked` **VisualState** 指定 [**Path**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) (名為 `CheckGlyph`，如前述範例所示) 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 是 1。 `Indeterminate` **VisualState** 指定 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) (名為 `IndeterminateGlyph`) 的 **Opacity** 是 1。 `Unchecked` **VisualState** 沒有 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 或 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，因此 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 會回到其預設外觀。
+下列 XAML 顯示 `Checked`、`Unchecked` 以及 `Indeterminate` 狀態的 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 物件。 此範例會設定在 [**Border**](/dotnet/api/system.windows.visualstatemanager) ([**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.Border) 的根元素) 上的 [**VisualStateManager.VisualStateGroups**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) 附加屬性。 `Checked` **VisualState** 指定 [**Path**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) (名為 `CheckGlyph`，如前述範例所示) 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 是 1。 `Indeterminate` **VisualState** 指定 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) (名為 `IndeterminateGlyph`) 的 **Opacity** 是 1。 `Unchecked` **VisualState** 沒有 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 或 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard)，因此 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 會回到其預設外觀。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -168,17 +168,17 @@ ms.locfileid: "82968743"
 </ControlTemplate>
 ```
 
-若要更加了解 [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 物件如何運作，請思考一下 [**CheckBox**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 從 `Unchecked` 狀態到 `Checked` 狀態，再到 `Indeterminate` 狀態，然後回到 `Unchecked` 狀態時，各發生什麼事。 以下為轉換情形。
+若要更加了解 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 物件如何運作，請思考一下 [**CheckBox**](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) 從 `Unchecked` 狀態到 `Checked` 狀態，再到 `Indeterminate` 狀態，然後回到 `Unchecked` 狀態時，各發生什麼事。 以下為轉換情形。
 
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 狀態轉換                     | 發生什麼事                                                                                                                                                                                                                                                                                                                                   | 轉換完成時 CheckBox 的外觀 |
-| 從 `Unchecked` 到 `Checked`。       | 會套用 `Checked` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，所以 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 1。                                                                                                                                                         | 顯示 X。                                |
-| 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 1。 會移除 `Checked` **VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.brush.opacity) 為 0。 | 顯示圓形。                            |
-| 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate` [**VisualState**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Setter) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
+| 從 `Unchecked` 到 `Checked`。       | 會套用 `Checked` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值，所以 `CheckGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 1。                                                                                                                                                         | 顯示 X。                                |
+| 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 1。 會移除 `Checked` **VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](/uwp/api/windows.ui.xaml.media.brush.opacity) 為 0。 | 顯示圓形。                            |
+| 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate` [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 的 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
 
  
-如需有關如何建立控制項視覺狀態的詳細資訊，特別是如何使用 [**Storyboard**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 類別和動畫類型，請參閱[視覺狀態的腳本動畫](https://docs.microsoft.com/previous-versions/windows/apps/jj819808(v=win.10))。
+如需有關如何建立控制項視覺狀態的詳細資訊，特別是如何使用 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 類別和動畫類型，請參閱[視覺狀態的腳本動畫](/previous-versions/windows/apps/jj819808(v=win.10))。
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>使用工具輕鬆處理主題
 

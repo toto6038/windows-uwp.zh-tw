@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 8443ac25ba678986046b967a90a8899eaffb76aa
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67420115"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161462"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>第 4 部分：新增 Windows 10 使用者活動及通知
 
@@ -33,11 +33,11 @@ ms.locfileid: "67420115"
 
 ### <a name="introduction-to-adaptive-cards"></a>調適型卡片簡介
 
-本節提供[調適型卡片](https://docs.microsoft.com/adaptive-cards/)的簡要概觀。 如果您不需要此資訊，可予以略過並直接前往[新增調適型卡片](#add-an-adaptive-card)指示。
+本節提供[調適型卡片](/adaptive-cards/)的簡要概觀。 如果您不需要此資訊，可予以略過並直接前往[新增調適型卡片](#add-an-adaptive-card)指示。
 
 調適型卡片可讓開發人員以通用且一致的方式交換卡片內容。 調適型卡片是由定義其內容的 JSON 承載所描述，其中可包含文字、影像、動作等等。
 
-調適型卡片只定義內容，而不是內容的視覺化外觀。 接收調適型卡片的平台可以使用最適當的樣式來呈現內容。 調適型卡片是透過[轉譯器](https://docs.microsoft.com/adaptive-cards/rendering-cards/getting-started)設計，該轉譯器可接受 JSON 承載並將其轉換成原生 UI。 例如，WPF 或 UWP 應用程式的 UI 可以是 XAML，AXML 適用於 Android 應用程式，或 HTML 適用於網站或 Bot 聊天。
+調適型卡片只定義內容，而不是內容的視覺化外觀。 接收調適型卡片的平台可以使用最適當的樣式來呈現內容。 調適型卡片是透過[轉譯器](/adaptive-cards/rendering-cards/getting-started)設計，該轉譯器可接受 JSON 承載並將其轉換成原生 UI。 例如，WPF 或 UWP 應用程式的 UI 可以是 XAML，AXML 適用於 Android 應用程式，或 HTML 適用於網站或 Bot 聊天。
 
 以下是簡單調適型卡片承載的範例。
 
@@ -391,7 +391,7 @@ Contoso 開發小組想要新增的第二個功能，就是每當新費用儲存
     }
     ```
 
-    快顯通知會以 XML 承載表示，其可包含文字、影像、動作等等。 您可以[在此](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/toast-schema)找到所有支援的元素。 此程式碼會使用非常簡單的結構描述，其中包含兩行文字：標題和主體。 在程式碼定義 XML 承載並將其載入 **XmlDocument** 物件之後，就會將 XML 包裝在 **ToastNotification** 物件中，並使用 **ToastNotificationManager** 類別加以顯示。
+    快顯通知會以 XML 承載表示，其可包含文字、影像、動作等等。 您可以[在此](/windows/uwp/design/shell/tiles-and-notifications/toast-schema)找到所有支援的元素。 此程式碼會使用非常簡單的結構描述，其中包含兩行文字：標題和主體。 在程式碼定義 XML 承載並將其載入 **XmlDocument** 物件之後，就會將 XML 包裝在 **ToastNotification** 物件中，並使用 **ToastNotificationManager** 類別加以顯示。
 
 5. 在 **ContosoExpenses.Core** 專案中，展開 **ViewModels** 資料夾，然後開啟 **AddNewExpenseViewModel.cs** 檔案。 
 

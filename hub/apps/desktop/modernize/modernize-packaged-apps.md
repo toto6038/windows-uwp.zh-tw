@@ -8,18 +8,18 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1930d879177bc9282a3b55d019aa2bef7eb8f120
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730086"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161512"
 ---
 # <a name="features-that-require-package-identity"></a>需要套件身分識別的功能
 
-如果您想使用[現代化 Windows 10 體驗](index.md)來更新傳統型應用程式，則許多功能僅適用於具有[套件識別資料](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的傳統型應用程式。 將套件識別資料授與傳統型應用程式的方式有數種：
+如果您想使用[現代化 Windows 10 體驗](index.md)來更新傳統型應用程式，則許多功能僅適用於具有[套件識別資料](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)的傳統型應用程式。 將套件識別資料授與傳統型應用程式的方式有數種：
 
-* 將其封裝在 [MSIX 套件](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是新式應用程式套件格式，為所有 Windows 應用程式、UWP、WPF、Windows Forms 及 Win32 應用程式提供通用封裝體驗。 這可以提供強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 如需詳細資訊，請參閱 MSIX 文件中的[封裝傳統型應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)。
+* 將其封裝在 [MSIX 套件](/windows/msix/desktop/desktop-to-uwp-root)中。 MSIX 是新式應用程式套件格式，為所有 Windows 應用程式、UWP、WPF、Windows Forms 及 Win32 應用程式提供通用封裝體驗。 這可以提供強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 如需詳細資訊，請參閱 MSIX 文件中的[封裝傳統型應用程式](/windows/msix/desktop/desktop-to-uwp-root)。
 * 如果您無法採用 MSIX 封裝來部署傳統型應用程式，請從 Windows 10 版本 2004 開始，藉由建立僅包含套件資訊清單的*疏鬆 MSIX 套件*來授與套件識別。 如需詳細資訊，請參閱[將身分識別授與非封裝的傳統型應用程式](grant-identity-to-nonpackaged-apps.md)。
 
 如果您的傳統型應用程式具有套件識別資料，則可在您的應用程式中使用下列功能。

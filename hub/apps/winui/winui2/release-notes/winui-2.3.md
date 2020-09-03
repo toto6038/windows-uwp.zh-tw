@@ -3,12 +3,12 @@ title: WinUI 2.3 版本資訊
 description: WinUI 2.3 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 9540f5314e6df02e95943279647d643bdbbef3c5
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493483"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154782"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI 程式庫 2.3
 
@@ -40,9 +40,9 @@ NuGet 套件下載：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsof
 
 ![確定的進度列](../images/DeterminateProgressBar.gif)
 
-[文件連結](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls)
+[文件連結](/windows/uwp/design/controls-and-patterns/progress-controls)
 
-[範例連結](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/progress-controls#examples)
+[範例連結](/windows/uwp/design/controls-and-patterns/progress-controls#examples)
 
 ### <a name="numberbox"></a>NumberBox
 
@@ -50,7 +50,7 @@ NuGet 套件下載：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsof
 
 ![NumberBox](../images/NumberBoxGif.gif)
 
-[文件和範例連結](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/number-box)
+[文件和範例連結](/windows/uwp/design/controls-and-patterns/number-box)
 
 ### <a name="radiobuttons"></a>RadioButtons
 

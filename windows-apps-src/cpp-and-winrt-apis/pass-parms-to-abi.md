@@ -5,16 +5,16 @@ ms.date: 07/10/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 傳遞, 參數, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 51cde2332d3d9df9d1f488aa7f8246f9e1e2ed36
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 05a627349ad2c4fda890a4f5280f5d33454ea910
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997975"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154452"
 ---
 # <a name="passing-parameters-into-the-abi-boundary"></a>將參數傳入到 ABI 界限
 
-透過 **winrt::param** 命名空間中的類型，C++/WinRT 可藉由在一般情況提供自動轉換，簡化將參數傳入 ABI 界線的過程。 您可以在[字串處理](/windows/uwp/cpp-and-winrt-apis/strings)和[標準 C++ 資料類型和 C++/WinRT](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types) 中看到更多詳細資料和程式碼範例。
+透過 **winrt::param** 命名空間中的類型，C++/WinRT 可藉由在一般情況提供自動轉換，簡化將參數傳入 ABI 界線的過程。 您可以在[字串處理](./strings.md)和[標準 C++ 資料類型和 C++/WinRT](./std-cpp-data-types.md) 中看到更多詳細資料和程式碼範例。
 
 > [!IMPORTANT]
 > 您不會自己使用 **winrt::param** 命名空間中的類型。 這些類型是為了用於投影。

@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 9d08dd0f43f1c505124203028c69326e10eea26c
-ms.sourcegitcommit: 6cdba316bdbd85a2429259ebfb59ff94440e234a
+ms.openlocfilehash: c11f1cab37e79fc320f1fb38f5b909d2cecd1ad4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85882881"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89161582"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>第 1 部分：將 Contoso Expenses 應用程式移轉到 .NET Core 3
 
@@ -134,7 +134,7 @@ ms.locfileid: "85882881"
     ```
 
     > [!NOTE]
-    > 您可能也會注意到，您為此 .NET Core 3 專案安裝的套件與 .NET Framework 4.7.2 專案所用的套件相同。 NuGet 套件支援多目標。 程式庫作者可以在同一個套件中包含不同版本的程式庫，並針對不同的架構和平台進行編譯。 這些套件都支援完整的 .NET Framework，以及與 .NET Core 3 專案相容的 .NET Standard 2.0。 如需有關 .NET Framework、.NET Core 和 .NET Standard 差異的詳細資訊，請參閱 [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard)。
+    > 您可能也會注意到，您為此 .NET Core 3 專案安裝的套件與 .NET Framework 4.7.2 專案所用的套件相同。 NuGet 套件支援多目標。 程式庫作者可以在同一個套件中包含不同版本的程式庫，並針對不同的架構和平台進行編譯。 這些套件都支援完整的 .NET Framework，以及與 .NET Core 3 專案相容的 .NET Standard 2.0。 如需有關 .NET Framework、.NET Core 和 .NET Standard 差異的詳細資訊，請參閱 [.NET Standard](/dotnet/standard/net-standard)。
 
 若要設定 **ContosoExpenses.Core** 專案的 NuGet 套件：
 

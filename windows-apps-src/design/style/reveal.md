@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 26e756b52d4faf18eff2fc684c7db94bca058642
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 24ac07b8caacd4369bcbadf2a4019bbcbde59c6b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82971073"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159972"
 ---
 # <a name="reveal-highlight"></a>顯示顯目提示
 
@@ -23,7 +23,7 @@ ms.locfileid: "82971073"
 
 顯示顯目提示是會在使用者將指標移近互動式元素 (例如命令列) 時，醒目提示該元素的光源效果。 
 
-> **重要 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush) \(英文\)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush) \(英文\)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush) \(英文\)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper) \(英文\)、[VisualState 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) \(英文\)
+> **重要 API**：[RevealBrush 類別](/uwp/api/windows.ui.xaml.media.revealbrush) \(英文\)、[RevealBackgroundBrush 類別](/uwp/api/windows.ui.xaml.media.revealbackgroundbrush) \(英文\)、[RevealBorderBrush 類別](/uwp/api/windows.ui.xaml.media.revealborderbrush) \(英文\)、[RevealBrushHelper 類別](/uwp/api/windows.ui.xaml.media.revealbrushhelper) \(英文\)、[VisualState 類別](/uwp/api/Windows.UI.Xaml.VisualState) \(英文\)
 
 ## <a name="how-it-works"></a>運作方式
 顯示顯目提示會在指標移近互動式元素時顯示該元素的容器，藉以引起使用者對該元素的注意，如下圖所示：
@@ -142,7 +142,7 @@ Reveal 會根據控制項、應用程式或使用者設定所要求的佈景主�
 ### <a name="when-to-add-reveal"></a>加入 Reveal 的時機
 您可以將 Reveal 加入自訂控制項，但在執行此動作之前，請先考慮控制項的類型及其運作方式。 
 * 如果自訂控制項是單一互動式元素，且沒有相似的控制項共用其空間 (例如功能表中的功能表項目)，您的自訂控制項可能就不需要 Reveal。  
-* 如果您有相關的互動式內容或元素的群組，則應用程式的該區域便很可能需要 Reveal；這通常被稱為[命令](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/collection-commanding) \(部分機器翻譯\) 介面。
+* 如果您有相關的互動式內容或元素的群組，則應用程式的該區域便很可能需要 Reveal；這通常被稱為[命令](../controls-and-patterns/collection-commanding.md) \(部分機器翻譯\) 介面。
 
 例如，按鈕本身不應使用 Reveal，但是命令列中的一組按鈕就應該使用 Reveal。
 
@@ -286,9 +286,9 @@ Reveal 會根據控制項、應用程式或使用者設定所要求的佈景主�
 
 ## <a name="related-articles"></a>相關文章
 
-- [RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush) \(英文\)
+- [RevealBrush 類別](/uwp/api/windows.ui.xaml.media.revealbrush) \(英文\)
 - [壓克力](acrylic.md)
-- [組合效果](https://docs.microsoft.com/windows/uwp/graphics/composition-effects) \(部分機器翻譯\)
+- [組合效果](../../composition/composition-effects.md) \(部分機器翻譯\)
 - [適用於 UWP 的 Fluent Design](/windows/apps/fluent-design-system)
 - [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) \(英文\)
 - [系統中的科學：Fluent Design 和光線](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f) \(英文\)

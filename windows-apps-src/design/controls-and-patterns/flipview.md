@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 51c43efc859e20606679b385051684730eee1922
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 7e498caa51aa0820b8fb8709f8da178bcee1de9b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493383"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160232"
 ---
 # <a name="flip-view"></a>翻轉檢視
 
@@ -27,7 +27,7 @@ ms.locfileid: "86493383"
 <img src="images/winui-logo-64x64.png" alt="WinUI logo"
      style="float: left; margin-right: 15px;" />
 
-Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
 
 > **平台 API：** [FlipView 類別](/uwp/api/windows.ui.xaml.controls.flipview)[ItemsSource 屬性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)[ItemTemplate 屬性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 
@@ -61,13 +61,13 @@ Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新�
 
 ## <a name="create-a-flip-view"></a>建立翻轉檢視
 
-FlipView 是一種 [ItemsControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol)，因此可以包含任何類型的項目集合。 若要填入檢視，請新增項目至 [**Items**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合，或將 [**ItemsSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設定至資料來源。
+FlipView 是一種 [ItemsControl](/uwp/api/windows.ui.xaml.controls.itemscontrol)，因此可以包含任何類型的項目集合。 若要填入檢視，請新增項目至 [**Items**](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合，或將 [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設定至資料來源。
 
-根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 若要指定項目在翻轉檢視中的確切顯示方式，請建立 [**DataTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate) 以定義用來顯示個別項目的控制項配置。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 將 DataTemplate 指派給 FlipView 的 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
+根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 若要指定項目在翻轉檢視中的確切顯示方式，請建立 [**DataTemplate**](/uwp/api/windows.ui.xaml.datatemplate) 以定義用來顯示個別項目的控制項配置。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 將 DataTemplate 指派給 FlipView 的 [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
 
 ### <a name="add-items-to-the-items-collection"></a>新增項目到 Items 集合
 
-您可以使用 XAML 或程式碼，將項目新增到 [**Items**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 如果您只有少量不會變更且很容易在 XAML 中定義的項目，或是如果您在執行階段於程式碼中產生項目，便通常會用這種方式新增項目。 以下的翻轉檢視含有以內嵌方式定義的項目。
+您可以使用 XAML 或程式碼，將項目新增到 [**Items**](/uwp/api/windows.ui.xaml.controls.itemscontrol.items) 集合。 如果您只有少量不會變更且很容易在 XAML 中定義的項目，或是如果您在執行階段於程式碼中產生項目，便通常會用這種方式新增項目。 以下的翻轉檢視含有以內嵌方式定義的項目。
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -88,13 +88,13 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-將項目新增到翻轉檢視時，它們會自動放置到 [**FlipViewItem**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipViewItem) 容器中。 若要變更項目的顯示方式，您可以設定 [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 屬性，將樣式套用到項目容器。 
+將項目新增到翻轉檢視時，它們會自動放置到 [**FlipViewItem**](/uwp/api/Windows.UI.Xaml.Controls.FlipViewItem) 容器中。 若要變更項目的顯示方式，您可以設定 [**ItemContainerStyle**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 屬性，將樣式套用到項目容器。 
 
 在 XAML 中定義項目時，項目會自動新增到 Items 集合。
 
 ### <a name="set-the-items-source"></a>設定項目來源
 
-您通常會使用翻轉檢視以顯示來自資料庫或網際網路等來源的資料。 若要從資料來源填入翻轉檢視，您要將它的 [**ItemsSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設定為資料項目的集合。
+您通常會使用翻轉檢視以顯示來自資料庫或網際網路等來源的資料。 若要從資料來源填入翻轉檢視，您要將它的 [**ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 屬性設定為資料項目的集合。
 
 在這裡，翻轉檢視的 ItemsSource 會在程式碼中直接設定至集合的執行個體。
 
@@ -116,7 +116,7 @@ stackPanel1.Children.Add(flipView1);
 
 您也可以將 ItemsSource 屬性繫結到 XAML 中的集合。 如需詳細資訊，請參閱[與 XAML 的資料繫結](../../data-binding/data-binding-quickstart.md)。
 
-此處的 ItemsSource 是繫結至名為 `itemsViewSource` 的 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 
+此處的 ItemsSource 是繫結至名為 `itemsViewSource` 的 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 
 
 ```xaml
 <Page.Resources>
@@ -134,7 +134,7 @@ stackPanel1.Children.Add(flipView1);
 
 ### <a name="specify-the-look-of-the-items"></a>指定項目的外觀
 
-根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 您通常會想要以更多樣化的表示方式顯示資料。 為了明確指定項目在翻轉檢視內的顯示方式，您需要建立一個 [**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 DataTemplate 是指派給 FlipView 控制項的 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
+根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 您通常會想要以更多樣化的表示方式顯示資料。 為了明確指定項目在翻轉檢視內的顯示方式，您需要建立一個 [**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 DataTemplate 是指派給 FlipView 控制項的 [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
 
 在這個範例中，FlipView 的 ItemTemplate 是以內嵌方式定義。 重疊會新增至影像以顯示影像名稱。 
 
@@ -163,7 +163,7 @@ stackPanel1.Children.Add(flipView1);
 
 ### <a name="set-the-orientation-of-the-flip-view"></a>設定翻轉檢視的方向
 
-根據預設，翻轉檢視是以水平翻轉。 若要讓它垂直翻轉，請以具有垂直方向的堆疊面板做為翻轉檢視的 [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。
+根據預設，翻轉檢視是以水平翻轉。 若要讓它垂直翻轉，請以具有垂直方向的堆疊面板做為翻轉檢視的 [**ItemsPanel**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。
 
 這個範例顯示如何以具有垂直方向的堆疊面板做為 FlipView 的 ItemsPanel。
 
@@ -236,4 +236,4 @@ stackPanel1.Children.Add(flipView1);
 ## <a name="related-articles"></a>相關文章
 
 - [清單的指導方針](lists.md)
-- [**FlipView 類別**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.FlipView)
+- [**FlipView 類別**](/uwp/api/Windows.UI.Xaml.Controls.FlipView)

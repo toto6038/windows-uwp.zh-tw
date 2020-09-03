@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 到 Windows, 快速鍵對應, 從 Unix 移至 Windows, 從 Mac 轉換至 Windows, 協助從 MacBook 移至 Surface, 如何為 Macintosh 使用者使用 Windows, 從 Macintosh 切換至 Windows, 協助變更開發環境, Mac OS X 至 Windows, 協助從 Mac 移至電腦
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: fa137ab51f0bb53e2907fa319d79ed77eb7ed655
-ms.sourcegitcommit: 1e06168ada5ce6013b1d07c428548f084464a286
+ms.openlocfilehash: 1d94944037caf7cd909ea4799867f83bd4a6f887
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87363707"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89157582"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>將開發環境從 Mac 變更為 Windows 的指南
 
@@ -74,14 +74,14 @@ Windows 支援數個命令列命令介面和終端機，其運作方式有些時
 
 Windows 有兩個主要的命令列命令介面：
 
-1. **[PowerShell](https://docs.microsoft.com/powershell/scripting/overview?view=powershell-7)** - PowerShell 是跨平台工作自動化和組態管理架構，其組成為以 .NET 為建置基礎的命令列命令介面和指令碼語言。 使用 PowerShell，系統管理員、開發人員和進階使用者便可以快速控制並將工作自動化，這些工作可管理複雜的程序和環境與其執行所在作業系統的各個層面。 PowerShell 是[完全開放原始碼](https://github.com/powershell/powershell)，並因為它可跨平台，也[適用於 Mac 和 Linux](https://docs.microsoft.com/powershell/scripting/install/installing-powershell?view=powershell-7)。
+1. **[PowerShell](/powershell/scripting/overview?view=powershell-7)** - PowerShell 是跨平台工作自動化和組態管理架構，其組成為以 .NET 為建置基礎的命令列命令介面和指令碼語言。 使用 PowerShell，系統管理員、開發人員和進階使用者便可以快速控制並將工作自動化，這些工作可管理複雜的程序和環境與其執行所在作業系統的各個層面。 PowerShell 是[完全開放原始碼](https://github.com/powershell/powershell)，並因為它可跨平台，也[適用於 Mac 和 Linux](/powershell/scripting/install/installing-powershell?view=powershell-7)。
 
     **Mac 和 Linux BASH 命令介面使用者**：PowerShell 也支援您已經熟悉的許多命令別名。 例如：
     - 列出目前目錄的內容，使用：`ls`
     - 移動檔案，使用：`mv`
     - 移至新目錄，使用：`cd <path>`
 
-    PowerShell 與 BASH 中的某些命令和引數不同。 若要深入了解，請在 PowerShell 中輸入：[`get-help`](https://docs.microsoft.com/powershell/scripting/learn/ps101/02-help-system?view=powershell-7)，或查看文件中[相容性別名](https://docs.microsoft.com/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7)。
+    PowerShell 與 BASH 中的某些命令和引數不同。 若要深入了解，請在 PowerShell 中輸入：[`get-help`](/powershell/scripting/learn/ps101/02-help-system?view=powershell-7)，或查看文件中[相容性別名](/powershell/scripting/samples/appendix-1---compatibility-aliases?view=powershell-7)。
 
     若要以系統管理員身分執行 PowerShell，請在 Windows [開始] 功能表中輸入 "PowerShell"，然後選取 [以系統管理員身分執行]。
 
@@ -89,7 +89,7 @@ Windows 有兩個主要的命令列命令介面：
 
 ### <a name="linux-shells"></a>Linux 命令介面
 
-現在可以安裝 Windows 子系統 Linux 版 (WSL)，以支援在 Windows 內執行 Linux 命令介面。 這表示您可以使用您所選擇的任何特定 Linux 發行版本 (直接整合在 Windows 內) 執行 **bash**。 使用 WSL 將提供 Mac 使用者最熟悉的環境類型。 例如，您會使用 **ls** 來列出目前目錄中的檔案，而非使用您在傳統 Windows Cmd 命令介面中使用的 **dir**。 若要了解安裝和使用 WSL 的詳細資訊，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](https://docs.microsoft.com/windows/wsl/install-win10)。 可以使用 WSL 安裝在 Windows 上的 Linux 發行版本包括：
+現在可以安裝 Windows 子系統 Linux 版 (WSL)，以支援在 Windows 內執行 Linux 命令介面。 這表示您可以使用您所選擇的任何特定 Linux 發行版本 (直接整合在 Windows 內) 執行 **bash**。 使用 WSL 將提供 Mac 使用者最熟悉的環境類型。 例如，您會使用 **ls** 來列出目前目錄中的檔案，而非使用您在傳統 Windows Cmd 命令介面中使用的 **dir**。 若要了解安裝和使用 WSL 的詳細資訊，請參閱[適用於 Windows 10 的 Windows 子系統 Linux 版安裝指南](/windows/wsl/install-win10)。 可以使用 WSL 安裝在 Windows 上的 Linux 發行版本包括：
 
 1. [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71)
 2. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
@@ -97,17 +97,17 @@ Windows 有兩個主要的命令列命令介面：
 4. [openSUSE Leap 15.1](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
 5. [SUSE Linux Enterprise Server 15 SP1](https://www.microsoft.com/store/apps/9PN498VPMF3Z)
 
-僅提供幾個例子。 您可以在 [WSL 安裝文件](https://docs.microsoft.com/windows/wsl/install-win10#install-your-linux-distribution-of-choice)中進一步了解，並直接從 [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools) 進行安裝。
+僅提供幾個例子。 您可以在 [WSL 安裝文件](/windows/wsl/install-win10#install-your-linux-distribution-of-choice)中進一步了解，並直接從 [Microsoft Store](https://www.microsoft.com/search/shop/apps?q=linux&category=Developer+tools) 進行安裝。
 
 ## <a name="windows-terminals"></a>Windows 終端機
 
 除了許多協力廠商產品，Microsoft 還提供兩個「終端機」，它們是可讓您存取命令列命令介面和應用程式的 GUI 應用程式。
 
-1. **[Windows 終端機](https://docs.microsoft.com/windows/terminal/)** ：「Windows 終端機」是一項全新、現代化、高度可設定的命令列終端機應用程式，提供非常高的效能、低延遲的命令列使用者體驗、多個索引標籤、分割視窗窗格、自訂主題和樣式、用於不同命令介面或命令列應用程式的多個「設定檔」，以及相當多的機會讓您設定並個人化您的命令列使用者體驗的許多層面。
+1. **[Windows 終端機](/windows/terminal/)** ：「Windows 終端機」是一項全新、現代化、高度可設定的命令列終端機應用程式，提供非常高的效能、低延遲的命令列使用者體驗、多個索引標籤、分割視窗窗格、自訂主題和樣式、用於不同命令介面或命令列應用程式的多個「設定檔」，以及相當多的機會讓您設定並個人化您的命令列使用者體驗的許多層面。
 
     您可以使用 Windows 終端機來開啟索引標籤，其中連線至 PowerShell、WSL 命令介面 (例如 Ubuntu 或 Debian)、傳統 Windows 命令提示字元或任何其他命令列應用程式 (例如 SSH、Azure CLI、Git Bash)。
 
-2. **[主控台](https://docs.microsoft.com/windows/console/)** ：在 Mac 和 Linux 上，使用者通常會啟動其偏好的終端機應用程式，接著它會建立並連線至使用者的預設命令介面 (例如 BASH)。
+2. **[主控台](/windows/console/)** ：在 Mac 和 Linux 上，使用者通常會啟動其偏好的終端機應用程式，接著它會建立並連線至使用者的預設命令介面 (例如 BASH)。
 
     不過，由於長久以來的怪癖，Windows 使用者傳統上會啟動其命令介面，而 Windows 會自動啟動並連線 GUI 主控台應用程式。
 

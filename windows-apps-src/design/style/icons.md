@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7c44baee7d3201e2e554604405afe337007dd510
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e35041cce7e43f6eebed06b39f3ae2dbda55a4ae
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970953"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89156792"
 ---
 # <a name="icons-for-windows-apps"></a>Windows 應用程式的圖示
 
@@ -39,7 +39,7 @@ ms.locfileid: "82970953"
     :::column-end:::
 :::row-end:::
 
-本文章會介紹您應用程式中的圖示。 若要深入了解應用程式以外的圖示 (應用程式圖示)，請參閱[應用程式圖示及標誌](/windows/uwp/design/shell/tiles-and-notifications/app-assets)一文。
+本文章會介紹您應用程式中的圖示。 若要深入了解應用程式以外的圖示 (應用程式圖示)，請參閱[應用程式圖示及標誌](./app-icons-and-logos.md)一文。
 
 ## <a name="when-to-use-icons"></a>使用圖示的時機
 
@@ -100,7 +100,7 @@ Microsoft 以 Segoe MDL2 Assets 字型的形式，提供了超過 1000 個圖示
 ### <a name="use-a-scalable-vector-graphics-svg-file"></a>使用可縮放向量圖形 (SVG) 檔案。
 :::row:::
     :::column:::
-SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳利。 大部分的繪圖應用程式可以匯出為 SVG。 如需說明，請參閱 [SVGImageSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
+SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳利。 大部分的繪圖應用程式可以匯出為 SVG。 如需說明，請參閱 [SVGImageSource](/uwp/api/windows.ui.xaml.media.imaging.svgimagesource)。
     :::column-end:::
     :::column:::
         ![SVG 影像](images/icons/icon-scale.gif)
@@ -156,7 +156,7 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 :::row:::
     :::column span="2":::
         <b>步驟 2</b><br>
-您可以使用以下其中一個圖示元素物件：[BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbolicon)。 這讓您有更多類型的圖示可選擇，並可讓您結合圖示和其他內容類型，例如文字，如果您想要：
+您可以使用以下其中一個圖示元素物件：[BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon)、[FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon)、[PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon) 或 [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon)。 這讓您有更多類型的圖示可選擇，並可讓您結合圖示和其他內容類型，例如文字，如果您想要：
     :::column-end:::
     :::column:::
         ![建立圖示按鈕步驟 2](images/icons/icon-text-step-2.svg)
@@ -176,7 +176,7 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 
 :::row:::
     :::column span:::
-當您有一系列結合的命令，例如剪下/複製/貼上或一組相片編輯程式的繪圖命令，請都放在同一個[命令列](../controls-and-patterns/app-bars.md)中。 命令列需要一個或多個應用程式列按鈕或是應用程式列切換按鈕，每個按鈕皆代表一個動作。 每個按鈕都有一個[圖示](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)屬性，可用來控制要顯示哪個圖示。 指定圖示有很多種方式。 
+當您有一系列結合的命令，例如剪下/複製/貼上或一組相片編輯程式的繪圖命令，請都放在同一個[命令列](../controls-and-patterns/app-bars.md)中。 命令列需要一個或多個應用程式列按鈕或是應用程式列切換按鈕，每個按鈕皆代表一個動作。 每個按鈕都有一個[圖示](/uwp/api/windows.ui.xaml.controls.appbarbutton#Windows_UI_Xaml_Controls_AppBarButton_Icon)屬性，可用來控制要顯示哪個圖示。 指定圖示有很多種方式。 
     :::column-end:::
     :::column:::
         ![具有圖示的命令列範例](images/icons/create-icon-command-bar.svg)
@@ -197,13 +197,13 @@ SVG 資源適用於圖示，因為任何大小或解析度上看起來都很銳�
 </CommandBar>
 
 ```
-如需完整圖示名稱的清單，請參閱 [Symbol 列舉](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.symbol)。 
+如需完整圖示名稱的清單，請參閱 [Symbol 列舉](/uwp/api/windows.ui.xaml.controls.symbol)。 
 
 還有其他方式能在命令列中提供按鈕圖示：
 
-+ [FontIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.fonticon)，圖示依據的是指定字型系列的字符。
-+ [BitmapIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.bitmapicon)，圖示依據的是具有指定 **Uri** 的點陣圖影像。
-+ [PathIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pathicon)，圖示依據的是[路徑](/uwp/api/windows.ui.xaml.shapes.path)資料。
++ [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon)，圖示依據的是指定字型系列的字符。
++ [BitmapIcon](/uwp/api/windows.ui.xaml.controls.bitmapicon)，圖示依據的是具有指定 **Uri** 的點陣圖影像。
++ [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon)，圖示依據的是[路徑](/uwp/api/windows.ui.xaml.shapes.path)資料。
 
 如需深入了解命令列，請參閱[命令列](../controls-and-patterns/app-bars.md)一文。 
 

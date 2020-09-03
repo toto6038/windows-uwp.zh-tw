@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 634393e700538dc5db43b2d4065c6742fd7673f1
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 37bc5688321249428405e730d366eb987a81bd66
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234329"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159842"
 ---
 # <a name="control-size-and-density"></a>控制項大小和密度
 
@@ -72,7 +72,7 @@ ms.locfileid: "83234329"
 
 ### <a name="examples"></a>範例
 
-精簡大小調整是透過特殊資源字典實作，您可以在應用程式中的頁面層級或特定版面配置上指定該字典。 在 [WinUI](https://docs.microsoft.com/uwp/toolkits/winui/) Nuget 套件中可取得資源字典。
+精簡大小調整是透過特殊資源字典實作，您可以在應用程式中的頁面層級或特定版面配置上指定該字典。 在 [WinUI](/uwp/toolkits/winui/) Nuget 套件中可取得資源字典。
 
 下列範例顯示頁面和個別格線控制項如何才能套用 `Compact` 樣式。
 
@@ -101,6 +101,6 @@ ms.locfileid: "83234329"
 ## <a name="related-articles"></a>相關文章
 
 - [觸控目標的指導方針](../input/guidelines-for-targeting.md)
-- [ResourceDictionary 與 XAML 資源參考](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)
-- [資源字典](https://docs.microsoft.com/uwp/api/windows.ui.xaml.resourcedictionary)
-- [XAML 樣式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles) 
+- [ResourceDictionary 與 XAML 資源參考](../controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)
+- [資源字典](/uwp/api/windows.ui.xaml.resourcedictionary)
+- [XAML 樣式](../controls-and-patterns/xaml-styles.md)

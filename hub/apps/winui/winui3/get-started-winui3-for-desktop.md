@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 7393d4d1bae227bf3b586a54fba5d43ca2dcb53e
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493403"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154822"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3
 
@@ -45,7 +45,7 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
         ![應用程式專案](images/WinUI-csharp-appproject.png)
 
-    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](https://docs.microsoft.com/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
+    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
 
         ![應用程式專案](images/WinUI-csharp-packageproject.png)
 
@@ -77,7 +77,7 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
         ![應用程式專案](images/WinUI-cpp-appproject.png)
 
-    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](https://docs.microsoft.com/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
+    * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
 
         ![封裝專案](images/WinUI-cpp-packageproject.png)
 
