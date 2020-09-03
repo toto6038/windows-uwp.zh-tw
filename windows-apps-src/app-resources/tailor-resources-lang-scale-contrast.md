@@ -1,17 +1,17 @@
 ---
-Description: 本主題說明限定詞的一般概念、其使用方式，以及每個限定詞名稱的用途。
+description: 本主題說明限定詞的一般概念、其使用方式，以及每個限定詞名稱的用途。
 title: 針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 template: detail.hbs
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 3678d525fa00df07408b9d85af34a3dd825b4fcf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 59f0b636384ba133e985f0704e2033c1acc5f15e
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161332"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412012"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -118,7 +118,7 @@ ms.locfileid: "89161332"
 
 您的目標系統或應用程式必須提供與 `alternateform` 限定詞相符的值。 不要將 `msft-` 首碼用於您自己的自訂 `alternateform` 限定詞值。
 
-## <a name="configuration"></a>設定
+## <a name="configuration"></a>組態
 
 您不太可能需要 `configuration` 限定詞名稱。 這可以用來指定只適用於特定製作階段環境的資源，例如僅供測試資源。
 
@@ -128,7 +128,7 @@ ms.locfileid: "89161332"
 
 `contrast` 限定詞用來提供最符合高對比設定的資源。
 
-## <a name="custom"></a>自訂
+## <a name="custom"></a>Custom
 
 您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 App 啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
 
@@ -193,7 +193,7 @@ public void SetLicenseLevel(BrandID brand)
 
 `homeregion` 限定詞對應於使用者的國家或地區設定。 這代表使用者的住家位置。 值包括任何有效 [BCP-47 區域標記](https://tools.ietf.org/html/bcp47)。 也就是，任何兩個字母的 **ISO 3166-1 alpha-2** 區域代碼，加上一組代表組成區域的三位數 **ISO 3166-1 數字**地理代碼 (請參閱[聯合國統計司 M49 區域分類編碼](https://unstats.un.org/unsd/methods/m49/m49regin.htm))。 「選取的經濟及其他群組」的代碼無效。
 
-## <a name="language"></a>Language
+## <a name="language"></a>語言
 
 `language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需語言清單，請參閱 [IANA 語言子標記登錄](https://www.iana.org/assignments/language-subtag-registry)。
 
@@ -286,7 +286,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 * [資源管理系統](resource-management-system.md)
 * [如何準備當地語系化](/previous-versions/windows/apps/hh967762(v=win.10))
 * [偵測執行您 app 的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [裝置系列概觀](/uwp/extension-sdks/device-families-overview)
+* [使用延伸模組 Sdk 進行程式設計](/uwp/extension-sdks/device-families-overview)
 * [當地語系化您的 UI 字串](localize-strings-ui-manifest.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
 * [聯合國統計司 M49 區域分類編碼](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

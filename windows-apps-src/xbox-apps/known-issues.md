@@ -6,20 +6,20 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 52421d17de5f26fe29060c39d33b51cc85fa197a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7867b26849019c517c0e3d2e3ad9aa0cf86158fc
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174552"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411992"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
 本主題說明 Xbox One 開發人員計畫上的 UWP 已知問題。 如需此計畫的詳細資訊，請參閱 [Xbox 上的 UWP](index.md)。 
 
-\[如果您是從 API 參考主題中的連結，並正在尋找通用裝置系列 API 資訊，請參閱 [Xbox 上尚未支援的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。\]
+\[如果您是從 API 參考主題中的連結，並正在尋找通用裝置系列 API 資訊，請參閱 [Xbox 上不支援的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。\]
 
-下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
+下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。
 
 **我們想要您的意見反應**，因此請在[開發通用 Windows 平台應用程式](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
 
@@ -60,8 +60,7 @@ Xbox One 裝置上的通用 Windows 平台 (UWP) 應用程式具有無法繫結�
 
 ## <a name="windows-runtime-api-coverage"></a>Windows 執行階段 API 涵蓋範圍
 
-Xbox 上並不支援所有 Windows 執行階段 Api。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](/uwp/extension-sdks/uwp-limitations-on-xbox)。 如果您發現其他 API 問題，請在論壇上報告它們。 
-
+Xbox 上並不支援所有 Windows 執行階段 Api。 如需我們已知無法運作的 Api 清單，請參閱 [Xbox 上不支援的 UWP 功能](/uwp/extension-sdks/uwp-limitations-on-xbox)。 如果您發現其他 API 問題，請在論壇上報告它們。
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告
 

@@ -1,17 +1,17 @@
 ---
-Description: 了解您的 app 套件是如何提供給您的客戶，以及如何管理特定套件案例。
+description: 了解您的 app 套件是如何提供給您的客戶，以及如何管理特定套件案例。
 title: 應用程式套件管理指導方針
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ecd8cc96196c31615eac032183956de3bee9e4b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6035f5f21cd1b704415193c393ae0637d3e5dc37
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171052"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411972"
 ---
 # <a name="guidance-for-app-package-management"></a>應用程式套件管理指導方針
 
@@ -49,15 +49,13 @@ ms.locfileid: "89171052"
 > [!NOTE]
 > 如果您想保持應用程式的可用性，但不想繼續提供給使用特定作業系統版本的新客戶，您可以建立新的提交，並針對您想要在其上防止新取得的作業系統版本移除所有套件。 例如，如果您先前已有適用於 Windows Phone 8.1 及 Windows 10 的套件，而您不想持續提供該應用程式給 Windows Phone 8.1 上的客戶，則可從提交中移除所有 Windows Phone 8.1 套件。 發佈更新之後，Windows Phone 8.1 上的新客戶將無法取得應用程式，但已有客戶可以繼續使用該應用程式) 。 不過，應用程式仍然可供 Windows 10 上的新客戶使用。
 
-
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>移除先前支援之裝置系列的套件
 
-如果您移除應用程式先前支援之特定 [裝置系列](/uwp/extension-sdks/device-families-overview) 的所有套件，系統會提示您確認這是您的目的，然後才能將變更儲存在 [ **套件** ] 頁面上。
+如果您移除特定裝置系列的所有套件 (請參閱應用程式先前支援的 [擴充功能 sdk 程式設計](/uwp/extension-sdks/device-families-overview)) ，系統會提示您確認這是您的目的，然後才能將變更儲存在 [ **套件** ] 頁面上。
 
 當您發佈提交，以移除可在您的應用程式先前支援的裝置系列上執行的所有套件時，新客戶將無法在該裝置系列上取得該應用程式。 此後您還是可以發佈其他更新，以再次針對該裝置系列提供套件。
 
 請注意，即使您移除支援特定裝置系列的所有套件，任何已安裝該 app 的現有客戶仍能夠使用它，且他們會取得您之後所提供的任何更新。
-
 
 <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>
 

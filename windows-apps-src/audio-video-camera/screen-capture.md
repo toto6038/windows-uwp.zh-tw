@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: b57be844e5ee10d384046aac651ab4f198f37d9e
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: 96b8c52d8c1c6b6947b7b151df0b1b8bbfe42869
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310069"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411922"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -688,7 +688,7 @@ End Class
 
 ## <a name="record-a-video"></a>錄製影片
 
-如果您想要錄製應用程式的影片，您可以依照文章螢幕擷取畫面中所示的逐步解說 [來觀看影片](screen-capture-video.md)。 或者，您也可以使用 [AppRecording 命名空間](/uwp/api/windows.media.apprecording)。 這是桌面擴充功能 SDK 的一部分，因此它只適用于桌上型電腦，而且需要您從專案新增對它的參考。 如需詳細資訊，請參閱 [裝置系列總覽](/uwp/extension-sdks/device-families-overview) 。
+如果您想要錄製應用程式的影片，您可以依照文章螢幕擷取畫面中所示的逐步解說 [來觀看影片](screen-capture-video.md)。 或者，您也可以使用 [AppRecording 命名空間](/uwp/api/windows.media.apprecording)。 這是桌面擴充功能 SDK 的一部分，因此它只適用于桌上型電腦，而且需要您從專案新增對它的參考。 如需詳細資訊，請參閱 [使用擴充功能 sdk](/uwp/extension-sdks/device-families-overview) 進行程式設計。
 
 ## <a name="see-also"></a>另請參閱
 

@@ -1,16 +1,16 @@
 ---
-Description: 成功上傳套件之後，您會看到一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。
+description: 成功上傳套件之後，您會看到一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。
 title: 裝置系列可用性
 ms.date: 03/21/2019
 ms.topic: article
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: f0b30b5805ffaf0cd591147bcfed9744b64afdb7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 48cbb0fd9ecf27c9926d55e22abc17d039d3674b
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161972"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411962"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 
@@ -55,7 +55,7 @@ Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 *
 
 請務必注意您在 **\[裝置系列可用性\]** 區段所做的選擇僅會套用至新擷取。 已經有您的 App 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除其裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 App 的客戶。 例如，如果您有已發佈的應用程式搭配 Windows Phone 8.1 套件，且您新增了以 Windows 通用裝置系列為目標的 Windows 10 (UWP) 套件，則即使您已取消選取 **Windows 10**的方塊，Windows Phone Windows 10 (套件的行動8.1 客戶也會收到此) Windows 10 行動裝置版 UWP 套件的更新。
 
-如需裝置系列的詳細資訊，請參閱[**裝置系列概觀**](/uwp/extension-sdks/device-families-overview)。
+如需裝置系列的詳細資訊，請參閱 [使用延伸模組 sdk 進行程式設計](/uwp/extension-sdks/device-families-overview)。
 
 
 ## <a name="understanding-ranking"></a>了解排行
