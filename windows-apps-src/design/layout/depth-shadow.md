@@ -9,12 +9,12 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: 2655abd69f0f02efada9de5bab22e463c86b5d7e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: fc2adb295df97cf1af49608d15c135b9f56b4594
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970183"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165562"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和陰影
 
@@ -54,7 +54,7 @@ Z 深度是在 3D 應用程式製作者之間通用的詞彙，用來表示沿�
 除非另有指定，否則以下通用控制項將自動使用 ThemeShadow 投射 32px 深度的陰影：
 
 - [操作功能表](../controls-and-patterns/menus.md)、[命令列](../controls-and-patterns/app-bars.md)、[命令列飛出視窗](../controls-and-patterns/command-bar-flyout.md)、[功能表列](../controls-and-patterns/menus.md#create-a-menu-bar)
-- [對話方塊與飛出視窗](../controls-and-patterns/dialogs.md) (64px 的對話方塊)
+- [對話方塊與飛出視窗](../controls-and-patterns/dialogs-and-flyouts/index.md) (64px 的對話方塊)
 - [NavigationView](../controls-and-patterns/navigationview.md)
 - [ComboBox](../controls-and-patterns/combo-box.md)、[DropDownButton、SplitButton、ToggleSplitButton](../controls-and-patterns/buttons.md)
 - [TeachingTip](../controls-and-patterns/dialogs-and-flyouts/teaching-tip.md)
@@ -96,9 +96,9 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ### <a name="disabling-default-themeshadow-on-custom-flyout-controls"></a>停用自訂飛出視窗控制項的預設 ThemeShadow
 
-以 [Flyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.flyout)、[DatePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.datepickerflyout)、[MenuFlyout](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.menuflyout) 或 [TimePickerFlyout](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.timepickerflyout) 為基礎的控制項，會自動使用 ThemeShadow 以投射陰影。
+以 [Flyout](/uwp/api/Windows.UI.Xaml.Controls.flyout)、[DatePickerFlyout](/uwp/api/windows.ui.xaml.controls.datepickerflyout)、[MenuFlyout](/uwp/api/Windows.UI.Xaml.Controls.menuflyout) 或 [TimePickerFlyout](/uwp/api/windows.ui.xaml.controls.timepickerflyout) 為基礎的控制項，會自動使用 ThemeShadow 以投射陰影。
 
-如果預設陰影在控制項的內容上看起來不正確，您可以在相關的 FlyoutPresenter 上，將 [IsDefaultShadowEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) 屬性設為 `false`，將其停用：
+如果預設陰影在控制項的內容上看起來不正確，您可以在相關的 FlyoutPresenter 上，將 [IsDefaultShadowEnabled](/uwp/api/windows.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled) 屬性設為 `false`，將其停用：
 
 ```xaml
 <Flyout>
@@ -154,7 +154,7 @@ Rectangle2.Translation += new Vector3(120, 0, 32);
 
 ## <a name="drop-shadow"></a>陰影
 
-DropShadow 不會自動回應其環境，而且不會使用光源。 如需實作範例，請參閱 [DropShadow 類別](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)。
+DropShadow 不會自動回應其環境，而且不會使用光源。 如需實作範例，請參閱 [DropShadow 類別](/uwp/api/windows.ui.composition.dropshadow)。
 
 ## <a name="which-shadow-should-i-use"></a>我應該使用哪一種陰影？
 

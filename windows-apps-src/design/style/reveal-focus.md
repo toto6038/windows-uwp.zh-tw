@@ -9,23 +9,23 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 098c46499e65c34e3699b09e137ea94c40590ef7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6afed2347bb3944c8ea5bd9b43e83d429973dc15
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968004"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169162"
 ---
 # <a name="reveal-focus"></a>顯示焦點
 
 ![主角圖像](images/header-reveal-focus.svg)
 
-顯示焦點是適用於 [10 英呎體驗](/windows/uwp/design/devices/designing-for-tv) (例如 Xbox One 和電視螢幕) 的光源效果。 它會在使用者將遊戲控制器或鍵盤的焦點移近可設定焦點的元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。 此效果預設會關閉，但也很容易啟用。 
+顯示焦點是適用於 [10 英呎體驗](../devices/designing-for-tv.md) (例如 Xbox One 和電視螢幕) 的光源效果。 它會在使用者將遊戲控制器或鍵盤的焦點移近可設定焦點的元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。 此效果預設會關閉，但也很容易啟用。 
 
-(如需了解顯示顯目提示效果 (一種能醒目提示互動式元素的光源效果)，請參閱[顯示顯目提示文章](/windows/uwp/design/style/reveal)。)
+(如需了解顯示顯目提示效果 (一種能醒目提示互動式元素的光源效果)，請參閱[顯示顯目提示文章](./reveal.md)。)
 
 
-> **重要 API**：[Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind) \(英文\)、[FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind) \(英文\)、[Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) \(英文\)
+> **重要 API**：[Application.FocusVisualKind property](/uwp/api/windows.ui.xaml.application.FocusVisualKind) \(英文\)、[FocusVisualKind enum](/uwp/api/windows.ui.xaml.focusvisualkind) \(英文\)、[Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) \(英文\)
 
 ## <a name="how-it-works"></a>運作方式
 顯示焦點會以動畫方式在元素框線周圍呈現光暈，讓使用者能注意到具有焦點的元素：
@@ -70,7 +70,7 @@ ms.locfileid: "82968004"
 
 ## <a name="customizing-reveal-focus"></a>自訂顯示焦點
 
-您可以透過修改每個控制項的焦點視覺效果屬性來自定顯示焦點效果：[FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) \(英文\)、[FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) \(英文\)、[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\)，以及 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\)。 這些屬性可讓您自訂焦點矩形的色彩和粗細。 (這些屬性和您用來建立[高可見度焦點視覺效果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals) \(部分機器翻譯\) 的屬性是相同的)。 
+您可以透過修改每個控制項的焦點視覺效果屬性來自定顯示焦點效果：[FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) \(英文\)、[FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) \(英文\)、[FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\)，以及 [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\)。 這些屬性可讓您自訂焦點矩形的色彩和粗細。 (這些屬性和您用來建立[高可見度焦點視覺效果](../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals) \(部分機器翻譯\) 的屬性是相同的)。 
 
 但是在您開始進行自訂之前，先多了解一點構成顯示焦點的元件是件很有幫助的事。
 
@@ -86,8 +86,8 @@ ms.locfileid: "82968004"
 
 | 框線類型 | 屬性 |
 | --- | --- |
-| 主要、光暈   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) \(英文\)<br/> (變更主要框線會依比例變更光暈的粗細。)   |
-| 次要   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) \(英文\)   |
+| 主要、光暈   | [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) \(英文\)<br/> (變更主要框線會依比例變更光暈的粗細。)   |
+| 次要   | [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) \(英文\)   |
 
 
 此範例會變更按鈕焦點視覺效果的框線粗細：
@@ -98,7 +98,7 @@ ms.locfileid: "82968004"
 
 ## <a name="customize-the-margin"></a>自訂邊界
 
-邊界是控制項的視覺界限與焦點視覺效果次要框線的起始位置之間的空間。 預設邊界是位於控制項界限 1px 的距離之外。 您可以針對個別控制項編輯這個邊界，方法是變更 [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) \(英文\) 屬性︰
+邊界是控制項的視覺界限與焦點視覺效果次要框線的起始位置之間的空間。 預設邊界是位於控制項界限 1px 的距離之外。 您可以針對個別控制項編輯這個邊界，方法是變更 [FocusVisualMargin](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) \(英文\) 屬性︰
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -108,12 +108,12 @@ ms.locfileid: "82968004"
 
 ## <a name="customize-the-color"></a>自訂色彩
 
-若要變更的顯示焦點視覺效果的色彩，請使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\) 屬性。
+若要變更的顯示焦點視覺效果的色彩，請使用 [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) 和 [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\) 屬性。
 
 | 屬性 | 預設資源 | 預設資源值 |
 | ---- | ---- | --- | 
-| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
-| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
+| [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
+| [FocusVisualSecondaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) \(英文\)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
 
 (FocusPrimaryBrush 屬性只會在 **FocusVisualKind** 被設定為 **Reveal** 時，才會預設至 **SystemControlRevealFocusVisualBrush** 資源。 否則，它會使用 **SystemControlFocusVisualPrimaryBrush**。)
 
@@ -145,12 +145,12 @@ ms.locfileid: "82968004"
 </Application.Resources>
 ```
 
-如需有關修改焦點視覺效果色彩的詳細資訊，請參閱[色彩商標和自訂](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#color-branding--customizing) \(部分機器翻譯\)。
+如需有關修改焦點視覺效果色彩的詳細資訊，請參閱[色彩商標和自訂](../input/guidelines-for-visualfeedback.md#color-branding--customizing) \(部分機器翻譯\)。
 
 
 ## <a name="show-just-the-glow"></a>只顯示光暈
 
-如果您只想要使用光暈，而不使用主要或次要焦點視覺效果，只需將控制項的 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) 屬性設定為 `Transparent`，並將 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) \(英文\) 設定為 `0`。 在這種情況下，光暈將會採用控制項背景的色彩來提供無框線風格。 您可以使用 [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) \(英文\) 來修改光暈粗細。
+如果您只想要使用光暈，而不使用主要或次要焦點視覺效果，只需將控制項的 [FocusVisualPrimaryBrush](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) \(英文\) 屬性設定為 `Transparent`，並將 [FocusVisualSecondaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) \(英文\) 設定為 `0`。 在這種情況下，光暈將會採用控制項背景的色彩來提供無框線風格。 您可以使用 [FocusVisualPrimaryThickness](/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) \(英文\) 來修改光暈粗細。
 
 ```xaml
 
@@ -172,10 +172,10 @@ ms.locfileid: "82968004"
 
 ## <a name="related-articles"></a>相關文章
 
-- [顯示顯目提示](https://docs.microsoft.com/windows/uwp/design/style/reveal) \(部分機器翻譯\)
-- [針對 Xbox 和電視進行設計](/windows/uwp/design/devices/designing-for-tv)
-- [遊戲控制器與遙控器的互動](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions) \(部分機器翻譯\)
+- [顯示顯目提示](./reveal.md) \(部分機器翻譯\)
+- [針對 Xbox 和電視進行設計](../devices/designing-for-tv.md)
+- [遊戲控制器與遙控器的互動](../input/gamepad-and-remote-interactions.md) \(部分機器翻譯\)
 - [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
-- [組合效果](https://docs.microsoft.com/windows/uwp/graphics/composition-effects) \(部分機器翻譯\)
+- [組合效果](../../composition/composition-effects.md) \(部分機器翻譯\)
 - [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f) \(英文\)
 - [系統中的科學：Fluent Design 和光線](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f) \(英文\)

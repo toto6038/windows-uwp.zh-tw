@@ -6,16 +6,16 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 37c382fb81a4527b730840142643ff72b9020127
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: bdc9c3ee51523120f1e50ba9d2a2aba2b828be48
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730298"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169872"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
-[傳統型橋接器應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)是使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)轉換為通用 Windows 平台 (UWP) 應用程式的 Windows 傳統型應用程式。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP 應用程式套件形式 (.appx 或 .appxbundle) 來封裝、維護及部署。
+[傳統型橋接器應用程式](/windows/msix/desktop/desktop-to-uwp-root)是使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)轉換為通用 Windows 平台 (UWP) 應用程式的 Windows 傳統型應用程式。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows 10 Desktop 的 UWP 應用程式套件形式 (.appx 或 .appxbundle) 來封裝、維護及部署。
 
 ## <a name="required-versus-optional-tests"></a>必要與選擇性測試
 適用於 Windows 傳統型橋接器應用程式的選擇性測試僅供參考，並不會用來在 Microsoft Store 上架期間評估您的應用程式。 建議調查這些測試結果，以製作品質良好的應用程式。 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
@@ -30,7 +30,7 @@ ms.locfileid: "82730298"
 測試會掃描套件中的所有可攜式執行檔，並檢查其標頭是否有簽章。 建議對所有 PE 檔案進行數位簽署。 如果未簽署任何 PE 檔案，則會產生警告。
  
 **修正動作**  
-一律建議具有數位簽署的檔案。 如需詳細資訊，請參閱[程式碼簽署簡介](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)) \(英文\)。
+一律建議具有數位簽署的檔案。 如需詳細資訊，請參閱[程式碼簽署簡介](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)) \(英文\)。
 
 ### <a name="2-file-association-verbs"></a>2.檔案關聯動詞 
 **背景**  
@@ -40,7 +40,7 @@ ms.locfileid: "82730298"
 運用各式各樣的 Windows 執行階段 API，可以增強已轉換的傳統型應用程式。 此測試會檢查應用程式中的 UWP 二進位檔案未呼叫非 Windows 執行階段 API。 UWP 二進位檔案已設定 **AppContainer** 旗標。
 
 **修正動作**  
-請參閱[傳統型轉 UWP 橋接器：應用程式延伸模組](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions) \(部分機器翻譯\)，以取得這些延伸模組的解釋，以及如何正確地使用它們。 
+請參閱[傳統型轉 UWP 橋接器：應用程式延伸模組](/windows/apps/desktop/modernize/desktop-to-uwp-extensions) \(部分機器翻譯\)，以取得這些延伸模組的解釋，以及如何正確地使用它們。 
 
 ### <a name="3-debug-configuration-test"></a>3.偵錯設定測試
 此測試會確認 .msix 或 appx 不是偵錯組建。
@@ -118,14 +118,14 @@ ms.locfileid: "82730298"
 影像 {image name} 不是有效的影像檔。  | 確認所有應用程式影像都遵守適當的檔案格式類型限制。 在實際訊息中，{image name} 包含無效的影像名稱。 
 影像 "BadgeLogo" 在位置 (x, y) 的 ABGR 值 {value} 無效。 像素必須是白色 (##FFFFFF) 或透明 (00######)  | 徽章標誌是出現在徽章通知旁邊的影像，用以在鎖定畫面識別應用程式。 這個影像必須為單色 (只能包含白色和透明像素)。 在實際訊息中，{value} 包含影像中無效的色彩值。 
 影像 "BadgeLogo" 在位置 (x, y) 的 ABGR 值 {value} 對於高對比白色影像無效。 像素必須是 (##2A2A2A) 或較深，或透明 (00######)。  | 徽章標誌是出現在徽章通知旁邊的影像，用以在鎖定畫面識別應用程式。 因為在高對比白色中，徽章標誌會出現在白色背景上，所以它必須是正常徽章標誌的深色版本。 在高對比白色中，徽章標誌只能包含比 (##2A2A2A) 深的像素或透明。 在實際訊息中，{value} 包含影像中無效的色彩值。 
-影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) \(部分機器翻譯\) 與[應用程式資源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 
+影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) \(部分機器翻譯\) 與[應用程式資源](../design/app-settings/store-and-retrieve-app-data.md)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
 "resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行階段將應用程式的語言套件資源合併到單一 resources.pri 中。 對於您在想要透過 Microsoft Store 發佈的應用程式，我們不建議使用這個選項。 透過 Microsoft Store 發佈的應用程式，其 resources.pri 必須位於應用程式套件的根目錄，而且包含應用程式支援的所有語言參考。 
-字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
+字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](../publish/app-package-requirements.md)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
-字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)。 
-"resources.pri" 檔案中沒有指定預設資源。  | 如需詳細資訊，請參閱[應用程式資源](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)的指南。 在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。 
+字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](../publish/app-package-requirements.md)。 
+"resources.pri" 檔案中沒有指定預設資源。  | 如需詳細資訊，請參閱[應用程式資源](../design/app-settings/store-and-retrieve-app-data.md)的指南。 在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在 app 套件中包含縮放比例-200 影像資源。 請確定您包含縮放比例-200 影像資源，或將您的專案設定為包含您所擁有的資源。 
 "resources.pri" 檔案中沒有指定資源值。  | 請確定 app 資訊清單會在 resource.pri 中定義有效的資源。 
 影像檔 {filename} 必須小於 204800 個位元組。  | 請降低所指示之影像的大小。 
 {filename} 檔案不應包含反向對應區段。  | 若呼叫 makepri.exe 時在 Visual Studio「F5 偵錯」期間產生反向對應，則可藉由在產生 pri 檔案時，執行 makepri.exe 但不加上 /m 參數來移除它。 
@@ -150,16 +150,16 @@ ms.locfileid: "82730298"
 應用程式必須包含格式正確的應用程式資訊清單。
 
 **測試詳細資料**  
-檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述。 這個測試會完成下列檢查︰
+檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](../publish/app-package-requirements.md)中所述。 這個測試會完成下列檢查︰
 * **副檔名與通訊協定**  
 應用程式可能會宣告可與其相關聯的檔案類型。 大量不常見檔案類型的宣告，會產生較差的使用者體驗。 這個測試會限制應用程式可以產生關聯的副檔名數目。
 * **架構相依性規則**  
 這個測試會強制要求應用程式需要宣告與 UWP 的適當相依性。 如果有不適當的相依性，這個測試就會失敗。 如果應用程式設為目標的作業系統版本與建立架構相依性的作業系統版本不符，測試將會失敗。 如果應用程式參照任何「預覽」版本的架構 DLL，測試也會失敗。
 * **處理程序間通訊 (IPC) 驗證**  
-這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) \(部分機器翻譯\) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
+這個測試強制要求傳統型橋接器應用程式不會在應用程式容器外部與傳統型元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](/uwp/schemas/appxpackage/appxmanifestschema/element-activatableclassattribute) \(部分機器翻譯\) 的名稱指定為 `DesktopApplicationPath` 的應用程式將無法通過這個測試。  
 
 **修正動作**  
-按照 [App 套件需求](https://docs.microsoft.com/windows/uwp/publish/app-package-requirements)中所述的需求來檢閱 App 的資訊清單。
+按照 [App 套件需求](../publish/app-package-requirements.md)中所述的需求來檢閱 App 的資訊清單。
 
 
 #### <a name="32-application-count"></a>3.2 應用程式計數
@@ -217,10 +217,10 @@ ms.locfileid: "82730298"
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
 
 > [!NOTE]
-> 應用程式的偵錯組建即使僅使用[適用於 UWP 應用程式的 API](https://docs.microsoft.com/uwp/)，還是無法通過這個測試。 檢閱錯誤訊息，找出 API 有哪些不屬於 UWP 應用程式的 API。 
+> 應用程式的偵錯組建即使僅使用[適用於 UWP 應用程式的 API](/uwp/)，還是無法通過這個測試。 檢閱錯誤訊息，找出 API 有哪些不屬於 UWP 應用程式的 API。 
 
 > [!NOTE]
-> 即使偵錯組態只使用來自適用於 UWP 應用程式之 Windows SDK 的 API，該設定內建的 C++ 應用程式也無法通過這個測試。 如需詳細資訊，請參閱 [UWP 應用程式中 Windows API 的替代方法](https://docs.microsoft.com/uwp/win32-and-com/win32-and-com-for-uwp-apps) \(部分機器翻譯\)。
+> 即使偵錯組態只使用來自適用於 UWP 應用程式之 Windows SDK 的 API，該設定內建的 C++ 應用程式也無法通過這個測試。 如需詳細資訊，請參閱 [UWP 應用程式中 Windows API 的替代方法](/uwp/win32-and-com/win32-and-com-for-uwp-apps) \(部分機器翻譯\)。
 
 ### <a name="6-user-account-control-uac-test"></a>6.使用者帳戶控制 (UAC) 測試  
 
@@ -231,7 +231,7 @@ ms.locfileid: "82730298"
 應用程式無法根據 Microsoft Store 原則來要求系統管理員權限提高或 UIAccess。 不支援安全性權限提高。 
 
 **修正動作**  
-必須以互動式使用者身分執行應用程式。 如需詳細資料，請參閱 [UI 自動化安全性概觀](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-security-overview?redirectedfrom=MSDN) \(部分機器翻譯\)。
+必須以互動式使用者身分執行應用程式。 如需詳細資料，請參閱 [UI 自動化安全性概觀](/dotnet/framework/ui-automation/ui-automation-security-overview) \(部分機器翻譯\)。
 
  
 ### <a name="7-windows-runtime-metadata-validation"></a>7.Windows 執行階段中繼資料驗證
@@ -286,4 +286,4 @@ Windows 應用程式認證套件中的「禁止的檔案檢查」目前會檢查
 
 ## <a name="related-topics"></a>相關主題
 
-* [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)
+* [Microsoft Store 原則](/legal/windows/agreements/store-policies)

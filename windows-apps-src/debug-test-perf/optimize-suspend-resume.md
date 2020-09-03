@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 610b6237071c9d7435ca167c1a89b4ef7c40b333
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 2bd19f660569893f1f2211b7a35ecf1b51c44b71
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71339570"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169922"
 ---
 # <a name="optimize-suspendresume"></a>最佳化暫停/繼續
 
@@ -54,17 +54,17 @@ UWP 處理程序生命週期系統可能會因為許多原因而暫停或終止 
 
 ### <a name="serialize-only-when-necessary"></a>只在必要時進行序列化
 
-許多應用程式會在暫停時序列化它們的所有資料。 不過，如果只需要儲存少量的應用程式設定資料，應該使用 [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) 存放區，而非序列化資料。 請針對大量資料和非設定資料使用序列化。
+許多應用程式會在暫停時序列化它們的所有資料。 不過，如果只需要儲存少量的應用程式設定資料，應該使用 [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) 存放區，而非序列化資料。 請針對大量資料和非設定資料使用序列化。
 
 當您序列化資料時，如果資料沒有變更，應該避免重新序列化。 這不但會使應用程式花費額外的時間序列化和儲存資料，而且再次啟用應用程式時，還需要花費額外的時間讀取和還原序列化資料。 相反的，我們建議應用程式判斷其狀態是否真的改變，若是如此，則只在變更的資料進行序列化和還原序列化。 確保執行這項工作的最佳方法是在資料變更後定期於背景序列化資料。 當您使用這項技巧時，需在暫停時序列化的所有資料早已儲存，因此應用程式不需要執行任何工作就能快速暫停。
 
 ### <a name="serializing-data-in-c-and-visual-basic"></a>在 C# 與 Visual Basic 中序列化資料
 
-.NET 應用程式可用的序列化技術選項是 [**System.Xml.Serialization.XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer)、[**System.Runtime.Serialization.DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) 以及 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer) 類別。
+.NET 應用程式可用的序列化技術選項是 [**System.Xml.Serialization.XmlSerializer**](/dotnet/api/system.xml.serialization.xmlserializer)、[**System.Runtime.Serialization.DataContractSerializer**](/dotnet/api/system.runtime.serialization.datacontractserializer) 以及 [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](/dotnet/api/system.runtime.serialization.json.datacontractjsonserializer) 類別。
 
-從效能的觀點來看，我們建議您使用 [**XmlSerializer**](https://docs.microsoft.com/dotnet/api/system.xml.serialization.xmlserializer) 類別。 **XmlSerializer** 有最低的序列化和還原序列化時間，並可維持最低的磁碟使用量。 **XmlSerializer** 對 .NET Framework 的依賴性較少；這表示相較於其他序列化技術，使用 **XmlSerializer** 時需要載入 app 的模組較少。
+從效能的觀點來看，我們建議您使用 [**XmlSerializer**](/dotnet/api/system.xml.serialization.xmlserializer) 類別。 **XmlSerializer** 有最低的序列化和還原序列化時間，並可維持最低的磁碟使用量。 **XmlSerializer** 對 .NET Framework 的依賴性較少；這表示相較於其他序列化技術，使用 **XmlSerializer** 時需要載入 app 的模組較少。
 
-[**DataContractSerializer**](https://docs.microsoft.com/dotnet/api/system.runtime.serialization.datacontractserializer) 讓序列化自訂類別的工作變得更容易，不過對於效能的影響比 **XmlSerializer** 還大。 如果您需要較佳的效能，請考慮調換使用。 一般而言，您不應該載入一個以上的序列化程式，而且應該優先使用 **XmlSerializer**，除非需要其他序列化程式的功能。
+[**DataContractSerializer**](/dotnet/api/system.runtime.serialization.datacontractserializer) 讓序列化自訂類別的工作變得更容易，不過對於效能的影響比 **XmlSerializer** 還大。 如果您需要較佳的效能，請考慮調換使用。 一般而言，您不應該載入一個以上的序列化程式，而且應該優先使用 **XmlSerializer**，除非需要其他序列化程式的功能。
 
 ### <a name="reduce-memory-footprint"></a>減少記憶體使用量
 
@@ -81,15 +81,11 @@ UWP 處理程序生命週期系統可能會因為許多原因而暫停或終止 
 
 當使用者將應用程式移到前景或是當系統離開低電源狀態時，就可以繼續暫停的應用程式。 當應用程式從暫停的狀態繼續時，它會從暫停它時的位置繼續。 因為應用程式資料是儲存在記憶體中，所以即使應用程式暫停了很長一段時間也不會遺失。
 
-大部分的應用程式都不需要處理 [**Resuming**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件。 繼續 app 時，變數與物件的狀態會與暫停 app 時所具有的狀態完全相同。 只有在您需要為暫停 app 與繼續 app 之間的這段時間內可能已經變更的資料或物件進行更新時，才處理 **Resuming** 事件，例如：內容 (如更新摘要資料)、網路連線，或是如果您需要重新取得裝置的存取 (如網路攝影機)。
+大部分的應用程式都不需要處理 [**Resuming**](/uwp/api/windows.applicationmodel.core.coreapplication.resuming) 事件。 繼續 app 時，變數與物件的狀態會與暫停 app 時所具有的狀態完全相同。 只有在您需要為暫停 app 與繼續 app 之間的這段時間內可能已經變更的資料或物件進行更新時，才處理 **Resuming** 事件，例如：內容 (如更新摘要資料)、網路連線，或是如果您需要重新取得裝置的存取 (如網路攝影機)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [應用程式暫停和繼續執行的指導方針](https://docs.microsoft.com/windows/uwp/launch-resume/index)
+* [應用程式暫停和繼續執行的指導方針](../launch-resume/index.md)
  
 
  
-
-
-
-

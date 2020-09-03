@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: Windows 10 中的協助工具, 建置無障礙 win32 應用程式, 建置無障礙 UWP 應用程式, 建置無障礙 WPF 應用程式, 建置無障礙 WinForms 應用程式
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: 04dc3571f6b2d8ddf57a3695330070d7c5b5061e
-ms.sourcegitcommit: 9beb6cce7375b726ad90ee84b72754268ae2819a
+ms.openlocfilehash: 7cdfa91bec648ab6f3d09d0aeff0d62e2962db86
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88047785"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169042"
 ---
 # <a name="accessibility-in-windows-10"></a>Windows 10 中的協助工具
 
@@ -37,13 +37,13 @@ ms.locfileid: "88047785"
 
       在任何裝置 (包括電腦、手機、Xbox One、HoloLens 等等) 上，於適用於 Windows 10 應用程式和遊戲 的新式平台上，開發無障礙的應用程式和工具，並將其發佈至 Microsoft Store。
 
-      [設計全人軟體](https://docs.microsoft.com/windows/uwp/accessibility/designing-inclusive-software)
+      [設計全人軟體](/windows/uwp/accessibility/designing-inclusive-software)
 
-      [開發全人 Windows 應用程式](https://docs.microsoft.com/windows/uwp/accessibility/developing-inclusive-windows-apps)
+      [開發全人 Windows 應用程式](/windows/uwp/accessibility/developing-inclusive-windows-apps)
 
-      [協助工具測試](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-testing)
+      [協助工具測試](/windows/uwp/accessibility/accessibility-testing)
 
-      [Store 中的協助工具](https://docs.microsoft.com/windows/uwp/accessibility/accessibility-in-the-store)
+      [Store 中的協助工具](/windows/uwp/accessibility/accessibility-in-the-store)
    :::column-end:::
    :::column:::
       ![Win32 平台應用程式](images/platform-win32.png)
@@ -52,21 +52,21 @@ ms.locfileid: "88047785"
 
       在適用於 C/C++ Windows 應用程式的原始平台上，開發無障礙的應用程式和工具。
 
-      [Windows 協助工具和自動化的新增功能](https://docs.microsoft.com/windows/desktop/accessibility-whatsnew)
+      [Windows 協助工具和自動化的新增功能](/windows/desktop/accessibility-whatsnew)
 
-      [開發適用於 Windows 的無障礙應用程式](https://docs.microsoft.com/windows/desktop/accessibility-appdev)
+      [開發適用於 Windows 的無障礙應用程式](/windows/desktop/accessibility-appdev)
 
-      [開發適用於 Windows 的無障礙 UI 架構](https://docs.microsoft.com/windows/desktop/accessibility-uiframeworkdev)
+      [開發適用於 Windows 的無障礙 UI 架構](/windows/desktop/accessibility-uiframeworkdev)
 
-      [開發 Windows 的輔助技術](https://docs.microsoft.com/windows/desktop/accessibility-atdev)
+      [開發 Windows 的輔助技術](/windows/desktop/accessibility-atdev)
 
-      [測試協助工具](https://docs.microsoft.com/windows/desktop/accessibility-testwithuia)
+      [測試協助工具](/windows/desktop/accessibility-testwithuia)
 
-      [舊版協助工具和自動化技術 - MSAA 至 UI 自動化](https://docs.microsoft.com/windows/desktop/accessibility-legacy)
+      [舊版協助工具和自動化技術 - MSAA 至 UI 自動化](/windows/desktop/accessibility-legacy)
 
-      [Windows 協助工具功能](https://docs.microsoft.com/windows/desktop/winauto/about-windows-accessibility-features)
+      [Windows 協助工具功能](/windows/desktop/winauto/about-windows-accessibility-features)
 
-      [設計協助工具應用程式的指導方針](https://docs.microsoft.com/windows/desktop/uxguide/inter-accessibility)
+      [設計協助工具應用程式的指導方針](/windows/desktop/uxguide/inter-accessibility)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -77,21 +77,21 @@ ms.locfileid: "88047785"
 
       在針對受管理 Windows 應用程式建立的平台上，利用 XAML UI 模型和 .NET Framework 開發無障礙的應用程式和工具。
 
-      [協助工具最佳作法](https://docs.microsoft.com/dotnet/framework/ui-automation/accessibility-best-practices)
+      [協助工具最佳作法](/dotnet/framework/ui-automation/accessibility-best-practices)
 
-      [UI 自動化基礎](https://docs.microsoft.com/dotnet/framework/ui-automation/index)
+      [UI 自動化基礎](/dotnet/framework/ui-automation/index)
 
-      [適用於 Managed 程式碼的 UI 自動化提供者](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
+      [適用於 Managed 程式碼的 UI 自動化提供者](/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
 
-      [適用於 Managed 程式碼的 UI 自動化用戶端](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
+      [適用於 Managed 程式碼的 UI 自動化用戶端](/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
 
-      [UI 自動化控制項模式](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-patterns)
+      [UI 自動化控制項模式](/dotnet/framework/ui-automation/ui-automation-control-patterns)
 
-      [UI 自動化文字模式](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-text-pattern)
+      [UI 自動化文字模式](/dotnet/framework/ui-automation/ui-automation-text-pattern)
 
-      [UI 自動化控制項類型](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-control-types)
+      [UI 自動化控制項類型](/dotnet/framework/ui-automation/ui-automation-control-types)
 
-      [ 自動化規格和社群承諾](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
+      [ 自動化規格和社群承諾](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
    :::column-end:::
    :::column:::
       ![Windows Forms 平台應用程式](images/platform-winforms.png)
@@ -100,13 +100,13 @@ ms.locfileid: "88047785"
 
       利用 XAML UI 模型和 .NET Framework，為受管理 Windows 應用程式開發無障礙的應用程式和工具。
 
-      [Windows Forms 協助工具](https://docs.microsoft.com/dotnet/framework/winforms/advanced/windows-forms-accessibility)
+      [Windows Forms 協助工具](/dotnet/framework/winforms/advanced/windows-forms-accessibility)
 
-      [建立無障礙 Windows 應用程式](https://docs.microsoft.com/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
+      [建立無障礙 Windows 應用程式](/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
 
-      [Windows Form 控制項上支援協助工具指導方針的屬性](https://docs.microsoft.com/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
+      [Windows Form 控制項上支援協助工具指導方針的屬性](/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
 
-      [為 Windows Form 上的控制項提供協助工具資訊](https://docs.microsoft.com/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
+      [為 Windows Form 上的控制項提供協助工具資訊](/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
    :::column-end:::
 :::row-end:::
 :::row:::
@@ -118,14 +118,14 @@ ms.locfileid: "88047785"
 :::row-end:::
 :::row:::
    :::column:::
-      [Web 協助工具簡介](https://docs.microsoft.com/microsoft-edge/accessibility)
+      [Web 協助工具簡介](/microsoft-edge/accessibility)
 
-      [設計無障礙網站](https://docs.microsoft.com/microsoft-edge/accessibility/design)
+      [設計無障礙網站](/microsoft-edge/accessibility/design)
    :::column-end:::
    :::column:::
-      [建置無障礙網站](https://docs.microsoft.com/microsoft-edge/accessibility/build)
+      [建置無障礙網站](/microsoft-edge/accessibility/build)
 
-      [測試無障礙網站](https://docs.microsoft.com/microsoft-edge/accessibility/test)
+      [測試無障礙網站](/microsoft-edge/accessibility/test)
    :::column-end:::
 :::row-end:::
 
@@ -135,7 +135,7 @@ ms.locfileid: "88047785"
 
 :::row:::
    :::column:::
-      [程式碼範例瀏覽器](https://docs.microsoft.com/samples/browse/)
+      [程式碼範例瀏覽器](/samples/browse/)
 
       取代 MSDN 程式碼庫的新範例瀏覽器。
    :::column-end:::
@@ -253,7 +253,7 @@ ms.locfileid: "88047785"
       [協助工具部落格](https://blogs.microsoft.com/accessibility/)
    :::column-end:::
    :::column:::
-      [Windows UI 自動化部落格](https://blogs.msdn.microsoft.com/winuiautomation/)
+      [Windows UI 自動化部落格](/archive/blogs/winuiautomation/)
    :::column-end:::
 :::row-end:::
 :::row:::

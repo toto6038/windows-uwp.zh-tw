@@ -5,16 +5,16 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一般, c++, cpp, winrt, 投影, 投射, 控點, 事件, 委派
 ms.localizationpriority: medium
-ms.openlocfilehash: cd67ea63fc633716cabf9a293a5faeeed6d24b70
-ms.sourcegitcommit: 1e8f51d5730fe748e9fe18827895a333d94d337f
+ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87296181"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166242"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
-本主題示範如何註冊和撤銷使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的事件處理委派。 您可以使用任何標準 C++ 類函式的物件處理事件。
+本主題示範如何註冊和撤銷使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 的事件處理委派。 您可以使用任何標準 C++ 類函式的物件處理事件。
 
 > [!NOTE]
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -314,6 +314,6 @@ winrt::hstring f(ListView listview)
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## <a name="related-topics"></a>相關主題
-* [以 C++/WinRT 撰寫事件](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)
-* [C++/WinRT 中的強式和弱式參考](/windows/uwp/cpp-and-winrt-apis/weak-references)
+* [以 C++/WinRT 撰寫事件](./author-events.md)
+* [透過 C++/WinRT 的並行和非同步作業](./concurrency.md)
+* [C++/WinRT 中的強式和弱式參考](./weak-references.md)

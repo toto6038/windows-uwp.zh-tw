@@ -6,19 +6,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 73da4a2a590c5f1d860bb480c6d81b01e5e93819
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 19749ff80401ccb8a3a4fae0ef6e237f42aeeb40
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79210074"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166072"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 與 GridView UI 最佳化
 
 
 **注意**  如需詳細資訊，請參閱 //build/ 講座[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/events/build/2013/3-158)。
 
-透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 的效能和啟動時間。 如需資料虛擬化技術的資訊，請參閱 [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md)。
+透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) 的效能和啟動時間。 如需資料虛擬化技術的資訊，請參閱 [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md)。
 
 ## <a name="two-key-factors-in-collection-performance"></a>集合效能的兩個關鍵因素
 
@@ -30,21 +30,21 @@ ms.locfileid: "79210074"
 
 ## <a name="ui-virtualization"></a>UI 虛擬化
 
-UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) (及其他標準 [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
+UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) (及其他標準 [**ItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
-如果您提供自訂項目面板範本 (請參閱 [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel))，則確定您使用虛擬面板，例如 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)。 如果您使用 [**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)、[**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid) 或 [**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)，則不會虛擬化。 此外，僅在使用 [**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel) 時會引發下列 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 事件：[**ChoosingGroupHeaderContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
+如果您提供自訂項目面板範本 (請參閱 [**ItemsPanel**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel))，則確定您使用虛擬面板，例如 [**ItemsWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)。 如果您使用 [**VariableSizedWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid)、[**WrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.WrapGrid) 或 [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)，則不會虛擬化。 此外，僅在使用 [**ItemsWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid) 或 [**ItemsStackPanel**](/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel) 時會引發下列 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 事件：[**ChoosingGroupHeaderContainer**](/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
 
-檢視區概念對 UI 虛擬化很重要，因為架構必須建立可能要顯示的元素。 一般而言，[**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 的檢視區是邏輯控制項的延伸。 例如，[**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 的檢視區是 **ListView** 元素的寬度和高度。 有些面板允許子元素有不限數量的空間，範例是 [**ScrollViewer**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 和 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)，使用自動調整大小的列或欄。 當虛擬化的 **ItemsControl** 放在這類的面板中時，會採用足夠的空間以顯示其所有項目，虛擬化就無效。 在 **ItemsControl** 設定寬度和高度以還原虛擬化。
+檢視區概念對 UI 虛擬化很重要，因為架構必須建立可能要顯示的元素。 一般而言，[**ItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 的檢視區是邏輯控制項的延伸。 例如，[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 的檢視區是 **ListView** 元素的寬度和高度。 有些面板允許子元素有不限數量的空間，範例是 [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 和 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)，使用自動調整大小的列或欄。 當虛擬化的 **ItemsControl** 放在這類的面板中時，會採用足夠的空間以顯示其所有項目，虛擬化就無效。 在 **ItemsControl** 設定寬度和高度以還原虛擬化。
 
 ## <a name="element-reduction-per-item"></a>每個項目的元素減少
 
 將用來轉譯您的項目的 UI 元素數保持在合理的最小值。
 
-當第一次顯示項目控制項時，會建立用來轉譯充滿項目之檢視區所需的所有元素。 此外，當項目接近檢視區，架構會使用繫結資料物件更新快取項目範本中的 UI 元素。 最小化範本內標記的複雜度可以換得記憶體和 UI 執行緒花費的時間，特別是在移動瀏覽/捲動時能夠改善回應性。 問題中的範本是項目範本 (請參閱 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)) 與 [**ListViewItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) 或 [**GridViewItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridviewitem) (項目控制項範本或 [**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)) 的控制項範本。 即使是小型元素計數減少乘上顯示項目的好處。
+當第一次顯示項目控制項時，會建立用來轉譯充滿項目之檢視區所需的所有元素。 此外，當項目接近檢視區，架構會使用繫結資料物件更新快取項目範本中的 UI 元素。 最小化範本內標記的複雜度可以換得記憶體和 UI 執行緒花費的時間，特別是在移動瀏覽/捲動時能夠改善回應性。 問題中的範本是項目範本 (請參閱 [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)) 與 [**ListViewItem**](/uwp/api/windows.ui.xaml.controls.listviewitem) 或 [**GridViewItem**](/uwp/api/windows.ui.xaml.controls.gridviewitem) (項目控制項範本或 [**ItemContainerStyle**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)) 的控制項範本。 即使是小型元素計數減少乘上顯示項目的好處。
 
 如需元素減少的範例，請參閱[最佳化您的 XAML 標記](optimize-xaml-loading.md)。
 
-[  **ListViewItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewitem) 和 [**GridViewItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridviewitem) 的預設控制項範本包含 [**ListViewItemPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter) 元素。 這個展示器是單一的最佳化元素，顯示焦點、選擇和其他視覺狀態的複雜視覺效果。 如果您已經有自訂項目控制項範本 ([**ItemContainerStyle**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或如果您在未來會編輯項目控制項範本的複本，我們建議您使用 **ListViewItemPresenter**，因為在大部分情況下，這些元素會提供您效能和自訂之間的最佳平衡。 您可以在展示器上設定屬性以自訂。 例如，以下標記移除選取項目時預設顯示的核取記號，並將所選項目的背景色彩變更為橘色。
+[  **ListViewItem**](/uwp/api/windows.ui.xaml.controls.listviewitem) 和 [**GridViewItem**](/uwp/api/windows.ui.xaml.controls.gridviewitem) 的預設控制項範本包含 [**ListViewItemPresenter**](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ListViewItemPresenter) 元素。 這個展示器是單一的最佳化元素，顯示焦點、選擇和其他視覺狀態的複雜視覺效果。 如果您已經有自訂項目控制項範本 ([**ItemContainerStyle**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle))，或如果您在未來會編輯項目控制項範本的複本，我們建議您使用 **ListViewItemPresenter**，因為在大部分情況下，這些元素會提供您效能和自訂之間的最佳平衡。 您可以在展示器上設定屬性以自訂。 例如，以下標記移除選取項目時預設顯示的核取記號，並將所選項目的背景色彩變更為橘色。
 
 ```xml
 ...
@@ -65,25 +65,25 @@ UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需�
 <!-- ... -->
 ```
 
-有大約 25 個屬性含有類似於 [**SelectionCheckMarkVisualEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 和 [**SelectedBackground**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground) 的自我描述名稱。 如果展示器類型證明不足以針對您的使用案例進行自訂，您可以改為編輯 `ListViewItemExpanded` 或 `GridViewItemExpanded` 控制項範本的複本。 您可以在 `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` 中找到這些項目。 請注意，使用這些範本表示，增加自訂就要犧牲一些效能。
+有大約 25 個屬性含有類似於 [**SelectionCheckMarkVisualEnabled**](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 和 [**SelectedBackground**](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground) 的自我描述名稱。 如果展示器類型證明不足以針對您的使用案例進行自訂，您可以改為編輯 `ListViewItemExpanded` 或 `GridViewItemExpanded` 控制項範本的複本。 您可以在 `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` 中找到這些項目。 請注意，使用這些範本表示，增加自訂就要犧牲一些效能。
 
 <span id="update-items-incrementally"/>
 
 ## <a name="update-listview-and-gridview-items-progressively"></a>漸進式更新 ListView 與 GridView 項目
 
-如果您使用資料虛擬化，則可以保留 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView) 的高回應性，方法是設定控制項針對仍在 (下載) 載入的項目轉譯暫時 UI 元素。 隨著資料載入，暫時元素隨後會逐漸被實際 UI 取代。
+如果您使用資料虛擬化，則可以保留 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 和[**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView) 的高回應性，方法是設定控制項針對仍在 (下載) 載入的項目轉譯暫時 UI 元素。 隨著資料載入，暫時元素隨後會逐漸被實際 UI 取代。
 
-而且—不論您是從哪裡載入資料 (本機磁碟機、網路或雲端)—使用者可以快速移動瀏覽/捲動 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)，以致於無法在保留順暢移動瀏覽/捲動的同時，完全不失真地轉譯每個項目。 若要保留順暢的移動瀏覽/捲動，您可以選擇在使用預留位置之外，在多個階段中轉譯項目。
+而且—不論您是從哪裡載入資料 (本機磁碟機、網路或雲端)—使用者可以快速移動瀏覽/捲動 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 或 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)，以致於無法在保留順暢移動瀏覽/捲動的同時，完全不失真地轉譯每個項目。 若要保留順暢的移動瀏覽/捲動，您可以選擇在使用預留位置之外，在多個階段中轉譯項目。
 
 這些技術的範例常見於相片檢視 app：即使尚未下載和顯示所有影像，使用者仍然可以移動瀏覽/捲動並與集合互動。 或者，對於「影片」項目，您可以在第一個階段中顯示標題，在第二個階段顯示分級，以及在第三個階段顯示海報影像。 使用者能夠越早看到每個項目的最重要資料，就表示他們能夠越快採取動作。 然後在時間允許時會填入較不重要的資訊。 以下是您可以用來實作這些技術的平台功能。
 
 ### <a name="placeholders"></a>預留位置
 
-暫時預留位置視覺效果功能預設為開啟，它是使用 [**ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 屬性進行控制。 在快速移動瀏覽/捲動期間，這項功能可為使用者提供視覺提示，以了解還有更多項目尚未完整顯示，同時保留順暢度。 如果您使用下列其中一個技術，若您不想讓系統轉譯預留位置，則可將 **ShowsScrollingPlaceholders** 設為 False。
+暫時預留位置視覺效果功能預設為開啟，它是使用 [**ShowsScrollingPlaceholders**](/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 屬性進行控制。 在快速移動瀏覽/捲動期間，這項功能可為使用者提供視覺提示，以了解還有更多項目尚未完整顯示，同時保留順暢度。 如果您使用下列其中一個技術，若您不想讓系統轉譯預留位置，則可將 **ShowsScrollingPlaceholders** 設為 False。
 
 **使用 x:Phase 的漸進式資料範本更新**
 
-以下說明如何使用 [x:Phase 屬性](https://docs.microsoft.com/windows/uwp/xaml-platform/x-phase-attribute)與 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 繫結，實作漸進式資料範本更新。
+以下說明如何使用 [x:Phase 屬性](../xaml-platform/x-phase-attribute.md)與 [{x:Bind}](../xaml-platform/x-bind-markup-extension.md) 繫結，實作漸進式資料範本更新。
 
 1.  以下是繫結來源的外觀 (這是我們將繫結至的資料來源)。
 
@@ -143,15 +143,15 @@ UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需�
     </Page>
     ```
 
-3.  如果您現在執行 app 並且快速移動瀏覽/捲動格線檢視，則您會發現畫面上出現的每個新項目，一開始轉譯成暗灰色矩形 (由於 [**ShowsScrollingPlaceholders**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 屬性預設為 **true**)，然後標題會出現，後面跟著副標題，再來是描述。
+3.  如果您現在執行 app 並且快速移動瀏覽/捲動格線檢視，則您會發現畫面上出現的每個新項目，一開始轉譯成暗灰色矩形 (由於 [**ShowsScrollingPlaceholders**](/uwp/api/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) 屬性預設為 **true**)，然後標題會出現，後面跟著副標題，再來是描述。
 
 **使用 ContainerContentChanging 的漸進式資料範本更新**
 
-[  **ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的一般策略是使用 **Opacity** 來隱藏不需要立即看到的元素。 回收元素時，它們會保留舊值，所以我們想要隱藏這些元素直到我們已經從新的資料項目更新這些值。 我們在事件引數上使用 **Phase** 屬性，以判斷要更新和顯示的項目。 如果需要額外的階段，我們會註冊回呼。
+[  **ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件的一般策略是使用 **Opacity** 來隱藏不需要立即看到的元素。 回收元素時，它們會保留舊值，所以我們想要隱藏這些元素直到我們已經從新的資料項目更新這些值。 我們在事件引數上使用 **Phase** 屬性，以判斷要更新和顯示的項目。 如果需要額外的階段，我們會註冊回呼。
 
 1.  我們會針對 **x:Phase** 使用相同的繫結來源。
 
-2.  以下顯示 `MainPage.xaml` 包含的標記。 格線檢視宣告處理常式為其 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件，所包含的項目範本具有用來顯示 **MyItem** 類別之 **Title**、**Subtitle** 和 **Description** 屬性的元素。 為了獲得使用 **ContainerContentChanging** 的最大效能優點，我們不在標記中使用繫結，而是改為以程式設計的方式指派值。 以下的例外狀況是我們在階段 0 中考量，顯示標題的元素。
+2.  以下顯示 `MainPage.xaml` 包含的標記。 格線檢視宣告處理常式為其 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件，所包含的項目範本具有用來顯示 **MyItem** 類別之 **Title**、**Subtitle** 和 **Description** 屬性的元素。 為了獲得使用 **ContainerContentChanging** 的最大效能優點，我們不在標記中使用繫結，而是改為以程式設計的方式指派值。 以下的例外狀況是我們在階段 0 中考量，顯示標題的元素。
     ```xml
     <Page
         x:Class="LotsOfItems.MainPage"
@@ -177,7 +177,7 @@ UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需�
         </Grid>
     </Page>
     ```
-3.  最後，這是 [**ContainerContentChanging**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件處理常式的實作。 這個程式碼也說明我們如何將類型 **RecordingViewModel** 的屬性新增至 **MainPage**，以公開類別的繫結來源類別，該類別代表我們的標記頁面。 只要您在資料範本中沒有任何 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 繫結，則請在處理常式的第一個階段將事件引數物件標示為已處理，提示該項目不需要設定資料內容。
+3.  最後，這是 [**ContainerContentChanging**](/uwp/api/windows.ui.xaml.controls.listviewbase.containercontentchanging) 事件處理常式的實作。 這個程式碼也說明我們如何將類型 **RecordingViewModel** 的屬性新增至 **MainPage**，以公開類別的繫結來源類別，該類別代表我們的標記頁面。 只要您在資料範本中沒有任何 [{Binding}](../xaml-platform/binding-markup-extension.md) 繫結，則請在處理常式的第一個階段將事件引數物件標示為已處理，提示該項目不需要設定資料內容。
     ```csharp
     namespace LotsOfItems
     {
@@ -246,11 +246,11 @@ UI 虛擬化是您可以執行的最重要改善。 這意謂著系統會依需�
 
 ## <a name="container-recycling-with-heterogeneous-collections"></a>含異質集合的容器回收
 
-在某些應用程式中，在集合內需要針對不同類型的項目有不同的 UI。 這會產生一種虛擬化面板不可能發生的情況，也就是重複使用/回收使用過的元素來顯示項目。 在移動瀏覽期間重新建立項目的視覺元素，會消除許多虛擬化提供的效能優點。 不過，稍加規劃就可允許虛擬化面板重複使用元素。 開發人員視其案例會有數個選項：[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件或項目範本選取器。 **ChoosingItemContainer** 方法有較佳的效能。
+在某些應用程式中，在集合內需要針對不同類型的項目有不同的 UI。 這會產生一種虛擬化面板不可能發生的情況，也就是重複使用/回收使用過的元素來顯示項目。 在移動瀏覽期間重新建立項目的視覺元素，會消除許多虛擬化提供的效能優點。 不過，稍加規劃就可允許虛擬化面板重複使用元素。 開發人員視其案例會有數個選項：[**ChoosingItemContainer**](/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件或項目範本選取器。 **ChoosingItemContainer** 方法有較佳的效能。
 
 **ChoosingItemContainer 事件**
 
-[**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件可讓您在每當啟動或回收期間需要新項目時就提供項目 (**ListViewItem**/**GridViewItem**) 給 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView)/[**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)。 您可以根據容器將會顯示的資料項目類型建立容器 (如下列範例所示)。 **ChoosingItemContainer** 是針對不同項目使用不同資料範本，一個高效能的方式。 容器快取可以使用 **ChoosingItemContainer** 來達成。 例如，如果您有五個不同的範本，其中某個範本比其他範本更常發生，則 ChoosingItemContainer 不僅可讓您以需要的比例建立項目，還可保留適當的快取元素數目以供回收。 [**ChoosingGroupHeaderContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 為群組標頭提供相同的功能。
+[**ChoosingItemContainer**](/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 事件可讓您在每當啟動或回收期間需要新項目時就提供項目 (**ListViewItem**/**GridViewItem**) 給 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)/[**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)。 您可以根據容器將會顯示的資料項目類型建立容器 (如下列範例所示)。 **ChoosingItemContainer** 是針對不同項目使用不同資料範本，一個高效能的方式。 容器快取可以使用 **ChoosingItemContainer** 來達成。 例如，如果您有五個不同的範本，其中某個範本比其他範本更常發生，則 ChoosingItemContainer 不僅可讓您以需要的比例建立項目，還可保留適當的快取元素數目以供回收。 [**ChoosingGroupHeaderContainer**](/uwp/api/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) 為群組標頭提供相同的功能。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -314,11 +314,10 @@ private void ListView_ChoosingItemContainer
 
 **項目範本選取器**
 
-項目範本選取器 ([**DataTemplateSelector**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.DataTemplateSelector)) 可讓 app 根據要顯示的資料項目類型，在執行階段傳回不同的項目範本。 這可以讓開發更具生產力，但因為不是每個項目範本都可以針對每個資料項目重複使用，這也會讓 UI 虛擬化更困難。
+項目範本選取器 ([**DataTemplateSelector**](/uwp/api/Windows.UI.Xaml.Controls.DataTemplateSelector)) 可讓 app 根據要顯示的資料項目類型，在執行階段傳回不同的項目範本。 這可以讓開發更具生產力，但因為不是每個項目範本都可以針對每個資料項目重複使用，這也會讓 UI 虛擬化更困難。
 
 回收項目 (**ListViewItem**/**GridViewItem**) 時，架構必須決定回收佇列 (回收佇列會快取目前沒有用來顯示資料的項目) 中可供使用的項目是否有項目範本符合目前資料項目所需的項目範本。 如果回收佇列中沒有任何項目有適當的項目範本，則會建立新的項目，並且會針對這個項目具現化適當的項目範本。 但是如果回收佇列中的項目有適當的項目範本，則該項目會從回收佇列中移除，並用於目前的資料項目。 項目範本選取器只能在使用少量項目範本的情形中運作，在使用不同項目範本的項目集合中具有平坦的分佈。
 
-如果使用不同項目範本的項目有不平坦的分佈，很可能需要在移動瀏覽時建立新的項目範本，這會讓虛擬化提供的許多好處無效。 此外，項目範本選取器在評估特定容器是否可供目前的資料項目重複使用時，只考量五個可能的候選項目。 因此您在 app 中使用項目範本選取器之前，應該仔細考量您的資料是否適合。 如果您的集合大部分是同質的，則選取器大部分 (可能幾乎所有) 時間都會傳回相同的類型。 需要注意的是您對該同質化的極少數例外狀況要付出的代價，並考量使用 [**ChoosingItemContainer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (或兩個項目控制項) 是否會更好。
+如果使用不同項目範本的項目有不平坦的分佈，很可能需要在移動瀏覽時建立新的項目範本，這會讓虛擬化提供的許多好處無效。 此外，項目範本選取器在評估特定容器是否可供目前的資料項目重複使用時，只考量五個可能的候選項目。 因此您在 app 中使用項目範本選取器之前，應該仔細考量您的資料是否適合。 如果您的集合大部分是同質的，則選取器大部分 (可能幾乎所有) 時間都會傳回相同的類型。 需要注意的是您對該同質化的極少數例外狀況要付出的代價，並考量使用 [**ChoosingItemContainer**](/uwp/api/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (或兩個項目控制項) 是否會更好。
 
  
-

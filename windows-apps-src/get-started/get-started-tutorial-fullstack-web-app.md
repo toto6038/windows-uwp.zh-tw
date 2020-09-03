@@ -5,12 +5,12 @@ keywords: 託管的 Web 應用程式, HWA, REST API, 單頁應用程式, SPA
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b9a6b80034dc8272226c9563960079434dff8e41
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3b2c8da824896b838776174cb22423181aae0e06
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684787"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168232"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -274,9 +274,9 @@ for (var i=0; i < board.length; i++){
 
 Azure 文件將逐步引導您完成：
 
- - [向 Azure 入口網站註冊新的「API 應用程式」  ](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
- - [設定適用於 API 應用程式的 Git 部署](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)，以及
- - [部署 API 應用程式的程式碼到 Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
+ - [向 Azure 入口網站註冊新的「API 應用程式」  ](/azure/app-service/app-service-web-tutorial-rest-api#createapiapp)
+ - [設定適用於 API 應用程式的 Git 部署](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)，以及
+ - [部署 API 應用程式的程式碼到 Azure](/azure/app-service/app-service-web-tutorial-rest-api#deploy-the-api-with-git)
 
 註冊您的應用程式時，請嘗試區分您的「應用程式名稱」  (避免命名與 *http://memorygameapi.azurewebsites.net* URL 上的其他請求變異衝突)。
 
@@ -290,7 +290,7 @@ Azure 文件將逐步引導您完成：
 
  - [使用 Visual Studio Code 的進階 Node.js 偵錯](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
 
- - [Azure Web + 行動裝置版文件](https://docs.microsoft.com/azure/#pivot=services&panel=web)
+ - [Azure Web + 行動裝置版文件](/azure/#pivot=services&panel=web)
 
  - [Azure DocumentDB 文件](https://azure.microsoft.com/blog/dear-documentdb-customers-welcome-to-azure-cosmos-db/)
 
@@ -635,13 +635,13 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 在 Microsoft Store 中發佈的基本步驟如下︰
 
  1. 建立 [Windows 開發人員](https://developer.microsoft.com/store/register)帳戶
- 2. 使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)
- 3. 提交您的應用程式[進行認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)
+ 2. 使用應用程式提交[檢查清單](../publish/app-submissions.md)
+ 3. 提交您的應用程式[進行認證](../publish/the-app-certification-process.md)
 
 以下是一些可讓您更進一步的實用資源︰
 
- - [將您的應用程式開發專案部署至 Azure 網站](https://docs.microsoft.com/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
+ - [將您的應用程式開發專案部署至 Azure 網站](/azure/cosmos-db/documentdb-nodejs-application#_Toc395783182)
 
- - [將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)
+ - [將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) 應用程式](/microsoft-edge/progressive-web-apps)
 
- - [發佈 Windows 應用程式](https://docs.microsoft.com/windows/uwp/publish/)
+ - [發佈 Windows 應用程式](../publish/index.md)

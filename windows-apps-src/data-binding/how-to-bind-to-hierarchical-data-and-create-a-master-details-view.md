@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14b6ab96ac5423d1811618c6a3c91ccf56645664
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: adcdb638a2ccfb9684676eb205592a25b24c8432
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74255118"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169962"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>繫結階層式資料並建立主要/詳細資料檢視
 
@@ -19,9 +19,9 @@ ms.locfileid: "74255118"
 
 > **注意**  另請參閱[主要/詳細資料範本](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail)。
 
-您可以將項目控制項繫結到已繫結成一個鏈的 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。 在本主題中，我們儘可能使用 [{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，必要時也使用更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)。
+您可以將項目控制項繫結到已繫結成一個鏈的 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。 在本主題中，我們儘可能使用 [{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)，必要時也使用更有彈性 (但效能較低) 的 [{Binding} 標記延伸](../xaml-platform/binding-markup-extension.md)。
 
-通用 Windows 平台 (UWP) app 有一個常見的結構，當使用者在主要清單中做選擇時，將會瀏覽至不同的詳細資料頁面。 當您想在階層中的每一層，為每個項目提供豐富的視覺表示時，這就很有用。 另一種作法是在單一頁面中顯示多層資料。 當您想要顯示一些簡單的清單，讓使用者快速深入查看有興趣的項目時，這就很有用。 本主題描述如何實作這種互動。 [  **CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體會追蹤每個階層式層級上目前選取的項目。
+通用 Windows 平台 (UWP) app 有一個常見的結構，當使用者在主要清單中做選擇時，將會瀏覽至不同的詳細資料頁面。 當您想在階層中的每一層，為每個項目提供豐富的視覺表示時，這就很有用。 另一種作法是在單一頁面中顯示多層資料。 當您想要顯示一些簡單的清單，讓使用者快速深入查看有興趣的項目時，這就很有用。 本主題描述如何實作這種互動。 [  **CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體會追蹤每個階層式層級上目前選取的項目。
 
 我們將建立一個運動團隊階層的檢視，分為聯盟、分組和團隊清單，並且包含團隊詳細資料檢視。 當您從任一清單中選取一個項目時，後續的檢視會自動更新。
 
@@ -29,7 +29,7 @@ ms.locfileid: "74255118"
 
 ## <a name="prerequisites"></a>必要條件
 
-這個主題假設您知道如何建立基本的 UWP app。 如需有關建立第一個 UWP app 的指示，請參閱[使用 C# 或 Visual Basic 建立您的第一個 UWP app](https://docs.microsoft.com/previous-versions/windows/apps/hh974581(v=win.10))。
+這個主題假設您知道如何建立基本的 UWP app。 如需有關建立第一個 UWP app 的指示，請參閱[使用 C# 或 Visual Basic 建立您的第一個 UWP app](/previous-versions/windows/apps/hh974581(v=win.10))。
 
 ## <a name="create-the-project"></a>建立專案
 
@@ -130,7 +130,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-最後，將 MainPage.xaml 檔案的內容取代為下列標記，其中宣告三個 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體，並將它們繫結成一個鏈。 然後，後續的控制項就可以繫結到階層中位於適當層級的 **CollectionViewSource**。
+最後，將 MainPage.xaml 檔案的內容取代為下列標記，其中宣告三個 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 執行個體，並將它們繫結成一個鏈。 然後，後續的控制項就可以繫結到階層中位於適當層級的 **CollectionViewSource**。
 
 ```xml
 <Page
@@ -220,9 +220,8 @@ namespace MasterDetailsBinding
 </Page>
 ```
 
-請注意，直接繫結到 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 時，就意味著您想要繫結到在集合本身找不到路徑之繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。 例如，代表小組檢視之 [**ContentControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 的 [**Content**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 屬性是繫結到 `Teams`**CollectionViewSource**。 不過，[**DataTemplate**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) 中的控制項則是繫結到 `Team` 類別的屬性，因為必要時，**CollectionViewSource** 會自動提供團隊清單中目前選取的團隊。
+請注意，直接繫結到 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 時，就意味著您想要繫結到在集合本身找不到路徑之繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。 例如，代表小組檢視之 [**ContentControl**](/uwp/api/Windows.UI.Xaml.Controls.ContentControl) 的 [**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 屬性是繫結到 `Teams`**CollectionViewSource**。 不過，[**DataTemplate**](/uwp/api/Windows.UI.Xaml.DataTemplate) 中的控制項則是繫結到 `Team` 類別的屬性，因為必要時，**CollectionViewSource** 會自動提供團隊清單中目前選取的團隊。
 
  
 
  
-

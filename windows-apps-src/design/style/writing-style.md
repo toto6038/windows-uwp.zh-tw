@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 8d79d4f3394bcf8f7892f2c6dc3d4e0ca72972ab
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: c17d4c0aca4c59e18a13bf42bad16e6739938717
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970603"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168672"
 ---
 # <a name="writing-style"></a>撰寫樣式
 
@@ -76,7 +76,7 @@ ms.locfileid: "82970603"
 
 ## <a name="style-conventions"></a>風格慣例
 
-如果您不認為自己是寫手，嘗試實施這些原則和建議可能會讓人卻步。 但別擔心，想要提供良好的使用者體驗，簡單直白的寫法是絕佳的選擇。 如果您仍然不確定如何組織您的文字，以下是一些很有幫助的指導方針。 如果需要詳細資訊，請參閱 [Microsoft 樣式指南](https://docs.microsoft.com/style-guide/welcome/) (英文)。
+如果您不認為自己是寫手，嘗試實施這些原則和建議可能會讓人卻步。 但別擔心，想要提供良好的使用者體驗，簡單直白的寫法是絕佳的選擇。 如果您仍然不確定如何組織您的文字，以下是一些很有幫助的指導方針。 如果需要詳細資訊，請參閱 [Microsoft 樣式指南](/style-guide/welcome/) (英文)。
 
 ### <a name="addressing-the-user"></a>對使用者的稱呼方式
 
@@ -228,7 +228,7 @@ ms.locfileid: "82970603"
 
 ## <a name="accessibility-and-localization"></a>協助工具和當地語系化
 
-撰寫應用程式時，如果能考慮到協助工具和當地語系化，您的應用程式就能適用於更多使用者。 光靠文字無法達成這個目的，不過直白且友善的用字就是個很好的出發點。 如需詳細資訊，請參閱我們的[協助工具概觀](https://docs.microsoft.com/windows/uwp/design/accessibility/accessibility-overview)和[當地語系化指導方針](https://docs.microsoft.com/windows/uwp/design/globalizing/globalizing-portal)。
+撰寫應用程式時，如果能考慮到協助工具和當地語系化，您的應用程式就能適用於更多使用者。 光靠文字無法達成這個目的，不過直白且友善的用字就是個很好的出發點。 如需詳細資訊，請參閱我們的[協助工具概觀](../accessibility/accessibility-overview.md)和[當地語系化指導方針](../globalizing/globalizing-portal.md)。
 
 * **伸出援手**：將不同的體驗納入考量。 避免使用對國際使用者沒有意義的片語，也不要在文字中假設使用者做得到什麼、做不到什麼。
 

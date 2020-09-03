@@ -5,18 +5,18 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 3dbdf8d006472c288369fd528e89663aca5a9e10
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970883"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169522"
 ---
 # <a name="page-layout"></a>頁面配置
 
-在 Windows 應用程式中，每個 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) (頁面) 通常都有瀏覽、命令和內容元素。 
+在 Windows 應用程式中，每個 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) (頁面) 通常都有瀏覽、命令和內容元素。 
 
-您的應用程式可以有多個頁面：當使用者啟動 Windows 應用程式時，應用程式程式碼會建立一個 [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame) (框架)，放在應用程式的 [**Window**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window) (視窗) 中。 然後，Frame 可以在應用程式的 [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) 實例之間[導覽](../basics/navigate-between-two-pages.md)。 
+您的應用程式可以有多個頁面：當使用者啟動 Windows 應用程式時，應用程式程式碼會建立一個 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) (框架)，放在應用程式的 [**Window**](/uwp/api/windows.ui.xaml.window) (視窗) 中。 然後，Frame 可以在應用程式的 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) 實例之間[導覽](../basics/navigate-between-two-pages.md)。 
 
 大部分的頁面都遵循通用的版面配置結構，本文涵蓋您需要的 UI 元素，以及它們在頁面上的位置。 
 
@@ -33,7 +33,7 @@ ms.locfileid: "82970883"
 - 進入應用程式設定的進入點
 - 進入帳戶設定的進入點
 
-[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview) 控制項會實作 UWP 的左側導覽模式。
+[NavigationView](/uwp/api/windows.ui.xaml.controls.navigationview) 控制項會實作 UWP 的左側導覽模式。
 
 選取導覽項目時，Frame 應該導覽至選取項目的 Page。
 

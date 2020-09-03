@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2e385f6b9977eead6aed52215080588e4f9d8c27
-ms.sourcegitcommit: cc645386b996f6e59f1ee27583dcd4310f8fb2a6
+ms.openlocfilehash: 32a66c92d4c079c99aed213d0e1aeae66b808d56
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84262769"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169402"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
@@ -90,7 +90,7 @@ UWP 應用程式會自動調整您的 UI 以確保應用程式在所有 Windows 
 - 最多使用 2 個欄/區域。
 - 顯示搜尋方塊。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。
-- 請考慮進一步自訂[電視體驗](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN)。
+- 請考慮進一步自訂[電視體驗](../devices/designing-for-tv.md)。
 
 ### <a name="large"></a>大型
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。

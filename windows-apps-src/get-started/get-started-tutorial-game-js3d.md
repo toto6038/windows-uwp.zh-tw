@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: b4ce91e32b14bdf81b40b24e810e0bd86bcaa99b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 4ee8eb8ea34205f2e597bf41da61f5ab63714566
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67321082"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162832"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 建立 3D JavaScript 遊戲
 
@@ -442,7 +442,7 @@ scene.add(controls.getObject());
 
 現在已連接相機，但我們需要稍微讓滑鼠與控制器互動，以便我們可以四處查看。 
 
-對於這種情形，[指標鎖定 API](https://docs.microsoft.com/microsoft-edge/dev-guide/dom/pointer-lock) 能解救這個問題，讓我們連接滑鼠移動與相機。 指標鎖定 API 也可以讓滑鼠消失，提供更沈浸式的體驗。 藉由按下 ESC，我們結束滑鼠與相機連接，讓滑鼠重新出現。 新增 `getPointerLock()` 和 `lockChange()` 函式可協助我們執行該動作。
+對於這種情形，[指標鎖定 API](/microsoft-edge/dev-guide/dom/pointer-lock) 能解救這個問題，讓我們連接滑鼠移動與相機。 指標鎖定 API 也可以讓滑鼠消失，提供更沈浸式的體驗。 藉由按下 ESC，我們結束滑鼠與相機連接，讓滑鼠重新出現。 新增 `getPointerLock()` 和 `lockChange()` 函式可協助我們執行該動作。
 
 `getPointerLock()` 函式會接聽何時發生滑鼠點選作業。 按一下後，我們轉譯的遊戲 (在 `container` 元素中) 會嘗試控制滑鼠。 我們也加入事件接聽程式，偵測何時玩家啟動或停用鎖定，然後事件接聽程式會呼叫 `lockChange()`。 
 
@@ -1084,7 +1084,6 @@ function lockChange() {
 現在您擁有 UWP 應用程式，可以將它發行至 Microsoft Store (假設您已先將它改進！)程序有幾個步驟。
 
 1.  您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
-2.  您必須使用應用程式提交[檢查清單](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-3.  必須提交應用程式以取得[認證](https://docs.microsoft.com/windows/uwp/publish/the-app-certification-process)。
-如需詳細資訊，請參閱[發佈 Windows 應用程式與遊戲](https://docs.microsoft.com/windows/uwp/publish/)。
-
+2.  您必須使用應用程式提交[檢查清單](../publish/app-submissions.md)。
+3.  必須提交應用程式以取得[認證](../publish/the-app-certification-process.md)。
+如需詳細資訊，請參閱[發佈 Windows 應用程式與遊戲](../publish/index.md)。

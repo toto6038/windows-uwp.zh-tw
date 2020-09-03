@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 489215c0289695832cb895d8566063a93ae2336c
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: f59bb821b65eda89aa1fbc88e9c38d5789f61f6e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867348"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163422"
 ---
 # <a name="tabview"></a>TabView
 
@@ -24,12 +24,12 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **TabView** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **TabView** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API**：[TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
-> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
@@ -44,7 +44,7 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 - 使用者將能夠直接在索引標籤中開啟文件或網頁。
 - 使用者將能夠在視窗之間拖放索引標籤。
 
-如果 TabView 不適合您的應用程式，請考慮使用 [Pivot](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot) 或[NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview) 等控制項。
+如果 TabView 不適合您的應用程式，請考慮使用 [Pivot](./pivot.md) 或[NavigationView](./navigationview.md) 等控制項。
 
 ## <a name="anatomy"></a>結構
 
@@ -104,7 +104,7 @@ private void TabView_TabCloseRequested(muxc.TabView sender, muxc.TabViewTabClose
 
 由於使用者可以拖曳視窗的標題列來重新置放視窗，所以標題列不能完全填滿索引標籤，這點很重要。 因此，在標題列中顯示索引標籤時，您必須指定標題列的一部分，以保留為可拖曳的區域。 如果您沒有指定可拖曳的區域，整個標題列將會是可拖曳的，這會導致您的索引標籤無法接收輸入事件。 如果您的 TabView 會顯示在視窗的標題列中，則應該一律在 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 中包含 [TabStripFooter](/uwp/api/microsoft.ui.xaml.controls.tabview.tabstripfooter)，並將其標示為可拖曳的區域。
 
-如需詳細資訊，請參閱[標題列自訂](https://docs.microsoft.com/windows/uwp/design/shell/title-bar)
+如需詳細資訊，請參閱[標題列自訂](../shell/title-bar.md)
 
 ![標題列中的索引標籤](images/tabview/tab-extend-to-title.png)
 
@@ -329,6 +329,6 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## <a name="related-articles"></a>相關文章
 
-- [MasterDetails](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/master-details)
-- [NavigationView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
-- [樞紐分析](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/pivot)
+- [MasterDetails](./master-details.md)
+- [NavigationView](./navigationview.md)
+- [樞紐分析](./pivot.md)

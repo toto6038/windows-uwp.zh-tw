@@ -6,17 +6,17 @@ ms.date: 10/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 37c7f9edbaee008b6e16ef2ca202ff5cbcf39ca2
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5a10a8a6e5b4e5188d28c0f75aace50f7465e5f4
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67317500"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163482"
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 測試 Surface Hub應用程式
 Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用 Windows 平台 (UWP) app (包括針對 Microsoft Surface Hub 建置的應用程式) 的環境。 此模擬器不會使用與 Surface Hub 相同的使用者介面，但很適合以 Surface Hub 的畫面大小與解析度測試您應用程式的外觀和行為。
 
-如需模擬器工具的一般詳細資訊，請參閱[在模擬器中執行 UWP 應用程式](https://docs.microsoft.com/visualstudio/debugger/run-windows-store-apps-in-the-simulator)。
+如需模擬器工具的一般詳細資訊，請參閱[在模擬器中執行 UWP 應用程式](/visualstudio/debugger/run-windows-store-apps-in-the-simulator)。
 
 ## <a name="add-surface-hub-resolutions-to-the-simulator"></a>將 Surface Hub 解析度新增到模擬器
 若要將 Surface Hub 解析度新增到模擬器：
@@ -90,7 +90,7 @@ Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用
 3. 選擇 [開發人員模式]  並接受警告提示。
 
 ### <a name="deploy-your-app-from-visual-studio"></a>從 Visual Studio 部署您的應用程式。
-如需有關一般部署程序的詳細資訊，請參閱[部署和偵測 UWP 應用程式](https://docs.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
+如需有關一般部署程序的詳細資訊，請參閱[部署和偵測 UWP 應用程式](./deploying-and-debugging-uwp-apps.md)。
 
    > [!NOTE]
    > 這項功能需要 Visual Studio 2015 Update 1 或更新版本，但我們建議您最好使用最新版本的 Visual Studio。 Visual Studio 執行個體的最新版本會有所有最新的開發和安全性更新。

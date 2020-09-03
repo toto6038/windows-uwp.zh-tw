@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 59397f12ec66bfa2864d830eaf80a9dcaaf06592
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 51786f907da5ddf0b4a52b8c9bea61a8756c78d9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74257875"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89163502"
 ---
 # <a name="planning-for-performance"></a>規劃效能
 
@@ -82,15 +82,15 @@ app 的特定可測量效率目標可能包含：
 **UI**
 
 -   最大化您的 app UI 之每個頁面的剖析和載入時間與記憶體效率 (特別是初始頁面)，方法是[最佳化您的 XAML 標記](optimize-xaml-loading.md)。 簡而言之，延遲載入 UI 和程式碼直到需要的時候。
--   對於 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.GridView)，讓所有項目大小相同和盡量使用 [ListView 和 GridView 最佳化技術](optimize-gridview-and-listview.md)。
+-   對於 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 和 [**GridView**](/uwp/api/Windows.UI.Xaml.Controls.GridView)，讓所有項目大小相同和盡量使用 [ListView 和 GridView 最佳化技術](optimize-gridview-and-listview.md)。
 -   以標記形式宣告 UI，架構可以載入區塊中並重複使用，而不是必須在程式碼中建構。
 -   延遲建立 UI 元素直到使用者需要時。 請參閱 [**x:Load**](../xaml-platform/x-load-attribute.md) 屬性。
--   偏好佈景主題轉場和腳本動畫。 如需詳細資訊，請參閱[動畫概念](https://docs.microsoft.com/windows/uwp/graphics/animations-overview)。 請記住，腳本動畫需要在畫面不斷更新，並讓 CPU 與圖形管線維持使用中狀態。 若要節省電池電力，如果使用者未與 app 互動，則不要讓動畫執行。
--   載入的影像應該以適合您要使用 [**GetThumbnailAsync**](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getthumbnailasync) 方法呈現之檢視的大小載入。
+-   偏好佈景主題轉場和腳本動畫。 如需詳細資訊，請參閱[動畫概念](../design/motion/xaml-animation.md)。 請記住，腳本動畫需要在畫面不斷更新，並讓 CPU 與圖形管線維持使用中狀態。 若要節省電池電力，如果使用者未與 app 互動，則不要讓動畫執行。
+-   載入的影像應該以適合您要使用 [**GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync) 方法呈現之檢視的大小載入。
 
 **CPU、記憶體與電源**
 
--   排定優先順序較低的工作在優先順序較低的執行緒和/或核心上執行。 請參閱[非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-universal-windows-platform-apps)、[**Dispatcher**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.dispatcher) 屬性和 [**CoreDispatcher**](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher) 類別。
+-   排定優先順序較低的工作在優先順序較低的執行緒和/或核心上執行。 請參閱[非同步程式設計](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)、[**Dispatcher**](/uwp/api/windows.ui.xaml.window.dispatcher) 屬性和 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 類別。
 -   透過釋放不需要的高度耗費資源 (例如媒體)，最小化 app 的磁碟使用量。
 -   最小化程式碼的工作集。
 -   盡可能解除登錄事件處理常式和解除參照 UI 元素，以避免記憶體流失。
@@ -98,29 +98,29 @@ app 的特定可測量效率目標可能包含：
 
 **資料存取**
 
--   如果可能的話，預先擷取內容。 若是自動預先擷取，請參閱 [**ContentPrefetcher**](https://docs.microsoft.com/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher) 類別。 若是手動預先擷取，請參閱 [**Windows.ApplicationModel.Background**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background) 命名空間和 [**MaintenanceTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 類別。
--   如果可能的話，快取耗費高度資源才能存取的內容。 請參閱 [**LocalFolder**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder) 和 [**LocalSettings**](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localsettings) 屬性。
+-   如果可能的話，預先擷取內容。 若是自動預先擷取，請參閱 [**ContentPrefetcher**](/uwp/api/Windows.Networking.BackgroundTransfer.ContentPrefetcher) 類別。 若是手動預先擷取，請參閱 [**Windows.ApplicationModel.Background**](/uwp/api/Windows.ApplicationModel.Background) 命名空間和 [**MaintenanceTrigger**](/uwp/api/Windows.ApplicationModel.Background.MaintenanceTrigger) 類別。
+-   如果可能的話，快取耗費高度資源才能存取的內容。 請參閱 [**LocalFolder**](/uwp/api/windows.storage.applicationdata.localfolder) 和 [**LocalSettings**](/uwp/api/windows.storage.applicationdata.localsettings) 屬性。
 -   對於快取遺失，儘快顯示預留位置 UI，指出 app 仍在載入內容。 以不讓使用者覺得突兀的方式，從預留位置內容轉換成即時內容。 例如，app 載入即時內容時，不會變更使用者手指或滑鼠指標下方的內容。
 
 **應用程式啟動及繼續**
 
--   延遲 app 的啟動顯示畫面，而且除非必要，否則不要延長 app 的啟動顯示畫面。 如需詳細資料，請參閱[建立快速而流暢的 app 啟動經驗](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx)和[延長顯示啟動顯示畫面](https://docs.microsoft.com/windows/uwp/launch-resume/create-a-customized-splash-screen)。
+-   延遲 app 的啟動顯示畫面，而且除非必要，否則不要延長 app 的啟動顯示畫面。 如需詳細資料，請參閱[建立快速而流暢的 app 啟動經驗](https://blogs.msdn.com/b/windowsappdev/archive/2012/05/21/creating-a-fast-and-fluid-app-launch-experience.aspx)和[延長顯示啟動顯示畫面](../launch-resume/create-a-customized-splash-screen.md)。
 -   停用啟動顯示畫面關閉之後立即出現的動畫，原因是它們會給人延遲 app 啟動時間的印象。
 
 **調適型 UI 與方向**
 
--   使用 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 類別。
+-   使用 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) 類別。
 -   只立即完成必要的工作，將需要大量資源的 app 工作延遲到稍後再進行 — 您的 app 有 200 到 800 毫秒可完成工作，超過這段時間之後，使用者就會看到 app UI 處於裁切的狀態。
 
 有了與效能相關的設計，您就可以開始編寫 app 的程式碼。
 
 ## <a name="instrument-for-performance"></a>檢測效能
 
-編寫程式碼時，您可以加入 app 執行時在特定點記錄訊息和事件的程式碼。 之後，當您要測試 app 時，可以使用 Windows Performance Recorder 和 Windows Performance Analyzer (兩者皆隨附於 [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10)) 中) 之類的分析工具，建立及檢視關於您 app 效能的報告。 您可以在此報告中尋找這些訊息和事件，以協助您更輕鬆地分析報告的結果。
+編寫程式碼時，您可以加入 app 執行時在特定點記錄訊息和事件的程式碼。 之後，當您要測試 app 時，可以使用 Windows Performance Recorder 和 Windows Performance Analyzer (兩者皆隨附於 [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10)) 中) 之類的分析工具，建立及檢視關於您 app 效能的報告。 您可以在此報告中尋找這些訊息和事件，以協助您更輕鬆地分析報告的結果。
 
-通用 Windows 平台 (UWP) 提供由 [Windows 事件追蹤 (ETW)](https://docs.microsoft.com/windows/desktop/ETW/event-tracing-portal) 所支援的記錄 API，共同提供豐富的事件記錄和追蹤解決方案。 這些 API 屬於 [**Windows.Foundation.Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics) 命名空間的一部分，其中包含 [**FileLoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)、[**LoggingActivity**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity)、[**LoggingChannel**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) 以及 [**LoggingSession**](https://docs.microsoft.com/uwp/api/Windows.Foundation.Diagnostics.LoggingSession) 類別。
+通用 Windows 平台 (UWP) 提供由 [Windows 事件追蹤 (ETW)](/windows/desktop/ETW/event-tracing-portal) 所支援的記錄 API，共同提供豐富的事件記錄和追蹤解決方案。 這些 API 屬於 [**Windows.Foundation.Diagnostics**](/uwp/api/Windows.Foundation.Diagnostics) 命名空間的一部分，其中包含 [**FileLoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession)、[**LoggingActivity**](/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity)、[**LoggingChannel**](/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel) 以及 [**LoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.LoggingSession) 類別。
 
-若要在 app 執行時，於報告中的特定點記錄訊息，請建立 **LoggingChannel** 物件，然後呼叫該物件的 [**LogMessage**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) 方法，如下所示。
+若要在 app 執行時，於報告中的特定點記錄訊息，請建立 **LoggingChannel** 物件，然後呼叫該物件的 [**LogMessage**](/uwp/api/windows.foundation.diagnostics.loggingchannel.logmessage) 方法，如下所示。
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -133,7 +133,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, "Here' s my logged message
 // ...
 ```
 
-若要在 app 執行時，於報告中記錄一段時間的開始和結束事件，請建立 **LoggingActivity** 物件，然後呼叫該物件的 [**LoggingActivity**](https://docs.microsoft.com/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) 建構函式，如下所示。
+若要在 app 執行時，於報告中記錄一段時間的開始和結束事件，請建立 **LoggingActivity** 物件，然後呼叫該物件的 [**LoggingActivity**](/uwp/api/windows.foundation.diagnostics.loggingactivity.loggingactivity) 建構函式，如下所示。
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -171,13 +171,13 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   執行 app 多次有助於排除隨機測試變數，並確保測量結果一致。
 -   降低的電源可用性測試。 使用者裝置的電源可能遠遠小於您開發電腦的電源。 Windows 是針對低電源裝置 (例如行動裝置) 所設計。 在平台上執行的 app 應該確定可以順利在這些裝置上執行。 我們發現低電源裝置的運作速度大約是桌上型電腦的四分之一，您必須據此設定您的目標。
 -   使用工具的組合 (例如 Microsoft Visual Studio 和 Windows Performance Analyzer) 測量 app 效能。 Visual Studio 的設計是提供以 app 為主的分析，例如原始程式碼連結。 Windows Performance Analyzer 的設計則是提供以系統為主的分析，例如提供系統資訊、觸控操作事件的相關資訊，以及磁碟輸入/輸出 (I/O) 和圖形處理器 (GPU) 成本的相關資訊。 兩個工具都提供追蹤擷取和匯出，而且可以重新開啟共用追蹤和事後追蹤。
--   將應用程式提交到市集進行認證之前，請務必將與效能相關的測試案例加入您的測試計劃中，如 [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)的＜效能測試＞一節，以及 [UWP 應用程式測試案例](https://docs.microsoft.com/previous-versions/windows/apps/dn275879(v=win.10)) \(英文\) 的＜效能和穩定性＞一節中所述。
+-   將應用程式提交到市集進行認證之前，請務必將與效能相關的測試案例加入您的測試計劃中，如 [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)的＜效能測試＞一節，以及 [UWP 應用程式測試案例](/previous-versions/windows/apps/dn275879(v=win.10)) \(英文\) 的＜效能和穩定性＞一節中所述。
 
 如需詳細資訊，請參閱這些資源和分析工具。
 
--   [Windows Performance Analyzer](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
--   [Windows Performance Toolkit](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
--   [使用 Visual Studio 診斷工具分析效能](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015) \(部分機器翻譯\)
+-   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
+-   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
+-   [使用 Visual Studio 診斷工具分析效能](/visualstudio/profiling/profiling-tools?view=vs-2015) \(部分機器翻譯\)
 -   //build/ 演講 [XAML 效能](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   //build/ 演講 [Visual Studio 2015 中新的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697)
 

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cf2eebdc97a1052dd3f4a3e00dd3a911cb80bace
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: bcd8fe289ce1539605ccb454e0994d02563688c5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970663"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169492"
 ---
 # <a name="rich-edit-box"></a>Rich Edit 方塊
 
@@ -26,14 +26,14 @@ ms.locfileid: "82970663"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[RichEditBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) \(英文\)、[Document 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) \(英文\)、[IsReadOnly 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly) \(英文\)、[IsSpellCheckEnabled 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) \(英文\)
+> **平台 API**：[RichEditBox 類別](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) \(英文\)、[Document 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.document) \(英文\)、[IsReadOnly 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly) \(英文\)、[IsSpellCheckEnabled 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用 **RichEditBox** 來顯示和編輯文字檔案。 您不會透過您使用其他標準文字輸入方塊的方式，使用 RichEditBox 取得針對您應用程式的使用者輸入內容。 更確切地說，您會使用它來處理與應用程式分開的文字檔案。 您通常會將輸入到 RichEditBox 的文字儲存為 .rtf 檔案。
--   如果多行文字方塊的主要目的為建立唯讀文件 (例如部落格文章或電子郵件內容)，而且這些文件需要 RTF，則改為使用 [RTF 方塊](/windows/uwp/design/controls-and-patterns/rich-text-block)。
+-   如果多行文字方塊的主要目的為建立唯讀文件 (例如部落格文章或電子郵件內容)，而且這些文件需要 RTF，則改為使用 [RTF 方塊](./rich-text-block.md)。
 -   擷取只會消耗且不會再對使用者顯示的文字時，請使用純文字輸入控制項。
 -   針對所有其他案例，請使用純文字輸入控制項。
 
@@ -61,9 +61,9 @@ ms.locfileid: "82970663"
 
 ## <a name="create-a-rich-edit-box"></a>建立 Rich Edit 方塊
 
-根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](text-controls.md)文章。
+根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](text-controls.md)文章。
 
-您可以使用 RichEditBox 的 [Document](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox.document) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](https://docs.microsoft.com/windows/desktop/api/tom/nn-tom-itextdocument) 物件，與使用[Windows.UI.Xaml.Documents.Block](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Block) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
+您可以使用 RichEditBox 的 [Document](/uwp/api/windows.ui.xaml.controls.richeditbox.document) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](/windows/desktop/api/tom/nn-tom-itextdocument) 物件，與使用[Windows.UI.Xaml.Documents.Block](/uwp/api/Windows.UI.Xaml.Documents.Block) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
 
 這個範例說明如何在 RichEditBox 中編輯、載入和儲存 RTF 格式 (rtf) 檔案。
 
@@ -208,7 +208,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 預設鍵盤配置通常適用於處理 RTF 文件。
 
-如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
+如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](../input/use-input-scope-to-change-the-touch-keyboard.md)。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -229,5 +229,5 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [拼字檢查指導方針](text-controls.md)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)

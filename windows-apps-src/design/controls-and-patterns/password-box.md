@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b68b5bc5fc6042d7abeae6944c351af178b70874
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 2bca2777145dd513cd19bfe1b002b5ec81d78c62
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86998015"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169732"
 ---
 # <a name="password-box"></a>密碼方塊
 
@@ -29,9 +29,9 @@ ms.locfileid: "86998015"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
+> **平台 API**：[PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)、[Password 屬性](/uwp/api/windows.ui.xaml.controls.passwordbox.password)、[PasswordChar 屬性](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar)、[PasswordRevealMode 屬性](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode)、[PasswordChanged 事件](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -71,7 +71,7 @@ ms.locfileid: "86998015"
 
 ## <a name="create-a-password-box"></a>建立密碼方塊
 
-使用 [Password](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.password) 屬性來取得或設定 PasswordBox 的內容。 您可以在處理常式中針對 [PasswordChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged) 事件執行此動作，在使用者輸入密碼時執行驗證。 您可以使用另一個事件 (例如按鈕 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click))，在使用者完成文字輸入之後執行驗證。
+使用 [Password](/uwp/api/windows.ui.xaml.controls.passwordbox.password) 屬性來取得或設定 PasswordBox 的內容。 您可以在處理常式中針對 [PasswordChanged](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchanged) 事件執行此動作，在使用者輸入密碼時執行驗證。 您可以使用另一個事件 (例如按鈕 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click))，在使用者完成文字輸入之後執行驗證。
 
 以下是適用於密碼方塊控制項的 XAML，該控制項展示 PasswordBox 的預設外觀。 當使用者輸入密碼時，您會檢查該控制項以確認是否為「Password」常值。 如果是，您會向使用者顯示訊息。
 
@@ -103,7 +103,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="password-character"></a>密碼字元
 
-您可以設定 [PasswordChar](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar) 屬性，來變更用來設定密碼遮罩的字元。 這裡會使用星號來取代預設的項目符號。
+您可以設定 [PasswordChar](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordchar) 屬性，來變更用來設定密碼遮罩的字元。 這裡會使用星號來取代預設的項目符號。
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
@@ -115,7 +115,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="headers-and-placeholder-text"></a>標頭與預留位置文字
 
-您可以使用 [Header](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.header) 和 [PlaceholderText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) 屬性來提供 PasswordBox 的內容。 當您有多個方塊時 (例如，在表單上變更密碼)，這特別有用。
+您可以使用 [Header](/uwp/api/windows.ui.xaml.controls.passwordbox.header) 和 [PlaceholderText](/uwp/api/windows.ui.xaml.controls.passwordbox.placeholdertext) 屬性來提供 PasswordBox 的內容。 當您有多個方塊時 (例如，在表單上變更密碼)，這特別有用。
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
@@ -125,7 +125,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ### <a name="maximum-length"></a>長度上限
 
-藉由設定 [MaxLength](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength) 屬性，來指定使用者可以輸入的字元數目上限。 沒有任何屬性可用來指定最小長度，但您可以在 app 程式碼中檢查密碼長度並執行任何其他驗證。
+藉由設定 [MaxLength](/uwp/api/windows.ui.xaml.controls.passwordbox.maxlength) 屬性，來指定使用者可以輸入的字元數目上限。 沒有任何屬性可用來指定最小長度，但您可以在 app 程式碼中檢查密碼長度並執行任何其他驗證。
 
 ## <a name="password-reveal-mode"></a>密碼顯示模式
 
@@ -137,17 +137,17 @@ PasswordBox 有一個內建按鈕，使用者按下該按鈕就會顯示密碼�
 
 預設會顯示密碼顯示按鈕 (或「預覽」按鈕)。 使用者必須持續按住該按鈕才能檢視密碼，如此便能維持高等級的安全性。
 
-[PasswordRevealMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) 屬性的值並非決定是否要讓使用者看見密碼顯示按鈕的唯一因素。 其他因素包括控制項是否會以大於最小寬度的形式來顯示、PasswordBox 是否具有焦點，以及文字輸入欄位是否包含至少一個字元。 密碼顯示按鈕只有在 PasswordBox 第一次收到焦點且輸入字元時才會顯示。 如果 PasswordBox 失去焦點，然後重新取得焦點，除非將密碼清除並重新開始輸入字元，否則顯示按鈕將不會再次顯示。
+[PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) 屬性的值並非決定是否要讓使用者看見密碼顯示按鈕的唯一因素。 其他因素包括控制項是否會以大於最小寬度的形式來顯示、PasswordBox 是否具有焦點，以及文字輸入欄位是否包含至少一個字元。 密碼顯示按鈕只有在 PasswordBox 第一次收到焦點且輸入字元時才會顯示。 如果 PasswordBox 失去焦點，然後重新取得焦點，除非將密碼清除並重新開始輸入字元，否則顯示按鈕將不會再次顯示。
 
 > **注意**&nbsp;&nbsp;在 Windows 10 之前，預設不會顯示密碼顯示按鈕。 如果您 app 的安全性需要一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
 
 ### <a name="hidden-and-visible-modes"></a>隱藏和顯示模式
 
-其他的 [PasswordRevealMode](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) 列舉值 (**Hidden** 和 **Visible**) 會隱藏密碼顯示按鈕，並讓您能夠以程式設計的方式來管理是否要隱藏密碼。
+其他的 [PasswordRevealMode](/uwp/api/Windows.UI.Xaml.Controls.PasswordRevealMode) 列舉值 (**Hidden** 和 **Visible**) 會隱藏密碼顯示按鈕，並讓您能夠以程式設計的方式來管理是否要隱藏密碼。
 
-若要一律隱藏密碼，請將 PasswordRevealMode 設定為 Hidden。 除非您需要一律隱藏密碼，否則，您可以提供自訂的 UI，讓使用者能夠在 Hidden 和 Visible 之間切換 PasswordRevealMode。 例如，您可以使用核取方塊來切換是否遮蔽密碼，如下列範例所示。 您也可以使用其他控制項 (例如 [ToggleButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton))，讓使用者能夠切換模式。
+若要一律隱藏密碼，請將 PasswordRevealMode 設定為 Hidden。 除非您需要一律隱藏密碼，否則，您可以提供自訂的 UI，讓使用者能夠在 Hidden 和 Visible 之間切換 PasswordRevealMode。 例如，您可以使用核取方塊來切換是否遮蔽密碼，如下列範例所示。 您也可以使用其他控制項 (例如 [ToggleButton](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton))，讓使用者能夠切換模式。
 
-這個範例示範如何使用 [CheckBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，讓使用者能夠切換 PasswordBox 的顯示模式。
+這個範例示範如何使用 [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)，讓使用者能夠切換 PasswordBox 的顯示模式。
 
 ```xaml
 <StackPanel Width="200">
@@ -181,7 +181,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 PasswordBox 只支援 **Password** 和 **NumericPin** 輸入範圍值。 會略過其他任何值。
 
-如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://docs.microsoft.com/windows/uwp/design/input/use-input-scope-to-change-the-touch-keyboard)。
+如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](../input/use-input-scope-to-change-the-touch-keyboard.md)。
 
 ## <a name="recommendations"></a>建議
 
@@ -201,8 +201,8 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 [文字控制項](text-controls.md)
 
 - [拼字檢查指導方針](text-controls.md)
-- [新增搜尋](https://docs.microsoft.com/previous-versions/windows/apps/hh465231(v=win.10))
+- [新增搜尋](/previous-versions/windows/apps/hh465231(v=win.10))
 - [文字輸入的指導方針](text-controls.md)
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 屬性](/dotnet/api/system.string.length)

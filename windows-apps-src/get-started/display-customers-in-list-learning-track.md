@@ -6,12 +6,12 @@ ms.topic: article
 keywords: get started, uwp, windows 10, learning track, data binding, list, 開始使用, 學習追蹤, 資料繫結, 清單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3cebf51bdf9fa9942a0b88ed7b4cf66204671781
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 097105d16d6d17807235ab61d36ab1fe185c8ca3
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71340333"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165052"
 ---
 # <a name="display-customers-in-a-list"></a>在清單中顯示客戶
 
@@ -110,7 +110,7 @@ public sealed partial class MainPage : Page
 
 如果您已按照先前的程式碼片段執行，您所做的繫結會使用 x:Bind 且不指定模式，這使它成為「單次」繫結。 如果您想要直接從 UI 編輯您的客戶，您需要將它變更為「雙向」繫結，來使資料的變更會傳送回 Customer 物件。 [深入了解資料繫結](../data-binding/data-binding-in-depth.md)中會提供詳細資訊。
 
-若資料來源已變更，雙向繫結也會更新 UI。 若樣讓此能夠運作，您必須在來源上實作 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) \(部分機器翻譯\)，並確定其屬性 setter 會引發 **PropertyChanged** 事件。 常見的作法是讓它們呼叫 **OnPropertyChanged** 方法之類的協助程式方法，如下所示：
+若資料來源已變更，雙向繫結也會更新 UI。 若樣讓此能夠運作，您必須在來源上實作 [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) \(部分機器翻譯\)，並確定其屬性 setter 會引發 **PropertyChanged** 事件。 常見的作法是讓它們呼叫 **OnPropertyChanged** 方法之類的協助程式方法，如下所示：
 
 ```csharp
 public class Customer : INotifyPropertyChanged
@@ -165,13 +165,13 @@ public class Customer : INotifyPropertyChanged
 
 | API | 說明 |
 |------|---------------|
-| [DataTemplate](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) | 描述資料物件的視覺化結構，以允許在 UI 中顯示特定元素。 |
+| [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) | 描述資料物件的視覺化結構，以允許在 UI 中顯示特定元素。 |
 | [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 關於建議的 x:Bind 標記延伸的文件。 |
 | [繫結](../xaml-platform/binding-markup-extension.md) | 關於較舊的 Binding 標記延伸的文件。 |
-| [ListView](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) \(英文\) | 以垂直堆疊顯示資料項目的 UI 控制項。 |
-| [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\) | 用來在 UI 中顯示可編輯文字資料的基本文字控制項。 |
-| [INotifyPropertyChanged](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) \(英文\) | 使資料變成可觀察，並將其提供至資料繫結的介面。 |
-| [ItemsControl](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) \(英文\) | 此類別的 **ItemsSource** 屬性能允許 ListView 繫結至資料來源。 |
+| [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) \(英文\) | 以垂直堆疊顯示資料項目的 UI 控制項。 |
+| [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\) | 用來在 UI 中顯示可編輯文字資料的基本文字控制項。 |
+| [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) \(英文\) | 使資料變成可觀察，並將其提供至資料繫結的介面。 |
+| [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) \(英文\) | 此類別的 **ItemsSource** 屬性能允許 ListView 繫結至資料來源。 |
 
 ### <a name="useful-docs"></a>實用的文件
 

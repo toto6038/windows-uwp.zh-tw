@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 834bea47a566789926648098086c05c0a47b6065
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 5c4ab2ac5a611d310abc177126cc92b88f9e3b8e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74260559"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165152"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>建置複雜通用 Windows 平台 (UWP) 應用程式
 
@@ -128,7 +128,7 @@ ms.locfileid: "74260559"
 -   **播放至**  ：讓使用者享受從應用程式串流處理到家用網路上其他裝置的音訊、視訊或影像。
 -   **檔案選擇器和檔案選擇器延伸模組**   ：讓使用者可以從本機檔案系統、連接的儲存裝置、家用群組，或甚至從其他 app 載入和儲存檔案。 您也可以提供檔案選擇器延伸模組，讓其他 app 可以載入您 app 的內容。
 
-如需詳細資訊，請參閱[應用程式協定與延伸](https://docs.microsoft.com/previous-versions/windows/apps/hh464906(v=win.10))。
+如需詳細資訊，請參閱[應用程式協定與延伸](/previous-versions/windows/apps/hh464906(v=win.10))。
 <!-- Win 8 page. Should have replacement. -->
 
 **不同的檢視、尺寸與硬體設定**  ：Windows 會讓使用者掌控一切，並讓您的應用程式領先群倫。 您一定希望您的應用程式 UI 無論在使用者決定使用的任何裝置、使用任何輸入模式、任何方向、任何硬體設定，以及任何環境中都能有出色的表現。
@@ -141,22 +141,22 @@ ms.locfileid: "74260559"
 
 **引人注目和全新感受**  ：確定您的應用程式讓人有耳目一新的感覺，並透過下列標準體驗吸引使用者的注意：
 
--   **動畫**  ：使用我們的動畫庫，讓您為使用者提供更靈活生動的應用程式。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。 深入了解[讓 UI 產生動畫效果](../graphics/animations-overview.md)。
+-   **動畫**  ：使用我們的動畫庫，讓您為使用者提供更靈活生動的應用程式。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。 深入了解[讓 UI 產生動畫效果](../design/motion/xaml-animation.md)。
 -   **快顯通知**  ：透過快顯通知讓使用者了解有時間緊迫性或與個人有關的內容，即使您的應用程式處於關閉狀態，也能提醒使用者回到您的應用程式。 深入了解[磚、徽章及快顯通知](../design/shell/tiles-and-notifications/index.md)。
 -   **應用程式磚**  ：提供全新與相關的更新，吸引使用者繼續使用您的應用程式。 下一節會有更多詳細資訊。 深入了解[應用程式磚](../design/shell/tiles-and-notifications/creating-tiles.md)。
 
 **個人化**
 
--   **設定**  ：可讓使用者透過儲存應用程式設定來建立想要的經驗。 將所有設定合併在一個畫面，然後讓使用者透過他們已經熟悉的常用機制來設定您的應用程式。 深入了解[新增應用程式設定](../design/app-settings/app-settings-and-data.md)。
--   **漫遊**  ：透過漫遊資料建立跨裝置的持續經驗，無論使用者使用何種裝置，都可以繼續之前未完成的工作，並保留他們最在乎的 UX。 使用漫遊來維護設定和狀態，讓使用者能夠輕易地在任何地方 (廚房家用電腦、辦公室電腦、個人平板電腦以及其他尺寸規格) 使用您的應用程式。 深入了解[管理應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)，並請參閱[應用程式資料漫遊的指導方針](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data)。
+-   **設定**  ：可讓使用者透過儲存應用程式設定來建立想要的經驗。 將所有設定合併在一個畫面，然後讓使用者透過他們已經熟悉的常用機制來設定您的應用程式。 深入了解[新增應用程式設定](../design/app-settings/guidelines-for-app-settings.md)。
+-   **漫遊**  ：透過漫遊資料建立跨裝置的持續經驗，無論使用者使用何種裝置，都可以繼續之前未完成的工作，並保留他們最在乎的 UX。 使用漫遊來維護設定和狀態，讓使用者能夠輕易地在任何地方 (廚房家用電腦、辦公室電腦、個人平板電腦以及其他尺寸規格) 使用您的應用程式。 深入了解[管理應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)，並請參閱[應用程式資料漫遊的指導方針](../design/app-settings/store-and-retrieve-app-data.md)。
 -   **使用者磚**  ：使用者可以載入自己的使用者磚影像，或是在 Windows 中讓使用者將您應用程式的內容設為個人磚，使您的應用程式更個人化。
 
 **裝置功能**  ：確定您的應用程式可充分運用現今裝置的各種功能。
 
--   **近接手勢**  ：透過彼此實際輕觸裝置 (多人連線遊戲)，可讓使用者與附近的其他使用者連接裝置。 深入了解[鄰近性和輕觸](https://docs.microsoft.com/previous-versions/windows/apps/hh465229(v=win.10))。
--   **相機和外部存放裝置**  ：讓使用者連到內建或外接的相機，用於聊天和進行會議、錄製影音部落格、拍攝設定檔圖片、記錄周遭的一切或是應用程式最拿手的任何活動。 深入了解[存取抽取式存放裝置上的內容](https://docs.microsoft.com/previous-versions/windows/apps/hh465189(v=win.10))。
+-   **近接手勢**  ：透過彼此實際輕觸裝置 (多人連線遊戲)，可讓使用者與附近的其他使用者連接裝置。 深入了解[鄰近性和輕觸](/previous-versions/windows/apps/hh465229(v=win.10))。
+-   **相機和外部存放裝置**  ：讓使用者連到內建或外接的相機，用於聊天和進行會議、錄製影音部落格、拍攝設定檔圖片、記錄周遭的一切或是應用程式最拿手的任何活動。 深入了解[存取抽取式存放裝置上的內容](/previous-versions/windows/apps/hh465189(v=win.10))。
 -   **加速計和其他感應器**    ：現今的裝置都會隨附許多感應器。 您的應用程式可以根據環境光線將顯示器變暗或變亮，使用者旋轉顯示器時重新排列 UI，或是回應任何實體的移動。 深入了解[感應器](../devices-sensors/sensors.md)。
--   **地理位置**  ：使用來自標準 Web 資料或地理位置感應器的地理位置資訊，可協助您的使用者識別並找出他們在地圖上的所在位置，或是尋找鄰近的人物、活動或目的地。 深入了解[地理位置](https://docs.microsoft.com/previous-versions/windows/apps/hh465139(v=win.10))。
+-   **地理位置**  ：使用來自標準 Web 資料或地理位置感應器的地理位置資訊，可協助您的使用者識別並找出他們在地圖上的所在位置，或是尋找鄰近的人物、活動或目的地。 深入了解[地理位置](/previous-versions/windows/apps/hh465139(v=win.10))。
 
 現在讓我們再回到之前的旅遊應用程式範例。 為了充分發揮讓朋友們一起規劃團體旅行的作用，您可以使用其中的某些功能，以下列出幾項：
 
@@ -212,15 +212,15 @@ ms.locfileid: "74260559"
 -   **盡可能使用內容。**   盡可能讓使用者在應用程式的畫布上直接操作內容，不要新增用來處理內容的命令。 例如，在旅遊應用程式中，讓使用者在畫布上拖放清單中的活動來重新安排旅遊行程，而不是選取某個活動，然後使用 [上移] 或 [下移] 命令按鈕。
 -   **如果您無法使用內容。** 如果無法使用內容，請將命令放置在其中一個 UI 表面上：
 
-    -   在[命令列](https://docs.microsoft.com/windows/uwp/controls-and-patterns/app-bars)中：您應該將大部分的命令放在命令列上，它通常處於隱藏狀態，在使用者點選後才會顯示。
+    -   在[命令列](../design/controls-and-patterns/app-bars.md)中：您應該將大部分的命令放在命令列上，它通常處於隱藏狀態，在使用者點選後才會顯示。
     -   在應用程式的畫布上：如果使用者在具單一用途的頁面或檢視中，您可以在畫布直接提供該用途適用的命令。 這些命令的數量應該非常少。
-    -   在[操作功能表](https://docs.microsoft.com/windows/uwp/controls-and-patterns/menus)中：您可以使用操作功能表提供剪貼簿動作 (例如剪下、複製及貼上)，或是提供可針對無法選取的內容套用的命令 (例如在地圖的某個位置加上固定釘)。
+    -   在[操作功能表](../design/controls-and-patterns/menus.md)中：您可以使用操作功能表提供剪貼簿動作 (例如剪下、複製及貼上)，或是提供可針對無法選取的內容套用的命令 (例如在地圖的某個位置加上固定釘)。
 
 **決定如何在每個檢視中配置您的應用程式。**   Windows 支援直向和橫向檢視，並支援將應用程式大小調整為任何寬度 (大至全螢幕，小至最小寬度)。 您希望應用程式在任何大小、任何螢幕以及任何方向都能相當美觀且運作順暢。 這表示您需要針對不同大小和檢視規劃 UI 元素的配置。 這樣做可讓您的應用程式 UI 流暢地變更，以符合使用者的需求與喜好。
 
 ![應用程式的電腦與行動裝置設計](images/ux-budgettracker1-md-notablet.png)
 
-如需針對不同螢幕大小進行設計的詳細資訊，請參閱[回應式設計的螢幕大小與中斷點](https://docs.microsoft.com/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design) (英文)。
+如需針對不同螢幕大小進行設計的詳細資訊，請參閱[回應式設計的螢幕大小與中斷點](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) (英文)。
 
 ## <a name="make-a-good-first-impression"></a>塑造良好的第一印象。
 
@@ -238,4 +238,4 @@ ms.locfileid: "74260559"
 
 在開發應用程式之前，請先確認您的設計或原型是否符合指導方針、使用者印象與需求，以免日後必須重做。 每個功能都有一組 UX 指導方針，協助您讓應用程式更臻完美；還有一組 Store 需求，必須符合這些需求才能在 Microsoft Store 中銷售您的應用程式。 您可以使用 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)測試是否符合市集技術需求。 您也可以使用 Microsoft Visual Studio 中的效能工具，確認您在每個案例中都為使用者提供了絕佳的經驗。
 
-使用 [UWP app 的詳細 UX 指導方針](https://developer.microsoft.com/windows/apps/design)，讓您持續專注在重要的功能。 使用 [Visual Studio 效能工具](https://docs.microsoft.com/visualstudio/profiling/profiling-tools?view=vs-2015)，分析您每個 app 案例的效能。
+使用 [UWP app 的詳細 UX 指導方針](https://developer.microsoft.com/windows/apps/design)，讓您持續專注在重要的功能。 使用 [Visual Studio 效能工具](/visualstudio/profiling/profiling-tools?view=vs-2015)，分析您每個 app 案例的效能。

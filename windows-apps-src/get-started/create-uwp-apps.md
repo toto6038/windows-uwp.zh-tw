@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, get started, 開始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 85795ceccdde1ab49c0b6af65bf0299514879e6c
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 83a6774180e2f2f0a65dc9a71ebfac5c273a4424
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75685227"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168182"
 ---
 # <a name="start-coding"></a>開始撰寫程式碼
 
@@ -43,13 +43,13 @@ ms.locfileid: "75685227"
 
 **文件：**
 
-* [開始使用 C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
-* [C# 快速入門](https://docs.microsoft.com/dotnet/csharp/quick-starts/)
-* [開始使用 Visual Studio](https://docs.microsoft.com/visualstudio/ide/)
+* [開始使用 C#](/dotnet/csharp/getting-started/)
+* [C# 快速入門](/dotnet/csharp/quick-starts/)
+* [開始使用 Visual Studio](/visualstudio/ide/)
 
 **教學課程：**
 
-* [Microsoft Learn 上的 Windows](https://docs.microsoft.com/learn/browse/?products=windows&resource_type=module)
+* [Microsoft Learn 上的 Windows](/learn/browse/?products=windows&resource_type=module)
 
 ## <a name="using-the-docs"></a>使用文件
 
@@ -57,9 +57,9 @@ ms.locfileid: "75685227"
 
 | 區域 | 說明 |
 | --- | --- |
-| **新功能？** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指導方針相關資訊，其中也包含新 API 的清單： </br>   [最新 Windows 10 版本中適用於發人員的新功能](../whats-new/windows-10-version-latest.md) </br> 不過，我們不是只在推出主要版本時，才更新文件。 我們會一直提供新資訊供您瀏覽，而且會讓您掌握最新資訊： </br>   [文件的最新動向](../whats-new/windows-docs-latest.md) |
+| **新功能？** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指導方針相關資訊，其中也包含新 API 的清單： </br>   [最新 Windows 10 版本中適用於發人員的新功能](../whats-new/windows-10-build-19041.md) </br> 不過，我們不是只在推出主要版本時，才更新文件。 我們會一直提供新資訊供您瀏覽，而且會讓您掌握最新資訊： </br>   [文件的最新動向](../whats-new/windows-docs-january-2019.md) |
 | **設計與 UI** | 應用程式的視覺呈現和 UI 的所有資訊，都包含在文件的此區域中。如果您對特定 XAML 標記語言感興趣，或只是想為您的文件建立獨特外觀，請從這裡開始： </br>   [UWP 應用程式設計基本知識](../design/basics/index.md) |
-| **開發應用程式** | 如果您需要特定 Windows 10 功能的詳細資訊，或只是想了解您可如何進行 UWP 開發，請查看文件的此區域： </br>   [UWP 應用程式功能](../develop/index.md)。 </br> Windows 10 應用程式的 API 參照記載在一組相關文件中，您可在此處找到： </br>   [Windows UWP 命名空間](https://docs.microsoft.com/uwp/api/) </br>   [檔案和 XML 結構描述](https://docs.microsoft.com/uwp/schemas/) |
+| **開發應用程式** | 如果您需要特定 Windows 10 功能的詳細資訊，或只是想了解您可如何進行 UWP 開發，請查看文件的此區域： </br>   [UWP 應用程式功能](../develop/index.md)。 </br> Windows 10 應用程式的 API 參照記載在一組相關文件中，您可在此處找到： </br>   [Windows UWP 命名空間](/uwp/api/) </br>   [檔案和 XML 結構描述](/uwp/schemas/) |
 | **開發遊戲** | 這些文件包含如何開發 Windows 或 Xbox 遊戲的資訊。 這包括的安裝指示、開發人員程式，以及使用 DirectX 或 Xbox 功能進行程式設計的指示。 </br>   [遊戲開發入門](../gaming/getting-started.md) |
 | **發佈** | 這些文件包含如何將您的應用程式發佈到 Microsoft Store 中，從應用程式提交到定價到促銷和客戶參與： </br>   [將您的應用程式發佈至 Microsoft Store](../publish/index.md) |
 
@@ -69,6 +69,6 @@ ms.locfileid: "75685227"
 
 | Docs | 說明 |
 | --- | --- |
-| **Microsoft Azure** | 雲端開發和 Microsoft Azure 的相關資訊，都可在 [Microsoft Azure 開發人員文件](https://docs.microsoft.com/azure/)中找到。 |
-| **Web 開發** | Microsoft Edge、WebVR 及其他 Windows Web 開發功能的資訊，可在 [Microsoft Edge 開發人員文件](https://docs.microsoft.com/microsoft-edge/) \(英文\) 中找到。 |
-| **Windows Mixed Reality** | 混合實境將現實世界和虛擬內容混合到實體和數位物件共存的體驗中。 建置 Microsoft HoloLens 應用程式和其他沉浸式頭戴裝置的資訊，可在 [Windows Mixed Reality 文件](https://docs.microsoft.com/windows/mixed-reality/)中找到。|
+| **Microsoft Azure** | 雲端開發和 Microsoft Azure 的相關資訊，都可在 [Microsoft Azure 開發人員文件](/azure/)中找到。 |
+| **Web 開發** | Microsoft Edge、WebVR 及其他 Windows Web 開發功能的資訊，可在 [Microsoft Edge 開發人員文件](/microsoft-edge/) \(英文\) 中找到。 |
+| **Windows Mixed Reality** | 混合實境將現實世界和虛擬內容混合到實體和數位物件共存的體驗中。 建置 Microsoft HoloLens 應用程式和其他沉浸式頭戴裝置的資訊，可在 [Windows Mixed Reality 文件](/windows/mixed-reality/)中找到。|

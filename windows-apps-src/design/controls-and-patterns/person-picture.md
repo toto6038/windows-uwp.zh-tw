@@ -11,16 +11,16 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a43c6592b5a9b243a19f3491ea54c05d10e7b0f7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0f2c9a80dbe821feb910636eb26e783ec7eb309a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970833"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169642"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 
-個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。
+個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。
 
 ![個人圖片控制項](images/person-picture/person-picture_hero.png)
 
@@ -30,9 +30,9 @@ ms.locfileid: "82970833"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **PersonPicture** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **PersonPicture** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[PersonPicture 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
+> **平台 API**：[PersonPicture 類別](/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -86,7 +86,7 @@ ms.locfileid: "82970833"
 
 ## <a name="using-the-person-picture-control-to-display-a-contact-object"></a>使用個人圖片控制項來顯示的 Contact 物件
 
-您可以使用人員選擇器控制項來顯示 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件：
+您可以使用人員選擇器控制項來顯示 [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件：
 
 ```xaml
 <Page
@@ -174,11 +174,11 @@ namespace SampleApp
 ```
 
 > [!NOTE]
-> 為了保持程式碼簡單瞭解，此範例建立新的 Contact 物件。 在實際的應用程式中，您可以讓使用者選取連絡人，或使用 [ContactManager](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 來查詢連絡人清單。 如需擷取和管理連絡人的詳細資訊，請參閱[連絡人和行事曆文章](../../contacts-and-calendar/index.md)。
+> 為了保持程式碼簡單瞭解，此範例建立新的 Contact 物件。 在實際的應用程式中，您可以讓使用者選取連絡人，或使用 [ContactManager](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager) 來查詢連絡人清單。 如需擷取和管理連絡人的詳細資訊，請參閱[連絡人和行事曆文章](../../contacts-and-calendar/index.md)。
 
 ## <a name="determining-which-info-to-display"></a>決定要顯示哪些資訊
 
-當您提供 [Contact](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件時，個人圖片控制項會進行評估，判斷該物件可以顯示哪些資訊。
+當您提供 [Contact](/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件時，個人圖片控制項會進行評估，判斷該物件可以顯示哪些資訊。
 
 如果有可用影像，控制項會依照下列順序，顯示找到的第一個影像：
 

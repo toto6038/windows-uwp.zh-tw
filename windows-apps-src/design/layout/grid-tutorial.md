@@ -7,22 +7,22 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 9848fc9e330a725f52ce2a7fae8b13f300476cf7
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: b4cd240882b920f06d06bf1143924a075e7cde53
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970193"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165542"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：使用 Grid 與 StackPanel 建立簡單的天氣應用程式
 
 利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣 app。 有了這些工具，您便可製作外觀極佳的應用程式，且其可在任何執行 Windows 10 的裝置上運作。 完成本教學課程可能需要 10-20 分鐘。
 
-> **重要 API**：[Grid 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要 API**：[Grid 類別](/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 類別](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必要條件
 - Windows 10 與 Microsoft Visual Studio 2015 或更新版本。 (建議使用最新的 Visual Studio 進行目前的開發和安全性更新) [按一下這裡以了解如何使用 Visual Studio 進行設定](../../get-started/get-set-up.md)。
-- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" 應用程式](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" 應用程式](../../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="step-1-create-a-blank-app"></a>步驟 1：建立空白的應用程式
 1. 在 Visual Studio 功能表中，選取 [檔案]   > [新增專案]  。
@@ -51,7 +51,7 @@ ms.locfileid: "82970193"
 
 新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義 app 介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "2\*" 與 "\*"，因此，**Grid** 為第一列配置的空間為第二列的三倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
 
-若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)。
+若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](./layouts-with-xaml.md)。
 
 如果您立即執行應用程式，就只會看見空白頁面，因為 **Grid** 區域中沒有任何內容。 為了顯示 **Grid**，我們將為它提供一些色彩。
 
@@ -120,6 +120,6 @@ ms.locfileid: "82970193"
 您可以視需要試著使用上述的版面配置進行試驗，並探索您可用來代表天氣資料的各種方式。
 
 ## <a name="related-articles"></a>相關文章
-如需如何設計 Windows 應用程式版面配置的簡介，請參閱 [Windows 應用程式設計簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)
+如需如何設計 Windows 應用程式版面配置的簡介，請參閱 [Windows 應用程式設計簡介](../basics/design-and-ui-intro.md)
 
-若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)
+若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](./layouts-with-xaml.md)

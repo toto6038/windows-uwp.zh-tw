@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始設定, uwp, windows 10, 了解曲目, 設定, 儲存設定, 載入設定
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 490dd8f0f3841fae089626ec9c283d54cc0d8cd9
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 32594d14a9da62f9abeca81c048e4169a7e99029
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66370490"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168152"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 應用程式中儲存和載入設定
 
@@ -25,14 +25,14 @@ ms.locfileid: "66370490"
 
 使用應用程式設定來儲存設定資料，例如使用者的喜好設定和應用程式狀態。  裝置特定的設定會儲存在本機。 在任何已安裝您的應用程式的裝置所套用的設定會儲存在漫遊資料存放區。 設定在裝置間漫遊，使用者使用相同的 Microsoft 帳戶登入這些裝置，且安裝了相同版本的應用程式。
 
-設定可以使用下列的資料類型：整數、加倍、浮點數、字元、字串、點、DateTimes，及更多。 您也可以儲存 [ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 類別的執行個體，有多個應視為一個單位的設定時，很實用。 例如，您的應用程式 \[讀取\] 窗格中顯示文字的字型名稱與點大小，應該以單一單位來儲存/還原。 這可以防止一個設定因另一個之前的漫遊延遲而與另一個設定不同步。
+設定可以使用下列的資料類型：整數、加倍、浮點數、字元、字串、點、DateTimes，及更多。 您也可以儲存 [ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 類別的執行個體，有多個應視為一個單位的設定時，很實用。 例如，您的應用程式 \[讀取\] 窗格中顯示文字的字型名稱與點大小，應該以單一單位來儲存/還原。 這可以防止一個設定因另一個之前的漫遊延遲而與另一個設定不同步。
 
 以下是您必須知道的主要 API 來儲存或載入應用程式設定：
 
-- [Windows.Storage.ApplicationData.Current.LocalSettings](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) 從本機應用程式資料存放區取得應用程式設定容器。 在此，儲存設定不適合在裝置間漫遊，因為它們代表特定於此裝置的狀態，或太大。
-- [Windows.Storage.ApplicationData.Current.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) 從漫遊應用程式資料存放區取得應用程式設定容器。 此資料在裝置間漫遊。
-- [Windows.Storage.ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) 是一種容器，其表示應用程式設定為索引鍵/值組。 使用這個類別來建立和擷取設定值。
-- [Windows.Storage.ApplicationDataCompositeValue](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 代表應以單位序列化的多個應用程式設定。 當一個設定不應該獨立更新時，這非常有用。
+- [Windows.Storage.ApplicationData.Current.LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) 從本機應用程式資料存放區取得應用程式設定容器。 在此，儲存設定不適合在裝置間漫遊，因為它們代表特定於此裝置的狀態，或太大。
+- [Windows.Storage.ApplicationData.Current.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) 從漫遊應用程式資料存放區取得應用程式設定容器。 此資料在裝置間漫遊。
+- [Windows.Storage.ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) 是一種容器，其表示應用程式設定為索引鍵/值組。 使用這個類別來建立和擷取設定值。
+- [Windows.Storage.ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) 代表應以單位序列化的多個應用程式設定。 當一個設定不應該獨立更新時，這非常有用。
 
 ## <a name="save-app-settings"></a>儲存應用程式設定
 
@@ -86,17 +86,17 @@ if (composite != null)
 
 | API | 說明 |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | 從本機應用程式資料存放區中取得應用程式設定容器。 |
-| [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | 從漫遊應用程式資料存放區中取得應用程式設定容器。 |
-| [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | 應用程式設定的容器，支援建立、移除、列舉，與周遊容器階層。 |
-| [Windows.UI.ApplicationSettings 命名空間](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | 提供您會用來定義應用程式設定的類別，其顯示在 Windows 殼層的設定窗格中。 |
+| [ApplicationData.LocalSettings](/uwp/api/windows.storage.applicationdata.temporaryfolder) | 從本機應用程式資料存放區中取得應用程式設定容器。 |
+| [ApplicationData.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings) | 從漫遊應用程式資料存放區中取得應用程式設定容器。 |
+| [ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) | 應用程式設定的容器，支援建立、移除、列舉，與周遊容器階層。 |
+| [Windows.UI.ApplicationSettings 命名空間](/uwp/api/windows.ui.applicationsettings) | 提供您會用來定義應用程式設定的類別，其顯示在 Windows 殼層的設定窗格中。 |
 
 ### <a name="useful-docs"></a>實用的文件
 
 | 主題 | 說明 |
 |-------|----------------|
-| [應用程式設定的指導方針](https://docs.microsoft.com/windows/uwp/design/app-settings/guidelines-for-app-settings) | 描述建立和顯示應用程式設定的最佳做法。 |
-| [儲存及擷取設定和其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#create-and-read-a-local-file) | 逐步解說儲存和擷取的設定，包括漫遊設定。 |
+| [應用程式設定的指導方針](../design/app-settings/guidelines-for-app-settings.md) | 描述建立和顯示應用程式設定的最佳做法。 |
+| [儲存及擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md#create-and-read-a-local-file) | 逐步解說儲存和擷取的設定，包括漫遊設定。 |
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 

@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a74d98298f2c51059d8293022817e91ba573cf45
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 5e3bcbfc338d629bbda1036ef722d75ed6df37cd
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970693"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169752"
 ---
 # <a name="number-box"></a>數字方塊
 
@@ -22,18 +22,18 @@ ms.locfileid: "82970693"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **NumberBox** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **NumberBox** 控制項需要 Windows UI 程式庫，該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](/uwp/toolkits/winui/)。 |
 
-**Windows UI 程式庫 API：** [NumberBox 類別](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.NumberBox)
+**Windows UI 程式庫 API：** [NumberBox 類別](/uwp/api/microsoft.ui.xaml.controls.NumberBox)
 
 > [!TIP]
-> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
+> 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
 >
 >在後方的程式碼中，我們也使用 C# 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已在檔案頂端新增了此 **using** 陳述式：`using muxc = Microsoft.UI.Xaml.Controls;`
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-您可使用 NumberBox 控制項來擷取和顯示數學輸入。 如果您需要可接受數字以外內容的可編輯文字方塊，請使用 [TextBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項。 如果您需要可接受密碼或其他敏感性輸入的可編輯文字方塊，請參閱 [PasswordBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.passwordbox)。 如果您需要文字方塊來輸入搜尋字詞，請參閱 [AutoSuggestBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox)。 如果您需要輸入或編輯格式化文字，請參閱 [RichEditBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.richeditbox)。
+您可使用 NumberBox 控制項來擷取和顯示數學輸入。 如果您需要可接受數字以外內容的可編輯文字方塊，請使用 [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 控制項。 如果您需要可接受密碼或其他敏感性輸入的可編輯文字方塊，請參閱 [PasswordBox](/uwp/api/windows.ui.xaml.controls.passwordbox)。 如果您需要文字方塊來輸入搜尋字詞，請參閱 [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox)。 如果您需要輸入或編輯格式化文字，請參閱 [RichEditBox](/uwp/api/windows.ui.xaml.controls.richeditbox)。
 
 ## <a name="examples"></a>範例
 
@@ -53,7 +53,7 @@ ms.locfileid: "82970693"
 
 ### <a name="create-a-simple-numberbox"></a>建立簡單的 NumberBox
 
-以下的 XAML 適用於示範預設外觀的基本 NumberBox。 使用 [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path)，以確保向使用者顯示的資料會與您應用程式中儲存的資料保持同步。
+以下的 XAML 適用於示範預設外觀的基本 NumberBox。 使用 [x:Bind](../../xaml-platform/x-bind-markup-extension.md#property-path)，以確保向使用者顯示的資料會與您應用程式中儲存的資料保持同步。
 
 ```xaml
 <muxc:NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />

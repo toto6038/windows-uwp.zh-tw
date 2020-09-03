@@ -7,12 +7,12 @@ ms.date: 03/13/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ee88e32ed0ce0fd193fe79e48814a11f494d062
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 9f36035bea91f39d60f44ca9e16c768eb5d75e78
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970213"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165632"
 ---
 # <a name="attached-layouts"></a>附加的版面配置
 
@@ -22,12 +22,12 @@ ms.locfileid: "82970213"
 
 | **取得 Windows UI 程式庫** |
 | - |
-| 此控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](/uwp/toolkits/winui/)。 |
 
 > **重要 API**：
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> * [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)
+> * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
 > * [配置](/uwp/api/microsoft.ui.xaml.controls.layout)
 >     * [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout)
 >     * [VirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout)
@@ -44,7 +44,7 @@ ms.locfileid: "82970213"
 
 2. 此元素的「位置」為何？
 
-對於[自訂面板](/windows/uwp/design/layout/custom-panels-overview)的討論將會簡要說明 XAML 的版面配置系統 (以回答這些問題)。
+對於[自訂面板](./custom-panels-overview.md)的討論將會簡要說明 XAML 的版面配置系統 (以回答這些問題)。
 
 ### <a name="containers-and-context"></a>容器和內容
 
@@ -55,7 +55,7 @@ ms.locfileid: "82970213"
 
 基於這個理由，XAML 中的 Panel 通常會與版面配置同義，但技術上來說，其不只是版面配置。
 
-[ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater) 的行為也與 Panel 類似，但與 Panel 不同的是，其不會公開 Children 屬性，此屬性允許以程式設計方式新增或移除 UIElement 子系。  相反地，其子系的存留期會由架構自動管理，以對應到資料項目的集合。  儘管其不是衍生自 Panel，但會運作且由 Panel 之類的架構來處理。
+[ItemsRepeater](../controls-and-patterns/items-repeater.md) 的行為也與 Panel 類似，但與 Panel 不同的是，其不會公開 Children 屬性，此屬性允許以程式設計方式新增或移除 UIElement 子系。  相反地，其子系的存留期會由架構自動管理，以對應到資料項目的集合。  儘管其不是衍生自 Panel，但會運作且由 Panel 之類的架構來處理。
 
 > [!NOTE]
 > [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 是衍生自 Panel 的容器，會將其邏輯委派給附加的 [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) 物件。  LayoutPanel 處於「預覽」  狀態，目前僅適用於 WinUI 套件的「發行前版本」  。
@@ -128,7 +128,7 @@ UI 虛擬化表示會將 UI 物件建立延遲到「需要時」  才進行。  
 **謹記下列事項...**
 
 1. 非虛擬化的版面配置比較容易撰寫。 如果項目數量一向很少，則建議您撰寫非虛擬化的版面配置。
-2. 此平台提供一組附加的版面配置，可與 [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater#change-the-layout-of-items) 和 [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 搭配使用以涵蓋常見需求。  請先熟悉那些需求，然後再決定您需要定義自訂版面配置。
+2. 此平台提供一組附加的版面配置，可與 [ItemsRepeater](../controls-and-patterns/items-repeater.md#change-the-layout-of-items) 和 [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 搭配使用以涵蓋常見需求。  請先熟悉那些需求，然後再決定您需要定義自訂版面配置。
 3. 相較於非虛擬化的版面配置，虛擬化的版面配置總是會有一些額外的 CPU 和記憶體成本/複雜性/額外負荷。  以一般經驗法則而言，如果版面配置將需管理的子系很可能要符合檢視區大小 3 倍的區域，則虛擬化的版面配置可能不會帶來太多好處。 此文件稍後將更詳細地討論 3 倍大小，但這是由於 Windows 上捲動的非同步性質及其對虛擬化的影響所致。
 
 > [!TIP]
@@ -145,7 +145,7 @@ UI 虛擬化表示會將 UI 物件建立延遲到「需要時」  才進行。  
 
 ## <a name="non-virtualizing-layout"></a>非虛擬化的版面配置
 
-建立非虛擬化版面配置的方法，對於已建立[自訂面板](/windows/uwp/design/layout/custom-panels-overview)的任何人而言都應該感到熟悉。  適用相同概念。  主要差異在於 [NonVirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) 可用來存取 [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) 集合，而 Layout 可以選擇儲存狀態。
+建立非虛擬化版面配置的方法，對於已建立[自訂面板](./custom-panels-overview.md)的任何人而言都應該感到熟悉。  適用相同概念。  主要差異在於 [NonVirtualizingLayoutCoNtext](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext) 可用來存取 [Children](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children) 集合，而 Layout 可以選擇儲存狀態。
 
 1. 衍生自基底類型 [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (而不是 Panel)。
 2. (選擇性)  定義相依性屬性，在變更時將會使版面配置失效。
@@ -246,7 +246,7 @@ public class MyStackLayout : NonVirtualizingLayout
 
 ![具現化的矩形](images/xaml-attached-layout-realizationrect.png)
 
-由於建立元素的成本很高，因此，虛擬化的容器 (例如 [ItemsRepeater](/windows/uwp/design/controls-and-patterns/items-repeater)) 一開始會搭配 [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 來提供附加的版面配置，以符合檢視區。 在閒置期間，容器可能會使用越來越大的具現化矩形重複呼叫版面配置，以擴大已備妥內容的緩衝區。 這種行為是一種效能最佳化，會嘗試在快速啟動時間和良好移動瀏覽體驗之間取得平衡。 ItemsRepeater 將產生的緩衝區大小上限會由其 [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 和 [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 屬性所控制。
+由於建立元素的成本很高，因此，虛擬化的容器 (例如 [ItemsRepeater](../controls-and-patterns/items-repeater.md)) 一開始會搭配 [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) 來提供附加的版面配置，以符合檢視區。 在閒置期間，容器可能會使用越來越大的具現化矩形重複呼叫版面配置，以擴大已備妥內容的緩衝區。 這種行為是一種效能最佳化，會嘗試在快速啟動時間和良好移動瀏覽體驗之間取得平衡。 ItemsRepeater 將產生的緩衝區大小上限會由其 [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 和 [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) 屬性所控制。
 
 **重複使用元素 (回收)**
 
