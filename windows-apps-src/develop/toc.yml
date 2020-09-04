@@ -151,6 +151,8 @@
       href: ../audio-video-camera/codec-query.md
     - name: 螢幕擷取
       href: ../audio-video-camera/screen-capture.md
+    - name: 將螢幕擷取到影片
+      href: ../audio-video-camera/screen-capture-video.md
 - name: 通訊
   items:
     - name: 應用程式間通訊
