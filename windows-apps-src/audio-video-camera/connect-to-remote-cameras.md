@@ -7,31 +7,30 @@ ms.topic: article
 ms.custom: 19H1
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c0e94e0ddaba027b38ecc76b1c97126204990f1a
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 1fae76aea28ffb63f6cb0ad5af8c5eb6e3fac6e4
+ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363981"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89494364"
 ---
 # <a name="connect-to-remote-cameras"></a>連線到遠端照相機
 
 本文說明如何連接到一或多個遠端攝影機，以及取得可讓您從每個相機讀取畫面格的 [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 物件。 如需從媒體來源讀取框架的詳細資訊，請參閱 [使用 MediaFrameReader 處理媒體框架](process-media-frames-with-mediaframereader.md)。 如需與裝置配對的詳細資訊，請參閱 [配對裝置](../devices-sensors/pair-devices.md)。
 
 > [!NOTE] 
-> 本文中討論的功能僅從 Windows 10 1903 版開始提供。
+> 從 Windows 10 1903 版開始，可以使用本文中討論的功能。
 
 ## <a name="create-a-devicewatcher-class-to-watch-for-available-remote-cameras"></a>建立 DeviceWatcher 類別以監看是否有可用的遠端攝影機
 
 [**DeviceWatcher**](/uwp/api/windows.devices.enumeration.devicewatcher)類別會監視您應用程式可用的裝置，並在新增或移除裝置時通知您的應用程式。 藉由呼叫[**DeviceInformation**](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher_System_String_)來取得**DeviceWatcher**的實例，並傳遞 ADVANCED Query 語法 (AQS 識別您要監視之裝置類型的) 字串。 指定網路攝影機裝置的 AQS 字串如下所示：
 
-```
+```syntax
 @"System.Devices.InterfaceClassGuid:=""{B8238652-B500-41EB-B4F3-4234F7F5AE99}"" AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True"
 ```
 
 > [!NOTE] 
 > Helper 方法 [**MediaFrameSourceGroup**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) 會傳回 AQS 字串，該字串會監視本機連線和遠端網路攝影機。 若只要監視網路攝影機，您應該使用如上所示的 AQS 字串。
-
 
 當您藉由呼叫[**start**](/uwp/api/windows.devices.enumeration.devicewatcher.start)方法來啟動傳回的**DeviceWatcher**時，它會為每個目前可用的網路攝影機引發[**新增**](/uwp/api/windows.devices.enumeration.devicewatcher.added)的事件。 在您藉由呼叫 [**stop**](/uwp/api/windows.devices.enumeration.devicewatcher.stop)來停止監看員之前，將會在新的網路攝影機裝置可用時引發 **新增** 的事件，而且當相機裝置變成無法使用時，將會引發 [**已移除**](/uwp/api/windows.devices.enumeration.devicewatcher.removed) 的事件。
 
@@ -45,13 +44,91 @@ ms.locfileid: "89363981"
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/Frames_Win10/cs/Frames_Win10/RemoteCameraPairingHelper.cs" id="SnippetRemoteCameraPairingHelper":::
 
+```cppwinrt
+#include <winrt/Windows.Devices.Enumeration.h>
+#include <winrt/Windows.Foundation.Collections.h>
+#include <winrt/Windows.Media.Capture.Frames.h>
+#include <winrt/Windows.UI.Core.h>
+using namespace winrt;
+using namespace winrt::Windows::Devices::Enumeration;
+using namespace winrt::Windows::Foundation::Collections;
+using namespace winrt::Windows::Media::Capture::Frames;
+using namespace winrt::Windows::UI::Core;
 
-## <a name="related-topics"></a>相關主題
+struct RemoteCameraPairingHelper
+{
+    RemoteCameraPairingHelper(CoreDispatcher uiDispatcher) :
+        m_dispatcher(uiDispatcher)
+    {
+        m_remoteCameraCollection = winrt::single_threaded_observable_vector<MediaFrameSourceGroup>();
+        auto remoteCameraAqs =
+            LR"(System.Devices.InterfaceClassGuid:=""{B8238652-B500-41EB-B4F3-4234F7F5AE99}"")"
+            LR"(AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True)";
+        m_watcher = DeviceInformation::CreateWatcher(remoteCameraAqs);
+        m_watcherAddedAutoRevoker = m_watcher.Added(winrt::auto_revoke, { this, &RemoteCameraPairingHelper::Watcher_Added });
+        m_watcherRemovedAutoRevoker = m_watcher.Removed(winrt::auto_revoke, { this, &RemoteCameraPairingHelper::Watcher_Removed });
+        m_watcherUpdatedAutoRevoker = m_watcher.Updated(winrt::auto_revoke, { this, &RemoteCameraPairingHelper::Watcher_Updated });
+        m_watcher.Start();
+    }
+    ~RemoteCameraPairingHelper()
+    {
+        m_watcher.Stop();
+    }
+    IObservableVector<MediaFrameSourceGroup> FrameSourceGroups()
+    {
+        return m_remoteCameraCollection;
+    }
+    winrt::fire_and_forget Watcher_Added(DeviceWatcher /* sender */, DeviceInformation args)
+    {
+        co_await AddDeviceAsync(args.Id());
+    }
+    winrt::fire_and_forget Watcher_Removed(DeviceWatcher /* sender */, DeviceInformationUpdate args)
+    {
+        co_await RemoveDevice(args.Id());
+    }
+    winrt::fire_and_forget Watcher_Updated(DeviceWatcher /* sender */, DeviceInformationUpdate args)
+    {
+        co_await RemoveDevice(args.Id());
+        co_await AddDeviceAsync(args.Id());
+    }
+    Windows::Foundation::IAsyncAction AddDeviceAsync(winrt::hstring id)
+    {
+        auto group = co_await MediaFrameSourceGroup::FromIdAsync(id);
+        if (group)
+        {
+            co_await m_dispatcher;
+            m_remoteCameraCollection.Append(group);
+        }
+    }
+    Windows::Foundation::IAsyncAction RemoveDevice(winrt::hstring id)
+    {
+        co_await m_dispatcher;
+
+        uint32_t ix{ 0 };
+        for (auto const&& item : m_remoteCameraCollection)
+        {
+            if (item.Id() == id)
+            {
+                m_remoteCameraCollection.RemoveAt(ix);
+                break;
+            }
+            ++ix;
+        }
+    }
+
+private:
+    CoreDispatcher m_dispatcher{ nullptr };
+    DeviceWatcher m_watcher{ nullptr };
+    IObservableVector<MediaFrameSourceGroup> m_remoteCameraCollection;
+    DeviceWatcher::Added_revoker m_watcherAddedAutoRevoker;
+    DeviceWatcher::Removed_revoker m_watcherRemovedAutoRevoker;
+    DeviceWatcher::Updated_revoker m_watcherUpdatedAutoRevoker;
+};
+```
+
+## <a name="related-topics"></a>相關的主題
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [相機畫面範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
 * [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
- 
-
- 

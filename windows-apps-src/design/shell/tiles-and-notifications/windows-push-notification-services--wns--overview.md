@@ -1,5 +1,5 @@
 ---
-Description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
+description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 這提供一種機制，用省電又可靠的方法，將最新的更新資訊傳送給使用者。
 title: Windows 推播通知服務 (WNS) 概觀
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 03/06/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98248aff8f16305b9fa335d4c77ca1a03bc46686
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bd910c42743577a83491386f5c667dd09722ba9b
+ms.sourcegitcommit: 8171695ade04a762f19723f0b88e46e407375800
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156742"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89494374"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀 
 
@@ -184,7 +184,6 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 ## <a name="expiration-of-tile-and-badge-notifications"></a>磚和徽章通知的到期時間
 
-
 根據預設，磚和徽章通知會在下載後的三天到期。 當通知到期的時候，會從磚或佇列中移除內容，不再對使用者顯示。 最佳作法是在所有的磚和徽章通知上設定到期時間 (使用一個對您的應用程式有意義的時間)，如此您的磚內容就不會超過內容的時效性。 明確的到期時間對於已定義存留時間的內容而言很重要。 如果您的雲端服務停止傳送通知或使用者從網路中斷連線一段期間時，這也可以確保會移除過時內容。
 
 您的雲端服務可以藉由設定 X-WNS-TTL HTTP 標頭，指定在傳送通知之後該通知將維持有效狀態的時間 (秒)，以便設定每個通知的到期時間。 如需詳細資訊，請參閱 [推播通知服務要求和回應標頭](/previous-versions/windows/apps/hh465435(v=win.10))。
@@ -192,7 +191,6 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 例如，在股市交易日，您可以將股價更新到期時間設定為傳送間隔時間的兩倍 (例如，如果是每半小時傳送通知一次，則是接收後的一小時)。 另一個範例是新聞應用程式可能決定每日新聞磚更新的適當到期時間為一天。
 
 ## <a name="push-notifications-and-battery-saver"></a>推播通知和省電模式
-
 
 省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 **\[設定\]** 應用程式中找到) 可讓您的應用程式即使在省電模式開啟時，也會接收到推播通知。
 
@@ -206,11 +204,9 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 > [!TIP]
 > 當通知使用者省電模式設定時，建議您提供一種方式來抑制未來的訊息。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
 
- 
+以下是如何檢查 Windows 10 中是否已開啟省電模式的範例。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
-以下是如何在 Windows 10 中檢查省電模式是否開啟的範例。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
-
-```cs
+```csharp
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -255,6 +251,62 @@ async public void CheckForEnergySaving()
 }
 ```
 
+```cppwinrt
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Storage.h>
+#include <winrt/Windows.System.h>
+#include <winrt/Windows.System.Power.h>
+#include <winrt/Windows.UI.Xaml.h>
+#include <winrt/Windows.UI.Xaml.Controls.h>
+#include <winrt/Windows.UI.Xaml.Navigation.h>
+using namespace winrt;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Storage;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::System::Power;
+using namespace winrt::Windows::UI::Xaml;
+using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt::Windows::UI::Xaml::Navigation;
+...
+winrt::fire_and_forget CheckForEnergySaving()
+{
+    // Get reminder preference from LocalSettings.
+    bool dontAskAgain{ false };
+    auto localSettings = ApplicationData::Current().LocalSettings();
+    IInspectable dontAskSetting = localSettings.Values().Lookup(L"dontAskAgainSetting");
+    if (!dontAskSetting)
+    {
+        // Setting doesn't exist.
+        dontAskAgain = false;
+    }
+    else
+    {
+        // Retrieve setting value
+        dontAskAgain = winrt::unbox_value<bool>(dontAskSetting);
+    }
+
+    // Check whether battery saver is on, and whether it's okay to raise dialog.
+    if ((PowerManager::EnergySaverStatus() == EnergySaverStatus::On) && (!dontAskAgain))
+    {
+        // Check dialog results.
+        ContentDialogResult dialogResult = co_await saveEnergyDialog().ShowAsync();
+        if (dialogResult == ContentDialogResult::Primary)
+        {
+            // Launch battery saver settings
+            // (settings are available only when a battery is present).
+            co_await Launcher::LaunchUriAsync(Uri(L"ms-settings:batterysaver-settings"));
+        }
+
+        // Save reminder preference.
+        if (dontAskAgainBox().IsChecked())
+        {
+            // Don't raise the dialog again.
+            localSettings.Values().Insert(L"dontAskAgainSetting", winrt::box_value(true));
+        }
+    }
+}
+```
+
 這是此範例之 [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) 的 XAML。
 
 ```xaml
@@ -275,8 +327,7 @@ async public void CheckForEnergySaving()
 </ContentDialog>
 ```
 
-## <a name="related-topics"></a>相關主題
-
+## <a name="related-topics"></a>相關的主題
 
 * [傳送本機磚通知](sending-a-local-tile-notification.md)
 * [快速入門：傳送推播通知](/previous-versions/windows/apps/hh868252(v=win.10))
@@ -287,6 +338,3 @@ async public void CheckForEnergySaving()
 * [推播通知服務要求和回應標頭](/previous-versions/windows/apps/hh465435(v=win.10))
 * [推播通知的指導方針和檢查清單]()
 * [原始通知](/previous-versions/windows/apps/hh761488(v=win.10))
- 
-
- 
