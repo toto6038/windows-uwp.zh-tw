@@ -1,5 +1,5 @@
 ---
-description: 能建立半透明紋理的筆刷類型。
+description: 了解如何使用壓克力 (這種類型的筆刷會建立半透明材質) 來增加深度並協助建立視覺階層。
 title: 壓克力材質
 template: detail.hbs
 ms.date: 08/09/2017
@@ -10,20 +10,20 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d969c5282fa03fb11d108d2b2c8e0fe44dfde49
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 6f7d431950e17b9908d079db9247d997ef8adadb
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968453"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174582"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
 ![主角圖像](images/header-acrylic.svg)
 
-Acrylic 是一種能建立半透明紋理的 [Brush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Brush) \(英文\) 類型。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
+Acrylic 是一種能建立半透明紋理的 [Brush](/uwp/api/Windows.UI.Xaml.Media.Brush) \(英文\) 類型。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要 API**：[AcrylicBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.acrylicbrush) \(英文\)、[Background 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control.Background) \(英文\)
+> **重要 API**：[AcrylicBrush 類別](/uwp/api/windows.ui.xaml.media.acrylicbrush) \(英文\)、[Background 屬性](/uwp/api/windows.ui.xaml.controls.control.Background) \(英文\)
 
 :::row:::
     :::column:::
@@ -87,7 +87,7 @@ Acrylic 最明顯的特徵就是它的透明度。 有兩種壓克力混合類�
 
 ![使用資訊飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
 
-我們的許多控制項預設都會使用壓克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus) \(部分機器翻譯\)、[AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box) \(部分機器翻譯\)、[ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) \(英文\) 及具有消失關閉快顯示窗的類似控制項，都會在被叫用時使用暫時性壓克力。
+我們的許多控制項預設都會使用壓克力。 [MenuFlyouts](../controls-and-patterns/menus.md) \(部分機器翻譯\)、[AutoSuggestBox](../controls-and-patterns/auto-suggest-box.md) \(部分機器翻譯\)、[ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) \(英文\) 及具有消失關閉快顯示窗的類似控制項，都會在被叫用時使用暫時性壓克力。
 
 > [!Note]
 > 呈現壓克力表面會大量佔用 GPU，這可能會提升裝置耗電量並縮短電池使用時間。 當電池進入省電模式時，壓克力效果會自動停用，使用者也可以選擇停用所有應用程式的壓克力效果。
@@ -246,7 +246,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>將壓克力延伸至標題列
 
-若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力。 此範例透過將 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) \(英文\) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) \(英文\) 及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) \(英文\) 屬性設定為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent) \(英文\)，來將壓克力延伸到標題列。
+若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力。 此範例透過將 [ApplicationViewTitleBar](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) \(英文\) 物件的 [ButtonBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) \(英文\) 及 [ButtonInactiveBackgroundColor](/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) \(英文\) 屬性設定為 [Colors.Transparent](/uwp/api/Windows.UI.Colors.Transparent) \(英文\)，來將壓克力延伸到標題列。
 
 ```csharp
 private void ExtendAcrylicIntoTitleBar()
@@ -258,7 +258,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-您可以在對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) \(英文\) 的呼叫之後 (如這裡所示)，將此程式碼置於您應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) \(英文\) 方法 (_App.xaml.cs_) 中，或是將它置於您應用程式的第一個頁面。
+您可以在對 [Window.Activate](/uwp/api/windows.ui.xaml.window.Activate) \(英文\) 的呼叫之後 (如這裡所示)，將此程式碼置於您應用程式的 [OnLaunched](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) \(英文\) 方法 (_App.xaml.cs_) 中，或是將它置於您應用程式的第一個頁面。
 
 ```csharp
 // Call your extend acrylic code in the OnLaunched event, after

@@ -1,17 +1,17 @@
 ---
-description: C++/WinRT 的新聞和變更。
+description: 查看最近的新增項目與改良功能，以及 C++/WinRT 2.0 和 Windows SDK 10.0.17763.0 版的新聞和變更。
 title: C++/WinRT 的新功能
 ms.date: 03/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3057a3d13ba1e7d368dd6bf8820710030687a04d
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 0d7c42b1346805c9c03714eb9bbb3944fe940ccf
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80662413"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154462"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -44,7 +44,7 @@ C++/WinRT 和 C++ 編譯器小組已共同合作，盡可能縮短組建時間�
 
 ### <a name="more-efficient-boxing"></a>更有效率的 Boxing
 
-在 XAML 應用程式中使用時，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 現在更有效率 (請參閱 [Boxing 和 Unboxing](/windows/uwp/cpp-and-winrt-apis/boxing))。 執行大量 Boxing 的應用程式也會注意到程式碼大小的縮減。
+在 XAML 應用程式中使用時，[**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 現在更有效率 (請參閱 [Boxing 和 Unboxing](./boxing.md))。 執行大量 Boxing 的應用程式也會注意到程式碼大小的縮減。
 
 ### <a name="support-for-implementing-com-interfaces-that-implement-iinspectable"></a>支援執行 IInspectable 的實作 COM 介面
 
@@ -205,7 +205,7 @@ C++/WinRT 本身為每個實作的 API 產生此模式。 有了數千個 API �
 
 這些兩種最佳化可讓您的元件直接存取其實作類型，即使它只使用投影的類型。 如果您只是想要使用公用 API 表面，則不需要使用 [**make**](/uwp/cpp-ref-for-winrt/make)[**make_self**](/uwp/cpp-ref-for-winrt/make-self)，也不需要 [**get_self**](/uwp/cpp-ref-for-winrt/get-self)。 您的呼叫將編譯成直接呼叫實作，甚至可能完全內嵌。
 
-如需詳細資訊和程式碼範例，請參閱[加入統一建構和直接實作存取](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
+如需詳細資訊和程式碼範例，請參閱[加入統一建構和直接實作存取](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 ##### <a name="type-erased-factories"></a>已清除類型的處理站
 
@@ -245,7 +245,7 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 由於投影和實作類別名稱 (依預設) 相同，而且只有命名空間不同，因此可能會誤用，並且可能會不小心在堆疊上建立實作，而不是使用協助程式的 [**make**](/uwp/cpp-ref-for-winrt/make) 系列。 在某些情況下，這可能很難診斷，因為物件可能會遭受破壞，而未完成的參照仍在執行中。 對於偵錯組件，判斷提示現在選擇此項目。 雖然判斷提示沒有偵測到協同程式中的堆疊配置，但它仍然有助於擷取大部分此類錯誤。
 
-如需詳細資訊，請參閱[診斷直接配置](/windows/uwp/cpp-and-winrt-apis/diag-direct-alloc)。
+如需詳細資訊，請參閱[診斷直接配置](./diag-direct-alloc.md)。
 
 #### <a name="improved-capture-helpers-and-variadic-delegates"></a>改善擷取協助程式，以及 variadic 委派
 
@@ -314,7 +314,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-如需詳細資訊，請參閱[延遲解構](/windows/uwp/cpp-and-winrt-apis/details-about-destructors#deferred-destruction)。
+如需詳細資訊，請參閱[延遲解構](./details-about-destructors.md#deferred-destruction)。
 
 #### <a name="improved-support-for-com-style-single-interface-inheritance"></a>已改善對 COM 樣式單一介面繼承的支援
 
@@ -341,7 +341,7 @@ struct MainPage : PageT<MainPage>
 | **重大變更**。 若要進行編譯，C++/WinRT 不會根據 Windows SDK 的標頭。 | 請參閱下方的[從 Windows SDK 標頭檔案隔離](#isolation-from-windows-sdk-header-files)。 |
 | Visual Studio 專案系統格式已變更。 | 請參閱下方[如何將 C++/WinRT 專案的目標重定為 Windows SDK 的較新版本](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 | 有一些新函式和基底類別有助於將集合物件傳遞給 Windows 執行階段函式，或者實作您自己的集合屬性和集合類別。 | 請參閱[使用 C++/WinRT 的集合](collections.md)。 |
-| 您可以將 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)。 |
+| 您可以將 [{Binding}](../xaml-platform/binding-markup-extension.md) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。 |
 | 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks)。 |
 | 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的**如果您使用成員函式作為委派**子小節。 |
 | 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中描述的問題 |
@@ -375,7 +375,7 @@ struct MainPage : PageT<MainPage>
 
 目前，唯一的例外狀況為 Windows SDK 標頭檔案隔離是內建函式和數值。 這些最後剩餘的相依性沒有已知問題。
 
-在專案中，您可以視需要使用 Windows SDK 標頭以重新啟用互通性。 例如，您可以想要實作 COM 介面 (根植於 [**IUnknown**](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown))。 對於該範例，在包含任何 C++/WinRT 標頭之前包含 `unknwn.h`。 這樣做會造成 C++/WinRT 基礎程式庫啟用各種勾點以支援傳統的 COM 介面。 如需程式碼範例，請參閱[使用 C++/WinRT 撰寫 COM 元件](author-coclasses.md)。 同樣地，請明確納入任何其他 Windows SDK 標頭，這些標頭會宣告您要呼叫的類型及/或函式。
+在專案中，您可以視需要使用 Windows SDK 標頭以重新啟用互通性。 例如，您可以想要實作 COM 介面 (根植於 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown))。 對於該範例，在包含任何 C++/WinRT 標頭之前包含 `unknwn.h`。 這樣做會造成 C++/WinRT 基礎程式庫啟用各種勾點以支援傳統的 COM 介面。 如需程式碼範例，請參閱[使用 C++/WinRT 撰寫 COM 元件](author-coclasses.md)。 同樣地，請明確納入任何其他 Windows SDK 標頭，這些標頭會宣告您要呼叫的類型及/或函式。
 
 ### <a name="how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何將 C++/WinRT 專案的目標重定為 Windows SDK 的較新版本
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b38cf60f1f890649af33ad34f244bc348af2832
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a837dc025023d529d9090fade401726a670c7561
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82148696"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166192"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -41,7 +41,7 @@ RAM
 -   64 位元
 -   Pro 版本或更高的版本
 
-若要檢查 BIOS 需求，請參閱[如何為 Windows Phone 8 的模擬器啟用 Hyper-V](https://docs.microsoft.com/previous-versions/windows/apps/jj863509(v=vs.105))。
+若要檢查 BIOS 需求，請參閱[如何為 Windows Phone 8 的模擬器啟用 Hyper-V](/previous-versions/windows/apps/jj863509(v=vs.105))。
 
 若要檢查 RAM 與作業系統的需求，請在 [控制台] 中選取 [系統及安全性]  ，然後選取 [系統]  。
 
@@ -215,7 +215,7 @@ NFC 索引標籤支援三種模式：
 -   NDEF:URI
 -   NDEF:wkt.U
 
-您可以透過編輯 [承載]  視窗或在檔案中提供訊息，來建立這些訊息。 如需這些類型與其使用方式的詳細資訊，請參閱 [**ProximityDevice.PublishBinaryMessage**](https://docs.microsoft.com/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage) 參考頁面的＜備註＞一節。
+您可以透過編輯 [承載]  視窗或在檔案中提供訊息，來建立這些訊息。 如需這些類型與其使用方式的詳細資訊，請參閱 [**ProximityDevice.PublishBinaryMessage**](/uwp/api/windows.networking.proximity.proximitydevice.publishbinarymessage) 參考頁面的＜備註＞一節。
 
 Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與 Windows Phone 8 模擬器相同的通訊協定。 您將需要下載 DDK、建置範例驅動程式、在 Windows 8 裝置上安裝，接著將 Windows 8 裝置的 IP 位址或主機名稱新增到裝置清單，並將它與另一部 Windows 8 裝置或 Windows Phone 8 模擬器輕觸。
 
@@ -268,7 +268,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 ### <a name="smart-card-reader-mode"></a>智慧卡讀卡機模式
 
-模擬器可以連線到您主機電腦上的智慧卡讀卡機裝置，如此插入或輕觸的智慧卡將顯示在您的手機 app 中，而且可以使用 [**Windows.Devices.SmartCards.SmartCardConnection**](https://docs.microsoft.com/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) 類別來與 APDU 通訊。 為了讓此功能運作，您需要將相容的智慧卡讀卡機裝置連接到您的電腦，USB 智慧卡讀卡機 (NFC/無接觸式與插入式/接觸式) 非常普及。 若要讓模擬器可搭配已連接的智慧卡讀卡機運作，請先選擇 [讀卡機]  模式 (這樣會顯示一個下拉方塊，其中列出已連接到主機系統的所有相容智慧卡讀卡機)，然後從下拉式清單中選擇要連線的智慧卡讀卡機裝置。
+模擬器可以連線到您主機電腦上的智慧卡讀卡機裝置，如此插入或輕觸的智慧卡將顯示在您的手機 app 中，而且可以使用 [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) 類別來與 APDU 通訊。 為了讓此功能運作，您需要將相容的智慧卡讀卡機裝置連接到您的電腦，USB 智慧卡讀卡機 (NFC/無接觸式與插入式/接觸式) 非常普及。 若要讓模擬器可搭配已連接的智慧卡讀卡機運作，請先選擇 [讀卡機]  模式 (這樣會顯示一個下拉方塊，其中列出已連接到主機系統的所有相容智慧卡讀卡機)，然後從下拉式清單中選擇要連線的智慧卡讀卡機裝置。
 
 請注意，並非所有 NFC 相容智慧卡讀卡機都支援所有類型的 NFC 卡，而且部分不支援標準 PC/SC 儲存卡 APDU 命令。
 
@@ -319,7 +319,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 當您使用不同速度以及利用不同的準確度設定檔，模擬從某一個位置移動到另一個位置時，可以測試您的應用程式。 定位模擬器可以協助識別您在位置 API 用法中的用法變更，以改善使用者體驗。 例如，這個工具可以協助識別您必須調整地理柵欄參數 (例如，大小或停留時間)，才能在不同案例中順利偵測地理柵欄。
 
-[位置]  索引標籤支援三種模式。 在所有模式中，當模擬器接收到新的位置時，即可使用該位置來觸發 [**PositionChanged**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件，或者回應您定位感知應用程式中的 [**GetGeopositionAsync**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 呼叫。
+[位置]  索引標籤支援三種模式。 在所有模式中，當模擬器接收到新的位置時，即可使用該位置來觸發 [**PositionChanged**](/uwp/api/windows.devices.geolocation.geolocator.positionchanged) 事件，或者回應您定位感知應用程式中的 [**GetGeopositionAsync**](/uwp/api/windows.devices.geolocation.geolocator.getgeopositionasync) 呼叫。
 
 -   在 [釘選]  模式中，您可以在地圖上放置圖釘圖示。 當您按一下 [播放所有點]  時，定位模擬器會以 [每個釘選的秒數]  文字方塊中指定的間隔，將每個釘選的位置逐一傳送到模擬器。
 
@@ -635,7 +635,7 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>解除安裝 Windows 10 行動裝置版映像
 
-當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]  清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 -\<版本\>]、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]。
+當您安裝模擬器時，即會安裝 Windows 10 行動裝置版 VHD 映像，它在控制台的 [程式和功能]  清單中會有自己的項目。 如果您想要解除安裝該映像，可在安裝的程式清單中尋找 [Windows 10 行動裝置版映像 - \<version\>]、在其上按一下滑鼠右鍵，然後選擇 [解除安裝]。
 
 在目前版本中，您接著必須手動刪除模擬器的 VHD 檔案。 若您將模擬器安裝至預設路徑，則 VHD 檔案會位於 C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\\<version\>\\flash.vhd。
 
@@ -660,7 +660,6 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ## <a name="related-topics"></a>相關主題
 
-* [在模擬器中執行 Windows Phone 應用程式](https://docs.microsoft.com/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [在模擬器中執行 Windows Phone 應用程式](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
 * [Windows 和 Windows Phone SDK 封存](https://developer.microsoft.com/windows/downloads/sdk-archive)
  
-

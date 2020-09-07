@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 應用程式中使用 MySQL 資料庫
-description: 在 UWP 應用程式中使用 MySQL 資料庫。
+description: 了解如何從您的 UWP 應用程式連線到 MySQL 資料庫，並使用範例程式碼來測試您的連線。
 ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, MySQL, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: bfed9c0a0c4198095b9be48fe71832bdfca67718
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 669755b9dc56277668ade777ef98a9ec256b9a59
+ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67713785"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054318"
 ---
 # <a name="use-a-mysql-database"></a>使用 MySQL 資料庫
 本文包含從 UWP 應用程式使用 MySQL 資料庫所需的步驟。 其中也包含小型的程式碼片段，顯示您在程式碼中與資料庫互動的方式。

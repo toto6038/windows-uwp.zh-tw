@@ -1,18 +1,18 @@
 ---
-Description: 如何使用縮圖影像協助使用者在 UWP 應用程式中預覽檔案。
 title: UWP 應用程式中縮圖影像的指導方針
+description: 了解如何使用縮圖影像，協助使用者在瀏覽通用 Windows 平台 (UWP) 應用程式時預覽檔案。
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: df0d2364762d75793f3f00856b06e8ae506cb327
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "63808668"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89165594"
 ---
 # <a name="thumbnail-images"></a>縮圖影像
 
@@ -20,7 +20,7 @@ ms.locfileid: "63808668"
 
 **重要 API**
 
--   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
+-   [**ThumbnailMode**](/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## <a name="should-my-app-include-thumbnails"></a>我的應用程式應該包含縮圖嗎？
 
@@ -36,7 +36,7 @@ ms.locfileid: "63808668"
     ![影片預覽](images/thumbnail-preview.png)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
-- 指定[縮圖模式](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView、VideosView、DocumentsView、MusicView、ListView 或 SingleItem)，當您擷取縮圖時。 這樣可確保縮圖影像最佳化，顯示使用者想要看見的檔案類型。 
+- 指定[縮圖模式](/uwp/api/windows.storage.fileproperties.thumbnailmode) (PicturesView、VideosView、DocumentsView、MusicView、ListView 或 SingleItem)，當您擷取縮圖時。 這樣可確保縮圖影像最佳化，顯示使用者想要看見的檔案類型。 
     - 使用 SingleItem 模式擷取單一項目的縮圖，無論檔案類型為何。 其他縮圖模式適用於顯示多個檔案的預覽。 
 
 - 顯示一般預留位置影像，取代縮圖載入時的縮圖。 使用預留位置幫助應用程式變得回應更快，因為使用者可以在縮圖載入前與預覽互動。 
@@ -55,7 +55,7 @@ ms.locfileid: "63808668"
 - 不要顯示圖片及影片檔案的其他檔案資訊。 在大多數情況下，縮圖影像就已足夠，可讓使用者瀏覽圖片和影片。 
 
 ## <a name="additional-usage-guidelines"></a>其他用法指導方針
-建議的[縮圖模式](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)與其功能：
+建議的[縮圖模式](/uwp/api/windows.storage.fileproperties.thumbnailmode)與其功能：
 
 <table>
 <tr>
@@ -163,8 +163,8 @@ ms.locfileid: "63808668"
 </div>
 
 ## <a name="related-topics"></a>相關主題
-- [ThumbnailMode 列舉](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
-- [StorageItemThumbnail 類別](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
-- [StorageFile 類別](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
+- [ThumbnailMode 列舉](/uwp/api/windows.storage.fileproperties.thumbnailmode)
+- [StorageItemThumbnail 類別](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
+- [StorageFile 類別](/uwp/api/windows.storage.storagefile)
 - [檔案和資料夾縮圖範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
 - [清單和方格檢視](../design/controls-and-patterns/lists.md)

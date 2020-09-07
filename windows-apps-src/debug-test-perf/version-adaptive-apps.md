@@ -5,12 +5,12 @@ ms.date: 05/17/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b947d0b6cc83dc6bca45efb7103a933e79972e3b
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: bb676ba5dbb92b1aa6dfb8888da90a8528e2dfa1
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67317455"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412032"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型應用程式：使用新的 API 並同時維持與先前版本的相容性
 
@@ -65,7 +65,7 @@ ms.locfileid: "67317455"
 
 ## <a name="perform-api-checks"></a>執行 API 檢查
 
-版本調適型應用程式的關鍵是 API 協定與 [ApiInformation](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation) 類別的結合。 這個類別可讓您偵測指定的 API 協定、類型或成員是否存在，讓您可以放心地跨各種裝置和 OS 版本進行 API 呼叫。
+版本調適型應用程式的關鍵是 API 協定與 [ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) 類別的結合。 這個類別可讓您偵測指定的 API 協定、類型或成員是否存在，讓您可以放心地跨各種裝置和 OS 版本進行 API 呼叫。
 
 ### <a name="api-contracts"></a>API 協定
 
@@ -81,10 +81,10 @@ ms.locfileid: "67317455"
 
 邏輯相關的類型會群組成一個 API 協定，並且從 Windows 10 開始，每個 Windows 執行階段 API 都是某個 API 協定的成員。 有了 API 協定，您檢查裝置上特定功能或 API 的可用性，其實也就是檢查裝置的功能，而不是檢查是否有特定裝置或作業系統。 實作 API 協定中任何 API 的平台也必須實實作該 API 協定中的每個 API。 這表示您可以測試執行中 OS 是否支援特定 API 協定；如果支援，則呼叫該 API 協定中的任何 API，而不需個別檢查每一個 API。
 
-最大且最常使用的 API 協定是 **Windows.Foundation.UniversalApiContract**。 其中包含通用 Windows 平台中的大多數 API。 [裝置系列擴充功能 SDK 及 API 協定](https://docs.microsoft.com/uwp/extension-sdks/)文件說明各種可用的 API 協定。 您將了解它們大部分代表一組在功能上相關的 API。
+最大且最常使用的 API 協定是 **Windows.Foundation.UniversalApiContract**。 其中包含通用 Windows 平台中的大多數 API。 [裝置系列擴充功能 SDK 及 API 協定](/uwp/extension-sdks/)文件說明各種可用的 API 協定。 您將了解它們大部分代表一組在功能上相關的 API。
 
 > [!NOTE]
-> 如果您已安裝的預覽版 Windows 軟體開發套件 (SDK) 尚未記載於文件，還是可以在位於 SDK 安裝資料夾 (\(Program Files (x86))\Windows Kits\10\Platforms\<platform>\<SDK 版本>\Platform.xml) 的 Platform.xml 檔案中找到 API 協定支援的相關資訊。
+> 如果您已安裝的預覽版 Windows 軟體開發套件 (SDK) 尚未記載於文件，還是可以在位於 SDK 安裝資料夾 (\(Program Files (x86))\Windows Kits\10\Platforms\<platform>\<SDK version>\Platform.xml) 的 Platform.xml 檔案中找到 API 協定支援的相關資訊。
 
 ### <a name="version-adaptive-code-and-conditional-xaml"></a>版本調適型程式碼和條件式 XAML
 
@@ -105,6 +105,6 @@ ms.locfileid: "67317455"
 
 ## <a name="related-articles"></a>相關文章
 
-- [什麼是 UWP 應用程式](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [什麼是 UWP 應用程式](../get-started/universal-application-platform-guide.md)
 - [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 協定](https://channel9.msdn.com/Events/Build/2015/3-733) (組建 2015 影片)

@@ -1,6 +1,6 @@
 ---
-Description: 使用者輸入時提供建議的文字輸入方塊。
 title: 自動建議方塊的指導方針
+description: 了解如何使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 59fef3ea55d6aa0ddfa2ef809634be7565d54f90
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
+ms.openlocfilehash: 6eaa57aa5e3ae9d60a9c199c8011da95cd7147e2
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437164"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160652"
 ---
 # <a name="auto-suggest-box"></a>自動建議方塊
 
@@ -29,9 +29,9 @@ ms.locfileid: "84437164"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](/windows/uwp/design/style/rounded-corner)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
-> **平台 API**：[AutoSuggestBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)[TextChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)[QuerySubmitted 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
+> **平台 API**：[AutoSuggestBox 類別](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)[TextChanged 事件](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose 事件](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen)[QuerySubmitted 事件](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -78,9 +78,9 @@ Groove 音樂 app 中的自動建議方塊。
 
 ### <a name="text-changed"></a>變更文字
 
-每當更新文字方塊的內容時，就會發生 [TextChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) 事件。 使用事件引數 [Reason](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) 屬性判斷變更是否因為使用者輸入所造成。 如果變更原因是 **UserInput**，請根據輸入，篩選您的資料。 接著，將已篩選的資料設定為 AutoSuggestBox 的 [ItemsSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 以更新建議清單。
+每當更新文字方塊的內容時，就會發生 [TextChanged](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged) 事件。 使用事件引數 [Reason](/uwp/api/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason) 屬性判斷變更是否因為使用者輸入所造成。 如果變更原因是 **UserInput**，請根據輸入，篩選您的資料。 接著，將已篩選的資料設定為 AutoSuggestBox 的 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) 以更新建議清單。
 
-若要控制建議清單中顯示項目的方式，您可以使用 [DisplayMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 或 [ItemTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)。
+若要控制建議清單中顯示項目的方式，您可以使用 [DisplayMemberPath](/uwp/api/windows.ui.xaml.controls.itemscontrol.displaymemberpath) 或 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)。
 
 - 若要顯示資料項目單一屬性的文字，請設定 DisplayMemberPath 屬性以選擇您物件的哪個屬性要顯示在建議清單中。
 - 若要為清單中的每個項目自訂外觀，請使用 the ItemTemplate 屬性。
@@ -89,19 +89,19 @@ Groove 音樂 app 中的自動建議方塊。
 
 當使用者使用鍵盤瀏覽建議清單時，您需要更新文字方塊中要符合的文字。
 
-您可以設定 [TextMemberPath](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) 屬性以選擇您資料物件的哪個屬性要顯示在文字方塊中。 如果您指定 TextMemberPath，就會自動更新文字方塊。 您通常應該為 DisplayMemberPath 和 TextMemberPath 指定相同的值，如此一來，建議清單和文字方塊中的文字便相同。
+您可以設定 [TextMemberPath](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textmemberpath) 屬性以選擇您資料物件的哪個屬性要顯示在文字方塊中。 如果您指定 TextMemberPath，就會自動更新文字方塊。 您通常應該為 DisplayMemberPath 和 TextMemberPath 指定相同的值，如此一來，建議清單和文字方塊中的文字便相同。
 
-如果您需要顯示多個簡單的屬性，處理 [SuggestionChosen](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) 事件，以便根據選取的項目，將自訂文字填入文字方塊。
+如果您需要顯示多個簡單的屬性，處理 [SuggestionChosen](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen) 事件，以便根據選取的項目，將自訂文字填入文字方塊。
 
 ### <a name="query-submitted"></a>提交查詢
 
-請處理 [QuerySubmitted](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) 事件以執行適合您 App 的查詢動作，並向使用者顯示結果。
+請處理 [QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) 事件以執行適合您 App 的查詢動作，並向使用者顯示結果。
 
 QuerySubmitted 事件會在使用者確認查詢字串時發生。 使用者可以透過下列其中一種方式確認查詢：
-- 當焦點在文字方塊中時，按下 Enter 或按一下查詢圖示。 事件引數 [ChosenSuggestion](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) 屬性為 **null**。
+- 當焦點在文字方塊中時，按下 Enter 或按一下查詢圖示。 事件引數 [ChosenSuggestion](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion) 屬性為 **null**。
 - 當焦點在建議清單中時，按下 Enter，按一下或點選項目。 事件引數 ChosenSuggestion property 包含從清單選取的項目。
 
-在所有情況下，事件引數 [QueryText](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) 屬性都會包含來自文字方塊的文字。
+在所有情況下，事件引數 [QueryText](/uwp/api/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext) 屬性都會包含來自文字方塊的文字。
 
 以下是一個包含所需事件處理常式的簡單 AutoSuggestBox。
 
@@ -149,7 +149,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-文字輸入方塊預設不會顯示查詢按鈕。 您可以設定 [QueryIcon](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請加入「Find」圖示，就像這樣：
+文字輸入方塊預設不會顯示查詢按鈕。 您可以設定 [QueryIcon](/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) 屬性，以便在文字方塊右側新增包含指定圖示的按鈕。 例如，若要讓 AutoSuggestBox 看起來像是典型的搜尋方塊，請加入「Find」圖示，就像這樣：
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
@@ -190,6 +190,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [文字控制項](text-controls.md)
 - [拼字檢查](text-controls.md)
 - [搜尋](search.md)
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 屬性](/dotnet/api/system.string.length)

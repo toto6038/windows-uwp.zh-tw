@@ -1,20 +1,20 @@
 ---
-Description: 使用版面配置面板，在應用程式中排列與群組 UI 元素。
+description: 了解如何使用內建的 XAML 版面配置面板 (例如 RelativePanel、StackPanel、Grid 和 Canvas) 來排列和分組應用程式中的 UI 元素。
 title: Windows 應用程式的版面配置面板
 ms.date: 04/02/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5a796f95efb418f7d70062ca2d73bbea7220d95
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 22fa8ef8df6f97ed63465df0cb3e62cbb14e2ced
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234852"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172442"
 ---
 # <a name="layout-panels"></a>版面配置面板
 
-版面配置面板是允許您在應用程式中排列和群組 UI 元素的容器。 內建的 XAML 版面配置面板包含 [**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)、[**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel)、[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid)、[**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) 及 [**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas)。 我們將在此處說明每個面板，以及示範如何使用它來為 XAML UI 元素進行版面配置。
+版面配置面板是允許您在應用程式中排列和群組 UI 元素的容器。 內建的 XAML 版面配置面板包含 [**RelativePanel**](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)、[**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel)、[**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)、[**VariableSizedWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) 及 [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas)。 我們將在此處說明每個面板，以及示範如何使用它來為 XAML UI 元素進行版面配置。
 
 選擇版面配置面板時需要考量下列數個事項：
 - 面板如何放置它的子元素。
@@ -46,7 +46,7 @@ ms.locfileid: "83234852"
 
 大多數 XAML 版面配置面板都是使用附加屬性，以讓其子元素通知父面板應該如何將它們放置在 UI 中。 附加屬性使用的語法是 *AttachedPropertyProvider.PropertyName*。 如果您的面板會巢串於其他面板內，則 UI 元素上為父項指定版面配置特性的附加屬性只會由最接近的父項面板來解譯。
 
-以下範例示範如何使用 XAML，在 Button 控制項上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 附加屬性。 這會通知父項 Canvas 應該將 Button 放置在從 Canvas 的左邊緣算起 50 個有效像素的位置。
+以下範例示範如何使用 XAML，在 Button 控制項上設定 [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) 附加屬性。 這會通知父項 Canvas 應該將 Button 放置在從 Canvas 的左邊緣算起 50 個有效像素的位置。
 
 ```xaml
 <Canvas>
@@ -70,22 +70,22 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 ![含有框線的方格](images/layout-panel-grid-border.png)
 
-使用內建的框線屬性，可降低 XAML 元素計數，這樣可以提升應用程式的 UI 效能。 如需版面配置面板和 UI 效能的詳細資訊，請參閱[最佳化您的 XAML 版面配置](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-your-xaml-layout)。
+使用內建的框線屬性，可降低 XAML 元素計數，這樣可以提升應用程式的 UI 效能。 如需版面配置面板和 UI 效能的詳細資訊，請參閱[最佳化您的 XAML 版面配置](../../debug-test-perf/optimize-your-xaml-layout.md)。
 
 ## <a name="relativepanel"></a>RelativePanel
 
-[**RelativePanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) 可讓您藉由為 UI 元素指定相對於其他元素和相對於面板的位置，為其進行版面配置。 元素預設會放置在面板的左上角。 您可以使用 RelativePanel 搭配 [**VisualStateManager**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualStateManager) 和 [**AdaptiveTrigger**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)，針對不同的視窗大小重新排列 UI。
+[**RelativePanel**](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) 可讓您藉由為 UI 元素指定相對於其他元素和相對於面板的位置，為其進行版面配置。 元素預設會放置在面板的左上角。 您可以使用 RelativePanel 搭配 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) 和 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger)，針對不同的視窗大小重新排列 UI。
 
 下表顯示的附加屬性可用來將元素與面板或其他元素對齊。
 
 面板對齊方式 | 同層級對齊方式 | 同層級位置
 ----------------|-------------------|-----------------
-[**AlignTopWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Above**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel)  
-[**AlignBottomWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**Below**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
-[**AlignLeftWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel) | [**AlignLeftWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**LeftOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
-[**AlignRightWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**AlignRightWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**RightOf**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
-[**AlignHorizontalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**AlignHorizontalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
-[**AlignVerticalCenterWithPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty) | [**AlignVerticalCenterWith**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty) | &nbsp;   
+[**AlignTopWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty) | [**AlignTopWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty) | [**Above**](/uwp/api/windows.ui.xaml.controls.relativepanel)  
+[**AlignBottomWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty) | [**AlignBottomWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty) | [**Below**](/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty)  
+[**AlignLeftWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel) | [**AlignLeftWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith) | [**LeftOf**](/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty)  
+[**AlignRightWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty) | [**AlignRightWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty) | [**RightOf**](/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof)  
+[**AlignHorizontalCenterWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty) | [**AlignHorizontalCenterWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty) | &nbsp;   
+[**AlignVerticalCenterWithPanel**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty) | [**AlignVerticalCenterWith**](/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty) | &nbsp;   
 
  
 這個 XAML 示範如何在 RelativePanel 中排列元素。
@@ -121,9 +121,9 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 ## <a name="stackpanel"></a>StackPanel
 
-[**StackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 將其子元素按水平或垂直方向排列到單行中。 StackPanel 通常用來排列頁面上 UI 的小型子區段。
+[**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 將其子元素按水平或垂直方向排列到單行中。 StackPanel 通常用來排列頁面上 UI 的小型子區段。
 
-您可以使用 [**Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 屬性來指定子元素的方向。 預設方向是 [**Vertical**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Orientation)。
+您可以使用 [**Orientation**](/uwp/api/windows.ui.xaml.controls.stackpanel.orientation) 屬性來指定子元素的方向。 預設方向是 [**Vertical**](/uwp/api/Windows.UI.Xaml.Controls.Orientation)。
 
 下列 XAML 示範如何建立項目的垂直 StackPanel。
 
@@ -145,11 +145,11 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 ## <a name="grid"></a>方格
 
-[**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 面板支援可變式版面配置並允許您在多列與多欄版面配置中排列控制項。 使用 [**RowDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) 和 [**ColumnDefinitions**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid.columndefinitions) 屬性指定 Grid 的列與欄。
+[**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 面板支援可變式版面配置並允許您在多列與多欄版面配置中排列控制項。 使用 [**RowDefinitions**](/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions) 和 [**ColumnDefinitions**](/uwp/api/windows.ui.xaml.controls.grid.columndefinitions) 屬性指定 Grid 的列與欄。
 
-使用 [**Grid.Column**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.column) 和 [**Grid.Row**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.row) 附加屬性，將物件放置在 Grid 的特定儲存格中。
+使用 [**Grid.Column**](/dotnet/api/system.windows.controls.grid.column) 和 [**Grid.Row**](/dotnet/api/system.windows.controls.grid.row) 附加屬性，將物件放置在 Grid 的特定儲存格中。
 
-使用 [**Grid.RowSpan**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) 和 [**Grid.ColumnSpan**](https://docs.microsoft.com/dotnet/api/system.windows.controls.grid.columnspan) 附加屬性將內容延伸到多個列與欄。
+使用 [**Grid.RowSpan**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) 和 [**Grid.ColumnSpan**](/dotnet/api/system.windows.controls.grid.columnspan) 附加屬性將內容延伸到多個列與欄。
 
 這個 XAML 範例示範如何建立具有兩列兩欄的方格。
 
@@ -182,9 +182,9 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 您可以使用 **Auto** 或星號調整來分配欄內或列內的空間。 您可以使用自動調整大小，讓 UI 元素調整大小以符合它們的內容或父容器。 您也可以使用自動調整大小搭配方格的列與欄。 若要使用自動調整大小，請將 UI 元素的 Height 和/或 Width 設定為 **Auto**。
 
-您使用等比例調整大小 (亦稱為「星號調整」)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值的表示方法為 \* (加權星號調整則為 *n*\* )。 例如，若要在 2 欄的版面配置中，將某一欄的寬度設定為第二欄的 5 倍，請使用 "5\*" 與 "\*" 來表示 [**ColumnDefinition**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) \(英文\) 元素中的 [**Width**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.columndefinition.width) \(英文\) 屬性。
+您使用等比例調整大小 (亦稱為「星號調整」)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值的表示方法為 \* (加權星號調整則為 *n*\* )。 例如，若要在 2 欄的版面配置中，將某一欄的寬度設定為第二欄的 5 倍，請使用 "5\*" 與 "\*" 來表示 [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) \(英文\) 元素中的 [**Width**](/uwp/api/windows.ui.xaml.controls.columndefinition.width) \(英文\) 屬性。
 
-這個範例會在具有 4 欄的 [**Grid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
+這個範例會在具有 4 欄的 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 
 &nbsp;|&nbsp;|&nbsp;
 ------|------|------
@@ -213,13 +213,13 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 ## <a name="variablesizedwrapgrid"></a>VariableSizedWrapGrid
 
-[**VariableSizedWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) 是方格樣式的版面配置面板，其中列或欄在達到 [**MaximumRowsOrColumns**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns) 值時會自動換行到新列或新欄。 
+[**VariableSizedWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid) 是方格樣式的版面配置面板，其中列或欄在達到 [**MaximumRowsOrColumns**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns) 值時會自動換行到新列或新欄。 
 
-[  **Orientation**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation) 屬性指定方格是否會在換行之前將項目新增到列或欄。 預設方向是 **Vertical**，這表示方格會從上到下新增項目，直到該欄滿了為止然後換行到新欄。 當值為 **Horizontal** 時，方格會從左到右新增項目，然後換行到新列。
+[  **Orientation**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation) 屬性指定方格是否會在換行之前將項目新增到列或欄。 預設方向是 **Vertical**，這表示方格會從上到下新增項目，直到該欄滿了為止然後換行到新欄。 當值為 **Horizontal** 時，方格會從左到右新增項目，然後換行到新列。
 
-儲存格尺寸是透過 [**ItemHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight) 和 [**ItemWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth) 來指定。 每個儲存格都是相同的大小。 如果未指定 ItemHeight 或 ItemWidth，則第一個儲存格會調整大小以符合其內容，而其他的每一個儲存格都是第一個儲存格的大小。
+儲存格尺寸是透過 [**ItemHeight**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight) 和 [**ItemWidth**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth) 來指定。 每個儲存格都是相同的大小。 如果未指定 ItemHeight 或 ItemWidth，則第一個儲存格會調整大小以符合其內容，而其他的每一個儲存格都是第一個儲存格的大小。
 
-您可以使用 [**VariableSizedWrapGrid.ColumnSpan**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid) 和 [**VariableSizedWrapGrid.RowSpan**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.getrowspan) 附加屬性，來指定子元素應該填滿多少個相鄰的儲存格。
+您可以使用 [**VariableSizedWrapGrid.ColumnSpan**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid) 和 [**VariableSizedWrapGrid.RowSpan**](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.getrowspan) 附加屬性，來指定子元素應該填滿多少個相鄰的儲存格。
 
 以下示範如何在 XAML 中使用 VariableSizedWrapGrid。
 
@@ -245,9 +245,9 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 ## <a name="canvas"></a>畫布
 
-[**Canvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定座標點定位子元素，且不支援可變式版面配置。 您可以在每個元素上設定 [**Canvas.Left**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](https://docs.microsoft.com/dotnet/api/system.windows.controls.canvas.top) 附加屬性，以指定個別子元素上的點。 在版面配置的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) 階段，父項 Canvas 會從其子系讀取這些附加屬性值。
+[**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) 面板使用固定座標點定位子元素，且不支援可變式版面配置。 您可以在每個元素上設定 [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](/dotnet/api/system.windows.controls.canvas.top) 附加屬性，以指定個別子元素上的點。 在版面配置的 [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) 階段，父項 Canvas 會從其子系讀取這些附加屬性值。
 
-Canvas 中的物件可以重疊，將某一個物件繪製於另一個物件上方。 根據預設，Canvas 會以宣告子物件的順序來呈現它們，因此最後一個子系會呈現在最上方 (每個元素的預設 z 索引為 0)。 這等同於其他內建的面板。 但是，Canvas 也支援 [**Canvas.ZIndex**](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 附加屬性，您可以在每一個子元素上設定它們。 您可以在程式碼中設定這個屬性，在執行階段期間變更元素的繪製順序。 含有最高 Canvas.ZIndex 值的元素是最後繪製的，因此會繪製於共用相同空間或以任何方式重疊的任何其他元素上。 請注意，因為會採用 Alpha 值 (透明度)，所以如果最上層元素的 Alpha 值不是最大的，即使元素重疊，重疊區域顯示的內容也可能會混合。
+Canvas 中的物件可以重疊，將某一個物件繪製於另一個物件上方。 根據預設，Canvas 會以宣告子物件的順序來呈現它們，因此最後一個子系會呈現在最上方 (每個元素的預設 z 索引為 0)。 這等同於其他內建的面板。 但是，Canvas 也支援 [**Canvas.ZIndex**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) 附加屬性，您可以在每一個子元素上設定它們。 您可以在程式碼中設定這個屬性，在執行階段期間變更元素的繪製順序。 含有最高 Canvas.ZIndex 值的元素是最後繪製的，因此會繪製於共用相同空間或以任何方式重疊的任何其他元素上。 請注意，因為會採用 Alpha 值 (透明度)，所以如果最上層元素的 Alpha 值不是最大的，即使元素重疊，重疊區域顯示的內容也可能會混合。
 
 Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都必須指定其大小。
 
@@ -270,7 +270,7 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
 
 ## <a name="panels-for-itemscontrol"></a>ItemsControl 的面板
 
-有數個具有特殊用途的面板，只能用來做為 [**ItemsPanel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)，以顯示 [**ItemsControl**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 中的項目。 這些是 [**ItemsStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)、[**ItemsWrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid)、[**VirtualizingStackPanel**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel) 及 [**WrapGrid**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.WrapGrid)。 您無法針對一般 UI 版面配置使用這些面板。
+有數個具有特殊用途的面板，只能用來做為 [**ItemsPanel**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)，以顯示 [**ItemsControl**](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) 中的項目。 這些是 [**ItemsStackPanel**](/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel)、[**ItemsWrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid)、[**VirtualizingStackPanel**](/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel) 及 [**WrapGrid**](/uwp/api/Windows.UI.Xaml.Controls.WrapGrid)。 您無法針對一般 UI 版面配置使用這些面板。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

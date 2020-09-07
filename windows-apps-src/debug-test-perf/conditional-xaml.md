@@ -5,16 +5,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef518c9974fb4c8bc0f09f442f4b78be1c9c85d2
-ms.sourcegitcommit: 3a7f9f05f0127bc8e38139b219e30a8df584cad3
+ms.openlocfilehash: f4d2e4c2c1cfde922e46ddea189ab93447f2b323
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775838"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89411952"
 ---
 # <a name="conditional-xaml"></a>條件式 XAML
 
-條件式 XAML 提供一種在 XAML 標記中使用 [ApiInformation.IsApiContractPresent](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的方式。 這可讓您在標記中根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。 它會選擇性剖析元素或屬性，判斷是否可在執行階段使用它們。 條件陳述式是在執行階段進行評估，如果評估為 **true**，則剖析條件式 XAML 標記所限定的元素，否則便將其忽略。
+條件式 XAML 提供一種在 XAML 標記中使用 [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) 方法的方式。 這可讓您在標記中根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。 它會選擇性剖析元素或屬性，判斷是否可在執行階段使用它們。 條件陳述式是在執行階段進行評估，如果評估為 **true**，則剖析條件式 XAML 標記所限定的元素，否則便將其忽略。
 
 條件式 XAML 是從 Creators Update (版本 1703 組建 15063) 開始提供。 若要使用條件式 XAML，必須將 Visual Studio 專案的最低版本設定為組建 15063 (Creators Update) 或更新版本，並將目標版本設定成比最低版本更新的版本。 如需有關設定 Visual Studio 專案的詳細資訊，請參閱[版本調適型應用程式](version-adaptive-apps.md)。
 
@@ -59,7 +59,7 @@ IsPropertyPresent(ControlType, PropertyName) | IsPropertyNotPresent(ControlType,
 
 在此範例中，如果應用程式在秋季版 Creators Update 或更新版本上執行，會顯示「條件式 XAML 您好」做為文字區塊的內容，如果在舊版執行，則依預設不顯示任何內容。
 
-首先，定義以 contract5Present 為前置詞的自訂命名空間，並使用預設 XAML 命名空間 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) ) 做為包含 [TextBlock.Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.Text) 屬性的結構描述。 若要讓這個命名空間變成條件式命名空間，請在結構描述後面加上 '?' 分隔符號。
+首先，定義以 contract5Present 為前置詞的自訂命名空間，並使用預設 XAML 命名空間 (https://schemas.microsoft.com/winfx/2006/xaml/presentation) ) 做為包含 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.Text) 屬性的結構描述。 若要讓這個命名空間變成條件式命名空間，請在結構描述後面加上 '?' 分隔符號。
 
 接著定義會在執行秋季版 Creators Update 或更新版本之裝置傳回 **true** 的條件式。 您可以使用 ApiInformation 方法 **IsApiContractPresent** 來檢查是否有第 5 版的 UniversalApiContract。 第 5 版 UniversalApiContract 已隨秋季版 Creators Update (SDK 16299) 一起發行。
 
@@ -159,7 +159,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 現在您已經了解如何使用條件式 XAML 設定屬性，但您也可以在執行階段根據可用的 API 協定有條件地具現化控制項。
 
-以下範例中，當應用程式在有提供 [ColorPicker](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker) 控制項的秋季版 Creators Update 上執行時，該控制項會具現化。 ColorPicker 無法在秋季版 Creators Update 以前的版本中使用，因此當應用程式在舊版中執行時，請使用 [ComboBox](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox) 來為使用者提供簡化的色彩選擇。
+以下範例中，當應用程式在有提供 [ColorPicker](/uwp/api/windows.ui.xaml.controls.colorpicker) 控制項的秋季版 Creators Update 上執行時，該控制項會具現化。 ColorPicker 無法在秋季版 Creators Update 以前的版本中使用，因此當應用程式在舊版中執行時，請使用 [ComboBox](/uwp/api/windows.ui.xaml.controls.combobox) 來為使用者提供簡化的色彩選擇。
 
 ```xaml
 <contract5Present:ColorPicker x:Name="colorPicker"
@@ -244,7 +244,7 @@ xmlns:contract5Present="http://schemas.microsoft.com/winfx/2006/xaml/presentatio
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式指南](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [UWP 應用程式指南](../get-started/universal-application-platform-guide.md)
 - [利用 API 協定動態偵測功能](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 - [API 協定](https://channel9.msdn.com/Events/Build/2015/3-733) (組建 2015 影片)
-- [通用裝置系列 API 合約](/uwp/extension-sdks/windows-universal-sdk)
+- [使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overview)

@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 應用程式中使用 MongoDB 資料庫
-description: 在 UWP 應用程式中使用 MongoDB 資料庫。
+description: 了解如何將您的通用 Windows 平台 (UWP) 應用程式直接連線到 MongoDB 資料庫，並以程式設計方式測試連線。
 ms.date: 03/28/2019
 ms.topic: article
 keywords: windows 10, uwp, MongoDB, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: ea3e630a3bb0b8fc5f7f4168b0b946f115b97446
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: aaa035393e49d6bdad49faa806485cc51d21bb84
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "67714001"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043510"
 ---
 # <a name="use-a-mongodb-database"></a>使用 MongoDB 資料庫
 本文包含從 UWP 應用程式使用 MongoDB 資料庫所需的步驟。 其中也包含小型的程式碼片段，顯示您在程式碼中與資料庫互動的方式。

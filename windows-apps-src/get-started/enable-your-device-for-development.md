@@ -1,17 +1,17 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 啟用您的裝置以用於開發
-description: 設定您的 Windows 10 裝置以進行開發和偵錯。
+description: 了解如何藉由在 Visual Studio 中啟用開發人員模式，讓您的 Windows 10 裝置進行開發和偵錯。
 keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用裝置
 ms.date: 05/22/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4402200726da93bb820946c9849d8c15bd1c5d8d
-ms.sourcegitcommit: 48e047a581fcfcc9a4084d65a78b89f2c01cf4f3
+ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85448388"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89159052"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -62,9 +62,9 @@ ms.locfileid: "85448388"
 若要深入了解裝置入口網站，請參閱 [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)。
 
 如需裝置特定的安裝指示，請參閱︰
-- [傳統型裝置的裝置入口網站](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [HoloLens 的裝置入口網站](https://docs.microsoft.com/windows/mixed-reality/using-the-windows-device-portal)
-- [IoT 的裝置入口網站](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
+- [傳統型裝置的裝置入口網站](../debug-test-perf/device-portal-desktop.md)
+- [HoloLens 的裝置入口網站](/windows/mixed-reality/using-the-windows-device-portal)
+- [IoT 的裝置入口網站](/windows/iot-core/manage-your-device/DevicePortal)
 - [行動裝置的行動裝置](../debug-test-perf/device-portal-mobile.md)
 - [Xbox 的裝置入口網站](../xbox-apps/device-portal-xbox.md)
 
@@ -75,7 +75,7 @@ ms.locfileid: "85448388"
 > [!NOTE]
 > 從最新的 Windows 10 更新起，預設會啟用側載。 您現在可以將已簽署的 MSIX 套件部署到裝置，而不需要特殊設定。 如果您使用舊版的 Windows 10，則預設設定只會允許您執行來自 Microsoft Store 的應用程式，而且必須啟用側載才能安裝來自非 Microsoft 來源的應用程式。
 
-通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載應用程式](https://docs.microsoft.com/windows/deploy/sideload-apps-in-windows-10)和[在 Microsoft Intune 基本概念](https://docs.microsoft.com/mem/intune/fundamentals/)。
+通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，或是需要執行的應用程式並非來自 Microsoft 的人員，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用「UWP 應用程式」設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載應用程式](/windows/deploy/sideload-apps-in-windows-10)和[在 Microsoft Intune 基本概念](/mem/intune/fundamentals/)。
 
 裝置系列特定的資訊
 
@@ -122,7 +122,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 有數個工具可讓您用來將應用程式從 Windows 10 電腦部署到 Windows 10 裝置。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。 列出的方法都只會安裝應用程式套件 (.appx/.appxbundle)；它們不會安裝憑證。
 
--   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](https://docs.microsoft.com/previous-versions/windows/apps/mt203806(v=vs.140))。
+-   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](/previous-versions/windows/apps/mt203806(v=vs.140))。
 -   您可以使用[裝置入口網站](../debug-test-perf/device-portal.md)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用 Device Portal 中的 **[App](../debug-test-perf/device-portal.md#apps-manager)** 頁面來上傳應用程式套件 (.appx)，並將它安裝在裝置上。
 
 ## <a name="failure-to-install-developer-mode-package"></a>無法安裝開發人員模式套件
@@ -231,8 +231,8 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 ## <a name="see-also"></a>另請參閱
 
 * [您的第一個應用程式](your-first-app.md)
-* [發佈您的 UWP 應用程式](https://docs.microsoft.com/windows/uwp/publish/)。
-* [開發 UWP 應用程式的操作說明文章](https://docs.microsoft.com/windows/uwp/develop/)
+* [發佈您的 UWP 應用程式](../publish/index.md)。
+* [開發 UWP 應用程式的操作說明文章](../develop/index.md)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 UWP 應用程式？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

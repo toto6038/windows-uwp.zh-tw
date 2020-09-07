@@ -1,25 +1,25 @@
 ---
-Description: 清單檢視的項目範本
+description: 取得可與 ListView 控制項搭配使用的項目範本，以顯示單一、雙重、三重和表格式清單項目。
 title: 清單檢視的項目範本
 template: detail.hbs
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 9328c3f156acd13fd8947e01e924bf0d6849c0a6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: fb4e45721c1da399e8b51974bef9f55b0c70e16c
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75684398"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172672"
 ---
 # <a name="item-templates-for-list-view"></a>清單檢視的項目範本
 
-本節包含的項目範本，您可以用來搭配 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項。 使用這些範本可取得通用應用程式類型的外觀。 
+本節包含的項目範本，您可以用來搭配 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 控制項。 使用這些範本可取得通用應用程式類型的外觀。 
 
 為了示範資料繫結，這些範本會將 **ListViewItems** 繫結至[資料繫結概觀](../../data-binding/data-binding-quickstart.md)的範例 Recording 類別。
 
 > [!NOTE] 
-> 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
+> 目前，當 **DataTemplate** 包含多個控制 (例如不只一個 **TextBlock**)，螢幕助讀程式的預設可存取名稱來自項目的 .ToString()。 為了方便起見，您可以改為在 **DataTemplate** 的根元素上設定 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties)。 如需協助工具的詳細資訊，請參閱[協助工具概觀](../accessibility/accessibility-overview.md)。
 
 ## <a name="single-line-list-item"></a>單行清單項目
 使用此範本可用影像和單行文字來顯示項目清單。
@@ -129,7 +129,7 @@ ms.locfileid: "75684398"
 ```
 
 ## <a name="related-articles"></a>相關文章
-- [ListView 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.listview)
+- [ListView 類別](/uwp/api/windows.ui.xaml.controls.listview)
 - [資料繫結概觀](../../data-binding/data-binding-quickstart.md)
 - [協助工具概觀](../accessibility/accessibility-overview.md)
 - [ListView 和 GridView 範例 (Windows 10)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)

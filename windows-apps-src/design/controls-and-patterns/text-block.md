@@ -1,6 +1,6 @@
 ---
 ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
-Description: TextBlock 是在應用程式中顯示唯讀文字的主要控制項。
+description: TextBlock 是在應用程式中顯示唯讀文字的主要控制項。
 title: 文字區塊
 label: Text block
 template: detail.hbs
@@ -11,24 +11,22 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f609f7ec989cf334d6b21a32ee8bde0e43203f0
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 83e27ef72aea195268d5163dea3b050f48547d5c
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80081504"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412022"
 ---
 # <a name="text-block"></a>文字區塊
 
+TextBlock 是在應用程式中顯示唯讀文字的主要控制項。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。
  
-
- TextBlock 是在應用程式中顯示唯讀文字的主要控制項。 您可以使用它來顯示單行或多行文字、內嵌的超連結，以及已設定格式的文字 (例如，粗體、斜體或加上底線)。
- 
- > **平台 API**：[TextBlock 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)
+ > **平台 API**：[TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[Text 屬性](/uwp/api/windows.ui.xaml.controls.textblock.text)、[Inlines 屬性](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-文字區塊通常很容易使用，且提供較 RTF 文字區塊更優異的文字轉譯效能，因此使其成為大部分應用程式 UI 文字的首選。 您可取得 [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性值，以在您的應用程式中透過文字區塊輕鬆存取和使用文字。 其還提供許多可用來自訂您文字轉譯方式的相同格式設定選項。
+文字區塊通常很容易使用，且提供較 RTF 文字區塊更優異的文字轉譯效能，因此使其成為大部分應用程式 UI 文字的首選。 您可取得 [Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 屬性值，以在您的應用程式中透過文字區塊輕鬆存取和使用文字。 其還提供許多可用來自訂您文字轉譯方式的相同格式設定選項。
 
 儘管您可以在文字中放置分行符號，但文字區塊是設計來顯示單一段落，不支援文字縮排。 當您需要支援多個段落、多欄文字或其他複雜的文字配置，或是內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock**。
 
@@ -63,14 +61,9 @@ TextBlock textBlock1 = new TextBlock();
 textBlock1.Text = "Hello, world!";
 ```
 
-    <TextBlock Text="Hello, world!" />
-
-    TextBlock textBlock1 = new TextBlock();
-    textBlock1.Text = "Hello, world!";
-
 ### <a name="content-model"></a>內容模型
 
-有兩個屬性可用來將內容新增到 TextBlock：[Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text) 和 [Inlines](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.inlines)。
+有兩個屬性可用來將內容新增到 TextBlock：[Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 和 [Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines)。
 
 顯示文字的最常見方法是將 Text 屬性設為字串值，如先前範例所示。
 
@@ -88,22 +81,22 @@ textBlock1.Text = "Hello, world!";
 XAML 會在可行時使用更有效率的程式碼路徑來配置文字。 這個快速路徑會減少整體記憶體使用量，同時大幅減少文字測量和排列的 CPU 時間。 這個快速路徑僅適用於 TextBlock，因此它應該是當 RichTextBlock 可行時的慣用項目。
 
 特定情況需要 TextBlock 針對文字轉譯讓出更豐富的功能和 CPU 密集程式碼路徑。 若要保持在快速路徑上進行文字轉譯，請確定當設定這裡列出的屬性時，遵循這些指導方針。
-- [Text](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.text)：最重要的條件是，只有當您在 XAML 或程式碼中 (如同前面範例所示) 明確設定 Text 屬性時，才使用快速路徑。 透過 TextBlock 的 Inlines 集合 (例如 `<TextBlock>Inline text</TextBlock>`) 設定文字將會停用快速路徑，原因在於多重格式具有潛在的複雜性。
-- [CharacterSpacing](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.characterspacing)：只有預設值為 0 才是快速路徑。
-- [TextTrimming](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)：只有 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值才是快速路徑。 **Clip** 值會停用快速路徑。
+- [Text](/uwp/api/windows.ui.xaml.controls.textblock.text)：最重要的條件是，只有當您在 XAML 或程式碼中 (如同前面範例所示) 明確設定 Text 屬性時，才使用快速路徑。 透過 TextBlock 的 Inlines 集合 (例如 `<TextBlock>Inline text</TextBlock>`) 設定文字將會停用快速路徑，原因在於多重格式具有潛在的複雜性。
+- [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing)：只有預設值為 0 才是快速路徑。
+- [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)：只有 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值才是快速路徑。 **Clip** 值會停用快速路徑。
 
-> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他屬性也會影響快速路徑。 如果應用程式是在舊版 Windows 上執行，這些情況也會造成您的文字在慢速路徑上轉譯。 如需版本的相關詳細資訊，請參閱＜版本調適型程式碼＞。
-- [Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography)：只有各種 Typography 屬性的預設值才是快速路徑。
-- [LineStackingStrategy](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)：如果 [LineHeight](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.lineheight) 不是 0，則 **BaselineToBaseline** 和 **MaxHeight** 值會停用快速路徑。
-- [IsTextSelectionEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled)：只有 **false** 才是快速路徑。 將此屬性設為 **true** 以停用快速路徑。
+> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他屬性也會影響快速路徑。 如果應用程式是在舊版 Windows 上執行，這些情況也會造成您的文字在慢速路徑上轉譯。 如需版本的相關詳細資訊，請參閱[版本調適型程式碼](/windows/uwp/debug-test-perf/version-adaptive-code)。
+- [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography)：只有各種 Typography 屬性的預設值才是快速路徑。
+- [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)：如果 [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) 不是 0，則 **BaselineToBaseline** 和 **MaxHeight** 值會停用快速路徑。
+- [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled)：只有 **false** 才是快速路徑。 將此屬性設為 **true** 以停用快速路徑。
 
-您可以在偵錯期間將 [DebugSettings.IsTextPerformanceVisualizationEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) 屬性設為 **true** 以判斷文字是否使用快速路徑轉譯。 當這個屬性設為 true 時，快速路徑上的文字會以亮綠色顯示。
+您可以在偵錯期間將 [DebugSettings.IsTextPerformanceVisualizationEnabled](/uwp/api/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled) 屬性設為 **true** 以判斷文字是否使用快速路徑轉譯。 當這個屬性設為 true 時，快速路徑上的文字會以亮綠色顯示。
 
 >**提示**&nbsp;&nbsp;Build 2015 的此會議詳細說明此功能 - [XAML 效能：最大化使用 XAML 建置的通用 Windows 應用程式體驗的技術](https://channel9.msdn.com/Events/Build/2015/3-698)。
 
 
 
-您通常會在 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法中設定偵錯設定，覆寫應用程式.xaml 的程式碼後置頁面，如下所示。
+您通常會在 [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched) 方法中設定偵錯設定，覆寫應用程式.xaml 的程式碼後置頁面，如下所示。
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -142,7 +135,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ### <a name="inline-elements"></a>內嵌元素
 
-[Windows.UI.Xaml.Documents](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents) 命名空間提供各種不同的內嵌文字元素，讓您可用來設定文字格式，例如 Bold、Italic、Run、Span 和 LineBreak。
+[Windows.UI.Xaml.Documents](/uwp/api/Windows.UI.Xaml.Documents) 命名空間提供各種不同的內嵌文字元素，讓您可用來設定文字格式，例如 Bold、Italic、Run、Span 和 LineBreak。
 
 您可以在 TextBlock 顯示一連串的字串，其中每個字串的格式都不同。 透過 Run 元素顯示每個字串及其格式，或是以 LineBreak 元素分開每個 Run 元素，您就可以這麼做。
 
@@ -170,7 +163,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ### <a name="typography"></a>印刷樣式
 
-[Typography](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Documents.Typography) 類別的附加屬性提供一組 Microsoft OpenType 印刷樣式屬性的存取權。 您可以在 TextBlock 或個別的內嵌文字元素上設定這些附加屬性。 這些範例示範如何使用這兩者。
+[Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography) 類別的附加屬性提供一組 Microsoft OpenType 印刷樣式屬性的存取權。 您可以在 TextBlock 或個別的內嵌文字元素上設定這些附加屬性。 這些範例示範如何使用這兩者。
 ```xaml
 <TextBlock Text="Hello, world!"
            Typography.Capitals="SmallCaps"
@@ -198,6 +191,6 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 - [拼字檢查指導方針](text-controls.md)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
-- [TextBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
-- [String.Length 屬性](https://docs.microsoft.com/dotnet/api/system.string.length)
+- [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+- [String.Length 屬性](/dotnet/api/system.string.length)

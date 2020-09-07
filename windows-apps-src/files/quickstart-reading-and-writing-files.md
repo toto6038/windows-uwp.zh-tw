@@ -1,7 +1,7 @@
 ---
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: 建立、寫入和讀取檔案
-description: 使用 StorageFile 物件讀取和寫入檔案。
+description: 了解如何使用通用 Windows 平台 (UWP) 物件 FileIO、StorageFolder 和 StorageFile 來建立、寫入和讀取檔案。
 ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 0dbe5e2f1cc32a3d1b52572f71fba7547af99f17
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 89bdd0793c7af26ccd56bc2494ab6d60a6574df0
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "74258568"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168382"
 ---
 # <a name="create-write-and-read-a-file"></a>建立、寫入和讀取檔案
 
@@ -35,7 +35,7 @@ ms.locfileid: "74258568"
 
 -   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++/WinRT 撰寫非同步應用程式，請參閱[透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何使用 C++/CX 撰寫非同步的應用程式，請參閱 [C++/CX 的非同步程式設計](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++/WinRT 撰寫非同步應用程式，請參閱[透過 C++/WinRT 的並行和非同步作業](../cpp-and-winrt-apis/concurrency.md)。 若要了解如何使用 C++/CX 撰寫非同步的應用程式，請參閱 [C++/CX 的非同步程式設計](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
 -   **了解如何取得想要讀取、寫入或進行兩者的檔案**
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接著從 `stream` 呼叫 [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
+2.  接著從 `stream` 呼叫 [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) 方法，以取得輸出資料流。 如果您使用 C#，則它放入 **using** 陳述式中以管理輸出資料流的存留期。 如果您使用 [ C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，將它放入區塊中，或在使用完畢時將它設為 `nullptr`，即可控制其存留期。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))

@@ -1,17 +1,17 @@
 ---
 title: 取得 Windows 應用程式範例
-description: 了解如何從 GitHub 下載 Windows 程式碼範例。
+description: 了解如何瀏覽、下載及開啟 GitHub 程式碼範例，以示範大部分的 Windows 功能及其 API 使用模式。
 ms.date: 06/30/2020
 ms.topic: article
 keywords: windows 10, 範例程式碼, 程式碼範例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 285388c4c1b4791e1ca271a853476416b6d13c13
-ms.sourcegitcommit: 179f8098d10e338ad34fa84934f1654ec58161cd
+ms.openlocfilehash: e08a81ac6f9bca2e4fe4b7451df830e20c714893
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85757615"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89162942"
 ---
 # <a name="get-windows-app-samples"></a>取得 Windows 應用程式範例
 
@@ -19,7 +19,7 @@ ms.locfileid: "85757615"
 
 :::image type="content" source="images/github-windows-samples-page.png" alt-text="GitHub Windows 通用範例存放庫":::
 
-若要更輕鬆地尋找特定範例，您可以透過[範例瀏覽器](https://docs.microsoft.com/samples/browse/)，瀏覽及搜尋各種 Microsoft 開發人員工具和技術的已分類程式碼範例集合。
+若要更輕鬆地尋找特定範例，您可以透過[範例瀏覽器](/samples/browse/)，瀏覽及搜尋各種 Microsoft 開發人員工具和技術的已分類程式碼範例集合。
 
 :::image type="content" source="images/samples-browser-windows.png" alt-text="Microsoft 範例瀏覽器":::
 

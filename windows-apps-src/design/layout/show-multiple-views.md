@@ -1,16 +1,16 @@
 ---
-Description: 在個別視窗中檢視應用程式的不同組件。
+description: 讓使用者在個別的視窗中檢視您應用程式的獨立部分，以協助他們提高生產力。
 title: 顯示 app 的多重檢視
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d6ea614a9d85eadfcb807c6e6100dbe15ed0c4
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 7b58841420c93f3fee02b0f283012fe45c468618
+ms.sourcegitcommit: b0cfbab1ed8749ef572ba6971e6b206717d12c12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970733"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89219131"
 ---
 # <a name="show-multiple-views-for-an-app"></a>顯示 app 的多重檢視
 
@@ -86,6 +86,7 @@ Windows 內容可透過不同方式裝載在應用程式內。
 | Window.Current.[Bounds](/uwp/api/windows.ui.xaml.window.bounds) | _uiElement_.XamlRoot.[Size](/uwp/api/windows.ui.xaml.xamlroot.size) |
 | Window.Current.[Content](/uwp/api/windows.ui.xaml.window.content) | UIElement root =  _uiElement_.XamlRoot.[Content](/uwp/api/windows.ui.xaml.xamlroot.content) |
 | Window.Current.[Compositor](/uwp/api/windows.ui.xaml.window.compositor) | 未變更。 AppWindow 和 DesktopWindowXamlSource 支援此項目。 |
+| VisualTreeHelper.[FindElementsInHostCoordinates](/uwp/api/windows.ui.xaml.media.visualtreehelper.findelementsinhostcoordinates)<br>雖然 UIElement 參數是選擇性的，但如果在 Island 上裝載時未提供 UIElement，此方法就會引發例外狀況。 | 請指定 _uiElement_.XamlRoot 作為 UIElement，而不是讓其保持空白。 |
 | VisualTreeHelper.[GetOpenPopups](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopups)<br/>在 XAML Islands app 中，這會擲回錯誤。 在 AppWindow app 中，這將會在主視窗中傳回開啟的快顯視窗。 | VisualTreeHelper.[GetOpenPopupsForXamlRoot](/uwp/api/windows.ui.xaml.media.visualtreehelper.getopenpopupsforxamlroot)(_uiElement_.XamlRoot) |
 | FocusManager.[GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement) | FocusManager.[GetFocusedElement](/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement#Windows_UI_Xaml_Input_FocusManager_GetFocusedElement_Windows_UI_Xaml_XamlRoot_)(_uiElement_.XamlRoot) |
 | contentDialog.ShowAsync() | contentDialog.[XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) = _uiElement_.XamlRoot;<br/>contentDialog.ShowAsync(); |
@@ -108,5 +109,5 @@ Windows 內容可透過不同方式裝載在應用程式內。
 
 - [使用 AppWindow](app-window.md)
 - [使用 ApplicationView](application-view.md)
-- [ApplicationViewSwitcher](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
-- [CreateNewView](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)
+- [ApplicationViewSwitcher](/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher)
+- [CreateNewView](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview)

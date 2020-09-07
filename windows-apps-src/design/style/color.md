@@ -1,5 +1,5 @@
 ---
-description: 了解如何在 Windows 應用程式中使用輔色及佈景主題。
+description: 了解如何藉由操作輔色和主題資源，在您的通用 Windows 平台 (UWP) 應用程式中有效地使用色彩。
 title: Windows 應用程式中的色彩
 ms.date: 04/07/2019
 ms.topic: article
@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: c87dfbdc00df36c75a5b0b865376af352edcabbb
-ms.sourcegitcommit: 577a54d36145f91c8ade8e4509d4edddd8319137
+ms.openlocfilehash: 06b566abf3fa20ca15e28a72b88e7c6e5a5cc4d5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83867358"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169332"
 ---
 # <a name="color"></a>色彩
 
@@ -190,7 +190,7 @@ Windows 殼層中的輔色演算法會產生輔色的淺色和深色色調。
 - `SystemAccentColorDark3`
 
 <!-- check this is true -->
-您也可以使用 [**UISettings.GetColorValue**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) 方法和 [**UIColorType**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) 列舉，以程式設計方式存取輔色調色盤。
+您也可以使用 [**UISettings.GetColorValue**](/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) 方法和 [**UIColorType**](/uwp/api/Windows.UI.ViewManagement.UIColorType) 列舉，以程式設計方式存取輔色調色盤。
 
 您可以使用輔色調色盤，在您的應用程式中進行色彩佈景主題設定。 以下是如何在按鈕上使用輔色調色盤的範例。
 
@@ -222,13 +222,13 @@ Windows 殼層中的輔色演算法會產生輔色的淺色和深色色調。
 
 ## <a name="color-api"></a>色彩 API
 
-有數個可用來增加應用程式色彩的 API。 首先是 [**Colors**](https://docs.microsoft.com/uwp/api/windows.ui.colors) 類別，可實作預先定義色彩的大型清單。 這些都可使用 XAML 屬性自動存取。 在以下範例中，我們建立按鈕並設定背景和前景色彩屬性為 **Colors** 類別成員。
+有數個可用來增加應用程式色彩的 API。 首先是 [**Colors**](/uwp/api/windows.ui.colors) 類別，可實作預先定義色彩的大型清單。 這些都可使用 XAML 屬性自動存取。 在以下範例中，我們建立按鈕並設定背景和前景色彩屬性為 **Colors** 類別成員。
 
 ```xaml
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-您可以使用 XAML 中的 [**Color**](https://docs.microsoft.com/uwp/api/windows.ui.color) 結構，從 RGB 或十六進位值建立自己的色彩。
+您可以使用 XAML 中的 [**Color**](/uwp/api/windows.ui.color) 結構，從 RGB 或十六進位值建立自己的色彩。
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
@@ -246,9 +246,9 @@ Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255
 字母「Argb」表示 Alpha (透明度)、紅色、綠色和藍色，色彩的四個元件。 每個引數的範圍為 0 到 255。 您可以選擇省略第一個值，如此會提供 255 的預設不透明度，亦即 100% 不透明。
 
 > [!Note]
-> 如果您使用 C++，則必須使用 [**ColorHelper**](https://docs.microsoft.com/uwp/api/windows.ui.colorhelper) 類別建立色彩。
+> 如果您使用 C++，則必須使用 [**ColorHelper**](/uwp/api/windows.ui.colorhelper) 類別建立色彩。
 
-**Color** 的最常見用途是做為 [**SolidColorBrush**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.solidcolorbrush) 的引數，可使用單一純色來繪製 UI 元素。 這些筆刷一般定義在 [**ResourceDictionary**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中，因此可重複使用於多個元素。
+**Color** 的最常見用途是做為 [**SolidColorBrush**](/uwp/api/windows.ui.xaml.media.solidcolorbrush) 的引數，可使用單一純色來繪製 UI 元素。 這些筆刷一般定義在 [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary) 中，因此可重複使用於多個元素。
 
 ```xaml
 <ResourceDictionary>
@@ -272,19 +272,19 @@ Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255
 
 ### <a name="how-to-use-colorpaletteresources"></a>如何使用 ColorPaletteResources
 
-ColorPaletteResources 是一項 API，可將資源的範圍位置告知系統。 ColorPaletteResources 必須使用 [X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，而這可以是三個選項的其中一個：
+ColorPaletteResources 是一項 API，可將資源的範圍位置告知系統。 ColorPaletteResources 必須使用 [X:key](../../xaml-platform/x-key-attribute.md)，而這可以是三個選項的其中一個：
 - Default
-  * 在[淺色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)佈景主題中顯示您的色彩變更
+  * 在[淺色](#light-theme)和[深色](#dark-theme)佈景主題中顯示您的色彩變更
 - 輕量型
-  * 只在[淺色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)中顯示您的色彩變更
+  * 只在[淺色佈景主題](#light-theme)中顯示您的色彩變更
 - 深色
-  * 只在[暗色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)中顯示您的色彩變更
+  * 只在[暗色佈景主題](#dark-theme)中顯示您的色彩變更
 
 如果您想在其中一個主題中有不同的自訂外觀，設定該 x:Key 可確保您的色彩適當地變更為系統或應用程式的佈景主題。
 
 ### <a name="how-to-apply-scoped-colors"></a>如何套用已設定範圍的色彩
 
-透過 XAML 中的 **ColorPaletteResources** API 設定資源範圍，可讓您取用我們[佈景主題資源庫](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)中的任何系統色彩和筆刷，並可在頁面或容器的範圍內將其重新定義。
+透過 XAML 中的 **ColorPaletteResources** API 設定資源範圍，可讓您取用我們[佈景主題資源庫](../controls-and-patterns/xaml-theme-resources.md)中的任何系統色彩和筆刷，並可在頁面或容器的範圍內將其重新定義。
 
 例如，如果您已在方格中定義兩種系統色彩 - **BaseLow** 和 **BaseMediumLow**，然後在頁面上放置兩個按鈕：一個在該方格內，一個在該方格外：
 

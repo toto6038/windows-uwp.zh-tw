@@ -1,16 +1,16 @@
 ---
 title: 建立調適型配置的教學課程
-description: 此文章說明 XAML 調適型配置的基本知識
+description: 了解如何在 XAML 中使用調適型配置功能，以建立外觀適合任何視窗大小的應用程式。
 keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b172f2da7fa8953045db4eab3818df02ce43e00c
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942888"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174472"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -60,11 +60,11 @@ ms.locfileid: "88942888"
 
 ![小型視窗：之前](../basics/images/xaml-basics/adaptive-layout-small-before.png)
 
-如需有關應用程式版面配置的詳細資訊，請參閱文件的＜[版面配置](/windows/uwp/design/layout/)＞一節。
+如需有關應用程式版面配置的詳細資訊，請參閱文件的＜[版面配置](../layout/index.md)＞一節。
 
 ### <a name="add-window-breakpoints"></a>新增視窗中斷點
 
-第一個步驟是定義套用不同視覺狀態的「中斷點」。 如需小型、中型和大型螢幕中斷點的詳細資訊，請參閱[螢幕大小和中斷點](/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-design)。
+第一個步驟是定義套用不同視覺狀態的「中斷點」。 如需小型、中型和大型螢幕中斷點的詳細資訊，請參閱[螢幕大小和中斷點](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
 
 從方案總管開啟 App.xaml，然後將下列程式碼加到 `MergedDictionaries` 後面，但在結尾的 `</ResourceDictionary>` 標記之前。
 
@@ -264,12 +264,12 @@ ms.locfileid: "88942888"
 
 ## <a name="going-further"></a>更進一步
 
-現在完成了這個實習課程，您已具備充足的調整型配置知識，可以進一步自行實驗。 若要進行更大的挑戰，請嘗試最佳化較大螢幕大小的版面配置，例如 Surface Hub。 如果您想要測試 Surface Hub 版面配置，請參閱[使用 Visual Studio 測試 Surface Hub 應用程式](/windows/uwp/debug-test-perf/test-surface-hub-apps-using-visual-studio)。
+現在完成了這個實習課程，您已具備充足的調整型配置知識，可以進一步自行實驗。 若要進行更大的挑戰，請嘗試最佳化較大螢幕大小的版面配置，例如 Surface Hub。 如果您想要測試 Surface Hub 版面配置，請參閱[使用 Visual Studio 測試 Surface Hub 應用程式](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)。
 
 如果遇到困難，您可以在[使用 XAML 定義頁面版面配置](../layout/layouts-with-xaml.md)的下列各節中找到更多指引。
 
-+ [視覺狀態與狀態觸發程序](/windows/uwp/design/layout/layouts-with-xaml#visual-states-and-state-triggers)
-+ [量身訂做的版面配置](/windows/uwp/design/layout/layouts-with-xaml#tailored-layouts)
++ [視覺狀態與狀態觸發程序](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [量身訂做的版面配置](../layout/layouts-with-xaml.md#tailored-layouts)
 
 或者，如果您想要深入了解最初的編輯相片應用程式是如何建置，請參閱 XAML [使用者介面](../basics/xaml-basics-ui.md)及[資料繫結](../../data-binding/xaml-basics-data-binding.md)的那些教學課程。
 

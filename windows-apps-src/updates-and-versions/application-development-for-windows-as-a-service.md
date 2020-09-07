@@ -1,17 +1,17 @@
 ---
 title: 「Windows 即服務」應用程式開發
-description: 將 App 的發行與支援從特定的 Windows 組建中分離。
+description: 了解 Windows 即服務 (WaaS) 的創新、開發和交付方法，以及以社群為中心的 Windows 測試人員測試計劃。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 47be38c6d7a5374b06789beede02647ef9b264d8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "75737631"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89173792"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 
@@ -20,7 +20,7 @@ ms.locfileid: "75737631"
 -   Windows 10 行動裝置版
 -   Windows 10 IoT 核心版 
 
-在今日的環境中，使用者期望經常是依照以裝置為主的體驗去設定，完整的產品週期需以月計，而非以年計。 此外，新發行版本還必須能持續使用，並且需以最不影響使用者的方式部署。 Microsoft 藉由實作創新式開發與傳遞的新方法 (稱為 [Windows 即服務 (WaaS)](https://docs.microsoft.com/windows/deployment/update/waas-overview))，設計出符合這些需求的 Windows 10。 既可明顯縮短產品週期，同時又能兼顧高品質水準，其關鍵就在於 Microsoft 為 Windows 10 實作以社群為主的創新測試方法。 社群又稱為 Windows 測試人員，包含世界各地數百萬名使用者。 當 Windows 測試人員選擇加入社群後，可透過稱為「正式發行前小眾測試」的循環方法，在產品週期進程中測試許多組建，並提供意見反應給 Microsoft。
+在今日的環境中，使用者期望經常是依照以裝置為主的體驗去設定，完整的產品週期需以月計，而非以年計。 此外，新發行版本還必須能持續使用，並且需以最不影響使用者的方式部署。 Microsoft 藉由實作創新式開發與傳遞的新方法 (稱為 [Windows 即服務 (WaaS)](/windows/deployment/update/waas-overview))，設計出符合這些需求的 Windows 10。 既可明顯縮短產品週期，同時又能兼顧高品質水準，其關鍵就在於 Microsoft 為 Windows 10 實作以社群為主的創新測試方法。 社群又稱為 Windows 測試人員，包含世界各地數百萬名使用者。 當 Windows 測試人員選擇加入社群後，可透過稱為「正式發行前小眾測試」的循環方法，在產品週期進程中測試許多組建，並提供意見反應給 Microsoft。
 
 以「正式發行前小眾測試版」方式散發的組建，可提供 Windows 工程團隊有關組建實際使用情況的重要資料。 配合 Windows 測試人員執行的「正式發行前小眾測試」，也可讓 Microsoft 在比過去更多樣化的硬體、應用程式和網路環境中測試組建，以更快找出問題。 因此，Microsoft 認為以社群為主的「正式發行前小眾測試」將可加快創新式傳遞的速度，還能提供更勝以往的公開發行品質。
 
@@ -42,7 +42,7 @@ Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員�
 | 半年通道 | Microsoft 首次發行後約 4 個月 | 從第一次發佈算起 18 個月 | 提供額外的時間，以在部署前先測試新功能升級 | 專業版、教育版、企業版、行動裝置企業版、IoT 核心專業版 |
 | 長期維護通道 (LTSC) | Microsoft 發行後即可安裝 | 10 年 | 可透過少量變更組態的方式長期部署選定的 Windows 10 發行版本 | 企業版 LTSB |
 
-如需詳細資訊，請參閱 [Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)。
+如需詳細資訊，請參閱 [Windows 10 更新與升級維護選項](/windows/deployment/update/waas-overview#servicing-channels)。
 
 ## <a name="supporting-apps-in-windows-as-a-service"></a>以「Windows 即服務」支援 app
 
@@ -90,7 +90,7 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 -   如果 app 依存於特定的 API 功能，請確定您有將正確的 API 版本作為目標。
 -   請確定您是透過 APISet 或另一個公用 API 偵測變更，並且不要使用版本做為某些功能或修正的代表。 如果有重大變更，且並未適當檢查，該變更就會變成是錯誤。
 -   請確定 app「不會」以奇特的方法檢查版本，例如透過登錄、檔案版本、位移、核心模式、驅動程式或其他方法。 如果 app 一定要檢查版本，請使用 GetVersion API，這應該會傳回主要、次要與組建編號。
--   如果您正在使用 [GetVersion](https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion?redirectedfrom=MSDN) API，請記住這個 API 的行為自 Windows 8.1 後已經變更。
+-   如果您正在使用 [GetVersion](/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversion) API，請記住這個 API 的行為自 Windows 8.1 後已經變更。
 
 如果您擁有像反惡意程式碼軟體或防火牆應用程式這樣的 app，您應該透過平常使用的意見反應管道和 Windows 測試人員計畫進行。
 
@@ -158,4 +158,4 @@ Microsoft 使用診斷與使用狀況資料來識別問題並進行疑難排解�
 
 
 ## <a name="related-topics"></a>相關主題
-[Windows 10 更新與升級維護選項](https://docs.microsoft.com/windows/manage/introduction-to-windows-10-servicing)
+[Windows 10 更新與升級維護選項](/windows/manage/introduction-to-windows-10-servicing)

@@ -1,23 +1,23 @@
 ---
 title: 使用檔案
-description: 了解如何使用通用 Windows 平台中的檔案。
+description: 了解要在通用 Windows 平台 (UWP) 應用程式中開始讀取與寫入檔案所需的主要 API 和類型。
 ms.date: 05/01/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c36f4885dffa86452543f05f5b7a59a882d25710
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: fea8437a533d3559c912e48241720bddd01ed96d
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730050"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89158962"
 ---
 # <a name="work-with-files"></a>使用檔案
 
 本主題涵蓋您需要了解在通用 Windows 平台 (UWP) 應用程式中開始讀取與寫入檔案。 介紹了主要 API 與類型，並提供連結有助於您了解更多資訊。
 
-這不是教學課程。 如果您想要教學課程，請參閱[建立、寫入及讀取檔案](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files)，除了示範如何建立，讀取和寫入檔案以外，也示範如何使用緩衝區和串流。 您可能也會對[檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)有興趣，其示範如何建立、讀取、寫入、複製和刪除檔案，以及如何擷取檔案屬性，並請記住檔案或資料夾，讓您的應用程式可以輕鬆地再次存取。
+這不是教學課程。 如果您想要教學課程，請參閱[建立、寫入及讀取檔案](../files/quickstart-reading-and-writing-files.md)，除了示範如何建立，讀取和寫入檔案以外，也示範如何使用緩衝區和串流。 您可能也會對[檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess)有興趣，其示範如何建立、讀取、寫入、複製和刪除檔案，以及如何擷取檔案屬性，並請記住檔案或資料夾，讓您的應用程式可以輕鬆地再次存取。
 
 我們會查看程式碼從檔案寫入及讀取文字，以及如何存取應用程式的本機、漫遊，以及暫存資料夾。
 
@@ -25,17 +25,17 @@ ms.locfileid: "82730050"
 
 以下是您必須知道關於讀取或從/至檔案寫入文字的主要類型：
 
-- [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) 代表檔案。 這個類別有屬性，可提供有關建立、開啟、複製、刪除、與重新命名檔案的檔案與方法相關資訊。
-可用於處理字串路徑。 有一些採用字串路徑的 Windows 執行階段 API，但您更經常使用 **StorageFile** 代表檔案，因為在 UWP 中一些您使用的檔案可能沒有路徑，或可能會有雜亂無章的路徑。 使用 [StorageFile.GetFileFromPathAsync()](https://docs.microsoft.com/uwp/api/windows.storage.storagefile.getfilefrompathasync) 將路徑轉換為 **StorageFile**。 
+- [Windows.Storage.StorageFile](/uwp/api/windows.storage.storagefile) 代表檔案。 這個類別有屬性，可提供有關建立、開啟、複製、刪除、與重新命名檔案的檔案與方法相關資訊。
+可用於處理字串路徑。 有一些採用字串路徑的 Windows 執行階段 API，但您更經常使用 **StorageFile** 代表檔案，因為在 UWP 中一些您使用的檔案可能沒有路徑，或可能會有雜亂無章的路徑。 使用 [StorageFile.GetFileFromPathAsync()](/uwp/api/windows.storage.storagefile.getfilefrompathasync) 將路徑轉換為 **StorageFile**。 
 
-- [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) 類別提供讀取和寫入文字的簡易方式。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 這個類別與 [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) 類別非常相似。 主要差異在於，它採用 **StorageFile**，而不是採用字串路徑作為 **PathIO**。
-- [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) 代表資料夾 (目錄)。 這個類別有建立檔案、查詢資料夾內容、建立、重新命名，以及刪除資料夾和可提供資料夾相關資訊的屬性的方法。 
+- [FileIO](/uwp/api/windows.storage.fileio) 類別提供讀取和寫入文字的簡易方式。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 這個類別與 [PathIO](/uwp/api/windows.storage.pathio) 類別非常相似。 主要差異在於，它採用 **StorageFile**，而不是採用字串路徑作為 **PathIO**。
+- [Windows.Storage.StorageFolder](/uwp/api/windows.storage.storagefolder) 代表資料夾 (目錄)。 這個類別有建立檔案、查詢資料夾內容、建立、重新命名，以及刪除資料夾和可提供資料夾相關資訊的屬性的方法。 
 
 取得 **StorageFolder** 的常見方式包含：
 
-- [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) 讓使用者瀏覽他們想要使用的資料夾。
-- [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) 提供特定於本機應用程式資料夾之一的 **StorageFolder**，例如本機、漫遊，以及暫存資料夾。
-- [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders) 提供 **StorageFolder** 用於已知的媒體櫃，例如 [音樂] 或 [圖片] 媒體櫃。
+- [Windows.Storage.Pickers.FolderPicker](/uwp/api/windows.storage.pickers.folderpicker) 讓使用者瀏覽他們想要使用的資料夾。
+- [Windows.Storage.ApplicationData.Current](/uwp/api/windows.storage.applicationdata.current) 提供特定於本機應用程式資料夾之一的 **StorageFolder**，例如本機、漫遊，以及暫存資料夾。
+- [Windows.Storage.KnownFolders](/uwp/api/windows.storage.knownfolders) 提供 **StorageFolder** 用於已知的媒體櫃，例如 [音樂] 或 [圖片] 媒體櫃。
 
 ## <a name="write-text-to-a-file"></a>將文字寫入檔案
 
@@ -90,17 +90,17 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(file);
 
 ### <a name="access-the-rest-of-the-file-system"></a>存取其餘檔案系統
 
-UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來存取特定使用者媒體櫃的意圖。 當安裝應用程式來確認它們是否授權存取指定的媒體櫃時，提示使用者。 如果沒有，則無法安裝應用程式。 有存取相片、影片與音樂媒體櫃的功能。 如需完整清單，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。 若要取得 **StorageFolder** 用於這些程式庫，請使用 [Windows.Storage.KnownFolders](https://docs.microsoft.com/uwp/api/windows.storage.knownfolders) 類別。
+UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來存取特定使用者媒體櫃的意圖。 當安裝應用程式來確認它們是否授權存取指定的媒體櫃時，提示使用者。 如果沒有，則無法安裝應用程式。 有存取相片、影片與音樂媒體櫃的功能。 如需完整清單，請參閱[應用程式功能宣告](../packaging/app-capability-declarations.md)。 若要取得 **StorageFolder** 用於這些程式庫，請使用 [Windows.Storage.KnownFolders](/uwp/api/windows.storage.knownfolders) 類別。
 
 #### <a name="documents-library"></a>文件庫
 
-雖然有存取使用者文件庫的功能，但該功能受限，其表示 Microsoft Store 拒絕應用程式宣告它，除非您依照程序取得特殊核准。 不是供一般使用。 請改用檔案或資料夾選擇器 (請參閱[使用選擇器開啟檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers)和[使用選擇器儲存檔案](https://docs.microsoft.com/windows/uwp/files/quickstart-save-a-file-with-a-picker))，讓使用者可瀏覽資料夾或檔案。 當使用者瀏覽資料夾或檔案時，隱含授予他們存取應用程式的權限且系統允許存取。
+雖然有存取使用者文件庫的功能，但該功能受限，其表示 Microsoft Store 拒絕應用程式宣告它，除非您依照程序取得特殊核准。 不是供一般使用。 請改用檔案或資料夾選擇器 (請參閱[使用選擇器開啟檔案和資料夾](../files/quickstart-using-file-and-folder-pickers.md)和[使用選擇器儲存檔案](../files/quickstart-save-a-file-with-a-picker.md))，讓使用者可瀏覽資料夾或檔案。 當使用者瀏覽資料夾或檔案時，隱含授予他們存取應用程式的權限且系統允許存取。
 
 #### <a name="general-access"></a>標準存取
 
-或者，您的應用程式可以宣告其資訊清單中受限制的 [broadFileSystem](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations) 的功能，這也需要 Microsoft Store 的核准。 然後應用程式可以存取使用者有存取權的任何檔案，不須要檔案或資料夾選擇器的介入。
+或者，您的應用程式可以宣告其資訊清單中受限制的 [broadFileSystem](../packaging/app-capability-declarations.md) 的功能，這也需要 Microsoft Store 的核准。 然後應用程式可以存取使用者有存取權的任何檔案，不須要檔案或資料夾選擇器的介入。
 
-如需應用程式可以存取的位置完整清單，請參閱[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。
+如需應用程式可以存取的位置完整清單，請參閱[檔案存取權限](../files/file-access-permissions.md)。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
@@ -110,39 +110,39 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 
 | API | 說明 |
 |------|---------------|
-|  [Windows.Storage.StorageFile](https://docs.microsoft.com/uwp/api/windows.storage.storagefile) | 提供有關建立、開啟、複製、刪除與重新命名檔案的檔案之方法相關資訊。 |
-| [Windows.Storage.StorageFolder](https://docs.microsoft.com/uwp/api/windows.storage.storagefolder) | 提供有關資料夾、建立檔案的方法，以及建立、重新命名檔案與刪除資料夾的方法的相關資訊。 |
-| [FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio) |  提供讀取和寫入文字的簡易方式。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 |
-| [PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio) | 提供讀取/寫入文字從/至指定字串路徑的檔案適用於檔案的簡單方法。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 |
-| [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) & [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) |  讀取和寫入緩衝區、位元組、整數、Guid、TimeSpans，以及更多從/至串流。 |
-| [Windows.Storage.ApplicationData.Current](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.current) | 可讓您存取為應用程式所建立的資料夾，例如本機資料夾、漫遊資料夾，和暫存檔案資料夾。 |
-| [Windows.Storage.Pickers.FolderPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.folderpicker) |  可讓使用者選擇資料夾，並將 **StorageFolder** 傳回給它。 這是您如何存取預設下應用程式也無法存取的位置。 |
-| [Windows.Storage.Pickers.FileOpenPicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.fileopenpicker) | 可讓使用者選擇檔案開啟與將 **StorageFolder** 傳回給它。 這是您如何存取預設下應用程式也無法存取的檔案。 |
-| [Windows.Storage.Pickers.FileSavePicker](https://docs.microsoft.com/uwp/api/windows.storage.pickers.filesavepicker) | 可讓使用者選擇檔案的檔案名稱、副檔名和儲存位置。 傳回 **StorageFile**。 這是您如何將檔案儲存至預設下應用程式也無法存取的位置。 |
-|  [Windows.Storage.Streams 命名空間](https://docs.microsoft.com/uwp/api/windows.storage.streams) | 涵蓋讀取和寫入串流。 尤其是，請查看 [DataReader](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader) 和 [DataWriter](https://docs.microsoft.com/uwp/api/windows.storage.streams.datawriter) 類別，其讀取和寫入緩衝區、位元組、整數、Guid、TimeSpans，以及更多。 |
+|  [Windows.Storage.StorageFile](/uwp/api/windows.storage.storagefile) | 提供有關建立、開啟、複製、刪除與重新命名檔案的檔案之方法相關資訊。 |
+| [Windows.Storage.StorageFolder](/uwp/api/windows.storage.storagefolder) | 提供有關資料夾、建立檔案的方法，以及建立、重新命名檔案與刪除資料夾的方法的相關資訊。 |
+| [FileIO](/uwp/api/windows.storage.fileio) |  提供讀取和寫入文字的簡易方式。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 |
+| [PathIO](/uwp/api/windows.storage.pathio) | 提供讀取/寫入文字從/至指定字串路徑的檔案適用於檔案的簡單方法。 這個類別也可以讀取/寫入位元組陣列，或緩衝區的內容。 |
+| [DataReader](/uwp/api/windows.storage.streams.datareader) & [DataWriter](/uwp/api/windows.storage.streams.datawriter) |  讀取和寫入緩衝區、位元組、整數、Guid、TimeSpans，以及更多從/至串流。 |
+| [Windows.Storage.ApplicationData.Current](/uwp/api/windows.storage.applicationdata.current) | 可讓您存取為應用程式所建立的資料夾，例如本機資料夾、漫遊資料夾，和暫存檔案資料夾。 |
+| [Windows.Storage.Pickers.FolderPicker](/uwp/api/windows.storage.pickers.folderpicker) |  可讓使用者選擇資料夾，並將 **StorageFolder** 傳回給它。 這是您如何存取預設下應用程式也無法存取的位置。 |
+| [Windows.Storage.Pickers.FileOpenPicker](/uwp/api/windows.storage.pickers.fileopenpicker) | 可讓使用者選擇檔案開啟與將 **StorageFolder** 傳回給它。 這是您如何存取預設下應用程式也無法存取的檔案。 |
+| [Windows.Storage.Pickers.FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker) | 可讓使用者選擇檔案的檔案名稱、副檔名和儲存位置。 傳回 **StorageFile**。 這是您如何將檔案儲存至預設下應用程式也無法存取的位置。 |
+|  [Windows.Storage.Streams 命名空間](/uwp/api/windows.storage.streams) | 涵蓋讀取和寫入串流。 尤其是，請查看 [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [DataWriter](/uwp/api/windows.storage.streams.datawriter) 類別，其讀取和寫入緩衝區、位元組、整數、Guid、TimeSpans，以及更多。 |
 
 ### <a name="useful-docs"></a>實用的文件
 
 | 主題 | 說明 |
 |-------|----------------|
-| [Windows.Storage 命名空間](https://docs.microsoft.com/uwp/api/windows.storage) | API 參考文件。 |
-| [檔案、資料夾和媒體櫃](https://docs.microsoft.com/windows/uwp/files/) | 概念文件。 |
-| [建立、寫入和讀取檔案](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵蓋建立、讀取和寫入文字、二進位資料以及串流。 |
+| [Windows.Storage 命名空間](/uwp/api/windows.storage) | API 參考文件。 |
+| [檔案、資料夾和媒體櫃](../files/index.md) | 概念文件。 |
+| [建立、寫入和讀取檔案](../files/quickstart-reading-and-writing-files.md) | 涵蓋建立、讀取和寫入文字、二進位資料以及串流。 |
 | [開始使用儲存本機應用程式資料](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | 除了涵蓋儲存本機資料的最佳做法，還涵蓋了 LocalSettings 和 LocalCache 資料夾的用途。 |
 | [開始使用漫遊應用程式資料](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | 有關如何使用漫遊應用程式資料的兩個系列。 |
-| [漫遊應用程式資料的指導方針](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 設計應用程式時，請遵循這些資料漫遊指導方針。 |
-| [儲存及擷取設定和其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 提供各種應用程式資料存放區的概觀，例如本機、漫遊，以及暫存資料夾。 如需指導方針與寫入裝置間漫遊的資料的其他相關資訊，請參閱[漫遊資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data)章節。 |
-| [檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | 應用程式可以存取的檔案系統位置之相關資訊。 |
-| [使用選擇器開啟檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 透過讓使用者藉由選擇器 UI 決定，來示範如何存取檔案和資料夾。 |
-| [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) | 用來讀取和寫入串流的類型。 |
-| [音樂、圖片及影片媒體櫃中的檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | 涵蓋如何從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。 |
+| [漫遊應用程式資料的指導方針](../design/app-settings/store-and-retrieve-app-data.md) | 設計應用程式時，請遵循這些資料漫遊指導方針。 |
+| [儲存及擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md) | 提供各種應用程式資料存放區的概觀，例如本機、漫遊，以及暫存資料夾。 如需指導方針與寫入裝置間漫遊的資料的其他相關資訊，請參閱[漫遊資料](../design/app-settings/store-and-retrieve-app-data.md#roaming-data)章節。 |
+| [檔案存取權限](../files/file-access-permissions.md) | 應用程式可以存取的檔案系統位置之相關資訊。 |
+| [使用選擇器開啟檔案和資料夾](../files/quickstart-using-file-and-folder-pickers.md) | 透過讓使用者藉由選擇器 UI 決定，來示範如何存取檔案和資料夾。 |
+| [Windows.Storage.Streams](/uwp/api/windows.storage.streams) | 用來讀取和寫入串流的類型。 |
+| [音樂、圖片及影片媒體櫃中的檔案和資料夾](../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 涵蓋如何從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。 |
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
 | 程式碼範例 | 說明 |
 |-----------------|---------------|
-| [應用程式資料範例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/applicationdata/) | 透過使用應用程式資料 API 來示範如何儲存和擷取每個使用者的特定資料。 |
+| [應用程式資料範例](/samples/microsoft/windows-universal-samples/applicationdata/) | 透過使用應用程式資料 API 來示範如何儲存和擷取每個使用者的特定資料。 |
 | [檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 示範如何建立、讀取、寫入、複製和刪除檔案。 |
-| [檔案選擇器範例](https://docs.microsoft.com/samples/microsoft/windows-universal-samples/filepicker/) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
-| [JSON 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 使用 [Windows.Data.Json 命名空間](https://docs.microsoft.com/uwp/api/Windows.Data.Json) 來示範如何編碼和解碼 JavaScript 物件標記法 (JSON) 物件、陣列、字串、數字和布林。 |
+| [檔案選擇器範例](/samples/microsoft/windows-universal-samples/filepicker/) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
+| [JSON 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 使用 [Windows.Data.Json 命名空間](/uwp/api/Windows.Data.Json) 來示範如何編碼和解碼 JavaScript 物件標記法 (JSON) 物件、陣列、字串、數字和布林。 |
 | [其他程式碼範例](https://developer.microsoft.com/windows/samples) | 在分類下拉式清單中選擇 [檔案、資料夾和媒體櫃]  。 |

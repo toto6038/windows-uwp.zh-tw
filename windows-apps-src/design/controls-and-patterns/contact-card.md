@@ -1,5 +1,5 @@
 ---
-Description: 按鈕讓使用者得以觸發立即動作。
+description: 了解如何使用連絡人卡片讓使用者顯示和編輯連絡人資訊，例如姓名、電話號碼和地址。
 title: 連絡人卡片
 ms.date: 03/07/2018
 ms.topic: article
@@ -9,12 +9,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 274481b2a282b025a637f7f6cc54dc0161c3e61d
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 2817977533b63df8498faa1ecbc5cc57a4987c30
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968753"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160592"
 ---
 # <a name="contact-card"></a>連絡人卡片
 
@@ -174,12 +174,12 @@ private void onUserClickShowContactCard()
 
 ## <a name="retrieving-real-contacts"></a>擷取「真實」的連絡人
 
-本文中的範例會建立簡單的連絡人。 在實際應用程式中，您可能會想要擷取現有的連絡人。 如需相關指示，請參閱[連絡人和行事曆](/windows/uwp/contacts-and-calendar/)。
+本文中的範例會建立簡單的連絡人。 在實際應用程式中，您可能會想要擷取現有的連絡人。 如需相關指示，請參閱[連絡人和行事曆](../../contacts-and-calendar/index.md)。
 
 
 
 
 ## <a name="related-articles"></a>相關文章
-- [連絡人和行事曆](/windows/uwp/contacts-and-calendar/)
+- [連絡人和行事曆](../../contacts-and-calendar/index.md)
 - [連絡人卡片範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
 - [連絡人圖片控制項](/windows/uwp/controls-and-patterns/person-picture/)

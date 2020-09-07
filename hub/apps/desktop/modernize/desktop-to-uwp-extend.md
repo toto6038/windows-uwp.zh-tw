@@ -1,18 +1,18 @@
 ---
-Description: 使用 Windows UI 和元件擴充您的傳統型應用程式
 title: 使用 Windows UI 和元件擴充您的應用程式
+description: 請使用 UWP 專案和 Windows 執行階段元件擴充您的傳統型應用程式，來新增新式 Windows 10 體驗。
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 73e867071058dfde71979318d6d711d79460f30b
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334559"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172782"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "85334559"
 在許多情況下，您可以直接從傳統型應用程式呼叫 Windows 執行階段 API，因此在檢視本指南之前，請先參閱[增強 Windows 10](desktop-to-uwp-enhance.md)。
 
 > [!NOTE]
-> 傳統型應用程式需要具備[套件識別資料](modernize-packaged-apps.md)，才能使用本文所述的功能。可選擇[將傳統型應用程式封裝在 MSIX 套件中](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-root)，或是[使用剖析套件授與應用程式識別資料](grant-identity-to-nonpackaged-apps.md)。
+> 傳統型應用程式需要具備[套件識別資料](modernize-packaged-apps.md)，才能使用本文所述的功能。可選擇[將傳統型應用程式封裝在 MSIX 套件中](/windows/msix/desktop/desktop-to-uwp-root)，或是[使用剖析套件授與應用程式識別資料](grant-identity-to-nonpackaged-apps.md)。
 
 準備好後就可以開始進行。
 
@@ -37,7 +37,7 @@ ms.locfileid: "85334559"
 
 ![擴充起始專案](images/desktop-to-uwp/extend-start-project.png)
 
-如果您的解決方案不包含封裝專案，請參閱[使用 Visual Studio 封裝傳統型應用程式](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
+如果您的解決方案不包含封裝專案，請參閱[使用 Visual Studio 封裝傳統型應用程式](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)。
 
 ### <a name="configure-the-desktop-application"></a>設定傳統型應用程式
 
@@ -175,7 +175,7 @@ ms.locfileid: "85334559"
 
 ### <a name="start-the-uwp-app"></a>啟動 UWP 應用程式
 
-首先，從您的傳統型應用程式建立 [Uri](https://docs.microsoft.com/dotnet/api/system.uri)，包括通訊協定名稱，以及您想要傳遞到 UWP 應用程式的任何參數。 然後，呼叫 [LaunchUriAsync](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync) 方法。
+首先，從您的傳統型應用程式建立 [Uri](/dotnet/api/system.uri)，包括通訊協定名稱，以及您想要傳遞到 UWP 應用程式的任何參數。 然後，呼叫 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法。
 
 ```csharp
 
@@ -366,7 +366,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-在使用者已開啟傳統型應用程式執行個體的情況下，還要操作 [FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher) 事件，並將路徑傳遞到檔案位置。 因此，傳統型應用程式任何開啟的執行個體都會顯示共用相片。
+在使用者已開啟傳統型應用程式執行個體的情況下，還要操作 [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher) 事件，並將路徑傳遞到檔案位置。 因此，傳統型應用程式任何開啟的執行個體都會顯示共用相片。
 
 ```csharp
 ...

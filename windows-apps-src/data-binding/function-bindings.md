@@ -1,16 +1,16 @@
 ---
-description: XBind 標記延伸允許在標記中使用函式。
+description: 了解如何在 xBind 標記延伸中使用函式作為資料繫結路徑的分葉步驟。
 title: x:Bind 中的函式
 ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d74e99526ed5531db92ba88a1053e07a3fc993b
-ms.sourcegitcommit: c7f33dbe9516d28664df1b91e03edca3cb9fb0c8
+ms.openlocfilehash: 4d677767f7eb73bf46784b3f256b511e54013548
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87871684"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170042"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
@@ -23,7 +23,7 @@ ms.locfileid: "87871684"
 - 使繫結取決於多個參數
 
 > [!NOTE]
-> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows 10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows 10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](../debug-test-perf/version-adaptive-code.md)。
 
 在下列範例中，項目的背景與前景會繫結函式，以根據色彩參數來執行轉換
 

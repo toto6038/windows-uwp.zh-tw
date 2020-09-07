@@ -1,16 +1,16 @@
 ---
-Description: Windows 應用程式中表單的版面配置指導方針。
 title: 表單
+description: 了解在通用 Windows 平台 (UWP) 應用程式中用於設計和建立表單 XAML 版面配置的指導方針。
 template: detail.hbs
 ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 69ffaf4ff67d4ee78e78c195d759ae242a069e8e
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82968509"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304690"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -45,8 +45,8 @@ ms.locfileid: "82968509"
 這類型的表單讓使用者具備回應彈性。 一般而言，這類型的表單包含更多自由表單輸入欄位，因此可接收更多樣的回應。 若要在提交時確保有效的使用者輸入和正格式確的資料，請考慮下列建議：
 
 - 使用正確的控制項 (也就是，使用 CalendarDatePicker，而不是行事曆日期的 TextBox)，讓使用者無法提交無效的資訊。 在稍後的「輸入控制項」一節中，查看更多關於在表單中選取適當輸入控制項的資訊。
-- 使用 TextBox 控制項時，利用 [PlaceholderText](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) 屬性提供使用者所需輸入格式的提示。
-- 以 [InputScope](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.inputscope) 屬性陳述預期的控制項輸入，以提供使用者適當的螢幕小鍵盤。
+- 使用 TextBox 控制項時，利用 [PlaceholderText](/uwp/api/Windows.UI.Xaml.Controls.TextBox.PlaceholderText) 屬性提供使用者所需輸入格式的提示。
+- 以 [InputScope](/uwp/api/windows.ui.xaml.input.inputscope) 屬性陳述預期的控制項輸入，以提供使用者適當的螢幕小鍵盤。
 - 以標籤上的星號 * 標記必要的輸入。
 - 停用提交按鈕，直到填入所有必要資訊為止。
 - 如果提交時有無效的資料，請以亮顯的欄位或框線標記具有無效輸入的控制項，並要求使用者重新提交表單。
@@ -58,7 +58,7 @@ ms.locfileid: "82968509"
 若要輔助使用者體驗並確保使用者能夠輸入正確的輸入，請考慮下列建議來設計表單的版面配置。 
 
 ### <a name="labels"></a>標籤
-[標籤](labels.md)應該靠左對齊且置於輸入控制項上方。 許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
+[標籤](labels.md)應該靠左對齊且置於輸入控制項上方。 許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
 若要[進行協助工具設計](../accessibility/accessibility.md)，請標記所有個別控制項和控制項群組，讓人類讀者和螢幕助讀程式都能清楚明確地使用。 
 
@@ -128,8 +128,8 @@ ms.locfileid: "82968509"
 控制 | 用法 | 範例
 - | - | -
 [ComboBox](combo-box.md) | 一開始為精簡狀態，展開可顯示可選取的項目清單 | 從一長串的項目中選取，例如州或國家/地區
-[ListView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#list-views) | 將項目分類並指派群組標頭、拖放項目、規劃內容，以及重新排序項目 | 排名選項
-[GridView](https://docs.microsoft.com/windows/uwp/controls-and-patterns/lists#grid-views) | 排列並瀏覽以影像為基礎的集合 | 挑選相片、色彩、顯示佈景主題
+[ListView](./lists.md#list-views) | 將項目分類並指派群組標頭、拖放項目、規劃內容，以及重新排序項目 | 排名選項
+[GridView](./lists.md#grid-views) | 排列並瀏覽以影像為基礎的集合 | 挑選相片、色彩、顯示佈景主題
 
 ### <a name="numeric-input"></a>數字輸入
 控制 | 用法 | 範例

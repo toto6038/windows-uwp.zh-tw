@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 0a967c923d9f8616a3a05af5bb0ebb612251d3b8
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 3f1aeb24a50d0e1f4d1e7c1ee702ea078582b4e5
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "71674538"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412002"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
@@ -23,7 +23,7 @@ ms.locfileid: "71674538"
 
 ## <a name="prerequisites"></a>必要條件
 
-這個主題假設您知道如何建立基本的 UWP app。 如需建立第一個 UWP 應用程式的指示，請參閱 [Windows 應用程式入門](https://docs.microsoft.com/windows/uwp/get-started/)。
+這個主題假設您知道如何建立基本的 UWP app。 如需建立第一個 UWP 應用程式的指示，請參閱 [Windows 應用程式入門](../get-started/index.md)。
 
 ## <a name="create-the-project"></a>建立專案
 
@@ -35,7 +35,7 @@ ms.locfileid: "71674538"
 
 如果您使用 C# 或 C++/CX，請在您的專案中加入一個新類別，並將類別命名為 **Recording**。
 
-如果您使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，請將新的 **Midl 檔案 (.idl)** 項目加入專案中，並如下列 C++/WinRT 程式碼範例所示命名。 以清單中顯示的 [MIDL 3.0](/uwp/midl-3/intro) 程式碼取代那些新檔案的內容、建置要產生 `Recording.h` 和 `.cpp` 和 `RecordingViewModel.h` 和 `.cpp` 的專案，然後將程式碼加入產生的檔案，以符合清單。 如需有關那些產生的檔案以及如何將其複製到專案中的詳細資訊，請參閱 [XAML 控制項；繫結至一個 C++/WinRT 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果您使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，請將新的 **Midl 檔案 (.idl)** 項目加入專案中，並如下列 C++/WinRT 程式碼範例所示命名。 以清單中顯示的 [MIDL 3.0](/uwp/midl-3/intro) 程式碼取代那些新檔案的內容、建置要產生 `Recording.h` 和 `.cpp` 和 `RecordingViewModel.h` 和 `.cpp` 的專案，然後將程式碼加入產生的檔案，以符合清單。 如需有關那些產生的檔案以及如何將其複製到專案中的詳細資訊，請參閱 [XAML 控制項；繫結至一個 C++/WinRT 屬性](../cpp-and-winrt-apis/binding-property.md)。
 
 ```csharp
 namespace Quickstart
@@ -223,7 +223,7 @@ namespace Quickstart
 
 接著，從代表標記頁面的類別中公開繫結來源類別。 作法是將 **RecordingViewModel** 類型的屬性加入到 **MainPage**。
 
-如果您是使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，請先更新 `MainPage.idl`。 建立專案以重新產生 `MainPage.h` 和 `.cpp`，並將這些產生檔案中的變更合併至專案中的檔案。
+如果您是使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，請先更新 `MainPage.idl`。 建立專案以重新產生 `MainPage.h` 和 `.cpp`，並將這些產生檔案中的變更合併至專案中的檔案。
 
 ```csharp
 namespace Quickstart
@@ -316,7 +316,7 @@ MainPage::MainPage()
 </Page>
 ```
 
-如果您使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則必須移除 **MainPage::ClickHandler** 函式，才能建立專案。
+如果您使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，則必須移除 **MainPage::ClickHandler** 函式，才能建立專案。
 
 結果如下。
 
@@ -324,11 +324,11 @@ MainPage::MainPage()
 
 ## <a name="binding-to-a-collection-of-items"></a>繫結到項目集合
 
-常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;** ](https://docs.microsoft.com/dotnet/api/system.collections.objectmodel.observablecollection-1) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](https://docs.microsoft.com/dotnet/api/system.componentmodel.inotifypropertychanged) 和 [**INotifyCollectionChanged**](https://docs.microsoft.com/dotnet/api/system.collections.specialized.inotifycollectionchanged) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
+常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;** ](/dotnet/api/system.collections.objectmodel.observablecollection-1) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) 和 [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
-如果您使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以在 [XAML 項目控制項；繫結至一個 C++/WinRT 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)深入瞭解如何繫結至可觀察的集合。 如果您先閱讀該主題，下面顯示的C++/WinRT 程式碼清單的目的將會更清楚。
+如果您使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，您可以在 [XAML 項目控制項；繫結至一個 C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)深入瞭解如何繫結至可觀察的集合。 如果您先閱讀該主題，下面顯示的C++/WinRT 程式碼清單的目的將會更清楚。
 
-下一個範例將 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 繫結到 `Recording` 物件的集合。 首先讓我們將集合加入到檢視模型。 將這些新成員加入到 **RecordingViewModel** 類別。
+下一個範例將 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 繫結到 `Recording` 物件的集合。 首先讓我們將集合加入到檢視模型。 將這些新成員加入到 **RecordingViewModel** 類別。
 
 ```csharp
 public class RecordingViewModel
@@ -439,7 +439,7 @@ public:
 };
 ```
 
-然後將 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 繫結到 **ViewModel.Recordings** 屬性。
+然後將 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 繫結到 **ViewModel.Recordings** 屬性。
 
 ```xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -450,11 +450,11 @@ public:
 </Page>
 ```
 
-我們還未提供資料範本給 **Recording** 類別，因此 UI 架構所能做的只是針對 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 中的每個項目，呼叫 [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString)。 **ToString** 的預設實作是傳回類型名稱。
+我們還未提供資料範本給 **Recording** 類別，因此 UI 架構所能做的只是針對 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 中的每個項目，呼叫 [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString)。 **ToString** 的預設實作是傳回類型名稱。
 
-![繫結清單檢視](images/xaml-databinding1.png)
+![繫結清單檢視 1](images/xaml-databinding1.png)
 
-若要解決這個問題，我們可以覆寫 [**ToString**](https://docs.microsoft.com/dotnet/api/system.object.tostring#System_Object_ToString) 來傳回 **OneLineSummary** 的值，不然就是提供資料範本。 資料範本選項是比較常見的解決辦法，而且更有彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 屬性或項目控制項的 [**ItemTemplate**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
+若要解決這個問題，我們可以覆寫 [**ToString**](/dotnet/api/system.object.tostring#System_Object_ToString) 來傳回 **OneLineSummary** 的值，不然就是提供資料範本。 資料範本選項是比較常見的解決辦法，而且更有彈性。 您可以使用內容控制項的 [**ContentTemplate**](/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate) 屬性或項目控制項的 [**ItemTemplate**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -467,7 +467,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 </ListView>
 ```
 
-![繫結清單檢視](images/xaml-databinding2.png)
+![繫結清單檢視 2](images/xaml-databinding2.png)
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -486,25 +486,25 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 </ListView>
 ```
 
-![繫結清單檢視](images/xaml-databinding3.png)
+![繫結清單檢視 3](images/xaml-databinding3.png)
 
-如需 XAML 語法的詳細資訊，請參閱[使用 XAML 建立 UI](https://docs.microsoft.com/windows/uwp/design/basics/xaml-basics-ui)。 如需控制項配置的詳細資訊，請參閱[使用 XAML 定義配置](https://docs.microsoft.com/windows/uwp/layout/layouts-with-xaml)。
+如需 XAML 語法的詳細資訊，請參閱[使用 XAML 建立 UI](../design/basics/xaml-basics-ui.md)。 如需控制項配置的詳細資訊，請參閱[使用 XAML 定義配置](../design/layout/layouts-with-xaml.md)。
 
 ## <a name="adding-a-details-view"></a>新增詳細資料檢視
 
-您可以選擇在 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 項目中顯示 **Recording** 物件的所有詳細資料。 但這會佔用大量空間。 相反地，您可以在項目中顯示剛好足夠識別它的資料，然後當使用者做出選擇時，您可以在另一個稱為詳細資料檢視的 UI 中，顯示選定項目的所有詳細資料。 這種安排也稱為主要/詳細資料檢視，或清單/詳細資料檢視。
+您可以選擇在 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 項目中顯示 **Recording** 物件的所有詳細資料。 但這會佔用大量空間。 相反地，您可以在項目中顯示剛好足夠識別它的資料，然後當使用者做出選擇時，您可以在另一個稱為詳細資料檢視的 UI 中，顯示選定項目的所有詳細資料。 這種安排也稱為主要/詳細資料檢視，或清單/詳細資料檢視。
 
-有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) 的 [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 屬性。 或者，您可以使用 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)，將 **ListView** 和詳細資料檢視都繫結到 **CollectionViewSource** - 這麼做可為您處理目前選取的項目。 以下顯示這兩種技巧，且兩者的結果相同，如圖所示。
+有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) 的 [**SelectedItem**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 屬性。 或者，您可以使用 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)，將 **ListView** 和詳細資料檢視都繫結到 **CollectionViewSource** - 這麼做可為您處理目前選取的項目。 以下顯示這兩種技巧，且兩者的結果相同，如圖所示。
 
 > [!NOTE]
-> 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension)。
+> 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](../xaml-platform/binding-markup-extension.md)。
 
-如果您使用 C++/WinRT 或 Visual C++ 元件延伸模組 (C++/CX)，則需要將 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 屬性新增至您希望繫結至之任何執行階段類別，以使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸。 若要使用 [{x:Bind}](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)，您不需要該屬性。
+如果您使用 C++/WinRT 或 Visual C++ 元件延伸模組 (C++/CX)，則需要將 [**BindableAttribute**](/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 屬性新增至您希望繫結至之任何執行階段類別，以使用 [{Binding}](../xaml-platform/binding-markup-extension.md) 標記延伸。 若要使用 [{x:Bind}](../xaml-platform/x-bind-markup-extension.md)，您不需要該屬性。
 
 > [!IMPORTANT]
-> 如果您使用的是 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則可以使用 [**BindableAttribute**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 屬性，前提是您安裝了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809) 或更新版本。 如果沒有該屬性，則需要實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 介面，才能使用 [{Binding}](https://docs.microsoft.com/windows/uwp/xaml-platform/binding-markup-extension) 標記延伸。
+> 如果您使用的是 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，則可以使用 [**BindableAttribute**](/uwp/api/Windows.UI.Xaml.Data.BindableAttribute) 屬性，前提是您安裝了 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809) 或更新版本。 如果沒有該屬性，則需要實作 [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) 和 [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) 介面，才能使用 [{Binding}](../xaml-platform/binding-markup-extension.md) 標記延伸。
 
-首先是 [**SelectedItem**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 技術。
+首先是 [**SelectedItem**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selecteditem) 技術。
 
 ```csharp
 // No code changes necessary for C#.
@@ -556,7 +556,7 @@ public ref class Recording sealed
 </Page>
 ```
 
-使用 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 技術時，請先新增 **CollectionViewSource** 做為頁面資源。
+使用 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) 技術時，請先新增 **CollectionViewSource** 做為頁面資源。
 
 ```xml
 <Page.Resources>
@@ -564,7 +564,7 @@ public ref class Recording sealed
 </Page.Resources>
 ```
 
-然後，將 [**ListView**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ListView) (不再需要命名) 和詳細資料檢視上的繫結調整為使用 [**CollectionViewSource**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 請注意，將詳細資料檢視直接繫結到 **CollectionViewSource** 時，就意味著您想要繫結至在集合本身找不到路徑之繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。
+然後，將 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView) (不再需要命名) 和詳細資料檢視上的繫結調整為使用 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource)。 請注意，將詳細資料檢視直接繫結到 **CollectionViewSource** 時，就意味著您想要繫結至在集合本身找不到路徑之繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。
 
 ```xml
 ...
@@ -579,7 +579,7 @@ public ref class Recording sealed
 > [!NOTE]
 > 如果您使用的是 C++，則您的 UI 看起來不會與下圖完全相同：**ReleaseDateTime** 屬性的轉譯結果不同。 詳細討論請參閱下一節。
 
-![繫結清單檢視](images/xaml-databinding4.png)
+![繫結清單檢視 4](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>格式化或轉換資料值以供顯示
 
@@ -705,7 +705,7 @@ public:
 ```
 
 > [!NOTE]
-> 針對上述 C++/WinRT 程式碼清單，在 `StringFormatter.idl` 中，我們使用[預設屬性](https://docs.microsoft.com/windows/desktop/midl/default)將 **IValueConverter** 宣告為預設介面。 在清單中，**StringFormatter** 只有一個建構函式，沒有任何方法，因此不會為其產生任何預設介面。 如果您不會將實例成員加入 **StringFormatter**，`default` 屬性是最佳選擇，因為不需要 QueryInterface 就能呼叫 **IValueConverter** 方法。 或者，您也可以提示要產生預設 **IStringFormatter** 介面，並使用 [default_interface 屬性](https://docs.microsoft.com/uwp/midl-3/predefined-attributes#the-default_interface-attribute)來標註執行階段類別本身來完成此動作。 如果您將實例成員加入 **StringFormatter** (被呼叫的頻率高於 **IValueConverter** 的方法)，該選項就是最佳做法，因為這樣不需要 QueryInterface 就能呼叫實例成員。
+> 針對上述 C++/WinRT 程式碼清單，在 `StringFormatter.idl` 中，我們使用[預設屬性](/windows/desktop/midl/default)將 **IValueConverter** 宣告為預設介面。 在清單中，**StringFormatter** 只有一個建構函式，沒有任何方法，因此不會為其產生任何預設介面。 如果您不會將實例成員加入 **StringFormatter**，`default` 屬性是最佳選擇，因為不需要 QueryInterface 就能呼叫 **IValueConverter** 方法。 或者，您也可以提示要產生預設 **IStringFormatter** 介面，並使用 [default_interface 屬性](/uwp/midl-3/predefined-attributes#the-default_interface-attribute)來標註執行階段類別本身來完成此動作。 如果您將實例成員加入 **StringFormatter** (被呼叫的頻率高於 **IValueConverter** 的方法)，該選項就是最佳做法，因為這樣不需要 QueryInterface 就能呼叫實例成員。
 
 現在我們可以加入 **StringFormatter** 的實例做為頁面資源，並在顯示 **ReleaseDateTime** 屬性的 **TextBlock** 的繫結中使用它。
 
@@ -727,7 +727,7 @@ public:
 ![顯示自訂格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible.Visible** 列舉值，並將 **false** 對應至 **Visible.Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible.Visible** 列舉值，並將 **false** 對應至 **Visible.Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](../debug-test-perf/version-adaptive-code.md)。
 
 ## <a name="see-also"></a>另請參閱
 * [資料繫結](index.md)

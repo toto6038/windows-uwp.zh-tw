@@ -1,6 +1,6 @@
 ---
 title: 使用視覺層搭配 Win32
-description: 使用視覺層來增強 Win32 傳統型應用程式的 UI。
+description: 了解如何使用通用 Windows 平台 (UWP) Windows 執行階段組合 API (也稱為視覺層) 來增強 Win32 C++ 應用程式的 UI。
 template: detail.hbs
 ms.date: 03/18/2019
 ms.topic: article
@@ -8,12 +8,12 @@ keywords: UWP, 轉譯, 組合, win32
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4ec38b0dd1f6eca3f43cfded74c6292c08100
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 98811d890aa496e05c38009dedea6978386d5e4a
+ms.sourcegitcommit: cb5af00af05e838621c270173e7fde1c5d2168ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "66215193"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89043470"
 ---
 # <a name="using-the-visual-layer-with-win32"></a>使用視覺層搭配 Win32
 

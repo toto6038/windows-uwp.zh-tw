@@ -1,5 +1,5 @@
 ---
-Description: 選項按鈕可以讓使用者從兩個以上的選項中選取一個選項。
+description: 了解如何使用選項按鈕，讓使用者從兩個或多個互斥但相關的選項集合中選取一個選項。
 title: 選項按鈕的指導方針
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dc6f5eb32cdedf442b6866e1e53be85edfb98dcb
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 7d09eaefff193a8283fd4bad68528b8976e0b63b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493433"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89169782"
 ---
 # <a name="radio-buttons"></a>選項按鈕
 
@@ -33,7 +33,7 @@ RadioButtons 群組的單一行為會與[核取方塊](checkbox.md) (可支援�
 
 | &nbsp; | &nbsp; |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | RadioButtons控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | RadioButtons控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
 **Windows UI 程式庫 API**： 
 * [RadioButtons 類別](/uwp/api/microsoft.ui.xaml.controls.radiobuttons)
@@ -42,9 +42,9 @@ RadioButtons 群組的單一行為會與[核取方塊](checkbox.md) (可支援�
 * [SelectedIndex 屬性](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex)
 
 **平台 API**： 
-* [RadioButton 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RadioButton) (英文)
-* [Checked 事件](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-* [IsChecked 屬性](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
+* [RadioButton 類別](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) (英文)
+* [Checked 事件](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
+* [IsChecked 屬性](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -129,7 +129,7 @@ RadioButtons 控制項支援兩種狀態：
 
 以列為主順序 (項目依序由左至右、由上至下填入)，當焦點位於列中的最後一個項目上，按下向右鍵時，焦點會移至下一列中的第一個項目。 反之亦會發生此相同行為：當焦點設定至列中的第一個項目上，按下向左鍵時，焦點移至上一列的最後一個項目。
 
-如需詳細資訊，請參閱[鍵盤互動](https://docs.microsoft.com/windows/uwp/design/input/keyboard-interactions#wrapping-homogeneous-list-and-grid-view-items)。
+如需詳細資訊，請參閱[鍵盤互動](../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items)。
 
 ##### <a name="wrapping"></a>換行
 
@@ -377,4 +377,4 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ### <a name="for-developers-xaml"></a>適用於開發人員 (XAML)
 
-- [RadioButton 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton) (英文)
+- [RadioButton 類別](/uwp/api/windows.ui.xaml.controls.radiobutton) (英文)

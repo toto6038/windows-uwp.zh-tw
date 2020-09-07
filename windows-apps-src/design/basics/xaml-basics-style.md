@@ -1,16 +1,16 @@
 ---
 title: 建立自訂樣式
-description: 此文章說明使用 XAML 設定 UI 元素樣式的基本知識
+description: 遵循此教學課程來了解如何建立自訂樣式和滑杆控制項，以自訂 XAML 應用程式的 UI。
 keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 60a62a80017b2c77acfc2604daf909ae1ec9fd36
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942958"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160770"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
@@ -76,11 +76,11 @@ Windows 應用程式提供幾種用來自訂應用程式外觀的方法。 從�
 
 1. 使用 `Polygon` 元素建立曝光滑桿的背景圖形。
 
-    [Windows.UI.Xaml.Shapes 命名空間](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！
+    [Windows.UI.Xaml.Shapes 命名空間](/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！
 
     ![獨角獸](../basics/images/xaml-basics/unicorn.png)
 
-    > **請參閱：** [繪製圖形](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/shapes)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。
+    > **請參閱：** [繪製圖形](../controls-and-patterns/shapes.md)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。
 
     我們想要建立三角形外觀的 Widget，就像在立體音響音量控制上看到的圖形一樣。
 
@@ -200,7 +200,7 @@ Windows 應用程式提供幾種用來自訂應用程式外觀的方法。 從�
 
 XAML 樣式的其中一個優點是，可以大幅縮減您需要撰寫的程式碼數量，而且可以讓您更輕鬆地更新應用程式外觀。
 
-若要定義樣式，請將 [Style](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Style) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 `Page.Resources` 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 `Application.Resources` 屬性，整個應用程式都可以存取該樣式。
+若要定義樣式，請將 [Style](/uwp/api/Windows.UI.Xaml.Style) 元素新增至包含需要設定樣式之控制項的元素的 [Resources](/uwp/api/windows.ui.xaml.frameworkelement.Resources) 屬性。  如果將樣式新增至 `Page.Resources` 屬性，整個頁面都可以存取您的樣式。 如果將樣式新增至 App.xaml 檔案中的 `Application.Resources` 屬性，整個應用程式都可以存取該樣式。
 
 您可以建立具名樣式和一般樣式。 具名樣式必須明確套用至特定控制項；一般樣式則套用至任何符合指定之 `TargetType` 的控制項。
 

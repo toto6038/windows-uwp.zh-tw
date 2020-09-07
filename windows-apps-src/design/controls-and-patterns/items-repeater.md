@@ -7,12 +7,12 @@ ms.date: 02/01/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c66fc2b07b5ee5ce87b6c1f37657b3eec49f3105
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 20aeda53af3b4b11c1562d2ed22b099a3377d3c7
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970403"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89172632"
 ---
 # <a name="itemsrepeater"></a>ItemsRepeater
 
@@ -26,7 +26,7 @@ ms.locfileid: "82970403"
 
 |  |  |
 | - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **ItemsRepeater** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| ![WinUI 標誌](images/winui-logo-64x64.png) | **ItemsRepeater** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
 
 > **Windows UI 程式庫 API：** [ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 >
@@ -95,7 +95,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-您也可以將 **ItemsSource** 屬性繫結到 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-quickstart)。
+您也可以將 **ItemsSource** 屬性繫結到 XAML 中的集合。 如需資料繫結的詳細資訊，請參閱[資料繫結概觀](../../data-binding/data-binding-quickstart.md)。
 
 
 ```xaml
@@ -111,7 +111,7 @@ itemsRepeater1.ItemsSource = Items;
 在此範例中，資料物件是一個簡單字串。 **DataTemplate** 在文字左側有個影像，且會設定 **TextBlock** 的樣式，以顯示出藍綠色的字串。
 
 > [!NOTE]
-> 當您在 **DataTemplate**中使用 [x:Bind markup extension](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) 時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
+> 當您在 **DataTemplate**中使用 [x:Bind markup extension](../../xaml-platform/x-bind-markup-extension.md) 時，必須在 DataTemplate 上指定 DataType (`x:DataType`)。
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -774,14 +774,14 @@ public class MyPage : Page
 
 ## <a name="enable-accessibility"></a>啟用協助工具
 
-[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 未提供預設的協助工具體驗。 [Windows 應用程式的可用性](/windows/uwp/design/usability)上的文件提供大量資訊，可幫助您確保應用程式提供包容性的使用者體驗。 如果您使用 ItemsRepeater 以建立自訂控制項，請務必查看[自訂自動化對等](/windows/uwp/design/accessibility/custom-automation-peers)上的文件。
+[ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater) 未提供預設的協助工具體驗。 [Windows 應用程式的可用性](../usability/index.md)上的文件提供大量資訊，可幫助您確保應用程式提供包容性的使用者體驗。 如果您使用 ItemsRepeater 以建立自訂控制項，請務必查看[自訂自動化對等](../accessibility/custom-automation-peers.md)上的文件。
 
 ### <a name="keyboarding"></a>鍵盤輸入
-ItemsRepeater 所提供焦點移動的最小鍵盤支援是根據 XAML 的[鍵盤輸入的 2D 方向導航](/windows/uwp/design/input/focus-navigation#2d-directional-navigation-for-keyboard)。
+ItemsRepeater 所提供焦點移動的最小鍵盤支援是根據 XAML 的[鍵盤輸入的 2D 方向導航](../input/focus-navigation.md#2d-directional-navigation-for-keyboard)。
 
 ![瀏覽方向](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)預設為_已啟用_。 根據預期的體驗，請考慮對常用的[鍵盤輸入互動](/windows/uwp/design/input/keyboard-interactions)新增支援，例如 Home、End、PageUp 和 PageDown。
+ItemsRepeater 的 [XYFocusKeyboardNavigation 模式](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)預設為_已啟用_。 根據預期的體驗，請考慮對常用的[鍵盤輸入互動](../input/keyboard-interactions.md)新增支援，例如 Home、End、PageUp 和 PageDown。
 
 ItemsRepeater 會自動確保其項目的預設 Tab 鍵順序 (無論是否虛擬化)，遵循與資料中項目相同的順序。 依預設，ItemsRepeater 已將其 [TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement.tabfocusnavigation) 屬性設為[一次](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode)，而不是常見的預設值_本機_。
 

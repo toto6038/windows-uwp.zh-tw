@@ -1,6 +1,6 @@
 ---
-Description: 使用內容連結在您的文字控制項中嵌入豐富資料。
 title: 文字控制項中的內容連結
+description: 了解如何使用內容連結，在 TextBlock、RichTextBlock 和 RichEditBox 控制項中內嵌豐富的資料。
 label: Content links
 template: detail.hbs
 ms.date: 03/07/2018
@@ -10,12 +10,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b72d7fced63a4c3ef4b1b233afcbb9f9874d9a3f
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68796722"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89174642"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 
@@ -162,7 +162,7 @@ Uri 屬性的作用很像超連結的 NavigateUri 屬性。 當使用者按一�
 - 如果 LinkContentKind 不是 "People"，則會開啟 [連絡人]  應用程式。 例如，如果您在 ContentLinkChanged 事件處理常式中修改了 LinkContentKind，就會發生這種情況。
 
 > [!TIP]
-> 如需有關從您的應用程式開啟其他應用程式和網站的詳細資訊，請參閱[使用 URI 啟動應用程式](/windows/uwp/launch-resume/launch-app-with-uri)之下的主題。
+> 如需有關從您的應用程式開啟其他應用程式和網站的詳細資訊，請參閱[使用 URI 啟動應用程式](../../launch-resume/launch-app-with-uri.md)之下的主題。
 
 #### <a name="invoked"></a>Invoked
 
@@ -303,7 +303,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 ```
 
 > [!TIP]
-> 當您在包含其他 XAML 文字元素的文字控制項中使用 ContentLink 時，將內容置入 [Span](https://docs.microsoft.com/uwp/api/windows.ui.xaml.documents.span) 容器，然後將 `xml:space="preserve"` 屬性套用至 Span 以保留 ContentLink 與其他元素之間的空白字元。
+> 當您在包含其他 XAML 文字元素的文字控制項中使用 ContentLink 時，將內容置入 [Span](/uwp/api/windows.ui.xaml.documents.span) 容器，然後將 `xml:space="preserve"` 屬性套用至 Span 以保留 ContentLink 與其他元素之間的空白字元。
 
 ## <a name="examples"></a>範例
 

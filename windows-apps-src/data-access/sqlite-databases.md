@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 應用程式中使用 SQLite 資料庫
-description: 在 UWP 應用程式中使用 SQLite 資料庫。
+description: 了解如何在 UWP 應用程式中使用 SQLite 資料庫，以在使用者裝置上的輕量資料庫中儲存和擷取資料。
 ms.date: 06/26/2020
 ms.topic: article
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 0db89408d5bc0af8b9101768a6498e70f9be6147
-ms.sourcegitcommit: e1104689fc1db5afb85701205c2580663522ee6d
+ms.openlocfilehash: 15a6cd4313a13abfa7897de62c80024a09ad1f71
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997935"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89154532"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP 應用程式中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -35,11 +35,11 @@ ms.locfileid: "86997935"
 
 Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特定物件處理關聯式資料。 如果您已使用此架構處理其他 .NET 應用程式中的資料，可將該程式碼移轉到 UWP 應用程式，適當變更連接字串之後就能運作。
 
-若要試試看，請參閱[在使用新資料庫的通用 Windows 平台 (UWP) 上開始使用 EF Core](https://docs.microsoft.com/ef/core/get-started/uwp/getting-started)。
+若要試試看，請參閱[在使用新資料庫的通用 Windows 平台 (UWP) 上開始使用 EF Core](/ef/core/get-started/uwp/getting-started)。
 
 ### <a name="sqlite-library"></a>SQLite 程式庫
 
-[Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 程式庫會在 [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common) 命名空間中實作介面。 Microsoft 會主動維護這些實作，並提供直覺的包裝函式來處理低階原生 SQLite API。
+[Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) 程式庫會在 [System.Data.Common](/dotnet/api/system.data.common) 命名空間中實作介面。 Microsoft 會主動維護這些實作，並提供直覺的包裝函式來處理低階原生 SQLite API。
 
 本指南的其餘部分可協助您使用此程式庫。
 
@@ -75,7 +75,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ![SQLite 套件](images/sqlite-package.png)
 
-繼續進行本指南中的[在 SQLite 資料庫中新增和擷取資料](/windows/uwp/data-access/sqlite-databases#add-and-retrieve-data-in-a-sqlite-database)一節。
+繼續進行本指南中的[在 SQLite 資料庫中新增和擷取資料](#add-and-retrieve-data-in-a-sqlite-database)一節。
 
 ### <a name="the-minimum-version-of-your-project-targets-the-fall-creators-update"></a>您專案的最低版本是以 Fall Creators Update 為目標
 
@@ -200,7 +200,7 @@ public async static void InitializeDatabase()
 
 此程式碼會建立 SQLite 資料庫，並將它儲存在應用程式的本機資料存放區。
 
-在此範例中，我們將資料庫命名為 ``sqlliteSample.db``，但您可以使用任意名稱，只要您將該名稱用於您具現化的所有 [SqliteConnection](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) 物件。
+在此範例中，我們將資料庫命名為 ``sqlliteSample.db``，但您可以使用任意名稱，只要您將該名稱用於您具現化的所有 [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection?view=msdata-sqlite-2.0.0) 物件。
 
 在 UWP 專案的 **App.xaml.cs** 檔案建構函式中，呼叫 **DataAccess** 類別的 ``InitializeDatabase`` 方法。
 
@@ -277,9 +277,9 @@ public static List<String> GetData()
 }
 ```
 
-[Read](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read) 方法會逐一處理所傳回的資料列。 如果有剩餘的列，它會傳回 **true**，否則會傳回 **false**。
+[Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_Read) 方法會逐一處理所傳回的資料列。 如果有剩餘的列，它會傳回 **true**，否則會傳回 **false**。
 
-[GetString](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) 方法會將所指定欄的值做為字串傳回。 它接受整數值，代表您要的資料的以零起始欄序數。 您可以使用類似的方法，例如 [GetDataTime](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) 和 [GetBoolean](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_)。 根據欄所包含的資料類型選擇方法。
+[GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) 方法會將所指定欄的值做為字串傳回。 它接受整數值，代表您要的資料的以零起始欄序數。 您可以使用類似的方法，例如 [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) 和 [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean?view=msdata-sqlite-2.0.0#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_)。 根據欄所包含的資料類型選擇方法。
 
 在此範例中，序數參數並不那麼重要，因為我們會選取一欄中的所有項目。 不過，如果您的查詢中有多欄，請使用序數值取得要從中擷取資料的欄。
 
@@ -316,7 +316,7 @@ private void AddData(object sender, RoutedEventArgs e)
 }
 ```
 
-就這麼簡單。 探索 [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)，了解還可以利用 SQLite 資料庫做什麼。 查看下列連結，了解在您的 UWP 應用程式中使用資料的其他方式。
+就這麼簡單。 探索 [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0)，了解還可以利用 SQLite 資料庫做什麼。 查看下列連結，了解在您的 UWP 應用程式中使用資料的其他方式。
 
 ## <a name="next-steps"></a>接下來的步驟
 
@@ -326,7 +326,7 @@ private void AddData(object sender, RoutedEventArgs e)
 
 **在不同平台的不同應用程式之間共用程式碼**
 
-請參閱[在桌面應用程式與 UWP 之間共用程式碼](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-migrate)。
+請參閱[在桌面應用程式與 UWP 之間共用程式碼](../porting/desktop-to-uwp-migrate.md)。
 
 **在 Azure SQL 後端新增主要詳細資料頁面**
 

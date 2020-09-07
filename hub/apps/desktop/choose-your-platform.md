@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 778c15bc511404fad9cf5713876f89c7fef56165
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493003"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89168902"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -51,12 +51,12 @@ WPF 是針對受管理 Windows 應用程式所建立的平台，可存取 .NET C
 
 如需 WPF 的詳細資訊，請參閱下列文章：
 
-* [使用者入門 (WPF)](https://docs.microsoft.com/dotnet/framework/wpf/getting-started/)
+* [使用者入門 (WPF)](/dotnet/framework/wpf/getting-started/)
 * [專案範本](visual-studio-templates.md#net-templates)
 * [建立您的第一個應用程式 (.NET Core)](/visualstudio/get-started/csharp/tutorial-wpf/)
 * [建立您的第一個應用程式 (.NET Framework)](/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/)
 * [將 WPF 應用程式遷移至 .NET Core](/dotnet/desktop-wpf/migration/convert-project-from-net-framework/)
-* [API 參照 (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API 參照 (.NET)](/dotnet/api/index)
 * [範例](https://github.com/Microsoft/WPF-Samples)
 
 ## <a name="windows-forms"></a>Windows Forms
@@ -65,11 +65,11 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 
 如需 Windows Forms 的詳細資訊，請參閱下列文章：
 
-* [Windows Form 使用者入門](https://docs.microsoft.com/dotnet/framework/winforms/getting-started-with-windows-forms)
+* [Windows Form 使用者入門](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [專案範本](visual-studio-templates.md#net-templates)
 * [建立您的第一個 Windows Forms 應用程式](/dotnet/framework/winforms/creating-a-new-windows-form)
 * [教學課程：建立圖片檢視器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
-* [API 參照 (.NET)](https://docs.microsoft.com/dotnet/api/index)
+* [API 參照 (.NET)](/dotnet/api/index)
 * [增強 Windows Forms 應用程式](/dotnet/framework/winforms/advanced/)
 
 ## <a name="win32"></a>Win32
@@ -125,8 +125,12 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 
 ### <a name="progressive-web-apps-pwas"></a>漸進式 Web 應用程式 (PWA)
 
-PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 10 電腦上安裝並且像應用程式一般執行。 如需詳細資訊，請參閱[漸進式 Web 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)。
+PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 10 電腦上安裝並且像應用程式一般執行。 如需詳細資訊，請參閱[漸進式 Web 應用程式](/microsoft-edge/progressive-web-apps/get-started)。
 
 ### <a name="xamarin"></a>Xamarin
 
 使用 Xamarin 可建置跨平台應用程式，不只適用於 Windows 10，也可以在 iOS 和 Android 上執行。 如需詳細資訊，請參閱 [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index)。
+
+### <a name="uno-platform"></a>Uno 平台
+
+Uno 平台可讓 Windows UWP 型的程式碼 (C# 和 XAML) 在 iOS、Android 和 WebAssembly 上執行。 其會針對 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) 中的 UWP 提供完整的 API 定義，以及部分 UWP API 的實作 (例如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041))，讓 UWP 應用程式可以在這些平台上執行。 如需詳細資訊，請參閱 [Uno 平台文件](https://platform.uno/docs/articles/intro.html)。

@@ -1,16 +1,16 @@
 ---
 title: 應用程式分析
-description: 分析應用程式的效能問題。
+description: 了解應用程式分析工具，並檢視其用來評估應用程式程式碼的效能指導方針和最佳做法。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e2977877b839f40e07b3eaa03b8349fb8439a401
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: b8ada4ec36e989cbc47abd3bbbe01fa7bc3e785b
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "73062757"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166172"
 ---
 # <a name="app-analysis-overview"></a>應用程式分析概觀
 
@@ -32,11 +32,11 @@ ms.locfileid: "73062757"
 
 #### <a name="image-is-not-being-set-asynchronously"></a>影像是以非同步方式設定
 
-App 使用 SetSource()，而不是 SetSourceAsync()。 當設定串流以透過非同步方式將影像解碼時，您應該一律避免使用 [**SetSource**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)，改為使用 [**SetSourceAsync**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync)。 
+App 使用 SetSource()，而不是 SetSourceAsync()。 當設定串流以透過非同步方式將影像解碼時，您應該一律避免使用 [**SetSource**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource)，改為使用 [**SetSourceAsync**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync)。 
 
 #### <a name="image-is-being-called-when-the-imagesource-is-not-in-the-live-tree"></a>影像在 ImageSource 不在動態樹狀結構中時被呼叫
 
-使用 SetSourceAsync 或 UriSource 來設定內容之後，BitmapImage 連接到動態的 XAML 樹狀結構。 您在設定來源之前，應該一律將 [**BitmapImage**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 附加到動態樹狀結構。 每當在標記中指定影像元素或筆刷時，就自動會是這種情況。 以下提供範例。 
+使用 SetSourceAsync 或 UriSource 來設定內容之後，BitmapImage 連接到動態的 XAML 樹狀結構。 您在設定來源之前，應該一律將 [**BitmapImage**](/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage) 附加到動態樹狀結構。 每當在標記中指定影像元素或筆刷時，就自動會是這種情況。 以下提供範例。 
 
 **動態樹狀結構範例**
 
@@ -72,7 +72,7 @@ myImage.Source = bitmapImage;
 
 當影像用於非矩形筆刷時，影像會使用軟體點陣化路徑，這將完全不會縮放影像。 此外，它也必須在軟體和硬體記憶體中都儲存一份影像。 例如，如果將一個影像用來作為橢圓形的筆刷，就會將可能很大的完整影像在內部儲存兩次。 使用非矩形筆刷時，您的 App 應該會將其影像預先縮放到接近要呈現的大小。
 
-或者，您也可以使用 [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
+或者，您也可以使用 [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
 
 ```xml
 <Image>
@@ -83,21 +83,21 @@ myImage.Source = bitmapImage;
 </Image>
 ```
 
-[  **DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 的單位預設是實體像素。 [  **DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，舉例來說，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 通常是適當的。 有了使用實體像素的預設行為時，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以因應使用者變更其顯示喜好設定的情況。
+[  **DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 的單位預設是實體像素。 [  **DecodePixelType**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) 屬性可以用來變更這個行為：將 **DecodePixelType** 設定為 **Logical** 會導致解碼大小自動採用系統目前的縮放比例，類似於其他的 XAML 內容。 因此，舉例來說，如果您希望 **DecodePixelWidth** 和 **DecodePixelHeight** 符合影像顯示所在之 Image 控制項的 Height 和 Width 屬性，將 **DecodePixelType** 設定為 **Logical** 通常是適當的。 有了使用實體像素的預設行為時，您必須自行考量系統目前的縮放比例；而且您必須接聽縮放比例變更通知，以因應使用者變更其顯示喜好設定的情況。
 
 在某些無法預先決定適當解碼大小的情況下，您應該遵從 XAML 的自動以正確大小解碼功能，它會在未指定明確的 DecodePixelWidth/DecodePixelHeight 時，盡可能嘗試以適當大小將影像解碼。
 
-如果您預先知道影像內容的大小，就應該設定明確的解碼大小。 如果提供的解碼大小是相對其他 XAML 元素的大小，您也應該一併將 [**DecodePixelType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) 設定為 **Logical**。 例如，如果您使用 Image.Width 和 Image.Height 來明確設定內容大小，您可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 來控制影像的大小，以達到潛在節省大量記憶體的目的。
+如果您預先知道影像內容的大小，就應該設定明確的解碼大小。 如果提供的解碼大小是相對其他 XAML 元素的大小，您也應該一併將 [**DecodePixelType**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixeltype) 設定為 **Logical**。 例如，如果您使用 Image.Width 和 Image.Height 來明確設定內容大小，您可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 來控制影像的大小，以達到潛在節省大量記憶體的目的。
 
 請注意，決定解碼內容的大小時，應考量 Image.Stretch。
 
 #### <a name="images-used-inside-of-bitmapicons-fall-back-to-decoding-to-natural-size"></a>在 BitmapIcons 內部使用的影像回復為解碼成原始大小 
 
-請使用 [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
+請使用 [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
 
 #### <a name="images-that-appear-extremely-large-on-screen-fall-back-to-decoding-to-natural-size"></a>在螢幕上顯示得極大的影像回復為解碼成原始大小 
 
-在螢幕上顯示得極大的影像回復為解碼成原始大小。 請使用 [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
+在螢幕上顯示得極大的影像回復為解碼成原始大小。 請使用 [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
 
 #### <a name="image-is-hidden"></a>影像被隱藏
 
@@ -105,7 +105,7 @@ myImage.Source = bitmapImage;
 
 #### <a name="image-is-using-ninegrid-property"></a>影像使用 NineGrid 屬性
 
-當影像用於 [**NineGrid**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image.ninegrid) 時，影像會使用軟體點陣化路徑，這將完全不會縮放影像。 此外，它也必須在軟體和硬體記憶體中都儲存一份影像。 使用 **NineGrid** 時，您的 App 應該會將其影像預先縮放到接近要呈現的大小。
+當影像用於 [**NineGrid**](/uwp/api/windows.ui.xaml.controls.image.ninegrid) 時，影像會使用軟體點陣化路徑，這將完全不會縮放影像。 此外，它也必須在軟體和硬體記憶體中都儲存一份影像。 使用 **NineGrid** 時，您的 App 應該會將其影像預先縮放到接近要呈現的大小。
 
 使用 NineGrid 屬性的影像會回復為解譯成原始大小。 請考慮在原始影像新增 NineGrid 效果。
 
@@ -115,7 +115,7 @@ myImage.Source = bitmapImage;
 
 #### <a name="image-is-decoded-as-part-of-producing-a-drag-and-drop-image"></a>影像在產生拖放影像的過程中被解碼
 
-請使用 [**DecodePixelWidth**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
+請使用 [**DecodePixelWidth**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelwidth) 和 [**DecodePixelHeight**](/uwp/api/windows.ui.xaml.media.imaging.bitmapimage.decodepixelheight) 屬性來設定一個明確的解碼大小，以將在螢幕上繪製的實際大小建立一個影像版本。
 
 ## <a name="collapsed-elements-at-load-time"></a>載入時摺疊的元素
 
@@ -133,7 +133,7 @@ App 中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才
 
 ### <a name="solution"></a>解決方案
 
-使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md)或 [x:DeferLoadStrategy](https://docs.microsoft.com/windows/uwp/xaml-platform/x-deferloadstrategy-attribute) \(部分機器翻譯\)，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在第一個畫面不顯示的 UI。 您可以選擇在需要時載入元素，或是隨著一組延遲邏輯一起載入。 若要觸發載入，請針對您希望載入的元素呼叫 findName。 x:Load 擴充可卸載元素的 x:DeferLoadStrategy 功能，以及透過 x:Bind 控制載入狀態。
+使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md)或 [x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md) \(部分機器翻譯\)，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在第一個畫面不顯示的 UI。 您可以選擇在需要時載入元素，或是隨著一組延遲邏輯一起載入。 若要觸發載入，請針對您希望載入的元素呼叫 findName。 x:Load 擴充可卸載元素的 x:DeferLoadStrategy 功能，以及透過 x:Bind 控制載入狀態。
 
 在某些情況下，使用 findName 來顯示某個 UI 可能無法作為解答。 如果您預期在按一下按鈕且延遲很低的情況下實現某個重要的 UI，便會是這種情況。 在此情況下，您可能會想要使用更多的記憶體來降低 UI 延遲，若是如此，您應該使用 x:DeferLoadStrategy，並針對您希望實現的元素將 Visibility 設定為 Collapsed。 在載入頁面且 UI 執行緒可用之後，您可以在必要時呼叫 findName 來載入元素。 使用者將無法看見元素，直到您將元素的 Visibility 設定為 Visible 為止。
 
@@ -141,7 +141,7 @@ App 中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才
 
 UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
-UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降低集合項目的複雜度及使用資料虛擬化是其他兩個可改善集合效能的重要層面。 如需有關改善 ListViews 和 GridViews 內集合效能的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)一文，以及 [ListView 和 GridView 資料虛擬化](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization)一文。
+UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降低集合項目的複雜度及使用資料虛擬化是其他兩個可改善集合效能的重要層面。 如需有關改善 ListViews 和 GridViews 內集合效能的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](./optimize-gridview-and-listview.md)一文，以及 [ListView 和 GridView 資料虛擬化](./listview-and-gridview-data-optimization.md)一文。
 
 ### <a name="impact"></a>影響
 
@@ -159,7 +159,7 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 
 UI 執行緒封鎖係指對執行關閉執行緒來封鎖 UI 執行緒之函式的同步呼叫。  
 
-如需可改善您 App 啟動效能的最佳做法完整清單，請參閱 [App 啟動效能的最佳做法](https://docs.microsoft.com/windows/uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance)和[讓 UI 執行緒保持回應](https://docs.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive)。
+如需可改善您 App 啟動效能的最佳做法完整清單，請參閱 [App 啟動效能的最佳做法](./best-practices-for-your-app-s-startup-performance.md)和[讓 UI 執行緒保持回應](./keep-the-ui-thread-responsive.md)。
 
 ### <a name="impact"></a>影響
 
@@ -213,7 +213,7 @@ ResourceDictionaries 通常是用來將您的資源儲存在稍微全域的層�
 
 UI 虛擬化是您對改善集合效能所能做的最重要改進。 這意謂著系統會依需求建立代表項目的 UI 元素。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是一種資源浪費，因為項目不會同時全部顯示。 ListView 和 GridView (及其他標準 ItemsControl 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 當不太可能再次顯示那些項目時，架構就會回收記憶體。
 
-UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降低集合項目的複雜度及使用資料虛擬化是其他兩個可改善集合效能的重要層面。 如需有關改善 ListViews 和 GridViews 內集合效能的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)一文，以及 [ListView 和 GridView 資料虛擬化](https://docs.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization)一文。
+UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降低集合項目的複雜度及使用資料虛擬化是其他兩個可改善集合效能的重要層面。 如需有關改善 ListViews 和 GridViews 內集合效能的詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](./optimize-gridview-and-listview.md)一文，以及 [ListView 和 GridView 資料虛擬化](./listview-and-gridview-data-optimization.md)一文。
 
 ### <a name="impact"></a>影響
 
@@ -262,5 +262,3 @@ UI 虛擬化只是可改善集合效能的數個重要因素其中之一。 降�
 ### <a name="solution"></a>解決方案
 
 在 XAML 中使用 AutomationProperties.Name 來設定名稱。 在經常發生這種情況的清單中，請使用繫結將 AutomationProperties.Name 的值繫結至資料來源。
-
-

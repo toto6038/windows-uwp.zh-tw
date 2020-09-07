@@ -1,16 +1,16 @@
 ---
 title: 建立資料繫結
-description: 本文說明 XAML 資料繫結的基本知識
+description: 了解如何遵循此教學課程，使用 XAML 和 C# 建立資料繫結以在 UI 與資料之間形成直接連結。
 keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac0603aab5abdc9aef54264c7e8d5bf9ae848889
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 5d3363dcc47ef43fe65b3c954b213a81cc5165e1
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88943118"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89166282"
 ---
 # <a name="tutorial-create-data-bindings"></a>教學課程：建立資料繫結
 
@@ -627,5 +627,5 @@ public string ImageTitle
 
 您應該已經在本教學課程中獲得您需要的所有資訊，如果還需要更多的指導方針，只要按一下滑鼠即可取得資料繫結文件。 從這裡開始：
 
-+ [{x:Bind} 標記延伸](https://docs.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
-+ [深入了解資料繫結](https://docs.microsoft.com/windows/uwp/data-binding/data-binding-in-depth)
++ [{x:Bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)
++ [深入了解資料繫結](./data-binding-in-depth.md)

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 50ee005fc0de52a3e0217a71fb3d391445c486db
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 6270f6f486c8d0a2764ea20d29dd966f142f3630
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80226232"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89170682"
 ---
 # <a name="advanced-scenarios-for-xaml-islands-in-c-win32-apps"></a>C++ Win32 應用程式中適用於 XAML Islands 的進階案例
 
@@ -25,19 +25,19 @@ ms.locfileid: "80226232"
 
   * **C++ Win32：** 應用程式可以在其主要訊息迴圈中直接呼叫 **PreTranslateMessage**。 如需範例，請參閱 [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16) 檔案。
 
-  * **WPF：** 應用程式可以從 [ComponentDispatcher.ThreadFilterMessage](https://docs.microsoft.com/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) \(部分機器翻譯\) 事件的事件處理常式中呼叫 **PreTranslateMessage**。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) 檔案。
+  * **WPF：** 應用程式可以從 [ComponentDispatcher.ThreadFilterMessage](/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage) \(部分機器翻譯\) 事件的事件處理常式中呼叫 **PreTranslateMessage**。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177) 檔案。
 
-  * **Windows Forms：** 應用程式可以從 [Control.PreprocessMessage](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.preprocessmessage) 方法的覆寫中呼叫 **PreTranslateMessage**。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) 檔案。
+  * **Windows Forms：** 應用程式可以從 [Control.PreprocessMessage](/dotnet/api/system.windows.forms.control.preprocessmessage) 方法的覆寫中呼叫 **PreTranslateMessage**。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100) 檔案。
 
 ## <a name="keyboard-focus-navigation"></a>鍵盤焦點瀏覽
 
-當使用者使用鍵盤來瀏覽應用程式中的 UI 元素時 (例如，按 **Tab** 鍵或方向鍵) 時，您必須以程式設計方式將焦點移入和移出 **DesktopWindowXamlSource** 物件。 當使用者的鍵盤瀏覽到達 **DesktopWindowXamlSource** 時，將焦點移至 UI 瀏覽順序中的第一個 [Windows.UI.Xaml.UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 物件、當使用者循環瀏覽元素時繼續將焦點移至後續的 **Windows.UI.Xaml.UIElement** 物件，接著將焦點移回到 **DesktopWindowXamlSource** 及父 UI 元素。  
+當使用者使用鍵盤來瀏覽應用程式中的 UI 元素時 (例如，按 **Tab** 鍵或方向鍵) 時，您必須以程式設計方式將焦點移入和移出 **DesktopWindowXamlSource** 物件。 當使用者的鍵盤瀏覽到達 **DesktopWindowXamlSource** 時，將焦點移至 UI 瀏覽順序中的第一個 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) 物件、當使用者循環瀏覽元素時繼續將焦點移至後續的 **Windows.UI.Xaml.UIElement** 物件，接著將焦點移回到 **DesktopWindowXamlSource** 及父 UI 元素。  
 
 UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作。
 
-* 當鍵盤瀏覽進入您的 **DesktopWindowXamlSource** 時，就會引發 [GotFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) \(英文\) 事件。 處理此事件，並使用 [NavigateFocus](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) \(英文\) 方法，以程式設計方式將焦點移至第一個裝載的 **Windows.UI.Xaml.UIElement**。
+* 當鍵盤瀏覽進入您的 **DesktopWindowXamlSource** 時，就會引發 [GotFocus](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus) \(英文\) 事件。 處理此事件，並使用 [NavigateFocus](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus) \(英文\) 方法，以程式設計方式將焦點移至第一個裝載的 **Windows.UI.Xaml.UIElement**。
 
-* 當使用者位於您的 **DesktopWindowXamlSource** 中最後一個可設定焦點的元素上，並按 **Tab** 鍵或方向鍵時，就會引發 [TakeFocusRequested](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) \(英文\) 事件。 處理此事件，並以程式設計方式將焦點移至主控件應用程式中下一個可設定焦點的元素。 例如，在 **DesktopWindowXamlSource** 裝載於 [System.Windows.Interop.HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) \(部分機器翻譯\) 的 WPF 應用程式中，您可以使用 [MoveFocus](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus) \(部分機器翻譯\) 方法，以將焦點轉移到主控件應用程式中下一個可設定焦點的元素。
+* 當使用者位於您的 **DesktopWindowXamlSource** 中最後一個可設定焦點的元素上，並按 **Tab** 鍵或方向鍵時，就會引發 [TakeFocusRequested](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested) \(英文\) 事件。 處理此事件，並以程式設計方式將焦點移至主控件應用程式中下一個可設定焦點的元素。 例如，在 **DesktopWindowXamlSource** 裝載於 [System.Windows.Interop.HwndHost](/dotnet/api/system.windows.interop.hwndhost) \(部分機器翻譯\) 的 WPF 應用程式中，您可以使用 [MoveFocus](/dotnet/api/system.windows.frameworkelement.movefocus) \(部分機器翻譯\) 方法，以將焦點轉移到主控件應用程式中下一個可設定焦點的元素。
 
 如需示範如何在運作中範例應用程式的內容中執行此操作的範例，請參閱下列程式碼檔案：
 
@@ -51,25 +51,25 @@ UWP XAML 裝載 API 提供數種類型和成員，可協助您完成這些工作
 
 當使用者變更父 UI 元素的大小時，您必須處理任何必要的版面配置變更，以確保您的 UWP 控制項會如預期般顯示。 以下是一些需要考慮的重要案例。
 
-* 在 C++ Win32 應用程式中，當您的應用程式處理 WM_SIZE 訊息時，可以使用 [SetWindowPos](https://docs.microsoft.com/windows/desktop/api/winuser/nf-winuser-setwindowpos) \(英文\) 函式重新置放裝載的 XAML Island。 如需範例，請參閱 [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) 程式碼檔案。
+* 在 C++ Win32 應用程式中，當您的應用程式處理 WM_SIZE 訊息時，可以使用 [SetWindowPos](/windows/desktop/api/winuser/nf-winuser-setwindowpos) \(英文\) 函式重新置放裝載的 XAML Island。 如需範例，請參閱 [SampleApp.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170) 程式碼檔案。
 
-* 當父 UI 元素需要取得所需的矩形區域大小以符合您在 **DesktopWindowXamlSource** 上所裝載的 **Windows.UI.Xaml.UIElement** 時，請呼叫 **Windows.UI.Xaml.UIElement** 的 [Measure](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.measure) \(英文\) 方法。 例如：
+* 當父 UI 元素需要取得所需的矩形區域大小以符合您在 **DesktopWindowXamlSource** 上所裝載的 **Windows.UI.Xaml.UIElement** 時，請呼叫 **Windows.UI.Xaml.UIElement** 的 [Measure](/uwp/api/windows.ui.xaml.uielement.measure) \(英文\) 方法。 例如：
 
-    * 在 WPF 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) \(部分機器翻譯\) 的 [MeasureOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.measureoverride) \(部分機器翻譯\) 方法中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
+    * 在 WPF 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [HwndHost](/dotnet/api/system.windows.interop.hwndhost) \(部分機器翻譯\) 的 [MeasureOverride](/dotnet/api/system.windows.frameworkelement.measureoverride) \(部分機器翻譯\) 方法中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
 
-    * 在 Windows Forms 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) 的 [GetPreferredSize](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.getpreferredsize) 方法中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
+    * 在 Windows Forms 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [Control](/dotnet/api/system.windows.forms.control) 的 [GetPreferredSize](/dotnet/api/system.windows.forms.control.getpreferredsize) 方法中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
 
-* 當父 UI 元素的大小變更時，請呼叫您裝載於 **DesktopWindowXamlSource** 上根 **Windows.UI.Xaml.UIElement** 的 [Arrange](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.arrange) \(英文\) 方法。 例如：
+* 當父 UI 元素的大小變更時，請呼叫您裝載於 **DesktopWindowXamlSource** 上根 **Windows.UI.Xaml.UIElement** 的 [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) \(英文\) 方法。 例如：
 
-    * 在 WPF 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [HwndHost](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost) \(部分機器翻譯\) 物件的 [ArrangeOverride](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.arrangeoverride) \(部分機器翻譯\) 方法中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
+    * 在 WPF 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [HwndHost](/dotnet/api/system.windows.interop.hwndhost) \(部分機器翻譯\) 物件的 [ArrangeOverride](/dotnet/api/system.windows.frameworkelement.arrangeoverride) \(部分機器翻譯\) 方法中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
 
-    * 在 Windows Forms 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [Control](https://docs.microsoft.com/dotnet/api/system.windows.forms.control) 的 [SizeChanged](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged) 事件中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
+    * 在 Windows Forms 應用程式中，您可以從裝載 **DesktopWindowXamlSource** 之 [Control](/dotnet/api/system.windows.forms.control) 的 [SizeChanged](/dotnet/api/system.windows.forms.control.sizechanged) 事件中執行此動作。 如需範例，請參閱 Windows 社群工具組中的 [WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs) 檔案。
 
 ## <a name="handle-dpi-changes"></a>處理 DPI 變更
 
 UWP XAML 架構會針對裝載的 UWP 控制項自動處理 DPI 變更 (例如，當使用者在具有不同螢幕 DPI 的監視器之間拖曳視窗時)。 為了獲得最佳體驗，我們建議您將 Windows Forms、WPF 或 C++ Win32 應用程式設定為個別監視器 DPI 感知。
 
-若要將應用程式設定為個別監視器 DPI 感知，請將[並存組件資訊清單](https://docs.microsoft.com/windows/desktop/SbsCs/application-manifests) \(英文\) 新增到您的專案，並將 **\<dpiAwareness\>** 元素設定為 **PerMonitorV2**。 如需此值的詳細資訊，請參閱 [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](https://docs.microsoft.com/windows/desktop/hidpi/dpi-awareness-context) 的描述。
+若要將應用程式設定為個別監視器 DPI 感知，請將[並存組件資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 新增到您的專案，並將 **\<dpiAwareness\>** 元素設定為 **PerMonitorV2**。 如需此值的詳細資訊，請參閱 [DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2](/windows/desktop/hidpi/dpi-awareness-context) 的描述。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

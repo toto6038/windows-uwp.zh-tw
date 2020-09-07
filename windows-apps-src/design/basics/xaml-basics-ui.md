@@ -1,16 +1,16 @@
 ---
 title: 建立使用者介面教學課程
-description: 此文章說明使用 XAML 建置使用者介面的基本知識
+description: 遵循此教學課程，以了解如何使用 Visual Studio 中的 XAML 工具來建立影像編輯程式的基本 UI。
 keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22cf8dc09022f841ff1f4e149232a949e7b82d20
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
+ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942878"
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "89160752"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
 
@@ -185,7 +185,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
     </RelativePanel>
     ```
 
-    如需有關使用 `RelativePanel` 之配置的詳細資訊，請參閱[版面配置面板](/windows/uwp/layout/layout-panels#relativepanel)。
+    如需有關使用 `RelativePanel` 之配置的詳細資訊，請參閱[版面配置面板](../layout/layout-panels.md#relativepanel)。
 
 2. 在 `TextBlock` 元素下方，新增名為 **ImageGridView** 的 `GridView` 控制項。 設定 `RelativePanel` _附加屬性_，以將控制項放置在標題文字下方，並讓它伸展橫跨整個螢幕寬度。
 
@@ -213,7 +213,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
     </RelativePanel>
     ```
 
-    如需有關 Panel 附加屬性的詳細資訊，請參閱[版面配置面板](/windows/uwp/layout/layout-panels)。
+    如需有關 Panel 附加屬性的詳細資訊，請參閱[版面配置面板](../layout/layout-panels.md)。
 
 3. 為了讓 `GridView` 控制項顯示任何內容，您必須為其提供要顯示的資料集合。 開啟 **MainPage.xaml.cs** 並尋找 `GetItemsAsync` 方法。 這個方法會填入名為 **Images** 的集合，這是我們已在 **MainPage** 中新增的屬性。
 
@@ -232,7 +232,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
 您會發現應用程式並沒有顯示影像。 根據預設，它會顯示集合中資料類型的 `ToString` 值。 接下來，您要建立資料範本來定義資料的顯示方式。
 
 > [!NOTE]
-> 您可以使用[版面配置面板](/windows/uwp/layout/layout-panels#relativepanel)文章中的 `RelativePanel` 來深入了解版面配置。 看看一些不同的版面配置，然後在 `RelativePanel` 和 `TextBlock` 上設定 `GridView` 附加屬性，實驗一下這些版面配置。
+> 您可以使用[版面配置面板](../layout/layout-panels.md#relativepanel)文章中的 `RelativePanel` 來深入了解版面配置。 看看一些不同的版面配置，然後在 `RelativePanel` 和 `TextBlock` 上設定 `GridView` 附加屬性，實驗一下這些版面配置。
 
 ## <a name="part-3-add-a-datatemplate-object-to-display-your-data"></a>第 3 部分：新增 DataTemplate 物件以顯示您的資料
 
@@ -267,7 +267,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
       NavigationCacheMode="Enabled">
     ```
 
-    如需 XAML 命名空間的詳細資訊，請參閱 [XAML 命名空間與命名空間對應](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)。
+    如需 XAML 命名空間的詳細資訊，請參閱 [XAML 命名空間與命名空間對應](../../xaml-platform/xaml-namespaces-and-namespace-mapping.md)。
 
 3. 在 [文件大綱] 中，以滑鼠右鍵按一下 [ImageGridView]  。 在捷徑功能表中，選取 [編輯其他範本]   > [編輯產生的項目 (ItemTemplate)]   > [建立空白]  。 [建立資源]  對話方塊隨即開啟。
 
@@ -317,7 +317,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
     </Grid>
     ```
 
-    如需有關 `Grid` 版面配置的詳細資訊，請參閱[版面配置面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#grid)。
+    如需有關 `Grid` 版面配置的詳細資訊，請參閱[版面配置面板](../layout/layout-panels.md#grid)。
 
 6. 將控制項新增至 `Grid` 版面配置。
 
@@ -325,7 +325,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
 
     b. 新增 `TextBlock` 控制來顯示影像的名稱、檔案類型和尺寸。 為此，您使用 `StackPanel` 控制項來排列文字區塊。 使用 `Grid.Row` 附加屬性，將最外層的 `StackPanel` 放在第二個資料列 (第 1 列) 中。
 
-    如需有關 `StackPanel` 版面配置的詳細資訊，請參閱[版面配置面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#stackpanel)。
+    如需有關 `StackPanel` 版面配置的詳細資訊，請參閱[版面配置面板](../layout/layout-panels.md#stackpanel)。
 
     c. 將 `RatingControl` 新增至外部 (垂直) `StackPanel` 控制項。 將它放置在內部 (水平) `StackPanel` 控制項之後。
 

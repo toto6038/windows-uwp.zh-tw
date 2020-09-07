@@ -6,21 +6,20 @@ ms.date: 08/21/2020
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 412dfe7d9e2387a90bc51f834755e8565f170812
-ms.sourcegitcommit: ab68ff43139f2423091bf8830c00f8a0fc7326ee
+ms.openlocfilehash: 55eacfe8b27758eb9579848d32b79446d2894bb7
+ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/24/2020
-ms.locfileid: "88785030"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89412042"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
-
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 開發案例中的定位為何？
 
-UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用程式會使用 WinRT API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。 UWP 應用程式仍然可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0))。
+通用 Windows 平台 (UWP) 只是用來建立 Windows 用戶端應用程式的眾多方法之一。 UWP 應用程式會使用 Windows 執行階段 (WinRT) API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。 UWP 應用程式仍然可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0))。
 
-Microsoft 開發案例持續演進，並提供 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
+Microsoft 開發案例持續演進，並提供 [WinUI](/windows/apps/winui/)、[MSIX](/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
 
 ## <a name="features-of-a-uwp-app"></a>UWP 應用程式的功能
 
@@ -48,11 +47,11 @@ Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windo
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>擴充功能 SDK 會公開特定裝置類型的獨特功能
 
-如果您的目標是通用 API，您的應用程式可以在所有執行 Windows 10 的裝置上執行。 如果您想要您的 UWP 應用程式利用裝置特定您的 API，您可以做到的。
+如果您的目標是通用 API，則應用程式可以在所有執行 Windows 10 的裝置上執行。 但如果您想要讓 UWP 應用程式利用裝置特定的 API，則您也可以這麼做。
 
-擴充功能 SDK 可讓您為不同裝置呼叫特殊的 API。 例如，如果您的 UWP 應用程式的目標是 IoT 裝置，您可以將 IoT 擴充功能 SDK 新增至您的專案，將特定功能瞄準 IoT 裝置。 如需新增擴充功能的 SDK 的詳細資訊，請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#extension-sdks)中的**擴充功能 SDK** 一節。
+擴充功能 SDK 可讓您為不同裝置呼叫特殊的 API。 例如，如果您的 UWP 應用程式的目標是 IoT 裝置，您可以將 IoT 擴充功能 SDK 新增至您的專案，將特定功能瞄準 IoT 裝置。 如需新增擴充功能的 SDK 的詳細資訊，請參閱[使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overvieww#extension-sdks)中的**擴充功能 SDK** 一節。
 
-您可以撰寫您的應用程式，使其按照您所預期只在特定類型的裝置上執行，然後限定其從 Microsoft Store 發佈到僅該類型的裝置。 或者，您也可以條件式地測試執行階段出現的 API 並據以調整您的應用程式行為。 如需詳細資訊，請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview#writing-code)中的**撰寫程式碼**一節。<br>
+您可以撰寫您的應用程式，使其按照您所預期只在特定類型的裝置上執行，然後限定其從 Microsoft Store 發佈到僅該類型的裝置。 或者，您也可以條件式地測試執行階段出現的 API 並據以調整您的應用程式行為。 如需詳細資訊，請參閱[使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overview#writing-code)中的**撰寫程式碼**一節。<br>
 
 下列影片提供簡短的裝置系列概觀和調適型程式設計：
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
@@ -120,44 +119,44 @@ UWP 應用程式使用 Windows 執行階段，這是作業系統提供的原生 
 
 ### <a name="design-your-app"></a>設計您的應用程式
 
-Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳做法結合的 UWP 功能，用於建立在所有執行 Windows 裝置類型上都能展現絕佳效能的應用程式。 Fluent 體驗從平板電腦到膝上型電腦，從個人電腦到電視等裝置以及虛擬實境裝置均自然流暢。 如需 Fluent Design 簡介，請參閱[適用於 UWP 應用程式的 Fluent Design 系統](https://docs.microsoft.com/windows/uwp/design/fluent-design-system)。
+Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳做法結合的 UWP 功能，用於建立在所有執行 Windows 裝置類型上都能展現絕佳效能的應用程式。 Fluent 體驗從平板電腦到膝上型電腦，從個人電腦到電視等裝置以及虛擬實境裝置均自然流暢。 如需 Fluent Design 簡介，請參閱[適用於 UWP 應用程式的 Fluent Design 系統](/windows/uwp/design/fluent-design-system)。
 
-良好的[設計](http://design.windows.com/)是決定應用程式與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的應用程式時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://developer.microsoft.com/windows/apps/design)會為您介紹如何設計通用 Windows 應用程式。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) 應用程式簡介](https://docs.microsoft.com/windows/uwp/layout/design-and-ui-intro)，以取得設計能讓使用者滿意的 UWP 應用程式的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../design/devices/index.md)，協助您思考在目標裝置所有不同構成要素上使用您的應用程式的互動體驗。
+良好的[設計](http://design.windows.com/)是決定應用程式與使用者的互動方式、外觀，以及功能的程序。 使用者經驗在判斷使用者使用您的應用程式時有多愉快佔有舉足輕重的地位，因此請不要跳過這個步驟。 [設計基本知識](https://developer.microsoft.com/windows/apps/design)會為您介紹如何設計通用 Windows 應用程式。 請參閱[適用於設計人員的通用 Windows 平台 (UWP) 應用程式簡介](../design/basics/design-and-ui-intro.md)，以取得設計能讓使用者滿意的 UWP 應用程式的詳細資訊。 開始撰寫程式碼之前，請參閱[裝置入門](../design/devices/index.md)，協助您思考在目標裝置所有不同構成要素上使用您的應用程式的互動體驗。
 
-除了在不同裝置上的互動之外，請妥善[計劃您的應用程式](https://docs.microsoft.com/windows/uwp/get-started/plan-your-app)以納入跨多個裝置工作的好處。 例如：
+除了在不同裝置上的互動之外，請妥善[計劃您的應用程式](./plan-your-app.md)以納入跨多個裝置工作的好處。 例如：
 
-- 使用 [UWP 應用程式瀏覽設計基本知識](https://docs.microsoft.com/windows/uwp/layout/navigation-basics)，設計在行動裝置、小螢幕與大螢幕裝置均可行的工作流程。 [配置您的使用者介面](https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design)以回應不同的螢幕大小與解析度。
+- 使用 [UWP 應用程式瀏覽設計基本知識](../design/basics/navigation-basics.md)，設計在行動裝置、小螢幕與大螢幕裝置均可行的工作流程。 [配置您的使用者介面](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)以回應不同的螢幕大小與解析度。
 
-- 請考慮如何容納多個輸入類型。 請參閱[互動的指導方針](https://docs.microsoft.com/windows/uwp/design/layout/index)以了解使用者如何使用 [Cortana](https://docs.microsoft.com/windows/uwp/input-and-devices/cortana-design-guidelines)、[語音](https://docs.microsoft.com/windows/uwp/input-and-devices/speech-interactions)、[觸控互動](https://docs.microsoft.com/windows/uwp/input-and-devices/guidelines-for-user-interaction)、[觸控式鍵盤](https://docs.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)等等方式與您的應用程式互動。  或者，請參閱[文字和文字輸入的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/text-controls)以取得更多傳統互動體驗。
+- 請考慮如何容納多個輸入類型。 請參閱[互動的指導方針](../design/layout/index.md)以了解使用者如何使用 [Cortana](/cortana/skills/)、[語音](../design/input/speech-interactions.md)、[觸控互動](../design/input/touch-interactions.md)、[觸控式鍵盤](../design/input/keyboard-interactions.md)等等方式與您的應用程式互動。  或者，請參閱[文字和文字輸入的指導方針](../design/controls-and-patterns/text-controls.md)以取得更多傳統互動體驗。
 
 ### <a name="add-services"></a>新增服務
 
 - 使用[雲端服務](https://azure.microsoft.com/documentation/services/cloud-services)進行跨裝置同步。
-- 了解如何[連線到 Web 服務](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))以支援您的應用程式體驗。
-- 在您的計劃中包含[推播通知](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview)和[在應用程式內購買](https://docs.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)。 這些功能應該可以跨裝置運作。
+- 了解如何[連線到 Web 服務](/previous-versions/windows/apps/hh761504(v=win.10))以支援您的應用程式體驗。
+- 在您的計劃中包含[推播通知](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)和[在應用程式內購買](../monetize/enable-in-app-product-purchases.md)。 這些功能應該可以跨裝置運作。
 
 ### <a name="submit-your-app-to-the-store"></a>將您的應用程式提交到 Windows 市集
 
 [合作夥伴中心](https://partner.microsoft.com/dashboard)可讓您集中管理和提交您為 Windows 裝置開發的所有應用程式。 請參閱[發佈 Windows 應用程式和遊戲](../publish/index.md)以了解如何提交您的應用程式，以便在 Microsoft Store 中發佈。
 
-新功能不只簡化程序，同時還讓您更好控制。 您在這裡還能找到結合[支付詳細資料](https://docs.microsoft.com/windows/uwp/publish/payout-summary)的詳細[分析報告](https://docs.microsoft.com/windows/uwp/publish/analytics)、[促銷應用程式和吸引客戶](https://docs.microsoft.com/windows/uwp/publish/app-promotion-and-customer-engagement)的方式，以及更多好用功能。
+新功能不只簡化程序，同時還讓您更好控制。 您在這裡還能找到結合[支付詳細資料](../publish/payout-summary.md)的詳細[分析報告](../publish/analytics.md)、[促銷應用程式和吸引客戶](../publish/attract-customers-and-promote-your-apps.md)的方式，以及更多好用功能。
 
-如需更多的簡介資料，請參閱[建置適用於 Windows 10 裝置的 Windows 應用程式的簡介](https://msdn.microsoft.com/magazine/dn973012.aspx)
+如需更多的簡介資料，請參閱[建置適用於 Windows 10 裝置的 Windows 應用程式的簡介](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 
 ### <a name="more-advanced-topics"></a>其他進階主題
 
 - 了解如何使用[使用者活動](https://blogs.windows.com/buildingapps/2017/12/19/application-engagement-windows-timeline-user-activities/#tHuZ6tLPtCXqYKvw.97)，讓您應用程式中的使用者活動顯示在 Windows 時間軸和 Cortana 接續未完成的部分功能中。
-- 了解如何使用 [UWP 應用程式的磚、徽章及通知](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/)。
-- 如需可用於 UWP 應用程式之 Win32 API 完整清單，請參閱[適用於 UWP 應用程式的 API 集合](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))和[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))。
+- 了解如何使用 [UWP 應用程式的磚、徽章及通知](../design/shell/tiles-and-notifications/index.md)。
+- 如需可用於 UWP 應用程式之 Win32 API 完整清單，請參閱[適用於 UWP 應用程式的 API 集合](/previous-versions/mt186421(v=vs.85))和[適用於 UWP 應用程式的 Dll](/previous-versions/mt186422(v=vs.85))。
 - 如需撰寫 .NET UWP 應用程式的概觀，請參閱 [.NET 中的通用 Windows 應用程式](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/)。
-- 如需您可以在 UWP 應用程式中使用的 .NET 類型清單，請參閱[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0)
-- [使用 .NET Native 編譯應用程式](https://docs.microsoft.com/dotnet/framework/net-native/)
+- 如需您可以在 UWP 應用程式中使用的 .NET 類型清單，請參閱[適用於 UWP 應用程式的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0)
+- [使用 .NET Native 編譯應用程式](/dotnet/framework/net-native/)
 - 了解如何新增 Windows 10 使用者的現代體驗到現有的傳統型應用程式，以及使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)在 Microsoft Store 中散發其功能。
 
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>通用 Windows 平台與 Windows 執行階段 API 有何關聯
 如果您正在建置通用 Windows 平台 (UWP) 應用程式，將「通用 Windows 平台 (UWP)」和「Windows 執行階段 (WinRT)」詞彙視為多少有點同義，可讓您獲得許多好處和便利性。 但「可以」  深入了解技術，並判斷這兩個想法之間的差異。 如果您想知道，請參閱最後一節。
 
-Windows 執行階段和 WinRT API 是 Windows API 的進化版。 起初，Windows 透過一般、C 樣式 Win32 API 撰寫程式。 新增的 COM API ([DirectX](https://docs.microsoft.com/windows/desktop/directx) 是明顯的範例)。 Windows Forms、WPF、.NET 和受控語言有其自己撰寫 Windows 應用程式的方式，以及自己喜好的 API 技術。 Windows 執行階段實際上是 COM 的下一個階段。 在實際的應用程式二進位介面 (ABI) 層，其在 COM 中的根目錄會變成可見。 但是，Windows 執行階段的設計訴求是可從各種不同的程式設計語言進行呼叫。 而且能夠以對每種語言都很自然的方式呼叫。 為了這個目的，可透過所謂的語言投影存取 Windows 執行階段。 Windows 執行階段語言投影成 C#、Visual Basic、標準 C++、JavaScript 等等。 此外，適當封裝後 (請參閱[傳統型橋接器](/windows/uwp/porting/desktop-to-uwp-root))，您可以從某個應用程式模型內建的應用程式呼叫 WinRT API：Win32、.NET、WinForms 和 WPF。
+Windows 執行階段和 WinRT API 是 Windows API 的進化版。 起初，Windows 透過一般、C 樣式 Win32 API 撰寫程式。 新增的 COM API ([DirectX](/windows/desktop/directx) 是明顯的範例)。 Windows Forms、WPF、.NET 和受控語言有其自己撰寫 Windows 應用程式的方式，以及自己喜好的 API 技術。 Windows 執行階段實際上是 COM 的下一個階段。 在實際的應用程式二進位介面 (ABI) 層，其在 COM 中的根目錄會變成可見。 但是，Windows 執行階段的設計訴求是可從各種不同的程式設計語言進行呼叫。 而且能夠以對每種語言都很自然的方式呼叫。 為了這個目的，可透過所謂的語言投影存取 Windows 執行階段。 Windows 執行階段語言投影成 C#、Visual Basic、標準 C++、JavaScript 等等。 此外，適當封裝後 (請參閱[傳統型橋接器](/windows/msix/desktop/source-code-overview))，您可以從某個應用程式模型內建的應用程式呼叫 WinRT API：Win32、.NET、WinForms 和 WPF。
 
 您當然可以從您的 UWP 應用程式呼叫 WinRT API。 UWP 是以 Windows 執行階段為基礎的應用程式模型。 在技術上，UWP 應用程式模型是以 [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication) 為基礎，不過視您所選擇的程式設計語言而定，您可能看不到細節。 如本主題所闡述，從價值主張的觀點來看，UWP 適合用於撰寫可發佈至 Microsoft Store 並在任何一種裝置板型規格上執行的單一二進位檔。 UWP 應用程式的裝置範圍取決於您限制您的應用程式呼叫或您有條件呼叫的 Windows 執行階段 API 子集。
 

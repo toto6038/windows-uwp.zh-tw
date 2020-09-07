@@ -1,17 +1,17 @@
 ---
 title: 了解追蹤建構和設定表單
-description: 了解您需要執行什麼來建立應用程式中健全的表單。
+description: 了解如何在通用 Windows 平台 (UWP) 應用程式中，建構及設定強固的表單以處理大量資訊的輸入。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 02cb15d948bf35b1c449bb430c9c31dd33d9eec6
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a674514bfeb2acbc545e59cf1b3fc6e59d697215
+ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "79543971"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89304520"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -51,7 +51,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 可讓使用者在兩個選項中選擇。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 可讓使用者選取一個日期的值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 可讓使用者選取一個日期的值。
-* [ComboBox](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 可展開以顯示可選取項目的清單。 您也可以在[這裡](../design/controls-and-patterns/combo-box.md)了解更多資訊
+* [ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) 可展開以顯示可選取項目的清單。 您也可以在[這裡](../design/controls-and-patterns/combo-box.md)了解更多資訊
 
 您可能也會想要新增[按鈕](../design/controls-and-patterns/buttons.md)，讓使用者可以儲存或取消。
 
@@ -155,10 +155,10 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 | API | 說明 |
 |------|---------------|
 | [適用於表單的控制項](../design/controls-and-patterns/forms.md#input-controls) | 用於建立表單的實用輸入控制項清單，以及在什麼地方使用它們的基本指導方針。 |
-| [方格](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用於在多列與多欄版面配置中排列控制項的面板。 |
-| [RelativePanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | 適用於排列對應於其他元素與面板界限之項目的面板。 |
-| [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | 適用於在單一水平或垂直行中排列元素的面板。 |
-| [VisualState](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.VisualState) | 當他們在特定狀態下，可讓您設定的 UI 元素的外觀。 |
+| [方格](/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用於在多列與多欄版面配置中排列控制項的面板。 |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | 適用於排列對應於其他元素與面板界限之項目的面板。 |
+| [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | 適用於在單一水平或垂直行中排列元素的面板。 |
+| [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | 當他們在特定狀態下，可讓您設定的 UI 元素的外觀。 |
 
 ### <a name="useful-docs"></a>實用的文件
 
