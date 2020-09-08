@@ -6,18 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6232a8003140284956319728e16b3b953aff3177
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 753ac6894a8ab863255b6023636fad54b7568f4a
+ms.sourcegitcommit: bea08ea0eea53cd3f002b04a081a96400f6759ae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362731"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89558471"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 
 
-
-\[某些資訊與預先發行的產品有關，在正式發行之前可能會經過大幅修改。 針對此處提供的資訊，Microsoft 不做任何明示或默許的擔保。\]
 
 本主題說明如何使用 [**FaceDetector**](/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) 來偵測影像中的臉部。 [**FaceTracker**](/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。
 
