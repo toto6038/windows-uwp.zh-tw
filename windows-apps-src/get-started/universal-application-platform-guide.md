@@ -6,20 +6,23 @@ ms.date: 08/21/2020
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 55eacfe8b27758eb9579848d32b79446d2894bb7
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: e0c8a059708babf3f0224cefac156cc3c1407e61
+ms.sourcegitcommit: 696f90cc95311ee3a74ce70881c7bb277b666e46
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412042"
+ms.locfileid: "89429119"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
+
+
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 開發案例中的定位為何？
 
-通用 Windows 平台 (UWP) 只是用來建立 Windows 用戶端應用程式的眾多方法之一。 UWP 應用程式會使用 Windows 執行階段 (WinRT) API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。 UWP 應用程式仍然可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0))。
+UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用程式會使用 WinRT API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。 UWP 應用程式仍然可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0))。
 
-Microsoft 開發案例持續演進，並提供 [WinUI](/windows/apps/winui/)、[MSIX](/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
+Microsoft 開發案例持續演進，並提供 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
+
 
 ## <a name="features-of-a-uwp-app"></a>UWP 應用程式的功能
 
