@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 1719b959b3c22bfac93215607785bd4634934407
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3f05bbd1ad5ea770e96ebbbd74c3a980ae0585b7
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166212"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643776"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -39,6 +39,8 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 - [從 C++/CX 移到 C++/WinRT](./move-to-winrt-from-cx.md)
 - 從 WRL 移到 [C++/WinRT](./move-to-winrt-from-wrl.md)
 - [從 C# 移到 C++/WinRT](./move-to-winrt-from-csharp.md)
+
+另請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)
 
 ### <a name="topics-about-cwinrt"></a>C++/WinRT 相關主題
 
