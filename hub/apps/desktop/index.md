@@ -1,18 +1,18 @@
 ---
-Description: 了解如何開始建置 Windows PC 適用的傳統型應用程式，包括如何為新應用程式選擇正確的應用程式平台，以及如何為 Windows 10 讓現有應用程式現代化。
+description: 了解如何開始建置 Windows PC 適用的傳統型應用程式，包括如何為新應用程式選擇正確的應用程式平台，以及如何為 Windows 10 讓現有應用程式現代化。
 title: 建置 Windows PC 適用的傳統型應用程式
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 9/10/2020
 keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f4b790978449bd6d5c279a5405c22db51cd0724
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6539f436e46f351efc355d361c0677b9fedee546
+ms.sourcegitcommit: 2bb975d5df38d294277f57bf8b6a06d9bf87ca9b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170722"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90046814"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -98,10 +98,11 @@ ms.locfileid: "89170722"
 
 ## <a name="related-documentation-and-technologies"></a>相關文件和技術
 
-| 資源 | 說明 |
+| 資源 | 描述 |
 |---------|-------------|
-| [.NET Core 3.0](/dotnet/core/whats-new/dotnet-core-3-0) | 深入瞭解 .NET Core 3.0 的最新功能，包括 WPF 和 Windows Forms 應用程式的增強功能。 |
-| [適用於 WPF 和 .NET Core 3.0 的桌面指南](/dotnet/desktop-wpf/overview/index) | 開發以 .NET Core 3.0 為目標的 WPF 應用程式，而不是完整的 .NET Framework。  |
+| [.NET Core 3.1](/dotnet/core/whats-new/dotnet-core-3-1) | 深入瞭解 .NET Core 3.1 的最新功能，包括 WPF 和 Windows Forms 應用程式的增強功能。 |
+| [.NET 5](/dotnet/core/dotnet-five) | 本文詳細說明 .NET 5 中包含的內容，這是 3.1 版之後的下一版 .NET Core。 |
+| [適用於 WPF 和 .NET Core 的桌面指南](/dotnet/desktop-wpf/overview/index) | 開發以 .NET Core 為目標的 WPF 應用程式，而不是完整的 .NET Framework。  |
 | [Azure](/azure/) | 使用 Azure 雲端服務擴充應用程式的範圍。 |
 | [Visual Studio](/visualstudio/) | 了解如何使用 Visual Studio 來開發應用程式和服務。 |
 | [MSIX](/windows/msix/) | 以現代化和通用的封裝格式封裝和部署任何 Windows 應用程式。 |

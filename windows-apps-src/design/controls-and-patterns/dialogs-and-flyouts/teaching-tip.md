@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: 31ced6c31b126986171c81e03b68a0a1cccc44f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 997a0c32de9d6ee803095f5c708f6ed8cedaf141
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160352"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643830"
 ---
 # <a name="teaching-tip"></a>教學提示
 
@@ -58,7 +58,7 @@ ms.locfileid: "89160352"
 </tr>
 </table>
 
-教學提示可以有數個設定，包括這些值得注意的。
+教學提示可以有數個設定，包括這些值得注意的：
 
 教學提示可以用其尾端，將特定 UI 元素作為目標，以增強所呈現資訊的內容清晰度。
 
@@ -106,9 +106,11 @@ public MainPage()
 
 ![範例應用程式，包含以 [儲存] 按鈕為目標的教學提示。 提示標題為 [自動儲存]，子標題為 [系統會在您工作時儲存您的變更，您永遠不需要再自行儲存了。]。 教學提示的右上角有關閉按鈕。](../images/teaching-tip-targeted.png)
 
+上述範例使用 [Title](/uwp/api/microsoft.ui.xaml.controls.teachingtip.title) 和 [Subtitle](/uwp/api/microsoft.ui.xaml.controls.teachingtip.subtitle) 屬性來設定教學提示的標題和子標題。 [Target](/uwp/api/microsoft.ui.xaml.controls.teachingtip.target) 屬性可設定為 "SaveButton"，以建立其本身與按鈕之間的視覺連結。 為了顯示教學提示，其 [IsOpen](/uwp/api/microsoft.ui.xaml.controls.teachingtip.isopen) 屬性會設定為 `true`。
+
 ### <a name="non-targeted-tips"></a>無目標提示
 
-並非所有提示都與畫面上的元素相關聯。 針對這些案例，您可以不設定 Target 屬性，教學提示就會顯示在相對於 XAML 根的邊緣。 不過，若要移除教學提示的尾端，但仍保持在相對於 UI 元素的位置，可以將 TailVisibility 屬性設定為 "Collapsed"。 下列示無目標教學提示的範例。
+並非所有提示都與畫面上的元素相關聯。 針對這些案例，請勿設定目標，教學提示會改為顯示在相對於 XAML 根的邊緣。 不過，若要移除教學提示的尾端，但仍保持在相對於 UI 元素的位置，可以將 [TailVisibility](/uwp/api/microsoft.ui.xaml.controls.teachingtip.tailvisibility) 屬性設定為 "Collapsed"。 下列示無目標教學提示的範例。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save" />
@@ -125,7 +127,7 @@ public MainPage()
 
 ### <a name="preferred-placement"></a>慣用位置
 
-教學提示使用 TeachingTipPlacementMode 屬性，複寫 Flyout 的[FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行為。 預設放置模式會嘗試將有目標教學提示放置在其目標上方，並將無目標教學提示置中在 XAML 根底部。 和 Flyout 一樣，如果慣用放置模式會沒有空間顯示教學提示，系統會自動選擇其他放置模式。
+教學提示使用 [PreferredPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.preferredplacement) 屬性，複寫 Flyout 的[FlyoutPlacementMode](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutPlacementMode) 放置行為。 預設放置模式會嘗試將有目標教學提示放置在其目標上方，並將無目標教學提示置中在 XAML 根底部。 和 Flyout 一樣，如果慣用放置模式會沒有空間顯示教學提示，系統會自動選擇其他放置模式。
 
 對於預測遊戲台輸入的應用程式，請參閱[遊戲台與遙控器的互動]( ../../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)。 建議您測試的使用應用程式 UI 的所有可能設定，測試每個教學提示的遊戲台協助工具。
 
@@ -168,7 +170,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="add-a-placement-margin"></a>新增放置邊界
 
-您可以使用 PlacementMargin 屬性來控制有目標教學提示與其目標的距離，也可控制無目標教學提示與 XAML 根邊緣的距離。 和 [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin) 一樣，PlacementMargin 有四個值 (左、右、上和下)，因此只會使用相關的值。 例如，PlacementMargin.Left 適用於提示是在目標左側時，或是在 XAML 根的左側邊緣時。
+您可以使用 [PlacementMargin](/uwp/api/microsoft.ui.xaml.controls.teachingtip.placementmargin) 屬性來控制有目標教學提示與其目標的距離，也可控制無目標教學提示與 XAML 根邊緣的距離。 和 [Margin](/uwp/api/windows.ui.xaml.frameworkelement.margin) 一樣，PlacementMargin 有四個值 (左、右、上和下)，因此只會使用相關的值。 例如，PlacementMargin.Left 適用於提示是在目標左側時，或是在 XAML 根的左側邊緣時。
 
 下列範例顯示 PlacementMargin 的 Left/Top/Right/Bottom 都設定為 80 的無目標提示。
 
@@ -188,7 +190,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="add-content"></a>新增內容
 
-可以使用 Content 屬性將內容新增至教學提示。 如果要顯示的內容大小超過教學提示所允許的，系統會自動啟用卷軸，讓使用者能捲動內容區域。
+可以使用 [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 屬性將內容新增至教學提示。 如果要顯示的內容大小超過教學提示所允許的，系統會自動啟用卷軸，讓使用者能捲動內容區域。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -210,11 +212,11 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="add-buttons"></a>新增按鈕
 
-預設會顯示標準 "X" 關閉按鈕，接著是教學提示的標題。 關閉按鈕可以使用 CloseButtonContent 屬性來自訂，在此情況下，按鈕會移動到教學提示的底部。
+預設會顯示標準 "X" 關閉按鈕，接著是教學提示的標題。 關閉按鈕可以使用 [CloseButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closebuttoncontent) 屬性來自訂，在此情況下，按鈕會移動到教學提示的底部。
 
 **注意：啟用消失關閉的提示不會顯示關閉按鈕**
 
-藉由設定 ActionButtonContent 屬性 (以及選用的 ActionButtonCommand 和 ActionButtonCommandParameter 屬性)，可以新增自訂動作按鈕。
+藉由設定 [ActionButtonContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncontent) 屬性 (以及選用的 [ActionButtonCommand](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommand) 和 [ActionButtonCommandParameter](/uwp/api/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommandparameter) 屬性)，可以新增自訂動作按鈕。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -239,7 +241,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="hero-content"></a>主圖內容
 
-藉由設定 HeroContent 屬性，可以將邊緣到邊緣內容新增至教學提示。 藉由設定 HeroContentPlacement 屬性，可以將主圖內容的位置可以設定在教學提示的頂端或底部。
+藉由設定 [HeroContent](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontent) 屬性，可以將邊緣到邊緣內容新增至教學提示。 藉由設定 [HeroContentPlacement](/uwp/api/microsoft.ui.xaml.controls.teachingtip.herocontentplacement) 屬性，可以將主圖內容的位置可以設定在教學提示的頂端或底部。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -260,7 +262,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="add-an-icon"></a>新增圖示
 
-使用 IconSource 屬性可以在標題和子標題旁邊新增圖示。 建議的圖示大小包括 16px、24px 和 32px。
+使用 [IconSource](/uwp/api/microsoft.ui.xaml.controls.teachingtip.iconsource) 屬性可以在標題和子標題旁邊新增圖示。 建議的圖示大小包括 16px、24px 和 32px。
 
 ```xaml
 <Button x:Name="SaveButton" Content="Save">
@@ -281,7 +283,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="enable-light-dismiss"></a>啟用消失關閉
 
-消失關閉功能預設是停用的，將它啟用之後，教學提示就會關閉 (例如，當使用者捲動時或與應用程式的其他元素互動時)。 因為此行為，當您要在捲動區域中放置提示時，消失關閉提示是最佳解決方案。
+消失關閉功能預設是停用的，但可藉由設定 [IsLightDismissEnabled](/uwp/api/microsoft.ui.xaml.controls.teachingtip.islightdismissenabled) 屬性來加以啟用，如此一來，教學提示就會關閉 (例如，當使用者捲動時或與應用程式的其他元素互動時)。 因為此行為，當您要在捲動區域中放置提示時，消失關閉提示是最佳解決方案。
 
 系統會將關閉按鈕從已啟用消失關閉的教學提示中移除，讓使用者識別其消失關閉行為。
 
@@ -299,7 +301,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="escaping-the-xaml-root-bounds"></a>逸出 XAML 根範圍
 
-從 Windows 10 版本1903 (組建 18362) 開始，可以透過設定 `ShouldConstrainToRootBounds` 屬性讓教學提示逸出 XAML 根範圍和畫面。 啟用此屬性之後，教學提示不會嘗試保持在 XAML 根或畫面的範圍中，且一律會放置在 `PreferredPlacement` 模式設定的位置。 建議您啟用 `IsLightDismissEnabled` 屬性，並將 `PreferredPlacement` 模式設定為最接近 XAML 根中央的位置，以確保有最佳使用者體驗。
+從 Windows 10 版本1903 (組建 18362) 開始，可以透過設定 [ShouldConstrainToRootBounds](/uwp/api/microsoft.ui.xaml.controls.teachingtip.shouldconstraintorootbounds) 屬性讓教學提示逸出 XAML 根範圍和畫面。 啟用此屬性之後，教學提示不會嘗試保持在 XAML 根或畫面的範圍中，且一律會放置在 `PreferredPlacement` 模式設定的位置。 建議您啟用 `IsLightDismissEnabled` 屬性，並將 `PreferredPlacement` 模式設定為最接近 XAML 根中央的位置，以確保有最佳使用者體驗。
 
 在舊版 Windows 中，系統會忽略此屬性，教學提示會一律保持在 XAML 根範圍內。
 
@@ -319,7 +321,7 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 
 ### <a name="canceling-and-deferring-close"></a>取消和延後關閉
 
-Closing 事件可用來取消和/或延遲教學提示的關閉。 這可用來保持教學提示開啟，或讓動作或自訂動畫有時間顯示。 當取消教學提示的關閉時，IsOpen 會恢復為 true，不過，在延遲期間它會保持為 false。 也可以取消程式設計方式的關閉。
+[Closing](/uwp/api/microsoft.ui.xaml.controls.teachingtip.closing) 事件可用來取消和/或延遲教學提示的關閉。 這可用來保持教學提示開啟，或讓動作或自訂動畫有時間顯示。 當取消教學提示的關閉時，IsOpen 會恢復為 true，不過，在延遲期間它會保持為 false。 也可以取消程式設計方式的關閉。
 
 > [!NOTE]
 > 如果沒有放置選項能讓教學提示完整顯示，則教學提示會在其事件生命週期期間強制執行關閉，而不會顯示為沒有可用的關閉按鈕。 如果應用程式取消 Closing 事件，教學提示可能會保持開啟，且沒有可用的關閉按鈕。

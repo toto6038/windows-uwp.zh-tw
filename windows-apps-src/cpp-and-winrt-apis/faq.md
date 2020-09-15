@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: e37f5b585554f4ec214f7f72a896545d66dde3d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d9b402a1f140126314bc10f69880a9f01af2b2a4
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170202"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643800"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -20,6 +20,9 @@ ms.locfileid: "89170202"
 
 > [!NOTE]
 > 如果您的問題是關於您已經看過的錯誤訊息，則也會看到[疑難排解 C++/WinRT](troubleshooting.md)主題。
+
+## <a name="where-can-i-find-cwinrt-sample-apps"></a>我可以在哪裡找到 C++/WinRT 範例應用程式？
+請參閱 [C++/WinRT 範例應用程式](/samples/browse/?languages=cppwinrt)。
 
 ## <a name="how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk"></a>如何將 C++/WinRT 專案的目標重新設定為 Windows SDK 的較新版本？
 請參閱[如何將您 C++/WinRT 專案的目標設定為 Windows SDK 的較新版本](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: 412f34d21ddb24f637450fdfc71214c360445841
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d7dc6455219510d75307df02571fc506b909553c
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170192"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643827"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -180,6 +180,10 @@ C++/WinRT 語言投影取決於某些 Windows 執行階段的可用 (非成員) 
 此案例是關於在 XAML UI 架構上建置應用程式和控制項。 在 XAML 應用程式中運作等同結合使用和撰寫。 但由於 XAML 是現今 Windows 上的主要 UI 架構，而其對 Windows 執行階段的影響成比例，因此應有自己的案例類別。
 
 請注意，XAML 最適合用於提供反映的程式設計語言。 在 C++/WinRT 中，您有時必須執行一些額外的工作，才能與 XAML 架構相交互操作。 這些案例全都涵蓋在本文件中。 建議從 [XAML 控制項；繫結至 C++/WinRT 屬性](./binding-property.md)和[使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項](./xaml-cust-ctrl.md)著手。
+
+## <a name="sample-apps-written-in-cwinrt"></a>以 C++/WinRT 撰寫的範例應用程式
+
+請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)。
 
 ## <a name="important-apis"></a>重要 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

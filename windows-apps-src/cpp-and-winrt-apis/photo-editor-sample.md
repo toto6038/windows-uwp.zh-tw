@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 範例, 應用程式, 相片, 編輯器
 ms.localizationpriority: medium
-ms.openlocfilehash: fb89deaef8c221df9a28f0350f0c860e8da3802d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f72fc1737e697427b22f65147260bdadebc9605
+ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154409"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89643798"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Photo Editor C++/WinRT 範例應用程式
 
@@ -28,3 +28,5 @@ Photo Editor 應用程式是通用 Windows 平台 (UWP) UWP 範例應用程式�
 - 針對影像效果，使用外部 Win2D NuGet 套件和 [Windows::UI::Composition](/uwp/api/windows.ui.composition)。
 - XAML 資料繫結，包括 [{X:bind} 標記延伸](../xaml-platform/x-bind-markup-extension.md)。
 - XAML 樣式和 UI 自訂，包括[連接動畫](../design/motion/connected-animation.md)。
+
+另請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)。
