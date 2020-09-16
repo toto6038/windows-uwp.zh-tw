@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 70f71265ff763ff8a160705694476e03bf8b6667
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d85df48b4f43759013f80623595d919ac6c77337
+ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166352"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90593432"
 ---
 # <a name="composition-visual"></a>組合視覺效果
 
@@ -19,17 +19,21 @@ ms.locfileid: "89166352"
 
 ## <a name="visuals"></a>視覺效果
 
-有三個構成視覺化樹狀結構的視覺效果類型，外加一個含有多個影響視覺效果內容之子類別的基底筆刷類別：
+有數種視覺效果類型會構成視覺化樹狀結構，再加上具有多個子類別（會影響視覺效果的內容）的基底筆刷類別：
 
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
 - [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) – 衍生自 [**Visual**](/uwp/api/Windows.UI.Composition.Visual)，並且會新增建立子系的能力。
-- [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) – 衍生自 [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual)，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
+  - [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 能夠建立筆刷的關聯性，讓視覺效果可以轉譯圖元，包括影像、效果或純色。
+  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 視覺效果的子系會壓平合併成單一圖層。<br/> (_在 Windows 10 1607 版、SDK 14393 中引進。_) 
+  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 屬於 CompositionShape 根目錄的視覺化樹狀結構節點。<br/> (_在 Windows 10 1803 版、SDK 17134 中引進。_) 
+  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 視覺效果會從另一個視覺效果取得其內容。<br/> (_在 WINDOWS 10 版本 1809 SDK 17763 中引進。_) 
+  - [**SceneVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 3D 場景節點的容器視覺效果。<br/> (_在 Windows 10 1903 版、SDK 18362 中引進。_) 
 
-您可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 和其子類別 (包括[**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush))，將內容和效果套用至 SpriteVisuals。 若要深入了解筆刷，請參閱 [**CompositionBrush 概觀**](./composition-brushes.md) (英文)。
+您可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 和其子類別 (包括[**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush))，將內容和效果套用至 SpriteVisuals。 若要深入瞭解筆刷，請參閱 [**CompositionBrush 總覽**](./composition-brushes.md)。
 
 ## <a name="the-compositionvisual-sample"></a>CompositionVisual 範例
 
-在此我們將以一個範例程式碼為例，說明先前所列三個不同的視覺効果類型。 雖然這個範例並未涵蓋像是「動畫」或更複雜效果的概念，但是它包含所有這些系統所使用的構成要素 (本文結尾處會列出完整的範例程式碼。)
+在此我們將以一個範例程式碼為例，說明先前所列三個不同的視覺効果類型。 雖然此範例並未涵蓋動畫或更複雜效果等概念，但它包含所有系統都使用的構成要素。 (本文結尾處會列出完整的範例程式碼。)
 
 在此範例中，有一些可以按一下並在螢幕上拖曳的單色方形。 在方形上按一下時，它將會顯示在最上層、 旋轉 45 度，並在拖曳時變成不透明。
 
@@ -40,7 +44,7 @@ ms.locfileid: "89166352"
 - 裁剪視覺效果
 - 旋轉視覺效果
 - 設定不透明度
-- 變更視覺效果在集合中的位置
+- 變更視覺效果在集合中的位置。
 
 ## <a name="creating-a-compositor"></a>建立撰寫器
 
@@ -78,7 +82,7 @@ _currentVisual.Clip = clip;
 
 ## <a name="span-idrotating_a_clipspanspan-idrotating_a_clipspanspan-idrotating_a_clipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋轉裁剪
 
-您可以使用旋轉來轉換 [**Visual**](/uwp/api/Windows.UI.Composition.Visual)。 請注意，[**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) 同時支援弧度與角度。 預設使用的是弧度，但是也可以輕鬆指定成角度，如下列程式碼片段所示：
+您可以使用旋轉來轉換 [**Visual**](/uwp/api/Windows.UI.Composition.Visual)。 請注意，[**RotationAngle**](/uwp/api/windows.ui.composition.visual.rotationangle) 同時支援弧度與角度。 它預設為弧度，但很容易指定度數，如下列程式碼片段所示：
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
