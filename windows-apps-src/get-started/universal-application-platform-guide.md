@@ -2,24 +2,28 @@
 title: 何謂通用 Windows 平台 (UWP) 應用程式？
 description: 了解可以在各式各樣執行 Windows 10 裝置上執行的「通用 Windows 平台」(UWP) 應用程式。
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 08/21/2020
+ms.date: 09/15/2020
 ms.topic: article
+ms.custom: contperfq1
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: e0c8a059708babf3f0224cefac156cc3c1407e61
-ms.sourcegitcommit: 696f90cc95311ee3a74ce70881c7bb277b666e46
+ms.openlocfilehash: 29e5171d0c6737bdf3d8064566b8ec2731e68978
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89429119"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569393"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
+UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用程式會使用 WinRT API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。
+
+若要下載開始建立 UWP 應用程式所需的工具，請查看 [開始設定](get-set-up.md)，然後 [撰寫第一個應用程式](your-first-app.md)。
 
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 開發案例中的定位為何？
 
-UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用程式會使用 WinRT API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。 UWP 應用程式仍然可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0))。
+UWP 是建立在 Windows 10 裝置上執行之應用程式的一種選擇，並且可以與其他平台結合使用。 UWP 應用程式可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0))。
 
 Microsoft 開發案例持續演進，並提供 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
 
@@ -34,21 +38,21 @@ UWP 應用程式：
 - 在所有執行 Windows 10 的裝置 (或只有您指定的裝置) 上，可從 Microsoft Store 提供。 Microsoft Store 在您的應用程式上提供多種方式賺錢。
 - 可以安裝和解除安裝，而對電腦無風險或產生「電腦垃圾」。
 - 互動：使用動態磚、推播通知和使用者活動，與 Windows 時間軸和 Cortana 接續未完成的部分互動，來使使用者積極參與。
-- 可以 C#、C++、Visual Basic 與 Javascript 進行程式設計。 對於 UI，使用 XAML、HTML 或 DirectX。
+- 可以 C#、C++、Visual Basic 與 Javascript 進行程式設計。 對於 UI，使用 WinUI、XAML、HTML 或 DirectX。
 
 讓我們更仔細看看這些。
 
-## <a name="secure"></a>安全
+### <a name="secure"></a>安全
 
 UWP 應用程式在資訊清單中宣告他們所需的裝置功能，例如存取麥克風、定位、網路攝影機、USB 裝置、檔案等等。 使用者必須認可並授權該存取之後，才能授與應用程式能力。
 
-## <a name="a-common-api-surface-across-all-devices"></a>跨所有裝置的通用 API 表面
+### <a name="a-common-api-surface-across-all-devices"></a>跨所有裝置的通用 API 表面
 
 Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windows 10 的裝置上使用的通用應用程式平台。 UWP 核心 API 在所有 Windows 裝置上是相同的。 如果您的應用程式只使用核心 API，它會在任何 Windows 10 裝置上執行，無論您的目標是桌上型電腦、Xbox 或混合實境耳機等。
 
 以 C++ /WinRT 或 C++ /CX 撰寫的 UWP 應用程式具有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 API 是由所有 Windows 10 裝置實作。
 
-## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>擴充功能 SDK 會公開特定裝置類型的獨特功能
+### <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>擴充功能 SDK 會公開特定裝置類型的獨特功能
 
 如果您的目標是通用 API，則應用程式可以在所有執行 Windows 10 的裝置上執行。 但如果您想要讓 UWP 應用程式利用裝置特定的 API，則您也可以這麼做。
 
@@ -59,7 +63,7 @@ Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windo
 下列影片提供簡短的裝置系列概觀和調適型程式設計：
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-## <a name="adaptive-controls-and-input"></a>調適型控制項和輸入
+### <a name="adaptive-controls-and-input"></a>調適型控制項和輸入
 
 UI 元素因應應用程式所執行的螢幕大小和 DPI 來調整它們的版面配置和縮放比例。 UWP 應用程式與多種輸入類型皆配合良好，例如，鍵盤、滑鼠、觸控、手寫筆和 Xbox One 控制器。 如果您需要進一步調整您的 UI 以適合特定畫面大小或裝置，新的配置面板和工具可以協助您設計可因應您的應用程式所執行的不同裝置和外形規格的 UI。
 
@@ -73,11 +77,13 @@ Windows 使用下列功能，協助您讓您的 UI 以多個裝置為目標：
 
 您的應用程式 UI 的某些層面會在不同裝置上自動調整。 不過，您的應用程式使用者經驗設計可能需要依據應用程式執行所在的裝置進行調整。 例如，在小型、手持裝置上執行相片應用程式時可調整其 UI，以確保適合單手操作使用。 在桌上型電腦上執行相片應用程式時，應該調整 UI 以充分利用額外的螢幕空間。
 
-## <a name="theres-one-store-for-all-devices"></a>還有一個適用於所有裝置的市集。
+### <a name="theres-one-store-for-all-devices"></a>還有一個適用於所有裝置的市集。
 
 整合的 App Store 可讓您的應用程式在 Windows 10 裝置上使用，例如個人電腦、平板電腦、Xbox、HoloLens、Surface Hub 及物聯網 (IoT) 裝置。 您可以將應用程式提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有應用程式。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
 
 UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/application-insights/) 整合以進行詳細的遙測和分析，這是一項重要工具，可用以了解您的使用者並提升您的應用程式。
+
+UWP 應用程式可以與 [MSIX](https://docs.microsoft.com/windows/msix/) 一起封裝，並透過 Microsoft Store 或以其他方式散發。 無論應用程式以何種方式散發，MSIX 均允許更新應用程式，請參閱[從您的程式碼更新非 Store 發佈的應用程式套件](https://docs.microsoft.com/windows/msix/non-store-developer-updates)。
 
 ### <a name="monetize-your-app"></a>從您的應用程式獲利
 
@@ -88,13 +94,8 @@ UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/
 - 激勵使用者的銷售價格。
 - App 內購買。
 
-### <a name="apps-from-the-microsoft-store-provide-a-seamless-install-uninstall-and-upgrade-experience"></a>Microsoft Store 的應用程式提供順暢的安裝、解除安裝和升級體驗
 
-所有 UWP 應用程式是使用保護使用者、裝置和系統的封裝系統散發。 使用者完全不需要後悔安裝應用程式，因為 UWP 應用程式可以解除安裝，而不會留下任何以應用程式建立的文件以外的任何東西。
-
-應用程式可以順暢地部署和更新。 應用程式封裝可以模組化，讓您能夠隨選下載內容及擴充功能。
-
-## <a name="deliver-relevant-real-time-info-to-your-users-to-keep-them-coming-back"></a>傳送相關、即時的資訊給您的使用者，並吸引他們更頻繁使用您的應用程式
+### <a name="deliver-relevant-real-time-info-to-your-users-to-keep-them-coming-back"></a>傳送相關、即時的資訊給您的使用者，並吸引他們更頻繁使用您的應用程式
 
 您有各種不同的方式您的 UWP 應用程式吸引使用者：
 
@@ -113,6 +114,8 @@ UWP 應用程式使用 Windows 執行階段，這是作業系統提供的原生 
 - XAML UI 和 C#、VB 或 C++
 - DirectX UI 和 C++
 - JavaScript 和 HTML
+- WinUI
+-
 
 ## <a name="links-to-help-you-get-going"></a>連結可協助您開始
 

@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: 檔案存取權限
 description: App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
-ms.date: 12/19/2018
+ms.date: 09/10/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -11,18 +11,19 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: d12ff61858d6d1434d07e00c70868697fefa1832
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.custom: contperfq1
+ms.openlocfilehash: 6bb0e44fa5ea31d73feebdfb9ced9951cc2bc937
+ms.sourcegitcommit: 2050175043c8c175be3312f17769b4af241b3275
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285439"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027647"
 ---
 # <a name="file-access-permissions"></a>檔案存取權限
 
 通用 Windows 平台 (UWP) 應用程式預設可存取某些檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
 
-## <a name="the-locations-that-all-apps-can-access"></a>所有 app 都能存取的位置
+## <a name="locations-that-all-apps-can-access"></a>所有應用程式都能存取的位置
 
 當您建立新的 app 時，預設可以存取下列檔案系統位置：
 
@@ -253,7 +254,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
 
 除了預設位置之外，應用程式還可以[在應用程式資訊清單中宣告功能](../packaging/app-capability-declarations.md)，或[呼叫檔案選擇器](quickstart-using-file-and-folder-pickers.md)來讓使用者挑選應用程式要存取的檔案和資料夾，藉以存取其他檔案和資料夾。
 
-宣告 [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) 擴充的應用程式，對於其從主控台視窗中啟動所在目錄以及其下層目錄具有檔案系統權限。
+宣告 [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap5-appexecutionalias) 延伸模組的應用程式，對於其從主控台視窗中啟動所在目錄，以及其下層目錄具有檔案系統權限。
 
 ### <a name="retaining-access-to-files-and-folders"></a>保留對檔案和資料夾的存取權
 

@@ -5,12 +5,12 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10、uwp、windows、執行時間、元件、元件、Windows 執行階段元件、WRC、c + +/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f84158311ef789851c268e9e21dbf5317063370
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 25286260c4abd6686939393b3bf81df818879bf9
+ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174312"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804748"
 ---
 # <a name="windows-runtime-components-with-cwinrt"></a>使用 C++/WinRT 的 Windows 執行階段元件
 
@@ -140,3 +140,9 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 若要將更多功能或新的 Windows 執行階段類型新增至 c + +/WinRT Windows 執行階段元件，您可以遵循如上所示的相同模式。 首先，使用 IDL 來定義您想要公開的功能。 然後，在 Visual Studio 中建立專案，以產生存根的執行。 然後視需要完成執行。 使用您的 Windows 執行階段元件的應用程式，可以看到您在 IDL 中定義的任何方法、屬性和事件。 如需 IDL 的詳細資訊，請參閱 [Microsoft 介面定義語言3.0 簡介](/uwp/midl-3/intro)。
 
 如需如何將事件加入 Windows 執行階段元件的範例，請參閱 [在 c + + 中撰寫事件/WinRT](../cpp-and-winrt-apis/author-events.md)。
+
+## <a name="troubleshooting"></a>疑難排解
+
+| 徵狀 | 補救方法 |
+|---------|--------|
+|在 c + +/WinRT 應用程式中，使用使用 XAML 的 [c # Windows 執行階段元件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 時，編譯器會產生格式為 "*' MyNamespace_XamlTypeInfo ' 的錯誤：不是 ' WinRT：： MyNamespace ' 的成員*， &mdash; 其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在 `pch.h` 使用 c + +/WinRT 應用程式中，新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 適當的取代*MyNamespace* 。 |

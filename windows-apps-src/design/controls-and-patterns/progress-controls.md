@@ -1,5 +1,5 @@
 ---
-Description: 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。
+description: 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。
 title: 進度控制項的指導方針
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d5756c4cfff05b666eae245de76c1813f9a834df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fbd9ed95137263f4ddad44e2272d4d77aced241f
+ms.sourcegitcommit: 234bb7c896b990f624b2b8789820b92426e52291
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169672"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90013370"
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -61,13 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 此外，進度控制項是唯讀的，無法互動。 表示使用者無法叫用或直接使用這些控制項。
 
-![ProgressBar 狀態](images/progress-bar-two-states.png)
+|控制|顯示|
+|---|---|
+| 不確定的 ProgressBar | ![ProgressBar 不確定](images/progressbar-indeterminate.gif) |
+| 確定的 ProgressBar | ![ProgressBar 確定](images/progressbar-determinate.png)|
+| 不確定的 ProgressRing | ![ProgressRing 狀態](images/progressring-indeterminate.gif)|
 
-*由上至下 - 不確定的 ProgressBar 和確定的 ProgressBar*
-
-![ProgressRing 狀態](images/ProgressRing_SingleState.png)
-
-*不確定的 ProgressRing*
 
 ## <a name="examples"></a>範例
 

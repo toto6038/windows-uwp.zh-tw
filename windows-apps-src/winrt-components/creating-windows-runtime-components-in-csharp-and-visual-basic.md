@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7a1235159b0f9d69e7fcedd334aeb9e9246d3d2b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 57d46ea1f88395624943135247a8f610112aaf90
+ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174292"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804728"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>Windows 執行階段元件與 C# 和 Visual Basic
 
@@ -280,6 +280,13 @@ End Function
 在您建立要供自己使用的 Windows 執行階段元件之後，可能會發現它封裝的功能對其他開發人員也很有用。 有兩種方式可供您選擇來包裝元件並發佈給其他開發人員。 請參閱[發佈 Managed Windows 執行階段元件](/previous-versions/windows/apps/jj614475(v=vs.140))。
 
 如需 Visual Basic 和 c # 語言功能的詳細資訊，以及 Windows 執行階段的 .NET 支援，請參閱 [Visual Basic 和 c # 語言參考](/visualstudio/welcome-to-visual-studio-2015?view=vs-2015)。
+
+
+## <a name="troubleshooting"></a>疑難排解
+
+| 徵狀 | 補救方法 |
+|---------|--------|
+|在 c + +/WinRT 應用程式中，使用使用 XAML 的 [c # Windows 執行階段元件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 時，編譯器會產生格式為 "*' MyNamespace_XamlTypeInfo ' 的錯誤：不是 ' WinRT：： MyNamespace ' 的成員*， &mdash; 其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在 `pch.h` 使用 c + +/WinRT 應用程式中，新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 適當的取代*MyNamespace* 。 |
 
 ## <a name="related-topics"></a>相關主題
 * [適用於 UWP app 的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0)

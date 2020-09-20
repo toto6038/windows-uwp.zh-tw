@@ -1,22 +1,21 @@
 ---
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: 適用於 UWP 開發人員的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。
+description: 適用於 UWP 開發人員的網路功能技術概觀，並建議您如何選擇最適合的應用程式的技術。
 title: 哪一種網路功能技術？
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 05aec42d4a8eef1d78ddd425f1e90e06cb610c0a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b3f14e06f5e6f7508c90df9f04265740daaccb49
+ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158162"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90569378"
 ---
 # <a name="which-networking-technology"></a>哪一種網路功能技術？
 
-
-適用於 UWP 開發人員的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。
+適用於 UWP 開發人員的網路功能技術概觀，並建議您如何選擇最適合的應用程式的技術。
 
 ## <a name="sockets"></a>通訊端
 
@@ -87,7 +86,7 @@ Windows 10 中新增的背景傳輸功能，是能夠在檔案傳輸完成時觸
 
 ### <a name="connection-quality"></a>連線品質
 
-[  **Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) API 可讓您存取網路連線、成本和使用資訊。 如需關於使用此 API 的詳細資訊，請參閱[存取網路連線狀態和管理網路成本](/previous-versions/windows/apps/hh452983(v=win.10))。
+[**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity)命名空間中的 API 可讓您存取網路連線、成本和使用資訊。 如需關於使用此 API 的詳細資訊，請參閱 [存取網路連線狀態和管理網路成本](/previous-versions/windows/apps/hh452985(v=win.10))。
 
 ### <a name="dns-service-discovery"></a>DNS 服務探索
 
@@ -103,7 +102,7 @@ Windows 10 中新增的背景傳輸功能，是能夠在檔案傳輸完成時觸
 
 ### <a name="near-field-communications"></a>近距離無線通訊
 
-[  **Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) API 可讓您將近距離無線通訊用在支援裝置鄰近性和輕觸的 app 上，使資料傳輸更為容易。 如需關於使用此 API 的詳細資訊，請參閱[支援鄰近性和輕觸](/previous-versions/windows/apps/hh465229(v=win.10))。
+[  **Windows.Networking.Proximity**](/uwp/api/Windows.Networking.Proximity) API 可讓您將近距離無線通訊用在支援裝置鄰近性和輕觸的 app 上，使資料傳輸更為容易。 如需使用此 API 的詳細資訊，請參閱[鄰近性和點選](/previous-versions/windows/apps/hh465221(v=win.10))。
 
 ### <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
