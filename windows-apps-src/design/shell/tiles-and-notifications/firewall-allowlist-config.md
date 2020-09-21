@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 ms.topic: article
 keywords: windows 10、uwp、WNS、windows 通知服務、通知、windows、防火牆、疑難排解、IP、流量、企業、網路、IPv4、VIP、FQDN、公用 IP 位址
 ms.localizationpriority: medium
-ms.openlocfilehash: a2eb09a0b1cc6f135a23b038207bb442eb741bf8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4277b46728464630bf478b1f78008e92b4e3fe99
+ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169202"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90845527"
 ---
 # <a name="enterprise-firewall-and-proxy-configurations-to-support-wns-traffic"></a>支援 WNS 流量的企業防火牆和 Proxy 設定
 
@@ -22,9 +22,9 @@ ms.locfileid: "89169202"
 ## <a name="proxy-support"></a>Proxy 支援
 
 > [!Note]
-> Windows 用戶端 **不** 支援所有 proxy，而 WNS 的連接必須是直接連線。
+> Windows 上的 WNS 推播通知目前不支援所有 proxy。 為了獲得最佳結果，WNS 的連接必須是直接連線。
 
-**即將推出！** 我們正在積極調查不同的網路設定、proxy 和防火牆。 我們很快就會更新此頁面，其中包含常見企業案例和 WNS 支援的更多詳細資料。
+我們正在積極調查不同的網路設定、proxy 和防火牆。 我們很快就會更新此頁面，其中包含常見企業案例和 WNS 支援的更多詳細資料。
 
 
 ## <a name="what-information-should-be-added-to-the-allowlist"></a>應新增至允許清單的資訊
