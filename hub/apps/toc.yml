@@ -55,6 +55,8 @@
                   href: desktop/modernize/modernize-packaged-apps.md
                 - name: 整合套件擴充功能
                   href: desktop/modernize/desktop-to-uwp-extensions.md
+                - name: 取得已封裝應用程式的啟用資訊
+                  href: desktop/modernize/get-activation-info-for-packaged-apps.md
                 - name: 使用 UWP 元件進行擴充
                   href: desktop/modernize/desktop-to-uwp-extend.md
                 - name: 散發您的封裝應用程式
