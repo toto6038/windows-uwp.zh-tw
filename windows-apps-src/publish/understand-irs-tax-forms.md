@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a385c9c351dc0bb5db857fe7d1f5f267347f1f1
-ms.sourcegitcommit: 31c925736391ab166c06f34258564b00aeebd83a
+ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
+ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84428913"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91128977"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -23,30 +23,31 @@ ms.locfileid: "84428913"
 
 | IRS 稅單 | 描述 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 列印的表單會在**1 月 31**日或之前加上加蓋郵戳，而 .pdf 複本則會在[合作夥伴中心](https://partner.microsoft.com/dashboard)提供（在**合作夥伴中心的開發人員設定**中，于付款**和稅務 > 支出和稅務設定檔**） |
-|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 列印的表單將于**3 月 15**日或之前的郵戳，而 .pdf 複本則會在合作夥伴中心提供（在**合作夥伴中心的開發人員設定**中，將于付款**和稅務 > 支出和稅務設定檔**）  |
+|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 列印的表單會在 **1 月 31**日或之前的日期時間，而且會在 [合作夥伴中心](https://partner.microsoft.com/dashboard) (的 **合作夥伴中心開發人員設定** 中提供 pdf 副本，> 付款和稅務 **設定檔**)  |
+|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 列印的表單將會在 **3 月 15**日或以前的日期時間，而且會在 **合作夥伴中心開發人員設定** 的合作夥伴中心 (中提供 pdf 副本，> 付款和稅務 **設定檔**)   |
 
 > [!NOTE]
-> 我們在 IRS 稅務表單上使用的位址來自于您的[稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的位址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
+> 我們在 IRS 稅務表單上使用的位址來自于您的 [稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的位址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
 
-稅務表單將會從下列位址傳送給您：
+您可以從下列位址將稅務表單傳送給您：
 
 **美國公民：**
 
 | 商務群組         | 法律實體          | 位址                                          |
 |------------------------|-----------------------|--------------------------------------------------|
-| Windows、Office、Azure | Microsoft Corporation | One Microsoft Way<br>美國華盛頓98052州雷德蒙德       |
-| 廣告            | Microsoft Online Inc。 | 6880塞拉里昂中心 Parkway<br>Reno，美國 NV 98511 |
+| Windows、Office、Azure | Microsoft Corporation | One Microsoft Way<br>美國 Redmond，WA 98052       |
+| 廣告            | Microsoft Online Inc。 | 6880 Sierra Center Parkway<br>Reno，NV 98511 USA |
 
 **非美國公民：**
+
 | 商務群組         | 法律實體          | 位址                                          |
 |------------------------|-----------------------|--------------------------------------------------|
-| Windows、Office、Azure | Microsoft 愛爾蘭營運限制（microsoft Corporation 透過 microsoft 愛爾蘭以 microsoft Corporation 的合格媒介身分進行付款） | 一個 Microsoft 場所<br>南部 &nbsp; 市 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18愛爾蘭|
-| 廣告\*          | Microsoft 愛爾蘭營運限制（付款是由 Microsoft Online Inc. 所建立，並由 microsoft 愛爾蘭擔任 Microsoft Online Inc. 的支出代理程式）。 | 一個 Microsoft 場所<br>南部 &nbsp; 市 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18愛爾蘭 |
-| 廣告            | Microsoft Online Inc。 | 6880塞拉里昂中心 Parkway<br>Reno，美國 NV 98511 |
+| Windows、Office、Azure | Microsoft 愛爾蘭營運的 (款項 Microsoft Corporation 透過 Microsoft 愛爾蘭作為 Microsoft Corporation 的合格媒介來進行)  | 一個 Microsoft 地點<br>南部 &nbsp; 縣 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18，D18 P521，愛爾蘭|
+| 廣告\*          | Microsoft 愛爾蘭營運受限 (付款由 Microsoft Online Inc. 支付。透過 microsoft 愛爾蘭，可作為 Microsoft Online Inc. 的付款專員。 )  | 一個 Microsoft 地點<br>南部 &nbsp; 縣 &nbsp; 公司 &nbsp; 公園<br>Leopardstown，都柏林18，D18 P521，愛爾蘭 |
+| 廣告            | Microsoft Online Inc。 | 6880 Sierra Center Parkway<br>Reno，NV 98511 USA |
 
 >[!NOTE]
-> \*下列國家/地區的公民獲得廣告收益，將透過 Microsoft 愛爾蘭作業限制付費：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、Czechia、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Man Isle、義大利、拉脫維亞、列支敦斯登、立陶宛、盧森堡、馬爾他、摩納哥、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國
+> \* 下列國家/地區的市民將透過 Microsoft 愛爾蘭作業限制來支付廣告收入：奧地利、比利時、保加利亞、克羅地亞、賽普勒斯、Czechia、丹麥、愛沙尼亞、芬蘭、法國、德國、希臘、匈牙利、愛爾蘭、Isle of Man、義大利、拉脫維亞、羅馬尼亞、立陶宛、盧森堡、馬爾他、荷蘭、挪威、波蘭、葡萄牙、羅馬尼亞、斯洛伐克、斯洛維尼亞、南非、西班牙、瑞典、瑞士、英國
 
 ## <a name="for-developers-located-in-the-united-states"></a>適用於位於美國的開發人員
 
@@ -57,15 +58,15 @@ ms.locfileid: "84428913"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度<b>銷售超過 200 個應用程式</b>，其中銷售總額<b>超過 $20,000 美元</b> (<b>不</b>含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
-    <td valign="top"><b>1099-K</b>：<br>報稅者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含<b>總購買</b>金額，而不是付款給您。</td>
+    <td valign="top"><b>1099-K</b>：<br>報稅者：Microsoft Corporation<br>EIN： * * * * 4442<br><br><b>重要</b>：表單 1099-K 包含 <b>總購買</b> 金額，而不是對您付款。</td>
   </tr>
   <tr> 
      <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到<b>至少 $10 美元的款項</b>。<br>
 <br>
 <b>OR</b><br>
 <br>
-我在適用的稅務年度（例如，來自比賽或促銷的獎勵付款或付款）中，至少收到 $600 與 Microsoft 的應用程式銷售無關的款項</td>
-    <td valign="top"><b>1099-MISC</b>：<br>付款者：Microsoft Corporation<br>EIN： * * * * * 4442<br><br><b>重要</b>事項：不論從 Microsoft 收到的付款金額為何，某些商業實體都不會收到 1099-其他表單。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
+我收到的付款至少為 $600，但在適用的稅金年份中，與 Microsoft 的應用程式銷售額無關， (例如，來自比賽或促銷的獎勵款項或款項) </td>
+    <td valign="top"><b>1099-MISC</b>：<br>付款者：Microsoft Corporation<br>EIN： * * * * 4442<br><br><b>重要</b>：某些商務實體將不會收到 1099-其他的表單，無論從 Microsoft 收到的付款金額為何。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
   </tr>
   <tr>
     <td valign="top">上述項目皆不適用。</td>
@@ -81,7 +82,7 @@ ms.locfileid: "84428913"
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>至少 $600 美元的款項</b></td>
-    <td valign="top"><b>1099-MISC</b>：<br>付款者：Microsoft Online Inc<br>EIN： * * * * * 0505<br><br><b>重要</b>事項：不論從 Microsoft 收到的付款金額為何，某些商業實體都不會收到 1099-其他表單。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
+    <td valign="top"><b>1099-MISC</b>：<br>付款者：Microsoft Online Inc<br>EIN： * * * * 0505<br><br><b>重要</b>：某些商務實體將不會收到 1099-其他的表單，無論從 Microsoft 收到的付款金額為何。  如需進一步的資訊，請洽詢您的稅務專業人員。</td>
   </tr>
   <tr> 
      <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>少於 $600 美元的款項</b></td>
@@ -94,7 +95,7 @@ ms.locfileid: "84428913"
 
 <table>
   <tr>
-    <td valign="top"><b>我收到來自 Microsoft 的 1042-S 形式。這是什麼？</b></td>
+    <td valign="top"><b>我收到來自 Microsoft 的表單 1042-S。這是什麼？</b></td>
     <td valign="top">因為美國稅務機關將 Microsoft 所支付給您的收益視為應申報且受扣繳稅款限制，所以我們將 1042-S 表單提供給您。  此項申報需求使用表單 1042-S。</td>
   </tr>
   <tr>
@@ -104,11 +105,11 @@ ms.locfileid: "84428913"
   <tr>
     <td valign="top"><b>為何我完成 W8 表單時，款項有扣繳稅款？</b></td>
     <td valign="top">下列任一情況即會產生扣繳稅款：<br>
-     1.您未正確完成 W8 的稅務條約區段，或<br>
-     2.貴使用者所在的國家/地區不具有美國的稅務條約。<br><br>您可以隨時造訪合作夥伴中心，以提交更新的 W8 表單。<br><br><b>注意</b>：並非所有收入皆須繳納稅金。</td>
+     1. 您未正確完成 W8 的稅務條約區段，或<br>
+     2. 您居住的國家/地區沒有與美國的稅務條約。<br><br>您可以隨時造訪合作夥伴中心提交更新的 W8 表單。<br><br><b>注意</b>：並非所有收入都受限於稅金。</td>
   </tr>
   <tr>
-    <td valign="top"><b>我提交了已更新的 W8 表單，其中包含有效的條約資訊。Microsoft 可以向我退款已被扣款的稅額嗎？</b></td>
+    <td valign="top"><b>我已使用有效的條約資訊提交更新後的 W8 表單。Microsoft 是否可退還已扣繳的稅額？</b></td>
     <td valign="top">稅款一旦經扣繳，便無法退還。 您應與稅務顧問討論是否能要求這些稅款的本地扣抵稅額，或是否可向 IRS 尋求退稅。</td>
   </tr>
   <tr>
