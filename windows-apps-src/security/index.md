@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 3169ee9b2674112964ced83bc3a34637846eb225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9a565c9bdec6932d0e8ca376f677c309991773d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167192"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219721"
 ---
 # <a name="security"></a>安全性
 
@@ -31,7 +31,7 @@ ms.locfileid: "89167192"
 <tr><th>主題</th><th>描述</th></tr>
 <tr><td><a href="credential-locker.md">認證保險箱</a></td><td>本文說明 App 如何使用認證保險箱來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。</td></tr>
 
-<tr><td><a href="fingerprint-biometrics.md">指紋生物識別技術</a> </td><td>本文將說明如何在您的應用程式中新增指紋生物識別技術。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">Windows.Security.Credentials.UI</a> 命名空間中的 <a href="https://docs.microsoft.com/uwp/api/Windows.Security.Credentials.UI">UserConsentVerifier</a> 類別所管理。</td></tr>
+<tr><td><a href="fingerprint-biometrics.md">指紋生物識別技術</a> </td><td>本文將說明如何在您的應用程式中新增指紋生物識別技術。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">Windows.Security.Credentials.UI</a> 命名空間中的 <a href="/uwp/api/Windows.Security.Credentials.UI">UserConsentVerifier</a> 類別所管理。</td></tr>
 <tr><td><a href="microsoft-passport.md">Microsoft Passport 及 Windows Hello</a></td><td>這篇文章說明新的 Windows 10 Microsoft Passport 技術，並討論開發人員如何實作這項技術來保護自己的應用程式及後端服務。 文章強調該技術的幾個特定功能，以協助您減少傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。 </td></tr>
 <tr><td><a href="microsoft-passport-login.md">建立 Microsoft Passport 登入應用程式</a></td><td>如何建立使用 Microsoft Passport 取代傳統使用者名稱及密碼驗證系統的 Windows 10 UWP(通用 Windows 平台) app 之完整逐步解說的第 1 部分。</td></tr>
 <tr><td><a href="microsoft-passport-login-auth-service.md">建立 Microsoft Passport 登入服務</a></td><td>在 Windows 10 UWP (通用 Windows 平台) app 中使用 Microsoft Passport 取代傳統的使用者名稱及密碼驗證系統之完整逐步解說的第 2 部分。</td></tr>

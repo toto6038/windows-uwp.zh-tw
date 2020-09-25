@@ -3,16 +3,16 @@ description: 了解如何讓您的應用程式包容世界各地的使用者且�
 keywords: uwP 應用程式協助工具, 全球化, 設計包容性應用程式, 協助工具應用程式需求
 title: Windows 應用程式的可用性 - Windows 應用程式開發
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
 ms.localizationpriority: medium
-ms.openlocfilehash: 614e6d81a4f30c0b9a277c94964c16189f2247f8
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 42d68a38b387630fd839e27f6ecaeef8ba00db5a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234287"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218041"
 ---
 # <a name="usability-for-windows-apps"></a>Windows 應用程式的可用性
 

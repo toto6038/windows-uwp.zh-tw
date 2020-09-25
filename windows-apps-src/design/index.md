@@ -2,17 +2,17 @@
 description: 有關在 Windows 10 建立 App 體驗的 Fluent Design 指導方針及 UI 程式碼範例
 keywords: uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發
 title: Windows 應用程式的設計和程式碼
-ms.date: 05/06/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 01e613088bba3c1e552180f398907145c6254705
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: aa5d81a96f3f7991597e7a7c49013de475e95e23
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970343"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218401"
 ---
 # <a name="design-and-code-windows-apps"></a>設計和程式碼 Windows 應用程式
 

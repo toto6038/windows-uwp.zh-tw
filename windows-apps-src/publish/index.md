@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 19607823ce98aa71a8e3abecb94b82ff06a08352
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a4fb353ef9c4ff5227cb1cff21b26ce3067f5dcc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164122"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219011"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
 
@@ -36,7 +36,7 @@ ms.locfileid: "89164122"
         <h3 style="margin-top: 10px; margin-bottom: 0px">價格與可用性</h3>
         <p style="margin-top: 0px; margin-bottom: 50px">透過每個市場的定價與排程、可見性選項、銷售定價以及其他選項，來自訂您應用程式的可用性。</p>
         <br>
-        <a href="define-pricing-and-market-selection.md">選擇您的市場</a><br/>
+        <a href="/windows/uwp/publish/define-market-selection">選擇您的市場</a><br/>
         <a href="set-and-schedule-app-pricing.md">設定及安排定價</a><br/>
         <a href="configure-precise-release-scheduling.md">設定精確發行時間日期</a><br/>
         <a href="set-app-pricing-and-availability.md">查看所有可用性選項</a><br/>
@@ -85,7 +85,7 @@ ms.locfileid: "89164122"
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/bcs-user-management-add-customer-1.svg" alt="Account icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">管理帳戶使用者</h3>
-        <a href="associate-azure-ad-with-dev-center.md">設定 Azure AD</a><br/>
+        <a href="/windows/uwp/publish/associate-azure-ad-with-partner-center">設定 Azure AD</a><br/>
         <a href="add-users-groups-and-azure-ad-applications.md">新增帳戶使用者</a><br/>
         <a href="set-custom-permissions-for-account-users.md">角色和權限</a><br/>
     :::column-end:::
