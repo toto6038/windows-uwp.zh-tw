@@ -5,15 +5,15 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, handwriting recognition, user interaction, input, 手寫辨識, 使用者互動, 輸入
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3733c98c81a23fbc5b369297b45f1c1e5183c198
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 34e41ff4b6fa402e8a1857a2ea406c9e63e7c868
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173382"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216961"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 應用程式中的手寫筆互動與 Windows Ink
 
@@ -27,7 +27,7 @@ ms.locfileid: "89173382"
 > [!NOTE]
 > 本主題著重在 Windows Ink 平台。 如需了解一般指標輸入處理 (類似於滑鼠、觸控及觸控板)，請參閱[處理指標輸入](handle-pointer-input.md)。
 
-| 視訊 |   |
+| 影片 |   |
 | --- | --- |
 | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
 | *在您的 Windows 應用程式中使用筆墨* | *使用 Windows Pen 和 Ink 建置更吸引人的企業 App* |
@@ -45,7 +45,7 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 
 ## <a name="components-of-the-windows-ink-platform"></a>Windows Ink 平台的元件
 
-| 元件 | 說明 |
+| 元件 | 描述 |
 | --- | --- |
 | [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | XAML UI 平台控制項，此控制項預設會接收來自畫筆的所有輸入，並顯示為筆墨筆劃或擦去筆劃。<br/>如需如何使用 InkCanvas 的詳細資訊，請參閱[將 Windows Ink 筆觸辨識為文字](convert-ink-to-text.md)與[儲存和抓取 Windows Ink 筆觸資料](save-and-load-ink.md)。 |
 | [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 屬性所公開) 進行具現化。 這個物件提供 **InkCanvas** 公開的所有預設筆跡功能，以及一組完整的 API 來進行其他自訂和個人化。<br/>如需如何使用 InkPresenter 的詳細資訊，請參閱[將 Windows Ink 筆觸辨識為文字](convert-ink-to-text.md)與[儲存和抓取 Windows Ink 筆觸資料](save-and-load-ink.md)。 |
@@ -462,7 +462,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 | --- | --- |
 | [辨識筆墨筆劃](convert-ink-to-text.md) | 使用手寫辨識，將筆墨筆劃轉換為文字，或者使用自訂辨識轉換為形狀。 |
 | [儲存和擷取筆墨筆劃](save-and-load-ink.md) | 使用內嵌的筆跡序列化格式 (ISF) 中繼資料，在圖形交換格式 (GIF) 檔案中儲存筆墨筆劃資料。 |

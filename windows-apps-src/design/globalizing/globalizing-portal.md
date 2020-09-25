@@ -5,16 +5,16 @@ title: 全球化和當地語系化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 12/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 479b5d21e40b998fac9380d34be1a50d7d87e9e0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b288a4d0ceaa97a4f6357d99f9937e21305bf3f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173472"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218331"
 ---
 # <a name="globalization-and-localization"></a>全球化與當地語系化
 
@@ -55,7 +55,7 @@ ms.locfileid: "89173472"
 
 大部分的當地語系化團隊都會使用特殊的工具，協助這段過程。 例如，回收重複出現文字的翻譯。
 
-| 發行項 | 說明 |
+| 發行項 | 描述 |
 |---------|-------------|
 | [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md) | 設計及開發您的應用程式，使其能夠在不同語言和文化設定的系統上正常運作。 |
 | [了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md) | 此主題會定義「使用者設定檔語言清單」、「應用程式資訊清單語言清單」及「應用程式執行階段語言清單」等三個術語。 我們會在本主題及位於此功能區域的其他主題中使用這些術語，因此請務必了解他們的意義。 |

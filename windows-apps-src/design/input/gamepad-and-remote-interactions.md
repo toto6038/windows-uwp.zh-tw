@@ -5,16 +5,16 @@ ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5efe2fe1e8a4e24df175a0d019834cd0ba90388
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172552"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217182"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
@@ -45,7 +45,7 @@ ms.locfileid: "89172552"
 > [!NOTE]
 > 因為 Xbox gamepads 和遠端控制支援許多 Windows 鍵盤的行為和經驗，所以這些建議適用于這兩種輸入類型。 如需更詳細的鍵盤資訊，請參閱 [鍵盤互動](keyboard-interactions.md) 。
 
-| 功能        | 說明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY 焦點瀏覽和互動](#xy-focus-navigation-and-interaction) | **XY 焦點導覽** 可讓使用者流覽應用程式的 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
 | [滑鼠模式](#mouse-mode)|針對某些類型的應用程式（例如地圖或繪圖和繪製應用程式），XY 焦點導覽並不實用或甚至可能。 在這些情況下， **滑鼠模式** 讓使用者可以自由地使用遊戲台或遙控器來流覽，就像電腦上的滑鼠一樣。|
@@ -559,7 +559,7 @@ public App()
 
 所有其他的 Windows 控制項都不會在發生任何行為或視覺變更時產生任何變更 `IsFocusEngagementEnabled="True"` 。
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>摘要
 
 您可以建立針對特定裝置或經驗優化的 Windows 應用程式，但通用 Windows 平臺也可讓您建立應用程式，以在跨裝置、2英尺和10英尺的體驗，以及輸入裝置或使用者能力的情況下成功使用。 使用本文中的建議可確保您的應用程式可以在電視和電腦上正常進行。
 

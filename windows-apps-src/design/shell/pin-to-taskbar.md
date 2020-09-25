@@ -2,16 +2,16 @@
 Description: 您可以寫程式將應用程式釘選到工作列上，並檢查其目前是否為已釘選。
 title: 將應用程式釘選到工作列
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile, 工作列, 工作列管理員, 釘選到工作列, 主要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c5bba4a3bd6ebf1c4cbe0ef59a21c0e6ce44c79
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c2090d038bb3999112e8d2fa3824968916e5d7dc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173832"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219331"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>將應用程式釘選到工作列
 

@@ -1,16 +1,16 @@
 ---
 Description: Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的雲端服務傳送快顯通知、磚、徽章和原始更新。 有許多方式可以傳送通知，視應用程式的需求而定
 title: 選擇正確的推播通知通道類型
-ms.date: 07/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166abeb792e86fc44568a5ee29263262214657cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 326012a38f2d4a8cd7d5c406c160db5168c9877d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173822"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219221"
 ---
 # <a name="choosing-the-right-push-notification-channel-type"></a>選擇正確的推播通知通道類型
 
@@ -20,7 +20,7 @@ ms.locfileid: "89173822"
 
 ## <a name="types-of-push-channels"></a>推播通道的類型 
 
-有三種類型的推播通道可以用來將通知傳送至 Windows 應用程式。 分別是： 
+有三種類型的推播通道可以用來將通知傳送至 Windows 應用程式。 其中包括： 
 
 [主要通道](/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_) - 「傳統」推播通道。 存放區中的任何應用程式都可以使用，以傳送快顯通知、磚、原始或徽章通知。 若要[深入瞭解](windows-push-notification-services--wns--overview.md)，請參閱。
 
@@ -107,7 +107,7 @@ PushNotificationChannel webChannel =
 <table>
 
 <tr class="header">
-<th align="left"><b>類型</b></th>
+<th align="left"><b>型別</b></th>
 <th align="left"><b>推播快顯通知？</b></th>
 <th align="left"><b>推播磚/徽章？</b></th>
 <th align="left"><b>推播原始通知？</b></th>

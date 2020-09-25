@@ -5,18 +5,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote, 鍵盤, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動, 遊戲台, 遙控器
-ms.date: 03/29/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: f4f2e9e13f492dd9a38d737c0c86dd3b1e632279
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173482"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219111"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
@@ -55,7 +55,7 @@ ms.locfileid: "89173482"
 
 以下是本主題中討論的裝置和工具：
 
-| 裝置/工具                       | 說明     |
+| 裝置/工具                       | 描述     |
 |-----------------------------------|-----------------|
 |鍵盤 (硬體與軟體)   |除了標準硬體鍵盤之外，Windows 應用程式也支援兩種軟體鍵盤： [觸控 (或軟體) 鍵盤](#software-keyboard) 和 [螢幕小鍵盤](#on-screen-keyboard)。|
 |遊戲台與遙控器         |Xbox 遊戲台與遙控器是[10 英呎經驗](../devices/designing-for-tv.md)中的基本輸入裝置。 如需適用于遊戲台和遠端控制的 Windows 支援的特定詳細資訊，請參閱 [遊戲台和遠端控制互動](gamepad-and-remote-interactions.md)。|
@@ -133,7 +133,7 @@ UWP 支援單一焦點視覺效果設計，適用於所有輸入類型和體驗�
 
 如需覆寫定位順序的詳細資訊，請參閱 [焦點導覽](focus-navigation.md) 。
 
-### <a name="navigation"></a>導覽
+### <a name="navigation"></a>巡覽
 
 鍵盤瀏覽通常是透過 Tab 鍵和方向鍵來支援。
 

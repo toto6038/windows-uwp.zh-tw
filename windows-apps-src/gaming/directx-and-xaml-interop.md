@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, XAML 互通性
 ms.localizationpriority: medium
-ms.openlocfilehash: fc5e5323f509759754822849bd7dc93e7a45eaee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a34510939b84c885bf90ac2b6b42ffa158decc8e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156472"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216571"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 
@@ -53,7 +53,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
-2.  取得 [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指標。 將 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 物件轉換為 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或 **IUnknown**)，並在其上呼叫 **QueryInterface** 以取得基礎 **ISurfaceImageSourceNativeWithD2D** 實作。 您使用這個實作中定義的方法來設定裝置並執行繪圖操作。
+2.  取得 [ISurfaceImageSourceNativeWithD2D](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指標。 將 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 物件轉換為 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (或 **IUnknown**)，並在其上呼叫 **QueryInterface** 以取得基礎 **ISurfaceImageSourceNativeWithD2D** 實作。 您使用這個實作中定義的方法來設定裝置並執行繪圖操作。
 
     ```cpp
     Microsoft::WRL::ComPtr<ISurfaceImageSourceNativeWithD2D> m_sisNativeWithD2D;
@@ -68,7 +68,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
         (void **)&m_sisNativeWithD2D);
     ```
 
-3.  藉由先呼叫 [D3D11CreateDevice](https://docs.microsoft.com/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 和 [D2D1CreateDevice](https://docs.microsoft.com/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice)，接著將裝置和內容傳遞到 [ISurfaceImageSourceNativeWithD2D::SetDevice](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice)，以建立 DXGI 和 D2D 裝置。 
+3.  藉由先呼叫 [D3D11CreateDevice](/windows/desktop/api/d3d11/nf-d3d11-d3d11createdevice) 和 [D2D1CreateDevice](/windows/desktop/api/d2d1_1/nf-d2d1_1-d2d1createdevice)，接著將裝置和內容傳遞到 [ISurfaceImageSourceNativeWithD2D::SetDevice](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-setdevice)，以建立 DXGI 和 D2D 裝置。 
 
     > [!NOTE]
     > 如果您將會從背景執行緒繪製到 **SurfaceImageSource**，您也需要確保 DXGI 裝置已啟用多執行緒存取。 基於效能考量，只有在從背景執行緒繪圖時，才必須執行此動作。
@@ -112,7 +112,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     m_sisNativeWithD2D->SetDevice(m_d2dDevice.Get());
     ```
 
-4.  將 [ID2D1DeviceContext](https://docs.microsoft.com/windows/desktop/api/dxgi/nn-dxgi-idxgisurface) 物件指標提供給 [ISurfaceImageSourceNativeWithD2D::BeginDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-begindraw)，而且使用傳回的繪圖內容，在**SurfaceImageSource** 內繪製到您想要的矩形內容。 **ISurfaceImageSourceNativeWithD2D::BeginDraw** 以及繪製命令可從背景執行緒呼叫。 只會針對 *updateRect* 參數中指定要更新的區域進行繪圖。
+4.  將 [ID2D1DeviceContext](/windows/desktop/api/dxgi/nn-dxgi-idxgisurface) 物件指標提供給 [ISurfaceImageSourceNativeWithD2D::BeginDraw](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-begindraw)，而且使用傳回的繪圖內容，在**SurfaceImageSource** 內繪製到您想要的矩形內容。 **ISurfaceImageSourceNativeWithD2D::BeginDraw** 以及繪製命令可從背景執行緒呼叫。 只會針對 *updateRect* 參數中指定要更新的區域進行繪圖。
 
     這個方法會傳回 *offset* 參數中已更新目標矩形的座標點 (x,y) 位移。 您可以使用此位移，判斷在哪裡使用 **ID2D1DeviceContext** 繪製更新的內容。
 
@@ -149,7 +149,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     }
     ```
 
-5. 呼叫 [ISurfaceImageSourceNativeWithD2D::EndDraw](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-enddraw) 以完成點陣圖。 該點陣圖可以當作 XAML [Image](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.image) 或 [ImageBrush](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 的來源。 **ISurfaceImageSourceNativeWithD2D::EndDraw** 必須只能從 UI 執行緒呼叫。
+5. 呼叫 [ISurfaceImageSourceNativeWithD2D::EndDraw](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d-enddraw) 以完成點陣圖。 該點陣圖可以當作 XAML [Image](/uwp/api/windows.ui.xaml.controls.image) 或 [ImageBrush](/uwp/api/Windows.UI.Xaml.Media.ImageBrush) 的來源。 **ISurfaceImageSourceNativeWithD2D::EndDraw** 必須只能從 UI 執行緒呼叫。
 
     ```cpp
     m_sisNative->EndDraw();
@@ -163,16 +163,16 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     ```
 
     > [!NOTE]
-    > 目前呼叫 [SurfaceImageSource::SetSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) (繼承自 **IBitmapSource::SetSource**) 會擲回例外狀況。 不要從您的 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 物件呼叫它。
+    > 目前呼叫 [SurfaceImageSource::SetSource](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsource) (繼承自 **IBitmapSource::SetSource**) 會擲回例外狀況。 不要從您的 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource) 物件呼叫它。
 
     > [!NOTE]
-    > 當相關 [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 隱藏時，應用程式必須避免繪製到 **SurfaceImageSource**，否則 **ISurfaceImageSourceNativeWithD2D** API 將會失敗。 若要完成此動作，請登錄為事件接聽程式，讓 [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件追蹤可見度變更。
+    > 當相關 [Window](/uwp/api/Windows.UI.Xaml.Window) 隱藏時，應用程式必須避免繪製到 **SurfaceImageSource**，否則 **ISurfaceImageSourceNativeWithD2D** API 將會失敗。 若要完成此動作，請登錄為事件接聽程式，讓 [Window.VisibilityChanged](/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件追蹤可見度變更。
 
 ## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
 當內容可能大於螢幕的可用空間時，[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 會擴充 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，因此必須虛擬化內容以達最佳呈現效果。
 
-[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 不同於 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，它使用您實作的回呼 ([IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded)) 在螢幕顯示表面區域時更新這些表面區域。 您不需要清除隱藏的區域，因為 XAML 架構會為您進行清除。
+[VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 不同於 [SurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.SurfaceImageSource)，它使用您實作的回呼 ([IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded)) 在螢幕顯示表面區域時更新這些表面區域。 您不需要清除隱藏的區域，因為 XAML 架構會為您進行清除。
 
 下列是在程式碼後置中建立和更新 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 物件的基本處理程序：
 
@@ -183,7 +183,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
         ref new VirtualSurfaceImageSource(2000, 2000);
     ```
 
-2.  取得 [IVirtualSurfaceImageSourceNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative) 和 [ISurfaceImageSourceNativeWithD2D](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指標。 將 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 物件轉換為 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 或 [IUnknown](https://docs.microsoft.com/windows/desktop/api/unknwn/nn-unknwn-iunknown)，並在其上呼叫 [QueryInterface](https://docs.microsoft.com/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 以取得基礎 **IVirtualSurfaceImageSourceNative** 和 **ISurfaceImageSourceNativeWithD2D** 實作。 您使用這些實作中定義的方法來設定裝置並執行繪圖操作。
+2.  取得 [IVirtualSurfaceImageSourceNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative) 和 [ISurfaceImageSourceNativeWithD2D](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-isurfaceimagesourcenativewithd2d) 的指標。 將 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 物件轉換為 [IInspectable](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 或 [IUnknown](/windows/desktop/api/unknwn/nn-unknwn-iunknown)，並在其上呼叫 [QueryInterface](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 以取得基礎 **IVirtualSurfaceImageSourceNative** 和 **ISurfaceImageSourceNativeWithD2D** 實作。 您使用這些實作中定義的方法來設定裝置並執行繪圖操作。
 
     ```cpp
     Microsoft::WRL::ComPtr<IVirtualSurfaceImageSourceNative>  m_vsisNative;
@@ -249,7 +249,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     m_vsisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  呼叫 [IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded)，將參照傳送至您實作的 [IVirtualSurfaceUpdatesCallbackNative](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative)。
+4.  呼叫 [IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded)，將參照傳送至您實作的 [IVirtualSurfaceUpdatesCallbackNative](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nn-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative)。
 
     ```cpp
     class MyContentImageSource : public IVirtualSurfaceUpdatesCallbackNative
@@ -274,11 +274,11 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     }
     ```
 
-    當 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 的區域需要更新時，架構會呼叫您的 [IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) 實作。
+    當 [VirtualSurfaceImageSource](/uwp/api/Windows.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource) 的區域需要更新時，架構會呼叫您的 [IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-registerforupdatesneeded) 實作。
 
-    當架構判斷需要繪製區域時 (例如當使用者進行表面的取景位置調整或縮放時)，或應用程式已經呼叫該區域上的 [IVirtualSurfaceImageSourceNative::Invalidate](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-invalidate) 後，就會進行這個動作。
+    當架構判斷需要繪製區域時 (例如當使用者進行表面的取景位置調整或縮放時)，或應用程式已經呼叫該區域上的 [IVirtualSurfaceImageSourceNative::Invalidate](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-invalidate) 後，就會進行這個動作。
 
-5.  在 [IVirtualSurfaceImageSourceNative::UpdatesNeeded](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded) 中，使用 [IVirtualSurfaceImageSourceNative::GetUpdateRectCount](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterectcount) 和 [IVirtualSurfaceImageSourceNative::GetUpdateRects](https://docs.microsoft.com/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterects) 方法來判斷必須繪製表面的哪些區域。
+5.  在 [IVirtualSurfaceImageSourceNative::UpdatesNeeded](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceupdatescallbacknative-updatesneeded) 中，使用 [IVirtualSurfaceImageSourceNative::GetUpdateRectCount](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterectcount) 和 [IVirtualSurfaceImageSourceNative::GetUpdateRects](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-ivirtualsurfaceimagesourcenative-getupdaterects) 方法來判斷必須繪製表面的哪些區域。
 
     ```cpp
     HRESULT STDMETHODCALLTYPE MyContentImageSource::UpdatesNeeded()
@@ -355,7 +355,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     3.  呼叫 **ISurfaceImageSourceNativeWithD2D:EndDraw**。 結果是一個點陣圖。
 
 > [!NOTE]
-> 當相關 [Window](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window) 隱藏時，應用程式必須避免繪製到 **SurfaceImageSource**，否則 **ISurfaceImageSourceNativeWithD2D** API 將會失敗。 若要完成此動作，請登錄為事件接聽程式，讓 [Window.VisibilityChanged](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件追蹤可見度變更。
+> 當相關 [Window](/uwp/api/Windows.UI.Xaml.Window) 隱藏時，應用程式必須避免繪製到 **SurfaceImageSource**，否則 **ISurfaceImageSourceNativeWithD2D** API 將會失敗。 若要完成此動作，請登錄為事件接聽程式，讓 [Window.VisibilityChanged](/uwp/api/Windows.UI.Xaml.Window.VisibilityChanged) 事件追蹤可見度變更。
 
 ## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel 和遊戲
 
@@ -365,16 +365,16 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 為了確保最佳的效能，[SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 類型有部分限制：
 
 -   每個 App 的 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel) 執行個體不能超過 4 個。
--   您應該在 [ [DXGI \_ 交換 \_ 鏈 \_ DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) ] 中，將 DirectX 交換鏈的高度和寬度 (設定) 到交換鏈元素的目前維度。 如果您沒有這麼做，則會使用 [ **DXGI \_ 縮放 \_ 延展**) ] 調整 (的顯示內容。
--   您必須在 [dxgi \_ 交換 \_ 鏈 \_ DESC1](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 中，將 DirectX 交換鏈的調整模式 (設定為 **dxgi \_ 調整 \_ 延展**。
--   您必須呼叫 [IDXGIFactory2::CreateSwapChainForComposition](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition) 來建立 DirectX 交換鏈結。
+-   您應該在 [ [DXGI \_ 交換 \_ 鏈 \_ DESC1](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1) ] 中，將 DirectX 交換鏈的高度和寬度 (設定) 到交換鏈元素的目前維度。 如果您沒有這麼做，則會使用 [ **DXGI \_ 縮放 \_ 延展**) ] 調整 (的顯示內容。
+-   您必須在 [dxgi \_ 交換 \_ 鏈 \_ DESC1](/windows/desktop/api/dxgi1_2/ns-dxgi1_2-dxgi_swap_chain_desc1)) 中，將 DirectX 交換鏈的調整模式 (設定為 **dxgi \_ 調整 \_ 延展**。
+-   您必須呼叫 [IDXGIFactory2::CreateSwapChainForComposition](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcomposition) 來建立 DirectX 交換鏈結。
 
-請根據應用程式的需求更新 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，不是根據 XAML 架構的更新。 如果您需要將 **SwapChainPanel** 的更新與 XAML 架構的更新同步，請登錄 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) 事件。 否則，您必須在嘗試從 (更新 **SwapChainPanel** 的執行緒以外的) 其他執行緒更新 XAML 元素時，考量會發生的跨執行緒問題。
+請根據應用程式的需求更新 [SwapChainPanel](/uwp/api/Windows.UI.Xaml.Controls.SwapChainPanel)，不是根據 XAML 架構的更新。 如果您需要將 **SwapChainPanel** 的更新與 XAML 架構的更新同步，請登錄 [Windows::UI::Xaml::Media::CompositionTarget::Rendering](/uwp/api/windows.ui.xaml.media.compositiontarget.rendering) 事件。 否則，您必須在嘗試從 (更新 **SwapChainPanel** 的執行緒以外的) 其他執行緒更新 XAML 元素時，考量會發生的跨執行緒問題。
 
-如果您的 **SwapChainPanel** 需要收到低延遲的指標輸入，請使用 [SwapChainPanel::CreateCoreIndependentInputSource](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource)。 這個方法會傳回 [CoreIndependentInputSource](https://docs.microsoft.com/uwp/api/windows.ui.core.coreindependentinputsource) 物件，能用於以最低延遲從背景執行序取得輸入事件。 請注意，一旦呼叫這個方法，一般 XAML 指標輸入事件將不會對 **SwapChainPanel** 引發，因為所有輸入都會重新導向到背景執行序。
+如果您的 **SwapChainPanel** 需要收到低延遲的指標輸入，請使用 [SwapChainPanel::CreateCoreIndependentInputSource](/uwp/api/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource)。 這個方法會傳回 [CoreIndependentInputSource](/uwp/api/windows.ui.core.coreindependentinputsource) 物件，能用於以最低延遲從背景執行序取得輸入事件。 請注意，一旦呼叫這個方法，一般 XAML 指標輸入事件將不會對 **SwapChainPanel** 引發，因為所有輸入都會重新導向到背景執行序。
 
 
-> **注意**   通常來說，您的 DirectX 應用程式應該橫向建立交換鏈結，並與顯示視窗大小相等 (這通常是大部分 Microsoft Store 遊戲中的原生螢幕解析度)。 這確保您的應用程式會在沒有任何可見的 XAML 重疊時使用最佳化的交換鏈結。 如果應用程式會旋轉為直向模式，則您的應用程式應該在現有的交換鏈結上呼叫 [IDXGISwapChain1::SetRotation](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation)、視需要將轉換套用到內容，然後在相同的交換鏈結上再次呼叫 [SetSwapChain](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)。 同樣地，只要呼叫[IDXGISwapChain：： ResizeBuffers](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)來調整交換鏈的大小，您的應用程式就應該在相同的交換鏈上再次呼叫**SetSwapChain** 。
+> **注意**   通常來說，您的 DirectX 應用程式應該橫向建立交換鏈結，並與顯示視窗大小相等 (這通常是大部分 Microsoft Store 遊戲中的原生螢幕解析度)。 這確保您的應用程式會在沒有任何可見的 XAML 重疊時使用最佳化的交換鏈結。 如果應用程式會旋轉為直向模式，則您的應用程式應該在現有的交換鏈結上呼叫 [IDXGISwapChain1::SetRotation](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgiswapchain1-setrotation)、視需要將轉換套用到內容，然後在相同的交換鏈結上再次呼叫 [SetSwapChain](/windows/desktop/api/windows.ui.xaml.media.dxinterop/nf-windows-ui-xaml-media-dxinterop-iswapchainpanelnative-setswapchain)。 同樣地，只要呼叫[IDXGISwapChain：： ResizeBuffers](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)來調整交換鏈的大小，您的應用程式就應該在相同的交換鏈上再次呼叫**SetSwapChain** 。
 
 
  

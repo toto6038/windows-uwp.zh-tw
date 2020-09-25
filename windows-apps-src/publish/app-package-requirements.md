@@ -2,16 +2,16 @@
 Description: 遵循這些指導方針來準備要提交到 Microsoft Store 的應用程式套件。
 title: 應用程式套件需求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 851aaa28a7c42d395a16ee78a49a7e8bc5712f62
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 848adbab20765a65ef4673219c55dfbf076e47e0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158102"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219771"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 

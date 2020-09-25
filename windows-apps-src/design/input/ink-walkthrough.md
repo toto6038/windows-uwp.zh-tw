@@ -3,15 +3,15 @@ ms.assetid: ''
 title: 在您的 Windows 應用程式中支援筆跡
 description: 依照此逐步教學課程，瞭解如何在基本通用 Windows 平臺 (UWP) 應用程式中支援 Windows Ink 撰寫和繪製。
 keywords: 筆跡、筆跡、教學課程
-ms.date: 01/25/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ed230fc9beb158df050f314a0142f250c2a8691
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304600"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219691"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教學課程：在您的 Windows 應用程式中支援筆墨
 
@@ -33,7 +33,7 @@ ms.locfileid: "89304600"
 
 您可以藉由 Windows Ink 提供客戶幾乎相當於可想像的所有紙筆體驗的數位手寫功能，從快速的手寫筆記和註解到白板示範，以及從架構和工程繪圖到個人傑作。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>必要條件
 
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
 * [Visual Studio 2019 與 RS2 SDK](https://developer.microsoft.com/windows/downloads)
@@ -64,7 +64,7 @@ ms.locfileid: "89304600"
 
 這些物件提供大量的 Windows 應用程式筆跡體驗。
 
-| 元件 | 說明 |
+| 元件 | 描述 |
 | --- | --- |
 | [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控制項，此控制項預設會接收來自畫筆的所有輸入，並顯示為筆墨筆劃或擦去筆劃。 |
 | [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 屬性所公開) 進行具現化。 此物件提供 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)所公開的所有預設筆墨功能，以及一組完整的 api 來進行額外的自訂和個人化。 |
@@ -458,7 +458,7 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 </tr>
 </table>
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 恭喜，您已完成 **輸入： Windows 應用程式中的支援筆墨** 教學課程！ 我們向您示範在您的 Windows 應用程式中支援筆墨所需的基本程式碼，以及如何提供 Windows Ink 平臺支援的一些更豐富使用者體驗。
 

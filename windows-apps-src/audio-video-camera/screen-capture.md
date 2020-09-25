@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: 96b8c52d8c1c6b6947b7b151df0b1b8bbfe42869
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: 26de7699f9f261bba6e02bc3664e335c46e4ac3d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89411922"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218661"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -692,5 +692,5 @@ End Class
 
 ## <a name="see-also"></a>另請參閱
 
-* [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
-* [螢幕捕捉至影片](screen-capture-video.md)
+* [Windows.Graphics.Capture 命名空間](/uwp/api/windows.graphics.capture)
+* [將螢幕擷取到影片](screen-capture-video.md)

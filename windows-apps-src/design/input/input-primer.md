@@ -4,16 +4,16 @@ title: 互動基本資訊
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dc220d1b5489faf96653472880dc06124c10b047
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dde0e5479533aed225dbadc68b325afede050dbb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173442"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219671"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 

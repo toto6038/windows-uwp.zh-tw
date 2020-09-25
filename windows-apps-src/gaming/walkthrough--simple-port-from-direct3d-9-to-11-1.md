@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, directx, 移植, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e194ab79b8ba0a5dc79d4ad24f808d3613a0c98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f93b1d733efec2d52ca364f2f97a6d0f424019ad
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158992"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216561"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>逐步解說：將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
@@ -27,7 +27,7 @@ ms.locfileid: "89158992"
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -41,7 +41,7 @@ ms.locfileid: "89158992"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md">移植遊戲迴圈</a></p></td>
-<td align="left"><p>說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 <a href="https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> 以控制全螢幕的 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>。</p></td>
+<td align="left"><p>說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 <a href="/uwp/api/Windows.ApplicationModel.Core.IFrameworkView"><strong>IFrameworkView</strong></a> 以控制全螢幕的 <a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a>。</p></td>
 </tr>
 </tbody>
 </table>
@@ -65,7 +65,7 @@ ms.locfileid: "89158992"
 
 請注意，為了簡單起見，本逐步解說使用 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow)，而且不涵蓋 XAML 互通性。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 您應[為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要用到範本，但是需要 Microsoft Visual Studio 2015 載入這個逐步解說的程式碼範例。

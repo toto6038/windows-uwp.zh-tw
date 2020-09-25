@@ -1,25 +1,25 @@
 ---
-Description: 通知視覺化檢視是存放區中的新 Windows 應用程式，可協助開發人員設計適用于 Windows 10 的適應性動態磚。
+Description: 通知視覺化工具是 Store 中新的 Windows 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
 title: 通知視覺化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f9dc51a8ba387018a50e95702db1c539e889a5d
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: b50dc41a52d478afc9ed2fc9cf94d94dedb18ef4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234680"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219921"
 ---
 # <a name="notifications-visualizer"></a>通知視覺化工具
 
  
 
 
-通知視覺化檢視是[存放區中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)的新 Windows 應用程式，可協助開發人員設計適用于 Windows 10 的調適型動態磚和互動式快顯通知。
+通知視覺化是 [存放區中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 的新 Windows 應用程式，可協助開發人員針對 Windows 10 設計自動調整動態磚和互動式快顯通知。
 
 
 ## <a name="overview"></a>概觀
@@ -34,7 +34,7 @@ ms.locfileid: "83234680"
 
 使用通知視覺化檢視，您可以建立及測試彈性磚和快顯通知承載，不需要編輯和部署您自己的應用程式。 建立含有理想的視覺效果的承載後，您便可將它整合到您的應用程式。 若要深入了解，請參閱[傳送本機磚通知](sending-a-local-tile-notification.md)和[傳送本機快顯通知](send-local-toast.md)。
 
-**注意**   通知視覺化檢視的 Windows [開始] 功能表和快顯通知的模擬不一定完全精確，而且也不支援某些 advanced 裝載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
+**注意**   通知視覺化的 Windows [開始] 功能表和快顯通知的模擬不一定是完全精確，而且不支援某些 advanced 裝載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
 
  
 

@@ -5,15 +5,15 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: 視覺化回饋、焦點回饋、觸控回饋、觸控點視覺效果、輸入、互動
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ced83ca771f4954f8e42dc42e0882d1a5b7c6b1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1afc1c884a7a01ef1021f37476d1e29430c62e3c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172452"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219831"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
@@ -58,7 +58,7 @@ ms.locfileid: "89172452"
 
 所有 Windows 應用程式都支援在應用程式內的可互動控制項周圍使用更詳細定義的焦點視覺效果。 這些新的焦點視覺效果都是完全可自訂的，而且也可視需要予以停用。
 
-針對 Xbox 和電視典型的 **10 英呎體驗**，Windows 支援**顯色焦點**，當透過遊樂器或鍵盤輸入聚焦時，這個光源效果會動畫顯示可聚焦的元素邊框，例如按鈕。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](../devices/designing-for-tv.md#reveal-focus)。
+針對 Xbox 和電視典型的 **10 英呎體驗**，Windows 支援**顯色焦點**，當透過遊樂器或鍵盤輸入聚焦時，這個光源效果會動畫顯示可聚焦的元素邊框，例如按鈕。
 
 ## <a name="color-branding--customizing"></a>色彩商標和自訂
 

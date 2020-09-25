@@ -2,16 +2,16 @@
 Description: 如果您的應用程式使用 Microsoft Advertising SDK 來顯示廣告，請使用合作夥伴中心的應用程式內 ads 頁面來管理廣告的使用方式。
 title: 應用程式內廣告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-ms.date: 03/25/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a1683cdad189b9e369700e25b47a6f0bf0796702
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c8d01042fec7435652c819f29e3a791a5623a947
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171022"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220261"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -111,7 +111,7 @@ ms.locfileid: "89171022"
 
 下表列出每個廣告類型目前支援的付費網路。 請注意，其中一些網路[並非所有市場都有提供](#network-markets)。
 
-|  廣告網路  |  說明  |  支援的廣告類型  |
+|  廣告網路  |  描述  |  支援的廣告類型  |
 |--------------|---------------|---------------------|
 | Oath 和 AppNexus |  這是由 Microsoft 管理的 ad 網路，可透過我們的合作夥伴網路（Oath 和 AppNexus）提供廣告。<p/>**注意**： Oath 和 AppNexus 一律排名在橫幅 ad 單位的 **付費 ad 網路** 清單中，而且無法變更為這些類型廣告的較低等級。 | 橫幅、插播式影片 |
 | AppNexus (直接) | 選取此選項以提供來自 [AppNexus](https://www.appnexus.com)的廣告。 | 插播式影片、原生  |
@@ -133,7 +133,7 @@ ms.locfileid: "89171022"
 
 下表列出每個廣告類型目前支援的其他網路。
 
-|  廣告網路  |  說明  |  支援的廣告類型  |
+|  廣告網路  |  描述  |  支援的廣告類型  |
 |--------------|---------------|---------------------|
 | Microsoft 社群廣告 |  如果您[建立其中一個應用程式的促銷廣告活動](create-an-ad-campaign-for-your-app.md)，並將此行銷活動設定為[社群廣告活動](about-community-ads.md)，則選取此選項可從這個行銷活動顯示廣告。 | 橫幅、插播式橫幅 |
 | Microsoft 自家廣告 | 如果您[建立其中一個應用程式的促銷廣告活動](create-an-ad-campaign-for-your-app.md)，並將此行銷活動設定為[自家廣告活動](about-house-ads.md)，則選取此選項可從這個行銷活動顯示廣告。 | 橫幅、插播式橫幅  |

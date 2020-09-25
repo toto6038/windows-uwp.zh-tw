@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff40b506ef305ac4bc651864da34fe746f6229a3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164852"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220011"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -56,7 +56,7 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 
 使用 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法來啟動 URI。 呼叫此方法時，您的 app 必須是前景 app，也就是說，使用者必須看得到您的 app。 這項需求可讓使用者握有控制權。 為了滿足這項需求，請務必將所有 URI 啟動直接繫結到您的應用程式 UI。 使用者一律必須採取某些動作，才能起始 URI 啟動。 如果您嘗試啟動 URI，但您的 app 不在前景，則啟動將會失敗，並會叫用您的錯誤回呼。
 
-首先，建立 [**System.Uri**](https://docs.microsoft.com/dotnet/api/system.uri) 物件來代表 URI，然後將它傳送到 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用傳回結果查看呼叫是否成功，如下列範例所示。
+首先，建立 [**System.Uri**](/dotnet/api/system.uri) 物件來代表 URI，然後將它傳送到 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 方法。 使用傳回結果查看呼叫是否成功，如下列範例所示。
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -82,7 +82,7 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 
 ![警告對話方塊會顯示在 app 變暗的背景上。 對話方塊會詢問使用者是否想要切換 app，並在右下方顯示 [是] 和 [否] 按鈕。 [否] 按鈕會醒目顯示。](images/warningdialog.png)
 
-如果您一律要顯示此提示，請使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.treatasuntrusted) 屬性來告知作業系統顯示警告。
+如果您一律要顯示此提示，請使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](/uwp/api/windows.system.launcheroptions.treatasuntrusted) 屬性來告知作業系統顯示警告。
 
 ```cs
 // The URI to launch
@@ -102,7 +102,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOption
 
 在多個 app 已登錄要處理 URI 配置時，建議十分有用。 在建議特定 app 時，如果該 app 已安裝，Windows 將會加以開啟。
 
-若要提供建議，請呼叫 [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://docs.microsoft.com/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) 方法，並將 [**LauncherOptions.preferredApplicationPackageFamilyName**](https://docs.microsoft.com/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) 設為您想建議使用者使用的市集應用程式套件系列名稱。 作業系統會使用此資訊，並搭配從市集取得建議 app 的特定選項，以取代在市集中搜尋 app 的一般選項。
+若要提供建議，請呼叫 [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](/uwp/api/windows.system.launcher.launchuriasync#Windows_System_Launcher_LaunchUriAsync_Windows_Foundation_Uri_Windows_System_LauncherOptions_) 方法，並將 [**LauncherOptions.preferredApplicationPackageFamilyName**](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname) 設為您想建議使用者使用的市集應用程式套件系列名稱。 作業系統會使用此資訊，並搭配從市集取得建議 app 的特定選項，以取代在市集中搜尋 app 的一般選項。
 
 ```cs
 // Set the recommended app
@@ -215,7 +215,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 配置 |結果 |
 |------------|--------|
-| ms-photos:viewer?fileName={filename} | 啟動「相片」應用程式檢視指定的影像，其中 {filename} 是完整路徑名稱。 例如：`c:\users\userName\Pictures\ImageToView.jpg` |
+| ms-photos:viewer?fileName={filename} | 啟動「相片」應用程式檢視指定的影像，其中 {filename} 是完整路徑名稱。 例如： `c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | 以影片編輯模式為由檔案語彙基元代表的檔案啟動「相片」應用程式。 **InputToken** 為必要。 使用 [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 取得檔案的語彙基元。 |
 | ms-photos:videoedit?Action={action} | 參數，指出要在其中開啟相片應用程式的影片編輯模式，其中 {action} 是下列其中一個： **SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、 **筆墨**。 需要**採取動作**。 |
 | ms-photos:videoedit?StartTime={timespan} | 選擇性參數，可指定開始播放影片的位置。 `{timespan}` 的格式必須是 `"hh:mm:ss.ffff"` 。 如果未指定，則預設為 `00:00:00.0000` |
@@ -228,7 +228,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ![相機隱私權設定。](images/privacyawarenesssettingsapp.png)
 
-如需詳細資訊，請參閱[啟動 Windows 設定 app](launch-settings-app.md) 和[隱私權感知 app 的指導方針](https://docs.microsoft.com/windows/uwp/security/index)。
+如需詳細資訊，請參閱[啟動 Windows 設定 app](launch-settings-app.md) 和[隱私權感知 app 的指導方針](../security/index.md)。
 
 ### <a name="store-app-uri-scheme"></a>Store 應用程式 URI 配置
 

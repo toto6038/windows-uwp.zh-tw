@@ -3,15 +3,15 @@ Description: 一旦您已透過保留名稱來建立您的 app，您可以開始
 title: 應用程式提交
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1359fb530dec1a35b2ab2994442b65ec441cc0ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 99b4d7412727e5f195c32d3f3c21fe82b284e658
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158062"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219971"
 ---
 # <a name="app-submissions"></a>應用程式提交
 
@@ -90,7 +90,7 @@ ms.locfileid: "89158062"
 
 | 欄位名稱                    | 備註                                       | 如需詳細資訊                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
-| **描述**               | 必要                                    | [撰寫一份出色的應用程式介紹](write-a-great-app-description.md) |
+| **說明**               | 必要                                    | [撰寫一份出色的應用程式介紹](write-a-great-app-description.md) |
 | **此版本的新功能**   | 選擇性                                 | [版本資訊](create-app-store-listings.md#whats-new-in-this-version)       |
 | **應用程式功能**              | 選擇性                                    | [產品功能](create-app-store-listings.md#product-features)         |
 | **螢幕擷取畫面**               | 必要 (至少一個螢幕擷取畫面，建議提供四個或更多)          | [螢幕擷取畫面](app-screenshots-and-images.md#screenshots)          |

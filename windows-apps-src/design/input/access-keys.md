@@ -4,19 +4,19 @@ title: 便捷鍵設計指導方針
 label: Access keys design guidelines
 keywords: 鍵盤, 便捷鍵, keytip, 按鍵提示, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動
 template: detail.hbs
-ms.date: 06/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ca8c21729f27e30e7703291c04a940301a3feb26
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173892"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218411"
 ---
 # <a name="access-keys"></a>便捷鍵
 

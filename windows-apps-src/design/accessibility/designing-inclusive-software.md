@@ -1,29 +1,29 @@
 ---
-Description: 瞭解適用于 Windows 10 之 Windows 應用程式的進化式內含性設計。  在設計和建置通用軟體時考量提供無障礙功能。
+Description: 瞭解適用于 Windows 10 的 Windows 應用程式演進的包容性設計。  在設計和建置通用軟體時考量提供無障礙功能。
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: 設計適用於 Windows 10 的全人軟體
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f7286394f68d6cda82581a825117f12ce98493ba
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83234081"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219861"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的全人軟體  
 
-瞭解適用于 Windows 10 之 Windows 應用程式的進化式內含性設計。  在設計和建置通用軟體時考量提供無障礙功能。
+瞭解適用于 Windows 10 的 Windows 應用程式演進的包容性設計。  在設計和建置通用軟體時考量提供無障礙功能。
 
 在 Microsoft，我們一直不斷發展我們的設計原則和做法。 這些可以說明我們的體驗如何呈現、操作、運作和表現。 我們的觀點一直不斷在進化。
 
 這個新的設計哲學稱為全人設計。 我們的想法是在一開始設計軟體時就融入每個人的需求。 這相較於在開發程序結尾才匆忙加上檢視協助工具以滿足一小群使用者的技術完全不同。
 
-「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \-從[內含](https://www.microsoft.com/design/inclusive/)影片  
+「我們如果將提供的服務、產品或環境不符合個人需求定義為一種限制。 那麼任何人都有可能體驗到這個限制。 我們想要排除這個常見的人性特點。」  \- 從 [內含](https://www.microsoft.com/design/inclusive/) 影片  
 
 通用設計可以為所有人創造更好的產品。 這牽涉到要考慮完整而多樣化的人性。 您現在會在大多數街道的人行道上看到路緣坡。 這些一開始是為了讓輪椅人士使用。 但是現在幾乎每個人都使用它們，包括使用嬰兒車的人、單車族與滑板族。 甚至行人也經常使用路緣坡，因為它們就在那兒且提供更好的體驗。 電視遙控器可以被視為是一項針對身體受限的人所使用的輔助技術 (AT)。 但是現在，購買電視幾乎不可能沒有遙控器。 在孩童學習如何綁鞋帶之前，他們可以穿著容易穿脫或繫牢的鞋子。 容易穿脫的鞋子通常較受進家門前需脫鞋的文化所喜愛。 它們也比較適合有敏捷性問題 (例如關節炎或甚至是暫時性手腕骨折) 的人們。
 
@@ -104,8 +104,8 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 7.  將您完成的產品與實作文件提供給之後可能會處理專案的人員。  
 
 ## <a name="related-topics"></a>相關主題  
-* [通用設計](https://www.microsoft.com/design/inclusive/)
+* [內含設計](https://www.microsoft.com/design/inclusive/)
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) 
-* [協助工具選項](accessibility.md)
+* [協助工具](accessibility.md)

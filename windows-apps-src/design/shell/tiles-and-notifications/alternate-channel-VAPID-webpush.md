@@ -1,16 +1,16 @@
 ---
 title: 在 UWP 中使用 VAPID 的替代推播通道
 description: 從 Windows 應用程式搭配使用替代推送通道與 VAPID 通訊協定的指示
-ms.date: 01/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、WinRT API、WNS
 localizationpriority: medium
-ms.openlocfilehash: 4bca7e4159c0a4950c95d5d5ef2f34362175a8a7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 79ea88cb457e9a0d7ba33ef51a184e6f52ab19c4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173302"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219271"
 ---
 # <a name="alternate-push-channels-using-vapid-in-windows"></a>在 Windows 中使用 VAPID 的替代推送通道 
 從秋季建立者的更新開始，Windows 應用程式可以使用 VAPID authentication 來傳送推播通知。  

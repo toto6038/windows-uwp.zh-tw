@@ -6,19 +6,19 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 keywords: Xbox, 電視, 10 英呎體驗, 遊戲台, 遙控器, 輸入, 互動
-ms.date: 11/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 491b67322c8b328c21446d50951daad61f15ad3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b0c278599c878e807ef8b2e2564ca9add31ea4ad
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175572"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220281"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -66,7 +66,7 @@ _**螢幕擷取畫面中顯示的所有電影都可在 Microsoft 影片 & 電視
 
 您現在知道了出色的 UWP app 具備 10 英呎體驗的設計原則，請仔細閱讀下列概觀，了解可最佳化您的 app 並提供絕佳使用者體驗的特定方式。
 
-| 功能        | 說明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
 | [調整 UI 元素大小](#ui-element-sizing)  | 通用 Windows 平台使用[縮放與有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)，根據檢視距離來調整 UI。 了解如何調整大小並套用到整個 UI，可協助最佳化 10 英呎環境的 app。  |
 |  [電視安全區域](#tv-safe-area) | UWP 預設會自動避免在電視不安全的區域 (接近螢幕邊緣的區域) 中顯示任何 UI。 不過，這會產生一種「被框住」的效果，UI 看起來就像信箱一樣。 為了讓您的 app 能真正融入電視螢幕，您要加以修改，讓 app 在支援的電視能延伸到螢幕的邊緣。 |
@@ -77,7 +77,7 @@ _**螢幕擷取畫面中顯示的所有電影都可在 Microsoft 影片 & 電視
 
 除了上述設計和配置考慮之外，您還可以在建立應用程式時考慮一些 [遊戲台和遠端控制互動](../input/gamepad-and-remote-interactions.md) 優化。
 
-| 功能        | 說明           |
+| 功能        | 描述           |
 | -------------------------------------------------------------- |--------------------------------|
 | [XY 焦點瀏覽和互動](../input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction) | **XY 焦點導覽** 可讓使用者流覽應用程式的 UI。 不過，這限制使用者只能向上、向下、向左和向右瀏覽。 本節概述處理此功能和其他考量的建議。 |
 | [滑鼠模式](../input/gamepad-and-remote-interactions.md#mouse-mode)|針對某些類型的應用程式（例如地圖或繪圖和繪製應用程式），XY 焦點導覽並不實用或甚至可能。 在這些情況下， **滑鼠模式** 讓使用者可以自由地使用遊戲台或遙控器來流覽，就像電腦上的滑鼠一樣。|
@@ -170,7 +170,7 @@ bool result =
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
 ```
 
-### <a name="image"></a>Image
+### <a name="image"></a>映像
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -560,7 +560,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>摘要
 
 針對 10 英呎經驗的設計已納入特殊考量，使其有別於其他所有平台的設計。 您當然可以直接將 UWP app 移植至 Xbox One 且它亦可運作，但它不一定是針對 10 英呎體驗最佳化，且會讓使用者感到失望。 遵循本文所述的指導方針，以確定 app 在電視上仍可呈現優異效果。
 

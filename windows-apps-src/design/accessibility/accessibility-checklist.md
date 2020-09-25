@@ -4,16 +4,16 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 協助工具檢查清單
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44864a0743443d976456f73a3bae5041fd63770e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163462"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216391"
 ---
 # <a name="accessibility-checklist"></a>協助工具檢查清單
 
@@ -41,7 +41,7 @@ ms.locfileid: "89163462"
 
 3. 確定文字是可讀取的大小
 
-    * Windows 包含各種協助工具工具和設定，使用者可利用這些工具和設定來調整，並根據自己的需求和喜好設定來閱讀文字。 其中包含：
+    * Windows 包含各種協助工具工具和設定，使用者可利用這些工具和設定來調整，並根據自己的需求和喜好設定來閱讀文字。 其中包括：
         * 放大鏡工具，可放大 UI 的選取區域。 您應該確保應用程式中的文字版面配置不會讓您難以使用放大鏡進行讀取。
         * 設定中的全域規模和解析度設定 **->系統 >顯示 >縮放和**配置。 確切的調整大小選項有何不同，這取決於顯示裝置的功能。
         * 設定中的文字大小設定 **->輕鬆存取->顯示**。 調整 [ **讓文字變得更大** ] 設定，只指定在所有應用程式和螢幕上支援控制項的文字大小 (所有 UWP 文字控制項都能支援不含任何自訂或範本) 的文字縮放體驗。

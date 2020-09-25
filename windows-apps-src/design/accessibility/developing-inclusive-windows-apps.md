@@ -4,16 +4,16 @@ ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 開發全人 Windows 10 應用程式
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 37fb7cc81d1a86a159526af5d580a02482d13f9a
-ms.sourcegitcommit: 87fd0ec1e706a460832b67f936a3014f0877a88c
+ms.openlocfilehash: 856ed1222cd393ec2730226f9c4faadf7e9ad0d7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83233969"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219811"
 ---
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
@@ -81,9 +81,9 @@ XAML
 如需詳細資料，請參閱完整的[協助工具檢查清單](accessibility-checklist.md)主題。
 
 ## <a name="related-topics"></a>相關主題  
-* [設計通用軟體](designing-inclusive-software.md)  
-* [通用設計](https://www.microsoft.com/design/inclusive/)
+* [設計全人軟體](designing-inclusive-software.md)  
+* [內含設計](https://www.microsoft.com/design/inclusive/)
 * [協助工具應避免的做法](practices-to-avoid.md)
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
-* [協助工具選項](accessibility.md)
+* [協助工具](accessibility.md)

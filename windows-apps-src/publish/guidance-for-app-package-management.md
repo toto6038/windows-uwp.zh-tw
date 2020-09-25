@@ -2,16 +2,16 @@
 description: 了解您的 app 套件是如何提供給您的客戶，以及如何管理特定套件案例。
 title: 應用程式套件管理指導方針
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6035f5f21cd1b704415193c393ae0637d3e5dc37
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: 497282632e9690cedd65788dcef18937d5c5cc74
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89411972"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219161"
 ---
 # <a name="guidance-for-app-package-management"></a>應用程式套件管理指導方針
 

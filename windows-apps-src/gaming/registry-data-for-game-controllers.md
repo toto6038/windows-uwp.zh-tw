@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: windows 10, uwp, games, input, registry, custom, 遊戲, 輸入, 登錄, 自訂
 ms.localizationpriority: medium
-ms.openlocfilehash: ac2ca98a067fb88dfcdc86c4e4ee4047b82206bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f3a49ae2c6fc283d479086759744eb51d8b33ce
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159272"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220061"
 ---
 # <a name="registry-data-for-game-controllers"></a>遊戲控制器的登錄資料
 
@@ -36,7 +36,7 @@ ms.locfileid: "89159272"
         <th>資訊</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>已停用</td>
         <td>DWORD</td>
         <td>否</td>
         <td>
@@ -48,13 +48,13 @@ ms.locfileid: "89159272"
         </td>
     </tr>
     <tr>
-        <td>說明</td>
+        <td>描述</td>
         <td>REG_SZ <td>否</td>
         <td>裝置的簡短描述。</td>
     </tr>
 </table>
 
-您的裝置安裝程式應該將此資料新增至登錄 (透過安裝或 [INF 檔案](https://docs.microsoft.com/windows-hardware/drivers/install/inf-files))。
+您的裝置安裝程式應該將此資料新增至登錄 (透過安裝或 [INF 檔案](/windows-hardware/drivers/install/inf-files))。
 
 以下幾節將詳述裝置根位置下方的子機碼。
 
@@ -543,9 +543,9 @@ ms.locfileid: "89159272"
     </tr>
 </table>
 
-如需有關 UI 瀏覽控制器及上述命令的詳細資訊，請參閱 [UI 瀏覽控制器](https://docs.microsoft.com/windows/uwp/gaming/ui-navigation-controller)。
+如需有關 UI 瀏覽控制器及上述命令的詳細資訊，請參閱 [UI 瀏覽控制器](./ui-navigation-controller.md)。
 
-## <a name="keys"></a>按鍵
+## <a name="keys"></a>索引鍵
 
 以下幾節說明 \[Gamepad\]****、\[RacingWheel\]****、\[ArcadeStick\]****、\[FlightStick\]**** 及 \[UINavigation\]**** 機碼下方每個子機碼的內容。
 
@@ -597,7 +597,7 @@ ms.locfileid: "89159272"
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">參數</td>
+        <td rowspan="3" style="vertical-align: middle;">交換器</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -654,7 +654,7 @@ ms.locfileid: "89159272"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>false</td>
+                    <td>FALSE</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -677,18 +677,18 @@ ms.locfileid: "89159272"
                     <th>AxisValue</th>
                 </tr>
                 <tr>
-                    <td>false</td>
-                    <td>false</td>
+                    <td>FALSE</td>
+                    <td>FALSE</td>
                     <td>0.5</td>
                 </tr>
                 <tr>
-                    <td>false</td>
+                    <td>FALSE</td>
                     <td>TRUE</td>
                     <td>1.0</td>
                 </tr>
                 <tr>
                     <td>true</td>
-                    <td>false</td>
+                    <td>FALSE</td>
                     <td>0.0</td>
                 </tr>
                 <tr>
@@ -713,7 +713,7 @@ ms.locfileid: "89159272"
         <td>表示對應的軸值在傳回之前應先反轉。</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">參數</td>
+        <td rowspan="3" style="vertical-align: middle;">交換器</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -898,7 +898,7 @@ ms.locfileid: "89159272"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">參數</td>
+        <td rowspan="3" style="vertical-align: middle;">交換器</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td><b>RawGameController</b> 切換陣列中的索引。
@@ -1051,7 +1051,7 @@ ms.locfileid: "89159272"
 
 ### <a name="button-labels"></a>按鈕標籤
 
-\[Buttons\]**** 機碼會將 \[RawGameController\]**** 其按鈕陣列中的每個按鈕位置對應至字串。 系統會在內部將每個字串對應至對應的 [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 列舉值。 例如，如果遊戲台上有十個按鈕，且 **RawGameController** 剖析出按鈕並在按鈕報告中呈現按鈕的順序為：
+\[Buttons\]**** 機碼會將 \[RawGameController\]**** 其按鈕陣列中的每個按鈕位置對應至字串。 系統會在內部將每個字串對應至對應的 [GameControllerButtonLabel](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 列舉值。 例如，如果遊戲台上有十個按鈕，且 **RawGameController** 剖析出按鈕並在按鈕報告中呈現按鈕的順序為：
 
 ```cpp
 Menu,               // Index 0
@@ -1070,7 +1070,7 @@ RightBumper         // Index 9
 
 <table>
     <tr>
-        <th>Name</th>
+        <th>名稱</th>
         <th>值 (類型：REG_SZ)</th>
     </tr>
     <tr>
@@ -1117,7 +1117,7 @@ RightBumper         // Index 9
 
 ### <a name="axis-labels"></a>軸標籤
 
-\[Axes\]**** 機碼會將 \[RawGameController\]**** 其軸陣列中的每個軸位置對應至在 [GameControllerButtonLabel 列舉](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) (英文) 中所列的其中一個標籤，就如同按鈕標籤。 請參閱[按鈕標籤](#button-labels)中的範例。
+\[Axes\]**** 機碼會將 \[RawGameController\]**** 其軸陣列中的每個軸位置對應至在 [GameControllerButtonLabel 列舉](/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) (英文) 中所列的其中一個標籤，就如同按鈕標籤。 請參閱[按鈕標籤](#button-labels)中的範例。
 
 ### <a name="switch-labels"></a>切換標籤
 
@@ -1136,7 +1136,7 @@ RightBumper         // Index 9
 
 <table>
     <tr>
-        <th>Name</th>
+        <th>名稱</th>
         <th>值 (類型：REG_SZ)</th>
     </tr>
     <tr>

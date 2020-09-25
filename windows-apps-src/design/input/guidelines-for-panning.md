@@ -4,16 +4,16 @@ title: 移動瀏覽
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e77485bd2febe2ee032f9a0c3ceada31c2807ee0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172492"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217048"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
@@ -80,7 +80,7 @@ ms.locfileid: "89172492"
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update 行為變更</strong> 使用中的畫筆預設會在 Windows 應用程式中進行滾動/移動 (例如觸控、觸控板和被動畫筆) ，而不是文字選取。  
-> 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a> \(英文\) 的 API 參考主題。
+> 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a> \(英文\) 的 API 參考主題。
 > </div>
 
 根據輸入裝置，使用者會透過下列其中一種方式，在可移動瀏覽的區域內移動瀏覽：

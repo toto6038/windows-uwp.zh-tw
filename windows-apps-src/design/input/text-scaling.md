@@ -4,16 +4,16 @@ title: 文字大小調整
 label: Text scaling
 template: detail.hbs
 keywords: UWP、文字、縮放、協助工具、「輕鬆存取」、顯示「讓文字變大」、使用者互動、輸入
-ms.date: 08/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 386920532f4598ee2d1519d292454b47c285555b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165832"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219941"
 ---
 # <a name="text-scaling"></a>文字大小調整
 
@@ -169,7 +169,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 原本就不支援文字調整，而 
 
 在您的自訂架構和控制項中處理 [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) UISettings 系統事件。 每次使用者在其系統上設定文字縮放比例時，就會引發此事件。
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>摘要
 
 本主題概要說明 Windows 中的文字調整支援，並包含如何自訂使用者體驗的 UX 和開發人員指引。
 

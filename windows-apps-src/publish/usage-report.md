@@ -2,16 +2,16 @@
 Description: 合作夥伴中心中的使用方式報告可讓您瞭解客戶如何使用您的應用程式。
 title: 使用方式報告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
-ms.date: 10/31/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 使用量, 自訂事件, 報告, 遙測, 使用者工作階段
 ms.localizationpriority: medium
-ms.openlocfilehash: d2839112d36822be5eb8297b838cdc38bab5c71b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a794018b2fcdd07017ee3441e65c6200e7436304
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167272"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220201"
 ---
 # <a name="usage-report"></a>使用方式報告
 

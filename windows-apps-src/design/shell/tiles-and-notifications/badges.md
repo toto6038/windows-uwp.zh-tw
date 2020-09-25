@@ -4,16 +4,16 @@ title: Windows 應用程式的徽章通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d3aa9658e8a57a7993eb79d164b1e17ac23b9ac
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: e8d3cf69da80b13ff334d89027f3ea366ac3accd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970873"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219391"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Windows 應用程式的徽章通知
 
@@ -35,7 +35,7 @@ ms.locfileid: "82970873"
 <table>
     <tr>
         <th>值</th>
-        <th>Badge</th>
+        <th>徽章</th>
         <th>XML</th>
     </tr>
     <tr>
@@ -100,7 +100,7 @@ ms.locfileid: "82970873"
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>錯誤</td>
+    <td>error</td>
     <td><img src="images/badges/badge-error.png" alt="Glyph" /></td>
     <td>`<badge value="error"/>`</td>
 </tr>

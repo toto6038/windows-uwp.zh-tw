@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1ba0205a837383e1c646664c0550e055227412
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 12a7c7ebd250fec8d944c4cba467a92ff67bd33d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173062"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219791"
 ---
 # <a name="input-assembler-ia-stage"></a>輸入組合語言 (IA) 階段
 
@@ -51,7 +51,7 @@ IA 階段將資料組合到基元，並附加系統產生的值，而如同基�
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -61,7 +61,7 @@ IA 階段將資料組合到基元，並附加系統產生的值，而如同基�
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">使用系統產生的值</a></p></td>
-<td align="left"><p>根據使用者提供的輸入 <a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">語義</a>) ，系統產生的值是由輸入組合語言 (IA) 階段 (產生，以允許著色器作業的特定效率。 藉由附加像執行個體識別碼 (顯現於<a href="vertex-shader-stage--vs-.md">頂點著色器 (VS) 階段</a>)、頂點識別碼 (顯現於 VS) 或基本識別碼 (顯現於<a href="geometry-shader-stage--gs-.md">幾何著色器 (GS) 階段</a>/<a href="pixel-shader-stage--ps-.md">像素著色器 (PS) 階段</a>)，後續著色器階段可能會尋找這些系統值，以在該階段進行最佳化處理。</p></td>
+<td align="left"><p>根據使用者提供的輸入 <a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">語義</a>) ，系統產生的值是由輸入組合語言 (IA) 階段 (產生，以允許著色器作業的特定效率。 藉由附加像執行個體識別碼 (顯現於<a href="vertex-shader-stage--vs-.md">頂點著色器 (VS) 階段</a>)、頂點識別碼 (顯現於 VS) 或基本識別碼 (顯現於<a href="geometry-shader-stage--gs-.md">幾何著色器 (GS) 階段</a>/<a href="pixel-shader-stage--ps-.md">像素著色器 (PS) 階段</a>)，後續著色器階段可能會尋找這些系統值，以在該階段進行最佳化處理。</p></td>
 </tr>
 </tbody>
 </table>

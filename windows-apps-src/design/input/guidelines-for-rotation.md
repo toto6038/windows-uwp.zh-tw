@@ -4,16 +4,16 @@ title: 旋轉
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ba886ffd74f03b4b502e1f7351c75c76646147
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 135f7773a94491e1e6470c84ad428265273bc79d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172472"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217001"
 ---
 # <a name="rotation"></a>旋轉
 
@@ -71,7 +71,7 @@ Windows 10 支援三種類型的旋轉：「免費」、「受限」和「合併
 <thead>
 <tr class="header">
 <th align="left">類型</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>

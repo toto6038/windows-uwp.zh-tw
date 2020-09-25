@@ -1,23 +1,23 @@
 ---
-Description: 要遵循的測試程式，以確保您的 Windows 應用程式可供存取。
+Description: 測試要遵循的程式，以確保您的 Windows 應用程式可以存取。
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: 協助工具測試
 label: Accessibility testing
 template: detail.hbs
-ms.date: 05/18/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1144f6edfab73069a8645e464a2aa8de3e5e2ed6
-ms.sourcegitcommit: e51f9489d8c977c3498afb1a75c91f96ac3a642b
+ms.openlocfilehash: 1da900732257babc0d53453fa4b9b2c9196e7e6d
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83854754"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216411"
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
-要遵循的測試程式，以確保您的 Windows 應用程式可供存取。
+測試要遵循的程式，以確保您的 Windows 應用程式可以存取。
 
 ## <a name="run-accessibility-testing-tools"></a>執行協助工具測試工具
 
@@ -33,7 +33,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ### <a name="inspect"></a>**檢查**  
 
-[**Inspect**](/windows/desktop/WinAuto/inspect-objects) 可以讓您選取任何 UI 元素以及查看它的協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時使用 [**檢查**]，以驗證如何在使用者介面自動化中公開協助工具屬性。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性會來自您在 XAML 標記中設定的特定值，做為[**AutomationProperties**](/uwp/api/windows.ui.xaml.automation.automationproperties)附加屬性。
+[**Inspect**](/windows/desktop/WinAuto/inspect-objects) 可以讓您選取任何 UI 元素以及查看它的協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 [ **檢查** ] 來確認消費者介面自動化中公開協助工具屬性的方式。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性會來自您在 XAML 標記中設定的特定值，做為 [**AutomationProperties**](/uwp/api/windows.ui.xaml.automation.automationproperties) 附加屬性。
 
 以下影像顯示 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 工具正在查詢「記事本」中 **\[編輯\]** 功能表元素的使用者介面自動化屬性。
 
@@ -90,7 +90,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 4. 按 _Caps Lock + Enter 鍵_來搜尋您的應用程式，並確認您的所有控制項都會出現在搜尋清單中，而且控制項名稱都已當地語系化且可閱讀。
 5. 關閉您的顯示器，並嘗試只使用鍵盤和朗讀程式來完成主應用程式案例。 若要取得朗讀程式命令和捷徑的完整清單，請按 _Caps Lock + F1_。
 
-從 Windows 10 版本 1607 開始，我們在朗讀程式中導入了新的開發人員模式。 按_ctrl + Caps lock + F12_，在朗讀程式已在執行時開啟開發人員模式。 啟用開發人員模式之後，螢幕將會被遮住且將會以醒目方式只顯示可存取的物件和透過程式設計方式向朗讀程式揭露的相關文字。 這可以透過很好的視覺方式向您展示向朗讀程式揭露的資訊。
+從 Windows 10 版本 1607 開始，我們在朗讀程式中導入了新的開發人員模式。 按下 _ctrl + Caps lock + F12_，在朗讀程式已在執行時開啟開發人員模式。 啟用開發人員模式之後，螢幕將會被遮住且將會以醒目方式只顯示可存取的物件和透過程式設計方式向朗讀程式揭露的相關文字。 這可以透過很好的視覺方式向您展示向朗讀程式揭露的資訊。
 
 **利用這些步驟，使用朗讀程式的觸控模式來測試您的應用程式：**
 
@@ -129,8 +129,8 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ## <a name="related-topics"></a>相關主題
 
-- [協助工具選項](accessibility.md)
+- [協助工具](accessibility.md)
 - [應避免的做法](practices-to-avoid.md)
-- [UI 自動化](/windows/desktop/WinAuto/entry-uiauto-win32)
+- [使用者介面自動化](/windows/desktop/WinAuto/entry-uiauto-win32)
 - [Windows 中的協助工具](https://www.microsoft.com/accessibility/)
 - [開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

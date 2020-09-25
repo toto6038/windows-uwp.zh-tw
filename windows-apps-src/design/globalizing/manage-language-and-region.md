@@ -3,16 +3,16 @@ Description: 本主題定義使用者設定檔語言清單、應用程式資訊�
 title: 了解使用者設定檔語言和應用程式資訊清單語言
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.date: 11/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: c4f1857ba4afe5eba271f7022c64aca26eb6b6b8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ee2ba09c9b8b307a56bd71e720a9f6db8f45a813
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156932"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220241"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解使用者設定檔語言和應用程式資訊清單語言
 Windows 使用者可以使用**設定**  >  **時間 & 語言**  >  **區域 & 語言**來設定慣用顯示語言的排序清單，或只設定單一慣用的顯示語言。 語言可具有地區性的變體。 例如，您可以選取在西班牙使用的西班牙文、在墨西哥使用的西班牙文、在美國使用的西班牙文等。

@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 57d46ea1f88395624943135247a8f610112aaf90
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: e78171fa182d44f1699bc35643265fddb87824f4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804728"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220291"
 ---
 # <a name="windows-runtime-components-with-c-and-visual-basic"></a>Windows 執行階段元件與 C# 和 Visual Basic
 
@@ -286,7 +286,7 @@ End Function
 
 | 徵狀 | 補救方法 |
 |---------|--------|
-|在 c + +/WinRT 應用程式中，使用使用 XAML 的 [c # Windows 執行階段元件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 時，編譯器會產生格式為 "*' MyNamespace_XamlTypeInfo ' 的錯誤：不是 ' WinRT：： MyNamespace ' 的成員*， &mdash; 其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在 `pch.h` 使用 c + +/WinRT 應用程式中，新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 適當的取代*MyNamespace* 。 |
+|在 c + +/WinRT 應用程式中，使用使用 XAML 的 [c # Windows 執行階段元件]() 時，編譯器會產生格式為 "*' MyNamespace_XamlTypeInfo ' 的錯誤：不是 ' WinRT：： MyNamespace ' 的成員*， &mdash; 其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在 `pch.h` 使用 c + +/WinRT 應用程式中，新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 適當的取代*MyNamespace* 。 |
 
 ## <a name="related-topics"></a>相關主題
 * [適用於 UWP app 的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0)

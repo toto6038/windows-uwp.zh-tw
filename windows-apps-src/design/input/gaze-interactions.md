@@ -4,19 +4,19 @@ Description: 瞭解如何設計和優化您的 Windows 應用程式，為依賴�
 label: Gaze interactions
 template: detail.hbs
 keywords: 注視, 眼球追蹤, 頭部追蹤, 注視點, 輸入, 使用者互動, 協助工具, 可用性
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: Jake Cohen
 dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c91de7eb0200780b04bad1853cb49caf41a22bc0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172502"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217021"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>在 Windows 應用程式中注視互動和眼睛追蹤
 

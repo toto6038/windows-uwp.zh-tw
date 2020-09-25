@@ -4,16 +4,16 @@ ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: 公開基本的協助工具資訊
 label: Expose basic accessibility information
 template: detail.hbs
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 723108b1a4e90de4cf378d8cdafcaae92bec2682
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: da0ad6c0121f81a4854728f4441e0407a6302f54
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157092"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217461"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
@@ -29,7 +29,7 @@ ms.locfileid: "89157092"
 
 這個表格描述如何定義或取得 XAML UI 中各種元素類型的無障礙名稱。
 
-| 項目類型 | 說明 |
+| 項目類型 | 描述 |
 |--------------|-------------|
 | 靜態文字 | 若為 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 元素，則會從可見的 (內部) 文字自動判斷無障礙名稱。 該元素中的所有文字都會當作名稱使用。 請參閱[來自內部文字的名稱](#name_from_inner_text)。 |
 | 影像 | XAML [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) 元素與 **img** 及類似元素的 HTML **alt** 屬性沒有直接的相似項目。 請使用 [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) 提供名稱，或使用輔助字幕技術。 請參閱[影像的無障礙名稱](#images)。 |
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-您也可以考慮加入文字輔助字幕，讓它顯示在可見 UI 中，它同時也可以當作是影像內容中與標籤相關的協助工具資訊。 以下為範例：
+您也可以考慮加入文字輔助字幕，讓它顯示在可見 UI 中，它同時也可以當作是影像內容中與標籤相關的協助工具資訊。 以下是範例：
 
 XAML
 ```xml

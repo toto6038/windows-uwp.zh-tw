@@ -2,16 +2,16 @@
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: 動畫概觀
 description: 使用 Windows 執行階段動畫庫的動畫，可以將 Windows 的外觀及操作方式整合到您的應用程式中。
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 546e376bc6c66c368387ddd6f67d21dc7dde582d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 40752da17591c9eca16f46fbd244d4507a38b1fb
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173842"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220001"
 ---
 # <a name="animations-in-xaml"></a>XAML 中的動畫
 
@@ -291,7 +291,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 您可以使用數種轉場效果，透過新增、移除、重新排序等動作在 UI 元素上建立動畫。 這些 API 的名稱都包含 "ThemeTransition"：
 
-| API | 說明 |
+| API | 描述 |
 |-----|-------------|
 | [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) | 針對[**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)中的頁面瀏覽，提供 Windows 個人化動畫效果。 |
 | [**AddDeleteThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition) | 提供控制項新增或刪除子項或內容時的動畫轉換行為。 通常控制項就是一個項目容器。 |
@@ -355,7 +355,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 您可以在 UI 元素套用數個其他佈景主題動畫，以建立動畫效果。 這些 API 的名稱都包含 "ThemeAnimation"：
 
-| API | 說明 |
+| API | 描述 |
 |-----|-------------|
 | [**DragItemThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation) | 表示可套用至要拖曳之項目元素的預先設定動畫。 |
 | [**DragOverThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation) | 表示可套用至要拖曳之元素下方元素的預先設定動畫。 |

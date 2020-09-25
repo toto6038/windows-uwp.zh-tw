@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 螢幕方向, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 967fa031ad56e2c35b9e923339970787a7206f1d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bb5ed4d942484ebded50216ad84f8d1346545527
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168372"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217681"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>支援螢幕方向 (DirectX 和 C++)
 
@@ -336,7 +336,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 -   判斷顯示器的新方向。 如果顯示器已經從橫向翻轉成直向 (反之亦然)，請切換顯示界限的高度和寬度值 — 從 DIP 值變更成像素。
 
--   然後，檢查看看是否已經建立交換鏈結。 如果尚未建立，請呼叫 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://docs.microsoft.com/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) 來建立它。 否則，請呼叫 [**IDXGISwapchain:ResizeBuffers**](https://docs.microsoft.com/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)，將現有交換鏈結的緩衝區大小調整成新的顯示大小。 雖然您不需要為旋轉事件調整交換鏈結大小 — 畢竟您輸出的是已經由轉譯管線旋轉的內容 — 但是，還是有其他需要調整大小的大小變更事件 (例如貼齊和填滿事件)。
+-   然後，檢查看看是否已經建立交換鏈結。 如果尚未建立，請呼叫 [**IDXGIFactory2::CreateSwapChainForCoreWindow**](/windows/desktop/api/dxgi1_2/nf-dxgi1_2-idxgifactory2-createswapchainforcorewindow) 來建立它。 否則，請呼叫 [**IDXGISwapchain:ResizeBuffers**](/windows/desktop/api/dxgi/nf-dxgi-idxgiswapchain-resizebuffers)，將現有交換鏈結的緩衝區大小調整成新的顯示大小。 雖然您不需要為旋轉事件調整交換鏈結大小 — 畢竟您輸出的是已經由轉譯管線旋轉的內容 — 但是，還是有其他需要調整大小的大小變更事件 (例如貼齊和填滿事件)。
 
 -   接著，請設定適當的 2D 或 3D 矩陣轉換，將圖形管線中的像素或頂點轉譯至交換鏈結時，分別套用像素和頂點。 我們有 4 個可能的旋轉矩陣：
 

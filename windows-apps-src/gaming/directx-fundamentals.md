@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 載入, 點陣化, 網格, 點陣圖, 2D, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 1718677dce325cccc535e603aca1910eb83d1de0
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: a982c1a57733e8ea9fc4d53974e4c5aec8e373dd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053578"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218021"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 程式設計的基礎
 
@@ -42,7 +42,7 @@ ms.locfileid: "89053578"
 <td align="left"><p>使用 DirectX 建立 2D 圖形。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/index">Direct3D 圖形學習指南</a></p></td>
+<td align="left"><p><a href="/windows/uwp/graphics-concepts/index">Direct3D 圖形學習指南</a></p></td>
 <td align="left"><p>了解 Direct3D 圖形概念。</p></td>
 </tr>
 <tr class="odd">

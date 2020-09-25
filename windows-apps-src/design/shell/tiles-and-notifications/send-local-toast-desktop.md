@@ -4,16 +4,16 @@ title: 從傳統型 C# 應用程式傳送本機快顯通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
-ms.date: 01/23/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: 'windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c #、c 清晰、快顯通知、wpf、傳送快顯通知 wpf、傳送快顯通知 winforms、傳送快顯通知 c #、傳送通知 wpf、傳送通知 c #、快顯通知 wpf、通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e78e68cdd44890b50209f3f900c538278bd523c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f4f78d689352f0278f814a2e89db6f92df52b99
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172292"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220121"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 

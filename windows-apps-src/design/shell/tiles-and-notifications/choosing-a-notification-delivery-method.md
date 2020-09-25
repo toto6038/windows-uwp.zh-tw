@@ -4,16 +4,16 @@ title: 選擇通知傳遞方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 166ff20e792c5cf4a5969e954ed1b7d04e5c5c9f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173292"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219151"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -79,7 +79,7 @@ App 可以使用四種機制來傳遞通知：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">推送</td>
+<td align="left">發送</td>
 <td align="left">磚、徽章、快顯通知、原始通知</td>
 <td align="left">即使您的應用程式未執行，仍然會從雲端伺服器傳送的通知。</td>
 <td align="left"><ul>

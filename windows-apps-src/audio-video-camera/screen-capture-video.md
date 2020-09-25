@@ -1,5 +1,5 @@
 ---
-title: 螢幕捕捉至影片
+title: 將螢幕擷取到影片
 description: 本文說明如何使用 Windows. 圖形將 Api 編碼的畫面格編碼至影片檔案。
 ms.date: 07/28/2020
 ms.topic: article
@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: windows 10、uwp、螢幕擷取畫面、影片
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1eb68e480b4c9b4b4fc88452a68f39f8461a79
-ms.sourcegitcommit: 14c0b1ea2447a81ddf31982b40e19a74ecc6d59e
+ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89310080"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218631"
 ---
-# <a name="screen-capture-to-video"></a>螢幕捕捉至影片
+# <a name="screen-capture-to-video"></a>將螢幕擷取到影片
 
-本文說明如何使用 Windows. 圖形將 Api 編碼的畫面格編碼至影片檔案。 如需螢幕捕捉（仍為影像）的相關資訊，請參閱 [Screeen capture](screen-capture-video)。 
+本文說明如何使用 Windows. 圖形將 Api 編碼的畫面格編碼至影片檔案。 如需螢幕捕捉（仍為影像）的相關資訊，請參閱 [Screeen capture](./screen-capture.md)。
 
 ## <a name="overview-of-the-video-capture-process"></a>影片捕獲流程總覽
 本文提供範例應用程式的逐步解說，此應用程式會將視窗內容記錄至影片檔案。 雖然可能需要很多程式碼來執行此案例，但螢幕錄製器應用程式的高階結構相當簡單。 螢幕擷取畫面進程會使用三個主要 UWP 功能：
@@ -55,21 +55,21 @@ ms.locfileid: "89310080"
 
 - **建立 MediaEncodingProfile 和 VideoStreamDescriptor。** [>mediastreamsource](/uwp/api/windows.media.core.mediastreamsource)類別的實例會取得從畫面中取出的影像，並將其編碼成影片串流。 然後，影片串流將會由 [MediaTranscoder](/uwp/api/windows.media.transcoding.mediatranscoder) 類別轉碼至影片檔案。 [VideoStreamDecriptor](/uwp/api/windows.media.core.videostreamdescriptor)為 **>mediastreamsource**提供編碼參數，例如解析度和畫面播放速率。 **MediaTranscoder**的影片檔案編碼參數會以[MediaEncodingProfile](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile)來指定。 請注意，用於影片編碼的大小不一定要與所要捕捉的視窗大小相同，但為了讓這個範例保持簡單，編碼設定是硬式編碼，以使用 capture 專案的實際維度。
 
-- **建立 >mediastreamsource 和 MediaTranscoder 物件。** 如先前所述， **>mediastreamsource** 物件會將個別的框架編碼成影片串流。 呼叫這個類別的函式，並傳入在上一個步驟中建立的 **MediaEncodingProfile** 。 將緩衝區時間設定為零，並註冊 [啟動](uwp/api/windows.media.core.mediastreamsource.starting) 和 [SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested) 事件的處理常式，這將在本文稍後顯示。 接下來，請建立 **MediaTranscoder** 類別的新實例，並啟用硬體加速。
+- **建立 >mediastreamsource 和 MediaTranscoder 物件。** 如先前所述， **>mediastreamsource** 物件會將個別的框架編碼成影片串流。 呼叫這個類別的函式，並傳入在上一個步驟中建立的 **MediaEncodingProfile** 。 將緩衝區時間設定為零，並註冊 [啟動](/uwp/api/windows.media.core.mediastreamsource.starting) 和 [SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested) 事件的處理常式，這將在本文稍後顯示。 接下來，請建立 **MediaTranscoder** 類別的新實例，並啟用硬體加速。
 
 - **建立輸出** 檔此方法中的最後一個步驟，是建立將轉碼影片的目標檔案。 在此範例中，我們只會在裝置上的影片庫資料夾中建立唯一的命名檔案。 請注意，為了存取此資料夾，您的應用程式必須在應用程式資訊清單中指定「影片庫」功能。 建立檔案之後，請開啟檔案進行讀取和寫入，然後將產生的資料流程傳遞至 **EncodeAsync** 方法，以顯示下一步。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_SetupEncoding":::
 
 ## <a name="start-encoding"></a>開始編碼
-現在主要物件已經初始化， **EncodeAsync** 方法會實作為開始進行捕捉作業。 這個方法會先檢查以確定我們尚未錄製，如果不是，則會呼叫 helper 方法 **StartCapture** 來開始從畫面中捕獲畫面格。 本文稍後會顯示這個方法。 接下來，使用我們在上一節中建立的編碼設定檔，呼叫 [PrepareMediaStreamSourceTranscodeAsync](/uwp/api/windows.media.transcoding.mediatranscoder.preparemediastreamsourcetranscodeasync) 來取得 **MediaTranscoder** 準備好將 **>mediastreamsource** 物件所產生的影片串流轉碼至輸出檔案資料流程。 備妥轉碼程式之後，請呼叫 [TranscodeAsync](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 以開始轉碼。 如需有關使用 **MediaTranscoder**的詳細資訊，請參閱 [轉碼媒體](/windows/uwp/audio-video-camera/transcode-media-files)檔案。
+現在主要物件已經初始化， **EncodeAsync** 方法會實作為開始進行捕捉作業。 這個方法會先檢查以確定我們尚未錄製，如果不是，則會呼叫 helper 方法 **StartCapture** 來開始從畫面中捕獲畫面格。 本文稍後會顯示這個方法。 接下來，使用我們在上一節中建立的編碼設定檔，呼叫 [PrepareMediaStreamSourceTranscodeAsync](/uwp/api/windows.media.transcoding.mediatranscoder.preparemediastreamsourcetranscodeasync) 來取得 **MediaTranscoder** 準備好將 **>mediastreamsource** 物件所產生的影片串流轉碼至輸出檔案資料流程。 備妥轉碼程式之後，請呼叫 [TranscodeAsync](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) 以開始轉碼。 如需有關使用 **MediaTranscoder**的詳細資訊，請參閱 [轉碼媒體](./transcode-media-files.md)檔案。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_EncodeAsync":::
 
 ## <a name="handle-mediastreamsource-events"></a>處理 >mediastreamsource 事件
 **>mediastreamsource**物件會採用我們從畫面捕捉的畫面格，並將其轉換成可使用**MediaTranscoder**儲存至檔案的影片串流。 我們會透過物件事件的處理常式，將畫面格傳遞給 **>mediastreamsource** 。
 
-當 **>mediastreamsource**準備好新的影片框架時，就會引發[SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested)事件。 確定目前正在錄製之後，就會呼叫 helper 方法 **WaitForNewFrame** 來取得從畫面中捕捉到的新框架。 本文章稍後所示的這個方法會傳回包含已捕捉框架的 [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件。 在此範例中，我們會將 **IDirect3DSurface** 介面包裝在協助程式類別中，此類別也會儲存捕獲框架的系統時間。 畫面格和系統時間都會傳遞至[MediaStreamSample. CreateFromDirect3D11Surface](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) factory 方法，而產生的[MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample)會設定為[MediaStreamSourceSampleRequestedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs)的[MediaStreamSourceSampleRequest 範例](MediaStreamSourceSampleRequest.Sample)屬性。 這是提供給 **>mediastreamsource**的捕獲框架的方式。
+當 **>mediastreamsource**準備好新的影片框架時，就會引發[SampleRequested](/uwp/api/windows.media.core.mediastreamsource.samplerequested)事件。 確定目前正在錄製之後，就會呼叫 helper 方法 **WaitForNewFrame** 來取得從畫面中捕捉到的新框架。 本文章稍後所示的這個方法會傳回包含已捕捉框架的 [ID3D11Surface](/uwp/api/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件。 在此範例中，我們會將 **IDirect3DSurface** 介面包裝在協助程式類別中，此類別也會儲存捕獲框架的系統時間。 畫面格和系統時間都會傳遞至[MediaStreamSample. CreateFromDirect3D11Surface](/uwp/api/windows.media.core.mediastreamsample.createfromdirect3d11surface) factory 方法，而產生的[MediaStreamSample](/uwp/api/windows.media.core.mediastreamsample)會設定為[MediaStreamSourceSampleRequestedEventArgs](/uwp/api/windows.media.core.mediastreamsourcesamplerequestedeventargs)的[MediaStreamSourceSampleRequest 範例](/uwp/api/windows.media.core.mediastreamsourcesamplerequest.sample)屬性。 這是提供給 **>mediastreamsource**的捕獲框架的方式。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/MainPage.xaml.cs" id="snippet_OnMediaStreamSourceSampleRequested":::
 
@@ -152,5 +152,5 @@ Frame 事件和 closed 事件會新增至陣列，因此我們可以在 capture 
 
 ## <a name="see-also"></a>另請參閱
 
-* [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)
+* [Windows.Graphics.Capture 命名空間](/uwp/api/windows.graphics.capture)
 * [螢幕擷取](screen-capture.md)

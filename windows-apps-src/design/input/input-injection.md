@@ -4,15 +4,15 @@ title: 透過輸入插入模擬使用者輸入
 label: Input injection
 template: detail.hbs
 keywords: device, digitizer, input, interaction, injection, 裝置, 數位板, 輸入, 互動, 插入
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f06414362b6a821233eabfb396ae59001f35c30d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156892"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219681"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 

@@ -4,18 +4,18 @@ title: 鍵盤快速操作
 label: Keyboard accelerators
 template: detail.hbs
 keywords: 鍵盤, 快速操作, 快速鍵, 鍵盤快速鍵, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動, 遊戲台, 遠端
-ms.date: 10/10/2017
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a3231f608984c9d1f67df71de9cab4cfecd9a13
-ms.sourcegitcommit: deb2867924ce16efcabfa011892157b7aa4fa2d2
+ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89187893"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219951"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -331,7 +331,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由於功能在應用程式之間各有不同，此建議不一定可行。
 
-| **編輯中** | **常見鍵盤快速操作** |
+| **編輯** | **常見鍵盤快速操作** |
 | ------------- | ----------------------------------- |
 | 開始編輯模式 | Ctrl + E |
 | 選取焦點所在控制項或視窗中的所有項目 | Ctrl + A |

@@ -3,16 +3,16 @@ Description: 探索桌面 Win32 應用程式用來傳送快顯通知的不同選
 title: 傳統型應用程式的快顯通知
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.date: 05/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、win32、desktop、快顯通知、傳統型橋接器、msix、sparse 套件、傳送快顯通知、com 伺服器、com activator、com、假 com、無 com、無 com、傳送快顯通知的選項
 ms.localizationpriority: medium
-ms.openlocfilehash: e2a70ebddd649b43424222e40165b19c9d567850
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 478c478fa6892e4b61ac1a7d6e22089720e96ca7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156712"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220070"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 

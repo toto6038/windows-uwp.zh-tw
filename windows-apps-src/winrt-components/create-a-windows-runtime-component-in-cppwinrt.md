@@ -5,12 +5,12 @@ ms.date: 07/06/2020
 ms.topic: article
 keywords: windows 10、uwp、windows、執行時間、元件、元件、Windows 執行階段元件、WRC、c + +/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: 25286260c4abd6686939393b3bf81df818879bf9
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: adf13308b1a2c360d7db53ded4edfe866de6c260
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804748"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220311"
 ---
 # <a name="windows-runtime-components-with-cwinrt"></a>使用 C++/WinRT 的 Windows 執行階段元件
 
@@ -145,4 +145,4 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 | 徵狀 | 補救方法 |
 |---------|--------|
-|在 c + +/WinRT 應用程式中，使用使用 XAML 的 [c # Windows 執行階段元件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) 時，編譯器會產生格式為 "*' MyNamespace_XamlTypeInfo ' 的錯誤：不是 ' WinRT：： MyNamespace ' 的成員*， &mdash; 其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在 `pch.h` 使用 c + +/WinRT 應用程式中，新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 適當的取代*MyNamespace* 。 |
+|在 c + +/WinRT 應用程式中，使用使用 XAML 的 [c # Windows 執行階段元件](./creating-windows-runtime-components-in-csharp-and-visual-basic.md) 時，編譯器會產生格式為 "*' MyNamespace_XamlTypeInfo ' 的錯誤：不是 ' WinRT：： MyNamespace ' 的成員*， &mdash; 其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在 `pch.h` 使用 c + +/WinRT 應用程式中，新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>` &mdash; 適當的取代*MyNamespace* 。 |

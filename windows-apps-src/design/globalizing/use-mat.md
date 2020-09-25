@@ -1,21 +1,21 @@
 ---
-Description: 多語系應用程式工具組（材料）4.0 與 Microsoft Visual Studio 2019 整合，為 Windows 應用程式提供翻譯支援、翻譯檔案管理和編輯器工具。
+Description: 多語應用程式工具組 (的) 4.0 與 Microsoft Visual Studio 2019 整合，以提供具有翻譯支援、翻譯檔案管理和編輯器工具的 Windows 應用程式。
 title: 使用多語應用程式工具組
 template: detail.hbs
-ms.date: 01/23/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: f11ee858be112db899e0fd25dd2fe274d5a092fd
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 4759be8b4e386620243cd587df1ac0bd3e6b0033
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970963"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217101"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
-多語系應用程式工具組（材料）4.0 與 Microsoft Visual Studio 2019 整合，為 Windows 應用程式提供翻譯支援、翻譯檔案管理和編輯器工具。 以下是一些工具組的價值主張。
+多語應用程式工具組 (的) 4.0 與 Microsoft Visual Studio 2019 整合，以提供具有翻譯支援、翻譯檔案管理和編輯器工具的 Windows 應用程式。 以下是一些工具組的價值主張。
 
 - 可協助您在開發期間管理資源變更與翻譯狀態。
 - 提供根據設定的翻譯提供者選擇語言的 UI。
@@ -38,10 +38,10 @@ ms.locfileid: "82970963"
 
 多語應用程式工具組 4.0 (MAT 4.0) 有兩個部分，每個部分都有自己的安裝程式。
 
-- [適用于 Visual Studio 2017 和更新版本的多語系應用程式工具組4.0 延伸](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)模組。 這包含適用于 Visual Studio 2019 的4.0 延伸模組，格式為 .vsix 安裝程式。
+- [適用于 Visual Studio 2017 和更新版本的多語應用程式工具組4.0 擴充](https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308)功能。 這包含 Visual Studio 2019 的4.0 副檔名（以 .vsix 安裝程式的形式）。
 - [多語應用程式工具組 4.0 編輯器](https://developer.microsoft.com/windows/develop/multilingual-app-toolkit)。 其中包含 MAT 4.0 獨立多語編輯器工具，其形式為 .msi 安裝程式。 它同時也包含適用於 Visual Studio 2015 和 Visual Studio 2013 的 MAT 4.0 延伸模組。
 
-如果您使用 Visual Studio 2017 或 Visual Studio 2019，則請下載並執行兩個安裝程式（一次一個）。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
+如果您使用 Visual Studio 2017 或 Visual Studio 2019，則請下載並執行兩個安裝程式（另一個）。 若您是使用 Visual Studio 2015 或 Visual Studio 2013，請下載並執行 .msi 安裝程式。
 
 ### <a name="step-3-enable-the-multilingual-app-toolkit-for-your-project"></a>步驟 3： 為您的專案啟用多語應用程式工具組
 
@@ -58,7 +58,7 @@ ms.locfileid: "82970963"
 請依照下列步驟來將語言新增到您的專案。
 
 1. 在 \[方案總管\] 中，以滑鼠右鍵按一下專案節點。
-2. 按一下 [**多語系應用程式工具** > 組] [**新增翻譯語言**]。
+2. 按一下**Multilingual App Toolkit**[  >  **新增翻譯語言**] 多語應用程式工具組 .。。
 3. 在 \[翻譯語言\] 對話方塊中，選取您想要支援的語言，然後按一下 \[確定\]。
 
 工具組會反映並執行下列作業。
@@ -82,8 +82,8 @@ ms.locfileid: "82970963"
 請依照下列步驟來虛擬當地語系化並測試您的專案。
 
 1. 使用 \[翻譯語言\] 對話方塊來將虛擬語言 (Pseudo) \[qps-ploc\] 新增到您的專案。
-2. 以滑鼠右鍵按一下`<project-name>.qps-ploc.xlf`方案總管中的檔案，然後按一下 [**多語系應用程式工具** > 組] [**產生機器翻譯**]。
-3. 在 [**設定** > **時間 & 語言** > **區域 & 語言** > **語言] 中，按一下**[**新增語言**]。
+2. 在方案總管中的檔案上按一下滑鼠右鍵 `<project-name>.qps-ploc.xlf` ，然後按一下 [ **Multilingual App Toolkit**  >  **產生電腦翻譯**多語應用程式工具組。
+3. 在 [**設定**  >  **時間] & 語言**  >  **區域 & 語言**  >  **語言**中，按一下 [**新增語言**]。
 5. 在搜尋方塊中，輸入 `qps-ploc`。
 6. 按一下 `English (qps-ploc)` 以新增它。
 7. 從語言清單中，選取 `English (qps-ploc)`，然後按一下 **\[設定成預設值\]**。
@@ -115,11 +115,11 @@ ms.locfileid: "82970963"
 
 #### <a name="option-2-send-the-xlf-files-to-a-third-party-for-translation"></a>選項 2。 將 .xlf 檔案傳送到協力廠商進行翻譯
 
-若要將翻譯和編輯工作外包給當地語系化人員，請在方案總管中選取所需的 xlf 檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [**多語系應用程式工具** > 組] [**匯出翻譯**...]。
+若要將翻譯和編輯工作外包給當地語系化人員，請在方案總管中選取所需的 xlf 檔案，以滑鼠右鍵**Multilingual App Toolkit**按一下它們，然後按一下 [  >  **匯出翻譯**] 多語應用程式工具組
 
 在匯出字串資源對話方塊中選取 **\[輸出: 郵件收件者\]**，然後按一下 \[確定\]，您的檔案便會進行壓縮並附加到新的電子郵件。 選取 **\[輸出: 檔案資料夾位置\]**，瀏覽資料夾並按一下 \[確定\]，選擇性的選擇要壓縮的檔案，再次按一下 \[確定\]，您的檔案便會 (在壓縮之後) 儲存到您選擇的位置，位於以您的專案命名的新資料夾中。
 
-在您負責當地語系化的人員完成工作，並將翻譯完的 .xlf 檔案傳送給您之後，您便可以將檔案匯入到您的專案中。 在方案總管中選取所需的 xlf 檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [**多語系應用程式工具** > 組匯**入/回收翻譯**...]。按一下 [**新增**]，流覽至 xlf 或 .zip 檔案，然後按一下 [匯**入**]。
+在您負責當地語系化的人員完成工作，並將翻譯完的 .xlf 檔案傳送給您之後，您便可以將檔案匯入到您的專案中。 在方案總管中選取所需的 xlf 檔案，以滑鼠右鍵按一下它們， **Multilingual App Toolkit**然後按一下 [匯  >  **入/回收翻譯**] 多語應用程式工具組按一下 [**新增**]，流覽至 xlf 或 .zip 檔案，然後按一下 [匯**入**]。
 
 **注意**：匯入處理序會在匯入前執行基本的驗證。 這會確保匯入檔案中的目標文化資訊與現有的 .xlf 檔案相符。
 
@@ -131,7 +131,7 @@ ms.locfileid: "82970963"
 - [Keywords Studios](https://www.keywordsstudios.com/)
 - [Lionbridge](https://www.lionbridge.com)
 - [Moravia](https://www.rws.com/what-we-do/rws-moravia/)
-- [SDL](https://www.sdl.com/translate/get-started/instant-quote.html)
+- [Sdl](https://www.sdl.com/translate/get-started/instant-quote.html)
 - [Welocalize](https://www.welocalize.com/)
 
 > [!NOTE]
@@ -161,7 +161,7 @@ ms.locfileid: "82970963"
 ## <a name="related-topics"></a>相關主題
 
 * [當地語系化您的 UI 及應用程式套件資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
-* [全球化與當地語系化](globalizing-portal.md)
+* [全球化和當地語系化](globalizing-portal.md)
 * [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
 * [讓您的應用程式可當地語系化](prepare-your-app-for-localization.md)
 * [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)

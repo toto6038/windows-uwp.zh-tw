@@ -2,19 +2,19 @@
 description: 連接動畫可讓兩個不同檢視之間元素的轉換有動畫效果，而產生動態且迷人的瀏覽體驗。
 title: 連接動畫
 template: detail.hbs
-ms.date: 10/04/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ff252faf4dd49929ec46c2ceaa02f94011e6b225
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 770f859cfb90dde4f3960492479beb6192c12c8f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169322"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217781"
 ---
 # <a name="connected-animation-for-windows-apps"></a>適用于 Windows 應用程式的連線動畫
 

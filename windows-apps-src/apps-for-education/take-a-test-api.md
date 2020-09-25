@@ -2,16 +2,16 @@
 Description: Microsoft 進行測驗 app 的 JavaScript API 可讓您執行安全性評定。 「進行測驗」提供了安全的瀏覽器，可防止學生在測驗期間使用其他電腦或網際網路資源。
 title: 進行測驗 JavaScript API。
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 08/08/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: f5894e80c11d69c91be8492b80c3200e15a3dc31
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2eeb190fc95e46a95813affd432948d38c0328a4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161262"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218391"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
@@ -30,13 +30,13 @@ ms.locfileid: "89161262"
 
 安全性命名空間可讓您鎖定裝置、檢查使用者和系統進程的清單、取得 MAC 和 IP 位址，以及清除快取的 web 資源。
 
-| 方法 | 說明   |
+| 方法 | 描述   |
 |--------|---------------|
 |[鎖定](#lockDown) | 鎖定裝置以進行考試。 |
 |[isEnvironmentSecure](#isEnvironmentSecure) | 判斷是否依舊將鎖定內容套用至裝置。 |
 |[getDeviceInfo](#getDeviceInfo) | 取得有關考試應用程式執行所在平台的詳細資訊。 |
 |[examineProcessList](#examineProcessList)|取得執行中使用者及系統處理程序的清單。|
-|[關閉](#close) | 關閉瀏覽器並將裝置解除鎖定。 |
+|[close](#close) | 關閉瀏覽器並將裝置解除鎖定。 |
 |[getPermissiveMode](#getPermissiveMode)|檢查寬鬆模式是開啟還是關閉。|
 |[setPermissiveMode](#setPermissiveMode)|將寬鬆模式切換為開啟或關閉。|
 |[emptyClipBoard](#emptyClipBoard)|清除系統剪貼簿。|
@@ -58,7 +58,7 @@ ms.locfileid: "89161262"
 `void SecureBrowser.security.lockDown(Boolean enable, Function onSuccess, Function onError);`
 
 **參數**  
-* `enable` - **true** 表示在鎖定畫面上方執行「進行測試」應用程式，並套用本 [檔](https://docs.microsoft.com/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中討論的原則。 **false** 會在鎖定畫面上停止執行 [進行測驗] 並將其關閉 (除非未將 App 鎖定)；在這種情況下沒有任何作用。  
+* `enable` - **true** 表示在鎖定畫面上方執行「進行測試」應用程式，並套用本 [檔](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中討論的原則。 **false** 會在鎖定畫面上停止執行 [進行測驗] 並將其關閉 (除非未將 App 鎖定)；在這種情況下沒有任何作用。  
 * `onSuccess` -[選擇性] 已成功啟用或停用鎖定之後要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 * `onError` -[選擇性] 鎖定作業失敗時要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 

@@ -5,15 +5,15 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆, 滑鼠, 觸控板, 觸控 ,指標, 輸入, 使用者互動
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f544b73e069827f3c680db45797081605ce41b63
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11402ae9f2ea99c583d82d1998ad238eac44576c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173452"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219851"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
@@ -58,7 +58,7 @@ Windows 應用程式可以接聽下列指標事件：
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
 <td align="left"><p>這會在平台取消指標時發生。 此會在以下情況發生：</p>
 <ul>
 <li>在輸入表面的範圍內偵測到手寫筆時，即會取消觸控指標。</li>
@@ -69,7 +69,7 @@ Windows 應用程式可以接聽下列指標事件：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>在另一個 UI 元素擷取指標、指標被釋放，或另一個指標以程式設計方式被擷取時，即會發生此情況。</p>
 <div class="alert">
 <strong>注意</strong>   沒有對應的指標捕捉事件。
@@ -79,43 +79,43 @@ Windows 應用程式可以接聽下列指標事件：
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
 <td align="left"><p>當指標進入元素的界限區域時，即會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
 <li>觸控需要手指接觸點來引發此事件，不論是從元素上直接向下觸碰，或是移到元素的界限區域內均可。</li>
 <li>滑鼠和觸控板一律會在螢幕上顯示一個游標，即使沒有按下滑鼠或觸控板按鈕，仍會引發此事件。</li>
-<li>如同觸控，手寫筆會透過從元素上直接向下觸碰，或是移到元素的界限區域內來引發此事件。 但是，手寫筆也有暫留狀態 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，當此狀態為 true 時，便會引發此事件。</li>
+<li>如同觸控，手寫筆會透過從元素上直接向下觸碰，或是移到元素的界限區域內來引發此事件。 但是，手寫筆也有暫留狀態 (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，當此狀態為 true 時，便會引發此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
 <td align="left"><p>當指標離開元素的界限區域時，即會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
 <li>觸控需要手指接觸點，並且在將指標移出元素的界限區域時引發此事件。</li>
 <li>滑鼠和觸控板一律會在螢幕上顯示一個游標，即使沒有按下滑鼠或觸控板按鈕，仍會引發此事件。</li>
-<li>如同觸控，手寫筆會在移出元素的界限區域時引發此事件。 不過，手寫筆也有暫留狀態 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，當此狀態從 true 變更為 false 時，就會引發此事件。</li>
+<li>如同觸控，手寫筆會在移出元素的界限區域時引發此事件。 不過，手寫筆也有暫留狀態 (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，當此狀態從 true 變更為 false 時，就會引發此事件。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
 <td align="left"><p>當指標在元素的界限區域內變更座標、按鈕狀態、壓力、傾斜或接觸幾何時 (例如，寬度與高度)，就會發生此情況。 針對觸控、觸控板、滑鼠及手寫筆輸入，發生此情況的方式會稍有不同。</p>
 <ul>
 <li>觸控需要手指接觸點，而且只會在接觸點位於元素的界限區域內時引發此事件。</li>
 <li>滑鼠和觸控板一律會在螢幕上顯示一個游標，即使沒有按下滑鼠或觸控板按鈕，仍會引發此事件。</li>
-<li>如同觸控，手寫筆會在接觸點位於元素的界限區域內時引發此事件。 不過，手寫筆也有暫留狀態 (<a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，當此狀態為 True 並位於元素的界線區域內時，就會引發此事件。</li>
+<li>如同觸控，手寫筆會在接觸點位於元素的界限區域內時引發此事件。 不過，手寫筆也有暫留狀態 (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>)，當此狀態為 True 並位於元素的界線區域內時，就會引發此事件。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
 <td align="left"><p>當指標指出元素界限區域內的按下動作 (例如，觸控向下、滑鼠向下、手寫筆向下或觸控板按鈕向下) 時，即會發生此情況。</p>
 <p><a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> 必須從此事件的處理常式中呼叫。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
 <td align="left"><p>當指標指出元素界限區域內的放開動作 (例如，觸控向上、滑鼠按鈕向上、手寫筆向上或觸控版按鈕向上)，或如果指標在界限區域外部被擷取時，即會發生此情況。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
 <td align="left"><p>發生於旋轉滑鼠滾輪時。</p>
 <p>滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> 事件建立指標與該按鈕的次要關聯。</p></td>
 </tr>

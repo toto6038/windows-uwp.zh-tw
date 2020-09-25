@@ -2,16 +2,16 @@
 Description: 您可以選取螢幕擷取畫面、標誌及其他美工圖案資產 (例如預告片和促銷影像) 加入您應用程式的市集清單中。
 title: 應用程式螢幕擷取畫面、影像及預告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
-ms.date: 03/07/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
-ms.openlocfilehash: da9d6517a43550693596d15c735e3134c5c60a7a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be46e33ccc97545b86321e2e520b79c5a74f7a2e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155312"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219761"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 

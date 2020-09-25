@@ -3,15 +3,15 @@ ms.assetid: ''
 title: 在您的 Windows 應用程式中支援 Surface Dial (及其他轉盤裝置)
 description: 為您的 Windows 應用程式) 的 Surface Dial (和其他輪子裝置新增支援的逐步教學課程。
 keywords: dial, 轉盤, 弧形, 教學
-ms.date: 03/11/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8edd7a9345f93d3cf0abe76f68c321a977ee2e50
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cc1618432d35687fe1bfa619396bc2b798dd40bf
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173372"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216921"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app"></a>教學課程：支援 Windows 應用程式中) 的 Surface Dial (和其他輪子裝置
 
@@ -38,7 +38,7 @@ Dial 支援三個基本手勢︰
 - 旋轉以反白顯示功能表項目 (如果功能表作用中)，或修改 App 中目前的動作 (如果功能表不在作用中)。
 - 按一下以選取反白顯示的功能表項目 (如果功能表作用中) 或在 App 中叫用命令 (如果功能表不在作用中)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 * 執行 Windows 10 Creators Update 或更新版本的電腦 (或虛擬機器)
 * [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
@@ -85,7 +85,7 @@ Dial 支援三個基本手勢︰
 
 這些物件提供 Windows 應用程式的大量輪子裝置體驗。
 
-| 元件 | 說明 |
+| 元件 | 描述 |
 | --- | --- |
 | [**RadialController** 類別](/uwp/api/Windows.UI.Input.RadialController)及相關 | 表示轉盤輸入裝置或配件，例如 Surface Dial。 |
 | [**IRadialControllerConfigurationInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)  / [ **IRadialControllerInterop**](/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱 [Windows 的傳統桌面範例](https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController)。 | 啟用與 Windows 應用程式的互通性。 |
@@ -609,7 +609,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 
     <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="600" height="400" allowFullScreen frameBorder="0"></iframe>  
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>摘要
 
 恭喜，您已完成 *開始教學課程：支援 Windows 應用程式) Surface Dial (和其他輪子裝置*！ 我們向您示範在您的 Windows 應用程式中支援輪子裝置所需的基本程式碼，以及如何提供 **RadialController** api 所支援的一些更豐富的使用者體驗。
 
