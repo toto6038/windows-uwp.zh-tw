@@ -2,16 +2,16 @@
 description: 本文說明如何在您的 Windows 應用程式中新增拖放功能。
 title: 拖放
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e661eb0859e9720e31fabb6e5a7b33857de28b7
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 8ab8d696ddb1a4ef9e3dc3549754cbf51fc91374
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363671"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220541"
 ---
 # <a name="drag-and-drop"></a>拖放
 

@@ -2,22 +2,22 @@
 Description: 本主題列出適用于 Windows 應用程式的字型，這些字型會當地語系化成美國英文以外的語言。
 title: 國際字型
 template: detail.hbs
-ms.date: 11/02/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: aa0b560ad684ba230e0a498b9069d24d510f49c0
-ms.sourcegitcommit: 0dee502484df798a0595ac1fe7fb7d0f5a982821
+ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82970903"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220601"
 ---
 # <a name="international-fonts"></a>國際字型
 
 本主題列出適用于 Windows 應用程式的字型，這些字型會當地語系化成美國英文以外的語言。
 
-在下表中，[語言標記] 欄會列出語言的[BCP-47 語言標記](https://tools.ietf.org/html/bcp47)。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
+在下表中，「語言標記」資料行會列出語言的 [BCP-47 語言標記](https://tools.ietf.org/html/bcp47) 。 如需查看 Microsoft Store 特別支援的語言標記清單，請參閱[支援的語言](../../publish/supported-languages.md)。
 
 | Language | 語言標記 | Windows 中使用的字型 |
 | --------- | ----------- | -------------------- |
@@ -30,9 +30,9 @@ ms.locfileid: "82970903"
 | 亞塞拜然文 (拉丁) | az-Latn-AZ | Segoe UI |
 | 孟加拉文 (孟加拉) | bn-BD | Nirmala UI |
 | 孟加拉文 (印度) | bn-IN | Nirmala UI |
-| 巴斯克文 (巴斯克) | eu-ES | Segoe UI |
+| 巴斯克文 (巴斯克文) | eu-ES | Segoe UI |
 | 白俄羅斯文 | be-BY | Segoe UI |
-| 波士尼亞文 (拉丁文) | bs-Latn-BA | Segoe UI |
+| 波士尼亞文 (拉丁) | bs-Latn-BA | Segoe UI |
 | 保加利亞文 | bg-BG | Segoe UI |
 | 卡達隆尼亞文 | ca-ES | Segoe UI |
 | 中部庫德文 (阿拉伯文) | ku-ARAB-IQ | Segoe UI |
@@ -50,13 +50,13 @@ ms.locfileid: "82970903"
 | 菲律賓文 | fil-PH | Segoe UI |
 | 芬蘭文 | fi-FI | Segoe UI |
 | 法文 | fr-FR | Segoe UI |
-| 加利西亞文 | gl-ES | Segoe UI |
+| 加里斯亞文 | gl-ES | Segoe UI |
 | 喬治亞文 | ka-GE | Segoe UI |
 | 德文 | de-DE | Segoe UI |
 | 希臘文 | el-GR | Segoe UI |
 | 古吉拉特文 | gu-IN | Nirmala UI |
 | 豪沙文 (拉丁) | ha-Latn-NG | Segoe UI |
-| Hebrew | he-IL | Segoe UI |
+| 希伯來文 | he-IL | Segoe UI |
 | Hindi | hi-IN | Nirmala UI |
 | 匈牙利文 | hu-HU | Segoe UI |
 | 冰島文 | is-IS | Segoe UI |
@@ -71,7 +71,7 @@ ms.locfileid: "82970903"
 | 哈薩克文 | kk-KZ | Segoe UI |
 | 高棉文 | km-KH | Leelawadee UI |
 | 基切文 | qut-GT | Segoe UI |
-| 盧安達文 | rw-RW | Segoe UI |
+| 金揚萬答文 | rw-RW | Segoe UI |
 | 史瓦希里文 | sw-KE | Segoe UI |
 | 貢根文 | kok-IN | Nirmala UI |
 | 韓文 | ko-KR | Malgun Gothic |
@@ -116,7 +116,7 @@ ms.locfileid: "82970903"
 | 韃靼文 | tt-RU | Segoe UI |
 | 泰盧固文 | te-IN | Nirmala UI |
 | 泰文 | th-TH | Leelawadee UI |
-| 提格利尼亞文 | ti-ET | Ebrima |
+| 提格里尼亞文 | ti-ET | Ebrima |
 | 土耳其文 | tr-TR | Segoe UI |
 | 土庫曼文 | tk-TM | Segoe UI |
 | 烏克蘭文 | uk-UA | Segoe UI |

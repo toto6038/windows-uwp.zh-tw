@@ -3,19 +3,19 @@ Description: 瞭解如何使用 Windows 應用程式中的鍵盤、遊戲台和�
 title: 使用鍵盤、遊戲台、遠端控制與協助工具以程式設計方式進行焦點瀏覽
 label: Programmatic focus navigation
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 887d8329cc95d735ba33ff8dafc5105874206eaf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ef2e62404766d822343537cea2aca8e512482093
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172542"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220531"
 ---
 # <a name="programmatic-focus-navigation"></a>程式設計焦點瀏覽
 

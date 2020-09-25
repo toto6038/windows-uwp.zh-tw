@@ -4,16 +4,16 @@ title: Surface Dial 互動
 label: Surface Dial interactions
 template: detail.hbs
 keywords: Surface Dial、Windows 滾輪、RadialController、Radial 控制器、使用者互動、輸入
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: b79fd57ddd089542de83e04450c768654df2f78f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e9a619fc58b1b84755e33fd36ebacd99f98d6b7f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165842"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220411"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 互動
 
@@ -27,7 +27,7 @@ Windows 滾輪裝置，例如 Surface Dial，是一種新的輸入裝置，可�
 > [!IMPORTANT]
 > 在本主題中，我們特別說明 Surface Dial 互動，但此資訊適用於所有 Windows 滾輪裝置。 
 
-| 視訊 |   |
+| 影片 |   |
 | --- | --- |
 | <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
 | *Surface Dial 應用程式合作夥伴* | *適用於開發人員的 Surface Dial* |
@@ -638,7 +638,7 @@ private void ActivateGridAtLocation(Point Location)
 ![啟用 Surface Dial 自訂工具的範例應用程式 UI 影像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *啟用 Surface Dial 自訂工具的範例應用程式 UI*
 
-## <a name="summary"></a>[摘要]
+## <a name="summary"></a>摘要
 
 本主題提供 Surface Dial 輸入裝置的概觀，以及搭配 Surface Studio 使用時，如何針對移開螢幕時的案例和放上螢幕時的案例自訂使用者體驗的 UX 與開發人員指導方針。
 

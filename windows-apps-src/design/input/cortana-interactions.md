@@ -5,15 +5,15 @@ ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 keywords: Cortana, Cortana 畫布, Cortana 設計, 使用者介面, 語音命令, VCD
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aa02956aec46280c4ed3e54547f68bc544497bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2d79f62a98e30ef67743abd6a6dd00ce24d3fa13
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160092"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220591"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 應用程式中的 Cortana 互動
 

@@ -5,15 +5,15 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 keywords: 觸控、指標、輸入、使用者互動
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 537d5aa08f61471c43ca8a965369bdd9dcdee7d3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165746"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220511"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -192,12 +192,12 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 以下提供 UWP 支援的基本觸控手勢組合。
 
-| 名稱           | 類型                 | 說明                                                                            |
+| 名稱           | 類型                 | 描述                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
 | 點選            | 靜態手勢       | 一根手指觸碰螢幕後提起手指。                                            |
 | 長按 | 靜態手勢       | 一根手指觸碰螢幕後停在原地。                                      |
 | 投影片          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向移動。                   |
-| 撥動          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向短距離移動。  |
+| Swipe          | 操作手勢 | 一或多根手指觸碰螢幕後，再往同一個方向短距離移動。  |
 | 轉動           | 操作手勢 | 二或多根手指輕觸螢幕後，往順時鐘或逆時鐘方向弧形移動。 |
 | 捏合          | 操作手勢 | 二或多根手指觸碰螢幕後，再朝靠攏的方向移動。                         |
 | 延展        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
@@ -222,7 +222,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 
 以下是指標事件及其相關事件引數的清單。
 
-| 事件或類別                                                       | 說明                                                   |
+| 事件或類別                                                       | 描述                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
 | [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | 單指觸碰螢幕時就會發生。               |
 | [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | 在相同的觸控點上提起時就會發生。                |
@@ -419,7 +419,7 @@ End Sub
 
 以下是操作事件及其相關事件引數的清單。
 
-| 事件或類別                                                                                               | 說明                                                                                                                               |
+| 事件或類別                                                                                               | 描述                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | [**ManipulationStarting 事件**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | 發生於第一次建立操作處理器時。                                                                                  |
 | [**ManipulationStarted 事件**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | 當輸入裝置開始在 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 進行操作時發生。                                            |

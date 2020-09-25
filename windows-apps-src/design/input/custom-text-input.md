@@ -5,15 +5,15 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: 鍵盤, 文字, 核心文字, 自訂文字, 文字服務架構, 輸入, 使用者互動
-ms.date: 02/08/2017
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cde343a77c41a9bb833a7484610e1c324916f8c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8a6183dcc690a8fe3b9d13cfa0e471f41f04ff30
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160142"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220571"
 ---
 # <a name="custom-text-input"></a>自訂文字輸入
 
