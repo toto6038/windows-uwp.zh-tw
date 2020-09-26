@@ -1,17 +1,17 @@
 ---
 title: 藍牙開發人員常見問題集
 description: 本文包含有關 UWP 藍牙 API 常見問題的解答。
-ms.date: 02/08/2017
+ms.date: 09/25/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d41e49f599e1fe5e835443f7c8cb732e625491e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1a5ff129afcee21b0b1b41212fb900235d5b21b4
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168592"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353718"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 
@@ -76,10 +76,12 @@ RFCOMM Api 可讓開發人員使用通訊端來執行雙向序列埠樣式的通
 
 ## <a name="can-i-access-these-apis-from-win32"></a>我可以從 Win32 存取這些 API 嗎？
 
-是，所有這些 API 應該都會運作。 這個部落格詳述呼叫[傳統型應用程式中的 Windows API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) 的方式。 
-## <a name="is-this-functionality-supposed-to-exist-on--insert-sku-here-"></a>「-在這裡插入 SKU-」** 上具有這項功能嗎？
+是，所有這些 API 應該都會運作。 這個部落格詳述呼叫[傳統型應用程式中的 Windows API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application/) 的方式。
 
-**藍牙 LE**︰ 是，所有功能都在 OneCore 中，而且應該適用於具有正常運作之藍牙 LE 堆疊的最新裝置。 
-> 警告：周邊角色與硬體相依，有些 Windows Server 版本不支援藍牙。 
+## <a name="is-this-functionality-supposed-to-exist-on-a-specific-sku"></a>這項功能是否應該存在於特定 SKU 上？
+
+**藍牙 LE**︰ 是，所有功能都在 OneCore 中，而且應該適用於具有正常運作之藍牙 LE 堆疊的最新裝置。
+
+> 警告：周邊角色與硬體相依，有些 Windows Server 版本不支援藍牙。
 
 **藍牙 BR/EDR (傳統) **：某些變化存在，但大多都有非常類似的設定檔層級支援。 請參閱[RFCOMM](send-or-receive-files-with-rfcomm.md)上的檔以及這些適用于[PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)和[手機](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)的支援設定檔檔

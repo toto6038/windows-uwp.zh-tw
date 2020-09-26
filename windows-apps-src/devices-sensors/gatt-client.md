@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd5f2b76af856dd66e2dfd0ee2b3e429199e6a19
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172282"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353758"
 ---
 # <a name="bluetooth-gatt-client"></a>藍牙 GATT 用戶端
 
@@ -109,6 +109,14 @@ bluetoothLeDevice.Dispose();
 ```
 
 如果應用程式需要再次存取裝置，則只有重新建立裝置物件以及存取特性 (在下一節討論) 才會觸發作業系統在必要時重新連接。 如果裝置在附近，您會取得裝置的存取權，否則會傳回 DeviceUnreachable 錯誤。  
+
+> [!NOTE]
+> 單獨呼叫這個方法來建立 [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) 物件，並不 (一定) 起始連接。 若要起始連線，請將 [GattSession MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) 至 `true` ，或在 **BluetoothLEDevice**上呼叫未快取的服務探索方法，或對裝置執行讀取/寫入作業。
+>
+> - 如果 **GattSession** 是設定為 true，則系統會無限期等候連線，而且會在裝置可用時連線。 您的應用程式不需要等待，因為 **GattSession MaintainConnection** 是屬性。
+> - 針對服務探索和 GATT 中的讀取/寫入作業，系統會等待有限但可變的時間。 從瞬間到幾分鐘的任何事物。 因素會包含堆疊上的流量，以及佇列要求的方式。 如果沒有其他擱置的要求，而且無法連線到遠端裝置，系統會在此時間之前等候七 (7) 秒。如果有其他暫止的要求，則佇列中的每個要求都可能需要七 (7) 秒來處理，因此，您可以將其他要求放到佇列的最後面，您將會等待較久的時間。
+>
+> 您目前無法取消連接處理常式。
 
 ## <a name="enumerating-supported-services-and-characteristics"></a>列舉支援的服務和特性
 
