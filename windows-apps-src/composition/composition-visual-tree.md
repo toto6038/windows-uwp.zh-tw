@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d85df48b4f43759013f80623595d919ac6c77337
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: a488126de73fccfd8a783ddde98b4245b46ced39
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593432"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366864"
 ---
 # <a name="composition-visual"></a>組合視覺效果
 
@@ -24,10 +24,10 @@ ms.locfileid: "90593432"
 - [**Visual**](/uwp/api/Windows.UI.Composition.Visual) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
 - [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) – 衍生自 [**Visual**](/uwp/api/Windows.UI.Composition.Visual)，並且會新增建立子系的能力。
   - [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 能夠建立筆刷的關聯性，讓視覺效果可以轉譯圖元，包括影像、效果或純色。
-  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 視覺效果的子系會壓平合併成單一圖層。<br/> (_在 Windows 10 1607 版、SDK 14393 中引進。_) 
-  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 屬於 CompositionShape 根目錄的視覺化樹狀結構節點。<br/> (_在 Windows 10 1803 版、SDK 17134 中引進。_) 
-  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 視覺效果會從另一個視覺效果取得其內容。<br/> (_在 WINDOWS 10 版本 1809 SDK 17763 中引進。_) 
-  - [**SceneVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 3D 場景節點的容器視覺效果。<br/> (_在 Windows 10 1903 版、SDK 18362 中引進。_) 
+  - [**LayerVisual**](/uwp/api/Windows.UI.Composition.LayerVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 視覺效果的子系會壓平合併成單一圖層。<br/> (_在 Windows 10 1607 版、SDK 14393 中引進。_) 
+  - [**ShapeVisual**](/uwp/api/Windows.UI.Composition.ShapeVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 屬於 CompositionShape 根目錄的視覺化樹狀結構節點。<br/> (_在 Windows 10 1803 版、SDK 17134 中引進。_) 
+  - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.RedirectVisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 視覺效果會從另一個視覺效果取得其內容。<br/> (_在 WINDOWS 10 版本 1809 SDK 17763 中引進。_) 
+  - [**SceneVisual**](/uwp/api/windows.ui.composition.scenes.scenevisual) –衍生自 [**system.windows.media.containervisual>**](/uwp/api/Windows.UI.Composition.ContainerVisual)。 3D 場景節點的容器視覺效果。<br/> (_在 Windows 10 1903 版、SDK 18362 中引進。_) 
 
 您可以使用 [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) 和其子類別 (包括[**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush))，將內容和效果套用至 SpriteVisuals。 若要深入瞭解筆刷，請參閱 [**CompositionBrush 總覽**](./composition-brushes.md)。
 

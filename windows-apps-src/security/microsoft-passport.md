@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 152254e5b4c0bfb8aec1e88a8d370863df88fe85
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ecb35a262f02576f0425460c8e27ce0016a08d1a
+ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170882"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91366894"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -83,8 +83,6 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 現在我們對 Windows Hello 的運作方式已經有基本的了解，那就來看看如何在自己的應用程式中使用它們。
 
 我們有幾個可使用 Windows Hello 來實作的不同案例。 例如，就只是登入您裝置上的應用程式而已。 另一個常見的案例，就是向服務進行驗證。 您將不會使用登入名稱和密碼，而是使用 Windows Hello。 在下列章節中，我們將討論幾個不同案例的實作，包括如何使用 Windows Hello 向您的服務進行驗證，以及如何將現有的登入名稱和密碼系統，轉換成使用 Windows Hello 的系統。
-
-最後，請注意 Windows Hello API 需要使用的 Windows 10 SDK，必須符合將來執行應用程式的作業系統。 換句話說，針對將會部署到 Windows 10 的應用程式，您必須使用 10.0.10240 Windows SDK；而針對將會部署到 Windows 10 版本 1511 的應用程式，您必須使用 10.0.10586 Windows SDK。
 
 ## <a name="3-implementing-windows-hello"></a>3 實作 Windows Hello
 
