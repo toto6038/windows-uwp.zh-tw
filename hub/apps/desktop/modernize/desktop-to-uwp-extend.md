@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 29064390e4e198d1220d40ff5ce58a63ea41e29a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d0a1d1b7685ae76c26c94fa104b6c0ff6334364d
+ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172782"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90837823"
 ---
 # <a name="extend-your-desktop-app-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -43,7 +43,7 @@ ms.locfileid: "89172782"
 
 確定您的傳統型應用程式是否具有呼叫 Windows 執行階段 API 所需檔案的參考。
 
-關於此操作，請參閱[設定您的專案](desktop-to-uwp-enhance.md#set-up-your-project)一節。
+若要執行此動作，請在[傳統型應用程式中呼叫 Windows 執行階段 API](desktop-to-uwp-enhance.md)。
 
 ### <a name="add-a-uwp-project"></a>新增 UWP 專案
 
@@ -51,15 +51,15 @@ ms.locfileid: "89172782"
 
 您會在此建置現代化 XAML UI 或使用只在 UWP 處理程序中執行的應用程式。
 
-![UWP 專案](images/desktop-to-uwp/add-uwp-project-to-solution.png)
+![加入新的專案](images/desktop-to-uwp/add-uwp-project-to-solution.png)
 
 在您的封裝專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後按一下 [新增參考]  。
 
-![參考 UWP 專案](images/desktop-to-uwp/add-uwp-project-reference.png)
+![新增參考](images/desktop-to-uwp/add-uwp-project-reference.png)
 
 然後，新增 UWP 專案的參考。
 
-![參考 UWP 專案](images/desktop-to-uwp/choose-uwp-project.png)
+![選取 UWP 專案](images/desktop-to-uwp/choose-uwp-project.png)
 
 您的解決方案會如下所示：
 
@@ -471,7 +471,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 在實作背景工作的 Windows 執行階段元件中提供類別的完整名稱。
 
-![Timer 屬性](images/desktop-to-uwp/background-task-entry-point.png)
+![指定進入點](images/desktop-to-uwp/background-task-entry-point.png)
 
 <a id="register-background-task"></a>
 

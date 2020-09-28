@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: e58315ed70b889e1369e8c13a563f320c0ca1948
-ms.sourcegitcommit: a222ad0e2d97e35a60000c473808c678395376ee
+ms.openlocfilehash: 2b0d6bb305490e05c2670f0e0a326601c51a8373
+ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89479078"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90837813"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 Windows 執行階段 API
 
@@ -23,18 +23,47 @@ ms.locfileid: "89479078"
 
 某些 Windows 執行階段 API 僅在具有[套件識別資料](modernize-packaged-apps.md)的傳統型應用程式中才支援。 如需詳細資訊，請參閱[可用的 Windows 執行階段 API](desktop-to-uwp-supported-api.md)。
 
-## <a name="set-up-your-project"></a>設定專案
+## <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 專案以使用 Windows 執行階段 API
 
-您必須對您的專案進行一些變更，以便使用 Windows 執行階段 API。
+.NET 專案有數個選項：
 
-### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改 .NET 專案以使用 Windows 執行階段 API
+* 從 .NET 5 Preview 8 開始，您可以將目標 Framework Moniker (TFM) 新增至您的專案檔，以存取 WinRT API。 將 Windows 10 版本 1809 或更新版本設為目標的專案支援此選項。
+* 若為舊版 .NET，您可以安裝 `Microsoft.Windows.SDK.Contracts` NuGet 套件，以將所有必要參考新增至您的專案。 將 Windows 10 版本 1803 或更新版本設為目標的專案支援此選項。
+* 如果您的專案將 .NET 5 Preview 8 (或更新版本) 和舊版 .NET 設為多重目標，您可以將專案檔設定為使用這兩個選項。
 
-.NET 專案有兩個選項：
+### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 Preview 8 和更新版本：使用目標 Framework Moniker 選項 
 
-* 如果您的應用程式以 Windows 10 1803 版或更新版本為目標，您可以安裝 NuGet 套件，此套件提供所有必要的參考。
-* 或者，您也可以手動新增參考。
+只有使用 .NET 5 Preview 8 (或舊版) 並將 Windows 10 版本 1809 或更新作業系統版本設為目標的專案，才支援此選項。 如需更多關於此案例的背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
 
-#### <a name="to-use-the-nuget-option"></a>使用 NuGet 選項
+1. 在 Visual Studio 中開啟您的專案，在 [方案總管] 中您的專案上按一下滑鼠右鍵，然後選擇 [編輯專案檔]。 您的專案檔看起來應該類似這樣。
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
+
+2. 將 **TargetFramework** 元素的值取代為下列其中一個字串：
+
+    * **net5.0-windows10.0.17763.0**：如果您的應用程式將 Windows 10 版本 1809 設為目標，請使用此值。
+    * **net5.0-windows10.0.18362.0**：如果您的應用程式將 Windows 10 版本 1903 設為目標，請使用此值。
+    * **net5.0-windows10.0.19041.0**：如果您的應用程式將 Windows 10 版本 2004 設為目標，請使用此值。
+
+    例如，下列元素適用於將 Windows 10 版本 2004 設為目標的專案。
+
+    ```csharp
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    ```
+
+3. 儲存您的變更並關閉專案檔。
+
+### <a name="earlier-versions-of-net-install-the-microsoftwindowssdkcontracts-nuget-package"></a>舊版 .NET：安裝 Microsoft.Windows.SDK.Contracts NuGet 套件
+
+如果您的應用程式使用 .NET Core 3.x、.NET 5 Preview 7 (或更早版本) 或 .NET Framework，請使用此選項。 將 Windows 10 版本 1803 或更新作業系統版本設為目標的專案支援此選項。
 
 1. 請確定已啟用[套件參考](/nuget/consume-packages/package-references-in-project-files)：
 
@@ -47,34 +76,74 @@ ms.locfileid: "89479078"
 
 4. 找到 `Microsoft.Windows.SDK.Contracts` 套件之後，請在 [NuGet 套件管理員] 的右窗格中，根據您想要設為目標的 Windows 10 版本，選取您要安裝的套件 [版本]：
 
+    * **10.0.19041.xxxx**：針對 Windows 10 版本 2004 選擇此版本。
     * **10.0.18362.xxxx**：針對 Windows 10 版本 1903 選擇此版本。
     * **10.0.17763.xxxx**：針對 Windows 10 版本 1809 選擇此版本。
     * **10.0.17134.xxxx**：針對 Windows 10 版本 1803 選擇此版本。
 
 5. 按一下 [安裝]。
 
-#### <a name="to-add-the-required-references-manually"></a>手動新增必要的參考
+### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>設定將不同版本 .NET 設為多重目標的專案
 
-1. 開啟 [參考管理員] 對話方塊，選擇 [瀏覽] 按鈕，然後選取 [所有檔案]。
+如果您的專案將 .NET 5 Preview 8 (或更新版本) 和舊版 (包括 .NET Core 3.x 和 .NET Framework) 設為多重目標，您可以將專案檔設定為使用目標 Framework Moniker，以自動提取 .NET 5 Preview 8 (或更新版本) 的 WinRT API 參考，並使用舊版的 `Microsoft.Windows.SDK.Contracts` NuGet 套件。
 
-    ![新增參考對話方塊](images/desktop-to-uwp/browse-references.png)
+1. 在 Visual Studio 中開啟您的專案，在 [方案總管] 中您的專案上按一下滑鼠右鍵，然後選擇 [編輯專案檔]。 下列範例示範應用程式的專案檔，該應用程式使用 .NET Core 3.1。
 
-2. 新增下列所有檔案的參考。
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+      </PropertyGroup>
+    </Project>
+    ```
 
-    |檔案|位置|
-    |--|--|
-    |System.Runtime.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.WindowsRuntime.UI.Xaml.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |System.Runtime.InteropServices.WindowsRuntime.dll|C:\Windows\Microsoft.NET\Framework\v4.0.30319|
-    |windows.winmd|C:\Program Files (x86)\Windows Kits\10\UnionMetadata\\<*sdk version*>\Facade|
-    |Windows.Foundation.UniversalApiContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk version*>\Windows.Foundation.UniversalApiContract\\<*版本*>|
-    |Windows.Foundation.FoundationContract.winmd|C:\Program Files (x86)\Windows Kits\10\References\\<*sdk 版本*>\Windows.Foundation.FoundationContract\\<*version*>|
+2. 將檔案中的 **TargetFramework** 元素取代為 **TargetFrameworks** 元素 (請注意複數)。 在此元素中，為您想要設為目標的所有 .NET 版本指定目標 Framework Moniker，以分號區隔。 
 
-3. 在 [屬性] 視窗中，將每個 .winmd 檔案的 [複製本機] 欄位設定為 [False]。
+    * 若為 .NET 5 Preview 8 或更新版本，請使用下列其中一個目標 Framework Moniker：
+        * **net5.0-windows10.0.17763.0**：如果您的應用程式將 Windows 10 版本 1809 設為目標，請使用此值。
+        * **net5.0-windows10.0.18362.0**：如果您的應用程式將 Windows 10 版本 1903 設為目標，請使用此值。
+        * **net5.0-windows10.0.19041.0**：如果您的應用程式將 Windows 10 版本 2004 設為目標，請使用此值。
+    * 若為 .NET Core 3.x，請使用 **netcoreapp3.0** 或 **netcoreapp3.1**。
+    * 若為 .NET Framework，請使用 **net46**。
 
-    ![[複製本機] 欄位](images/desktop-to-uwp/copy-local-field.png)
+    下列範例示範如何將 .NET Core 3.1 和 .NET 5 Preview 8 (適用於 Windows 10 版本 2004) 設為多重目標。
 
-### <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 專案以使用 Windows 執行階段 API
+    ```csharp
+    <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+    ```
+
+3. 在 **PropertyGroup** 元素後面，新增 **PackageReference** 專案，其中包含的條件陳述式會針對您應用程式設為目標的任何 .NET Core 3.x 或 .NET Framework 版本安裝 `Microsoft.Windows.SDK.Contracts` NuGet 套件。 **PackageReference** 元素必須是 **ItemGroup** 元素的子項。 以下範例示範 .NET Core 3.1 的操作方法。
+
+    ```csharp
+    <ItemGroup>
+      <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                        Include="Microsoft.Windows.SDK.Contracts"
+                        Version="10.0.19041.0" />
+    </ItemGroup>
+    ```
+
+    完成時，您的專案檔看起來應該類似這樣。
+
+    ```csharp
+    <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+      <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFrameworks>netcoreapp3.1;net5.0-windows10.0.19041.0</TargetFrameworks>
+        <UseWPF>true</UseWPF>
+      </PropertyGroup>
+      <ItemGroup>
+        <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
+                         Include="Microsoft.Windows.SDK.Contracts"
+                         Version="10.0.19041.0" />
+      </ItemGroup>
+    </Project>
+    ```
+
+4. 儲存您的變更並關閉專案檔。
+
+## <a name="modify-a-c-win32-project-to-use-windows-runtime-apis"></a>修改 C++ Win32 專案以使用 Windows 執行階段 API
 
 使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 來取用 Windows 執行階段 API。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
 

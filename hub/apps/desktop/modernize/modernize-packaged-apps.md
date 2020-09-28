@@ -1,5 +1,5 @@
 ---
-Description: 了解如何在您已封裝在 Windows 應用程式套件中的傳統型應用程式中，為 Windows 10 使用者新增現代化體驗。
+description: 了解如何在您已封裝在 Windows 應用程式套件中的傳統型應用程式中，為 Windows 10 使用者新增現代化體驗。
 title: 讓封裝的傳統型應用程式現代化
 ms.date: 04/22/2019
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d1ce2e7dc434558ac1efd52f6def99d63b38c57e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: adcf1e26ba5ebd2d4fb3b901e27e49da4b6d89dd
+ms.sourcegitcommit: 5d7168ebc9f43aa13051446aff45a46600e6aafe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161512"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90783040"
 ---
 # <a name="features-that-require-package-identity"></a>需要套件身分識別的功能
 
@@ -33,6 +33,12 @@ ms.locfileid: "89161512"
 如果應用程式需要與系統整合 (例如：建立防火牆規則)，請在應用程式的封裝資訊清單中描述這些項目，系統會替您完成其餘的工作。 針對大部分的工作，您完全不需要撰寫任何程式碼。 只需在資訊清單中提供一些 XML，您就可以執行一些工作，像是在使用者登入時執行處理程序、將應用程式與檔案總管整合，以及將應用程式加入在其他應用程式中出現的列印目標清單。
 
 如需詳細資訊，請參閱[整合您的傳統型應用程式與套件擴充功能](desktop-to-uwp-extensions.md)。
+
+## <a name="get-activation-info-for-packaged-apps"></a>取得已封裝應用程式的啟用資訊
+
+從 Windows 10 版本 1809 開始，封裝的傳統型應用程式可以在啟動期間擷取特定種類的啟用資訊。 例如，您可以開啟檔案、按一下互動式快顯通知或使用通訊協定，取得與應用程式啟用相關的資訊。
+
+如需詳細資訊，請參閱[取得已封裝應用程式的啟用資訊](get-activation-info-for-packaged-apps.md)。
 
 ## <a name="extend-with-uwp-components"></a>使用 UWP 元件進行擴充
 

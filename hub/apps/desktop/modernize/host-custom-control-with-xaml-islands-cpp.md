@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: d61abe8b59f916ed56c1fefe0bda4b9f25b673a4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 82eaee6b29336559455a86dfdba3debc288babbb
+ms.sourcegitcommit: fd6ca4e9426a5fe46138012d1fecf56f9f621a3f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173722"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90825278"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -176,7 +176,7 @@ ms.locfileid: "89173722"
 
 ### <a name="define-a-xamlapplication-class"></a>定義 XamlApplication 類別
 
-接著，修訂 **MyUWPApp** 專案中預設的 [應用程式]  類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 稍後在本逐步解說中，您會更新傳統型專案以建立此類別的執行個體。
+接著，修訂 **MyUWPApp** 專案中預設的 [應用程式]  類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 稍後在本逐步解說中，您會更新傳統型專案以建立此類別的執行個體。
 
   > [!NOTE]
   > 每個使用 XAML Islands 的解決方案只能包含一個定義 `XamlApplication` 物件的專案。 您應用程式中的所有自訂 UWP XAML 控制項都會共用相同的 `XamlApplication` 物件。 
@@ -284,12 +284,12 @@ ms.locfileid: "89173722"
             }
         private:
             bool _contentLoaded{ false };
-            std::shared_ptr<XamlMetaDataProvider> _appProvider;
-            std::shared_ptr<XamlMetaDataProvider> AppProvider()
+            winrt::com_ptr<XamlMetaDataProvider> _appProvider;
+            winrt::com_ptr<XamlMetaDataProvider> AppProvider()
             {
                 if (!_appProvider)
                 {
-                    _appProvider = std::make_shared<XamlMetaDataProvider>();
+                    _appProvider = winrt::make_self<XamlMetaDataProvider>();
                 }
                 return _appProvider;
             }
@@ -561,7 +561,7 @@ ms.locfileid: "89173722"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系並儲存您所做的變更。 此元素會從 WinUI 程式庫新增 https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
+5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系並儲存您所做的變更。 此元素會從 WinUI 程式庫新增 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
 
     ```xml
     <StackPanel HorizontalAlignment="Center" Spacing="10" 
