@@ -5,12 +5,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 39f45b7604e71c4b57439f8c3e89548614758484
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: e832ac783c43058b24cb0d341d17ad52ff7dcc05
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "80614978"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403883"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "80614978"
         <p style="margin-top: 0px; margin-bottom: 50px">Windows 10 與通用 Windows 平台可讓您建置可在所有 Windows 裝置類型上運作且完美呈現的應用程式，或使用現代化功能來更新現有的應用程式。</p>
         <br>
         <a href="//docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">什麼是 Windows 應用程式？</a><br/>
-        <a href="//developer.microsoft.com/windows/apps/design">設計與 UI</a><br/>
+        <a href="https://docs.microsoft.com/windows/uwp/design/">設計與 UI</a><br/>
     :::column-end:::
     :::column:::
         <img src="https://docs.microsoft.com/media/illustrations/biztalk-host-integration-install-configure.svg" alt="Setup illustration" />
@@ -84,11 +84,11 @@ ms.locfileid: "80614978"
         <a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a><br/>
         <a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows 社群工具組</a><br/>
         <a href="//developer.microsoft.com/windows/downloads/virtual-machines">虛擬機器</a><br/>
-        <a href="//docs.microsoft.com/windows/wsl/about">Windows 上 Ubuntu 的 Bash</a><br/>
+        <a href="//docs.microsoft.com/windows/wsl/about">在 Windows 上 Ubuntu 上的 Bash</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">對於開發不熟悉？</h3>
-        <a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Microsoft Learn 上的 Windows</a><br/>
+        <a href="//docs.microsoft.com/learn/browse/%3Fproducts=windows&resource_type=module">Microsoft Learn 上的 Windows</a><br/>
     :::column-end:::
     :::column:::
         <h3 style="margin-top: 10px; margin-bottom: 0px">瀏覽相關文件</h3>
