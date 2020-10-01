@@ -116,17 +116,6 @@
   items:
     - name: 產生促銷碼
       href: ../publish/generate-promotional-codes.md
-    - name: 為您的應用程式建立廣告活動
-      href: ../publish/create-an-ad-campaign-for-your-app.md
-      items:
-        - name: 管理您的廣告活動
-          href: ../publish/managing-your-ad-campaign.md
-        - name: 關於自家廣告
-          href: ../publish/about-house-ads.md
-        - name: 關於社群廣告
-          href: ../publish/about-community-ads.md
-        - name: 關於廣告活動的常見問題
-          href: ../publish/common-questions.md
     - name: 建立自訂應用程式促銷活動
       href: ../publish/create-a-custom-app-promotion-campaign.md
     - name: 促銷應用程式和附加元件
