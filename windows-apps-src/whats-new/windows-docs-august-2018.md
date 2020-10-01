@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 8 月
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb6900b4d5ad529ee2e94f09439dda6abcaebac8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 92ed09940800160af8fcff6aec7dde26144cffe9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174392"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220331"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 開發人員文件的新增功能
 
@@ -58,7 +58,7 @@ Mozilla Developer Network 文件中新增了[舊版 Microsoft API 擴充功能](
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity 外掛程式
 
-Unity 的 Xbox Live 外掛程式包含對您的標題加入 Xbox Live 簽章、統計資料、朋友清單、雲端儲存空間和排行榜。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以深入了解，然後[下載 GitHub 套件](https://aka.ms/UnityPlugin)即可開始著手。
+Unity 的 Xbox Live 外掛程式包含對您的標題加入 Xbox Live 簽章、統計資料、朋友清單、雲端儲存空間和排行榜。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以深入了解，然後[下載 GitHub 套件](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi)即可開始著手。
 
 ### <a name="one-dev-question"></a>One Dev Question
 

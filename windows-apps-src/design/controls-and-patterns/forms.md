@@ -2,15 +2,15 @@
 title: 表單
 description: 了解在通用 Windows 平台 (UWP) 應用程式中用於設計和建立表單 XAML 版面配置的指導方針。
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 0113cbf50601a3db717753ab2e12524fa281daba
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304690"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219461"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 

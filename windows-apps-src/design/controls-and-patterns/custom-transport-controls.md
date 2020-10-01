@@ -4,16 +4,16 @@ title: 建立自訂媒體傳輸控制項
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5dd1a27cb02a33a8d760f4d902a42c6619ad796
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fc68410a0e68d1c642057664bc9641669282bd7f
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160412"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219541"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -217,7 +217,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 您必須將它新增至適當位置的 CommandBar。 (如需詳細資訊，請參閱「使用溢位功能表」一節)。其置於 UI 的方式取決於此按鈕在標記中的位置。 比方說，如果您想要此按鈕顯示為主要命令中的最後一個元素，則將它新增於主要命令清單的最尾端。
 
-您也可以自訂此按鈕的圖示。 如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> 參考。
+您也可以自訂此按鈕的圖示。 如需詳細資訊，請參閱 <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> 參考。
     
 
 2. 在 [**OnApplyTemplate**](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) 覆寫中，從範本中取得按鈕，並註冊適用於其 [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的處理常式。 這個程式碼位於 `CustomMediaTransportControls` 類別中。

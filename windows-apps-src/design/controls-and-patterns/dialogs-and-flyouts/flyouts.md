@@ -2,7 +2,7 @@
 Description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
 title: 飛出視窗控制項
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 089518a340ba5c33eef5bc9bd883cbd04dcabeb9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 35f54ee6063b7f40033319c180ed23a1955aadbd
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160272"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219531"
 ---
 # <a name="flyouts"></a>飛出視窗
 

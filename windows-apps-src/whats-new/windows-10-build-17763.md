@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1f211442476ed271dfe049af65e340d6889870a9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b54e0b4417dd4ba9b835622a4c064b803de7fca9
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167012"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219702"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員的 Windows 10 (組建 17763) 的新功能
 
@@ -109,7 +109,7 @@ Windows 現在允許您執行 UWP 應用程式的多個執行個體，而每個�
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity 外掛程式
 
-Unity 的 Xbox Live 外掛程式包含對您的標題加入 Xbox Live 簽章、統計資料、朋友清單、雲端儲存空間和排行榜。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以深入了解，然後[下載 GitHub 套件](https://aka.ms/UnityPlugin)即可開始著手。
+Unity 的 Xbox Live 外掛程式包含對您的標題加入 Xbox Live 簽章、統計資料、朋友清單、雲端儲存空間和排行榜。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以深入了解，然後[下載 GitHub 套件](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/live-cr-unity-win10-nav?WT.mc_id=windowsdocs-twi)即可開始著手。
 
 ### <a name="one-dev-question"></a>One Dev Question
 

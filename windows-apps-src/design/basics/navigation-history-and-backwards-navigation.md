@@ -3,16 +3,16 @@ Description: 了解如何實作向後瀏覽，以便周遊 Windows 應用程式�
 title: 瀏覽歷程記錄和向後瀏覽
 template: detail.hbs
 op-migration-status: ready
-ms.date: 04/09/2019
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fe9cbb9fdc9d73a38642a4f5894b1ef0f8182e69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f3eb7ff033a81e358cb74e670b3235ade17e8a87
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174512"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220041"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 應用程式的瀏覽歷程記錄和向後瀏覽
 
@@ -336,14 +336,14 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>頁面之間、相同對等群組、沒有螢幕上的瀏覽元素</strong>
-<p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有可供直接瀏覽到這兩個頁面的螢幕瀏覽元素 (例如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>)。</p></td>
+<p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有可供直接瀏覽到這兩個頁面的螢幕瀏覽元素 (例如<a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>)。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
 <p>在下圖中，使用者在相同對等群組中的兩個頁面之間瀏覽，且瀏覽應新增至瀏覽歷程記錄。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>頁面之間、相同對等群組、有螢幕上的瀏覽元素</strong>
-<p>使用者從相同對等群組中的一個頁面瀏覽到另一個頁面。 兩個頁面都顯示在同一個瀏覽元素中，例如 <a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
+<p>使用者從相同對等群組中的一個頁面瀏覽到另一個頁面。 兩個頁面都顯示在同一個瀏覽元素中，例如 <a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
 <td style="vertical-align:top;"><strong>不一定</strong>
 <p>是的，新增至瀏覽歷程記錄，但有 2 個值得注意的例外。 如果您希望您的應用程式使用者頻繁在對等群組中的頁面間切換，或者如果您想要保留瀏覽階層，請勿新增到瀏覽歷程記錄。 在此情況下，當使用者按下返回時，將返回使用者瀏覽到目前對等群組之前的最後一個頁面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

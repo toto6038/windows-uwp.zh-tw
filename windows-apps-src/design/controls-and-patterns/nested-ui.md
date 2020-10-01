@@ -3,7 +3,7 @@ title: 清單項目中的巢狀 UI
 description: 了解如何在 ListView 和 GridView 項目中建立巢狀 UI，以向使用者呈現採取重要動作所需的其他選項。
 label: Nested UI in list items
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d727c9b5e4c7e2912f0bcae8848149c8073f3b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 433f24ea6c4e2fd03faa652a041f3a1c1578652e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169742"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217931"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 

@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 83e27ef72aea195268d5163dea3b050f48547d5c
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: aa72b01e6c567e55e36e7f182ca962367346980c
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412022"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220421"
 ---
 # <a name="text-block"></a>文字區塊
 
@@ -85,7 +85,7 @@ XAML 會在可行時使用更有效率的程式碼路徑來配置文字。 這�
 - [CharacterSpacing](/uwp/api/windows.ui.xaml.controls.textblock.characterspacing)：只有預設值為 0 才是快速路徑。
 - [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming)：只有 **None**、**CharacterEllipsis** 和 **WordEllipsis** 值才是快速路徑。 **Clip** 值會停用快速路徑。
 
-> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他屬性也會影響快速路徑。 如果應用程式是在舊版 Windows 上執行，這些情況也會造成您的文字在慢速路徑上轉譯。 如需版本的相關詳細資訊，請參閱[版本調適型程式碼](/windows/uwp/debug-test-perf/version-adaptive-code)。
+> **注意**&nbsp;&nbsp;在 Windows 10 版本 1607 之前，其他屬性也會影響快速路徑。 如果應用程式是在舊版 Windows 上執行，這些情況也會造成您的文字在慢速路徑上轉譯。 如需版本的相關詳細資訊，請參閱[版本調適型程式碼](../../debug-test-perf/version-adaptive-code.md)。
 - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography)：只有各種 Typography 屬性的預設值才是快速路徑。
 - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy)：如果 [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) 不是 0，則 **BaselineToBaseline** 和 **MaxHeight** 值會停用快速路徑。
 - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled)：只有 **false** 才是快速路徑。 將此屬性設為 **true** 以停用快速路徑。

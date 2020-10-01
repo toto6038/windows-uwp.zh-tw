@@ -2,15 +2,15 @@
 title: 建立自訂樣式
 description: 遵循此教學課程來了解如何建立自訂樣式和滑杆控制項，以自訂 XAML 應用程式的 UI。
 keywords: XAML, UWP, 開始使用
-ms.date: 08/20/2020
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d3423e9d78e2519f2d3c9ad1fc2c0b099de0349
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1ff5df0d56d5be6b2cbb93814d01fed48a626797
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160770"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219091"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 

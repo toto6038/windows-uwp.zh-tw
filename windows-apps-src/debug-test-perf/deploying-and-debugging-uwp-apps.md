@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1ff6a98182f4832a2a1b82bf8ceca4aa176c36
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157257"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91220351"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
@@ -178,7 +178,7 @@ C++ UWP app 的屬性頁面會看起來如下。
   - **配置資料夾路徑** = `\\NETWORK-SHARE\Layouts\App1`
   - **封裝註冊路徑** = `\\NETWORK-SHARE\Layouts\App1`
 
-當您第一次從網路登錄配置時，系統會將您的認證快取在目標裝置上，讓您不需要重複地登入。 若要移除已快取的認證，您可以使用來自 Windows 10 SDK 的 [WinAppDeployCmd.exe 工具](https://docs.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) 搭配 **deletecreds** 命令。
+當您第一次從網路登錄配置時，系統會將您的認證快取在目標裝置上，讓您不需要重複地登入。 若要移除已快取的認證，您可以使用來自 Windows 10 SDK 的 [WinAppDeployCmd.exe 工具](../packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md) 搭配 **deletecreds** 命令。
 
 當您從網路登錄配置時，無法選取 [保留裝置上的所有檔案]  ，因為沒有任何檔案被實際複製到遠端裝置上。
 

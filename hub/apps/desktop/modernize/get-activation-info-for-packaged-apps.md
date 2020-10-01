@@ -7,16 +7,16 @@ keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 748646ce335e9e68ee7a22131ebd305db94e9801
-ms.sourcegitcommit: 5d7168ebc9f43aa13051446aff45a46600e6aafe
+ms.openlocfilehash: 5593b59a542f014e482c590b8d534804c836a1a7
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90799845"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216721"
 ---
 # <a name="get-activation-info-for-packaged-apps"></a>取得已封裝應用程式的啟用資訊
 
-從 Windows 10 版本 1809 開始，封裝的傳統型應用程式可以呼叫 [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) 方法，在啟動期間擷取特定種類的啟用資訊。 例如，您可以呼叫此方法，開啟檔案、按一下互動式快顯通知或使用通訊協定，以取得與應用程式啟用相關的資訊。 從 Windows 10 版本 2004 開始，在使用[疏鬆套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)的應用程式中也支援這項功能。
+從 Windows 10 版本 1809 開始，封裝的傳統型應用程式可以呼叫 [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) 方法，在啟動期間擷取特定種類的啟用資訊。 例如，您可以呼叫此方法，開啟檔案、按一下互動式快顯通知或使用通訊協定，以取得與應用程式啟用相關的資訊。 從 Windows 10 版本 2004 開始，在使用[疏鬆套件](./grant-identity-to-nonpackaged-apps.md)的應用程式中也支援這項功能。
 
 > [!NOTE]
 > 除了使用本文所述的 [AppInstance. GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) 方法來擷取特定類型的啟用資訊以外，您也可以藉由定義 COM 類別來擷取背景工作的啟用資訊。 如需詳細資訊，請參閱[建立並註冊 winmain COM 背景工作](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task)。
@@ -66,10 +66,10 @@ static void Main()
 
 | 事件引數類型 | 封裝擴充功能 | 相關文件 | 
 |-------------------|-----------------|-----------------------|
-| [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [讓您的傳統型應用程式成為共用目標](/windows/apps/desktop/modernize/desktop-to-uwp-extend#making-your-desktop-application-a-share-target) |
-| [ProtocolActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs) | [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) | [使用通訊協定啟動您的應用程式](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-your-application-by-using-a-protocol) |
+| [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [讓您的傳統型應用程式成為共用目標](./desktop-to-uwp-extend.md#making-your-desktop-application-a-share-target) |
+| [ProtocolActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs) | [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) | [使用通訊協定啟動您的應用程式](./desktop-to-uwp-extensions.md#start-your-application-by-using-a-protocol) |
 | [ToastNotificationActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventarg) | desktop:ToastNotificationActivation | [來自傳統型應用程式的快顯通知](/windows/uwp/design/shell/tiles-and-notifications/toast-desktop-apps)。 |
-| [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [在使用者登入 Windows 時執行可執行檔](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-an-executable-file-when-users-log-into-windows) |
-| [FileActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs) | [uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation) | [將已封裝的應用程式和一組檔案類型建立關聯](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#associate-your-packaged-application-with-a-set-of-file-types) |
+| [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [在使用者登入 Windows 時執行可執行檔](./desktop-to-uwp-extensions.md#start-an-executable-file-when-users-log-into-windows) |
+| [FileActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs) | [uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation) | [將已封裝的應用程式和一組檔案類型建立關聯](./desktop-to-uwp-extensions.md#associate-your-packaged-application-with-a-set-of-file-types) |
 | [VoiceCommandActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.voicecommandactivatedeventargs) | 無 | [處理啟用和執行語音命令](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana) |
 | [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) | 無 |  |

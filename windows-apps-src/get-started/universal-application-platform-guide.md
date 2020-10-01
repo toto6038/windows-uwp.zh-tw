@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 29e5171d0c6737bdf3d8064566b8ec2731e68978
-ms.sourcegitcommit: b99e2f4dffa603b68c2a8273fe6313432f91b353
+ms.openlocfilehash: 416df29fcb6ac007375ff9cf2a8f22d80a12b73e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90569393"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219821"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
@@ -23,9 +23,9 @@ UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用�
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 開發案例中的定位為何？
 
-UWP 是建立在 Windows 10 裝置上執行之應用程式的一種選擇，並且可以與其他平台結合使用。 UWP 應用程式可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](https://docs.microsoft.com/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](https://docs.microsoft.com/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](https://docs.microsoft.com/dotnet/api/index?view=dotnet-uwp-10.0))。
+UWP 是建立在 Windows 10 裝置上執行之應用程式的一種選擇，並且可以與其他平台結合使用。 UWP 應用程式可以使用 Win32 API 和 .NET 類別 (請參閱[適用於 UWP 應用程式的 API 集](/previous-versions/mt186421(v=vs.85))、[適用於 UWP 應用程式的 Dll](/previous-versions/mt186422(v=vs.85))，以及[適用於 UWP 應用程式的 .NET](/dotnet/api/index?view=dotnet-uwp-10.0))。
 
-Microsoft 開發案例持續演進，並提供 [WinUI](https://docs.microsoft.com/windows/apps/winui/)、[MSIX](https://docs.microsoft.com/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
+Microsoft 開發案例持續演進，並提供 [WinUI](/windows/apps/winui/)、[MSIX](/windows/msix/) 和 [Project Reunion](https://github.com/microsoft/ProjectReunion) 等計畫，UWP 是建立用戶端應用程式的強大工具。
 
 
 ## <a name="features-of-a-uwp-app"></a>UWP 應用程式的功能
@@ -83,7 +83,7 @@ Windows 使用下列功能，協助您讓您的 UI 以多個裝置為目標：
 
 UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/application-insights/) 整合以進行詳細的遙測和分析，這是一項重要工具，可用以了解您的使用者並提升您的應用程式。
 
-UWP 應用程式可以與 [MSIX](https://docs.microsoft.com/windows/msix/) 一起封裝，並透過 Microsoft Store 或以其他方式散發。 無論應用程式以何種方式散發，MSIX 均允許更新應用程式，請參閱[從您的程式碼更新非 Store 發佈的應用程式套件](https://docs.microsoft.com/windows/msix/non-store-developer-updates)。
+UWP 應用程式可以與 [MSIX](/windows/msix/) 一起封裝，並透過 Microsoft Store 或以其他方式散發。 無論應用程式以何種方式散發，MSIX 均允許更新應用程式，請參閱[從您的程式碼更新非 Store 發佈的應用程式套件](/windows/msix/non-store-developer-updates)。
 
 ### <a name="monetize-your-app"></a>從您的應用程式獲利
 

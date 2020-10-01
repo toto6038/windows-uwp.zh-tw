@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: bb647d844c32286a2d612231b3069430f11fcad0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3205ef65922cfe9cf44fbf0a24c90b4e592ca663
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174012"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216421"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
@@ -412,7 +412,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <tr><td>
 <p>影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">UWP app 回應設計 101</a> 和 <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">app 資源的指導方針</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">UWP app 回應設計 101</a> 和 <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">app 資源的指導方針</a>。</p>
 </td></tr>
 <tr><td>
 <p>套件缺少 "resources.pri" 檔案。</p>
@@ -434,7 +434,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <tr><td>
 <p>字串 {string} 不符合 {number} 個字元的長度上限限制。</p>
 </td><td>
-<p>請參閱 <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">app 套件需求</a>。</p>
+<p>請參閱 <a href="/windows/uwp/publish/app-package-requirements">app 套件需求</a>。</p>
 <p>在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。</p>
 </td></tr>
 <tr><td>
@@ -447,12 +447,12 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <tr><td>
 <p>字串必須為非空白 (長度大於零)</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/windows/uwp/publish/app-package-requirements">app 套件需求</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="/windows/uwp/publish/app-package-requirements">app 套件需求</a>。</p>
 </td></tr>
 <tr><td>
 <p>"resources.pri" 檔案中沒有指定預設資源。</p>
 </td><td>
-<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data">app 資源的指導方針</a>。</p>
+<p>如需詳細資訊，請參閱 <a href="/windows/uwp/app-settings/store-and-retrieve-app-data">app 資源的指導方針</a>。</p>
 <p>在預設建置組態中，當產生套件組合、將其他資源放在資源套件中時，Visual Studio 只會在應用程式套件中包含縮放 200 的影像資源。 請確定您包含縮放 200 影像資源，或將您的專案設定為包含您所擁有的資源。</p>
 </td></tr>
 <tr><td>

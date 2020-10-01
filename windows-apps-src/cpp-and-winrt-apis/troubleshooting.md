@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error, 標準, 投影, 移難排解, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: e517f796d1352d9373321d456d77875ebd54afbd
-ms.sourcegitcommit: 21eb13a50402bf5442a5f0a4bf34800d1dc679c4
+ms.openlocfilehash: 94cfb51d9fd832a29c71049a2255e35c4bc6f484
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804718"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219961"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>針對 C++/WinRT 問題進行疑難排解
 
@@ -59,7 +59,7 @@ XAML 剖析例外狀況可能難以診斷 &mdash; 特別是如果例外狀況中
 | 您的專案會產生「模稜兩可的 'PopulatePropertyInfoOverride' 存取**」。 | 當您在 IDL 中宣告一個基底類別，並在 XAML 標記中宣告不同基底類別時，就會發生此錯誤。 |
 | 第一次載入 C++/WinRT 解決案會產生「*專案 'MyProject.vcxproj' 組態 'Debug\|x86' 的 Designtime 建置失敗。IntelliSense 可能無法使用。* 」 | 經過第一次建置之後，此 IntelliSense 問題就會解決。 |
 | 註冊委派時嘗試指定 [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 會產生 [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) 例外狀況。 | 請參閱[如果您的自動撤銷委派無法註冊](handle-events.md#if-your-auto-revoke-delegate-fails-to-register)。 |
-|在 C++/WinRT 應用程式中，當取用一個使用 XAML 的 [C# Windows 執行階段元件](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)時，編譯器會產生格式為 " *'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'* "&mdash;其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在取用 C++/WinRT 應用程式的 `pch.h` 中，視適當情況新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;取代 *MyNamespace*。 |
+|在 C++/WinRT 應用程式中，當取用一個使用 XAML 的 [C# Windows 執行階段元件](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)時，編譯器會產生格式為 " *'MyNamespace_XamlTypeInfo': is not a member of 'winrt::MyNamespace'* "&mdash;其中 *MyNamespace* 是 Windows 執行階段元件命名空間的名稱。 | 在取用 C++/WinRT 應用程式的 `pch.h` 中，視適當情況新增 `#include <winrt/MyNamespace.MyNamespace_XamlTypeInfo.h>`&mdash;取代 *MyNamespace*。 |
 
 > [!NOTE]
 > 如果本主題無法解答您的問題，則您可藉由造訪 [Visual Studio C++ 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)，或[在 Stack Overflow 上使用 `c++-winrt` 標籤](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)來尋找說明。

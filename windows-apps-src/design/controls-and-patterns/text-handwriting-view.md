@@ -3,7 +3,7 @@ Description: 針對 TextBox、RichEditBox 之類的 Windows 文字控制項，�
 title: 含手寫檢視的文字輸入
 label: Text input with the handwriting view
 template: detail.hbs
-ms.date: 10/13/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: sewen
@@ -11,12 +11,12 @@ design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: e7c25a77b552ffc187a4e49a02b7facd771e8258
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 64963128679f3bb50afe1ba4c939ec6367ad9561
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175582"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218801"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>含手寫檢視的文字輸入
 
@@ -316,6 +316,7 @@ private double GetPopupVerticalOffset()
 透過所有的 XAML 架構控制項，您可以針對您特定的需求來自訂 [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) 的視覺化結構和視覺化行為。
 
 若要查看建立自訂範本的完整範例，請查看[建立自訂傳輸控制項](./custom-transport-controls.md)操作說明或[自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
+
 
 
 

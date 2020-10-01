@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 82eaee6b29336559455a86dfdba3debc288babbb
-ms.sourcegitcommit: fd6ca4e9426a5fe46138012d1fecf56f9f621a3f
+ms.openlocfilehash: c74e6fbb8907a25af6fe6e4ad6439dbaca425b84
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90825278"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216771"
 ---
 # <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
 
@@ -561,7 +561,7 @@ ms.locfileid: "90825278"
     xmlns:winui="using:Microsoft.UI.Xaml.Controls"
     ```
 
-5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系並儲存您所做的變更。 此元素會從 WinUI 程式庫新增 [RatingControl](https://docs.microsoft.com/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
+5. 在相同的檔案中，新增 `<winui:RatingControl />` 元素作為 `<StackPanel>` 的子系並儲存您所做的變更。 此元素會從 WinUI 程式庫新增 [RatingControl](/uwp/api/microsoft.ui.xaml.controls.ratingcontrol) 類別的執行個體。 新增此屬性之後，`<StackPanel>` 現在應該如下所示。
 
     ```xml
     <StackPanel HorizontalAlignment="Center" Spacing="10" 

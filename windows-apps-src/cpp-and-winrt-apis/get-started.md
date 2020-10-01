@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b1ec459875b909e62c1d4a615db57343d660e9b
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845557"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219901"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -183,7 +183,7 @@ C++/WinRT 語言投影取決於某些 Windows 執行階段的可用 (非成員) 
 
 ## <a name="sample-apps-written-in-cwinrt"></a>以 C++/WinRT 撰寫的範例應用程式
 
-請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-cwinrt-sample-apps)。
+請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](./faq.md#where-can-i-find-cwinrt-sample-apps)。
 
 ## <a name="important-apis"></a>重要 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

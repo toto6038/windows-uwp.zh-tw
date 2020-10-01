@@ -2,7 +2,7 @@
 description: Reveal 是一種光源效果，可協助為應用程式的互動元素帶來深度和焦點。
 title: 顯示顯目提示
 template: detail.hbs
-ms.date: 08/09/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -10,12 +10,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ac07b8caacd4369bcbadf2a4019bbcbde59c6b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 23f23cd65564df5f224696faabae74aa4465a438
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159972"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216864"
 ---
 # <a name="reveal-highlight"></a>顯示顯目提示
 

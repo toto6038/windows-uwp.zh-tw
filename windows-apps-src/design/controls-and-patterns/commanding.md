@@ -3,13 +3,13 @@ title: Windows 應用程式中的命令
 description: 如何使用 XamlUICommand 和 StandardUICommand 類別 (連同 ICommand 介面) 來共用及管理各種控制項類型的命令 (不論所使用的裝置和輸入類型為何)。
 ms.service: ''
 ms.topic: overview
-ms.date: 09/13/2019
-ms.openlocfilehash: 767172fe3384fc74687b239768b277b6147c0fd4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.date: 09/24/2020
+ms.openlocfilehash: 5ef1cb0e78757ee575a0129a60252d1a7404a6d4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160632"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217371"
 ---
 # <a name="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand"></a>Windows 應用程式中使用 StandardUICommand、XamlUICommand 和 ICommand 的命令
 

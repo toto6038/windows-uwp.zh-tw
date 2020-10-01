@@ -2,16 +2,16 @@
 title: 撰寫樣式
 description: 使用正確的語氣和語調，是讓應用程式的文字與設計融為一體的關鍵。
 keywords: UWP, Windows 10, UI, UX, 文字, 書寫, 語氣, 語調, 設計
-ms.date: 05/07/2018
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c17d4c0aca4c59e18a13bf42bad16e6739938717
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 324aae957d53c7ec63817c8f0e80909d25dc1c0a
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168672"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216621"
 ---
 # <a name="writing-style"></a>撰寫樣式
 

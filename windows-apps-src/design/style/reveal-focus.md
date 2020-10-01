@@ -2,19 +2,19 @@
 description: 顯示焦點是一種光源效果，能在使用者將遊戲控制器或鍵盤的焦點移近可設定焦點的元素時，以動畫方式呈現這些元素的框線。
 title: 顯示焦點
 template: detail.hbs
-ms.date: 03/01/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 6afed2347bb3944c8ea5bd9b43e83d429973dc15
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 15ddbd46f2e4177b53701259feecd03d8306064b
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169162"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218111"
 ---
 # <a name="reveal-focus"></a>顯示焦點
 

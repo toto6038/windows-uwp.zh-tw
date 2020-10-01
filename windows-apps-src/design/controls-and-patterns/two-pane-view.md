@@ -2,16 +2,16 @@
 Description: TwoPaneView 是一種版面配置控制項，可協助您管理具有 2 個不同內容區域的應用程式顯示。
 title: 兩個窗格檢視
 template: detail.hbs
-ms.date: 01/22/2020
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c2fd792b9652e38637810b4ccd0aee94075895b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d43c9b7f5674ed7f56f6f2d05bef44521095f56e
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174692"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217231"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
 

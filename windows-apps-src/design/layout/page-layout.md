@@ -1,16 +1,16 @@
 ---
 title: 適用於 Windows 應用程式的頁面配置
 description: 設計您的應用程式時，首先要考慮的事項是版面配置結構。 本文涵蓋基本頁面配置的通用結構，包括您需要的 UI 元素，以及它們在頁面上的位置。 在 Windows 應用程式中，每個頁面通常都有瀏覽、命令和內容元素。
-ms.date: 03/19/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 551d937836f0dcf0094e54a503d2a8cd80a2f28b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169522"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218621"
 ---
 # <a name="page-layout"></a>頁面配置
 

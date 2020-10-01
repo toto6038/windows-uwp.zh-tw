@@ -2,17 +2,17 @@
 Description: 此教學課程將逐步解說如何建立基本的應用程式使用者介面。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。
 title: 使用 Grid 與 StackPanel 建立簡單的應用程式。
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: b4cd240882b920f06d06bf1143924a075e7cde53
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3fa22f303f308b38a59a804604752712895b0ea0
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165542"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91219371"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：使用 Grid 與 StackPanel 建立簡單的天氣應用程式
 

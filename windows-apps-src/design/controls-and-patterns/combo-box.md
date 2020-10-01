@@ -3,19 +3,19 @@ description: 了解如何使用清單方塊和下拉式方塊 (也稱為下拉�
 title: 下拉式方塊和清單方塊
 label: Combo box and list box
 template: detail.hbs
-ms.date: 10/02/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 911585d4e00c5e6c6aea66a72488c48f4d6ffb6d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b8a6854eb361388fc1597816d31daf08bb5fe782
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173492"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217451"
 ---
 # <a name="combo-box-and-list-box"></a>下拉式方塊和清單方塊
 

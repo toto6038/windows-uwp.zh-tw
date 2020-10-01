@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: d4415bc703acf0b94f6f8a6fe8aab053620336c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0aa439010138af80f91c4e02776163577658d6cc
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168902"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91216731"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -129,7 +129,7 @@ PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 1
 
 ### <a name="xamarin"></a>Xamarin
 
-使用 Xamarin 可建置跨平台應用程式，不只適用於 Windows 10，也可以在 iOS 和 Android 上執行。 如需詳細資訊，請參閱 [Xamarin](https://docs.microsoft.com/xamarin/xamarin-forms/get-started/index)。
+使用 Xamarin 可建置跨平台應用程式，不只適用於 Windows 10，也可以在 iOS 和 Android 上執行。 如需詳細資訊，請參閱 [Xamarin](/xamarin/xamarin-forms/get-started/index)。
 
 ### <a name="uno-platform"></a>Uno 平台
 

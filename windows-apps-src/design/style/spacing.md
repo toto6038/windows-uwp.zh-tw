@@ -2,16 +2,16 @@
 title: 間距和大小
 description: 不論裝置和輸入方法為何，新的 Fluent 標準和精簡控制項樣式都可確保舒適的使用者體驗。
 keywords: UWP, Windows 10, 控制項, 大小, 密度, 標準, 精簡
-ms.date: 04/19/2019
+ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 37bc5688321249428405e730d366eb987a81bd66
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aa4d1fa64f23f417957b4590bb3a846f00653869
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159842"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91217751"
 ---
 # <a name="control-size-and-density"></a>控制項大小和密度
 

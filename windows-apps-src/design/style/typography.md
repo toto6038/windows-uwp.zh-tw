@@ -1,17 +1,17 @@
 ---
 description: 了解如何在您的應用程式中使用印刷樣式，以協助使用者輕鬆了解內容。
 title: Windows 應用程式中的印刷樣式
-ms.date: 04/06/2018
+ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 555459d427eae045d3cf7eda45a97ec806717380
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3e9e9e501f1c4277121e7694e8213ccea51c5297
+ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175512"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91218131"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 應用程式中的印刷樣式
 
