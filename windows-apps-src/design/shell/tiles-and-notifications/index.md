@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce19fdca0ff79c430fcae7353cda595702f260c0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218431"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636618"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Windows 應用程式的磚、徽章及通知
  
@@ -22,7 +22,7 @@ ms.locfileid: "91218431"
 
 > **重要 API**：[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
+<p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 App 在 [開始] 功能表上以磚的形式顯示。 每個 Windows 應用程式都有一個磚。 您可以啟用不同的磚大小 (小、中、寬及大)。</p>
 
 <p>您可以使用「磚通知」更新磚，以將新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 傳遞給使用者。</p>
