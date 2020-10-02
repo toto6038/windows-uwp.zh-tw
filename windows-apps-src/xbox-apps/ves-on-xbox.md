@@ -4,12 +4,12 @@ description: 瞭解如何使用已啟用語音的 Shell)  (的通用 Windows 平
 ms.date: 10/19/2017
 ms.topic: article
 keywords: windows 10、uwp、xbox、語音、語音功能 shell
-ms.openlocfilehash: 38afa2473dd74ab580cf38cc21d1f2b192f9b72a
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304650"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636478"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>使用語音來叫用 UI 元素
 
@@ -83,7 +83,7 @@ VES 採用下列啟發學習法來決定要使用語音辨識器註冊哪一個�
 
 若要解決這個問題，請從 Windows 10 Creators Update 開始，朗讀程式也已更新，以查看 `AutomationProperties.HelpText` 屬性。  如果這個屬性不是空的，除了之外，朗讀程式還會說出其內容 `AutomationProperties.Name` 。  如果 `HelpText` 是空的，則 [朗讀程式] 只會讀取名稱的內容。  這可讓您在需要時使用較長的描述性字串，但會在屬性中維護較短的語音辨識易記片語 `Name` 。
 
-![](images/ves_narrator.jpg)
+![顯示按鈕背後的程式碼的圖表，其中包含 AutomationProperties.Name 和 AutomationProperties。 HelpText 顯示已啟用語音的 Shell 會接聽名稱設定。](images/ves_narrator.jpg)
 
 如需詳細資訊，請參閱 [UI 中協助工具支援的自動化屬性](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff400332(v=vs.95) "UI 中協助工具支援的 Automation 屬性")。
 
@@ -101,7 +101,7 @@ VES 採用下列啟發學習法來決定要使用語音辨識器註冊哪一個�
 - Cortana 重迭會顯示在右上角，告訴使用者他們會看到的內容。  當使用者說話時，語音辨識器所辨識的片語片段也會顯示在此位置中。
 - VES 會剖析 UIA 樹狀結構、尋找所有可操作的控制項、在語音辨識文法中註冊其文字，以及開始連續接聽會話。
 
-    ![](images/ves_overlay.png)
+    ![顯示醒目提示 [顯示標籤] 選項的 [顯示標籤] 選項的螢幕擷取畫面。](images/ves_overlay.png)
 
 ### <a name="exiting-alm"></a>離開 ALM ###
 當使用者使用語音與 UI 互動時，系統將會保留在 ALM 中。  有兩種方式可以離開 ALM：
@@ -129,24 +129,24 @@ VES 採用下列啟發學習法來決定要使用語音辨識器註冊哪一個�
 ## <a name="location-of-voice-tip-labels"></a>語音提示標籤的位置 ##
 語音提示標籤會在控制項的 BoundingRectangle 中水準和垂直置中。  當控制項較小且緊密地分組時，其他標籤可能會重迭/被他人遮蔽，而且 VES 會嘗試將這些標籤分開來分開，並確保它們是可見的。  不過，這不保證會在100% 的時間內運作。  如果有非常擁擠的 UI，可能會導致某些標籤被他人遮蔽。 請使用 [顯示標籤] 檢查您的 UI，以確保有足夠的聲音提示可見空間。
 
-![](images/ves_labels.png)
+![語音提示標籤的螢幕擷取畫面，以水準和垂直方式置中控制項的周框。](images/ves_labels.png)
 
 ## <a name="combo-boxes"></a>下拉式方塊 ##
 展開下拉式方塊中的每個個別專案時，下拉式方塊中的每個個別專案都會取得自己的語音提示標籤，而且通常會在下拉式清單的現有控制項上方。  為了避免呈現混亂而令人困惑的標籤 muddle (其中的下拉式方塊專案標籤會與下拉式方塊後方的控制項標籤混合) 當下拉式方塊展開時，只會顯示其子專案的標籤; 所有其他語音提示標籤將會隱藏。  然後，使用者可以選取其中一個下拉式專案或 [關閉] 下拉式方塊。
 
 - 折迭下拉式方塊上的標籤：
 
-    ![](images/ves_combo_closed.png)
+    ![顯示和音效影片輸出視窗的螢幕擷取畫面，其中具有折迭下拉式方塊的標籤。](images/ves_combo_closed.png)
 
 - 展開的下拉式方塊上的標籤：
 
-    ![](images/ves_combo_open.png)
+    ![顯示和音效影片輸出視窗的螢幕擷取畫面，其中具有展開下拉式方塊的標籤。](images/ves_combo_open.png)
 
 
 ## <a name="scrollable-controls"></a>可滾動的控制項 ##
 針對可滾動的控制項，捲軸命令的聲音提示將會以控制項的每個邊緣為中心。  語音秘訣只會顯示為可採取動作的捲軸方向，因此例如，如果無法使用垂直捲動條，將不會顯示「向上快移」和「向下滾動」。  當有多個可捲動區域存在時，會使用序數來區分它們 (例如。 ) 的「向右滾動1」、「向右滾動2」等等。
 
-![](images/ves_scroll.png) 
+![在水準滾動 U I 上向左和向右滾動的聲音提示螢幕擷取畫面。](images/ves_scroll.png) 
 
 ## <a name="disambiguation"></a>去除混淆 ##
 當多個 UI 元素有相同的名稱，或語音辨識器符合多個候選項目時，VES 將會進入去除混淆模式。  在此模式中，會顯示相關元素的語音提示標籤，讓使用者可以選取正確的專案。 使用者可以藉由說出 [取消] 來取消去除混淆模式。
@@ -155,15 +155,15 @@ VES 採用下列啟發學習法來決定要使用語音辨識器註冊哪一個�
 
 - 在進行混淆之前的主動式接聽模式;使用者說：「我不清楚」：
 
-    ![](images/ves_disambig1.png) 
+    ![目前使用中接聽模式的螢幕擷取畫面，您可以看到顯示的選項，以及按鈕上沒有標籤。](images/ves_disambig1.png) 
 
 - 這兩個按鈕相符;已開始消除混淆：
 
-    ![](images/ves_disambig2.png) 
+    ![使用中的接聽模式的螢幕擷取畫面，其中顯示您想要的選項，以及按鈕上的專案1和專案2標籤。](images/ves_disambig2.png) 
 
 - 選擇 [選取 2] 時顯示 click 動作：
 
-    ![](images/ves_disambig3.png) 
+    ![使用中的 [使用中] 接聽模式的螢幕擷取畫面，您可以看到顯示的選項，而且我的第一個按鈕上的標籤不明確。](images/ves_disambig3.png) 
  
 ## <a name="sample-ui"></a>範例 UI ##
 以下是以 XAML 為基礎的 UI 範例，以各種方式設定 AutomationProperties.Name：
@@ -203,11 +203,11 @@ VES 採用下列啟發學習法來決定要使用語音辨識器註冊哪一個�
  
 - 在主動接聽模式中，不會顯示標籤：
 
-    ![](images/ves_alm_nolabels.png) 
+    ![作用中接聽模式的螢幕擷取畫面，其中顯示標籤、顯示 [顯示標籤] 選項，且未顯示任何標籤。](images/ves_alm_nolabels.png) 
 
 - 在主動接聽模式中，在使用者顯示 [顯示標籤] 之後：
 
-    ![](images/ves_alm_labels.png) 
+    ![使用中接聽模式的螢幕擷取畫面（如果您已完成），並顯示顯示在 U I 控制項上的 [停止接聽選項] 和 [標籤]。](images/ves_alm_labels.png) 
 
 在的案例中 `button1` ，XAML 會 `AutomationProperties.Name` 使用控制項的可見文字內容中的文字來自動填入屬性。  這就是為什麼即使沒有明確的設定，也會有語音提示標籤 `AutomationProperties.Name` 。
 

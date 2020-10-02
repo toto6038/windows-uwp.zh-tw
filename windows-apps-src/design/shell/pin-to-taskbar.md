@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile, 工作列, 工作列管理員, 釘選到工作列, 主要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: c2090d038bb3999112e8d2fa3824968916e5d7dc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219331"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636628"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>將應用程式釘選到工作列
 
 您可以寫程式將自己的應用程式釘選到工作列上，就如同您可以[將應用程式釘選到開始功能表](tiles-and-notifications/primary-tile-apis.md)。 您可以檢查您的應用程式目前是否已釘選，以及工作列是否允許釘選。 
 
-![工作列](images/taskbar/taskbar.png)
+![Windows 10 工作列的螢幕擷取畫面，其中顯示釘選的應用程式。](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
 > **需要 Fall Creators Update**：您的目標必須是 SDK 16299 並執行組建 16299 或更新版本，才能使用工作列 API。

@@ -1,20 +1,20 @@
 ---
 title: 針對轉換後的傳統型應用程式和遊樂場使用 MRT
-description: 將您的 .NET 或 Win32 應用程式或遊戲封裝為 msix 或 .appx 套件，即可利用資源管理系統來載入針對執行時間內容量身打造的應用程式資源。 這個深入主題說明技術。
+description: 將您的 .NET 或 Win32 應用程式或遊戲封裝成 .msix 或 .appx 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
-ms.openlocfilehash: dafce15fa259fdbc8a0afab90b6617dc6cc37cf4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b86cbcfcc5a6c6284b993dcad1325b108b1ab353
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157612"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636488"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
-.NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。 將您的 .NET 或 Win32 應用程式或遊戲封裝為 msix 或 .appx 套件，即可利用資源管理系統來載入針對執行時間內容量身打造的應用程式資源。 這個深入主題說明技術。
+.NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的應用程式當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。 將您的 .NET 或 Win32 應用程式或遊戲封裝成 .msix 或 .appx 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的應用程式資源。 這個深入主題說明技術。
 
 將傳統 Win32 應用程式當地語系化的方法有許多種，但 Windows 8 引進了[新資源管理系統](/previous-versions/windows/apps/jj552947(v=win.10))，其跨程式設計語言、跨應用程式類型運作，並且提供超簡單的當地語系化功能。 此系統在本主題中將稱為「MRT」。 過去這代表「現代化資源技術」，但「現代化」一詞已停止使用。 資源管理員也稱為 MRM (現代化資源管理員) 或 PRI (套件資源索引)。
 
@@ -62,7 +62,7 @@ ms.locfileid: "89157612"
 
 以下是簡單的應用程式範例，其有兩個上頭有文字標籤的按鍵 (`openButton`和`saveButton`)，以及一個當成標誌使用的 PNG 檔案 (`logoImage`)。 文字標籤當地語系化成英文和德文，而標誌針對正常桌面顯示 (100% 縮放比例) 和高解析度的手機 (300% 縮放比例) 進行最佳化。 請注意，此圖表呈現模型的高階、概念視圖，並不完全對應實作。
 
-<p><img src="images\conceptual-resource-model.png"/></p>
+:::image type="content" source="images\conceptual-resource-model.png" alt-text="來來源程式代碼標籤、查閱資料表標籤和磁片標籤上檔案的螢幕擷取畫面。":::
 
 在圖片中，應用程式碼參考三個邏輯資源名稱。 在執行階段，`GetResource`虛擬功能使用 MRT 在資源表中查詢這些資源名稱 (稱為 PRI 檔案)，並根據環境條件尋找最適當的候選項目 (使用者的語言和顯示器的縮放比例)。 對於標籤則會直接使用字串。 對於標誌圖像，字串會解譯為檔名，並從磁碟讀出檔案。 
 
@@ -198,7 +198,7 @@ ms.locfileid: "89157612"
 1. `Strings\en-us`在專案中建立適當的資料夾 (或其他語言) ，然後使用的預設名稱，將**新專案**加入專案的根資料夾中 `resources.resw` 。 請務必選擇 **資源檔 ( .resw) ** 而不是 **資源字典** -資源字典是 XAML 應用程式所使用的檔案。
 2. 使用設計工具，輸入下列字串 (使用相同 `Names` 但將 `Values` 取代為應用程式的適當文字)：
 
-<img src="images\editing-resources-resw.png"/>
+:::image type="content" source="images\editing-resources-resw.png" alt-text="來來源程式代碼標籤、查閱資料表標籤和磁片標籤上檔案的螢幕擷取畫面。" :::
 
 > [!NOTE]
 > 如果您開始使用 Visual Studio 設計工具，一律可以按下直接編輯 XML `F7` 。 但是，如果您以最小的 XML 檔案啟動，*設計工具將無法辨識檔案*，因為檔案遺失許多額外的中繼資料。若要修正此問題，只需將重複使用的 XSD 資訊從設計工具產生的檔案，複製到您手工編輯的 XML 檔案即可。
@@ -236,8 +236,9 @@ ms.locfileid: "89157612"
 
 如果您使用 Visual Studio 的資訊清單設計工具，請開啟 package.appxmanifest 檔案，並在 [*應用程式*] 索引標籤和 [*封裝*] 索引標籤中變更反<span style="background-color: lightgreen">白顯示的值</span>：
 
-<img src="images\editing-application-info.png"/>
-<img src="images\editing-packaging-info.png"/>
+:::image type="content" source="images\editing-application-info.png" alt-text="來來源程式代碼標籤、查閱資料表標籤和磁片標籤上檔案的螢幕擷取畫面。" :::
+
+:::image type="content" source="images\editing-packaging-info.png" alt-text="來來源程式代碼標籤、查閱資料表標籤和磁片標籤上檔案的螢幕擷取畫面。" :::
 
 ### <a name="step-12-build-pri-file-make-an-msix-package-and-verify-its-working"></a>步驟1.2：建立 PRI 檔案、製作 MSIX 套件，並確認它是否正常運作
 
@@ -462,7 +463,7 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 您也可以使用 Visual Studio 資訊清單設計工具、使用 `Declarations` 索引標籤、記下<span style="background-color: lightgreen">反白值</span>以新增此資訊：
 
-<p><img src="images\editing-declarations-info.png"/></p>
+:::image type="content" source="images\editing-declarations-info.png" alt-text="來來源程式代碼標籤、查閱資料表標籤和磁片標籤上檔案的螢幕擷取畫面。" :::
 
 立即將對應的資源名稱加入到每一個 `.resw` 檔案，並將<span style="background-color: yellow">反白文字</span>取代為應用程式的適用文字 (務必針對*每一種支援的語言執行此動作！*)：
 
@@ -478,7 +479,7 @@ makepri createconfig /cf ..\contoso_demo.xml /dq en-US_de-DE_fr-FR /pv 10.0 /o
 
 這接著會顯示部分的 Windows 殼層，例如檔案總管︰
 
-<p><img src="images\file-type-tool-tip.png"/></p>
+:::image type="content" source="images\file-type-tool-tip.png" alt-text="來來源程式代碼標籤、查閱資料表標籤和磁片標籤上檔案的螢幕擷取畫面。":::
 
 如以往建置並測試套件，執行應該顯示新的 UI 字串的任何新案例。
 

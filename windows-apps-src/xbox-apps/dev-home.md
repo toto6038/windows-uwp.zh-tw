@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 permalink: en-us/docs/xdk/dev-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 40100adb1bd9337d933b8ebd155847bde71e341a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 291b25e962aa8ac37705fd0db544f138036949d2
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172812"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636608"
 ---
 # <a name="developer-home-on-the-console-dev-home"></a>主機上的開發人員首頁 (開發人員首頁)
    
@@ -30,10 +30,10 @@ ms.locfileid: "89172812"
    1. 選取 **\[所有設定\]**  
    1. 從預設 **\[開發人員\]** 頁面上，選取 **\[開發人員首頁\]**（首頁圖示）   
 
- ![](images/dev_home_icons.png)   
+ ![[設定] 中 [開發人員] 頁面的螢幕擷取畫面。](images/dev_home_icons.png)   
   
 在較早的復原工具上，選取 **\[精選內容\]** 中主螢幕右側的開發人員首頁磚，或檢視 Xbox One 管理員中的應用程式清單並啟動 **\[開發人員首頁\]**。   
- ![](images/dev_home_1.png) 
+ ![[應用程式] 索引標籤的螢幕擷取畫面，其中顯示已醒目提示啟動選項。](images/dev_home_1.png) 
 <a id="ID4EBC"></a>
 
    
@@ -81,10 +81,10 @@ ms.locfileid: "89172812"
    
   
 若要存取貼齊模式，請反白顯示適當工具的標題、按控制器上的 **\[檢視\]** 按鈕，以及選取操作功能表上的 **\[貼齊\]**：  
- ![](images/dev_home_4.png)   
+ ![[開發] 首頁的螢幕擷取畫面，其中顯示已醒目提示的貼齊選項。](images/dev_home_4.png)   
   
 開發人員首頁將貼齊右側。 如常點選兩次 \[Nexus\] 按鈕，即可切換內容。  
- ![](images/dev_home_5.png)  
+ ![顯示開發首頁的螢幕擷取畫面，顯示您在測試時可以存取您的工具。](images/dev_home_5.png)  
 <a id="ID4EKF"></a>
 
    
@@ -102,7 +102,7 @@ ms.locfileid: "89172812"
    
   
 若要變更工具的大小或位置，請在標題具有焦點時使用操作功能表按鈕 (控制器上的檢視按鈕) 在操作功能表上，選取 **\[移動\]** 或 **\[調整大小\]**。   
- ![](images/dev_home_6.png)  
+ ![[開發] 首頁的螢幕擷取畫面，顯示醒目提示的移動選項。](images/dev_home_6.png)  
 <a id="ID4EEG"></a>
 
    
@@ -111,7 +111,7 @@ ms.locfileid: "89172812"
    
   
 從主功能表，您可以選取 **\[工作區\]**，然後選取 **\[變更佈景主題色彩\]**。 選取新的色彩，然後選取 **\[儲存\]** 更新用於焦點醒目提示的佈景主題色彩。   
- ![](images/dev_home_7.png)  
+ ![[開發] 首頁的螢幕擷取畫面，其中顯示已選取的工作區和變更主題色彩選項。](images/dev_home_7.png)  
 <a id="ID4EVG"></a>
 
    
@@ -120,7 +120,7 @@ ms.locfileid: "89172812"
    
   
 如果套件包含多個應用程式，開發人員首頁可讓您設定要啟動的預設應用程式。 在啟動程式中反白顯示套件，然後按 **A** 按鍵以開啟可使用的應用程式清單。 反白顯示您想要設為預設的應用程式，並按下 **\[檢視\]** 按鈕，然後從操作功能表選擇 **\[設為預設值\]**。   
- ![](images/dev_home_setdefault.png)  
+ ![醒目提示 [設定為預設值] 選項之開發首頁的螢幕擷取畫面。](images/dev_home_setdefault.png)  
 <a id="ID4EGH"></a>
 
    
@@ -129,13 +129,13 @@ ms.locfileid: "89172812"
    
   
 從啟動程式、已安裝的 app 和遊戲清單底部，您可以選取選項 **\[Register a game from a network share\]** (從網路共用註冊遊戲)，遠端執行標題的鬆散檔案版本。   
- ![](images/dev_home_8.png)   
+ ![醒目提示 [從網路共用註冊遊戲] 選項的 [開發] 首頁螢幕擷取畫面。](images/dev_home_8.png)   
   
 您可以針對要註冊之標題輸入 appxmanifest.xml 檔案的網路路徑。 開發人員首頁會嘗試使用該網路共用的任何現有認證來註冊標題，需要時將會提示您輸入新的網路認證。 如果您需要存取其他網路共用（例如，存取不同伺服器上的符號連結資源），則需要透過下列選項新增那些。   
    
   
 您可以透過主功能表的**\[Manage network credentials\]** (管理網路認證) 選項，在主機上管理這些儲存的認證（以及新增其他認證）。   
- ![](images/dev_home_9.png)   
+ ![已反白顯示 [管理網路認證] 選項之開發首頁的螢幕擷取畫面。](images/dev_home_9.png)   
   
 您可以檢視主機上目前的認證，選取認證的路徑並按一下 **A** 按鍵編輯認證，以及選取移除連結並按一下**A** 按鍵移除認證。   
    
