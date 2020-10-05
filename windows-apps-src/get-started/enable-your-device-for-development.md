@@ -3,21 +3,24 @@ ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: 啟用您的裝置以用於開發
 description: 了解如何藉由在 Visual Studio 中啟用開發人員模式，讓您的 Windows 10 裝置進行開發和偵錯。
 keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用裝置
-ms.date: 05/22/2020
+ms.date: 09/28/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 702e3aa166501c3e9974398ae5b89e832cfa7391
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2a227494bb597b25c090d4ff57982e5d5c739184
+ms.sourcegitcommit: 9940ed6431aadbd8d4e54ca23d8ae44d3a2d048d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159052"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91403913"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
 ## <a name="activate-developer-mode-sideload-apps-and-access-other-developer-features"></a>啟用開發人員模式、側載應用程式，以及存取其他開發人員功能
 
 ![啟用您的裝置以進行開發](images/developer-poster.png)
+
+> [!IMPORTANT]
+> 如果您不是在自己的電腦上建立自己的應用程式，就不需要啟用開發人員模式。 如果您要嘗試修正電腦的問題，請參閱 [Windows 說明](https://support.microsoft.com/hub/4338813/windows-help?os=windows-10)。 如果您是第一次進行開發，最好下載所需的工具來[取得設定](get-set-up.md) 。
 
 如果您使用電腦進行一般的日常活動，例如玩遊戲、瀏覽網頁、收發電子郵件或使用 Office 應用程式等等，您「不」必啟用開發人員模式，事實上您不應啟用。 此頁面上剩餘的資訊對您而言不重要，您可以放心地返回任何您原本進行的動作。 感謝您的瀏覽！
 

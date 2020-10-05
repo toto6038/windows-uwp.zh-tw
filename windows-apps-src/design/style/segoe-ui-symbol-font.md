@@ -1,5 +1,5 @@
 ---
-Description: 本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。
+description: 本文列出並提供 Segoe MDL2 Asset 字型隨附之字符的用法指導方針。
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 圖示的指導方針
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
@@ -9,12 +9,13 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0663f9947249f54a888bf2d3f52f522ceb885604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.custom: contperfq1
+ms.openlocfilehash: 5c2dc3237f2ff68ce2836fc80fa0936e13d84dd7
+ms.sourcegitcommit: f46edb85d523a4a1f5006787d357cdc9d090aefe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175782"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91414858"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 圖示
 
@@ -67,8 +68,6 @@ ms.locfileid: "89175782"
 
 ## <a name="icon-list"></a>圖示清單
 請記住，**Segoe MDL2 Assets** 字型包含比我們在此處所展示的更多圖示。 許多圖示用於專門用途，通常不會用於其他地方。
-
-
 
 <table style="background-color: white; color: black">
 

@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d3363dcc47ef43fe65b3c954b213a81cc5165e1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 10615c3bb9a137655f32ca4b5cc174ddba1ee5ef
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166282"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353768"
 ---
 # <a name="tutorial-create-data-bindings"></a>教學課程：建立資料繫結
 
@@ -457,7 +457,7 @@ private ObservableCollection<ImageFileInfo> Images { get; }
 
 ### <a name="attach-the-detailpage"></a>附加 DetailPage
 
-1. 在 MainPage.xaml 中，尋找名為 `GridView` 的 `ImageGridView`，並加入 `ItemClick` 值。
+1. 在 MainPage.xaml 中，尋找名為 `ImageGridView` 的 `GridView`。 若要讓人可點選該項目，將 `IsItemClickEnabled` 設定為 `True`，並加入 `ItemClick` 事件處理常式。
 
     > [!TIP]
     > 如果您鍵入下方變更，而不是以複製/貼上方式進行，您將會看到 IntelliSense 快顯視窗顯示 "\<New Event Handler\>"。 如果您按下 Tab 鍵，其中會填入預設方法處理常式名稱的值，並自動移除下一個步驟中顯示的方法。 接著可以按 F12 瀏覽至程式碼後置中的方法。
@@ -465,14 +465,15 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     **之前：**
 
     ```xaml
-    <GridView x:Name="ImageGridView"
+    <GridView x:Name="ImageGridView">
     ```
 
     **之後：**
 
     ```xaml
     <GridView x:Name="ImageGridView"
-              ItemClick="ImageGridView_ItemClick"
+              IsItemClickEnabled="True"
+              ItemClick="ImageGridView_ItemClick">
     ```
 
     > [!NOTE]

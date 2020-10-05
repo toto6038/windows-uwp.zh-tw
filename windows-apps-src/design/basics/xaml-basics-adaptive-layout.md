@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e1498836772c3c279a1b9d85d76070b29593f5e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aabad7a731bd0654468d7b9849d3b9a5bf6bead6
+ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174472"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91353728"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -165,17 +165,17 @@ ms.locfileid: "89174472"
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
         </VisualState>
 
@@ -185,7 +185,7 @@ ms.locfileid: "89174472"
 
 ### <a name="create-statetriggers-to-apply-the-visual-state"></a>建立 StateTriggers 以套用視覺狀態
 
-接下來，建立對應至每個貼齊點的 `StateTriggers`。 在 MainPage.xaml 中，將下列程式碼新增至您於第 2 部分建立的 `VisualStateManager`。
+接下來，建立對應至每個貼齊點的 `StateTriggers`。 在 MainPage.xaml 中，將下列程式碼加入每個 `VisualState`。
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -193,7 +193,7 @@ ms.locfileid: "89174472"
     ...
 
         <!-- Large window VisualState -->
-        <VisualState x:Key="LargeWindow">
+        <VisualState>
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
@@ -203,7 +203,7 @@ ms.locfileid: "89174472"
         </VisualState>
 
         <!-- Medium window VisualState -->
-        <VisualState x:Key="MediumWindow">
+        <VisualState>
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
@@ -213,7 +213,7 @@ ms.locfileid: "89174472"
         </VisualState>
 
         <!-- Small window VisualState -->
-        <VisualState x:Key="SmallWindow">
+        <VisualState>
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
@@ -266,9 +266,9 @@ ms.locfileid: "89174472"
 
 現在完成了這個實習課程，您已具備充足的調整型配置知識，可以進一步自行實驗。 若要進行更大的挑戰，請嘗試最佳化較大螢幕大小的版面配置，例如 Surface Hub。 如果您想要測試 Surface Hub 版面配置，請參閱[使用 Visual Studio 測試 Surface Hub 應用程式](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)。
 
-如果遇到困難，您可以在[使用 XAML 定義頁面版面配置](../layout/layouts-with-xaml.md)的下列各節中找到更多指引。
+如果遇到困難，您可以在[使用 XAML 回應式版面配置](../layout/layouts-with-xaml.md)的下列各節中找到更多指引。
 
-+ [視覺狀態與狀態觸發程序](../layout/layouts-with-xaml.md#visual-states-and-state-triggers)
++ [視覺狀態與狀態觸發程序](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
 + [量身訂做的版面配置](../layout/layouts-with-xaml.md#tailored-layouts)
 
 或者，如果您想要深入了解最初的編輯相片應用程式是如何建置，請參閱 XAML [使用者介面](../basics/xaml-basics-ui.md)及[資料繫結](../../data-binding/xaml-basics-data-binding.md)的那些教學課程。

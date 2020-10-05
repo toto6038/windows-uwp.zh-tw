@@ -1,16 +1,16 @@
 ---
 description: 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。
 title: XAML 控制項；繫結至一個 C++/WinRT 屬性
-ms.date: 06/21/2019
+ms.date: 09/25/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: b6e663ec77c66d4a018d388da350794771312b77
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 77155b92c126f2aae7f798c8ecd67cb255182445
+ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154382"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91376236"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
 
@@ -21,9 +21,9 @@ ms.locfileid: "89154382"
 
 ## <a name="what-does-observable-mean-for-a-property"></a>對一個屬性來說，*可觀察*的意義是什麼？
 
-比方說一個名為 **BookSku** 的執行階段類別有個名為 **Title** 的屬性。 如果 **BookSku** 選擇引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，每當變更 **Title** 的值時，則 **Title** 是可觀察的屬性。 它是 **BookSku** 的行為 (引發或不引發事件)，判斷是哪一個，如果有的話，其屬性則為可觀察的。
+比方說一個名為 **BookSku** 的執行階段類別有個名為 **Title** 的屬性。 如果每當 **Title** 值變更，**BookSku** 就會引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件，表示 **Title** 是可觀察的屬性。 它是 **BookSku** 的行為 (引發或不引發事件)，判斷是哪一個，如果有的話，其屬性則為可觀察的。
 
-XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯示新的值，可繫結至並處理這些事件。
+XAML 文字元素 (或控制項) 可以繫結至 (並處理) 這些事件。 這類元素或控制項處理事件的方式是：擷取更新的值，然後更新本身以顯示新的值。
 
 > [!NOTE]
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -34,7 +34,7 @@ XAML 文字元素或控制項藉由擷取更新的值並且更新其本身以顯
 
 我們撰寫新的類別，代表擁有可觀察到標題屬性的一本書。 我們在相同的編譯單位裡撰寫和使用此類別。 但是，我們希望能從 XAML 繫結至此類別，且基於這個原因，它會是一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
-撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 請命名為 `BookSku.idl`。 刪除 `BookSku.idl`的預設內容，並在此執行階段類別宣告中貼上。
+撰寫新執行階段類別的第一個步驟，要將一個新的 **Midl 檔案 (.idl)** 項目新增至專案。 將新項目命名為 `BookSku.idl`。 刪除 `BookSku.idl`的預設內容，並在此執行階段類別宣告中貼上。
 
 ```idl
 // BookSku.idl
@@ -42,6 +42,7 @@ namespace Bookstore
 {
     runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
     {
+        BookSku(String title);
         String Title;
     }
 }
@@ -54,15 +55,17 @@ namespace Bookstore
 >
 > 檢視模型是檢視的抽取，所以會直接繫結至檢視 (XAML 標記)。 資料模型是資料的抽取，而且只能從您的檢視模型取用，並不會直接繫結至 XAML。 因此，您可以宣告您的資料模型不是執行階段類別，而是 C++ 結構或類別。 它們不需在 MIDL 中宣告，而且您可以隨意使用您喜歡的任何繼承階層。
 
-儲存檔案並建置專案。 在建置程序期間，會執行 `midl.exe` 工具，以建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，其會描述執行階段類別。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
+儲存檔案並建置專案。 建置尚未完全成功，但是會為我們執行一些必要的動作。 特別是在建置程序期間，會執行 `midl.exe` 工具來建立 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)，此檔案描述執行階段類別。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
 以滑鼠右鍵按一下專案節點，然後按一下 [在檔案總管中開啟資料夾]。 這會在檔案總管中開啟專案資料夾。 在那裏，從 `\Bookstore\Bookstore\Generated Files\sources\` 資料夾將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 [方案總管] 中，選取專案資料夾後，確定 [顯示所有檔案] 已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 [加入至專案]。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
-現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 在 `BookSku.h` 中，進行下列變更。
+現在要開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp`，並實作我們的執行階段類別。 首先，您會在 `BookSku.h` 和 `BookSku.cpp` 的頂端看到 `static_assert`，您必須將其移除。
 
-- 新增採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 值的函式。 此值是標題字串。
-- 新增私人成員以儲存標題字串。
+然後，在 `BookSku.h` 中，進行下列變更。
+
+- 在預設的建構函式中，將 `= default` 變更為 `= delete`。 這是因為我們不想要預設的建構函式。
+- 新增私人成員以儲存標題字串。 請注意，我們使用的建構函式會採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 值。 此值是標題字串。
 - 在標題變更時，為我們將引發的事件新增另一個私人成員。
 
 進行這些變更之後，您的 `BookSku.h` 看起來像這樣。
@@ -87,6 +90,12 @@ namespace winrt::Bookstore::implementation
     private:
         winrt::hstring m_title;
         winrt::event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+    };
+}
+namespace winrt::Bookstore::factory_implementation
+{
+    struct BookSku : BookSkuT<BookSku, implementation::BookSku>
+    {
     };
 }
 ```
@@ -133,6 +142,8 @@ namespace winrt::Bookstore::implementation
 
 在 **Title** 更動子函式裡，我們檢查是否設定了與目前值不同的值。 如果是，則更新標題並使用與變更過的屬性名稱相同的引數引發 [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件。 這是為了讓使用者介面 (UI) 知道要重新查詢哪些屬性的值。
 
+現在，如果您去檢查，會發現專案已重新建置。
+
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>宣告和實作 **BookstoreViewModel**
 我們的主要 XAML 頁面會繫結至主要檢視模型。 且檢視模型會有幾個屬性，包括類型之一的 **BookSku**。 在此步驟，我們會宣告並實作主要檢視模型執行階段類別。
 
@@ -146,12 +157,18 @@ namespace Bookstore
 {
     runtimeclass BookstoreViewModel
     {
+        BookstoreViewModel();
         BookSku BookSku{ get; };
     }
 }
 ```
 
-儲存並建置。 從 `Generated Files\sources` 資料夾將 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製到專案資料夾，在專案中包含它們。 開啟那些檔案，並實作如下所示的執行階段類別。 請注意，我們在 `BookstoreViewModel.h` 中如何宣告 `BookSku.h`，其會宣告 **BookSku** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookSku**)。 我們會從預設的建構函式中移除 `= default`。
+儲存並建置 (建置尚未完全成功，但是我們此時建置就是為了再次產生 stub 檔案)。
+
+從 `Generated Files\sources` 資料夾將 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製到專案資料夾，在專案中包含它們。 開啟那些檔案 (再次移除 `static_assert`)，並實作執行階段類別，如下所示。 請注意，我們在 `BookstoreViewModel.h` 中如何宣告 `BookSku.h`，其會宣告 **BookSku** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookSku**)。 我們會從預設的建構函式中移除 `= default`。
+
+> [!NOTE]
+> 在下面的 `BookstoreViewModel.h` 和 `BookstoreViewModel.cpp` 中，程式碼闡述了建構 m_bookSku 資料成員的預設方式。 這是從第一版 C++/WinRT 就開始使用的方法，您最好至少要熟悉此模式。 到了 C++/WinRT 2.0 版和更新的版本，有一套已經最佳化的建構方法可供您使用，稱為「統一結構」 (請參閱 [C++/WinRT 2.0 中的新聞和變更](./news.md#news-and-changes-in-cwinrt-20))。 稍後在本主題中，我們將示範統一建構的範例。
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -169,6 +186,12 @@ namespace winrt::Bookstore::implementation
 
     private:
         Bookstore::BookSku m_bookSku{ nullptr };
+    };
+}
+namespace winrt::Bookstore::factory_implementation
+{
+    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel, implementation::BookstoreViewModel>
+    {
     };
 }
 ```
@@ -196,8 +219,14 @@ namespace winrt::Bookstore::implementation
 > [!NOTE]
 > `m_bookSku` 的類型是投影類型 (**winrt::Bookstore::BookSku**)，且您搭配 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 使用的範本參數是實作類型 (**winrt::Bookstore::implementation::BookSku**)。 即便如此，**make** 傳回投影類型的執行個體。
 
+現在，專案會再次建置。
+
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>將類型的屬性 **BookstoreViewModel** 新增至 **MainPage**
-開放 `MainPage.idl`，其宣告代表我們主要 UI 頁面的執行階段類別。 新增一個匯入陳述式以匯入 `BookstoreViewModel.idl`，並新增一個名為類型 **BookstoreViewModel** MainViewModel 的唯讀屬性。 也會移除 **MyProperty** 屬性。 也請注意下面清單中的 `import` 指示詞。
+開放 `MainPage.idl`，其宣告代表我們主要 UI 頁面的執行階段類別。
+
+- 加入 `import` 指示詞以匯入 `BookstoreViewModel.idl`。
+- 加入名為 **MainViewModel** 且類型為 **BookstoreViewModel** 的唯讀屬性。
+- 移除 **MyProperty** 屬性。
 
 ```idl
 // MainPage.idl
@@ -213,13 +242,21 @@ namespace Bookstore
 }
 ```
 
-儲存檔案。 此專案此刻不會建置完成，但立即建置是實用的做法，因為它會重新產生原始程式碼檔案，而 **MainPage** 執行階段類別會在其中實作 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` 和 `MainPage.cpp`)。 因此繼續執行並立即建置。 您預期在這個階段看見的建置錯誤為 **'MainViewModel': 不是 'winrt::Bookstore::implementation::MainPage' 的成員**。
+儲存檔案。 此專案尚未完全建置成功，但在此時建置是實用的做法，因為專案會重新產生原始程式碼檔案，而檔案中會實作 **MainPage** 執行階段類別 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h` 和 `MainPage.cpp`)。 因此繼續執行並立即建置。 您預期在這個階段看見的建置錯誤為 **'MainViewModel': 不是 'winrt::Bookstore::implementation::MainPage' 的成員**。
 
-如果您省略包含 `BookstoreViewModel.idl` (請查看上面的 `MainPage.idl` 清單)，則會看到 **\<"MainViewModel" 附近**的預期錯誤。 確定您將所有類型都留在相同的命名空間中的另一個秘訣：未顯示在程式碼清單中的命名空間。
+如果您省略包含 `BookstoreViewModel.idl` (請查看上面的 `MainPage.idl` 清單)，則會看到 **\<"MainViewModel" 附近**的預期錯誤。 另一個訣竅是，確定您將所有類型都留在相同的命名空間中 &mdash; 顯示在程式碼中的命名空間。
 
 若要解決我們預期會看見的錯誤，您現在必須從所產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和 `MainPage.cpp`) 複製 **MainViewModel** 屬性的存取子虛設常式，並貼到 `\Bookstore\Bookstore\MainPage.h` 和 `MainPage.cpp` 中。 接下來說明這麼做的步驟。
 
-在 `\Bookstore\Bookstore\MainPage.h` 中包含 `BookstoreViewModel.h`，其會宣告 **BookstoreViewModel** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookstoreViewModel**)。 新增私用成員以儲存檢視模型。 請注意，按照 **BookstoreViewModel** (這是 **Bookstore::BookstoreViewModel**) 的投影類型，實作屬性存取子函式 (以及成員 m_mainViewModel)。 實作類型是在與應用程式相同的專案 (編譯單位) 中，因此我們透過採用 **std::nullptr_t** 的建構函式多載建構 m_mainViewModel。 也會移除 **MyProperty** 屬性。
+在 `\Bookstore\Bookstore\MainPage.h` 中，執行以下步驟。
+
+- 包含 `BookstoreViewModel.h`，其會宣告 **BookstoreViewModel** 的實作類型 (也就是 **winrt::Bookstore::implementation::BookstoreViewModel**)。
+- 新增私用成員以儲存檢視模型。 請注意，按照 **BookstoreViewModel** (這是 **Bookstore::BookstoreViewModel**) 的投影類型，實作屬性存取子函式 (以及成員 *m_mainViewModel*)。
+- 實作類型是在與應用程式相同的專案 (編譯單位) 中，因此我們透過採用 **std::nullptr_t** 的建構函式多載建構 *m_mainViewModel*。
+- 移除 **MyProperty** 屬性。
+
+> [!NOTE]
+> 在下面的 `MainPage.h` 和 `MainPage.cpp` 中，程式碼闡述了建構 m_mainViewModel 資料成員的預設方式。 在接下來的章節中，我們將介紹使用了統一建構的版本。
 
 ```cppwinrt
 // MainPage.h
@@ -243,7 +280,12 @@ namespace winrt::Bookstore::implementation
 ...
 ```
 
-在 `\Bookstore\Bookstore\MainPage.cpp` 中，如下列清單所示，進行下列變更。 呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (搭配 **BookstoreViewModel** 實作類型) 將一個 **BookstoreViewModel** 投影類型的新執行個體指派給 *m_mainViewModel*。 如先前所見，**BookstoreViewModel** 建構函式會建立新的 **BookSku** 物件做為私人資料成員，一開始就將其標題設定為 `L"Atticus"`。 在按鈕的事件處理常式 (**ClickHandler**) 中，將書籍的標題更新為其已發佈的標題。 最後，實作 **MainViewModel** 屬性的存取子。 也會移除 **MyProperty** 屬性。
+在 `\Bookstore\Bookstore\MainPage.cpp` 中，如下列清單所示，進行下列變更。
+
+- 呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) (搭配 **BookstoreViewModel** 實作類型) 將一個 **BookstoreViewModel** 投影類型的新執行個體指派給 *m_mainViewModel*。 如先前所見，**BookstoreViewModel** 建構函式會建立新的 **BookSku** 物件做為私人資料成員，一開始就將其標題設定為 `L"Atticus"`。
+- 在按鈕的事件處理常式 (**ClickHandler**) 中，將書籍的標題更新為其已發佈的標題。
+- 實作 **MainViewModel** 屬性的存取子。
+- 移除 **MyProperty** 屬性。
 
 ```cppwinrt
 // MainPage.cpp
@@ -273,6 +315,27 @@ namespace winrt::Bookstore::implementation
     }
 }
 ```
+
+### <a name="uniform-construction"></a>統一建構
+為了使用統一建構來代替 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，請在 `MainPage.h` 中用一個步驟宣告並初始化 *m_mainViewModel*，如下所示。
+
+```cppwinrt
+// MainPage.h
+...
+#include "BookstoreViewModel.h"
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+private:
+    Bookstore::BookstoreViewModel m_mainViewModel;
+};
+...
+```
+
+然後，在 `MainPage.cpp` 的 **MainPage** 建構函式中，不需要程式碼 `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();`。
+
+如需統一建構的詳細資訊和程式碼範例，請參閱[加入統一建構和直接實作存取](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 ## <a name="bind-the-button-to-the-title-property"></a>將按鈕繫結至 **Title** 屬性
 開啟 `MainPage.xaml`，其中包含我們主要 UI 頁面的 XAML 標記。 如以下清單所示，從按鈕移除名稱，然後從一個常值變更其 **Content** 屬性為繫結運算式。 注意繫結運算式上的 `Mode=OneWay` (單向從檢視模型到 UI)。 沒有該屬性，UI 不會回應變更事件的屬性。

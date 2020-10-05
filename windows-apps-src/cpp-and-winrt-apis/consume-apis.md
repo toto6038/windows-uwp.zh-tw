@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 已投影, 投影, 實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c8edc65f78de14c1c42611ea1e8d97046128ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
+ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170362"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91376246"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 取用 API
 
@@ -186,7 +186,7 @@ runtimeclass Gift
 }
 ```
 
-假設我們要建構不在盒子中的 **Gift** (以未初始化 **GiftBox** 建構的 **Gift**)。 首先，讓我們看看「錯誤」  的方法。 我們知道有一個採用 **GiftBox** 的 **Gift** 建構函式。 但是，如果我們想要傳遞 null 的 **GiftBox** (透過我們下方所執行的統一初始化叫用 **Gift** 建構函式)，則我們「不會」  得到想要的結果。
+假設我們要建構不在盒子中的 **Gift** (以未初始化 **GiftBox** 建構的 **Gift**)。 首先，讓我們看看「錯誤」  的方法。 我們知道有一個採用 **GiftBox** 的 **Gift** 建構函式。 但是，如果我們想要傳遞 null 的 **GiftBox** (透過我們下方所執行的統一初始化叫用 **Gift** 建構函式)，則我們「不會」得到想要的結果。
 
 ```cppwinrt
 // These are *not* what you intended. Doing it in one of these two ways
@@ -283,13 +283,26 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 如需更多詳細資料、程式碼和使用 Windows 執行階段元件中實作的 API 的逐步解說，請參閱[使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)和[在 C++/WinRT 中撰寫事件](./author-events.md)。
 
 ## <a name="if-the-api-is-implemented-in-the-consuming-project"></a>如果 API 是在取用的專案中實作
-從 XAML UI 使用的類型必須是執行階段類別，即使它與 XAML 位於相同專案中。
+本節的程式碼範例取自 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)主題。 如需更多詳細資料、程式碼，以及在在實作執行階段類別的同一專案中使用該類別的逐步解說，也請參閱該主題。
 
-針對這個案例，您可以從執行階段類別的 Windows 執行階段中繼資料 (`.winmd`) 產生投影類型。 同樣地，包含標頭，但這次透過其 **std::nullptr_t** 建構函式建構投影類型。 該建構函式不執行任何初始化，因此您接下來必須透過 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 輔助函式將一個值指派給執行個體，傳遞任何必要的建構函式引數。 在與取用程式碼相同的專案中實作的執行階段類別不需要登錄，也不需要透過 Windows 執行階段/COM 啟動來進行具現化。
+從 XAML UI 使用的類型必須是執行階段類別，即使它與 XAML 位於相同專案中。 針對這個案例，您可以從執行階段類別的 Windows 執行階段中繼資料 (`.winmd`) 產生投影類型。 同樣地，包含標頭，但接下來您可以選擇使用 C++/WinRT 1.0 版或 2.0 版的方法來建構執行階段類別的執行個體。 1\.0 版方法使用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)；2.0 版方法則為「統一建構」。 讓我們分別說明。
 
-您需要適用於此程式碼範例的**空白應用程式 (C++/WinRT)** 專案。
+### <a name="constructing-by-using-winrtmake"></a>使用 **winrt::make** 進行建構
+讓我們從預設的 ( C++/WinRT 1.0 版) 方法開始，因為您最好至少要熟悉該模式。 您可以透過其 **std::nullptr_t** 建構函式來建構投影類型。 該建構函式不執行任何初始化，因此您接下來必須透過 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 輔助函式將一個值指派給執行個體，傳遞任何必要的建構函式引數。 在與取用程式碼相同的專案中實作的執行階段類別不需要登錄，也不需要透過 Windows 執行階段/COM 啟動來進行具現化。
+
+如需完整的逐步解說，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。 本節摘錄自該逐步解說。
 
 ```cppwinrt
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+
 // MainPage.h
 ...
 struct MainPage : MainPageT<MainPage>
@@ -297,10 +310,9 @@ struct MainPage : MainPageT<MainPage>
     ...
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
-        ...
-    };
-}
+};
 ...
+
 // MainPage.cpp
 ...
 #include "BookstoreViewModel.h"
@@ -312,7 +324,45 @@ MainPage::MainPage()
 }
 ```
 
-如需在取用專案中實作取用執行階段類別的更多詳細資料、程式碼，以及逐步解說，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
+### <a name="uniform-construction"></a>統一建構
+到了 C++/WinRT 2.0 版和更新的版本，有一套已經最佳化的建構方法可供您使用，稱為「統一結構」 (請參閱 [C++/WinRT 2.0 中的新聞和變更](./news.md#news-and-changes-in-cwinrt-20))。
+
+如需完整的逐步解說，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。 本節摘錄自該逐步解說。
+
+若要使用統一建構而不是 [**winrt::make**](/uwp/cpp-ref-for-winrt/make)，您將需要一個啟用處理站。 在您的 IDL 中加入建構函式，就是一個產生啟用處理站不錯的做法。
+
+```idl
+// MainPage.idl
+import "BookstoreViewModel.idl";
+namespace Bookstore
+{
+    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+        BookstoreViewModel MainViewModel{ get; };
+    }
+}
+```
+
+然後，在 `MainPage.h` 中，用一個步驟宣告並初始化 *m_mainViewModel*，如下所示。
+
+```cppwinrt
+// MainPage.h
+...
+struct MainPage : MainPageT<MainPage>
+{
+    ...
+    private:
+        Bookstore::BookstoreViewModel m_mainViewModel;
+        ...
+    };
+}
+...
+```
+
+接下來，在 `MainPage.cpp` 的 **MainPage** 建構函式中，不需要程式碼 `m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();`。
+
+如需統一建構的詳細資訊和程式碼範例，請參閱[加入統一建構和直接實作存取](./author-apis.md#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>具現化並傳回投影類型與介面
 以下是在您使用專案中的投影類型和介面可能會有的外觀範例。 請記住，投影的類型 (例如此範例中的類型) 是由工具產生，而不是您自己撰寫的。
