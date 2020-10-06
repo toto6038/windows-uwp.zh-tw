@@ -2,16 +2,16 @@
 Description: 新增新式 XAML 使用者介面、建立 MSIX 套件，以及將其他新式元件併入您的傳統型應用程式。
 title: 讓您適用於 Windows 的傳統型應用程式現代化
 ms.topic: article
-ms.date: 04/17/2019
+ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: d2ae73cc32fd4e3717fe40b8a6ec8c3397b40619
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161532"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671497"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -24,7 +24,7 @@ Windows 10 和通用 Windows 平台 (UWP) 提供許多功能，您可以用來�
 
 ## <a name="windows-ui-library"></a>Windows UI 程式庫
 
-Windows UI 程式庫一組 NuGet 套件，可提供 Windows 10 應用程式的控制項和其他使用者介面元素。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 UWP 控制項。 WinUI 已擴大範圍，現在是適用於 UWP、.NET 和 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。
+Windows UI 程式庫一組 NuGet 套件，可提供 Windows 10 應用程式的控制項和其他使用者介面元素。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 WinRT XAML 控制項。 WinUI 已擴大範圍，現在是適用於 UWP、.NET 和原生 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。
 
 您可以透過下列方式在桌面應用程式中使用 WinUI：
 
@@ -43,7 +43,7 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 ## <a name="net-core-3"></a>.NET Core 3
 
-.NET Core 3 是 .NET Core 的最新主要版本。 這個版本的重點是支援 Windows 傳統型應用程式，包括 Windows Forms 和 WPF 應用程式。 您可以在 .NET Core 3 上執行新的和現有的 Windows 傳統型應用程式，並享有 .NET Core 帶來的所有優點。 裝載於 [XAML Islands](xaml-islands.md) 中的 UWP 控制項，也可以在目標為 .NET Core 3 的 Windows Forms 和 WPF 應用程式中使用。
+.NET Core 3 是 .NET Core 的最新主要版本。 這個版本的重點是支援 Windows 傳統型應用程式，包括 Windows Forms 和 WPF 應用程式。 您可以在 .NET Core 3 上執行新的和現有的 Windows 傳統型應用程式，並享有 .NET Core 帶來的所有優點。 裝載於 [XAML Islands](xaml-islands.md) 中的 WinRT XAML 控制項，也可以在目標為 .NET Core 3 的 Windows Forms 和 WPF 應用程式中使用。
 
 如需詳細資訊，請參閱 [.NET Core 3.0 的新功能](/dotnet/core/whats-new/dotnet-core-3-0)。
 
@@ -53,15 +53,15 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 如需詳細資訊，請參閱[在傳統型應用程式中使用 Windows 執行階段 API](desktop-to-uwp-enhance.md)。
 
-## <a name="host-uwp-controls-xaml-islands"></a>主機 UWP 控制項 (XAML Islands)
+## <a name="host-winrt-xaml-controls-xaml-islands"></a>主機 WinRT XAML 控制項 (XAML Islands)
 
 從 Windows 10 1903 版開始，您可以直接將 [UWP XAML 控制項](/windows/uwp/design/controls-and-patterns/controls-by-function)新增至 WPF、Windows Forms 或 C++ Win32 應用程式的任何 UI 元素 (與視窗控制代碼 (HWND) 相關聯)。 這表示您可以將最新的 UWP 功能 (例如 [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions))，與支援 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)的控制項，完全整合至傳統型應用程式中的視窗和其他顯示表面。 此開發人員案例有時候稱為 XAML islands。
 
-如需詳細資訊，請參閱[傳統型應用程式中的 UWP 控制項](xaml-islands.md)
+如需詳細資訊，請參閱[傳統型應用程式中的 WinRT XAML 控制項](xaml-islands.md)
 
 ## <a name="use-the-visual-layer-in-desktop-apps"></a>在傳統型應用程式中使用視覺層
 
-您現在可以在非 UWP 傳統型應用程式中使用 Windows 執行階段 API，來增強您的 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格及功能，並且利用只能透過 UWP 取用的最新 Windows 10 UI 功能。 當您需要建立自訂體驗，超越使用 XAML Islands 可以裝載的內建 UWP 控制項時，這個方式非常有用。
+您現在可以在非 UWP 傳統型應用程式中使用 Windows 執行階段 API，來增強您的 WPF、Windows Forms 和 C++ Win32 應用程式的外觀、風格及功能，並且利用只能透過 UWP 取用的最新 Windows 10 UI 功能。 當您需要建立自訂體驗，超越使用 XAML Islands 可以裝載的內建 WinRT XAML 控制項時，這個方式非常有用。
 
 如需詳細資訊，請參閱[使用視覺層讓您的傳統型應用程式現代化](visual-layer-in-desktop-apps.md)。
 
@@ -76,9 +76,9 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 <a id="desktop-uwp-controls"></a>
 
-## <a name="uwp-controls-optimized-for-desktop-apps"></a>針對傳統型應用程式最佳化的 UWP 控制項
+## <a name="winrt-xaml-controls-optimized-for-desktop-apps"></a>針對傳統型應用程式最佳化的 WinRT XAML 控制項
 
-不論您是要建置完全以桌面裝置系列作為目標的 UWP 應用程式，或是要在 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中使用 UWP 控制項，下列新的和更新的 UWP 控制項的設計目的，是透過 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)提供桌面最佳化體驗。 這些控制項是在 Windows 10 1809 版 (2018 年 10 月更新，或 10.0.17763 版) 中導入。
+不論您是要建置完全以桌面裝置系列作為目標的 WinRT XAML 應用程式，或是要在 WPF、Windows Forms 或 C++ Win32 傳統型應用程式中使用 WinRT XAML 控制項，下列新的和更新的 UWP 控制項的設計目的，是透過 [Fluent Design 系統](/windows/uwp/design/fluent-design-system/index)提供桌面最佳化體驗。 這些控制項是在 Windows 10 1809 版 (2018 年 10 月更新，或 10.0.17763 版) 中導入。
 
 | 控制 |  說明 |
 |------ |--------------|
