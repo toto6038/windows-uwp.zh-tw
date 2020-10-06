@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d3b032b735b8985ae87ce78e100442085cce55e7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 603cdfe0c35d559ca3f2acacbce491ce3f54c35d
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163702"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749994"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -21,7 +21,7 @@ ms.locfileid: "89163702"
 
 PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 PlayReady 內容，同時強制執行內容提供者所定義的存取規則。 本節說明對於適用於 Windows 10 的 Microsoft PlayReady DRM 所做的變更，以及如何修改 PlayReady UWP app 來支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。
  
-| 主題                                                                     | 說明                                                                                                                                                                                                                                                                             |
+| 主題                                                                     | 描述                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [硬體 DRM](hardware-drm.md)                                           | 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到 UWP app。                                                                                                                                                                 |
 | [搭配使用彈性資料流與 PlayReady](adaptive-streaming-with-playready.md) | 本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。 |
@@ -87,7 +87,7 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 -   利用某些新的 PlayReady 3.0 功能 (包括但不限於適用於硬體式用戶端的 SL3000、在一個授權取得訊息中取得多個非永久性授權，以及非永久性授權上的時間限制)，PlayReady 伺服器必須是 Microsoft PlayReady 伺服器軟體開發套件 v3.0.2769 版本或更新版本。
 -   根據內容授權中指定的輸出保護原則，如果使用者連接的輸出不支援這些需求，則媒體播放將會失敗。 下表列出一組所產生的常見錯誤。 如需詳細資訊，請參閱 [PlayReady 規範和穩健性規則](https://www.microsoft.com/playready/licensing/compliance/)。
 
-| 錯誤                                                   | 值      | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| 錯誤                                                   | 值      | 描述                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 錯誤 \_ 圖形 \_ OPM \_ 輸出 \_ 不 \_ \_ 支援 \_ HDCP  | 0xC0262513 | 授權的輸出保護原則要求監視器採用 HDCP，但卻無法採用 HDCP。                                                                                                                                                                                                                                                                                                                                                                                              |
 | \_ \_ 不支援 MF E 原則 \_                              | 0xC00D7159 | 授權的輸出保護原則要求監視器採用 HDCP 類型 1，但卻無法採用 HDCP 類型 1。                                                                                                                                                                                                                                                                                                                                                                                |
@@ -287,7 +287,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>狀況</th>
         <th>GUID</th>
         <th>如果...</th>
         <th>則...</th>
@@ -319,7 +319,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>狀況</th>
         <th>GUID</th>
         <th>如果...</th>
         <th colspan="2">則...</th>
@@ -371,7 +371,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 
 <table>
     <tr>
-        <th>案例</th>
+        <th>狀況</th>
         <th>GUID</th>
         <th>如果...</th>
         <th colspan="2">則...</th>
@@ -393,7 +393,7 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 </table>
 <br/>
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 開始建立 PlayReady 保護的 UWP app 之前，需要在系統上安裝下列軟體：
 
@@ -472,30 +472,30 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 ## <a name="query-for-protection-capabilities"></a>查詢保護功能
 從 Windows 10 版本 1703 開始，您可以查詢 HW DRM 功能，例如解碼轉碼器、解析度和輸出保護 (HDCP)。 查詢是使用 [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) 方法來執行，這個方法接受表示查詢支援功能的字串以及指定查詢套用所在金鑰系統的字串。 如需支援的字串值清單，請參閱 [**IsTypeSupported**](/uwp/api/windows.media.protection.protectioncapabilities.istypesupported) 的 API 參考頁面。 下列程式碼範例說明此方法的使用方式。  
 
-    ```cs
-    using namespace Windows::Media::Protection;
+```cs
+using namespace Windows::Media::Protection;
 
-    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
 
-    ProtectionCapabilityResult result = sr->IsTypeSupported(
-    L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
-    L"com.microsoft.playready");
+ProtectionCapabilityResult result = sr->IsTypeSupported(
+L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+L"com.microsoft.playready");
 
-    switch (result)
-    {
-        case ProtectionCapabilityResult::Probably:
-        // Queue up UHD HW DRM video
-        break;
+switch (result)
+{
+    case ProtectionCapabilityResult::Probably:
+    // Queue up UHD HW DRM video
+    break;
 
-        case ProtectionCapabilityResult::Maybe:
-        // Check again after UI or poll for more info.
-        break;
+    case ProtectionCapabilityResult::Maybe:
+    // Check again after UI or poll for more info.
+    break;
 
-        case ProtectionCapabilityResult::NotSupported:
-        // Do not queue up UHD HW DRM video.
-        break;
-    }
-    ```
+    case ProtectionCapabilityResult::NotSupported:
+    // Do not queue up UHD HW DRM video.
+    break;
+}
+```
 ## <a name="add-secure-stop"></a>新增安全停止功能
 
 本節說明如何將安全停止功能新增到您的 UWP app。

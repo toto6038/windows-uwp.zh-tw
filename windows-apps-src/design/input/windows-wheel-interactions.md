@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: e9a619fc58b1b84755e33fd36ebacd99f98d6b7f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220411"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749964"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 互動
 
@@ -27,10 +27,18 @@ Windows 滾輪裝置，例如 Surface Dial，是一種新的輸入裝置，可�
 > [!IMPORTANT]
 > 在本主題中，我們特別說明 Surface Dial 互動，但此資訊適用於所有 Windows 滾輪裝置。 
 
-| 影片 |   |
-| --- | --- |
-| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
-| *Surface Dial 應用程式合作夥伴* | *適用於開發人員的 Surface Dial* |
+:::row:::
+   :::column:::
+      <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *Surface Dial 應用程式合作夥伴*
+   :::column-end:::
+   :::column:::
+      <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe>
+
+      *適用於開發人員的 Surface Dial*
+   :::column-end:::
+:::row-end:::
 
 使用以 *旋轉* 動作為依據的外型規格 (或手勢) 時，Surface Dial 會作為輔助的多重強制回應輸入裝置，以便從主要裝置補充輸入。 在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 
 
@@ -45,9 +53,18 @@ Surface Dial 也支援 *按下和按住* 動作和 *點擊* 動作。 長按有�
 >
 >系統會偵測 Surface Dial 的接觸位置和界限，使用此資訊處理裝置的遮蔽範圍，並沿著 Dial 外圍迴旋顯示較大版本的功能表。 您的應用程式也可以使用這個相同的資訊，針對裝置是否存在及其預期的使用方式 (例如使用者的手與手臂的放置位置) 打造 UI。
 
-| Surface Dial 移開螢幕時的功能表 | | Surface Dial 位於螢幕上的功能表 |
-| --- | --- | --- |
-| ![Surface Dial 移開螢幕時的功能表](images/windows-wheel/surface-dial-menu-offscreen.png) | | ![Surface Dial 位於螢幕上的功能表](images/windows-wheel/surface-dial-menu-onscreen.png) |
+:::row:::
+   :::column:::
+      **Surface Dial 移開螢幕時的功能表**
+
+      ![Surface Dial 移開螢幕時的功能表](images/windows-wheel/surface-dial-menu-offscreen.png)
+   :::column-end:::
+   :::column:::
+      **Surface Dial 位於螢幕上的功能表**
+
+      ![Surface Dial 位於螢幕上的功能表](images/windows-wheel/surface-dial-menu-onscreen.png)
+   :::column-end:::
+:::row-end:::
 
 ## <a name="system-integration"></a>系統整合
 
@@ -113,10 +130,23 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 - 圖示應該填滿大部分的影像
 - 白色圖示要有一個黑色外框可在高對比模式中顯示
 
-|   |   |   |
-| --- | --- | --- |
-| ![使用 alpha 背景的圖示](images/windows-wheel/surface-dial-menu-icon1.png) | ![滾輪功能表上使用預設佈景主題圖示所顯示的圖示](images/windows-wheel/surface-dial-menu-icon2.png) | ![Surface Dial 位於螢幕上的功能表](images/windows-wheel/surface-dial-menu-icon3.png) |
-| *使用 alpha 背景的圖示* | *滾輪功能表上使用預設佈景主題所顯示的圖示* | *滾輪功能表上使用高對比白色佈景主題所顯示的圖示* |
+:::row:::
+   :::column:::
+      ![使用 alpha 背景的圖示](images/windows-wheel/surface-dial-menu-icon1.png)
+
+      *使用 alpha 背景的圖示*
+   :::column-end:::
+   :::column:::
+      ![滾輪功能表上使用預設佈景主題圖示所顯示的圖示](images/windows-wheel/surface-dial-menu-icon2.png)
+
+      *滾輪功能表上使用預設佈景主題所顯示的圖示*
+   :::column-end:::
+   :::column:::
+      ![Surface Dial 位於螢幕上的功能表](images/windows-wheel/surface-dial-menu-icon3.png)
+
+      *滾輪功能表上使用高對比白色佈景主題所顯示的圖示*
+   :::column-end:::
+:::row-end:::
 
 **使用簡潔和清楚描述的名稱**  
 工具名稱會與工具圖示一起顯示在工具功能表中，螢幕助讀程式也會使用此名稱。 
@@ -291,7 +321,7 @@ public MainPage()
 > [!NOTE]
 > 如果將 Surface Dial 放在 Surface Studio 的螢幕上，就會在 Surface Dial 放在螢幕上的位置中央顯示功能表。
 
-### <a name="rotate"></a>旋轉
+### <a name="rotate"></a>Rotate
 
 Surface Dial 主要是設計來支援涉及順暢、增量調整類比值或控制項的互動旋轉。
 
@@ -316,10 +346,25 @@ Surface Dial 無法偵測到您正在使用哪隻手，但是使用者可以在 
 
 Dial 功能表上的內建工具和命令遵循下列指導方針進行以旋轉為基礎的互動︰
 
-|   |   |   |
-| --- | --- | --- |
-| Left<br/>Up<br/>外 | ![Surface Dial 的影像](images/windows-wheel/surface-dial-rotate.png) | Right<br/>Down<br/>位於 |
-|   |   |   |
+:::row:::
+   :::column:::
+      Left
+
+      Up
+
+      外 
+   :::column-end:::
+   :::column span="2":::
+      ![Surface Dial 的影像](images/windows-wheel/surface-dial-rotate.png)
+   :::column-end:::
+   :::column:::
+      Right
+
+      Down
+
+      位於
+   :::column-end:::
+:::row-end:::
 
 | 概念方向 | 對應到 Surface Dial | 順時針方向旋轉 | 逆時針方向旋轉 |
 | --- | --- | --- | --- |
@@ -638,7 +683,7 @@ private void ActivateGridAtLocation(Point Location)
 ![啟用 Surface Dial 自訂工具的範例應用程式 UI 影像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *啟用 Surface Dial 自訂工具的範例應用程式 UI*
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 本主題提供 Surface Dial 輸入裝置的概觀，以及搭配 Surface Studio 使用時，如何針對移開螢幕時的案例和放上螢幕時的案例自訂使用者體驗的 UX 與開發人員指導方針。
 

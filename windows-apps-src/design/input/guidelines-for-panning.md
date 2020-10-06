@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e26d48ef74631e732fb043e909869945a6366
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217048"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749934"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
@@ -139,12 +139,23 @@ Windows 8 支援三種移動瀏覽類型：
 
 下圖顯示移動瀏覽至特定點並放開時，如何造成內容自動移動瀏覽至某個邏輯位置。
 
-|                                                                |                                                                                         |                                                                                                                 |
-|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![顯示可移動瀏覽區域的影像。](images/ux-panning-snap1.png) | ![顯示可移動瀏覽區域被移動瀏覽至左側的影像。](images/ux-panning-snap2.png) | ![顯示已在某個邏輯貼齊點停止移動瀏覽之可移動瀏覽區域的影像。](images/ux-panning-snap3.png) |
-| 撥動以移動瀏覽。                                                  | 提起手指。                                                                     | 可移動瀏覽區域會在貼齊點停止，而不是提起手指的位置。                                |
+:::row:::
+   :::column:::
+      ![顯示可移動瀏覽區域的影像。](images/ux-panning-snap1.png)
 
- 
+      撥動以移動瀏覽。
+   :::column-end:::
+   :::column:::
+      ![顯示可移動瀏覽區域被移動瀏覽至左側的影像。](images/ux-panning-snap2.png)
+
+      提起手指。
+   :::column-end:::
+   :::column:::
+      ![顯示已在某個邏輯貼齊點停止移動瀏覽之可移動瀏覽區域的影像。](images/ux-panning-snap3.png)
+
+      可移動瀏覽區域會在貼齊點停止，而不是提起手指的位置。
+   :::column-end:::
+:::row-end:::
 
 **柵欄** 內容可以寬於和高於顯示裝置的維度及解析度。 基於這個理由，二維移動瀏覽 (水平和垂直) 通常是必需的。 柵欄可改進這些案例中的使用者經驗，透過沿著動作方向的軸線 (垂直或水平) 強調移動瀏覽來完成。
 

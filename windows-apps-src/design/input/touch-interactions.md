@@ -8,12 +8,12 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 14be47fa701742c73048e70c0842cb421c52a7e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220511"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750384"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -57,7 +57,7 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 <table>
 <tbody><tr><th>因素</th><th>觸控互動</th><th>滑鼠、鍵盤、畫筆/手寫筆互動</th><th>Touchpad</th></tr>
-<tr><td rowspan="3">精確度</td><td>指尖的接觸區域大於單一 x-y 座標，增加了啟動非預期命令的機會。</td><td>滑鼠和畫筆/手寫筆可以提供精確的 x-y 座標。</td><td>與滑鼠相同。</td></tr>
+<tr><td rowspan="3">Precision</td><td>指尖的接觸區域大於單一 x-y 座標，增加了啟動非預期命令的機會。</td><td>滑鼠和畫筆/手寫筆可以提供精確的 x-y 座標。</td><td>與滑鼠相同。</td></tr>
 <tr><td>接觸區域的形狀會隨著移動而變化。  </td><td>滑鼠移動和畫筆/手寫筆筆觸可以提供精確的 x-y 座標。 鍵盤焦點很明確。</td><td>與滑鼠相同。</td></tr>
 <tr><td>沒有滑鼠游標協助目標預測。</td><td>滑鼠游標、畫筆/手寫筆游標以及鍵盤焦點，都可以協助目標預測。</td><td>與滑鼠相同。</td></tr>
 <tr><td rowspan="3">人體構造</td><td>指尖的移動並不精準，因為用單指或多指進行直線動作很困難。 這是因為手關節的曲度以及手指進行動作時牽涉到好幾個關節。</td><td>使用滑鼠或畫筆/手寫筆進行直線動作較為簡單，因為控制這些裝置的手實際經過的距離比畫面上的游標短。</td><td>與滑鼠相同。</td></tr>
@@ -150,10 +150,8 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 -   互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
 -   不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
 
-   > [!NOTE]
-   > 例外狀況是您使用特定的計時互動來協助學習和探索 (例如，按住) 。
-
-     
+    > [!NOTE]
+    > 例外狀況是您使用特定的計時互動來協助學習和探索 (例如，按住) 。
 
 -   適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
 

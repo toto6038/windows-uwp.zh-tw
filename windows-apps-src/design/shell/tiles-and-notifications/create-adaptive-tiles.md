@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c60794a52c3d8a5f597d4ab2d09490405c98f85a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5ec8832d4e0e8c72954bf4d0582aac8240da2efe
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218371"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750684"
 ---
 # <a name="create-adaptive-tiles"></a>建立彈性磚
 
@@ -412,9 +412,8 @@ new AdaptiveText()
 
 **基本文字樣式**
 
-|                                |                           |             |
-|--------------------------------|---------------------------|-------------|
 | &lt;text 提示-style = " \* "/&gt; | 字型高度               | 字型寬度 |
+|--------------------------------|---------------------------|-------------|
 | caption                        | 12 個有效像素 (epx) | 定期     |
 | body                           | 15 epx                    | 定期     |
 | base                           | 15 epx                    | 半粗體    |
@@ -429,11 +428,11 @@ new AdaptiveText()
 
 這些變化會減少行高，讓上方和下方的內容會更接近文字。
 
-|                  |
-|------------------|
-| titleNumeral     |
-| subheaderNumeral |
-| headerNumeral    |
+- titleNumeral
+
+- subheaderNumeral
+
+- headerNumeral
 
  
 
@@ -441,18 +440,25 @@ new AdaptiveText()
 
 每個樣式都有可提供文字 60% 不透明度的細微變化，這通常會使文字色彩變成淺灰色網底。
 
-|                        |
-|------------------------|
-| captionSubtle          |
-| bodySubtle             |
-| baseSubtle             |
-| subtitleSubtle         |
-| titleSubtle            |
-| titleNumeralSubtle     |
-| subheaderSubtle        |
-| subheaderNumeralSubtle |
-| headerSubtle           |
-| headerNumeralSubtle    |
+- captionSubtle
+
+- bodySubtle
+
+- baseSubtle
+
+- subtitleSubtle
+
+- titleSubtle
+
+- titleNumeralSubtle
+
+- subheaderSubtle
+
+- subheaderNumeralSubtle
+
+- headerSubtle
+
+- headerNumeralSubtle
 
  
 

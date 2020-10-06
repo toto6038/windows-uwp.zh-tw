@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 非同步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e3810b25ac35cbf5e16f49a86affb4792089d1e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e08a73c7617a5b24af49d5b3665303124e28d257
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161792"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750154"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX 中的非同步程式設計
 > [!NOTE]
@@ -119,9 +119,8 @@ void App::DeleteWithTasks(String^ fileName)
 
 在上一個範例中，請注意工作傳回的是 **task<void>** 事件 (即使它的 Lambda 傳回 [**IAsyncInfo**][IAsyncInfo] 物件)。 下表摘要說明 Lambda 函式和封入工作之間的類型轉換：
 
-| | |
-|--------------------------------------------------------|---------------------|
-| Lambda 傳回類型                                     | `.then` 傳回類型 |
+| Lambda 傳回類型 | `.then` 傳回類型 |
+| ------------------ | ------------------- |
 | TResult                                                | 任務<TResult> |
 | IAsyncOperation<TResult>^                        | 任務<TResult> |
 | IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | 任務<TResult> |

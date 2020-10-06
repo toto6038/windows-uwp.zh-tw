@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a20463414f0b96ea51bdf9796c48759975bfc43e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 62085377da89d64c8ba0799dc6bab13c17675f90
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162212"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750674"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 
@@ -103,9 +103,9 @@ ms.locfileid: "89162212"
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | 檢閱在視覺變更為 [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 和 [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 之後您應用程式的外觀。 針對在行動裝置上執行的 Windows 10 應用程式，這些控制項便不再瀏覽到選取頁面，而是改用會消失關閉的快顯視窗。 |
 | [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) | 在 Windows 10 應用程式中，您無法將 [**DatePicker**](/uwp/api/Windows.UI.Xaml.Controls.DatePicker) 或 [**TimePicker**](/uwp/api/Windows.UI.Xaml.Controls.TimePicker) 放在飛出的內部。如果您想要在快顯類型控制項中顯示這些控制項，則可以使用 [**DatePickerFlyout**](/uwp/api/Windows.UI.Xaml.Controls.DatePickerFlyout) 和 [**TimePickerFlyout**](/uwp/api/Windows.UI.Xaml.Controls.TimePickerFlyout)。 |
 | **GridView**、**ListView** | 若為**gridview** / **ListView**，請參閱[gridview 和 ListView 變更](#gridview-and-listview-changes)。 |
-| [**中樞**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | 在 Windows Phone 市集應用程式中，[**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 控制項會從最後一個區段迴繞到第一個區段。 在 Windows 執行階段8.x 應用程式中，且在 Windows 10 應用程式中，中樞區段不會換行。 |
-| [**中樞**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | 在 Windows Phone 市集應用程式中，[**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 控制項的背景影像不會以相對於中樞區段的視差移動。 在 Windows 執行階段8.x 應用程式中，且在 Windows 10 應用程式中，不會使用視差。 |
-| [**中樞**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | 在通用 8.1 app 中，[**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) 屬性會讓區段標頭—和旁邊呈現的 ＞ 形箭號字符—變成互動式。 在 Windows 10 應用程式中，標頭旁邊有一個互動式的 [查看更多] 預示性，但標頭本身不是互動式。 **IsHeaderInteractive** 仍然會決定互動是否會引發 [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick) 事件。 |
+| [**集線器**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | 在 Windows Phone 市集應用程式中，[**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 控制項會從最後一個區段迴繞到第一個區段。 在 Windows 執行階段8.x 應用程式中，且在 Windows 10 應用程式中，中樞區段不會換行。 |
+| [**集線器**](/uwp/api/Windows.UI.Xaml.Controls.Hub) | 在 Windows Phone 市集應用程式中，[**Hub**](/uwp/api/Windows.UI.Xaml.Controls.Hub) 控制項的背景影像不會以相對於中樞區段的視差移動。 在 Windows 執行階段8.x 應用程式中，且在 Windows 10 應用程式中，不會使用視差。 |
+| [**集線器**](/uwp/api/Windows.UI.Xaml.Controls.Hub)  | 在通用 8.1 app 中，[**HubSection.IsHeaderInteractive**](/uwp/api/windows.ui.xaml.controls.hubsection.isheaderinteractive) 屬性會讓區段標頭—和旁邊呈現的 ＞ 形箭號字符—變成互動式。 在 Windows 10 應用程式中，標頭旁邊有一個互動式的 [查看更多] 預示性，但標頭本身不是互動式。 **IsHeaderInteractive** 仍然會決定互動是否會引發 [**Hub.SectionHeaderClick**](/uwp/api/windows.ui.xaml.controls.hub.sectionheaderclick) 事件。 |
 | **MessageDialog** | 如果您使用的是 **MessageDialog**，則請考慮改用更有彈性的 [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)。 另請參閱 [XAML UI 基本知識](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)範例。 |
 | **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout** 和 **PickerFlyout** 對於 Windows 10 應用程式已過時。 如需單一選擇飛出視窗，請使用 [**MenuFlyout**](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)；如需更複雜的體驗，請使用 [**Flyout**](/uwp/api/Windows.UI.Xaml.Controls.Flyout)。 |
 | [**PasswordBox**](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox) | [**PasswordBox.IsPasswordRevealButtonEnabled**](/uwp/api/windows.ui.xaml.controls.passwordbox.ispasswordrevealbuttonenabled) 屬性在 Windows 10 應用程式中已過時，因此設定該屬性沒有任何作用。 改為使用 [**PasswordBox PasswordRevealMode**](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) ，這會預設為 **查看** 顯示圖像的 (，例如 Windows 執行階段8.x 應用程式) 。 另請參閱[密碼方塊的指導方針](../design/controls-and-patterns/password-box.md)。 |
@@ -187,20 +187,20 @@ ms.locfileid: "89162212"
 
 下表說明 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 和 [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 控制項範本中視覺狀態和視覺狀態群組的變更。
 
-| 8.1                 |                         | Windows 10        |                     |
+| 8.1                 | 功能狀態           | Windows 10        | 功能狀態       |
 |---------------------|-------------------------|-------------------|---------------------|
 | CommonStates        |                         | CommonStates      |                     |
 |                     | 正常                  |                   | 正常              |
 |                     | PointerOver             |                   | PointerOver         |
 |                     | 按下                 |                   | 按下             |
 |                     | PointerOverPressed      |                   | [無法使用]       |
-|                     | Disabled                |                   | [無法使用]       |
+|                     | 停用                |                   | [無法使用]       |
 |                     | [無法使用]           |                   | PointerOverSelected |
 |                     | [無法使用]           |                   | 已選取            |
 |                     | [無法使用]           |                   | PressedSelected     |
 | [無法使用]       |                         | DisabledStates    |                     |
-|                     | [無法使用]           |                   | Disabled            |
-|                     | [無法使用]           |                   | 已啟用             |
+|                     | [無法使用]           |                   | 停用            |
+|                     | [無法使用]           |                   | 啟用             |
 | SelectionHintStates |                         | [無法使用]     |                     |
 |                     | VerticalSelectionHint   |                   | [無法使用]       |
 |                     | HorizontalSelectionHint |                   | [無法使用]       |
@@ -450,7 +450,7 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 設定頁面應填滿應用程式的整個視窗，而且設定頁面也應是關於和意見反應的所在位置。 如需設定頁面的設計指導方針，請參閱[應用程式設定的指導方針](../design/app-settings/guidelines-for-app-settings.md)。
 
-## <a name="text"></a>文字
+## <a name="text"></a>Text
 
 文字 (或印刷樣式) 是 UWP app 中的一個重要層面，在移植時，您可以重新檢閱檢視的視覺設計，以確保它們不會與新的設計語言產生違和感。 請使用這些插圖說明來找出可用的通用 Windows 平台 (UWP) **TextBlock** 系統樣式。 尋找與您使用的 Windows Phone Silverlight 樣式相對應的樣式。 您也可以選擇建立自己的通用樣式，然後從 Windows Phone Silverlight 系統樣式將屬性複製到這些通用樣式中。
 

@@ -4,12 +4,12 @@ description: 瞭解如何使用已啟用語音的 Shell)  (的通用 Windows 平
 ms.date: 10/19/2017
 ms.topic: article
 keywords: windows 10、uwp、xbox、語音、語音功能 shell
-ms.openlocfilehash: b59b578a13145910be30c3f228305b874f9e9734
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa0f56a6821fd8858cab317654cd0ead5d731693
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636478"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750264"
 ---
 # <a name="using-speech-to-invoke-ui-elements"></a>使用語音來叫用 UI 元素
 
@@ -20,31 +20,31 @@ ms.locfileid: "91636478"
 
 - 使用者開啟 Xbox 主控台，並想要流覽其應用程式以尋找感興趣的內容：
 
-        User: "Hey Cortana, open My Games and Apps"
+    > 使用者： "嗨 Cortana，開啟我的遊戲和應用程式
 
 - 使用者停留在主動接聽模式 (ALM) ，這表示主控台現在正在接聽使用者來叫用畫面上可見的控制項，而不需要每次「嗨 Cortana」。  使用者現在可以切換以查看應用程式，並在應用程式清單中進行滾動：
 
-        User: "applications"
+    > 使用者：「應用程式」
 
 - 若要滾動查看，使用者可以直接說：
 
-        User: "scroll down"
+    > 使用者：「向下滾動」
 
 - 使用者會看到他們感興趣的應用程式封面，但忘記名稱。  使用者要求顯示語音提示標籤：
 
-        User: "show labels"
+    > 使用者：「顯示標籤」
 
 - 現在您可以清楚說，可以啟動應用程式：
 
-        User: "movies and TV"
+    > 使用者：「電影和電視」
 
 - 若要結束主動接聽模式，使用者可告知 Xbox 停止聆聽：
 
-        User: "stop listening"
+    > 使用者：「停止接聽」
 
 - 之後，可以使用下列方式啟動新的作用中接聽會話：
 
-        User: "Hey Cortana, make a selection" or "Hey Cortana, select"
+    > 使用者：「嗨 Cortana，進行選取」或「嗨 Cortana，請選取」
 
 ## <a name="ui-automation-dependency"></a>使用者介面自動化相依性 ##
 VES 是消費者介面自動化用戶端，而且會依賴應用程式透過其消費者介面自動化提供者公開的資訊。 這與 Windows 平臺上的 [朗讀程式] 功能已使用相同的基礎結構。  消費者介面自動化可讓您以程式設計方式存取使用者介面元素，包括控制項的名稱、其類型，以及它所執行的控制項模式。  當應用程式中的 UI 變更時，VES 將會回應 UIA 更新事件，並重新剖析更新的消費者介面自動化樹狀結構，以找出所有可採取動作的專案，並使用這項資訊來建立語音辨識文法。 
@@ -168,36 +168,37 @@ VES 採用下列啟發學習法來決定要使用語音辨識器註冊哪一個�
 ## <a name="sample-ui"></a>範例 UI ##
 以下是以 XAML 為基礎的 UI 範例，以各種方式設定 AutomationProperties.Name：
 
-    <Page
-        x:Class="VESSampleCSharp.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:VESSampleCSharp"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
-        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
-            <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
-            <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
-                <ComboBoxItem Content="Monday" IsSelected="True"/>
-                <ComboBoxItem Content="Tuesday"/>
-                <ComboBoxItem Content="Wednesday"/>
-                <ComboBoxItem Content="Thursday"/>
-                <ComboBoxItem Content="Friday"/>
-                <ComboBoxItem Content="Saturday"/>
-                <ComboBoxItem Content="Sunday"/>
-            </ComboBox>
-            <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
-                <Grid>
-                    <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
-                    <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
-                </Grid>
-            </Button>
-        </Grid>
-    </Page>
-
+```xaml
+<Page
+    x:Class="VESSampleCSharp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VESSampleCSharp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="button1" Content="Hello World" HorizontalAlignment="Left" Margin="44,56,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button2" AutomationProperties.Name="Launch Game" Content="Launch" HorizontalAlignment="Left" Margin="44,106,0,0" VerticalAlignment="Top" Width="99"/>
+        <TextBlock AutomationProperties.Name="Day of Week" x:Name="label1" HorizontalAlignment="Left" Height="22" Margin="168,62,0,0" TextWrapping="Wrap" Text="Select Day of Week:" VerticalAlignment="Top" Width="137"/>
+        <ComboBox AutomationProperties.LabeledBy="{Binding ElementName=label1}" x:Name="comboBox" HorizontalAlignment="Left" Margin="310,57,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Monday" IsSelected="True"/>
+            <ComboBoxItem Content="Tuesday"/>
+            <ComboBoxItem Content="Wednesday"/>
+            <ComboBoxItem Content="Thursday"/>
+            <ComboBoxItem Content="Friday"/>
+            <ComboBoxItem Content="Saturday"/>
+            <ComboBoxItem Content="Sunday"/>
+        </ComboBox>
+        <Button x:Name="button3" HorizontalAlignment="Left" Margin="44,156,0,0" VerticalAlignment="Top" Width="213">
+            <Grid>
+                <TextBlock AutomationProperties.Name="Accept">Accept Offer</TextBlock>
+                <TextBlock Margin="0,25,0,0" Foreground="#FF5A5A5A">Exclusive offer just for you</TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Page>
+```
 
 使用上述範例，就是 UI 的外觀和沒有語音提示標籤的樣子。
  

@@ -4,12 +4,12 @@ description: 瞭解如何使用通用 Windows 平臺 (UWP) ，搭配適用于 Xb
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 3e4d98892b9bd738eca788d166ef79f81ea1b047
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1c0eb9bfc6ee758b854754b0531299fb30b51d1c
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173742"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749854"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：針對您的 UWP 專案進行版本控制
 
@@ -31,19 +31,21 @@ ms.locfileid: "89173742"
 
 ***不熟悉 .gitignore 檔案是什麼？ 請參閱 [.gitignore](https://git-scm.com/docs/gitignore)。***
 
-    ##################################################################
-    # The original .gitignore file can be found at
-    # https://github.com/github/gitignore/blob/master/Unity.gitignore
-    ##################################################################
+```console
+##################################################################
+# The original .gitignore file can be found at
+# https://github.com/github/gitignore/blob/master/Unity.gitignore
+##################################################################
 
-    # standard ignores for a Unity Project
-    ...
+# standard ignores for a Unity Project
+...
 
-    # ignore the whole UWP directory
-    /UWP/**
+# ignore the whole UWP directory
+/UWP/**
 
-    # except we want to keep... (this line will be modified and removed further down)
-    !/UWP/ScrapyardPhoenix/
+# except we want to keep... (this line will be modified and removed further down)
+!/UWP/ScrapyardPhoenix/
+```
 
 我們會從 **UWP/ScrapyardPhoenix** 資料夾中選取幾個不同的檔案與資料夾，以新增到我們的版本控制。  我們先看看完整的詳細資料：
 
@@ -67,25 +69,27 @@ ms.locfileid: "89173742"
 
 ## <a name="resulting-gitignore"></a>產生的 .gitignore
 
-    ##################################################################
-    # The original .gitignore file can be found at
-    # https://github.com/github/gitignore/blob/master/Unity.gitignore
-    ##################################################################
+```console
+##################################################################
+# The original .gitignore file can be found at
+# https://github.com/github/gitignore/blob/master/Unity.gitignore
+##################################################################
 
-    # standard ignores for a Unity Project
-    ...
+# standard ignores for a Unity Project
+...
 
-    # ignore the whole UWP directory
-    /UWP/**
+# ignore the whole UWP directory
+/UWP/**
 
-    # except we want to keep...
-    !/UWP/ScrapyardPhoenix/Assets/*
-    !/UWP/ScrapyardPhoenix/Dependencies/*
-    !/UWP/ScrapyardPhoenix/Properties/*
-    !/UWP/ScrapyardPhoenix/App.cs
-    !/UWP/ScrapyardPhoenix/Package.appxmanifest
-    !/UWP/ScrapyardPhoenix/project.json
-    !/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
+# except we want to keep...
+!/UWP/ScrapyardPhoenix/Assets/*
+!/UWP/ScrapyardPhoenix/Dependencies/*
+!/UWP/ScrapyardPhoenix/Properties/*
+!/UWP/ScrapyardPhoenix/App.cs
+!/UWP/ScrapyardPhoenix/Package.appxmanifest
+!/UWP/ScrapyardPhoenix/project.json
+!/UWP/ScrapyardPhoenix/ScrapyardPhoenix.csproj
+```
 
 這樣就好了，現在您的小組成員將會與您產生的 UWP 專案同步。 現在您可以放心地將其他資產、來源和相依性新增到您的 UWP 專案。
 

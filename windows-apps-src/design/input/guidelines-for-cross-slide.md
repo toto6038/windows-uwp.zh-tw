@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5f86da29900e0ef83fb0bf41d2c8d9fe59727f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2b16c957991889cb5f39a775397de72ff56beffc
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172512"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749975"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑動的指導方針
 
@@ -58,14 +58,18 @@ ms.locfileid: "89172512"
 
 **注意**   如果內容區域可以用兩種方向移動流覽，例如網頁瀏覽器或電子讀者，則應該使用持續時間的互動，來叫用影像和超連結等物件的內容功能表。
 
- 
+:::row:::
+   :::column:::
+     ![水平移動瀏覽，二維清單](images/groupedlistview1.png)
 
-|                                                                                         |                                                                                         |
-|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![水平移動瀏覽，二維清單](images/groupedlistview1.png)                | ![垂直移動瀏覽，一維清單](images/listviewlistlayout.png)                |
-| 一個水平移動瀏覽的二維清單。 垂直拖曳以選取或移動項目。 | 一個垂直移動瀏覽的一維清單。 水平拖曳以選取或移動項目。 |
+     一個水平移動瀏覽的二維清單。 垂直拖曳以選取或移動項目。 
+   :::column-end:::
+   :::column:::
+      ![垂直移動瀏覽，一維清單](images/listviewlistlayout.png)
 
- 
+      一個垂直移動瀏覽的一維清單。 水平拖曳以選取或移動項目。
+   :::column-end:::
+:::row-end:::
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 

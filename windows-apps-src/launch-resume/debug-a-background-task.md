@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5daec3f4d0fa823341ff7590094463ef412b88
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156002"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750164"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
@@ -42,16 +42,16 @@ ms.locfileid: "89156002"
 
 2.  在偵錯工具中執行您的應用程式，然後使用 [ **生命週期事件** ] 工具列觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
 
-> [!NOTE]
-> 在 Visual Studio 中，預設不會顯示 [生命週期事件] 工具列選項。 若要顯示這些選項，請以滑鼠右鍵按一下 Visual Studio 中的目前工具列，並確定已啟用 [ **偵錯工具位置** ] 選項。
+    > [!NOTE]
+    > 在 Visual Studio 中，預設不會顯示 [生命週期事件] 工具列選項。 若要顯示這些選項，請以滑鼠右鍵按一下 Visual Studio 中的目前工具列，並確定已啟用 [ **偵錯工具位置** ] 選項。
 
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
+    若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
 
-> [!Note]
-> 無法以這種方式將使用下列觸發程序的背景啟用：[**ApplicationTrigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger)、[**MediaProcessingTrigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、[**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、[**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)，以及觸發程序類型為 [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 使用 [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 的背景工作。  
-> **ApplicationTrigger** 與 **MediaProcessingTrigger** 可以使用 `trigger.RequestAsync()` 在程式碼中手動發送訊號。
+    > [!Note]
+    > 無法以這種方式將使用下列觸發程序的背景啟用：[**ApplicationTrigger**](/uwp/api/windows.applicationmodel.background.applicationtrigger)、[**MediaProcessingTrigger**](/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger)、[**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)、[**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger)，以及觸發程序類型為 [**SmsReceived**](/uwp/api/Windows.ApplicationModel.Background.SystemTriggerType) 使用 [**SystemTrigger**](/uwp/api/Windows.ApplicationModel.Background.SystemTrigger) 的背景工作。  
+    > **ApplicationTrigger** 與 **MediaProcessingTrigger** 可以使用 `trigger.RequestAsync()` 在程式碼中手動發送訊號。
 
-![偵錯背景工作](images/debugging-activation.png)
+    ![偵錯背景工作](images/debugging-activation.png)
 
 3.  當背景工作啟用時，偵錯工具會連結到工作，並在 VS 顯示偵錯輸出。
 

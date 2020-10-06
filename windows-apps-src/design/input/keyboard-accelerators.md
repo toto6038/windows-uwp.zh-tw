@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 02fba8027c5bddec5e5c501783b32dbab5642db9
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 8ec5791c212e2fdfbafd40131d96ace6c88fb519
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219951"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91749954"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -350,14 +350,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 粗體 | Ctrl + B |
 | Underline | Ctrl + U |
 | 斜體 | Ctrl + I |
-
 | **導覽** | |
-| ------------- | ----------------------------------- |
 | 尋找焦點所在控制項或視窗中的內容 | Ctrl + F |
 | 移至下一個搜尋結果 | F3 |
-
 | **其他動作** | |
-| ------------- | ----------------------------------- |
 | 新增我的最愛 | Ctrl + D | 
 | 重新整理 | F5 或 Ctrl + R | 
 | 放大 | Ctrl + + | 

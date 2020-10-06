@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb35a262f02576f0425460c8e27ce0016a08d1a
-ms.sourcegitcommit: 651a6b9769fad1736ab16e2a4e423258889b248e
+ms.openlocfilehash: bcb43748baeeb7f68ec246cb0277fbef0944fc47
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91366894"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750353"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -411,8 +411,8 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 
 ### <a name="62-terminology"></a>6.2 詞彙
 
-| | |
-|-|-|
+| 詞彙 | 定義 |
+| ---- | ---------- |
 | AIK | 證明識別金鑰是用來提供密碼編譯證明 (TPM 金鑰證明)，方法是簽署不可移轉金鑰的屬性，然後將屬性和簽章提供給信賴憑證者來進行驗證。 所產生的簽章稱為「證明聲明」。 因為簽章是使用 AIK 私密金鑰 (只能用在建立它的 TPM 中) 所建立的，信賴憑證者可以信任證明金鑰是真的無法移轉，且無法在該 TPM 以外的地方使用。 |
 | AIK 憑證 | AIK 憑證用來證明 AIK 存在 TPM 內。 它也用來證明經過 AIK 認證的其他金鑰源自於該特定 TPM。 |
 | IDP | IDP 是識別提供者。 其中一個例子，就是 Microsoft 為 Microsoft 帳戶所建立的 IDP。 應用程式每次需要利用 MSA 來驗證時，可以呼叫 MSA IDP。 |

@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bf5d6a2413ba6aeb2e3fd86122e865e34b8729fa
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e89011086e6c6d318d589226400789b41f8fe64
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172202"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750344"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支援的服務點週邊設備
 
@@ -23,7 +23,7 @@ ms.locfileid: "89172202"
 |
 
 
-| 製造商  | 型號                          | 功能 | 連線    | 類型         | [模式]                      |
+| 製造商  | 模型                          | 功能 | 連線    | 類型         | 模式                      |
 |---------------|--------------------------------|------------|--------------|--------------|---------------------------|
 | 程式碼          | 讀取器™950                    | 2D         | USB          | 手持     | 隱藏的 POS 掃描器           |
 | 程式碼          | 讀取器™1021                   | 2D         | USB          | 手持     | 隱藏的 POS 掃描器           |
@@ -75,12 +75,12 @@ ms.locfileid: "89172202"
 <hr>
 
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>具有內建條碼掃描器的 Windows 裝置
-| 製造商   | 型號 | 作業系統 |
+| 製造商   | 模型 | 作業系統 |
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>具有內建條碼掃描器的 Windows Mobile 裝置
-| 製造商   | 型號 | 作業系統 |
+| 製造商   | 模型 | 作業系統 |
 |----------------|-------|------------------|
 | Bluebird       | EF400 | Windows Mobile   |
 | Bluebird       | EF500 | Windows Mobile   |
@@ -123,7 +123,7 @@ Windows 根據廠商識別碼和產品識別碼 (VID/PID)，為 Magtek 和 IDTec
 ## <a name="receipt-printer-posprinter"></a>收據印表機 (POSPrinter)
 | 連線能力 | 支援 |
 | -------------|-------------|
-| 網路和藍牙 | <p>Windows 支援使用 Epson ESC/POS 印表機控制語言的網路及藍牙連線收據印表機。  使用 POSPrinter API 可自動對下列印表機進行探索。 其他提供 ESC/POS 模擬的回條印表機也可以運作，但必須使用 [超出範圍配對](./point-of-service.md#out-of-band-pairing) 程式來建立關聯。</p><p>注意：票印站及存根記錄站無法透過這種方式來支援。</p> |
+| 網路和藍牙 | <p>Windows 支援使用 Epson ESC/POS 印表機控制語言的網路及藍牙連線收據印表機。  使用 POSPrinter API 可自動對下列印表機進行探索。 其他提供 ESC/POS 模擬的回條印表機也可以運作，但必須使用 [超出範圍配對](./point-of-service.md) 程式來建立關聯。</p><p>注意：票印站及存根記錄站無法透過這種方式來支援。</p> |
 | OPOS    | <p> 透過 OPOS 服務物件支援任何 OPOS 相容收據印表機。 根據裝置製造商的安裝指示，安裝 OPOS 驅動程式。 </p> |
 
 ### <a name="stationary-receipt-printers-networkbluetooth"></a>固定式收據印表機 (網路/藍牙)

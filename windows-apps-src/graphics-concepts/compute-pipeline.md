@@ -4,32 +4,34 @@ description: Direct3D 計算管線主要設計用來處理大部分可與圖形�
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 36d1bd524d6e71b0a1aa9477d7a2b7a5f27544aa
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57651113"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750044"
 ---
 # <a name="compute-pipeline"></a>計算管線
 
 
-\[某些資訊與相關預先發行的產品，這可能會在正式發行之前大幅修改。 Microsoft 不做任何明示明示或默示此處提供的資訊。\]
+\[某些資訊與預先發行的產品有關，在正式發行之前可能會經過大幅修改。 針對此處提供的資訊，Microsoft 不做任何明示或默許的擔保。\]
 
 
 Direct3D 計算管線主要設計用來處理大部分可與圖形管線平行進行的計算。 計算管線中只有幾個步驟：資料透過可程式化著色器階段，從輸入端流向輸出端。
 
-| | |
-|-|-|
-|用途|就像其他可程式化的著色器，[計算著色器 (CS) 階段](compute-shader-stage--cs-.md)利用 HLSL 進行設計與實作。 計算著色器提供高速一般用途運算，並且利用了圖形處理器 (GPU) 大量平行處理器的優勢。 計算著色器提供了記憶體共用以及執行緒同步功能，讓平行程式設計方法更有效率。|
-|Input|與其他可程式化著色器不同，輸入的定義其實相當抽象。 輸入在本質上可以是一維、二維，或是三維的，並且決定了呼叫計算著色器執行的引動過程數量。 您可以為一組引動過程定義要讀取的共用資料。|
-|輸出|來自計算著色器的輸出資料可能各不相同，並且可以在需要計算資料時與圖形轉譯管線同步。|
-| | |
+## <a name="purpose"></a>目的
 
+就像其他可程式化的著色器，[計算著色器 (CS) 階段](compute-shader-stage--cs-.md)利用 HLSL 進行設計與實作。 計算著色器提供高速一般用途運算，並且利用了圖形處理器 (GPU) 大量平行處理器的優勢。 計算著色器提供記憶體共用和執行緒同步處理功能，以允許更有效的平行程式設計方法。 |
 
+## <a name="input"></a>輸入
 
+與其他可程式化著色器不同，輸入的定義其實相當抽象。 輸入在本質上可以是一維、二維，或是三維的，並且決定了呼叫計算著色器執行的引動過程數量。 您可以為一組要讀取的調用定義共用資料。 |
+
+## <a name="output"></a>輸出
+
+來自計算著色器的輸出資料可能各不相同，並且可以在需要計算資料時與圖形轉譯管線同步。
 
 <!---
 <table>
