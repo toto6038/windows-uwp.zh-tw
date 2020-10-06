@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf6bc95eef416b481642d84eef8315451916604
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 411ecb63189084ba83f9971ded2bbe02d899aabd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174102"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762863"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>當地語系化您的 UI 及應用程式套件資訊清單中的字串
 
@@ -40,7 +40,7 @@ ms.locfileid: "89174102"
 
     `Strings/en-US/Resources.resw`
 
-    ![新增資源, 英文](images/addresource-en-us.png)
+    ![> E N U S > Resources. .resw 檔案的 [新增資源] 資料表的螢幕擷取畫面。](images/addresource-en-us.png)
 
     在此範例中，「Greeting」是您可以從您的標記參照的字串資源識別碼，如以下所示。 對於識別碼「Greeting」，會提供 Text 屬性字串，並提供 Width 屬性字串。 「Greeting.Text」是屬性識別碼的範例，因為它對應 UI 項目的屬性。 您同時也可以，例如在 \[名稱\] 欄位中新增「Greeting.Foreground」，並將其 Value 設為「Red」。 「Farewell」識別碼是簡單的字串資源識別碼；不具備子屬性，它可以從命令式程式碼載入，如以下所示。 Comment 欄位是提供任何特殊指示給翻譯人員的很好位置。
 
@@ -108,13 +108,13 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 1. 開啟您的應用程式套件資訊清單原始程式檔 (檔案 `Package.appxmanifest`) ，在預設情況下，您的應用程式 `Display name` 會以字串常值表示。
 
-   ![新增資源, 英文](images/display-name-before.png)
+   ![Package.appxmanifest 檔案的螢幕擷取畫面，其中顯示 [應用程式] 索引標籤，並將 [顯示名稱] 設定為 [艾德作品] 週期。](images/display-name-before.png)
 
 2. 若要製作這個字串的當地語系化版本，請開啟 `Resources.resw` 並加入名稱為「AppDisplayName」和值為「Adventure Works Cycles」的新字串資源。
 
 3. 以剛建立的字串資源識別碼 (「AppDisplayName」) 的參照，取代顯示名稱字串常值。 若要這樣做，您可以使用 `ms-resource` URI (統一資源識別項) 配置。
 
-   ![新增資源, 英文](images/display-name-after.png)
+   ![Package.appxmanifest 檔案的螢幕擷取畫面，其中顯示 [應用程式] 索引標籤，並將 [顯示名稱] 設定為 M S 資源應用程式顯示名稱。](images/display-name-after.png)
 
 4. 對於您想要當地語系化的資訊清單中的每個字串重複此程序。 例如，您的 App 簡短名稱 (您可以設定為顯示在 [開始] 畫面的 App 磚上)。 如需可當地語系化的應用程式套件資訊清單中的所有項目清單，請參閱[可當地語系化的資訊清單項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)。
 
@@ -147,7 +147,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 
 您可以將所有字串保存在單一資源檔案 (resw)，或者您可以將它們分解為跨多個資源檔案。 例如，您可能想要在一個資源檔案中保存您的錯誤訊息，另一個資源檔案中保存應用程式套件資訊清單字串，第三個保存您的 UI 字串。 在該案例中，您的資料夾結構看起來會像這樣。
 
-![新增資源, 英文](images/manifest-resources.png)
+![解決方案面板的螢幕擷取畫面，其中顯示 [艾德作品] > 字串] 資料夾，其中包含德文、U S 英文和法文地區設定資料夾和檔案。](images/manifest-resources.png)
 
 若要將字串資源識別碼限定範圍為參照特定檔案，您只要在識別碼之前新增 `/<resources-file-name>/`。 以下標記範例假設 `ErrorMessages.resw` 包含的資源其名稱為「PasswordTooWeak.Text」，其值描述錯誤。
 
@@ -303,7 +303,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 
 1. 從程式碼解析資源時，請使用 [GetForViewIndependentUse](/uwp/api/windows.applicationmodel.resources.resourceloader.getforviewindependentuse) 而非 [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，因為未封裝的案例中沒有 *目前的觀點* 。 如果您在非封裝案例中呼叫 [GetForCurrentView](/uwp/api/windows.applicationmodel.resources.resourceloader.getforcurrentview) ，就會發生下列例外狀況： *可能無法在沒有 CoreWindow 的執行緒上建立資源內容。*
 1. 使用 [MakePri.exe](./compile-resources-manually-with-makepri.md) 手動產生您的應用程式資源 pri 檔案。
-    - `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`執行 {2}
+    - `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`執行
     - &lt;Priconfig.default.xml &gt; 必須省略「封裝」 &lt; 區段， &gt; 以便將所有資源配套到單一資源的 pri 檔案中。 如果使用[createconfig](./makepri-exe-command-options.md#createconfig-command)所建立的預設[MakePri.exe 設定檔](./makepri-exe-configuration.md)，您必須在 &lt; 建立後手動刪除「封裝」 &gt; 區段。
     - &lt;Priconfig.default.xml &gt; 必須包含所有必要的索引子，以將您專案中的所有資源合併為單一資源的 pri 檔案。 [Createconfig](./makepri-exe-command-options.md#createconfig-command)所建立的預設[MakePri.exe 設定檔](./makepri-exe-configuration.md)包含所有索引子。
     - 如果您未使用預設設定，請確定已啟用 PRI 索引子 (查看如何執行這項作業的預設設定) ，以合併位於專案根目錄內的 UWP 專案參考、NuGet 參考等等的 PRIs。

@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
-ms.openlocfilehash: ae3d4826c4468cabea318ed230da0cfbb4d5f24b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 005ec4883eeb52a84e458ba917439d093ab0041f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219111"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763079"
 ---
 # <a name="keyboard-interactions"></a>鍵盤互動
 
@@ -507,11 +507,13 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 在所有支援的輸入裝置上測試您的 app，以確保以一致且直覺式的方式瀏覽至 UI 元素，且沒有非預期的元素會干擾您想要的 Tab 順序。
 
 ## <a name="related-articles"></a>相關文章
+
 * [鍵盤事件](keyboard-events.md)
 * [識別輸入裝置](identify-input-devices.md)
 * [回應觸控式鍵盤的出現](respond-to-the-presence-of-the-touch-keyboard.md)
 * [焦點視覺效果範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) \(英文\)
-* [NavigationView 控制項鍵盤細節](../controls-and-patterns/navigationview.md#hierarchical-navigation) 
+* [NavigationView 控制項鍵盤細節](../controls-and-patterns/navigationview.md#hierarchical-navigation)
+* [鍵盤協助工具](../accessibility/keyboard-accessibility.md)
 
 ## <a name="appendix"></a>附錄
 
@@ -547,7 +549,7 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 -   功能表列
 -   功能表項目
 -   工具列
--   清單
+-   List
 -   清單項目
 
 以下是觸控式鍵盤各種模式的範例。 第一個影像是預設版面配置，第二個是拇指版面配置 (不是所有語言都有提供)。
@@ -576,7 +578,3 @@ Xbox 遊戲台與遙控器支援許多 UWP 鍵盤行為和體驗。 不過，因
 ***螢幕小鍵盤***
 
 如需有關螢幕小鍵盤的詳細資訊，請瀏覽[螢幕小鍵盤頁面](https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard)。
-
-## <a name="related-articles"></a>相關文章
-
-- [鍵盤協助工具](../accessibility/keyboard-accessibility.md)

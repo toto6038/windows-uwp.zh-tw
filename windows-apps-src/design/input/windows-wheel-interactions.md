@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a054299b933e523f8594419c4e954c3a0bf1e4
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: fd21ca0a27979a5febbc5a3a76a02a1beb2138fd
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749964"
+ms.locfileid: "91763014"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 互動
 
@@ -57,12 +57,12 @@ Surface Dial 也支援 *按下和按住* 動作和 *點擊* 動作。 長按有�
    :::column:::
       **Surface Dial 移開螢幕時的功能表**
 
-      ![Surface Dial 移開螢幕時的功能表](images/windows-wheel/surface-dial-menu-offscreen.png)
+      ![螢幕擷取畫面： Surface Dial 的螢幕擷取畫面。](images/windows-wheel/surface-dial-menu-offscreen.png)
    :::column-end:::
    :::column:::
       **Surface Dial 位於螢幕上的功能表**
 
-      ![Surface Dial 位於螢幕上的功能表](images/windows-wheel/surface-dial-menu-onscreen.png)
+      ![螢幕擷取畫面：螢幕上的 [Surface Dial] 功能表。](images/windows-wheel/surface-dial-menu-onscreen.png)
    :::column-end:::
 :::row-end:::
 
@@ -132,17 +132,17 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 :::row:::
    :::column:::
-      ![使用 alpha 背景的圖示](images/windows-wheel/surface-dial-menu-icon1.png)
+      ![具有 Alpha 背景之圖示的螢幕擷取畫面。](images/windows-wheel/surface-dial-menu-icon1.png)
 
       *使用 alpha 背景的圖示*
    :::column-end:::
    :::column:::
-      ![滾輪功能表上使用預設佈景主題圖示所顯示的圖示](images/windows-wheel/surface-dial-menu-icon2.png)
+      ![以預設主題顯示于滾輪功能表上之圖示的螢幕擷取畫面。](images/windows-wheel/surface-dial-menu-icon2.png)
 
       *滾輪功能表上使用預設佈景主題所顯示的圖示*
    :::column-end:::
    :::column:::
-      ![Surface Dial 位於螢幕上的功能表](images/windows-wheel/surface-dial-menu-icon3.png)
+      ![具有高對比白色主題之滾輪功能表上顯示圖示的螢幕擷取畫面。](images/windows-wheel/surface-dial-menu-icon3.png)
 
       *滾輪功能表上使用高對比白色佈景主題所顯示的圖示*
    :::column-end:::
@@ -171,7 +171,7 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 1. 首先，我們在 XAML 中宣告我們的 UI (只有一個滑桿和切換按鈕)。
 
-   ![範例應用程式 UI 的影像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   ![星形控制器範例的螢幕擷取畫面，其中的水準滑杆設為左邊。](images/windows-wheel/surface-dial-snippet-customtool1.png)  
    *範例應用程式 UI*
 
     ```Xaml
@@ -272,7 +272,7 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 當我們執行應用程式時，我們使用 Surface Dial 與其進行互動。 首先，我們長按以開啟功能表，然後選取我們自訂的工具。 自訂工具啟用之後，可以旋轉 Dial 調整滑桿控制項，而且可以按一下 Dial 切換開關。
 
-![啟用 Surface Dial 自訂工具的範例應用程式 UI 影像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+![星形控制器範例的螢幕擷取畫面，其中的水準滑杆設為中間。](images/windows-wheel/surface-dial-snippet-customtool2.png)  
 *啟用 Surface Dial 自訂工具的範例應用程式 UI*
 
 **指定內建的工具**
@@ -480,7 +480,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 1. 首先，我們在 XAML 中宣告我們的 UI (四個區段，每個區段都有一個滑桿和切換按鈕)。
 
-   ![範例應用程式 UI 的影像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   ![星形控制器範例的螢幕擷取畫面，其中四個水準滑杆設為左邊。](images/windows-wheel/surface-dial-snippet-customtool3.png)  
    *範例應用程式 UI*
 
    ```xaml 
@@ -680,14 +680,12 @@ private void ActivateGridAtLocation(Point Location)
 
 當我們執行應用程式時，我們使用 Surface Dial 與其進行互動。 首先，我們將裝置放在 Surface Studio 螢幕上，應用程式會偵測到並與右下角的區段關聯 (參閱影像)。 然後，我們長按 Surface Dial 以開啟功能表，然後選取我們自訂的工具。 自訂工具啟用之後，可以旋轉 Surface Dial 調整滑桿控制項，而且可以按一下 Surface Dial 切換開關。
 
-![啟用 Surface Dial 自訂工具的範例應用程式 UI 影像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+![星形控制器範例的螢幕擷取畫面，其中四個水準滑杆設為左方，而第四個控制器已反白顯示。](images/windows-wheel/surface-dial-snippet-customtool4.png)  
 *啟用 Surface Dial 自訂工具的範例應用程式 UI*
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 本主題提供 Surface Dial 輸入裝置的概觀，以及搭配 Surface Studio 使用時，如何針對移開螢幕時的案例和放上螢幕時的案例自訂使用者體驗的 UX 與開發人員指導方針。
-
-## <a name="feedback"></a>意見反應
 
 請將您的問題、建議和意見反應傳送給 [radialcontroller@microsoft.com](mailto:radialcontroller@microsoft.com) 。
 
