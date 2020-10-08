@@ -11,12 +11,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e9007d73a347fbd2575d198ed6af858f629e6cf6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 886236000c31dbeda12ae95e4c920be0a2cb03f3
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217521"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750554"
 ---
 # <a name="color-picker"></a>色彩選擇器
 
@@ -26,9 +26,17 @@ ms.locfileid: "91217521"
 
 **取得 Windows UI 程式庫**
 
-|  |  |
-| - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **ColorPicker** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 標誌](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **ColorPicker** 控制項包含在 Windows UI 程式庫中，該程式庫是 NuGet 套件，其包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI 程式庫 API：** [ColorPicker 類別](/uwp/api/microsoft.ui.xaml.controls.colorpicker)、[Color 屬性](/uwp/api/microsoft.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](/uwp/api/microsoft.ui.xaml.controls.colorpicker.ColorChanged)
 >

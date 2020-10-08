@@ -14,12 +14,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: RS5, 19H1
-ms.openlocfilehash: ceade84d60b4e2f01c51c4570bb9ce425848a2d8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e033c98aa9336c544219786a254cebaedfcd9f29
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217201"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750144"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -36,9 +36,17 @@ XAML [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項啟用提�
 
 **取得 Windows UI 程式庫**
 
-|  |  |
-| - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **TreeView** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 標誌](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **TreeView** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 UWP 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI 程式庫 API：** [TreeView 類別](/uwp/api/microsoft.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/microsoft.ui.xaml.controls.treeviewnode)、[TreeView.ItemsSource 屬性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource)
 >
@@ -134,13 +142,13 @@ XAML [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項啟用提�
 
 如果您使用 **TreeView.ItemsSource**，這些 API 可用於從容器中取得節點或資料項目，反之亦然。
 
-| **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
-| - | - |
+| [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem) | 描述 |
+| ------------------------------------------------------------------ | ----------- |
 | [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | 取得所指定 **TreeViewItem** 容器的資料項目。 |
 | [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | 取得所指定資料項目的 **TreeViewItem** 容器。 |
 
-| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
-| - | - |
+| [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) | 描述 |
+| -------------------------------------------------------------- | ----------- |
 | [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | 取得所指定 **TreeViewItem** 容器的 **TreeViewNode**。 |
 | [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | 取得所指定 **TreeViewNode** 的 **TreeViewItem** 容器。 |
 
@@ -179,12 +187,12 @@ End Sub
 
 這些 API 可用來管理樹狀檢視的資料階層。
 
-| **[TreeView](/uwp/api/windows.ui.xaml.controls.treeview)** | |
-| - | - |
+| [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) | 描述 |
+| ------------------------------------------------------ | ----------- |
 | [RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes) | 樹狀檢視可以有一或多個根節點。 將 **TreeViewNode** 物件新增至 **RootNodes** 集合以建立根節點。 根節點的 **Parent** 永遠為 **null**。 根節點的 **Depth** 為 0。 |
 
-| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
-| - | - |
+| [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) | 描述 |
+| -------------------------------------------------------------- | ----------- |
 | [子系](/uwp/api/windows.ui.xaml.controls.treeviewnode.children) | 將 **TreeViewNode** 物件新增至父節點的 **Children** 集合以建立您的節點階層。 節點是其 **Children** 集合中所有節點的 **Parent**。 |
 | [HasChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.haschildren) | 如果節點有具現化的子系，則為 **true**。 **false** 表示空的資料夾或一個項目。 |
 | [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) | 如果您正在節點展開時填滿節點，請使用此屬性。 請參閱本文稍後的＜[當節點正在展開時填滿節點](#fill-a-node-when-its-expanding)＞。 |

@@ -5,12 +5,12 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 遷移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c6b4213ee5edf8f9a5878b4f9a1a7095220bcd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 353ca9922bc633efa5f53b2c3a3f4d7a4cad5986
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157322"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750614"
 ---
 # <a name="move-to-cwinrt-from-c"></a>從 C# 移到 C++/WinRT
 
@@ -33,8 +33,8 @@ ms.locfileid: "89157322"
 
 ## <a name="changes-that-involve-the-language-projection"></a>涉及語言投射的變更
 
-||C#|C++/WinRT|另請參閱|
-|-|-|-|-|
+| 類別 | C# | C++/WinRT | 另請參閱 |
+| -------- | -- | --------- | -------- |
 |不具類型的物件|`object` 或 [**System.Object**](/dotnet/api/system.object)|[**Windows::Foundation::IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
 |投影命名空間|`using System;`|`using namespace Windows::Foundation;`||
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
@@ -107,8 +107,8 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 
 ## <a name="changes-that-involve-the-language-syntax"></a>涉及語言語法的變更
 
-||C#|C++/WinRT|另請參閱|
-|-|-|-|-|
+| 類別 | C# | C++/WinRT | 另請參閱 |
+| -------- | -- | --------- | -------- |
 |存取修飾詞|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[移植 **Button_Click** 方法](./clipboard-to-winrt-from-csharp.md#button_click)|
 |存取資料成員|`this.variable`|`this->variable`||
 |非同步動作|`async Task ...`|`IAsyncAction ...`||
@@ -128,10 +128,10 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |字串常值|`"a string literal"`|`L"a string literal"`|[移植建構函式 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
 |推斷 (或推算) 的類型|`var`|`auto`|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
 |使用指示詞|`using A.B.C;`|`using namespace A::B::C;`|[移植建構函式 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|逐字/原始字串常值|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md##displaytoast)|
+|逐字/原始字串常值|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)|
 
 > [!NOTE]
-> 如果標頭檔不包含指定命名空間的 `using namespace` 指示詞，則您必須完整限定該命名空間的所有類型名稱；或者至少要限定在足以讓編譯器找到這些名稱的範圍。 如需範例，請參閱[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md##displaytoast)。
+> 如果標頭檔不包含指定命名空間的 `using namespace` 指示詞，則您必須完整限定該命名空間的所有類型名稱；或者至少要限定在足以讓編譯器找到這些名稱的範圍。 如需範例，請參閱[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)。
 
 ### <a name="porting-classes-and-members"></a>移植類別與成員
 
@@ -151,8 +151,8 @@ C# 靜態欄位會成為 C++/WinRT 靜態存取子和 (或) 更動子涵式。 �
 
 ## <a name="changes-that-involve-procedures-within-the-language"></a>涉及語言內程序的變更
 
-||C#|C++/WinRT|另請參閱|
-|-|-|-|-|
+| 類別 | C# | C++/WinRT | 另請參閱 |
+| -------- | -- | --------- | -------- |
 |非同步方法中的存留期管理|不適用|`auto lifetime{ get_strong() };` 或<br>`auto lifetime = get_strong();`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |處置|`using (var t = v)`|`auto t{ v };`<br>`t.Close(); // or let wrapper destructor do the work`|[移植 **CopyImage** 方法](./clipboard-to-winrt-from-csharp.md#copyimage)|
 |建構物件|`new MyType(args)`|`MyType{ args }` 或<br>`MyType(args)`|[移植 **Scenarios** 屬性](./clipboard-to-winrt-from-csharp.md#scenarios)|
@@ -266,8 +266,8 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 針對字串建立，C# 有內建的 [**StringBuilder**](/dotnet/api/system.text.stringbuilder) 類型。
 
-| | C# | C++/WinRT |
-|-|-|-|
+| 類別 | C# | C++/WinRT |
+| -------- | -- | --------- |
 | 字串建立 | `StringBuilder builder;`<br>`builder.Append(...);` | `std::wostringstream builder;`<br>`builder << ...;` |
 | 附加 Windows 執行階段字串，保留 null | `builder.Append(s);` | `builder << std::wstring_view{ s };` |
 | 加入新行 |`builder.Append(Environment.NewLine);` | `builder << std::endl;` |

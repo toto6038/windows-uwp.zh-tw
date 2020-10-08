@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 9aee0f0e91528258b0591f2e3c7e0ea10353b5b7
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: fd2f755153b29c9be766d39fb685a3f923868946
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593452"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750415"
 ---
 # <a name="responsive-layouts-with-xaml"></a>使用 XAML 的回應式版面配置
 
@@ -47,8 +47,8 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 
 這個範例會在具有 4 欄的 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| 資料行 | 調整大小 | 描述 |
+| ------ | ------ | ----------- |
 Column_1 | **Auto** | 會調整欄的大小以容納其內容。
 Column_2 | * | 計算 Auto 欄之後，這個欄會分配到一部分的剩餘寬度。 Column_2 會是 Column_4 的一半寬度。
 Column_3 | **44** | 此欄寬度為 44 個像素。

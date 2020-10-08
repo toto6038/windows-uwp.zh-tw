@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一般, c++, cpp, winrt, 投影, 投射, 控點, 事件, 委派
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d2470b1aa52f8aa4be7e07bf1dfe5213054b005
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fefc7f72fb91a61ae924ac082dcac6d3cf9c044b
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166242"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750124"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -112,12 +112,12 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
 > ```
 >
 > 從這些資訊，可以發現 **UIElement.KeyDown** 事件 (討論主題) 具有 **KeyEventHandler** 此委派類型，因為這是使用此事件類型註冊委派時所傳遞的類型。 因此，請點擊主題的連結前往該 [KeyEventHandler 委派](/uwp/api/windows.ui.xaml.input.keyeventhandler)類型。 在這裡，語法區塊含有函式呼叫運算子。 而且，如上所述，其會告訴您所需的委派參數。
-> 
-> ```cppwinrt
-> void operator()(
-    winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
-> ```
+>
+>```cppwinrt
+>void operator()(
+>   winrt::Windows::Foundation::IInspectable const& sender,
+>   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>```
 >
 >  如您所見，需要宣告委派，才能使用 **IInspectable** 做為傳送者，並且使用 [KeyRoutedEventArgs 類別](/uwp/api/windows.ui.xaml.input.keyroutedeventargs)的執行個體做為引數。
 >

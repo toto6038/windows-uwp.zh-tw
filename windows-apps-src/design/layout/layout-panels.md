@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3915fca3b459d259e83c9c9ce5ef19aa413e2e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3fd8d57db92b8a59f32935586edfc247ec3c281f
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218671"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750454"
 ---
 # <a name="layout-panels"></a>版面配置面板
 
@@ -186,8 +186,8 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 
 這個範例會在具有 4 欄的 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 
-&nbsp;|&nbsp;|&nbsp;
-------|------|------
+| 資料行 | 調整大小 | 描述 |
+| ------ | ------ | ----------- |
 Column_1 | **Auto** | 會調整欄的大小以容納其內容。
 Column_2 | * | 計算 Auto 欄之後，這個欄會分配到一部分的剩餘寬度。 Column_2 會是 Column_4 的一半寬度。
 Column_3 | **44** | 此欄寬度為 44 個像素。

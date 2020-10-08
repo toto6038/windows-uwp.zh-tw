@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: c035a97b1750c8f285689f2b2f82f3766a6c06ad
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d301a2dfcc478f6d90b8aa562bfbd34cf79493c1
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173792"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750134"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 
@@ -54,9 +54,9 @@ Microsoft 會發行「正式發行前小眾測試版」給 Windows 測試人員�
 
 這個方法會減少將 app 排程與 Windows 版本維持一致的負擔。 ISV 合作夥伴應該可以自由地以他們本身的步調來發行功能或更新。 我們認為我們的合作夥伴可透過和 Windows 版本無關的最新 app 更新讓他們的客戶維持在最新狀態。 此外，我們的客戶不需要在 Windows 組建發行時尋找明確的支援聲明。 以下是支援聲明的範例，涵蓋 app 可能受不同版本作業系統支援的方式：
 
-| 應用程式生命週期支援聲明的範例 | |
-| --- | --- |
-| Contoso 是軟體開發公司，也是最熱門的 Mojave app 擁有者，在企業領域中佔有重要的一席之地。 Contoso 發行其下一個主要版本 Mojave 14.0，並且宣告主要支援為自發行日起三年的期間。 在主要支援期間，所有的更新與支援均免費提供給授權產品。 Contoso 也宣告額外的兩年延伸支援，客戶可購買寬限期間的更新與支援。 延伸支援結束日期之後，就不再支援此產品版本。 在主要支援期間，Contoso 將在所有發行的 Windows 組建上支援 Mojave 14.0。 Contoso 也會視需要發行 Mojave 的更新，此更新與 Windows 產品版本無關。 | |
+> **應用程式生命週期支援聲明的範例**
+>
+> Contoso 是軟體開發公司，也是最熱門的 Mojave app 擁有者，在企業領域中佔有重要的一席之地。 Contoso 發行其下一個主要版本 Mojave 14.0，並且宣告主要支援為自發行日起三年的期間。 在主要支援期間，所有的更新與支援均免費提供給授權產品。 Contoso 也宣告額外的兩年延伸支援，客戶可購買寬限期間的更新與支援。 延伸支援結束日期之後，就不再支援此產品版本。 在主要支援期間，Contoso 將在所有發行的 Windows 組建上支援 Mojave 14.0。 Contoso 也會視需要發行 Mojave 的更新，此更新與 Windows 產品版本無關。
 
 在下列章節中，您會找到 Microsoft 為維持基礎作業系統相容性所採取之步驟的其他資訊。 您也會找到可採取之步驟的指導方針，協助您維護組合作業系統與 app 生態系統的相容性。 另外有章節說明如何利用 Windows 正式發行前小眾測試組建，在 Windows 組建發行之前偵測 app 迴歸。 最後，我們說明如何使用檢測與遙測導向方法，來提高 Windows 組建的品質。 我們建議 ISV 對他們的 app 組合採用類似的方法。
 

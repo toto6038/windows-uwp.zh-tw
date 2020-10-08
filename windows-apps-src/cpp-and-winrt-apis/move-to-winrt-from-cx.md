@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 94ffa80700cea640d63f63344991144a2ac00ab6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
+ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157312"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91750594"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -39,7 +39,7 @@ ms.locfileid: "89157312"
 
 若要將專案做好準備以進行逐步移植程序，其中一個選項是將 C++/WinRT 支援新增至您的 C++/CX 專案。 如需該作業所需的步驟，請參閱[取用 C++/CX 專案並新增 C++/WinRT 支援](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)。 然後，您即可從該處逐步移植。
 
-另一個選項是使用一個 C++/WinRT 專案範本在 Visual Studio 中建立新的專案 (請參閱 [C++/WinRT 的 Visual Studio 支援](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，將 C++/CX 支援新增至該專案。 如需該作業所需的步驟，請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support)。 如此，您即可開始將原始程式碼移至該程式碼，同時將*部分* C++/CX 原始程式碼移植到 C++/WinRT。
+另一個選項是使用一個 C++/WinRT 專案範本在 Visual Studio 中建立新的專案 (請參閱 [C++/WinRT 的 Visual Studio 支援](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，將 C++/CX 支援新增至該專案。 如需該作業所需的步驟，請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support)。 如此，您即可開始將原始程式碼移至該程式碼，同時將*部分* C++/CX 原始程式碼移植到 C++/WinRT。
 
 無論採用哪個選項，您都可以在C++/WinRT 程式碼與尚未移植的任何 C++/CX 程式碼之間進行相互操作 (雙向)。
 
@@ -64,7 +64,7 @@ ms.locfileid: "89157312"
 無論您的移植策略為何 (一次性移植或逐步移植)，首要步驟都是將您要移植的專案準備就緒。 以下將扼要重述我們在[移植策略](#strategies-for-porting)中，針對您首先應處理的專案類型及其設定方式所做的說明。
 
 - **一次性移植**。 使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新的專案。 將檔案從 C++/CX 專案移至該新專案，並移植 C++/CX 原始程式碼。
-- **逐步移植非 XAML 專案**。 您可以選擇將 C++/WinRT 支援新增 C++/CX 專案 (請參閱[取用 C++/CX 專案並新增 C++/WinRT 支援](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support))，然後逐步移植。 或者，您可以選擇建立新的 C++/WinRT 專案，並為其新增 C++/CX 支援 (請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-cx-support))、將檔案移過去，然後逐步移植。
+- **逐步移植非 XAML 專案**。 您可以選擇將 C++/WinRT 支援新增 C++/CX 專案 (請參閱[取用 C++/CX 專案並新增 C++/WinRT 支援](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support))，然後逐步移植。 或者，您可以選擇建立新的 C++/WinRT 專案，並為其新增 C++/CX 支援 (請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support))、將檔案移過去，然後逐步移植。
 - **逐步移植 XAML 專案**。 建立新的 C++/WinRT 專案、將檔案移過去，然後逐步移植。 您的 XAML 頁面類型無論何時都必須完全是 C++/WinRT *或*完全是 C++/CX。
 
 無論您選擇哪一種移植策略，都適用本主題的其餘內容。 其中包含將原始程式碼從 C++/CX 移植到 C++/WinRT 所牽涉到的技術詳細資料目錄。 如果您要逐步移植，則建議您也參閱 [C++/WinRT 與 C++/CX 之間的相互操作](./interop-winrt-cx.md)和 [C++/WinRT 與 C++/CX 之間的非同步和相互操作](./interop-winrt-cx-async.md)。
