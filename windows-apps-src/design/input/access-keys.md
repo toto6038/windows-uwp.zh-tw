@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何藉由提供直覺的方式，讓使用者透過鍵盤（而非指標裝置）（而非指標 (裝置）（例如觸控或滑鼠) ）快速流覽應用程式，並與之互動，藉此改善您的 Windows 應用程式的可用性和可存取性。
+description: 瞭解如何藉由提供直覺的方式，讓使用者透過鍵盤（而非指標裝置）（而非指標 (裝置）（例如觸控或滑鼠) ）快速流覽應用程式，並與之互動，藉此改善您的 Windows 應用程式的可用性和可存取性。
 title: 便捷鍵設計指導方針
 label: Access keys design guidelines
 keywords: 鍵盤, 便捷鍵, keytip, 按鍵提示, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77986569ec224ba36471f60c0200dfb1825472a0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 48f1d3bd69b10a8d500bb2d29b64c0eb91c9900b
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218411"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829533"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -29,7 +29,7 @@ ms.locfileid: "91218411"
 
 Windows 應用程式透過稱為按鍵提示的視覺提示，為鍵盤型存取金鑰和相關 UI 回饋提供跨平臺控制項的內建支援。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 便捷鍵是 Alt 鍵與一或多個英數字元鍵 (有時稱為「*助憶鍵*」) 的組合，通常是循序，而不是同時按下。
 
@@ -276,7 +276,7 @@ _自動按鍵提示位置的範例_
 
 位置模式是：Top、Bottom、Right、Left、Hidden、Center 和 Auto。
 
-![按鍵提示位置模式](images/accesskeys/keytip-postion-modes.png)
+![顯示主要提示放置模式之相對位置的螢幕擷取畫面](images/accesskeys/keytip-postion-modes.png)
 
 _按鍵提示位置模式_
 
@@ -299,11 +299,11 @@ _按鍵提示位置模式_
 > [!NOTE]
 > KeyTipPlacementMode 設定為 Auto 時無法設定位移。
 
-KeyTipHorizontalOffset 屬性指示將按鍵提示向左或向右移動多遠。 範例示範如何設定按鈕的按鍵提示位移。
+KeyTipHorizontalOffset 屬性指示將按鍵提示向左或向右移動多遠。
 
-![按鍵提示位置模式](images/accesskeys/keytip-offsets.png)
+![按鈕的垂直和水準按鍵提示位移螢幕擷取畫面](images/accesskeys/keytip-offsets.png)
 
-_設定按鍵提示的垂直和水準位移_
+_設定按鈕的垂直和水準按鍵提示位移_
 
 ``` xaml
 <Button
@@ -318,9 +318,9 @@ _設定按鍵提示的垂直和水準位移_
 
 按鍵提示位置會根據螢幕邊緣自動調整，來確保完全顯示按鍵提示。 發生這種情形時，控制項和按鍵提示對齊點之間的距離可能會不同於水平和垂直位移的指定值。
 
-![按鍵提示位置模式](images/accesskeys/keytips-screen-edge.png)
+![按鍵提示畫面邊緣對齊方式的螢幕擷取畫面](images/accesskeys/keytips-screen-edge.png)
 
-_螢幕邊緣會造成按鍵提示自動重新定位_
+_按鍵提示會根據螢幕邊緣自動定位_
 
 ## <a name="key-tip-style"></a>按鍵提示樣式
 
@@ -328,7 +328,7 @@ _螢幕邊緣會造成按鍵提示自動重新定位_
 
 如果您需要指定自己的按鍵提示樣式，請使用應用程式資源例如 KeyTipFontSize (字型大小)、KeyTipFontFamily (字型系列)、KeyTipBackground (背景)、KeyTipForeground (前景)、KeyTipPadding (填補)、KeyTipBorderBrush (框線色彩)，以及 KeyTipBorderThemeThickness (框線粗細)。
 
-![按鍵提示位置模式](images/accesskeys/keytip-customization.png)
+![螢幕擷取畫面：主要提示自訂選項，包括字型、順序和色彩](images/accesskeys/keytip-customization.png)
 
 _按鍵提示自訂選項_
 

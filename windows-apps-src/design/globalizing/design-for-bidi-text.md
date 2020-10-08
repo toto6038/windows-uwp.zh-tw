@@ -1,17 +1,17 @@
 ---
-Description: 設計您的應用程式，提供雙向文字支援 （雙向），讓您可以結合從左到右 (LTR) 及從右至左 (RTL) 書寫系統，其中通常包含不同類型的音義符號的指令碼。
+description: 將您的應用程式設計為提供雙向文字支援 (雙向) ，讓您可以將腳本從左至右的 (LTR) 和由右至左的 (RTL) RTL 寫入系統（通常包含不同類型的字母）。
 title: 將您的應用程式設計為支援雙向文字
 template: detail.hbs
 ms.date: 11/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化, rtl, ltr
 ms.localizationpriority: medium
-ms.openlocfilehash: 66a158a96fcab5391030f4517b6420ba4585bf04
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: f09aa1ac2b56c83b502e54ce631e46d2f4054943
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57641123"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829606"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>將您的應用程式設計為支援雙向文字
 
@@ -42,8 +42,8 @@ Windows 支援四種雙向設計元素。 讓我們查看一些 Windows 中的�
 
 Windows 會調整字型格線的方向，使其能夠從右流向左，表示格線上的第一個磚會位於右上角，最後一個磚則會位於左下角。 這符合印刷出版品，例如書籍和雜誌的 RTL 模式。使用者的閱讀方式總是從右上角開始往左閱讀。
 
-![BiDi [開始] 功能表](images/56283_BIDI_01_startscreen_resized.png)
-![BiDi 開始 功能表與快速鍵](images/56283_BIDI_02_startscreen_charm_resized.png)
+![](images/56283_BIDI_01_startscreen_resized.png)
+ ![ 使用常用鍵的雙向開始功能表雙向開始功能表](images/56283_BIDI_02_startscreen_charm_resized.png)
 
 若要保留一致的 UI 流程，使磚上的內容維持在由右至左的配置，表示應用程式的名稱和標誌會位於磚的右下角，無論應用程式的 UI 語言為何。
 
@@ -65,11 +65,11 @@ Windows 會調整字型格線的方向，使其能夠從右流向左，表示格
 
 Windows UI 中的每個元素都可和 RTL 方向結合。 常用鍵及飛出視窗的位置位於畫面的左側邊緣，不會與搜尋結果重疊或降低觸控最佳化。 他們可以輕鬆使用大拇指操控。
 
-![BiDi 螢幕擷取畫面](images/56286_BIDI_05_search_flyout_resized.png)
-![BiDi 螢幕擷取畫面](images/56286_BIDI_06_print_flyout_resized.png)
+![雙向的螢幕擷取畫面，顯示 [搜尋] 飛出視窗已調整大小的 ](images/56286_BIDI_05_search_flyout_resized.png)
+ ![ 雙向螢幕擷取畫面](images/56286_BIDI_06_print_flyout_resized.png)
 
-![BiDi 螢幕擷取畫面](images/56286_BIDI_07_settings_flyout_resized.png)
-![BiDi 螢幕擷取畫面](images/56286_BIDI_08_app_bars_resized.png)
+![顯示設定飛出視窗的雙向螢幕擷取畫面，其中顯示已重設 ](images/56286_BIDI_07_settings_flyout_resized.png)
+ ![ 大小的應用程式橫條](images/56286_BIDI_08_app_bars_resized.png)
 
 ### <a name="text-input-in-any-direction"></a>任何方向的文字輸入
 
@@ -99,12 +99,12 @@ Windows 提供螢幕觸控式鍵盤，簡潔而不紊亂。 針對雙向語言�
 
 Windows 會針對所有雙向語言使用 Segoe UI 字型。 這個字型的形狀和縮放比例是針對 Windows UI 設計的。
 
-![BiDi 語言 Segoe UI 字型](images/56290_BIDI_13_start_screen_segoe.png)
-![BiDi 語言 Segoe UI 字型](images/56290_BIDI_13_start_screen_segoe_arabic.png)
+![螢幕擷取畫面，顯示 [開始] 畫面上的 Segoe UI 字型 ](images/56290_BIDI_13_start_screen_segoe.png)
+ ![ 顯示 [開始] 畫面上的 [Segoe 阿拉伯文] 字型](images/56290_BIDI_13_start_screen_segoe_arabic.png)
 
-## <a name="case-study-1-a-bidi-music-app"></a>案例研究 #1:BiDi music 應用程式
+## <a name="case-study-1-a-bidi-music-app"></a>案例研究 #1：雙向音樂應用程式
 
-### <a name="overview"></a>概觀
+### <a name="overview"></a>總覽
 
 設計多媒體應用程式是一項相當有趣的挑戰，因為媒體控制項通常都會預期擁有由左至右的配置，與非雙向語言相似。
 
@@ -182,9 +182,9 @@ string NormalizeTextDirection(string data)
 
 新增的 Unicode 字元寬度為零，因此不會影響字串的間距。 此程式碼可能會潛在性的降低效能，因為偵測字串的方向需要逐一檢查字串，直到遇到非中性字元為止。 每個檢查是否為中性的字元都會先和幾個 Unicode 範圍比較，因此其並非簡單的檢查。
 
-## <a name="case-study-2-a-bidi-mail-app"></a>案例研究 #2:BiDi 郵件應用程式
+## <a name="case-study-2-a-bidi-mail-app"></a>案例研究 #2：雙向郵件應用程式
 
-### <a name="overview"></a>概觀
+### <a name="overview"></a>總覽
 
 當論及 UI 配置需求時，郵件用戶端的設計便相當簡單。 Windows 中的「郵件」應用程式根據預設便是鏡像的。 從文字處理角度而言，郵件應用程式必須具備更多強固的文字顯示和撰寫功能，才能容納混合文字的情節。
 

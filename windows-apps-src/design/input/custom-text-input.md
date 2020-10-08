@@ -1,5 +1,5 @@
 ---
-Description: Windows 的核心文字 Api 命名空間可讓 Windows 應用程式從 Windows 裝置上所支援的任何文字服務接收文字輸入。
+description: Windows 的核心文字 Api 命名空間可讓 Windows 應用程式從 Windows 裝置上所支援的任何文字服務接收文字輸入。
 title: 自訂文字輸入概觀
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -8,12 +8,12 @@ keywords: 鍵盤, 文字, 核心文字, 自訂文字, 文字服務架構, 輸入
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a6183dcc690a8fe3b9d13cfa0e471f41f04ff30
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 95dbd6de78cb6670ea7e904252bbc1f9f14edb77
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220571"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829636"
 ---
 # <a name="custom-text-input"></a>自訂文字輸入
 
@@ -38,7 +38,7 @@ ms.locfileid: "91220571"
 -   「應用程式」代表裝載使用核心文字 Api 所建立之自訂編輯控制項的 Windows 應用程式。
 -   [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) API會透過 Windows 來協助與文字服務進行通訊。 文字編輯控制項和文字服務之間的通訊主要是透過 [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext) 物件來處理，此物件會提供方法和事件，協助進行通訊。
 
-![核心文字架構圖](images/coretext/architecture.png)
+![CoreText 架構圖表](images/coretext/architecture.png)
 
 ## <a name="text-ranges-and-selection"></a>文字範圍與選取項目
 
@@ -49,7 +49,8 @@ ms.locfileid: "91220571"
 
 與核心文字 API 搭配使用的文字範圍是以插入號位置來表示。 「應用程式插入號位置 (ACP)」是以零起始的數字，指出從緊接在插入號前開始之文字資料流的字元數目，如下所示。
 
-![文字資料流圖表範例](images/coretext/stream-1.png)
+![顯示應用程式插入號位置 (ACP) 字元計數的螢幕擷取畫面](images/coretext/stream-1.png)
+
 ### <a name="text-ranges-and-selection"></a>文字範圍與選取項目
 
 文字範圍與選取項目是透過 [**CoreTextRange**](/uwp/api/Windows.UI.Text.Core.CoreTextRange) 結構來呈現，其中包含兩個欄位：
@@ -69,11 +70,11 @@ ms.locfileid: "91220571"
 
 ### <a name="noncontiguous-selection"></a>不連續的選取項目
 
-有一些編輯控制項支援不連續的選取項目。 例如，Microsoft Office App 支援多個任意選取項目，而且有許多原始程式碼編輯器支援選取欄。 不過，核心文字 API 不支援不連續的選取項目。 編輯控制項只能報告單一的連續選取項目，最常見的是不連續選取項目的作用中子範圍。
+有一些編輯控制項支援不連續的選取項目。 例如，Microsoft Office App 支援多個任意選取項目，而且有許多原始程式碼編輯器支援選取欄。 不過，核心文字 Api 不支援非連續的選取專案。 編輯控制項只能報告單一的連續選取項目，最常見的是不連續選取項目的作用中子範圍。
 
-以下列文字資料流為例：
+例如，下圖顯示具有兩個非連續選取專案的文字資料流程： \[ 0、1 \] 和 \[ 6、11， \] 編輯控制項只能報告一個 (\[ 0、1 \] 或 \[ 6、11 \]) 。
 
-![範例文字串流圖表 ](images/coretext/stream-2.png) 有兩個選擇： \[ 0、1 \] 和 \[ 6、11 \] 。 編輯控制項必須只報告其中一個： \[0、1 \] 或 \[ 6、11 \] 。
+![顯示非連續文字選取範圍的螢幕擷取畫面，其中會選取第一個字元和最後五個字元。](images/coretext/stream-2.png)
 
 ## <a name="working-with-text"></a>使用文字
 
@@ -96,7 +97,9 @@ ms.locfileid: "91220571"
 
 例如，這是編輯控制項在使用者輸入 "d" 之前的狀態。 插入點是 \[ 10，10 \] 。
 
-![範例文字串流圖 ](images/coretext/stream-3.png) ：當使用者輸入 "d" 時， [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件會以下列 [**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs) 資料引發：
+![文字資料流程圖的螢幕擷取畫面，其中顯示插入點 \[ 10、10 \] 、插入前](images/coretext/stream-3.png)
+
+當使用者輸入 "d" 時，會使用下列[**CoreTextTextUpdatingEventArgs**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingEventArgs)資料引發[**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件：
 
 -   [**Range**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.range)  =  範圍 \[10、10\]
 -   [**Text**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.text) = "d"
@@ -104,7 +107,8 @@ ms.locfileid: "91220571"
 
 在編輯控制項中，套用指定的變更，並將 [**Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) 設為 **Succeeded**。 以下是控制項在套用變更之後的狀態。
 
-![文字資料流圖表範例](images/coretext/stream-4.png)
+:::image type="content" source="images/coretext/stream-4.png" alt-text="文字資料流程圖的螢幕擷取畫面，其中顯示插入點 \[ 11、11 \] 、插入之後":::
+
 ### <a name="rejecting-text-updates"></a>拒絕文字更新
 
 您有時無法套用文字更新，因為要求的範圍是在不得變更的編輯控制項區域內。 在此情況下，您不應該套用任何變更。 而是改為通知系統，已藉由將 [**CoreTextTextUpdatingEventArgs.Result**](/uwp/api/windows.ui.text.core.coretexttextupdatingeventargs.result) 設為 [**CoreTextTextUpdatingResult.Failed**](/uwp/api/Windows.UI.Text.Core.CoreTextTextUpdatingResult)，來讓更新失敗。
@@ -117,9 +121,13 @@ ms.locfileid: "91220571"
 
 例如，這是編輯控制項在使用者貼上 "World" 之前的狀態。 插入點位於 6 \[ 、6 \] 。
 
-![](images/coretext/stream-5.png)使用者執行 [貼上] 動作的範例文字串流圖，而編輯控制項最後會包含下列文字：
+![文字資料流程圖的螢幕擷取畫面，其中顯示插入點 \[ 6、6 \] 、插入前](images/coretext/stream-5.png)
 
-![](images/coretext/stream-4.png)當發生這種情況時，請使用下列引數呼叫[**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
+在套用變更之後，使用者會執行貼上動作和編輯控制項：
+
+:::image type="content" source="images/coretext/stream-4.png" alt-text="文字資料流程圖的螢幕擷取畫面，其中顯示插入點 \[ 11、11 \] 、插入之後":::
+
+發生這種情況時，您應該使用下列引數來呼叫 [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
 
 -   *modifiedRange*  =  modifiedRange \[6、6\]
 -   *newLength* = 5
@@ -133,11 +141,17 @@ ms.locfileid: "91220571"
 
 例如，假設有個編輯控制項可提供將縮寫形式化的校正功能。 這是編輯控制項在使用者輸入空格鍵來觸發校正功能之前的狀態。 插入點是 \[ 3，3 \] 。
 
-![](images/coretext/stream-6.png)使用者按下空格鍵並引發對應的[**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件的範例文字串流圖表。 編輯控制項接受文字更新。 這是編輯控制項在完成校正之前短暫的狀態。 插入點是 4 \[ ，4 \] 。
+![文字資料流程圖的螢幕擷取畫面，其中顯示插入點 \[ 3，3 \] ，插入前](images/coretext/stream-6.png)
 
-![](images/coretext/stream-7.png) [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating)事件處理常式外部的範例文字串流圖，編輯控制項可進行下列更正。 這是編輯控制項在完成校正之後的狀態。 插入點是 \[ 5，5 \] 。
+使用者按下空格鍵並引發對應的 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件。 編輯控制項接受文字更新。 這是編輯控制項在完成校正之前短暫的狀態。 插入點是 4 \[ ，4 \] 。
 
-![](images/coretext/stream-8.png)當發生這種情況時，請使用下列引數呼叫[**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
+![文字資料流程圖的螢幕擷取畫面，其中顯示插入點 \[ 4、4 \] 、插入之後](images/coretext/stream-7.png)
+
+在 [**TextUpdating**](/uwp/api/windows.ui.text.core.coretexteditcontext.textupdating) 事件處理常式之外，編輯控制項會進行下列更正。 這是編輯控制項在完成校正之後的狀態。 插入點是 \[ 5，5 \] 。
+
+![文字資料流程圖的螢幕擷取畫面，其中顯示 \[ 5、5的插入點\]](images/coretext/stream-8.png)
+
+發生這種情況時，您應該使用下列引數來呼叫 [**NotifyTextChanged**](/uwp/api/windows.ui.text.core.coretexteditcontext.notifytextchanged) ：
 
 -   *modifiedRange*  =  modifiedRange \[1、2\]
 -   *newLength* = 2
