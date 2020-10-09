@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb9c6a43b9411b2297cc4cbf35dfdb2177e5dab7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea0fe6f29059a2b9ef8e5ce728d883d5349d0468
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155372"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878421"
 ---
 # <a name="advertising-performance-report"></a>廣告績效報告
 
@@ -59,8 +59,8 @@ ms.locfileid: "89155372"
 | 點擊  |  使用者點閱您應用程式中的廣告的次數。 |
 | CTR  |  點閱率，即廣告點閱數除以曝光數。 |
 | Viewability | 可在您的應用程式中看到的廣告閱聽百分比。 如需如何計算此值的詳細資訊，請參閱將 [您的 ad 單位 Viewability 優化](../monetize/optimize-ad-unit-viewability.md)。 |
-| 賺取的點數  | 如果您執行[社群廣告](./about-community-ads.md)行銷活動，這是指您藉由在應用程式中顯示社群廣告所賺得的促銷廣告空間點數。  |
-| 花費的點數  | 如果您執行[社群廣告](./about-community-ads.md)行銷活動，這是指您在應用程式廣告上花費的點數。  |
+| 賺取的點數  | 如果您執行[社群廣告](../monetize/index.md)行銷活動，這是指您藉由在應用程式中顯示社群廣告所賺得的促銷廣告空間點數。  |
+| 花費的點數  | 如果您執行[社群廣告](../monetize/index.md)行銷活動，這是指您在應用程式廣告上花費的點數。  |
 
 ## <a name="related-topics"></a>相關主題
 

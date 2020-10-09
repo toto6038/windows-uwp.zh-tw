@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b6ffbbb13646fe085fa81c99f4ecf45e328a01f7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3b768fa4a2506004527ba38256a7ff1849570ca1
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164262"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878491"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客戶以及促銷您的應用程式
 
@@ -27,7 +27,7 @@ ms.locfileid: "89164262"
 
 這些活動會在任何其他應用程式中執行與應用程式裝置和類別相符的廣告。 您也可以選擇通用活動，其中廣告也會出現在 MSN.com、Outlook.com、Skype 及其他 Microsoft premium 屬性中。
 
-[探索更多 >](create-an-ad-campaign-for-your-app.md)
+[探索更多 >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -40,7 +40,7 @@ ms.locfileid: "89164262"
 
 這些活動只會在您的其他應用程式中，免費執行廣告。
 
-[探索更多 >](about-house-ads.md)
+[探索更多 >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -54,7 +54,7 @@ ms.locfileid: "89164262"
 
 這些活動將會在其他開發人員所發佈的應用程式中執行廣告，這些開發人員也可以免費參與社區廣告活動。
 
-[探索更多 >](create-an-ad-campaign-for-your-app.md)
+[探索更多 >](../monetize/index.md)
     :::column-end:::
 :::row-end:::
 
@@ -103,7 +103,7 @@ ms.locfileid: "89164262"
 
 ![深入瞭解應用程式促銷活動](images/app-promotion-campaigns.png)
 
-[在儀表板中建立廣告活動](create-an-ad-campaign-for-your-app.md)
+[在儀表板中建立廣告活動](../monetize/index.md)
 
 [使用我們的 REST API 建立 ad 活動](../monetize/run-ad-campaigns-using-windows-store-services.md)
 
@@ -119,7 +119,7 @@ ms.locfileid: "89164262"
 
 [下載數報告](acquisitions-report.md)
 
-[使用我們的 REST API 取得分析資料](../monetize/access-analytics-data-using-windows-store-services.md)
+[使用 REST API 取得分析資料](../monetize/access-analytics-data-using-windows-store-services.md)
 
 ## <a name="other-ways-to-promote-your-app"></a>升級應用程式的其他方式
 

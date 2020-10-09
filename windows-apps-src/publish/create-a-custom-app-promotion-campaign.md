@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 自訂, 應用程式, 促銷, 行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 4015ee5372c2068d7a9ead389fe7eb07aa50a466
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c04a9705797e69543e9aec8f4e6205c815f76800
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171122"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878431"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>建立自訂應用程式促銷活動
 
-除了為將在 Windows 應用程式中執行的 [應用程式建立 ad 活動](create-an-ad-campaign-for-your-app.md) 之外，您也可以使用其他通道來推廣您的應用程式。 例如，您可以使用第三方 app 行銷提供者促銷您的 app，或可以在社交媒體網站上張貼 app 的連結。 這些活動稱為*自訂行銷活動*。
+除了為將在 Windows 應用程式中執行的 [應用程式建立 ad 活動](../monetize/index.md) 之外，您也可以使用其他通道來推廣您的應用程式。 例如，您可以使用第三方 app 行銷提供者促銷您的 app，或可以在社交媒體網站上張貼 app 的連結。 這些活動稱為*自訂行銷活動*。
 
 如果為您的應用程式執行自訂行銷活動，可以追蹤每個行銷活動相關的效能，方法是為每個自訂行銷活動建立不同的 URL，其中每個 URL 包含不同的*行銷活動識別碼*。 當執行 Windows 10 的客戶按一下包含活動識別碼的 URL 時，Microsoft 會將點擊與對應的自訂活動建立關聯，並讓您在 [合作夥伴中心](https://partner.microsoft.com/dashboard)中提供這項資料。
 

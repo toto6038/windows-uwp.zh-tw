@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d01042fec7435652c819f29e3a791a5623a947
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 724a9b6bc34d38a5addfd0e0123f26e1d98c9caf
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220261"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878591"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -48,7 +48,7 @@ ms.locfileid: "91220261"
 6. 視需要設定下列其他設定：
 
     * 如果您為廣告單元選取 **\[UWP (Windows 10)\]** 裝置系列，則可以選擇性設定廣告單元的[流量分配設定](#mediation)。
-    * 如果為橫幅廣告單元選取 **\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]** 裝置系列，您可以選擇性選取 **\[在應用程式中顯示社群廣告\]** 以選擇加入[社群廣告](about-community-ads.md)。
+    * 如果為橫幅廣告單元選取 **\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]** 裝置系列，您可以選擇性選取 **\[在應用程式中顯示社群廣告\]** 以選擇加入[社群廣告](../monetize/index.md)。
 
 7.  如果您尚未設定所選應用程式的 COPPA 合規性，請選擇 [COPPA 合規性](#coppa)區段中的選項。
 8.  按一下 **\[建立廣告單元\]**。
@@ -115,7 +115,7 @@ ms.locfileid: "91220261"
 |--------------|---------------|---------------------|
 | Oath 和 AppNexus |  這是由 Microsoft 管理的 ad 網路，可透過我們的合作夥伴網路（Oath 和 AppNexus）提供廣告。<p/>**注意**： Oath 和 AppNexus 一律排名在橫幅 ad 單位的 **付費 ad 網路** 清單中，而且無法變更為這些類型廣告的較低等級。 | 橫幅、插播式影片 |
 | AppNexus (直接) | 選取此選項以提供來自 [AppNexus](https://www.appnexus.com)的廣告。 | 插播式影片、原生  |
-| Microsoft 應用程式安裝廣告 | 選取此選項可提供 Windows 生態系統中其他[為自己的 App 建立促銷廣告活動](create-an-ad-campaign-for-your-app.md)的開發人員建立的應用程式安裝廣告或應用程式重新佔用廣告。  |  橫幅、插播式橫幅、原生  |
+| Microsoft 應用程式安裝廣告 | 選取此選項可提供 Windows 生態系統中其他[為自己的 App 建立促銷廣告活動](../monetize/index.md)的開發人員建立的應用程式安裝廣告或應用程式重新佔用廣告。  |  橫幅、插播式橫幅、原生  |
 | MSN 內容建議 |  選取此選項以提供來自 MSN 內容建議的廣告。 |  橫幅、插播式橫幅  |
 | Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅、插播式橫幅  |
 | Revcontent |  選取此選項可從 [Revcontent](https://www.revcontent.com/) 提供廣告。 |  橫幅、原生  |
@@ -135,8 +135,8 @@ ms.locfileid: "91220261"
 
 |  廣告網路  |  描述  |  支援的廣告類型  |
 |--------------|---------------|---------------------|
-| Microsoft 社群廣告 |  如果您[建立其中一個應用程式的促銷廣告活動](create-an-ad-campaign-for-your-app.md)，並將此行銷活動設定為[社群廣告活動](about-community-ads.md)，則選取此選項可從這個行銷活動顯示廣告。 | 橫幅、插播式橫幅 |
-| Microsoft 自家廣告 | 如果您[建立其中一個應用程式的促銷廣告活動](create-an-ad-campaign-for-your-app.md)，並將此行銷活動設定為[自家廣告活動](about-house-ads.md)，則選取此選項可從這個行銷活動顯示廣告。 | 橫幅、插播式橫幅  |
+| Microsoft 社群廣告 |  如果您[建立其中一個應用程式的促銷廣告活動](../monetize/index.md)，並將此行銷活動設定為[社群廣告活動](../monetize/index.md)，則選取此選項可從這個行銷活動顯示廣告。 | 橫幅、插播式橫幅 |
+| Microsoft 自家廣告 | 如果您[建立其中一個應用程式的促銷廣告活動](../monetize/index.md)，並將此行銷活動設定為[自家廣告活動](../monetize/index.md)，則選取此選項可從這個行銷活動顯示廣告。 | 橫幅、插播式橫幅  |
 
 
 <span id="network-markets" />

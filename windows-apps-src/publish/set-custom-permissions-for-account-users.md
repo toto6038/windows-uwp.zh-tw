@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
-ms.openlocfilehash: f8454587e31751e3653d983dbb1d45e21a2808d9
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3cdd1904dad82e0145305fe2709360be01518a7f
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750174"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878481"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -104,7 +104,7 @@ ms.locfileid: "91750174"
 <tr><td align="left">    <b>帳戶設定</b>                    </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中查看所有頁面，包括 <a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡人資訊</a>。       </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中查看所有頁面。 可變更<a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
 <tr><td align="left">    <b>帳戶使用者</b>                       </td><td align="left">  可檢視已加入 <b>\[使用者\]</b> 區段中的帳戶的使用者。          </td><td align="left">  可在 <b>\[使用者\]</b> 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
 <tr><td align="left">    <b>帳戶層級 ad 效能報表</b> </td><td align="left">  可檢視帳戶層級的<a href="advertising-performance-report.md">廣告效益報告</a>。      </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>廣告活動</b>                        </td><td align="left">  可檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。      </td><td align="left">  可建立、管理和檢視帳戶中建立的<a href="create-an-ad-campaign-for-your-app.md">廣告活動</a>。          </td></tr>
+<tr><td align="left">    <b>廣告活動</b>                        </td><td align="left">  可檢視帳戶中建立的<a href="/windows/uwp/monetize/">廣告活動</a>。      </td><td align="left">  可建立、管理和檢視帳戶中建立的<a href="/windows/uwp/monetize/">廣告活動</a>。          </td></tr>
 <tr><td align="left">    <b>Ad 中繼</b>                        </td><td align="left">  可檢視帳戶中所有產品的廣告流量分配設定。    </td><td align="left">  可檢視和變更帳戶中所有產品的廣告流量分配設定。        </td></tr>
 <tr><td align="left">    <b>Ad 中繼報告</b>                </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/advertising-performance-report">廣告流量分配報告</a>。    </td><td align="left">  N/A    </td></tr>
 <tr><td align="left">    <b>Ad 效能報告</b>              </td><td align="left">  可檢視帳戶中所有產品的<a href="advertising-performance-report.md">廣告效益報告</a>。       </td><td align="left">  N/A         </td></tr>
@@ -112,7 +112,7 @@ ms.locfileid: "91750174"
 <tr><td align="left">    <b>分支機搆廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/in-app-ads">聯盟廣告</a>使用量。    </td><td align="left">  可管理和檢視帳戶中所有產品的<a href="/windows/uwp/publish/in-app-ads">聯盟廣告</a>使用量。                </td></tr>
 <tr><td align="left">    <b>關係企業效能報告</b>      </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/advertising-performance-report">聯盟績效報告</a>。   </td><td align="left">  N/A   </td></tr>
 <tr><td align="left">    <b>應用程式安裝 ads 報表</b>             </td><td align="left">  可檢視<a href="/windows/uwp/publish/ad-campaign-report">廣告活動報告</a>。           </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>社區廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-community-ads.md">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="about-community-ads.md">社群廣告</a>使用量。               </td></tr>
+<tr><td align="left">    <b>社區廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/monetize/">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="/windows/uwp/monetize/">社群廣告</a>使用量。               </td></tr>
 <tr><td align="left">    <b>連絡人資訊</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡資訊</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 合規性</b>                    </td><td align="left">  可檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
 <tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可以)  (區段和已知的使用者群組，來查看 <a href="create-customer-groups.md">客戶群組</a> 。      </td><td align="left">  可以建立、編輯及查看 <a href="create-customer-groups.md">客戶群組</a> (區段和已知的使用者群組) 。       </td></tr>

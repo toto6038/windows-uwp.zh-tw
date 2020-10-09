@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 74afbda1cc93aa0602618d6d94efe6baadf59ecb
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2be721137e6c09913eafd2c58bab07f1ae6f2728
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363701"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878511"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用Microsoft Store 服務執行廣告行銷活動
 
@@ -23,7 +23,7 @@ ms.locfileid: "89363701"
 2.  在呼叫 Microsoft Store 促銷 API 中的方法之前，請先[取得 Azure AD 存取權杖](#obtain-an-azure-ad-access-token)。 取得權杖之後，在權杖到期之前，您有 60 分鐘的時間可以使用這個權杖呼叫 Microsoft Store 促銷 API。 權杖到期之後，您可以產生新的權杖。
 3.  [呼叫 Microsoft Store 促銷 API](#call-the-windows-store-promotions-api)。
 
-您也可以使用合作夥伴中心建立和管理 ad 活動，您也可以在合作夥伴中心中存取透過 Microsoft Store 促銷 API 以程式設計方式建立的任何廣告活動。 如需在合作夥伴中心中管理 ad 活動的詳細資訊，請參閱為 [您的應用程式建立 ad 行銷活動](../publish/create-an-ad-campaign-for-your-app.md)。
+您也可以使用合作夥伴中心建立和管理 ad 活動，您也可以在合作夥伴中心中存取透過 Microsoft Store 促銷 API 以程式設計方式建立的任何廣告活動。 如需在合作夥伴中心中管理 ad 活動的詳細資訊，請參閱為 [您的應用程式建立 ad 行銷活動](./index.md)。
 
 > [!NOTE]
 > 具有合作夥伴中心帳戶的任何開發人員都可以使用 Microsoft Store 促銷 API 來管理其應用程式的廣告活動。 媒體代理商也可要求存取這個 API，代表廣告客戶執行廣告行銷活動。 如果您是想要深入了解或要求存取這個 API 的媒體代理商，請將您的要求傳送至 storepromotionsapi@microsoft.com。
@@ -34,7 +34,7 @@ ms.locfileid: "89363701"
 
 開始撰寫程式碼以呼叫 Microsoft Store 促銷 API 之前，請先確定您已完成下列先決條件。
 
-* 您必須先 [使用合作夥伴中心中的 [ **ad 活動** ] 頁面建立一個付費的 ad 活動](../publish/create-an-ad-campaign-for-your-app.md)，然後在此頁面上至少新增一個付款條件，您才能使用此 API 成功建立和啟動 ad 活動。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 您使用此 API 建立的 ad 活動傳遞行，會自動為合作夥伴中心中的 [ **ad 活動** ] 頁面上選擇的預設付款條件產生帳單。
+* 您必須先 [使用合作夥伴中心中的 [ **ad 活動** ] 頁面建立一個付費的 ad 活動](./index.md)，然後在此頁面上至少新增一個付款條件，您才能使用此 API 成功建立和啟動 ad 活動。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 您使用此 API 建立的 ad 活動傳遞行，會自動為合作夥伴中心中的 [ **ad 活動** ] 頁面上選擇的預設付款條件產生帳單。
 
 * 您 (或您的組織) 必須具有 Azure AD 目錄，且您必須具備該目錄的[全域管理員](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) \(部分機器翻譯\) 權限。 如果您已經使用 Microsoft 365 或 Microsoft 的其他商務服務，則您已經有 Azure AD 目錄。 否則，您可以 [在合作夥伴中心中建立新的 Azure AD](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account) ，而不需要額外收費。
 

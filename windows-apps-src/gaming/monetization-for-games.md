@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 獲利
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f2d5ceef5ef15ac81e43447e24e2eaf61e4a22a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159362"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878581"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -213,15 +213,15 @@ Smaato 可讓您將橫幅廣告整合到 UWP App 和遊戲。 下載 [SDK](https
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>透過廣告活動將遊戲的潛力最大化
 
-針對使用廣告宣傳您的遊戲採取進一步的步驟。 當您為遊戲[建立廣告活動](../publish/create-an-ad-campaign-for-your-app.md)時，其他遊戲就會顯示宣傳您的遊戲的廣告。
+針對使用廣告宣傳您的遊戲採取進一步的步驟。 當您為遊戲[建立廣告活動](../monetize/index.md)時，其他遊戲就會顯示宣傳您的遊戲的廣告。
 
 從數種類型中選擇能協助增加遊戲玩家族群的活動類型。
 
 |活動類型             | 您遊戲的廣告出現在...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |已支付                      |符合您遊戲的裝置或類別的 App。                                                                                                                                                   |
-|免費社群            |其他同為加入社群廣告活動的開發人員所發佈的 App。 如需詳細資訊，請參閱[關於社群廣告](../publish/about-community-ads.md)。|
-|自家免費                |僅限您已經發佈的 App。 如需詳細資訊，請參閱[關於自家廣告](../publish/about-house-ads.md)。                                                            |
+|免費社群            |其他同為加入社群廣告活動的開發人員所發佈的 App。 如需詳細資訊，請參閱[關於社群廣告](../monetize/index.md)。|
+|自家免費                |僅限您已經發佈的 App。 如需詳細資訊，請參閱[關於自家廣告](../monetize/index.md)。                                                            |
 
 ## <a name="related-links"></a>相關連結
 
