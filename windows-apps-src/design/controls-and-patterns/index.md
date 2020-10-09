@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 4da50161008645374fbe95de73882da9d9f9f826
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f7a06c75b37b62436c4ef0ebcb8ccae2a6153b85
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750654"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829424"
 ---
 # <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
 
@@ -61,23 +61,23 @@ ms.locfileid: "91750654"
 :::row:::
     :::column:::
 
-- 動畫視覺播放器 (請參閱 [Lottie](/windows/communitytoolkit/animations/lottie)) ![WinUI 標誌](images/winui-logo-16x16.png)
+- 動畫視覺播放器 (請參閱 [Lottie](/windows/communitytoolkit/animations/lottie)) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [自動建議方塊](auto-suggest-box.md)
 - [Button](buttons.md)
 - [行事曆日期選擇器](calendar-date-picker.md)
 - [行事曆檢視](calendar-view.md)
 - [核取方塊](checkbox.md)
-- [色彩選擇器](color-picker.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [色彩選擇器](color-picker.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [下拉式方塊](combo-box.md)
 - [命令列](app-bars.md)
-- [命令列飛出視窗](command-bar-flyout.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [命令列飛出視窗](command-bar-flyout.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [連絡人卡片](contact-card.md)
 - [內容對話方塊](dialogs-and-flyouts/dialogs.md)
 - [內容連結](content-links.md)
 - [操作功能表](menus.md)
 - [日期選擇器](date-picker.md)
 - [對話方塊和飛出視窗](dialogs-and-flyouts/index.md)
-- [下拉按鈕](buttons.md#create-a-drop-down-button) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [下拉按鈕](buttons.md#create-a-drop-down-button) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [翻轉檢視](flipview.md)
 - [飛出視窗](dialogs-and-flyouts/flyouts.md)
 - [表單](forms.md) (模式)
@@ -90,22 +90,22 @@ ms.locfileid: "91750654"
 - [地圖控制項](../../maps-and-location/display-maps.md)
 - [主要/詳細資料](master-details.md) (模式)
 - [媒體播放](media-playback.md)
-- [功能表列](menus.md#create-a-menu-bar) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [功能表列](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [功能表飛出視窗](menus.md)
-- [瀏覽檢視](navigationview.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [瀏覽檢視](navigationview.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 
     :::column-end:::
     :::column:::
 
-- [數字方塊](number-box.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [視差檢視](..\motion\parallax.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [數字方塊](number-box.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [視差檢視](..\motion\parallax.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [密碼方塊](password-box.md)
-- [個人圖片](person-picture.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [樞紐分析](pivot.md)
-- [進度列](progress-controls.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [進度環](progress-controls.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [選項按鈕](radio-button.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [評分控制項](rating.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [個人圖片](person-picture.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [樞紐](pivot.md)
+- [進度列](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [進度環](progress-controls.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [選項按鈕](radio-button.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [評分控制項](rating.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [重複按鈕](buttons.md#create-a-repeat-button)
 - [Rich Edit 方塊](rich-edit-box.md)
 - [RTF 區塊](rich-text-block.md)
@@ -114,11 +114,11 @@ ms.locfileid: "91750654"
 - [語意式縮放](semantic-zoom.md)
 - [形狀](shapes.md)
 - [滑桿](slider.md)
-- [分割按鈕](buttons.md#create-a-split-button) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [分割按鈕](buttons.md#create-a-split-button) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [分割檢視](split-view.md)
-- [撥動控制項](swipe.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [索引標籤檢視](tab-view.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [教學提示](dialogs-and-flyouts/teaching-tip.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [撥動控制項](swipe.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [索引標籤檢視](tab-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [教學提示](dialogs-and-flyouts/teaching-tip.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [文字區塊](text-block.md)
 - [文字方塊](text-box.md)
 - [時間選擇器](time-picker.md)
@@ -126,8 +126,8 @@ ms.locfileid: "91750654"
 - [切換按鈕](buttons.md)
 - [切換分割按鈕](buttons.md#create-a-toggle-split-button)
 - [工具提示](tooltips.md)
-- [樹狀檢視](tree-view.md) ![WinUI 標誌](images/winui-logo-16x16.png)
-- [雙窗格檢視](two-pane-view.md) ![WinUI 標誌](images/winui-logo-16x16.png)
+- [樹狀檢視](tree-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
+- [兩個窗格檢視](two-pane-view.md) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [網頁檢視](web-view.md)
 
     :::column-end:::

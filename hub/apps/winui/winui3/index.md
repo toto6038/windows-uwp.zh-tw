@@ -3,12 +3,12 @@ title: WinUI 3 預覽版 2 (2020 年 7 月)
 description: WinUI 3 預覽版 2 的概觀。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: c57132ec5219ef32f2b2b69168592e07f49d904b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 11c7ff587c7c237c19ad627587f082be84e68bf8
+ms.sourcegitcommit: 337f31b3fe3ff434dbc2c232fb84c3b22ebd4be8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168772"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804572"
 ---
 # <a name="windows-ui-library-3-preview-2-july-2020"></a>Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)
 
@@ -49,12 +49,12 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 
 3. 如果想要建立適用於 C#/.NET 5 和 C++/Win32 應用程式的桌面 WinUI 專案，您也必須同時安裝 x64 和 x86 版本的 .NET 5 預覽版 5： **請注意，.NET 5 預覽版 5 目前僅支援 WinUI 3 的 .NET 5 預覽**：
 
-    - x64：[https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x64.exe)
-    - x86：[https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe](https://aka.ms/dotnet/net5/preview5/Sdk/dotnet-sdk-win-x86.exe)
+    - [適用於 .NET 5 Preview 5 的 x64 安裝程式](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x64-installer)
+    - [適用於 .NET 5 Preview 5 的 x86 安裝程式](https://dotnet.microsoft.com/download/dotnet/thank-you/sdk-5.0.100-preview.5-windows-x86-installer)
 
 4. 下載及安裝 [WinUI 3 預覽版 2 VSIX 套件](https://aka.ms/winui3/previewdownload)。 此 VSIX 套件會將 WinUI 3 專案範本和 NuGet 套件 (包含 WinUI 3 程式庫) 新增至 Visual Studio 2019。
 
-    如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](/visualstudio/ide/finding-and-using-visual-studio-extensions?view=vs-2019#install-without-using-the-manage-extensions-dialog-box)。
+    如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
 
 
 ## <a name="create-winui-projects"></a>建立 WinUI 專案
@@ -111,10 +111,10 @@ WinUI 3 預覽版 2 包含 Visual Studio 專案範本，可協助您開始使用
 > [!NOTE]
 > WinUI 3 預覽版 2 使用 WinUI 2 程式庫的 2.4.2 版。 
 
-- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged?view=net-5.0) 和 [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-5.0) 現在會如預期般的在 C# 桌面應用程式中運作
+- [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 和 [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) 現在會如預期般的在 C# 桌面應用程式中運作
   - 這會清除在後端中更新時未在 UI 中更新的集合控制項相關其他問題。
   - *感謝 @hshristov 在 GitHub 上提出[類似的問題](https://github.com/microsoft/microsoft-ui-xaml/issues/2490)！*
-- 預覽版 2 現在與適用於桌面應用程式的 [.NET 5 預覽版 5](/dotnet/api/?view=net-5.0) 相容
+- 預覽版 2 現在與適用於桌面應用程式的 [.NET 5 預覽版 5](/dotnet/api/?view=net-5.0&preserve-view=true) 相容
 - WinUI 3 現在與 [WinUI 2.4](../winui2/release-notes/winui-2.4.md) 同位，其中包含新的控制項和功能，例如[階層式 NavigationView](../winui2/release-notes/winui-2.4.md#hierarchical-navigation) 和 [ProgressRing](../winui2/release-notes/winui-2.4.md#progressring)。
 - 損毀已修正：搭配觸控使用 [TabView](/windows/uwp/design/controls-and-patterns/tab-view)
 - [XAML 控制項庫範例](#xaml-controls-gallery-winui-3-preview-2-branch)中的 [NavigationView](/windows/uwp/design/controls-and-patterns/navigationview) 現在使用左側模式，而不是左側精簡模式

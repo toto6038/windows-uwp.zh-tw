@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 36b264b203627761d2872b0f9b8dade81099b149
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b519a2c9ea5f415ec15c368091475434c46092fb
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216711"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829672"
 ---
 # <a name="design-toolkits-and-samples-for-windows-apps"></a>設計 Windows 應用程式的工具組和範例
 
@@ -26,19 +26,19 @@ Fluent 設計/Windows 應用程式的設計與 UI 相關下載。 如需其他�
 
 :::row:::
     :::column:::
-![主角圖像](images/figma.png)
+:::image type="icon" source="images/figma.png":::
 <b>Figma 工具組</b><br>
 WinUI 2.4，2020 年 5 月<br>
 <a href="https://aka.ms/figmatoolkit">下載</a>
     :::column-end:::
     :::column:::
-![主角圖像](images/sketch.png)
-<b>草圖工具組</b><br>
+:::image type="icon" source="images/sketch.png":::
+<b>Sketch 工具組</b><br>
 1810 版，2018 年 10 月<br>
 <a href="https://aka.ms/sketchtoolkit">下載</a>
     :::column-end:::    
     :::column:::
-![主角圖像](images/adobe-xd.png)
+:::image type="icon" source="images/adobe-xd.png":::
 <b>Adobe XD 工具組</b><br>
 1901 版，2019 年 1 月<br>
 <a href="https://aka.ms/adobexdtoolkit">下載</a>
