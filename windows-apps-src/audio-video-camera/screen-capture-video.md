@@ -7,16 +7,16 @@ dev_langs:
 - csharp
 keywords: windows 10、uwp、螢幕擷取畫面、影片
 ms.localizationpriority: medium
-ms.openlocfilehash: d8f70748d025d50d19dbf2cb184ae841cced7f8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9f95e310fb93292db7dc348493487fada9c6d66e
+ms.sourcegitcommit: 83eb36047380501fd1e4d023d593904ad783365b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218631"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852375"
 ---
 # <a name="screen-capture-to-video"></a>將螢幕擷取到影片
 
-本文說明如何使用 Windows. 圖形將 Api 編碼的畫面格編碼至影片檔案。 如需螢幕捕捉（仍為影像）的相關資訊，請參閱 [Screeen capture](./screen-capture.md)。
+本文說明如何使用 Windows. 圖形將 Api 編碼的畫面格編碼至影片檔案。 如需螢幕捕捉（仍為影像）的相關資訊，請參閱 [Screeen capture](./screen-capture.md)。 如需簡單的端對端範例應用程式，以利用本文中所示的概念和技術，請參閱 [SimpleRecorder](https://github.com/MicrosoftDocs/SimpleRecorder/)。
 
 ## <a name="overview-of-the-video-capture-process"></a>影片捕獲流程總覽
 本文提供範例應用程式的逐步解說，此應用程式會將視窗內容記錄至影片檔案。 雖然可能需要很多程式碼來執行此案例，但螢幕錄製器應用程式的高階結構相當簡單。 螢幕擷取畫面進程會使用三個主要 UWP 功能：
@@ -150,7 +150,7 @@ Frame 事件和 closed 事件會新增至陣列，因此我們可以在 capture 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/ScreenRecorderExample/cs/Direct3D11Helpers.cs" id="snippet_Direct3D11Helpers":::
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [Windows.Graphics.Capture 命名空間](/uwp/api/windows.graphics.capture)
 * [螢幕擷取](screen-capture.md)
