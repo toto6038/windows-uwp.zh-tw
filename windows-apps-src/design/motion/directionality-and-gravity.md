@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 649fb9e2833a425ccad78f5f0bcb69ccb4091bca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 87047e20d4513c9120c79bb329c008dad104a352
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217801"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860082"
 ---
 # <a name="directionality-and-gravity"></a>方向性和重力
 
@@ -47,7 +47,7 @@ ms.locfileid: "91217801"
 當您移動物件時，請避免非自然衝突。 請記住，物件來自和移至，而且一律支援可在場景中使用的較高層級的結構，例如滾動方向或版面配置階層。
     :::column-end:::
     :::column:::
-        ![後進方向](images/Direction.gif)
+        ![顯示圓形，然後新增 X 軸、Y 軸和 Z 軸的短片。](images/Direction.gif)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ ms.locfileid: "91217801"
 **往回** 和向前復原相同，但是反轉。
     :::column-end:::
     :::column:::
-        ![後進方向](images/backwardIN.gif)
+        ![顯示從框架右邊進入，並在框架中間停止的短片。](images/backwardIN.gif)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -114,7 +114,7 @@ ms.locfileid: "91217801"
 
 在此，方格頂端列中的元素受到重力影響，讓它在離開其位置時緩慢地往下掉，並移動到前方。
 
-![後進方向](images/continuity-photos.gif)
+![顯示矩形元素離開方格頂端資料列、輕微卸載，然後縮放至視窗前端的短片。](images/continuity-photos.gif)
 
 ## <a name="related-articles"></a>相關文章
 

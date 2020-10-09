@@ -1,5 +1,5 @@
 ---
-Description: 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。
+description: 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。
 title: 特殊磚範本
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4368c3d504b01a48b05fcaffdb01a71b916d9d43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1aac8997492eba2d591d0f80f89dbc9a8f5830ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169302"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860205"
 ---
 # <a name="special-tile-templates"></a>特殊磚範本
  
@@ -50,9 +50,9 @@ ms.locfileid: "89169302"
 
 對於非正方形資產，會自動水平/垂直置中並貼齊至容器寬度/高度：
 
-![含/不含徽章的非正方形資產大小調整](images/assetguidance26a.png)
+![顯示自動置中水準非方形資產調整大小的螢幕擷取畫面，包含和不含徽章。](images/assetguidance26a.png)
 
-![含/不含徽章的非正方形資產大小調整](images/assetguidance26b.png)
+![顯示自動置中垂直非方形資產調整大小的螢幕擷取畫面，包含和不含徽章。](images/assetguidance26b.png)
 
 **步驟 2：建立基本的磚**
 

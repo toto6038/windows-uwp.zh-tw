@@ -11,12 +11,12 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fe776361276341e368db1fbdf8e332a1e5dc70b5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 336b49c999d135908fb54490b7b33057d4527079
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220191"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860157"
 ---
 # <a name="timing-and-easing"></a>計時和加/減速
 
@@ -49,7 +49,7 @@ ms.locfileid: "91220191"
 
 在 Fluent 中動作的計時使用 500ms (或二分之一秒) 做為基準，因為這是使用者感知為瞬間的最長時間量。
 
-![主角圖像](images/time.gif)
+![顯示三個圓形的短片，以垂直方式堆疊，以不同的速度向左和向右移動：150毫秒、300毫秒和500毫秒。](images/time.gif)
 
 ### <a name="150ms-exit"></a>**150ms** (離開)
 
@@ -90,7 +90,7 @@ ms.locfileid: "91220191"
 
 加/減速是操作物件移動時的速度的一種方式。 它可緊密結合所有的 Fluent 動畫體驗。 雖然極端，系統中所使用的加/減速可協助統一物件在整個系統移動的實際感覺。 這是唯一模擬真實世界的途徑，並可讓動作中的物件感覺它們屬於其環境。
 
-![主角圖像](images/easing.gif)
+![顯示圓形的短片會顯示在畫面右下角，並停止框架左上角附近的圓形。](images/easing.gif)
 
 ## <a name="apply-easing-to-motion"></a>將加/減速套用到動作
 

@@ -1,5 +1,5 @@
 ---
-Description: 建立 Windows 應用程式和支援平臺文字調整的自訂/範本控制項。
+description: 建立 Windows 應用程式和支援平臺文字調整的自訂/範本控制項。
 title: 文字大小調整
 label: Text scaling
 template: detail.hbs
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d8f7536da045514471c1af1c2f0cfac74af91a7a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0d47523ca69f8088d5e13ab944c5dd2be2d1d8ba
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219941"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860165"
 ---
 # <a name="text-scaling"></a>文字大小調整
 
-![文字調整100% 到225% 的範例](images/coretext/text-scaling-news-hero-small.png)  
+![顯示從100% 到225% 的文字縮放範例的主圖影像。](images/coretext/text-scaling-news-hero-small.png)  
 *Windows 10 (100% 到225% 的文字縮放範例 ) *
 
 ## <a name="overview"></a>概觀
@@ -40,7 +40,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 原本就不支援文字調整，而 
 
 使用者可以在 [設定->] 輕鬆存取-> 視覺/顯示畫面上，使用 [讓文字放大] 滑杆來調整文字縮放比例。
 
-![文字調整100% 到225% 的範例](images/coretext/text-scaling-settings-100-small.png)  
+![輕鬆存取視覺/顯示設定] 頁面的螢幕擷取畫面，其中顯示 [讓文字變大] 滑杆。](images/coretext/text-scaling-settings-100-small.png)  
 *設定中的文字縮放設定-> 輕鬆存取-> 視覺/顯示畫面*
 
 ## <a name="ux-guidance"></a>UX 指導方針
@@ -93,7 +93,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 原本就不支援文字調整，而 
 </Grid>
 ```
 
-![將100% 調整為225% 的動畫文字](images/coretext/text-scaling.gif)  
+![文字調整100% 到225% 的動畫。](images/coretext/text-scaling.gif)  
 *動畫文字縮放比例*
 
 ### <a name="use-auto-sizing"></a>使用自動調整大小
@@ -123,7 +123,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 原本就不支援文字調整，而 
           AcceptsReturn="True" TextWrapping="Wrap" />
 ```
 
-![使用文字換行調整100% 到225% 的動畫文字](images/coretext/text-scaling-textwrap.gif)  
+![文字換行調整100% 到225% 的動畫。](images/coretext/text-scaling-textwrap.gif)  
 *文字換行的動畫文字縮放比例*
 
 ### <a name="specify-text-trimming-behavior"></a>指定文字修剪行為
@@ -141,7 +141,7 @@ DirectWrite、GDI 和 XAML SwapChainPanels 原本就不支援文字調整，而 
 </TextBlock>
 ```
 
-![文字裁剪的文字調整100% 到225%](images/coretext/text-scaling-clipping-small.png)  
+![使用文字裁剪調整100% 到225% 的文字螢幕擷取畫面。](images/coretext/text-scaling-clipping-small.png)  
 *文字裁剪的文字縮放*
 
 ### <a name="use-a-tooltip"></a>使用工具提示

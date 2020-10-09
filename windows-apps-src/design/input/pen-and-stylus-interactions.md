@@ -1,5 +1,5 @@
 ---
-Description: 建立 Windows 應用程式，以支援來自畫筆和手寫筆裝置的自訂互動，包括用於自然書寫和繪圖體驗的數位筆跡。
+description: 建立 Windows 應用程式，以支援來自畫筆和手寫筆裝置的自訂互動，包括用於自然書寫和繪圖體驗的數位筆跡。
 title: Windows 應用程式中的手寫筆互動與 Windows Ink
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in Windows apps
@@ -8,16 +8,16 @@ keywords: Windows Ink, Windows Inking, Windows 筆跡, DirectInk, InkPresenter, 
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a877fabfd34bcbe16afb70c012d403d489e3a6e0
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749914"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860174"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 應用程式中的手寫筆互動與 Windows Ink
 
-![Surface 手寫筆](images/ink/hero-small.png)  
+![Surface 手寫筆的主圖影像。](images/ink/hero-small.png)  
 *Surface 手寫筆* (可在 [Microsoft 網上商店](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)購買)。
 
 ## <a name="overview"></a>概觀
@@ -95,7 +95,7 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 
 這系列的影像會顯示這個 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項轉譯畫筆輸入的方式。
 
-| ![含有背景影像的空白 InkCanvas](images/ink_basic_1_small.png) | ![含有筆墨筆劃的 InkCanvas](images/ink_basic_2_small.png) | ![已擦掉一個筆劃的 InkCanvas](images/ink_basic_3_small.png) |
+| ![具有背景影像之空白 InkCanvas 的螢幕擷取畫面。](images/ink_basic_1_small.png) | ![具有筆墨筆劃之 InkCanvas 的螢幕擷取畫面。](images/ink_basic_2_small.png) | ![已清除一個筆劃之 InkCanvas 的螢幕擷取畫面。](images/ink_basic_3_small.png) |
 | --- | --- | ---|
 | 含有背景影像的空白 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。 | 含有筆墨筆劃的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。 | 已擦掉一個筆畫的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) (請注意，此功能會擦掉整個筆劃，而不是擦掉部分筆劃)。 |
 
@@ -206,7 +206,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 這些影像說明 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 如何處理和自訂畫筆輸入。
 
-| ![含有預設黑色筆墨筆劃的 InkCanvas](images/ink-basic-custom-1-small.png) | ![含有使用者選取的紅色筆墨筆劃的 InkCanvas](images/ink-basic-custom-2-small.png) |
+| ![顯示具有預設黑色筆墨筆觸之 InkCanvas 的螢幕擷取畫面。](images/ink-basic-custom-1-small.png) | ![InkCanvas 的螢幕擷取畫面，其中包含使用者選取的紅色筆墨筆劃。](images/ink-basic-custom-2-small.png) |
 | --- | --- |
 | 具有預設黑色筆墨筆觸的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | 含有使用者選取的紅色筆墨筆劃的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | 
 
@@ -230,7 +230,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
     我們將在此處新增畫布 (位於 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 下方) 來繪製選取筆劃。 使用個別層級來繪製選取筆劃，讓 **InkCanvas** 及其內容保持原貌。
 
-    ![含有基礎選取項目畫布的空白 InkCanvas](images/ink-unprocessed-1-small.png)
+    ![具有基礎選取畫布的空白 InkCanvas 螢幕擷取畫面。](images/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -271,7 +271,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
     最後，會針對 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) 的 [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) 和 [**StrokesErased**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 事件指派接聽程式 。 如果開始新的筆劃或擦掉了現有的筆劃，我們就會使用這些事件的處理常式來清除 UI 選取項目。
 
-    ![含有預設黑色筆墨筆劃的 InkCanvas](images/ink-unprocessed-2-small.png)
+    ![[前進筆墨自訂範例] 應用程式的螢幕擷取畫面，其中顯示具有預設黑色筆墨筆觸的 inkcanvas。](images/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -320,7 +320,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
     所有的選取功能都是在這些處理常式中實作的，包括套索筆劃和週框。
 
-    ![選取套索](images/ink-unprocessed-3-small.png)
+    ![選取 [套索] 的螢幕擷取畫面。](images/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -368,7 +368,7 @@ Windows Ink 平台不提供需要修改輸入 (例如筆觸選取項目) 動作�
 
 5.  為了推斷出 PointerReleased 事件處理常式，我們清除了所有內容的選取項目層級 (套索筆劃)，然後在套索區域所圍繞的筆墨筆劃四周繪製單一週框。
 
-    ![選取週框](images/ink-unprocessed-4-small.png)
+    ![選取範圍矩形的螢幕擷取畫面。](images/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing

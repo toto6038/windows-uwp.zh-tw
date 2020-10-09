@@ -6,16 +6,16 @@ keywords: 筆跡、筆跡、教學課程
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0660312746a88a61ccb7b2ca9c01d720ebb2be3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219691"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860196"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教學課程：在您的 Windows 應用程式中支援筆墨
 
-![Surface 手寫筆](images/ink/ink-hero-small.png)  
+![Surface 手寫筆主圖影像。](images/ink/ink-hero-small.png)  
 *Surface 手寫筆* (可在 [Microsoft 網上商店](https://www.microsoft.com/p/surface-pen/8zl5c82qmg6b)購買)。
 
 本教學課程會逐步說明如何建立支援使用 Windows Ink 撰寫和繪製的基本 Windows 應用程式。 我們會使用範例應用程式的程式碼片段，這您可以從 GitHub 下載 (請參閱[範例程式碼](#sample-code))，來展示每個步驟中所討論的各種不同功能和相關 Windows Ink API (請參閱 [Windows Ink 平台的元件](#components-of-the-windows-ink-platform))。
@@ -53,7 +53,7 @@ ms.locfileid: "91219691"
 從 [GitHub](https://github.com/) 的 [windows-appsample-get-started-ink sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink) 下載此 Visual Studio 範例和原始程式碼：
 
 1. 選取綠色的 **\[Clone or download\]**(複製或下載) 按鈕  
-![複製存放庫](images/ink/ink-clone.png)
+![複製存放庫。](images/ink/ink-clone.png)
 2. 如果您有 GitHub 帳戶，您可以選擇 **\[在 Visual Studio 中開啟\]** 將存放庫複製到您的本機電腦 
 3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]**(您必須定期返回以下載最新的更新)
 
@@ -80,11 +80,11 @@ ms.locfileid: "91219691"
 
    > [!NOTE]
    > 或者，您可以選取 [ **Debug**  >  **開始調試**] 功能表項目，或選取此處顯示的 [**本機電腦**執行] 按鈕。
-   > ![Visual Studio 組建專案按鈕](images/ink/ink-vsrun-small.png)
+   > ![Visual Studio 建立專案] 按鈕。](images/ink/ink-vsrun-small.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
 
-![空的 App](images/ink/ink-app-step1-empty-small.png)
+![空白應用程式的螢幕擷取畫面。](images/ink/ink-app-step1-empty-small.png)
 
 好了，現在我們將在本教學課程的其餘部分使用基本 Windows 應用程式。 在下列步驟中，我們會新增筆跡功能。
 
@@ -119,11 +119,11 @@ ms.locfileid: "91219691"
     <InkCanvas x:Name="inkCanvas" />
 ```
 
-這樣就完成了！ 
+就這麼簡單！ 
 
 現在，再次執行應用程式。 請繼續進行並徒手畫、撰寫您的名稱或者 (如果您有一面鏡子或者記性很好) 繪製您自己的自畫像。
 
-![基本筆跡](images/ink/ink-app-step1-name-small.png)
+![本主題反白顯示之基本筆墨範例應用程式的螢幕擷取畫面。](images/ink/ink-app-step1-name-small.png)
 
 ## <a name="step-3-support-inking-with-touch-and-mouse"></a>步驟 3︰使用觸控與滑鼠支援筆跡
 
@@ -181,21 +181,21 @@ ms.locfileid: "91219691"
 
 現在，再次執行以查看 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 並試試一些工具。
 
-![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-inktoolbar-default-small.png)
+![本主題中以預設 InkToolbar 醒目提示之基本筆墨範例應用程式的螢幕擷取畫面。](images/ink/ink-inktoolbar-default-small.png)
 
 ### <a name="challenge-add-a-custom-button"></a>挑戰︰新增自訂按鈕
 <table class="wdg-noborder">
 <tr>
 <td>
 
-![從 Ink 工作區繪圖板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
 
 以下是自訂 **[InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)** (從 Windows Ink 工作區的繪圖板) 的範例。
 
-![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-inktoolbar-sketchpad-small.png)
+![Ink 工作區中 Sketchpad 的筆墨工具列螢幕擷取畫面。](images/ink/ink-inktoolbar-sketchpad-small.png)
 
 如需有關自訂 [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar)的詳細資訊，請參閱 [將 InkToolbar 新增至 Windows 應用程式筆跡應用程式](ink-toolbar.md)。
 
@@ -213,9 +213,9 @@ ms.locfileid: "91219691"
 > 手寫辨識可以透過**手寫筆和 Windows Ink** 設定改進︰
 > 1. 開啟 [開始] 功能表，然後選取 **\[設定\]**。
 > 2. 從 [設定] 畫面中，選取 [**裝置**  >  **畫筆 &] Windows Ink**。
-> ![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-settings-small.png)
+> ![[畫筆 & Windows Ink 設定] 頁面的螢幕擷取畫面。](images/ink/ink-settings-small.png)
 > 3. 選取 **\[了解我的手寫內容\]** 以開啟 **\[個人化手寫\]** 對話方塊。
-> ![從 Ink 工作區繪圖板的 InkToolbar](images/ink/ink-settings-handwritingpersonalization-small.png)
+> ![[手寫辨識個人化] 對話方塊的螢幕擷取畫面。](images/ink/ink-settings-handwritingpersonalization-small.png)
 
 ### <a name="in-the-sample"></a>在範例中︰
 1. 請開啟 MainPage.xaml 檔案，
@@ -286,7 +286,7 @@ ms.locfileid: "91219691"
 <tr>
 <td>
 
-![從 Ink 工作區繪圖板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -306,7 +306,7 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 <tr>
 <td>
 
-![從 Ink 工作區繪圖板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 <td>
@@ -385,11 +385,11 @@ Windows Ink 支援許多 Windows 所支援語言的文字辨識。 每個語言�
 
 以下是 Digital Napkin 的初步流程圖範例。
 
-![原始筆跡流程圖](images/ink/ink-app-step6-shapereco1-small.png)
+![數位 napkin 中基本流程圖的螢幕擷取畫面。](images/ink/ink-app-step6-shapereco1-small.png)
 
 以下是圖形辨識之後的相同流程圖。
 
-![原始筆跡流程圖](images/ink/ink-app-step6-shapereco2-small.png)
+![使用者選取 [辨識] 圖形之後之流程圖的螢幕擷取畫面。](images/ink/ink-app-step6-shapereco2-small.png)
 
 
 ## <a name="step-7-save-and-load-ink"></a>步驟 7︰儲存和載入筆跡
@@ -444,7 +444,7 @@ ISF 檔案是基本的 GIF 圖像，包含描述筆墨筆劃屬性和行為的�
 <tr>
 <td>
 
-![從 Ink 工作區繪圖板的 InkToolbar](images/challenge-icon.png)
+:::image type="icon" source="images/challenge-icon.png":::
 
 </td>
 
