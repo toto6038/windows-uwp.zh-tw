@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e60d8ef919a05493f47f086ee992afe8bfeb4c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0a67c88eb7eb70308e6dcbbd096289c0617793b1
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172832"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933069"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -71,7 +71,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 
 當您執行應用程式並按一下 [登入] 按鈕，它應該會顯示空白視窗。 
 
-![帳戶設定窗格](images/tb-1.png)
+![[選擇未列出帳戶的帳戶] 視窗的螢幕擷取畫面。](images/tb-1.png)
 
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
 
@@ -156,7 +156,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 執行上述的程式碼，您的窗格看起來應該如下： 
 
-![帳戶設定窗格](images/tb-2.png)
+![[選擇帳戶] 視窗的螢幕擷取畫面，其中列出帳戶。](images/tb-2.png)
 
 ### <a name="request-a-token"></a>要求權杖
 
@@ -390,7 +390,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![帳戶設定窗格](images/tb-3.png)
+![[選擇未列出帳戶的帳戶] 視窗的螢幕擷取畫面，以及指出我的絕佳應用程式在您登入時最適合的訊息。](images/tb-3.png)
 
 請勿過度使用標頭文字；請將它維持簡短易記。 如果您的登入程序很複雜，而您需要顯示更多資訊，請使用自訂連結將使用者連結到另一個頁面。 
 
@@ -416,7 +416,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 }
 ```
 
-![帳戶設定窗格](images/tb-4.png)
+![[選擇未列出帳戶的帳戶] 視窗的螢幕擷取畫面，以及隱私權原則的連結。](images/tb-4.png)
 
 理論上，您可以使用 settings 命令來做任何事情。 不過，我們建議僅將它們使用在直覺、與帳戶相關的案例上，例如上述的案例。 
 

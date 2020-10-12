@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 38522be28280c0a08f6cb065e5dfb5c2f26642a8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75cb520f97f68c06f8861b90ce1068fb136bd374
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162792"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933149"
 ---
 # <a name="introduction-to-rasterization-rules"></a>點陣化規則簡介
 
@@ -42,11 +42,11 @@ Direct3D 針對填充幾何使用左上角填充慣例。 這是針對 GDI 和 O
 
 如果您定義在 (0.5, 0.5) 左上角的矩形，而其右下角在 (2.5, 4.5)，此矩形中心點則在 (1.5, 2.5)。 當 Direct3D 點陣化將這個矩形切成方格時，每個像素中心均明確地位於四個三角形的每個三角形內，不需要左上角填充慣例。 下圖顯示此項。 矩形中的像素依據 Direct3D 包含像素的三角形中標示。
 
-![已編號的方塊包含分成四個三角形的矩形](images/noambig.png)
+![編號方塊的螢幕擷取畫面，其中包含分成四個三角形的矩形。](images/noambig.png)
 
 如果您移動前述圖中的矩形，其左上角便會在 (1.0, 1.0)，其右下角在 (3.0, 5.0)，而其中心點在 (2.0, 3.0)，Direct3D 會套用左上角填充慣例。 此矩形中的大多數像素跨兩個或更多三角形間的邊界，如下圖所示。
 
-![已編號的方塊包含分成四個三角形的矩形](images/fillrule.png)
+![已編號方塊的螢幕擷取畫面，其中矩形向下和向右移動。](images/fillrule.png)
 
 針對這兩個矩形，同一個像素會受到影響，如下圖所示。
 

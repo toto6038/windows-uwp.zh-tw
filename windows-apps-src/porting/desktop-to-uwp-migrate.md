@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed23f77936378f2348abf868a67041be84978123
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304680"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933159"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>從桌面應用程式移至 UWP
 
@@ -56,7 +56,7 @@ ms.locfileid: "89304680"
 
 在傳統型應用程式專案中，新增類別庫專案的參考。
 
-![類別庫參考](images/desktop-to-uwp/class-library-reference.png)
+![呼叫 .net 專案之類別庫參考的方案總管窗格螢幕擷取畫面。](images/desktop-to-uwp/class-library-reference.png)
 
 接下來，使用工具來判斷您的程式碼有多少符合標準。 如此一來，將程式碼移入程式庫之前就可以決定您可重複使用哪些部分、哪些部分需要進行最基本的修改，以及哪些部分要保留給特定應用程式專用。
 
@@ -186,7 +186,7 @@ public partial class Customers : Form
 
 然後，從 UWP 專案新增 .NET Standard 2.0 程式庫專案的參考。
 
-![類別庫參考](images/desktop-to-uwp/class-library-reference2.png)
+![UWP 方案總管窗格的螢幕擷取畫面，會呼叫 .net 專案的類別庫參考參考。](images/desktop-to-uwp/class-library-reference2.png)
 
 #### <a name="build-your-pages"></a>建置您的頁面
 
@@ -222,7 +222,7 @@ public sealed partial class MainPage : Page
 
 您可以透過新增 Xamarin 專案，將目標範本擴及 Android 和 iOS 裝置  
 
-![Xamarin 應用程式](images/desktop-to-uwp/xamarin-apps.png)
+![顯示適用于 Xamarin 應用程式的 Android 裝置和 i O S 裝置的影像。](images/desktop-to-uwp/xamarin-apps.png)
 
 這些專案允許您使用 C# 來建置可以完整存取平台特定及裝置特定 API 的 Android 和 iOS 應用程式。 這些應用程式充分利用平台特定的硬體加速，並且針對原生效能進行編譯。
 
@@ -236,14 +236,14 @@ public sealed partial class MainPage : Page
 
 您可以在 **\[加入新的專案\]** 對話方塊的 **\[Visual C#\]** 群組底下找到這些範本。
 
-![Xamarin 應用程式](images/desktop-to-uwp/xamarin-projects.png)
+![[加入新專案] 對話方塊的螢幕擷取畫面，其中顯示已安裝的 > Visual C 清晰選取，以及已呼叫的 Android、跨平臺和 i O S 選項。](images/desktop-to-uwp/xamarin-projects.png)
 
 >[!NOTE]
 >跨平台專案非常適合只有極少平台特定功能的應用程式。 您可以使用這些專案建立一個在 Android、iOS 及 Windows 上執行的原生 XAML 型 UI。 [在此](/xamarin/xamarin-forms/)深入了解。
 
 接著，從 Android、iOS 或跨平台專案中新增類別庫專案的參考。
 
-![類別庫參考](images/desktop-to-uwp/class-library-reference3.png)
+![方案總管窗格的螢幕擷取畫面，會呼叫 Android、i O S 或跨平臺專案的類別庫參考參考。](images/desktop-to-uwp/class-library-reference3.png)
 
 #### <a name="build-your-pages"></a>建置您的頁面
 

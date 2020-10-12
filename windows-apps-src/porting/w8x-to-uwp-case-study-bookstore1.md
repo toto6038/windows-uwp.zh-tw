@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 98c74ac688707c6c80b9f3098760328fea0f852a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ff8e095fc46d2c08771f3e2e002fe2d8b602ab71
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174852"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933059"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 執行階段 8.x 至 UWP 的案例研究：Bookstore1
 
@@ -68,11 +68,11 @@ Bookstore1 \_ 81 解決方案是8.1 通用應用程式專案，其中包含這�
 
 您可以立即建置並執行。 以下是新的 UWP app 在尚未明確執行任何工作以將其移植到 Windows 10 之後的外觀。
 
-![已變更初始來源程式碼的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
+![沒有明確變更的 Windows 10 應用程式螢幕擷取畫面。](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
 已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式
 
-![已變更初始來源程式碼的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
+![具有初始原始程式碼變更的 Windows 10 應用程式螢幕擷取畫面。](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
 已變更初始原始程式碼且正在行動裝置上執行的 Windows 10 應用程式
 
@@ -91,11 +91,11 @@ Bookstore1 \_ 81 應用程式使用兩個不同的資源字典 (BookstoreStyles)
 
 樣式作業的最後一個步驟會讓 app 看起來像這樣。
 
-![幾乎移植完成的 Windows 10 app](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
+![具有最後一系列樣式作業的應用程式螢幕擷取畫面。](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
 幾乎移植完成且正在傳統型裝置上執行的 Windows 10 應用程式
 
-![幾乎移植完成的 Windows 10 app](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
+![幾乎移植之 windows 10 應用程式的螢幕擷取畫面。](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
 幾乎移植完成且正在行動裝置上執行的 Windows 10 app
 

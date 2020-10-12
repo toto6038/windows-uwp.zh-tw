@@ -6,12 +6,12 @@ ms.date: 04/09/2019
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: ed490b0474b919d4439e5b74b676d5974a3c6a30
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7df29b6c1446d65c8e5224eede3030a25888364
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174782"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933169"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
@@ -43,13 +43,13 @@ ms.locfileid: "89174782"
 
 Xbox 裝置入口網站提供一組標準頁面，類似 Windows 裝置入口網站上提供的，另外還有幾個特殊的頁面。 如需前者的詳細描述，請參閱 [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)。 下列章節描述 Xbox 裝置入口網站專有的頁面。
 
-### <a name="home"></a>家庭
+### <a name="home"></a>首頁
 
 類似 Windows 裝置入口網站的 **\[應用程式管理員\]** 頁面，Xbox 裝置入口網站的 **\[首頁\]** 頁面也會顯示已安裝遊戲和 app 的清單，位於 **\[我的遊戲與 app\]** 底下。 按一下遊戲或 app 名稱，即可查看與其相關的詳細資料，例如 **\[套件系列名稱\]**。 在 **\[動作\]** 下拉式清單中，您可以對遊戲或 app 執行動作，例如將它 **\[啟動\]**。
 
 在 **\[Xbox Live 測試帳戶\]** 底下，您可以管理與 Xbox 相關的帳戶。 您可以新增使用者和訪客帳戶、建立新使用者、將使用者登入和登出，以及移除帳戶。
 
-![家庭](images/device-portal-xbox-16.png)
+![首頁](images/device-portal-xbox-16.png)
 
 ### <a name="xbox-live-game-saves"></a>Xbox Live (遊戲儲存)
 
@@ -89,9 +89,9 @@ Xbox 裝置入口網站中的 **\[網路\]** 頁面幾乎與 Windows 裝置入�
 
 有數個不同的區段中包含不同的設定可檢視和/或編輯，說明如下。
 
-![設定](images/device-portal-xbox-20.png)
+![[設定] 頁面的螢幕擷取畫面，其中顯示 [裝置資訊] 和 [顯示設定] 區段。](images/device-portal-xbox-20.png)
 
-![設定](images/device-portal-xbox-21.png)
+![[設定] 頁面的螢幕擷取畫面，其中顯示 [當地語系化設定]、[電源設定] 和 [使用者設定] 區段。 ](images/device-portal-xbox-21.png)
 
 #### <a name="device-information"></a>裝置資訊
 

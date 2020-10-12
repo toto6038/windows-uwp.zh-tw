@@ -5,24 +5,24 @@ ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 永遠連線, 相容性疑難排解員, ARM 上的 windows
 ms.localizationpriority: medium
-ms.openlocfilehash: 6573bedb97a7081681e5ecc600bb473f6d0b83bf
-ms.sourcegitcommit: 26bb75084b9d2d2b4a76d4aa131066e8da716679
+ms.openlocfilehash: 24ae6e7c12fde1dfbb9e5395b3fa3aa4901adb3d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75683951"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933019"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程式相容性疑難排解員
 模擬支援 x86 應用程式，是為 ARM64 上的 Windows 10 建立的新功能。 有時候模擬執行的最佳化不會造成最佳體驗。 您可以使用程式相容性疑難排解員，為您的 x86 應用程式切換模擬設定，減少預設最佳化並可能增加相容性。
 
 ## <a name="start-the-program-compatibility-troubleshooter"></a>啟動程式相容性疑難排解員
-在任何 Windows 10 電腦上以相同的方式手動啟動[程式相容性疑難排解員](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible)：在可執行檔案 (.exe) 上按一下滑鼠右鍵，然後選取 **\[疑難排解相容性\]** 。 這個畫面隨即顯示。
+在任何 Windows 10 電腦上以相同的方式手動啟動[程式相容性疑難排解員](https://support.microsoft.com/help/15078/windows-make-older-programs-compatible)：在可執行檔案 (.exe) 上按一下滑鼠右鍵，然後選取 **\[疑難排解相容性\]**。 這個畫面隨即顯示。
 
-![疑難排解相容性選項的螢幕擷取畫面](images/arm/Capture4.png)
+![[疑難排解相容性] 選項的螢幕擷取畫面。](images/arm/Capture4.png)
 
-如果您按一下 **\[疑難排解程式\]** ，以下列選項將會出現。
+如果您按一下 **\[疑難排解程式\]**，以下列選項將會出現。
 
-![疑難排解相容性選項的螢幕擷取畫面](images/arm/Capture5.png)
+![螢幕擷取畫面：您注意到哪些問題的選項。](images/arm/Capture5.png)
 
 所有選項都會啟用所有 Windows 10 桌上型電腦上套用的適用設定。 此外，第一個、第二個和第四個選項會套用[停用應用程式快取](#disable-app-cache)和[停用混合執行模式](#disable-hybrid-exec-mode)模擬設定。
 
@@ -30,13 +30,13 @@ ms.locfileid: "75683951"
 > [!WARNING]
 > 變更模擬設定可能會造成應用程式未預期當機或根本無法啟動。
 
-您可以在可執行檔上按一下滑鼠右鍵，然後選取 **\[內容\]** ，切換模擬設定。
+您可以在可執行檔上按一下滑鼠右鍵，然後選取**\[內容\]**，切換模擬設定。
 
-在 ARM 上，名為 **\[ARM 上的 Windows 10\]** 的區段將會出現在 **\[相容性\]** 索引標籤。按一下 **\[變更模擬設定\]** 以啟動第二個視窗，如此處所示。
+在 ARM 上，名為**\[ARM 上的 Windows 10\]** 的區段將會出現在**\[相容性\]** 索引標籤。按一下**\[變更模擬設定\]** 以啟動第二個視窗，如此處所示。
 
 ![變更模擬設定螢幕擷取畫面](images/arm/Capture.png)
 
-這個視窗提供兩種修改模擬設定的方式。 您可以選取預先定義的模擬設定群組，也可以按一下 **\[使用進階設定\]** 選項，讓您選擇個別設定。
+這個視窗提供兩種修改模擬設定的方式。 您可以選取預先定義的模擬設定群組，也可以按一下**\[使用進階設定\]** 選項，讓您選擇個別設定。
 
 群組的模擬設定會為了品質而降低效能最佳化。 以下是一些您可以選取的群組設定。
 
@@ -55,6 +55,6 @@ ms.locfileid: "75683951"
 
 ![多核心設定螢幕擷取畫面](images/arm/Capture3.png)
 
-這些設定變更記憶體障礙數目，記憶體障礙用於模擬期間同步處理應用程式的核心記憶體存取。 **\[快速\]** 是預設模式，但 **\[嚴格\]** 和 **\[非常嚴格\]** 選項將會增加障礙數目。 這會讓應用程式速度變慢，但降低應用程式錯誤的風險。 **\[單核心\]** 選項會移除所有障礙，但強制所有應用程式執行緒在單一核心上執行。
+這些設定變更記憶體障礙數目，記憶體障礙用於模擬期間同步處理應用程式的核心記憶體存取。 **\[快速\]** 是預設模式，但**\[嚴格\]** 和**\[非常嚴格\]** 選項將會增加障礙數目。 這會讓應用程式速度變慢，但降低應用程式錯誤的風險。 **\[單核心\]** 選項會移除所有障礙，但強制所有應用程式執行緒在單一核心上執行。
 
-如果變更特定的設定解決您的問題，請將包含詳細資料的電子郵件傳送至 *woafeedback@microsoft.com* ，以便我們納入您的意見反應。
+如果變更特定設定可解決您的問題，請以電子郵件寄出 *woafeedback@microsoft.com* 詳細資料，讓我們可以納入您的意見反應。

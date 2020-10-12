@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d9041b5e90ce8ffc16fe0158dda597f99b41bc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 96aea61073cf0c62f0c9636519018e1f19d0c8b3
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157942"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933089"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
@@ -92,7 +92,7 @@ Windows Hello 隨附裝置與 Windows 10 電腦 裝置間的關係可以是一�
 - 使用者會在她想要使用該 Windows Hello 隨附裝置解除鎖定的每個目標 Windows 10 Desktop 裝置上設定 PIN。
 - 使用者會在 Windows 10 Desktop 裝置上執行 Windows Hello 隨附裝置 app，以向 Windows 10 Desktop 註冊她的 Windows Hello 隨附裝置。
 
-附註：
+注意：
 
 - 我們建議您簡化探索、下載及啟動 Windows Hello 附屬裝置應用程式，如果可能的話，也可以自動 (例如，在 Windows 10 桌面裝置端) 的 NFC 讀取器上，透過 Windows Hello 隨附裝置來下載應用程式。 不過，這是由 Windows Hello 隨附裝置和 Windows Hello 隨附裝置 app 負責執行。
 - 在企業環境中，可透過 MDM 部署 Windows Hello 隨附裝置 app。
@@ -102,7 +102,7 @@ Windows Hello 隨附裝置與 Windows 10 電腦 裝置間的關係可以是一�
 
 下圖說明 Windows Hello 隨附裝置在註冊期間如何與隨附驗證服務互動。  
 
-![註冊流程](images/companion-device-2.png)
+![註冊流程的圖表。](images/companion-device-2.png)
 
 我們的通訊協定中使用了兩個金鑰：
 
@@ -145,7 +145,7 @@ Windows Hello 隨附裝置架構將提供一組 (當地語系化的) 文字和�
 
 服務會使用第二個計算出的值來驗證裝置，也會避免在傳輸通道中遭到重新執行攻擊。
 
-![註冊流程](images/companion-device-3.png)
+![更新註冊流程的圖表。](images/companion-device-3.png)
 
 ## <a name="lifecycle-management"></a>生命週期管理
 

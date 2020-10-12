@@ -6,12 +6,12 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務
 ms.localizationpriority: medium
-ms.openlocfilehash: dd6262677cd548fa8e690fde5a90ab1f2662ea2a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2516a1708948f0322d197bf4fdd524ede6ba0b0
+ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155642"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91878541"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 
@@ -71,7 +71,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 我們支援各式各樣符合大多數人需求的廣告體驗，包括橫幅廣告、插播式廣告 (橫幅與影片)、線性影片廣告、播放式廣告以及原生廣告。 我們的平台符合 OpenRTB、VAST 2.x、MRAID 2 及 VPAID 3 等標準，而且與 MOAT 及 IAS 相容。
 
-[探索廣告選項](../publish/create-an-ad-campaign-for-your-app.md)
+[探索廣告選項]()
 [安裝廣告 SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
     :::column-end:::
 :::row-end:::

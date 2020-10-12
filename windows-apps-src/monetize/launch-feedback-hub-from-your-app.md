@@ -1,17 +1,17 @@
 ---
-Description: 您可以鼓勵客戶從您的應用程式啟動意見反應中樞，來留下意見反應。
+description: 您可以鼓勵客戶從您的應用程式啟動意見反應中樞，來留下意見反應。
 title: 從您的應用程式啟動意見反應中樞
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ecb104f1864eefcf1e38f793a4af53a977f693
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 511612911d180459bd7c732803d3a98e3d4580c8
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363101"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933129"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 
@@ -60,16 +60,16 @@ ms.locfileid: "89363101"
 
 若要啟動意見反應中樞，建議您在應用程式中新增 UI 元素 (例如按鈕)，而應用程式使用 Segoe MDL2 Assets 字型和字元碼 E939 來顯示下列標準意見反應圖示。
 
-![意見反應圖示](images/feedback_icon.PNG)
+:::image type="icon" source="images/feedback_icon.PNG":::
 
 我們也建議您使用下列一個或多個位置選項來連結到您應用程式中的意見反應中樞。
 * **直接在應用程式列中**： 根據您的實作，您可能只想要使用圖示，或新增文字 (如下所示)。
 
-  ![意見反應圖示](images/feedback_appbar_placement.png)
+  ![在右上角具有意見反應圖示的應用程式螢幕擷取畫面，其旁邊有標籤意見反應。](images/feedback_appbar_placement.png)
 
 * **在應用程式的設定中**： 這是存取意見反應中樞的更精緻方式。 在下列範例中，意見反應連結會顯示為應用程式下的其中一個連結。
 
-  ![意見反應圖示](images/feedback_settings_placement.png)
+  ![[設定] 頁面的螢幕擷取畫面，其中顯示 [應用程式] 下方的意見反應連結。](images/feedback_settings_placement.png)
 
 * **在事件驅動的飛出視窗中**： 當您想要在啟動到 Windows 意見反應中樞之前查詢您的客戶有關特定問題時，這十分有用。 例如，在您的應用程式使用特定功能之後，您可能會向客戶提示他們對該功能滿意度的特定問題。 如果客戶選擇回應，您的應用程式就會啟動意見反應中樞。
 

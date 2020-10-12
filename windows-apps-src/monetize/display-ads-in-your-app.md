@@ -6,19 +6,19 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e9a67bb26d47d0bd9cc26c56df90efac5e2daa5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164832"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933119"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
 >[!WARNING]
 > 從2020年6月1日起，適用于 Windows UWP 應用程式的 Microsoft Ad 營收平臺將會關閉。 [深入了解](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
-使用 Microsoft Advertising SDK，在您的適用於 Windows 10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的 ad 營收平臺提供各種 ad 格式，可順暢地整合到您的應用程式，並支援使用許多熱門 ad 網路進行中繼。 我們的平臺符合 OpenRTB、龐大的2.x、MRAID 2 和 VPAID 3 標準，而且與護城河和 IAS 相容。 
+使用 Microsoft Advertising SDK，在您的適用於 Windows 10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的 ad 營收平臺提供各種 ad 格式，可順暢地整合到您的應用程式，並支援使用許多熱門 ad 網路進行中繼。 我們的平台符合 OpenRTB、VAST 2.x、MRAID 2 及 VPAID 3 等標準，而且與 MOAT 及 IAS 相容。 
 
 <br/>
 
@@ -71,7 +71,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 如需指示和程式碼範例，請參閱[本文](adcontrol-in-xaml-and--net.md)。
 
-![addreferences](images/banner-ad.png)
+![在平板電腦上描繪橫幅廣告的影像。](images/banner-ad.png)
 
 ### <a name="interstitial-video-and-interstitial-banner-ads"></a>插播式影片和插播式橫幅廣告
 
@@ -79,7 +79,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 如需指示和程式碼範例，請參閱[本文](interstitial-ads.md)。
 
-![addreferences](images/interstitial-ad.png)
+![在平板電腦上播放的遊戲中描繪插入式廣告的影像。](images/interstitial-ad.png)
 
 ### <a name="native-ads"></a>原生廣告
 
@@ -87,7 +87,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 如需指示和程式碼範例，請參閱[本文](native-ads.md)。
 
-![addreferences](images/native-ad.png)
+![描繪可在各種裝置上顯示之原生廣告的影像。](images/native-ad.png)
 
 <span id="ad-mediation"/>
 
@@ -111,7 +111,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 如需使用 Microsoft Advertising SDK 的其他說明，請使用下列資源。
 
-|  工作    | 資源 |               
+|  Task    | 資源 |               
 |----------|-------|
 | 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/windows/support)，然後選擇 **\[用程式內廣告\]**。        |
 | 取得社群支援     | 造訪[論壇](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。       |

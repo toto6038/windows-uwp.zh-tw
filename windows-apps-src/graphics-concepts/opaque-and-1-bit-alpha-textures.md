@@ -7,14 +7,14 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74768202554a3eb49c0df8ee5f17a4fe5f979be8
-ms.sourcegitcommit: 82edc63a5b3623abce1d5e70d8e200a58dec673c
+ms.openlocfilehash: c08489055bfd4e867310c5bdec6fea655ddc6d41
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58291806"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933009"
 ---
-# <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明，1 位元 alpha 的材質
+# <a name="span-iddirect3dconceptsopaque_and_1-bit_alpha_texturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位元 alpha 紋理
 
 紋理格式 BC1 主要針對不透明或只有單一透明色彩的紋理。
 
@@ -54,67 +54,67 @@ else
 
 建議您在混合之前將透明度像素的 RGBA 元件設為零。
 
-下表顯示 8 位元組區塊的記憶體配置。 它假設第一個索引對應 y 座標，第二個對應 x 座標。 比方說，材質\[1\]\[2\]紋理對應像素在 (x，y) 是指 = (2，1)。
+下表顯示 8 位元組區塊的記憶體配置。 它假設第一個索引對應 y 座標，第二個對應 x 座標。 例如，材質 \[ 1 \] \[ 2 \] 指的是 (x，y) = (2，1) 的材質地圖圖元。
 
 以下是 8 位元組 (64 位元) 區塊的記憶體配置︰
 
 | 單字位址 | 16 位元單字    |
 |--------------|----------------|
-| 0            | Color\_0       |
-| 1            | 色彩\_1       |
-| 2            | Bitmap Word\_0 |
-| 3            | 點陣圖 Word\_1 |
+| 0            | 色彩 \_ 0       |
+| 1            | 色彩 \_ 1       |
+| 2            | 點陣圖字 \_ 0 |
+| 3            | 點陣圖文字 \_ 1 |
 
  
 
-色彩\_0 和色彩\_1，在兩個極端的色彩配置，如下所示：
+色彩 \_ 0 和色彩 \_ 1 （兩個極端的色彩）如下所示：
 
-| 位元數        | 色彩                 |
+| Bits        | Color                 |
 |-------------|-----------------------|
-| 4:0 (LSB\*) | 藍色元件  |
+| 4:0 (LSB \*)  | 藍色元件  |
 | 10:5        | 綠色元件 |
 | 15:11       | 紅色元件   |
 
  
 
-\*最小顯著性的位元
+\*最不重要的位
 
-點陣圖 Word\_0 配置，如下所示：
+點陣圖字 \_ 0 的配置如下：
 
-| 位元數          | 紋素           |
+| Bits          | 紋素           |
 |---------------|-----------------|
-| 1:0 (LSB)     | Texel\[0\]\[0\] |
-| 3:2           | 材質\[0\]\[1\] |
-| 5:4           | 材質\[0\]\[2\] |
-| 7:6           | 材質\[0\]\[3\] |
-| 9:8           | 材質\[1\]\[0\] |
-| 11:10         | 材質\[1\]\[1\] |
-| 13:12         | 材質\[1\]\[2\] |
-| 15:14 (MSB\*) | 材質\[1\]\[3\] |
+| 1:0 (LSB)     | 材質 \[ 0 \] \[ 0\] |
+| 3:2           | 材質 \[ 0 \] \[ 1\] |
+| 5:4           | 材質 \[ 0 \] \[ 2\] |
+| 7:6           | 材質 \[ 0 \] \[ 3\] |
+| 9:8           | 材質 \[ 1 \] \[ 0\] |
+| 11:10         | 材質 \[ 1 \] \[ 1\] |
+| 13:12         | 材質 \[ 1 \] \[ 2\] |
+| 15:14 (MSB \*)  | 材質 \[ 1 \] \[ 3\] |
 
  
 
-\*最大顯著性位元 (MSB)
+\*最重要的一點 (MSB) 
 
-點陣圖 Word\_1 配置，如下所示：
+點陣圖 Word \_ 1 的配置如下：
 
-| 位元數        | 紋素           |
+| Bits        | 紋素           |
 |-------------|-----------------|
-| 1:0 (LSB)   | 材質\[2\]\[0\] |
-| 3:2         | 材質\[2\]\[1\] |
-| 5:4         | 材質\[2\]\[2\] |
-| 7:6         | 材質\[2\]\[3\] |
-| 9:8         | 材質\[3\]\[0\] |
-| 11:10       | 材質\[3\]\[1\] |
-| 13:12       | 材質\[3\]\[2\] |
-| 15:14 (MSB) | 材質\[3\]\[3\] |
+| 1:0 (LSB)   | 材質 \[ 2 \] \[ 0\] |
+| 3:2         | 材質 \[ 2 \] \[ 1\] |
+| 5:4         | 材質 \[ 2 \] \[ 2\] |
+| 7:6         | 材質 \[ 2 \] \[ 3\] |
+| 9:8         | 材質 \[ 3 \] \[ 0\] |
+| 11:10       | 材質 \[ 3 \] \[ 1\] |
+| 13:12       | 材質 \[ 3 \] \[ 2\] |
+| 15:14 (MSB) | 材質 \[ 3 \] \[ 3\] |
 
  
 
-## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>範例中的不透明的色彩編碼
+## <a name="span-idexample_of_opaque_color_encodingspanspan-idexample_of_opaque_color_encodingspanspan-idexample_of_opaque_color_encodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>不透明色彩編碼的範例
 
 
-以不透明編碼為例，假設色彩紅色和黑色位於極端。 Red 是色彩\_0，而黑色是色彩\_1。 有四個以內插值取代的色彩之之間平均漸層分散。 若要判斷 4x4 點陣圖值，請使用下列的計算︰
+以不透明編碼為例，假設色彩紅色和黑色位於極端。 紅色為色彩 \_ 0，黑色為色彩 \_ 1。 有四個以內插值取代的色彩之之間平均漸層分散。 若要判斷 4x4 點陣圖值，請使用下列的計算︰
 
 ```cpp
 00 ? color_0
@@ -125,20 +125,20 @@ else
 
 然後點陣圖看起來如下列圖表。
 
-![展開的點陣圖配置的圖表](images/colors2.png)
+![紅色和黑色的展開點陣圖版面配置圖表。](images/colors2.png)
 
 這看起來像下列圖解系列色彩。
 
-**附註**  映像，在像素 (0，0)，會出現在左上方。
+**注意**   在影像中，圖元 (0，0) 出現在左上方。
 
  
 
 ![不透明編碼漸層圖例](images/redsquares.png)
 
-## <a name="span-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanspan-idexampleof1bitalphaencodingspanexample-of-1-bit-alpha-encoding"></a><span id="Example_of_1_Bit_Alpha_Encoding"></span><span id="example_of_1_bit_alpha_encoding"></span><span id="EXAMPLE_OF_1_BIT_ALPHA_ENCODING"></span>1 位元 alpha 編碼方式的範例
+## <a name="span-idexample_of_1_bit_alpha_encodingspanspan-idexample_of_1_bit_alpha_encodingspanspan-idexample_of_1_bit_alpha_encodingspanexample-of-1-bit-alpha-encoding"></a><span id="Example_of_1_Bit_Alpha_Encoding"></span><span id="example_of_1_bit_alpha_encoding"></span><span id="EXAMPLE_OF_1_BIT_ALPHA_ENCODING"></span>1位 Alpha 編碼範例
 
 
-選取這種格式時的不帶正負號的 16 位元整數、 色彩\_0，小於不帶正負號的 16 位元整數，色彩\_1。 可以使用此格式的範例是樹上樹葉，與藍天對映。 有些紋素可標示成透明，同時有三種綠色系列仍可供樹葉運用。 兩個色彩修正極端，而且第三個插補色彩。
+當不帶正負號的16位整數（色彩0） \_ 小於不帶正負號的16位整數（色彩1）時，就會選取此格式 \_ 。 可以使用此格式的範例是樹上樹葉，與藍天對映。 有些紋素可標示成透明，同時有三種綠色系列仍可供樹葉運用。 兩個色彩修正極端，而且第三個插補色彩。
 
 以下是這類圖片的範例圖。
 
@@ -157,7 +157,7 @@ else
 
 然後點陣圖看起來如下列圖表。
 
-![展開的點陣圖配置的圖表](images/colors3.png)
+![已展開點陣圖配置的圖，適用于較淺的綠色和深綠色。](images/colors3.png)
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
