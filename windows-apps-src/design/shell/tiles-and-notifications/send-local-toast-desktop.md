@@ -1,33 +1,33 @@
 ---
 Description: '瞭解 Win32 c # 應用程式如何傳送本機快顯通知，以及如何處理使用者按一下快顯通知。'
-title: 從傳統型 C# 應用程式傳送本機快顯通知
+title: '從 Win32 c # 應用程式傳送本機快顯通知'
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from desktop C# apps
+label: Send a local toast notification from Win32 C# apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: 'windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c #、c 清晰、快顯通知、wpf、傳送快顯通知 wpf、傳送快顯通知 winforms、傳送快顯通知 c #、傳送通知 wpf、傳送通知 c #、快顯通知 wpf、通知 c#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f4f78d689352f0278f814a2e89db6f92df52b99
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b13927bbd12a5cb306018ca02cd8730f580182cd
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220121"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984644"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
+# <a name="send-a-local-toast-notification-from-win32-c-apps"></a>從 Win32 c # 應用程式傳送本機快顯通知
 
-傳統型應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置以及如果您不是使用 MSIX 或稀疏套件，桌面應用程式可能會有一些特殊步驟。
+Win32 應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，Win32 應用程式有幾個特殊步驟是因為不同的啟用配置，以及如果您未使用 MSIX 或稀疏套件，可能缺乏套件識別。
 
 > [!IMPORTANT]
-> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C++ WRL](send-local-toast-desktop-cpp-wrl.md)。
+> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 如需其他桌面語言，請參閱 [Win32 c + + WRL](send-local-toast-desktop-cpp-wrl.md)。
 
 
 ## <a name="step-1-install-the-notifications-library"></a>步驟1：安裝通知程式庫
 
 `Microsoft.Toolkit.Uwp.Notifications`在您的專案中安裝[NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。
 
-此 [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 會新增相容性程式庫程式碼，以使用來自桌面應用程式的快顯通知。 它也會參考 UWP Sdk，並可讓您使用 c # （而不是原始 XML）來建立通知。 本快速入門的其餘部分取決於通知程式庫。
+此 [通知程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 會新增相容性程式庫程式碼，以處理來自 Win32 應用程式的快顯通知。 它也會參考 UWP Sdk，並可讓您使用 c # （而不是原始 XML）來建立通知。 本快速入門的其餘部分取決於通知程式庫。
 
 
 ## <a name="step-2-implement-the-activator"></a>步驟2：執行啟動項
@@ -320,7 +320,7 @@ protected override async void OnStartup(StartupEventArgs e)
 
 
 ### <a name="foreground-vs-background-activation"></a>前景和背景啟用
-對於傳統型應用程式，前景與背景啟用的處理方式相同 - 都會呼叫 COM 啟動者。 接著將由您應用程式的程式碼決定是否顯示視窗，或僅執行一些工作然後就結束。 因此，在快顯通知內容中指定 **Background** 的 **ActivationType** 並不會變更行為。
+針對 Win32 應用程式，前景和背景啟用的處理方式相同-會呼叫您的 COM activator。 接著將由您應用程式的程式碼決定是否顯示視窗，或僅執行一些工作然後就結束。 因此，在快顯通知內容中指定 **Background** 的 **ActivationType** 並不會變更行為。
 
 
 ## <a name="step-7-remove-and-manage-notifications"></a>步驟7：移除和管理通知
@@ -357,5 +357,5 @@ DesktopNotificationManagerCompat.History.Clear();
 ## <a name="resources"></a>資源
 
 * [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/desktop-toasts)
-* [傳統型應用程式的快顯通知](toast-desktop-apps.md)
+* [來自 Win32 應用程式的快顯通知](toast-desktop-apps.md)
 * [快顯通知內容文件](adaptive-interactive-toasts.md)

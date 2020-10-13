@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, 次要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: a4cd65093e9969531c3de683064973aab58b1680
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57653183"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984664"
 ---
 # <a name="secondary-tiles"></a>次要磚
 
@@ -29,11 +29,11 @@ ms.locfileid: "57653183"
 
 ## <a name="quick-links"></a>快速連結
 
-| 文章 | 描述 |
+| 發行項 | 描述 |
 | --- | --- |
-| [次要磚的指引](secondary-tiles-guidance.md) | 了解您使用次要磚的時機和位置。 |
-| [次要磚釘選](secondary-tiles-pinning.md) | 了解如何釘選次要磚。 |
-| [從桌面應用程式釘選](secondary-tiles-desktop-pinning.md) | Windows 傳統型應用程式因為傳統型橋接器之故而可以釘選次要磚！ |
+| [次要磚指導方針](secondary-tiles-guidance.md) | 了解您使用次要磚的時機和位置。 |
+| [釘選次要磚](secondary-tiles-pinning.md) | 了解如何釘選次要磚。 |
+| [從 Win32 應用程式釘選](secondary-tiles-desktop-pinning.md) | 由於傳統型橋接器，Win32 應用程式可以釘選次要磚！ |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>次要磚與主要磚比較
@@ -66,9 +66,9 @@ ms.locfileid: "57653183"
 * 使用者可以隨時刪除其次要磚，無須刪除父項應用程式。
 * 次要磚可以在執行階段建立。 應用程式磚只能在安裝期間建立。
 * 飛出視窗會提示使用者在新增次要磚前先確認。
-* 無法以程式設計的方式透過向使用者要求來為鎖定畫面選取次要磚。 在 電腦設定，使用者必須手動將透過個人化頁面的 次要 圖格。
+* 無法以程式設計的方式透過向使用者要求來為鎖定畫面選取次要磚。 使用者必須透過 [電腦設定] 中的 [個人化] 頁面，手動新增次要磚。
 
-對於傳送通知，會為搭配次要磚使用的磚與徽章更新程式及推播通知通道提供特定的方法。 這些方法與搭配主要磚使用的版本一致。 比方說，CreateBadgeUpdaterForApplication vs。CreateBadgeUpdaterForSecondaryTile。
+對於傳送通知，會為搭配次要磚使用的磚與徽章更新程式及推播通知通道提供特定的方法。 這些方法與搭配主要磚使用的版本一致。 例如，CreateBadgeUpdaterForApplication 與 CreateBadgeUpdaterForSecondaryTile 比較。
 
 
 ## <a name="guidance-on-secondary-tiles"></a>次要磚指導方針
@@ -79,5 +79,5 @@ ms.locfileid: "57653183"
 若要了解如何釘選次要磚，請參閱[釘選次要磚](secondary-tiles-pinning.md)。
 
 
-## <a name="desktop-applications-and-secondary-tiles"></a>傳統型應用程式和次要磚
-若要了解如何透過傳統型橋接器從您的傳統型應用程式使用次要磚，請參閱[從傳統型應用程式釘選次要磚](secondary-tiles-desktop-pinning.md)。
+## <a name="win32-applications-and-secondary-tiles"></a>Win32 應用程式和次要磚
+若要瞭解如何透過傳統型橋接器從您的 Win32 應用程式使用次要磚，請參閱 [從 win32 應用程式釘選次要磚](secondary-tiles-desktop-pinning.md)。

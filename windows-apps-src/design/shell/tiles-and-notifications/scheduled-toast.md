@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10、uwp、排程的快顯通知、scheduledtoastnotification、操作說明、快速入門、使用者入門、程式碼範例、逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: bc80cf04c1e1461612401ef4ced898058e2dd4ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 04bbf3da388bf065b2b96684cf3f27cd7534ff51
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172352"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984734"
 ---
 # <a name="schedule-a-toast-notification"></a>排程快顯通知
 
@@ -21,12 +21,12 @@ ms.locfileid: "89172352"
 請注意，排程的快顯通知有5分鐘的傳遞視窗。 如果電腦在排定的傳遞時間內關閉，且維持超過5分鐘的時間，則會「捨棄」通知，告知使用者不再相關。 如果您需要保證傳遞通知，而不是電腦的關機時間長度，建議您使用具有時間觸發程式的背景工作，如下列程式 [代碼範例](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)所示。
 
 > [!IMPORTANT]
-> MSIX/sparse 封裝和傳統 Win32)  (的桌面應用程式，會有稍微不同的步驟來傳送通知和處理啟用。 請依照下列指示操作，但將取代為 `ToastNotificationManager` `DesktopNotificationManagerCompat` [桌面應用程式](toast-desktop-apps.md) 檔中的類別。
+> MSIX/sparse 封裝和傳統 Win32)  (的 Win32 應用程式都有稍微不同的步驟來傳送通知和處理啟用。 請依照下列指示操作，但 `ToastNotificationManager` 以 `DesktopNotificationManagerCompat` [Win32 應用程式](toast-desktop-apps.md) 檔中的類別取代。
 
 > **重要 api**： [ScheduledToastNotification 類別](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 要完全了解本主題，下列項目將有所幫助...
 
@@ -35,77 +35,40 @@ ms.locfileid: "89172352"
 * Windows 10 UWP app 專案
 
 
-## <a name="install-nuget-packages"></a>安裝 NuGet 套件
+## <a name="step-1-install-nuget-package"></a>步驟1：安裝 NuGet 套件
 
-建議您將下列兩個 NuGet 套件安裝到您的專案。 我們程式碼範例將會使用這些套件。
-
-* [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)：透過物件而不透過原始 XML 來產生快顯通知承載。
-* [QueryString.NET](https://www.nuget.org/packages/QueryString.NET/)：使用 C# 產生和剖析查詢字串
+安裝 node.js. [ [通知] NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)。 我們的程式碼範例會使用此套件。 在本文結尾，我們將提供不使用任何 NuGet 套件的「一般」程式碼片段。 此套件可讓您在不使用 XML 的情況下建立快顯通知。
 
 
-## <a name="add-namespace-declarations"></a>新增命名空間宣告
+## <a name="step-2-add-namespace-declarations"></a>步驟2：加入命名空間宣告
 
 `Windows.UI.Notifications` 包含快顯通知 Api。
 
 ```csharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
-using Microsoft.QueryStringDotNET; // QueryString.NET
 ```
 
 
-## <a name="construct-the-toast-content"></a>建造快顯通知內容
+## <a name="step-3-schedule-the-notification"></a>步驟3：排程通知
 
-在 Windows 10 中，您的快顯通知內容是使用賦予通知外觀極大彈性的調適性語言進行描述。 如需詳細資訊，請參閱[快顯通知內容文件](adaptive-interactive-toasts.md)。
-
-多虧了通知程式庫，產生 XML 內容很簡單。 如果您未安裝 NuGet 提供的 Notifications 程式庫，就必須手動建構 XML，很有可能會發生錯誤。
-
-您應一律設定 **Launch** 屬性，以便當使用者按下快顯通知主體並啟動您的應用程式時，您的應用程式知道應顯示哪些內容。
+我們將使用以文字為基礎的簡單通知，提醒學生今天所關注的作業。 建立通知和排程！
 
 ```csharp
-// In a real app, these would be initialized with actual data
-string title = "ASTR 170B1";
-string content = "You have 3 items due today!";
+// Construct the content
+var content = new ToastContentBuilder()
+    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .GetToastContent();
 
-// Now we can construct the final toast content
-ToastContent toastContent = new ToastContent()
-{
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = title
-                },
-     
-                new AdaptiveText()
-                {
-                    Text = content
-                }
-            }
-        }
-    },
- 
-    // Arguments when the user taps body of toast
-    Launch = new QueryString()
-    {
-        { "action", "viewClass" },
-        { "classId", "3910938180" }
- 
-    }.ToString()
-};
-```
-
-## <a name="create-the-scheduled-toast"></a>建立排定的快顯通知
-
-當您初始化快顯通知內容之後，請建立新的 [ScheduledToastNotification](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) 並傳入內容的 XML，以及您想要傳遞通知的時間。
-
-```csharp
+    
 // Create the scheduled notification
-var toast = new ScheduledToastNotification(toastContent.GetXml(), DateTime.Now.AddSeconds(5));
+var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
+
+
+// Add your scheduled toast to the schedule
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 
@@ -120,16 +83,6 @@ Tag 與 Group 結合可以做為主複合索引鍵。 Group 是較通用的識�
 ```csharp
 toast.Tag = "18365";
 toast.Group = "ASTR 170B1";
-```
-
-
-## <a name="schedule-the-notification"></a>排程通知
-
-最後，建立 [ToastNotifier](/uwp/api/windows.ui.notifications.toastnotifier) 並呼叫 AddToSchedule ( # A1，並傳入排程的快顯通知。
-
-```csharp
-// And your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 ```
 
 

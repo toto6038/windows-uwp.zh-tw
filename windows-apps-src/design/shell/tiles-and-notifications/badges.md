@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: dea3eebc253f46f5de888a0a37fea9d3ad1ac3df
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: a49d771b7efdbb7e787db0cbadea45c255a1120e
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860115"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984594"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Windows 應用程式的徽章通知
 
@@ -32,99 +32,29 @@ ms.locfileid: "91860115"
 
 ## <a name="numeric-badges"></a>數字徽章
 
-<table>
-    <tr>
-        <th>值</th>
-        <th>徽章</th>
-        <th>XML</th>
-    </tr>
-    <tr>
-        <td>從 1 到 99 的數字。 值為 0 相當於字符的 value 屬性為 "none"，而且將會清除徽章。</td>
-        <td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /></td>
-        <td>`<badge value="1"/>`</td>
-    </tr>
-    <tr>
-        <td>任何大於 99 的數字徽章。</td>
-        <td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td></td>
-        <td>`<badge value="100"/>`</td>
-    </tr>    
-</table>
+值 | 徽章 | XML
+--|--|--
+從 1 到 99 的數字。 值為 0 相當於字符的 value 屬性為 "none"，而且將會清除徽章。 | <img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100." /> | `<badge value="1"/>`
+任何大於 99 的數字徽章。 | <img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99." /></td> | `<badge value="100"/>`
 
 ## <a name="glyph-badges"></a>字符徽章
 除了數字之外，徽章也可以顯示一個字符，其屬於一組不可延伸之狀態字符。 
 
-<table>
-<tr>
-    <th>狀態</th>
-    <th>圖像</th>
-    <th>XML</th>
-</tr>
-<tr>
-    <td>無</td>
-    <td>(沒有顯示徽章。)</td>
-    <td>`<badge value="none"/>`</td>
-</tr>
-<tr>
-    <td>activity</td>
-    <td><img src="images/badges/badge-activity.png" alt="Screenshot of the activity glyph." /></td>
-    <td>`<badge value="activity"/>`</td>
-</tr>
-<tr>
-    <td>鬧鐘 (alarm)</td>
-    <td><img src="images/badges/badge-alarm.png" alt="Screenshot of the alarm glyph." /></td>
-    <td>`<badge value="alarm"/>`</td>
-</tr>
-<tr>
-    <td>警示</td>
-    <td><img src="images/badges/badge-alert.png" alt="Screenshot of the alert glyph." /></td>
-    <td>`<badge value="alert"/>`</td>
-</tr>
-<tr>
-    <td>注意 (attention)</td>
-    <td><img src="images/badges/badge-attention.png" alt="Screenshot of the attention glyph." /></td>
-    <td>`<badge value="attention"/>`</td>
-</tr>
-<tr>
-    <td>可供使用</td>
-    <td><img src="images/badges/badge-available.png" alt="Screenshot of the available glyph." /></td>
-    <td>`<badge value="available"/>`</td>
-</tr>
-<tr>
-    <td>離開 (away)</td>
-    <td><img src="images/badges/badge-away.png" alt="Screenshot of the away glyph." /></td>
-    <td>`<badge value="away"/>`</td>
-</tr>
-<tr>
-    <td>忙碌 (busy)</td>
-    <td><img src="images/badges/badge-busy.png" alt="Screenshot of the busy glyph." /></td>
-    <td>`<badge value="busy"/>`</td>
-</tr>
-<tr>
-    <td>error</td>
-    <td><img src="images/badges/badge-error.png" alt="Screenshot of the error glyph." /></td>
-    <td>`<badge value="error"/>`</td>
-</tr>
-<tr>
-    <td>新訊息 (newMessage)</td>
-    <td><img src="images/badges/badge-newMessage.png" alt="Screenshot of the new message glyph." /></td>
-    <td>`<badge value="newMessage"/>`</td>
-</tr>
-<tr>
-    <td>暫停 (paused)</td>
-    <td><img src="images/badges/badge-paused.png" alt="Screenshot of the paused glyph." /></td>
-    <td>`<badge value="paused"/>`</td>
-</tr>
-<tr>
-    <td>正在播放 (playing)</td>
-    <td><img src="images/badges/badge-playing.png" alt="Screenshot of the playing glyph." /></td>
-    <td>`<badge value="playing"/>`</td>
-</tr>
-<tr>
-    <td>離線 (unavailable)</td>
-    <td><img src="images/badges/badge-unavailable.png" alt="Screenshot of the unavailable glyph" /></td>
-    <td>`<badge value="unavailable"/>`</td>
-</tr>
-</table>
+狀態 | 圖像 | XML
+--|--|--
+無 | (沒有顯示徽章。) | `<badge value="none"/>`
+activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
+鬧鐘 (alarm) | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
+警示 | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
+注意 (attention) | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
+可供使用 | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
+離開 (away) | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
+忙碌 (busy) | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
+error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
+新訊息 (newMessage) | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
+暫停 (paused) | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
+正在播放 (playing) | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
+離線 (unavailable) | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
 
 ## <a name="create-a-badge"></a>建立徽章
 

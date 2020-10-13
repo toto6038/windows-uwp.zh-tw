@@ -1,25 +1,25 @@
 ---
 Description: 瞭解 Win32 c + + WRL apps 如何傳送本機快顯通知，以及如何處理使用者按一下快顯通知。
-title: 從傳統型 C++ WRL 應用程式傳送本機快顯通知
-label: Send a local toast notification from desktop C++ WRL apps
+title: 從 Win32 c + + WRL 應用程式傳送本機快顯通知
+label: Send a local toast notification from Win32 C++ WRL apps
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c + +、cpp、>cplusplus、WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: f90733cb4b549b7b8f088d6ecfa652941b0769b1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220141"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984654"
 ---
-# <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>從傳統型 C++ WRL 應用程式傳送本機快顯通知
+# <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>從 Win32 c + + WRL 應用程式傳送本機快顯通知
 
-傳統型應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，由於不同的啟用配置以及如果您不是使用 MSIX 或稀疏套件，桌面應用程式可能會有一些特殊步驟。
+Win32 應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，Win32 應用程式有幾個特殊步驟是因為不同的啟用配置，以及如果您不是使用 MSIX 或稀疏套件，可能缺乏套件識別。
 
 > [!IMPORTANT]
-> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C#](send-local-toast-desktop.md)。
+> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 如需其他 Win32 語言，請參閱 [Win32 c #](send-local-toast-desktop.md)。
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>步驟 1：啟用 Windows 10 SDK
@@ -372,7 +372,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 
 
 ### <a name="foreground-vs-background-activation"></a>前景和背景啟用
-對於傳統型應用程式，前景與背景啟用的處理方式相同 - 都會呼叫 COM 啟動者。 接著將由您應用程式的程式碼決定是否顯示視窗，或僅執行一些工作然後就結束。 因此，在快顯內容中指定**背景**的**activationType**並不會變更行為。
+針對 Win32 應用程式，前景和背景啟用的處理方式相同-會呼叫您的 COM activator。 接著將由您應用程式的程式碼決定是否顯示視窗，或僅執行一些工作然後就結束。 因此，在快顯內容中指定**背景**的**activationType**並不會變更行為。
 
 
 ## <a name="step-9-remove-and-manage-notifications"></a>步驟 9：移除和管理通知
@@ -444,5 +444,5 @@ if (IsWindows10OrGreater())
 ## <a name="resources"></a>資源
 
 * [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/desktop-toasts)
-* [傳統型應用程式的快顯通知](toast-desktop-apps.md)
+* [來自 Win32 應用程式的快顯通知](toast-desktop-apps.md)
 * [快顯通知內容文件](adaptive-interactive-toasts.md)

@@ -7,12 +7,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 擱置中的更新, pendingupdate, 多步驟互動性, 多步驟互動
 ms.localizationpriority: medium
-ms.openlocfilehash: 00551414fbefe5591813731337653964bd2524f3
-ms.sourcegitcommit: 5d34eb13c7b840c05e5394910a22fa394097dc36
+ms.openlocfilehash: bc77e41ad144c76af4452b2a9a87c183ae84422c
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054538"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984574"
 ---
 # <a name="toast-with-pending-update-activation"></a>具有擱置中更新啟用的快顯通知
 
@@ -49,25 +49,47 @@ ms.locfileid: "89054538"
 
 在快顯通知背景啟用按鈕上，設定 **AfterActivationBehavior** 為 **PendingUpdate**。 請注意，這只適用於具有 **Background** 之 **ActivationType** 的按鈕。
 
-```csharp
-new ToastButton("Yes", "action=orderLunch")
-{
-    ActivationType = ToastActivationType.Background,
+#### <a name="builder-syntax"></a>[Builder 語法](#tab/builder-syntax)
 
-    ActivationOptions = new ToastActivationOptions()
+```csharp
+new ToastContentBuilder()
+
+    .AddText("Would you like to order lunch today?")
+
+    .AddButton(new ToastButton("Yes", "action=orderLunch")
     {
-        AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
-    }
-}
+        ActivationType = ToastActivationType.Background,
+
+        ActivationOptions = new ToastActivationOptions()
+        {
+            AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
+        }
+    });
 ```
+
+#### <a name="xml"></a>[XML](#tab/xml)
 
 ```xml
-<action
-    content='Yes'
-    arguments='action=orderLunch'
-    activationType='background'
-    afterActivationBehavior='pendingUpdate' />
+<toast>
+  
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Would you like to order lunch today?</text>
+    </binding>
+  </visual>
+
+  <actions>
+    <action
+      content="Yes"
+      arguments="action=orderLunch"
+      activationType="background"
+      afterActivationBehavior="pendingUpdate"/>
+  </actions>
+  
+</toast>
 ```
+
+---
 
 
 ## <a name="use-a-tag-on-the-notification"></a>在通知上使用標記

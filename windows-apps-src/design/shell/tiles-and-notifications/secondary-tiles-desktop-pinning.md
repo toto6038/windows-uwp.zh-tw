@@ -1,30 +1,30 @@
 ---
-Description: Windows 傳統型應用程式因為傳統型橋接器之故而可以釘選次要磚！
-title: 從傳統型應用程式釘選次要磚
-label: Pin secondary tiles from desktop application
+Description: 由於傳統型橋接器，Win32 應用程式可以釘選次要磚！
+title: 從 Win32 應用程式釘選次要磚
+label: Pin secondary tiles from Win32 apps
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf, 傳統型橋接器, 次要磚, 釘選, 快速入門, 程式碼範例, 範例, 次要磚, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 111d66e69ddb9cff56f36a26bd8094429fe808ef
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e45fedbb981c26945d3127d7f1c01bfc08d221f0
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172372"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984724"
 ---
-# <a name="pin-secondary-tiles-from-desktop-application"></a>從傳統型應用程式釘選次要磚
+# <a name="pin-secondary-tiles-from-win32-apps"></a>從 Win32 應用程式釘選次要磚
 
 
-由於[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)之故，Windows 傳統型應用程式 (如 Win32、Windows Form 及 WPF) 可釘選次要磚！
+多虧 [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，Win32 應用程式 (像 Windows Forms，而 WPF) 可以釘選次要磚！
 
 ![次要磚螢幕擷取畫面](images/secondarytiles.png)
 
 > [!IMPORTANT]
 > **需要 Fall Creators Update**：您的目標必須是 SDK 16299 並執行組建 16299 或更新版本，才能從您的傳統型橋接器應用程式釘選次要磚。
 
-從 WPF 或 WinForms 應用程式新增次要磚的方式，與單純的 UWP 應用程式非常類似。 唯一的不同是，您必須指定您的主要視窗控制代碼 (HWND)。 這是因為當釘選磚時，Windows 會顯示強制回應對話方塊要求使用者確認是否要釘選磚。 如果傳統型應用程式未透過擁有者視窗設定 SecondaryTile 物件，則 Windows 不會知道要在何處繪製對話方塊，作業將會失敗。
+從 WPF 或 WinForms 應用程式新增次要磚的方式，與單純的 UWP 應用程式非常類似。 唯一的不同是，您必須指定您的主要視窗控制代碼 (HWND)。 這是因為當釘選磚時，Windows 會顯示強制回應對話方塊要求使用者確認是否要釘選磚。 如果 Win32 應用程式未使用擁有者視窗來設定 SecondaryTile 物件，則 Windows 不知道要在哪裡繪製對話，而且作業會失敗。
 
 
 ## <a name="package-your-app-with-desktop-bridge"></a>使用傳統型橋接器封裝應用程式
@@ -66,7 +66,7 @@ SecondaryTile tile = new SecondaryTile(
 
 ## <a name="assign-the-window-handle"></a>指派視窗控制代碼
 
-這是傳統型應用程式的主要步驟。 將物件投射到 [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 物件。 接著，呼叫 [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，並傳遞您要成為強制回應對話方塊之擁有者的視窗控制代碼。 下列 C# 範例說明如何將您應用程式主要視窗的控制代碼傳遞給方法。
+這是 Win32 應用程式的關鍵步驟。 將物件投射到 [IInitializeWithWindow](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) 物件。 接著，呼叫 [IInitializeWithWindow.Initialize](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize) 方法，並傳遞您要成為強制回應對話方塊之擁有者的視窗控制代碼。 下列 C# 範例說明如何將您應用程式主要視窗的控制代碼傳遞給方法。
 
 ```csharp
 // Assign the window handle

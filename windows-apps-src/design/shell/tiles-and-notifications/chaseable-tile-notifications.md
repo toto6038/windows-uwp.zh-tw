@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
-ms.openlocfilehash: a10e68f2926761338a95d5d2c649c84468efada8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 770c3f13d701de622c4f6ea8075dfef5f6b1afc8
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173812"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984454"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
@@ -140,14 +140,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ```
 
 
-### <a name="accessing-onlaunched-from-desktop-applications"></a>從桌面應用程式存取 >onlaunched
+### <a name="accessing-onlaunched-from-win32-applications"></a>從 Win32 應用程式存取 >onlaunched
 
-桌面應用程式 (例如 Win32、WPF 等) 使用 [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，也可以使用 chaseable 圖格！ 唯一的差異在於存取 >onlaunched 引數。 請注意，您必須先 [使用傳統型橋接器封裝您的應用程式](/windows/msix/desktop/source-code-overview)。
+使用 [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Win32 應用程式 (例如 WPF 等) ，也可以使用 chaseable 圖格！ 唯一的差異在於存取 >onlaunched 引數。 請注意，您必須先 [使用傳統型橋接器封裝您的應用程式](/windows/msix/desktop/source-code-overview)。
 
 > [!IMPORTANT]
 > **需要2018年10月更新**：若要使用 `AppInstance.GetActivatedEventArgs()` API，您必須以 SDK 17763 為目標，並執行組建17763或更新版本。
 
-針對桌面應用程式，若要存取啟動引數，請執行下列動作 .。。
+針對 Win32 應用程式，若要存取啟動引數，請執行下列動作 .。。
 
 ```csharp
 
