@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb3eb985ab10bd4c28ca38f87aefe3d1fc7fd61e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216471"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636638"
 ---
 # <a name="icons-for-windows-apps"></a>Windows 應用程式的圖示
 
@@ -47,7 +47,8 @@ ms.locfileid: "91216471"
 
 :::row:::
     :::column:::
-        ![可行事項](images/do.svg) ![圖示標準影像](images/icons/icons-standard.svg)<br>
+        ![顯示剪下、複製、貼上及儲存圖示的螢幕擷取畫面。](images/do.svg)
+        ![圖示標準影像](images/icons/icons-standard.svg)<br>
 
 像是剪下、複製、貼上和儲存之類的動作，或是導覽功能表的導覽項目，都可以使用圖示。
     :::column-end:::
@@ -60,12 +61,14 @@ ms.locfileid: "91216471"
 
 :::row:::
     :::column:::
-        ![可行事項](images/do.svg) ![圖示購物車](images/icons/icon-shopping-cart.svg)<br>
+        ![簡單且熟悉的購物車圖示螢幕擷取畫面。](images/do.svg)
+        ![圖示購物車](images/icons/icon-shopping-cart.svg)<br>
 
 如果有個圖示的意義很容易就能讓使用者了解，而且小尺寸也清晰易讀，就可使用該圖示。
     :::column-end:::
     :::column:::
-        ![禁止事項](images/dont.svg) ![圖示概念影像](images/icons/icon-bad-example.png)<br>
+        ![複雜且不熟悉的購物車圖示螢幕擷取畫面。](images/dont.svg)
+        ![圖示概念影像](images/icons/icon-bad-example.png)<br>
 
 如果圖示的意義不明確，或是需要複雜的圖形才能清晰顯示圖示，則請勿使用。
     :::column-end:::

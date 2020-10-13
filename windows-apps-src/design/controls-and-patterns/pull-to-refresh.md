@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1164113b4e4c6b64c6ee1e3d98e0bdc4c8b635ea
-ms.sourcegitcommit: 8e0e4cac79554e86dc7f035c4b32cb1f229142b0
+ms.openlocfilehash: 26b9d89d5c4a329cd08283c4ebe96d4de4bdc562
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88942848"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763027"
 ---
 # <a name="pull-to-refresh"></a>拖動以重新整理
 
@@ -33,7 +33,7 @@ ms.locfileid: "88942848"
 
 您也可以使用 [RefreshVisualizer](/uwp/api/windows.ui.xaml.controls.refreshvisualizer)，建立以其他方式 (例如透過 [重新整理] 按鈕) 叫用的一致重新整理體驗。
 
-## <a name="examples"></a>範例
+## <a name="xaml-controls-gallery-examples"></a>XAML 控制項庫範例
 
 <table>
 <th align="left">XAML 控制項庫<th>

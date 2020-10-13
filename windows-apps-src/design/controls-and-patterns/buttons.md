@@ -13,12 +13,12 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bdfc212c435469746faf1fdf94898c0dc7beb221
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 38f62483d09b3ec75e9a670ddcd0c27b710d6a38
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219081"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829630"
 ---
 # <a name="buttons"></a>按鈕
 
@@ -33,16 +33,24 @@ ms.locfileid: "91219081"
 [Button](/uwp/api/windows.ui.xaml.controls.button) | 起始立即動作的按鈕。 可以搭配 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件或 [Command](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command) 繫結使用。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 按下時會接連引發 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件的按鈕。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | 樣式類似超連結且用於瀏覽的按鈕。 如需有關超連結的詳細資訊，請參閱[超連結](hyperlinks.md)。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | ![WinUI 標誌](images/winui-logo-16x16.png) 用於開啟附加飛出視窗的按鈕 (具有＞形箭號)。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | ![WinUI 標誌](images/winui-logo-16x16.png) 具有兩端的按鈕。 一端可起始動作，另一端可開啟功能表。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | ![WinUI 標誌](images/winui-logo-16x16.png) 具有兩端的切換按鈕。 一端可開啟/關閉，另一端可開啟功能表。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | :::image type="icon" source="images/winui-logo-16x16.png":::用於開啟附加飛出視窗的按鈕 (具有＞形箭號)。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | :::image type="icon" source="images/winui-logo-16x16.png":::具有兩端的按鈕。 一端可起始動作，另一端可開啟功能表。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | :::image type="icon" source="images/winui-logo-16x16.png":::具有兩端的切換按鈕。 一端可開啟/關閉，另一端可開啟功能表。
 [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton) | 可以開啟或關閉的按鈕。
 
 **取得 Windows UI 程式庫**
 
-|  |  |
-| - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      :::image type="icon" source="images/winui-logo-64x64.png":::
+   :::column-end:::
+   :::column span="3":::
+      **DropDownButton**、**SplitButton** 和 **ToggleSplitButton** 包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **Windows UI 程式庫 API：** [DropDownButton 類別](/uwp/api/microsoft.ui.xaml.controls.dropdownbutton)、[SplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.splitbutton)、[ToggleSplitButton 類別](/uwp/api/microsoft.ui.xaml.controls.togglesplitbutton)
 >
@@ -153,15 +161,15 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 <table>
 <tr>
 <td> <b>需要修正：</b><br> 含溢位文字的按鈕。 </td>
-<td> <img src="images/button-wraptext.png"/> </td>
+<td> <img src="images/button-wraptext.png" alt="Screenshot of two buttons, side by side, with labels that both say: Button with thxt that woul"/> </td>
 </tr>
 <tr>
 <td> <b>選項 1：</b><br> 增加按鈕寬度、堆疊按鈕，如果文字長度大於 26 個字元，則換行。 </td>
-<td> <img src="images/button-wraptext1.png"> </td>
+<td> <img src="images/button-wraptext1.png" alt="Screenshot of two buttons with increased width, one over the other, with labels that both say: Button with thxt that would wrap."> </td>
 </tr>
 <tr>
 <td> <b>選項 2：</b><br> 增加按鈕高度，並將文字換行。 </td>
-<td> <img src="images/button-wraptext2.png"> </td>
+<td> <img src="images/button-wraptext2.png" alt="Screenshot of two buttons with increased height, side by side, with labels that both say: Button with thxt that would wrap."> </td>
 </tr>
 </table>
 

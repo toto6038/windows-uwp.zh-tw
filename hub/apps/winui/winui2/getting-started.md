@@ -4,12 +4,12 @@ description: 如何安裝及使用 Windows UI 程式庫。
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: 94c23ab9573df576af89d9211ced70938fd5105f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7b7b248ce166368d315dce42f27075d3933c0781
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174132"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762843"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>開始使用 Windows UI 2.x 程式庫
 
@@ -33,9 +33,9 @@ ms.locfileid: "89174132"
 **Microsoft.UI.Xaml** 套件包含適用於所有應用程式的 Fluent 控制項和功能。  
 您可以選擇性地核取 [包含發行前版本]，以查看包含實驗性新功能的最新發行前版本。
 
-    ![NuGet 套件](images/ManageNugetPackages.png "管理 NuGet 套件映像")
+    ![[方案總管] 面板的螢幕擷取畫面，已使用滑鼠右鍵按一下專案，且醒目提示 [管理 NuGet 套件] 選項。](images/ManageNugetPackages.png "管理 NuGet 套件映像")
 
-    ![NuGet 套件](images/NugetPackages.png)
+    ![[NuGet 套件管理員] 對話方塊的螢幕擷取畫面，其中顯示搜尋欄位中含有 winui 的 [瀏覽] 索引標籤。](images/NugetPackages.png)
 
 4. 將 Windows UI (WinUI) 佈景主題資源新增至 App.xaml 資源。 視您是否有額外的應用程式資源而定，您可以透過兩種方式來執行此動作。
 

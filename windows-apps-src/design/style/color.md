@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: bb0f38c250d20780b301a925b24e3d1c36bda7e3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f7035017b1b1bfe878e4bd390fcefbe2bf3a6be5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216601"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636558"
 ---
 # <a name="color"></a>色彩
 
@@ -216,7 +216,7 @@ Windows 殼層中的輔色演算法會產生輔色的淺色和深色色調。
 
 下圖顯示輔色的各種淺色/深色色調範例，以及如何在彩色表面上套用彩色類型。
 
-![色彩上的色彩](images/color/color-on-color.png)
+![色彩上的色彩圖表螢幕擷取畫面，由上往下以色彩漸層的方式顯示淺藍色到深藍色。](images/color/color-on-color.png)
 
 如需控制項樣式設定的詳細資訊，請參閱 [XAML 樣式](../controls-and-patterns/xaml-styles.md)。
 

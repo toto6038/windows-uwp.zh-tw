@@ -1,5 +1,5 @@
 ---
-description: 本教學課程示範如何新增 UWP XAML 使用者介面、建立 MSIX 套件，以及將其他新式元件併入您的 UWP 應用程式。
+description: 本教學課程示範如何將名為 Contoso Expenses 的範例 WPF 桌面應用程式現代化。
 title: 使用 MSIX 封裝和部署
 ms.topic: article
 ms.date: 01/23/2020
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 18b89caa0de947d2b95b46c3deb11378912b6012
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2ab83b2c9253e8cdd9adc403909a1bd03db1ccda
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161422"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762982"
 ---
 # <a name="part-5-package-and-deploy-with-msix"></a>第 5 部分：使用 MSIX 封裝和部署
 

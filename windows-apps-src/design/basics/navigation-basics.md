@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6fa0f8997db9a383097c7e0fece3d8a17d5875ab
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e144d369dccac6a14a32168bd073bb501275097f
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220091"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763067"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 
@@ -67,7 +67,7 @@ ms.locfileid: "91220091"
 
 :::row:::
     :::column:::
-        ![執行範例](images/nav/do.svg)
+        ![綠色長條的第一個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/nav/do.svg)
 
         ![良好的 navview](images/nav/navview-good.svg)
 
@@ -86,7 +86,7 @@ ms.locfileid: "91220091"
 
 清楚的路徑可讓使用者邏輯瀏覽。 提供清楚明瞭的選項，並釐清頁面之間的關係，可防止使用者迷失方向。
 
-![執行範例](images/nav/clarity-image.svg)
+![應用程式模擬的螢幕擷取畫面，其中顯示使用者的明確瀏覽路徑。](images/nav/clarity-image.svg)
 
 > 將目的地清楚標示出，讓使用者知道自己身在何處。
 

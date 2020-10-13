@@ -1,26 +1,26 @@
 ---
-description: 此文章示範如何使用 XAML 裝載 API，在 C++ Win32 應用程式中裝載標準 UWP 控制項。
-title: 使用 XAML Islands 在 C++ Win32 應用程式中裝載標準 UWP 控制項
-ms.date: 03/23/2020
+description: 此文章示範如何使用 XAML 裝載 API，在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項。
+title: 使用 XAML Islands 在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項
+ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, 包裝的控制項, 標準控制項
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 0842046419402bbfacc24331d0521efa9510153a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 60cbf422b5417dc62ff261cf2e7ba02f25840032
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174192"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671517"
 ---
-# <a name="host-a-standard-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 UWP 控制項
+# <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項
 
-此文章示範如何使用 [UWP XAML 裝載 API](using-the-xaml-hosting-api.md)，在新的 C++ Win32 應用程式中裝載標準 UWP 控制項 (也就是 Windows SDK 所提供的控制項)。 此程式碼會以[簡單的 XAML Island 範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App)為基礎，而此節將討論程式碼中一些最重要的部分。 如果有現有的 C++ Win32 應用程式專案，則可針對您的專案調整這些步驟和程式碼範例。
+此文章示範如何使用 [UWP XAML 裝載 API](using-the-xaml-hosting-api.md)，在新的 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項 (也就是 Windows SDK 所提供的控制項)。 此程式碼會以[簡單的 XAML Island 範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App)為基礎，而此節將討論程式碼中一些最重要的部分。 如果有現有的 C++ Win32 應用程式專案，則可針對您的專案調整這些步驟和程式碼範例。
 
 > [!NOTE]
-> 此文章示範的案例不支援直接編輯應用程式中裝載之 UWP 控制項的 XAML 標記。 此案例限制您只能透過程式碼，修改裝載 UWP 控制項的外觀和行為。 如需可讓您在裝載 UWP 控制項時直接編輯 XAML 標記的指示，請參閱[在 C++ Win32 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands-cpp.md)。
+> 此文章示範的案例不支援直接編輯應用程式中裝載之 WinRT XAML 控制項的 XAML 標記。 此案例限制您只能透過程式碼，修改裝載控制項的外觀和行為。 如需可讓您在裝載 WinRT XAML 控制項時直接編輯 XAML 標記的指示，請參閱[在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項](host-custom-control-with-xaml-islands-cpp.md)。
 
 ## <a name="create-a-desktop-application-project"></a>建立傳統型應用程式專案
 
@@ -39,12 +39,12 @@ ms.locfileid: "89174192"
 4. 安裝 [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet 套件：
 
     1. 在 [NuGet 套件管理員]  視窗中，確定已選取 [包含發行前版本]  。
-    2. 選取 [瀏覽]  索引標籤、搜尋 **Microsoft.Toolkit.Win32.UI.SDK** 套件，然後安裝此套件的 v6.0.0 版 (或更新版本)。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
+    2. 選取 [瀏覽] 索引標籤、搜尋 **Microsoft.Toolkit.Win32.UI.SDK** 套件，然後安裝此套件的最新穩定版本。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
 
 5. 在您的[應用程式資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 中設定 `maxVersionTested` 值，以指定您的應用程式與 Windows 10 1903 版或更新版本相容。
 
     1. 如果您的專案中還沒有應用程式資訊清單，請將新的 XML 檔案新增至您的專案並命名為 **app.manifest**。
-    2. 在您的應用程式資訊清單中，包含下列範例所示的 **compatibility** 元素及子元素。 以您要設為目標的 Windows 10 版本號碼 (必須是 Windows 10 1903 版或更新版本) 來取代 **maxVersionTested** 元素的 **Id** 屬性。
+    2. 在您的應用程式資訊清單中，包含下列範例所示的 **compatibility** 元素及子元素。 以您要設為目標的 Windows 10 版本號碼 (必須是 10.0.18362 或更新版本) 來取代 **maxVersionTested** 元素的 **Id** 屬性。
 
         ```xml
         <?xml version="1.0" encoding="UTF-8"?>
@@ -59,9 +59,9 @@ ms.locfileid: "89174192"
         </assembly>
         ```
 
-## <a name="use-the-xaml-hosting-api-to-host-a-uwp-control"></a>使用 XAML 裝載 API 來裝載 UWP 控制項
+## <a name="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control"></a>使用 XAML 裝載 API 來裝載 WinRT XAML 控制項
 
-使用 XAML 裝載 API 來裝載 UWP 控制項的基本程序會遵循下列一般步驟：
+使用 XAML 裝載 API 來裝載 WinRT XAML 控制項的基本程序會遵循下列一般步驟：
 
 1. 針對目前執行緒來將 UWP XAML 架構初始化，然後您的應用程式才會建立任何其將裝載的 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) \(英文\) 物件。 根據您打算建立將裝載控制項之 [DesktopWindowXamlSource](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource) \(英文\) 物件的時機而定，有數種方式可執行此操作。
 
@@ -82,7 +82,7 @@ ms.locfileid: "89174192"
 
     2. 呼叫 **IDesktopWindowXamlSourceNative** 或 **IDesktopWindowXamlSourceNative2** 介面的 **AttachToWindow** 方法，並傳入應用程式中父 UI 元素的視窗控制碼。
 
-    3. 設定 **DesktopWindowXamlSource** 中所含之內部子視窗的初始大小。 根據預設，這個內部子視窗的寬度和高度均設為 0。 如果您未設定視窗的大小，則您新增至 **DesktopWindowXamlSource** 的任何 UWP 控制項都不會顯示。 若要存取 **DesktopWindowXamlSource** 中的內部子視窗，請使用 **IDesktopWindowXamlSourceNative** 或 **IDesktopWindowXamlSourceNative2** 介面的 **WindowHandle** 屬性。
+    3. 設定 **DesktopWindowXamlSource** 中所含之內部子視窗的初始大小。 根據預設，這個內部子視窗的寬度和高度均設為 0。 如果您未設定視窗的大小，則您新增至 **DesktopWindowXamlSource** 的任何 WinRT XAML 控制項都不會顯示。 若要存取 **DesktopWindowXamlSource** 中的內部子視窗，請使用 **IDesktopWindowXamlSourceNative** 或 **IDesktopWindowXamlSourceNative2** 介面的 **WindowHandle** 屬性。
 
 3. 最後，將您想要裝載的 **Windows.UI.Xaml.UIElement** 指派給 **DesktopWindowXamlSource** 物件的 [Content](/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content) \(英文\) 屬性。
 
@@ -166,7 +166,7 @@ ms.locfileid: "89174192"
         WindowsXamlManager winxamlmanager = WindowsXamlManager::InitializeForCurrentThread();
 
         // This DesktopWindowXamlSource is the object that enables a non-UWP desktop application 
-        // to host UWP controls in any UI element that is associated with a window handle (HWND).
+        // to host WinRT XAML controls in any UI element that is associated with a window handle (HWND).
         DesktopWindowXamlSource desktopSource;
 
         // Get handle to the core window.
@@ -270,7 +270,7 @@ ms.locfileid: "89174192"
     > [!NOTE]
     > 您可能會看到數個建置警告，包括 `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` 和 `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 這些警告是目前工具和 NuGet 套件的已知問題，可加以忽略。
 
-如需示範這些工作的完整範例，請參閱下列程式碼檔案：
+如需示範如何使用 XAML 裝載 API 來裝載標準 WinRT XAML 控制項的完整範例，請參閱下列程式碼檔案：
 
 * **C++ Win32：**
   * 請參閱 [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) 檔案。
@@ -291,17 +291,17 @@ ms.locfileid: "89174192"
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後選擇 [新增參考]  。 在專案清單中，選取您解決方案中的 C++/Win32 傳統型應用程式專案，然後按一下 [確定]  。
 
-3. 建置和執行封裝專案。 確認應用程式會如預期般執行並顯示 UWP 控制項。
+3. 建置和執行封裝專案。 確認應用程式會如預期般執行並顯示 WinRT XAML 控制項。
 
 ## <a name="next-steps"></a>接下來的步驟
 
-此文章中的程式碼範例可讓您開始使用在 C++ Win32 應用程式中裝載標準 UWP 控制項的基本案例。 下列各節將介紹您的應用程式可能需要支援的其他案例。
+此文章中的程式碼範例可讓您開始使用在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項的基本案例。 下列各節將介紹您的應用程式可能需要支援的其他案例。
 
-### <a name="host-a-custom-uwp-control"></a>裝載自訂 UWP 控制項
+### <a name="host-a-custom-winrt-xaml-control"></a>裝載自訂 WinRT XAML 控制項
 
-針對許多案例，您可能需要裝載自訂 UWP XAML 控制項，其中包含數個要共同作業的個別控制項。 在 C++ Win32 應用程式中裝載自訂 UWP 控制項的程序 (您自行定義的控制項或協力廠商所提供的控制項)，比裝載標準控制項更複雜，而且需要額外的程式碼。
+針對許多案例，您可能需要裝載自訂 UWP XAML 控制項，其中包含數個要共同作業的個別控制項。 在 C++ Win32 應用程式中裝載自訂控制項的程序 (您自行定義的控制項或協力廠商所提供的控制項)，比裝載標準控制項更複雜，而且需要額外的程式碼。
 
-如需完整的逐步解說，請參閱[使用 XAML 裝載 API 在 C++ Win32 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands-cpp.md)。
+如需完整的逐步解說，請參閱[使用 XAML 裝載 API 在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項](host-custom-control-with-xaml-islands-cpp.md)。
 
 ### <a name="advanced-scenarios"></a>進階案例
 
@@ -313,6 +313,6 @@ ms.locfileid: "89174192"
 
 * [在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)](xaml-islands.md)
 * [在 C++ Win32 應用程式中使用 UWP XAML 裝載 API](using-the-xaml-hosting-api.md)
-* [在 C++ Win32 應用程式中裝載自訂 UWP 控制項](host-custom-control-with-xaml-islands-cpp.md)
+* [在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項](host-custom-control-with-xaml-islands-cpp.md)
 * [C++ Win32 應用程式中適用於 XAML Islands 的進階案例](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands 程式碼範例](https://github.com/microsoft/Xaml-Islands-Samples) \(英文\)

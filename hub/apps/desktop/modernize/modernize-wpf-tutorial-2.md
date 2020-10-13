@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 0b5250f1e01aece4f73d83dc7327f193a58f53cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 24fb2507dd8f5a83b5581ff08d44210b0f5146c3
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161492"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636448"
 ---
 # <a name="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands"></a>第 2 部分：使用 XAML Islands 新增 UWP InkCanvas 控制項
 
@@ -147,7 +147,7 @@ ms.locfileid: "89161492"
 
 13. 現在試著使用滑鼠，在簽章空間中繪製一些內容。 此時，您將會看到筆跡出現在螢幕上。
 
-    ![簽名](images/wpf-modernize-tutorial/Signature.png)
+    ![顯示簽章空間的 [費用詳細資料] 螢幕擷取畫面。](images/wpf-modernize-tutorial/Signature.png)
 
 ## <a name="next-steps"></a>接下來的步驟
 

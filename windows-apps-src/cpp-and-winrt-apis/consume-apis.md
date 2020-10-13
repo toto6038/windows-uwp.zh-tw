@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 已投影, 投影, 實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3d9e4be7c45d4d2b9b5063087a78556497dc9b
-ms.sourcegitcommit: bcf60b6d460dc4855f207ba21da2e42644651ef6
+ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
+ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91376246"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646271"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 取用 API
 
@@ -271,11 +271,11 @@ auto smallBox{
 然後，就像 Windows 命名空間類型一樣，您包含標頭並透過其中一個建構函式建構投影類型。 您的應用程式專案啟動程式碼註冊執行階段類別，且投影類別的建構函式呼叫 [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance)，以從參考的元件啟動執行階段類別。
 
 ```cppwinrt
-#include <winrt/BankAccountWRC.h>
+#include <winrt/ThermometerWRC.h>
 
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount bankAccount;
+    ThermometerWRC::Thermometer thermometer;
     ...
 };
 ```
@@ -420,14 +420,14 @@ CurrencyFormatter currency = factory.CreateCurrencyFormatterCode(L"USD");
 using namespace winrt::Windows::Foundation;
 ...
 auto factory = winrt::get_activation_factory<Uri, IUriRuntimeClassFactory>();
-Uri account = factory.CreateUri(L"http://www.contoso.com");
+Uri uri = factory.CreateUri(L"http://www.contoso.com");
 ```
 
-上述兩個範例中的類別是 Windows 命名空間的類型。 在下一個範例中，**BankAccountWRC::BankAccount** 是 Windows 執行階段元件中實作的自訂類型。
+上述兩個範例中的類別是 Windows 命名空間的類型。 在下一個範例中，**ThermometerWRC::Thermometer** 是 Windows 執行階段元件中實作的自訂類型。
 
 ```cppwinrt
-auto factory = winrt::get_activation_factory<BankAccountWRC::BankAccount>();
-BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::BankAccount>();
+auto factory = winrt::get_activation_factory<ThermometerWRC::Thermometer>();
+ThermometerWRC::Thermometer thermometer = factory.ActivateInstance<ThermometerWRC::Thermometer>();
 ```
 
 ## <a name="membertype-ambiguities"></a>成員/類型意義不明確

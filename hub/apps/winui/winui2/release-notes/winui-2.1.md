@@ -3,12 +3,12 @@ title: WinUI 2.1 版本資訊
 description: WinUI 2.1 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 02e870209486a271e0455d61070cf5403333e1df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5087e9f5059a568e92f972c04b25d8c618015f2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154882"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762880"
 ---
 # <a name="windows-ui-library-21"></a>Windows UI 程式庫 2.1
 
@@ -29,7 +29,7 @@ WinUI 是裝載於 GitHub 上的開放原始碼專案。 我們歡迎您在 [Win
 使用 ItemsRepeater，即可使用靈活的版面配置系統、自訂檢視畫面、進行模擬，藉以建立自訂的集合體驗。
 與 ListView 不同，ItemsRepeater 並未提供全面的使用者體驗，無預設的 UI，也未提供焦點、選取或使用者互動的相關原則。 然而，其為建置組塊，可供您用來建立自己的唯一集合型體驗和自訂控制項。 其支援建置更豐富且更具效能的體驗。
 
-![範例](../images/ItemsRepeater%20-%20MSN%20News.gif)
+![顯示項目重複器控制項行為的短片。](../images/ItemsRepeater%20-%20MSN%20News.gif)
 
 [文件](/windows/uwp/design/controls-and-patterns/items-repeater)
 
@@ -37,7 +37,7 @@ WinUI 是裝載於 GitHub 上的開放原始碼專案。 我們歡迎您在 [Win
 
 AnimatedVisualPlayer 會裝載並控制動畫視覺效果的播放，讓您可以將高效能的自訂動作圖形新增至應用程式。 例如，AnimatedVisualPlayer 可用來顯示和控制 Lottie 動畫。
 
-![範例](../images/AnimatedVisualPlayerUpdated.gif)
+![顯示動畫視覺播放器控制項行為的短片。](../images/AnimatedVisualPlayerUpdated.gif)
 
 [文件](/windows/communitytoolkit/animations/lottie)
 
@@ -45,7 +45,7 @@ AnimatedVisualPlayer 會裝載並控制動畫視覺效果的播放，讓您可�
 
 TeachingTip 提供了吸引人的 Fluent 方式，讓應用程式能夠使用非侵入式且內容豐富的秘訣來引導和通知使用者。 TeachingTip 可以將焦點帶到新的或重要的功能，告訴使用者如何執行工作，以及如何藉由為您手邊的工作提供內容相關的資訊來增強工作流程。
 
-![範例](../images/TeachingTipUpdated.gif)
+![顯示教學提示控制項行為的短片。](../images/TeachingTipUpdated.gif)
 
 [文件](/windows/uwp/design/controls-and-patterns/dialogs-and-flyouts/teaching-tip)
 
@@ -53,7 +53,7 @@ TeachingTip 提供了吸引人的 Fluent 方式，讓應用程式能夠使用非
 
 包含可在 MenuBar 中使用「選項按鈕」樣式選項的能力。 這可讓具有項目符號且繫結在一起的選項形成群組，例如選項按鈕群組。 系統會為開發人員處理此邏輯。
 
-![範例](../images/RadioMenuFlyoutItem1.png)
+![顯示廣播功能表飛出視窗項目控制項行為的螢幕擷取畫面。](../images/RadioMenuFlyoutItem1.png)
 
 [文件](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-flyout-or-a-context-menu)
 
@@ -61,7 +61,7 @@ TeachingTip 提供了吸引人的 Fluent 方式，讓應用程式能夠使用非
 
 精簡模式可讓開發人員為任意數目的案例建立舒適的體驗。 只要新增資源字典，您的應用程式就可以適應平均 ~33% 以上的 UI。
 
-![精簡密度範例](../images/CompactDensityUpdated.png)
+![顯示精簡密度控制項行為的螢幕擷取畫面。](../images/CompactDensityUpdated.png)
 
 [文件](/windows/uwp/design/style/spacing)
 

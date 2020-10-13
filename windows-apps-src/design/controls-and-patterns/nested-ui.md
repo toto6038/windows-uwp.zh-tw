@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 433f24ea6c4e2fd03faa652a041f3a1c1578652e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217931"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829453"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
@@ -35,7 +35,7 @@ ms.locfileid: "91217931"
 - 「清單項目」  指的是清單上使用者可以採取動作的個別項目。
 - 「巢狀 UI」  指的是位於清單項目內，可以獨立於項目清單本身讓使用者採取動作的 UI 元素。
 
-![巢狀 UI 組件](images/nested-ui-example-1.png)
+![螢幕擷取畫面：顯示巢狀 UI 的部分。](images/nested-ui-example-1.png)
 
 > 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](/uwp/api/windows.ui.xaml.controls.listviewbase) \(英文\) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
 
@@ -107,7 +107,7 @@ ms.locfileid: "91217931"
 
 如果您具有巢狀元素的清單 UI 支援叫用、選取 (單一或多個) 或拖放作業等動作，我們建議使用下列方向鍵技巧來瀏覽您的巢狀 UI 元素。
 
-![巢狀 UI 組件](images/nested-ui-navigation.png)
+![螢幕擷取畫面：顯示標記了字母 A、B、C 和 D 的巢狀 UI 元素。](images/nested-ui-navigation.png)
 
 **遊戲台**
 
@@ -147,7 +147,7 @@ ms.locfileid: "91217931"
 
 這種 UI 通常會比先前的範例更加複雜，並具有許多使用者可採取動作的巢狀元素。
 
-![巢狀 UI 組件](images/nested-ui-grouping.png)
+![複雜巢狀 UI 的螢幕擷取畫面，顯示使用者可以與之互動的許多巢狀元素。](images/nested-ui-grouping.png)
 
 
 如果要達成此 UI，請在清單上設定下列屬性：

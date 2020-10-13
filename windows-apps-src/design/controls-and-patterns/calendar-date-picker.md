@@ -1,5 +1,5 @@
 ---
-Description: 行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如星期幾、行事曆行程密度。
+description: 行事曆日期選擇器是一種下拉式控制項，最適合用來從行事曆檢視中挑選單一日期，然後取得各種重要的相關資訊，例如星期幾、行事曆行程密度。
 title: 行事曆日期選擇器
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a12ae302f5e904db29655eacb075a9eba5f8f3e5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c7061de6098c77214136f3441b43abbf35a10686
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217541"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829614"
 ---
 # <a name="calendar-date-picker"></a>行事曆日期選擇器
 
@@ -25,9 +25,17 @@ ms.locfileid: "91217541"
 
 **取得 Windows UI 程式庫**
 
-|  |  |
-| - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 標誌](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **平台 API**：[CalendarDatePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker)、[Date 屬性](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date)、[DateChanged 事件](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
 
@@ -57,7 +65,7 @@ ms.locfileid: "91217541"
 
 如果尚未設定日期，進入點會顯示預留位置文字；否則，它會顯示所選的日期。 當使用者選取進入點時，行事曆檢視會展開，方便使用者選擇日期。 行事曆檢視與其他 UI 重疊；它不會將其他 UI 移開。
 
-![行事曆日期選擇器的範例](images/calendar-date-picker-2-views.png)
+![行事曆日期選擇器的螢幕擷取畫面，其中顯示一個空白的 [選取日期] 文字方塊，然後是一個底下填入行事曆的文字方塊。](images/calendar-date-picker-2-views.png)
 
 ## <a name="create-a-date-picker"></a>建立日期選擇器
 
@@ -72,7 +80,7 @@ arrivalCalendarDatePicker.Header = "Arrival date";
 
 產生的行事曆日期選擇器看起來像這樣︰
 
-![行事曆日期選擇器的範例](images/calendar-date-picker-closed.png)
+![已填入行事曆日期選擇器的螢幕擷取畫面，其標籤顯示 [抵達日期]。](images/calendar-date-picker-closed.png)
 
 行事曆日期選擇器有一個內部 [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)，可用來挑選日期。 CalendarView 屬性的子集 (例如 [IsTodayHighlighted](/uwp/api/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted) 和 [FirstDayOfWeek](/uwp/api/windows.ui.xaml.controls.calendardatepicker.firstdayofweek)) 存在於 CalendarDatePicker 上面，而且會被轉送到內部 CalendarView 供您修改。 
 

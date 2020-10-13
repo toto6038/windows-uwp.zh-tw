@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 324aae957d53c7ec63817c8f0e80909d25dc1c0a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6665eaced6092242d1f5000de6e248044fda1ee0
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216621"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636438"
 ---
 # <a name="writing-style"></a>撰寫樣式
 
@@ -41,7 +41,8 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)選取**濾鏡**以將效果新增至影像。
+![綠色長條的第一個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+選取 [濾鏡]以將效果新增至影像。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)如果您想要新增視覺效果或改變影像，請選取**濾鏡**。
@@ -54,7 +55,8 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)重新啟動應用程式以查看您的變更。
+![綠色長條的第二個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+重新啟動應用程式以查看您的變更。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)當應用程式重新啟動時，將會套用所做的變更。
@@ -67,7 +69,8 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)我們無法上傳圖片。 如果再度發生這種情況，請嘗試重新啟動應用程式。 但請不要擔心 — 當您回來時，您的圖片已經準備好了。
+![綠色長條的第三個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+我們無法上傳圖片。 如果再度發生這種情況，請嘗試重新啟動應用程式。 但請不要擔心 — 當您回來時，您的圖片已經準備好了。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)發生錯誤，我們無法上傳圖片。 請再試一次，如果再次遇到這個問題，您可能需要重新啟動應用程式。 但不用擔心 — 我們已經將您的工作儲存在本機上，當您回來時，它已經準備好了。
@@ -87,7 +90,8 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)我們無法將您的檔案儲存到該位置。
+![綠色長條的第四個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+我們無法將您的檔案儲存到該位置。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -103,7 +107,8 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg) Windows 應用程式設計指引可以協助您設計和建立美觀、優雅的應用程式。 運用每個 Windows 應用程式中所包含的設計功能，您可以建置可在一系列裝置上縮放的使用者介面 (UI)。
+![綠色長條的第五個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+Windows 應用程式設計指引可以協助您設計和建立美觀、優雅的應用程式。 運用每個 Windows 應用程式中所包含的設計功能，您可以建置可在一系列裝置上縮放的使用者介面 (UI)。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -117,7 +122,8 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)當您對影像感到滿意時，請選取**儲存**，將它新增到您的圖庫。 在那裡，您可以將它分享給朋友。
+![綠色長條的第六個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+當您對影像感到滿意時，請選取 [儲存]，將其新增到您的圖庫。 在那裡，您可以將它分享給朋友。
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -131,7 +137,7 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)
+![綠色長條的第七個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 <b>您未連線。</b>
 * 請檢查網路纜線是否插上。
 * 請確定您不是處於飛航模式。
@@ -150,7 +156,7 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)
+![綠色長條的第八個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 <b>哪個部分發生問題？</b>
 * 我忘記密碼。
 * 系統不接受密碼。
@@ -174,7 +180,7 @@ ms.locfileid: "91216621"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)
+![綠色長條的第九個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 <b>您未連線。</b>
 * 請檢查網路纜線是否插上。
 * 請確定您不是處於飛航模式。
@@ -194,7 +200,7 @@ ms.locfileid: "91216621"
 但最重要的是對話方塊的標題和其按鈕之間的「呼叫與回應」。 請確定您的按鈕是標題所張貼問題的明確答案，並且應用程式中所有按鈕的格式都一致。
     :::column-end:::
     :::column:::
-![可行事項](images/do.svg)
+![綠色長條的第十個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 <b>哪個部分發生問題？</b>
 1. 我忘記密碼
 2. 系統不接受我的密碼
@@ -210,7 +216,7 @@ ms.locfileid: "91216621"
 撰寫按鈕的文字時，請記住每個按鈕代表一個動作。 按鈕的文字請務必使用*主動語態*，並使用代表動作 (而非反應) 的文字。
     :::column-end:::
     :::column:::
-![可行事項](images/do.svg)
+![綠色長條的第十一個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 * 立即安裝
 * 共用
     :::column-end:::

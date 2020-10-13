@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ee12ed108f552b8aa95549f1e9c2f3ac09a889ae
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1e313fe0e51ed77d416f782e40aee9dee81796ae
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220131"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636648"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -64,7 +64,7 @@ ms.locfileid: "91220131"
       (使用者可以藉由前往 **[設定] &gt; [顯示] &gt; [縮放與版面配置]** 頁面來覆寫預設值)。
    :::column-end:::
    :::column:::
-      ![](images/icons/display-settings-screen.png)
+      ![[設定] 中 [顯示] 頁面的螢幕擷取畫面。](images/icons/display-settings-screen.png)
    :::column-end:::
 :::row-end:::  
 

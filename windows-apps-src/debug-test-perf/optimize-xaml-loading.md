@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c6f9398a61865b014400bbf4a96c8a7ce8a231
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ce7344b810c3b6683050876dce38264be6f5c8b7
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154352"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762839"
 ---
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
 
@@ -81,11 +81,11 @@ ListView 在此處載入，但因寬度為 0 而看不到。 ListView 及其每�
 
 載入 ListView 後的即時視覺化樹狀結構。 頁面的元素總計數為 89。
 
-![包含清單檢視的視覺化樹狀結構](images/visual-tree-1.png)
+![包含清單檢視的視覺化樹狀結構螢幕擷取畫面。](images/visual-tree-1.png)
 
 ListView 及其子系已載入記憶體中。
 
-![包含清單檢視的視覺化樹狀結構](images/memory-use-1.png)
+![受控記憶體測試應用程式 .EXE 資料表的螢幕擷取畫面，其中顯示 ListView 及其子系已載入記憶體中。](images/memory-use-1.png)
 
 #### <a name="option-2---better"></a>選項 2 - 較佳
 
@@ -97,11 +97,11 @@ ListView 的可見度在此處設定為已摺疊 (其他 XAML 與原先完全相
 
 ListView 已摺疊的即時視覺化樹狀結構。 頁面的元素總計數為 46。
 
-![包含已摺疊清單檢視的視覺化樹狀結構](images/visual-tree-2.png)
+![包含已摺疊清單檢視的視覺化樹狀結構螢幕擷取畫面。](images/visual-tree-2.png)
 
 ListView 及其子系已載入記憶體中。
 
-![包含清單檢視的視覺化樹狀結構](images/memory-use-1.png)
+![受控記憶體測試應用程式 .EXE 資料表的更新後螢幕擷取畫面，其中顯示 ListView 及其子系已載入記憶體中。](images/memory-use-1.png)
 
 #### <a name="option-3---most-efficient"></a>選項 3 - 最具效率
 

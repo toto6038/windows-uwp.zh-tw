@@ -10,12 +10,12 @@ label: XAML styles
 template: detail.hbs
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dfb9c73eb6db0bb948714e1ce5e99a185b8dd3d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6e4e69b87ba78134982032f9ceca826758c1a5ba
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173862"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829658"
 ---
 # <a name="xaml-styles"></a>XAML 樣式
 
@@ -29,7 +29,7 @@ ms.locfileid: "89173862"
 
 使用樣式擷取視覺屬性設定，再放入可重複使用的資源中。 以下是一個顯示 3 個按鈕的範例，其中使用一個設定 [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush)、[BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) 及 [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) 屬性的樣式。 透過套用樣式，您可以讓控制項擁有相同的外觀，而不需在每個控制項上個別設定這些屬性。
 
-![已設定樣式的按鈕](images/styles-rainbow-buttons.png)
+![並排排列的三個樣式按鈕螢幕擷取畫面。](images/styles-rainbow-buttons.png)
 
 您可以在 XAML 中定義控制項的樣式內崁，或當作可重複使用的資源。 在個別頁面的 XAML 檔案、在 App.xaml 檔案或在另一個資源字典 XAML 檔案中定義資源。 資源字典 XAML 檔案可以跨應用程式共用，而且一個以上的資源字典可以合併成一個應用程式。 定義資源的位置會決定資源可使用的範圍。 只有定義這些資源的頁面才可以使用頁面層級資源。 如果將包含相同索引鍵的資源定義在 App.xaml 和頁面中，則頁面中的資源會覆寫 App.xaml 中的資源。 如果資源是在不同的資源字典檔案中定義，則其範圍由資源字典的參照位置決定。
 
@@ -149,7 +149,7 @@ ms.locfileid: "89173862"
 
 覆寫系統筆刷一般是在應用程式或頁面層級完成，而且在任一情況下，色彩覆寫都會影響參考該筆刷的所有控制項，而在 XAML 中，多個控制項可以參考相同的系統筆刷。
 
-![已設定樣式的按鈕](images/LightweightStyling_ButtonStatesExample.png)
+![兩個按鈕的螢幕擷取畫面：一個處於靜止狀態，另一個則套用輕量樣式。](images/LightweightStyling_ButtonStatesExample.png)
 
 ```XAML
 <Page.Resources>
@@ -173,7 +173,7 @@ ms.locfileid: "89173862"
 
 有時為了以某種方式查看，會需要變更單一頁面上的單一控制項，但不變更該控制項的任何其他版本︰
 
-![已設定樣式的按鈕](images/LightweightStyling_CheckboxExample.png)
+![三個樣式按鈕的螢幕擷取畫面，排列方式為彼此堆疊。](images/LightweightStyling_CheckboxExample.png)
 
 ```XAML
 <CheckBox Content="Normal CheckBox" Margin="5"/>

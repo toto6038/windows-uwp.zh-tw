@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4c2c8d52069bf074897ec09fa44f550066b28b5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160752"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829549"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
 
@@ -367,7 +367,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
 
 立即執行應用程式，查看包含您剛建立之項目範本的 `GridView` 控制項。 接下來，您將變更背景色彩，並在方格項目之間新增一些空間。
 
-![應用程式 UI 檢查點 3](images/xaml-basics/layout-1.png)
+![執行中的集合應用程式螢幕擷取畫面，其中顯示項目範本。](images/xaml-basics/layout-1.png)
 
 ## <a name="part-4-modify-the-item-container-style"></a>第 4 部分：修改項目容器樣式
 
@@ -455,7 +455,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
 
 執行應用程式，看看目前會是什麼樣子。 調整應用程式視窗大小。 `GridView` 控制項負責重新排列影像，但在某些寬度下，應用程式視窗右側會留下許多空間。 如果影像已置中，就比較好看。 您接下來會處理這個問題。
 
-![應用程式 UI 檢查點 3](images/xaml-basics/layout-2.png)
+![執行中的集合應用程式螢幕擷取畫面，其中顯示項目範本，且應用程式視窗的右邊有額外空間。](images/xaml-basics/layout-2.png)
 
 > [!Note]
 > 如果您想要實驗，請嘗試將 `Background` 和 `Margin` 屬性設定為不同值，看看會有什麼效果。

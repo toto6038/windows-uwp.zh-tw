@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f507a325a89220e229b277a1ae08727054cc2a75
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2a84dcc209fa0fcd897668293cb136a5448e7254
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219101"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829520"
 ---
 # <a name="command-bar"></a>命令列
 
@@ -59,15 +59,15 @@ CommandBar 控制項是一般用途、彈性、輕量的控制項，它可以顯
 
 根據預設，命令列會顯示一排圖示按鈕與一個選擇性的 [查看更多] 按鈕，它會以省略符號 \[•••\] 表示。 這個命令列是由稍後顯示的範例程式碼建立。 顯示的命令列處於關閉、精簡狀態。
 
-![關閉的命令列](images/command-bar-compact.png)
+![顯示已關閉命令列的螢幕擷取畫面。](images/command-bar-compact.png)
 
 命令列也可以顯示成關閉、最小狀態，看起來像這樣。 請參閱[開啟與關閉狀態](#open-and-closed-states)一節以取得詳細資訊。
 
-![關閉的命令列](images/command-bar-minimal.png)
+![螢幕擷取畫面，顯示處於已關閉最小狀態的命令列。](images/command-bar-minimal.png)
 
 以下是處於開啟狀態的相同命令列。 標籤會識別控制項的主要部分。
 
-![關閉的命令列](images/commandbar_anatomy_open.png)
+![螢幕擷取畫面，顯示處於開啟狀態的命令列。](images/commandbar_anatomy_open.png)
 
 命令列被分成 4 個主要區域︰
 - 內容區域會對齊命令列左側。 如果已填入 [Content](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 屬性，就會顯示內容區域。

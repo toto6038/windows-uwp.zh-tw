@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 設定 windows, 開發環境, 開發工具, 開發路徑, Microsoft, Windows, 開發人員, 秘訣, 效能, WSL, 終端機, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: b1b13635da3b5b06b43d1e6b009399da5a916094
-ms.sourcegitcommit: ef3cdca5e9b8f032f46174da4574cb5593d32d56
+ms.openlocfilehash: 0b3df6b081504b98933ae5b261c6e7aaf5464953
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90593462"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671617"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上設定開發環境
 
@@ -57,9 +57,9 @@ ms.locfileid: "90593462"
         開始使用 C# 和 .NET Core 來建置應用程式。
     :::column-end:::
     :::column:::
-       [![適用於 Java 的 Azure 圖示](../images/java-logo.png)](/azure/developer/java/)<br>
-        **[在 Azure 上開始使用 Java](/azure/developer/java/)**<br>
-        使用適用於 Java 開發人員的這些教學課程和工具，開始建置雲端的應用程式。
+       [![適用於 Windows 的 Docker Desktop 圖示](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[開始使用適用於 Windows 的 Docker Desktop](../dev-environment/docker/overview.md)**<br>
+        透過來自 Visual Studio、VS Code、.NET、Windows 子系統 Linux 版或各種 Azure 服務的支援建立遠端開發容器。
     :::column-end:::
     :::column:::
        [![PowerShell 圖示](../images/powershell.png)](/powershell/)<br>

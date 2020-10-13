@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: ff94c34c61dee4de8450ed0f4f89a1dfc6537f83
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1f0a91dd0370b8eda8763b63034d7c3ffaa1acd5
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173592"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762999"
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
@@ -19,7 +19,7 @@ ms.locfileid: "89173592"
 
 如需啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](../get-started/enable-your-device-for-development.md)。
 
-![Device Portal 設定](images/device-portal/mob-dev-mode-options.png)
+![[裝置探索] 和 [裝置入口網站] 設定的螢幕擷取畫面。](images/device-portal/mob-dev-mode-options.png)
 
 ## <a name="set-up-device-portal-on-windows-phone"></a>在 Windows Phone 上設定 Device Portal
 
@@ -59,7 +59,7 @@ ms.locfileid: "89173592"
 
 以下是 Windows Phone 上開發人員設定頁面的 [Device Portal] 區段。
 
-![Device Portal 設定](images/device-portal/mob-dev-mode-portal.png)
+![Windows Phone 中 [裝置入口網站設定] 頁面的螢幕擷取畫面。](images/device-portal/mob-dev-mode-portal.png)
 
 如果您是在受保護的環境中使用 Device Portal (例如測試實驗室)，您可以在此環境中信任區域網路上的每個人、裝置上沒有個人資訊，而且有獨特的需求，則您可以停用驗證。 這會啟用未加密的通訊，並允許具有您手機 IP 位址的任何人對它進行控制。
 

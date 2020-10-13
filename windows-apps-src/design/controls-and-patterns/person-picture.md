@@ -11,26 +11,34 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c4967a63a4417f284c0735153a1b7a543e82e54c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ee8d78b38c05483f127571b15e1f4ebfb267c331
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217861"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829433"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 
 個人圖片控制項會顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。 您可以使用控制項來顯示 [Contact 物件](/uwp/api/Windows.ApplicationModel.Contacts.Contact) (管理個人連絡資訊的物件)，也可以手動提供連絡人資訊，例如顯示名稱和設定檔圖片。
 
-![個人圖片控制項](images/person-picture/person-picture_hero.png)
+![個人圖片控制項的螢幕擷取畫面。](images/person-picture/person-picture_hero.png)
 
  > 兩個個人圖片控制項，伴隨兩個顯示使用者名稱的[文字區塊](text-block.md)元素。
 
 **取得 Windows UI 程式庫**
 
-|  |  |
-| - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | **PersonPicture** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 標誌](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      **PersonPicture** 控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **平台 API**：[PersonPicture 類別](/uwp/api/windows.ui.xaml.controls.personpicture)、[Contact 類別](/uwp/api/Windows.ApplicationModel.Contacts.Contact)、[ContactManager 類別](/uwp/api/Windows.ApplicationModel.Contacts.ContactManager)
 
@@ -43,7 +51,7 @@ ms.locfileid: "91217861"
 * 顯示訊息的寄件者
 * 顯示社交媒體連絡人
 
-圖中顯示連絡人清單中的個人圖片控制項：![個人圖片控制項](images/person-picture/person-picture-control.png)
+圖中顯示連絡人清單中的個人圖片控制項：![顯示連絡人清單中個人圖片控制項的螢幕擷取畫面。](images/person-picture/person-picture-control.png)
 
 ## <a name="examples"></a>範例
 

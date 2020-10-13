@@ -4,12 +4,12 @@ description: 了解圓角原則、設計方法和自訂選項。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 邊角半徑, 修圓
-ms.openlocfilehash: 134a49ac57678eea0da718e93a14e3d0cf8896d5
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81001475"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636528"
 ---
 # <a name="corner-radius"></a>圓角半徑
 
@@ -115,11 +115,11 @@ ms.locfileid: "81001475"
 
 - 當控制項容納於另一個容器內時，例如 ScrollBar 的條狀和屬於 ScrollBar 容器的按鈕，這也是 ScrollViewer 的一部分。
 
-![ScrollBar](images/rounded-corner/scrollbar.png)
+![沒有圓角的垂直捲軸螢幕擷取畫面。](images/rounded-corner/scrollbar.png)
 
 - 當飛出視窗 UI 元素連結到可在一側叫用飛出視窗的 UI 時。
 
-![AutoSuggest](images/rounded-corner/autosuggest.png)
+![自動建議飛出視窗的螢幕擷取畫面，其中有些角落不是圓角。](images/rounded-corner/autosuggest.png)
 
 ### <a name="keyboard-focus-rectangle-and-shadow"></a>鍵盤焦點矩形和陰影
 

@@ -6,12 +6,12 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: c18cb3c5b8a979e7c7c6485e6989736d818613ba
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220351"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763059"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
@@ -109,11 +109,11 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 針對 C++ 和 JS UWP 專案，您會看到 [命令列引數]  是 [偵錯屬性]  中的一個欄位。
 
-![命令列引數 C++ 和 JS](images/command-line-arguments-cpp.png)
+![已選取 [設定屬性] > [偵測] 選項的 [應用程式 4] 屬性頁螢幕擷取畫面，其中顯示資料表中的命令列引數屬性 isted。](images/command-line-arguments-cpp.png)
 
 指定命令列引數之後，即可存取應用程式 **OnLaunched** 方法中的引數值。 [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) 物件 *args* 的 **Arguments** 屬性值會設為 [命令列引數]  欄位中的文字。
 
-![命令列引數 C++ 和 JS](images/command-line-arguments-debugging.png)
+![C++ 和 JS 的命令列引數螢幕擷取畫面。](images/command-line-arguments-debugging.png)
 
 ## <a name="authentication-modes"></a>驗證模式
 

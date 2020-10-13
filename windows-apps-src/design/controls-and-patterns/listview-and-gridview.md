@@ -1,5 +1,5 @@
 ---
-Description: 使用 ListView 或 GridView 控制項來顯示和操縱一組資料，例如影像圖庫或一組電子郵件訊息。
+description: 使用 ListView 或 GridView 控制項來顯示和操縱一組資料，例如影像圖庫或一組電子郵件訊息。
 title: 清單檢視和方格檢視
 label: List view and grid view
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 988400ae16d19525acc1dc811c91fc5af9fd97d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 26f7e36d09857d37da4a0b4533cc8f65d2789e20
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172622"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829646"
 ---
 # <a name="list-view-and-grid-view"></a>清單檢視和方格檢視
 
@@ -53,7 +53,7 @@ ListView 和 GridView 是立即可用的控制項，可用來顯示任何集合�
 -   如果您具有無法使用 ListView 或 GridView 來建立的高度自訂 UI，或是您的資料來源針對每個項目需要高度不同的行為，則應使用 ItemsRepeater。
 
 
-若要深入了解 ItemsRepeater，請閱讀其[指引](./items-repeater.md)和 [API 文件](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)頁面。
+若要深入了解 ItemsRepeater，請閱讀其[指引](./items-repeater.md)和 [API 文件](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)頁面。
 
 ## <a name="examples"></a>範例
 
@@ -121,7 +121,7 @@ FruitsPanel.Children.Add(Fruits);
 ```
 上述兩個選項會產生相同的 ListView，如下所示：
 
-![簡單的清單檢視](images/listview-basic-code-example2.png)
+![顯示水果清單的簡單清單檢視螢幕擷取畫面。](images/listview-basic-code-example2.png)
 <br/>
 <u>方法 2：藉由設定 ItemsSource 來新增項目</u>
 
@@ -290,7 +290,7 @@ ListView 或 GridView 中的資料範本會定義項目/資料的視覺化方式
 當您將項目新增至 ListView 或 GridView 時，控制項會在項目容器中將每個項目自動換行，接著配置所有項目容器。 這些項目容器的配置方式取決於控制項的 [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel)。  
 - 根據預設，**ListView** 會使用 [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) \(英文\)，其會產生垂直清單，如下所示。
 
-![簡單的清單檢視](images/listview-simple.png)
+![顯示項目清單的簡單清單檢視螢幕擷取畫面。](images/listview-simple.png)
 
 - **GridView** 會使用 [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) \(英文\)，其會以水平方向新增項目，然後以垂直方向進行換行和捲動，如下所示。
 

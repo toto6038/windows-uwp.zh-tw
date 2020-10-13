@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 5473542019a4f8afa3e916b914127e41a4fe05d4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218621"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636568"
 ---
 # <a name="page-layout"></a>頁面配置
 
@@ -86,7 +86,7 @@ ms.locfileid: "91218621"
 [主要/詳細資料](../controls-and-patterns/master-details.md)模型是由清單檢視 (主要) 與內容檢視 (詳細資料) 所組成。 這兩個窗格都是固定的，並可垂直捲動。 當使用者選取清單檢視中的一個項目，內容檢視會隨之更新。 
 
 ## <a name="forms"></a>表單
-![表單](images/form.svg)
+![顯示空白文字方塊和按鈕的表單螢幕擷取畫面。](images/form.svg)
 
 [表單](../controls-and-patterns/forms.md)是一組控制項，會收集和提交使用者的資料。 大多數 (即使不是全部) 應用程式都會在設定頁面上、登入入口網站、意見反應中樞、帳戶建立或基於其他目的使用某種表單。 
 

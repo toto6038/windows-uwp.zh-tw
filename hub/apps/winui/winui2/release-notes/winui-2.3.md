@@ -3,12 +3,12 @@ title: WinUI 2.3 版本資訊
 description: WinUI 2.3 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: 63091f927f63a708c5a5e4d41e9d81fd9f528cb1
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1043ae488342fc8396902c73c2f00eb5b19f584d
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154782"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636508"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI 程式庫 2.3
 
@@ -56,7 +56,7 @@ NuGet 套件下載：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsof
 
 **RadioButtons** 是新的容器控制項，可讓您輕鬆建立 RadioButton 元素的相關群組，同時又能正確地支援鍵盤輸入和朗讀程式/螢幕助讀程式功能
 
-![RadioButtons](../images/RadioButtons.png)
+![已選取第三個選項按鈕 (共三個) 的螢幕擷取畫面。](../images/RadioButtons.png)
 
 [文件和範例連結](https://github.com/microsoft/microsoft-ui-xaml-specs/blob/c8d3d3668af546091656dfc37436b13cd062f52d/active/radiobuttons/RadioButtons_Spec.md)
 
@@ -67,8 +67,7 @@ Xaml 控制項庫範例應用程式包含 WinUI 控制項用法的互動式示�
 * 從 [Microsoft Store](
 https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) 安裝 XAML 控制項庫應用程式
 
-* Xaml 控制項庫也是 [GitHub 上的開放原始碼項目](
-https://github.com/Microsoft/Xaml-Controls-Gallery)
+* Xaml 控制項庫也是 [GitHub 上的開放原始碼項目](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## <a name="documentation"></a>文件
 

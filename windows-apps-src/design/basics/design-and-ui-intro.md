@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 75d8dfe44c9296fbaf1d8caf5127db0244fc1d8d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216511"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91763083"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 應用程式設計簡介
 
@@ -67,7 +67,7 @@ UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 4
 當 UWP 應用程式在任何 Windows 10 裝置上啟動時，它會在 [Window](/uwp/api/windows.ui.xaml.window) 中啟動，其含有[框架](/uwp/api/windows.ui.xaml.controls.frame)，其可在[頁面](/uwp/api/windows.ui.xaml.controls.page)執行個體間巡覽。
     :::column-end:::
     :::column:::
-![Frame](images/frame.svg)
+![具有框架的 Window 螢幕擷取畫面。](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
@@ -78,7 +78,7 @@ UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 4
 若要了解如何組織頁面，請參閱[瀏覽基本知識](navigation-basics.md)。
     :::column-end:::
     :::column:::
-![Frame](images/collection-pages.svg)
+![集合頁面的螢幕擷取畫面。](images/collection-pages.svg)
     :::column-end:::
 :::row-end:::
 
@@ -94,7 +94,7 @@ UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 4
 
 若要深入了解如何實作常見 UWP 應用程式模式，請參閱[頁面配置](../layout/page-layout.md)文章。
 
-您也可以使用 Visual Studio 中的 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio/tree/master) 開始使用您的應用程式版面配置。
+您也可以使用 Visual Studio 中的 [Windows Template Studio](https://github.com/Microsoft/WindowsTemplateStudio) 開始使用您的應用程式版面配置。
 
 ## <a name="controls"></a>控制項
 
@@ -134,7 +134,7 @@ UWP 應用程式有四種磚大小 (小型、中型、寬形及大型)，可利�
 UWP 應用程式需依賴智慧型互動。 您可以針對按一下的互動來設計，無需知道或定義按一下是來自滑鼠、手寫筆或手指的點選。 不過，您也可以針對[特定的輸入模式](../input/input-primer.md)設計您的應用程式。
     :::column-end:::
     :::column:::
-![輸入](images/inputs.svg)
+![指定不同輸入模式的圖示螢幕擷取畫面。](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 
@@ -146,7 +146,7 @@ UWP 應用程式需依賴智慧型互動。 您可以針對按一下的互動來
 
 ## <a name="usability"></a>可用性
 
-<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb?ver=727c">
+:::image type="content" source="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REYaAb" alt-text="指出人員有不同能力的火柴人卡通短片。":::
 
 最後同樣重要的是可用性，可讓您將應用程式開放給所有使用者體驗。 每個人都可受惠於真正的全人使用者體驗 - 請參閱 [UWP 應用程式的可用性](../usability/index.md)，了解如何讓每個人輕鬆使用您的應用程式。
 

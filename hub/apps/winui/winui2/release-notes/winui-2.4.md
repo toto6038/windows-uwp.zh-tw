@@ -3,12 +3,12 @@ title: WinUI 2.4 版本資訊
 description: WinUI 2.4 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 22fd028ba2059a092ee2f2be47a114fb2d618ce1
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
+ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86492823"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91762922"
 ---
 # <a name="windows-ui-library-24"></a>Windows UI 程式庫 2.4
 
@@ -28,7 +28,7 @@ NuGet 套件下載：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsof
 
 RadialGradientBrush 會在 Center、RadiusX 和 RadiusY 屬性所定義的橢圓形內繪製。 漸層的色彩會從橢圓形的中央開始，並在半徑上結束。
 
-![放射狀漸層筆刷](../images/radialgradientbrush.gif)<br>
+![顯示放射狀漸層筆刷行為的短片。](../images/radialgradientbrush.gif)<br>
 *放射狀漸層筆刷*
 
 [使用方針](/windows/uwp/design/style/brushes#radial-gradient-brushes)
@@ -39,7 +39,7 @@ RadialGradientBrush 會在 Center、RadiusX 和 RadiusY 屬性所定義的橢圓
 
 ProgressRing 控制項是用於強制回應的互動，直到 ProgressRing 消失之前，使用者都會被封鎖。 如果作業需要暫停與應用程式的大部分互動，直到作業完成為止，請使用此控制項。
 
-![ProgressRing 控制項](../images/progressring.gif)<br>
+![顯示進度環控制項行為的短片。](../images/progressring.gif)<br>
 *ProgressRing 控制項*
 
 [使用方針](/windows/uwp/design/controls-and-patterns/progress-controls)
@@ -70,8 +70,8 @@ TabView 控制項更新可讓您更充分掌控索引標籤的轉譯方式。
 
 | 之前 | 之後 |
 | - | - |
-| ![TextBox 深色佈景主題更新 (之前)](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox 深色佈景主題更新 (之前)* | ![TextBox 深色佈景主題更新 (之後)](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox 深色佈景主題更新 (之後)* |
-| ![TextBox 深色佈景主題更新 (之前)](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox 深色佈景主題更新 (之前)* | ![TextBox 深色佈景主題更新 (之後)](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox 深色佈景主題更新 (之後)* |
+| ![顯示更新之前 TextBox 深色佈景主題行為的短片。](..\images\textbox-darkthemeupdates-before1.gif)<br>*TextBox 深色佈景主題更新 (之前)* | ![顯示更新之後 TextBox 深色佈景主題行為的短片。](..\images\textbox-darkthemeupdates-after1.gif)<br>*TextBox 深色佈景主題更新 (之後)* |
+| ![顯示更新之前 TextBox 深色佈景主題行為的另一個簡短電影。](..\images\textbox-darkthemeupdates-before2.gif)<br>*TextBox 深色佈景主題更新 (之前)* | ![顯示更新之後 TextBox 深色佈景主題行為的另一個簡短電影。](..\images\textbox-darkthemeupdates-after2.gif)<br>*TextBox 深色佈景主題更新 (之後)* |
 
 以下是 TextBox 系列控制項所包含的一些控制項：
 

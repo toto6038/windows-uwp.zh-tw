@@ -1,21 +1,21 @@
 ---
-description: 此文章示範如何使用 XAML 裝載 API，在 C++ Win32 應用程式中裝載自訂 UWP 控制項。
-title: 使用 XAML 裝載 API 在 C++ Win32 應用程式中裝載自訂 UWP 控制項
-ms.date: 04/07/2020
+description: 此文章示範如何使用 XAML 裝載 API，在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項。
+title: 使用 XAML 裝載 API 在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項
+ms.date: 10/02/2020
 ms.topic: article
 keywords: windows 10, uwp, C++, Win32, xaml islands, 自訂控制項, 使用者控制項, 主控制項
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: c74e6fbb8907a25af6fe6e4ad6439dbaca425b84
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
+ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216771"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91671557"
 ---
-# <a name="host-a-custom-uwp-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 UWP 控制項
+# <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項
 
 此文章示範如何使用 [UWP XAML 裝載 API](using-the-xaml-hosting-api.md)，在新的 C++ Win32 應用程式中裝載自訂 UWP XAML 控制項。 如果有現有的 C++ Win32 應用程式專案，則可針對您的專案調整這些步驟和程式碼範例。
 
@@ -44,8 +44,8 @@ ms.locfileid: "91216771"
 
 4. 在 [管理 NuGet 套件]  視窗中，安裝下列額外的 NuGet 套件：
 
-    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) \(英文\) (v6.0.0 版或更新版本)。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
-    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) (v6.0.0 版或更新版本)。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
+    * [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) (最新的穩定版本)。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
+    * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (最新的穩定版本)。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140) \(英文\)。
 
 5. 建置解決方案並確認已成功建置。
@@ -61,7 +61,7 @@ ms.locfileid: "91216771"
 3. 在 **MyUWPApp** 專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) NuGet 套件。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
 
     1. 以滑鼠右鍵按一下 [MyUWPApp]  專案，然後選擇 [管理 NuGet 套件]  。
-    2. 選取 [瀏覽]  索引標籤、搜尋 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 套件，然後安裝此套件的 v6.0.0 或更新版本。
+    2. 選取 [瀏覽] 索引標籤、搜尋 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) 套件，然後安裝此套件的最新穩定版本。
 
 4. 以滑鼠右鍵按一下 [MyUWPApp]  節點，然後選取 [屬性]  。 在 [通用屬性] -> [C++/WinRT] 頁面上，將 [詳細程度] 屬性設定為 [一般]，然後按一下 [套用]。 當您完成時，[屬性] 頁面看起來應該像這樣。
 
@@ -132,7 +132,7 @@ ms.locfileid: "91216771"
 4. 在 [屬性管理員]  視窗中，以滑鼠右鍵按一下 [MyDesktopWin32App]  ，然後選取 [加入現有屬性工作表]  。 瀏覽至您剛新增的 **Solution.props** 檔案，然後按一下 [開啟]  。
 5. 重複執行上一個步驟，以便在 [屬性管理員]  視窗中，將 **Solution.props** 檔案新增至 **MyUWPApp** 專案。
 6. 關閉 [屬性管理員]  視窗。
-7. 確認已正確儲存屬性工作表變更。 在 [方案總管]  中，以滑鼠右鍵按一下 [MyDesktopWin32App]  專案，然後選擇 [屬性]  。 按一下 [設定屬性]   -> [一般]  ，然後確認 [輸出目錄]  和 [中繼目錄]  屬性均具有您新增至 **Solution.props** 檔案的值。 您也可以針對 **MyUWPApp** 專案確認相同的值。
+7. 確認已正確儲存屬性工作表變更。 在 [方案總管]  中，以滑鼠右鍵按一下 [MyDesktopWin32App]  專案，然後選擇 [屬性]  。 按一下 [設定屬性] -> [一般]，然後確認 [輸出目錄] 和 [中繼目錄] 屬性均具有您新增至 **Solution.props** 檔案的值。 您也可以針對 **MyUWPApp** 專案確認相同的值。
     ![專案屬性](images/xaml-islands/xaml-island-cpp-4.png)
 
 8. 在 [方案總管]  中，以滑鼠右鍵按一下解決方案節點，然後選擇 [專案相依性]  。 在 [專案]  下拉式清單中，確定已選取 [MyDesktopWin32App]  ，然後在 [相依於]  清單中選取 [MyUWPApp]  。
@@ -373,15 +373,13 @@ ms.locfileid: "91216771"
       <!-- End Section-->
     ```
 
-4. 在 [方案總管]  中，以滑鼠右鍵按一下 [MyDesktopWin32App (卸載)]  ，然後選取 [重新載入專案]  。
+4. 在 [方案總管] 中，以滑鼠右鍵按一下 [MyDesktopWin32App (卸載)]，然後選取 [重新載入專案]。
 
-5. 以滑鼠右鍵按一下 [MyDesktopWin32App]  、選取 [屬性]  ，然後按一下左窗格中的 [C/C++]  節點。 確認已根據您在上一個步驟中所做的專案檔變更，定義了 [其他 Include 目錄]  巨集。
-
-    ![C/C++ 專案設定](images/xaml-islands/xaml-island-cpp-7.png)
-
-6. 在 [屬性頁]  對話方塊中，展開 [資訊清單工具]   -> [輸入及輸出]  。 將 [DPI 感知]  屬性設定為 [以螢幕為基礎的高 DPI 感知]  。 如果您未設定此屬性，可能就會在某些高 DPI 案例中遇到資訊清單設定錯誤。
+5. 以滑鼠右鍵按一下 [MyDesktopWin32App] 專案，選取 [屬性]，然後在左窗格中展開 [資訊清單工具] -> [輸入和輸出]。 將 [DPI 感知]  屬性設定為 [以螢幕為基礎的高 DPI 感知]  。 如果您未設定此屬性，可能就會在某些高 DPI 案例中遇到資訊清單設定錯誤。
 
     ![C/C++ 專案設定](images/xaml-islands/xaml-island-cpp-8.png)
+
+6. 按一下 [確定] 關閉 [屬性頁] 對話方塊。
 
 ## <a name="host-the-custom-uwp-xaml-control-in-the-desktop-project"></a>在傳統型專案中裝載自訂 UWP XAML 控制項
 
@@ -512,16 +510,19 @@ ms.locfileid: "91216771"
 9. 儲存檔案。
 10. 建置解決方案並確認已成功建置。
 
-## <a name="add-a-control-from-the-winui-library-to-the-custom-control"></a>將控制項從 WinUI 程式庫新增至自訂控制項
+## <a name="add-a-control-from-the-winui-2x-library-to-the-custom-control"></a>將控制項從 WinUI 2.x 程式庫新增至自訂控制項
 
-習慣上，UWP 控制項已當作 Windows 10 OS 的一部分發行，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](/uwp/toolkits/winui/)是替代方法，其中 Windows SDK 中已更新的 UWP 控制項版本會在未繫結至 Windows SDK 版本的 NuGet 套件中散發。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平台的新控制項。 如需詳細資訊，請參閱我們的 [WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
+習慣上，WinRT XAML 控制項已當作 Windows 10 OS 的一部分發行，並可透過 Windows SDK 提供給開發人員使用。 [WinUI 程式庫](/uwp/toolkits/winui/)是替代方法，其中 Windows SDK 中已更新的 WinRT XAML 控制項版本會在未繫結至 Windows SDK 版本的 NuGet 套件中散發。 此程式庫也包含不屬於 Windows SDK 和預設 UWP 平台的新控制項。 如需詳細資訊，請參閱我們的 [WinUI 程式庫藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)。
 
-本節示範如何將 UWP 控制項從 WinUI 程式庫新增至您的使用者控制項。
+本節示範如何將 WinRT XAML 控制項從 WinUI 2.x 程式庫新增至您的使用者控制項。
+
+> [!NOTE]
+> 目前，XAML Islands 僅支援從 WinUI 2.x 程式庫裝載控制項。 從 WinUI 3 程式庫裝載控制項的支援會在之後的版本中推出。
 
 1. 在 **MyUWPApp** 專案中，安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的最新發行前或發行版本。
 
-    > [!NOTE]
-    > 如果您的傳統型應用程式封裝在 [MSIX 套件](/windows/msix)中，您可使用 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 套件的發行前或發行版本。 如果您的傳統型應用程式未使用 MSIX 進行封裝，您必須安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的發行前版本。
+    * 如果您在本逐步解說稍早選擇[使用 MSIX 封裝 MyDesktopWin32App 專案](#option-1-package-the-app-using-msix)，則可以安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NugGet 套件的發行前版本或發行版本。 所封裝的傳統型應用程式可以使用此套件的發行前版本或發行版本。
+    * 如果您選擇不要封裝 **MyDesktopWin32App** 專案，則必須安裝 [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet 套件的發行前版本。 未封裝的傳統型應用程式必須使用此套件的發行前版本。
 
 2. 在此專案的 pch.h 檔案中，新增下列 `#include` 陳述式並儲存您所做的變更。 這些陳述式會從 WinUI 程式庫將所需的投影標頭集合帶入您的專案中。 任何使用 WinUI 程式庫的 C++/WinRT 專案都需要執行此步驟。 如需詳細資訊，請參閱[這篇文章](/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project)。
 
@@ -594,6 +595,6 @@ ms.locfileid: "91216771"
 
 * [在傳統型應用程式中裝載 UWP XAML 控制項 (XAML Islands)](xaml-islands.md)
 * [在 C++ Win32 應用程式中使用 UWP XAML 裝載 API](using-the-xaml-hosting-api.md)
-* [在 C++ Win32 應用程式中裝載標準 UWP 控制項](host-standard-control-with-xaml-islands-cpp.md)
+* [在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項](host-standard-control-with-xaml-islands-cpp.md)
 * [C++ Win32 應用程式中適用於 XAML Islands 的進階案例](advanced-scenarios-xaml-islands-cpp.md)
 * [XAML Islands 程式碼範例](https://github.com/microsoft/Xaml-Islands-Samples) \(英文\)

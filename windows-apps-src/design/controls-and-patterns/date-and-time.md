@@ -1,5 +1,5 @@
 ---
-Description: 日期和時間控制項可讓您檢視並設定日期和時間。 此文章提供設計指導方針，並協助您挑選適當的控制項。
+description: 日期和時間控制項可讓您檢視並設定日期和時間。 此文章提供設計指導方針，並協助您挑選適當的控制項。
 title: 日期和時間控制項的指導方針
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 45f69c2216cdfd5809a978e9199d05d0d79740ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a7afab6e226a86b7aa8979d5d849376cf83739c4
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160422"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829574"
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
@@ -45,12 +45,12 @@ ms.locfileid: "89160422"
 
 有四個日期和時間控制項可供選擇。您使用的控制項取決於您的案例。 使用此資訊，以選擇適合在您 app 中使用的控制項。
 
-&nbsp;|&nbsp;|&nbsp;                                                                                                                      
---------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-行事曆檢視       |![行事曆檢視的範例](images/controls_calendar_monthview_small.png)|用來從一律顯示的行事曆中挑選單一日期或日期範圍。                   
-行事曆日期選擇器|![行事曆日期選擇器的範例](images/calendar-date-picker-closed.png)|用來從內容相關的行事曆挑選單一日期。 
-日期選擇器         |![日期選擇器的範例](images/date-picker-closed.png)|當內容相關的資訊並不重要時，用來挑選單一已知日期。
-時間選擇器         |![時間選擇器的範例](images/time-picker-closed.png)|用來挑選單一時間值。                                        
+| 控制 | 範例 | 描述 |
+| ------- | :-----: | ----------- |
+| 行事曆檢視 | ![行事曆檢視的範例](images/controls_calendar_monthview_small.png) | 用來從一律顯示的行事曆中挑選單一日期或日期範圍。 |
+| 行事曆日期選擇器 | ![行事曆日期選擇器的螢幕擷取畫面。](images/calendar-date-picker-closed.png) | 用來從內容相關的行事曆挑選單一日期。 |
+| 日期選擇器 | ![日期選擇器的範例](images/date-picker-closed.png) | 當內容相關的資訊並不重要時，用來挑選單一已知日期。 |
+| 時間選擇器 | ![時間選擇器的範例](images/time-picker-closed.png) | 用來挑選單一時間值。 |
 
 <!-- This table seems redundant, not sure it's needed.-->
 
@@ -60,7 +60,7 @@ ms.locfileid: "89160422"
 
 行事曆檢視是由 3 個個別檢視所組成：月份檢視、年份檢視和十年份檢視。 行事曆啟動時預設以月份檢視開啟，但是您可以指定任何檢視做為啟動檢視。
 
-![行事曆日期選擇器的範例](images/calendar-view-3-views.png)
+![三個行事曆檢視的螢幕擷取畫面，其中顯示月份檢視、年份檢視和十年份檢視。](images/calendar-view-3-views.png)
 
 - 若您需要讓使用者選取多個日期，則必須使用 **CalendarView**。
 - 若您需要讓使用者只挑選單一日期，而且不需要一律顯示行事曆，請考慮使用 **CalendarDatePicker** 或 **DatePicker** 控制項。
@@ -71,7 +71,7 @@ ms.locfileid: "89160422"
 
 如果尚未設定日期，進入點會顯示預留位置文字；否則，它會顯示所選的日期。 當使用者選取進入點時，行事曆檢視會展開，方便使用者選擇日期。 行事曆檢視與其他 UI 重疊；它不會將其他 UI 移開。
 
-![行事曆日期選擇器的範例](images/calendar-date-picker-2-views.png)
+![行事曆日期選擇器的螢幕擷取畫面，其中顯示一個空白的 [選取日期] 文字方塊，然後是一個底下填入行事曆的文字方塊。](images/calendar-date-picker-2-views.png)
 
 - 行事曆日期選擇器的用途包括選擇約會或出發日期。 
 
@@ -108,7 +108,7 @@ ms.locfileid: "89160422"
 
 XAML 日期控制項支援 Windows 所支援的每個日曆系統。 這些行事曆是在 [Windows.Globalization.CalendarIdentifiers](/uwp/api/Windows.Globalization.CalendarIdentifiers) 類別中指定。 每個控制項會針對您 app 的預設語言使用正確的行事曆，或者您也可以設定 **CalendarIdentifier** 屬性，以使用特定的行事曆系統。
 
-時間選擇器控制項支援 [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) 類別中指定的每個時鐘系統。 您可以設定 [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 屬性，以使用 12 小時制或 24 小時制的時鐘。 屬性的類型是字串，但您必須使用對應到 ClockIdentifiers 類別的靜態字串屬性的值。 這些是：TwelveHour ("12HourClock" 字串) 和 TwentyFourHour ("24HourClock" 字串)。 "12HourClock" 是預設值。
+時間選擇器控制項支援 [Windows.Globalization.ClockIdentifiers](/uwp/api/Windows.Globalization.ClockIdentifiers) 類別中指定的每個時鐘系統。 您可以設定 [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 屬性，以使用 12 小時制或 24 小時制的時鐘。 屬性的類型是字串，但您必須使用對應到 ClockIdentifiers 類別的靜態字串屬性的值。 這些是︰TwelveHour ("12HourClock" 字串) 和 TwentyFourHour ("24HourClock" 字串)。 "12HourClock" 是預設值。
 
 ### <a name="datetime-and-calendar-values"></a>DateTime 與 Calendar 值
 

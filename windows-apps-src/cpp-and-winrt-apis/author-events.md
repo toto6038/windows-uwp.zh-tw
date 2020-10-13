@@ -5,20 +5,20 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: f1500ab9999d4689385a9f7edce33253c385c0d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c70ad8efcb8bb84272a044824d8058813ed30def
+ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154562"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91646231"
 ---
 # <a name="author-events-in-cwinrt"></a>以 C++/WinRT 撰寫事件
 
 本主題係根據 Windows 執行階段元件和使用中應用程式建置的，而[使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主題會向您示範建置方式。
 
 以下是本主題新增的功能。
-- 更新銀行帳戶執行階段類別，以在其餘額進行扣款時引發事件。
-- 更新使用銀行帳戶執行階段類別的核心應用程式，使其能夠處理該事件。
+- 更新溫度計執行階段類別，以在其溫度低於冰點時引發事件。
+- 更新使用溫度計執行階段類別的核心應用程式，使其能夠處理該事件。
 
 > [!NOTE]
 > 如需安裝和使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -26,44 +26,44 @@ ms.locfileid: "89154562"
 > [!IMPORTANT]
 > 如需一些基本概念和詞彙，以協助了解如何以 C++/WinRT 使用及撰寫執行階段類別，請參閱[使用 C++/WinRT 來使用 API](consume-apis.md) 和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
-## <a name="create-bankaccountwrc-and-bankaccountcoreapp"></a>建立 **BankAccountWRC** 和 **BankAccountCoreApp**
+## <a name="create-thermometerwrc-and-thermometercoreapp"></a>建立 **ThermometerWRC** 和 **ThermometerCoreApp**
 
-如果您想要遵循本主題所示的更新，讓您可以建置和執行程式碼，則第一個步驟是遵循[使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主題中的逐步解說。 如此一來，您將會有 **BankAccountWRC** Windows 執行階段元件，以及使用其的 **BankAccountCoreApp** 核心應用程式。
+如果您想要遵循本主題所示的更新，讓您可以建置和執行程式碼，則第一個步驟是遵循[使用 C++/WinRT 的 Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)主題中的逐步解說。 如此一來，您將會有 **ThermometerWRC** Windows 執行階段元件，以及使用其的 **ThermometerCoreApp** 核心應用程式。
 
-## <a name="update-bankaccountwrc-to-raise-an-event"></a>更新 **BankAccountWRC** 以引發事件
+## <a name="update-thermometerwrc-to-raise-an-event"></a>更新 **ThermometerWRC** 以引發事件
 
-更新 `BankAccount.idl`，使其看起來像下面的清單。 這是使用單精確度浮點數的引數宣告事件的方式，而此事件的委派類型為 [**EventHandler**](/uwp/api/windows.foundation.eventhandler-1)。
+更新 `Thermometer.idl`，使其看起來像下面的清單。 這是使用單精確度浮點數的引數宣告事件的方式，而此事件的委派類型為 [**EventHandler**](/uwp/api/windows.foundation.eventhandler-1)。
 
 ```idl
-// BankAccountWRC.idl
-namespace BankAccountWRC
+// Thermometer.idl
+namespace ThermometerWRC
 {
-    runtimeclass BankAccount
+    runtimeclass Thermometer
     {
-        BankAccount();
-        void AdjustBalance(Single value);
-        event Windows.Foundation.EventHandler<Single> AccountIsInDebit;
+        Thermometer();
+        void AdjustTemperature(Single deltaFahrenheit);
+        event Windows.Foundation.EventHandler<Single> TemperatureIsBelowFreezing;
     };
 }
 ```
 
-儲存檔案。 專案不會以目前狀態完成建置，但在任何情況下都會立即執行建置，以產生 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 和 `BankAccount.cpp` Stub 檔案的更新版本。 在那些檔案內，您現在可以看到 **AccountIsInDebit** 事件的 Stub 實作。 在 C++/WinRT 中，IDL 宣告的事件實作為一組的多載函式 (與將屬性實作為一對多載的 get 和 set 函式類似)。 一個多載會接受將註冊的委派，並傳回預付碼 ([**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token))。 其他則接收預付碼並撤銷相關的委派。
+儲存檔案。 專案不會以目前狀態完成建置，但在任何情況下都會立即執行建置，以產生 `\ThermometerWRC\ThermometerWRC\Generated Files\sources\Thermometer.h` 和 `Thermometer.cpp` Stub 檔案的更新版本。 在這些檔案中，您現在可以看到 **TemperatureIsBelowFreezing** 事件的虛設常式實作。 在 C++/WinRT 中，IDL 宣告的事件實作為一組的多載函式 (與將屬性實作為一對多載的 get 和 set 函式類似)。 一個多載會接受將註冊的委派，並傳回預付碼 ([**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token))。 其他則接收預付碼並撤銷相關的委派。
 
-現在開啟 `BankAccount.h` 和 `BankAccount.cpp`，並更新 **BankAccount** 執行階段類別的實作。 在 `BankAccount.h` 中，新增兩個多載的 **AccountIsInDebit** 函式，以及要在實作那些函式時使用的私人事件資料成員。
+現在開啟 `Thermometer.h` 和 `Thermometer.cpp`，並更新 **Thermometer** 執行階段類別的實作。 在 `Thermometer.h` 中，新增兩個多載的 **TemperatureIsBelowFreezing** 函式，以及要在實作那些函式時使用的私人事件資料成員。
 
 ```cppwinrt
-// BankAccount.h
+// Thermometer.h
 ...
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    struct BankAccount : BankAccountT<BankAccount>
+    struct Thermometer : ThermometerT<Thermometer>
     {
         ...
-        winrt::event_token AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler);
-        void AccountIsInDebit(winrt::event_token const& token) noexcept;
+        winrt::event_token TemperatureIsBelowFreezing(Windows::Foundation::EventHandler<float> const& handler);
+        void TemperatureIsBelowFreezing(winrt::event_token const& token) noexcept;
 
     private:
-        winrt::event<Windows::Foundation::EventHandler<float>> m_accountIsInDebitEvent;
+        winrt::event<Windows::Foundation::EventHandler<float>> m_temperatureIsBelowFreezingEvent;
         ...
     };
 }
@@ -72,27 +72,27 @@ namespace winrt::BankAccountWRC::implementation
 
 如您所見，事件是由 [**winrt::event**](/uwp/cpp-ref-for-winrt/event) 結構範本表示，由特定委派類型參數化 (其本身可由 args 類型參數化)。
 
-在 `BankAccount.cpp`，實作兩個多載的 **AccountIsInDebit** 函式。
+在 `Thermometer.cpp` 中，實作兩個多載的 **TemperatureIsBelowFreezing** 函式。
 
 ```cppwinrt
-// BankAccount.cpp
+// Thermometer.cpp
 ...
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<float> const& handler)
+    winrt::event_token Thermometer::TemperatureIsBelowFreezing(Windows::Foundation::EventHandler<float> const& handler)
     {
-        return m_accountIsInDebitEvent.add(handler);
+        return m_temperatureIsBelowFreezingEvent.add(handler);
     }
 
-    void BankAccount::AccountIsInDebit(winrt::event_token const& token) noexcept
+    void Thermometer::TemperatureIsBelowFreezing(winrt::event_token const& token) noexcept
     {
-        m_accountIsInDebitEvent.remove(token);
+        m_temperatureIsBelowFreezingEvent.remove(token);
     }
 
-    void BankAccount::AdjustBalance(float value)
+    void Thermometer::AdjustTemperature(float deltaFahrenheit)
     {
-        m_balance += value;
-        if (m_balance < 0.f) m_accountIsInDebitEvent(*this, m_balance);
+        m_temperatureFahrenheit += deltaFahrenheit;
+        if (m_temperatureFahrenheit < 32.f) m_temperatureIsBelowFreezingEvent(*this, m_temperatureFahrenheit);
     }
 }
 ```
@@ -102,11 +102,11 @@ namespace winrt::BankAccountWRC::implementation
 
 其他多載 (註冊和手動撤銷多載) 則「不會」在投影中內建。 這是為了讓您能夠彈性地以最佳方式在案例中進行實作。 呼叫 [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) 和 [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function)(如同這些實作所示) 是有效率且並行/執行緒安全的預設值。 但若您有大量的事件，則您可能不想要每一個都有事件欄位，而寧願改用一些疏鬆的實作。
 
-如果餘額為負數的話，您也可能看到以上 **AdjustBalance** 函式的實作已更新，以引發 **AccountIsInDebit** 事件。
+您也可以從上面看到，**AdjustTemperature** 函式的實作已更新為會在溫度低於冰點時引發 **TemperatureIsBelowFreezing** 事件。
 
-## <a name="update-bankaccountcoreapp-to-handle-the-event"></a>更新 **BankAccountCoreApp** 以處理事件
+## <a name="update-thermometercoreapp-to-handle-the-event"></a>更新 **ThermometerCoreApp** 以處理事件
 
-在 **BankAccountCoreApp** 專案的 `App.cpp` 中，對程式碼進行下列變更以註冊事件處理常式，然後導致帳戶進行扣款。
+在 **ThermometerCoreApp** 專案的 `App.cpp` 中，對程式碼進行下列變更以註冊事件處理常式，然後讓溫度低於冰點。
 
 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 
@@ -118,29 +118,29 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
     
     void Initialize(CoreApplicationView const &)
     {
-        m_eventToken = m_bankAccount.AccountIsInDebit([](const auto &, float balance)
+        m_eventToken = m_thermometer.TemperatureIsBelowFreezing([](const auto &, float temperatureFahrenheit)
         {
-            WINRT_ASSERT(balance < 0.f); // Put a breakpoint here.
+            WINRT_ASSERT(temperatureFahrenheit < 32.f); // Put a breakpoint here.
         });
     }
     ...
 
     void Uninitialize()
     {
-        m_bankAccount.AccountIsInDebit(m_eventToken);
+        m_thermometer.TemperatureIsBelowFreezing(m_eventToken);
     }
     ...
     
     void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
     {
-        m_bankAccount.AdjustBalance(-1.f);
+        m_thermometer.AdjustTemperature(-1.f);
         ...
     }
     ...
 };
 ```
 
-請留意 **OnPointerPressed** 方法的變更。 現在，每一次您按一下視窗，從銀行帳戶餘額「減」1。 現在，應用程式正在處理餘額為負值時所引發的事件。 若要示範事件如預期般引發，請將中斷點放在正在處理 **AccountIsInDebit** 事件的 lambda 運算式內、執行應用程式，然後在視窗中按一下。
+請留意 **OnPointerPressed** 方法的變更。 現在，每當您按一下視窗時，就會讓溫度計的溫度*減去*華氏 1 度。 現在，應用程式正在處理溫度低於冰點時所引發的事件。 若要示範事件如預期般引發，請將中斷點放在正在處理 **TemperatureIsBelowFreezing** 事件的 lambda 運算式內、執行應用程式，然後在視窗中按一下。
 
 ## <a name="parameterized-delegates-across-an-abi"></a>透過 ABI 的參數化委派
 
@@ -148,25 +148,25 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 這兩個委派類型的類型參數必須透過 ABI，因此類型參數也必須是 Windows 執行階段類型。 包含 Windows 執行階段類別、第三方執行階段類別，以及數字和字串等基本類型。 如果您忘記此限制的話，編譯器會協助您解決「必須是 WinRT 類型」的錯誤。
 
-以下是程式代碼清單形式的範例。 從您稍早在本主題中建立的 **BankAccountWRC** 和 **BankAccountCoreApp** 專案開始，編輯這些專案中的程式碼，使其看起來像這些清單中的程式碼。
+以下是程式代碼清單形式的範例。 從您稍早在本主題中建立的 **ThermometerWRC** 和 **ThermometerCoreApp** 專案開始，編輯這些專案中的程式碼，使其看起來像這些清單中的程式碼。
 
-第一份清單適用於 **BankAccountWRC** 專案。 如下所示編輯 `BankAccountWRC.idl` 之後，請建立專案，然後將 `MyEventArgs.h` 和 `.cpp` 複製到專案中 (從 `Generated Files` 資料夾)，就如同您先前使用 `BankAccount.h` 和 `.cpp` 所做的一樣。
+第一個清單是 **ThermometerWRC** 專案的清單。 如下所示編輯 `ThermometerWRC.idl` 之後，請建立專案，然後將 `MyEventArgs.h` 和 `.cpp` 複製到專案中 (從 `Generated Files` 資料夾)，就如同您先前使用 `Thermometer.h` 和 `.cpp` 所做的一樣。
 
 ```cppwinrt
-// BankAccountWRC.idl
-namespace BankAccountWRC
+// ThermometerWRC.idl
+namespace ThermometerWRC
 {
     [default_interface]
     runtimeclass MyEventArgs
     {
-        Single Balance{ get; };
+        Single TemperatureFahrenheit{ get; };
     }
 
     [default_interface]
-    runtimeclass BankAccount
+    runtimeclass Thermometer
     {
         ...
-        event Windows.Foundation.EventHandler<BankAccountWRC.MyEventArgs> AccountIsInDebit;
+        event Windows.Foundation.EventHandler<ThermometerWRC.MyEventArgs> TemperatureIsBelowFreezing;
         ...
     };
 }
@@ -175,16 +175,16 @@ namespace BankAccountWRC
 #pragma once
 #include "MyEventArgs.g.h"
 
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
     struct MyEventArgs : MyEventArgsT<MyEventArgs>
     {
         MyEventArgs() = default;
-        MyEventArgs(float balance);
-        float Balance();
+        MyEventArgs(float temperatureFahrenheit);
+        float TemperatureFahrenheit();
 
     private:
-        float m_balance{ 0.f };
+        float m_temperatureFahrenheit{ 0.f };
     };
 }
 
@@ -193,60 +193,60 @@ namespace winrt::BankAccountWRC::implementation
 #include "MyEventArgs.h"
 #include "MyEventArgs.g.cpp"
 
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    MyEventArgs::MyEventArgs(float balance) : m_balance(balance)
+    MyEventArgs::MyEventArgs(float temperatureFahrenheit) : m_temperatureFahrenheit(temperatureFahrenheit)
     {
     }
 
-    float MyEventArgs::Balance()
+    float MyEventArgs::TemperatureFahrenheit()
     {
-        return m_balance;
+        return m_temperatureFahrenheit;
     }
 }
 
-// BankAccount.h
+// Thermometer.h
 ...
-struct BankAccount : BankAccountT<BankAccount>
+struct Thermometer : ThermometerT<Thermometer>
 {
 ...
-    winrt::event_token AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler);
+    winrt::event_token TemperatureIsBelowFreezing(Windows::Foundation::EventHandler<ThermometerWRC::MyEventArgs> const& handler);
 ...
 private:
-    winrt::event<Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs>> m_accountIsInDebitEvent;
+    winrt::event<Windows::Foundation::EventHandler<ThermometerWRC::MyEventArgs>> m_temperatureIsBelowFreezingEvent;
 ...
 }
 ...
 
-// BankAccount.cpp
+// Thermometer.cpp
 #include "MyEventArgs.h"
 ...
-winrt::event_token BankAccount::AccountIsInDebit(Windows::Foundation::EventHandler<BankAccountWRC::MyEventArgs> const& handler) { ... }
+winrt::event_token Thermometer::TemperatureIsBelowFreezing(Windows::Foundation::EventHandler<ThermometerWRC::MyEventArgs> const& handler) { ... }
 ...
-void BankAccount::AdjustBalance(float value)
+void Thermometer::AdjustTemperature(float deltaFahrenheit)
 {
-    m_balance += value;
+    m_temperatureFahrenheit += deltaFahrenheit;
 
-    if (m_balance < 0.f)
+    if (m_temperatureFahrenheit < 32.f)
     {
-        auto args = winrt::make_self<winrt::BankAccountWRC::implementation::MyEventArgs>(m_balance);
-        m_accountIsInDebitEvent(*this, *args);
+        auto args = winrt::make_self<winrt::ThermometerWRC::implementation::MyEventArgs>(m_temperatureFahrenheit);
+        m_temperatureIsBelowFreezingEvent(*this, *args);
     }
 }
 ...
 ```
 
-這份清單適用於 **BankAccountCoreApp** 專案。
+這個清單是 **ThermometerCoreApp** 專案的清單。
 
 ```cppwinrt
 // App.cpp
 ...
 void Initialize(CoreApplicationView const&)
 {
-    m_eventToken = m_bankAccount.AccountIsInDebit([](const auto&, BankAccountWRC::MyEventArgs args)
+    m_eventToken = m_thermometer.TemperatureIsBelowFreezing([](const auto&, ThermometerWRC::MyEventArgs args)
     {
-        float balance = args.Balance();
-        WINRT_ASSERT(balance < 0.f); // Put a breakpoint here.
+        float degrees = args.TemperatureFahrenheit();
+        WINRT_ASSERT(degrees < 32.f); // Put a breakpoint here.
     });
 }
 ...
@@ -254,62 +254,62 @@ void Initialize(CoreApplicationView const&)
 
 ## <a name="simple-signals-across-an-abi"></a>跨 ABI 的簡單訊號
 
-如果您不需要透過您的事件傳遞任何參數或與引數，則可以定義自己的簡單 Windows 執行階段委派類型。 以下範例顯示 **BankAccount** 執行階段類別的簡易版本。 它會宣告名為 **SignalDelegate** 的委派類型，然後使用該委派類型來引發訊號類型事件，而不是具有參數的事件。
+如果您不需要透過您的事件傳遞任何參數或與引數，則可以定義自己的簡單 Windows 執行階段委派類型。 以下範例顯示 **Thermometer** 執行階段類別的簡易版本。 它會宣告名為 **SignalDelegate** 的委派類型，然後使用該委派類型來引發訊號類型事件，而不是具有參數的事件。
 
 ```idl
-// BankAccountWRC.idl
-namespace BankAccountWRC
+// ThermometerWRC.idl
+namespace ThermometerWRC
 {
     delegate void SignalDelegate();
 
-    runtimeclass BankAccount
+    runtimeclass Thermometer
     {
-        BankAccount();
-        event BankAccountWRC.SignalDelegate SignalAccountIsInDebit;
-        void AdjustBalance(Single value);
+        Thermometer();
+        event ThermometerWRC.SignalDelegate SignalTemperatureIsBelowFreezing;
+        void AdjustTemperature(Single value);
     };
 }
 ```
 
 ```cppwinrt
-// BankAccount.h
+// Thermometer.h
 ...
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    struct BankAccount : BankAccountT<BankAccount>
+    struct Thermometer : ThermometerT<Thermometer>
     {
         ...
 
-        winrt::event_token SignalAccountIsInDebit(BankAccountWRC::SignalDelegate const& handler);
-        void SignalAccountIsInDebit(winrt::event_token const& token);
-        void AdjustBalance(float value);
+        winrt::event_token SignalTemperatureIsBelowFreezing(ThermometerWRC::SignalDelegate const& handler);
+        void SignalTemperatureIsBelowFreezing(winrt::event_token const& token);
+        void AdjustTemperature(float deltaFahrenheit);
 
     private:
-        winrt::event<BankAccountWRC::SignalDelegate> m_signal;
-        float m_balance{ 0.f };
+        winrt::event<ThermometerWRC::SignalDelegate> m_signal;
+        float m_temperatureFahrenheit{ 0.f };
     };
 }
 ```
 
 ```cppwinrt
-// BankAccount.cpp
+// Thermometer.cpp
 ...
-namespace winrt::BankAccountWRC::implementation
+namespace winrt::ThermometerWRC::implementation
 {
-    winrt::event_token BankAccount::SignalAccountIsInDebit(BankAccountWRC::SignalDelegate const& handler)
+    winrt::event_token Thermometer::SignalTemperatureIsBelowFreezing(ThermometerWRC::SignalDelegate const& handler)
     {
         return m_signal.add(handler);
     }
 
-    void BankAccount::SignalAccountIsInDebit(winrt::event_token const& token)
+    void Thermometer::SignalTemperatureIsBelowFreezing(winrt::event_token const& token)
     {
         m_signal.remove(token);
     }
 
-    void BankAccount::AdjustBalance(float value)
+    void Thermometer::AdjustTemperature(float deltaFahrenheit)
     {
-        m_balance += value;
-        if (m_balance < 0.f)
+        m_temperatureFahrenheit += deltaFahrenheit;
+        if (m_temperatureFahrenheit < 32.f)
         {
             m_signal();
         }
@@ -321,25 +321,25 @@ namespace winrt::BankAccountWRC::implementation
 // App.cpp
 struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 {
-    BankAccountWRC::BankAccount m_bankAccount;
+    ThermometerWRC::Thermometer m_thermometer;
     winrt::event_token m_eventToken;
     ...
     
     void Initialize(CoreApplicationView const &)
     {
-        m_eventToken = m_bankAccount.SignalAccountIsInDebit([] { /* ... */ });
+        m_eventToken = m_thermometer.SignalTemperatureIsBelowFreezing([] { /* ... */ });
     }
     ...
 
     void Uninitialize()
     {
-        m_bankAccount.SignalAccountIsInDebit(m_eventToken);
+        m_thermometer.SignalTemperatureIsBelowFreezing(m_eventToken);
     }
     ...
 
     void OnPointerPressed(IInspectable const &, PointerEventArgs const & args)
     {
-        m_bankAccount.AdjustBalance(-1.f);
+        m_thermometer.AdjustTemperature(-1.f);
         ...
     }
     ...

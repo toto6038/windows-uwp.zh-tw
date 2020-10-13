@@ -6,12 +6,12 @@ ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b02677cb6f38bc86d5123e835f658bedd83543de
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a33670f69d86a913288608ff07efb72edab8fd17
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173932"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829664"
 ---
 # <a name="draw-shapes"></a>繪製圖形
 
@@ -231,7 +231,7 @@ layoutRoot.Children.Add(polyline1);
 
 以下是經過轉譯的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。
 
-![經過轉譯的路徑。](images/shapes-path.jpg)
+![簡單轉譯路徑的螢幕擷取畫面。](images/shapes-path.jpg)
 
 下個範例示範我們已討論過的另一個技術用法：[**GeometryGroup**](/uwp/api/windows.ui.xaml.media.geometrygroup) 搭配 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)。 此範例會運用可作為 **PathGeometry** 一部分的一些參與幾何類型：[**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) 和可以是 [**PathFigure.Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments) 中區段的各種元素。
 
@@ -316,6 +316,6 @@ layoutRoot.Children.Add(path1);
 
 以下是經過轉譯的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path)。
 
-![經過轉譯的路徑。](images/shapes-path-2.png)
+![複雜轉譯路徑的螢幕擷取畫面。](images/shapes-path-2.png)
 
 使用 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 可能會較填入 [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 字串更易閱讀。 相反地，[**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 使用與可縮放向量圖形 (SVG) 映像路徑定義相容的語法，在從 SVG 移植圖形或自 Blend 等工具輸出時非常實用。

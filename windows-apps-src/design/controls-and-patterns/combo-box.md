@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a6854eb361388fc1597816d31daf08bb5fe782
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb903be202724927d60ee5bcd1edb9e16bc4c982
+ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217451"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91829482"
 ---
 # <a name="combo-box-and-list-box"></a>下拉式方塊和清單方塊
 
@@ -23,15 +23,23 @@ ms.locfileid: "91217451"
 
 關閉下拉式方塊後，它會顯示目前的選取項目，若沒有已選取的項目則是空的。 當使用者展開下拉式方塊時，它會顯示可選取的項目清單。
 
-![精簡狀態下的下拉式清單範例](images/combo-box-expand.gif)
+![顯示處於精簡狀態和展開狀態的下拉式清單短片。](images/combo-box-expand.gif)
 
 > _精簡狀態下具有標頭的下拉式方塊。_
 
 **取得 Windows UI 程式庫**
 
-|  |  |
-| - | - |
-| ![WinUI 標誌](images/winui-logo-64x64.png) | Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。 |
+:::row:::
+   :::column:::
+      ![WinUI 標誌](images/winui-logo-64x64.png)
+   :::column-end:::
+   :::column span="3":::
+      Windows UI 程式庫 2.2 或更新版本中有這個控制項使用圓角的新範本。 如需詳細資訊，請參閱[圓角半徑](../style/rounded-corner.md)。 WinUI 是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫](/uwp/toolkits/winui/)。
+   :::column-end:::
+   :::column:::
+
+   :::column-end:::
+:::row-end:::
 
 > **平台 API：** [ComboBox 類別](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[IsEditable 屬性](/uwp/api/windows.ui.xaml.controls.combobox.iseditable)、[Text 屬性](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[TextSubmitted 事件](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)
 
@@ -60,7 +68,7 @@ ms.locfileid: "91217451"
 
 精簡狀態下的下拉式清單可以顯示標頭。
 
-![精簡狀態下的下拉式清單範例](images/combo_box_collapsed.png)
+![螢幕擷取畫面：顯示處於精簡狀態的下拉式清單。](images/combo_box_collapsed.png)
 
 雖然下拉式方塊可延展來支援較長的字串長度，但是請避免使用過長而難以閱讀的字串。
 

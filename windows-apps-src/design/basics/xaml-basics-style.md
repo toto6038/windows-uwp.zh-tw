@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ff5df0d56d5be6b2cbb93814d01fed48a626797
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 04357cc43ed227b109d4aab20c509077261360ee
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219091"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636598"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
@@ -18,11 +18,11 @@ ms.locfileid: "91219091"
 
 PhotoLab 範例應用程式有兩個頁面。 「主頁面」  會顯示影像中心檢視，以及一些關於每個影像檔案的資訊。
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Photolab 主頁面的螢幕擷取畫面。](../basics/images/xaml-basics/mainpage.png)
 
 「詳細資料頁面」  會在選取單一相片之後，顯示該相片。 飛出視窗編輯功能表可用來變更、重新命名和儲存相片。
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Photolab 詳細頁面的螢幕擷取畫面。](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>必要條件
 

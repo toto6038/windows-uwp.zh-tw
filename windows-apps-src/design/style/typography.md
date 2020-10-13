@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3e9e9e501f1c4277121e7694e8213ccea51c5297
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218131"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636538"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 應用程式中的印刷樣式
 
@@ -29,7 +29,8 @@ ms.locfileid: "91218131"
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)為 UI 選擇一種字型。
+![綠色長條的第一個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+為 UI 選擇一種字型。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)請勿混合使用多個字型。
@@ -46,7 +47,8 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)遵循 Windows [字體坡形](#type-ramp)大小調整。
+![綠色長條的第二個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+遵循 Windows [字體坡形](#type-ramp)大小調整。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)使用小於 12 像素的字型大小。
@@ -93,7 +95,8 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)讓大部分文字使用「Body」。
+![綠色長條的第三個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+讓大部分文字使用「Body」。
 
 標題在空間有限時使用「基準」。
     :::column-end:::
@@ -118,7 +121,8 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)每行維持 50–60 個字母以利閱讀。
+![[綠色長條的第四個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+每行維持 50–60 個字母以利閱讀。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)每行少於 20 個字元或超過 60 個字元會阻礙閱讀。
@@ -137,7 +141,8 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 :::row:::
     :::column:::
-![可行事項](images/do.svg)裁剪文字，如果啟用多行則換行。
+![[綠色長條的第五個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+裁剪文字，如果啟用多行則換行。
     :::column-end:::
     :::column:::
 ![禁止事項](images/dont.svg)使用省略符號以避免視覺干擾。

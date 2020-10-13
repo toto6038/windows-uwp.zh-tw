@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: aabad7a731bd0654468d7b9849d3b9a5bf6bead6
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 1f71eb48264570df384fce672b1ca895d98e1109
+ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353728"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91636588"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -18,11 +18,11 @@ ms.locfileid: "91353728"
 
 影像編輯程式有兩個頁面。 「主頁面」  會顯示影像中心檢視，以及一些關於每個影像檔案的資訊。
 
-![MainPage](../basics/images/xaml-basics/mainpage.png)
+![Photolab 主頁面的螢幕擷取畫面。](../basics/images/xaml-basics/mainpage.png)
 
 「詳細資料頁面」  會在選取單一相片之後，顯示該相片。 飛出視窗編輯功能表可用來變更、重新命名和儲存相片。
 
-![DetailPage](../basics/images/xaml-basics/detailpage.png)
+![Photolab 詳細頁面的螢幕擷取畫面。](../basics/images/xaml-basics/detailpage.png)
 
 ## <a name="prerequisites"></a>必要條件
 
