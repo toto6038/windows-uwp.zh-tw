@@ -310,7 +310,71 @@
           href: motion/key-frame-and-easing-function-animations.md
 - name: 殼層
   items:
-    - name: Tiles
+    - name: 快顯通知
+      items:
+        - name: UX 指導方針
+          href: shell/tiles-and-notifications/toast-ux-guidance.md
+        - name: 傳送本機快顯通知
+          items:
+            - name: UWP 應用程式
+              href: shell/tiles-and-notifications/send-local-toast.md
+            - name: Win32 應用程式
+              items:
+                - name: 概觀
+                  href: shell/tiles-and-notifications/toast-desktop-apps.md
+                - name: C# 應用程式
+                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
+                - name: C++ WRL 應用程式
+                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+        - name: 快顯通知內容
+          items:
+            - name: 內容
+              href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
+            - name: 結構描述
+              href: shell/tiles-and-notifications/toast-schema.md
+        - name: 排程快顯通知
+          href: shell/tiles-and-notifications/scheduled-toast.md
+        - name: 其他功能
+          items:
+            - name: 自訂音效
+              href: shell/tiles-and-notifications/custom-audio-on-toasts.md
+            - name: 進度列
+              href: shell/tiles-and-notifications/toast-progress-bar.md
+            - name: 擱置中更新
+              href: shell/tiles-and-notifications/toast-pending-update.md
+            - name: 自訂時間戳記
+              href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
+            - name: 集合
+              href: shell/tiles-and-notifications/toast-collections.md
+            - name: 標頭
+              href: shell/tiles-and-notifications/toast-headers.md
+            - name: 通知接聽程式
+              href: shell/tiles-and-notifications/notification-listener.md
+            - name: 已淘汰
+              items:
+                - name: 通知鏡像
+                  href: shell/tiles-and-notifications/notification-mirroring.md
+                - name: 通用關閉
+                  href: shell/tiles-and-notifications/universal-dismiss.md
+    - name: 徽章通知
+      href: shell/tiles-and-notifications/badges.md
+    - name: 推送通知
+      items:
+        - name: 概觀
+          href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
+        - name: WNS 優先順序
+          href: shell/tiles-and-notifications/wns-notification-priorities.md
+        - name: Allowlisting WNS 流量
+          href: shell/tiles-and-notifications/firewall-allowlist-config.md
+        - name: 由推播通知精靈產生的程式碼
+          href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
+    - name: 工作列
+      items:
+        - name: 將應用程式釘選到工作列
+          href: shell/pin-to-taskbar.md
+    - name: 標題列
+      href: shell/title-bar.md
+    - name: 動態磚
       href: shell/tiles-and-notifications/creating-tiles.md
       items:
         - name: 次要磚
@@ -338,54 +402,8 @@
           href: shell/tiles-and-notifications/primary-tile-apis.md
         - name: 對語言、縮放比例及高對比的磚與快顯通知支援
           href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
-    - name: 將應用程式釘選到工作列
-      href: shell/pin-to-taskbar.md
-    - name: 標題列自訂
-      href: shell/title-bar.md
-    - name: 通知
+    - name: 其他
       items:
-        - name: 快顯通知
-          items:
-            - name: UX 指導方針
-              href: shell/tiles-and-notifications/toast-ux-guidance.md
-            - name: 快顯通知內容
-              href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
-            - name: 快顯通知內容結構描述
-              href: shell/tiles-and-notifications/toast-schema.md
-            - name: 傳送本機快顯通知
-              items:
-                - name: Windows 應用程式
-                  href: shell/tiles-and-notifications/send-local-toast.md
-                - name: 傳統型應用程式
-                  items:
-                    - name: 概觀
-                      href: shell/tiles-and-notifications/toast-desktop-apps.md
-                    - name: C# 應用程式
-                      href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                    - name: C++ WRL 應用程式
-                      href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
-            - name: 排程快顯通知
-              href: shell/tiles-and-notifications/scheduled-toast.md
-            - name: 自訂音效
-              href: shell/tiles-and-notifications/custom-audio-on-toasts.md
-            - name: 進度列
-              href: shell/tiles-and-notifications/toast-progress-bar.md
-            - name: 擱置中更新
-              href: shell/tiles-and-notifications/toast-pending-update.md
-            - name: 自訂時間戳記
-              href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
-            - name: 集合
-              href: shell/tiles-and-notifications/toast-collections.md
-            - name: 標頭
-              href: shell/tiles-and-notifications/toast-headers.md
-            - name: 通知接聽程式
-              href: shell/tiles-and-notifications/notification-listener.md
-            - name: 通知鏡像
-              href: shell/tiles-and-notifications/notification-mirroring.md
-            - name: 通用關閉
-              href: shell/tiles-and-notifications/universal-dismiss.md
-        - name: 徽章通知
-          href: shell/tiles-and-notifications/badges.md
         - name: 通知視覺化工具
           href: shell/tiles-and-notifications/notifications-visualizer.md
         - name: 通知傳遞方法
@@ -397,17 +415,6 @@
               href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
             - name: 定期通知
               href: shell/tiles-and-notifications/periodic-notification-overview.md
-        - name: Windows 推播通知服務 (WNS)
-          href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
-          items:
-            - name: WNS 優先順序
-              href: shell/tiles-and-notifications/wns-notification-priorities.md
-            - name: Allowlisting WNS 流量
-              href: shell/tiles-and-notifications/firewall-allowlist-config.md
-            - name: 由推播通知精靈產生的程式碼
-              href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
-        - name: 原始通知
-          href: shell/tiles-and-notifications/raw-notification-overview.md
 - name: 輸入與互動
   items:
     - name: 概觀
