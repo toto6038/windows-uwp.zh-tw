@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fb098cb247890dc1b3919f6123b76b54366d60f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c3cac3049dbd5d22c23716a2da38a41fb6000a71
+ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154322"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "91984494"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -31,11 +31,13 @@ C#/WinRT 也支援 WinUI 3.0。 此版 WinUI 會從作業系統中提取原生�
 
 最後，C# /WinRT 是一般的工具組，目的是為了支援無法在 C# 編譯器或 .NET 執行階段中使用內建 WinRT 支援的其他案例。 C#/WinRT 支援相容於 .NET Standard 2.0 的 .NET 執行階段版本，例如 Mono 5.4。
 
-如需有關 C#/WinRT 的詳細資訊，請參閱 [C#/WinRT GitHub 存放庫](https://aka.ms/cswinrt/repo)
+如需有關 C#/WinRT 的詳細資訊，請參閱 [C#/WinRT GitHub 存放庫](https://aka.ms/cswinrt/repo)。
 
 ## <a name="create-an-interop-assembly"></a>建立 interop 組件
 
-WinRT API 定義於 Windows 中繼資料 (*.winmd) 檔案中。 C#/WinRT NuGet 套件包含 C# /WinRT 編譯器 (**cswinrt**)，可讓您用來處理 Windows 中繼資料檔案並產生 .NET Standard 2.0 C# 程式碼。 您可以將這些來源檔案編譯成 interop 組件，類似於 [C++/WinRT](../cpp-and-winrt-apis/index.md) 產生 C++ 語言投影標頭的方式。 接著，除了 C#/WinRT 執行階段組件，您還可以散發 C#/WinRT interop 組件讓應用程式參考。
+WinRT API 定義於 Windows 中繼資料 (*.winmd) 檔案中。 C#/WinRT NuGet 套件 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 包含 C# /WinRT 編譯器 (**cswinrt**)，可讓您用來處理 Windows 中繼資料檔案並產生 .NET 5.0 C# 程式碼。 您可以將這些來源檔案編譯成 interop 組件，類似於 [C++/WinRT](../cpp-and-winrt-apis/index.md) 產生 C++ 語言投影標頭的方式。 接著，除了 C#/WinRT 執行階段組件，您還可以散發 C#/WinRT interop 組件讓應用程式參考。
+
+如需示範如何建立 Interop 組件的逐步解說，請參閱 [逐步解說：從 C++/WinRT 元件產生 .NET 5.0 投影並更新 NuGet](net-projection-from-cppwinrt-component.md)。
 
 ### <a name="invoke-cswinrtexe"></a>叫用 cswinrt.exe
 
