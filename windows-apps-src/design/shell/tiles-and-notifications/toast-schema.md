@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c095e48e24a06caf9e31066b21f9e2b023ed51cf
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 6399cb3aa6c22e188ed84941c3209632511d90e4
+ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878471"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92020168"
 ---
 # <a name="toast-content-schema"></a>快顯通知內容結構描述
 
@@ -21,7 +21,7 @@ ms.locfileid: "91878471"
 
 以下說明快顯通知內容中的所有屬性和元素。
 
-如果您想要使用原始 XML，而不使用 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，請參閱 [XML 結構描述]()。
+如果您想要使用原始 XML，而不使用 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，請參閱 [XML 結構描述](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root)。
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -132,9 +132,9 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | **BodySubtle** | 和 Body 一樣，只是有輕微不透明度。 |
 | **基地** | 段落字型大小、粗體粗細。 基本上是 Body 的粗體版本。 |
 | **BaseSubtle** | 和 Base 一樣，只是有輕微不透明度。 |
-| **字幕** | H4 字型大小。 |
+| **副標題** | H4 字型大小。 |
 | **SubtitleSubtle** | 和 Subtitle 一樣，只是有輕微不透明度。 |
-| **標題** | H3 字型大小。 |
+| **Title** (標題) | H3 字型大小。 |
 | **TitleSubtle** | 和 Title 一樣，只是有輕微不透明度。 |
 | **TitleNumeral** | 和 Title 一樣，只是上/下邊框間距已移除。 |
 | **Subheader.aboutdocs** | H2 字型大小。 |
@@ -235,7 +235,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **標題** | 字串或 [BindableString](#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
+| **Title** (標題) | 字串或 [BindableString](#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
 | **ReplTest1** | double 或 [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](#bindableprogressbarvalue) | false | 取得或設定進度列的值。 支援資料繫結。 預設為 0。 |
 | **ValueStringOverride** | 字串或 [BindableString](#bindablestring) | false | 取得或設定要顯示的選用字串，用於取代預設百分比字串。 如果未提供此項，將會顯示「70%」之類的內容。 |
 | **狀態** | 字串或 [BindableString](#bindablestring) | true | 取得或設定狀態字串 (必要)，它會顯示在左側進度列的下方。 這個字串應該反映作業的狀態，例如「正在下載...」或「正在安裝...」 |
@@ -336,7 +336,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **標題** | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
+| **Title** (標題) | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
 | **PlaceholderContent** | 字串 | false | 使用者尚未輸入任何文字時，要顯示在文字方塊中的預留位置文字。 |
 | **DefaultInput** | 字串 | false | 要放在文字方塊中的初始文字。 如需空白文字方塊，請保持為 null。 |
 
@@ -358,7 +358,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **標題** | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
+| **Title** (標題) | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
 | **DefaultSelectionBoxItemId** | 字串 | false | 這會控制預設選取哪些項目，並且參考 [ToastSelectionBoxItem](#toastselectionboxitem) 的的 Id 屬性。 如果沒有提供這個屬性，預設選取項目會是空白 (使用者看不到任何項目)。 |
 | **項目** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | 使用者可以從這個 SelectionBox 中挑選的選取項目。 只能新增 5 個項目。 |
 
@@ -471,7 +471,7 @@ Creators Update 的新功能：將控制中心內多個通知群組一起的自�
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
-| **標題** | 字串 | true | 標頭的標題。 |
+| **Title** (標題) | 字串 | true | 標頭的標題。 |
 | **引數**| 字串 | true | 取得或設定開發人員定義的引數字串，當使用者按下此標頭時會傳回至應用程式。 不可以是 null。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 取得或設定此標頭在使用者按一下時要使用的啟用類型。 預設為 Foreground。 請注意，只支援 Foreground 和 Protocol。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | 取得或設定與快顯通知標頭啟用相關的其他選項。 |
