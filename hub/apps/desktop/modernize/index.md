@@ -6,12 +6,12 @@ ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5df07995c2e4175bc9a67010a78c353cbd9d8cfa
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: b7c640e89f36dfcea6e0080cbbe3887e0231ddfc
+ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671497"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91958721"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -82,7 +82,7 @@ MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式
 
 | 控制 |  說明 |
 |------ |--------------|
-| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 提供快速、簡單的方法，公開可能需要比 **CommandBar** 所允許還要多組織和群組的一組應用程式命令。 |
+| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | 針對可能需要比 **CommandBar** 所允許更多組織或群組的應用程式，提供一種快速且簡單的方法來公開一組命令。 |
 | [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | 將＞形箭號顯示為視覺指標，具有包含許多選項的附加飛出視窗。  |
 | [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | 提供一個按鈕，具有可以分別叫用的兩個組件。 一個組件的行為類似標準按鈕，並且會叫用立即動作。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。|
 | [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | 提供一個按鈕，具有可以分別叫用的兩個組件。 一個組件的行為類似可以開或關的切換按鈕。 另一個組件會叫用飛出視窗，其中包含使用者可以選擇的其他選項。 |

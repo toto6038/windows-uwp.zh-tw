@@ -822,7 +822,11 @@
             - name: 值類別，以及參考
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
     - name: C#/WinRT
-      href: ../csharp-winrt/index.md
+      items:
+        - name: 概觀
+          href: ../csharp-winrt/index.md
+        - name: 逐步解說：從 C++/WinRT 元件產生 .NET 5.0 投影
+          href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
     - name: 安全性
       href: ../security/index.md
       items:
