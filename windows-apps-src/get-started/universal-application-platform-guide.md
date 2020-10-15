@@ -7,18 +7,18 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 416df29fcb6ac007375ff9cf2a8f22d80a12b73e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f435631b575a06daae9cb4d34c5419e93ba8063f
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219821"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011353"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
 UWP 是建立 Windows 用戶端應用程式的許多方式之一。 UWP 應用程式會使用 WinRT API 來提供功能強大的 UI 和進階的非同步功能，適用於與網際網路連線的裝置。
 
-若要下載開始建立 UWP 應用程式所需的工具，請查看 [開始設定](get-set-up.md)，然後 [撰寫第一個應用程式](your-first-app.md)。
+若要下載開始建立 UWP 應用程式所需的工具，請查看 [開始設定](/windows/apps/get-set-up.md)，然後 [撰寫第一個應用程式](your-first-app.md)。
 
 
 ## <a name="where-does-uwp-fit-in-the-microsoft-development-story"></a>UWP 在 Microsoft 開發案例中的定位為何？
@@ -121,7 +121,7 @@ UWP 應用程式使用 Windows 執行階段，這是作業系統提供的原生 
 
 ### <a name="get-set-up"></a>開始設定
 
-請查看[開始設定](get-set-up.md)，下載開始建立應用程式所需的工具，然後[撰寫第一個應用程式](your-first-app.md)。
+請查看[開始設定](/windows/apps/get-started/get-set-up.md)，下載開始建立應用程式所需的工具，然後[撰寫第一個應用程式](your-first-app.md)。
 
 ### <a name="design-your-app"></a>設計您的應用程式
 

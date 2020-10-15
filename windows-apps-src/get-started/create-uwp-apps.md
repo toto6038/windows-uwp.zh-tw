@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, get started, 開始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a6774180e2f2f0a65dc9a71ebfac5c273a4424
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a9230df47c9929ee902fc8e0b93f7de7a5ef70df
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168182"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011368"
 ---
 # <a name="start-coding"></a>開始撰寫程式碼
 
@@ -18,7 +18,7 @@ ms.locfileid: "89168182"
 
 歡迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在這個頁面上，我們將指向開始程式設計您想要建立的 Windows 10 應用程式所需的正確資訊。
 
-開始開發之前，您應該要[開始設定。](get-set-up.md)
+開始開發之前，您應該要[開始設定。](/windows/apps/get-started/get-set-up.md)
 
 ## <a name="learning-tracks"></a>學習路線
 
@@ -57,8 +57,8 @@ ms.locfileid: "89168182"
 
 | 區域 | 說明 |
 | --- | --- |
-| **新功能？** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指導方針相關資訊，其中也包含新 API 的清單： </br>   [最新 Windows 10 版本中適用於發人員的新功能](../whats-new/windows-10-build-19041.md) </br> 不過，我們不是只在推出主要版本時，才更新文件。 我們會一直提供新資訊供您瀏覽，而且會讓您掌握最新資訊： </br>   [文件的最新動向](../whats-new/windows-docs-january-2019.md) |
-| **設計與 UI** | 應用程式的視覺呈現和 UI 的所有資訊，都包含在文件的此區域中。如果您對特定 XAML 標記語言感興趣，或只是想為您的文件建立獨特外觀，請從這裡開始： </br>   [UWP 應用程式設計基本知識](../design/basics/index.md) |
+| **新功能？** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指導方針相關資訊，其中也包含新 API 的清單： </br>   [最新 Windows 10 版本中適用於發人員的新功能](../whats-new/windows-10-version-latest.md) |
+| **設計與 UI** | 包含在此文件區域中的視覺呈現與應用程式的 UI 上的所有資訊。如果您對 XAML 標記語言的特定項目感興趣，或只是想要建立獨特的文件外觀，請由此開始︰ </br>   [UWP 應用程式設計基本知識](../design/basics/index.md) |
 | **開發應用程式** | 如果您需要特定 Windows 10 功能的詳細資訊，或只是想了解您可如何進行 UWP 開發，請查看文件的此區域： </br>   [UWP 應用程式功能](../develop/index.md)。 </br> Windows 10 應用程式的 API 參照記載在一組相關文件中，您可在此處找到： </br>   [Windows UWP 命名空間](/uwp/api/) </br>   [檔案和 XML 結構描述](/uwp/schemas/) |
 | **開發遊戲** | 這些文件包含如何開發 Windows 或 Xbox 遊戲的資訊。 這包括的安裝指示、開發人員程式，以及使用 DirectX 或 Xbox 功能進行程式設計的指示。 </br>   [遊戲開發入門](../gaming/getting-started.md) |
 | **發佈** | 這些文件包含如何將您的應用程式發佈到 Microsoft Store 中，從應用程式提交到定價到促銷和客戶參與： </br>   [將您的應用程式發佈至 Microsoft Store](../publish/index.md) |
@@ -67,8 +67,8 @@ ms.locfileid: "89168182"
 
 某些特殊 Windows 10 平台，像是 Web 開發或混合實境，有自己的文件設定。 如果您對於開發具這些功能的應用程式感興趣，請查看其文件：
 
-| Docs | 說明 |
+| Docs | 描述 |
 | --- | --- |
 | **Microsoft Azure** | 雲端開發和 Microsoft Azure 的相關資訊，都可在 [Microsoft Azure 開發人員文件](/azure/)中找到。 |
-| **Web 開發** | Microsoft Edge、WebVR 及其他 Windows Web 開發功能的資訊，可在 [Microsoft Edge 開發人員文件](/microsoft-edge/) \(英文\) 中找到。 |
+| **Web 程式開發** | Microsoft Edge、WebVR 及其他 Windows Web 開發功能的資訊，可在 [Microsoft Edge 開發人員文件](/microsoft-edge/) \(英文\) 中找到。 |
 | **Windows Mixed Reality** | 混合實境將現實世界和虛擬內容混合到實體和數位物件共存的體驗中。 建置 Microsoft HoloLens 應用程式和其他沉浸式頭戴裝置的資訊，可在 [Windows Mixed Reality 文件](/windows/mixed-reality/)中找到。|
