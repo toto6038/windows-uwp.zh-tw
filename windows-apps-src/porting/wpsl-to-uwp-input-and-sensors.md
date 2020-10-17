@@ -1,17 +1,17 @@
 ---
-description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
+description: 瞭解如何將 Windows Phone Silverlight 移植至適用于 i/o、裝置和應用程式模型的 UWP。
 title: 針對 I/O、裝置與 app 模型將 Windows Phone Silverlight 移植到 UWP
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 09b192f38a5bedaad491ade322df252d4b9e5971
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 85f0bfaa42c6357a468f2c3babbd4a89925d2e4c
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162182"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133011"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>將 Windows Phone Silverlight 移植到適用于 i/o、裝置和應用程式模型的 UWP
 
@@ -88,7 +88,7 @@ Windows Phone Silverlight app 可以使用 **Microsoft.Phone.Info.DeviceStatus**
 
 當在其應用程式套件資訊清單中宣告定位功能的應用程式於 Windows 10 上執行時，系統會提示使用者同意。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
 
-## <a name="orientation"></a>方向
+## <a name="orientation"></a>Orientation
 
 UWP app 中，與 **PhoneApplicationPage.SupportedOrientations** 和 **Orientation** 屬性對等的項目是 app 套件資訊清單中的 [**uap:InitialRotationPreference**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-splashscreen) 元素。 選取 [ **應用程式** ] 索引標籤（如果尚未選取），然後選取 [ **支援的旋轉** ] 下的一或多個核取方塊以記錄您的喜好設定
 

@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10、uwp、排程的快顯通知、scheduledtoastnotification、操作說明、快速入門、使用者入門、程式碼範例、逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 04bbf3da388bf065b2b96684cf3f27cd7534ff51
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984734"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100306"
 ---
 # <a name="schedule-a-toast-notification"></a>排程快顯通知
 
@@ -21,7 +21,7 @@ ms.locfileid: "91984734"
 請注意，排程的快顯通知有5分鐘的傳遞視窗。 如果電腦在排定的傳遞時間內關閉，且維持超過5分鐘的時間，則會「捨棄」通知，告知使用者不再相關。 如果您需要保證傳遞通知，而不是電腦的關機時間長度，建議您使用具有時間觸發程式的背景工作，如下列程式 [代碼範例](https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off)所示。
 
 > [!IMPORTANT]
-> MSIX/sparse 封裝和傳統 Win32)  (的 Win32 應用程式都有稍微不同的步驟來傳送通知和處理啟用。 請依照下列指示操作，但 `ToastNotificationManager` 以 `DesktopNotificationManagerCompat` [Win32 應用程式](toast-desktop-apps.md) 檔中的類別取代。
+> 桌面應用程式 (MSIX/sparse 套件和傳統桌面) 都有稍微不同的步驟來傳送通知和處理啟用。 請依照下列指示操作，但將取代為 `ToastNotificationManager` `DesktopNotificationManagerCompat` [桌面應用程式](toast-desktop-apps.md) 檔中的類別。
 
 > **重要 api**： [ScheduledToastNotification 類別](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 

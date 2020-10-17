@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, 次要磚, 釘選, 快速入門, 程式碼範例, 範例
 ms.localizationpriority: medium
-ms.openlocfilehash: dc65768eb90ca51a86db51dd0add00d9542df24e
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 2e84885f6c75b37614c054fe1919cf71e09d5d07
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984674"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100346"
 ---
 # <a name="pin-secondary-tiles-to-start"></a>將次要磚釘選到開始
 
@@ -110,7 +110,7 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 最後，要求釘選該磚。 請注意，這此必須從 UI 執行緒呼叫。 在桌面上將會出現一個對話方塊，要求使用者確認是否要釘選磚。
 
 > [!IMPORTANT]
-> 如果您是使用傳統型橋接器的 Win32 應用程式，您必須先執行[從 win32 應用程式釘](secondary-tiles-desktop-pinning.md)選中所述的額外步驟
+> 如果您是使用傳統型橋接器的桌面應用程式，您必須先執行額外的步驟，如[釘選自桌面應用程式](secondary-tiles-desktop-pinning.md)中所述
 
 ```csharp
 // Pin the tile

@@ -1,16 +1,16 @@
 ---
 title: 關聯式動畫
 description: 瞭解當動作相依于另一個物件的屬性時，如何使用 ExpressionAnimations 建立以關聯為基礎的動畫。
-ms.date: 10/10/2017
+ms.date: 10/16/2020
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 57d2f3729430faefc7db31cad6a0ac91ddaa2e02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 75adcd2f762fd4314d7b852811760d523ef522aa
+ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166362"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152418"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 
@@ -52,10 +52,10 @@ Expressions 也支援一組關鍵字 - 只有在 ExpressionAnimation 系統中�
 
 ### <a name="creating-expressions-with-expressionbuilder"></a>使用 ExpressionBuilder 建立 Expressions
 
-有兩個選項可在 UWP 應用程式中建立 Expressions：
+在 UWP 應用程式中建立運算式有兩個選項：
 
-1. 透過正式、公用 API 將方程式建置為字串。
-1. 透過開放原始碼 ExpressionBuilder 工具，在型別安全物件模型中建置方程式。 請參閱 [Github 來源和文件](https://github.com/microsoft/WindowsCompositionSamples/tree/master/ExpressionBuilder)。
+1. 透過官方的公用 API，將方程式建立為字串。
+1. 透過 [Windows 社群](/windows/communitytoolkit/animations/expressions)工具組隨附的 r 工具，在型別安全物件模型中建立方程式。
 
 針對本文的目的，我們將使用 ExpressionBuilder 定義 Expressions。
 
@@ -112,7 +112,9 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` 是簡短的 "using" 標記法，用來定義 r. ExpressionFunctions。
+> `EF` 這是用來定義 ExpressionFunctions 的速記「using」標記法。
+>
+> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
 
 最後，將這些元件結合在一起，並參考紅球的位置來定義數學關係。
 

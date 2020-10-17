@@ -5,23 +5,23 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 25b0732b7c29653d18f0e018698ab4b6398d402a
-ms.sourcegitcommit: 6f32604876ed480e8238c86101366a8d106c7d4e
+ms.openlocfilehash: 438f108a07349da6515443e64bd4494529b8e6a0
+ms.sourcegitcommit: fe21402578a1f434769866dd3c78aac63dbea5ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67318067"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92152400"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>美化現有的 ScrollViewer 體驗
 
 本文說明如何使用 XAML ScrollViewer 和 ExpressionAnimations 來建立動態輸入導向的動作體驗。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入驅動動畫](input-driven-animations.md)
-- [關聯型動畫](relation-animations.md)
+- [輸入導向動畫](input-driven-animations.md)
+- [關聯式動畫](relation-animations.md)
 
 ## <a name="why-build-on-top-of-scrollviewer"></a>為何在 ScrollViewer 上建置？
 
@@ -43,27 +43,27 @@ ms.locfileid: "67318067"
 
 ![害羞標頭](images/animation/shy-header.gif)
 
-## <a name="using-scrollmanipulationpropertyset"></a>使用 ScrollManipulationPropertySet
+## <a name="using-scrollviewermanipulationpropertyset"></a>使用 ScrollViewerManipulationPropertySet
 
-若要使用 XAML ScrollViewer 建立這些動態體驗，您必須能夠參考動畫中的捲動位置。 做法是存取稱為 ScrollManipulationPropertySet 的 XAML ScrollViewer 中的 CompositionPropertySet。
-ScrollManipulationPropertySet 包含單一 Vector3 屬性，稱為 Translation，可提供 ScrollViewer 捲動位置的存取。 接著您可以像 ExpressionAnimation 中的任何其他 CompositionPropertySet，參考此項目。
+若要使用 XAML ScrollViewer 建立這些動態體驗，您必須能夠參考動畫中的捲動位置。 這是藉由存取稱為 ScrollViewerManipulationPropertySet 之 XAML ScrollViewer 的 CompositionPropertySet 來完成。
+ScrollViewerManipulationPropertySet 包含稱為轉譯的單一 Vector3 屬性，可讓您存取 ScrollViewer 的滾動位置。 接著您可以像 ExpressionAnimation 中的任何其他 CompositionPropertySet，參考此項目。
 
 入門一般步驟：
 
-1. 透過 ElementCompositionPreview 存取 ScrollManipulationPropertySet。
-    - `ElementCompositionPreview.GetScrollManipulationPropertySet(ScrollViewer scroller)`
+1. 透過 ElementCompositionPreview 存取 ScrollViewerManipulationPropertySet。
+    - `ElementCompositionPreview.GetScrollViewerManipulationPropertySet(ScrollViewer scroller)`
 1. 建立 ExpressionAnimation，參考 PropertySet 的 Translation 屬性。
     - 不要忘記設定參考參數！
 1. 使用 ExpressionAnimation 以 CompositionObject 的屬性做為目標。
 
 > [!NOTE]
-> 建議您將 GetScrollManipulationPropertySet 方法傳回的 PropertySet 指派給類別變數。 如此可確保屬性設定不會被記憶體回收清理，因而對參考它的 ExpressionAnimation 沒有效果。 ExpressionAnimations 不會對方程式中使用的任何物件維持強式參考。
+> 建議您將從 GetScrollViewerManipulationPropertySet 方法傳回的 PropertySet 指派給類別變數。 如此可確保屬性設定不會被記憶體回收清理，因而對參考它的 ExpressionAnimation 沒有效果。 ExpressionAnimations 不會對方程式中使用的任何物件維持強式參考。
 
 ## <a name="example"></a>範例
 
 讓我們來看看上述視差範例如何組合呈現。 如需參考資料，此應用程式的所有原始碼都能在[GitHub 上的 Window UI 開發人員實驗室存放庫](https://github.com/microsoft/WindowsCompositionSamples)中找到。
 
-首先，取得 ScrollManipulationPropertySet 的參考。
+第一件事是取得 ScrollViewerManipulationPropertySet 的參考。
 
 ```csharp
 _scrollProperties =

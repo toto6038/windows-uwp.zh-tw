@@ -1,17 +1,17 @@
 ---
-description: 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。
+description: 針對將 Windows Phone Silverlight 移植到 UWP 時可能發生的問題進行疑難排解。
 title: 將 Windows Phone Silverlight 移植到 UWP 的疑難排解
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a2c1353882ade36b5c1b82d0b75967d010ae0dc7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b1e73dcb74ae95729cb5c07db469a1ef1a77e35
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174822"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133001"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>將 Windows Phone Silverlight 移植到 UWP 的疑難排解
 

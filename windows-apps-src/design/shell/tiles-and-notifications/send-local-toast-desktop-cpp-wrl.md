@@ -7,19 +7,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c + +、cpp、>cplusplus、WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: a227ccbc52aa3c1dd8c0cd9c61cdecf140375fe2
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: e1e8aedd867dfdcabd382ebde1dd4c96a94d1001
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984654"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100316"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>從 Win32 c + + WRL 應用程式傳送本機快顯通知
 
 Win32 應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，Win32 應用程式有幾個特殊步驟是因為不同的啟用配置，以及如果您不是使用 MSIX 或稀疏套件，可能缺乏套件識別。
 
 > [!IMPORTANT]
-> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 如需其他 Win32 語言，請參閱 [Win32 c #](send-local-toast-desktop.md)。
+> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C#](send-local-toast-desktop.md)。
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>步驟 1：啟用 Windows 10 SDK

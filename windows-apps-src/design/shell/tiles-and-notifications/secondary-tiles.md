@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, 次要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: a4cd65093e9969531c3de683064973aab58b1680
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984664"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100336"
 ---
 # <a name="secondary-tiles"></a>次要磚
 
@@ -33,7 +33,7 @@ ms.locfileid: "91984664"
 | --- | --- |
 | [次要磚指導方針](secondary-tiles-guidance.md) | 了解您使用次要磚的時機和位置。 |
 | [釘選次要磚](secondary-tiles-pinning.md) | 了解如何釘選次要磚。 |
-| [從 Win32 應用程式釘選](secondary-tiles-desktop-pinning.md) | 由於傳統型橋接器，Win32 應用程式可以釘選次要磚！ |
+| [從桌面應用程式釘選](secondary-tiles-desktop-pinning.md) | 傳統型應用程式可以釘選次要磚，因為這是傳統型橋接器！ |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>次要磚與主要磚比較
@@ -79,5 +79,5 @@ ms.locfileid: "91984664"
 若要了解如何釘選次要磚，請參閱[釘選次要磚](secondary-tiles-pinning.md)。
 
 
-## <a name="win32-applications-and-secondary-tiles"></a>Win32 應用程式和次要磚
-若要瞭解如何透過傳統型橋接器從您的 Win32 應用程式使用次要磚，請參閱 [從 win32 應用程式釘選次要磚](secondary-tiles-desktop-pinning.md)。
+## <a name="desktop-applications-and-secondary-tiles"></a>傳統型應用程式和次要磚
+若要瞭解如何透過傳統型橋接器從您的桌面應用程式使用次要磚，請參閱 [從桌面應用程式釘選次要磚](secondary-tiles-desktop-pinning.md)。

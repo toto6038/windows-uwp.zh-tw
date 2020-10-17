@@ -1,27 +1,27 @@
 ---
-Description: 了解如何傳送本機快顯通知，以及處理使用者按一下快顯通知的動作。
-title: 傳送本機快顯通知
+Description: 瞭解如何從 UWP 應用程式傳送本機快顯通知，並處理使用者按一下快顯通知。
+title: 從 UWP 應用程式傳送本機快顯通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification
+label: Send a local toast notification from UWP apps
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 566a1093fc576751bdd2428c2349428a5d2ef626
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 7b669ad3c846fec0b60ae01134b80a6d87586c62
+ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984693"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92100286"
 ---
-# <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
+# <a name="send-a-local-toast-notification-from-uwp-apps"></a>從 UWP 應用程式傳送本機快顯通知
 
 
 快顯通知是一則訊息，App 可以建構此訊息，並於使用者目前未在 App 內時，傳遞給使用者。 這項快速入門會逐步引導您使用新的調適型範本和互動式動作，完成建立、傳遞和顯示 Windows 10 快顯通知的步驟。 這些動作透過本機通知進行示範，本機通知是我們要實作的最簡單通知。
 
 > [!IMPORTANT]
-> Win32 應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 有不同的步驟來傳送通知和處理啟用。 請參閱 [Win32 應用程式](toast-desktop-apps.md) 檔，以瞭解如何執行快顯通知。
+> 傳統型應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統非封裝的桌面應用程式) 有不同的步驟來傳送通知和處理啟用。 請參閱 [傳統型應用程式](toast-desktop-apps.md)文件以了解如何實作快顯通知。
 
 > **重要 API**：[ToastNotification 類別](/uwp/api/Windows.UI.Notifications.ToastNotification)、[ToastNotificationActivatedEventArgs 類別](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
@@ -192,7 +192,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 > 您可以使用 App 套件、App 本機存放區或網頁中的影像。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。
 
 > [!IMPORTANT]
-> 只有在其資訊清單中具有網際網路功能的 UWP/MSIX/sparse 應用程式中，才支援 Http 映射。 Win32 非 MSIX/sparse 應用程式不支援 HTTP 映射;您必須將映射下載至本機應用程式資料，並在本機進行參考。
+> 只有在其資訊清單中具有網際網路功能的 UWP/MSIX/sparse 應用程式中，才支援 Http 映射。 桌面非 MSIX/稀疏應用程式不支援 HTTP 映射;您必須將映射下載至本機應用程式資料，並在本機進行參考。
 
 <img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
 
