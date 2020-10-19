@@ -5,12 +5,12 @@ ms.date: 10/12/2020
 ms.topic: article
 keywords: 'windows 10、c #、winrt、cswinrt、投影'
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5c8e39b808fd1a8bc557fd29ba828d33d8dde4
-ms.sourcegitcommit: df4d99f9950655be725afa83f1ee7c3b73dff923
+ms.openlocfilehash: 3116e176c8f156939f075e0a23d1be2352a8ecde
+ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92001394"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171147"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>逐步解說：從 c + +/WinRT 元件產生 .NET 5 投影並散發 NuGet
 
@@ -128,7 +128,16 @@ namespace winrt::SimpleMathComponent::implementation
     - `CsWinRTIncludes`屬性會指定要投影的命名空間。
     - `CsWinRTGeneratedFilesDir`屬性會設定輸出目錄，其中會產生投射中的檔案，我們會在下一節中將其設定為從來源中建立。
 
-4. 儲存並關閉 **SimpleMathProjection .csproj** 檔案。
+4. 本逐步解說的最新 c #/WinRT 版本可能需要指定 Windows 中繼資料。 這將在未來的 c # 版本中修正/Winrt 您可以使用下列其中一種方式來提供：
+
+    - 封裝參考，例如，對 [Microsoft.]( https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts/)。
+    - 使用屬性設定的明確值為 `CsWinRTWindowsMetadata` ：
+
+      ```xml
+      <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+      ```
+
+5. 儲存並關閉 **SimpleMathProjection .csproj** 檔案。
 
 ## <a name="build-projects-out-of-source"></a>從來源建立專案
 
