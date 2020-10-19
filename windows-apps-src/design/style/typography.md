@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bb0a6b48e9a9a01881955ae0ccb65e93b9cf2b6e
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636538"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860105"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 應用程式中的印刷樣式
 
@@ -23,7 +23,7 @@ ms.locfileid: "91636538"
 
 您應該在整個應用程式 UI 中使用單一字型，我們建議您維持 Windows 應用程式的預設字型 **Segoe UI**。 它設計成可維持不同大小和像素密度的最佳可讀性，並能提供輔助系統內容的乾淨、明亮、開放審美觀。
 
-![Segoe UI 字型的範例文字](images/type/segoe-sample.svg)
+![Segoe UI 字型的範例文字。](images/type/segoe-sample.svg)
 
 若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#languages)和[字型](#fonts)以了解我們對 Windows 應用程式的建議使用字型。
 
@@ -41,7 +41,7 @@ ms.locfileid: "91636538"
 
 UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
 
-![不同裝置的檢視距離](images/type/scaling-chart.svg)
+![不同裝置的檢視距離。](images/type/scaling-chart.svg)
 
 因為縮放比例系統的運作方式，您是以有效像素進行設計，而不是實際實體像素，而且您不應根據不同的螢幕大小或解析度來變更字型大小。
 
@@ -62,7 +62,7 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 使用者在掃描頁面時依賴視覺階層：標頭摘要顯示內容，本文提供更多詳細資料。 若要在應用程式中建立清楚的視覺階層，請遵循 Windows 字體坡形。
     :::column-end:::
     :::column:::
-![文字區塊樣式](images/type/type-hierarchy.svg)
+![三行文字的螢幕擷取畫面，其中的字型大小從一行到下一行逐漸變小。](images/type/type-hierarchy.svg)
     :::column-end:::
 :::row-end:::
 
@@ -70,18 +70,13 @@ UWP 應用程式的字型大小會在所有裝置上自動縮放。 此縮放演
 
 Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用者輕鬆閱讀內容。 所有大小都是有效像素，會針對在所有裝置上執行的 UWP 應用程式而最佳化。
 
-![字體坡形](images/type/type-ramp.png)
+![Windows 字體坡形。](images/type/type-ramp.png)
 
 ### <a name="using-the-type-ramp"></a>使用字體坡形
 
 :::row:::
     :::column:::
-您可以存取 XAML [靜態資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)形式的字體坡形層級。 此樣式遵循 `*TextBlockStyle` 命名慣例。
-    :::column-end:::
-    :::column:::
-![文字區塊樣式](images/type/text-block-type-ramp.svg)
-    :::column-end:::
-:::row-end:::
+您可以存取 XAML [靜態資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)形式的字體坡形層級。 此樣式遵循這裡顯示的 `*TextBlockStyle` 命名慣例。
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -92,6 +87,13 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
+    :::column-end:::
+    :::column:::
+![標頭、子標頭、標題、子標題、基底、主體和標題文字樣式的螢幕擷取畫面。](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
+
+
 
 :::row:::
     :::column:::
@@ -133,7 +135,7 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 當文字量超過可用空間時，建議裁剪文字，這是大部分 [UWP 文字控制項](../controls-and-patterns/text-controls.md)的預設行為。
 
-![顯示使用文字裁剪的裝置框架](images/type/clipping.svg)
+![顯示使用文字裁剪的裝置框架。](images/type/clipping.svg)
 
 ```xaml
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>

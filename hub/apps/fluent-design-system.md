@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: 8a05a0a9aeb3a31e76c0510eef70b5ee3036d2f7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216830"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932989"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>適用於 Windows 的 Fluent Design 系統應用程式建立者
 
@@ -69,7 +69,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/thumbnail-size-classes.jpg)
+        ![描述正確中斷點設計的影像。](images/fluent/thumbnail-size-classes.jpg)
     :::column-end:::
     :::column span="2":::
 **正確中斷點的設計**
@@ -82,7 +82,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/rspd-resize.gif)
+        ![描述回應式配置的短片。](images/fluent/rspd-resize.gif)
     :::column-end:::
     :::column span="2":::
 **建立回應式配置**
@@ -95,7 +95,7 @@ Fluent 體驗調整行為和意圖&mdash;它們了解並預期所需的項目。
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/devices.jpg)
+        ![描述裝置頻譜設計的影像。](images/fluent/devices.jpg)
     :::column-end:::
     :::column span="2":::
 **適用於裝置頻譜的設計**
@@ -107,7 +107,7 @@ UWP 應用程式可以在各種不同執行 Windows 的裝置上執行。 這對
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/keyboard-shortcuts.jpg)
+        ![描述如何最佳化正確輸出的影像。](images/fluent/keyboard-shortcuts.jpg)
     :::column-end:::
     :::column span="2":::
 **適用於正確輸入的最佳化**
@@ -127,7 +127,7 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/thumbnail-navview.png)
+        ![描述如何提供正確導覽的影像。](images/fluent/thumbnail-navview.png)
     :::column-end:::
     :::column span="2":::
 **提供適當的瀏覽**
@@ -139,7 +139,7 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/thumbnail-commanding.png)
+        ![描述如何互動的影像。](images/fluent/thumbnail-commanding.png)
     :::column-end:::
     :::column span="2":::
 **互動式**
@@ -151,7 +151,7 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/thumbnail-controls-2.jpg)
+        ![描述如何為作業使用正確控制項的影像。](images/fluent/thumbnail-controls-2.jpg)
     :::column-end:::
     :::column span="2":::
 **對工作使用正確的控制項**
@@ -183,7 +183,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/Nav_Reveal_Animation.gif)
+        ![描述顯示醒目提示的短片。](images/fluent/Nav_Reveal_Animation.gif)
     :::column-end:::
     :::column span="2":::
 **顯示顯目提示**
@@ -193,7 +193,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/traveling-focus-fullscreen-light-rf.gif)
+        ![描述顯示焦點的短片。](images/fluent/traveling-focus-fullscreen-light-rf.gif)
     :::column-end:::
     :::column span="2":::
 **顯示焦點**
@@ -209,7 +209,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/_parallax_v2.gif)
+        ![描述視差捲動的短片。](images/fluent/_parallax_v2.gif)
     :::column-end:::
     :::column span="2":::
 **視差**
@@ -241,7 +241,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/acrylic_lighttheme_base.png)
+        ![描述壓克力層的影像。](images/fluent/acrylic_lighttheme_base.png)
     :::column-end:::
     :::column span="2":::
 **壓克力**
@@ -255,7 +255,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 :::row:::
     :::column:::
-        ![fpo 影像](images/fluent/thumbnail-toolkits.jpg)
+        ![設計工具組與範例頁面的螢幕擷取畫面。](images/fluent/thumbnail-toolkits.jpg)
     :::column-end:::
     :::column span="2":::
 **設計工具組與範例頁面**

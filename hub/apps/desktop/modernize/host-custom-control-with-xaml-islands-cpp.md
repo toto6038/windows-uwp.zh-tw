@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 6cdeee0730a2fe68f671a41ea77b000ab13bc0cb
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 3f12c3d16cabcbe834ca9bb55a437e3f932bbf78
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671557"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933049"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項
 
@@ -377,7 +377,7 @@ ms.locfileid: "91671557"
 
 5. 以滑鼠右鍵按一下 [MyDesktopWin32App] 專案，選取 [屬性]，然後在左窗格中展開 [資訊清單工具] -> [輸入和輸出]。 將 [DPI 感知]  屬性設定為 [以螢幕為基礎的高 DPI 感知]  。 如果您未設定此屬性，可能就會在某些高 DPI 案例中遇到資訊清單設定錯誤。
 
-    ![C/C++ 專案設定](images/xaml-islands/xaml-island-cpp-8.png)
+    ![C/C++ 專案設定的螢幕擷取畫面。](images/xaml-islands/xaml-island-cpp-8.png)
 
 6. 按一下 [確定] 關閉 [屬性頁] 對話方塊。
 

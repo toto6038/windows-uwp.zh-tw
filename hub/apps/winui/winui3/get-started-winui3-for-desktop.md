@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 2b946047602013704b27fb5c5565155d38dbb7f8
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 164ae035d3b9dda24137bcb09dd208e718db0319
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154822"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933099"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3
 
@@ -31,7 +31,7 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
 3. 選取 [已封裝的空白應用程 (WinUI in Desktop)] 專案類型，然後按 [下一步]。
 
-    ![空白應用程式專案範本](images/WinUI-csharp-newproject.png)
+    ![建立新專案精靈的螢幕擷取畫面，其中已醒目提示空白應用程式已封裝 (桌面中的 Win UI) 選項。](images/WinUI-csharp-newproject.png)
 
 4. 輸入專案名稱，視需要選擇任何其他選項，然後按一下 [建立]。
 
@@ -43,15 +43,15 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
     * **專案名稱 (桌面)** ：此專案包含您的應用程式程式碼。 **App.xaml.cs** 程式碼檔案會定義代表您應用程式執行個體的 `Application` 類別，而 **MainWindow.xaml.cs** 程式碼檔案會定義 `MainWindow` 類別來代表您應用程式所顯示的主要視窗。 這些類別衍生自 **Microsoft.UI.Xaml** 命名空間 (由 WinUI 提供) 中的類型。
 
-        ![應用程式專案](images/WinUI-csharp-appproject.png)
+        ![Visual Studio 的螢幕擷取畫面，其中顯示 [方案總管] 窗格和主要 Windows XAML dot CS 檔案的內容。](images/WinUI-csharp-appproject.png)
 
     * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
 
-        ![應用程式專案](images/WinUI-csharp-packageproject.png)
+        ![Visual Studio 的螢幕擷取畫面，其中顯示 [方案總管] 窗格和套件應用程式 x 資訊清單檔案的內容。](images/WinUI-csharp-packageproject.png)
 
 7. 若要將新項目新增至您的應用程式專案，請以滑鼠右鍵按一下 [方案總管] 中的 **專案名稱 (桌面)** 專案節點，然後選取 [新增] -> [新增項目]。 在 [新增項目] 對話方塊中選取 [WinUI] 索引標籤，選擇您要新增的專案，然後按一下 [新增]。 如需可用項目的詳細資訊，請參閱[本節](index.md#item-templates-for-winui-3)。
 
-    ![新增項目](images/WinUI-csharp-newitem.png)
+    ![[新增項目] 對話方塊的螢幕擷取畫面，其中已選取 [已安裝 > Visual C sharp 項目 > Win UI] 並且醒目提示 [空白頁面] 選項。](images/WinUI-csharp-newitem.png)
 
 8. 建立並執行您的解決方案，以確認應用程式可在沒有錯誤的情況下執行。
 
@@ -63,7 +63,7 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
 3. 選取 [已封裝的空白應用程 (WinUI in Desktop)] 專案類型，然後按 [下一步]。
 
-    ![空白應用程式專案範本](images/WinUI-cpp-newproject.png)
+    ![建立新專案精靈的另一個螢幕擷取畫面，其中已醒目提示空白應用程式已封裝 (桌面中的 Win UI) 選項。](images/WinUI-cpp-newproject.png)
 
 4. 輸入專案名稱，視需要選擇任何其他選項，然後按一下 [建立]。
 
@@ -75,11 +75,11 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
     * **專案名稱 (桌面)** ：此專案包含您的應用程式程式碼。 **App.xaml** 和各種 **App** 程式碼檔案會定義代表您應用程式執行個體的 `Application` 類別，而 **MainWindow.xaml** 和各種 **MainWindow** 程式碼檔案會定義 `MainWindow` 類別來代表您應用程式所顯示的主要視窗。 這些類別衍生自 **Microsoft.UI.Xaml** 命名空間 (由 WinUI 提供) 中的類型。
 
-        ![應用程式專案](images/WinUI-cpp-appproject.png)
+        ![Visual Studio 的螢幕擷取畫面，其中顯示 [方案總管] 窗格和主要 Windows XAML 檔案的內容。](images/WinUI-cpp-appproject.png)
 
     * **專案名稱 (封裝)** ：這是 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。 此專案包含您應用程式的[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)，而且是您解決方案預設的啟始專案。
 
-        ![封裝專案](images/WinUI-cpp-packageproject.png)
+        ![Visual Studio 的另一個螢幕擷取畫面，其中顯示 [方案總管] 窗格和套件應用程式 x 資訊清單檔案的內容。](images/WinUI-cpp-packageproject.png)
 
 7. 若要將新項目新增至您的應用程式專案，請以滑鼠右鍵按一下 [方案總管] 中的 **專案名稱 (桌面)** 專案節點，然後選取 [新增] -> [新增項目]。 在 [新增項目] 對話方塊中選取 [WinUI] 索引標籤，選擇您要新增的專案，然後按一下 [新增]。 如需可用項目的詳細資訊，請參閱[本節](index.md#item-templates-for-winui-3)。
 

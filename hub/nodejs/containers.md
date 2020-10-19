@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: a1bd1b0f2916ccf44cc79d83f0335f55cf3863e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bd9b912dfd4b733f57aaacfe6e8f246985e3b4f5
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166622"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933079"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>開始在 Node.js 中使用 Docker 容器
 
@@ -47,7 +47,7 @@ Docker 容器類似於虛擬機器，但不會建立整個虛擬作業系統。 
 
 2. 開啟您剛才下載的 Docker 安裝程式。 安裝精靈會詢問您是否要「使用 Windows 容器，而非 Linux 容器」 - 不要勾選此項，因為我們將使用 Linux 子系統。 Docker 將會安裝於預設 WSL 2 發行版本的受控目錄中，並將包含 Docker 精靈、CLI 和 Compose CLI。
 
-    ![Docker Desktop 啟動](../images/install-docker-1.png)
+    ![[安裝 Docker 桌面] 精靈 [設定] 頁面的螢幕擷取畫面，其中顯示已選取將捷徑新增至桌面選項。](../images/install-docker-1.png)
 
 3. 如果您還沒有 Docker 識別碼，則必須造訪 [https://hub.docker.com/signup](https://hub.docker.com/signup) 進行設定。 您的識別碼必須全部是小寫的英數位元。
 
@@ -55,7 +55,7 @@ Docker 容器類似於虛擬機器，但不會建立整個虛擬作業系統。 
 
 5. 在技術預覽版視窗開啟後，選取 [開始]  以開始在 WSL 2 中執行 Docker 精靈 (背景程序)。 當 WSL 2 Docker 精靈啟動時，系統會自動為其建立 Docker CLI 內容。
 
-    ![Docker Desktop 啟動](../images/start-docker.gif)
+    ![顯示如何啟動 Docker 技術預覽的短片。](../images/start-docker.gif)
 
 6. 若要確認已安裝 Docker並顯示版本號碼，請開啟命令列 (WSL 或 PowerShell) 並輸入：`docker --version`
 

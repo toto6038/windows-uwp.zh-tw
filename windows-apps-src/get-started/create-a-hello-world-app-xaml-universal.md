@@ -6,12 +6,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world, 第一個應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b39efb7aa90499f6d238306ad079f1969907f46
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175252"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860076"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 "Hello, World!" 應用程式 (XAML)
 
@@ -61,11 +61,11 @@ ms.locfileid: "89175252"
 
 5.  [目標版本/最小版本] 對話方塊隨即出現。 在這個教學課程中使用預設設定即可，因此請選取 [確定] 來建立專案。
 
-    ![[方案總管] 視窗](images/win10-cs-02.png)
+    ![新增通用 Windows 專案對話方塊的螢幕擷取畫面。](images/win10-cs-02.png)
 
 6.  當您的新專案開啟時，其檔案會顯示在右邊的 [方案總管] 窗格中。 您可能需要選擇 [方案總管] 索引標籤 (而不是 [屬性] 索引標籤)，才能看到您的檔案。
 
-    ![[方案總管] 視窗](images/win10-cs-03.png)
+    ![已醒目提示 Hello World (通用 Windows) 解決方案的方案總管窗格螢幕擷取畫面。](images/win10-cs-03.png)
 
 雖然 [空白應用程式 (通用 Windows)] 是最基本的範本，它仍然包含許多檔案。 這些檔案對於所有使用 C# 的 UWP app 都是必要的。 您在 Visual Studio 中建立的每個專案都包含這些檔案。
 
@@ -110,15 +110,15 @@ ms.locfileid: "89175252"
 
     您會注意到畫面上半部有一個圖形檢視，而 XAML 程式碼檢視則在下方。 您可以對任一檢視進行變更，但目前我們會使用圖形檢視。
 
-    ![[方案總管] 視窗](images/win10-cs-04.png)
+    ![顯示主頁面 XAML 設計檢視的 Visual Studio 螢幕擷取畫面。](images/win10-cs-04.png)
 
 2.  按一下左邊的垂直 [工具箱] 索引標籤來開啟 UI 控制項清單。 (您可以按一下其標題列中的釘選圖示來讓它保持可見)。
 
-    ![[方案總管] 視窗](images/win10-cs-05.png)
+    ![[工具箱] 窗格的螢幕擷取畫面，其中具有指向釘選圖示的紅色箭頭。](images/win10-cs-05.png)
 
 3.  展開 [通用 XAML 控制項]，然後將 [按鈕] 拖曳到設計畫布的中間。
 
-    ![[方案總管] 視窗](images/win10-cs-06.png)
+    ![[工具箱] 窗格和主頁面 XAML 設計檢視的螢幕擷取畫面，其中顯示在[工具箱] 窗格和主頁面 XAML 設計檢視醒目提示的 [按鈕] 選項。](images/win10-cs-06.png)
 
     如果您看一下 XAML 程式碼視窗，您就會看到那裡也已新增該「按鈕」。
 
@@ -136,7 +136,7 @@ ms.locfileid: "89175252"
 
 請注意設計畫布中顯示的按鈕如何更新成顯示新的文字。
 
-![[方案總管] 視窗](images/win10-cs-07.png)
+![Hello, world 按鈕的螢幕擷取畫面，在按鈕周圍有紅色方塊以及在按鈕後面有程式碼。](images/win10-cs-07.png)
 
 ## <a name="step-3-start-the-app"></a>步驟 3：啟動應用程式
 

@@ -10,16 +10,19 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a35e065a44eb55b84f6b70f5833c8652188a8c9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 867ece1f3517b2b34836dc87ab4e6545ba3d3bbc
+ms.sourcegitcommit: 837ef4b2c2375d023ee85204f72a029f9ec8f4ee
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174642"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079283"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 
 內容連結提供可在文字控制項中嵌入豐富資料的方法，讓使用者不離開應用程式的內容也能尋找和使用有關個人或位置的詳細資訊。
+
+> [!IMPORTANT]
+> Windows 10 版本 1903 之後的 Windows 版本中不提供啟用內容連結的 Windows 功能。 XAML 文字控制項的內容連結在版本 1903 之後將無法運作。
 
 當使用者在 RichEditBox 中的項目開頭加上 @ 符號時，系統會向他們顯示符合該項目的連絡人和/或地點建議清單。 例如，使用者接著選擇某個地點時，這個地點的 ContentLink 將會插入文字中。 當使用者從 RichEditBox 叫用內容連結時，飛出視窗會出現，並顯示地圖以及該地點的其他資訊。
 

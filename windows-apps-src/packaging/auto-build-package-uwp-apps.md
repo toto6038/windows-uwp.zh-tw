@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 32054a30e56102b9c0642392d78ac75b78fb99e9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7f0e1d460ca52c659401bbb291deafa5746b7bb6
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158222"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91933109"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP 應用程式的自動化組建
 
@@ -73,12 +73,12 @@ steps:
 1. 在 Azure Pipelines 中，展開瀏覽窗格中的 [管線]  ，然後按一下 [程式庫]  。
 2. 按一下 [安全檔案]  索引標籤，然後按一下 [+ 安全檔案]  。
 
-    ![如何上傳安全檔案](images/secure-file1.png)
+    ![Azure 的螢幕擷取畫面，其中醒目提示 [程式庫] 選項，顯示 [安全檔案] 頁面。](images/secure-file1.png)
 
 3. 瀏覽至憑證檔案，然後按一下 [確定]  。
 4. 在您上傳憑證之後，請選取其來檢視其屬性。 在 [管線權限]  下，啟用 [授權在所有管線中使用]  的切換。
 
-    ![如何上傳安全檔案](images/secure-file2.png)
+    ![[管線權限] 區段的螢幕擷取畫面，其中已選取 [授權在所有管線中使用] 選項。](images/secure-file2.png)
 
 5. 如果憑證中的私密金鑰有密碼，建議您將密碼儲存在 [Azure Key Vault](/azure/key-vault/about-keys-secrets-and-certificates)，然後將密碼連結到[變數群組](/azure/devops/pipelines/library/variable-groups)。 您可以使用變數來存取管線中的密碼。 請注意，只有私密金鑰才支援密碼；目前不支援使用本身受到密碼保護的憑證檔案。
 

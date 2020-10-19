@@ -6,12 +6,12 @@ ms.date: 04/28/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e70c76f3ed659a46dd9834442049849dd3b7761
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1bf42e75ed8bb6d22fe8d4829aa6df32fa130230
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175522"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860042"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用筆刷來繪製背景、前景和外框
 
@@ -106,7 +106,7 @@ ms.locfileid: "89175522"
 
 在漸層停駐點之間每個點的色彩，都是以線性插補成由兩個連結漸層停駐點所指定的色彩結合。 下圖強調顯示前述範例中的漸層停駐點。 圓圈標示漸層停駐點的位置，虛線則是漸層軸。
 
-![漸層停駐點](images/linear-gradients-stops.png)
+![描述漸層停駐點 1 到 4 的圖表，從圖表的左上角開始並且向下傾斜到右側，直到圖表的右下角。](images/linear-gradients-stops.png)
 
 由兩個周框漸層停駐點所指定的色彩組合 
 
@@ -160,7 +160,7 @@ ms.locfileid: "89175522"
 
 在漸層停駐點之間每個點的色彩，都是以放射狀插補成由兩個連結漸層停駐點所指定的色彩結合。 下圖強調顯示前述範例中的漸層停駐點。 
 
-![漸層停駐點](images/radial-gradient.png)
+![放射狀漸層的螢幕擷取畫面。](images/radial-gradient.png)
 
 漸層停駐點 
 

@@ -7,12 +7,12 @@ keywords: windows 10, uwp
 ms.author: jimwalk
 author: jwmsft
 ms.localizationpriority: medium
-ms.openlocfilehash: 33a5f0bc31a8fe1421f7ab0de5f229d2feb77915
-ms.sourcegitcommit: ef723e3d6b1b67213c78da696838a920c66d5d30
+ms.openlocfilehash: 8fc9b3ea0f085a12be769e9733b3f92b2700dc16
+ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82730131"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91932939"
 ---
 # <a name="using-the-visual-layer-in-desktop-apps"></a>在傳統型應用程式中使用視覺層
 
@@ -22,7 +22,7 @@ ms.locfileid: "82730131"
 
 視覺層會針對圖形、效果和動畫提供高效能、保留模式的 API。 這是跨 Windows 10 裝置的 UI 基礎。 UWP XAML 控制項是以視覺層為基礎，可實現 [Fluent Design System](/windows/uwp/design/fluent-design-system/index) 的許多層面，例如光線、深度、動作、材質和規模。
 
-![使用視覺層建立的使用者介面](images/visual-layer-interop/pull-to-animate.gif)
+![顯示使用視覺層所建立使用者介面的短片。](images/visual-layer-interop/pull-to-animate.gif)
 
 > _使用視覺層建立的使用者介面_
 
@@ -54,7 +54,7 @@ ms.locfileid: "82730131"
 
 [組合動畫](/windows/uwp/composition/composition-animation)可直接在 Compositor 程序中執行，與 UI 執行緒無關。 這可確保平滑和規模，讓您可以執行大量的並行、明確動畫。 除了熟悉的 KeyFrame 動畫用來驅動一段時間的屬性變更之外，您還可使用運算式來設定不同屬性之間的數學關聯性，包括使用者輸入。 輸入驅動的動畫可讓您建立可動態和流暢地回應使用者輸入的 UI，進而導致更高的使用者參與。
 
-![使用視覺層建立的使用者介面](images/visual-layer-interop/swipe-scroller.gif)
+![使用視覺層所建立另一個使用者介面的短片。](images/visual-layer-interop/swipe-scroller.gif)
 
 > _[Windows UI 組合範例庫](https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery)中所示範的動作。_
 

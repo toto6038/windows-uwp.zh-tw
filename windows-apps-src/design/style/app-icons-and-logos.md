@@ -1,5 +1,5 @@
 ---
-Description: 如何在 [開始] 功能表、應用程式磚、工作列、Microsoft Store 等中建立代表您的應用程式的應用程式圖示/標誌。
+description: 如何在 [開始] 功能表、應用程式磚、工作列、Microsoft Store 等中建立代表您的應用程式的應用程式圖示/標誌。
 title: 應用程式圖示及標誌
 template: detail.hbs
 ms.date: 09/24/2020
@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1e313fe0e51ed77d416f782e40aee9dee81796ae
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 4e908cbad1fb0b70fe96af50917e8b895fdda90d
+ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636648"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91860128"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -141,7 +141,7 @@ Visual Studio 提供了一個非常有用的工具來管理名為**資訊清單�
             Visual Studio 顯示資訊清單設計工具。
     :::column-end:::
     :::column:::
-            ![[視覺資產] 索引標籤](images/icons/vs-manfiest-designer.png)
+            ![資訊清單設計工具的螢幕擷取畫面，顯示 [應用程式] 索引標籤。](images/icons/vs-manfiest-designer.png)
     :::column-end:::
 :::row-end:::    
 :::row:::
@@ -149,7 +149,7 @@ Visual Studio 提供了一個非常有用的工具來管理名為**資訊清單�
         3. 按一下 [視覺資產]  索引標籤。
     :::column-end:::
     :::column:::
-        ![[視覺資產] 索引標籤](images/icons/vs-manfiest-designer-visual-assets.png)
+        ![資訊清單設計工具的螢幕擷取畫面，顯示 [視覺資產] 索引標籤。](images/icons/vs-manfiest-designer-visual-assets.png)
     :::column-end:::
 :::row-end:::        
 

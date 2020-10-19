@@ -2,16 +2,16 @@
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 建立您的第一個應用程式
 description: 使用您最愛的程式設計語言，建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
-ms.date: 01/25/2017
+ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: dba3541c5c7e942b4d157d5d7a331f2cb6c93c38
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7a5491ef0e57399c9465697f933aa8fff92664cd
+ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158902"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92011370"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個應用程式
 
@@ -35,7 +35,7 @@ ms.locfileid: "89158902"
 
 運用您在標準 C++ 中的程式設計專長，使用 C++/WinRT 搭配可延伸應用程式標記語言 (XAML) 來建置應用程式。
 
-* [使用 C++/WinRT 來建立 "Hello, World!" 應用程式](./create-a-basic-windows-10-app-in-cppwinrt.md)
+* [使用 C++/WinRT 來建立 "Hello, World!" 應用程式](create-a-basic-windows-10-app-in-cppwinrt.md)
 
 深入了解 C++/WinRT。
 
@@ -52,32 +52,16 @@ ms.locfileid: "89158902"
 * [適用於 UWP 應用程式的 C++](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
 * [適用於傳統型應用程式的 C++](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
-## <a name="javascript-and-html"></a>JavaScript 和 HTML
-
-利用您的 Web 技能，使用 HTML5、CSS3 和 JavaScript 來建置應用程式。
-
-* [使用 HTML 和 JavaScript 建立 "Hello, world" 應用程式](create-a-hello-world-app-js-uwp.md)
-
-將您的 JavaScript 和 HTML 技能擴展到 UWP 之外以建立 Web 應用程式，或在網站上透過 WebVR 探索虛擬實境。
-
-* [Microsoft Edge 開發人員文件](/microsoft-edge/)
-* [將 WebVR 與 Microsoft Edge 搭配使用](/microsoft-edge/webvr/)
-
-Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，並在 Microsoft Store 上推廣。
-
-* [託管的 Web 應用程式](https://developer.microsoft.com/windows/pwa)
-* [將您的 Web 應用程式轉換成 UWP 應用程式](/microsoft-edge/progressive-web-apps-chromium/)
-
 ## <a name="next-steps"></a>接下來的步驟
 
 當您準備好要嘗試比 "Hello, World!" 更有趣的內容時，請嘗試下列教學課程。
 
 * [教學課程：建立使用者介面](../design/basics/xaml-basics-ui.md)
-* [適用於 Microsoft Store 的簡單 2D UWP 遊戲，以 C# 和 MonoGame 撰寫](get-started-tutorial-game-mg2d.md)
+* [Microsoft Learn 上的 Windows 應用程式](https://docs.microsoft.com/learn/browse/?products=windows)
 
 ## <a name="see-also"></a>另請參閱
 
 * [開始撰寫程式碼](create-uwp-apps.md)
 * [什麼是 UWP 應用程式？](universal-application-platform-guide.md)
-* [開始設定](get-set-up.md)
-* [註冊 Windows 帳戶](sign-up.md)
+* [開始設定](/windows/apps/get-started/get-set-up.md)
+* [註冊 Windows 帳戶](/windows/apps/get-started/sign-up.md)
