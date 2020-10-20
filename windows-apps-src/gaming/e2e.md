@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: f90e0e87119bbc3bd5d2c313c18b2c940e205469
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c6cae9e2416eb992815f098649d6b02ee472da14
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220361"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192968"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -96,12 +96,12 @@ ms.locfileid: "91220361"
     <tr>
         <td>Mixer Interactive 文件</td>
         <td><a href="https://dev.mixer.com/reference/interactive/index.html">為遊戲新增互動性</a></td>
-    </tr>        
+    </tr>
 </table>
 
 ### <a name="partner-center"></a>合作夥伴中心
 
-[在合作夥伴中心中註冊開發人員帳戶](https://developer.microsoft.com/store/register) 是發佈 Windows 遊戲的第一步。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交到 Microsoft Store。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。 
+[在合作夥伴中心中註冊開發人員帳戶](https://developer.microsoft.com/store/register) 是發佈 Windows 遊戲的第一步。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交到 Microsoft Store。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。
 
 Microsoft 也提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 在註冊合作夥伴中心帳戶之前，建議您先查看是否有任何最適合您的帳戶。 如需詳細資訊，請移至[開發人員計畫](#developer-programs)
 
@@ -226,7 +226,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     <tr>
         <td>MonoGame 2D UWP 遊戲範例</td>
         <td><a href="../get-started/get-started-tutorial-game-mg2d.md">使用 MonoGame 2D 建立 UWP 遊戲</a></td>
-    </tr>      
+    </tr>
 </table>
 
 ### <a name="developer-forums"></a>開發人員論壇
@@ -295,7 +295,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Somasegar 開發人員工具部落格</td>
-        <td><a href="https://devblogs.microsoft.com/somasegar/">Somasegar 部落格</a></td>
+        <td><a href="https://devblogs.microsoft.com/somasegar/">Somasegar 的 blog</a></td>
     </tr>
     <tr>
         <td>DirectX 開發人員部落格</td>
@@ -386,7 +386,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
 
 ### <a name="choosing-your-graphics-technology-and-programming-language"></a>選擇您的圖形技術與程式設計語言
 
-有數種程式設計語言與圖形技術可在 Windows 10 遊戲中使用。 您可以依據您正在開發的遊戲類型、開發工作室的經驗與喜好，以及遊戲的特定功能需求來選擇。 您將會使用 C#、C++ 或 JavaScript？ DirectX、XAML 或 HTML5？
+有數種程式設計語言與圖形技術可在 Windows 10 遊戲中使用。 您所採取的路徑取決於您所開發的遊戲類型、您的開發 studio 體驗和喜好設定，以及遊戲的特定功能需求。 您將會使用 C#、C++ 或 JavaScript？ DirectX、XAML 或 HTML5？
 
 #### <a name="directx"></a>DirectX
 
@@ -394,7 +394,7 @@ Microsoft DirectX 是適用於高效能 2D 與 3D 圖形與多媒體的選擇。
 
 DirectX 12 比任何之前的版本都更快速且更有效率。 Direct3D 12 可提供更豐富的場景、更多物件、更複雜得效果，以及在 Windows 10 電腦和 Xbox One 上充分運用現代的 GPU 硬體。
 
-如果您想要使用熟悉的 Direct3D 11 圖形管線，您仍然可以從 Direct3D 11.3 中加入的新轉譯與最佳化功能中獲益。 而且如果您正嘗試且確實是使用 Win32 的傳統型 Windows API 開發人員，您仍然可以在 Windows 10 中使用該選項。
+如果您想要使用 Direct3D 11 的熟悉圖形管線，您仍然可以從新增至 Direct3D 11.3 的新轉譯和優化功能中獲益。 而且，如果您是在 Win32 中具有根的已試用桌面 Windows API 開發人員，您仍然可以在 Windows 10 中使用該選項。
 
 DirectX 的廣泛功能與深度的平台整合可為要求最嚴苛的遊戲提供所需的強大功能與效能。
 
@@ -427,7 +427,7 @@ DirectX 的廣泛功能與深度的平台整合可為要求最嚴苛的遊戲提
 
 #### <a name="xaml"></a>XAML
 
-XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例如動畫、腳本、資料繫結、可調整的向量式圖形、動態調整大小及場景圖形。 XAML 非常適用於遊戲 UI、功能表、精靈及 2D 圖形。 為了簡化 UI 版面配置，XAML 與設計及開發工具相容，例如 Expression Blend 與 Microsoft Visual Studio。 XAML 經常與 C# 搭配使用，但是如果您偏好使用 C++ 語言，或是您的遊戲對 CPU 的要求較高，那麼 C++ 也是一個很好的選擇。
+XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例如動畫、腳本、資料繫結、可調整的向量式圖形、動態調整大小及場景圖形。 XAML 非常適用於遊戲 UI、功能表、精靈及 2D 圖形。 為了簡化 UI 版面配置，XAML 與設計及開發工具相容，例如 Expression Blend 與 Microsoft Visual Studio。 XAML 通常搭配 c # 使用，但如果這是您慣用的語言，或您的遊戲有高 CPU 需求，則 c + + 也是不錯的選擇。
 
 <table>
     <colgroup>
@@ -462,8 +462,8 @@ XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例�
         <td><a href="https://www.w3.org/TR/html5/">HTML5</a></td>
     </tr>
 </table>
- 
-#### 結合簡報技術
+
+#### <a name="combining-presentation-technologies"></a>結合呈現技術
 
 Microsoft DirectX Graphics Infrastructure (DXGI) 可提供跨多種圖形技術的互通性與相容性。 針對高效能圖形，您可以結合 XAML 與 DirectX，將 XAML 用於功能表與其他簡單的 UI，然後將 DirectX 用於轉譯複雜的 2D 與 3D 場景。 DXGI 也提供 Direct2D、Direct3D、DirectWrite、DirectCompute 及 Microsoft Media Foundation 之間的相容性。
 
@@ -481,10 +481,10 @@ Microsoft DirectX Graphics Infrastructure (DXGI) 可提供跨多種圖形技術�
         <td><a href="directx-and-xaml-interop.md">DirectX 與 XAML 互通性</a></td>
     </tr>
 </table>
- 
-#### C++
 
-C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、相容性及平台存取的強大效能。 C++/CX 可讓您很容易地使用 Windows 10 中所有優越的遊戲功能，包括 DirectX 與 Xbox Live。 您也可以重複使用現有的 C++ 程式碼與程式庫。 C++/CX 可建立快速、原生，且不會因收集廢棄項目而產生額外負荷的程式碼，所以您的城市可以擁有優越的效能與低耗電量，進而延長電池使用時間。 請將 C++/CX 與 DirectX 或 XAML 搭配使用，或建立將兩者結合使用的遊戲。
+#### <a name="c"></a>C++
+
+C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、相容性及平台存取的強大效能。 C++/CX 可讓您很容易地使用 Windows 10 中所有優越的遊戲功能，包括 DirectX 與 Xbox Live。 您也可以重複使用現有的 C++ 程式碼與程式庫。 C + +/CX 會建立快速、原生程式碼，而不會造成垃圾收集的負擔，因此您的遊戲可以有絕佳的效能和低耗電量，進而導致電池壽命變長。 請將 C++/CX 與 DirectX 或 XAML 搭配使用，或建立將兩者結合使用的遊戲。
 
 <table>
     <colgroup>
@@ -500,8 +500,8 @@ C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、�
         <td><a href="/cpp/visual-cpp-in-visual-studio">Visual Studio 2019 中的 Visual C++</a></td>
     </tr>
 </table>
- 
-#### C#
+
+#### <a name="c"></a>C#
 
 C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向的新式、創新語言。 C# 可讓您快速進行開發，同時保有 C 式語言的熟悉性與運算式表示方式。 C# 雖然容易使用，但它也有許多先進的語言功能，例如多型、委派、關閉、Iterator 方法、共變數，及 Language-Integrated Query (LINQ) 運算式。 如果您的目標是 XAML、想要快速開始開發您的遊戲，或之前有使用過 C# 的經驗，C# 就會是您的最佳選擇。 C# 主要是與 XAML 搭配使用，因此如果您想要使用 DirectX，請改為選擇 C++，或將遊戲的部分內容撰寫成與 DirectX 互動的 C++ 元件。 或是考慮使用 [Win2D](https://github.com/Microsoft/Win2D)，這是一種適用於 C# 與 C++ 的直接模式 Direct2D 圖形程式庫。
 
@@ -515,12 +515,12 @@ C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向�
         <td><a href="/dotnet/articles/csharp/csharp">C # 語言參考</a></td>
     </tr>
 </table>
- 
-#### JAVAscript
+
+#### <a name="javascript"></a>JavaScript
 
 JavaScript 是一種動態指令碼語言，廣泛地使用在現代化網站與豐富型用戶端應用程式中。
 
-Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物件導向之 JavaScript 類別的方法與屬性) 存取 Universal Windows Platform 的強大功能。 如果您是在 Web 開發環境中，且已經很熟悉 JavaScript，或想要使用 HTML5、CSS、WinJS 或 JavaScript 程式庫，JavaScript 是您的遊戲適用的好選擇。 如果您的目標是 DirectX 或 XAML，請改為選擇 C# 或 C++/CX。
+Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物件導向之 JavaScript 類別的方法與屬性) 存取 Universal Windows Platform 的強大功能。 如果您是從 網頁程式開發環境、已經熟悉 JavaScript，或是想要使用 HTML5、CSS、WinJS 或 JavaScript 程式庫，則 JavaScript 是您遊戲的理想選擇。 如果您的目標是 DirectX 或 XAML，請改為選擇 c # 或 c + +/CX。
 
 <table>
     <colgroup>
@@ -535,7 +535,7 @@ Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物�
 
 #### <a name="use-windows-runtime-components-to-combine-languages"></a>使用 Windows 執行階段元件來結合語言
 
-有了「通用 Windows 平台」，結合以不同語言撰寫的元件就變得相當簡單。 以 c + +、c # 或 Visual Basic 建立 Windows 執行階段元件，然後從 JavaScript、c #、c + + 或 Visual Basic 呼叫這些元件。 這是以您選擇的語言為遊戲的某些部分撰寫程式碼的絕佳方式。 元件也可以讓您取用只以特定語言提供的外部程式庫，以及使用您已經撰寫完成的舊有程式碼。
+有了通用 Windows 平臺，您可以輕鬆地結合以不同語言撰寫的元件。 以 c + +、c # 或 Visual Basic 建立 Windows 執行階段元件，然後從 JavaScript、c #、c + + 或 Visual Basic 呼叫這些元件。 這是以您選擇的語言為遊戲的某些部分撰寫程式碼的絕佳方式。 元件也可讓您使用僅適用于特定語言的外部程式庫，並使用您已撰寫的舊版程式碼。
 
 <table>
     <colgroup>
@@ -644,8 +644,8 @@ PlayFab 現在是 Microsoft 家庭成員，它是直播遊戲的完整後端平�
         <td><a href="https://community.playfab.com/index.html">PlayFab 論壇</a></td>
     </tr>
 </table>
- 
-#### Unity
+
+#### <a name="unity"></a>Unity
 
 Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲及 App。 它可讓您快速實現您的創意，並傳遞內容到幾乎任何媒體或裝置。
 
@@ -690,7 +690,7 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
     </tr>
     <tr>
         <td>疑難排解有關 .NET API 遺失組件參考</td>
-        <td><a href="/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Unity 和 UWP 中遺失 .NET API</a></td>
+        <td><a href="/windows/uwp/gaming/missing-dot-net-apis-in-unity-and-uwp">Unity 和 UWP 中缺少 .NET Api</a></td>
     </tr>
     <tr>
         <td>將您的 Unity 遊戲發行為通用 Windows 平台 app (影片)</td>
@@ -705,10 +705,10 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
         <td><a href="https://www.youtube.com/playlist?list=PLReL099Y5nRfseAg0k1SJOlpqdcsDs8Em">搭配 Visual Studio 2015 使用 Unity</a></td>
     </tr>
 </table>
- 
-#### Havok
 
-Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動與沉浸式情境層級。 Havok 能夠實現極逼真的物理效果、互動式模擬及令人驚豔的場景。 2015.1 版和更新版本正式在 x86、64 位元和 ARM 的 Visual Studio 2015 中支援 UWP。
+#### <a name="havok"></a>Havok
+
+Havok 的工具和技術模組套件，可協助遊戲創作者觸及新的互動和深度層級。 Havok 能夠實現極逼真的物理效果、互動式模擬及令人驚豔的場景。 2015.1 版和更新版本正式在 x86、64 位元和 ARM 的 Visual Studio 2015 中支援 UWP。
 
 <table>
     <colgroup>
@@ -728,8 +728,8 @@ Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動�
         <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
 </table>
- 
-#### MonoGame
+
+#### <a name="monogame"></a>MonoGame
 
 MonoGame 是開放原始碼的跨平台遊戲開發架構，最初是以 Microsoft 的 XNA Framework 4.0 為基礎。 Monogame 目前支援 Windows、Windows Phone 和 Xbox，以及 Linux、macOS、iOS、Android 與數種其他平台。
 
@@ -753,7 +753,7 @@ MonoGame 是開放原始碼的跨平台遊戲開發架構，最初是以 Microso
     <tr>
         <td>MonoGame 2D UWP 遊戲範例</td>
         <td><a href="../get-started/get-started-tutorial-game-mg2d.md">使用 MonoGame 2D 建立 UWP 遊戲</a></td>
-    </tr>    
+    </tr>
 </table>
 
 #### <a name="cocos2d"></a>Cocos2d
@@ -826,7 +826,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     <tr>
         <td>使用 BabylonJS 建置跨平台 WebGL 遊戲</td>
         <td><a href="https://www.smashingmagazine.com/2016/07/babylon-js-building-sponza-a-cross-platform-webgl-game/">使用 BabylonJS 開發跨平台遊戲</a></td>
-    </tr>    
+    </tr>
 </table>
 
 ### <a name="porting-your-game"></a>移植您的遊戲
@@ -840,7 +840,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </colgroup>
     <tr>
         <td>將 Windows 8 應用程式移植到通用 Windows 平台 app</td>
-        <td><a href="/windows/uwp/porting/w8x-to-uwp-root">從 Windows Runtime 8.x 移至 UWP</a></td>
+        <td><a href="/windows/uwp/porting/w8x-to-uwp-root">從 Windows 執行階段8.x 移至 UWP</a></td>
     </tr>
     <tr>
         <td>將 Windows 8 應用程式移植到通用 Windows 平台 app (影片)</td>
@@ -852,7 +852,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>將 Silverlight 應用程式移植到通用 Windows 平台 app</td>
-        <td><a href="/windows/uwp/porting/wpsl-to-uwp-root">從 Windows Phone Silverlight 移到 UWP</a></td>
+        <td><a href="/windows/uwp/porting/wpsl-to-uwp-root">從 Windows Phone Silverlight 移至 UWP</a></td>
     </tr>
     <tr>
         <td>將 XAML 或 Silverlight 移植到通用 Windows 平台 app (影片)</td>
@@ -908,8 +908,8 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
         <td><a href="/windows/uwp/get-started/universal-application-platform-guide">UWP 應用程式指南</a></td>
     </tr>
 </table>
- 
-### 開始使用 UWP 開發
+
+### <a name="getting-started-with-uwp-development"></a>UWP 開發入門
 
 設定並準備好開發通用 Windows 平台 app 是相當快速且輕鬆的程序。 下列指南將引導您逐步完成這個程序。
 
@@ -996,8 +996,8 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
         <td><a href="/uwp/win32-and-com/alternatives-to-windows-apis-uwp">通用 Windows 平台 (UWP) app 中 Windows API 的替代方法</a></td>
     </tr>
 </table>
- 
-### 進程存留期管理
+
+### <a name="process-lifetime-management"></a>處理程序生命週期管理
 
 處理程序生命週期管理 (或應用程式週期) 說明通用 Windows 平台 app 可經歷轉換的各種啟用狀態。 您的遊戲可以被啟用、暫停、繼續或終止，並且可以透過各種方式經歷這些狀態的轉換。
 
@@ -1012,11 +1012,11 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </tr>
     <tr>
         <td>使用 Microsoft Visual Studio 觸發 App 轉換</td>
-        <td><a href="/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015">如何在 Visual Studio 中觸發 UWP app 的暫停、繼續及背景事件</a></td>
+        <td><a href="/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio">如何在 Visual Studio 中觸發 UWP app 的暫停、繼續及背景事件</a></td>
     </tr>
 </table>
- 
-### 設計遊戲 UX
+
+### <a name="designing-game-ux"></a>設計遊戲 UX
 
 出色的遊戲起源於充滿靈感的設計。
 
@@ -1044,10 +1044,10 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     <tr>
         <td>以多種裝置尺寸規格為目標 (影片)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">針對 Windows Core 世界設計遊戲</a></td>
-    </tr>   
+    </tr>
 </table>
- 
-#### 色彩指導方針和調色板
+
+#### <a name="color-guideline-and-palette"></a>色彩指南與調色盤
 
 在您的遊戲中遵循一致的色彩指南可增加美學質感、有助於瀏覽，且可成為協助遊戲玩家使用功能表與 HUD 功能的強大工具。 讓遊戲元素 (例如警告、損毀、XP 及成就) 採用一致的色調可使 UI 更清晰，而降低使用明確標籤的需求。
 
@@ -1079,7 +1079,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
 
 #### <a name="ui-map"></a>UI 對應
 
-UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 UI 對應有助於讓所有相關的專案關係人了解遊戲的介面與導覽路徑，而可以在開發週期中早日揭露潛在的障礙與無法解決的問題。
+UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 UI 對應可協助所有相關專案關係人瞭解遊戲的介面和導覽路徑，而且可能會在開發週期初期公開潛在的障礙和失效的結束。
 
 <table>
     <colgroup>
@@ -1168,7 +1168,7 @@ DirectX 遊戲開發的指南與參考資料。
 
 #### <a name="learning-direct3d-12"></a>了解 Direct3D 12
 
-了解 Direct3D 12 中的變更，和如何使用 Direct3D 12 開始進行程式設計。 
+了解 Direct3D 12 中的變更，和如何使用 Direct3D 12 開始進行程式設計。
 
 <table>
     <colgroup>
@@ -1200,8 +1200,8 @@ DirectX 遊戲開發的指南與參考資料。
         <td><a href="/windows/desktop/direct3d12/memory-management">Direct3D 12 中的記憶體管理</a></td>
     </tr>
 </table>
- 
-#### DirectX 工具套件和程式庫
+
+#### <a name="directx-tool-kit-and-libraries"></a>DirectX 工具組和程式庫
 
 DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程式庫、UVAtlas 程式庫，以及 DirectXMath 程式庫能提供紋理、網格、精靈及其他公用程式功能與協助程式類別來進行 DirectX 開發。 這些程式庫能幫您節省開發時間與精力。
 
@@ -1267,7 +1267,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
     </tr>
 </table>
 
-## <a name="production"></a>生產
+## <a name="production"></a>Production
 
 您的工作室現在已完全進入並移到製作階段，工作已散佈至整個團隊。 您正在潤飾、重構及延伸原型，以將它精心製作成完整的遊戲。
 
@@ -1325,7 +1325,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
     </tr>
     <tr>
         <td>取用附加元件</td>
-        <td><a href="/windows/uwp/monetize/enable-consumable-in-app-product-purchases">啟用消費性應用程式內產品購買</a></td>
+        <td><a href="/windows/uwp/monetize/enable-consumable-in-app-product-purchases">啟用取用應用程式內產品購買</a></td>
     </tr>
     <tr>
         <td>附加元件詳細資料和提交</td>
@@ -1336,12 +1336,12 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
         <td><a href="/windows/uwp/publish/iap-acquisitions-report">附加元件下載數報告</a></td>
     </tr>
 </table>
- 
-### 調試、效能優化和監視
+
+### <a name="debugging-performance-optimization-and-monitoring"></a>偵錯、效能最佳化及監視
 
 若要將效能最佳化，請完整利用目前硬體的功能，藉此充分利用 Windows 10 中的遊戲模式為玩家提供最佳的遊戲體驗。
 
-Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入的 Windows 作業系統與應用程式效能分析結果。 對於監視記憶體使用狀況及改進遊戲效能而言，此工具特別有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 之中。 此工具組包含兩項獨立工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 ProcDump 命令列公用程式是 [Windows Sysinternals](/sysinternals/) 的一部分，可監視 CPU 尖峰並在遊戲當機時產生傾印檔案。 
+Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入的 Windows 作業系統與應用程式效能分析結果。 對於監視記憶體使用狀況及改進遊戲效能而言，此工具特別有用。 Windows Performance Toolkit 包含在 Windows 10 SDK 和 Windows ADK 之中。 此工具組包含兩項獨立工具：Windows Performance Recorder (WPR) 和 Windows Performance Analyzer (WPA)。 ProcDump 命令列公用程式是 [Windows Sysinternals](/sysinternals/) 的一部分，可監視 CPU 尖峰並在遊戲當機時產生傾印檔案。
 
 <table>
     <colgroup>
@@ -1445,12 +1445,12 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <tr>
         <td>使用 DirectX 建立和設定進階的色彩</td>
         <td><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/D2DAdvancedColorImages">Direct2D 進階的色彩影像轉譯範例</a></td>
-    </tr>   
+    </tr>
 </table>
 
 ### <a name="globalization-and-localization"></a>全球化和當地語系化
 
-開發 Windows 上全球適用的遊戲，並了解 Microsoft 暢銷產品中的國際功能。
+開發適用于 Windows 平臺的全球遊戲，並瞭解 Microsoft 最重要的產品內建的國際功能。
 
 <table>
     <colgroup>
@@ -1491,7 +1491,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <tr>
         <td>使用 Azure Active Directory (AAD) 將使用者新增至您的合作夥伴中心帳戶</td>
         <td><a href="/windows/uwp/publish/manage-account-users">管理帳戶使用者</a></td>
-    </tr>   
+    </tr>
     <tr>
         <td>為遊戲分級 (部落格文章)</td>
         <td><a href="https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/">使用 IARC 系統指派年齡分級的單一工作流程</a></td>
@@ -1536,7 +1536,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <tr>
         <td>使用 SignTool 數位簽署您的檔案</td>
         <td><a href="/windows/desktop/SecCrypto/signtool">使用 SignTool 簽署檔案及驗證檔案中的簽章</a></td>
-    </tr>    
+    </tr>
     <tr>
         <td>上傳及設定您遊戲的版本</td>
         <td><a href="/windows/uwp/publish/upload-app-packages">上傳應用程式套件</a></td>
@@ -1609,8 +1609,8 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
         <td><a href="https://developer.microsoft.com/store/promote-your-apps">推銷您的應用程式</a></td>
     </tr>
 </table>
- 
-### Visual Studio Application Insights
+
+### <a name="visual-studio-application-insights"></a>Visual Studio Application Insights
 
 Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙測及使用狀況分析。 Application Insights 可協助您在發行遊戲之後偵測及解決問題、持續監視及改善使用狀況，以及了解玩家與您遊戲的持續互動情況。 Application Insights 的運作方式是將 SDK 加入至您的應用程式，並將遙測資料傳送至 [Azure 入口網站](https://portal.azure.com/)。
 
@@ -1647,7 +1647,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
     <tr>
         <td>了解如何使用適用於 Google Analytics 的 Windows SDK (影片)</td>
         <td><a href="https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Creators-Update/Getting-started-with-the-Windows-SDK-for-Google-Analytics">開始使用適用於 Google Analytics 的 Windows SDK</a></td>
-    </tr>    
+    </tr>
     <tr>
         <td>使用 Facebook 應用程式安裝廣告向 Facebook 使用者宣傳您的遊戲</td>
         <td><a href="https://github.com/Microsoft/winsdkfb">取得適用於 Facebook 的 Windows SDK</a></td>
@@ -1683,7 +1683,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
 
 ## <a name="adding-xbox-live-to-your-game"></a>將 Xbox Live 新增到您的遊戲
 
-Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 開發人員可存取能夠增加他們遊戲的對象的 Xbox Live 功能，包括 Xbox Live 目前狀態、排行榜、雲端儲存、遊戲中心、俱樂部、派對交談、遊戲 DVR 等。
+Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 開發人員可獲得 Xbox Live 功能的存取權，這些功能可茁壯成長其遊戲物件，包括 Xbox Live 狀態、排行榜、雲端儲存、遊戲中樞、俱樂部、合作物件聊天、遊戲 DVR 等等。
 
 > [!Note]
 > 如果您想要開發 Xbox Live 支援的遊戲，則有數個選項可供您使用。 如需各種計畫的相關資訊，請參閱[開發人員計畫概觀](/gaming/xbox-live/developer-program-overview)。
@@ -1745,7 +1745,7 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     <tr>
         <td>了解如何在 UWP 遊戲中整合跨平台 Xbox Live 體驗 (影片)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-005">Xbox Live 創作者計畫</a></td>
-    </tr>  
+    </tr>
 </table>
 
 ### <a name="for-managed-partners-and-developers-in-the-idxbox-program"></a>對於 ID@Xbox 計劃中的受管理合作夥伴與開發人員
@@ -1778,7 +1778,7 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     <tr>
         <td>範例</td>
         <td><a href="https://github.com/Microsoft/xbox-live-samples/tree/master/Samples/ID%40XboxSDK">開發人員的程式碼範例 ID@Xbox</a></td>
-    </tr>  
+    </tr>
     <tr>
         <td>Xbox Live 遊戲開發概觀 (影片)</td>
         <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">使用適用於 Windows 10 的 Xbox Live 進行開發</a></td>

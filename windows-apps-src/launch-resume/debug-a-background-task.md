@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: e7d008a6956c3acd22dcb99e6bf4e1cda1442545
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 5696d3c5ffb28ee8dc6ebd51e678894ee78ae420
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750164"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192978"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
@@ -91,12 +91,12 @@ ms.locfileid: "91750164"
 
 ## <a name="background-tasks-and-visual-studio-package-deployment"></a>背景工作和 Visual Studio 套件部署
 
-如果使用背景工作的應用程式是利用 Visual Studio 所部署，且隨後更新了在資訊清單設計工具中指定的版本 (主要和/或次要)，則後續透過 Visual Studio 重新部署應用程式時，可能會使應用程式的背景工作停止。 這可以透過下列方式來修正：
+如果使用 Visual Studio 部署使用背景工作的應用程式，且資訊清單設計工具中指定的 (主要和/或次要) 版本接著更新，則使用 Visual Studio 重新部署應用程式可能會導致應用程式的背景工作停止。 這可以透過下列方式來修正：
 
 -   執行與套件一起產生的指令碼，使用 Windows PowerShell (而非 Visual Studio) 來部署已更新的應用程式。
--   如果您已經使用 Visual Studio 部署應用程式，而應用程式的背景工作現在停止了，請重新啟動或登出/登入，讓應用程式的背景工作再次運作。
+-   如果您已經使用 Visual Studio 部署應用程式，且其背景工作現在已停止，請重新開機或登出/登入，以讓應用程式的背景工作再次運作。
 -   您可以選取 [永遠重新安裝我的封裝] 偵錯選項，避免在 C# 專案中發生這個狀況。
--   等待 app 準備就緒再進行最終部署，以遞增套件版本 (不要在偵錯期間變更)。
+-   等到應用程式準備好進行最終部署，以遞增套件版本 (在) 偵錯工具時不會變更它。
 
 ## <a name="remarks"></a>備註
 
@@ -104,7 +104,7 @@ ms.locfileid: "91750164"
 -   如果背景工作需要鎖定畫面存取，請確定先將 app 置於鎖定畫面後，再嘗試偵錯背景工作。 如需為具有鎖定畫面功能的 App 指定資訊清單選項的詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 -   背景工作註冊參數是在註冊之時進行驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
-如需使用 VS 來偵測背景工作的詳細資訊，請參閱 [如何在 UWP 應用程式中觸發暫止、繼續及背景事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)。
+如需使用 VS 來偵測背景工作的詳細資訊，請參閱 [如何在 UWP 應用程式中觸發暫止、繼續及背景事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -113,7 +113,7 @@ ms.locfileid: "91750164"
 * [註冊背景工作](register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [如何在 UWP App 中觸發暫停、繼續和背景事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio?view=vs-2015)
+* [如何在 UWP App 中觸發暫停、繼續和背景事件](/visualstudio/debugger/how-to-trigger-suspend-resume-and-background-events-for-windows-store-apps-in-visual-studio)
 * [使用 Visual Studio 程式碼分析，分析 UWP 應用程式的程式碼品質](/visualstudio/test/analyze-the-code-quality-of-store-apps-using-visual-studio-static-code-analysis?view=vs-2015)
 
  

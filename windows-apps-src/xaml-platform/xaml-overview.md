@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 792712256e36b40cd376f0e378bb110ab33bc0fb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c4e61cb04aaefdc0aeef05ce0c61ca549019791b
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173732"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192958"
 ---
 # <a name="xaml-overview"></a>XAML 概觀
 
@@ -256,4 +256,4 @@ XAML 通常是在 IDE 內 (如 Visual Studio) 以及它的其中一個 XAML 設�
 > [!NOTE]
 > 使用 c + +/CX 進行程式碼的應用程式不會取得特定的 [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
 
-如需偵錯 Windows 執行階段 app 的詳細資訊，請參閱[啟動偵錯工作階段](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml?view=vs-2015)。
+如需有關將 Windows 執行階段應用程式進行偵錯工具的詳細資訊，請參閱 [啟動 debug 會話](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml)。

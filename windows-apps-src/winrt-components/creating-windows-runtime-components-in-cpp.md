@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2965eb3196f2a19f7d5351ee422013c6c22ba88a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174302"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192948"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>Windows 執行階段元件與 C++/CX
 
@@ -24,7 +24,7 @@ ms.locfileid: "89174302"
 - 獲得 C++ 在複雜或密集運算作業中的效能優勢。
 - 重複使用已經撰寫好且經過測試的程式碼。
 
-當您建置包含 JavaScript 或 .NET 專案以及 Windows 執行階段元件專案的方案時，JavaScript 專案檔與已編譯的 DLL 會合併成單一封裝，如此您就能在模擬器進行本機偵錯，或在行動網卡上進行遠端偵錯。 您也可以利用擴充功能 SDK 格式，僅發佈元件專案。 如需詳細資訊，請參閱[建立軟體開發套件](/visualstudio/extensibility/creating-a-software-development-kit?view=vs-2015)。
+當您建置包含 JavaScript 或 .NET 專案以及 Windows 執行階段元件專案的方案時，JavaScript 專案檔與已編譯的 DLL 會合併成單一封裝，如此您就能在模擬器進行本機偵錯，或在行動網卡上進行遠端偵錯。 您也可以利用擴充功能 SDK 格式，僅發佈元件專案。 如需詳細資訊，請參閱[建立軟體開發套件](/visualstudio/extensibility/creating-a-software-development-kit)。
 
 一般情況下，當您撰寫 c + +/CX 元件的程式碼時，請使用一般 c + + 程式庫和內建類型，但在抽象二進位介面 (ABI) 界限，而您會在另一個 winmd 封裝的程式碼中傳遞資料。 在該處，請使用 Windows 執行階段類型，以及 c + +/CX 針對建立和操作這些類型所支援的特殊語法。 此外，在您的 c + +/CX 程式碼中，您可以使用委派和事件之類的型別，來執行可從元件引發並以 JavaScript、Visual Basic、c + + 或 c # 處理的事件。 如需 c + +/CX 語法的詳細資訊，請參閱 [Visual C++ 語言參考 (c + +/cx) ](/cpp/cppcx/visual-c-language-reference-c-cx)。
 
@@ -185,7 +185,7 @@ public:
 };
 ```
 
-但無法區分下列簽章間的差異：
+但它無法分辨兩者之間的差異：
 
 ```cpp
 int GetNumber(int i);
