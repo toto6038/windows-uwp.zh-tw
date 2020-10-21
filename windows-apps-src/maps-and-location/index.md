@@ -2,23 +2,22 @@
 title: 地圖和位置概觀
 description: 本節說明如何在您的應用程式中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何啟動 Windows 地圖應用程式，以使用特定地圖、路線或一組轉向建議導航路線指引。
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
 ms.localizationpriority: medium
-ms.openlocfilehash: c67312fe54492e20b6bb9a8b2d1cb07b5fc77c80
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 61b36aa8299d98544c44039abb138f4422e0a164
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171772"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297658"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 
-
-
-
 本節說明如何在您的應用程式中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何啟動 Windows 地圖應用程式，以使用特定地圖、路線或一組轉向建議導航路線指引。
+
+[**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地圖服務要求地圖驗證金鑰，稱為 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 > [!TIP]
 > 若要深入了解如何在應用程式中使用地圖和位置，請從 GitHub 上的 [Windows-universal-samples 存放庫](https://github.com/Microsoft/Windows-universal-samples)下載下列範例：
