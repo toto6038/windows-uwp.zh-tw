@@ -7,22 +7,22 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209864"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253785"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
-[MakePri.exe](compile-resources-manually-with-makepri.md) 擁有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主題詳述命令列選項的使用。
+[MakePri.exe](compile-resources-manually-with-makepri.md) 包含一組命令、、、 `createconfig` `dump` `new` `resourcepack` 和 `versioned` 。 本主題詳述命令列選項的使用。
 
 > [!NOTE]
-> 當您在安裝 Windows 軟體發展工具組時，檢查**UWP 受管理應用程式的 Windows SDK**選項時，會安裝 MakePri。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` （以及其他架構的資料夾中）。 例如：`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 當您在安裝 Windows 軟體開發套件時，檢查 **UWP 受管理應用程式的 Windows SDK** 選項時，會安裝 MakePri.exe。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及針對其他架構) 命名的資料夾中。 例如： `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` 。
 
 ## <a name="getting-help-from-the-command-line"></a>從命令列取得協助
 
-您可以執行 `MakePri.exe help` 或 `MakePri.exe /?` 查看可與 MakePri 搭配使用的命令。 您也可以發出 `MakePri.exe <command> /?`，以查看有關命令的詳細資訊，並在極罕見的情況下，甚至 `MakePri.exe <command> <option>` 查看選項的詳細資訊。
+您可以執行 `MakePri.exe help` 或 `MakePri.exe /?` 來查看可搭配 MakePri.exe 使用的命令。 您也可以發出 `MakePri.exe <command> /?` 有關命令的詳細資訊，以及在非常罕見的情況下查看有關 `MakePri.exe <command> <option>` 某個選項的詳細資訊。
 
 ## <a name="makepri-commands"></a>MakePri 命令
 
@@ -115,7 +115,7 @@ Help:
 `dump` 命令會輸出傾印的 xml 檔案，包含指定 PRI 檔案中的所有資源的清單。 執行 `MakePri.exe dump /?` 以查看此命令的詳細說明。
 
 > [!NOTE]
-> 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您沒有指定主要檔案，就會收到錯誤訊息「*套件中的 resources.pri 已損毀，因此加密失敗 (錯誤 PRI222: 0xdef0000f - 發生未指定的錯誤)* 」。
+> 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您沒有指定主要檔案，就會收到錯誤訊息「*套件中的 resources.pri 已損毀，因此加密失敗 (錯誤 PRI222: 0xdef0000f - 發生未指定的錯誤)*」。
 
 ```console
 C:\>makepri dump /?
@@ -162,7 +162,7 @@ Help:
     /Help(h, ?)         : Display the usage help text
 ```
 
-## <a name="new-command"></a>New 命令
+## <a name="new-command"></a>新命令
 
 `new` 命令會依照您的設定檔的指示，在專案中編製檔案的索引，以建立新的 PRI 檔案。 執行 `MakePri.exe new /?` 以查看此命令的詳細說明。
 
@@ -416,18 +416,18 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 **FILEPATH** 是指定輸入 PRI 檔案或 PRI 結構描述檔案的位置的權杖。
 
-## <a name="47indexoptionsio-option"></a>&#47;IndexOptions （io）選項
+## <a name="47indexoptionsio-option"></a>&#47;IndexOptions (io) 選項
 
-您可以使用索引選項選項（/io）搭配 `new`、`resourcepack`和 `versioned` 來指定選項，以提供資源索引子行為的詳細控制。 索引選項預設為停用。
+您可以使用索引選項選項 (/io) 搭配 `new` 、 `resourcepack` 和， `versioned` 指定可提供資源索引子行為詳細控制的選項。 索引選項預設為停用。
 
 ```console
 /IndexOptions(io) <OPTIONS>
 ```
 
-**選項**是由下列選項群組成的逗號分隔清單。
+**選項** 是由下列選項群組成的逗點分隔清單。
 
-- +/-HiddenFiles （hf）。 Index （+）或忽略（-）隱藏的檔案和資料夾。
-- +/-LinkedFiles （lf）。 索引（+）或忽略（-）連結的檔案和資料夾。
+- +/-HiddenFiles (hf) 。 Index (+) 或忽略 ( ) 隱藏的檔案和資料夾。
+- +/-LinkedFiles (lf) 。 Index (+) 或忽略 ( ) 連結的檔案和資料夾。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) 選項
 
@@ -458,7 +458,7 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 ## <a name="output-summary"></a>輸出摘要
 
-如果建立資源套件，MakePRI.exe 的輸出摘要是更多詳細資訊的形式。 以下是一個範例。
+如果建立資源套件，MakePRI.exe 的輸出摘要是更多詳細資訊的形式。 以下是範例。
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
@@ -495,11 +495,11 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 ## <a name="47outputfileof-option"></a>&#47;OutputFile(of) 選項
 
-您使用輸出檔案選項 (/of) 搭配 `dump`、`new`、`resourcepack` 和 `versioned`，來指定輸出位置和要產生之 PRI 檔案的名稱。 如果 MakePri.exe 產生一個以上的資源 PRI 檔案，將其放入目標檔案的上層資料夾中。 例如，若您指定 `/of MyParentFolder\TargetFile.pri`，然後 MakePri.exe 在 `TargetFile.language-en.pri` 底下產生 `TargetFile.scale-100.pri` 和 `TargetFile.pri` 以及 `ParentFolder`。
+您使用輸出檔案選項 (/of) 搭配 `dump`、`new`、`resourcepack` 和 `versioned`，來指定輸出位置和要產生之 PRI 檔案的名稱。 如果 MakePri.exe 產生一個以上的資源 PRI 檔案，將其放入目標檔案的上層資料夾中。 例如，若您指定 `/of MyParentFolder\TargetFile.pri`，然後 MakePri.exe 在 `ParentFolder` 底下產生 `TargetFile.language-en.pri` 和 `TargetFile.scale-100.pri` 以及 `TargetFile.pri`。
 
 以下是範例錯誤條件和對應的錯誤訊息。
 
-| 錯誤條件 | 錯誤訊息 |
+| 錯誤狀況 | 錯誤訊息 |
 | --------------- | ------------- |
 | 輸出檔案名稱與設定中的其中一個資源套件名稱相同。 | 無效的設定：資源套件名稱 <resource pack name> 不可與輸出檔案 < outputfilename.pri > 相同。 |
 
@@ -547,8 +547,8 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 'VersionMajor (vma)' input parameter has been deprecated. Please specify major version in the configuration file using 'majorVersion' attribute on 'resources' node.
 ```
 
-若要提供主要版本號碼，請在您的設定檔中使用 [resources@majorVersion](makepri-exe-configuration.md) 屬性。
+若要提供主要版本號碼，請使用 [resources@majorVersion](makepri-exe-configuration.md) 設定檔中的屬性。
 
 ## <a name="related-topics"></a>相關主題
 
-* [MakePri .exe](compile-resources-manually-with-makepri.md)
+* [MakePri.exe](compile-resources-manually-with-makepri.md)

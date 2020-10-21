@@ -1,22 +1,19 @@
 ---
-Description: 這個主題說明需要存取使用者位置之 app 的效能指導方針。
+description: 這個主題說明需要存取使用者位置之 app 的效能指導方針。
 title: 定位感知應用程式的指導方針
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: 2178a8812a4c900c59c370e52e7e5a5b3e0a9182
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: af9ea1a214bb3cb49dd65a77d1fde30e4bb3a064
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158662"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297738"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
-
-
-
 
 **重要 API**
 
@@ -163,7 +160,7 @@ ms.locfileid: "89158662"
 
 * [設定地理柵欄](./set-up-a-geofence.md)
 * [取得目前的位置](./get-location.md)
-* [顯示地圖的 2D、3D 和 Streetside 檢視](./display-maps.md)
+* [顯示具有2D、3D 和 Streetside views 的地圖](./display-maps.md)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP 位置範例 (地理位置)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
