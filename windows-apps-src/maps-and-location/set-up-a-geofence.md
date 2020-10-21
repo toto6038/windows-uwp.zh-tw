@@ -2,21 +2,21 @@
 title: 設定地理柵欄
 description: 在您的 app 中設定地理柵欄，並了解如何在前景和背景中處理通知。
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.date: 02/08/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b991930ba37cfaec333146bf7a95b4c9a9c8b98
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca6dad1a96f37e3a308ad10c84293a8d49fb0329
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171702"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297592"
 ---
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 
-
-
+> [!NOTE]
+> [**隨 mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地圖服務會 Requite 稱為 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)的地圖服務驗證金鑰。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 在您的應用程式中設定 [**地理柵欄**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) ，並瞭解如何在前景和背景處理通知。
 

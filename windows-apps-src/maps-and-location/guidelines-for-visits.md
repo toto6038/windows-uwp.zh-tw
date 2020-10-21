@@ -1,19 +1,22 @@
 ---
-Description: 了解如何使用強大的「行止動線追蹤」(Visits Tracking) 功能，進行更切合實際的位置追蹤。
+description: 了解如何使用強大的「行止動線追蹤」(Visits Tracking) 功能，進行更切合實際的位置追蹤。
 title: 關於使用行止動線追蹤功能的指導方針
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.date: 05/18/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, 地圖, 位置, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b1766d0f883fa42b005908dcc63102e97ff0d4f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: bdca33832b4dfadb52dca45c7a060de4f05c500c
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162512"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297735"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>關於使用行止動線追蹤功能的指導方針
+
+> [!NOTE]
+> [**隨 mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地圖服務會 Requite 稱為 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)的地圖服務驗證金鑰。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 行止動線 (Visits) 功能簡化位置追蹤程序，使之在許多應用程式的實際用途上變得更有效率。 「行止動線」(Visit) 定義為使用者進入與離開的顯著地理區域。 行止動線與[地理柵欄](guidelines-for-geofencing.md)相似之處在於，兩者都可讓應用程式只在使用者進入或離開感興趣的特定區域時才收到通知，不再需要持續進行可能會耗盡電池使用時間的位置追蹤。 但與地理柵欄不同的是，行止動線是在平台層級上動態識別，不需要由個別應用程式明確定義。 此外，應用程式選擇追蹤哪些行止動線是依據單一細微性設定來處理，而不是依據個別地點的訂閱。
 

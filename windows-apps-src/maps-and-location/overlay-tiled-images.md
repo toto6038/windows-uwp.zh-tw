@@ -2,18 +2,21 @@
 title: 在地圖上重疊顯示並排影像
 description: 使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.date: 07/19/2018
+ms.date: 10/20/2020
 ms.topic: article
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
-ms.openlocfilehash: a2a93ac408232e71c2a5ec2bc79f99388e24e5df
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8d4a8e3f8a8566fbaae64d44fe876808f094bdd5
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171732"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297629"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
+
+> [!NOTE]
+> [**隨 mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地圖服務會 Requite 稱為 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)的地圖服務驗證金鑰。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 

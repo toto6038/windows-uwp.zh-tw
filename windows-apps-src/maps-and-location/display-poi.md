@@ -2,18 +2,21 @@
 title: 在地圖上顯示感興趣的地點 (POI)
 description: 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.date: 08/11/2017
+ms.date: 10/20/2020
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 圖釘
 ms.localizationpriority: medium
-ms.openlocfilehash: c27132c0728c85238b80e710c62d2e733ee1dd5d
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: feaf5edc4a25ebbc6dd3e3b7eb484ff63f8b1a23
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155802"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297777"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地圖上顯示感興趣的地點
+
+> [!NOTE]
+> [**隨 mapcontrol**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) 和地圖服務會 Requite 稱為 [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken)的地圖服務驗證金鑰。 如需有關取得及設定地圖驗證金鑰的詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 POI 是地圖上代表感興趣項目的特定點。 例如，公司、城市或朋友的位置。
 
@@ -165,7 +168,7 @@ public void AddLandmarkPhoto()
 
 此程式碼有三個部分值得進一步研究：影像、參考相機，以及 [**NormalizedAnchorPoint**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 屬性。
 
-### <a name="image"></a>Image
+### <a name="image"></a>映像
 
 此範例顯示專案的 **\[資產\]** 資料夾中儲存的自訂影像。 [**MapBillboard**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 屬性預期的值類型為 [**RandomAccessStreamReference**](/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference)。 這種類型會要求針對 [**Windows.Storage.Streams**](/uwp/api/Windows.Storage.Streams) 命名空間**使用** using 陳述式。
 
