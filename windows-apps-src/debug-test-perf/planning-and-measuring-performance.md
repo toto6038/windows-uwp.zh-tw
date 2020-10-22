@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 51786f907da5ddf0b4a52b8c9bea61a8756c78d9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ba9d84ee10990e7d187e2faa01b458e02893b95e
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163502"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92192998"
 ---
 # <a name="planning-for-performance"></a>規劃效能
 
@@ -177,7 +177,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 -   [Windows Performance Analyzer](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10))
 -   [Windows Performance Toolkit](/previous-versions/windows/it-pro/windows-8.1-and-8/hh162945(v=win.10))
--   [使用 Visual Studio 診斷工具分析效能](/visualstudio/profiling/profiling-tools?view=vs-2015) \(部分機器翻譯\)
+-   [使用 Visual Studio 診斷工具分析效能](/visualstudio/profiling/profiling-feature-tour) \(部分機器翻譯\)
 -   //build/ 演講 [XAML 效能](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   //build/ 演講 [Visual Studio 2015 中新的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697)
 

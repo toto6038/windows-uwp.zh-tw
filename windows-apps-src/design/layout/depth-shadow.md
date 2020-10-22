@@ -1,5 +1,4 @@
 ---
-author: knicholasa
 description: Z 深度 (即相對深度) 以及陰影，是兩種在應用程式中呈現深度的方式，有助於使用者自然且有效率地對焦。
 title: Windows 應用程式的 Z 深度與陰影
 template: detail.hbs
@@ -9,12 +8,12 @@ ms.custom: 19H1
 keywords: windows 10, uwp
 pm-contact: chigy
 ms.localizationpriority: medium
-ms.openlocfilehash: ffabb494d10f802668e57ebb9cfd122ac5304d46
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 72cffc86d71b34de2c4c9292221889ee4f0bc1d5
+ms.sourcegitcommit: 5684340ad29a81939c6a93017b5a39ccbe1f6040
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219381"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92184213"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和陰影
 

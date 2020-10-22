@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3bda79b998038dd26f62eec983384f491793502
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 49a608f46c21cddfbd7fcb5e149c4b316bf9b175
+ms.sourcegitcommit: ce1a7efa01779721b4b618ae5605597152e424cb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160762"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92379373"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -719,7 +719,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[文字區塊控制項指南](text-block.md)、[RTF 區塊控制項指南](rich-text-block.md)
 
-範例程式碼：[XAML 文字範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+範例程式碼：[XAML 文字範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="text-box"></a>文字方塊
 單行或多行純文字欄位。
@@ -735,7 +735,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[文字方塊控制項指南](text-box.md) 
 
-範例程式碼：[XAML 文字範例](https://code.msdn.microsoft.com/windowsapps/XAML-text-display-sample-2593ba0a)
+範例程式碼：[XAML 文字範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ## <a name="selection-controls"></a>選取控制項
 
