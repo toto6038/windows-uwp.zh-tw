@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a49d771b7efdbb7e787db0cbadea45c255a1120e
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 64d5595bcc315b24228401ff23a1a59d29282eae
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984594"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344962"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Windows 應用程式的徽章通知
 
@@ -43,18 +43,18 @@ ms.locfileid: "91984594"
 狀態 | 圖像 | XML
 --|--|--
 無 | (沒有顯示徽章。) | `<badge value="none"/>`
-activity | <img src="images/badges/badge-activity.png" alt="Glyph" /> | `<badge value="activity"/>`
-鬧鐘 (alarm) | <img src="images/badges/badge-alarm.png" alt="Glyph" /> | `<badge value="alarm"/>`
-警示 | <img src="images/badges/badge-alert.png" alt="Glyph" /> | `<badge value="alert"/>`
-注意 (attention) | <img src="images/badges/badge-attention.png" alt="Glyph" /> | `<badge value="attention"/>`
-可供使用 | <img src="images/badges/badge-available.png" alt="Glyph" /> | `<badge value="available"/>`
-離開 (away) | <img src="images/badges/badge-away.png" alt="Glyph" /> | `<badge value="away"/>`
-忙碌 (busy) | <img src="images/badges/badge-busy.png" alt="Glyph" /> | `<badge value="busy"/>`
-error | <img src="images/badges/badge-error.png" alt="Glyph" /> | `<badge value="error"/>`
-新訊息 (newMessage) | <img src="images/badges/badge-newMessage.png" alt="Glyph" /> | `<badge value="newMessage"/>`
-暫停 (paused) | <img src="images/badges/badge-paused.png" alt="Glyph" /> | `<badge value="paused"/>`
-正在播放 (playing) | <img src="images/badges/badge-playing.png" alt="Glyph" /> | `<badge value="playing"/>`
-離線 (unavailable) | <img src="images/badges/badge-unavailable.png" alt="Glyph" /> | `<badge value="unavailable"/>`</td>
+activity | :::image type="icon" source="images/badges/badge-activity.png"::: | `<badge value="activity"/>`
+鬧鐘 (alarm) | :::image type="icon" source="images/badges/badge-alarm.png"::: | `<badge value="alarm"/>`
+警示 | :::image type="icon" source="images/badges/badge-alert.png"::: | `<badge value="alert"/>`
+注意 (attention) | :::image type="icon" source="images/badges/badge-attention.png"::: | `<badge value="attention"/>`
+可供使用 | :::image type="icon" source="images/badges/badge-available.png"::: | `<badge value="available"/>`
+離開 (away) | :::image type="icon" source="images/badges/badge-away.png"::: | `<badge value="away"/>`
+忙碌 (busy) | :::image type="icon" source="images/badges/badge-busy.png"::: | `<badge value="busy"/>`
+錯誤 | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
+新訊息 (newMessage) | :::image type="icon" source="images/badges/badge-newMessage.png"::: | `<badge value="newMessage"/>`
+暫停 (paused) | :::image type="icon" source="images/badges/badge-paused.png"::: | `<badge value="paused"/>`
+正在播放 (playing) | :::image type="icon" source="images/badges/badge-playing.png"::: | `<badge value="playing"/>`
+離線 (unavailable) | :::image type="icon" source="images/badges/badge-unavailable.png"::: | `<badge value="unavailable"/>`</td>
 
 ## <a name="create-a-badge"></a>建立徽章
 
