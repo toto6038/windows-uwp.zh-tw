@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: a10962740d3f723a855914595ea02d0688ff9707
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8dc98176e61ea6e03b1d822e05f8e0656a34e4b3
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170372"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297748"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -158,7 +158,7 @@ int main()
 
 上述範例中，**RetrieveBlogFeedAsync** 傳回 **IAsyncOperationWithProgress**，其同時具有處理程序和一個傳回值。 我們可以執行其他工作，同時 **RetrieveBlogFeedAsync** 執行其項目與擷取摘要。 接著，我們在非同步作業物件上呼叫 **get** 封鎖，等待其完成，再取得作業的結果。
 
-如果您正非同步傳回 Windows 執行階段類型，則您應該要傳回 [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1) 或 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)。 任何第一或第三方執行階段類別資格，或任何可從 Windows Runtime 函式或傳送至 Windows Runtime 函式的任何類型 (例如，`int`，或 **winrt::hstring**)。 如果您嘗試將其中一個非同步作業類型與非 Windows 執行階段類型一起使用，編譯器會協助您解決*必須為 WinRT 類型*的錯誤。
+如果您正非同步傳回 Windows 執行階段類型，則您應該要傳回 [**IAsyncOperation&lt;TResult&gt;** ](/uwp/api/windows.foundation.iasyncoperation-1) 或 [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;** ](/uwp/api/windows.foundation.iasyncoperationwithprogress-2)。 任何第一或第三方執行階段類別資格，或任何可從 Windows Runtime 函式或傳送至 Windows Runtime 函式的任何類型 (例如，`int`，或 **winrt::hstring**)。 如果您嘗試將其中一個非同步作業類型與非 Windows 執行階段類型一起使用，編譯器會協助您解決「T 必須為 WinRT 類型」錯誤。
 
 如果協同程式沒有至少一個 `co_await` 陳述式，為了符合協同程式，它必須至少有一個 `co_return` 或一個 `co_yield` 陳述式。 在這個情況下，您的協同程式不用引入任何非同步便可以傳回一個值，且因此不封鎖也不會切換內容。 以下是透過快取值這樣做（稱為第二次以上的次數）的範例。
 

@@ -1,5 +1,5 @@
 ---
-description: 本教學課程示範如何新增 UWP XAML 使用者介面、建立 MSIX 套件，以及將其他新式元件併入您的 UWP 應用程式。
+description: 本教學課程示範如何將整個 Contoso Expenses 應用程式從 .NET Framework 4.7.2 遷移至 .NET Core 3。
 title: 將 Contoso Expenses 應用程式移轉到 .NET Core 3
 ms.topic: article
 ms.date: 06/27/2019
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: c11f1cab37e79fc320f1fb38f5b909d2cecd1ad4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cab839e4f9e8c60f2f3f7c1b043f8a3af77bd4e7
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161582"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133081"
 ---
 # <a name="part-1-migrate-the-contoso-expenses-app-to-net-core-3"></a>第 1 部分：將 Contoso Expenses 應用程式移轉到 .NET Core 3
 

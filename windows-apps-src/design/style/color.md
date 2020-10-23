@@ -10,12 +10,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: f7035017b1b1bfe878e4bd390fcefbe2bf3a6be5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: c2f2053a02f6ddb2f955597f1a25cc58d220e115
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636558"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344974"
 ---
 # <a name="color"></a>色彩
 
@@ -414,7 +414,7 @@ ColorPaletteResources 也允許以包裝函式的形式 (不是線性函式) 直
 
 :::row:::
     :::column:::
-![對比圖](images/color/illo-contrast.svg)
+![對比圖例](images/color/illo-contrast.svg)
     :::column-end:::
     :::column span="2":::
 **對比**
@@ -427,7 +427,7 @@ ColorPaletteResources 也允許以包裝函式的形式 (不是線性函式) 直
 
 :::row:::
     :::column:::
-![對比圖](images/color/illo-lighting.svg)
+![光源圖例](images/color/illo-lighting.svg)
     :::column-end:::
     :::column span="2":::
 **光源**
@@ -438,7 +438,7 @@ ColorPaletteResources 也允許以包裝函式的形式 (不是線性函式) 直
 
 :::row:::
     :::column:::
-![對比圖](images/color/illo-colorblindness.svg)
+![色盲圖例](images/color/illo-colorblindness.svg)
     :::column-end:::
     :::column span="2":::
 **色盲**

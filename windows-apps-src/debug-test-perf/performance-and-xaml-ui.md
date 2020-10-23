@@ -1,17 +1,17 @@
 ---
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: 效能
-description: 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。
+description: 如何組織您的效能工作流程、修正動畫問題和畫面播放速率問題，以及微調您的啟動時間、頁面瀏覽時間和記憶體使用量。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23548ada603e21e9230ccc3e8c63630e81b1a8ae
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f81052336985eee866fec6ae370d2795e8001859
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154142"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133091"
 ---
 # <a name="performance"></a>效能
 

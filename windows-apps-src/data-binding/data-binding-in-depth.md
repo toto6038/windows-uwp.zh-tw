@@ -1,7 +1,7 @@
 ---
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: 深入了解資料繫結
-description: 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。
+description: 了解如何在通用 Windows 平台 (UWP) 應用程式中使用資料繫結
 ms.date: 10/05/2018
 ms.topic: article
 keywords: windows 10, uwp
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: a12fb133aed8706385480254f0371508c324107f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a4fc9244c84b955b925fef9c3527778bdb3ab2ea
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170092"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133061"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 

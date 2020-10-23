@@ -1,5 +1,5 @@
 ---
-Description: 理想的圖示達到印刷格式與其餘設計語言的平衡。 它們不會混合使用隱喻，而且只會盡可能快速並簡單地溝通所需的內容。
+description: 理想的圖示達到印刷格式與其餘設計語言的平衡。 它們不會混合使用隱喻，而且只會盡可能快速並簡單地溝通所需的內容。
 title: 圖示
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 66f9d166d0e20f82f495f98b26deceff8e136cc5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 75de051bd569981d7dca6b33e8e7389c3186a09d
+ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636638"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92344988"
 ---
 # <a name="icons-for-windows-apps"></a>Windows 應用程式的圖示
 
@@ -47,13 +47,12 @@ ms.locfileid: "91636638"
 
 :::row:::
     :::column:::
-        ![顯示剪下、複製、貼上及儲存圖示的螢幕擷取畫面。](images/do.svg)
-        ![圖示標準影像](images/icons/icons-standard.svg)<br>
+        ![綠色列的第一個影像，其具有綠色勾號和 Do 這個字](images/do.svg) ![顯示剪下、複製、貼上及儲存圖示的螢幕擷取畫面](images/icons/icons-standard.svg)<br>
 
 像是剪下、複製、貼上和儲存之類的動作，或是導覽功能表的導覽項目，都可以使用圖示。
     :::column-end:::
     :::column:::
-        ![禁止事項](images/dont.svg) ![圖示概念影像](images/icons/icons-concept.svg)<br>
+        ![紅色列的第一個影像，其具有紅色 X 和 Don’t 這個字](images/dont.svg) ![顯示教育、觸控及行事曆圖示的螢幕擷取畫面](images/icons/icons-concept.svg)<br>
 
 如果您想要表達的概念已經有圖示存在，請直接使用。 (若要查看圖示是否存在，請查看 Segoe 圖示清單)。
     :::column-end:::
@@ -61,14 +60,12 @@ ms.locfileid: "91636638"
 
 :::row:::
     :::column:::
-        ![簡單且熟悉的購物車圖示螢幕擷取畫面。](images/do.svg)
-        ![圖示購物車](images/icons/icon-shopping-cart.svg)<br>
+        ![綠色列的第二個影像，其具有綠色勾號和 Do 這個字](images/do.svg) ![簡單且熟悉的購物車圖示螢幕擷取畫面](images/icons/icon-shopping-cart.svg)<br>
 
 如果有個圖示的意義很容易就能讓使用者了解，而且小尺寸也清晰易讀，就可使用該圖示。
     :::column-end:::
     :::column:::
-        ![複雜且不熟悉的購物車圖示螢幕擷取畫面。](images/dont.svg)
-        ![圖示概念影像](images/icons/icon-bad-example.png)<br>
+        ![紅色列的第二個影像，其具有紅色 X 和 Don’t 這個字](images/dont.svg) ![複雜且不熟悉的購物車圖示螢幕擷取畫面](images/icons/icon-bad-example.png)<br>
 
 如果圖示的意義不明確，或是需要複雜的圖形才能清晰顯示圖示，則請勿使用。
     :::column-end:::

@@ -9,16 +9,24 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 開發人員, 秘訣, 效能, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 1135be4797893a74e398e69fcbc1c43d60e9fdb9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7d02e3b46d6938532bbc7024e8840b976b2715a6
+ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172662"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92171152"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>改善效能和開發工作流程的秘訣
 
 我們收集了一些秘訣，希望能讓您的工作流程更有效率且更有樂趣。 您有其他要分享的秘訣嗎？ 使用上方的 [編輯] 按鈕來提出提取要求，或使用下方的 [意見反應] 按鈕來提出問題，我們可將其新增至清單。
+
+> [!NOTE]
+> 如果您遇到與在 Windows 10 上進行開發相關的任何效能問題，例如：
+> - 開發工具 (例如編譯器、連結器等) 在 Windows 上的執行速度比預期慢。
+> - 執行階段平台 (例如 node、.NET、Python) 在 Windows 上執行的速度比其他平台慢。
+> - 您的應用程式遇到與檔案 IO/網路/程序建立相關的效能問題。 
+> 
+> 請在 [Windows 開發人員 (WinDev) 問題存放庫](https://github.com/microsoft/WinDev)中提出問題，讓我們知道！
 
 ## <a name="use-shortcuts-to-open-a-project-in-vs-code-or-windows-file-explorer"></a>使用快速鍵在 VS Code 或 Windows 檔案總管中開啟專案
 

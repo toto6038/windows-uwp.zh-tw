@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 一般, c++, cpp, winrt, 投影, 投射, 控點, 事件, 委派
 ms.localizationpriority: medium
-ms.openlocfilehash: fefc7f72fb91a61ae924ac082dcac6d3cf9c044b
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 884f61e877b1d7ff9f5c4567dfc329d59610b773
+ms.sourcegitcommit: 14e79119aacc75382de9940fb5abaf7a618ad843
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750124"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92210602"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -34,7 +34,7 @@ XAML 設計工具會將適當的事件處理常式函式原型 (以及虛設常�
 
 ```xaml
 // MainPage.xaml
-<Button x:Name="Button" Click="ClickHandler">Click Me</Button>
+<Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
 ```
 
 ```cppwinrt
@@ -48,9 +48,14 @@ void MainPage::ClickHandler(
     IInspectable const& /* sender */,
     RoutedEventArgs const& /* args */)
 {
-    Button().Content(box_value(L"Clicked"));
+    myButton().Content(box_value(L"Clicked"));
 }
 ```
+
+上述程式碼取自 Visual Studio 中的 [空白應用程式 (C++/WinRT)] 專案。 程式碼 `myButton()` 會呼叫所產生的存取子函式，此函式會傳回我們命名為 myButton 的 **Button**。 如果您變更該 **Button** 元素的 `x:Name`，則產生的存取子函式名稱也會變更。
+
+> [!NOTE]
+> 在此情況下，事件來源 (引發事件的物件) 是名為 myButton 的 **Button**。 而事件接收者 (處理事件的物件) 是 **MainPage** 的 執行個體。 本主題稍後會提供更多有關管理事件來源與事件接收者存留時間的資訊。
 
 可以不在標記中以宣告方式執行，改以註冊成員函式處理事件。 在以下的程式碼範例中，可能不太明顯，但 [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)呼叫的引數是 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) 委派的執行個體。 在此案例中，會使用 **RoutedEventHandler** 建構函式多載，其會採用物件和指標成員函式。
 
@@ -60,7 +65,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click({ this, &MainPage::ClickHandler });
+    myButton().Click({ this, &MainPage::ClickHandler });
 }
 ```
 
@@ -80,7 +85,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click( MainPage::ClickHandler );
+    myButton().Click( MainPage::ClickHandler );
 }
 void MainPage::ClickHandler(
     IInspectable const& /* sender */,
@@ -130,9 +135,9 @@ MainPage::MainPage()
 {
     InitializeComponent();
 
-    Button().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    myButton().Click([this](IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
     {
-        Button().Content(box_value(L"Clicked"));
+        myButton().Content(box_value(L"Clicked"));
     });
 }
 ```
@@ -148,7 +153,7 @@ MainPage::MainPage()
     {
         sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
-    Button().Click(click_handler);
+    myButton().Click(click_handler);
     AnotherButton().Click(click_handler);
 }
 ```
@@ -306,7 +311,7 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>使用事件處理委派安全地存取 this  指標
 
-如果您使用物件的成員函式，或是從物件成員函式裡的 lambda 函式中處理一個事件，您會需要考量事件 (處理事件的物件) 和事件來源 (引發事件的物件) 的相對存留時間。 如需詳細資訊以及程式碼範例，請參閱 [C++/WinRT 中的強式和弱式參考](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果您使用物件的成員函式，或是從物件成員函式裡的 lambda 函式中處理一個事件，您會需要考量事件接收者 (處理事件的物件) 和事件來源 (引發事件的物件) 的相對存留時間。 如需詳細資訊以及程式碼範例，請參閱 [C++/WinRT 中的強式和弱式參考](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)

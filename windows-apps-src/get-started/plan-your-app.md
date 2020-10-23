@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c4ab2ac5a611d310abc177126cc92b88f9e3b8e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fb7229d977f2d2f32b251a524e101a8acf2b2524
+ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165152"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92193011"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>建置複雜通用 Windows 平台 (UWP) 應用程式
 
@@ -238,4 +238,4 @@ ms.locfileid: "89165152"
 
 在開發應用程式之前，請先確認您的設計或原型是否符合指導方針、使用者印象與需求，以免日後必須重做。 每個功能都有一組 UX 指導方針，協助您讓應用程式更臻完美；還有一組 Store 需求，必須符合這些需求才能在 Microsoft Store 中銷售您的應用程式。 您可以使用 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)測試是否符合市集技術需求。 您也可以使用 Microsoft Visual Studio 中的效能工具，確認您在每個案例中都為使用者提供了絕佳的經驗。
 
-使用 [UWP app 的詳細 UX 指導方針](https://developer.microsoft.com/windows/apps/design)，讓您持續專注在重要的功能。 使用 [Visual Studio 效能工具](/visualstudio/profiling/profiling-tools?view=vs-2015)，分析您每個 app 案例的效能。
+使用 [UWP app 的詳細 UX 指導方針](https://developer.microsoft.com/windows/apps/design)，讓您持續專注在重要的功能。 使用 [Visual Studio 效能工具](/visualstudio/profiling/profiling-feature-tour)，分析您每個 app 案例的效能。

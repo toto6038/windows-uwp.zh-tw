@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b402a1f140126314bc10f69880a9f01af2b2a4
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
+ms.openlocfilehash: b1a05dbb666b33739a083c517395359a64fee9df
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643800"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297654"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -186,7 +186,7 @@ a.f();
 
 標頭檔 `winrt/Windows.UI.Xaml.Media.Animation.h` 會宣告名為 **GetCurrentTime** 的方法，而 `windows.h` (透過 `winbase.h`) 會定義名為 **GetCurrentTime** 的巨集。 當兩者發生衝突時，C++ 編譯器會產生「*錯誤 C4002：函式類巨集引動過程 GetCurrentTime 有太多引數*」。
 
-同樣地，`winrt/Windows.Globalization.h` 會宣告名為 **TRY** 的方法，而 `afx.h` 會定義名為 **GetCurrentTime** 的巨集。 當這些有所衝突時，C++編譯器會產生「錯誤 C2334：'{' 前面有非預期的權杖；略過顯示的函式主體」。
+同樣地，`winrt/Windows.Globalization.h` 會宣告名為 **TRY** 的方法，而 `afx.h` 會定義名為 **TRY** 的巨集。 當這些有所衝突時，C++編譯器會產生「錯誤 C2334：'{' 前面有非預期的權杖；略過顯示的函式主體」。
 
 若要解決其中一個問題，或同時解決這兩個問題，您可以執行此操作。
 

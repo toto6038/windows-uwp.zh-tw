@@ -1,5 +1,5 @@
 ---
-description: 本教學課程示範如何新增 UWP XAML 使用者介面、建立 MSIX 套件，以及將其他新式元件併入您的 UWP 應用程式。
+description: 本教學課程示範如何將活動和通知功能新增至應用程式。
 title: 新增 Windows 10 使用者活動及通知
 ms.topic: article
 ms.date: 06/27/2019
@@ -8,12 +8,12 @@ author: mcleanbyron
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
 ms.custom: RS5, 19H1
-ms.openlocfilehash: 30b41cf0d22d8f8c2c4ce7f774eab9d2aa479d78
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3acc5638115932f6536eccb3be5e7222ef53fbb7
+ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161462"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92133051"
 ---
 # <a name="part-4-add-windows-10-user-activities-and-notifications"></a>第 4 部分：新增 Windows 10 使用者活動及通知
 

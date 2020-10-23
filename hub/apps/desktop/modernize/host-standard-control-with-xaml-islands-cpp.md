@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 60cbf422b5417dc62ff261cf2e7ba02f25840032
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
+ms.openlocfilehash: 5acf1a017a55ddf75520eccf22b1a3b00ee8084b
+ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671517"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92253598"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項
 
@@ -36,10 +36,7 @@ ms.locfileid: "91671517"
     > [!NOTE]
     > 針對新專案，您也可以安裝 [C++/WinRT Visual Studio 延伸模組 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) \(英文\)，並使用該延伸模組隨附的其中一個 C++/WinRT 專案範本。 如需詳細資料，請參閱[這篇文章](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-4. 安裝 [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet 套件：
-
-    1. 在 [NuGet 套件管理員]  視窗中，確定已選取 [包含發行前版本]  。
-    2. 選取 [瀏覽] 索引標籤、搜尋 **Microsoft.Toolkit.Win32.UI.SDK** 套件，然後安裝此套件的最新穩定版本。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
+4. 在 [NuGet 套件管理員] 的 [瀏覽] 索引標籤上，搜尋 [Microsoft.Toolkit.Win32.UI.SDK](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK) NuGet 套件，然後安裝此套件的最新穩定版本。 此套件提供數個組建和執行階段資產，讓 XAML Islands 可在您的應用程式中運作。
 
 5. 在您的[應用程式資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 中設定 `maxVersionTested` 值，以指定您的應用程式與 Windows 10 1903 版或更新版本相容。
 

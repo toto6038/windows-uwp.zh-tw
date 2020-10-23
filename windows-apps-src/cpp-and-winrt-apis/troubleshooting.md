@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, troubleshooting, HRESULT, error, 標準, 投影, 移難排解, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 94cfb51d9fd832a29c71049a2255e35c4bc6f484
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 268792dfe8053feca8c1e6fcb486bede4b26ee6a
+ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219961"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92297718"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>針對 C++/WinRT 問題進行疑難排解
 
@@ -39,8 +39,9 @@ XAML 剖析例外狀況可能難以診斷 &mdash; 特別是如果例外狀況中
 | C++ 編譯器產生錯誤「無法從 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'」。|當您將 winrt::hstring 的 std::vector 傳遞至預期收到集合的 Windows 執行階段 API 時，且您沒有將向量複製或移動到非同步被呼叫者，便會發生此情況。 如需詳細資訊，請參閱[標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
 | 開啟一個專案時，Visual Studio 產生此錯誤「未安裝專案的應用程式**」。|如果您尚未開始，您需要從 Visual Studio 的 [新專案]**** 對話方塊中安裝 **C++ 開發 Windows 通用工具**。 如果無法解決問題，則此專案可能相依於 C++/WinRT Visual Studio 擴充功能 (VSIX) (請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。|
 | Windows 應用程式認證套件測試產生執行階段類別的錯誤之一「*不是從 Windows 的基底類別衍生。所有可組合類別必須最終從 Windows 命名空間中的類別衍生*」。|從基底類別衍生的任何執行階段類別 (您在您的應用程式中宣告)，都稱為「可組合」** 類別。 可組合類別的最終基底類別都必須是源自 Windows.* 命名空間的類別；例如，[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。 如需詳細資訊，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。|
-| C++ 編譯器產生 EventHandler 或 TypedEventHandler 委派特製化的「必須為 WinRT 類型**」錯誤。|請考慮改用 **winrt::delegate&lt;...T&gt;**。 請參閱[在 C++/WinRT 中撰寫事件](author-events.md)。|
-| C++ 編譯器產生 Windows 執行階段非同步作業特製化的「必須為 WinRT 類型**」錯誤。|請考慮改為傳回平行模式程式庫 (PPL) [**task**](/cpp/parallel/concrt/reference/task-class)。 請參閱[並行和非同步作業](concurrency.md)。|
+| C++ 編譯器產生 EventHandler 或 TypedEventHandler 委派特製化的「T 必須為 WinRT 類型」錯誤。|請考慮改用 **winrt::delegate&lt;...T&gt;**。 請參閱[在 C++/WinRT 中撰寫事件](author-events.md)。|
+| C++ 編譯器產生 Windows 執行階段非同步作業特製化的「T 必須為 WinRT 類型」錯誤。|請考慮改為傳回平行模式程式庫 (PPL) [**task**](/cpp/parallel/concrt/reference/task-class)。 請參閱[並行和非同步作業](concurrency.md)。|
+| 當您呼叫 [**winrt::xaml_typename**](/uwp/cpp-ref-for-winrt/xaml-typename)時，C++ 編譯器會產生「T 必須為 WinRT 類型」錯誤。|使用預估類型搭配 **winrt::xaml_typename** (例如，使用 **BgLabelControlApp::BgLabelControl**)，而不是實作類型 (例如，請勿使用 **BgLabelControlApp::implementation::BgLabelControl**)。 請參閱 [XAML 自訂 (範本化) 控制項](xaml-cust-ctrl.md)。|
 | C++ 編譯器產生「錯誤 C2220: 將警告視為錯誤處理 - 沒有產生 'object' 檔案**」。|修正警告，或將 [C/C++] > [一般] > [將警告視為錯誤] 設定為 [否 (/WX-)]。|
 | 您的應用程式當機，因為在終結物件後，呼叫了在 C++/WinRT 物件中處理的事件。|請參閱[使用事件處理委派安全地存取 *this* 指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。|
 | C++ 編譯器產生「*錯誤 C2338：這僅適用於弱式參考資料支援*」。|您為將 **winrt::no_weak_ref** 標記結構作為範本引數傳遞至其基底類別的類型，要求一個弱式參考。 請參閱[不使用弱式參考支援](weak-references.md#opting-out-of-weak-reference-support)。|
