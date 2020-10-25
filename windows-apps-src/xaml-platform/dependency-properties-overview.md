@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7633ff363a00c90a576ad5799ef0d2b048cd5cdd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 769d786078edd68af2e1e57bdb869e7aa4099405
+ms.sourcegitcommit: 88f3992462c88a0c5c6e85b942705bae5e4a1aac
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166852"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499603"
 ---
 # <a name="dependency-properties-overview"></a>相依性屬性概觀
 
@@ -203,11 +203,11 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](/uwp/api/windows.ui.x
 ### <a name="conceptual-material"></a>概念資料
 
 - [自訂相依性屬性](custom-dependency-properties.md)
-- [附加屬性概觀](attached-properties-overview.md)
+- [附加屬性總覽](attached-properties-overview.md)
 - [深入了解資料繫結](../data-binding/data-binding-in-depth.md)
-- [腳本動畫](../design/motion/storyboarded-animations.md)
+- [Storyboarded 動畫](../design/motion/storyboarded-animations.md)
 - [建立 Windows 執行階段元件](/previous-versions/windows/apps/hh441572(v=vs.140))
-- [XAML 使用者和自訂控制項範例](https://code.msdn.microsoft.com/windowsapps/XAML-user-and-custom-a8a9505e)
+- [XAML 使用者和自訂控制項範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
 
 ## <a name="apis-related-to-dependency-properties"></a>相依性屬性相關的 Api
 
