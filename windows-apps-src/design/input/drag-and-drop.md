@@ -6,18 +6,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ab8d696ddb1a4ef9e3dc3549754cbf51fc91374
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 9a0005ecf7d51cc6b08bc5cc61350489839d568f
+ms.sourcegitcommit: 047004e2bf100e319d134c18518062bf7f3efb5d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220541"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92763102"
 ---
 # <a name="drag-and-drop"></a>拖放
 
 拖放是在 Windows 桌面上於應用程式中或應用程式間傳輸資料的直覺方式。 拖放可讓使用者使用標準手勢 (使用手指按住不放然後平移，或使用滑鼠或手寫筆按住然後平移) 在應用程式間或在應用程式內傳輸資料。
 
-> **重要 API**：[CanDrag 屬性](/uwp/api/windows.ui.xaml.uielement.candrag)、[AllowDrop 屬性](/uwp/api/windows.ui.xaml.uielement.allowdrop) 
+> **重要 API** ： [CanDrag 屬性](/uwp/api/windows.ui.xaml.uielement.candrag)、 [AllowDrop 屬性](/uwp/api/windows.ui.xaml.uielement.allowdrop) 
 
 拖曳來源 (即觸發拖曳手勢的應用程式或區域) 可藉由填入可包含標準資料格式，包含文字、RTF、HTML、點陣圖、儲存項目或自訂資料格式的資料套件物件，來提供要傳送的資料。 來源同時也指出其支援的作業類型：複製、移動或連結。 當指標釋放時，便會發生置放。 置放目標，即指標底下的應用程式或區域，會處理資料套件，然後傳回執行的作業類型。
 
@@ -29,7 +29,7 @@ ms.locfileid: "91220541"
 
 1. 將元素的 **CanDrag** 屬性設為 true 以啟用拖曳。  
 2. 建置資料套件。 系統會自動處理影像和文字，但針對其他內容，您將需要處理 **DragStarted** 和 **DragCompleted** 事件，然後使用他們建構您自己的資料套件。 
-3. 藉由將 **AllowDrop** 屬性設為 **true**，來在所有能接收置放內容的元素上啟用置放。 
+3. 藉由將 **AllowDrop** 屬性設為 **true** ，來在所有能接收置放內容的元素上啟用置放。 
 4. 處理 **DragOver** 事件，讓系統知道元素可接收什麼類型的置放作業。 
 5. 處理 **Drop** 事件，以接收置放內容。 
 
@@ -37,7 +37,7 @@ ms.locfileid: "91220541"
 
 ## <a name="enable-dragging"></a>啟用拖曳
 
-若要在元素上啟用拖曳，請將其 [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) 屬性設為 **true**。 這會讓元素--以及其中包含的元素，若元素本身為集合 (像是 ListView) 的話--可進行拖曳。
+若要在元素上啟用拖曳，請將其 [**CanDrag**](/uwp/api/windows.ui.xaml.uielement.candrag) 屬性設為 **true** 。 這會使元素（以及它所包含的專案）在可拖曳的集合（例如 ListView）的情況下成為可拖曳的專案。
 
 指定可拖曳的內容。 使用者不會想要拖曳您應用程式中的所有東西，通常只有特定項目，例如影像或文字。 
 
@@ -92,9 +92,15 @@ ms.locfileid: "91220541"
 
 ## <a name="designate-an-item-in-a-listview-or-gridview-as-a-folder"></a>將 ListView 或 GridView 中的項目指定為資料夾
 
-您可以指定 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 或 [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 做為資料夾。 對於樹狀檢視和檔案總管情況而言，這特別有用。 若要這樣做，請將該項目上的 [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) 屬性明確設為 **True**。 
+您可以指定 [**ListViewItem**](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem) 或 [**GridViewItem**](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem) 做為資料夾。 對於樹狀檢視和檔案總管情況而言，這特別有用。 若要這樣做，請將該項目上的 [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) 屬性明確設為 **True** 。 
 
 系統將會針對拖曳到資料夾中和非資料夾項目，自動顯示適當的動畫。 您的 app 程式碼必須在資料夾 (以及非資料夾項目) 上繼續處理 [**Drop**](/uwp/api/windows.ui.xaml.uielement.drop) 事件，以更新料來源並將放下的項目新增到目標資料夾。
+
+## <a name="enable-drag-and-drop-reordering-within-listviews"></a>在 Listview 內啟用拖放重新排列
+
+[**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)可使用與本文所述的 **CanDrop** API 非常類似的 api，來支援以拖曳為基礎的重新排列。 您至少要加入 **system.windows.uielement.allowdrop** 和 **CanReorderItems** 屬性。
+
+如需詳細資訊，請參閱 [**ListViewBase CanReorderItems**](/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems) 。
 
 ## <a name="implementing-custom-drag-and-drop"></a>實作自訂拖放
 
@@ -109,7 +115,7 @@ ms.locfileid: "91220541"
 
 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [應用程式間通訊](index.md)
 * [AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop)
