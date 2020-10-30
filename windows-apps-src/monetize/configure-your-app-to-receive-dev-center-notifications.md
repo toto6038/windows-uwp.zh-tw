@@ -1,17 +1,17 @@
 ---
-Description: 瞭解如何註冊您的 UWP 應用程式，以接收從合作夥伴中心傳送的推播通知。
+description: 瞭解如何註冊您的 UWP 應用程式，以接收從合作夥伴中心傳送的推播通知。
 title: 設定您的應用程式以接收目標式推播通知
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、Microsoft Store Services SDK、目標推播通知合作夥伴中心
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
-ms.openlocfilehash: abb901c1b067dcf3609cbfb5c4cf3f81c9dc465c
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 2296ae29ddcfd868e31c294f8859d4f4b925fca8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364131"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033531"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>設定您的應用程式以接收目標式推播通知
 
@@ -25,9 +25,9 @@ ms.locfileid: "89364131"
 
 1. 如果您尚未這麼做，請在您的開發電腦上[安裝 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。 
 2. 在 Visual Studio 中，開啟您的專案。
-3. 在方案總管中，以滑鼠右鍵按一下專案的 [ **參考** ] 節點，然後按一下 [ **加入參考**]。
-4. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**，然後按一下 **\[擴充功能\]**。
-5. 在 Sdk 清單中，按一下 [ **Microsoft Engagement 架構** ] 旁的核取方塊，然後按一下 **[確定]**。
+3. 在方案總管中，以滑鼠右鍵按一下專案的 [ **參考** ] 節點，然後按一下 [ **加入參考** ]。
+4. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** ，然後按一下 **\[擴充功能\]** 。
+5. 在 Sdk 清單中，按一下 [ **Microsoft Engagement 架構** ] 旁的核取方塊，然後按一下 **[確定]** 。
 
 ## <a name="register-for-push-notifications"></a>註冊推播通知
 
@@ -57,7 +57,7 @@ ms.locfileid: "89364131"
 
 ### <a name="how-targeted-push-notifications-are-routed-to-customers"></a>目標式推播通知是如何路由至客戶
 
-當您的 app 呼叫 **RegisterNotificationChannelAsync**，這個方法會收集目前登入裝置之客戶的 Microsoft 帳戶。 稍後，當您將目標推播通知傳送至包含此客戶的區段時，合作夥伴中心會將通知傳送至與此客戶 Microsoft 帳戶相關聯的裝置。
+當您的 app 呼叫 **RegisterNotificationChannelAsync** ，這個方法會收集目前登入裝置之客戶的 Microsoft 帳戶。 稍後，當您將目標推播通知傳送至包含此客戶的區段時，合作夥伴中心會將通知傳送至與此客戶 Microsoft 帳戶相關聯的裝置。
 
 如果啟動您的 App 的客戶在仍登入其 Microsoft 帳戶的裝置時，將裝置借給別人使用，請留意其他人可能會看到以原來客戶為目標的通知。 這可能會產生非預期的結果，尤其是針對需要客戶登入才能使用服務的 App。 若要在本案例中防止其他使用者查看您的目標式通知，請在登出您的 app 時呼叫[UnregisterNotificationChannelAsync](/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.unregisternotificationchannelasync) 方法。 如需詳細資訊，請參閱本文稍後的[取消推播通知登錄](#unregister)。
 
@@ -83,7 +83,7 @@ ms.locfileid: "89364131"
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/App.xaml.cs" id="OnActivated":::
 
-* 如果推播通知具有背景啟用類型，請從您[背景工作](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法呼叫此方法，然後將已傳遞的 [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) 物件中所提供的引數傳遞給此方法。 下列程式碼範例假設您的程式碼檔案有 **Microsoft.Services.Store.Engagement**、**Windows.ApplicationModel.Background** 及 **Windows.UI.Notifications** 命名空間的 **using** 陳述式。
+* 如果推播通知具有背景啟用類型，請從您[背景工作](../launch-resume/support-your-app-with-background-tasks.md)的 [Run](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run) 方法呼叫此方法，然後將已傳遞的 [ToastNotificationActionTriggerDetail](/uwp/api/Windows.UI.Notifications.ToastNotificationActionTriggerDetail) 物件中所提供的引數傳遞給此方法。 下列程式碼範例假設您的程式碼檔案有 **Microsoft.Services.Store.Engagement** 、 **Windows.ApplicationModel.Background** 及 **Windows.UI.Notifications** 命名空間的 **using** 陳述式。
 
   :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/StoreSDKSamples/cs/DevCenterNotifications.cs" id="Run":::
 

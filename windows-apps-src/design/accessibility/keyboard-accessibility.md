@@ -1,5 +1,5 @@
 ---
-Description: 如果 app 未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用 app，或者根本無法使用。
+description: 如果 app 未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用 app，或者根本無法使用。
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: 鍵盤協助工具
 label: Keyboard accessibility
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c6fc039ad29fc7c29e609788983274c5342951c2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 79dd977cda50d8573cfeab2628ab6227cc9309c0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174002"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032501"
 ---
 # <a name="keyboard-accessibility"></a>鍵盤協助工具  
 
@@ -52,7 +52,7 @@ XAML
 </Grid>
 ```
 
-您可以排除 Tab 順序中的控制項。 通常只要將控制項變成非互動就可以達成，例如，將它的 [**IsEnabled**](/uwp/api/windows.ui.xaml.controls.control.isenabled) 屬性設定成 **false**。 停用的控制項會自動從 Tab 順序中排除。 不過有時候，即使控制項未停用，您還是想從 Tab 順序排除控制項。 在這種情況下，您可以將 [**IsTabStop**](/uwp/api/windows.ui.xaml.controls.control.istabstop) 屬性設定成 **false**。
+您可以排除 Tab 順序中的控制項。 通常只要將控制項變成非互動就可以達成，例如，將它的 [**IsEnabled**](/uwp/api/windows.ui.xaml.controls.control.isenabled) 屬性設定成 **false** 。 停用的控制項會自動從 Tab 順序中排除。 不過有時候，即使控制項未停用，您還是想從 Tab 順序排除控制項。 在這種情況下，您可以將 [**IsTabStop**](/uwp/api/windows.ui.xaml.controls.control.istabstop) 屬性設定成 **false** 。
 
 根據預設，可以擁有焦點的任何元素通常會在 Tab 順序中。 但有一個例外，就是某些文字顯示類型 (例如 [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)) 可以有焦點，剪貼簿才能使用這些類型選取文字；不過，由於靜態元素本來就不應該出現在 Tab 順序中，所以 Tab 順序也不會有這些靜態元素。 它們不是以慣用的方式互動 (它們無法被叫用，也不需要文字輸入，但支援[文字控制項模式](/windows/desktop/WinAuto/uiauto-controlpatternsoverview)，此模式支援尋找和調整文字選取點)。 文字不應有當焦點設定到其上時，將啟用一些可能動作的意涵。 文字元素仍然能被輔助技術偵測，並在螢幕助讀程式中大聲讀出，但這全都是依賴以實際 Tab 順序尋找這些元素以外的技術。
 
@@ -60,14 +60,14 @@ XAML
 
 * [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) 等於 0 的 UI 元素會根據 XAML 或子集合中的宣告順序，新增到 Tab 順序。
 * [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) 大於 0 的 UI 元素會根據 **TabIndex** 的值，新增到 Tab 順序。
-* [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) 小於 0 的 UI 元素會新增到 Tab 順序，並顯示在任何零值的前面。 這與 HTML 處理 **tabindex** 屬性的方法有潛在的不同 (且舊版的 HTML 規格不支援負 **tabindex**)。
+* [**TabIndex**](/uwp/api/windows.ui.xaml.controls.control.tabindex) 小於 0 的 UI 元素會新增到 Tab 順序，並顯示在任何零值的前面。 這與 HTML 處理 **tabindex** 屬性的方法有潛在的不同 (且舊版的 HTML 規格不支援負 **tabindex** )。
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
 
 ## <a name="keyboard-navigation-within-a-ui-element"></a>使用鍵盤在 UI 元素中瀏覽  
-至於複合元素，務必確認可以在內含的元素之間進行合適的內部瀏覽。 複合元素可以管理目前使用中的子元素，減少所有子元素能夠擁有焦點的負擔。 這種複合元素會包含在 Tab 順序中，而且可以自行處理鍵盤瀏覽事件。 許多複合控制項都已經在控制項的事件處理中內建一些內部瀏覽邏輯。 例如，根據預設，您可以使用方向鍵瀏覽 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[**GridView**](/uwp/api/windows.ui.xaml.controls.gridview)、[**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**FlipView**](/uwp/api/Windows.UI.Xaml.Controls.FlipView) 控制項。
+至於複合元素，務必確認可以在內含的元素之間進行合適的內部瀏覽。 複合元素可以管理目前使用中的子元素，減少所有子元素能夠擁有焦點的負擔。 這種複合元素會包含在 Tab 順序中，而且可以自行處理鍵盤瀏覽事件。 許多複合控制項都已經在控制項的事件處理中內建一些內部瀏覽邏輯。 例如，根據預設，您可以使用方向鍵瀏覽 [**ListView**](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [**GridView**](/uwp/api/windows.ui.xaml.controls.gridview)、 [**ListBox**](/uwp/api/Windows.UI.Xaml.Controls.ListBox) 和 [**FlipView**](/uwp/api/Windows.UI.Xaml.Controls.FlipView) 控制項。
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
@@ -96,10 +96,10 @@ XAML
 ## <a name="keyboard-shortcuts"></a>鍵盤快速鍵  
 除了實作應用程式的鍵盤瀏覽以及啟用功能之外，實作應用程式功能的捷徑也是不錯的做法。 Tab 瀏覽會提供基本的鍵盤支援，不過遇到複雜的表單時，可能需要加入快速鍵的支援。 這樣可以讓應用程式更加容易操作，即使同時使用鍵盤和指標裝置的人，也是如此。
 
-*快速鍵*是一種鍵盤組合，可讓使用者有效率地存取應用程式功能，以提高生產力。 目前有兩種捷徑：
+*快速鍵* 是一種鍵盤組合，可讓使用者有效率地存取應用程式功能，以提高生產力。 目前有兩種捷徑：
 
-* *便捷鍵*是連至應用程式中某部分 UI 的捷徑。 便捷鍵包含 Alt 鍵和一個字母按鍵。
-* *快速鍵*是應用程式命令的捷徑。 您的應用程式不一定會包含準確對應到命令的 UI。 快速鍵包含 Ctrl 鍵和一個字母按鍵。
+* *便捷鍵* 是連至應用程式中某部分 UI 的捷徑。 便捷鍵包含 Alt 鍵和一個字母按鍵。
+* *快速鍵* 是應用程式命令的捷徑。 您的應用程式不一定會包含準確對應到命令的 UI。 快速鍵包含 Ctrl 鍵和一個字母按鍵。
 
 請為依賴螢幕助讀程式或其他輔助技術的使用者，提供一種便利的方法，讓他們發現應用程式的快速鍵。 使用工具提示、無障礙名稱、無障礙說明或其他螢幕上的溝通方式，與快速鍵進行溝通。 至少應在 app 的說明內容中詳細記載快速鍵。
 
@@ -155,7 +155,7 @@ XAML
 <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"/>
 
 ### <a name="implementing-a-key-event-handler"></a>實作按鍵事件處理常式  
-像按鍵事件這種輸入事件，都使用一種稱為「路由事件」** 的事件概念。 路由事件可以透過複合控制項的子元素反昇，因此通用控制項父元素可以處理多個子元素的事件。 如果控制項包含多個複合組件，而這些組件的設計無法擁有焦點或無法成為 Tab 順序一部分，這時候很適合使用這種事件模型，為控制項定義快速鍵動作。
+像按鍵事件這種輸入事件，都使用一種稱為「路由事件」  的事件概念。 路由事件可以透過複合控制項的子元素反昇，因此通用控制項父元素可以處理多個子元素的事件。 如果控制項包含多個複合組件，而這些組件的設計無法擁有焦點或無法成為 Tab 順序一部分，這時候很適合使用這種事件模型，為控制項定義快速鍵動作。
 
 如需示範如何撰寫包含輔助按鍵 (例如 Ctrl 鍵) 檢查的按鍵事件處理常式的程式碼範例，請參閱[鍵盤互動](../input/keyboard-interactions.md)。
 
@@ -173,7 +173,7 @@ XAML
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
 
 ## <a name="an-example-of-a-visual-state-for-a-focus-indicator"></a>焦點指示器的視覺狀態範例  
-我們稍早有提到任何可以讓使用者將它當作焦點的自訂控制項，都應該有視覺焦點指示器。 通常該焦點指示器就像在控制項的一般週框矩形外圍再緊接著繪製一個矩形一樣簡單。 視覺焦點的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是控制項範本中其餘控制項組合的對等元素，但是它一開始的 [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 值是設成 **Collapsed**，因為控制項還沒有被當作焦點。 然後，當控制項確實被當作焦點時，系統就會叫用視覺狀態將焦點視覺效果的 **Visibility** 設成 **Visible**。 一旦焦點移到其他地方，系統就會呼叫另一個視覺狀態，然後 **Visibility** 就會變成 **Collapsed**。
+我們稍早有提到任何可以讓使用者將它當作焦點的自訂控制項，都應該有視覺焦點指示器。 通常該焦點指示器就像在控制項的一般週框矩形外圍再緊接著繪製一個矩形一樣簡單。 視覺焦點的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 是控制項範本中其餘控制項組合的對等元素，但是它一開始的 [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) 值是設成 **Collapsed** ，因為控制項還沒有被當作焦點。 然後，當控制項確實被當作焦點時，系統就會叫用視覺狀態將焦點視覺效果的 **Visibility** 設成 **Visible** 。 一旦焦點移到其他地方，系統就會呼叫另一個視覺狀態，然後 **Visibility** 就會變成 **Collapsed** 。
 
 所有預設 XAML 控制項聚焦時都會顯示適當的視覺焦點指示器 (如果可以聚焦)。 根據使用者選取的佈景主題，外觀也可能會不同 (尤其是當使用者使用高對比模式時)。如果您在 UI 使用 XAML 控制項，且沒有取代控制項範本，則不需要執行額外的動作在行為和顯示正常的控制項取得視覺焦點指示器。 不過，如果您打算重新範本化控制項，或者想了解 XAML 控制項如何提供視覺焦點指示器，本節剩餘的內容將說明如何透過 XAML 和控制項邏輯進行此工作。
 
@@ -232,7 +232,7 @@ XAML
 </ControlTemplate>
 ```
 
-請注意如何會導致只有其中一個指定的狀態會直接調整 [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility)，而其他狀態似乎是空白的。 視覺狀態的運作方式就是，只要控制項一使用來自相同 [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) 的另一個狀態，就立即取消由先前狀態套用的所有動畫。 由於來自組合的預設 **Visibility** 是 **Collapsed**，因此表示將不會出現矩形。 控制項邏輯可透過接聽焦點事件 (例如 [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus))，並利用 [**GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 變更狀態，以控制此行為。 如果您使用的是預設控制項，或是根據已有該行為的控制項所自訂的控制項，則通常已為您完成這項處理。
+請注意如何會導致只有其中一個指定的狀態會直接調整 [**Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility)，而其他狀態似乎是空白的。 視覺狀態的運作方式就是，只要控制項一使用來自相同 [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) 的另一個狀態，就立即取消由先前狀態套用的所有動畫。 由於來自組合的預設 **Visibility** 是 **Collapsed** ，因此表示將不會出現矩形。 控制項邏輯可透過接聽焦點事件 (例如 [**GotFocus**](/uwp/api/windows.ui.xaml.uielement.gotfocus))，並利用 [**GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 變更狀態，以控制此行為。 如果您使用的是預設控制項，或是根據已有該行為的控制項所自訂的控制項，則通常已為您完成這項處理。
 
 <span id="Keyboard_accessibility_and_Windows_Phone"/>
 <span id="keyboard_accessibility_and_windows_phone"/>

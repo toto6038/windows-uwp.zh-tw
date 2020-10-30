@@ -1,17 +1,17 @@
 ---
-Description: 瞭解如何在 Microsoft Store 中推廣您的應用程式和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
+description: 瞭解如何在 Microsoft Store 中推廣您的應用程式和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
 title: Microsoft Store 應用程式行銷指導方針
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64da05c3c3caed204e33890e88222e9a75be3ae0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 753b60cf3da6400d3df695c2f390c0b47c7a9e68
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162052"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033961"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 應用程式行銷指導方針
 
@@ -21,7 +21,7 @@ ms.locfileid: "89162052"
 
 我們已建立特殊的宣傳徽章，可協助您將更多客戶提供給您的應用程式在 Microsoft Store 中的清單。 這些徽章提供 44 種語言的版本。 請記住，當您使用這些圖片時，您必須遵守特定要求；可以在 PDF 檔案中找到這些要求、使用方式範例以及指導方針。
 
-[ ![ 下載按鈕](images/downloadbutton.png)](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf) **Microsoft Store 徽章指導方針 (PDF、英文) **
+[ ![ 下載按鈕](images/downloadbutton.png)](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf) **Microsoft Store 徽章指導方針 (PDF、英文)**
 
 
 ## <a name="badge-generator-and-images"></a>徽章產生器和影像
@@ -37,11 +37,11 @@ ms.locfileid: "89162052"
 
 若要促銷您的 app，您可能會想要顯示該 app 在 Windows 裝置上執行時的外觀。 我們有各種不同的裝置機格圖片讓您選取，包括手機、平板電腦、膝上型電腦和個人電腦。 您可以在 [Microsoft Store 行銷指導方針](https://download.microsoft.com/download/0/7/D/07DF43D4-B1A8-4D38-BC02-4903BB36CEE8/Microsoft_Store_Badge_Guidelines.pdf)中找到如何使用這些映射的最佳作法和技術規格。
 
-[ ![ 下載按鈕](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) **Windows 裝置藝術**
+[ ![ 下載按鈕](images/downloadbutton.png)](https://download.microsoft.com/download/1/A/5/1A58A23A-1388-4097-B441-A3E8DBC14849/Windows_Store_Device_Art.zip) **Windows 裝置藝術**
 
 ## <a name="license-to-microsoft-marks"></a>授與 Microsoft 商標權限
 
-*Microsoft 商標*代表[徽章](https://developer.microsoft.com/store/badges)產生器頁面上所述的*microsoft 徽章*。 若要使用這些徽章，您必須：
+*Microsoft 商標* 代表 [徽章](https://developer.microsoft.com/store/badges)產生器頁面上所述的 *microsoft 徽章* 。 若要使用這些徽章，您必須：
 
 -   將您的應用程式或其他內容提供給 Microsoft Store，或成為 [Microsoft 分支機搆方案](https://www.microsoftaffiliates.com/)的一部分。
 
@@ -53,6 +53,6 @@ ms.locfileid: "89162052"
 
 Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使用 Microsoft 標誌之商譽的唯一受益人。 Microsoft 在未經通知的情況下，得隨時撤銷此授權。
 
- 
+ 
 
- 
+ 

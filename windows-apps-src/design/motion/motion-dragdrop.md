@@ -1,5 +1,5 @@
 ---
-Description: 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
+description: 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
 title: 拖曳動畫
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a51f60fdbc8d616bd4db360190c8e329e10709e8
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: acc193f0851e2f04113e33aa470e9aa784337921
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220161"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034281"
 ---
 # <a name="drag-animations"></a>拖曳動畫
 
@@ -22,7 +22,7 @@ ms.locfileid: "91220161"
 
 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
 
-> **重要 API**: [**DragItemThemeAnimation 類別**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
+> **重要 API** : [**DragItemThemeAnimation 類別**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -56,8 +56,8 @@ ms.locfileid: "91220161"
 
 ## <a name="related-articles"></a>相關文章
 
-**適用于開發人員**
-* [動畫概觀](./xaml-animation.md)
+**開發人員**
+* [動畫總覽](./xaml-animation.md)
 * [讓拖放序列產生動畫效果](/previous-versions/windows/apps/jj649427(v=win.10))
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**DragItemThemeAnimation 類別**](/uwp/api/windows.ui.xaml.media.animation.dragitemthemeanimation)
@@ -65,4 +65,4 @@ ms.locfileid: "91220161"
 * [**DragOverThemeAnimation 類別**](/uwp/api/windows.ui.xaml.media.animation.dragoverthemeanimation)
 
 
- 
+ 

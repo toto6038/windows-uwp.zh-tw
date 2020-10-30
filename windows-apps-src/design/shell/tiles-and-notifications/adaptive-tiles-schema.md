@@ -1,19 +1,19 @@
 ---
-Description: 以下是用來建立彈性磚的元素和屬性。
+description: 以下是用來建立彈性磚的元素和屬性。
 title: 彈性磚結構描述與範本
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed9124b0b66239c10b277f070ac2c9594c336fdd
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: c0bf281006d63f65ad6af557700eb2e4186bcf51
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57611013"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034091"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>彈性磚範本：結構描述和指導方針
 
@@ -52,7 +52,7 @@ ms.locfileid: "57611013"
 </visual>
 ```
 
-## <a name="binding-element"></a>正在繫結元素
+## <a name="binding-element"></a>Binding Element - 繫結項目
 
 
 ``` xml
@@ -141,10 +141,10 @@ textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle �
 ## <a name="related-topics"></a>相關主題
 
 
-* [建立自動調整圖格](create-adaptive-tiles.md)
- 
+* [建立彈性磚](create-adaptive-tiles.md)
+ 
 
- 
+ 
 
 
 

@@ -1,5 +1,5 @@
 ---
-Description: 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。
+description: 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。
 title: 傳送本機磚通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e3bee4a32c4a66ece5f486386340e9f9122f87
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 6b93f9731fb9bf843ce9bb03bd8c6526546c4249
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156802"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034461"
 ---
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
  
@@ -24,7 +24,7 @@ Windows 10 中的主要應用程式磚定義在您的應用程式資訊清單中
 > [!NOTE] 
 >了解[建立調適性磚](create-adaptive-tiles.md)及[磚內容結構描述](../tiles-and-notifications/tile-schema.md)。
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>安裝 NuGet 封裝
 
@@ -293,6 +293,6 @@ var notification = new TileNotification(doc);
 * [**Windows.UI.Notifications 命名空間**](/uwp/api/Windows.UI.Notifications)
 * [如何使用通知佇列 (XAML)](/previous-versions/windows/apps/hh868234(v=win.10))
 * [傳遞通知](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 

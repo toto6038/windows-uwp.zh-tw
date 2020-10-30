@@ -1,5 +1,5 @@
 ---
-Description: 定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。
+description: 定期通知也稱為輪詢通知，可以在固定的時間間隔從雲端服務下載內容來更新磚和徽章。
 title: 定期通知概觀
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9936fd6b7210298bdce042b7848a75be8e044040
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5860c4e45a25b0d141e1b2c57421dd2640d5fbb4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175502"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033781"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概觀
  
@@ -25,9 +25,9 @@ ms.locfileid: "89175502"
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 定期通知是將相同內容散佈給廣大群眾的理想方式。
 
-**注意**   您可以下載 Windows 8.1 的推播[和定期通知範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))，並在 Windows 10 應用程式中重複使用它的原始程式碼，以深入瞭解。
+**注意：** 若要深入了解，您可以下載適用於 Windows 8.1 的 [推播和定期通知範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208))，並在 Windows 10 應用程式中重複使用其原始程式碼。
 
- 
+ 
 
 ## <a name="how-it-works"></a>運作方式
 
@@ -106,4 +106,4 @@ ms.locfileid: "89175502"
 * [定期通知的指導方針]()
 * [如何設定徽章的定期通知](/previous-versions/windows/apps/hh761476(v=win.10))
 * [如何設定磚的定期通知](/previous-versions/windows/apps/hh761476(v=win.10))
- 
+ 

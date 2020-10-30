@@ -1,5 +1,5 @@
 ---
-Description: 使用 Windows.globalization.datetimeformatting API 搭配自訂範本和模式，以完全依照您想要的格式來顯示日期和時間。
+description: 使用 DateTimeFormatting API 搭配自訂範本和模式，以完全符合您想要的格式顯示日期和時間。
 title: 使用模式來設定日期和時間的格式
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: da4d9b2c7380a085efdcb234ad210eafca40b1c3
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: dbabbcaccd88b187a03c83909bcb38d5f64b30bb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493603"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034311"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用範本和模式來設定日期和時間的格式
 
@@ -25,11 +25,11 @@ ms.locfileid: "86493603"
 
 但當您想要對所希望顯示之 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 物件的元件順序與格式有更多控制時，您可以將格式模式傳遞到建構函式的 *formatTemplate* 引數。 格式模式使用一種特殊的語法，可讓您取得 **DateTime** 物件的個別元件&mdash;例如，單純月份的名稱，或年份的值&mdash;以使用任何您選擇的自訂格式顯示他們。 此外，模式也可以當地語系化以配合其他語言和地區。
 
-**注意**   這只是格式模式的總覽。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
+**備註** ：這僅只是格式模式的概觀。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式範本和格式模式的不同
 
-格式範本是與文化無關的格式字串。 因此，若您使用格式範本建構 **DateTimeFormatter**，則格式器會以目前語言的正確順序顯示您的格式化元件。 相反的，格式模式則是文化限定的。 若您使用格式模式建構 **DateTimeFormatter**，則格式器會直接使用指定的模式。 因此，模式不見得在每個文化中都是有效的。
+格式範本是與文化無關的格式字串。 因此，若您使用格式範本建構 **DateTimeFormatter** ，則格式器會以目前語言的正確順序顯示您的格式化元件。 相反的，格式模式則是文化限定的。 若您使用格式模式建構 **DateTimeFormatter** ，則格式器會直接使用指定的模式。 因此，模式不見得在每個文化中都是有效的。
 
 讓我們用範例說明這項差異。 我們會將一個簡單的格式範本 (並非模式) 傳遞給 **DateTimeFormatter** 建構函式。 這是格式範本 "month day"。
 
@@ -39,7 +39,7 @@ var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatt
 
 這會根據目前內容的語言與地區值來建立格式子。 格式範本中的元件順序不重要，因為格式器會使用目前語言的正確順序顯示他們。 因此，它會為英文 (美國) 顯示「January 1」，為法文 (法國) 顯示「1 janvier」，為日文顯示「1月1日」。
 
-另一方面，格式模式則是文化限定的。 讓我們存取格式範本的格式模式。
+另一方面，格式模式則是文化限定的。 讓我們來存取格式範本的格式模式。
 
 ```csharp
 IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;
@@ -53,13 +53,13 @@ Fr-FR: "{day.integer} {month.full}"
 Ja-JP: "{month.integer}月{day.integer}日"
 ```
 
-在上述範例中，我們輸入無關文化的格式字串，並取得文化限定的格式字串 (即為我們呼叫 `dateFormatter.Patterns` 時發揮作用的語言和地區函式)。 因此，若您使用文化限定的格式模式建構 **DateTimeFormatter**，則它便只會在特定語言/地區中有效。
+在上述範例中，我們輸入無關文化的格式字串，並取得文化限定的格式字串 (即為我們呼叫 `dateFormatter.Patterns` 時發揮作用的語言和地區函式)。 因此，若您使用文化限定的格式模式建構 **DateTimeFormatter** ，則它便只會在特定語言/地區中有效。
 
 ```csharp
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-上述格式器會針對括弧內的個別元件，傳回文化特性的特定值 {} 。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
+上述格式器會傳回括弧內個別元件的文化特性特定值 {} 。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
 
 ``` syntax
 En-US: January 1
@@ -98,7 +98,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 June 25 | 1:38 PM
 ```
 
-日期部分會對應 "month day" 格式範本，而時間部分則會對應 "hour minute" 格式範本。 因此，您可以針對相關的日期和時間格式範本來建立格式化程式，然後使用可當地語系化的格式字串將其輸出串連在一起。
+日期部分會對應 "month day" 格式範本，而時間部分則會對應 "hour minute" 格式範本。 因此，您可以針對相關的日期和時間格式範本來建立格式器，然後使用可當地語系化的格式字串將其輸出串連在一起。
 
 ```csharp
 var dateToFormat = System.DateTime.Now;
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString`這是參考資源檔（. .resw）中可當地語系化資源的資源識別碼。 針對預設語言 [英文（美國）]，這會設定為 "|" 的值，加上 {0} {1} 批註，表示 " {0} " 為日期，而 " {1} " 為時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
+`CustomDateTimeFormatString` 是資源識別碼，可在資源檔中參考可當地語系化的資源 ( .resw) 。 針對英文 (美國) 的預設語言，這會設定為 "|" 的值， {0} {1} 以及表示 " {0} " 是日期和 " {1} " 是時間的批註。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
 
 另一種實作此範例的方法便是查詢兩個格式器以取得其格式模式，將他們結合在一起，然後使用結合後的格式模式建構第三個格式器。
 

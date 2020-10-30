@@ -1,5 +1,5 @@
 ---
-Description: 設計您的應用程式，使其在混合現實中看起來良好且功能良好。
+description: 設計您的應用程式，使其在混合現實中看起來良好且功能良好。
 title: 設計混合實境
 ms.assetid: ''
 label: Designing for Mixed Reality
@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: c0b1ae069959e74239234ae5c9ba409fe7a65f23
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 225b91b20f35c974fca865cc4e94a96efceda84d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165972"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034371"
 ---
 # <a name="designing-for-mixed-reality"></a>設計混合實境
 
@@ -40,7 +40,7 @@ HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行�
 
 如果您要建立沈浸式應用程式，您應該瀏覽 [Windows Mixed Reality 開發人員中心](https://developer.microsoft.com/mixed-reality)了解詳細資訊。
 
-2D 應用程式在使用者檢視中，如同傳統平面視窗執行。 在 HoloLens 上，這表示釘選檢視於專頁，或在使用者真實世界客廳或辦公室空間裡的一點。 Windows Mixed Reality 頭戴式裝置中，應用程式釘選到在 [混合實境首頁](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)(有時稱為*懸崖之屋*) 的專頁。
+2D 應用程式在使用者檢視中，如同傳統平面視窗執行。 在 HoloLens 上，這表示釘選檢視於專頁，或在使用者真實世界客廳或辦公室空間裡的一點。 Windows Mixed Reality 頭戴式裝置中，應用程式釘選到在 [混合實境首頁](/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home)(有時稱為 *懸崖之屋* ) 的專頁。
 
 ![混合實境中執行多個應用程式](images/MR-multiple.png)
 
@@ -113,9 +113,9 @@ HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行�
 
 ![混合實境應用程式中顯示的文字應該要大。](images/MR-text.png)
 
-* [您的注視是滑鼠](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting)。 當使用者查看項目時，做為 **touch hover** 事件，只需查看物件可能會觸發非故意的快顯或其他不想要的互動。 如果應用程式目前在混合實境中執行與變更此行為，您可能需要偵測。 請查閱 **執行階段支援**，於下方。 
+* [您的注視是滑鼠](https://developer.microsoft.com/windows/mixed-reality/gaze_targeting)。 當使用者查看項目時，做為 **touch hover** 事件，只需查看物件可能會觸發非故意的快顯或其他不想要的互動。 如果應用程式目前在混合實境中執行與變更此行為，您可能需要偵測。 請查閱 **執行階段支援** ，於下方。 
 
-* 當使用者注視項目或點指向運動控制器，會發生 **touch hover** 事件。 這包含**PointerPoint**，其中 **PointerType** 是 **Touch**，但 **IsInContact** 是 **\ [false\]**。 發生某種認可的形式時 (例如，按下遊戲台 A 按鈕、按下 clicker 裝置、按下運動控制器觸發程序，或語音辨識出現「選取」)，發生 **touch press**，**PointerPoint** 有 **IsInContact** 變成 ** true**。 請參閱 [觸控互動](../input/touch-interactions.md)，了解這些輸入事件的詳細資訊。
+* 當使用者注視項目或點指向運動控制器，會發生 **touch hover** 事件。 這包含 **PointerPoint** ，其中 **PointerType** 是 **Touch** ，但 **IsInContact** 是 **\ [false\]** 。 發生某種認可的形式時 (例如，按下遊戲台 A 按鈕、按下 clicker 裝置、按下運動控制器觸發程序，或語音辨識出現「選取」)，發生 **touch press** ， **PointerPoint** 有 **IsInContact** 變成 **true** 。 請參閱 [觸控互動](../input/touch-interactions.md)，了解這些輸入事件的詳細資訊。
 
 * 請記住，注視不像滑鼠指向那麼準確。 較小的滑鼠目標或按鈕可能會造成使用者的挫折，因此請適當的重新調整控制項。 如果是為觸控而設計，可在混合實境中工作，但您會決定在執行階段放大一些按鈕。 請參閱 [更新您現有的 Hololens 跨平台應用程式](https://developer.microsoft.com/windows/mixed-reality/updating_your_existing_universal_app_for_hololens)。
 

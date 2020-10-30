@@ -1,5 +1,5 @@
 ---
-Description: 下列文章說明快顯通知內容中的所有屬性和元素。
+description: 下列文章說明快顯通知內容中的所有屬性和元素。
 title: 快顯通知內容結構描述
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Toast content schema
@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6399cb3aa6c22e188ed84941c3209632511d90e4
-ms.sourcegitcommit: 8b01b9ab7293dad1259da32d1459fdd454796e12
+ms.openlocfilehash: 7116f1aa6f06eda1351183963ea8169625a8df70
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92020168"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033021"
 ---
 # <a name="toast-content-schema"></a>快顯通知內容結構描述
 
@@ -40,8 +40,8 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **啟動**| 字串 | false | 快顯通知啟動應用程式時，傳遞給應用程式的字串。 此字串的格式和內容是由應用程式定義以供應用程式自己使用。 當使用者點選或按一下快顯通知來啟動其相關聯應用程式時，啟動字串會提供相關內容給應用程式，以允許應用程式向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。 |
-| **視覺效果** | [ToastVisual](#toastvisual) | true | 描述快顯通知的視覺效果部分。 |
+| **發射**| 字串 | false | 快顯通知啟動應用程式時，傳遞給應用程式的字串。 此字串的格式和內容是由應用程式定義以供應用程式自己使用。 當使用者點選或按一下快顯通知來啟動其相關聯應用程式時，啟動字串會提供相關內容給應用程式，以允許應用程式向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。 |
+| **Visual** | [ToastVisual](#toastvisual) | true | 描述快顯通知的視覺效果部分。 |
 | **動作** | [IToastActions](#itoastactions) | false | 選擇性使用按鈕和輸入建立自訂動作。 |
 | **音訊** | [ToastAudio](#toastaudio) | false | 描述快顯通知的音效部分。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 指定使用者此快顯通知內文時，將會使用什麼啟用類型。 |
@@ -134,7 +134,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | **BaseSubtle** | 和 Base 一樣，只是有輕微不透明度。 |
 | **副標題** | H4 字型大小。 |
 | **SubtitleSubtle** | 和 Subtitle 一樣，只是有輕微不透明度。 |
-| **Title** (標題) | H3 字型大小。 |
+| **標題** | H3 字型大小。 |
 | **TitleSubtle** | 和 Title 一樣，只是有輕微不透明度。 |
 | **TitleNumeral** | 和 Title 一樣，只是上/下邊框間距已移除。 |
 | **Subheader.aboutdocs** | H2 字型大小。 |
@@ -176,7 +176,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | 值 | 意義 |
 |---|---|
 | **預設值** | 預設值。 裁剪行為取決於轉譯器。 |
-| **None** | 不裁剪影像。 |
+| **無** | 不裁剪影像。 |
 | **Circle** | 將影像裁剪成圓形形狀。 |
 
 
@@ -235,7 +235,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Title** (標題) | 字串或 [BindableString](#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
+| **標題** | 字串或 [BindableString](#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
 | **ReplTest1** | double 或 [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](#bindableprogressbarvalue) | false | 取得或設定進度列的值。 支援資料繫結。 預設為 0。 |
 | **ValueStringOverride** | 字串或 [BindableString](#bindablestring) | false | 取得或設定要顯示的選用字串，用於取代預設百分比字串。 如果未提供此項，將會顯示「70%」之類的內容。 |
 | **狀態** | 字串或 [BindableString](#bindablestring) | true | 取得或設定狀態字串 (必要)，它會顯示在左側進度列的下方。 這個字串應該反映作業的狀態，例如「正在下載...」或「正在安裝...」 |
@@ -247,7 +247,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **ReplTest1** | double | false | 取得或設定值 (0.0 - 1.0)，代表完成百分比。 |
-| **IsIndeterminate** | bool | false | 取得或設定值，指出進度列不確定。 如果這為 true，會略過 **Value**。 |
+| **IsIndeterminate** | bool | false | 取得或設定值，指出進度列不確定。 如果這為 true，會略過 **Value** 。 |
 
 
 ### <a name="bindableprogressbarvalue"></a>BindableProgressBarValue
@@ -275,7 +275,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 值 | 意義 |
 |---|---|
 | **預設值** | 裁剪時會使用轉譯器的預設行為。 |
-| **None** | 不裁剪影像，顯示為正方形。 |
+| **無** | 不裁剪影像，顯示為正方形。 |
 | **Circle** | 將影像裁剪成圓形。 |
 
 
@@ -316,7 +316,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 |---|---|---|---|
 | **輸入** | IList<[IToastInput](#itoastinput)> | false | 像文字方塊和選擇輸入之類的輸入。 最多僅允許 5 項輸入。 |
 | **按鈕** | IList<[IToastButton](#itoastbutton)> | false | 按鈕會顯示在所有輸入之後 (如果當做快速回覆按鈕，則與輸入相鄰)。 最多僅允許 5 個按鈕 (如果還有操作功能表項目則更少)。 |
-| **ContextMenuItems** | IList<[ToastCoNtextMenuItem](#toastcontextmenuitem)> | false | 年度更新版的新功能：自訂操作功能表項目，如果使用者以滑鼠右鍵按一下通知，則會提供其他動作。 最多只能有 5 個按鈕與操作功能表項目搭配*組合*。 |
+| **ContextMenuItems** | IList<[ToastCoNtextMenuItem](#toastcontextmenuitem)> | false | 年度更新版的新功能：自訂操作功能表項目，如果使用者以滑鼠右鍵按一下通知，則會提供其他動作。 最多只能有 5 個按鈕與操作功能表項目搭配 *組合* 。 |
 
 
 ## <a name="itoastinput"></a>IToastInput
@@ -336,7 +336,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **Title** (標題) | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
+| **標題** | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
 | **PlaceholderContent** | 字串 | false | 使用者尚未輸入任何文字時，要顯示在文字方塊中的預留位置文字。 |
 | **DefaultInput** | 字串 | false | 要放在文字方塊中的初始文字。 如需空白文字方塊，請保持為 null。 |
 
@@ -358,7 +358,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **Title** (標題) | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
+| **標題** | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
 | **DefaultSelectionBoxItemId** | 字串 | false | 這會控制預設選取哪些項目，並且參考 [ToastSelectionBoxItem](#toastselectionboxitem) 的的 Id 屬性。 如果沒有提供這個屬性，預設選取項目會是空白 (使用者看不到任何項目)。 |
 | **項目** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | 使用者可以從這個 SelectionBox 中挑選的選取項目。 只能新增 5 個項目。 |
 
@@ -402,7 +402,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | Fall Creators Update 的新功能：取得或設定當使用者叫用此動作時，快顯通知應該使用的行為。 這只適用於桌上型電腦、[ToastButton](#toastbutton) 和 [ToastContextMenuItem](#toastcontextmenuitem)。 |
-| **ProtocolActivationTargetApplicationPfn** | 字串 | false | 如果您要使用 *ToastActivationType.Protocol*，則可以選擇性指定目標 PFN，因此無論是否已註冊多個 App 來處理相同的通訊協定 URI，都一律會啟動您想要的 App。 |
+| **ProtocolActivationTargetApplicationPfn** | 字串 | false | 如果您要使用 *ToastActivationType.Protocol* ，則可以選擇性指定目標 PFN，因此無論是否已註冊多個 App 來處理相同的通訊協定 URI，都一律會啟動您想要的 App。 |
 
 
 ### <a name="toastafteractivationbehavior"></a>ToastAfterActivationBehavior
@@ -471,7 +471,7 @@ Creators Update 的新功能：將控制中心內多個通知群組一起的自�
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
-| **Title** (標題) | 字串 | true | 標頭的標題。 |
+| **標題** | 字串 | true | 標頭的標題。 |
 | **引數**| 字串 | true | 取得或設定開發人員定義的引數字串，當使用者按下此標頭時會傳回至應用程式。 不可以是 null。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 取得或設定此標頭在使用者按一下時要使用的啟用類型。 預設為 Foreground。 請注意，只支援 Foreground 和 Protocol。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | 取得或設定與快顯通知標頭啟用相關的其他選項。 |

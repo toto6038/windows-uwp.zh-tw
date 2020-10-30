@@ -1,24 +1,24 @@
 ---
-Description: 若要在通用 Windows 平台 (UWP) app 中運用 A/B 測試執行實驗，您必須在 App 中編寫實驗的程式碼。
+description: 若要在通用 Windows 平台 (UWP) app 中運用 A/B 測試執行實驗，您必須在 App 中編寫實驗的程式碼。
 title: 編寫實驗用的應用程式程式碼
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
-ms.openlocfilehash: dbdd95ab0d4ecde5fbe5cfb8d84d2d328b4c5a24
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: a5229be4d0ea2ce98ec10530458fe29af10fa7f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363661"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033601"
 ---
 # <a name="code-your-app-for-experimentation"></a>編寫實驗用的應用程式程式碼
 
 在您 [建立專案並在合作夥伴中心中定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)之後，您就可以將通用 WINDOWS 平臺 (UWP) 應用程式中的程式碼更新為：
 * 從合作夥伴中心接收遠端變數值。
 * 使用遠端變數為您的使用者設定 App 體驗。
-* 將事件記錄到合作夥伴中心，指出使用者是否已查看您的實驗，並執行所需的動作 (也稱為 *轉換*) 。
+* 將事件記錄到合作夥伴中心，指出使用者是否已查看您的實驗，並執行所需的動作 (也稱為 *轉換* ) 。
 
 若要將此行為新增到您的 App 中，您將使用 Microsoft Store Services SDK 所提供的 API。
 
@@ -33,9 +33,9 @@ ms.locfileid: "89363661"
 
 1. [安裝 Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk)。
 2. 在 Visual Studio 中，開啟您的專案。
-3. 在方案總管中，展開專案節點，以滑鼠右鍵按一下 [ **參考**]，然後按一下 [ **加入參考**]。
-3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**，然後按一下 **\[擴充功能\]**。
-4. 在 Sdk 清單中，選取 [ **Microsoft Engagement Framework** ] 旁的核取方塊，然後按一下 **[確定]**。
+3. 在方案總管中，展開專案節點，以滑鼠右鍵按一下 [ **參考** ]，然後按一下 [ **加入參考** ]。
+3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]** ，然後按一下 **\[擴充功能\]** 。
+4. 在 Sdk 清單中，選取 [ **Microsoft Engagement Framework** ] 旁的核取方塊，然後按一下 **[確定]** 。
 
 > [!NOTE]
 > 本文中的程式碼範例假設您的程式碼檔案有 **System.Threading.Tasks** 和 **Microsoft.Services.Store.Engagement** 命名空間的 **using** 陳述式。

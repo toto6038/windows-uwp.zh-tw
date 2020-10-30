@@ -1,5 +1,5 @@
 ---
-Description: '瞭解桌面 c # 應用程式如何傳送本機快顯通知，以及如何處理使用者按一下快顯通知。'
+description: '瞭解桌面 c # 應用程式如何傳送本機快顯通知，以及如何處理使用者按一下快顯通知。'
 title: 從傳統型 C# 應用程式傳送本機快顯通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: 'windows 10、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、稀疏套件、c #、c 清晰、快顯通知、wpf、傳送快顯通知 wpf、傳送快顯通知（c #）、傳送通知 wpf、傳送通知 c #、快顯通知 wpf、快顯通知#'
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fa6b23e775beee993051b23b828c59316ac1382
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: cb91a76db38623b533a925ea1df4728bc0fead78
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100296"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034471"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
@@ -60,12 +60,12 @@ public class MyNotificationActivator : NotificationActivator
 
 #### <a name="msixsparse-packages"></a>[MSIX/sparse 封裝](#tab/msix-sparse)
 
-如果您使用的是 [MSIX](/windows/msix/desktop/source-code-overview) 或 [sparse 封裝](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者，如果您同時支援這兩個) ，請在 **package.appxmanifest**中新增：
+如果您使用的是 [MSIX](/windows/msix/desktop/source-code-overview) 或 [sparse 封裝](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) (或者，如果您同時支援這兩個) ，請在 **package.appxmanifest** 中新增：
 
 1. **xmlns:com** 的宣告
 2. **xmlns:desktop** 的宣告
-3. 在 **IgnorableNamespaces** 屬性中，**com** 和 **desktop**
-4. com：使用步驟 #2 中的 GUID 之 COM 啟動項的**擴充**功能。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
+3. 在 **IgnorableNamespaces** 屬性中， **com** 和 **desktop**
+4. com：使用步驟 #2 中的 GUID 之 COM 啟動項的 **擴充** 功能。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
 5. **desktop：** **toastNotificationActivation** 的擴充功能，可將您的快顯啟動程式 CLSID (步驟 #2) 的 GUID。
 
 「Package.appxmanifest」
@@ -162,7 +162,7 @@ DesktopNotificationManagerCompat.RegisterActivator<MyNotificationActivator>();
 
 ## <a name="step-5-send-a-notification"></a>步驟5：傳送通知
 
-傳送通知與 UWP app 相同，除了您將使用 **DesktopNotificationManagerCompat** 類別來建立 **ToastNotifier**。 相容性程式庫會自動處理 MSIX/sparse 套件與傳統桌面之間的差異，因此您不需要將程式碼派生。 針對傳統桌面，相容性程式庫會快取您在呼叫 **RegisterAumidAndComServer** 時所提供的 AUMID，如此您就不需要擔心何時提供或不提供 AUMID。
+傳送通知與 UWP app 相同，除了您將使用 **DesktopNotificationManagerCompat** 類別來建立 **ToastNotifier** 。 相容性程式庫會自動處理 MSIX/sparse 套件與傳統桌面之間的差異，因此您不需要將程式碼派生。 針對傳統桌面，相容性程式庫會快取您在呼叫 **RegisterAumidAndComServer** 時所提供的 AUMID，如此您就不需要擔心何時提供或不提供 AUMID。
 
 > [!NOTE]
 > 安裝 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，讓您可以使用如下所示的 C# 來建構通知，而不是使用原始 XML。
@@ -351,7 +351,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="known-issues"></a>已知問題
 
-**已修正：按一下快顯通知之後應用程式不會成為焦點**：在組建 15063 與更早版本中，當我們啟用 COM 伺服器時前景權限無法傳輸至您的應用程式。 因此，當您嘗試將它移動到前景時，您的應用程式只會閃爍。 此問題沒有解決方法。 我們在組建 16299 與更高版本中已修正這個問題。
+**已修正：按一下快顯通知之後應用程式不會成為焦點** ：在組建 15063 與更早版本中，當我們啟用 COM 伺服器時前景權限無法傳輸至您的應用程式。 因此，當您嘗試將它移動到前景時，您的應用程式只會閃爍。 此問題沒有解決方法。 我們在組建 16299 與更高版本中已修正這個問題。
 
 
 ## <a name="resources"></a>資源

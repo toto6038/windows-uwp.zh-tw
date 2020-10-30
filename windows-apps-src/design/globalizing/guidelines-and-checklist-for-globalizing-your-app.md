@@ -1,5 +1,5 @@
 ---
-Description: 設計及開發您的應用程式，使其能夠在不同語言和文化設定的系統上正常運作。
+description: 設計及開發您的應用程式，使其能夠在不同語言和文化設定的系統上正常運作。
 Search.Refinement.TopicID: 180
 title: 全球化指導方針
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
@@ -8,12 +8,12 @@ ms.date: 11/02/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: d71cf2289654860b47aef18c117ac9d6d36fab0a
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: f97408596750c2f9a8d2ad61ad2754627e23426f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493243"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033711"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指導方針
 
@@ -32,10 +32,10 @@ ms.locfileid: "86493243"
 | 比較語言標記的規則並非簡易規則。 | [BCP-47 語言標記](https://tools.ietf.org/html/bcp47)很複雜。 在比較語言標記時會產生許多問題，包括比對指令碼資訊、傳統標記及多個地區變體的問題。 Windows 中的資源管理系統會為您處理比對工作。 您可以使用任何語言指定一組資源，系統就會為使用者和應用程式選擇適當的資源。 請參閱[應用程式資源和資源管理系統](../../app-resources/index.md)及[資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)。 |
 | 建議您將您的 UI 設計為可容納不同文字長度和文字大小的標籤和文字輸入控制項。 | 翻譯成不同語言的字串長度可能會大幅改變，因此您需要將您的 UI 控制項設為可根據其內容動態調整尺寸。 在其他語言中常見的字元包含位於英文中常用字母上方或下方的標記 (例如 Å 或 Ņ)。 使用標準字型大小和列高提供適當的垂直空間。 請注意，適用於其他語言的字型可能會需要較大的最小字型大小，以保持在可閱讀的情況。 請參閱 [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live) 命名空間中的類別。 |
 | 支援閱讀順序的鏡像。 | 文字對齊和閱讀順序可以是由左至右 (例如，英文)，或由右至左 (RTL) (例如，阿拉伯文或希伯來文)。 如果您正在將產品當地語系化為使用和您自己的語言不同閱讀順序的語言，請確定 UI 元素的配置支援鏡像。 像是返回按鈕、UI 轉換效果及影像等項目都可能需要鏡像。 如需詳細資訊，請參閱[調整配置和字型及支援 RTL](adjust-layout-and-fonts--and-support-rtl.md)。 |
-| 正確顯示文字和字型。 | 理想的字型、字型大小和文字的方向會根據不同市場而有所不同。 如需詳細資訊，請參閱[**調整配置和字型及支援 RTL**](adjust-layout-and-fonts--and-support-rtl.md) 和[國際字型](loc-international-fonts.md)。 |
+| 正確顯示文字和字型。 | 理想的字型、字型大小和文字的方向會根據不同市場而有所不同。 如需詳細資訊，請參閱 [**調整配置和字型及支援 RTL**](adjust-layout-and-fonts--and-support-rtl.md) 和 [國際字型](loc-international-fonts.md)。 |
 
 ## <a name="important-apis"></a>重要 API
- 
+ 
 * [全球化](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)

@@ -1,17 +1,17 @@
 ---
-Description: 您的磚和快顯通知可以載入針對顯示語言、顯示縮放比例、高對比及其他執行階段內容量身打造的字串與影像。
+description: 您的磚和快顯通知可以載入針對顯示語言、顯示縮放比例、高對比及其他執行階段內容量身打造的字串與影像。
 title: 對語言、縮放比例及高對比的磚和快顯通知支援
 template: detail.hbs
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 88bcd5d6ce59d0561e76f46f6291f58ad03ddf3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0048da25cd1e775391c2523e37cb936243b7308c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89156732"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033111"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>對語言、縮放比例及高對比的磚和快顯通知支援
 
@@ -29,7 +29,7 @@ ms.locfileid: "89156732"
 <text id="1">ms-resource:Farewell</text>
 ```
 
-如果您省略 `ms-resource` URI 配置，則文字本文就只是字串常值，而*非*識別項參考。
+如果您省略 `ms-resource` URI 配置，則文字本文就只是字串常值，而 *非* 識別項參考。
 
 ```xml
 <text id="1">Farewell</text>
@@ -66,7 +66,7 @@ ms.locfileid: "89156732"
 
 然後在提供影像的應用程式服務中實作 HTTP 處理常式，在其中檢查和使用查詢字串來判斷要傳回哪一個影像。
 
-您也必須在[磚](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)或[快顯通知](/uwp/schemas/tiles/toastschema/schema-root?branch=live) XML 承載中，將 [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) 屬性設定為 `true`。 **AddImageQuery**屬性會出現在圖格和快顯快顯 `visual` 架構的、 `binding` 和元素中 `image` 。 明確設定元素上的 **addImageQuery** 會覆寫上階設定的任何值。 例如，`image` 元素的 **addImageQuery** 值 `true` 會覆寫其上層 `binding` 元素的 **addImageQuery** 值 `false`。
+您也必須在 [磚](/uwp/schemas/tiles/tilesschema/schema-root?branch=live)或 [快顯通知](/uwp/schemas/tiles/toastschema/schema-root?branch=live) XML 承載中，將 [**addImageQuery**](/uwp/schemas/tiles/tilesschema/element-visual?branch=live) 屬性設定為 `true`。 **AddImageQuery** 屬性會出現在圖格和快顯快顯 `visual` 架構的、 `binding` 和元素中 `image` 。 明確設定元素上的 **addImageQuery** 會覆寫上階設定的任何值。 例如，`image` 元素的 **addImageQuery** 值 `true` 會覆寫其上層 `binding` 元素的 **addImageQuery** 值 `false`。
 
 以下是您可以使用的查詢字串。
 

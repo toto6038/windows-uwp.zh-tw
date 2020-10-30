@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何建立有效且以使用者為主的通知，讓您的使用者更具生產力。
+description: 瞭解如何建立有效且以使用者為主的通知，讓您的使用者更具生產力。
 title: 快顯 UX 指導方針
 label: Toast UX Guidance
 template: detail.hbs
@@ -7,17 +7,17 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10、uwp、通知、收集、群組、ux、ux 指引、指引、動作、快顯、控制中心、noninterruptive、有效通知、不造成干擾通知、可操作、管理、組織
 ms.localizationpriority: medium
-ms.openlocfilehash: 9879d052882532e4d47c27c0b636f728293311cf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d6ad253ccfa744864caa8d0229d09ba40d066771
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169172"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033041"
 ---
 # <a name="toast-notification-ux-guidance"></a>快顯通知 UX 指導方針
 通知是現代化生命的必要部分;它們可協助使用者更具生產力，並與應用程式和網站聯繫，並隨時掌握最新的更新。 但是，如果不是以使用者為中心的方式設計，通知就可以快速地變成張牙舞爪和侵入式。 您的通知是以滑鼠右鍵按一下而不是關閉的，而且不太可能會在關閉後重新開啟。  因此，請確定您的通知會尊重使用者的螢幕空間和時間，讓您可以讓這個 engagement 通道保持開啟狀態。
 
-> **重要 api**： [Windows 社群工具組通知 nuget 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要 api** ： [Windows 社群工具組通知 nuget 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 我們已分析過 Windows 遙測，以及其他第一方和協力廠商個案研究，以產生絕佳通知故事的四項規則。  無論平臺為何，這些規則都是通用的，而且會協助您的通知對您的使用者有正面的影響。
 

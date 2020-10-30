@@ -1,5 +1,5 @@
 ---
-Description: 藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，將您的應用程式設計為可全球通用。 您的應用程式在將來便可因應全球市場中的其他文化特性、地區及語言。
+description: 藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，將您的應用程式設計為可全球通用。 您的應用程式在將來便可因應全球市場中的其他文化特性、地區及語言。
 title: 全球化您的日期/時間/數字格式
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 798199269a4fd02eebef7dcd46cd5781ba561250
-ms.sourcegitcommit: c1226b6b9ec5ed008a75a3d92abb0e50471bb988
+ms.openlocfilehash: 8c3bacbfbbe944cddfe014fcd34038ca9a56c36e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86493423"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034341"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化您的日期/時間/數字格式
 
@@ -24,7 +24,7 @@ ms.locfileid: "86493423"
 
 不同的地區和文化使用不同的日期和時間格式。 這包含使用不同的慣例來排列日期的日、月順序、時間的小時和分鐘區隔方式，即使是做為分隔符號的標點符號也會有所不同。 此外，日期可能會因為不同文化而顯示為各種長格式 (「Wednesday, March 28, 2012」) 或短格式 (「3/28/12」)。 不同語言之間的星期幾與月份的名稱和縮寫當然也會有所不同。
 
-您可以預覽不同語言使用的格式。 移至 [**設定**] [  >  **時間] & [語言**  >  **地區] & 語言**]，然後按一下 [**其他日期]、[時間]、[& 地區設定**]  >  **變更日期、時間或數位格式**。 在 **[格式]** 索引標籤上，從 **[格式]** 下拉式功能表中選取語言，然後在 **[範例]** 中預覽格式。
+您可以預覽不同語言使用的格式。 移至 **設定**  >  **時間 & 語言**  >  **區域 & 語言** ，然後按一下 [ **其他日期、時間] & [地區設定** ]  >  **變更日期、時間或數位格式** 。 在 **[格式]** 索引標籤上，從 **[格式]** 下拉式功能表中選取語言，然後在 **[範例]** 中預覽格式。
 
 此主題會使用「使用者設定檔語言清單」、「應用程式資訊清單語言清單」及「應用程式執行階段語言清單」等三個術語。 如需取得這些術語意義和存取其值的詳細資訊，請參閱[了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)。
 
@@ -32,7 +32,7 @@ ms.locfileid: "86493423"
 
 如果需要讓使用者選擇日期或選取時間，請使用標準[日曆、日期和時間控制項](../controls-and-patterns/date-and-time.md)。 這些會自動使用最適合應用程式執行階段語言清單的日期和時間格式。
 
-若您需要自行顯示日期或時間，您可以使用 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別。 根據預設，**DateTimeFormatter** 會自動使用最適合應用程式執行階段語言清單的日期和時間格式。 因此，以下程式碼會將特定 **DateTime** 格式化為最適合該清單的格式。 例如，假設您的應用程式資訊清單語言清單包含您預設語言的英文 (美國) 和德文 (德國)。 若目前的日期是 2017 年 11 月 6 日，使用者設定檔語言清單首先包含德文 (德國)，則格式器將為 "06.11.2017"。 若使用者設定檔語言清單首先包含英文 (美國) (或並未包含英文或德文)，則格式器將為 "11/6/2017" (因為 "en-US" 符合，或作為預設值使用)。
+若您需要自行顯示日期或時間，您可以使用 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別。 根據預設， **DateTimeFormatter** 會自動使用最適合應用程式執行階段語言清單的日期和時間格式。 因此，以下程式碼會將特定 **DateTime** 格式化為最適合該清單的格式。 例如，假設您的應用程式資訊清單語言清單包含您預設語言的英文 (美國) 和德文 (德國)。 若目前的日期是 2017 年 11 月 6 日，使用者設定檔語言清單首先包含德文 (德國)，則格式器將為 "06.11.2017"。 若使用者設定檔語言清單首先包含英文 (美國) (或並未包含英文或德文)，則格式器將為 "11/6/2017" (因為 "en-US" 符合，或作為預設值使用)。
 
 ```csharp
     // Use the DateTimeFormatter class to display dates and times using basic formatters.
@@ -52,11 +52,11 @@ ms.locfileid: "86493423"
 您可以在您自己的電腦上以這種方式測試。
 
 - 確認您專案中的資源檔同時限定 "en-US" 和 "de-DE" (請參閱[針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md))。
-- 變更 [**設定**時間] 中的使用者設定檔語言清單  >  **& 語言**  >  **區域 & 語言**  >  **語言**。 新增德文 (德國)，將其設為預設值，然後重新執行程式碼。
+- 在 [ **設定** 時間] 中，將您的使用者設定檔語言清單變更  >  **& 語言**  >  **區域 & 語言**  >  **語言** 。 新增德文 (德國)，將其設為預設值，然後重新執行程式碼。
 
 ## <a name="format-dates-and-times-for-the-user-profile-language-list"></a>為使用者設定檔語言清單格式化日期和時間
 
-請記住，根據預設，**DateTimeFormatter** 會比對應用程式執行階段語言清單。 如此一來，若您顯示字串，例如「日期是 &lt;date&gt;」，則語言便會符合日期格式。
+請記住，根據預設， **DateTimeFormatter** 會比對應用程式執行階段語言清單。 如此一來，若您顯示字串，例如「日期是 &lt;date&gt;」，則語言便會符合日期格式。
 
 若您因為任何理由，想要只根據使用者設定檔語言清單格式化日期和/或時間，您可以使用程式碼執行此作葉，如以下範例所示。 但是若您決定執行此作業，請了解使用者可能會選擇您的應用程式不具備翻譯字串的語言。 例如，若您的應用程式並未當地語系化成德文 (德國)，但使用者選擇該語言作為其慣用語言，這可能會導致奇怪的字串顯示結果，例如「日期是 06.11.2017」。
 
@@ -104,13 +104,13 @@ ms.locfileid: "86493423"
                     "Formatted Euro (fr-FR defaults): " + currencyValueEuroFR;
 ```
 
-您可以在您自己的電腦上測試上述程式碼，方法是變更 [**設定**時間] 中的國家或地區，  >  **& 語言**  >  **地區] & [語言**] [  >  **國家或地區**]。 選擇國家或地區 (假設是冰島)，然後重新執行程式碼。
+您可以藉由變更 [ **設定** 時間] 中的 [國家或地區]  >  **& 語言**  >  **區域 & 語言** 的  >  **國家或地區** ，在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是冰島)，然後重新執行程式碼。
 
 ## <a name="use-a-culturally-appropriate-calendar"></a>使用符合當地文化的日曆
 
 不同地區及語言的行事曆也有所不同。 公曆 (西曆) 不是每個地區的預設行事曆。 有些地區的使用者可能會選擇其他日曆，像是日本年號年曆或阿拉伯陰曆。 不同的時區及日光節約時間也會對日曆上的日期和時間有顯著影響。
 
-若要確保使用的是慣用日曆格式，您可以使用標準[日曆、日期和時間控制項](../controls-and-patterns/date-and-time.md)。 如果遇到更複雜的案例，需要在日曆日期上直接使用操作，**Windows.Globalization** 可以提供 [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live) 類別，對特定文化、地區及日曆類型，提供適當的日曆表示法。
+若要確保使用的是慣用日曆格式，您可以使用標準[日曆、日期和時間控制項](../controls-and-patterns/date-and-time.md)。 如果遇到更複雜的案例，需要在日曆日期上直接使用操作， **Windows.Globalization** 可以提供 [**Calendar**](/uwp/api/windows.globalization.calendar?branch=live) 類別，對特定文化、地區及日曆類型，提供適當的日曆表示法。
 
 ## <a name="format-phone-numbers-appropriately"></a>以適當方式格式化電話號碼
 
@@ -118,9 +118,9 @@ ms.locfileid: "86493423"
 
 [**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) 會剖析數字字串，並可讓您：判斷數字是否為目前地區中的有效電話號碼、比較兩個號碼是否相等、並擷取電話號碼不同的功能部分，例如國碼 (地區碼)。
 
-[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live)會格式化數位的字串或**PhoneNumberInfo**以顯示，即使數位的字串代表部分電話號碼也一樣。 您可以使用此部分的號碼格式，在使用者輸入號碼時格式化號碼。
+[**PhoneNumberFormatter**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live) 會格式化數位的字串或 **PhoneNumberInfo** 來顯示，即使數位的字串代表部分電話號碼也是如此。 您可以使用此部分的號碼格式，在使用者輸入號碼時格式化號碼。
 
-以下範例示範如何使用 **PhoneNumberFormatter**，在輸入電話號碼時格式化電話號碼。 每當名為 phoneNumberInputTextBox 的 **TextBox** 內有文字變更時，就會使用目前預設地區設定來格式化文字方塊內容，並顯示在名為 phoneNumberOutputTextBlock 的 **TextBlock** 中。 為了便於示範，字串也使用紐西蘭的地區設定格式化，並顯示在名為 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
+以下範例示範如何使用 **PhoneNumberFormatter** ，在輸入電話號碼時格式化電話號碼。 每當名為 phoneNumberInputTextBox 的 **TextBox** 內有文字變更時，就會使用目前預設地區設定來格式化文字方塊內容，並顯示在名為 phoneNumberOutputTextBlock 的 **TextBlock** 中。 為了便於示範，字串也使用紐西蘭的地區設定格式化，並顯示在名為 phoneNumberOutputTextBlockNZ 的 TextBlock 中。
   
 ```csharp
     using Windows.Globalization.PhoneNumberFormatting;
@@ -151,7 +151,7 @@ ms.locfileid: "86493423"
     }
 ```    
 
-您可以在您自己的電腦上測試上述程式碼，方法是變更 [**設定**時間] 中的國家或地區，  >  **& 語言**  >  **地區] & [語言**] [  >  **國家或地區**]。 選擇國家或地區 (假設是紐西蘭，以確認該格式相符)，然後重新執行程式碼。 如需取得測試資料，您可以使用 Web 搜尋位於紐西蘭公司的電話號碼。
+您可以藉由變更 [ **設定** 時間] 中的 [國家或地區]  >  **& 語言**  >  **區域 & 語言** 的  >  **國家或地區** ，在您自己的電腦上測試上述程式碼。 選擇國家或地區 (假設是紐西蘭，以確認該格式相符)，然後重新執行程式碼。 如需取得測試資料，您可以使用 Web 搜尋位於紐西蘭公司的電話號碼。
 
 ## <a name="the-users-language-and-cultural-preferences"></a>使用者語言及文化喜好設定
 

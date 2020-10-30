@@ -1,5 +1,5 @@
 ---
-Description: 本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。
+description: 本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: 協助工具文字的需求
 label: Accessible text requirements
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3294daa57cc7d1eb585e41910f72f574d9ffb600
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: aefc53f6d28d2c30566680ac985a4712040ea8e0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163382"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032610"
 ---
 # <a name="accessible-text-requirements"></a>協助工具文字的需求  
 
@@ -28,7 +28,7 @@ ms.locfileid: "89163382"
 ## <a name="contrast-ratios"></a>對比率  
 雖然使用者一直都可以選擇切換至高對比模式，但是您 App 對文字的設計應該將該選項視為最後的手段。 更好的做法是確定 App 文字符合專門為文字與背景間的對比層級所制定的指導方針。 對比層級的評估是根據各種不考慮色調的決定性技術。 例如，如果是綠色背景上的紅色文字，那麼患有色盲的使用者可能就看不清楚文字。 檢查並更正對比率可以防止這些類型的協助工具問題。
 
-此處記載的文字對比建議是以網頁協助工具標準為基礎，[G18：確定文字 (和文字的圖像) 和文字背景之間的對比率至少是 4.5:1](https://www.w3.org/TR/WCAG20-TECHS/G18.html)。 此指導方針位於 *WCAG 2.0 的 W3C 技術*規格中。
+此處記載的文字對比建議是以網頁協助工具標準為基礎，[G18：確定文字 (和文字的圖像) 和文字背景之間的對比率至少是 4.5:1](https://www.w3.org/TR/WCAG20-TECHS/G18.html)。 此指導方針位於 *WCAG 2.0 的 W3C 技術* 規格中。
 
 為了提供無障礙功能，顯示的文字與背景的亮度對比率至少必須是 4.5:1。 例外的情況包括標誌以及不重要的文字，例如非作用中 UI 元素的文字。
 
@@ -44,16 +44,16 @@ ms.locfileid: "89163382"
 <span id="TEXT_ELEMENT_ROLES"/>
 
 ## <a name="text-element-roles"></a>文字元素角色  
-UWP App 可以使用這些預設元素 (一般稱為「文字元素」** 或「文字編輯控制項」**)：
+UWP App 可以使用這些預設元素 (一般稱為「文字元素」  或「文字編輯控制項」  )：
 
 * [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)：角色是 [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 * [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox)：角色是 [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
-* [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (以及 overflow 類別[**RichTextBlockOverflow**](/uwp/api/windows.ui.xaml.controls.richtextblockoverflow))：角色是 [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
+* [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) (以及 overflow 類別 [**RichTextBlockOverflow**](/uwp/api/windows.ui.xaml.controls.richtextblockoverflow))：角色是 [**Text**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 * [**RichEditBox**](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)：角色是 [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)
 
 當控制項報告它有一個 [**Edit**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 角色，輔助技術會假設使用者有各種方法可變更這些值。 因此，如果您將靜態文字放到 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 中，就會報告錯誤的角色，也向協助工具使用者報告錯誤的應用程式結構。
 
-在適用於 XAML 的文字模型中，主要用於靜態文字的元素有兩個：[**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)。 這兩個元素都不能是 [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) 子類別，因此它們都無法取得鍵盤焦點，或是以 Tab 順序顯示。 但是，這不表示輔助技術無法或不會讀取它們。 螢幕助讀程式通常設計成可支援多種模式以閱讀應用程式中的內容，包含超越焦點與 Tab 順序的專用閱讀模式或瀏覽模式，例如「虛擬游標」。 因此，請不要只是因為定位順序能將使用者帶至可設定焦點的容器，就將您的靜態文字放入該處。 輔助技術使用者預期定位順序中的每個項目都能進行互動，而如果他們在該處遇到靜態文字，則所帶來的混亂就會大過助益。 您應自行使用朗讀程式測試這一點，以了解透過螢幕助讀程式檢閱您 App 中靜態文字的使用者體驗。
+在適用於 XAML 的文字模型中，主要用於靜態文字的元素有兩個： [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)。 這兩個元素都不能是 [**Control**](/uwp/api/Windows.UI.Xaml.Controls.Control) 子類別，因此它們都無法取得鍵盤焦點，或是以 Tab 順序顯示。 但是，這不表示輔助技術無法或不會讀取它們。 螢幕助讀程式通常設計成可支援多種模式以閱讀應用程式中的內容，包含超越焦點與 Tab 順序的專用閱讀模式或瀏覽模式，例如「虛擬游標」。 因此，請不要只是因為定位順序能將使用者帶至可設定焦點的容器，就將您的靜態文字放入該處。 輔助技術使用者預期定位順序中的每個項目都能進行互動，而如果他們在該處遇到靜態文字，則所帶來的混亂就會大過助益。 您應自行使用朗讀程式測試這一點，以了解透過螢幕助讀程式檢閱您 App 中靜態文字的使用者體驗。
 
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
@@ -126,19 +126,19 @@ _沒有預設選取項目的範例_
 
 當字型使用的文字太小時，使用者可能難以讀取應用程式中的文字，因此請先確定您應用程式中的任何文字都是合理的大小。
 
-當您完成這項操作之後，Windows 就會包含各種協助工具工具和設定，使用者可以利用這些工具和設定，並根據自己的需求和喜好設定來進行讀取文字。 其中包含：
+當您完成這項操作之後，Windows 就會包含各種協助工具工具和設定，使用者可以利用這些工具和設定，並根據自己的需求和喜好設定來進行讀取文字。 它們包括：
 
 * 放大鏡工具，可放大 UI 的選取區域。 您應該確保應用程式中的文字版面配置不會讓您難以使用放大鏡進行讀取。
-* 設定中的全域規模和解析度設定 **->系統 >顯示 >縮放和**配置。 確切的調整大小選項有何不同，這取決於顯示裝置的功能。
-* 設定中的文字大小設定 **->輕鬆存取->顯示**。 調整 [ **讓文字變得更大** ] 設定，只指定在所有應用程式和螢幕上支援控制項的文字大小 (所有 UWP 文字控制項都能支援不含任何自訂或範本) 的文字縮放體驗。 
+* 設定中的全域規模和解析度設定 **->系統 >顯示 >縮放和** 配置。 確切的調整大小選項有何不同，這取決於顯示裝置的功能。
+* 設定中的文字大小設定 **->輕鬆存取->顯示** 。 調整 [ **讓文字變得更大** ] 設定，只指定在所有應用程式和螢幕上支援控制項的文字大小 (所有 UWP 文字控制項都能支援不含任何自訂或範本) 的文字縮放體驗。 
 > [!NOTE]
 > [ **讓所有專案變得更大** ] 設定可讓使用者在主要畫面上，通常只會指定其慣用的文字和應用程式大小。
 
-各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 若 **為 true**，則可以調整該元素中的文字大小。 調整會影響較小 **FontSize** 的文字，而不會影響具有大型 **FontSize**的文字。 您可以將元素的 **IsTextScaleFactorEnabled** 屬性設定為 **false**，以停用自動調整大小。 
+各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 若 **為 true** ，則可以調整該元素中的文字大小。 調整會影響較小 **FontSize** 的文字，而不會影響具有大型 **FontSize** 的文字。 您可以將元素的 **IsTextScaleFactorEnabled** 屬性設定為 **false** ，以停用自動調整大小。 
 
 如需詳細資訊，請參閱 [文字縮放](../input/text-scaling.md) 。
 
-將下列標記新增至應用程式並加以執行。 調整 **文字大小** 設定，並查看每個 **TextBlock**會發生什麼事。
+將下列標記新增至應用程式並加以執行。 調整 **文字大小** 設定，並查看每個 **TextBlock** 會發生什麼事。
 
 XAML
 ```xml
@@ -169,7 +169,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 }
 ```
 
-**TextScaleFactor**的值是1、2.25 範圍內的雙精度浮點數 \[ \] 。 最小的文字依照此量放大。 舉例來說，您可以使用這個值來調整圖形以符合文字。 但是請記住，並非所有文字都會以相同比例縮放。 一般說來，較大的文字比較不容易受到縮放所影響。
+**TextScaleFactor** 的值是1、2.25 範圍內的雙精度浮點數 \[ \] 。 最小的文字依照此量放大。 舉例來說，您可以使用這個值來調整圖形以符合文字。 但是請記住，並非所有文字都會以相同比例縮放。 一般說來，較大的文字比較不容易受到縮放所影響。
 
 這些類型都有 **IsTextScaleFactorEnabled** 屬性：  
 * [**ContentPresenter**](/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter)

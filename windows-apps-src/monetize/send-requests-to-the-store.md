@@ -1,17 +1,17 @@
 ---
-Description: 您可以使用 SendRequestAsync 方法將要求傳送至 Microsoft Store，以找出 Windows SDK 中還沒有 API 可用的作業。
+description: 您可以使用 SendRequestAsync 方法將要求傳送至 Microsoft Store，以找出 Windows SDK 中還沒有 API 可用的作業。
 title: 傳送要求至 Microsoft Store
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: a02be93a56d6066ebd4d9547c8cc9ea1a96c9e09
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 53b525617ac72aec67349645430bc5995253460f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164492"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034661"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>傳送要求至 Microsoft Store
 
@@ -34,7 +34,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": { \"flightGroupId\": \"your group ID\" } }");
 
     if (result.ExtendedError == null)
     {
@@ -58,7 +58,7 @@ public async Task<bool> AddUserToFlightGroup()
 
 **SendRequestAsync** 方法支援正式發行前小眾測試版群組案例的一組要求，例如將使用者或裝置新增至正式發行前小眾測試版群組。 若要提交這些要求，傳送值 7 或 8 至 *requestKind* 參數，並將 JSON 格式化字串傳送至 *parametersAsJson* 參數，表示您想要與任何相關引數一起提交的要求。 這些 *requestKind* 值在下列方面不同。
 
-|  要求類型值  |  說明  |
+|  要求類型值  |  描述  |
 |----------------------|---------------|
 |  7                   |  要求是在目前裝置的內容中執行。 這個值僅能在 Windows 10 版本 1703 或更新版本中使用。  |
 |  8                   |  要求是在目前已登入 Microsoft Store 之使用者的內容中執行。 這個值可以在 Windows 10 版本 1607 或更新版本中使用。  |
@@ -72,33 +72,33 @@ public async Task<bool> AddUserToFlightGroup()
 
 此要求擷取目前使用者或裝置所屬最高排名之正式發行前小眾測試版群組的遠端變數。 若要傳送這個要求，傳遞下列資訊到 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 參數。
 
-|  參數  |  說明  |
+|  參數  |  描述  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7，傳回裝置所屬最高排名之正式發行前小眾測試版群組，或指定 8 傳回目前使用者與裝置所屬最高排名之正式發行前小眾測試版群組。 我們建議 *requestKind* 參數使用值 8，因為這個值會跨目前使用者及裝置的成員資格，傳回最高排名之正式發行前小眾測試版群組。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
 
-下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將 *projectId* 欄位指派給您在合作夥伴中心中定義遠端變數的專案識別碼。
+下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables* 。 將 *projectId* 欄位指派給您在合作夥伴中心中定義遠端變數的專案識別碼。
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
 您提交此要求後，[StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) 傳回值的 [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) 屬性包含有下列欄位的 JSON 格式化字串。
 
-|  欄位  |  說明  |
+|  欄位  |  描述  |
 |----------------------|---------------|
-|  *匿名*                   |  布林值，**true** 表示使用者或裝置身分識別未出現在要求中，**false** 表示使用者或裝置身分識別出現在要求中。  |
+|  *匿名*                   |  布林值， **true** 表示使用者或裝置身分識別未出現在要求中， **false** 表示使用者或裝置身分識別出現在要求中。  |
 |  *name*                   |  字串，包含裝置或使用者所屬最高排名之正式發行前小眾測試版群組的名稱。  |
 |  *設定*                   |  索引鍵/值組的字典，包含開發人員為正式發行前小眾測試版群組設定的遠端變數的名稱及值。  |
 
 以下範例示範此要求的傳回值。
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -115,17 +115,17 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要傳送這個要求，傳遞下列資訊到 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 參數。
 
-|  參數  |  說明  |
+|  參數  |  描述  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 將裝置新增到正式發行前小眾測試版群組中，或指定 8 將目前已登入 Microsoft Store 之使用者新增到正式發行前小眾測試版群組中。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
 
-下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *AddToFlightGroup*。 將 *flightGroupId* 欄位指派到正式發行前小眾測試版群組識別碼，您想要在此群組中新增裝置或使用者。
+下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *AddToFlightGroup* 。 將 *flightGroupId* 欄位指派到正式發行前小眾測試版群組識別碼，您想要在此群組中新增裝置或使用者。
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -138,17 +138,17 @@ public async Task<bool> AddUserToFlightGroup()
 
 若要傳送這個要求，傳遞下列資訊到 **SendRequestAsync** 方法的 *requestKind* 和 *parametersAsJson* 參數。
 
-|  參數  |  說明  |
+|  參數  |  描述  |
 |----------------------|---------------|
 |  *requestKind*                   |  指定 7 從正式發行前小眾測試版群組中移除裝置，或指定 8 從正式發行前小眾測試版群組中移除目前已登入 Microsoft Store 之使用者。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
 
-下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *RemoveFromFlightGroup*。 將 *flightGroupId* 欄位指派到正式發行前小眾測試版群組識別碼，您想要從此群組中移除裝置或使用者。
+下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *RemoveFromFlightGroup* 。 將 *flightGroupId* 欄位指派到正式發行前小眾測試版群組識別碼，您想要從此群組中移除裝置或使用者。
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 

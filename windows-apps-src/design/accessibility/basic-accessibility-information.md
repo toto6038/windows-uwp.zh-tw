@@ -1,5 +1,5 @@
 ---
-Description: 基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。
+description: 基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: 公開基本的協助工具資訊
 label: Expose basic accessibility information
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: da0ad6c0121f81a4854728f4441e0407a6302f54
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 09dfb92f53105d7c8718ff12f1a0d5634ba6a75d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217461"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032561"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
@@ -44,10 +44,10 @@ ms.locfileid: "91217461"
 ## <a name="role-and-value"></a>角色和值  
 屬於 XAML 詞彙的控制項和其他 UI 元素會實作使用者介面自動化支援，進而將角色和值報告為定義的一部分。 您可以使用使用者介面自動化工具檢查控制項的角色和值資訊，或者是閱讀每個控制項 [**AutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer) 實作的說明文件。 UI 自動化架構可用的角色定義在 [**AutomationControlType**](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) 列舉中。 使用者介面自動化用戶端 (例如輔助技術) 能夠呼叫使用者介面自動化架構使用控制項的 **AutomationPeer** 來公開的方法，以取得角色資訊。
 
-並不是所有控制項都有值。 沒有值的控制項會透過支援的對等和模式，向 UI 自動化報告此資訊。 例如，[**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 表單元素有值。 輔助技術可以是使用者介面自動化用戶端，因此能夠找到一個值並知道值是什麼。 在這個特殊案例中，**TextBox** 可透過 [**TextBoxAutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 定義來支援 [**IValueProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 模式。
+並不是所有控制項都有值。 沒有值的控制項會透過支援的對等和模式，向 UI 自動化報告此資訊。 例如， [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 表單元素有值。 輔助技術可以是使用者介面自動化用戶端，因此能夠找到一個值並知道值是什麼。 在這個特殊案例中， **TextBox** 可透過 [**TextBoxAutomationPeer**](/uwp/api/Windows.UI.Xaml.Automation.Peers.TextBoxAutomationPeer) 定義來支援 [**IValueProvider**](/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider) 模式。
 
 > [!NOTE]
-> 如果您是使用 [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) 或其他技術明確提供無障礙名稱，則不要在無障礙名稱中包含控制項角色或類型資訊所使用的文字。 例如，名稱中不要有像是 "button" 或 "list" 此類字串。 角色和類型資訊來自不同的使用者介面自動化屬性 (**LocalizedControlType**) 而這些屬性是由使用者介面自動化支援的預設控制項所提供。 許多輔助技術會將 **LocalizedControlType** 附加到無障礙名稱，因此無障礙名稱中的角色如果重複，就會造成單字不必要的重複。 例如，如果您為 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項提供的無障礙名稱為 "button"，或者在名稱的最後一部分包含 "button"，則螢幕助讀程式可能會將這個控制項讀做 "button button"。 您應該使用朗讀程式來測試這個層面的協助工具資訊。
+> 如果您是使用 [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) 或其他技術明確提供無障礙名稱，則不要在無障礙名稱中包含控制項角色或類型資訊所使用的文字。 例如，名稱中不要有像是 "button" 或 "list" 此類字串。 角色和類型資訊來自不同的使用者介面自動化屬性 ( **LocalizedControlType** ) 而這些屬性是由使用者介面自動化支援的預設控制項所提供。 許多輔助技術會將 **LocalizedControlType** 附加到無障礙名稱，因此無障礙名稱中的角色如果重複，就會造成單字不必要的重複。 例如，如果您為 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button) 控制項提供的無障礙名稱為 "button"，或者在名稱的最後一部分包含 "button"，則螢幕助讀程式可能會將這個控制項讀做 "button button"。 您應該使用朗讀程式來測試這個層面的協助工具資訊。
 
 <span id="Influencing_the_UI_Automation_tree_views"/>
 <span id="influencing_the_ui_automation_tree_views"/>
@@ -56,7 +56,7 @@ ms.locfileid: "91217461"
 ## <a name="influencing-the-ui-automation-tree-views"></a>影響使用者介面自動化樹狀檢視  
 使用者介面自動化架構含有樹狀檢視的概念，其中使用者介面自動化用戶端可以使用三種可能的檢視來擷取 UI 中元素間的關係：原始、控制項及內容。 控制項檢視是使用者介面自動化用戶端通常所使用的檢視，因為它提供 UI 中可互動元素的良好表示法和組織。 測試工具通常可以讓您選擇在工具呈現元素的組織時要使用哪一種樹狀檢視。
 
-根據預設，當消費者介面自動化架構代表 Windows 應用程式的 UI 時 [**，控制項的所有衍生**](/uwp/api/Windows.UI.Xaml.Controls.Control) 類別和一些其他元素都會出現在控制項視圖中。 但是，有時您會基於 UI 組合的緣故而不想讓元素出現在控制項檢視中，因為該元素正在複製資訊，或者呈現與協助工具案例無關緊要的資訊。 使用附加屬性 [**AutomationProperties.AccessibilityView**](/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 來變更在樹狀檢視中公開元素的方法。 如果您在 **Raw** 樹狀結構中放置元素，則大多數的輔助技術不會報告該元素為其檢視的一部分。 若要查看如何在現有控制項中運作的一些範例，請在文字編輯器中開啟 generic.xaml 設計參考 XAML 檔案，並在範本中搜尋 **AutomationProperties.AccessibilityView**。
+根據預設，當消費者介面自動化架構代表 Windows 應用程式的 UI 時 [**，控制項的所有衍生**](/uwp/api/Windows.UI.Xaml.Controls.Control) 類別和一些其他元素都會出現在控制項視圖中。 但是，有時您會基於 UI 組合的緣故而不想讓元素出現在控制項檢視中，因為該元素正在複製資訊，或者呈現與協助工具案例無關緊要的資訊。 使用附加屬性 [**AutomationProperties.AccessibilityView**](/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) 來變更在樹狀檢視中公開元素的方法。 如果您在 **Raw** 樹狀結構中放置元素，則大多數的輔助技術不會報告該元素為其檢視的一部分。 若要查看如何在現有控制項中運作的一些範例，請在文字編輯器中開啟 generic.xaml 設計參考 XAML 檔案，並在範本中搜尋 **AutomationProperties.AccessibilityView** 。
 
 <span id="name_from_inner_text"/>
 <span id="NAME_FROM_INNER_TEXT"/>
@@ -64,7 +64,7 @@ ms.locfileid: "91217461"
 ## <a name="name-from-inner-text"></a>來自內部文字的名稱  
 為了讓可見 UI 中已經存在的字串可以更容易當成無障礙名稱值，很多控制項和其他 UI 元素會根據元素的內部文字或來自內容屬性的字串值，自動判斷預設的無障礙名稱。
 
-* [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 以及 **RichTextBlock**，每一個都會將 **Text** 屬性的值升級為預設的無障礙名稱。
+* [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、 [**RichTextBlock**](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 以及 **RichTextBlock** ，每一個都會將 **Text** 屬性的值升級為預設的無障礙名稱。
 * 任何 [**ContentControl**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 子類別都會使用反覆的 "ToString" 技術在它的 [**Content**](/uwp/api/windows.ui.xaml.controls.contentcontrol.content) 值內尋找字串，然後將這些字串升級為預設的無障礙名稱。
 
 > [!NOTE]
@@ -83,7 +83,7 @@ XAML
   AutomationProperties.Name="An image of a customer using the product."/>
 ```
 
-您也可以考慮加入文字輔助字幕，讓它顯示在可見 UI 中，它同時也可以當作是影像內容中與標籤相關的協助工具資訊。 以下是範例：
+您也可以考慮加入文字輔助字幕，讓它顯示在可見 UI 中，它同時也可以當作是影像內容中與標籤相關的協助工具資訊。 以下為範例：
 
 XAML
 ```xml
@@ -97,7 +97,7 @@ XAML
 <span id="LABELS"/>
 
 ## <a name="labels-and-labeledby"></a>標籤和 LabeledBy  
-將標籤與表單元素建立關聯的較好做法是使用 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 搭配 **x:Name** 來表示標籤文字，然後在表單元素上設定 [**AutomationProperties.LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 附加屬性以根據 XAML 名稱參照標籤 **TextBlock**。 如果您使用這種模式，則當使用者按一下標籤時，焦點會移至相關的控制項，然後輔助技術可以將標籤文字當作表單欄位的無障礙名稱。 以下範例示範這種技術。
+將標籤與表單元素建立關聯的較好做法是使用 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 搭配 **x:Name** 來表示標籤文字，然後在表單元素上設定 [**AutomationProperties.LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 附加屬性以根據 XAML 名稱參照標籤 **TextBlock** 。 如果您使用這種模式，則當使用者按一下標籤時，焦點會移至相關的控制項，然後輔助技術可以將標籤文字當作表單欄位的無障礙名稱。 以下範例示範這種技術。
 
 XAML
 ```xml
@@ -134,14 +134,14 @@ XAML
 ## <a name="testing-accessibility-early-and-often"></a>及早並經常測試協助工具  
 最後，支援螢幕助讀程式的最好方式，就是利用螢幕助讀程式親自測試您的應用程式。 這樣做會為您示範螢幕助讀程式的行為以及顯示應用程式可能遺漏的基本協助工具資訊。 接下來，您可以調整 UI 或使用者介面自動化屬性值。 如需詳細資訊，請參閱[協助工具測試](accessibility-testing.md)。
 
-您可以用來測試協助工具的其中一個工具稱為 **AccScope**。 **AccScope** 工具特別有用，因為您可以看見 UI 的視覺表示法，該 UI 會呈現輔助技術如何將您的 app 當成動畫樹狀結構來檢視。 特別是提供了朗讀程式模式，讓您可以檢視朗讀程式如何從您的 app 中取得文字，以及如何組織 UI 中的元素。 AccScope 的設計讓您能夠在整個 app 開發週期中使用它，而且它非常有用，即使是在初步設計階段期間也一樣。 如需詳細資訊，請參閱 [AccScope](/windows/desktop/WinAuto/accscope)。
+您可以用來測試協助工具的其中一個工具稱為 **AccScope** 。 **AccScope** 工具特別有用，因為您可以看見 UI 的視覺表示法，該 UI 會呈現輔助技術如何將您的 app 當成動畫樹狀結構來檢視。 特別是提供了朗讀程式模式，讓您可以檢視朗讀程式如何從您的 app 中取得文字，以及如何組織 UI 中的元素。 AccScope 的設計讓您能夠在整個 app 開發週期中使用它，而且它非常有用，即使是在初步設計階段期間也一樣。 如需詳細資訊，請參閱 [AccScope](/windows/desktop/WinAuto/accscope)。
 
 <span id="Accessible_names_from_dynamic_data"/>
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>動態資料的無障礙名稱  
-Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」** 的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)的＜案例 4＞。
+Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」  的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)的＜案例 4＞。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>

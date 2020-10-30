@@ -1,26 +1,26 @@
 ---
-Description: 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。
+description: 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。
 title: 在試用版本中排除或限制某些功能
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
 keywords: Windows 10, UWP, 試用版, app 內購買, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a0ecc6a6d219262513508114cee226d72d91e386
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 701769386f9637574cfb7f38f7458a1434796730
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362741"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033971"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 開始撰寫程式碼之前，請先決定哪些功能應受到限制，然後確定只有在客戶購買完整授權後，App 才會允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
 
 > [!IMPORTANT]
-> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空間的成員來實作試用版功能。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間。 **Windows. Store**命名空間支援最新的附加元件類型（例如儲存管理的可使用附加元件和訂閱），其設計目的是要與合作夥伴中心和存放區所支援的未來產品和功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需使用 **Windows.Services.Store** 命名空間實作試用功能的詳細資訊，請參閱[本文](implement-a-trial-version-of-your-app.md)。
+> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空間的成員來實作試用版功能。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間。 **Windows. Store** 命名空間支援最新的附加元件類型（例如儲存管理的可使用附加元件和訂閱），其設計目的是要與合作夥伴中心和存放區所支援的未來產品和功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需使用 **Windows.Services.Store** 命名空間實作試用功能的詳細資訊，請參閱 [本文](implement-a-trial-version-of-your-app.md)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>Prerequisites
 
 要新增功能讓客戶購買的 Windows 應用程式。
 
@@ -63,7 +63,7 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 
 當您的 App 初始化時，為您的 App 取得 [LicenseInformation](/uwp/api/Windows.ApplicationModel.Store.LicenseInformation) 物件，如此範例中所示。 我們假設 **licenseInformation** 是類型 **LicenseInformation** 的全域變數或欄位。
 
-現在，您將要使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 取得模擬的授權資訊。 將 App 的發行版本提交到** Microsoft Store **之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp**。
+現在，您將要使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 取得模擬的授權資訊。 將 App 的發行版本提交到 **Microsoft Store** 之前，您必須將程式碼中所有的 **CurrentAppSimulator** 參考取代為 **CurrentApp** 。
 
 > [!div class="tabbedCodeSnippets"]
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/monetize/InAppPurchasesAndLicenses/cs/TrialVersion.cs" id="InitializeLicenseTest":::
@@ -93,13 +93,13 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 
 ## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>步驟 5：透過模擬呼叫授權 API 來測試功能
 
-現在使用模擬的資料來測試您的 App。 **CurrentAppSimulator**會從名為 WindowsStoreProxy.xml 的 XML 檔案取得測試特定授權資訊，該檔案位於% UserProfile% \\ AppData \\ 本機 \\ 封裝 \\ &lt; 套件名稱 &gt; \\ LocalState \\ Microsoft \\ Windows Store \\ ApiData 中。 您可以編輯 WindowsStoreProxy.xml，變更您 App 與其功能的模擬到期日。 測試所有可能的到期日與授權組態，確認一切無誤。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
+現在使用模擬的資料來測試您的 App。 **CurrentAppSimulator** 會從名為 WindowsStoreProxy.xml 的 XML 檔案取得測試特定授權資訊，該檔案位於% UserProfile% \\ AppData \\ 本機 \\ 封裝 \\ &lt; 套件名稱 &gt; \\ LocalState \\ Microsoft \\ Windows Store \\ ApiData 中。 您可以編輯 WindowsStoreProxy.xml，變更您 App 與其功能的模擬到期日。 測試所有可能的到期日與授權組態，確認一切無誤。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
 
 如果這個路徑和檔案不存在，您必須在安裝或執行階段期間建立它們。 如果您嘗試存取 [CurrentAppSimulator.LicenseInformation](/uwp/api/windows.applicationmodel.store.currentappsimulator.licenseinformation) 屬性，但該特定位置中卻沒有 WindowsStoreProxy.xml，則會發生錯誤。
 
 ## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>步驟 6：以實際的 API 取代模擬的授權 API 方法
 
-以模擬的授權伺服器測試您的 App 之後，並在將 App 提交至 Microsoft Store 進行認證之前，請以 **CurrentApp** 取代 **CurrentAppSimulator**，如下一個程式碼範例所示。
+以模擬的授權伺服器測試您的 App 之後，並在將 App 提交至 Microsoft Store 進行認證之前，請以 **CurrentApp** 取代 **CurrentAppSimulator** ，如下一個程式碼範例所示。
 
 > [!IMPORTANT]
 > 在將您的 App 提交至 Microsoft Store 時，該 App 必須使用 **CurrentApp** 物件，否則將無法通過認證。
@@ -119,6 +119,6 @@ App 目前的授權狀態會儲存為 [LicenseInformation](/uwp/api/Windows.Appl
 * [設定應用程式價格與可用性](../publish/set-app-pricing-and-availability.md)
 * [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp)
 * [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator)
- 
+ 
 
- 
+ 

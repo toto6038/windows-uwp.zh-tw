@@ -1,27 +1,27 @@
 ---
-Description: 就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與應用程式互動時相當有用。
+description: 就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。
 title: 多重輸入設計指導方針
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c67430680854e7940d12af15ecd3c07dcd976802
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: dba9ff049355a7319c6e653b3ecbe5524547b8b1
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57601293"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034671"
 ---
 # <a name="multiple-inputs"></a>多重輸入
 
 
-就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與應用程式互動時相當有用。
+就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。
 
 
-為了儘可能配合較多的使用者和裝置，建議您將應用程式設計成可以與越多的輸入類型 (手勢、語音、觸控、觸控板、滑鼠及鍵盤) 搭配使用越好。 這樣會將彈性、可用性及可存取性最大化。
+為了儘可能配合多個使用者和裝置，我們建議將 app 設計為可以使用各種輸入類型 (手勢、語音、觸控、觸控板、滑鼠與鍵盤)。 這樣會最大化彈性、可用性及可存取性。
 
 若要開始，請考慮您的 app 處理輸入的各種案例。 嘗試在您的 app 保持一致，並記住平台控制項提供多個輸入類型的內建支援。
 

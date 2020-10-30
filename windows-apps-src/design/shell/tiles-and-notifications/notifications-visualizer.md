@@ -1,5 +1,5 @@
 ---
-Description: 通知視覺化工具是 Store 中新的 Windows 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
+description: 通知視覺化工具是 Store 中新的 Windows 應用程式，可協助開發人員設計適用於 Windows 10 的彈性動態磚。
 title: 通知視覺化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b50dc41a52d478afc9ed2fc9cf94d94dedb18ef4
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 55ab7e22dc011555a8d98fd863b7dd9ff67de5fa
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219921"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033671"
 ---
 # <a name="notifications-visualizer"></a>通知視覺化工具
 
@@ -30,15 +30,15 @@ ms.locfileid: "91219921"
 
 ![含有程式碼與磚的通知視覺化檢視應用程式編輯器的螢幕擷取畫面](images/notif-visualizer-001.png)
 
- 
+ 
 
 使用通知視覺化檢視，您可以建立及測試彈性磚和快顯通知承載，不需要編輯和部署您自己的應用程式。 建立含有理想的視覺效果的承載後，您便可將它整合到您的應用程式。 若要深入了解，請參閱[傳送本機磚通知](sending-a-local-tile-notification.md)和[傳送本機快顯通知](send-local-toast.md)。
 
-**注意**   通知視覺化的 Windows [開始] 功能表和快顯通知的模擬不一定是完全精確，而且不支援某些 advanced 裝載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
+**注意** ：Windows [開始] 功能表和快顯通知的通知視覺化檢視模擬不一定完全精確，而且它不支援部分進階承載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
 
- 
+ 
 
-## <a name="features"></a>功能
+## <a name="features"></a>特性
 
 通知視覺化檢視隨附數個範例承載，以展示彈性動態磚和互動式快顯通知可能的型態並協助您開始。 您可以實驗所有不同的文字選項、群組/子群組、背景影像，而且您可以看到磚如何適應不同的裝置和螢幕。 在您變更後，您可以將更新的承載儲存為檔案以供日後使用。
 
@@ -50,7 +50,7 @@ ms.locfileid: "91219921"
 
 ![含有磚的通知視覺化工具編輯器的螢幕擷取畫面](images/notif-visualizer-004.png)
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 

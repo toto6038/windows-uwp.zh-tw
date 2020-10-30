@@ -1,5 +1,5 @@
 ---
-Description: 本主題說明選取和操作文字、影像和控制項的新的 Windows UI，並提供在 Windows 應用程式中使用這些新的選取專案和操作機制時應考慮的使用者經驗指導方針。
+description: 本主題說明選取和操作文字、影像和控制項的新的 Windows UI，並提供在 Windows 應用程式中使用這些新的選取專案和操作機制時應考慮的使用者經驗指導方針。
 title: 選取文字和影像
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
@@ -8,19 +8,19 @@ keywords: 鍵盤、文字、輸入、使用者互動
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 179eeffd014cb614fb5314826068d9690fc29807
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0b7954ec21b2282700352b94e7a84bf6914d7f9c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216971"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032851"
 ---
 # <a name="selecting-text-and-images"></a>選取文字和影像
 
 
 本文描述如何選取及操作文字、影像以及控制項，並提供在應用程式中使用這些機制時，所應考慮的使用者經驗指導方針。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
+> **重要 API** ： [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、 [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
  
 
 
@@ -78,9 +78,9 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 ![在選取範圍內或在移駐夾上進行點選 (或長按)，以叫用操作功能表。](images/textselection-show-context.png)
 
-**注意**   在拼錯的單字案例中，這些互動會有些許差異。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
+**備註** 針對文字拼錯的情況，這些互動會表現得有些不同。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
 
- 
+ 
 
 **不可編輯的內容**
 

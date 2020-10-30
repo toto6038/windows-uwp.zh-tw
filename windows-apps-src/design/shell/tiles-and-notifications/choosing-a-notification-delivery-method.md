@@ -1,5 +1,5 @@
 ---
-Description: 本文涵蓋四個通知選項&\# 郵件; 本機、已排程、定期和推送&\# 郵件; 可提供磚和徽章更新和快顯通知內容。
+description: 本文涵蓋四個通知選項&\# 郵件; 本機、已排程、定期和推送&\# 郵件; 可提供磚和徽章更新和快顯通知內容。
 title: 選擇通知傳遞方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a929cb88e20cc47562ab4920fd0fc94304fae2
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f85918eb0c8f936cc5be393217cd47d66a8b7ff5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219151"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034001"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -61,7 +61,7 @@ App 可以使用四種機制來傳遞通知：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">排程</td>
+<td align="left">已排程</td>
 <td align="left">磚、快顯通知</td>
 <td align="left">預先排程通知以在您指定的時間更新的一組 API 呼叫。</td>
 <td align="left"><ul>
@@ -79,7 +79,7 @@ App 可以使用四種機制來傳遞通知：
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">發送</td>
+<td align="left">推送</td>
 <td align="left">磚、徽章、快顯通知、原始通知</td>
 <td align="left">即使您的應用程式未執行，仍然會從雲端伺服器傳送的通知。</td>
 <td align="left"><ul>
@@ -92,7 +92,7 @@ App 可以使用四種機制來傳遞通知：
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>本機通知
 
@@ -142,7 +142,7 @@ App 可以使用四種機制來傳遞通知：
 -   [定期通知概觀](periodic-notification-overview.md)
 -   [Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <a name="push-notifications"></a>推播通知
+## <a name="push-notifications"></a>推送通知
 
 
 若要交流即時資料或針對使用者個人化的資料，就非常適合使用推播通知。 推播通知用於在無法預測的時間產生的內容，像是突發新聞、社交網路更新或立即訊息。 當資料 (像是遊戲進行時的遊戲分數) 有時效性而不適合定期通知時，也可以使用推播通知。
@@ -168,6 +168,6 @@ App 可以使用四種機制來傳遞通知：
 * [定期通知概觀](periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 * [GitHub 上的 Windows 應用程式通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 

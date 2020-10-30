@@ -1,17 +1,17 @@
 ---
-Description: 您可以透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，將企業營運 (LOB) 應用程式直接發佈到企業來進行大量取得，而不需使應用程式可在市集中廣泛取得。
+description: 您可以透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，將企業營運 (LOB) 應用程式直接發佈到企業來進行大量取得，而不需使應用程式可在市集中廣泛取得。
 title: 將 LOB 應用程式發佈到企業
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fccf3cab82724f12789131b8450795201e0fba6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b9bb384ac8514431899fd6ac37cf56303a80d214
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161942"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033920"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB 應用程式發佈到企業
 
@@ -39,7 +39,7 @@ ms.locfileid: "89161942"
 您可以透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，將企業營運 (LOB) 應用程式直接發佈到企業來進行大量取得，而不需使應用程式可在 Store 中廣泛取得。 使用此選項時，應用程式會由存放區簽署，且必須符合標準存放區原則。
 
 > [!NOTE]
-> 目前只有免費的應用程式可透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，單獨發佈到企業。 若您提交付費 app 做為 LOB，則無法將其提供給企業使用。 
+> 目前只有免費的應用程式可透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，單獨發佈到企業。 若您提交付費 app 做為 LOB，則無法將其提供給企業使用。 
 
 > [!IMPORTANT]
 > 您無法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，直接將 LOB 應用程式發佈到企業。 LOB 應用程式的所有提交都必須透過合作夥伴中心發佈。
@@ -53,7 +53,7 @@ ms.locfileid: "89161942"
 
 當企業選擇邀請您發佈 app 以供他們專用時，您將會收到一封電子郵件，其中包含確認關聯的連結。 您也可以前往 **\[帳戶設定\]** 的 **\[企業關聯\]** 區段確認這些關聯 (只要您使用用來開啟開發人員帳戶的 Microsoft 帳戶登入)。
 
-若要確認關聯，請按一下 **\[接受\]**。 您的帳戶接著能夠發佈 app，以供該企業專用。
+若要確認關聯，請按一下 **\[接受\]** 。 您的帳戶接著能夠發佈 app，以供該企業專用。
 
 ### <a name="submit-lob-apps"></a>提交 LOB 應用程式
 
@@ -61,7 +61,7 @@ ms.locfileid: "89161942"
 
 #### <a name="visibility"></a>可見度
 
-在您設定企業關聯之後，每當您提交 app 時，就會在提交的 **\[定價和可用性\]** 頁面之 **\[可見性\]** 區段中看見一個下拉式方塊。 根據預設，這會設定為 **\[零售經銷\]**。 若要使 app 供某家企業專用，您需要選擇 **\[企業營運 (LOB) 發佈\]**。
+在您設定企業關聯之後，每當您提交 app 時，就會在提交的 **\[定價和可用性\]** 頁面之 **\[可見性\]** 區段中看見一個下拉式方塊。 根據預設，這會設定為 **\[零售經銷\]** 。 若要使 app 供某家企業專用，您需要選擇 **\[企業營運 (LOB) 發佈\]** 。
 
 選取 **\[企業營運 (LOB) 發佈\]** 之後，一般的 **\[可見性\]** 選項將會利用您可為其發佈專屬 app 的企業清單來取代。 所選取企業外部的任何人都無法檢視或下載 app。
 
@@ -79,7 +79,7 @@ ms.locfileid: "89161942"
 
 #### <a name="age-ratings"></a>年齡分級
 
-針對 LOB app，提交程序的[年齡分級](age-ratings.md)步驟的運作方式與零售版 App 相同，但您也有其他選擇，可讓您手動指出您 App 的 Store 年齡分級，而不是完成問卷或是匯入現有的 IARC 分級識別碼。 此手動分級僅能搭配 LOB 散佈使用，因此，如果您曾經將 App 的 **\[可見性\]** 設定變更為 **\[零售經銷\]**，您將需要先接受年齡分級問卷調查，然後才可以發佈提交。
+針對 LOB app，提交程序的[年齡分級](age-ratings.md)步驟的運作方式與零售版 App 相同，但您也有其他選擇，可讓您手動指出您 App 的 Store 年齡分級，而不是完成問卷或是匯入現有的 IARC 分級識別碼。 此手動分級僅能搭配 LOB 散佈使用，因此，如果您曾經將 App 的 **\[可見性\]** 設定變更為 **\[零售經銷\]** ，您將需要先接受年齡分級問卷調查，然後才可以發佈提交。
 
 ### <a name="enterprise-deployment-of-lob-apps"></a>LOB App 的企業部署
 
@@ -92,11 +92,11 @@ ms.locfileid: "89161942"
 
 ### <a name="update-lob-apps"></a>更新 LOB 應用程式
 
-若要將更新發佈到您已經準備好發佈為 LOB 的 app，只需建立新的提交。 您可以上傳新的套件或進行任何其他變更，然後按一下 **\[提交至 Store\]**，讓更新的版本可供使用。 請確定會在 **\[可見性\]** 中使企業選取項目保持不變 (除非您故意想要變更它們，例如，選取其他企業來取得該 app，或是移除您先前已發佈該 app 的其中一個企業)。
+若要將更新發佈到您已經準備好發佈為 LOB 的 app，只需建立新的提交。 您可以上傳新的套件或進行任何其他變更，然後按一下 **\[提交至 Store\]** ，讓更新的版本可供使用。 請確定會在 **\[可見性\]** 中使企業選取項目保持不變 (除非您故意想要變更它們，例如，選取其他企業來取得該 app，或是移除您先前已發佈該 app 的其中一個企業)。
 
-如果您想要停止提供您先前已發佈為企業營運 app 的 app 並防止任何新的取得，您需要建立新的提交。 首先，需要將 **\[可見性\]** 選取項目從 **\[企業營運 (LOB) 發佈\]** 變更為 **\[零售經銷\]**。 然後在 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 區段中，選擇 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 與 **\[停止取得\]** 選項。
+如果您想要停止提供您先前已發佈為企業營運 app 的 app 並防止任何新的取得，您需要建立新的提交。 首先，需要將 **\[可見性\]** 選取項目從 **\[企業營運 (LOB) 發佈\]** 變更為 **\[零售經銷\]** 。 然後在 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 區段中，選擇 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 與 **\[停止取得\]** 選項。
 
 在提交進入認證程序之後，該 App 將不再供新的下載數使用 (儘管任何已經擁有它的人還是能夠繼續使用)。
 
 > [!NOTE]
-> 將 App 變更為 **\[零售經銷\]** 時，如果您還未完成[年齡分級問卷](age-ratings.md)，則必須先完成該問卷 (即使 App 將不再供新的下載數使用)。
+> 將 App 變更為 **\[零售經銷\]** 時，如果您還未完成 [年齡分級問卷](age-ratings.md)，則必須先完成該問卷 (即使 App 將不再供新的下載數使用)。

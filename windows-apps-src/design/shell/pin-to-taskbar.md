@@ -1,17 +1,17 @@
 ---
-Description: 您可以寫程式將應用程式釘選到工作列上，並檢查其目前是否為已釘選。
+description: 您可以寫程式將應用程式釘選到工作列上，並檢查其目前是否為已釘選。
 title: 將應用程式釘選到工作列
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile, 工作列, 工作列管理員, 釘選到工作列, 主要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: e43dd7084c042b7480aa98c638f1fc5d216e64c7
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: fa33725447da80b5c3295455f12a3851228a2756
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636628"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034161"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>將應用程式釘選到工作列
 
@@ -20,20 +20,20 @@ ms.locfileid: "91636628"
 ![Windows 10 工作列的螢幕擷取畫面，其中顯示釘選的應用程式。](images/taskbar/taskbar.png)
 
 > [!IMPORTANT]
-> **需要 Fall Creators Update**：您的目標必須是 SDK 16299 並執行組建 16299 或更新版本，才能使用工作列 API。
+> **需要 Fall Creators Update** ：您的目標必須是 SDK 16299 並執行組建 16299 或更新版本，才能使用工作列 API。
 
-> **重要 API**：[TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager) 
+> **重要 API** ： [TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager) 
 
 
 ## <a name="when-should-you-ask-the-user-to-pin-your-app-to-the-taskbar"></a>何時您應要求使用者將您的應用程式釘選在工作列上？ 
 
 [TaskbarManager 類別](/uwp/api/windows.ui.shell.taskbarmanager)可讓您要求使用者將應用程式釘選到工作列上；使用者必須核准此要求。 您大費周章地建構了主要應用程式，現在您有機會可以要求使用者將它釘選到工作列。 但在我們深入了解程式碼之前，應先知道以下一些設計您在設計體驗時要注意的事項：
 
-* **務必**在應用程式中以明確的「釘選至工作列」動作製作不具破壞性且可輕鬆關閉的 UX。 避免將對話方塊與飛出視窗用於此用途。 
-* **務必**先清楚說明您應用程式的真實意義，再要求使用者釘選。
-* **請勿**在該磚已釘選或裝置不支援該磚時，要求使用者釘選您的應用程式。 (本文說明如何判斷是否支援釘選。)
-* **請勿**重複要求使用者釘選您的應用程式 (這樣可能會惹煩使用者)。
-* **請勿**在沒有明確使用者互動情況下，或在應用程式已最小化/未開啟時呼叫釘選 API。
+* **務必** 在應用程式中以明確的「釘選至工作列」動作製作不具破壞性且可輕鬆關閉的 UX。 避免將對話方塊與飛出視窗用於此用途。 
+* **務必** 先清楚說明您應用程式的真實意義，再要求使用者釘選。
+* **請勿** 在該磚已釘選或裝置不支援該磚時，要求使用者釘選您的應用程式。 (本文說明如何判斷是否支援釘選。)
+* **請勿** 重複要求使用者釘選您的應用程式 (這樣可能會惹煩使用者)。
+* **請勿** 在沒有明確使用者互動情況下，或在應用程式已最小化/未開啟時呼叫釘選 API。
 
 
 ## <a name="1-check-whether-the-required-apis-exist"></a>1. 檢查所需的 API 是否存在

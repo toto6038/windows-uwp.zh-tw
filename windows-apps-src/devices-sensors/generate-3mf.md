@@ -1,5 +1,5 @@
 ---
-Description: 描述 3D 製造格式檔案類型的結構以及如何使用 Windows.Graphics.Printing3D API 來建立和操作。
+description: 描述 3D 製造格式檔案類型的結構以及如何使用 Windows.Graphics.Printing3D API 來建立和操作。
 MS-HAID: dev\_devices\_sensors.generate\_3mf
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 032117349ea20cc3f4f6a3275969ff59a05502b4
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 7beafb754ead837dd9218d4a9e0223334e12bfb1
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363941"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034651"
 ---
 # <a name="generate-a-3mf-package"></a>產生 3MF 套件
 
@@ -28,7 +28,7 @@ ms.locfileid: "89363941"
 
 3D 製造格式 (3MF) 是一組慣例，基於製造 (3D 列印) 而使用 XML 來描述 3D 模型的外觀和結構。 它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。
 
-在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)。
+在 Windows 10 中， **Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](/uwp/api/windows.graphics.printing3d.printing3d3mfpackage) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -70,7 +70,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 ## <a name="create-materials"></a>建立材質
 
 
-3D 模型可以保留多個材質的資料。 這個慣例是要利用可對單一列印工作使用多個材質的 3D 製造裝置。 也有多種*類型*的材質群組，各可以支援數個不同的個別材質。 每個材質群組都必須有唯一的參考識別碼，而且該群組內的每一種材質也必須有唯一識別碼。
+3D 模型可以保留多個材質的資料。 這個慣例是要利用可對單一列印工作使用多個材質的 3D 製造裝置。 也有多種 *類型* 的材質群組，各可以支援數個不同的個別材質。 每個材質群組都必須有唯一的參考識別碼，而且該群組內的每一種材質也必須有唯一識別碼。
 
 模型內的不同網格物件接著可以參考這些材質。 此外，每個網格上的個別三角形可以指定不同的材質。 甚至，不同的材質可在單一三角形內表示，而且每個三角形頂點都已獲指派不同的材質，而且表面材質計算為其中的漸層。
 
@@ -78,35 +78,35 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ### <a name="base-materials"></a>基本材質
 
-預設材質類型是 [**基本材質**]，其具有 [**色彩材質**] 值 (如下所述) 以及用來指定要使用的材質*類型*的 name 屬性。
+預設材質類型是 [ **基本材質** ]，其具有 [ **色彩材質** ] 值 (如下所述) 以及用來指定要使用的材質 *類型* 的 name 屬性。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetBaseMaterialGroup":::
 
 > [!NOTE]
-> 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
+> 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
 
 ### <a name="color-materials"></a>色彩材質
 
-**色彩材質**與**基本材質**類似，但不包含名稱。 因此，它們不會提供有關電腦應該使用的材質類型的指示。 它們只會保留色彩資料，並讓電腦選擇材質類型 (而電腦接著可能會提示使用者進行選擇)。 在下面的程式碼中，會自行使用先前方法中的 `colrMat` 物件。
+**色彩材質** 與 **基本材質** 類似，但不包含名稱。 因此，它們不會提供有關電腦應該使用的材質類型的指示。 它們只會保留色彩資料，並讓電腦選擇材質類型 (而電腦接著可能會提示使用者進行選擇)。 在下面的程式碼中，會自行使用先前方法中的 `colrMat` 物件。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetColorMaterialGroup":::
 
 ### <a name="composite-materials"></a>複合材質
 
-**複合材質**只會指示製造裝置使用不同**基底材質**的統一混合。 每個**複合材質群組**都只能參考一個用來繪製組成部分的**基本材質群組**。 此外，此群組內要設為可用的**基本材質**必須列在**材質索引**清單中，而每個**複合材質**在指定比例時都會參考該清單 (每個**複合材質**都只是**基本材質**的比例)。
+**複合材質** 只會指示製造裝置使用不同 **基底材質** 的統一混合。 每個 **複合材質群組** 都只能參考一個用來繪製組成部分的 **基本材質群組** 。 此外，此群組內要設為可用的 **基本材質** 必須列在 **材質索引** 清單中，而每個 **複合材質** 在指定比例時都會參考該清單 (每個 **複合材質** 都只是 **基本材質** 的比例)。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetCompositeMaterialGroup":::
 
 ### <a name="texture-coordinate-materials"></a>紋理座標材質
 
-3MF 支援使用 2D 影像來將 3D 模型的表面著色。 因此，模型的每個三角形表面可以傳送更多色彩資料 (而不是每個三角形頂點只有一個色彩值)。 與**色彩材質**類似，紋理座標材質只會傳送色彩資料。 若要使用 2D 紋理，必須先宣告紋理資源︰
+3MF 支援使用 2D 影像來將 3D 模型的表面著色。 因此，模型的每個三角形表面可以傳送更多色彩資料 (而不是每個三角形頂點只有一個色彩值)。 與 **色彩材質** 類似，紋理座標材質只會傳送色彩資料。 若要使用 2D 紋理，必須先宣告紋理資源︰
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTextureResource":::
 
 > [!NOTE]
 > 紋理資料屬於 3MF 套件本身，而不屬於套件內的模型組件。
 
-接下來，我們必須填寫 **Texture3Coord 材質**。 所有這些項目都參考紋理資源，並指定影像上的特定點 (UV 座標)。
+接下來，我們必須填寫 **Texture3Coord 材質** 。 所有這些項目都參考紋理資源，並指定影像上的特定點 (UV 座標)。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetTexture2CoordMaterialGroup":::
 
@@ -118,9 +118,9 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 ## <a name="components-and-build"></a>元件和建置
 
-元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [**Printing3DComponent**](/uwp/api/windows.graphics.printing3d.printing3dcomponent) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](/uwp/api/windows.graphics.printing3d.printing3dcomponentwithmatrix) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent**，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
+元件結構可讓使用者在可列印的 3D 模型中放入多個網格物件。 [**Printing3DComponent**](/uwp/api/windows.graphics.printing3d.printing3dcomponent) 物件包含單一網格以及其他元件的參考清單。 這實際上是 [**Printing3DComponentWithMatrix**](/uwp/api/windows.graphics.printing3d.printing3dcomponentwithmatrix) 物件的清單。 **Printing3DComponentWithMatrix** 物件各包含一個 **Printing3DComponent** ，而且重要的是套用至網格的轉換矩陣以及 **Printing3DComponent** 的內含元件。
 
-例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent**。 "Body" 元件接著可能會包含對四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent**，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
+例如，汽車模型可能包含保留汽車主體網格的 "Body" **Printing3DComponent** 。 "Body" 元件接著可能會包含對四個不同 **Printing3DComponentWithMatrix** 物件的參考，這四個物件都參考具有 "Wheel" 網格的相同 **Printing3DComponent** ，並且包含四個不同的轉換矩陣 (將車輪對應到汽車主體的四個不同位置)。 在這個案例中，"Body" 網格和 "Wheel" 網格各只需要儲存一次，即使最終產品共具備五個網格也是一樣。
 
 所有 **Printing3DComponent** 物件都必須在模型的 **Components** 屬性中直接參考。 要用在列印工作的一個特定元件儲存在 **Build** 屬性中。
 
@@ -135,18 +135,18 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetFixTexture":::
 
-接下來，我們可以起始應用程式內的列印工作 (請參閱[從應用程式進行 3D 列印](./3d-print-from-app.md))，或將此 **Printing3D3MFPackage** 儲存為 .3mf 檔案。
+接下來，我們可以起始應用程式內的列印工作 (請參閱 [從應用程式進行 3D 列印](./3d-print-from-app.md))，或將此 **Printing3D3MFPackage** 儲存為 .3mf 檔案。
 
-下列方法採用已完成的 **Printing3D3MFPackage**，並將其資料儲存至 .3mf 檔案。
+下列方法採用已完成的 **Printing3D3MFPackage** ，並將其資料儲存至 .3mf 檔案。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/devices-sensors/3dprinthowto/cs/Generate3MFMethods.cs" id="SnippetSaveTo3mf":::
 
 ## <a name="related-topics"></a>相關主題
 
-[從 app 進行 3D 列印](./3d-print-from-app.md)  
+[從您的應用程式進行3D 列印](./3d-print-from-app.md)  
 [3D 列印 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
- 
+ 
 
- 
+ 
 
- 
+ 

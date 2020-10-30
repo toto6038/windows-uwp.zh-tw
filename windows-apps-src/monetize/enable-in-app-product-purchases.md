@@ -1,29 +1,29 @@
 ---
-Description: 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
+description: 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
 title: 啟用應用程式內產品購買
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
 keywords: UWP, 附加元件, app 內購買, IAP, Windows.ApplicationModel.Store
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6fc8a6ac39c106e3d5d593a36595097c4bde45
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b24a48034585411af5edfb0950fc4f96b189519f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89364111"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033471"
 ---
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 
 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。
 
 > [!IMPORTANT]
-> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空間的成員來啟用在應用程式內產品購買。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間。 **Windows. Store**命名空間支援最新的附加元件類型（例如儲存管理的可使用附加元件和訂閱），其設計目的是要與合作夥伴中心和存放區所支援的未來產品和功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需有關使用 **Windows.Services.Store** 命名空間來啟用 app 內產品購買的詳細資訊，請參閱[本文](enable-in-app-purchases-of-apps-and-add-ons.md)。
+> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](/uwp/api/windows.applicationmodel.store) 命名空間的成員來啟用在應用程式內產品購買。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](/uwp/api/windows.services.store) 命名空間。 **Windows. Store** 命名空間支援最新的附加元件類型（例如儲存管理的可使用附加元件和訂閱），其設計目的是要與合作夥伴中心和存放區所支援的未來產品和功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需有關使用 **Windows.Services.Store** 命名空間來啟用 app 內產品購買的詳細資訊，請參閱 [本文](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
 > [!NOTE]
 > 試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>Prerequisites
 
 -   要新增功能讓客戶購買的 Windows 應用程式。
 -   初次撰寫並測試新應用程式內產品的程式碼時，您必須使用 [CurrentAppSimulator](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 物件，而不是 [CurrentApp](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂% userprofile% \\ AppData \\ 本機 \\ 套件 \\ &lt; 套件名稱 &gt; \\ LocalState \\ Microsoft \\ Windows Store \\ ApiData 中名為 WindowsStoreProxy.xml 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 App 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
@@ -92,7 +92,7 @@ ms.locfileid: "89364111"
 ## <a name="related-topics"></a>相關主題
 
 
-* [啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)
+* [啟用取用應用程式內產品購買](enable-consumable-in-app-product-purchases.md)
 * [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)
 * [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)
 * [Microsoft Store 範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)

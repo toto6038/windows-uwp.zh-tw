@@ -1,5 +1,5 @@
 ---
-Description: 測試要遵循的程式，以確保您的 Windows 應用程式可以存取。
+description: 測試要遵循的程式，以確保您的 Windows 應用程式可以存取。
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: 協助工具測試
 label: Accessibility testing
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1da900732257babc0d53453fa4b9b2c9196e7e6d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 1cb4807f551f79d488cc56d71513745d22c43d27
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216411"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032671"
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
@@ -21,7 +21,7 @@ ms.locfileid: "91216411"
 
 ## <a name="run-accessibility-testing-tools"></a>執行協助工具測試工具
 
-Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [**AccScope**](/windows/desktop/WinAuto/accscope)、[**Inspect**](/windows/desktop/WinAuto/inspect-objects) 和 [**UI Accessibility Checker**](/windows/desktop/WinAuto/ui-accessibility-checker)。 這些工具可以協助您確認應用程式的協助工具。 請務必確認所有的 app 案例以及 UI 元素。
+Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [**AccScope**](/windows/desktop/WinAuto/accscope)、 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 和 [**UI Accessibility Checker**](/windows/desktop/WinAuto/ui-accessibility-checker)。 這些工具可以協助您確認應用程式的協助工具。 請務必確認所有的 app 案例以及 UI 元素。
 
 您可以從 Microsoft Visual Studio 命令提示字元或從 Windows SDK 工具資料夾 (您開發電腦上安裝 Windows SDK 所在的 bin 子目錄) 啟動協助工具測試工具。
   
@@ -29,11 +29,11 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
   
 ### <a name="accscope"></a>**AccScope**  
 
-[**AccScope**](/windows/desktop/WinAuto/accscope) 工具可讓開發人員和測試人員在 App 開發和設計期間 (有可能在早期原型階段，而不是 App 開發週期的晚期測試階段) 評估 App 的協助工具。 這是特別針對 App 的朗讀程式協助工具案例測試所設計。
+[**AccScope**](/windows/desktop/WinAuto/accscope)工具可讓開發人員和測試人員在應用程式的開發和設計期間評估其應用程式的協助工具（可能在先前的原型階段中），而不是在應用程式開發週期的晚期測試階段中。 這是特別針對 App 的朗讀程式協助工具案例測試所設計。
 
 ### <a name="inspect"></a>**檢查**  
 
-[**Inspect**](/windows/desktop/WinAuto/inspect-objects) 可以讓您選取任何 UI 元素以及查看它的協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 [ **檢查** ] 來確認消費者介面自動化中公開協助工具屬性的方式。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性會來自您在 XAML 標記中設定的特定值，做為 [**AutomationProperties**](/uwp/api/windows.ui.xaml.automation.automationproperties) 附加屬性。
+[**檢查**](/windows/desktop/WinAuto/inspect-objects) 可讓您選取任何 UI 元素，並查看其協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 [ **檢查** ] 來確認消費者介面自動化中公開協助工具屬性的方式。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性會來自您在 XAML 標記中設定的特定值，做為 [**AutomationProperties**](/uwp/api/windows.ui.xaml.automation.automationproperties) 附加屬性。
 
 以下影像顯示 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) 工具正在查詢「記事本」中 **\[編輯\]** 功能表元素的使用者介面自動化屬性。
 
@@ -41,15 +41,15 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ### <a name="ui-accessibility-checker"></a>UI 協助工具檢查程式
 
-**UI 協助工具檢查程式 (AccChecker)** 可協助您找出在執行階段的協助工具問題。 當 UI 設計完成而且功能正常後，請使用 **AccChecker** 測試不同的案例、確認執行階段協助工具資訊是否正確，以及發現執行階段發生的問題。 您可以在 UI 或命令列模式中執行 **AccChecker**。 若要執行 UI 模式工具，請開啟 Windows SDK bin 目錄中的 **AccChecker** 目錄，執行 acccheckui.exe，然後按一下 **\[說明\]** 功能表。
+**UI 協助工具檢查程式 (AccChecker)** 可協助您找出在執行階段的協助工具問題。 當 UI 設計完成而且功能正常後，請使用 **AccChecker** 測試不同的案例、確認執行階段協助工具資訊是否正確，以及發現執行階段發生的問題。 您可以在 UI 或命令列模式中執行 **AccChecker** 。 若要執行 UI 模式工具，請開啟 Windows SDK bin 目錄中的 **AccChecker** 目錄，執行 acccheckui.exe，然後按一下 **\[說明\]** 功能表。
 
 ### <a name="ui-automation-verify"></a>使用者介面自動化確認
 
-**「使用者介面自動化驗證 (UIA 驗證)」** 是一種使用者介面自動化實作的自動測試和驗證架構。 **「UIA 驗證」** 可以整合到測試程式碼中，並執行使用者介面自動化案例的一般自動測試或抽樣檢查。 若要執行 **「UIA 驗證」**，請從 [UIAVerify] 子目錄執行 VisualUIAVerifyNative.exe。
+**「使用者介面自動化驗證 (UIA 驗證)」** 是一種使用者介面自動化實作的自動測試和驗證架構。 **「UIA 驗證」** 可以整合到測試程式碼中，並執行使用者介面自動化案例的一般自動測試或抽樣檢查。 若要執行 **「UIA 驗證」** ，請從 [UIAVerify] 子目錄執行 VisualUIAVerifyNative.exe。
 
 ### <a name="accessible-event-watcher"></a>協助工具事件監控程式
 
-當 UI 發生變更時，[**Accessible Event Watcher (AccEvent)**](/windows/desktop/WinAuto/accessible-event-watcher) 會測試應用程式的 UI 元素是否引發正確的使用者介面自動化以及 Microsoft Active Accessibility 事件。 當焦點變更，或者當叫用、選取 UI 元素，或 UI 元素的狀態或屬性變更時，就會發生 UI 變更。
+當 UI 發生變更時， [**Accessible Event Watcher (AccEvent)**](/windows/desktop/WinAuto/accessible-event-watcher) 會測試應用程式的 UI 元素是否引發正確的使用者介面自動化以及 Microsoft Active Accessibility 事件。 當焦點變更，或者當叫用、選取 UI 元素，或 UI 元素的狀態或屬性變更時，就會發生 UI 變更。
 
 > [!NOTE]
 > 文件中提及的大部分協助工具測試工具都是在電腦上執行，而不是在手機上執行。 您可以在開發和使用模擬器的同時執行某些工具，不過其中大部分的工具都無法在模擬器內公開使用者介面自動化樹狀目錄。
@@ -71,7 +71,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 ## <a name="verify-your-app-with-display-settings"></a>使用顯示設定驗證應用程式  
 
-使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，app UI 能夠正確縮放。 (某些使用者會變更 DPI 值來做為其無障礙輔助，您可以在 **\[輕鬆存取\]** 中變更該選項，以及顯示屬性)。如果發現任何問題，請按照[配置縮放指導方針](https://developer.microsoft.com/windows/apps/design)的做法，同時為不同的縮放比例提供額外的資源。
+使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，app UI 能夠正確縮放。 (某些使用者會變更 DPI 值來做為其無障礙輔助，您可以在 **\[輕鬆存取\]** 中變更該選項，以及顯示屬性)。如果發現任何問題，請按照 [配置縮放指導方針](https://developer.microsoft.com/windows/apps/design)的做法，同時為不同的縮放比例提供額外的資源。
 
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>使用朗讀程式，確認主 App 操作正常
 
@@ -82,15 +82,15 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 **透過下列步驟，使用朗讀程式搭配滑鼠和鍵盤來測試您的應用程式：**
 
 1. 按 _Windows 標誌鍵 + Ctrl + Enter_ 來啟動朗讀程式。 在 Windows 10 版本 1607 之前的版本，請使用 _Windows 標誌鍵 + Enter_ 來啟動朗讀程式。
-2. 使用 _Tab_ 鍵、方向鍵及 _Caps Lock + 方向鍵_，利用鍵盤來瀏覽您的應用程式。
+2. 使用 _Tab_ 鍵、方向鍵及 _Caps Lock + 方向鍵_ ，利用鍵盤來瀏覽您的應用程式。
 3. 瀏覽應用程式時，聆聽朗讀程式朗讀 UI 的元素，並確認下列各項：
     - 對於每個控制項，確保朗讀程式朗讀所有顯示的內容。 此外，還需確保朗讀程式朗讀每個控制項的名稱、所有適當的狀態 (已勾選、已選取等)，以及控制項類型 (按鈕、核取方塊、清單項目等)。
-    - 如果元素是互動的，請確認您可以使用朗讀程式，透過按 _Caps Lock + Enter 鍵_來叫用它的動作。
+    - 如果元素是互動的，請確認您可以使用朗讀程式，透過按 _Caps Lock + Enter 鍵_ 來叫用它的動作。
     - 對於每個表格，確保朗讀程式正確朗讀表格名稱、表格說明 (如果可用的話)，以及列與欄標題。
-4. 按 _Caps Lock + Enter 鍵_來搜尋您的應用程式，並確認您的所有控制項都會出現在搜尋清單中，而且控制項名稱都已當地語系化且可閱讀。
-5. 關閉您的顯示器，並嘗試只使用鍵盤和朗讀程式來完成主應用程式案例。 若要取得朗讀程式命令和捷徑的完整清單，請按 _Caps Lock + F1_。
+4. 按 _Caps Lock + Enter 鍵_ 來搜尋您的應用程式，並確認您的所有控制項都會出現在搜尋清單中，而且控制項名稱都已當地語系化且可閱讀。
+5. 關閉您的顯示器，並嘗試只使用鍵盤和朗讀程式來完成主應用程式案例。 若要取得朗讀程式命令和捷徑的完整清單，請按 _Caps Lock + F1_ 。
 
-從 Windows 10 版本 1607 開始，我們在朗讀程式中導入了新的開發人員模式。 按下 _ctrl + Caps lock + F12_，在朗讀程式已在執行時開啟開發人員模式。 啟用開發人員模式之後，螢幕將會被遮住且將會以醒目方式只顯示可存取的物件和透過程式設計方式向朗讀程式揭露的相關文字。 這可以透過很好的視覺方式向您展示向朗讀程式揭露的資訊。
+從 Windows 10 版本 1607 開始，我們在朗讀程式中導入了新的開發人員模式。 按下 _ctrl + Caps lock + F12_ ，在朗讀程式已在執行時開啟開發人員模式。 啟用開發人員模式之後，螢幕將會被遮住且將會以醒目方式只顯示可存取的物件和透過程式設計方式向朗讀程式揭露的相關文字。 這可以透過很好的視覺方式向您展示向朗讀程式揭露的資訊。
 
 **利用這些步驟，使用朗讀程式的觸控模式來測試您的應用程式：**
 
@@ -98,10 +98,10 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 > 朗讀程式會自動在支援 4 個以上觸控點的裝置進入觸控模式。 朗讀程式不支援多個顯示器案例，也不支援主要螢幕上的多點觸控數位板。
 
 1. 熟悉 UI 並探索配置。
-    - **使用單指撥動手勢在 UI 之間瀏覽。** 使用向左或向右撥動以在項目之間移動，並使用向上或向下撥動來變更瀏覽的項目類別。 類別包含所有項目、連結、表格、標頭等。 利用單指撥動手勢進行瀏覽類似於使用 _Caps Lock + 方向鍵_來瀏覽。
+    - **使用單指撥動手勢在 UI 之間瀏覽。** 使用向左或向右撥動以在項目之間移動，並使用向上或向下撥動來變更瀏覽的項目類別。 類別包含所有項目、連結、表格、標頭等。 利用單指撥動手勢進行瀏覽類似於使用 _Caps Lock + 方向鍵_ 來瀏覽。
     - **使用 Tab 鍵手勢來於可設定焦點的元素之間瀏覽。** 使用三指向右或向左撥動，就和使用鍵盤上的 _Tab_ 鍵與 _Shift + Tab_ 鍵來瀏覽一樣。
     - **使用單指大範圍地查看 UI。** 使用單指向上和向下拖曳，或是向左和向右拖曳，可以讓朗讀程式閱讀您手指下方的項目。 您可以使用滑鼠做為替代選項，因為滑鼠會使用和單指拖曳相同的點擊測試邏輯。
-    - **使用三指向上撥動來朗讀整個視窗及其所有內容**。 這相當於使用 _Caps Lock + W_ 鍵。
+    - **使用三指向上撥動來朗讀整個視窗及其所有內容** 。 這相當於使用 _Caps Lock + W_ 鍵。
 
     如果有您無法觸及的重要 UI，那麼您可能有協助工具問題。
 

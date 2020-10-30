@@ -1,17 +1,17 @@
 ---
-Description: 本文章明如何建立能實作 IBasicAudioEffect 介面以允許您為音訊串流建立自訂效果的 Windows 執行階段元件。
+description: 本文章明如何建立能實作 IBasicAudioEffect 介面以允許您為音訊串流建立自訂效果的 Windows 執行階段元件。
 title: 自訂音訊效果
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: e52aa4ebde6f988daad9c1712845e07ee553d7a2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: b5b9613dc9d480a4193dbff0dbb236929d9ed54a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363961"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033171"
 ---
 # <a name="custom-audio-effects"></a>自訂音訊效果
 
@@ -24,12 +24,12 @@ ms.locfileid: "89363961"
 
 **為您的音訊效果新增 Windows 執行階段元件**
 
-1.  在 Microsoft Visual Studio 中，開啟您的方案，移至 **[檔案** ] 功能表，然後選取 [ **加入 &gt; 新專案**]。
-2.  選取 [ **通用 Windows) ] 專案類型 (Windows 執行階段元件 ** 。
-3.  針對此範例，請將專案命名為 *AudioEffectComponent*。 此名稱將會由稍後的程式碼所參考。
-4.  按一下 [確定]  。
-5.  專案範本會建立名為 Class1.cs 的類別。 在 **方案總管**中，以滑鼠右鍵按一下 Class1.cs 的圖示，然後選取 [ **重新命名**]。
-6.  將檔案重新命名為 *ExampleAudioEffect.cs*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]  。
+1.  在 Microsoft Visual Studio 中，開啟您的方案，移至 **[檔案** ] 功能表，然後選取 [ **加入 &gt; 新專案** ]。
+2.  選取 [ **通用 Windows) ] 專案類型 (Windows 執行階段元件** 。
+3.  針對此範例，請將專案命名為 *AudioEffectComponent* 。 此名稱將會由稍後的程式碼所參考。
+4.  按一下 [確定]。
+5.  專案範本會建立名為 Class1.cs 的類別。 在 **方案總管** 中，以滑鼠右鍵按一下 Class1.cs 的圖示，然後選取 [ **重新命名** ]。
+6.  將檔案重新命名為 *ExampleAudioEffect.cs* 。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]  。
 7.  開啟 **ExampleAudioEffect.cs** 並更新類別定義以實作 [**IBasicAudioEffect**](/uwp/api/Windows.Media.Effects.IBasicAudioEffect) 介面。
 
 
@@ -45,13 +45,13 @@ ms.locfileid: "89363961"
 
 ### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties 屬性
 
-系統將會檢查 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicaudioeffect.supportedencodingproperties) 屬性來判斷您效果所支援的編碼屬性。 請注意，如果您效果的取用者無法使用您所指定的屬性來編碼音訊，系統將會在您的效果上呼叫 [**Close**](/uwp/api/windows.media.effects.ibasicaudioeffect.close) 並將您的效果從音訊管線中移除。 在這個範例中，[**AudioEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.AudioEncodingProperties) 物件會建立並新增到傳回的清單，以支援 44.1 kHz 及 48 kHz 的 32 位元浮點單聲道編碼。
+系統將會檢查 [**SupportedEncodingProperties**](/uwp/api/windows.media.effects.ibasicaudioeffect.supportedencodingproperties) 屬性來判斷您效果所支援的編碼屬性。 請注意，如果您效果的取用者無法使用您所指定的屬性來編碼音訊，系統將會在您的效果上呼叫 [**Close**](/uwp/api/windows.media.effects.ibasicaudioeffect.close) 並將您的效果從音訊管線中移除。 在這個範例中， [**AudioEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.AudioEncodingProperties) 物件會建立並新增到傳回的清單，以支援 44.1 kHz 及 48 kHz 的 32 位元浮點單聲道編碼。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetSupportedEncodingProperties":::
 
 ### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
-系統會在您的效果上呼叫 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 來讓您知道效果正在運作之音訊串流的編碼屬性。 為了實作回音效果，本範例會使用緩衝區以儲存一秒的音訊資料。 這個方法能根據音訊編碼的取樣率，提供針對一秒音訊中的範例數目初始化緩衝區大小的機會。 延遲效果也會使用整數計數器以追蹤延遲緩衝區中的目前位置。 由於系統會在效果新增到音訊管道時呼叫 **SetEncodingProperties**，這是將該值初始化為 0 的好時機。 您也可以擷取傳遞到此方法的 **AudioEncodingProperties** 物件，以用於效果中的其他地方。
+系統會在您的效果上呼叫 [**SetEncodingProperties**](/uwp/api/windows.media.effects.ibasicvideoeffect.setencodingproperties) 來讓您知道效果正在運作之音訊串流的編碼屬性。 為了實作回音效果，本範例會使用緩衝區以儲存一秒的音訊資料。 這個方法能根據音訊編碼的取樣率，提供針對一秒音訊中的範例數目初始化緩衝區大小的機會。 延遲效果也會使用整數計數器以追蹤延遲緩衝區中的目前位置。 由於系統會在效果新增到音訊管道時呼叫 **SetEncodingProperties** ，這是將該值初始化為 0 的好時機。 您也可以擷取傳遞到此方法的 **AudioEncodingProperties** 物件，以用於效果中的其他地方。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetDeclareEchoBuffer":::
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetSetEncodingProperties":::
@@ -77,13 +77,13 @@ ms.locfileid: "89363961"
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 **\[屬性\]**。
-> 2.  選取 [組建] **** 索引標籤。
+> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[AudioEffectComponent\] 專案，然後選取 **\[屬性\]** 。
+> 2.  選取 [組建]  索引標籤。
 > 3.  選取 [ **允許 unsafe 程式碼** ] 核取方塊。
 
- 
+ 
 
-現在您可以將 **ProcessFrame** 方法實作新增到效果。 首先，此方法會同時從輸入和輸出音訊框架取得 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer) 物件。 請注意，輸出畫面格會針對寫入開啟，而輸入畫面格則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 來為每個緩衝區取得 [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
+現在您可以將 **ProcessFrame** 方法實作新增到效果。 首先，此方法會同時從輸入和輸出音訊框架取得 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer) 物件。 請注意，輸出畫面格會針對寫入開啟，而輸入畫面格則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](/uwp/api/windows.graphics.imaging.bitmapbuffer.createreference) 來為每個緩衝區取得 [**IMemoryBufferReference**](/uwp/api/Windows.Foundation.IMemoryBufferReference)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer** ，來取得實際的資料緩衝區。
 
 現在您已取得資料緩衝區，您可以從輸入緩衝區讀取，並寫入至輸出緩衝區。 針對輸入緩衝區中的每個範例，將會取得其值並乘以 1 - **Mix** 以設定效果的乾聲訊號值。 接下來，將會從目前在回音緩衝區中的位置擷取範例，並乘以 **Mix** 以設定效果的濕聲值。 輸出範例將會以乾聲和濕聲值的總和設定。 最後，每個輸入範例都會儲存在回音緩衝區中，且目前的範例索引會遞增。
 
@@ -111,7 +111,7 @@ ms.locfileid: "89363961"
 
 ### <a name="useinputframeforoutput-property"></a>UseInputFrameForOutput 屬性
 
-將 [**UseInputFrameForOutput**](/uwp/api/windows.media.effects.ibasicaudioeffect.useinputframeforoutput) 屬性設定為 **true**，以告訴系統您的效果會將其輸出寫入到傳入 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicaudioeffect.processframe) 之 [**ProcessAudioFrameContext**](/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext) 的 [**InputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.inputframe)，而非寫入 [**OutputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.outputframe)。 
+將 [**UseInputFrameForOutput**](/uwp/api/windows.media.effects.ibasicaudioeffect.useinputframeforoutput) 屬性設定為 **true** ，以告訴系統您的效果會將其輸出寫入到傳入 [**ProcessFrame**](/uwp/api/windows.media.effects.ibasicaudioeffect.processframe) 之 [**ProcessAudioFrameContext**](/uwp/api/Windows.Media.Effects.ProcessAudioFrameContext) 的 [**InputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.inputframe)，而非寫入 [**OutputFrame**](/uwp/api/windows.media.effects.processaudioframecontext.outputframe)。 
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/AudioEffectComponent/ExampleAudioEffect.cs" id="SnippetUseInputFrameForOutput":::
 
@@ -121,8 +121,8 @@ ms.locfileid: "89363961"
 
 如果要從您的 App 使用您的音訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 [方案總管] 中，於您的專案下方，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考\]**。
-2.  展開 **\[專案\]** 索引標籤，選取 **\[方案\]**，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent*。
+1.  在 [方案總管] 中，於您的專案下方，以滑鼠右鍵按一下 **\[參考\]** ，然後選取 **\[加入參考\]** 。
+2.  展開 **\[專案\]** 索引標籤，選取 **\[方案\]** ，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *AudioEffectComponent* 。
 3.  按一下 [檔案] &gt; [新增] &gt; [專案] 
 
 如果您的音訊效果類別已宣告為不同的命名空間，請務必將該命名空間包含在程式碼檔案中。
@@ -150,4 +150,4 @@ ms.locfileid: "89363961"
 * [Win2D 文件](https://microsoft.github.io/Win2D/html/Introduction.htm)
 * [媒體播放](media-playback.md)
 
- 
+ 

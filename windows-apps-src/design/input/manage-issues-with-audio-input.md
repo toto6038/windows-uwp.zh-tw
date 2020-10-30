@@ -1,5 +1,5 @@
 ---
-Description: 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
+description: 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 title: 管理音訊輸入的問題
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
@@ -8,25 +8,25 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bbbe9a887afa4637aaf8e6576e14979a92aa6b8f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a5d74346aec4784cea9be2dfcef3ec2efccd8b56
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173392"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034691"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音訊輸入的問題
 
 
 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 
-> **重要 API**：[**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)、[**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)、[**SpeechRecognitionAudioProblem**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
+> **重要 API** ： [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer)、 [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading)、 [**SpeechRecognitionAudioProblem**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionAudioProblem)
 
 
 ## <a name="assess-audio-input-quality"></a>評定音訊輸入品質
 
 
-在啟用語音辨識功能的情況下，使用您語音辨識器的 [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件，以判斷是否有一或多個音訊問題可能在干擾語音輸入。 事件引數 ([**SpeechRecognitionQualityDegradingEventArgs**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) 會提供 [**Problem**](/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 屬性，用來描述偵測到的音訊輸入問題。
+在啟用語音辨識功能的情況下，使用您語音辨識器的 [**RecognitionQualityDegrading**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognitionqualitydegrading) 事件，以判斷是否有一或多個音訊問題可能在干擾語音輸入。 事件引數 ( [**SpeechRecognitionQualityDegradingEventArgs**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs)) 會提供 [**Problem**](/uwp/api/windows.media.speechrecognition.speechrecognitionqualitydegradingeventargs.problem) 屬性，用來描述偵測到的音訊輸入問題。
 
 太多背景噪音、麥克風靜音，以及說話者的音量或速度，都可能會影響辨識。
 
@@ -109,6 +109,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 **範例**
 * [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

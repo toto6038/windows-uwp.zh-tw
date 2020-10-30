@@ -1,16 +1,16 @@
 ---
-Description: 深入瞭解您可以用程式設計方式讓客戶對您的應用程式進行評分和審核的幾種方式。
+description: 深入瞭解您可以用程式設計方式讓客戶對您的應用程式進行評分和審核的幾種方式。
 title: 為您的應用程式作評等與評論
 ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a668ac66f48e386a6299a64e5bcc18cec4fccc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9dbc33eaaf3adcb05a6ad37e2f54ceec4769f530
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158372"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034401"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -101,7 +101,7 @@ private async Task PromptUserToRateApp()
 }
 ```
 
-**RequestRateAndReviewAppAsync**方法是在 Windows 10 版本1809中引進，而且只能用於以**Windows 10 2018 年10月更新 (10.0 為目標的專案中。Visual Studio 中的組建 17763) **或更新版本。
+**RequestRateAndReviewAppAsync** 方法是在 Windows 10 版本1809中引進，而且只能用於以 **Windows 10 2018 年10月更新 (10.0 為目標的專案中。Visual Studio 中的組建 17763)** 或更新版本。
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>評等與評論要求的回應資料
 
@@ -110,8 +110,8 @@ private async Task PromptUserToRateApp()
 以下範例展示在客戶成功提交評分或評論後該要求的傳回值。
 
 ```json
-{ 
-  "status": "success", 
+{ 
+  "status": "success", 
   "data": {
     "updated": false
   },
@@ -122,8 +122,8 @@ private async Task PromptUserToRateApp()
 以下範例展示在客戶選擇提交評分或評論後該要求的傳回值。
 
 ```json
-{ 
-  "status": "aborted", 
+{ 
+  "status": "aborted", 
   "errorDetails": "Navigation was unsuccessful"
 }
 ```
@@ -132,8 +132,8 @@ private async Task PromptUserToRateApp()
 
 | 欄位          | 描述                                                                                                                                   |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| *status*       | 表示客戶是否成功提交評等或評論的字串。 支援的值為**成功**和**中止**。 |
-| *data*         | 此物件包含名為*已更新*的單一布林值。 此值表示客戶是否更新現有評等或評論。 *資料*物件只包含在成功回應中。 |
+| *status*       | 表示客戶是否成功提交評等或評論的字串。 支援的值為 **成功** 和 **中止** 。 |
+| *data*         | 此物件包含名為 *已更新* 的單一布林值。 此值表示客戶是否更新現有評等或評論。 *資料* 物件只包含在成功回應中。 |
 | *errorDetails* | 字串包含要求的錯誤詳細資料。                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>在 Microsoft Store 中啟動您的應用程式的評等與評論頁面

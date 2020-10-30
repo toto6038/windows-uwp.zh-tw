@@ -1,5 +1,5 @@
 ---
-Description: 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
+description: 處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
 title: 滑鼠互動
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
@@ -8,16 +8,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84390e7b929412e4058c1a7e6507ff171344bd53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: dfefda0e09159c398334ae77bc29dcd8fc3f628a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218931"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034721"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
-針對觸控輸入優化 Windows 應用程式設計，並依預設取得基本的滑鼠支援。 
+針對觸控輸入優化 Windows 應用程式設計，並依預設取得基本的滑鼠支援。 
 
 ![滑鼠](images/input-patterns/input-mouse.jpg)
 
@@ -59,10 +59,10 @@ ms.locfileid: "91218931"
 <td align="left"><p>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>注意</strong>   如果選取範圍或應用程式行命令不是適當的 UI 行為，請以滑鼠右鍵按一下以顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>注意</strong>  如果「選取」或「應用程式列命令」不是適當的 UI 行為，則以按滑鼠右鍵來顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -86,7 +86,7 @@ ms.locfileid: "91218931"
 
 ## <a name="mouse-input-events"></a>滑鼠輸入事件
 
-大部分的滑鼠輸入都可以透過所有 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 物件所支援的一般路由輸入事件來處理。 其中包括：
+大部分的滑鼠輸入都可以透過所有 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 物件所支援的一般路由輸入事件來處理。 它們包括：
 
 - [**BringIntoViewRequested**](/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
 - [**CharacterReceived**](/uwp/api/windows.ui.xaml.uielement.characterreceived)

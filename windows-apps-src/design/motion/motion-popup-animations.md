@@ -1,5 +1,5 @@
 ---
-Description: 使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
+description: 使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
 title: 快顯 UI 動畫
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d605378e802f28015734da4c35a22f41adfc185
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5d09363d6ecd2eb5909c98da316c7c1395ebec03
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217732"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034121"
 ---
 # <a name="pop-up-ui-animations"></a>快顯 UI 動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "91217732"
 
 使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。
 
-> **重要 API**: [**PopInThemeAnimation 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)、[**PopupThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
+> **重要 API** : [**PopInThemeAnimation 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)、 [**PopupThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -33,13 +33,13 @@ ms.locfileid: "91217732"
 
 ## <a name="related-articles"></a>相關文章
 
-* [動畫概觀](./xaml-animation.md)
+* [動畫總覽](./xaml-animation.md)
 * [讓快顯 UI 產生動畫效果](/previous-versions/windows/apps/jj649433(v=win.10))
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**PopInThemeAnimation 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation)
 * [**PopOutThemeAnimation 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation)
 * [**PopupThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition)
 
- 
+ 
 
- 
+ 

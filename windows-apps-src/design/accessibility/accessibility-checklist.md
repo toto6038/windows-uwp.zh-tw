@@ -1,5 +1,5 @@
 ---
-Description: 提供檢查清單以協助您確定可以存取您的 Windows 應用程式。
+description: 提供檢查清單以協助您確定可以存取您的 Windows 應用程式。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: 協助工具檢查清單
 label: Accessibility checklist
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d6b9340f55064ff89c0b047cbb6d7407574da3d6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fd16c93b3914987741a486e4f40d4b60e0b274ee
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216391"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032711"
 ---
 # <a name="accessibility-checklist"></a>協助工具檢查清單
 
@@ -23,7 +23,7 @@ ms.locfileid: "91216391"
 
 1. 為 App 的內容和互動式 UI 元素設定無障礙名稱 (必要) 以及描述 (選用)。
 
-    無障礙名稱是螢幕助讀程式用來宣告 UI 元素的簡單描述性文字字串。 某些像是 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 的 UI 元素會將自己的文字內容升級為預設的無障礙名稱；請參閱[基本的協助工具資訊](basic-accessibility-information.md#name_from_inner_text)。
+    無障礙名稱是螢幕助讀程式用來宣告 UI 元素的簡單描述性文字字串。 某些像是 [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 和 [**TextBox**](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 的 UI 元素會將自己的文字內容升級為預設的無障礙名稱；請參閱 [基本的協助工具資訊](basic-accessibility-information.md#name_from_inner_text)。
 
     如果影像或其他控制項不會將內部文字內容升級為隱含的無障礙名稱，則您應該為它們設定明確的無障礙名稱。 您應該在表單元素使用標籤，這樣標籤文字就可以當作 Microsoft 使用者介面自動化模型的 [**LabeledBy**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)) 目標，負責將標籤和輸入建立關聯。 如果您想為使用者提供比典型無障礙名稱更多內容的 UI 指導方針，可以使用無障礙說明和工具提示來協助使用者了解 UI。
 
@@ -41,10 +41,10 @@ ms.locfileid: "91216391"
 
 3. 確定文字是可讀取的大小
 
-    * Windows 包含各種協助工具工具和設定，使用者可利用這些工具和設定來調整，並根據自己的需求和喜好設定來閱讀文字。 其中包括：
+    * Windows 包含各種協助工具工具和設定，使用者可利用這些工具和設定來調整，並根據自己的需求和喜好設定來閱讀文字。 它們包括：
         * 放大鏡工具，可放大 UI 的選取區域。 您應該確保應用程式中的文字版面配置不會讓您難以使用放大鏡進行讀取。
-        * 設定中的全域規模和解析度設定 **->系統 >顯示 >縮放和**配置。 確切的調整大小選項有何不同，這取決於顯示裝置的功能。
-        * 設定中的文字大小設定 **->輕鬆存取->顯示**。 調整 [ **讓文字變得更大** ] 設定，只指定在所有應用程式和螢幕上支援控制項的文字大小 (所有 UWP 文字控制項都能支援不含任何自訂或範本) 的文字縮放體驗。
+        * 設定中的全域規模和解析度設定 **->系統 >顯示 >縮放和** 配置。 確切的調整大小選項有何不同，這取決於顯示裝置的功能。
+        * 設定中的文字大小設定 **->輕鬆存取->顯示** 。 調整 [ **讓文字變得更大** ] 設定，只指定在所有應用程式和螢幕上支援控制項的文字大小 (所有 UWP 文字控制項都能支援不含任何自訂或範本) 的文字縮放體驗。
         > [!NOTE]
         > [ **讓所有專案變得更大** ] 設定可讓使用者在主要畫面上，通常只會指定其慣用的文字和應用程式大小。
 

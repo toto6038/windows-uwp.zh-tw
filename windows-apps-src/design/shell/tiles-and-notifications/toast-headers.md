@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何使用標頭，以視覺方式將您的快顯通知分組在行動中心。
+description: 瞭解如何使用標頭，以視覺方式將您的快顯通知分組在行動中心。
 title: 快顯通知標頭
 label: Toast headers
 template: detail.hbs
@@ -7,19 +7,19 @@ ms.date: 12/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 標頭, 快顯通知標頭, 通知, 群組快顯通知, 控制中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 95cd6083cf4430f25b1514a7e163d04892097903
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 1afc354b15b7c916426ca3c0a7130b777c21e0cf
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984474"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033071"
 ---
 # <a name="toast-headers"></a>快顯通知標頭
 
 您可以在通知上使用快顯通知標頭，來視覺分組控制中心內的相關通知。
 
 > [!IMPORTANT]
-> **需要 Desktop Creators Update 和 Notifications 程式庫 1.4.0**：您必須執行桌上型電腦組建 15063 或更新版本，才能看見快顯通知標頭。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構標頭。 只有桌上型電腦才支援標頭。
+> **需要 Desktop Creators Update 和 Notifications 程式庫 1.4.0** ：您必須執行桌上型電腦組建 15063 或更新版本，才能看見快顯通知標頭。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構標頭。 只有桌上型電腦才支援標頭。
 
 如下所示，群組交談已整合至單一標頭「露營!!」下方。 交談中的每個個別訊息都是不同的快顯通知，但共用相同的快顯通知標頭。
 
@@ -64,27 +64,27 @@ new ToastContentBuilder()
 總結來說...
 
 1. 新增 **Header** 到 **ToastContent**
-2. 指派必要的 **Id**、**Title** 和 **Arguments** 屬性
+2. 指派必要的 **Id** 、 **Title** 和 **Arguments** 屬性
 3. 傳送您的通知 ([深入了解](send-local-toast.md))
-4. 在另一個通知上，使用相同標頭 **Id** 將它們整合在同一個標頭下。 **Id** 是用來判斷是否應將通知分組在一起的唯一屬性，這表示 **Title** 和 **Arguments** 可以不同。 會使用來自群組中最新通知的 **Title** 和 **Arguments**。 如果該通知被移除，則 **Title** 和 **Arguments** 會退回下一個最新的通知。
+4. 在另一個通知上，使用相同標頭 **Id** 將它們整合在同一個標頭下。 **Id** 是用來判斷是否應將通知分組在一起的唯一屬性，這表示 **Title** 和 **Arguments** 可以不同。 會使用來自群組中最新通知的 **Title** 和 **Arguments** 。 如果該通知被移除，則 **Title** 和 **Arguments** 會退回下一個最新的通知。
 
 
 ## <a name="handle-activation-from-a-header"></a>處理來自標頭的啟用
 
 標頭可供使用者點按，因此使用者可以按下標頭以從您的應用程式了解更多資訊。
 
-因此，應用程式可以在標頭上提供 **Arguments**，類似於快顯本身的啟動引數。
+因此，應用程式可以在標頭上提供 **Arguments** ，類似於快顯本身的啟動引數。
 
-啟用的處理方式與[一般快顯通知啟用](send-local-toast.md#step-4-handling-activation)相同，這表示您可以在 `App.xaml.cs` 的 **OnActivated** 方法中擷取這些引數，如同當使用者按下快顯通知的主體或快顯通知的按鈕時您所執行的動作。
+啟用的處理方式與 [一般快顯通知啟用](send-local-toast.md#step-4-handling-activation)相同，這表示您可以在 `App.xaml.cs` 的 **OnActivated** 方法中擷取這些引數，如同當使用者按下快顯通知的主體或快顯通知的按鈕時您所執行的動作。
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
 {
-    // Handle toast activation
-    if (e is ToastNotificationActivatedEventArgs)
-    {
+    // Handle toast activation
+    if (e is ToastNotificationActivatedEventArgs)
+    {
         // Arguments specified from the header
-        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
+        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
     }
 }
 ```

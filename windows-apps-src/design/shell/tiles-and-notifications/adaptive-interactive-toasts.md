@@ -1,5 +1,5 @@
 ---
-Description: 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
+description: 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
 title: 快顯通知內容
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Toast content
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 互動式快顯通知, 調適性快顯通知, 快顯通知內容, 快顯通知裝載
 ms.localizationpriority: medium
-ms.openlocfilehash: ed801d07991c4faa186bc0164dbf0d1323537a20
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: f148938f8c8e3bb5ac305a82d1863545005fd802
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984604"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034291"
 ---
 # <a name="toast-content"></a>快顯通知內容
 
 調適型和互動式快顯通知可讓您使用文字、影像和按鈕/輸入建立彈性通知。
 
-> **重要 API**：[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要 API** ： [UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 > [!NOTE]
 > 若要查看來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](/previous-versions/windows/apps/hh761494(v=win.10))。
@@ -39,13 +39,13 @@ ms.locfileid: "91984604"
 
 ## <a name="toast-notification-structure"></a>快顯通知結構
 
-快顯通知是一些如 Tag/Group 等資料屬性 (讓您識別通知) 與*快顯通知內容*的組合。
+快顯通知是一些如 Tag/Group 等資料屬性 (讓您識別通知) 與 *快顯通知內容* 的組合。
 
 快顯通知內容的核心元件為...
-* **launch**：這會定義使用者按一下快顯通知時，要將哪些引數傳回到 App，讓您深度連結至快顯通知已在顯示的正確內容中。 若要深入了解，請參閱[傳送本機快顯通知](send-local-toast.md)。
-* **visual**：快顯通知的視覺效果部分，其中會有包含文字和影像的泛型繫結。
-* **actions**：快顯通知的互動部分，包括輸入和動作。
-* **audio**：控制向使用者顯示快顯通知時播放的音效。
+* **launch** ：這會定義使用者按一下快顯通知時，要將哪些引數傳回到 App，讓您深度連結至快顯通知已在顯示的正確內容中。 若要深入了解，請參閱[傳送本機快顯通知](send-local-toast.md)。
+* **visual** ：快顯通知的視覺效果部分，其中會有包含文字和影像的泛型繫結。
+* **actions** ：快顯通知的互動部分，包括輸入和動作。
+* **audio** ：控制向使用者顯示快顯通知時播放的音效。
 
 快顯通知內容是以原始 XML 定義，但是您可以使用我們的 [NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) 取得 C# (or C++) 物件模型來建構快顯通知內容。 本文記載快顯通知內容的相關資訊，應有盡有。
 
@@ -64,17 +64,17 @@ new ToastContentBuilder()
 ```xml
 <toast launch="app-defined-string">
 
-  <visual>
-    <binding template="ToastGeneric">
-      ...
-    </binding>
-  </visual>
+  <visual>
+    <binding template="ToastGeneric">
+      ...
+    </binding>
+  </visual>
 
-  <actions>
-    ...
-  </actions>
+  <actions>
+    ...
+  </actions>
 
-  <audio src="ms-winsoundevent:Notification.Reminder"/>
+  <audio src="ms-winsoundevent:Notification.Reminder"/>
 
 </toast>
 ```
@@ -86,7 +86,7 @@ new ToastContentBuilder()
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
 
-## <a name="visual"></a>視覺效果
+## <a name="visual"></a>Visual
 
 每個快顯通知都必須指定視覺效果，您必須在其中提供可包含文字、影像等項目的泛型快顯通知繫結。 這些元素會呈現在各種不同 Windows 裝置，包括桌上型電腦、手機、平板電腦和 Xbox。
 
@@ -105,7 +105,7 @@ new ToastContentBuilder()
 
 <img alt="Toast with title and description" src="images/toast-title-and-description.jpg" width="364"/>
 
-從 Windows 10 年度更新版以後，您可以使用文字的 **HintMaxLines** 屬性控制顯示多少行文字。 預設 (及上限) 為標題最多 2 行文字，以及兩個額外描述元素 (第二個和第三個 **AdaptiveText**) 最多 4 行 (合併)。
+從 Windows 10 年度更新版以後，您可以使用文字的 **HintMaxLines** 屬性控制顯示多少行文字。 預設 (及上限) 為標題最多 2 行文字，以及兩個額外描述元素 (第二個和第三個 **AdaptiveText** ) 最多 4 行 (合併)。
 
 #### <a name="builder-syntax"></a>[Builder 語法](#tab/builder-syntax)
 
@@ -135,7 +135,7 @@ new ToastContentBuilder()
 
 <img alt="Toast with app logo override" src="images/toast-applogooverride.jpg" width="364"/>
 
-您可以使用 **HintCrop** 屬性來變更影像的裁剪。 例如，**Circle** 會產生圓形裁剪的影像。 否則，影像為正方形。 100% 縮放比例的影像尺寸為 48x48 像素。
+您可以使用 **HintCrop** 屬性來變更影像的裁剪。 例如， **Circle** 會產生圓形裁剪的影像。 否則，影像為正方形。 100% 縮放比例的影像尺寸為 48x48 像素。
 
 #### <a name="builder-syntax"></a>[Builder 語法](#tab/builder-syntax)
 
@@ -161,7 +161,7 @@ new ToastContentBuilder()
 
 ## <a name="hero-image"></a>主角圖像
 
-**年度更新版的新功能**：快顯通知可以顯示主角影像，這是在快顯通知橫幅和控制中心內顯示得很醒目的精選 [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage)。 100% 縮放比例的影像尺寸為 364x180 像素。
+**年度更新版的新功能** ：快顯通知可以顯示主角影像，這是在快顯通知橫幅和控制中心內顯示得很醒目的精選 [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage)。 100% 縮放比例的影像尺寸為 364x180 像素。
 
 <img alt="Toast with hero image" src="images/toast-heroimage.jpg" width="364"/>
 
@@ -232,7 +232,7 @@ new ToastContentBuilder()
 
 ## <a name="attribution-text"></a>屬性文字
 
-**年度更新版的新功能**：如果需要參考內容的來源，您可以使用屬性文字。 此文字永遠和通知身分識別或通知時間戳記一起顯示在通知的底部。
+**年度更新版的新功能** ：如果需要參考內容的來源，您可以使用屬性文字。 此文字永遠和通知身分識別或通知時間戳記一起顯示在通知的底部。
 
 舊版 Windows 不支援文字屬性，文字只是簡單顯示成另一個文字元素 (假設文字元素尚未到達最多三個的限制)。
 
@@ -261,7 +261,7 @@ new ToastContentBuilder()
 
 ## <a name="custom-timestamp"></a>自訂時間戳記
 
-**Creators Update 的新功能**：您現在可以將系統提供的時間戳記覆寫為您自己的準確表示何時產生訊息/資訊/內容的時間戳記。 此時間戳記可顯示在控制中心內。
+**Creators Update 的新功能** ：您現在可以將系統提供的時間戳記覆寫為您自己的準確表示何時產生訊息/資訊/內容的時間戳記。 此時間戳記可顯示在控制中心內。
 
 <img alt="Toast with custom timestamp" src="images/toast-customtimestamp.jpg" width="396"/>
 
@@ -280,7 +280,7 @@ new ToastContentBuilder()
 
 ```xml
 <toast displayTimestamp="2017-04-15T19:45:00Z">
-  ...
+  ...
 </toast>
 ```
 
@@ -289,16 +289,16 @@ new ToastContentBuilder()
 
 ## <a name="progress-bar"></a>進度列
 
-建立**者更新的新**功能：您可以提供快顯通知的進度列，讓使用者知道下載作業的進度。
+建立 **者更新的新** 功能：您可以提供快顯通知的進度列，讓使用者知道下載作業的進度。
 
 <img alt="Toast with progress bar" src="images/toast-progressbar.png" width="364"/>
 
 若要深入了解使用進度列，請參閱[快顯通知進度列](toast-progress-bar.md)。
 
 
-## <a name="headers"></a>headers
+## <a name="headers"></a>標題
 
-**Creators Update 的新功能**：您可以將通知分組在控制中心的標頭下方。 例如，您可以將來自某個群組聊天的群組訊息分組在一個標頭下，或將常見主題的通知分組在一個標頭下，以此類推。
+**Creators Update 的新功能** ：您可以將通知分組在控制中心的標頭下方。 例如，您可以將來自某個群組聊天的群組訊息分組在一個標頭下，或將常見主題的通知分組在一個標頭下，以此類推。
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
@@ -307,7 +307,7 @@ new ToastContentBuilder()
 
 ## <a name="adaptive-content"></a>調適性內容
 
-**年度更新版的新功能**：除了以上所指定的內容之外，您還可以顯示會在展開快顯通知時顯示的其他調適性內容。
+**年度更新版的新功能** ：除了以上所指定的內容之外，您還可以顯示會在展開快顯通知時顯示的其他調適性內容。
 
 這個額外內容是使用 Adaptive 所指定，您可以閱讀[調適型磚文件](create-adaptive-tiles.md) 進行深入了解。
 
@@ -480,7 +480,7 @@ new ToastContentBuilder()
 
 ### <a name="buttons-with-pending-update-activation"></a>具有擱置中更新啟用的按鈕
 
-**Fall Creators Update 的新功能**：在背景啟動按鈕上，您可以使用 **PendingUpdate** 的啟用後行為在快顯通知中建立多步驟互動。 當使用者按下您的按鈕時，便會啟用背景工作，快顯通知將進入「擱置中的更新」狀態，它會停留在螢幕上，直到背景工作使用新的快顯通知來取代快顯通知。
+**Fall Creators Update 的新功能** ：在背景啟動按鈕上，您可以使用 **PendingUpdate** 的啟用後行為在快顯通知中建立多步驟互動。 當使用者按下您的按鈕時，便會啟用背景工作，快顯通知將進入「擱置中的更新」狀態，它會停留在螢幕上，直到背景工作使用新的快顯通知來取代快顯通知。
 
 若要了解如何執行此程序，請參閱[快顯通知擱置中的更新](toast-pending-update.md)。
 
@@ -489,7 +489,7 @@ new ToastContentBuilder()
 
 ### <a name="context-menu-actions"></a>內容功能表動作
 
-**年度更新版的新功能**：您可以新增額外的內容功能表動作至現有的內容功能表 (當使用者以滑鼠右鍵按一下控制中心中的快顯通知，便會顯示此內容功能表)。 請注意，只有在控制中心內以滑鼠右鍵按一下時，才會出現這個功能表。 以滑鼠右鍵按一下快顯通知快顯橫幅並不會出現此功能表。
+**年度更新版的新功能** ：您可以新增額外的內容功能表動作至現有的內容功能表 (當使用者以滑鼠右鍵按一下控制中心中的快顯通知，便會顯示此內容功能表)。 請注意，只有在控制中心內以滑鼠右鍵按一下時，才會出現這個功能表。 以滑鼠右鍵按一下快顯通知快顯橫幅並不會出現此功能表。
 
 > [!NOTE]
 > 在舊款裝置上，這些額外的內容功能表動作會在您的快顯通知上顯示為一般按鈕。
@@ -735,25 +735,25 @@ new ToastContentBuilder()
 
 ```xml
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
-   
-  ...
- 
-  <actions>
-     
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
- 
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
- 
-    <action activationType="system" arguments="dismiss" content=""/>
-     
-  </actions>
-   
+   
+  ...
+ 
+  <actions>
+     
+    <input id="snoozeTime" type="selection" defaultInput="15">
+      <selection id="1" content="1 minute"/>
+      <selection id="15" content="15 minutes"/>
+      <selection id="60" content="1 hour"/>
+      <selection id="240" content="4 hours"/>
+      <selection id="1440" content="1 day"/>
+    </input>
+ 
+    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
+ 
+    <action activationType="system" arguments="dismiss" content=""/>
+     
+  </actions>
+   
 </toast>
 ```
 
@@ -764,7 +764,7 @@ new ToastContentBuilder()
 -   指定 **ToastButtonSnooze** 或 **ToastButtonDismiss**
 -   選擇性指定自訂內容字串：
     -   如果沒有提供字串，我們會自動使用 "Snooze" (延遲) 和 "Dismiss" (關閉) 的當地語系化字串。
--   選擇性指定 **SelectionBoxId**：
+-   選擇性指定 **SelectionBoxId** ：
     -   如果您不想讓使用者選取延遲間隔，而只想讓您的通知延遲一段系統定義的時間間隔 (整個系統一致)，那就不要建置任何 &lt;input&gt;。
     -   如果您想要提供延遲間隔選取項目：
         -   在延遲動作中指定 **SelectionBoxId**
@@ -816,9 +816,9 @@ new ToastContentBuilder()
 > [!IMPORTANT]
 > 使用提醒或鬧鐘時，您必須在您的快顯通知上至少提供一個按鈕。 否則，快顯通知會被視為一般的快顯通知。
 
-* **Reminder**：提醒快顯通知將停留在螢幕上，直到使用者將它關閉或採取動作。 在 Windows Mobile 上，快顯通知也會以預先展開的方式顯示。 將會播放提醒音效。
-* **Alarm**：除了提醒行為之外，鬧鐘還會另外使用預設鬧鐘音效，循環重複播放音效。
-* **IncomingCall**：來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 否則，除了使用鈴聲音效以外，其行為與鬧鐘相同，其按鈕也會以不同方式設定樣式。
+* **Reminder** ：提醒快顯通知將停留在螢幕上，直到使用者將它關閉或採取動作。 在 Windows Mobile 上，快顯通知也會以預先展開的方式顯示。 將會播放提醒音效。
+* **Alarm** ：除了提醒行為之外，鬧鐘還會另外使用預設鬧鐘音效，循環重複播放音效。
+* **IncomingCall** ：來電通知會在 Windows Mobile 裝置上以全螢幕方式顯示。 否則，除了使用鈴聲音效以外，其行為與鬧鐘相同，其按鈕也會以不同方式設定樣式。
 
 #### <a name="builder-syntax"></a>[Builder 語法](#tab/builder-syntax)
 
@@ -848,7 +848,7 @@ new ToastContentBuilder()
 
 ## <a name="handling-activation"></a>處理啟用
 如需了解如何處理快顯通知啟用 (使用者按一下您的快顯通知或快顯通知上的按鈕)，請參閱[傳送本機快顯通知](send-local-toast.md)。
- 
+ 
 ## <a name="related-topics"></a>相關主題
 
 * [傳送本機快顯通知及處理啟用](send-local-toast.md)

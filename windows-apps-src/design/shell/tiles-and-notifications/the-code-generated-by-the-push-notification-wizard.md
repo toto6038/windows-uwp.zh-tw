@@ -1,5 +1,5 @@
 ---
-Description: 您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。
+description: 您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。
 title: 由推播通知精靈產生的程式碼
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc6c52859b74d7cd40dd39c0ae588ad690c0138b
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f9af0301dcf8944127ab814155466335940642f0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220111"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034441"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
@@ -29,7 +29,7 @@ ms.locfileid: "91220111"
 -   在行動服務的資料庫伺服器上建立通道表。 此表格包含將推播通知傳送到應用程式執行個體所需的資訊。
 -   建立四個函式的指令碼：delete、insert、read 和 update。
 -   使用自訂 API (notifyallusers.js) 建立一個指令碼，將推播通知傳送到所有用戶端。
--   將宣告加入您的應用程式.xaml.cs、App.xaml.vb 或應用程式.xaml.cpp 檔案，或將宣告加入 JavaScript 專案的新檔案 service.js。 這個宣告會宣告 MobileServiceClient 物件，其中包含連接到行動服務時所需的資訊。 您可以使用應用程式.*MyServiceName*Client 名稱，從應用程式的任一頁面存取這個名為 *MyServiceName*Client 的 MobileServiceClient 物件。
+-   將宣告加入您的應用程式.xaml.cs、App.xaml.vb 或應用程式.xaml.cpp 檔案，或將宣告加入 JavaScript 專案的新檔案 service.js。 這個宣告會宣告 MobileServiceClient 物件，其中包含連接到行動服務時所需的資訊。 您可以使用應用程式. *MyServiceName* Client 名稱，從應用程式的任一頁面存取這個名為 *MyServiceName* Client 的 MobileServiceClient 物件。
 
 services.js 檔案包含下列程式碼：
 
@@ -207,9 +207,9 @@ function sendNotifications(request) {
 
 sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也可以使用其他類型的推播通知。
 
-**秘訣**   如需如何在編輯腳本時取得協助的詳細資訊，請參閱[啟用伺服器端 JavaScript 的 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
+**提示**  如需如何在編輯指令碼時取得協助的詳細資訊，請參閱 [針對伺服器端 JavaScript 啟用 IntelliSense](https://blogs.msdn.com/b/visualstudio/archive/2013/07/26/enabling-intellisense-for-mobile-services-javascript-in-visual-studio.aspx)。
 
- 
+ 
 
 ## <a name="push-notification-types"></a>推播通知類型
 
@@ -224,7 +224,7 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 如果您利用推播通知更新動態磚，也應該遵循[磚與徽章的指導方針和檢查清單](./creating-tiles.md)中的指導方針。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 
 ### <a name="using-the-windows-push-notification-services-wns"></a>使用 Windows 推播通知服務 (WNS)
@@ -233,9 +233,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](/azure/)。
 
-**警告**   一旦您執行了推播通知嚮導一次，請不要第二次執行嚮導來新增另一個行動服務的註冊程式碼。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push. register \* 中移動 wizard 產生的程式碼來完成這項工作。 (包括 >onlaunched 事件外的) **CreatePushNotificationChannelForApplicationAsync** 呼叫，但這項操作的詳細內容將取決於您的應用程式架構。
+**警告**  當您執行一次推播通知精靈之後，請勿因為要針對其他行動服務新增註冊碼，而再次執行精靈。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以在 push. register \* 中移動 wizard 產生的程式碼來完成這項工作。 (包括 >onlaunched 事件外的) **CreatePushNotificationChannelForApplicationAsync** 呼叫，但這項操作的詳細內容將取決於您的應用程式架構。
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 
@@ -245,6 +245,6 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 * [連線到 Microsoft Azure 行動服務 (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
 * [連線到 Microsoft Azure 行動服務 (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
 * [快速入門：為行動服務加入推播通知 (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
- 
+ 
 
- 
+ 

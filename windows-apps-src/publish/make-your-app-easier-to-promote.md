@@ -1,17 +1,17 @@
 ---
-Description: 讓您的應用程式成為矚目的焦點！ 除了讓您的應用程式達到最好的功能之外，還有一些您可以做到的事，就是讓 Microsoft Store 和其他網站更容易展現您的應用程式，讓更多人注意到它。
+description: 讓您的應用程式成為矚目的焦點！ 除了讓您的應用程式達到最好的功能之外，還有一些您可以做到的事，就是讓 Microsoft Store 和其他網站更容易展現您的應用程式，讓更多人注意到它。
 title: 讓您的應用程式更容易促銷
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 促銷, 宣傳, 精選, 展示, store
 ms.localizationpriority: medium
-ms.openlocfilehash: c2503dbd6d585452c8bfec0ac217e2144a4da384
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ea42ff2d4aa7f953ed98813de3d4b2ead1547b16
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161902"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033891"
 ---
 # <a name="make-your-app-easier-to-promote"></a>讓您的應用程式更容易促銷
 
@@ -27,7 +27,7 @@ Microsoft Store 會依類別或主題分組展示不同的應用程式。 因為
 
     推薦應用程式時，Microsoft Store 可能在各種配置中使用您的[應用程式螢幕擷取畫面與影像](app-screenshots-and-images.md)。 務必設計能夠充分展現您 app 的螢幕擷取畫面，並確認第一個螢幕擷取畫面特別具有代表性和吸引力。 您可以提供數組不同的螢幕擷取畫面，以顯示應用程式在支援的每個裝置類型上的外觀。
 
-    為了將您的應用程式在 Microsoft Store 中獲得大力推薦的機會發揮到極致，請在 Store 清單的 **\[Microsoft Store 標誌\]** 和 **\[其他美工圖案資產\]** 區段中提供所有適用的影像。 **9:16 海報藝術 (720 x 1080 或 1440 x 2160 圖元) **和**16:9 超級主圖藝術 (1920 x 1080 或 3840 x 2160 圖元) **映射特別重要。 如果您的應用程式支援 Xbox 和/或 Holographic 裝置系列，我們建議也為這些裝置系列提供所有適用的影像。 如需更多詳細資料與指導方針，請參閱[應用程式螢幕擷取畫面、影像及預告片](app-screenshots-and-images.md)。
+    為了將您的應用程式在 Microsoft Store 中獲得大力推薦的機會發揮到極致，請在 Store 清單的 **\[Microsoft Store 標誌\]** 和 **\[其他美工圖案資產\]** 區段中提供所有適用的影像。 **9:16 海報藝術 (720 x 1080 或 1440 x 2160 圖元)** 和 **16:9 超級主圖藝術 (1920 x 1080 或 3840 x 2160 圖元)** 映射特別重要。 如果您的應用程式支援 Xbox 和/或 Holographic 裝置系列，我們建議也為這些裝置系列提供所有適用的影像。 如需更多詳細資料與指導方針，請參閱[應用程式螢幕擷取畫面、影像及預告片](app-screenshots-and-images.md)。
 
 -   **只建置一個版本的應用程式，不要建置免費版本和另一個付費版本**
 
@@ -43,4 +43,4 @@ Microsoft Store 會依類別或主題分組展示不同的應用程式。 因為
 
 
 
- 
+ 

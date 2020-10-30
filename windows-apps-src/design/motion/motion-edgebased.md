@@ -1,5 +1,5 @@
 ---
-Description: 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。
+description: 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。
 title: 以邊緣為基礎的 UI 動畫
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b36f609308d559f5f0cbb56c90420f2381fb8e53
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a49277a82a3bfffffb478496ab01d353c169463f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220171"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034231"
 ---
 # <a name="edge-based-ui-animations"></a>以邊緣為基礎的 UI 動畫
 
@@ -23,7 +23,7 @@ ms.locfileid: "91220171"
 
 以邊緣為基礎的動畫會顯示或隱藏從畫面邊緣出現的 UI。 可透過使用者或 app 來起始顯示和隱藏動作。 這個 UI 可以與 app 重疊，或者成為主 app 表面的一部分。 如果 UI 是應用程式表面的一部分，則可能需要重新調整應用程式其餘部分的大小以容納它。
 
-> **重要 API**: [**EdgeUIThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
+> **重要 API** : [**EdgeUIThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -44,8 +44,8 @@ ms.locfileid: "91220171"
 ## <a name="related-articles"></a>相關文章
 
 
-**適用于開發人員**
-* [動畫概觀](./xaml-animation.md)
+**開發人員**
+* [動畫總覽](./xaml-animation.md)
 * [讓以邊緣為基礎的 UI 產生動畫效果](/previous-versions/windows/apps/jj649428(v=win.10))
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**EdgeUIThemeTransition 類別**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition)
@@ -53,6 +53,6 @@ ms.locfileid: "91220171"
 * [讓淡入/淡出產生動畫效果](/previous-versions/windows/apps/jj649429(v=win.10))
 * [讓重新定位產生動畫效果](/previous-versions/windows/apps/jj649434(v=win.10))
 
- 
+ 
 
- 
+ 

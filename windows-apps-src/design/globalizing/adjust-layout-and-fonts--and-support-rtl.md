@@ -1,6 +1,6 @@
 ---
-Description: 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。
-title: 調整配置和字型以及支援 RTL
+description: 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。
+title: 調整配置和字型並支援 RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
@@ -8,14 +8,14 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: windows 10, uwp, 可當地語系化性, 當地語系化, rtl, ltr
 ms.localizationpriority: medium
-ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 0e4725f6d26cf1abf42effddd813c31e87926e89
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79209834"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033791"
 ---
-# <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型以及支援 RTL
+# <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型並支援 RTL
 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。 流程方向是文字書寫和顯示，以及使用者的眼睛掃過頁面上 UI 元素的方向。
 
 ## <a name="layout-guidelines"></a>配置指導方針
@@ -29,13 +29,13 @@ ms.locfileid: "79209834"
 <TextBlock x:Uid="TitleText">
 ```
 
-如需關於資源檔 (.resw)、屬性識別碼，和 **x:Uid** 的詳細資訊，請參閱[當地語系化 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)。
+如需關於資源檔 (.resw)、屬性識別碼，和 **x:Uid** 的詳細資訊，請參閱 [當地語系化 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)。
 
 ## <a name="fonts"></a>字型
 您可以使用 [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live) 字型對應類別，以程式設計方式存取特定語言的建議字型系列、大小、粗細及樣式。 **LanguageFont** 類別會針對各種內容類別 (包括 UI 標頭、通知、內文，以及使用者可以編輯的文件內文字型)，提供正確字型資訊的存取權。
 
 ## <a name="mirroring-images"></a>鏡像影像
-如果應用程式含有必須針對 RTL 進行鏡像的影像 (也就是相同的影像可以翻轉)，您可以使用 **FlowDirection**。
+如果應用程式含有必須針對 RTL 進行鏡像的影像 (也就是相同的影像可以翻轉)，您可以使用 **FlowDirection** 。
 
 ```xaml
 <!-- en-US\localized.xaml -->
@@ -45,17 +45,17 @@ ms.locfileid: "79209834"
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-如果您的應用程式需要不同的影像才能正確翻轉影像，您可以搭配 `LayoutDirection` 限定詞使用資源管理系統 (請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)中的＜LayoutDirection＞一節)。 系統會在應用程式執行階段語言 (請參閱`file.layoutdir-rtl.png`了解使用者設定檔語言和應用程式資訊清單語言[) 設為 RTL 語言時選擇名為 ](manage-language-and-region.md) 的影像。 在已翻轉影像的某些部分，但其他部分尚未翻轉時，可能需要這個處理方式。
+如果您的應用程式需要不同的影像才能正確翻轉影像，您可以搭配 `LayoutDirection` 限定詞使用資源管理系統 (請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md#layoutdirection)中的＜LayoutDirection＞一節)。 系統會在應用程式執行階段語言 (請參閱[了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)) 設為 RTL 語言時選擇名為 `file.layoutdir-rtl.png` 的影像。 在已翻轉影像的某些部分，但其他部分尚未翻轉時，可能需要這個處理方式。
 
 ## <a name="handling-right-to-left-rtl-languages"></a>處理從右至左 (RTL) 的語言
 當您的 App 當地語系化為從右至左 (RTL) 的語言，請使用 [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性，然後設定對稱邊框間距和邊界。 配置面板，例如 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) 會自動使用您設定的 **FlowDirection** 值縮放及翻轉。
 
-在您的頁面的根配置面板 (或框架) 或頁面本身上設定 **FlowDirection**。 這會致使其中包含的所有控制項繼承該屬性。
+在您的頁面的根配置面板 (或框架) 或頁面本身上設定 **FlowDirection** 。 這會致使其中包含的所有控制項繼承該屬性。
 
 > [!IMPORTANT]
-> 不過，**FlowDirection***不是*根據 Windows 設定中選取的顯示語言自動設定；其也不會動態變更以回應使用者切換顯示語言。 如果使用者將 Windows 設定從英文切換為阿拉伯文，例如，則 **FlowDirection** 屬性將*不會*自動從左至右變更為從右至左。 身為 App 開發人員，您要針對目前所顯示的語言適當地設定 **FlowDirection**。
+> 不過， **FlowDirection***不是* 根據 Windows 設定中選取的顯示語言自動設定；其也不會動態變更以回應使用者切換顯示語言。 如果使用者將 Windows 設定從英文切換為阿拉伯文，例如，則 **FlowDirection** 屬性將 *不會* 自動從左至右變更為從右至左。 身為 App 開發人員，您要針對目前所顯示的語言適當地設定 **FlowDirection** 。
 
-程式設計的技術是使用慣用的使用者顯示語言的 `LayoutDirection` 屬性，來設定 [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性 (請參見下列程式碼範例)。 Windows 中包含的大部分控制項均已使用 **FlowDirection**。 如果您要實作自訂控制項，則應使用 **FlowDirection**，以針對 RTL 及 LTR 語言配置進行適當的變更。
+程式設計的技術是使用慣用的使用者顯示語言的 `LayoutDirection` 屬性，來設定 [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性 (請參見下列程式碼範例)。 Windows 中包含的大部分控制項均已使用 **FlowDirection** 。 如果您要實作自訂控制項，則應使用 **FlowDirection** ，以針對 RTL 及 LTR 語言配置進行適當的變更。
 
 ```csharp    
 this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
@@ -124,6 +124,6 @@ else
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [當地語系化您 UI 及應用程式封裝資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
-* [針對語言、規模和其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [瞭解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)
+* [當地語系化您的 UI 及應用程式套件資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
+* [針對語言、縮放比例及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)

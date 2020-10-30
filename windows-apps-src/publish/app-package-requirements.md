@@ -1,17 +1,17 @@
 ---
-Description: 遵循這些指導方針來準備要提交到 Microsoft Store 的應用程式套件。
+description: 遵循這些指導方針來準備要提交到 Microsoft Store 的應用程式套件。
 title: 應用程式套件需求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 848adbab20765a65ef4673219c55dfbf076e47e0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 464714388f9e998bace3af45c580f2a4a7638b27
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219771"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034391"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 
@@ -26,7 +26,7 @@ ms.locfileid: "91219771"
 如果您使用 Microsoft Visual Studio 做為開發環境，則您已經擁有內建的工具可以快速並輕易地建立應用程式套件。 如需詳細資訊，請參閱[封裝 app](../packaging/index.md)。
 
 > [!NOTE]
-> 務必讓您的所有檔案名稱都使用 ANSI。 
+> 務必讓您的所有檔案名稱都使用 ANSI。 
 
 在 Visual Studio 中建立套件時，請確定您已經使用與開發人員帳戶相關聯的相同帳戶登入。 套件資訊清單的某些部分具有與您帳戶相關的特定詳細資料。 系統會自動偵測並新增此資訊。 若未新增其他資訊至資訊清單，您可能會遇到套件上傳失敗。 
 
@@ -40,7 +40,7 @@ ms.locfileid: "91219771"
 針對 UWP 應用程式，Visual Studio 可以產生應用程式套件組合 (. msixbundle 或 .appxbundle) 以縮減使用者下載的應用程式大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
 
 > [!NOTE]
-> 一個應用程式套件組合可以包含所有架構的套件。
+> 一個應用程式套件組合可以包含所有架構的套件。
 
 有了 app 套件組合，使用者只需要下載相關的檔案，不需要下載所有可能的資源。 如需應用程式套件組合的詳細資訊，請參閱[封裝應用程式](../packaging/index.md)和[使用 Visual Studio 封裝 UWP app](/windows/msix/package/packaging-uwp-apps)。
 
@@ -51,16 +51,16 @@ ms.locfileid: "91219771"
 
 如需完整的資訊清單詳細資料和需求，請務必檢閱 [App 套件資訊清單](/uwp/schemas/appxpackage/appx-package-manifest)文件。 您的資訊清單必須遵循套件資訊清單結構描述才能通過認證。
 
-您的資訊清單必須包含一些關於帳戶與 app 的特定資訊。 您可以在儀表板中，查看 app 概觀頁面 **應用程式管理** 區段中的[檢視應用程式身分識別詳細資料](view-app-identity-details.md)，來找到此資訊。
+您的資訊清單必須包含一些關於帳戶與 app 的特定資訊。 您可以在儀表板中，查看 app 概觀頁面 **應用程式管理** 區段中的 [檢視應用程式身分識別詳細資料](view-app-identity-details.md)，來找到此資訊。
 
 > [!NOTE]
-> 資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
+> 資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
 
 
-應用程式套件組合 ( msixbundle 或 .appxbundle) 使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。 請注意，在 msixbundle 或 .appxbundle 中，每個包含套件的資訊清單都必須使用相同的專案和屬性，但[Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**屬性除外。
+應用程式套件組合 ( msixbundle 或 .appxbundle) 使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。 請注意，在 msixbundle 或 .appxbundle 中，每個包含套件的資訊清單都必須使用相同的專案和屬性，但 [Identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的 **ProcessorArchitecture** 屬性除外。
 
 > [!TIP]
-> 提交封裝之前，請務必先執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md) 。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
+> 在您提交套件之前，請務必執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
 
 
 ## <a name="package-format-requirements"></a>套件格式需求
@@ -77,7 +77,7 @@ ms.locfileid: "91219771"
 
 ## <a name="supported-versions"></a>支援的版本
 
-UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows 10 版本為目標。 您的套件支援的版本必須表示在應用程式資訊清單的[TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素的**MinVersion**和**MaxVersionTested**屬性中。
+UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows 10 版本為目標。 您的套件支援的版本必須表示在應用程式資訊清單的 [TargetDeviceFamily](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)元素的 **MinVersion** 和 **MaxVersionTested** 屬性中。
 
 目前支援的版本範圍為： 
 - 最小值：10.0.10240.0
@@ -88,6 +88,6 @@ UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows
 
 StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用，則會使用應用程式套件提交 StoreManifest.xml，而且必須在應用程式主要專案的根資料夾中。 如需詳細資訊，請參閱 [StoreManifest 結構描述](/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
- 
+ 
 
- 
+ 

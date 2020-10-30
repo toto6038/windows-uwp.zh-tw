@@ -1,17 +1,17 @@
 ---
-Description: 本主題列出適用于 Windows 應用程式的字型，這些字型會當地語系化成美國英文以外的語言。
+description: 本主題列出適用于 Windows 應用程式的字型，這些字型會當地語系化成美國英文以外的語言。
 title: 國際字型
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 1200b80347a67bb1c9a6414a18697ca9d30bc29f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 4af2cb68f92f21750bafa8a86e5dd036d5247c4b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220601"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034351"
 ---
 # <a name="international-fonts"></a>國際字型
 
@@ -56,7 +56,7 @@ ms.locfileid: "91220601"
 | 希臘文 | el-GR | Segoe UI |
 | 古吉拉特文 | gu-IN | Nirmala UI |
 | 豪沙文 (拉丁) | ha-Latn-NG | Segoe UI |
-| 希伯來文 | he-IL | Segoe UI |
+| Hebrew | he-IL | Segoe UI |
 | Hindi | hi-IN | Nirmala UI |
 | 匈牙利文 | hu-HU | Segoe UI |
 | 冰島文 | is-IS | Segoe UI |

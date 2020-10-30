@@ -1,17 +1,17 @@
 ---
-Description: 取得您的 Windows 應用程式、合作夥伴中心或其他方法的詳細分析。
+description: 取得您的 Windows 應用程式、合作夥伴中心或其他方法的詳細分析。
 title: 分析應用程式效能
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、分析、報表、儀表板、應用程式、資料、計量
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14ee776b31e21fbb8a0ee1d66b933648549b69
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08ee9c5ddf729ac7a9026c36bc9fbddad0af5dc5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162082"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032981"
 ---
 # <a name="analyze-app-performance"></a>分析應用程式效能
 
@@ -21,7 +21,7 @@ ms.locfileid: "89162082"
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>檢視您所有 App 的關鍵分析
 
-若要檢視您最多下載的應用程式的關鍵分析，請展開 **\[分析\]** 並選取 **\[概觀\]**。 根據預設，概觀頁面會顯示生命週期內下載數最多的五個應用程式的資訊。 若要選擇顯示不同發行的應用程式，請選取 **\[篩選條件\]**。
+若要檢視您最多下載的應用程式的關鍵分析，請展開 **\[分析\]** 並選取 **\[概觀\]** 。 根據預設，概觀頁面會顯示生命週期內下載數最多的五個應用程式的資訊。 若要選擇顯示不同發行的應用程式，請選取 **\[篩選條件\]** 。
 
 ## <a name="view-individual-reports-for-each-app"></a>檢視每個 app 的個別報告
 

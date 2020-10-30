@@ -1,5 +1,5 @@
 ---
-Description: 使用可追蹤式磚通知來了解當使用者按下動態磚，您的應用程式會顯示什麼內容。
+description: 使用可追蹤式磚通知來了解當使用者按下動態磚，您的應用程式會顯示什麼內容。
 title: 可追蹤式磚通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 951dc891fb34ae4be7551c08ff47eabc19ae9eb6
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 636b0214ced9b63c7bd435ab551059faca7e810c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100276"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034021"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
@@ -21,10 +21,10 @@ ms.locfileid: "92100276"
 例如，新聞應用程式可使用此功能來判斷當使用者啟動它時，其動態磚會顯示什麼新聞故事，藉以確保以醒目的方式顯示某些新聞，讓使用者可以找到它。 
 
 > [!IMPORTANT]
-> **需要年度更新版**：若要搭配 C#、C++ 或 VB 型 UWP app 使用可追蹤式磚通知，您的目標必須是 SDK 14393 並執行組建 14393 或更新版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
+> **需要年度更新版** ：若要搭配 C#、C++ 或 VB 型 UWP app 使用可追蹤式磚通知，您的目標必須是 SDK 14393 並執行組建 14393 或更新版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
 
 
-> **重要 API**：[LaunchActivatedEventArgs.TileActivatedInfo 屬性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、[TileActivatedInfo 類別](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要 API** ： [LaunchActivatedEventArgs.TileActivatedInfo 屬性](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、 [TileActivatedInfo 類別](/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>運作方式
@@ -40,7 +40,7 @@ ms.locfileid: "92100276"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>如何使用可追蹤式磚通知
 
-最重要的是要注意在大部分案例中，**您不應直接瀏覽到當使用者按下時磚上的特定通知**。 動態磚可做為應用程式的進入點。 使用者在兩種情形下會按動態磚：(1) 他們想以正常方式啟動您的應用程式，或 (2) 他們想查看剛剛出現在動態磚上的特定通知的相關資訊。 由於使用者無法明確表明他們想要哪種操作，理想的經驗是**正常啟動您的應用程式，並確認可以輕鬆找到使用者看到的通知**。
+最重要的是要注意在大部分案例中， **您不應直接瀏覽到當使用者按下時磚上的特定通知** 。 動態磚可做為應用程式的進入點。 使用者在兩種情形下會按動態磚：(1) 他們想以正常方式啟動您的應用程式，或 (2) 他們想查看剛剛出現在動態磚上的特定通知的相關資訊。 由於使用者無法明確表明他們想要哪種操作，理想的經驗是 **正常啟動您的應用程式，並確認可以輕鬆找到使用者看到的通知** 。
 
 例如，按一下「MSN 新聞」應用程式的動態磚會正常啟動應用程式：它會顯示首頁，或使用者先前閱讀的文章。 不過，在首頁中，應用程式可確保能輕鬆找到動態磚上的故事。 如此一來就能同時支援這兩種情形：您只是想要啟動/繼續應用程式，以及您想檢視特定故事。
 
@@ -57,48 +57,48 @@ ms.locfileid: "92100276"
 // Uses the following NuGet packages
 // - Microsoft.Toolkit.Uwp.Notifications
 // - QueryString.NET
- 
+ 
 TileContent content = new TileContent()
 {
-    Visual = new TileVisual()
-    {
-        // These arguments cascade down to Medium and Wide
-        Arguments = new QueryString()
-        {
-            { "action", "storyClicked" },
-            { "story", "201c9b1" }
-        }.ToString(),
- 
- 
-        // Medium tile
-        TileMedium = new TileBinding()
-        {
-            Content = new TileBindingContentAdaptive()
-            {
-                // Omitted
-            }
-        },
- 
- 
-        // Wide tile is same as Medium
-        TileWide = new TileBinding() { /* Omitted */ },
- 
- 
-        // Large tile is an aggregate of multiple stories
-        // and therefore needs different arguments
-        TileLarge = new TileBinding()
-        {
-            Arguments = new QueryString()
-            {
-                { "action", "storiesClicked" },
-                { "story", "43f939ag" },
-                { "story", "201c9b1" },
-                { "story", "d9481ca" }
-            }.ToString(),
- 
-            Content = new TileBindingContentAdaptive() { /* Omitted */ }
-        }
-    }
+    Visual = new TileVisual()
+    {
+        // These arguments cascade down to Medium and Wide
+        Arguments = new QueryString()
+        {
+            { "action", "storyClicked" },
+            { "story", "201c9b1" }
+        }.ToString(),
+ 
+ 
+        // Medium tile
+        TileMedium = new TileBinding()
+        {
+            Content = new TileBindingContentAdaptive()
+            {
+                // Omitted
+            }
+        },
+ 
+ 
+        // Wide tile is same as Medium
+        TileWide = new TileBinding() { /* Omitted */ },
+ 
+ 
+        // Large tile is an aggregate of multiple stories
+        // and therefore needs different arguments
+        TileLarge = new TileBinding()
+        {
+            Arguments = new QueryString()
+            {
+                { "action", "storiesClicked" },
+                { "story", "43f939ag" },
+                { "story", "201c9b1" },
+                { "story", "d9481ca" }
+            }.ToString(),
+ 
+            Content = new TileBindingContentAdaptive() { /* Omitted */ }
+        }
+    }
 };
 ```
 
@@ -116,26 +116,26 @@ LaunchActivatedEventArgs 物件具有可啟用可追蹤式通知的屬性：[Til
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
 {
-    // If the API is present (doesn't exist on 10240 and 10586)
-    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
-    {
-        // If clicked on from tile
-        if (args.TileActivatedInfo != null)
-        {
-            // If tile notification(s) were present
-            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
-            {
-                // Get arguments from the notifications that were recently displayed
-                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
-                .Select(i => i.Arguments)
-                .ToArray();
- 
-                // TODO: Highlight each story in the app
-            }
-        }
-    }
- 
-    // TODO: Initialize app
+    // If the API is present (doesn't exist on 10240 and 10586)
+    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
+    {
+        // If clicked on from tile
+        if (args.TileActivatedInfo != null)
+        {
+            // If tile notification(s) were present
+            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+            {
+                // Get arguments from the notifications that were recently displayed
+                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
+                .Select(i => i.Arguments)
+                .ToArray();
+ 
+                // TODO: Highlight each story in the app
+            }
+        }
+    }
+ 
+    // TODO: Initialize app
 }
 ```
 
@@ -145,7 +145,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 桌面應用程式 (例如 WPF 等) 使用 [傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，也可以使用 chaseable 圖格！ 唯一的差異在於存取 >onlaunched 引數。 請注意，您必須先 [使用傳統型橋接器封裝您的應用程式](/windows/msix/desktop/source-code-overview)。
 
 > [!IMPORTANT]
-> **需要2018年10月更新**：若要使用 `AppInstance.GetActivatedEventArgs()` API，您必須以 SDK 17763 為目標，並執行組建17763或更新版本。
+> **需要2018年10月更新** ：若要使用 `AppInstance.GetActivatedEventArgs()` API，您必須以 SDK 17763 為目標，並執行組建17763或更新版本。
 
 針對桌面應用程式，若要存取啟動引數，請執行下列動作 .。。
 
@@ -165,19 +165,19 @@ static void Main()
             var launchArgs = args as LaunchActivatedEventArgs;
 
             // If clicked on from tile
-            if (launchArgs.TileActivatedInfo != null)
-            {
-                // If tile notification(s) were present
-                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
-                {
-                    // Get arguments from the notifications that were recently displayed
-                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
-                    .Select(i => i.Arguments)
-                    .ToArray();
-     
-                    // TODO: Highlight each story in the app
-                }
-            }
+            if (launchArgs.TileActivatedInfo != null)
+            {
+                // If tile notification(s) were present
+                if (launchArgs.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+                {
+                    // Get arguments from the notifications that were recently displayed
+                    string[] allTileArgs = launchArgs.TileActivatedInfo.RecentlyShownNotifications
+                    .Select(i => i.Arguments)
+                    .ToArray();
+     
+                    // TODO: Highlight each story in the app
+                }
+            }
     
             break;
 ```
@@ -189,31 +189,31 @@ static void Main()
 
 ```xml
 <tile>
-  <visual arguments="action=storyClicked&amp;story=201c9b1">
- 
-    <binding template="TileMedium">
-       
-      <text>Kitten learns how to drive a car...</text>
-      ... (omitted)
-     
-    </binding>
- 
-    <binding template="TileWide">
-      ... (same as Medium)
-    </binding>
-     
-    <!--Large tile is an aggregate of multiple stories-->
-    <binding
-      template="TileLarge"
-      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
-   
-      <text>Can your dog understand what you're saying?</text>
-      ... (another story)
-      ... (one more story)
-   
-    </binding>
- 
-  </visual>
+  <visual arguments="action=storyClicked&amp;story=201c9b1">
+ 
+    <binding template="TileMedium">
+       
+      <text>Kitten learns how to drive a car...</text>
+      ... (omitted)
+     
+    </binding>
+ 
+    <binding template="TileWide">
+      ... (same as Medium)
+    </binding>
+     
+    <!--Large tile is an aggregate of multiple stories-->
+    <binding
+      template="TileLarge"
+      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
+   
+      <text>Can your dog understand what you're saying?</text>
+      ... (another story)
+      ... (one more story)
+   
+    </binding>
+ 
+  </visual>
 </tile>
 ```
 

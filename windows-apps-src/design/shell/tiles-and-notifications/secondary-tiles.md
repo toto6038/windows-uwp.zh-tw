@@ -1,5 +1,5 @@
 ---
-Description: 次要磚可讓使用者將您應用程式中的特定內容與深度連結釘選到其 \[開始\] 功能表，讓使用者未來能夠輕鬆地存取您應用程式中的內容。
+description: 次要磚可讓使用者將您應用程式中的特定內容與深度連結釘選到其 \[開始\] 功能表，讓使用者未來能夠輕鬆地存取您應用程式中的內容。
 title: 次要磚
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, 次要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: ecafd52be36b34c83d9b11757ccd733e796fd727
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 066a6dcb3683e2e55f7452b1f09bb834157aee62
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100336"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034501"
 ---
 # <a name="secondary-tiles"></a>次要磚
 
@@ -25,7 +25,7 @@ ms.locfileid: "92100336"
 
 透過將次要磚新增到您的應用程式，您可以快速且有效率地協助使用者一再使用您的應用程式，並因次要磚所帶來的便利性而增加使用者的回頭率。
 
-**只有使用者才能釘選次要磚；未經使用者的核准，應用程式無法以程式設計的方式釘選次要磚**。 使用者必須明確地按一下您應用程式內的 \[釘選\] 按鈕 (這也是您之後使用 API 要求建立次要磚的位置)，接著系統會顯示對話方塊要求使用者確認是否想要將次要磚釘選。
+**只有使用者才能釘選次要磚；未經使用者的核准，應用程式無法以程式設計的方式釘選次要磚** 。 使用者必須明確地按一下您應用程式內的 \[釘選\] 按鈕 (這也是您之後使用 API 要求建立次要磚的位置)，接著系統會顯示對話方塊要求使用者確認是否想要將次要磚釘選。
 
 ## <a name="quick-links"></a>快速連結
 

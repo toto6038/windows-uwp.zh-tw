@@ -1,21 +1,21 @@
 ---
-Description: 產品聲明可協助確保您的應用程式在 Microsoft Store 中正確顯示，並提供給正確的客戶集合。
+description: 產品聲明可協助確保您的應用程式在 Microsoft Store 中正確顯示，並提供給正確的客戶集合。
 title: 產品宣告
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c4e8677a27128e6a33a844f5a887e921ca9ced3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3469992a73a4e90e25ce34883319343ad6986d75
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89167362"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034611"
 ---
 # <a name="product-declarations"></a>產品宣告
 
-[提交](app-submissions.md)程式之 [[屬性](enter-app-properties.md)] 頁面的 [**產品**宣告] 區段有助於確保您的應用程式能適當地顯示並提供給正確的客戶集合，並協助他們瞭解他們如何使用您的應用程式。
+[提交](app-submissions.md)程式之 [ [屬性](enter-app-properties.md)] 頁面的 [ **產品** 宣告] 區段有助於確保您的應用程式能適當地顯示並提供給正確的客戶集合，並協助他們瞭解他們如何使用您的應用程式。
 
 下列各節說明一些宣告，以及您在判斷每個宣告是否適用于您的應用程式時所需考慮的事項。 請注意，根據預設 (會檢查其中的兩個宣告，如下所述 ) 。根據您的產品類別，您可能也會看到其他宣告。 請務必檢查所有的宣告，並確保它們能準確地反映您的提交內容。
 
@@ -40,7 +40,7 @@ ms.locfileid: "89167362"
 如需詳細資訊，請參閱 [協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)和[市集中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非您已特別針對該目的進行設計和測試，否則請勿將應用程式列為可存取。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> 除非您已特別針對該目的進行設計和測試，否則請勿將應用程式列為可存取。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
@@ -62,8 +62,8 @@ ms.locfileid: "89167362"
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
