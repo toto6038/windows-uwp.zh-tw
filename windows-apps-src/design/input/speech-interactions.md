@@ -1,5 +1,5 @@
 ---
-Description: 使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的應用程式。
+description: 使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的應用程式。
 title: 語音互動
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
@@ -8,23 +8,23 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 94a93f9b1506d2b4dfcdad260bf86bf39c15d875
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d42802f4efb131f413b192f4e5f851f630ce4e57
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173342"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029861"
 ---
 # <a name="speech-interactions"></a>語音互動
 
 將語音辨識和文字轉換語音 (也稱為 TTS，或語音合成) 直接整合到應用程式的使用者體驗。
 
-**語音辨識**：語音辨識會將使用者所說的字詞轉換成文字以進行表單輸入、文字聽寫、指定動作或命令，以及完成工作。 支援預先定義的任意文字口述與網頁搜尋文法，以及使用語音辨識文法規格 (SRGS) 版本 1.0 編寫的自訂文法。
+**語音辨識** ：語音辨識會將使用者所說的字詞轉換成文字以進行表單輸入、文字聽寫、指定動作或命令，以及完成工作。 支援預先定義的任意文字口述與網頁搜尋文法，以及使用語音辨識文法規格 (SRGS) 版本 1.0 編寫的自訂文法。
 
-**TTS**：TTS 使用語音合成引擎 (語音) 以轉換文字字串為口說字詞。 輸入的字串可以是基本、原始的文字，或是更加複雜的語音合成標記語言 (SSML)。 SSML 提供一個控制語音輸出特性 (例如發音、音量、音調、速率或速度，以及重音) 的標準方式。
+**TTS** ：TTS 使用語音合成引擎 (語音) 以轉換文字字串為口說字詞。 輸入的字串可以是基本、原始的文字，或是更加複雜的語音合成標記語言 (SSML)。 SSML 提供一個控制語音輸出特性 (例如發音、音量、音調、速率或速度，以及重音) 的標準方式。
 
 **其他語音相關元件：** 
-Windows 應用程式中的**Cortana**會使用自訂語音命令 (說出或輸入) ，以將您的應用程式啟動到前景 (應用程式取得焦點，就像是從 [開始] 功能表啟動一樣，或以背景服務的形式啟動應用程式) **Cortana**會保留焦點，但會從應用程式 (提供結果。 如果您要在 **Cortana** UI 中公開應用程式功能，請參閱 [Cortana 語音命令 (VCD) 指導方針](/cortana/voice-commands/vcd)。
+Windows 應用程式中的 **Cortana** 會使用自訂語音命令 (說出或輸入) ，以將您的應用程式啟動到前景 (應用程式取得焦點，就像是從 [開始] 功能表啟動一樣，或以背景服務的形式啟動應用程式) **Cortana** 會保留焦點，但會從應用程式 (提供結果。 如果您要在 **Cortana** UI 中公開應用程式功能，請參閱 [Cortana 語音命令 (VCD) 指導方針](/cortana/voice-commands/vcd)。
 
 ## <a name="speech-interaction-design"></a>語音互動設計
 
@@ -80,14 +80,14 @@ Windows 應用程式中的**Cortana**會使用自訂語音命令 (說出或輸�
 
 -   預先定義的文法 (聽寫或網頁搜尋)
 
-    -   **接聽**畫面。
-    -   **思考**畫面。
-    -   **您說**的是畫面或錯誤畫面。
+    -   **接聽** 畫面。
+    -   **思考** 畫面。
+    -   **您說** 的是畫面或錯誤畫面。
 -   字詞或片語的清單或 SRGS 文法檔案
 
-    -   **接聽**畫面。
-    -   **您說**的是，如果使用者所說的內容可以解讀為一個以上的可能結果，
-    -   **您說**的是畫面或錯誤畫面。
+    -   **接聽** 畫面。
+    -   **您說** 的是，如果使用者所說的內容可以解讀為一個以上的可能結果，
+    -   **您說** 的是畫面或錯誤畫面。
 
 在 **接聽** 畫面上，您可以：
 
@@ -204,7 +204,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章 
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 | --- | --- |
 | [語音辨識](speech-recognition.md) | 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。 |
 | [指定語音辨識器語言](specify-the-speech-recognizer-language.md) | 了解如何選取已安裝的語言以用於語音辨識。 |
@@ -218,9 +218,9 @@ TTS 從純文字或 SSML 產生語音輸出。
 * [語音互動]()
 * [Cortana 互動](./cortana-interactions.md)
 
- **範例**
+ **範例**
 
 * [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何排程稍後會顯示本機快顯通知。
+description: 瞭解如何排程稍後會顯示本機快顯通知。
 title: 排程快顯通知
 label: Schedule a toast notification
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10、uwp、排程的快顯通知、scheduledtoastnotification、操作說明、快速入門、使用者入門、程式碼範例、逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ef849490df82d7677e19d1f1619d98111611be3
-ms.sourcegitcommit: c5df8832e9df8749d0c3eee9e85f4c2d04f8b27b
+ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92100306"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030691"
 ---
 # <a name="schedule-a-toast-notification"></a>排程快顯通知
 
@@ -23,14 +23,14 @@ ms.locfileid: "92100306"
 > [!IMPORTANT]
 > 桌面應用程式 (MSIX/sparse 套件和傳統桌面) 都有稍微不同的步驟來傳送通知和處理啟用。 請依照下列指示操作，但將取代為 `ToastNotificationManager` `DesktopNotificationManagerCompat` [桌面應用程式](toast-desktop-apps.md) 檔中的類別。
 
-> **重要 api**： [ScheduledToastNotification 類別](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **重要 api** ： [ScheduledToastNotification 類別](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 要完全了解本主題，下列項目將有所幫助...
 
-* 快顯通知詞彙與概念的作業知識。 如需詳細資訊，請參閱快顯 [和控制中心總覽](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10)。
+* 快顯通知詞彙與概念的作業知識。 如需詳細資訊，請參閱[快顯通知與控制中心概觀](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10)。
 * 熟悉 Windows 10 快顯通知內容。 如需詳細資訊，請參閱[快顯通知內容文件](adaptive-interactive-toasts.md)。
 * Windows 10 UWP app 專案
 

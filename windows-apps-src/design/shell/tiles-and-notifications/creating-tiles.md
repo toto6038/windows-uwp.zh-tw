@@ -1,5 +1,5 @@
 ---
-Description: App 在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的 Windows 應用程式專案時，它會包含一個預設磚，以顯示您應用程式的名稱和標誌。
+description: App 在 [開始] 功能表上以磚的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的 Windows 應用程式專案時，它會包含一個預設磚，以顯示您應用程式的名稱和標誌。
 title: Windows 應用程式的磚
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
@@ -8,18 +8,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 19c8612188000a3d1161fa746d6e7944667a5104
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 79e1ac5188b5c777ba1e99380f0e63beb6e01d37
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218151"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032071"
 ---
 # <a name="tiles-for-windows-apps"></a>Windows 應用程式的磚
 
  
 
-*磚*是應用程式在 [開始] 功能表上的標記法。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的 Windows 應用程式專案時，它會包含一個預設磚，以顯示您應用程式的名稱和標誌。Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
+*磚* 是應用程式在 [開始] 功能表上的標記法。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的 Windows 應用程式專案時，它會包含一個預設磚，以顯示您應用程式的名稱和標誌。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
 ## <a name="configure-the-default-tile"></a>設定預設磚
 
@@ -55,11 +55,11 @@ ms.locfileid: "91218151"
 
     縮放影像按照以下命名慣例：
     
-    * &lt; 映射名稱 &gt; *。縮放* &lt; 比例比例 &gt; *。* &lt;影像檔案 &gt; 副檔名* 
+    *&lt; 映射名稱 &gt;* 。縮放 *&lt; 比例比例 &gt;* 。 *&lt;影像檔案 &gt; 副檔名* 
 
     例如：SplashScreen.scale-100.png
 
-    當您參考影像時，請將其稱為* &lt; 映射名稱 &gt; *。* &lt;&gt;* 此範例) 的影像檔案副檔名 ( "SplashScreen.png"。 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
+    當您參考影像時，請將其稱為 *&lt; 映射名稱 &gt;* 。 *&lt;&gt;* 此範例) 的影像檔案副檔名 ( "SplashScreen.png"。 系統會從您提供的影像中，為裝置自動選取適當的縮放影像。
 
 -   您不需要 (但強烈建議您) 提供適用於寬形磚和大型磚大小的標誌，方便使用者可以將 App 的磚調整成那些尺寸。 若要提供這些額外的影像，您可以建立 **DefaultTile** 元素，並使用 **Wide310x150Logo** 和 **Square310x310Logo** 屬性來指定其他影像：
 ```    XML

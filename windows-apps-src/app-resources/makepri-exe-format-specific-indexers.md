@@ -1,34 +1,34 @@
 ---
-Description: 本主題說明 MakePri.exe 用來產生資源索引的格式特定索引子。
+description: 本主題說明 MakePri.exe 用來產生資源索引的格式特定索引子。
 title: MakePri.exe 格式特定的索引子
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d30a0321de872dac11070c52dd0598b2276bcab
-ms.sourcegitcommit: ca1b5c3ab905ebc6a5b597145a762e2c170a0d1c
+ms.openlocfilehash: 3794d369ae9d47cfc7aad1b24ca2768b04024581
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79200956"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031691"
 ---
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 格式特定的索引子
 
 本主題說明  [MakePri.exe](compile-resources-manually-with-makepri.md) 工具用來產生資源索引的格式特定索引子。
 
 > [!NOTE]
-> 當您在安裝 Windows 軟體發展工具組時，檢查**UWP 受管理應用程式的 Windows SDK**選項時，會安裝 MakePri。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` （以及其他架構的資料夾中）。 例如：`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 當您在安裝 Windows 軟體開發套件時，檢查 **UWP 受管理應用程式的 Windows SDK** 選項時，會安裝 MakePri.exe。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及針對其他架構) 命名的資料夾中。 例如： `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 MakePri.exe 通常搭配 `new`、`versioned` 或 `resourcepack` 命令使用。 請參閱 [MakePri.exe 命令列選項](makepri-exe-command-options.md)。 在這些案例中，它會編制來源檔案的索引來產生資源的索引。 MakePri.exe 使用各種個別索引子來讀取不同來源的資源檔案或資源的容器。 最簡單的索引子是資料夾索引子，它會為諸如 `.jpg` 或 `.png` 影像等編制資料夾內容的索引。
 
-您可透過在 `<indexer-config>`MakePri.exe 設定檔`<index>` 的 [ 項目內指定 ](makepri-exe-configuration.md) 項目，來識別格式特定索引子。 `type` 屬性會辨識所使用的格式特定索引子。
+您可透過在 [MakePri.exe 設定檔](makepri-exe-configuration.md) 的 `<index>` 項目內指定 `<indexer-config>` 項目，來識別格式特定索引子。 `type` 屬性會辨識所使用的格式特定索引子。
 
 在編製索引期間遇到的資源容器通常是使其內容編好索引而非新增至索引本身。 例如，資料夾索引子找到的 `.resjson` 檔案可能進一步由 `.resjson` 索引子編制索引，此時 `.resjson` 檔案本身不會顯示在索引中。 **注意** 與該容器關聯之索引子的 `<indexer-config>` 項目必須包含在設定檔內才能使其發生。
 
-通常，在包含實體 (例如資料夾或 &mdash; 檔案) 上找到的限定詞會套用到其中的所有資源，例如資料夾中的檔案或 `.resw` 檔案中的字串。
+通常，在包含實體 (例如資料夾或 `.resw` 檔案) 上找到的限定詞會套用到其中的所有資源，例如資料夾中的檔案或 `.resw` 檔案中的字串。
 
-## <a name="folder"></a>Folder
+## <a name="folder"></a>資料夾
 
 資料夾索引子可透過 FOLDER 的 `type` 屬性來識別。 它會編制資料夾內容的索引，並判定資料夾和檔案名稱的資源限定詞。 其設定項目符合下列結構描述。
 
@@ -67,7 +67,7 @@ MakePri.exe 通常搭配 `new`、`versioned` 或 `resourcepack` 命令使用。 
 </xs:schema>
 ```
 
-`qualifierDelimiter` 屬性指定在檔名 (略過副檔名) 中指定限定詞之後的字元。 預設是「.」。
+`qualifierDelimiter` 屬性指定在檔名 (略過副檔名) 中指定限定詞之後的字元。 預設值為 "."。
 
 ## <a name="pri"></a>PRI
 
@@ -92,7 +92,7 @@ PRI 檔案中包含的所有資源名稱、限定詞和值都直接保留在新�
 
 ## <a name="priinfo"></a>PriInfo
 
-PriInfo 索引子可透過 PRIINFO 的 `type` 屬性來識別。 它會編制詳細傾印檔案內容的索引。 您透過使用 `makepri dump` 選項執行 `/dt detailed` 來產生詳細的傾印檔案。 索引子的設定項目符合下列結構描述。
+PriInfo 索引子可透過 PRIINFO 的 `type` 屬性來識別。 它會編制詳細傾印檔案內容的索引。 您透過使用 `/dt detailed` 選項執行 `makepri dump` 來產生詳細的傾印檔案。 索引子的設定項目符合下列結構描述。
 
 ```xml
 <xs:schema id="priinfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
@@ -282,7 +282,7 @@ ResFiles 索引子可透過 RESFILES 的 `type` 屬性來識別。 它會編制 
 </xs:schema>
 ```
 
-`.resfiles` 檔案是包含一般檔案路徑清單的純文字檔。 `.resfiles` 檔案可包含「//」註解。 以下是一個範例。
+`.resfiles` 檔案是包含一般檔案路徑清單的純文字檔。 `.resfiles` 檔案可包含「//」註解。 以下為範例。
 
 <blockquote>
 <pre>
@@ -319,7 +319,7 @@ ResJSON 索引子可透過 RESJSON 的 `type` 屬性來識別。 它會編制 `.
 
 檔案也可能包含「//」註解，這在剖析期間會被忽略。
 
-`initialPath` 屬性會將所有資源放在這個初始路徑下，方式是在資源的名稱前加上它。 您通常是在編製類別庫資源的索引使用此項。 預設值是 blank。
+`initialPath` 屬性會將所有資源放在這個初始路徑下，方式是在資源的名稱前加上它。 您通常是在編製類別庫資源的索引使用此項。 預設值為空白。
 
 ## <a name="resw"></a>ResW
 
@@ -395,11 +395,11 @@ ResW 索引子可透過 RESW 的 `type` 屬性來識別。 它會編制 `.resw` 
 
 `convertDotsToSlashes` 屬性會轉換資源名稱 (資料項目名稱屬性) 中找到的所有點 (「.」) 字元為正斜線「/」，除非點字元是在「[」和「]」之間。
 
-`initialPath` 屬性會將所有資源放在這個初始路徑下，方式是在資源的名稱前加上它。 您通常是在編製類別庫資源的索引使用此項。 預設值是 blank。
+`initialPath` 屬性會將所有資源放在這個初始路徑下，方式是在資源的名稱前加上它。 您通常是在編製類別庫資源的索引使用此項。 預設值為空白。
 
 ## <a name="related-topics"></a>相關主題
 
 * [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
-* [MakePri .exe 命令列選項](makepri-exe-command-options.md)
-* [MakePri .exe 設定檔案](makepri-exe-configuration.md)
-* [JavaScript 物件標記法的應用程式/json 媒體類型（JSON）](https://www.ietf.org/rfc/rfc4627.txt)
+* [MakePri.exe 命令列選項](makepri-exe-command-options.md)
+* [MakePri.exe 設定檔](makepri-exe-configuration.md)
+* [JavaScript 物件標記法 (JSON) 的 application/json 媒體類型](https://www.ietf.org/rfc/rfc4627.txt)

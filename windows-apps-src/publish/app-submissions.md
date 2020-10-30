@@ -1,29 +1,29 @@
 ---
-Description: 一旦您已透過保留名稱來建立您的 app，您可以開始進行發行。 第一個步驟是建立提交項。
+description: 一旦您已透過保留名稱來建立您的 app，您可以開始進行發行。 第一個步驟是建立提交項。
 title: 應用程式提交
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99b4d7412727e5f195c32d3f3c21fe82b284e658
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d38cf2b8e134983ae73c909f7036603eadcd6289
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219971"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031291"
 ---
 # <a name="app-submissions"></a>應用程式提交
 
 
-當您藉 [由保留名稱來建立應用程式](create-your-app-by-reserving-a-name.md)之後，就可以開始著手進行發佈。 第一個步驟是建立**提交**。
+當您藉 [由保留名稱來建立應用程式](create-your-app-by-reserving-a-name.md)之後，就可以開始著手進行發佈。 第一個步驟是建立 **提交** 。
 
 您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 系統會儲存您對提交所做的更新，讓您可以在準備好時隨時回來處理。
 
 > [!NOTE]
 > 您必須要有使用中的 [開發人員帳戶](https://developer.microsoft.com/store/register) ，才能將應用程式提交至 Microsoft Store 的 [合作夥伴中心](https://partner.microsoft.com/dashboard) 。
 
-發佈您的應用程式之後，您可以在合作夥伴中心中建立另一個提交來發佈更新的版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發佈的應用程式建立新提交，請按一下 [**總覽**] 頁面上顯示的最新提交旁的 [**更新**]。 如果需要的話，您也可以 [從存放區移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store) (然後在稍後讓它可供使用) 。
+發佈您的應用程式之後，您可以在合作夥伴中心中建立另一個提交來發佈更新的版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發佈的應用程式建立新提交，請按一下 [ **總覽** ] 頁面上顯示的最新提交旁的 [ **更新** ]。 如果需要的話，您也可以 [從存放區移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store) (然後在稍後讓它可供使用) 。
 
 > [!NOTE]
 > 本檔的這一節說明如何在合作夥伴中心中建立應用程式提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。

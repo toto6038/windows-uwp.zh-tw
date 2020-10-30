@@ -1,5 +1,5 @@
 ---
-Description: 在您的 Windows 應用程式中，模擬鍵盤、滑鼠、觸控、畫筆和遊戲台等裝置的輸入，並將其自動化。
+description: 在您的 Windows 應用程式中，模擬鍵盤、滑鼠、觸控、畫筆和遊戲台等裝置的輸入，並將其自動化。
 title: 透過輸入插入模擬使用者輸入
 label: Input injection
 template: detail.hbs
@@ -7,18 +7,18 @@ keywords: device, digitizer, input, interaction, injection, 裝置, 數位板, �
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e1497ea30400c550cb0cbb2309801ff8145fd6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 0cd1a56ca46c3e9ea401794ff5b9964545ce0c5d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219681"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030121"
 ---
 # <a name="simulate-user-input-through-input-injection"></a>透過輸入插入模擬使用者輸入
 
 從 Windows 應用程式中的裝置（例如鍵盤、滑鼠、觸控、畫筆和遊戲台）模擬和自動化使用者輸入。
 
-> **重要 API**：[**Windows.UI.Input.Preview.Injection**](/uwp/api/windows.ui.input.preview.injection)
+> **重要 API** ： [**Windows.UI.Input.Preview.Injection**](/uwp/api/windows.ui.input.preview.injection)
 
 ## <a name="overview"></a>概觀
 
@@ -30,7 +30,7 @@ ms.locfileid: "91219681"
 
 若要在您的 Windows 應用程式中使用輸入插入 Api，您必須將下列內容新增至應用程式資訊清單：
 
-1. 以滑鼠右鍵按一下 **Package.appxmanifest** 檔案，然後選取**檢視程式碼**。
+1. 以滑鼠右鍵按一下 **Package.appxmanifest** 檔案，然後選取 **檢視程式碼** 。
 1. 將下列內容插入 `Package` 節點：
     - `xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"`
     - `IgnorableNamespaces="rescap"`
@@ -45,7 +45,7 @@ ms.locfileid: "91219681"
 
 在此範例中，我們會示範如何使用輸入插入 API ([Windows.UI.Input.Preview.Injection](/uwp/api/windows.ui.input.preview.injection))，在一個地區的 App 接聽滑鼠輸入事件，以及在另一個地區模擬對應的觸控輸入事件。
 
-**從 [輸入插入範例下載此範例 (滑鼠觸控) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
+**從 [輸入插入範例下載此範例 (滑鼠觸控)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。
 

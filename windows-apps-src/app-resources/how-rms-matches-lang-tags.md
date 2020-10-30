@@ -1,17 +1,17 @@
 ---
-Description: 上一個主題 (資源管理系統如何比對和選擇資源) 主要綜觀限定詞比對。 本主題著重於語言標記比對的細節。
+description: 上一個主題 (資源管理系統如何比對和選擇資源) 主要綜觀限定詞比對。 本主題著重於語言標記比對的細節。
 title: 資源管理系統如何比對語言標記
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 2db4c7d98924ffb25800b1c615e929495b279fdc
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 3c5b2d595585cabdfb9f2983f2ad87f05b7fa5a4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74254664"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031881"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>資源管理系統如何比對語言標記
 
@@ -42,7 +42,7 @@ ms.locfileid: "74254664"
 
 當比較兩種語言標記時，會根據相符項目的相近度給分。
 
-| 比對 | 分數 | 範例 |
+| 相符項目 | Score | 範例 |
 | ----- | ----- | ------- |
 | 完全相符 | 最高 | en-AU : en-AU |
 | 變體相符 (語言、字集、地區、變體) |  | en-AU-variant1 : en-AU-variant1-t-ja |
@@ -68,9 +68,9 @@ ms.locfileid: "74254664"
 
 語言、字集和地區子標記的標記相符，但是它們在某些方面又不相同。 例如，de-DE-1996 與 de-DE 相符，而 en-US-x-Pirate 與 en-US 相符。
 
-### <a name="partial-matches"></a>部分相符
+### <a name="partial-matches"></a>部分符合結果
 
-語言和字集子標記的標記相符，但是它們在地區或某些其他子標記又不相同。 例如，en-us 符合 en，或 en-us 符合\*。
+語言和字集子標記的標記相符，但是它們在地區或某些其他子標記又不相同。 例如，en-us 符合 en，或 en-us 符合 en-us \* 。
 
 #### <a name="macro-region-match"></a>宏觀地區相符
 
@@ -98,13 +98,13 @@ ms.locfileid: "74254664"
 
 ### <a name="undetermined-language"></a>未定的語言
 
-資源可能會被標記為「und」以表示它與任何語言相符。 此標記也可能會搭配使用字集標記，來依據字集篩選相符項目。 例如，「und-Latn」將與使用拉丁文書寫體的任何語言標記相符。 如需詳細資訊，請參閱下方。
+資源可能會被標記為「und」以表示它與任何語言相符。 此標記也可能會搭配使用字集標記，來依據字集篩選相符項目。 例如，「und-Latn」將與使用拉丁文書寫體的任何語言標記相符。 詳細資訊請見下文。
 
 ### <a name="script-mismatch"></a>字集不符
 
 當只有主要語言標記而不是指令碼的標記相符時，配對會被視為不符合，並且分數會在有效相符的層級以下。
 
-### <a name="no-match"></a>不相符
+### <a name="no-match"></a>沒有符合的結果
 
 不相符主要語言子標記的評分會低於有效相符的等級。 例如，zh-Hant 與 zh-Hans 不相符。
 
@@ -126,14 +126,14 @@ ms.locfileid: "74254664"
 
 有些時候，比對單一語言和語言清單的較大程序會發生相符。 例如，可能有以單一語言為基礎的資源與 App 的語言清單相符。 相符項的分數是以清單中第一個相符語言的位置進行加權。 語言在清單中的位置越低，分數就越低。
 
-當語言清單包含兩個或更多具有相同語言和字集子標記的地區變體時，第一個語言標記的比較只有完全相符、變體相符和地區相符會計分。 部分相符的計分會延遲到最後一個地區變體。 這可讓使用者精確控制語言清單的比對行為。 相符行為可能包含，如果有第三個項目符合第一個語言和字集，允許清單中第二個項目的完全符合優先於清單中第一個項目的部分相符。 這裡提供一個範例。
+當語言清單包含兩個或更多具有相同語言和字集子標記的地區變體時，第一個語言標記的比較只有完全相符、變體相符和地區相符會計分。 部分相符的計分會延遲到最後一個地區變體。 這可讓使用者精確控制語言清單的比對行為。 相符行為可能包含，如果有第三個項目符合第一個語言和字集，允許清單中第二個項目的完全符合優先於清單中第一個項目的部分相符。 以下為範例。
 
 - 語言清單 (依序排列)：「pt-PT」(葡萄牙文 (葡萄牙))、「en-US」(英文 (美國))、「pt-BR」(葡萄牙文 (巴西))。
 - 資源：「en-US」、「pt-BR」。
 - 較高分數的資源：「en-US」。
 - 描述：比較從「pt-PT」開始，但找不到完全相符。 因為使用者的語言清單中存在「pt-BR」，所以部分相符延遲到與「pt-BR」的比較。 下一個語言比較是具有完全符合的「en-US」。 因此，獲勝資源是「en-US」。
 
-或
+OR
 
 - 語言清單 (依序排列)：「es-MX」(西班牙文 (墨西哥))、「es-HO」(西班牙文 (宏都拉斯))。
 - 資源：「en-ES」、「es-HO」。
@@ -141,21 +141,21 @@ ms.locfileid: "74254664"
 
 ## <a name="undetermined-language-und"></a>未定的語言 (「und」)
 
-語言標記「und」可能用來指定沒有更好的相符者時將匹配任何語言的資源。 它可以視為類似 BCP-47 語言範圍「 *」或「* -&lt;字集&gt;。 這裡提供一個範例。
+語言標記「und」可能用來指定沒有更好的相符者時將匹配任何語言的資源。 它可以視為與 BCP-47 語言範圍 " *" 或 "* - &lt; script &gt; " 類似。 以下為範例。
 
 - 語言清單：「en-US」、「zh-Hans-CN」。
 - 資源：「zh-Hans-CN」、「und」。
 - 較高分數的資源：「und」。
 - 描述：比較從「en-US」開始，但是找不到根據「en」(部分或更佳) 相符者。 因為有標記「und」的資源，所以比對演算法會使用它。
 
-標記「und」可讓多個語言共用單一資源，並允許將個別語言視為例外。 範例如下。
+標記「und」可讓多個語言共用單一資源，並允許將個別語言視為例外。 例如，
 
 - 語言清單：「zh-Hans-CN」、「en-US」。
 - 資源：「zh-Hans-CN」、「und」。
 - 較高分數的資源：「zh-Hans-CN」。
 - 描述：比較會尋找第一個項目的完全相符，所以它不會檢查標示為「und」的資源。
 
-您可以使用「und」和字集標記按字集來篩選資源。 範例如下。
+您可以使用「und」和字集標記按字集來篩選資源。 例如，
 
 - 語言清單：「ru」。
 - 資源：「und-Latn」、「und-Cyrl」、「und-Arab」。
@@ -190,5 +190,5 @@ App 通常只支援任何指定語言的單一種類。 假設 App 擁有僅一�
 
 * [資源管理系統如何比對和選擇資源](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](https://tools.ietf.org/html/bcp47)
-* [瞭解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)
-* [宏地理（大陸）區域、地理子領域，以及選取的經濟和其他群組的組合](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
+* [了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)
+* [宏觀地理 (大陸) 地區、地理子地區以及所選取經濟和其他群組的組合。](https://unstats.un.org/unsd/methods/m49/m49regin.htm)

@@ -1,5 +1,5 @@
 ---
-Description: 開發自訂輸入方法編輯器 (IME) 來協助使用者輸入無法在標準的標準鍵盤上輕鬆表示的語言文字。
+description: 開發自訂輸入方法編輯器 (IME) 來協助使用者輸入無法在標準的標準鍵盤上輕鬆表示的語言文字。
 title: 輸入法編輯器 (IME) 需求
 label: Input Method Editor (IME) requirements
 template: detail.hbs
@@ -7,12 +7,12 @@ keywords: 輸入法、輸入法編輯器、輸入、互動
 ms.date: 07/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a34c15826bff757b7c4277b87cc5fed53a6f109
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74c223aefa525bb6109521c8b91a9a849e2f5586
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160002"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030131"
 ---
 # <a name="custom-input-method-editor-ime-requirements"></a>自訂輸入方法編輯器 (IME) 需求
 
@@ -22,13 +22,13 @@ ms.locfileid: "89160002"
 
 ## <a name="default-ime"></a>預設 IME
 
-使用者可以選取任何使用中的 Ime (**設定-> 時間 & 語言 > 語言 > 慣用語言 > 語言套件-選項**) 為慣用語言的預設 IME。
+使用者可以選取任何使用中的 Ime ( **設定-> 時間 & 語言 > 語言 > 慣用語言 > 語言套件-選項** ) 為慣用語言的預設 IME。
 
 :::image type="content" source="images/IMEs/ime-preferred-languages.png" alt-text="慣用語言設定":::
 
 在慣用語言的 [語言選項設定] 畫面上，選取預設鍵盤。
 
-:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="慣用語言鍵盤":::
+:::image type="content" source="images/IMEs/ime-preferred-languages-keyboard.png" alt-text="慣用語言設定":::
 
 > [!Important]
 > 我們不建議直接寫入登錄來為您的自訂 IME 設定預設鍵盤。
@@ -80,8 +80,8 @@ Windows 應用程式不支援 (TTS) Ime 的資料表文字服務。
 
 - **字典** 檔-通常，ime 有唯讀的字典檔案，可將使用者輸入對應至特定字元。 若要從應用程式容器記憶體取這些檔案，您的 IME 必須將它們放在 Program Files 或 Windows 目錄下。 根據預設，這些目錄可以從應用程式容器讀取，因此 Ime 可以存取儲存在這些位置中的字典檔。 如果您的輸入檔必須將字典檔案儲存在其他位置，則必須明確操作字典檔案 [ (ACL) 的存取控制清單 ](/windows/win32/secauthz/access-control-lists) ，以允許從應用程式容器進行存取。
 - **網際網路更新** -如果您的 IME 需要使用來自網際網路的資料來更新其字典，它無法在應用程式容器內可靠地這麼做，因為不一定會允許網際網路存取。 相反地，您的 IME 應該執行個別的桌面進程，負責以網際網路的資料更新字典檔案。
-- 即時**學習**-如果輸入法是在可存取網際網路的應用程式容器中執行，則輸入法可以進行通訊的端點沒有限制。 在此情況下，IME 可以使用雲端伺服器來提供即時學習服務。 某些 Ime 會在使用者輸入時，即時下載並上傳使用者輸入。 由於應用程式容器無法保證網際網路存取，因此不一定會允許這種情況。
-- 在**進程之間共用資訊**-ime 可能需要在不同應用程式容器中的應用程式之間共用使用者輸入喜好設定的相關資料。 使用 web 服務在應用程式之間共用資料。
+- 即時 **學習** -如果輸入法是在可存取網際網路的應用程式容器中執行，則輸入法可以進行通訊的端點沒有限制。 在此情況下，IME 可以使用雲端伺服器來提供即時學習服務。 某些 Ime 會在使用者輸入時，即時下載並上傳使用者輸入。 由於應用程式容器無法保證網際網路存取，因此不一定會允許這種情況。
+- 在 **進程之間共用資訊** -ime 可能需要在不同應用程式容器中的應用程式之間共用使用者輸入喜好設定的相關資料。 使用 web 服務在應用程式之間共用資料。
 
 > [!Important]
 > 如果您嘗試規避應用程式容器安全性規則，您的 IME 可能會被視為惡意程式碼和封鎖。
@@ -118,8 +118,8 @@ IME 可指定要使用的觸控鍵盤配置，並啟用 IME 以使用觸控優�
 
 當按下這些按鍵時，觸控鍵盤會呼叫 [SendInput](/windows/win32/api/winuser/nf-winuser-sendinput) 函式，將下列 Unicode 私用區域字元傳送給焦點應用程式，讓 IME 可以攔截並採取動作：
 
-- **下一頁 (0xF003) ** -當在日文和簡體中文的觸控優化鍵盤上按下候選頁面按鍵時，或在繁體中文的觸控優化鍵盤上按下一個頁面按鍵時傳送。
-- **上一頁 (0xF004) ** -在按下候選頁面按鍵時傳送，以在日文和簡體中文的觸控優化鍵盤上同步選取 Shift 鍵，或在繁體中文觸控優化鍵盤上按下一個頁面按鍵時傳送。
+- **下一頁 (0xF003)** -當在日文和簡體中文的觸控優化鍵盤上按下候選頁面按鍵時，或在繁體中文的觸控優化鍵盤上按下一個頁面按鍵時傳送。
+- **上一頁 (0xF004)** -在按下候選頁面按鍵時傳送，以在日文和簡體中文的觸控優化鍵盤上同步選取 Shift 鍵，或在繁體中文觸控優化鍵盤上按下一個頁面按鍵時傳送。
 
 這些字元會以 Unicode 輸入的形式傳送。 下一段會詳細說明如何在文字服務架構 IME 將接收的重要事件接收通知期間解壓縮字元資訊。 這些字元值不會在任何標頭檔中定義，因此您必須在程式碼中定義它們。
 
@@ -147,35 +147,7 @@ if (ToUnicode(VK_PACKET, 0, abKbdState, &wch, 1, 0) == 1)
 
 透過搜尋合約提供使用者搜尋功能，並與 [搜尋] 窗格整合。
 
-:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="搜尋窗格和輸入法的建議":::<br/>
-*搜尋窗格和輸入法的建議*
-
-搜尋窗格是一個中心位置，可讓使用者在其所有應用程式中執行搜尋。 針對 IME 使用者，Windows 提供獨特的搜尋體驗，可讓相容的 Ime 與 Windows 整合，以提高效率和可用性。
-
-使用與搜尋相容的 IME 輸入的使用者，有兩個主要優點：
-
-- 輸入法與搜尋體驗之間的緊密互動。 IME 候選項目會以內嵌方式顯示在搜尋方塊下方，而不會遮蔽搜尋建議。 使用者可以使用鍵盤在搜尋方塊、IME 轉換候選項目和搜尋建議之間順暢地流覽。
-- 更快速地存取應用程式所提供的相關結果和建議。 應用程式可存取所有目前的轉換候選項目，以提供更相關的建議。 為了更妥善設定搜尋建議的優先順序，會以相關性的順序提供應用程式的轉換。 使用者可以在不轉換的情況下尋找並選取所要的結果，只要輸入拼音就可以了。
-
-如果 IME 符合下列準則，則 IME 與整合式搜尋體驗相容：
-
-- 與 Windows 樣式 shell 相容。
-- 執行 TSF UILess 模式 Api。 如需詳細資訊，請參閱 [UILess 模式總覽](/windows/win32/tsf/uiless-mode-overview)。
-- 執行 TSF 搜尋整合 Api （ [ITfFnSearchCandidateProvider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider) 和 [ITfIntegratableCandidateListUIElement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement)）。
-
-在 [搜尋] 窗格中啟用時，相容的 IME 會置於 UIless 模式，而且無法顯示其 UI。 相反地，它會將轉換候選項目傳送給 Windows，以將它們顯示在內嵌候選清單控制項中，如先前的螢幕擷取畫面所示。
-
-此外，IME 也會傳送應用來執行目前搜尋的候選項目。 這些候選項目可以與轉換候選項目相同，或可針對搜尋量身打造。
-
-良好的搜尋候選人符合下列準則：
-
-- 沒有前置詞重迭。 例如，北京大學 and北京是多餘的，因為它是另一個的前置詞。
-- 無多餘的候選項目。 任何多餘的候選項對搜尋都沒有説明，因為它不會協助篩選結果。 例如，任何符合北京大學的結果也會符合北京。
-- 無預測候選，僅限轉換。 例如，如果使用者輸入 "as"，IME 可以傳回北做為候選項，但無法傳回北京大學。 預測候選項目通常太嚴格。
-
-不符合準則的 Ime 與其他控制項的方式相同，無法與搜尋顯示相容，而且無法利用 UI 整合和搜尋候選項目。 應用程式只會在使用者完成撰寫之後才接收查詢。
-
-當支援搜尋合約的應用程式收到查詢時，查詢事件會包含 "queryTextAlternatives" 陣列，其中包含所有已知的替代方案，並根據最相關的 (可能) 最相關的 (不太) 。
+:::image type="content" source="images/IMEs/ime-search-pane.png" alt-text="慣用語言設定" 陣列，其中包含所有已知的替代方案，並根據最相關的 (可能) 最相關的 (不太) 。
 
 提供替代方案時，應用程式應該將每個替代方案視為查詢，並傳回符合任何替代專案的所有結果。 應用程式的行為應該與使用者同時發出多個查詢相同，基本上是對提供結果的服務發出「或」查詢。 基於效能考慮，應用程式通常會限制與最相關的替代專案5和20之間的相符專案。
 
@@ -208,9 +180,9 @@ IME 模式圖示是由新式字型中的白色印刷字元所定義，其中包�
 
 | 圖示 | 描述 |
 | --- | --- |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="繁體中文 ChangeJie 的範例 IME 品牌圖示。"::: | 繁體中文 ChangeJie 的範例 IME 品牌圖示。 |
-| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="繁體中文新 ChangeJie 的範例 IME 品牌圖示。"::: | 繁體中文 ChangeJie 的範例 IME 品牌圖示。 |
-| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="中文模式圖示"::: | 範例輸入法模式圖示。 |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese.png" alt-text="慣用語言設定"::: | 繁體中文 ChangeJie 的範例 IME 品牌圖示。 |
+| :::image type="content" source="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt-text="慣用語言設定"::: | 繁體中文 ChangeJie 的範例 IME 品牌圖示。 |
+| :::image type="content" source="images/IMEs/ime-mode-icon-chinese.png" alt-text="慣用語言設定"::: | 範例輸入法模式圖示。 |
 
 ### <a name="owned-window"></a>擁有的視窗
 
@@ -257,22 +229,22 @@ Ime 宣告它們是相容的，其方式是使用 [ITfCategoryMgr：： Register
 
 - 安裝 Visual Studio。
 - 啟動 Visual Studio。
-- **在 [檔案**] 功能表上，指向 [**新增**]，然後選取 [**專案**]。 [ **新增專案** ] 對話方塊隨即開啟。
-- 在左窗格中，流覽至 [ **範本 > 其他專案類型] > 安裝和部署**]，按一下 [ **啟用 InstallShield 限量版**]，然後按一下 **[確定]**。 遵循安裝指示進行。
+- **在 [檔案** ] 功能表上，指向 [ **新增** ]，然後選取 [ **專案** ]。 [新增專案]  對話方塊隨即開啟。
+- 在左窗格中，流覽至 [ **範本 > 其他專案類型] > 安裝和部署** ]，按一下 [ **啟用 InstallShield 限量版** ]，然後按一下 **[確定]** 。 遵循安裝指示進行。
 - 重新啟動 Visual Studio。
 -  ( .sln) 檔案中開啟 IME 方案。
-- 在方案總管中，以滑鼠右鍵按一下方案，指向 [ **加入**]，然後選取 [ **新增專案**]。 [ **加入新專案** ] 對話方塊隨即開啟。
-- 在左側樹狀檢視控制項中，流覽至 [ **範本 > 其他專案類型] > [InstallShield 限量版**]。
-- 在中央視窗中，按一下 [ **InstallShield 限量版專案**]。
-- 在 [ **名稱** ] 文字方塊中，輸入 "SetupIME"，然後按一下 **[確定]**。
-- 在 [ **專案助理** ] 對話方塊中，按一下 [ **應用程式資訊**]。
+- 在方案總管中，以滑鼠右鍵按一下方案，指向 [ **加入** ]，然後選取 [ **新增專案** ]。 [ **加入新專案** ] 對話方塊隨即開啟。
+- 在左側樹狀檢視控制項中，流覽至 [ **範本 > 其他專案類型] > [InstallShield 限量版** ]。
+- 在中央視窗中，按一下 [ **InstallShield 限量版專案** ]。
+- 在 [ **名稱** ] 文字方塊中，輸入 "SetupIME"，然後按一下 **[確定]** 。
+- 在 [ **專案助理** ] 對話方塊中，按一下 [ **應用程式資訊** ]。
 - 填寫您的公司名稱和其他欄位。
-- 按一下 [ **應用程式檔**]。
-- 在左窗格中，以滑鼠右鍵按一下 **[INSTALLDIR]** 資料夾，然後選取 [ **新增資料夾**]。 將資料夾命名為 "外掛程式"。
-- 按一下 [ **新增**檔案]。 流覽至您的 IME DLL，然後將它新增至 [ **外掛程式** ] 資料夾。 針對 IME 字典重複此步驟。
-- 以滑鼠右鍵按一下 IME DLL，然後選取 [ **屬性**]。 [ **屬性** ] 對話方塊隨即開啟。
+- 按一下 [ **應用程式檔** ]。
+- 在左窗格中，以滑鼠右鍵按一下 **[INSTALLDIR]** 資料夾，然後選取 [ **新增資料夾** ]。 將資料夾命名為 "外掛程式"。
+- 按一下 [ **新增** 檔案]。 流覽至您的 IME DLL，然後將它新增至 [ **外掛程式** ] 資料夾。 針對 IME 字典重複此步驟。
+- 以滑鼠右鍵按一下 IME DLL，然後選取 [ **屬性** ]。 [ **屬性** ] 對話方塊隨即開啟。
 - 在 [ **屬性** ] 對話方塊中，按一下 [ **COM & .net 設定** ] 索引標籤。
-- 在 [ **註冊類型**] 下，選取 [ **自我註冊** ]，然後按一下 **[確定]**。
+- 在 [ **註冊類型** ] 下，選取 [ **自我註冊** ]，然後按一下 **[確定]** 。
 - 建置方案。 IME DLL 是建立的，InstallShield 會建立一個 setup.exe 檔案，讓使用者可以在 Windows 上安裝您的 IME。
 
 若要建立您自己的安裝體驗，請在安裝期間呼叫 [ITfInputProcessorProfileMgr：： RegisterProfile](/windows/win32/api/msctf/nf-msctf-itfinputprocessorprofilemgr-registerprofile) 方法來註冊 IME。 請勿直接寫入登錄專案。
@@ -286,9 +258,9 @@ Ime 宣告它們是相容的，其方式是使用 [ITfCategoryMgr：： Register
 執行下列慣例，讓您的 Ime 符合協助工具需求，以及使用朗讀程式。 若要讓候選清單成為可存取的，您的 Ime 必須遵循此慣例。
 
 - 候選清單的 **UIA_AutomationIdPropertyId** 必須等於「IME_Candidate_Window」，才能取得轉換候選清單或「IME_Prediction_Window」以取得預測候選清單。
-- 當候選清單出現並消失時，會分別引發 **UIA_MenuOpenedEventId** 和 **UIA_MenuClosedEventId**類型的事件
-- 當目前選取的候選項變更時，候選清單會引發 **UIA_SelectionItem_ElementSelectedEventId**。 選取的元素應該有屬性 **UIA_SelectionItemIsSelectedPropertyId** 等於 **TRUE**。
-- 候選清單中每個專案的 **UIA_NamePropertyId** 都必須是候選項目的名稱。 （選擇性）您可以提供其他資訊，透過 **UIA_HelpTextPropertyId**來區分候選項目。
+- 當候選清單出現並消失時，會分別引發 **UIA_MenuOpenedEventId** 和 **UIA_MenuClosedEventId** 類型的事件
+- 當目前選取的候選項變更時，候選清單會引發 **UIA_SelectionItem_ElementSelectedEventId** 。 選取的元素應該有屬性 **UIA_SelectionItemIsSelectedPropertyId** 等於 **TRUE** 。
+- 候選清單中每個專案的 **UIA_NamePropertyId** 都必須是候選項目的名稱。 （選擇性）您可以提供其他資訊，透過 **UIA_HelpTextPropertyId** 來區分候選項目。
 
 ## <a name="related-topics"></a>相關主題
 

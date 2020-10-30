@@ -1,5 +1,5 @@
 ---
-Description: 將預設 InkToolbar 新增至 Windows 應用程式筆跡應用程式、將自訂畫筆按鈕新增至 InkToolbar，然後將自訂畫筆按鈕系結至自訂畫筆定義。
+description: 將預設 InkToolbar 新增至 Windows 應用程式筆跡應用程式、將自訂畫筆按鈕新增至 InkToolbar，然後將自訂畫筆按鈕系結至自訂畫筆定義。
 title: 將 InkToolbar 新增至 Windows 應用程式
 label: Add an InkToolbar to a Windows app
 template: detail.hbs
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
-ms.openlocfilehash: 20446af1f0d62f0c6b18a0ff675818fe41db1740
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 78585f9734131531db5cfa429770ed8351459d8f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219741"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030201"
 ---
 # <a name="add-an-inktoolbar-to-a-windows-app"></a>將 InkToolbar 新增至 Windows 應用程式
 
@@ -35,11 +35,11 @@ ms.locfileid: "91219741"
 
   我們會在本主題中討論 InkToolbar。
 
-> **重要 api**： [**InkCanvas 類別**](/uwp/api/windows.ui.xaml.controls.inkcanvas)、 [**InkToolbar 類別**](/uwp/api/windows.ui.xaml.controls.inktoolbar)、 [**InkPresenter 類別、類別**](/uwp/api/windows.ui.input.inking.inkpresenter)、[**輸入**](/uwp/api/Windows.UI.Input.Inking)筆墨
+> **重要 api** ： [**InkCanvas 類別**](/uwp/api/windows.ui.xaml.controls.inkcanvas)、 [**InkToolbar 類別**](/uwp/api/windows.ui.xaml.controls.inktoolbar)、 [**InkPresenter 類別、類別**](/uwp/api/windows.ui.input.inking.inkpresenter)、 [**輸入**](/uwp/api/Windows.UI.Input.Inking)筆墨
 
 ## <a name="default-inktoolbar"></a>預設 InkToolbar
 
-根據預設，[**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含可用於繪圖、清除、反白顯示，以及顯示樣板 (尺規或量角器) 的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆劃粗細、清除所有筆跡) 將會在飛出視窗中提供。
+根據預設， [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含可用於繪圖、清除、反白顯示，以及顯示樣板 (尺規或量角器) 的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆劃粗細、清除所有筆跡) 將會在飛出視窗中提供。
 
 ![InkToolbar](./images/ink/ink-tools-invoked-toolbar-small.png)  
 *預設 Windows Ink 工具列*
@@ -110,7 +110,7 @@ ms.locfileid: "91219741"
 
 您可以透過 Windows.UI.ViewManagement 的 HandPreference 屬性查詢此設定，然後根據傳回的值設定 [HorizontalAlignment](/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment)。 在此範例中，我們會為慣用左手的人將工具列設在應用程式的左側，為慣用右手的人將工具列設在右側。
 
-**從 [筆墨工具列位置和方向範例下載此範例 (基本) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
+**從 [筆墨工具列位置和方向範例下載此範例 (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
 ```csharp
 public MainPage()
@@ -131,11 +131,11 @@ public MainPage()
 
 您也可以使用繫結來追蹤根據使用者喜好設定、裝置設定或裝置狀態變更而產生的 UI 更新。 在以下的範例中，我們會展開先前的範例，並示範如何使用繫結、一個 ViewMOdel 物件和 [NotifyPropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged) 介面根據裝置的方向動態調整筆跡工具列的位置。 
 
-**從 [筆墨工具列位置和方向範例下載此範例 (動態) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
+**從 [筆墨工具列位置和方向範例下載此範例 (動態)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. 首先，讓我們先新增 ViewModel。
-    1. 將新資料夾新增到您的專案，然後命名為 **ViewModels**。
-    1. 在 ViewModels 資料夾中新增新的類別 (在此範例中，我們命名為 **InkToolbarSnippetHostViewModel.cs**)。
+    1. 將新資料夾新增到您的專案，然後命名為 **ViewModels** 。
+    1. 在 ViewModels 資料夾中新增新的類別 (在此範例中，我們命名為 **InkToolbarSnippetHostViewModel.cs** )。
         > [!NOTE] 
         > 我們使用[單一模式](/previous-versions/msp-n-p/ff650849(v=pandp.10)) (英文)，因為我們在應用程式的使用期間只需要一個此類型的物件
 
@@ -170,7 +170,7 @@ public MainPage()
         }
         ```
 
-    1. 將兩個 bool 屬性新增到 InkToolbarSnippetHostViewModel 類別：**LeftHandedLayout** (與先前的僅 XAML 範例中具備相同功能) 和 **PortraitLayout** (裝置的方向)。
+    1. 將兩個 bool 屬性新增到 InkToolbarSnippetHostViewModel 類別： **LeftHandedLayout** (與先前的僅 XAML 範例中具備相同功能) 和 **PortraitLayout** (裝置的方向)。
         >[!NOTE] 
         > PortraitLayout 可進行設定，並包含 [PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件的定義。
 
@@ -210,8 +210,8 @@ public MainPage()
         ```
 
 1. 現在，讓我們為專案新增幾個轉換器類別。 每個類別都包含一個 Convert 物件，該物件會傳回對齊值 ([HorizontalAlignment](/uwp/api/windows.ui.xaml.horizontalalignment) 或 [VerticalAlignment](/uwp/api/windows.ui.xaml.verticalalignment))。
-    1. 將新資料夾新增到您的專案，然後命名為 **Converters**。
-    1. 將兩個新類別新增到 Converters 資料夾 (在此範例中，我們命名為 **HorizontalAlignmentFromHandednessConverter.cs** 和 **VerticalAlignmentFromAppViewConverter.cs**)。
+    1. 將新資料夾新增到您的專案，然後命名為 **Converters** 。
+    1. 將兩個新類別新增到 Converters 資料夾 (在此範例中，我們命名為 **HorizontalAlignmentFromHandednessConverter.cs** 和 **VerticalAlignmentFromAppViewConverter.cs** )。
     1. 為每個檔案新增 `using Windows.UI.Xaml` 和 `using Windows.UI.Xaml.Data` 命名空間。
     1. 將每個類別都變更為 `public`，指定其實作 [IValueConverter](/uwp/api/windows.ui.xaml.data.ivalueconverter) 介面。
     1. 為每個檔案新增 [Convert](/uwp/api/windows.ui.xaml.data.ivalueconverter.convert) 和 [ConvertBack](/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback) 方法，如下所示 (我們先不實作 ConvertBack 方法)。
@@ -734,7 +734,7 @@ class CalligraphicPen : InkToolbarCustomPen
 當應用程式啟動時，只支援畫筆筆跡，觸控則用來移動瀏覽或縮放筆跡表面。 觸控筆跡啟用時，就無法透過觸控輸入移動瀏覽或縮放筆跡表面。
 
 > [!NOTE]
-> 請參閱[**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)和[**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) UX 指導方針的筆墨[控制項](../controls-and-patterns/inking-controls.md)。 下列是與此範例相關的建議︰
+> 請參閱 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)和 [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) UX 指導方針的筆墨 [控制項](../controls-and-patterns/inking-controls.md)。 下列是與此範例相關的建議︰
 > - [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar)和筆跡一般都是透過使用中的畫筆獲得最佳體驗。 不過，如果您的應用程式要求，也可支援使用滑鼠與觸控的手寫筆跡。 
 > - 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 "Segoe MLD2 Assets" 字型的"ED5F" 圖示。 
 
@@ -848,7 +848,7 @@ namespace Ink_Basic_InkToolbar
 
 您可以建立自訂工具按鈕來叫用您的應用程式所定義的非手寫筆工具。
 
-根據預設，[**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 會將所有輸入處理為筆墨筆劃或清除筆劃。 這包括透過次要硬體能供性所修改的輸入，例如畫筆筆身按鈕、滑鼠右鍵按鈕或類似按鈕。 不過，[**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 可以設定為不處理特定的輸入，接著傳遞至您的應用程式進行自訂的處理。
+根據預設， [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 會將所有輸入處理為筆墨筆劃或清除筆劃。 這包括透過次要硬體能供性所修改的輸入，例如畫筆筆身按鈕、滑鼠右鍵按鈕或類似按鈕。 不過， [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 可以設定為不處理特定的輸入，接著傳遞至您的應用程式進行自訂的處理。
 
 在此範例中，我們定義自訂的工具按鈕，選取時，讓後續的筆觸進行處理，並轉譯為選取套索 (虛線) 而不是筆跡。 選取區域界限內所有的筆墨筆劃都設定為 [**Selected**](/uwp/api/windows.ui.input.inking.inkstroke.selected)。
 

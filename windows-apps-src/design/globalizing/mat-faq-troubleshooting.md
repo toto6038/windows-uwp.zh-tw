@@ -1,17 +1,17 @@
 ---
-Description: 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。
+description: 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。
 title: 多語應用程式工具組常見問題集與疑難排解
 template: detail.hbs
 ms.date: 11/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 07e087dbb0cb2fcbd4dd1d098f84c49543f3a885
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: 86c7805f92adf3551729783e2359c85103a0c13e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74258148"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030751"
 ---
 # <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多語應用程式工具組 4.0 常見問題與疑難排解
 
@@ -19,11 +19,11 @@ ms.locfileid: "74258148"
 
 另請參閱[使用多語應用程式工具組 4.0](use-mat.md)。
 
-**注意**：工具組同時支援 .resw (XAML) 和 .resjson (JavaScript) 檔案。 但本主題中我們只會使用 .resw 檔案。 .resw 檔案也稱為資源檔。 其中包含預設語言或翻譯成其他語言的字串。 包含 .resw 檔案的資料夾通常會為語言標記的值命名。
+**注意** ：工具組同時支援 .resw (XAML) 和 .resjson (JavaScript) 檔案。 但本主題中我們只會使用 .resw 檔案。 .resw 檔案也稱為資源檔。 其中包含預設語言或翻譯成其他語言的字串。 包含 .resw 檔案的資料夾通常會為語言標記的值命名。
 
 ## <a name="do-i-need-resw-files-in-multiple-languages"></a>我需要多種語言的 .resw 檔案嗎？
 
-不。 工具組的其中一個主要利益，便是您不需要多種語言的 .resw 檔案。 工具組會使用 .xlf 檔案管理及同步您應用程式的資源。 這個避免使多個 .resw 檔案的內容保持同步時可能會發生的相關問題。
+否。 工具組的其中一個主要利益，便是您不需要多種語言的 .resw 檔案。 工具組會使用 .xlf 檔案管理及同步您應用程式的資源。 這個避免使多個 .resw 檔案的內容保持同步時可能會發生的相關問題。
 
 包含相符 .resw 及 .xlf 檔案的專案會忽略來自 .xlf 檔案的翻譯。 當發生這種情形時，會在建置時顯示警告，告知您最終應用程式中將不會包含 .xlf 翻譯。 當具有相同語言代碼的目標語言時，.resw 檔案與 .xlf 檔案便相符。 其中一個相符配對的範例便是 `Strings\de-DE\Resources.resw` 及 `<project-name>.de-DE.xlf` 檔案 (包含 `target-language="de-DE"`)。
 
@@ -41,7 +41,7 @@ ms.locfileid: "74258148"
 
 ## <a name="when-i-build-my-project-i-dont-see-a-message-saying-that-a-multilingual-app-toolkit-build-has-started"></a>當我建置專案時，我沒看到顯示「多語應用程式工具組建置已啟動」的訊息
 
-確認您已為您的專案啟用 MAT。 在 **\[工具\]** 功能表上，選取 **\[多語應用程式工具組\]**  >  **\[啟用選取\]** 。 若您的專案是使用先前版本啟用的，請使用 **\[工具\]** 功能表停用並重新啟用 MAT。 這會更新專案，使用新版本的工具組。
+確認您已為您的專案啟用 MAT。 在 **\[工具\]** 功能表上，選取 **\[多語應用程式工具組\]** > **\[啟用選取\]** 。 若您的專案是使用先前版本啟用的，請使用 **\[工具\]** 功能表停用並重新啟用 MAT。 這會更新專案，使用新版本的工具組。
 
 請確認您已安裝「為所有 Visual Studio 版本建置工作」元件。 這項建置元件會和延伸模組一同安裝，但可在安裝過程中手動取消選取。 這項元件為更新 .xlf 檔案並將翻譯新增到 PRI 檔案的必要元件。 若已安裝這項元件並且正常運作時，您便會看到這些建置訊息。
 
@@ -128,7 +128,7 @@ Merge of Loc PRI file failed calling makepri.exe: "0x80004005"
 
 ## <a name="is-there-a-way-to-find-out-more-information-about-the-errors-im-seeing"></a>有什麼方法可以找到更多我看到的錯誤的相關資訊嗎？
 
-有，您可以在 Visual Studio 中開啟詳細記錄。 按一下 **\[工具\]**  >  **\[選項\]**  >  **\[專案及解決方案\]**  >  **\[建置及執行\]** 。 將 **\[MSBuild 專案建置輸出詳細資訊\]** 從 \[最小\] 變更為 \[標準\] 或更高。
+有，您可以在 Visual Studio 中開啟詳細記錄。 按一下 [ **工具**  >  **選項**  >  **專案和方案**  >  **組建並執行** ]。 將 **\[MSBuild 專案建置輸出詳細資訊\]** 從 \[最小\] 變更為 \[標準\] 或更高。
 
 從命令列執行 MSBuild 也會產生額外的訊息。
 
@@ -177,6 +177,6 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用多語系應用程式工具組4。0](use-mat.md)
-* [Microsoft 線上翻譯](https://www.microsofttranslator.com/)
-* [MakePri .exe 命令列選項](../../app-resources/makepri-exe-command-options.md)
+* [使用多語應用程式工具組 4.0](use-mat.md)
+* [Microsoft Translator](https://www.microsofttranslator.com/)
+* [MakePri.exe 命令列選項](../../app-resources/makepri-exe-command-options.md)

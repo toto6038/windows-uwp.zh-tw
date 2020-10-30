@@ -1,5 +1,5 @@
 ---
-Description: 瞭解您應在 Windows 應用程式中使用次要磚的時機和位置。
+description: 瞭解您應在 Windows 應用程式中使用次要磚的時機和位置。
 title: 次要磚設計指導方針
 label: Secondary tiles
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, guidance, guidelines, best practices, 次要磚. 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 5414c9d8437ee77e2a4a584dea26f7bf1fadef4a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: f0114b4aac7dc590bb80cdfb2aef40f0e0efedcb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220231"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030611"
 ---
 # <a name="secondary-tile-guidance"></a>次要磚指導方針
 

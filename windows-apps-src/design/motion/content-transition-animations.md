@@ -1,5 +1,5 @@
 ---
-Description: 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
+description: 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 title: 內容轉換動畫的指導方針
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
@@ -10,12 +10,12 @@ pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d498c3214effd64895c6a894802a9ccc82ff357
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ed70a100b4aec7a2c1490cfc48e4d2f6ceac950e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169262"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029775"
 ---
 # <a name="content-transition-animations"></a>內容轉換動畫
 
@@ -23,7 +23,7 @@ ms.locfileid: "89169262"
 
 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 
-> **重要 API**: [**ContentThemeTransition 類別 (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
+> **重要 API** : [**ContentThemeTransition 類別 (XAML)**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -41,11 +41,11 @@ ms.locfileid: "89169262"
 ## <a name="related-articles"></a>相關文章
 
 **適用於開發人員 (XAML)**
-* [動畫概觀](./xaml-animation.md)
+* [動畫總覽](./xaml-animation.md)
 * [讓內容轉換產生動畫效果](/previous-versions/windows/apps/jj649426(v=win.10))
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](/previous-versions/windows/apps/hh452703(v=win.10))
 * [**ContentThemeTransition 類別**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition)
 
- 
+ 
 
- 
+ 

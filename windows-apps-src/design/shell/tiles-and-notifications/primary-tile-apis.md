@@ -1,5 +1,5 @@
 ---
-Description: 您可以透過程式設計方式，將自己的 App 主要磚釘選到 [開始]，就像您可以釘選次要磚一樣。 您也可以檢查其目前是否已釘選。
+description: 您可以透過程式設計方式，將自己的 App 主要磚釘選到 [開始]，就像您可以釘選次要磚一樣。 您也可以檢查其目前是否已釘選。
 title: 主要磚 API
 label: Primary tile API's
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile, 釘選主要磚, 主要磚 api, 檢查是否釘選, 動態磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 569ef5de9298a0fb9da58e4aaa88689c35b98c72
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 83cf11d80ffcd03148cbe5e784aaad5836357796
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172342"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029691"
 ---
 # <a name="primary-tile-apis"></a>主要磚 API
  
@@ -20,20 +20,20 @@ ms.locfileid: "89172342"
 主要磚 API 可讓您查看您的應用程式目前是否釘選在 \[開始\] 上，以及要求釘選您應用程式的主要磚。
 
 > [!IMPORTANT]
-> **需要 Creators Update**：您的目標必須是 SDK 15063 並執行組建 15063 或更新版本，才能使用主要磚 API。
+> **需要 Creators Update** ：您的目標必須是 SDK 15063 並執行組建 15063 或更新版本，才能使用主要磚 API。
 
-> **重要 API**：[**StartScreenManager 類別**](/uwp/api/windows.ui.startscreen.startscreenmanager)、[ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)、[RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
+> **重要 API** ： [**StartScreenManager 類別**](/uwp/api/windows.ui.startscreen.startscreenmanager)、 [ContainsAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_ContainsAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)、 [RequestAddAppListEntryAsync](/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_)
 
 
 ## <a name="when-to-use-primary-tile-apis"></a>使用主要磚 API 的時機
 
 您大費周章設計了提供絕佳體驗的 App 主要磚，而您現在有機會可以要求使用者將它釘選到 [開始]。 但我們深入了解程式碼之前，以下是一些在設計您的體驗時要注意的事項：
 
-* **務必**在 App 中，以明確的「釘選動態磚」動作邀請來製作不具破壞性且可輕鬆關閉的 UX。
-* **務必**在要求使用者釘選 App 動態磚之前，清楚說明其真實意義。
-* **請勿**要求使用者釘選 App 的磚，如果該磚已釘選或裝置不支援此磚的話 (詳細資訊後述)。
-* **請勿**重複要求使用者釘選 App 的磚 (這樣可能會困擾使用者)。
-* **請勿**在沒有明確使用者互動情況下，或在應用程式已最小化/未開啟時呼叫釘選 API。
+* **務必** 在 App 中，以明確的「釘選動態磚」動作邀請來製作不具破壞性且可輕鬆關閉的 UX。
+* **務必** 在要求使用者釘選 App 動態磚之前，清楚說明其真實意義。
+* **請勿** 要求使用者釘選 App 的磚，如果該磚已釘選或裝置不支援此磚的話 (詳細資訊後述)。
+* **請勿** 重複要求使用者釘選 App 的磚 (這樣可能會困擾使用者)。
+* **請勿** 在沒有明確使用者互動情況下，或在應用程式已最小化/未開啟時呼叫釘選 API。
 
 
 ## <a name="checking-whether-the-apis-exist"></a>檢查 API 是否存在

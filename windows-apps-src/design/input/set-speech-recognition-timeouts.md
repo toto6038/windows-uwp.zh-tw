@@ -1,5 +1,5 @@
 ---
-Description: 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
+description: 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
 title: 設定語音辨識逾時
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
@@ -8,19 +8,19 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c68b8aeb71ed4269b3a7fc52c6b616a8b0760b0b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 78c351941b1b6703c28f249afcd119cf267f3d0a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173322"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031351"
 ---
 # <a name="set-speech-recognition-timeouts"></a>設定語音辨識逾時
 
 
 設定語音辨識器忽略靜音或無法辨識的聲音 (Babble) 並繼續聆聽語音輸入的時間長度。
 
-> **重要 API**：[**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts)、[**SpeechRecognizerTimeouts**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
+> **重要 API** ： [**Timeouts**](/uwp/api/windows.media.speechrecognition.speechrecognizer.timeouts)、 [**SpeechRecognizerTimeouts**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts)
 
 ## <a name="set-a-timeout"></a>設定逾時
 
@@ -31,9 +31,9 @@ ms.locfileid: "89173322"
 -   BabbleTimeout - SpeechRecognizer 在假設語音輸入已結束並且完成辨識作業之前，繼續聆聽無法辨識音效 (babble) 的時間長度。
 -   EndSilenceTimeout - SpeechRecognizer 偵測靜音 (在產生辨識結果之前) 並且假設語音輸入已結束的時間長度。
 
-**注意**   您可以針對每個辨識器來設定超時。
+**注意** 每個辨識器都可以設定逾時。
 
- 
+ 
 
 ```CSharp
 // Set timeout settings.

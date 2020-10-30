@@ -1,5 +1,5 @@
 ---
-Description: 使用可啟動 Windows 應用程式並執行單一動作的語音命令，來擴充 Cortana 的基本功能。
+description: 使用可啟動 Windows 應用程式並執行單一動作的語音命令，來擴充 Cortana 的基本功能。
 title: Cortana 互動
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
@@ -8,12 +8,12 @@ keywords: Cortana, Cortana 畫布, Cortana 設計, 使用者介面, 語音命令
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d79f62a98e30ef67743abd6a6dd00ce24d3fa13
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 270c3e4838c6edc3ac0aedc7092a545028ceff86
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220591"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032191"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 應用程式中的 Cortana 互動
 
@@ -37,6 +37,6 @@ Cortana 提供了健全且全方位的可擴充架構，讓您能夠將您應用
 
 **範例**
 * [Cortana 語音命令範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CortanaVoiceCommand)
- 
+ 
 
- 
+ 

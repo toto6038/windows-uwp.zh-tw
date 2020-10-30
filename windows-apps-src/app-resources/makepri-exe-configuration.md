@@ -1,24 +1,24 @@
 ---
-Description: 本主題說明 MakePri.exe XML 設定檔的結構描述。
+description: 本主題說明 MakePri.exe XML 設定檔的結構描述。
 title: MakePri.exe 設定檔
 template: detail.hbs
 ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: ef0e8834310e77084c0bb4a8aad22786a89fb312
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 5427927322f61f44cf3a8b53112f5f7811520290
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57607793"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031721"
 ---
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 設定檔
 
 本主題說明 [MakePri.exe](compile-resources-manually-with-makepri.md) XML 設定檔的結構描述；也稱為 PRI 設定檔。 MakePri.exe 工具擁有 [createconfig 命令](makepri-exe-command-options.md#createconfig-command)，您可以用來建立新初始化的 PRI 設定檔。
 
 > [!NOTE]
-> 檢查時，已安裝 MakePri.exe **UWP 管理的應用程式的 Windows SDK**安裝 Windows 軟體開發套件時的選項。 它會安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他架構資料夾）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 當您在安裝 Windows 軟體開發套件時，檢查 **UWP 受管理應用程式的 Windows SDK** 選項時，會安裝 MakePri.exe。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及針對其他架構) 命名的資料夾中。 例如： `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 設定檔控制要編製索引的資源以及編制方式。 設定 XML 必須符合下列結構描述。
 
@@ -226,7 +226,7 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 
 此屬性的預設值是 1。 如果您提供明確的值，並且您也對 MakePri.exe 工具使用已過時的 `/VersionMajor(vma)` 命令列，則設定檔中的值取得優先。
 
-這裡提供一個範例。
+以下為範例。
 
 ```xml
 <resources majorVersion="2">
@@ -247,7 +247,7 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 | 6.3.0 (預設值) | Windows 8.1 |
 | 6.2.1 | Windows 8 |
 
-這裡提供一個範例。
+以下為範例。
 
 ```xml
 <resources targetOsVersion="10.0.0">
@@ -278,23 +278,23 @@ map<string, list<string>> RPNameToQSIMap; // To store ResourcePackage name to Qu
 
 以下是一些範例錯誤條件和對應的錯誤訊息。
 
-| 狀況 | 嚴重性 | 訊息 |
+| 條件 | Severity | 訊息 |
 | --------- | -------- | ------- |
-| 指定 targetOsVersion 以外的其中一個支援的值。 | 錯誤 | 無效的組態：指定了無效的 targetOsVersion。 |
-| 指定「6.2.1」的 targetOsVersion 並且 `packaging` 項目不存在。 | 錯誤 | 無效的組態：「 封裝 」 節點不支援此 targetOsVersion。 |
+| 指定 targetOsVersion 以外的其中一個支援的值。 | 錯誤 | 無效的設定：指定了無效的 targetOsVersion。 |
+| 指定「6.2.1」的 targetOsVersion 並且 `packaging` 項目不存在。 | 錯誤 | 無效的設定：此 targetOsVersion 不支援「Packaging」節點。 |
 | 在設定中找到以個以上的模式。 例如，指定 Manual 與 AutoResourcePackage。 | 錯誤 | 無效的設定：「Packaging」節點不可擁有一個以上的操作模式。 |
 | 預設限定詞列在資源套件底下。 | 錯誤 | 無效的設定：<Qualifiername>=<QualifierValue> 是預設限定詞且其候選項目無法新增至資源套件。 |
-| AutoResourcePackage 限定詞包含多個限定詞。 例如，language_scale。 | 錯誤 | 無效的組態：不支援使用多個限定詞 AutoResourcePackage。 |
-| ResourcePackage QualifierSet 包含多個限定詞。 例如，language-en-us_scale-100 | 錯誤 | 無效的組態：不支援使用多個限定詞 QualifierSet。 |
-| 找到重複 resourcepack 名稱。 | 錯誤 | 無效的組態：重複的資源組件名稱<rpname>。 |
-| 在兩個資源套件中定義了相同的限定詞組。 | 錯誤 | 無效的組態：多個執行個體的 QualifierSet"<qualifier tags>"找到。 |
-| 「ResourcePackage」節點找不到列出的 QualifierSet 的候選項目。 | 警告 | 無效的組態：沒有候選項目找到<Resource Package Name>。 |
-| 「AutoResourcePackage」節點下找不到列出的限定詞的候選項目。 | 警告 | 無效的組態：沒有候選項目找到辨識符號<qualifier name>。 未產生資源套件。 |
-| 找不到任何模式。 也就是找到空的「packaging」節點中。 | 警告 | 無效的組態：指定未包裝模式。 |
+| AutoResourcePackage 限定詞包含多個限定詞。 例如，language_scale。 | 錯誤 | 無效的設定：不支援含有多個限定詞的 AutoResourcePackage。 |
+| ResourcePackage QualifierSet 包含多個限定詞。 例如，language-en-us_scale-100 | 錯誤 | 無效的設定：不支援含有多個限定詞的 QualifierSet。 |
+| 找到重複 resourcepack 名稱。 | 錯誤 | 無效的設定：重複的資源套件名稱 <rpname>。 |
+| 在兩個資源套件中定義了相同的限定詞組。 | 錯誤 | 無效的設定：找到多個執行個體的 QualifierSet「<qualifier tags>」。 |
+| 「ResourcePackage」節點找不到列出的 QualifierSet 的候選項目。 | 警告 | 無效的設定：找不到 <Resource Package Name> 的候選項目。 |
+| 「AutoResourcePackage」節點下找不到列出的限定詞的候選項目。 | 警告 | 無效的設定：找不到限定詞 <qualifier name> 的候選項目。 未產生資源套件。 |
+| 找不到任何模式。 也就是找到空的「packaging」節點中。 | 警告 | 無效的設定：未指定任何封裝模式。 |
 
 ## <a name="related-topics"></a>相關主題
 
 * [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
-* [MakePri.exe 命令列選項&mdash;createconfig 命令](makepri-exe-command-options.md#createconfig-command)
+* [MakePri.exe 命令列選項 &mdash; createconfig 命令](makepri-exe-command-options.md#createconfig-command)
 * [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
-* [資源管理系統&mdash;resourcecontext)&lt;2}](resource-management-system.md#resourcecontext)
+* [資源管理系統 &mdash; windows.applicationmodel.resources.core.resourcecoNtext](resource-management-system.md#resourcecontext)

@@ -1,5 +1,5 @@
 ---
-Description: 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。
+description: 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。
 title: 語音辨識
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
@@ -8,19 +8,19 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 249af1260b261733454fa353adc695818d113afc
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ad721bc64de87fc8bb1a56f687860738bebed56c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165892"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030051"
 ---
 # <a name="speech-recognition"></a>語音辨識
 
 
 使用語音辨識以提供輸入、指定動作或命令，以及完成工作。
 
-> **重要 API**：[**Windows.Media.SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
+> **重要 API** ： [**Windows.Media.SpeechRecognition**](/uwp/api/Windows.Media.SpeechRecognition)
 
 語音辨識包含了語音執行階段、用於設計執行階段程式的辨識 API、現成的口述和網頁搜尋文法，以及可幫助使用者探索和使用語音辨識功能的預設系統 UI。
 
@@ -28,7 +28,7 @@ ms.locfileid: "89165892"
 
 若要支援應用程式的語音辨識，使用者必須在其裝置上連接並啟用麥克風，並接受 Microsoft 隱私權原則授與許可權，讓您的應用程式使用它。
 
-若要自動提示具有系統對話方塊的使用者要求存取權限，並使用麥克風的音訊摘要 (範例（如下所示的[語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)) 所示），只需在[應用程式套件資訊清單](/uwp/schemas/appxpackage/appx-package-manifest)中設定**麥克風**[裝置功能](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)。 如需詳細資訊，請參閱 [應用程式功能聲明](../../packaging/app-capability-declarations.md)。
+若要自動提示具有系統對話方塊的使用者要求存取權限，並使用麥克風的音訊摘要 (範例（如下所示的 [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)) 所示），只需在 [應用程式套件資訊清單](/uwp/schemas/appxpackage/appx-package-manifest)中設定 **麥克風**[裝置功能](/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)。 如需詳細資訊，請參閱 [應用程式功能聲明](../../packaging/app-capability-declarations.md)。
 
 ![麥克風存取的隱私權原則](images/speech/privacy.png)
 
@@ -221,7 +221,7 @@ var AudioCapturePermissions = WinJS.Class.define(
 網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
 > [!NOTE]
-> 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。     
+> 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。     
 
 這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
@@ -278,9 +278,9 @@ catch (Exception exception)
 
 使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱 [使用語音命令透過 Cortana 啟用前景應用程式](/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-請參閱[ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+請參閱 [ **SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
 
-**注意**   您所使用的條件約束類型類型，取決於您想要建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制類型在應用程式中的用途。
+**注意**  您所使用的條件約束類型類型，取決於您想要建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制類型在應用程式中的用途。
 若要開始使用條件約束，請參閱[定義自訂辨識條件約束](define-custom-recognition-constraints.md)。
 
 預先定義的通用 Windows app 聽寫文法可以辨識一個語言中大部分的字詞和簡短片語。 將語音辨識器物件具現化而沒有搭配自訂限制式時，預設會啟用該預先定義的聽寫文法。
@@ -316,15 +316,15 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 如果您使用的是以預先定義的文法 (口述或網頁搜尋) 為基礎的限制式：
 
--   **接聽**畫面。
--   **思考**畫面。
--   **您說**的是畫面或錯誤畫面。
+-   **接聽** 畫面。
+-   **思考** 畫面。
+-   **您說** 的是畫面或錯誤畫面。
 
 如果您使用的是以字詞或片語清單為基礎的限制式，或是以 SRGS 文法檔為基礎的限制式：
 
--   **接聽**畫面。
--   **您說**的是，如果使用者所說的內容可以解讀為一個以上的可能結果，
--   **您說**的是畫面或錯誤畫面。
+-   **接聽** 畫面。
+-   **您說** 的是，如果使用者所說的內容可以解讀為一個以上的可能結果，
+-   **您說** 的是畫面或錯誤畫面。
 
 下列影像針對使用以 SGRS 文法檔為基礎之條件約束的語音辨識器，顯示其畫面之間流程的範例。 在這個範例中，語音辨識是成功的。
 

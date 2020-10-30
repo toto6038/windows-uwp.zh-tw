@@ -1,5 +1,5 @@
 ---
-Description: 瞭解適用于 Windows 10 的 Windows 應用程式演進的包容性設計。  在設計和建置通用軟體時考量提供無障礙功能。
+description: 瞭解適用于 Windows 10 的 Windows 應用程式演進的包容性設計。  在設計和建置通用軟體時考量提供無障礙功能。
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: 設計適用於 Windows 10 的全人軟體
 label: Designing inclusive software
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 795344a7a03344c5f8aeea26252e1e0610d9d8c3
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 20a168fa9073aaf09055481be836799b4a3f00e7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219861"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029881"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的全人軟體  
 
@@ -30,13 +30,13 @@ ms.locfileid: "91219861"
 ## <a name="inclusive-design-principles"></a>全人設計原則  
 下列 4 個原則引導 Microsoft 邁向全人設計︰
 
-**思考通用性**︰我們將焦點放在人的共通性 - 人的動機、關係和能力。 這驅使我們思考我們的工作如何產生更廣泛的社交影響。 結果是一種所有人有各式各樣的方式參與的體驗。
+**思考通用性** ︰我們將焦點放在人的共通性 - 人的動機、關係和能力。 這驅使我們思考我們的工作如何產生更廣泛的社交影響。 結果是一種所有人有各式各樣的方式參與的體驗。
 
-**個人化**︰接下來，我們挑戰自己建立情感的連結。 人與人之間的互動可以啟發人與科技之間有更好的互動。 個人的獨特經驗可以改善設計，更適合所有人。 結果就像是一種特別為一位使用者創造的體驗。
+**個人化** ︰接下來，我們挑戰自己建立情感的連結。 人與人之間的互動可以啟發人與科技之間有更好的互動。 個人的獨特經驗可以改善設計，更適合所有人。 結果就像是一種特別為一位使用者創造的體驗。
 
-**保持簡單**︰我們從簡單開始，也極致追求簡單。 當我們一切從簡，人們就會知道接下來要做的動作。 激發人們進入乾淨、明亮而且開放的空間。 結果是一種可靠而經得起時間考驗的體驗。
+**保持簡單** ︰我們從簡單開始，也極致追求簡單。 當我們一切從簡，人們就會知道接下來要做的動作。 激發人們進入乾淨、明亮而且開放的空間。 結果是一種可靠而經得起時間考驗的體驗。
 
-**創造愉悅**︰愉悅的體驗會引發好奇與探索。 有時候很神奇， 有時候是正巧需要的詳情。 我們將這些時刻設計得好像喜歡變化的節奏。 結果是一種動態和流動的體驗。
+**創造愉悅** ︰愉悅的體驗會引發好奇與探索。 有時候很神奇， 有時候是正巧需要的詳情。 我們將這些時刻設計得好像喜歡變化的節奏。 結果是一種動態和流動的體驗。
 
 ## <a name="inclusive-design-users"></a>全人設計的使用者  
 輔助技術 (AT) 主要針對兩種類型的使用者︰

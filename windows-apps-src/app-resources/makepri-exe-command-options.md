@@ -1,24 +1,24 @@
 ---
-Description: MakePri.exe 擁有命令集 createconfig、dump、new、resourcepack 和 versioned。 本主題詳述其使用。
+description: MakePri.exe 擁有命令集 createconfig、dump、new、resourcepack 和 versioned。 本主題詳述其使用。
 title: MakePri.exe 命令列選項
 template: detail.hbs
 ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 638de4d2795b3b248edfdcc35dc72fa21d31fc3b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 7443efbb227bf3f9ea64db58902ebeb67b02f676
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253785"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031731"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 包含一組命令、、、 `createconfig` `dump` `new` `resourcepack` 和 `versioned` 。 本主題詳述命令列選項的使用。
 
 > [!NOTE]
-> 當您在安裝 Windows 軟體開發套件時，檢查 **UWP 受管理應用程式的 Windows SDK** 選項時，會安裝 MakePri.exe。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及針對其他架構) 命名的資料夾中。 例如： `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe` 。
+> 當您在安裝 Windows 軟體開發套件時，檢查 **UWP 受管理應用程式的 Windows SDK** 選項時，會安裝 MakePri.exe。 它會安裝到路徑 `%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe` (以及針對其他架構) 命名的資料夾中。 例如： `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 ## <a name="getting-help-from-the-command-line"></a>從命令列取得協助
 
@@ -115,7 +115,7 @@ Help:
 `dump` 命令會輸出傾印的 xml 檔案，包含指定 PRI 檔案中的所有資源的清單。 執行 `MakePri.exe dump /?` 以查看此命令的詳細說明。
 
 > [!NOTE]
-> 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您沒有指定主要檔案，就會收到錯誤訊息「*套件中的 resources.pri 已損毀，因此加密失敗 (錯誤 PRI222: 0xdef0000f - 發生未指定的錯誤)*」。
+> 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您沒有指定主要檔案，就會收到錯誤訊息「 *套件中的 resources.pri 已損毀，因此加密失敗 (錯誤 PRI222: 0xdef0000f - 發生未指定的錯誤)* 」。
 
 ```console
 C:\>makepri dump /?
@@ -458,7 +458,7 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 ## <a name="output-summary"></a>輸出摘要
 
-如果建立資源套件，MakePRI.exe 的輸出摘要是更多詳細資訊的形式。 以下是範例。
+如果建立資源套件，MakePRI.exe 的輸出摘要是更多詳細資訊的形式。 以下為範例。
 
 ```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack

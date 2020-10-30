@@ -1,5 +1,5 @@
 ---
-Description: 了解如何定義及使用自訂限制式來進行語音辨識。
+description: 了解如何定義及使用自訂限制式來進行語音辨識。
 title: 定義自訂辨識限制式
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
@@ -8,18 +8,18 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b48564469fd77f3c670739a7095124ed7399a1fe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5cef63bab911f46e34d337957011556a0c420763
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160072"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032161"
 ---
 # <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
 
 了解如何定義及使用自訂限制式來進行語音辨識。
 
-> **重要 API**：[**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)、[**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)、[**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
+> **重要 API** ： [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)、 [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)、 [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
 語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的通用 Windows app 聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 
@@ -144,7 +144,7 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 - 您可以將多個文法檔限制式新增到限制式集合。
 - 針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
 
-這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，**[封裝動作]** 是設定為 **[內容]**，而 **[複製到輸出目錄]** 是設定為 **[ 永遠複製 ]**：
+這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中， **[封裝動作]** 是設定為 **[內容]** ，而 **[複製到輸出目錄]** 是設定為 **[ 永遠複製 ]** ：
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -171,7 +171,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合全球資訊網協會 (適用于語音辨識的 W3C)  [語義解讀 (SISR) 1.0](https://www.w3.org/TR/semantic-interpretation/) 規格。
+這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合全球資訊網協會 (W3C) [語音辨識適用的語意轉譯 (SISR) 1.0](https://www.w3.org/TR/semantic-interpretation/) 規格。
 
 如下，我們將接聽各種不同形式的 "yes" 和 "no"。
 
@@ -212,7 +212,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 ## <a name="manage-constraints"></a>管理限制式
 
-載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定為 **true**。
+載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 屬性設為 **true** 或 **false** ，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定為 **true** 。
 
 與針對每項辨識操作載入、卸載及編譯限制式相比，先一次載入限制式，再視需要予以啟用及停用，通常是較有效率的方式。 請視需要使用 [**IsEnabled**](/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled) 屬性。
 

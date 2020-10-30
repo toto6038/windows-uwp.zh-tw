@@ -1,5 +1,5 @@
 ---
-Description: 本指南可協助您啟發應用程式，以處理 Windows 資訊保護 (WIP) 原則管理的企業資料和個人資料。
+description: 本指南可協助您啟發應用程式，以處理 Windows 資訊保護 (WIP) 原則管理的企業資料和個人資料。
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Windows 資訊保護 (WIP) 開發人員指南
@@ -8,20 +8,20 @@ ms.topic: article
 keywords: Windows 10, uwp, wip, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: d6454fdf63fb757c703ec31dba46a86e2a46aec6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: a1afea58fd7fc7c7868103fc9c7a8510f9f81908
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163252"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032061"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 資訊保護 (WIP) 開發人員指南
 
-*啟用 rms*應用程式會區分公司和個人資料，而且會根據系統管理員所定義的 WINDOWS 資訊保護 (WIP) 原則，知道要保護哪些資料。
+*啟用 rms* 應用程式會區分公司和個人資料，而且會根據系統管理員所定義的 WINDOWS 資訊保護 (WIP) 原則，知道要保護哪些資料。
 
 在本指南中，我們將說明如何建置啟發式應用程式。 當您完成後，原則系統管理員將會信任並允許您的應用程式使用其組織資料。 而員工則會很高興得知，就算他們從組織的行動裝置管理 (MDM) 取消註冊，或是完全離該組織，他們的個人資料也能在裝置上保持不變。
 
-__注意__：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Windows 傳統型應用程式，請參閱 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide)。
+__注意__ ：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Windows 傳統型應用程式，請參閱 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](/previous-versions/windows/desktop/EDP/wip-developer-guide)。
 
 如需 WIP 與啟發式應用程式的詳細資訊，請參閱︰[Windows 資訊保護 (WIP)](wip-hub.md)。
 
@@ -82,7 +82,7 @@ __注意__：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Wi
     ```xml
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >*選擇性讀取*： "rescap" 前置詞表示 *限制的功能*。 請參閱[特殊和受限制的功能](../packaging/app-capability-declarations.md)。
+   >*選擇性讀取* ： "rescap" 前置詞表示 *限制的功能* 。 請參閱[特殊和受限制的功能](../packaging/app-capability-declarations.md)。
 
 4. 將這個命名空間新增到您的封裝資訊清單檔案︰
 
@@ -197,9 +197,9 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 }
 ```
 
-[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus) 值為 **Protected**，即表示檔案已受保護，而且您的 App 可以開啟該檔案，因為 App 列在原則的允許清單上。
+[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus) 值為 **Protected** ，即表示檔案已受保護，而且您的 App 可以開啟該檔案，因為 App 列在原則的允許清單上。
 
-[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus) 值為 **UnProtected**，即表示檔案未受保護，縱使您的 App 不在原則的允許清單上，App 也能開啟該檔案。
+[FileProtectionStatus](/uwp/api/windows.security.enterprisedata.fileprotectionstatus) 值為 **UnProtected** ，即表示檔案未受保護，縱使您的 App 不在原則的允許清單上，App 也能開啟該檔案。
 
 > **API** <br>
 [FileProtectionManager.GetProtectionInfoAsync](/uwp/api/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync)<br>
@@ -268,7 +268,7 @@ else
 
 請勿在受保護的執行緒上建立任何個人檔案，因為這些檔案會自動加密。
 
-無論端點是否由原則管理，[**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) 方法一律會傳回 [**ThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.threadnetworkcontext) 物件。 如果您的應用程式同時會處理個人和企業資源，請呼叫 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) 以取得所有身分識別。  取得資源之後，請捨棄 ThreadNetworkContext 以清除來自目前執行緒的任何身份識別標記。
+無論端點是否由原則管理， [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) 方法一律會傳回 [**ThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.threadnetworkcontext) 物件。 如果您的應用程式同時會處理個人和企業資源，請呼叫 [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext) 以取得所有身分識別。  取得資源之後，請捨棄 ThreadNetworkContext 以清除來自目前執行緒的任何身份識別標記。
 
 > **API** <br>
 [ProtectionPolicyManager.GetForCurrentView](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview)<br>
@@ -334,7 +334,7 @@ private static async Task<IBuffer> GetDataFromNetworkbyUsingHeaderHelperMethod(H
 
 有時候，網頁伺服器會將流量重新導向至較新版本的資源。
 
-為因應這種情況，請在要求的回應狀態值為**確定**時再提出要求。
+為因應這種情況，請在要求的回應狀態值為 **確定** 時再提出要求。
 
 接著再使用該回應的 URI 來取得端點的身分識別。 以下是其中一種做法：
 
@@ -445,7 +445,7 @@ private bool IsClipboardAllowedAsync()
 
 **避免提示使用者同意對話方塊**
 
-新檔不是 *個人* 或 *企業*。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
+新檔不是 *個人* 或 *企業* 。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
 
 ```csharp
 private async void PasteText(bool isNewEmptyDocument)
@@ -489,7 +489,7 @@ private async void PasteText(bool isNewEmptyDocument)
 
 當員工選擇您的應用程式來分享資訊時，您的應用程式會開啟一個包含該內容的新項目。
 
-如先前所述，新的專案不是 *個人* 或 *企業*。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
+如先前所述，新的專案不是 *個人* 或 *企業* 。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -1099,7 +1099,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 
 當裝置解除鎖定，而且裝置上的金鑰又再次可用時，就會引發 [**ProtectionPolicyManager.ProtectedAccessResumed**](/uwp/api/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed)。
 
-如果系統管理員未根據鎖定原則設定安全的資料保護，[**ProtectedAccessResumedEventArgs.Identities**](/uwp/api/windows.security.enterprisedata.protectedaccessresumedeventargs.identities) 會是空集合。
+如果系統管理員未根據鎖定原則設定安全的資料保護， [**ProtectedAccessResumedEventArgs.Identities**](/uwp/api/windows.security.enterprisedata.protectedaccessresumedeventargs.identities) 會是空集合。
 
 這個範例與前面的範例相反。 它會解密緩衝區，將該緩衝區中的資訊重新加回文字區塊，然後捨棄該緩衝區。
 

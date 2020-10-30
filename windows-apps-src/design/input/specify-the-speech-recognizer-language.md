@@ -1,5 +1,5 @@
 ---
-Description: 了解如何選取已安裝的語言以用於語音辨識。
+description: 了解如何選取已安裝的語言以用於語音辨識。
 title: 指定語音辨識器語言
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
@@ -8,19 +8,19 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a19e4ec876ca5dfa313c56e5653b3a27a4155765
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: fa8137b5bf05bb8099a803fedd7e056fc14d9d70
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219931"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031321"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定語音辨識器語言
 
 
 了解如何選取已安裝的語言以用於語音辨識。
 
-> **重要 API**：[**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)、[**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)、[**Language**](/uwp/api/Windows.Globalization.Language)
+> **重要 API** ： [**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)、 [**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)、 [**Language**](/uwp/api/Windows.Globalization.Language)
 
 
 我們將在此處列舉已安裝於系統上的語言、識別哪一個是預設語言，並選取不同的辨識語言。
@@ -56,15 +56,15 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安裝的語言會隨著裝置而不同。 如果您要針對特定限制式來使用它，就應該確認該語言是否存在。
 
-**注意**   安裝新的語言套件之後，需要重新開機。 \_如果指定的語言不受支援或尚未完成安裝，則會引發錯誤碼 SPERR 找不到的例外狀況， \_ (0x8004503a) 。
+**注意** 安裝新的語言套件之後，需要重新開機。 \_如果指定的語言不受支援或尚未完成安裝，則會引發錯誤碼 SPERR 找不到的例外狀況， \_ (0x8004503a) 。
 
- 
+ 
 
 勾選 [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) 類別的這兩個靜態屬性之一，來判斷裝置上支援的語言：
 
--   [**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)：[**Language**](/uwp/api/Windows.Globalization.Language) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
+-   [**SupportedTopicLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedtopiclanguages)： [**Language**](/uwp/api/Windows.Globalization.Language) 物件的集合，可以與預先定義的聽寫與網頁搜尋文法搭配使用。
 
--   [**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)：[**Language**](/uwp/api/Windows.Globalization.Language) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
+-   [**SupportedGrammarLanguages**](/uwp/api/windows.media.speechrecognition.speechrecognizer.supportedgrammarlanguages)： [**Language**](/uwp/api/Windows.Globalization.Language) 物件的集合，可以與清單限制式或語音辨識文法規格 (SRGS) 檔案搭配使用。
 
 ## <a name="specify-a-language"></a>指定語言
 
@@ -95,6 +95,6 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](/uwp/
 **範例**
 
 * [語音辨識和語音合成範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
- 
+ 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。
+description: 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
-ms.openlocfilehash: 69bab48836d7679d8bcec5f9132bca88d7607cdb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cb3006541a5e14936035bc7b9d3b6493df031823
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173242"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032011"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 資訊保護 (WIP)
 
@@ -35,7 +35,7 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 若使用者不須註冊其裝置，系統管理員會使用其 MAM 系統定義並部署適用於特定應用程式的原則。 使用者安裝任何這類的應用程式時，即會收到相關聯的原則。
 
-原則會識別可以存取企業資料的應用程式 (稱為原則的*允許清單*)。 這些應用程式可以在剪貼簿上或透過分享協定存取受保護的企業檔案、虛擬私人網路 (VPN) 和企業資料。 原則也定義了管理資料的規則。 例如，資料是否可以從企業擁有的檔案複製和貼到非企業擁有的檔案。
+原則會識別可以存取企業資料的應用程式 (稱為原則的 *允許清單* )。 這些應用程式可以在剪貼簿上或透過分享協定存取受保護的企業檔案、虛擬私人網路 (VPN) 和企業資料。 原則也定義了管理資料的規則。 例如，資料是否可以從企業擁有的檔案複製和貼到非企業擁有的檔案。
 
 若使用者將裝置從組織的 MDM 系統取消註冊，或將組織 MAM 系統所識別的應用程式取消註冊，系統管理員可從裝置以遠端方式抹除企業資料。
 
@@ -47,7 +47,7 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 如果您的應用程式在允許清單中，則應用程式產生的所有資料都會受到原則限制。 這表示如果系統管理員撤銷使用者的企業資料存取權，這些使用者就會失去應用程式產生的所有資料的存取權。
 
-如果您的應用程式只是設計成供企業使用就無所謂。 但是，如果您的應用程式會建立使用者認為個人的資料，您會想要 *enlighten* 您的應用程式，以在企業和個人資料之間聰明地辨別。 我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
+如果您的應用程式只是設計成供企業使用就無所謂。 但是，如果您的應用程式會建立使用者認為個人的資料，您會想要 *enlighten* 您的應用程式，以在企業和個人資料之間聰明地辨別。 我們稱這種類型的應用程式為 *企業啟發式應用程式* ，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
 
 ## <a name="create-an-enterprise-enlightened-app"></a>建立企業啟發式應用程式
 
@@ -96,4 +96,4 @@ MDM 原則不需要旗標，但 MAM 原則需要。
 
 
 
- 
+ 

@@ -1,17 +1,17 @@
 ---
-Description: 有幾個可供您用來參考您的應用程式套件、您的應用程式資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您應用程式的檔案資源 (.resw) 載入的字串。
+description: 有幾個可供您用來參考您的應用程式套件、您的應用程式資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從您應用程式的檔案資源 (.resw) 載入的字串。
 title: URI 配置
 template: detail.hbs
 ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5bf063c12362fe26e3810e6153b857b7c1a2e4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8806992ebb7f4335ca0a748c1b2bce4a6de39fae
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170522"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031542"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
@@ -31,7 +31,7 @@ hier-part   = "//" authority path-abempty
             / path-empty
 ```
 
-這表示，URI 基本上會有三個元件。 緊接在 URI *配置*的兩個斜線後面的是稱為*授權單位*的元件 (可空白)。 再緊接其後的是*路徑*。 以 URI `http://www.contoso.com/welcome.png` 為例，其配置是「`http://`」、授權單位是「`www.contoso.com`」，以及路徑是「`/welcome.png`」。 另舉一個範例 URI `ms-appx:///logo.png`，其中授權單位元件為空白，並接受預設值。
+這表示，URI 基本上會有三個元件。 緊接在 URI *配置* 的兩個斜線後面的是稱為 *授權單位* 的元件 (可空白)。 再緊接其後的是 *路徑* 。 以 URI `http://www.contoso.com/welcome.png` 為例，其配置是「`http://`」、授權單位是「`www.contoso.com`」，以及路徑是「`/welcome.png`」。 另舉一個範例 URI `ms-appx:///logo.png`，其中授權單位元件為空白，並接受預設值。
 
 本主題所述 URI 的配置特定處理會忽略片段元件。 進行資源擷取和比較時，片段元件並無任何影響。 不過，特定實作以上的層級可能會解譯片段來擷取次要資源。
 
@@ -41,7 +41,7 @@ hier-part   = "//" authority path-abempty
 
 本主題說明的所有 URI 配置都遵循配置正規化及資源擷取的一般 URI 規則 (RFC 3986)。 這些標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼。
 
-就本主題所述的所有 URI 配置而言，*配置*、*授權單位*和*路徑*依照標準不區分大小寫，或是由其他系統以不區分大小寫的方式來處理。 **注意**：該規則的唯一例外是 `ms-resource` 的*授權單位*，這會區分大小寫。
+就本主題所述的所有 URI 配置而言， *配置* 、 *授權單位* 和 *路徑* 依照標準不區分大小寫，或是由其他系統以不區分大小寫的方式來處理。 **注意** ：該規則的唯一例外是 `ms-resource` 的 *授權單位* ，這會區分大小寫。
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx 和 ms-appx-web
 

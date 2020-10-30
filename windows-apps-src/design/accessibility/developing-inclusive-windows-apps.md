@@ -1,5 +1,5 @@
 ---
-Description: 瞭解如何開發可存取的 Windows 應用程式，包括鍵盤導覽、色彩和對比設定，以及輔助技術的支援。
+description: 瞭解如何開發可存取的 Windows 應用程式，包括鍵盤導覽、色彩和對比設定，以及輔助技術的支援。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: 開發全人 Windows 10 應用程式
 label: Developing inclusive Windows 10 apps
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 856ed1222cd393ec2730226f9c4faadf7e9ad0d7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: ff42cc2ac8ffb965b5f58db081cd86106f4145ef
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219811"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029871"
 ---
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
@@ -32,7 +32,7 @@ ms.locfileid: "91219811"
 
 如需使 app 的 UI 元素可供輔助技術 (AT) 使用的詳細資訊，請參閱[公開基本的協助工具資訊](basic-accessibility-information.md)。
 
-## <a name="keyboard-navigation"></a>鍵盤瀏覽  
+## <a name="keyboard-navigation"></a>鍵盤導覽  
 讓視障或行動不便的使用者能夠透過鍵盤瀏覽 UI，是一件非常重要的事。 不過，只有需要使用者互動以運作的 UI 控制項才需要鍵盤焦點。 不需要動作的元件 (例如靜態影像) 並不需要鍵盤焦點。  
 
 請務必記得，鍵盤瀏覽和使用滑鼠或觸控瀏覽的不同之處，在於鍵盤瀏覽是線性的。 考慮鍵盤瀏覽時，請思考您的使用者與產品互動的方式，以及什麼樣的瀏覽才是合乎邏輯的方式。 在西方文化中，人們的閱讀方式是從左到右，從上到下。 因此，常見的鍵盤瀏覽做法便是跟隨這個模式。  
@@ -47,7 +47,7 @@ ms.locfileid: "91219811"
 
 如需深入了解使用鍵盤瀏覽 UI 元素的方式，請參閱[鍵盤協助工具](keyboard-accessibility.md)。  
 
-此外，[針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)電子書，針對這個主題有一篇名叫_設計邏輯階層_的絕佳章節。
+此外， [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)電子書，針對這個主題有一篇名叫 _設計邏輯階層_ 的絕佳章節。
 
 ## <a name="color-and-contrast"></a>色彩和對比  
 Windows 的其中一個內建協助工具功能便是高對比模式，此模式能增加螢幕上文字和影像的色彩對比。 對於一些人來說，提升色彩對比能降低眼睛的疲勞度，並使畫面更容易閱讀。 當您在高對比中驗證 UI 時，應該要檢查控制項的程式碼是否有一致，且依照系統色彩 (而非硬式編碼色彩) 進行撰寫，以確保使用者能和未使用高對比之使用者看到一樣的控制項。  

@@ -1,17 +1,17 @@
 ---
-Description: 建置期間，資源管理系統會建立所有不同變體 (使用您的應用程式封裝) 的資源的索引。 在執行階段，系統會偵測生效的使用者和電腦設定，並載入這些設定的最佳相符項的資源。
+description: 建置期間，資源管理系統會建立所有不同變體 (使用您的應用程式封裝) 的資源的索引。 在執行階段，系統會偵測生效的使用者和電腦設定，並載入這些設定的最佳相符項的資源。
 title: 資源管理系統
 template: detail.hbs
 ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: afe538292fe804dcf042c969005978c3161ec6b6
-ms.sourcegitcommit: 963316e065cf36c17b6360c3f89fba93a1a94827
+ms.openlocfilehash: 083f49dd8a269bd3a0277084cadc175271d5e501
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82868874"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031621"
 ---
 # <a name="resource-management-system"></a>資源管理系統
 資源管理系統有建置時間和執行階段的功能。 在建置期間，系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 此索引套件資源索引或 PRI，並且也會包含在您的應用程式套件中。 在執行階段，系統偵測到已生效的使用者與電腦設定，查詢 PRI 中的資訊，並自動載入最符合這些設定的資源。
@@ -41,7 +41,7 @@ ms.locfileid: "82868874"
 
 App 可用的資源儲存在階層集合中，您可以存取 [**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 物件。 **ResourceManager** 類別提供 App 所使用各種最上層 **ResourceMap** 執行個體的存取權，對應至 App 的各種不同套件。 [**MainResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.MainResourceMap) 值對應至目前應用程式套件的資源地圖，它不包含任何參考的架構套件。 各個 **ResourceMap** 會針對套件資訊清單中指定的套件名稱命名。 在 **ResourceMap** 內是子樹系 (請參閱 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live))，它也包含 **NamedResource** 物件。 子樹系通常對應至包含資源的資源檔案。 如需詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產](images-tailored-for-scale-theme-contrast.md)。
 
-範例如下。
+以下為範例。
 
 ```csharp
 // using Windows.ApplicationModel.Resources.Core;
@@ -50,9 +50,9 @@ ResourceContext resourceContext = ResourceContext.GetForCurrentView()
 var str = resourceMap.GetValue("String1", resourceContext).ValueAsString;
 ```
 
-**注意**：資源識別碼會被視為統一資源識別項 (URI) 語意受統一資源識別碼 (URI) 片段，遵照 URI 語意。 例如，`GetValue("Caption%20")` 被視為 `GetValue("Caption ")`。 勿在資源識別碼中使用「?」或「#」，因為它們會終止資源路徑評估。 例如，「MyResource?3」會被視為「MyResource」。
+**注意** ：資源識別碼會被視為統一資源識別項 (URI) 語意受統一資源識別碼 (URI) 片段，遵照 URI 語意。 例如，`GetValue("Caption%20")` 被視為 `GetValue("Caption ")`。 勿在資源識別碼中使用「?」或「#」，因為它們會終止資源路徑評估。 例如，「MyResource?3」會被視為「MyResource」。
 
-**ResourceManager** 不只支援存取 App 的字串資源，也維護列舉和檢查各種不同檔案資源的能力。 為避免檔案和源自檔案內其他資源之間發生衝突，已建立索引的檔案路徑均在保留的「檔案」**ResourceMap** 子樹系內。 例如，檔案 `\Images\logo.png` 對應至資源名稱 `Files/images/logo.png`。
+**ResourceManager** 不只支援存取 App 的字串資源，也維護列舉和檢查各種不同檔案資源的能力。 為避免檔案和源自檔案內其他資源之間發生衝突，已建立索引的檔案路徑均在保留的「檔案」 **ResourceMap** 子樹系內。 例如，檔案 `\Images\logo.png` 對應至資源名稱 `Files/images/logo.png`。
 
 [**StorageFile**](/uwp/api/Windows.Storage.StorageFile?branch=live) API 無障礙地處理檔案參照為資源，並且適用於常見使用案例。 **ResourceManager** 應僅用於進階案例，例如當您想要覆寫目前內容時。
 
