@@ -8,12 +8,12 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 614d8c5340100ca5ba666493ccb23ec4d8ca8498
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: f173c90d43b7be795b8a87fe14dd3de9d6284da1
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035051"
+ms.locfileid: "93063010"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -31,15 +31,15 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 觸控互動需要具備三個要件：
 
--   觸控式顯示器。
--   一或多根手指在該顯示器上直接接觸 (或鄰近性，如果顯示器具有近接感測器且支援暫留偵測)。
--   觸控接觸點的移動 (或者沒有，根據時間閾值)。
+- 觸控式顯示器。
+- 一或多根手指在該顯示器上直接接觸 (或鄰近性，如果顯示器具有近接感測器且支援暫留偵測)。
+- 觸控接觸點的移動 (或者沒有，根據時間閾值)。
 
 觸控感應器提供的輸入資料可以：
 
--   解譯為直接操作一或多個 UI 元素的實際手勢 (例如，移動瀏覽、旋轉、調整大小或移動)。 相反地，透過元素的屬性視窗、對話方塊或其他 UI 能供性進行互動，會被視為間接操作。
--   辨識為替代的輸入法，例如滑鼠或手寫筆。
--   用來補充或修改其他輸入法的層面，例如弄髒手寫筆繪製的筆跡筆觸。
+- 解譯為直接操作一或多個 UI 元素的實際手勢 (例如，移動瀏覽、旋轉、調整大小或移動)。 相反地，透過元素的屬性視窗、對話方塊或其他 UI 能供性進行互動，會被視為間接操作。
+- 辨識為替代的輸入法，例如滑鼠或手寫筆。
+- 用來補充或修改其他輸入法的層面，例如弄髒手寫筆繪製的筆跡筆觸。
 
 觸控輸入通常會與在螢幕上直接操作元素有關。 元素會立即回應其點擊測試區域內的任何觸控點，並適當地回應觸控點的任何後續動作 (包括移除)。
 
@@ -88,19 +88,19 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 目標預測透過以下各項進行最佳化：
 
--   觸控目標大小
+- 觸控目標大小
 
     清楚的大小指導方針，可以確定應用程式能夠提供正常的 UI，裡面包含的物件和控制項都可以輕易、放心當作目標。
 
--   接觸幾何
+- 接觸幾何
 
     手指的整個接觸面會判斷最可能的目標物件為何。
 
--   Scrubbing
+- Scrubbing
 
     手指在群組中的項目之間拖曳，可以輕鬆重新轉換目標 (例如，選項按鈕)。 拿起手指不觸摸之後，就會啟動目前的項目。
 
--   搖晃
+- 搖晃
 
     對於密集封裝的項目 (例如超連結)，只要手指按下、不滑動並在項目上來回搖晃，即可輕易重新選定目標。 由於遮蔽的緣故，因此會透過工具提示或狀態列來識別目前的項目，並且會在放開手指時啟動。
 
@@ -108,26 +108,26 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 使用下列功能針對隨性互動進行設計：
 
--   貼齊點：在使用者與內容進行互動時，可以較容易停在想要的位置。
--   指向性「柵欄」：可在即使手以稍微弧形的方式移動時，協助進行垂直或水平移動瀏覽。如需詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)。
+- 貼齊點：在使用者與內容進行互動時，可以較容易停在想要的位置。
+- 指向性「柵欄」：可在即使手以稍微弧形的方式移動時，協助進行垂直或水平移動瀏覽。如需詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)。
 
 ## <a name="occlusion"></a>遮蔽
 
 下列方式可以避免手指與手部遮蔽問題：
 
--   UI 的大小和放置位置
+- UI 的大小和放置位置
 
     將 UI 元素設計得大一些，使元素不致於被指尖接觸區域完全覆蓋。
 
     盡可能將功能表和快顯通知置於接觸區域的上方。
 
--   工具提示
+- 工具提示
 
     當使用者的手指一直接觸物件時顯示工具提示。 這個功能很有用，能夠描述物件功能。 使用者可以拖曳指尖離開物件，避免叫用工具提示。
 
     對於小型物件，請讓工具提示位移，使提示不致於被指尖接觸區域覆蓋。 這對於目標預測很實用。
 
--   精確度控點
+- 精確度控點
 
     在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段應用程式)](guidelines-for-textselection.md)。
 
@@ -139,21 +139,21 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 直接操作提供一些超越計時互動的優勢：
 
--   互動時的立即視覺化回饋，可以讓使用者感覺更投入、更自信以及操控自如。
--   直接操作使得探索系統時較為安全，因為這些操作是可以還原的，使用者可以藉由邏輯且直覺式的方式回到先前的動作。
--   直接影響物件的互動和虛擬實境互動比較直覺式、易搜尋、易記憶。 它們不倚賴模糊或抽象的互動。
--   計時互動可能會難以執行，因為使用者必須先達到任意且隱藏的閾值，才構成執行條件。
+- 互動時的立即視覺化回饋，可以讓使用者感覺更投入、更自信以及操控自如。
+- 直接操作使得探索系統時較為安全，因為這些操作是可以還原的，使用者可以藉由邏輯且直覺式的方式回到先前的動作。
+- 直接影響物件的互動和虛擬實境互動比較直覺式、易搜尋、易記憶。 它們不倚賴模糊或抽象的互動。
+- 計時互動可能會難以執行，因為使用者必須先達到任意且隱藏的閾值，才構成執行條件。
 
 此外，下列是幾個強烈建議的原則：
 
--   不應該以使用的手指數來辨別操作行為。
--   互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
--   不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
+- 不應該以使用的手指數來辨別操作行為。
+- 互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
+- 不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
 
     > [!NOTE]
     > 例外狀況是您使用特定的計時互動來協助學習和探索 (例如，按住) 。
 
--   適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
+- 適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
 
 
 ## <a name="app-views"></a>應用程式檢視
@@ -176,15 +176,15 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 若要提供自訂的觸控支援，您可以處理各種不同的 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 事件。 這些事件會分成三個等級的抽象概念。
 
--   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、 [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、 [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 及 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
+- 靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、 [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、 [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 及 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
 
     您可以透過將 [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled)、 [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、 [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 及 [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 設定為 **false** ，來停用特定元素的手勢事件。
 
--   指標事件 (例如 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)) 會針對每個觸控點提供低階詳細資料，包括指標移動以及區分按下和放開事件的能力。
+- 指標事件 (例如 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)) 會針對每個觸控點提供低階詳細資料，包括指標移動以及區分按下和放開事件的能力。
 
     指標是含有統一事件機制的泛型輸入類型。 它會公開作用中輸入來源 (觸控、觸控板、滑鼠或手寫筆) 的基本資訊 (例如螢幕位置)。
 
--   操作手勢事件 (例如 [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)) 會指出進行中的互動。 當使用者觸控元素並繼續進行，直到該使用者舉起手指或操作取消為止，就會開始引發它們。
+- 操作手勢事件 (例如 [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)) 會指出進行中的互動。 當使用者觸控元素並繼續進行，直到該使用者舉起手指或操作取消為止，就會開始引發它們。
 
     操作事件包括多點觸控互動 (例如縮放、移動瀏覽或旋轉)，以及使用慣性和速度資料的互動 (例如拖曳)。 操作事件所提供的資訊不會識別已執行的互動形式，而是會包括像是位置、平移量及速度等資料。 您可以使用這個觸控資料來判斷應該執行的互動類型。
 
@@ -571,19 +571,20 @@ End Sub
 
 ## <a name="routed-events"></a>路由事件
 
-
 本文中所述的所有指標事件、手勢事件和操控事件都會做為 *「路由事件」* 來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 的父容器或應用程式的根 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](/previous-versions/windows/apps/hh758286(v=win.10))。
 
-## <a name="dos-and-donts"></a>可行與禁止事項
+> [!Important]
+> 如果您需要處理可滾動的視圖中的 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 指標事件 (例如 ScrollViewer 或 ListView) ，您必須藉由呼叫 [UIElement. CancelDirectmanipulation ( # B3](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)，明確停用在 view 中的元素上操作事件的支援。 若要在 view 中重新啟用操作事件，請呼叫 [UIElement. TryStartDirectManipulation ( # B1 ](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
+## <a name="dos-and-donts"></a>Dos 和 don't's
 
--   設計以觸控互動做為主要預期輸入方法的應用程式。
--   為所有類型的互動 (觸控、畫筆、手寫筆、滑鼠等等) 提供視覺回饋。
--   調整觸控目標大小、接觸幾何、擦選和搖晃來最佳化目標定位。
--   使用對齊點和方向性「柵欄」來最佳化正確性。
--   提供工具提示和控點，協助改進緊密組合的 UI 項目的觸控正確性。
--   如有可能，不要使用計時互動 (適當用法範例：觸碰並按住)。
--   如有可能，不要使用手指數目來辨別操作。
+- 設計以觸控互動做為主要預期輸入方法的應用程式。
+- 為所有類型的互動 (觸控、畫筆、手寫筆、滑鼠等等) 提供視覺回饋。
+- 調整觸控目標大小、接觸幾何、擦選和搖晃來最佳化目標定位。
+- 使用對齊點和方向性「柵欄」來最佳化正確性。
+- 提供工具提示和控點，協助改進緊密組合的 UI 項目的觸控正確性。
+- 如有可能，不要使用計時互動 (適當用法範例：觸碰並按住)。
+- 如有可能，不要使用手指數目來辨別操作。
 
 ## <a name="related-articles"></a>相關文章
 
