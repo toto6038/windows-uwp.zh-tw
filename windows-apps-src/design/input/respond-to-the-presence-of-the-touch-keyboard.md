@@ -1,5 +1,5 @@
 ---
-Description: 了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
+description: 了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
 title: 回應觸控式鍵盤的出現
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
@@ -7,12 +7,12 @@ template: detail.hbs
 keywords: 鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動
 ms.date: 09/24/2020
 ms.topic: article
-ms.openlocfilehash: 4af7e7533ebd985a22eedd2e11f35d8bf5f5dc8a
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: c3431fcafb86428ce5eddb8ea7a6b0187b64a5e5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216901"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035081"
 ---
 # <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤的出現
 
@@ -54,7 +54,7 @@ ms.locfileid: "91216901"
 
 - 與您的表單互動時全程顯示觸控式鍵盤。
 
-- 確定您的自訂控制項具有適當的消費者介面自動化 [AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType) ，以便在焦點移出文字輸入欄位時，在文字輸入的內容中從文字輸入欄位繼續進行。 例如，如果有功能表在輸入文字期間開啟，而您希望鍵盤繼續顯示，則功能表必須要有功能表的 **AutomationControlType**。
+- 請確定自訂的控制項擁有正確的 UI 自動化[AutomationControlType](/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType)，這樣在輸入文字時，如果焦點離開文字輸入欄位，鍵盤也會繼續顯示。 例如，如果有功能表在輸入文字期間開啟，而您希望鍵盤繼續顯示，則功能表必須要有功能表的 **AutomationControlType** 。
 
 - 不要操縱 UI 自動化屬性以控制觸控式鍵盤。 其他協助工具依賴 UI 自動化屬性的精確度。
 

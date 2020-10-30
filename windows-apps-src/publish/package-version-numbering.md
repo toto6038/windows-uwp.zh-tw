@@ -1,17 +1,17 @@
 ---
-Description: Microsoft Store 會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
+description: Microsoft Store 會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
 title: 套件版本編號
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b09c5688fd8a043d1a4ca1783af046398b504050
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 18b4d6b8a901e68ea1e8513b7076a951e939f028
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219731"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035031"
 ---
 # <a name="package-version-numbering"></a>套件版本編號
 
@@ -21,7 +21,7 @@ ms.locfileid: "91219731"
 > 本主題是指「套件」，但除非另有說明，否則相同的規則適用于 msix/.appx 和. msixbundle/.appxbundle 檔案的版本號碼。
 
 
-## <a name="version-numbering-for-windows10-packages"></a>Windows 10 套件的版本編號
+## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 套件的版本編號
 
 > [!IMPORTANT]
 > 針對 Windows 10 (UWP) 套件，版本號碼的最後一個 (第四個) 區段保留給 Store 使用，而且當您建立套件時，必須保持為0（雖然存放區可能會變更本節 (中的值）。 其他區段必須設定為介於0與65535之間的整數 (但第一個區段不能是 0) 。
@@ -47,10 +47,10 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 | 1          | -   套件版本：1.1.10.0 <br> -   裝置系列：Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   套件版本：1.1.0.0 <br> -   裝置系列：Windows.Mobile, minVersion 10.0.10240.0     | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> -   其他裝置系列無法購買及安裝應用程式 |
 | 2          | -   套件版本：1.1.10.0 <br> -   裝置系列：Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   套件版本：1.1.0.0 <br> -   裝置系列：Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   套件版本：1.0.0.0 <br> -   裝置系列：Windows.Universal, minVersion 10.0.10240.0    | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10240.0 和更新版本的裝置會取得 1.1.0.0 <br> -   其他 (非傳統型、非行動) 裝置系列在被引入時將會取得 1.0.0.0 <br> -   已安裝應用程式的傳統型和行動裝置不會看到任何更新 (因為它們已經有最佳的可用版本—1.1.10.0 和 1.1.0.0 都高於 1.0.0.0) |
 | 3          | -   套件版本：1.1.10.0 <br> -   裝置系列：Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   套件版本：1.1.5.0 <br> -   裝置系列：Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   套件版本：1.0.0.0 <br> -   裝置系列：Windows.Universal, minVersion 10.0.10240.0    | -   Windows 10 傳統型組建 10.0.10240.0 和更新版本的裝置會取得 1.1.10.0 <br> -   Windows 10 行動裝置組建 10.0.10250.0 和更新版本的裝置會取得 1.1.5.0 <br> -   Windows 10 行動裝置組建 &gt;=10.0.10240.0 和 &lt; 10.010250.0 的裝置會取得 1.1.0.0 
-| 4          | -   套件版本：2.0.0.0 <br> -   裝置系列：Windows.Universal, minVersion 10.0.10240.0   | -   在 Windows 10 組建 10.0.10240.0 版和更高版本上所有裝置系列的所有客戶會取得套件 2.0.0.0 | 
+| 4          | -   套件版本：2.0.0.0 <br> -   裝置系列：Windows.Universal, minVersion 10.0.10240.0   | -   在 Windows 10 組建 10.0.10240.0 版和更高版本上所有裝置系列的所有客戶會取得套件 2.0.0.0 | 
 
 > [!NOTE]
->  在所有情況下，客戶裝置會收到符合資格的最高可能版本號碼的套件。 例如，在上述的第三個提交中，所有傳統型裝置將會收到 v1.1.10.0，即使他們有作業系統版本 10.0.10250.0 或更高版本，因此也可以接受 v1.1.5.0。 因為 1.1.10.0 是它們可用的最高版本號碼，所以這是它們會取得的套件。
+>  在所有情況下，客戶裝置會收到符合資格的最高可能版本號碼的套件。 例如，在上述的第三個提交中，所有傳統型裝置將會收到 v1.1.10.0，即使他們有作業系統版本 10.0.10250.0 或更高版本，因此也可以接受 v1.1.5.0。 因為 1.1.10.0 是它們可用的最高版本號碼，所以這是它們會取得的套件。
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>針對新的擷取使用版本編號回復到先前發佈的套件
 
@@ -61,7 +61,7 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 若要針對已經收到有問題之套件的客戶修正問題，您可以提交新的 Windows 10 套件，使其版本號碼高於您的正確套件。 提交進行認證程序之後，所有客戶都會更新為新套件，因為它將會有較高的版本號碼。
 
 
-## <a name="version-numbering-for-windows81-and-earlier-and-windows-phone-81-packages"></a>Windows 8.1 (和舊版) 和 Windows Phone 8.1 套件的版本編號
+## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Windows 8.1 (和舊版) 和 Windows Phone 8.1 套件的版本編號
 
 > [!IMPORTANT]
 > 您無法再上傳使用 Windows Phone 8.x SDK (s) 建立的新 XAP 套件。 已存在於 XAP 套件中的應用程式將會繼續在 Windows 10 行動裝置版裝置上運作。 如需詳細資訊，請參閱這 [篇 blog 文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
@@ -81,7 +81,7 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | Nothing                                     | x86, v1.0.0.0               | x86 和 x64 電腦上都是 x86, v1.0.0.0                                                | 不做任何動作。 |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | 客戶的架構為 v1.0.0.0                                                   | 不做任何動作。 版本號碼相同。 |
-| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | x86 的客戶為 v1.0.0.0 <br> x64 的客戶為 v1.0.0.1                 | 在 x86 電腦上執行應用程式的客戶不顯示任何資訊。 <br> 針對在 x64 電腦上執行 app 的客戶，v1.0.0.0 會更新為 v1.0.0.1。 <br> **注意**   如果 x86 版本的應用程式是在 x64 電腦上執行，除非客戶卸載並重新安裝，否則應用程式不會更新為 x64 版。 |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | x86 的客戶為 v1.0.0.0 <br> x64 的客戶為 v1.0.0.1                 | 在 x86 電腦上執行應用程式的客戶不顯示任何資訊。 <br> 針對在 x64 電腦上執行 app 的客戶，v1.0.0.0 會更新為 v1.0.0.1。 <br> **注意**  如果應用程式的 x86 版本是在 x64 電腦上執行，則除非客戶先將應用程式解除安裝再重新安裝，否則應用程式不會更新成 x64 版本。 |
 | Nothing                                     | 中性, v1.0.0.1           | 所有電腦上都是中性, v1.0.0.1                                                         | 不做任何動作。 |
 | 中性, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | 客戶電腦的架構為 v1.0.0.0。          | 不做任何動作。 擁有中性, v1.0.0.1 版本 app 的客戶將繼續使用。 |
 | 中性, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | 客戶電腦的架構為 v1.0.0.1。 | 執行中性, v1.0.0.1 版本應用程式的客戶不顯示任何資訊。 <br> 執行為電腦特定架構建置的 v1.0.0.0 應用程式的客戶，v1.0.0.0 將更新為 v1.0.0.1。 |

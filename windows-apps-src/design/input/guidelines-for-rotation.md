@@ -1,5 +1,5 @@
 ---
-Description: 本主題說明旋轉的新的 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
+description: 本主題說明旋轉的新的 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
 title: 旋轉
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 135f7773a94491e1e6470c84ad428265273bc79d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 755386b8cffa5c546d20cd561693da5d21b30799
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217001"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035101"
 ---
 # <a name="rotation"></a>旋轉
 
 
 本文描述輪替的新的 Windows UI，並提供在 Windows 應用程式中使用這個新的互動機制時應考慮的使用者經驗指導方針。
 
-> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -44,7 +44,8 @@ ms.locfileid: "91217001"
 
 ![示範旋轉所支援的各種手指姿勢的圖。](images/ux-rotate-positions.png)
 
-**注意**   在大部分的情況下，旋轉點是兩個觸控點的其中一個，除非使用者可指定與連絡人點無關的旋轉點 (例如，在繪圖或配置應用程式) 中。 下列影像示範未以這樣的方式限制旋轉點時，會如何對使用者經驗產生負面影響。
+**注意**  
+在直覺上，以及在大部分情況下，旋轉點是指兩個觸碰點的其中一點，除非使用者能夠指定一個與接觸點不相關的旋轉點 (例如，在繪圖或配置應用程式中)。 下列影像示範未以這樣的方式限制旋轉點時，會如何對使用者經驗產生負面影響。
 
 第一張圖片顯示初始 (拇指) 和次要 (食指) 觸碰點：食指觸碰一顆樹，而拇指觸碰一段木材。
 
@@ -59,7 +60,7 @@ ms.locfileid: "91217001"
 
 ![顯示旋轉後圖片的影像，其中旋轉點被限制為圖片最左邊的中心，而非兩個初始觸碰點的其中一點。](images/ux-rotate-points4.png)
 
- 
+ 
 
 Windows 10 支援三種類型的旋轉：「免費」、「受限」和「合併」。
 
@@ -88,10 +89,10 @@ Windows 10 支援三種類型的旋轉：「免費」、「受限」和「合併
 <td align="left">組合式旋轉</td>
 <td align="left"><p>組合式旋轉支援依區域 (類似於<a href="guidelines-for-panning.md">移動瀏覽的指導方針</a>中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
 <div class="alert">
-<strong>注意</strong>   「使用者介面滑軌」（user interface 鐵路）是一種功能，可讓目標周圍的區域限制移至特定的值或位置，以影響其選取專案。
+<strong>注意</strong>  「使用者介面滑軌」（user interface 鐵路）是一種功能，可讓目標周圍的區域限制移至特定的值或位置，以影響其選取專案。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>

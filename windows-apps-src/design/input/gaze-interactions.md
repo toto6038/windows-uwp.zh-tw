@@ -1,6 +1,6 @@
 ---
 title: 注視互動
-Description: 瞭解如何設計和優化您的 Windows 應用程式，為依賴眼睛和前端追蹤器輸入的使用者提供最佳體驗。
+description: 瞭解如何設計和優化您的 Windows 應用程式，為依賴眼睛和前端追蹤器輸入的使用者提供最佳體驗。
 label: Gaze interactions
 template: detail.hbs
 keywords: 注視, 眼球追蹤, 頭部追蹤, 注視點, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fa08cb65afc46069e48263344270e1e3b1a3d5f5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7799c95642b412d67b69c87dba54bf5c68ab9761
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217021"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035131"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-windows-apps"></a>在 Windows 應用程式中注視互動和眼睛追蹤
 
@@ -27,7 +27,7 @@ ms.locfileid: "91217021"
 > [!NOTE]
 > 如需 [Windows Mixed Reality](/windows/mixed-reality/) 中的注視輸入，請參閱 [注視](/windows/mixed-reality/gaze)。
 
-**重要 Api**: [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview),[GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview),[GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview),[GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
+**重要 Api** : [Windows.Devices.Input.Preview](/uwp/api/windows.devices.input.preview), [GazeDevicePreview](/uwp/api/windows.devices.input.preview.gazedevicepreview), [GazePointPreview](/uwp/api/windows.devices.input.preview.gazepointpreview), [GazeInputSourcePreview](/uwp/api/windows.devices.input.preview.gazeinputsourcepreview)
 
 ## <a name="overview"></a>概觀
 
@@ -36,7 +36,7 @@ ms.locfileid: "91217021"
 此外，注視輸入提供同樣吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
 
 > [!NOTE]
-> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 Windows 執行階段 Api ([Windows. 輸入. Preview](/uwp/api/windows.devices.input.preview)) 來建立可與眼睛追蹤硬體互動的應用程式，可在 **Windows 10 2018 年4月更新 (1803 版、組建 17134) 和更新版本中 ** 取得。
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 Windows 執行階段 Api ( [Windows. 輸入. Preview](/uwp/api/windows.devices.input.preview)) 來建立可與眼睛追蹤硬體互動的應用程式，可在 **Windows 10 2018 年4月更新 (1803 版、組建 17134) 和更新版本中** 取得。
 
 ## <a name="privacy"></a>隱私權
 
@@ -72,7 +72,7 @@ ms.locfileid: "91217021"
 
 *使用計時器範例的注視追蹤*
 
-**從 [注視輸入範例下載此範例 (基本) ](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
+**從 [注視輸入範例下載此範例 (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip)**
 
 1. 首先，先設定 UI (MainPage.xaml)。
 

@@ -1,21 +1,21 @@
 ---
-Description: 當您建立完 App 的提交作業並且按一下 \[提交至 Microsoft Store\] 時，提交就進入認證步驟。
+description: 當您建立完 App 的提交作業並且按一下 \[提交至 Microsoft Store\] 時，提交就進入認證步驟。
 title: 應用程式認證程序
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、uwp、發行、前置處理、認證、發行、暫止、提交、發佈、狀態、時間
 ms.localizationpriority: medium
-ms.openlocfilehash: d88d8deeb467f186f120fb8c1e579d5c9222aaf1
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: 414a182074f03256c3c66492eab21e574e1a960c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253798"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034981"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
-當您建立完 App 的提交作業並且按一下 **\[提交至 Microsoft Store\]** 時，提交就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 提交通過認證之後，最多可能需要24小時的時間，客戶才能看到應用程式的新提交清單，或針對套件的變更進行更新提交。 如果您的更新只變更 Store 清單詳細資料，則發佈程式將會在一小時內完成。  當您發佈提交時，系統將會通知您，且儀表板中的應用程式狀態將會 **在存放區中**。
+當您建立完 App 的提交作業並且按一下 **\[提交至 Microsoft Store\]** 時，提交就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 提交通過認證之後，最多可能需要24小時的時間，客戶才能看到應用程式的新提交清單，或針對套件的變更進行更新提交。 如果您的更新只變更 Store 清單詳細資料，則發佈程式將會在一小時內完成。  當您發佈提交時，系統將會通知您，且儀表板中的應用程式狀態將會 **在存放區中** 。
 
 ## <a name="preprocessing"></a>前置處理
 
@@ -36,8 +36,8 @@ ms.locfileid: "92253798"
 當您的應用程式通過認證時，即已準備好移至 **發佈** 流程。
 
 - 如果您已指出應該儘快發佈提交 (預設選項) ，則會立即開始發行程式。
-- 如果這是您第一次發行應用程式，而且您在 [[排程](configure-precise-release-scheduling.md#release)] 區段中指定了**發行日期**，則應用程式將會根據您的**發行日期**選項而變成可用。
-- 如果您已使用 [發佈保留選項](manage-submission-options.md#publishing-hold-options) 來指定在特定日期之前不應發行，我們會等到該日期開始發佈程式，除非您選取 **變更發行日期**。
+- 如果這是您第一次發行應用程式，而且您在 [ [排程](configure-precise-release-scheduling.md#release)] 區段中指定了 **發行日期** ，則應用程式將會根據您的 **發行日期** 選項而變成可用。
+- 如果您已使用 [發佈保留選項](manage-submission-options.md#publishing-hold-options) 來指定在特定日期之前不應發行，我們會等到該日期開始發佈程式，除非您選取 **變更發行日期** 。
 - 如果您已使用 [發行保留選項](manage-submission-options.md#publishing-hold-options) 來指定要手動發佈提交，除非您選取 [ **立即發佈** ]，否則不會啟動發佈程式 (或選取 [ **變更發行日期** ]，然後挑選特定的日期) 。
 
 
@@ -47,20 +47,20 @@ ms.locfileid: "92253798"
 
 針對新的應用程式和更新（包括應用程式套件的變更），發佈程式將在24小時內完成。 針對只變更選項（例如 Store 清單詳細資料，但不變更應用程式封裝）的更新，發佈程式將花費不到一小時的時間。
 
-當您的應用程式在發佈階段時，您應用程式提交的 [狀態] 資料行中的 [ **顯示詳細資料** ] 連結，可讓您知道新套件和 Store 清單詳細資料何時可供客戶在每個支援的作業系統版本上使用。 尚未完成的步驟會顯示為**擱置中**。 在程式完成之前，您的應用程式會保留在發佈階段中，這表示所有應用程式的潛在客戶都可使用新的套件及/或清單詳細資料。
+當您的應用程式在發佈階段時，您應用程式提交的 [狀態] 資料行中的 [ **顯示詳細資料** ] 連結，可讓您知道新套件和 Store 清單詳細資料何時可供客戶在每個支援的作業系統版本上使用。 尚未完成的步驟會顯示為 **擱置中** 。 在程式完成之前，您的應用程式會保留在發佈階段中，這表示所有應用程式的潛在客戶都可使用新的套件及/或清單詳細資料。
 
 ## <a name="in-the-store"></a>在 Microsoft Store 中 
 
-成功進行上述步驟之後，提交的狀態會從 **\[發行中\]** 變成 **\[在 Microsoft Store 內\]**。 客戶就能在 Microsoft Store 下載您的提交項目 (除非您選擇了其他[可搜尋性](choose-visibility-options.md#discoverability)選項)。 
+成功進行上述步驟之後，提交的狀態會從 **\[發行中\]** 變成 **\[在 Microsoft Store 內\]** 。 客戶就能在 Microsoft Store 下載您的提交項目 (除非您選擇了其他[可搜尋性](choose-visibility-options.md#discoverability)選項)。 
 
 > [!NOTE]
 > 我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Microsoft Store 原則](store-policies.md)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

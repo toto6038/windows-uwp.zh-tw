@@ -1,31 +1,31 @@
 ---
-Description: 使用通知、針對性優惠、回應評論和意見反應等功能，提高客戶參與和滿意度。
+description: 使用通知、針對性優惠、回應評論和意見反應等功能，提高客戶參與和滿意度。
 title: 與您的客戶互動
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e03e698a7c74dc6c3a9abec30d471a0a16427650
-ms.sourcegitcommit: 2dba9b4e81151d14ca90d36341274a3b59926197
+ms.openlocfilehash: 827001cda13b6335f9aaae06d8138c5223dbbb84
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74057568"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034841"
 ---
 # <a name="engage-with-your-customers"></a>與您的客戶互動
 
-使用推播通知、針對性優惠，以及回應意見反應和評論等功能，提高客戶參與和滿意度。 [合作夥伴中心](https://partner.microsoft.com/dashboard)包含這些功能，可協助您推動客戶參與和滿意度。
+使用推播通知、目標供應專案，以及意見反應和評論的回應，來推動客戶的參與度和滿意度。 [合作夥伴中心](https://partner.microsoft.com/dashboard) 包含這些功能及其他資訊，可協助您推動客戶的參與度和滿意度。
 
-## <a name="understand-your-audience"></a>了解您的對象
+## <a name="understand-your-audience"></a>瞭解您的物件
 
 :::row:::
     :::column:::
-        ![定義客戶區隔](images/engage-pie-chart.png)
+        ![定義客戶區段](images/engage-pie-chart.png)
     :::column-end:::
     :::column span="2":::
-**定義客戶區隔**
+**定義客戶區段**
 
-根據您自選的人口統計或收入條件，使用儀表板來定義應用程式的客戶區隔。 
+根據您選擇的人口統計或收入準則，使用儀表板來定義您的應用程式客戶區段。 
 
 [定義區段](create-customer-segments.md)
     :::column-end:::
@@ -33,12 +33,12 @@ ms.locfileid: "74057568"
 
 :::row:::
     :::column:::
-        ![目標供應專案](images/engage-phone-truck.png)
+        ![目標優惠](images/engage-phone-truck.png)
     :::column-end:::
     :::column span="2":::
-**目標供應專案**
+**目標優惠**
 
-對您的特定客戶區隔，顯示有吸引力、個人化的內容，以提高參與、保留和營收。
+向客戶的特定區段顯示吸引人且個人化的內容，以提升參與度、保留期和營收。
 
 [推廣優惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)
     :::column-end:::
@@ -46,18 +46,18 @@ ms.locfileid: "74057568"
 
 :::row:::
     :::column:::
-        ![目標式推播通知](images/engage-push-notifications.png)
+        ![目標推播通知](images/engage-push-notifications.png)
     :::column-end:::
     :::column span="2":::
-**特定對象的推播通知**
+**目標推播通知**
 
-使用儀表板為每個對象量身打造每個通知，建立推播通知並傳送給您的應用程式客戶區隔。
+使用儀表板來建立推播通知，並將其傳送至應用程式的各個區段，並為每個物件量身打造每個通知。
 
 [傳送通知](send-push-notifications-to-your-apps-customers.md)
     :::column-end:::
 :::row-end:::
 
-## <a name="run-experiments-and-connect-with-customers"></a>執行實驗並與客戶保持聯繫
+## <a name="run-experiments-and-connect-with-customers"></a>執行實驗並與客戶聯繫
 
 :::row:::
     :::column:::
@@ -66,7 +66,7 @@ ms.locfileid: "74057568"
     :::column span="2":::
 **A/B 測試**
 
-在您為所有客戶啟用變更前，先在應用程式中執行實驗來衡量功能變更的有效性。
+在您的應用程式中執行實驗來測量功能變更的有效性，然後再為所有客戶啟用這些變更。
 
 [執行 A/B 測試](../monetize/run-app-experiments-with-a-b-testing.md)
     :::column-end:::
@@ -79,7 +79,7 @@ ms.locfileid: "74057568"
     :::column span="2":::
 **應用程式意見反應**
 
-引導您的 Windows 10 客戶前往 [意見反應中樞]，邀請客戶與您分享意見。客戶可於該處提交問題、建議與附議。 然後從儀表板檢閱並回應客戶的意見反應。
+邀請您的 Windows 10 客戶，藉由將這些客戶導向至意見反應中樞來告訴您他們的想法，讓他們可以提交問題、建議和 upvotes。 然後檢查並回應儀表板中的意見反應。
 
 [取得意見反應](respond-to-customer-feedback.md)
     :::column-end:::
@@ -92,17 +92,17 @@ ms.locfileid: "74057568"
     :::column span="2":::
 **回應評論**
 
-透過公開回應或私下回應客戶的評論，追蹤並聯繫您的客戶。 您可以在儀表板中或使用我們的 REST API 提交回應。
+追蹤您的客戶，並以公開或私密的方式回應他們的評論，並與客戶聯繫。 您可以在儀表板中或使用我們的 REST API 來提交您的回應。
 
 [回應評論](respond-to-customer-reviews.md)
     :::column-end:::
 :::row-end:::
 
-## <a name="engagement-analytics"></a>參與分析
+## <a name="engagement-analytics"></a>Engagement 分析
 
-![參與分析](images/engage-analytics.png)
+![Engagement 分析](images/engage-analytics.png)
 
-使用這些功能和報表，讓您的客戶參與活動保有索引標籤。
+使用這些功能和報表，讓客戶參與活動保持定位。
 
 - [建立客戶群組](create-customer-groups.md)
 - [評論報告](reviews-report.md)

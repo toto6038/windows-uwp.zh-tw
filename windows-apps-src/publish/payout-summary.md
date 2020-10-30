@@ -1,23 +1,23 @@
 ---
-Description: 付款報表會顯示您的應用程式和附加元件所獲得的金錢詳細資料。 也可以讓您了解何時會收到付款與付款金額。
+description: 付款報表會顯示您的應用程式和附加元件所獲得的金錢詳細資料。 也可以讓您了解何時會收到付款與付款金額。
 title: 支出報告
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
-ms.openlocfilehash: 7eab86cc1856f5ad206aa8bbceb2f2e04f5410d2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763108"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035021"
 ---
 # <a name="payout-reports"></a>支出報告
 
 付款 **摘要** 會顯示您已使用 Microsoft 所獲得之錢的詳細資料。 也可以讓您了解何時會收到付款與付款金額。
 
-如果您在 Azure Marketplace 銷售產品，您也會在付款 **摘要**中看到成功支出的資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](/legal/marketplace/participation-policy)及 [Microsoft Azure Marketplace 發行者合約](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
+如果您在 Azure Marketplace 銷售產品，您也會在付款 **摘要** 中看到成功支出的資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](/legal/marketplace/participation-policy)及 [Microsoft Azure Marketplace 發行者合約](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3ypvt)。
 
 > [!NOTE]
 > 若要符合支付資格，收益必須達到美金 $50 元的[付款門檻](payment-thresholds-methods-and-timeframes.md)。 如需付款門檻的詳細資料，請參閱此頁面並檢閱應用程式開發人員合約。
@@ -225,5 +225,5 @@ ms.locfileid: "91763108"
 | 付款貨幣        | 付款給您時使用的貨幣。                                                                                                                                       |
 | 已轉換付款       | 使用 FX 匯率轉換為付款貨幣的付款金額。                                                                                                         |
 | 稅務匯款模型         | 負責繳交稅金 (營業稅、使用稅或增值稅/貨物及服務稅) 的合作對象。                                                                                                   |
-| 資格日期時間   | 交易收入符合支出資格的日期和時間 (UTC)。 建立支付時，它會包含支付建立日期之前，具有資格日期時間的交易收益  (僅包含在**保留的** .csv 檔案中)。 |
-| Charges                 | 顯示 [交易金額] 欄位中所有彙總之收費詳細資料的明細 (只有 Azure Marketplace 包含；不包含在**保留的** .csv 檔案中)。 |
+| 資格日期時間   | 交易收入符合支出資格的日期和時間 (UTC)。 建立支付時，它會包含支付建立日期之前，具有資格日期時間的交易收益  (僅包含在 **保留的** .csv 檔案中)。 |
+| Charges                 | 顯示 [交易金額] 欄位中所有彙總之收費詳細資料的明細 (只有 Azure Marketplace 包含；不包含在 **保留的** .csv 檔案中)。 |

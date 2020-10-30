@@ -1,5 +1,5 @@
 ---
-Description: 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
+description: 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 title: 移動瀏覽
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 596a9f2f3f234ba90b799eae982523c3a9de9732
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 0a989a6a96ac42b1eb790b6ac0dd223bd55b1bb8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749934"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035121"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
 
 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
-> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
@@ -32,9 +32,9 @@ ms.locfileid: "91749934"
 
 -   顯示移動瀏覽指示器和捲軸來提供位置和尺寸提示。若您要提供自訂瀏覽功能，請隱藏他們。
 
-    **注意**   不同于標準捲軸，移動游標是純資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
+    **備註**  與標準捲軸不同，移動瀏覽指標僅為提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
 
-     
+     
 
 **單軸移動瀏覽 (一維溢位)**
 
@@ -115,9 +115,9 @@ Windows 8 支援三種移動瀏覽類型：
 -   觸控時為移動瀏覽指標。
 -   使用其他輸入裝置 (包括滑鼠、觸控板、鍵盤以及手寫筆) 時為捲軸。
 
-**注意**   只有當觸控連絡人位於 pannable 區域內時，才會顯示行動電話指標。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
+**備註**  移動瀏覽指標僅在觸控觸碰點位於可移動瀏覽的區域時，才會顯示。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
 
- 
+ 
 
 **移動瀏覽指標** 移動瀏覽指標類似於捲軸中的捲動方塊。 它們指示了顯示內容佔可移動瀏覽總區域的比例，以及顯示內容在可移動瀏覽區域中的相對位置。
 
@@ -126,7 +126,7 @@ Windows 8 支援三種移動瀏覽類型：
 ![顯示兩個長度不同的可移動瀏覽區域及其移動瀏覽指標的影像。](images/scrolling-indicators.png)
 
 **移動流覽行為** 
-**貼齊點**移動觸控手勢時，移動觸控手勢時，會將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
+**貼齊點** 移動觸控手勢時，移動觸控手勢時，會將慣性行為引入互動。 利用慣性作用，內容會繼續移動瀏覽，直到達到某個距離閾值，而不用使用者直接輸入。 使用貼齊點修改這種慣性行為。
 
 貼齊點會指定應用程式內容的邏輯停止點。 貼齊點的作用就像是供使用者使用的分頁機制，將在大型可移動瀏覽區域的過度滑動或撥動減至最低程度。 使用它們即可處理不精確的使用者輸入，確保檢視區中可以顯示特定內容子集或關鍵資訊。
 

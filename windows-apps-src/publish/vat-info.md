@@ -1,22 +1,22 @@
 ---
-Description: 如果您需要在合作夥伴中心註冊程式期間提供加值稅識別碼，以下是可讓您開始使用的一些資訊。
+description: 如果您在合作夥伴中心註冊程式期間必須提供加值稅識別碼，以下提供一些資訊，讓您開始使用。
 title: VAT 資訊
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c8521ef2988e2108dbbd619812bfde26cecc81b
-ms.sourcegitcommit: a7effa01ca1c810e792b60f89ba38ce3bf0b310e
+ms.openlocfilehash: bd863210fad66d9494d9d71115966656ccbb8893
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81545078"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034921"
 ---
 # <a name="vat-info"></a>VAT 資訊
 
 
-如果您需要在合作夥伴中心註冊程式期間提供加值稅識別碼，以下是可讓您開始使用的一些資訊。
+如果您在合作夥伴中心註冊程式期間必須提供加值稅識別碼，以下提供一些資訊，讓您開始使用。
 
 ## <a name="understanding-vat-numbers"></a>了解 VAT 編號
 
@@ -29,7 +29,7 @@ ms.locfileid: "81545078"
 請注意，Microsoft 不會提供任何稅務建議，下列資訊僅供參考。 如果這份指導方針的資訊不足以供您向 Microsoft 提供 VAT 編號，您應該諮詢當地的稅徵機關以查看是否有最新的變更。
 
 <table Responsive="true">
-<tr><th>國家 (地區)</th><th>VAT 資訊</th></tr>
+<tr><th>國家/區域</th><th>VAT 資訊</th></tr>
 <tr><td data-th="Country/region">奧地利
 </td><td data-th="VAT info">
 <ul>
@@ -70,7 +70,7 @@ ms.locfileid: "81545078"
 <li>範例：12345678、123456789 或 0123456789</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Czechia</td><td data-th="VAT info">
+<tr><td data-th="Country/region">捷克</td><td data-th="VAT info">
 <ul>
 <li>VAT 編號格式：8、9 或 10 個數字</li>
 <li>國家/地區代碼：CZ</li>
@@ -98,7 +98,7 @@ ms.locfileid: "81545078"
 <li>範例：12345678</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">France</td><td data-th="VAT info">
+<tr><td data-th="Country/region">法國</td><td data-th="VAT info">
 <ul>
 <li>VAT 編號格式：11 個數字</li>
 <li>國家/地區代碼：FR</li>
@@ -106,7 +106,7 @@ ms.locfileid: "81545078"
 <li>注意：可包含任何字母字元 (I 或 Q 除外) 做為第一個或第二個字元，或做為第一個與第二個字元，再加上 9 個數字。</li>
 </ul>
 </td></tr>
-<tr><td data-th="Country/region">Germany</td><td data-th="VAT info">
+<tr><td data-th="Country/region">德國</td><td data-th="VAT info">
 <ul>
 <li>VAT 編號格式：9 個數字</li>
 <li>國家/地區代碼：DE</li>
@@ -245,9 +245,9 @@ ms.locfileid: "81545078"
 </table>
                                                                                                                                                                   
 
- 
+ 
 
- 
+ 
 
 
 

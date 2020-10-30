@@ -1,5 +1,5 @@
 ---
-Description: 這個主題描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
+description: 這個主題描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
 title: 視覺化縮放和調整大小的指導方針
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f5864be7a4a7f80e376439e8db387e2b2853dfd7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1cf62546efd95c3a4d26ad3ca6f16990b832611c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172482"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035111"
 ---
 # <a name="optical-zoom-and-resizing"></a>視覺化縮放和調整大小
 
@@ -21,7 +21,7 @@ ms.locfileid: "89172482"
 
 這個文章描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
 
-> **重要 API**：[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
 
 視覺化縮放可以讓使用者將內容區域內的內容檢視放大 (執行對象是內容區域本身)，而調整大小則可以讓使用者變更一或多個物件的相對大小，卻不變更對該內容區域的檢視 (執行對象是內容區域內的物件)。
 
@@ -29,17 +29,18 @@ ms.locfileid: "89172482"
 
 下圖示範調整大小和視覺化縮放的差異。
 
-**視覺化縮放**：使用者選取一個區域，然後縮放整個區域。
+**視覺化縮放** ：使用者選取一個區域，然後縮放整個區域。
 
 ![將手指靠攏會縮小，將手指分開則會放大。](images/areazoom.png)
 
-**調整大小**：使用者選取區域內的一個物件，然後調整該物件大小。
+**調整大小** ：使用者選取區域內的一個物件，然後調整該物件大小。
 
 ![將手指靠攏會縮小物件，將手指分開會放大物件。](images/objectresize.png)
 
-**注意**   光學縮放不應與[語義縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
+**注意**  
+請勿將視覺化縮放與[語意式縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -55,7 +56,7 @@ ms.locfileid: "89172482"
 
     -   鄰近性 - 提起手指後，如果慣性作用讓貼齊點停在距離閾值範圍內，就會選取該貼齊點。 鄰近性貼齊點仍然允許縮放或大小調整在貼齊點之間結束。
     -   強制 - 選取的貼齊點為提起手指之前，在最後一個越過之貼齊點之前或之後的那個貼齊點 (取決於手勢的方向和速度)。 操作必須在強制貼齊點結束。
--   使用慣性物理。 這些選項包括：
+-   使用慣性物理。 其中包括下列各項：
     -   減速：在使用者停止捏合或伸展時發生。 這類似於在光滑的表面上滑動到停止的現象。
     -   反彈：超過大小限制或界限時發生的輕微彈回效果。
 -   根據[目標預測的指導方針](guidelines-for-targeting.md)來設定控制項之間的空間。
@@ -65,7 +66,8 @@ ms.locfileid: "89172482"
     -   繪圖應用程式，可調整大小的項目可以顯示在可調整大小的畫布或製圖板上。
     -   包含內嵌物件 (如地圖) 的網頁。
 
-    **注意**   在所有情況下，除非所有觸控點都在可調整大小的物件內，否則內容區域會調整大小。
+    **注意**  
+    在所有的情況下都會調整內容區域的大小，除非所有觸控點都位於可調整大小的物件內。
 
 ## <a name="related-articles"></a>相關文章
 

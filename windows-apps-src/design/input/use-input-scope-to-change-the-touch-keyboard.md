@@ -1,5 +1,5 @@
 ---
-Description: 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。
+description: 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。
 MS-HAID: dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -9,12 +9,12 @@ template: detail.hbs
 keywords: 鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
-ms.openlocfilehash: e6e140a1967ca3ffe7775f427ccae7a7e07c5ca6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9b274d7cafd179157571a51db1122153a33d846e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165812"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035071"
 ---
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>使用輸入範圍來變更觸控式鍵盤
 
@@ -25,9 +25,9 @@ ms.locfileid: "89165812"
 - [InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)
 
 
-當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者按下可編輯的輸入欄位（例如 **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 或 **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)**）時，就會叫用觸控鍵盤。 您可以將文字控制項的 *輸入範圍* 設定為符合您希望使用者輸入的資料類型，讓使用者更快速且更輕鬆地在應用程式中輸入資料。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
+當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者按下可編輯的輸入欄位（例如 **[TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 或 **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)** ）時，就會叫用觸控鍵盤。 您可以將文字控制項的 *輸入範圍* 設定為符合您希望使用者輸入的資料類型，讓使用者更快速且更輕鬆地在應用程式中輸入資料。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
-例如，如果文字方塊僅用來輸入4位數的 PIN，請將 [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
+例如，如果文字方塊僅用來輸入4位數的 PIN，請將 [**InputScope**](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number** 。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
 
 > [!IMPORTANT]
 > - 此資訊只適用於 SIP。 它並不適用於硬體鍵盤或 Windows [輕鬆存取] 選項中提供的 [螢幕小鍵盤]。
@@ -38,7 +38,7 @@ ms.locfileid: "89165812"
 您的應用程式中可用的輸入範圍是 **[InputScopeNameValue](/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue)** 列舉的成員。 您可以將 ****TextBox**** 或 **[RichEditBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox)** 的 [InputScope](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) 屬性設定成這些值的其中之一。
 
 > [!IMPORTANT]
-> **[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** 上的**[InputScope](/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** 屬性只支援**Password**和**NumericPin**值。 會略過其他任何值。
+> **[PasswordBox](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)** 上的 **[InputScope](/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope)** 屬性只支援 **Password** 和 **NumericPin** 值。 會略過其他任何值。
 
 您會在這裡變更數個文字方塊的輸入範圍，使其符合每個文字方塊的預期資料。
 
@@ -125,7 +125,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 -   [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) — 文字控制項啟用文字預測時，系統會顯示您可能正開始輸入的文字清單。 您可以從清單中選取單字，這樣您就不必輸入整個單字。 文字預測預設為啟用。
 
-    如果輸入範圍不是 **Default**，則即使 [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 屬性為 **true**，也可能停用文字預測功能。能。 如需詳細資訊，請參閱本主題稍後的表格。
+    如果輸入範圍不是 **Default** ，則即使 [**IsTextPredictionEnabled**](/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled) 屬性為 **true** ，也可能停用文字預測功能。能。 如需詳細資訊，請參閱本主題稍後的表格。
 
 -   [**PreventKeyboardDisplayOnProgrammaticFocus**](/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus) — 此屬性是 **true** 時，當焦點透過程式設計設定在文字控制項上時，系統將不會顯示 SIP。 取而代之的是，只有當使用者與控制項互動時，才會顯示鍵盤。
 
@@ -143,10 +143,10 @@ phoneNumberTextBox.InputScope = new InputScope()
 預設的 Windows 觸控鍵盤。
 
 ![預設 Windows 觸控式鍵盤](images/input-scopes/default.png)
-- 拼寫檢查：如果**IsSpellCheckEnabled**  =  **為 true**，則會啟用，如果**IsSpellCheckEnabled**  =  **為 false** ，則停用
-- 自動校正：如果**IsSpellCheckEnabled**  =  **為 true**，則啟用，如果**IsSpellCheckEnabled**  =  **false** ，則停用
-- 自動大寫：如果**IsSpellCheckEnabled**  =  **為 true**，則啟用，如果**IsSpellCheckEnabled**  =  **false** ，則停用
-- 文字預測：如果**IsTextPredictionEnabled**  =  **為 true**，則啟用，如果**IsTextPredictionEnabled**  =  **false** ，則停用
+- 拼寫檢查：如果 **IsSpellCheckEnabled**  =  **為 true** ，則會啟用，如果 **IsSpellCheckEnabled**  =  **為 false** ，則停用
+- 自動校正：如果 **IsSpellCheckEnabled**  =  **為 true** ，則啟用，如果 **IsSpellCheckEnabled**  =  **false** ，則停用
+- 自動大寫：如果 **IsSpellCheckEnabled**  =  **為 true** ，則啟用，如果 **IsSpellCheckEnabled**  =  **false** ，則停用
+- 文字預測：如果 **IsTextPredictionEnabled**  =  **為 true** ，則啟用，如果 **IsTextPredictionEnabled**  =  **false** ，則停用
 
 ### <a name="currencyamountandsymbol"></a>CurrencyAmountAndSymbol
 
@@ -168,8 +168,8 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 ![Windows URL 觸控式鍵盤](images/input-scopes/url.png)
 
-- 包含 **.com** 和![前往鍵](images/input-scopes/kbdgokey.png) (前往) 鍵。 按住 **.com** 鍵以顯示其他選項 (**. org**、 **.net**和區域特定的尾碼) 
-- 包含 **：**、 **-** 和索引 **/** 鍵
+- 包含 **.com** 和![前往鍵](images/input-scopes/kbdgokey.png) (前往) 鍵。 按住 **.com** 鍵以顯示其他選項 ( **. org** 、 **.net** 和區域特定的尾碼) 
+- 包含 **：** 、 **-** 和索引 **/** 鍵
 - 拼字檢查：預設為關閉，可以啟用
 - 自動校正：預設為關閉，可以啟用
 - 自動大寫：預設為關閉，可以啟用
@@ -181,7 +181,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
 ![Windows 電子郵件地址觸控式鍵盤](images/input-scopes/emailsmtpaddress.png)
-- 包含 **@** 和 **.com** 索引鍵。 按住 **.com** 鍵以顯示其他選項 (**. org**、 **.net**和區域特定的尾碼) 
+- 包含 **@** 和 **.com** 索引鍵。 按住 **.com** 鍵以顯示其他選項 ( **. org** 、 **.net** 和區域特定的尾碼) 
 - 包含 **_** 和索引 **-** 鍵
 - 拼字檢查：預設為關閉，可以啟用
 - 自動校正：預設為關閉，可以啟用
@@ -189,7 +189,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 - 文字預測：預設為關閉，可以啟用
 
 
-### <a name="number"></a>Number
+### <a name="number"></a>數字
 
 `<TextBox InputScope="Number"/>`
 
@@ -225,7 +225,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="SearchIncremental"/>`
 
 ![適用于漸進式搜尋的 Windows 觸控鍵盤](images/input-scopes/searchincremental.png)
-- 與**預設值**相同的版面配置
+- 與 **預設值** 相同的版面配置
 - 拼字檢查：預設為關閉，可以啟用
 - 自動校正：一律停用
 - 自動大寫：一律停用
@@ -248,7 +248,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="Chat"/>`
 
 ![預設 Windows 觸控式鍵盤](images/input-scopes/default.png)
-- 與**預設值**相同的版面配置
+- 與 **預設值** 相同的版面配置
 - 拼字檢查：預設為開啟，可以停用
 - 自動校正：預設為開啟，可以停用
 - 自動大寫：預設為開啟，可以停用
@@ -259,7 +259,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 `<TextBox InputScope="NameOrPhoneNumber"/>`
 
 ![預設 Windows 觸控式鍵盤](images/input-scopes/default.png)
-- 與**預設值**相同的版面配置
+- 與 **預設值** 相同的版面配置
 - 拼字檢查：預設為關閉，可以啟用
 - 自動校正：預設為關閉，可以啟用
 - 自動大小寫：預設為關閉，可 (每個單字的第一個字母為大寫) 

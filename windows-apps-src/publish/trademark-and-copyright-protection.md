@@ -1,17 +1,17 @@
 ---
-Description: 了解如果您認為其他應用程式侵犯您的智慧財產權您可以採取的行動。
+description: 了解如果您認為其他應用程式侵犯您的智慧財產權您可以採取的行動。
 title: 商標與著作權保護
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.date: 06/19/2017
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 14dae80876e1e7a77151f4e814a8dcd06e039645
-ms.sourcegitcommit: b52ddecccb9e68dbb71695af3078005a2eb78af1
+ms.openlocfilehash: d3ae8467143dd1c254db20c237316e3984573242
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74259893"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034971"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標與著作權保護
 
@@ -21,7 +21,7 @@ ms.locfileid: "74259893"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. 如何提報 Windows app 內有人侵犯到我的智慧財產權？
 
 
-請使用下列[表單](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0)，送出 Windows app 上著作權、商標或公開發表權的侵權控訴。 如果是跨多個應用程式的著作權、商標或公開發表權的侵權控訴，請將您的要求送到 mktlegal@microsoft.com。 如果您需要 Microsoft DMCA 原則的其他相關資訊，請造訪： [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx)。
+請使用下列[表單](https://support.microsoft.com/getsupport/hostpage.aspx?locale=EN-US&ln=EN-US&oaspworkflow=start_1.0.0.0&wfname=RAVCI&wf=0)，送出 Windows app 上著作權、商標或公開發表權的侵權控訴。 如果是跨多個應用程式的著作權、商標或公開發表權的侵權控訴，請將您的要求送到 mktlegal@microsoft.com。 如果您需要 Microsoft DMCA 原則的其他資訊，請流覽： [https://www.microsoft.com/info/cpyrtInfrg.aspx](https://www.microsoft.com/info/cpyrtInfrg.aspx) 。
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. 我建立了能與 Microsoft 產品/服務搭配使用的應用程式。 我是否可以在 app 名稱中使用 Microsoft 產品/服務名稱？
 
@@ -44,7 +44,7 @@ Microsoft 強烈建議您不要這樣做。 但是，如果有明確的商務需
 ### <a name="4-may-i-use-microsofts-graphical-trademarks-logos-such-as-the-windows-flag-logo-in-my-app"></a>4. 我是否可以在 app 中使用 Microsoft 的圖形商標 (標誌)，例如 WINDOWS 旗幟標誌？
 
 
-不。 Microsoft 僅允許協力廠商透過正式授權來使用它的商標標誌。 我們通常不為此類情境提供授權。
+否。 Microsoft 僅允許協力廠商透過正式授權來使用它的商標標誌。 我們通常不為此類情境提供授權。
 
 如需詳細資訊，請參閱[美國專利商標局：商標基本知識](http://www.uspto.gov/trademarks-getting-started/trademark-basics)或下載[美國著作權局：商標基本知識](https://www.copyright.gov/circs/circ01.pdf)。
 
@@ -63,9 +63,9 @@ Microsoft 強烈建議您不要這樣做。 但是，如果有明確的商務需
 
 請仔細閱讀 Microsoft 的通知，並依照指示進行。 Microsoft 的通知可能會包含您能夠遵循的特定步驟來通知我們，您已完成問題的更正、您不同意控訴者的意見，和/或您想要重新送出 app 到「市集」。
 
- 
+ 
 
- 
+ 
 
 
 

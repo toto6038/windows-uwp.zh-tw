@@ -1,5 +1,5 @@
 ---
-Description: 以直覺且特殊的使用者互動體驗來建立 Windows 應用程式，這些體驗已針對觸控進行優化，但在輸入裝置上的功能一致。
+description: 以直覺且特殊的使用者互動體驗來建立 Windows 應用程式，這些體驗已針對觸控進行優化，但在輸入裝置上的功能一致。
 title: 觸控互動
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
@@ -8,12 +8,12 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 302a1f39d85902b229642b60f483b40f51209a72
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 614d8c5340100ca5ba666493ccb23ec4d8ca8498
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750384"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035051"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -22,7 +22,7 @@ ms.locfileid: "91750384"
 
 不過，請記住，針對觸控最佳化的 UI 未必優於傳統 UI。 兩者對技術和應用程式而言各有優缺點。 在移至觸控優先的 UI 中，請務必瞭解觸控、觸控板、畫筆/手寫筆、滑鼠和鍵盤輸入之間的核心差異。
 
-> **重要 API**：[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、[**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
+> **重要 API** ： [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)、 [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、 [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
 
 
 許多裝置都配備多點觸控螢幕，支援使用一或多根手指 (或觸控點) 進行輸入。 觸控點及其移動方式都會解譯為觸控手勢與操作，以支援各種不同的使用者互動。
@@ -75,7 +75,7 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 > [!NOTE]
 > 間接輸入的優勢在於已經過 25 年以上的技術改良。 有一些功能 (例如暫留觸發工具提示) 是專門設計來解決觸控板、滑鼠、畫筆/手寫筆以及鍵盤輸入的 UI 探索問題。 這類的 UI 功能已經針對觸控輸入提供的豐富經驗而重新設計，不會犧牲這些裝置上的使用者經驗。
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>使用觸控回饋
 
@@ -176,9 +176,9 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 
 若要提供自訂的觸控支援，您可以處理各種不同的 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 事件。 這些事件會分成三個等級的抽象概念。
 
--   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、[**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、[**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 及 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
+-   靜態手勢事件會在互動完成之後觸發。 手勢事件包含 [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped)、 [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped)、 [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped) 及 [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding)。
 
-    您可以透過將 [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled)、[**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、[**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 及 [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 設定為 **false**，來停用特定元素的手勢事件。
+    您可以透過將 [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled)、 [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled)、 [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled) 及 [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) 設定為 **false** ，來停用特定元素的手勢事件。
 
 -   指標事件 (例如 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)) 會針對每個觸控點提供低階詳細資料，包括指標移動以及區分按下和放開事件的能力。
 
@@ -200,7 +200,7 @@ Windows 應用程式包含許多不同的機制來處理觸控輸入，可讓您
 | 捏合          | 操作手勢 | 二或多根手指觸碰螢幕後，再朝靠攏的方向移動。                         |
 | 延展        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -232,9 +232,9 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | 發生于滑鼠滾輪的 delta 值變更和觸控板 pinched 時。         |
 | [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | 提供所有指標事件的資料。                         |
 
- 
+ 
 
-下列範例示範如何使用 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上的點選互動。
+下列範例示範如何使用 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上的點選互動。
 
 首先，在 Extensible Application Markup Language (XAML) 中建立名為 `touchRectangle` 的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)。
 
@@ -244,7 +244,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
            Height="100" Width="200" Fill="Blue" />
 </Grid>
 ```
-接下來，指定 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、[**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件的接聽程式。
+接下來，指定 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)、 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 及 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) 事件的接聽程式。
 
 ```cpp
 MainPage::MainPage()
@@ -284,7 +284,7 @@ Public Sub New()
 End Sub
 ```
 
-最後，當 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerExited**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時，[**PointerPressed**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 事件處理常式會提高 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**Width**](/uwp/api/windows.ui.xaml.uielement.pointerexited)。
+最後，當 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerExited**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時， [**PointerPressed**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 事件處理常式會提高 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Height**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 和 [**Width**](/uwp/api/windows.ui.xaml.uielement.pointerexited)。
 
 ```cpp
 // Handler for pointer exited event.
@@ -431,7 +431,7 @@ End Sub
 | [**ManipulationVelocities**](/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | 描述發生操作的速度。                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | 提供 [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) 事件的資料。                                       |
 
- 
+ 
 
 手勢是由一系列操作事件所組成。 每個手勢都是以 [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) 事件開始，例如當使用者觸碰螢幕。
 
@@ -440,7 +440,7 @@ End Sub
 > [!NOTE]
 > 如果您沒有觸控式螢幕監視器，您可以使用滑鼠和滑鼠滾輪介面，在模擬器中測試操作事件程式碼。
 
- 
+ 
 
 下列範例示範如何使用 [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑動互動，並在螢幕上移動它。
 

@@ -1,5 +1,5 @@
 ---
-Description: 本主題描述在 Windows 執行階段應用程式中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。
+description: 本主題描述在 Windows 執行階段應用程式中如何使用接觸幾何來預測觸控目標，並提供觸控目標的最佳做法。
 title: 目標
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64142b1ec35040ded890d837245ecae36e03fdc1
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: a8b6113294d3f3c0c98946f0fed407e36de8a563
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216981"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035061"
 ---
 # <a name="guidelines-for-touch-targets"></a>觸控目標的指導方針
 
@@ -25,7 +25,7 @@ Windows 應用程式中的所有互動式 UI 元素必須夠大，才能讓使�
 
 在本主題中，我們將說明這些預設行為，讓您可以使用平臺控制項和自訂控制項來設計應用程式，以達到最大的可用性， (您的應用程式需要) 。
 
-> **重要 API**：[**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、[**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、[**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **重要 API** ： [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)、 [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)、 [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
 
 ## <a name="fluent-standard-sizing"></a>Fluent 標準大小調整
 
@@ -38,7 +38,7 @@ Windows 應用程式中的所有互動式 UI 元素必須夠大，才能讓使�
 
 ## <a name="fluent-compact-sizing"></a>Fluent 精簡大小調整
 
-應用程式可以使用 *流暢的精簡大小*來顯示較高層級的資訊密度。 Compact 調整大小會將 UI 元素對齊至 32x32 window.epx.codesnippet.copycode 目標，讓 UI 元素對齊更緊密的方格，並根據系統層級調整適當地調整規模。
+應用程式可以使用 *流暢的精簡大小* 來顯示較高層級的資訊密度。 Compact 調整大小會將 UI 元素對齊至 32x32 window.epx.codesnippet.copycode 目標，讓 UI 元素對齊更緊密的方格，並根據系統層級調整適當地調整規模。
 
 ### <a name="examples"></a>範例
 

@@ -1,5 +1,5 @@
 ---
-Description: 以直覺且特殊的使用者互動體驗來建立 Windows 應用程式，這些體驗已針對觸控板優化，但在輸入裝置上的功能一致。
+description: 以直覺且特殊的使用者互動體驗來建立 Windows 應用程式，這些體驗已針對觸控板優化，但在輸入裝置上的功能一致。
 title: 觸控板互動
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
@@ -8,19 +8,19 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c47a3a510f6ed0d865064e8d140c47c8dd9f78
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6b0e0a7e45ee63d845a1d5b0057d00da11e01c18
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220431"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035091"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
 
 將您的應用程式設計成使用者可透過觸控板與其互動的應用程式。 觸控板結合了間接多點觸控輸入與指標裝置 (如滑鼠) 精確輸入。 這項結合讓觸控板既適用於觸控最佳化 UI，也適用於較小的生產力應用程式目標。
 
- 
+ 
 
 ![觸控板](images/input-patterns/input-touchpad.jpg)
 
@@ -114,12 +114,12 @@ ms.locfileid: "91220431"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="hardware"></a>硬體
 
 
-查詢滑鼠裝置的功能 ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
+查詢滑鼠裝置的功能 ( [**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities))，了解觸控板硬體可以直接存取應用程式 UI 的什麼層面。 建議提供同時適用於觸控與滑鼠輸入的 UI。
 
 如需有關查詢裝置功能的詳細資訊，請參閱[識別輸入裝置](identify-input-devices.md)。
 

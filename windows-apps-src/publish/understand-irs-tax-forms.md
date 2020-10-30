@@ -1,17 +1,17 @@
 ---
-Description: 了解 Microsoft 寄發的稅單，包括哪些人會接收到以及收到的時機。
+description: 了解 Microsoft 寄發的稅單，包括哪些人會接收到以及收到的時機。
 title: 了解 Microsoft 寄發的 IRS 稅單
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 6493e20dbc0e38405a7cd30fc22acb9973098431
-ms.sourcegitcommit: 97002cc3e5942f43ab0f14f4ad70543a63db0c03
+ms.openlocfilehash: 05d038aca0670c31f1d8ed10250e3a905e6bfe3b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128977"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034961"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -23,11 +23,11 @@ ms.locfileid: "91128977"
 
 | IRS 稅單 | 描述 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 列印的表單會在 **1 月 31**日或之前的日期時間，而且會在 [合作夥伴中心](https://partner.microsoft.com/dashboard) (的 **合作夥伴中心開發人員設定** 中提供 pdf 副本，> 付款和稅務 **設定檔**)  |
-|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 列印的表單將會在 **3 月 15**日或以前的日期時間，而且會在 **合作夥伴中心開發人員設定** 的合作夥伴中心 (中提供 pdf 副本，> 付款和稅務 **設定檔**)   |
+|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 列印的表單會在 **1 月 31** 日或之前的日期時間，而且會在 [合作夥伴中心](https://partner.microsoft.com/dashboard) (的 **合作夥伴中心開發人員設定** 中提供 pdf 副本，> 付款和稅務 **設定檔** )  |
+|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 列印的表單將會在 **3 月 15** 日或以前的日期時間，而且會在 **合作夥伴中心開發人員設定** 的合作夥伴中心 (中提供 pdf 副本，> 付款和稅務 **設定檔** )   |
 
 > [!NOTE]
-> 我們在 IRS 稅務表單上使用的位址來自于您的 [稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的位址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
+> 我們在 IRS 稅務表單上使用的位址來自于您的 [稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的位址。 若您的地址有所變更，請務必更新您 **稅務設定檔** 中的地址。
 
 您可以從下列位址將稅務表單傳送給您：
 
@@ -129,4 +129,4 @@ ms.locfileid: "91128977"
 
 
 > [!NOTE]
-> 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](https://developer.microsoft.com/windows/support)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
+> 如您有與 **IRS 稅單** 相關的其他問題或疑慮，請建立 [支援票證](https://developer.microsoft.com/windows/support)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
