@@ -1,5 +1,5 @@
 ---
-Description: 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
+description: 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
 title: 磚、徽章及通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -8,19 +8,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 580edca578a0d518d89b5d2fdb30c9304be35cef
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: dbcc4138c0f09d3ad620e4d1c192dd63bb522052
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636618"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033681"
 ---
 # <a name="tiles-badges-and-notifications-for-windows-apps"></a>Windows 應用程式的磚、徽章及通知
  
 
 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
 
-> **重要 API**：[UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+> **重要 API** ： [UWP 社群工具組通知 NuGet 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" alt="Screenshot of a static tile and a live tile displaying a notification and a badge." />
 App 在 [開始] 功能表上以磚的形式顯示。 每個 Windows 應用程式都有一個磚。 您可以啟用不同的磚大小 (小、中、寬及大)。</p>
@@ -32,14 +32,14 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 Windows 應用程�
 <p>「快顯通知」是您的 App 透過名為 <em>toast</em> (或 <em>banner</em>) 的快顯 UI 元素傳送給使用者的通知。 無論使用者是否在您的 App 中，都可以看到通知。</p>
 <p><em>推播通知</em>或<em>原始通知</em>是從 Windows 推播通知服務 (WNS) 或從背景工作傳送到您 app 的通知。 您的應用程式可以通知使用者有趣事發生 (透過徽章更新、磚更新或快顯通知) 以回應這些通知，或是以您所選擇的任何方式來回應。</p>
 
- 
+ 
 ## <a name="tiles"></a>Tiles
 | 文章 | 說明 |
 | --- | --- |
 | [建立磚](creating-tiles.md) | 自訂您的 App 的預設磚，並提供不同螢幕大小的資產。 |
 | [應用程式圖示資產](../../style/app-icons-and-logos.md) | 以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比 Windows 應用程式的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。 |
 | [主要磚 API](primary-tile-apis.md) | 要求釘選應用程式的主要磚，並檢查主要磚目前是否已釘選。 |
-| [磚內容](create-adaptive-tiles.md) | 磚通知內容是使用調適型 (Windows 10 中的新功能) 所指定，可讓您使用配合不同螢幕密度調整的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為 Windows 應用程式建立彈性動態磚。 |
+| [磚內容](create-adaptive-tiles.md) | 磚通知內容是使用 Adaptive (Windows 10 中的新功能) 所指定，可讓您使用配合不同螢幕密度調整的簡易靈活標記語言，設計專屬的磚通知內容。 本文會告訴您如何為 Windows 應用程式建立彈性動態磚。 |
 | [磚內容結構描述](../tiles-and-notifications/tile-schema.md) | 以下是用來建立彈性磚的元素和屬性。 |
 | [特殊的磚範本](special-tile-templates-catalog.md) | 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 |
 | [傳送本機磚通知](sending-a-local-tile-notification.md) | 了解如何傳送本機磚通知，並將豐富的動態內容新增至動態磚。 |

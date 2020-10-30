@@ -1,5 +1,5 @@
 ---
-Description: 認識支援 Windows 應用程式的裝置，可協助您針對各種外型規格提供最佳的使用者體驗。
+description: 認識支援 Windows 應用程式的裝置，可協助您針對各種外型規格提供最佳的使用者體驗。
 title: 適用於 Windows 裝置的 UI 考量
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
@@ -8,12 +8,12 @@ keywords: 裝置, 輸入, 互動
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d32fd2ba2ee35c19aeaa66d2c6b2c1f81be2a59
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2267a0a704d0f637b60e38cdaa50b1afa2ec3f9a
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217831"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030541"
 ---
 #  <a name="ui-considerations-for-windows-devices"></a>適用於 Windows 裝置的 UI 考量
 
@@ -94,7 +94,7 @@ UI 考量
 
 ## <a name="xbox-and-tv"></a>Xbox 和電視
 
-坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。  這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
+坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」。  這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎* 體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
 
 為 10 英呎體驗設計 Windows 應用程式，與為以下所列的任何其他裝置類別設計 Windows 應用程式十分不同。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](designing-for-tv.md)。
 
@@ -131,7 +131,7 @@ UI 考量
 
 所有計算裝置中最為廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-透過 Continuum 手機版 (此為可相容的 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](/windows-hardware/design/device-experiences/continuum-phone)一文)。
+透過 Continuum 手機版 (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作 (如需詳細資訊，請參閱 [Continuum 手機版](/windows-hardware/design/device-experiences/continuum-phone)一文)。
 
 螢幕大小
 -   手機 (4 吋 到 5 吋)
@@ -164,7 +164,7 @@ UI 考量
 -   動作感應器
 -   定位感應器
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Surface Hub 裝置
 
@@ -197,7 +197,7 @@ UI 考量
 -   相機
 -   麥克風
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Windows IoT 裝置
 

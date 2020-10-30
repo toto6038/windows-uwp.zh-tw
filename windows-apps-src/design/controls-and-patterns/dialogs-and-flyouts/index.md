@@ -1,5 +1,5 @@
 ---
-Description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
+description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
 title: 對話方塊和飛出視窗
 template: detail.hbs
 ms.date: 07/06/2018
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c61d1478c38df315a3fe3c20151de8c2bfbca4e2
-ms.sourcegitcommit: f727b68e86a86c94eff00f67ed79a1c12666e7bc
+ms.openlocfilehash: bf4746a6d3a024fec31045bbf9c63d3b11315b8c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "81123576"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033841"
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
@@ -40,7 +40,7 @@ ms.locfileid: "81123576"
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-對話方塊和飛出視窗可確保使用者知曉重要的資訊，但它們也會干擾使用者體驗。 因為對話方塊為強制回應 (封鎖)，所以會打擾使用者，並防止他們繼續執行動作，直到他們與對話方塊互動為止。 飛出視窗能提供較不突兀的體驗，但是顯示太多的飛出視窗也可能會造成困擾。
+對話方塊和飛出視窗可確保使用者知曉重要的資訊，但也會干擾使用者體驗。 因為對話方塊為強制回應 (封鎖)，所以會打擾使用者，並防止他們繼續執行動作，直到他們與對話方塊互動為止。 飛出視窗能提供較不突兀的體驗，但是顯示太多的飛出視窗也可能會造成困擾。
 
 在您決定要使用對話方塊或飛出視窗之後，您必須選擇要使用哪一個。
 
@@ -58,16 +58,16 @@ ms.locfileid: "81123576"
 
 </li>
 <li>套用到整個應用程式內容的錯誤訊息，例如連線錯誤。</li>
-<li>問題，當應用程式需要詢問使用者關於造成應用程式無法繼續執行的問題時 (例如當應用程式無法代替使用者選擇時)。 會造成應用程式無法繼續執行的問題，且該問題不能忽略或延遲回應，並應該向使用者提供明確定義的選擇。</li>
+<li>問題，當應用程式需要詢問使用者關於造成應用程式無法繼續執行的問題時 (例如當應用程式無法代替使用者選擇時)。 封鎖性問題不能忽略或延遲回應，因此應該向使用者提供明確定義的選擇。</li>
 </ul>
 </p>
 
 
    <p><b>適合使用飛出視窗的情況...</b> <br/>
 <ul>
-<li>用來在完成動作之前收集所需的其他資訊。</li>
+<li>在完成動作之前收集所需的其他資訊。</li>
 <li>顯示僅在某些情況下有關聯的資訊。 例如，在影像中心 App 中，當使用者按一下影像縮圖時，您可以使用飛出視窗顯示該影像的大尺寸版本。</li>
-<li>顯示詳細資訊，例如頁面上項目的詳細資料或較長的描述。</li>
+<li>顯示詳細資訊，例如頁面上項目的詳細資料或較長描述。</li>
 </ul></p>
 
 ## <a name="ways-to-avoid-using-dialogs-and-flyouts"></a>避免使用對話方塊與飛出視窗的方法

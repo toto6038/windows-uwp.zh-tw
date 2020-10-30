@@ -1,5 +1,5 @@
 ---
-Description: 本節顯示如何製作、封裝及使用您應用程式的字串、影像和檔案資源。
+description: 本節顯示如何製作、封裝及使用您應用程式的字串、影像和檔案資源。
 title: 應用程式資源和資源管理系統
 label: Intro
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 10/20/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: cb64294710ca1d28c11308161665e72e37342193
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3d6b23284c24de4b611301668c52894b57ed2500
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174092"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031801"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>應用程式資源和資源管理系統
 
