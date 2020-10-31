@@ -5,12 +5,12 @@ ms.date: 06/26/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d4ec2c3d849833b4a1673c4a4f425f32c42d00f
-ms.sourcegitcommit: 662fcfdc08b050947e289a57520a2f99fad1a620
+ms.openlocfilehash: 339a154c3acf39c4f574d22907cf697db658552b
+ms.sourcegitcommit: 74c2c878b9dbb92785b89f126359c3f069175af2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91353758"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93122399"
 ---
 # <a name="bluetooth-gatt-client"></a>藍牙 GATT 用戶端
 
@@ -23,7 +23,7 @@ ms.locfileid: "91353758"
 - 訂閱特性值變更時的通知
 
 > [!Important]
-> 您必須在 *package.appxmanifest*中宣告「藍牙」功能。
+> 您必須在 *package.appxmanifest* 中宣告「藍牙」功能。
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
@@ -52,7 +52,11 @@ ms.locfileid: "91353758"
 
 為方便起見，藍牙 SIG 會保持一份可用的[公用設定檔清單](https://www.bluetooth.com/specifications/adopted-specifications#gattspec)。
 
-## <a name="query-for-nearby-devices"></a>查詢附近的裝置
+## <a name="examples"></a>範例
+
+如需完整範例，請參閱 [藍牙低能量範例](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BluetoothLE)。
+
+### <a name="query-for-nearby-devices"></a>查詢附近的裝置
 
 有兩種主要方法可查詢附近的裝置︰
 
@@ -89,7 +93,7 @@ deviceWatcher.Start();
 
 啟動 DeviceWatcher 之後，就會收到每個符合查詢之裝置的[DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)，而查詢位於有問題裝置中 [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added)事件的處理常式。 若要更詳細地查看 DeviceWatcher，請參閱 [Github](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) 上的完整範例。
 
-## <a name="connecting-to-the-device"></a>連接至裝置
+### <a name="connecting-to-the-device"></a>連接至裝置
 
 探索到想要的裝置之後，請使用[DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id)取得有問題裝置的藍牙 LE 裝置物件︰
 
@@ -111,14 +115,14 @@ bluetoothLeDevice.Dispose();
 如果應用程式需要再次存取裝置，則只有重新建立裝置物件以及存取特性 (在下一節討論) 才會觸發作業系統在必要時重新連接。 如果裝置在附近，您會取得裝置的存取權，否則會傳回 DeviceUnreachable 錯誤。  
 
 > [!NOTE]
-> 單獨呼叫這個方法來建立 [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) 物件，並不 (一定) 起始連接。 若要起始連線，請將 [GattSession MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) 至 `true` ，或在 **BluetoothLEDevice**上呼叫未快取的服務探索方法，或對裝置執行讀取/寫入作業。
+> 單獨呼叫這個方法來建立 [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) 物件，並不 (一定) 起始連接。 若要起始連線，請將 [GattSession MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) 至 `true` ，或在 **BluetoothLEDevice** 上呼叫未快取的服務探索方法，或對裝置執行讀取/寫入作業。
 >
 > - 如果 **GattSession** 是設定為 true，則系統會無限期等候連線，而且會在裝置可用時連線。 您的應用程式不需要等待，因為 **GattSession MaintainConnection** 是屬性。
 > - 針對服務探索和 GATT 中的讀取/寫入作業，系統會等待有限但可變的時間。 從瞬間到幾分鐘的任何事物。 因素會包含堆疊上的流量，以及佇列要求的方式。 如果沒有其他擱置的要求，而且無法連線到遠端裝置，系統會在此時間之前等候七 (7) 秒。如果有其他暫止的要求，則佇列中的每個要求都可能需要七 (7) 秒來處理，因此，您可以將其他要求放到佇列的最後面，您將會等待較久的時間。
 >
 > 您目前無法取消連接處理常式。
 
-## <a name="enumerating-supported-services-and-characteristics"></a>列舉支援的服務和特性
+### <a name="enumerating-supported-services-and-characteristics"></a>列舉支援的服務和特性
 
 既然您已經有 BluetoothLEDevice 物件, 下一步就是找出裝置所公開的資料。 要這樣做的第一個步驟是查詢服務︰
 
@@ -146,7 +150,7 @@ if (result.Status == GattCommunicationStatus.Success)
 
 作業系統會傳回接著可對其執行作業之 GattCharacteristic 物件的 ReadOnly 清單。
 
-## <a name="perform-readwrite-operations-on-a-characteristic"></a>對特性執行讀取/寫入作業
+### <a name="perform-readwrite-operations-on-a-characteristic"></a>對特性執行讀取/寫入作業
 
 特性是以 GATT 為基礎之通訊的基本單位。 它包含的值代表裝置上資料的不同部分。 例如，電池電量特性的值代表裝置的電池電量。
 
@@ -196,13 +200,13 @@ if (result == GattCommunicationStatus.Success)
 }
 ```
 
-> **秘訣**：當使用您從許多藍牙 api 取得的原始緩衝區時，會不可或缺 [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [>datawriter](/uwp/api/windows.storage.streams.datawriter) 。
+> **秘訣** ：當使用您從許多藍牙 api 取得的原始緩衝區時，會不可或缺 [DataReader](/uwp/api/windows.storage.streams.datareader) 和 [>datawriter](/uwp/api/windows.storage.streams.datawriter) 。
 
-## <a name="subscribing-for-notifications"></a>訂閱通知
+### <a name="subscribing-for-notifications"></a>訂閱通知
 
 請確定特性支援 Indicate 或 Notify (檢查特性屬性予以確定)。
 
-> **此外**︰Indicate 視為更可靠，因為每個值 changed 事件都會搭配來自用戶端裝置的通知。 Notify 較為普遍，因為大部分 GATT 交易都會想要節省電源，而不是額外可靠。 在任何情況下，所有這些作業都是在控制器層級處理，應用程式並不會涉入。 我們將它們通稱為「通知」，而現在您也知道了。
+> **此外** ︰Indicate 視為更可靠，因為每個值 changed 事件都會搭配來自用戶端裝置的通知。 Notify 較為普遍，因為大部分 GATT 交易都會想要節省電源，而不是額外可靠。 在任何情況下，所有這些作業都是在控制器層級處理，應用程式並不會涉入。 我們將它們通稱為「通知」，而現在您也知道了。
 
 取得通知之前，需要注意兩個事項︰
 
@@ -235,3 +239,4 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
     // Parse the data however required.
 }
 ```
+
