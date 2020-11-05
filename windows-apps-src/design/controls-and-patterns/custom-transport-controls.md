@@ -1,5 +1,5 @@
 ---
-Description: 媒體播放器具有可自訂的 XAML 傳輸控制項，以管理音訊和視訊內容的控制項。
+description: 媒體播放器具有可自訂的 XAML 傳輸控制項，以管理音訊和視訊內容的控制項。
 title: 建立自訂媒體傳輸控制項
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fc68410a0e68d1c642057664bc9641669282bd7f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3329ea23c831b1bd91955013f0bdedcbbd08aa34
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219541"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032931"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -21,7 +21,7 @@ ms.locfileid: "91219541"
 
 MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理 Windows 應用程式內音訊和視訊內容的控制項。 在這裡，我們將示範如何自訂 MediaTransportControls 範本。 我們將說明如何使用溢位功能表、新增自訂按鈕，以及修改滑桿。
 
-> **重要 API**：[MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaPlayerElement.AreTransportControlsEnabled](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)、[MediaTransportControls](/uwp/api/Windows.Media.SystemMediaTransportControls)
+> **重要 API** ： [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、 [MediaPlayerElement.AreTransportControlsEnabled](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled)、 [MediaTransportControls](/uwp/api/Windows.Media.SystemMediaTransportControls)
 
 開始之前，您應該先熟悉 MediaPlayerElement 和 MediaTransportControls 類別。 如需詳細資訊，請參閱＜MediaPlayerElement 控制項指南＞。
 
@@ -29,7 +29,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理 Windows �
 > 本主題中的範例是以[媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)為基礎。 您可以下載範例來檢視及執行完整的程式碼。
 
 > [!NOTE]
-> **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 此頁面上的所有範例也適用於 **MediaElement**。
+> **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 此頁面上的所有範例也適用於 **MediaElement** 。
 
 ## <a name="when-should-you-customize-the-template"></a>您何時應該自訂範本？
 
@@ -57,7 +57,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理 Windows �
 - 第三個區段包含 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid)，其可一併容納各種 MediaTransportControls 元素，並定義元件的版面配置方式。
 
 > [!NOTE]
-> 如需修改範本的詳細資訊，請參閱[控制項範本](./control-templates.md)。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 (\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
+> 如需修改範本的詳細資訊，請參閱[控制項範本](./control-templates.md)。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 (\(*Program Files* )\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\( *SDK version* )\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
 
 在下列各節中，您將了解如何為傳輸控制項自訂數個主要元素：
 - [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider)：允許使用者拖曳他們的媒體，同時顯示進度

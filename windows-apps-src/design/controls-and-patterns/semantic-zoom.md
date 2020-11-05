@@ -1,5 +1,5 @@
 ---
-Description: 語意式縮放控制項可以讓使用者在相同資料集的兩個不同語意式檢視間縮放。
+description: 語意式縮放控制項可以讓使用者在相同資料集的兩個不同語意式檢視間縮放。
 title: 語意式縮放
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
@@ -11,12 +11,12 @@ pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f2fea27bf44e2e7f199c6c04f045f2cda6663315
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c945fe25807dcdfa556d7dc9b971b5429b4bcfc8
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174442"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035181"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -29,9 +29,9 @@ ms.locfileid: "89174442"
 
 例如，使用者檢視通訊錄時，可縮小以快速跳到字母 "W"，然後放大該字母以查看與其相關的名稱。 
 
-> **重要 API**：[SemanticZoom 類別](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、[ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 類別](/uwp/api/Windows.UI.Xaml.Controls.GridView)
+> **重要 API** ： [SemanticZoom 類別](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom)、 [ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [GridView 類別](/uwp/api/Windows.UI.Xaml.Controls.GridView)
 
-**功能**：
+**功能** ：
 
 -   縮小檢視的大小受限於語意式縮放控制項的範圍。
 -   點選群組標題會切換檢視。 可以啟用捏合在檢視之間切換。

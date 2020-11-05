@@ -1,5 +1,5 @@
 ---
-Description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
+description: 對話方塊和飛出視窗會在使用者要求暫時性 UI 元素，或發生需要通知或核准的情況時顯示暫時性 UI 元素。
 title: 飛出視窗控制項
 template: detail.hbs
 ms.date: 09/24/2020
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: cfe7d7cb435437a4a2601db1fdf69650521001cc
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: fd725407e8b8a8972bb9d1acee2c6b699f51ce20
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750484"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034561"
 ---
 # <a name="flyouts"></a>飛出視窗
 
@@ -161,7 +161,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ## <a name="styling-flyouts-for-10-foot-experiences"></a>設定 10 英呎體驗的飛出視窗樣式
 
-像飛出視窗這樣的消失關閉控制項會將鍵盤和遊戲台焦點圈限在暫時性 UI 內，直到控制項關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的對比度和可見度變暗。 此行為可以使用 [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) 屬性進行修改。 根據預設，飛出視窗將會在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律為 **On** 或一律為 **Off**。
+像飛出視窗這樣的消失關閉控制項會將鍵盤和遊戲台焦點圈限在暫時性 UI 內，直到控制項關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的對比度和可見度變暗。 此行為可以使用 [`LightDismissOverlayMode`](/uwp/api/Windows.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode) 屬性進行修改。 根據預設，飛出視窗將會在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律為 **On** 或一律為 **Off** 。
 
 ![包含變暗重疊的飛出視窗](../images/flyout-smoke.png)
 

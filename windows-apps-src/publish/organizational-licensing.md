@@ -1,17 +1,17 @@
 ---
-Description: 您可以透過商務用 Microsoft 網上商店和教育用 Microsoft 網上商店，在應用程式提交的 [組織授權] 區段中，指出您的應用程式是否可以大量購買及其方式。
+description: 您可以透過商務用 Microsoft 網上商店和教育用 Microsoft 網上商店，在應用程式提交的 [組織授權] 區段中，指出您的應用程式是否可以大量購買及其方式。
 title: 組織授權選項
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 商務用 store, 教育用 store, 組織, 大量授權, 企業版, 教育 store, 商務 store, 大量購買, 大量
 localizationpriority: high
-ms.openlocfilehash: f572a09c488cfff391fead603612148b6a85bc02
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: dbaf44409e387d15225e701ef5c64fc2cb198ece
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174742"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034621"
 ---
 # <a name="organizational-licensing-options"></a>組織授權選項
 

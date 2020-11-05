@@ -1,5 +1,5 @@
 ---
-Description: 了解如何實作向後瀏覽，以便周遊 Windows 應用程式內使用者的瀏覽歷程記錄。
+description: 了解如何實作向後瀏覽，以便周遊 Windows 應用程式內使用者的瀏覽歷程記錄。
 title: 瀏覽歷程記錄和向後瀏覽
 template: detail.hbs
 op-migration-status: ready
@@ -7,16 +7,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f87c02f726512f54830f8678fa8bbec5ecee4f
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 17303da53e7822be2e4984e6b852664c63c0919c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763043"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030991"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 應用程式的瀏覽歷程記錄和向後瀏覽
 
-> **重要 API**：[BackRequested 事件](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、[SystemNavigationManager 類別](/uwp/api/Windows.UI.Core.SystemNavigationManager)、[OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
+> **重要 API** ： [BackRequested 事件](/uwp/api/Windows.UI.Core.SystemNavigationManager.BackRequested)、 [SystemNavigationManager 類別](/uwp/api/Windows.UI.Core.SystemNavigationManager)、 [OnNavigatedTo](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto#Windows_UI_Xaml_Controls_Page_OnNavigatedTo_Windows_UI_Xaml_Navigation_NavigationEventArgs_)
 
 Windows 應用程式提供一致的返回瀏覽系統，以周遊使用者在應用程式內及應用程式之間 (視裝置而定) 的瀏覽歷程記錄。
 
@@ -286,9 +286,9 @@ bool App::On_BackRequested()
 
 此向後瀏覽設計指導方針適用於所有裝置，但不同的裝置和外形規格可能因最佳化而受惠。 這也取決於不同殼層支援的硬體返回按鈕。
 
-- **手機/平板電腦**：硬體或軟體返回按鈕一律顯示在行動電話和平板電腦上，但我們建議另設應用程式內返回按鈕以便清楚說明。
-- **桌面/中心**：在應用程式 UI 左上角設置應用程式內返回按鈕。
-- **Xbox/電視**：不設置返回按鈕，因為這樣會增添不必要的 UI 混雜度。 改用遊戲台 B 按鈕向後瀏覽。
+- **手機/平板電腦** ：硬體或軟體返回按鈕一律顯示在行動電話和平板電腦上，但我們建議另設應用程式內返回按鈕以便清楚說明。
+- **桌面/中心** ：在應用程式 UI 左上角設置應用程式內返回按鈕。
+- **Xbox/電視** ：不設置返回按鈕，因為這樣會增添不必要的 UI 混雜度。 改用遊戲台 B 按鈕向後瀏覽。
 
 如果您的應用程式將在多個裝置上執行，[為 Xbox 建立自訂的視覺化觸發程序](../devices/designing-for-tv.md#custom-visual-state-trigger-for-xbox)以切換按鈕的可見性。 如果您的應用程式在 Xbox 上執行，NavigationView 控制項會自動切換返回按鈕的可見性。 
 

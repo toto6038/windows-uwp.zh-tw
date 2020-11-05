@@ -1,17 +1,17 @@
 ---
-Description: TwoPaneView 是一種版面配置控制項，可協助您管理具有 2 個不同內容區域的應用程式顯示。
+description: TwoPaneView 是一種版面配置控制項，可協助您管理具有 2 個不同內容區域的應用程式顯示。
 title: 兩個窗格檢視
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 681405694880024e158b4ef5798ca2862a38fde2
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750224"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034431"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
 
@@ -23,7 +23,7 @@ ms.locfileid: "91750224"
 雖然它適用於所有 Windows 裝置，但是 TwoPaneView 控制項的設計目的是協助您自動充分利用雙螢幕裝置，而不需要特殊的編碼。 在雙螢幕裝置上，兩個窗格檢視可確保使用者介面 (UI) 在跨越螢幕之間的間隙時清楚地分割，如此一來，您的內容就會顯示在間距的任一側。
 
 > [!NOTE]
-> _雙螢幕裝置_是一種特殊裝置，具有獨特的功能。 這不等同於具有多個監視器的桌面裝置。 如需雙螢幕裝置的詳細資訊，請參閱[雙螢幕裝置簡介](/dual-screen/introduction)。 (如需您可以針對多個監視器最佳化應用程式的方式詳細資訊，請參閱[顯示多重檢視](../layout/show-multiple-views.md)。)
+> _雙螢幕裝置_ 是一種特殊裝置，具有獨特的功能。 這不等同於具有多個監視器的桌面裝置。 如需雙螢幕裝置的詳細資訊，請參閱[雙螢幕裝置簡介](/dual-screen/introduction)。 (如需您可以針對多個監視器最佳化應用程式的方式詳細資訊，請參閱[顯示多重檢視](../layout/show-multiple-views.md)。)
 
 **取得 Windows UI 程式庫**
 
@@ -102,7 +102,7 @@ ms.locfileid: "91750224"
 
 雙窗格檢視的每個窗格分別可包含單一 XAML `UIElement`。 若要新增內容，您通常會在每個窗格中放置 XAML 版面配置面板，然後將其他控制項和內容新增至面板。 窗格可以變更大小，並且在寬和高模式之間切換，因此您必須確定每個窗格中的內容都可以適應這些變更。 如需有關建立調適型 UI 的詳細資訊，請參閱[搭配 XAML 的回應式版面配置](../layout/layouts-with-xaml.md)和[版面配置面板](../layout/layout-panels.md)。
 
-此範例會建立先前顯示於_範例_一節中的簡單圖片/資訊應用程式 UI。 當應用程式跨雙螢幕時，圖片和資訊會顯示在不同的螢幕上。 在單一螢幕上，內容可顯示在兩個窗格中，或結合成單一窗格，視可用的空間量而定。 (當只有一個窗格的空間時，您會將 Pane2 的內容移至 Pane1，並且讓使用者捲動以查看任何隱藏的內容。 您稍後會在_回應模式變更_一節中看到這個部分的程式碼。)
+此範例會建立先前顯示於 _範例_ 一節中的簡單圖片/資訊應用程式 UI。 當應用程式跨雙螢幕時，圖片和資訊會顯示在不同的螢幕上。 在單一螢幕上，內容可顯示在兩個窗格中，或結合成單一窗格，視可用的空間量而定。 (當只有一個窗格的空間時，您會將 Pane2 的內容移至 Pane1，並且讓使用者捲動以查看任何隱藏的內容。 您稍後會在 _回應模式變更_ 一節中看到這個部分的程式碼。)
 
 ![跨雙螢幕的範例應用程式的小影像](images/two-pane-view/tpv-left-right.png)
 
@@ -186,7 +186,7 @@ ms.locfileid: "91750224"
 
 ### <a name="specify-which-pane-to-display"></a>指定要顯示的窗格
 
-當兩個窗格檢視只能顯示單一窗格時，它會使用 [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) 屬性來決定要顯示哪一個窗格。 根據預設，PanePriority 會設定為 **Pane1**。 以下是您可以在 XAML 或程式碼中設定此屬性的方式。
+當兩個窗格檢視只能顯示單一窗格時，它會使用 [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) 屬性來決定要顯示哪一個窗格。 根據預設，PanePriority 會設定為 **Pane1** 。 以下是您可以在 XAML 或程式碼中設定此屬性的方式。
 
 ```xaml
 <muxc:TwoPaneView x:Name="MyTwoPaneView" PanePriority="Pane2">
@@ -198,7 +198,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>調整窗格大小
 
-在單一螢幕上，窗格的大小取決於 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 屬性。 這些屬性會使用 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值，支援_自動_和_星號_(\*)調整大小。 如需自動和以星號調整大小的說明，請參閱[搭配 XAML 的回應式版面配置](../layout/layouts-with-xaml.md#layout-properties)的_版面配置屬性_一節。
+在單一螢幕上，窗格的大小取決於 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 屬性。 這些屬性會使用 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值，支援 _自動_ 和 _星號_ (\*)調整大小。 如需自動和以星號調整大小的說明，請參閱 [搭配 XAML 的回應式版面配置](../layout/layouts-with-xaml.md#layout-properties)的 _版面配置屬性_ 一節。
 
 根據預設，`Pane1Length` 會設定為 `Auto`，而且會自行調整大小以符合其內容。 `Pane2Length` 會設定為 `*`，且會使用所有剩餘的空間。
 
@@ -235,7 +235,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 
 > [!NOTE]
-> 如前所述，當應用程式跨雙螢幕時，將會忽略這些屬性，而根據裝置_狀態_來決定顯示模式。
+> 如前所述，當應用程式跨雙螢幕時，將會忽略這些屬性，而根據裝置 _狀態_ 來決定顯示模式。
 
 #### <a name="wide-configuration-options"></a>寬設定選項
 

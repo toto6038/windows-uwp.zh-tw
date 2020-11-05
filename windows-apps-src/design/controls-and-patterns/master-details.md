@@ -1,5 +1,5 @@
 ---
-Description: 主要/詳細資料模式會顯示主要清單和目前所選項目的詳細資料。 這個模式通常用於電子郵件和連絡人清單/通訊錄。
+description: 主要/詳細資料模式會顯示主要清單和目前所選項目的詳細資料。 這個模式通常用於電子郵件和連絡人清單/通訊錄。
 title: 主要/詳細資料
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 60cd7eaa9e5ef317641e105004f2456e82ee48ca
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 605d42417145b9f6ecc8f71a0191afe6049de9c5
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219981"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034521"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -21,7 +21,7 @@ ms.locfileid: "91219981"
 
 主要/詳細資料模式具有一個主要窗格 (通常會有一個[清單檢視](lists.md)) 和內容的詳細資料窗格。 當選取主要清單中的項目時，會更新詳細資料窗格。 這個模式經常用於電子郵件和通訊錄。
 
-> **重要 API**：[ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](/uwp/api/windows.ui.xaml.controls.splitview)
+> **重要 API** ： [ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [SplitView 類別](/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "91219981"
 | 320 epx-640 epx        | 堆疊           |
 | 641 epx 或更寬       | 並存      |
 
- 
+ 
 ## <a name="stacked-style"></a>堆疊樣式
 
 在堆疊樣式中，一次只能看到一個檢視：主要或詳細資料檢視。
@@ -62,7 +62,7 @@ ms.locfileid: "91219981"
 
 對於主要檢視頁面，[清單檢視](lists.md)控制項很適合用來呈現可以包含影像及文字的清單。 
 
-對於詳細資料檢視頁面，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置來將元素排列成表單。
+對於詳細資料檢視頁面，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用 **格線** 配置來將元素排列成表單。
 
 如需在頁面之間瀏覽，請參閱[適用於 Windows 應用程式的瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
 
@@ -82,7 +82,7 @@ ms.locfileid: "91219981"
 
 針對主要窗格，[清單檢視](lists.md)能夠用於呈現可以包含影像和文字的清單。
 
-對於詳細資料內容，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用**格線**配置來將元素排列成表單。
+對於詳細資料內容，請使用最適合的[內容元素](../layout/layout-panels.md)。 如果您有許多個別的欄位，請考慮使用 **格線** 配置來將元素排列成表單。
 
 ## <a name="adaptive-layout"></a>調適型配置
 

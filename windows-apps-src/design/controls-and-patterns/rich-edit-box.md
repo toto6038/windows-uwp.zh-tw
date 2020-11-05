@@ -1,5 +1,5 @@
 ---
-Description: 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 true，使 RichEditBox 變成唯讀。
+description: 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 true，使 RichEditBox 變成唯讀。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
@@ -11,16 +11,16 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ff0b8cc337c8afe3d7c06ffabca4eb0fa0d5a8d
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: bb5ee48152b96c430e3b6ab8cf320b3055620865
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750324"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035211"
 ---
 # <a name="rich-edit-box"></a>Rich Edit 方塊
 
-您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true**，使 RichEditBox 變成唯讀。
+您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true** ，使 RichEditBox 變成唯讀。
 
 **取得 Windows UI 程式庫**
 
@@ -36,7 +36,7 @@ ms.locfileid: "91750324"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[RichEditBox 類別](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) \(英文\)、[Document 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.document) \(英文\)、[IsReadOnly 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly) \(英文\)、[IsSpellCheckEnabled 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) \(英文\)
+> **平台 API** ： [RichEditBox 類別](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox) \(英文\)、 [Document 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.document) \(英文\)、 [IsReadOnly 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly) \(英文\)、 [IsSpellCheckEnabled 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -69,7 +69,7 @@ ms.locfileid: "91750324"
 
 ## <a name="create-a-rich-edit-box"></a>建立 Rich Edit 方塊
 
-根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](text-controls.md)文章。
+根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled) 屬性設為 **false** 。 如需詳細資訊，請參閱[拼字檢查的指導方針](text-controls.md)文章。
 
 您可以使用 RichEditBox 的 [Document](/uwp/api/windows.ui.xaml.controls.richeditbox.document) 屬性取得其內容。 RichEditBox 的內容是 [Windows.UI.Text.ITextDocument](/windows/desktop/api/tom/nn-tom-itextdocument) 物件，與使用[Windows.UI.Xaml.Documents.Block](/uwp/api/Windows.UI.Xaml.Documents.Block) 物件做為其內容的 RichTextBlock 控制項不同。 ITextDocument 介面提供的方法可載入文件並儲存為資料流、抓取文字範圍、取得使用中的選取項目、復原和重做變更、設定預設格式化屬性等等。
 

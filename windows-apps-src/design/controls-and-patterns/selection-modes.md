@@ -1,5 +1,5 @@
 ---
-Description: 選取模式可讓使用者選取一或多個項目，並且採取動作。
+description: 選取模式可讓使用者選取一或多個項目，並且採取動作。
 title: 選取模式
 label: Selection mode
 template: detail.hbs
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b781e6074468fbe73446e4057e36ff31266d05
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: 1f3ec8d816ecd6de0cb08ca685a69cc693f4f47c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "72165095"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93035191"
 ---
 # <a name="selection-mode-overview"></a>選取模式概觀
 

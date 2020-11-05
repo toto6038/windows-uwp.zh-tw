@@ -1,5 +1,5 @@
 ---
-Description: 了解如何儲存及擷取本機、漫遊和暫存的應用程式資料。
+description: 了解如何儲存及擷取本機、漫遊和暫存的應用程式資料。
 title: 儲存及擷取設定和其他 app 資料
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
@@ -8,16 +8,16 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 642f49927a113a79e50dad52c1a73d32a1571fcb
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9f4736c598e18bc4f1225a7fa8e0488c3601420c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173942"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031461"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 
-*應用程式資料*是由特定應用程式所建立及管理的可變資料。 其中包含了執行階段狀態、應用程式設定、使用者喜好設定、參考內容 (如字典應用程式中的字典定義) 及其他設定。 app 資料不同於*使用者資料*，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
+*應用程式資料* 是由特定應用程式所建立及管理的可變資料。 其中包含了執行階段狀態、應用程式設定、使用者喜好設定、參考內容 (如字典應用程式中的字典定義) 及其他設定。 app 資料不同於 *使用者資料* ，後者是使用者在使用 app 時建立和管理的資料。 使用者資料包括文件或媒體檔案、電子郵件或通訊記錄，或保存使用者建立之內容的資料庫記錄。 使用者資料可能對於多個 app 都是實用或有意義的。 使用者資料通常是使用者想要當做與應用程式本身無關之實體來操作或傳送的資料 (如文件)。
 
 **有關此應用程式資料的重要注意事項：** App 資料的生命週期與 app 生命週期息息相關。 如果移除應用程式，所有應用程式資料也會隨之遺失。 請勿使用 app 資料來儲存使用者資料或使用者可能認為重要且無法取代的任何資料。 建議以使用者的媒體櫃和 Microsoft OneDrive 來儲存這類資訊。 app 資料適合儲存 app 特定的使用者喜好設定、各種設定值和我的最愛。
 
@@ -31,12 +31,12 @@ app 資料有兩種類型：設定和檔案。
 
 以下是可用於應用程式設定的資料類型：
 
-- **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
+- **UInt8** 、 **Int16** 、 **UInt16** 、 **Int32** 、 **UInt32** 、 **Int64** 、 **UInt64** 、 **Single** 、 **Double**
 - **布林值**
-- **Char16**、**String**
-- [**DateTime**](/uwp/api/Windows.Foundation.DateTime)、[**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
-    - 若為 C#/.NET，請使用：[**System.DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、[**System.TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
-- **GUID**、[**Point**](/uwp/api/Windows.Foundation.Point)、 [**Size**](/uwp/api/Windows.Foundation.Size)、[**Rect**](/uwp/api/Windows.Foundation.Rect)
+- **Char16** 、 **String**
+- [**DateTime**](/uwp/api/Windows.Foundation.DateTime)、 [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan)
+    - 若為 C#/.NET，請使用： [**System.DateTimeOffset**](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0)、 [**System.TimeSpan**](/dotnet/api/system.timespan?view=dotnet-uwp-10.0)
+- **GUID** 、 [**Point**](/uwp/api/Windows.Foundation.Point)、 [**Size**](/uwp/api/Windows.Foundation.Size)、 [**Rect**](/uwp/api/Windows.Foundation.Rect)
 - [**ApplicationDataCompositeValue**](/uwp/api/Windows.Storage.ApplicationDataCompositeValue)：一組必須個別序列化和還原序列化的相關應用程式設定。 使用複合設定，可以輕鬆管理不可部分完成的互相依存設定更新。 在並行存取和漫遊期間，系統可確保複合設定的完整性。 複合設定是針對少量資料最佳化，如果針對大型資料集使用複合設定，可能會拖慢系統效能。
 
 ### <a name="files"></a>檔案
@@ -132,7 +132,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在本機 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 與 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在本機 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 與 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -199,7 +199,7 @@ async void ReadTimestamp()
 
 開發人員可以鎖定自己的裝置以觸發應用程式資料漫遊同步處理。 如果應用程式資料似乎未在某個時間範圍內轉換，請檢查並確定下列項目：
 
-- 您的漫遊資料未超過大小上限 (如需詳細資訊，請參閱[**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota))。
+- 您的漫遊資料未超過大小上限 (如需詳細資訊，請參閱 [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota))。
 - 您的檔案已正確關閉並釋放。
 - 至少有兩個裝置執行相同的 app 版本。
 
@@ -296,7 +296,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在漫遊 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 與 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 這個範例會開啟上一節中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在漫遊 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 與 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 這個範例會開啟上一節中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()
@@ -345,7 +345,7 @@ async void WriteTimestamp()
 }
 ```
 
-若要在暫時的 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 及 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](/previous-versions/windows/apps/hh965322(v=win.10))。
+若要在暫時的 app 資料存放區中開啟和讀取檔案，請使用檔案 API，例如 [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync)、 [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) 及 [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync)。 這個範例會開啟上一個步驟中建立的 `dataFile.txt` 檔案，然後讀取該檔案的日期。 如需從各種位置載入檔案資源的詳細資料，請參閱[如何載入檔案資源](/previous-versions/windows/apps/hh965322(v=win.10))。
 
 ```csharp
 async void ReadTimestamp()

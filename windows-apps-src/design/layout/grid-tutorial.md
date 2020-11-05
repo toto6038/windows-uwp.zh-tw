@@ -1,5 +1,5 @@
 ---
-Description: 此教學課程將逐步解說如何建立基本的應用程式使用者介面。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。
+description: 此教學課程將逐步解說如何建立基本的應用程式使用者介面。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。
 title: 使用 Grid 與 StackPanel 建立簡單的應用程式。
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fa22f303f308b38a59a804604752712895b0ea0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 03b3a4342e4f464cb61cddc495ee5693570cd28b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219371"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034821"
 ---
 # <a name="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app"></a>教學課程：使用 Grid 與 StackPanel 建立簡單的天氣應用程式
 
 利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣 app。 有了這些工具，您便可製作外觀極佳的應用程式，且其可在任何執行 Windows 10 的裝置上運作。 完成本教學課程可能需要 10-20 分鐘。
 
-> **重要 API**：[Grid 類別](/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 類別](/uwp/api/windows.ui.xaml.controls.stackpanel)
+> **重要 API** ： [Grid 類別](/uwp/api/windows.ui.xaml.controls.grid)、 [StackPanel 類別](/uwp/api/windows.ui.xaml.controls.stackpanel)
 
 ## <a name="prerequisites"></a>必要條件
 - Windows 10 與 Microsoft Visual Studio 2015 或更新版本。 (建議使用最新的 Visual Studio 進行目前的開發和安全性更新) [按一下這裡以了解如何使用 Visual Studio 進行設定](../../get-started/get-set-up.md)。
@@ -28,13 +28,13 @@ ms.locfileid: "91219371"
 1. 在 Visual Studio 功能表中，選取 [檔案]   > [新增專案]  。
 2. 在 [新增專案]  對話方塊的左窗格中，選取 [Visual C#]   > [Windows]   > [通用]  或 [Visual C++]   > [Windows]   > [通用]  。
 3. 在中央窗格中，選取 [空白應用程式]  。
-4. 在 [名稱]  方塊中，輸入 **WeatherPanel**，然後選取 [確定]  。
+4. 在 [名稱]  方塊中，輸入 **WeatherPanel** ，然後選取 [確定]  。
 5. 若要執行程式，請從功能表中選取 [偵錯]   > [開始偵錯]  ，或選取 F5。
 
 ## <a name="step-2-define-a-grid"></a>步驟 2：定義 Grid
-在 XAML 中，**Grid** 是由一系列的列和欄所組成。 透過在 **Grid** 內指定元素的列與欄，您便可在使用者介面內放置及隔開其他元素。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
+在 XAML 中， **Grid** 是由一系列的列和欄所組成。 透過在 **Grid** 內指定元素的列與欄，您便可在使用者介面內放置及隔開其他元素。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
 
-若要開始建立版面配置，請使用 [方案總管]  來開啟 **MainPage.xaml**，然後使用此程式碼來取代自動產生的 **Grid** 元素。
+若要開始建立版面配置，請使用 [方案總管]  來開啟 **MainPage.xaml** ，然後使用此程式碼來取代自動產生的 **Grid** 元素。
 
 ```xml
 <Grid>
@@ -49,14 +49,14 @@ ms.locfileid: "91219371"
 </Grid>
 ```
 
-新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義 app 介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "2\*" 與 "\*"，因此，**Grid** 為第一列配置的空間為第二列的三倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
+新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義 app 介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "2\*" 與 "\*"，因此， **Grid** 為第一列配置的空間為第二列的三倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
 
 若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](./layouts-with-xaml.md)。
 
-如果您立即執行應用程式，就只會看見空白頁面，因為 **Grid** 區域中沒有任何內容。 為了顯示 **Grid**，我們將為它提供一些色彩。
+如果您立即執行應用程式，就只會看見空白頁面，因為 **Grid** 區域中沒有任何內容。 為了顯示 **Grid** ，我們將為它提供一些色彩。
 
 ## <a name="step-3-color-the-grid"></a>步驟 3：為 Grid 上色
-為了為 **Grid** 上色，我們新增了三個 **Border** 元素，每一個都有不同的背景色彩。 此外，也會使用 **Grid.Row** 和 **Grid.Column** 屬性，將每一個元素指派給父項 **Grid** 中的列與欄。 這些屬性的值均預設為 0，如此您就不需將它們指派給第一個 **Border**。 將下列程式碼新增到 **Grid** 元素的列與欄定義之後。
+為了為 **Grid** 上色，我們新增了三個 **Border** 元素，每一個都有不同的背景色彩。 此外，也會使用 **Grid.Row** 和 **Grid.Column** 屬性，將每一個元素指派給父項 **Grid** 中的列與欄。 這些屬性的值均預設為 0，如此您就不需將它們指派給第一個 **Border** 。 將下列程式碼新增到 **Grid** 元素的列與欄定義之後。
 
 ```xml
 <Border Background="#2f5cb6"/>
@@ -64,7 +64,7 @@ ms.locfileid: "91219371"
 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="#152951"/>
 ```
 
-請注意，我們針對第三個 **Border** 使用額外的屬性 **Grid.ColumnSpan**，這導致此 **Border** 會在較低的列中橫跨兩欄。 您可以透過相同方式來使用 **Grid.RowSpan**，而且一起使用這些屬性，可讓您在任意數目的列和欄上橫跨某個元素。 這類橫跨的左上角永遠是元素屬性中所指定的 **Grid.Column** 和 **Grid.Row** 。
+請注意，我們針對第三個 **Border** 使用額外的屬性 **Grid.ColumnSpan** ，這導致此 **Border** 會在較低的列中橫跨兩欄。 您可以透過相同方式來使用 **Grid.RowSpan** ，而且一起使用這些屬性，可讓您在任意數目的列和欄上橫跨某個元素。 這類橫跨的左上角永遠是元素屬性中所指定的 **Grid.Column** 和 **Grid.Row** 。
 
 如果您執行此應用程式，結果看起來就像這樣。
 

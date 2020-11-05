@@ -1,5 +1,5 @@
 ---
-Description: XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。
+description: XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -11,18 +11,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac4f7c7705fef0a3a7a1d556635e1c80e9c04a29
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 6da668c005f95d51f6fb0588f60fdcf63aea4fd7
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217208"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034421"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
 XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。 XAML 架構支援的佈景主題有 3 個："Light"、"Dark" 和 "HighContrast"。
 
-**必要條件**：本主題假設您已閱讀 [ResourceDictionary 與 XAML 資源參考](resourcedictionary-and-xaml-resource-references.md)。
+**必要條件** ：本主題假設您已閱讀 [ResourceDictionary 與 XAML 資源參考](resourcedictionary-and-xaml-resource-references.md)。
 
 ## <a name="theme-resources-v-static-resources"></a>佈景主題資源與 靜態資源
 
@@ -206,7 +206,7 @@ For many examples of how the brushes are used in the XAML control templates, see
 
 ## <a name="the-xaml-type-ramp"></a>XAML 字體坡形
 
-themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI 中文字容器的 [Style](/uwp/api/Windows.UI.Xaml.Style)，特別是針對 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 或 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)。 這些不是預設的隱含樣式。 提供這些資源是為了讓您更容易建立符合[字型的指導方針](../style/typography.md)中所記載之 *Windows 字體坡形*的 XAML UI 定義。
+themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI 中文字容器的 [Style](/uwp/api/Windows.UI.Xaml.Style)，特別是針對 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 或 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)。 這些不是預設的隱含樣式。 提供這些資源是為了讓您更容易建立符合 [字型的指導方針](../style/typography.md)中所記載之 *Windows 字體坡形* 的 XAML UI 定義。
 
 這些樣式是用於您想要套用到整個文字容器的文字屬性。 如果只想將樣式套用到文字的區段，請針對容器內的文字元素設定屬性，例如，[TextBlock.Inlines](/uwp/api/windows.ui.xaml.controls.textblock.inlines) 中的 [Run](/uwp/api/Windows.UI.Xaml.Documents.Run) 或 [RichTextBlock.Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 中的 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)。
 
@@ -228,7 +228,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
-**TargetType**：[TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+**TargetType** ： [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 為所有其他 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 容器樣式提供通用屬性。
 
@@ -338,7 +338,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
-**TargetType**：[RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
+**TargetType** ： [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)
 
 為所有其他 [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 容器樣式提供通用屬性。
 
@@ -375,7 +375,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-**注意**：  [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 樣式並沒有 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
+**注意** ：   [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) 樣式並沒有 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [TextBlock.Text](/uwp/api/windows.ui.xaml.controls.textblock.text) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
 
 ## <a name="miscellaneous-named-styles"></a>其他具名樣式
 
@@ -383,11 +383,11 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
-**TargetType**：[ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
+**TargetType** ： [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase)
 
-當您需要顯示使用者可按一下以採取動作的文字時，請將此樣式套用到 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。 文字的樣式是使用目前的輔色所設定，可區別出它是可互動，且具備適用於文字的焦點矩形。 與 [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隱含樣式不同，**TextBlockButtonStyle** 不會為文字加上底線。
+當您需要顯示使用者可按一下以採取動作的文字時，請將此樣式套用到 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。 文字的樣式是使用目前的輔色所設定，可區別出它是可互動，且具備適用於文字的焦點矩形。 與 [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 的隱含樣式不同， **TextBlockButtonStyle** 不會為文字加上底線。
 
-該範本也設定所顯示文字的樣式來使用 **SystemControlHyperlinkBaseMediumBrush** (適用於 "PointerOver" 狀態)、**SystemControlHighlightBaseMediumLowBrush** (適用於 "Pressed" 狀態) 以及 **SystemControlDisabledBaseLowBrush** (適用於 "Disabled" 狀態)。
+該範本也設定所顯示文字的樣式來使用 **SystemControlHyperlinkBaseMediumBrush** (適用於 "PointerOver" 狀態)、 **SystemControlHighlightBaseMediumLowBrush** (適用於 "Pressed" 狀態) 以及 **SystemControlDisabledBaseLowBrush** (適用於 "Disabled" 狀態)。
 
 以下是 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 與套用到它的 **TextBlockButtonStyle** 資源。
 
@@ -402,9 +402,9 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
-**TargetType**：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** ： [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
-這個 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供可做為瀏覽 app 之向後瀏覽按鈕的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 完整範本。 預設尺寸是 40 x 40 像素。 若要量身打造樣式，您可以在 **Button** 上明確設定 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、[Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、[FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) 及其他屬性，或者使用 [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) 建立衍生的樣式。
+這個 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供可做為瀏覽 app 之向後瀏覽按鈕的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 完整範本。 預設尺寸是 40 x 40 像素。 若要量身打造樣式，您可以在 **Button** 上明確設定 [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height)、 [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width)、 [FontSize](/uwp/api/windows.ui.xaml.controls.control.fontsize) 及其他屬性，或者使用 [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) 建立衍生的樣式。
 
 以下是已套用 **NavigationBackButtonNormalStyle** 資源的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)。
 
@@ -418,7 +418,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
-**TargetType**：[Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
+**TargetType** ： [Button](/uwp/api/Windows.UI.Xaml.Controls.Button)
 
 這個 [Style](/uwp/api/Windows.UI.Xaml.Style) 提供可做為瀏覽 app 之向後瀏覽按鈕的 [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) 完整範本。 與 **NavigationBackButtonNormalStyle** 類似，但尺寸是 30 x 30 像素。
 

@@ -1,5 +1,5 @@
 ---
-Description: 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。
+description: 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。
 title: 時間選擇器
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: ec500eaeb634e82342dcc6ac5a393c1d06969797
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 507ce20c97767af435634b3c4db8e9c7e97db729
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750634"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034701"
 ---
 # <a name="time-picker"></a>時間選擇器
  
@@ -40,7 +40,7 @@ ms.locfileid: "91750634"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[TimePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、[Time 屬性](/uwp/api/windows.ui.xaml.controls.timepicker.time)
+> **平台 API** ： [TimePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、 [Time 屬性](/uwp/api/windows.ui.xaml.controls.timepicker.time)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？

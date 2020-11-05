@@ -1,5 +1,5 @@
 ---
-Description: 使用範本來修改 ListView 或 GridView 控制項中的項目外觀。
+description: 使用範本來修改 ListView 或 GridView 控制項中的項目外觀。
 title: 項目容器與範本
 label: Item containers and templates
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 505e03124f345b8b32c6b3454ffa4aad32a72e29
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 74cacee6dc8ea7bec0af4e5ffab66b392a0f945c
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172752"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034681"
 ---
 # <a name="item-containers-and-templates"></a>項目容器與範本
 
@@ -25,7 +25,7 @@ ms.locfileid: "89172752"
 
 **ListView** 和 **GridView** 控制項可管理其項目的排列方式 (水平、垂直、換行等)，以及使用者與項目之間的互動方式，但不會管理個別項目在畫面上的顯示方式。 項目視覺效果是由項目容器所管理。 將項目新增到清單檢視時，會自動將它們放到容器中。 ListView 的預設項目容器是 [ListViewItem](/uwp/api/Windows.UI.Xaml.Controls.ListViewItem)；如果是 GridView，則是 [GridViewItem](/uwp/api/Windows.UI.Xaml.Controls.GridViewItem)。
 
-> **重要 API**：[ListView 類別](/uwp/api/windows.ui.xaml.controls.listview)、[GridView 類別](/uwp/api/windows.ui.xaml.controls.gridview)、[ListViewItem 類別](/uwp/api/windows.ui.xaml.controls.listviewitem)、[GridViewItem 類別](/uwp/api/windows.ui.xaml.controls.gridviewitem)、[ItemTemplate 屬性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、[ItemContainerStyle 屬性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+> **重要 API** ： [ListView 類別](/uwp/api/windows.ui.xaml.controls.listview)、 [GridView 類別](/uwp/api/windows.ui.xaml.controls.gridview)、 [ListViewItem 類別](/uwp/api/windows.ui.xaml.controls.listviewitem)、 [GridViewItem 類別](/uwp/api/windows.ui.xaml.controls.gridviewitem)、 [ItemTemplate 屬性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)、 [ItemContainerStyle 屬性](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)
 
 
 > [!NOTE]
@@ -38,7 +38,7 @@ ms.locfileid: "89172752"
 - **GridViewItems** - 項目通常圖形是方形，或至少是較細長的矩形。 項目是以影像為主，而且可能會在影像周圍出現或重疊顯示文字。 
 
 ## <a name="introduction-to-customization"></a>自訂簡介
-容器控制項 (例如 ListViewItem 和 GridViewItem) 是由兩個重要部分所組成，可結合來建立項目最終顯示的視覺效果：*資料範本*和*控制項範本*。
+容器控制項 (例如 ListViewItem 和 GridViewItem) 是由兩個重要部分所組成，可結合來建立項目最終顯示的視覺效果： *資料範本* 和 *控制項範本* 。
 
 - **資料範本** - 您會將 [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) 指派到清單檢視的 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) \(英文\) 屬性，以指定個別資料項目的顯示方式。
 - **控制項範本** - 控制項範本提供項目視覺效果的部分，此部分是由架構所負責 (例如視覺狀態)。 您可以使用 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) 屬性來修改控制項範本。 一般而言，這樣做可修改清單檢視色彩以符合您的品牌，或變更所選取項目的顯示方式。
@@ -90,9 +90,9 @@ ms.locfileid: "89172752"
 
 ## <a name="the-data"></a>資料
 
-在更深入查看如何於清單檢視中顯示資料項目之前，我們需要了解所顯示的資料。 在這個範例中，我們會建立名為 `NamedColor` 的資料類型。 它結合了色彩名稱、色彩值及色彩的 **SolidColorBrush**，它會公開為 3 個屬性︰`Name`、`Color` 及 `Brush`。
+在更深入查看如何於清單檢視中顯示資料項目之前，我們需要了解所顯示的資料。 在這個範例中，我們會建立名為 `NamedColor` 的資料類型。 它結合了色彩名稱、色彩值及色彩的 **SolidColorBrush** ，它會公開為 3 個屬性︰`Name`、`Color` 及 `Brush`。
  
-我們接著會針對 [Colors](/uwp/api/windows.ui.colors) \(英文\) 類別中的每個具名色彩，填入具有 `NamedColor` 物件的 **List**。 此清單會設為清單檢視的 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)。
+我們接著會針對 [Colors](/uwp/api/windows.ui.colors) \(英文\) 類別中的每個具名色彩，填入具有 `NamedColor` 物件的 **List** 。 此清單會設為清單檢視的 [ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)。
 
 以下程式碼可定義類別並填入 `NamedColors` 清單。
 
@@ -179,7 +179,7 @@ namespace ColorsListApp
 您通常會想要以更多樣化的表示方式顯示資料。 為了明確指定項目在清單檢視中的顯示方式，您需要建立一個 [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義靜態內容。 將 DataTemplate 指派給清單控制項的 [ItemTemplate](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate) 屬性。
 
 > [!IMPORTANT]
-> 您無法同時使用 **ItemTemplate** 和 **DisplayMemberPath**。 如果同時設定這兩個屬性，就會發生例外狀況。
+> 您無法同時使用 **ItemTemplate** 和 **DisplayMemberPath** 。 如果同時設定這兩個屬性，就會發生例外狀況。
 
 您要在這裡定義 DataTemplate，在項目色彩中顯示 [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle)，以及色彩名稱和 RGB 值。 
 
@@ -328,9 +328,9 @@ namespace ColorsListApp
 ListView 和 GridView 控制項已最佳化，可減少針對每個項目所建立的 XAML 元素數目。 **ListViewItem** 視覺效果是由 [ListViewItemPresenter](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter) \(英文\) 所建立，其為特殊的 XAML 元素，能針對焦點、選取項目和其他視覺效果狀態顯示複雜的視覺效果，而不會有許多 UIElement 所帶來的額外負荷。
  
 > [!NOTE]
-> 在適用於 Windows 10 的 UWP 應用程式中，**ListViewItem** 和 **GridViewItem** 都會使用**ListViewItemPresenter**；GridViewItemPresenter 已過時，因此您不應該使用它。 ListViewItem 和 GridViewItem 會在 ListViewItemPresenter 上設定不同的屬性值，以實現不同的預設外觀。
+> 在適用於 Windows 10 的 UWP 應用程式中， **ListViewItem** 和 **GridViewItem** 都會使用 **ListViewItemPresenter** ；GridViewItemPresenter 已過時，因此您不應該使用它。 ListViewItem 和 GridViewItem 會在 ListViewItemPresenter 上設定不同的屬性值，以實現不同的預設外觀。
 
-若要修改項目容器的外觀，請使用 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) \(英文\) 屬性，並提供 [Style](/uwp/api/windows.ui.xaml.style) \(英文\) 且將其 [TargetType](/uwp/api/windows.ui.xaml.style.targettype) \(英文\) 設為 **ListViewItem** 或 **GridViewItem**。
+若要修改項目容器的外觀，請使用 [ItemContainerStyle](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle) \(英文\) 屬性，並提供 [Style](/uwp/api/windows.ui.xaml.style) \(英文\) 且將其 [TargetType](/uwp/api/windows.ui.xaml.style.targettype) \(英文\) 設為 **ListViewItem** 或 **GridViewItem** 。
 
 在這個範例中，您要在ListViewItem 中加入邊框間距，在清單的項目之間建立一些空間。
 
@@ -426,12 +426,12 @@ ListView 和 GridView 控制項已最佳化，可減少針對每個項目所建�
 
 ListView 和 GridView 會根據控制項和 [SelectionMode](/uwp/api/windows.ui.xaml.controls.listviewbase.selectionmode)，以不同方式指出所選取的項目。 如需清單檢視選取的詳細資訊，請參閱 [ListView 與 GridView](listview-and-gridview.md)。 
 
-當 **SelectionMode** 設為 **Multiple**，選取核取方塊就會顯示為項目控制項範本的一部分。 您可以使用 [SelectionCheckMarkVisualEnabled](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 屬性，來關閉 Multiple 選取模式中的選取核取方塊。 不過，這個屬性在其他選取模式中會被忽略，因此您無法在 Extended 或 Single 選取模式中開啟此核取方塊。
+當 **SelectionMode** 設為 **Multiple** ，選取核取方塊就會顯示為項目控制項範本的一部分。 您可以使用 [SelectionCheckMarkVisualEnabled](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) 屬性，來關閉 Multiple 選取模式中的選取核取方塊。 不過，這個屬性在其他選取模式中會被忽略，因此您無法在 Extended 或 Single 選取模式中開啟此核取方塊。
 
 您可以設定 [CheckMode](/uwp/api/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode) 屬性，以指定是否要使用內嵌樣式或重疊樣式來顯示核取方塊。
 
-- **Inline**：此樣式會在內容左邊顯示核取方塊，並將色彩加入項目容器的背景來表示選取。 這是 ListView 的預設樣式。
-- **Overlay**：此樣式會在內容上方顯示核取方塊，並只會將色彩加入項目容器的框線來表示選取。 這是 GridView 的預設樣式。
+- **Inline** ：此樣式會在內容左邊顯示核取方塊，並將色彩加入項目容器的背景來表示選取。 這是 ListView 的預設樣式。
+- **Overlay** ：此樣式會在內容上方顯示核取方塊，並只會將色彩加入項目容器的框線來表示選取。 這是 GridView 的預設樣式。
 
 下表顯示用來表示選取的預設視覺效果。
 
@@ -473,7 +473,7 @@ ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳�
 如先前所提及，項目範本中的 UIElement 數目會對清單檢視的效能產生顯著影響。 使用延伸的 XAML 範本取代 ListViewItemPresenter 可大幅增加元素計數，當您的清單檢視將顯示大量項目，或者需要顧慮到效能時，則不建議此做法。
 
 > [!NOTE]
-> 只有在清單檢視的 [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) \(英文\) 是 [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) \(英文\) 或 [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) \(英文\) 時，才支援 **ListViewItemPresenter**。 如果您變更 ItemsPanel 來使用 [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid)、[WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid) 或 [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel)，則項目範本會自動切換到延伸的 XAML 範本。 如需詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](../../debug-test-perf/optimize-gridview-and-listview.md)。
+> 只有在清單檢視的 [ItemsPanel](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) \(英文\) 是 [ItemsWrapGrid](/uwp/api/windows.ui.xaml.controls.itemswrapgrid) \(英文\) 或 [ItemsStackPanel](/uwp/api/windows.ui.xaml.controls.itemsstackpanel) \(英文\) 時，才支援 **ListViewItemPresenter** 。 如果您變更 ItemsPanel 來使用 [VariableSizedWrapGrid](/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid)、[WrapGrid](/uwp/api/windows.ui.xaml.controls.wrapgrid) 或 [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel)，則項目範本會自動切換到延伸的 XAML 範本。 如需詳細資訊，請參閱 [ListView 與 GridView UI 最佳化](../../debug-test-perf/optimize-gridview-and-listview.md)。
 
 若要自訂延伸的 XAML 範本，您需要在應用程式中建立它的複本，並將 **ItemContainerStyle** 屬性設為您的複本。
 

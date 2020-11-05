@@ -1,5 +1,5 @@
 ---
-Description: 使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
+description: 使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
 title: 標籤
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68b062dc4bd70c81b1b8b57808fad8e9c7498d75
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9c1dc878280b24424aa4bb20d5a1d6324838b127
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172612"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034541"
 ---
 # <a name="labels"></a>標籤
 
@@ -24,7 +24,7 @@ ms.locfileid: "89172612"
 
 標籤是控制項或一組相關控制項的名稱或標題。
 
-> **重要 API**：Header 屬性、[TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
+> **重要 API** ：Header 屬性、 [TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
 在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
@@ -53,6 +53,6 @@ ms.locfileid: "89172612"
 * [RichEditBox.Header 屬性](/uwp/api/windows.ui.xaml.controls.richeditbox.header)
 * [TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)
 
- 
+ 
 
- 
+ 

@@ -1,5 +1,5 @@
 ---
-Description: 想想我們每天多常閱讀電子郵件、書籍、路標、菜單價格、胎壓標記，或是街道柱子上張貼海報中的文字。
+description: 想想我們每天多常閱讀電子郵件、書籍、路標、菜單價格、胎壓標記，或是街道柱子上張貼海報中的文字。
 title: 文字控制項
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b06767e5009a4d7654fa7937498319a1bbed671
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: ca8facaa63f0eb4c99e518c2fafb0e87208b759d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173882"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033001"
 ---
 # <a name="text-controls"></a>文字控制項
 
@@ -25,7 +25,7 @@ ms.locfileid: "89173882"
 - 顯示唯讀文字的控制項是 [TextBlock](text-block.md) 與 [RichTextBlock](rich-text-block.md)。
 - 文字輸入和編輯的控制項為：[TextBox](text-box.md)、[RichEditBox](rich-edit-box.md)、[AutoSuggestBox](auto-suggest-box.md) 和 [PasswordBox](password-box.md)。
 
-> **重要 API**：[TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、[RichTextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、[TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[RichEditBox 類別](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、[AutoSuggestBox 類別](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、[PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
+> **重要 API** ： [TextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBlock)、 [RichTextBlock 類別](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock)、 [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、 [RichEditBox 類別](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox)、 [AutoSuggestBox 類別](/uwp/api/Windows.UI.Xaml.Controls.AutoSuggestBox)、 [PasswordBox 類別](/uwp/api/Windows.UI.Xaml.Controls.PasswordBox)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -39,7 +39,7 @@ TextBlock 通常很容易使用，並且提供較 RichTextBlock 更優異的文�
 
 其還提供許多可用來自訂您文字轉譯方式的相同格式設定選項。 儘管您可以在文字中放置分行符號，但 TextBlock 是針對顯示單一段落而設計，不支援文字縮排。
 
-當您需要支援多個段落、多欄文字或其他複雜的文字配置，或是內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock**。 RichTextBlock 提供數項適用於進階文字配置的功能。
+當您需要支援多個段落、多欄文字或其他複雜的文字配置，或是內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock** 。 RichTextBlock 提供數項適用於進階文字配置的功能。
 
 RichTextBlock 的內容屬性是 [Blocks](/uwp/api/windows.ui.xaml.controls.richtextblock.blocks) 屬性，此屬性透過 [Paragraph](/uwp/api/Windows.UI.Xaml.Documents.Paragraph) 元素支援以段落為基礎的文字。 它沒有您可以用來輕鬆存取 app 中控制項文字內容的 **Text** 屬性。  
 
@@ -135,7 +135,7 @@ RichTextBlock 的內容屬性是 [Blocks](/uwp/api/windows.ui.xaml.controls.rich
 
 當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 TextBox 或 RichEditBox) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
-例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
+例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number** 。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
 
 >重要  
 >輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
@@ -148,7 +148,7 @@ RichTextBlock 的內容屬性是 [Blocks](/uwp/api/windows.ui.xaml.controls.rich
 
 Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Emoji 字型會定義表情符號與其他 Emoji 字元的色彩版本。
 
-標準和 rtf 文字控制項支援顯示色彩字型。 根據預設，**IsColorFontEnabled** 屬性為 **true**，而具有這些額外色層的字型會以彩色方式轉譯。 系統上的預設色彩字型為 Segoe UI Emoji，而控制項會改為使用此字型來顯示彩色字符。
+標準和 rtf 文字控制項支援顯示色彩字型。 根據預設， **IsColorFontEnabled** 屬性為 **true** ，而具有這些額外色層的字型會以彩色方式轉譯。 系統上的預設色彩字型為 Segoe UI Emoji，而控制項會改為使用此字型來顯示彩色字符。
 
 ```xaml
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>

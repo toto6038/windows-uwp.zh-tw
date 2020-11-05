@@ -1,5 +1,5 @@
 ---
-Description: 超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。
+description: 超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。
 title: 超連結
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 471e17199d6a1858625ce418ea756d79cf8600f9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 90dfaa44205ac8eebfcb21227368e2daa492d3c4
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160132"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030561"
 ---
 # <a name="hyperlinks"></a>超連結
 
-超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式：**Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
+超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式： **Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
 
-> **平台 API**：[Hyperlink 文字元素](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)、[HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
+> **平台 API** ： [Hyperlink 文字元素](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink)、 [HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
 
 ![超連結按鈕](images/controls/hyperlink-button.png)
 
@@ -35,7 +35,7 @@ ms.locfileid: "89160132"
 根據您的需求選擇正確的超連結類型：
 
 -   使用文字控制項內的內嵌 **Hyperlink** 文字元素。 Hyperlink 元素會與其他文字元素一起流動，而且您可以在任何 InlineCollection 中使用它。 若您希望超連結會自動換行，且不需要大的點擊目標，請使用文字超連結。 超連結文字通常比較小且不易對準，特別是使用觸控時。
--   如果是獨立超連結，請使用 **HyperlinkButton**。 HyperlinkButton 是一個特殊 Button 控制項，可在要使用 Button 的任何位置使用。
+-   如果是獨立超連結，請使用 **HyperlinkButton** 。 HyperlinkButton 是一個特殊 Button 控制項，可在要使用 Button 的任何位置使用。
 -   使用具有 [Image](/uwp/api/windows.ui.xaml.controls.image) 的 **HyperlinkButton** 做為其內容，以設為可點選的影像。
 
 ## <a name="examples"></a>範例

@@ -1,5 +1,5 @@
 ---
-Description: 已封裝的傳統型應用程式可使用各種不同的 Windows 執行階段 API，即使它們尚未完全轉換為 UWP 應用程式。 本文列出您的已封裝應用程式可以使用的類別。
+description: 已封裝的傳統型應用程式可使用各種不同的 Windows 執行階段 API，即使它們尚未完全轉換為 UWP 應用程式。 本文列出您的已封裝應用程式可以使用的類別。
 title: Windows 執行階段 API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
 ms.date: 04/19/2019
 ms.topic: article
@@ -9,12 +9,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 419ffb348aa57183020c324fae3835074ac556ad
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 252ce5d39f09e957abed4f2629abc4d79580fab2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172712"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031141"
 ---
 # <a name="windows-runtime-apis-available-to-desktop-apps"></a>適用於傳統型應用程式的 Windows 執行階段 API
 
@@ -379,7 +379,7 @@ ms.locfileid: "89172712"
 
 ### <a name="apis-supported-in-all-desktop-applications"></a>所有傳統型應用程式均支援的 API
 
-所有傳統型應用程式都支援具有 [DualApiPartition](/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) 的 API，包括有套件識別資料以及沒有套件識別資料的應用程式。 若要判斷是否支援您要從傳統型應用程式呼叫的 API，請在 [WinRT 命名空間的參考文件](/uwp/api/)中尋找您感興趣的類別或成員的參考文章。 然後，查看該參考文章的**屬性**一節中是否有 [DualApiPartition](/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) 屬性。
+所有傳統型應用程式都支援具有 [DualApiPartition](/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) 的 API，包括有套件識別資料以及沒有套件識別資料的應用程式。 若要判斷是否支援您要從傳統型應用程式呼叫的 API，請在 [WinRT 命名空間的參考文件](/uwp/api/)中尋找您感興趣的類別或成員的參考文章。 然後，查看該參考文章的 **屬性** 一節中是否有 [DualApiPartition](/uwp/api/Windows.Foundation.Metadata.DualApiPartitionAttribute) 屬性。
 
 ## <a name="next-steps"></a>接下來的步驟
 

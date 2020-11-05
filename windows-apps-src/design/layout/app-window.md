@@ -1,16 +1,16 @@
 ---
-Description: 使用 AppWindow 類別，在個別視窗中檢視應用程式的不同組件。
+description: 使用 AppWindow 類別，在個別視窗中檢視應用程式的不同組件。
 title: 使用 AppWindow 類別，顯示應用程式的次要視窗
 ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b89d9100157cf40266bb983e258aa187f65dc93
-ms.sourcegitcommit: 76e8b4fb3f76cc162aab80982a441bfc18507fb4
+ms.openlocfilehash: a3f8644612954c4693ad28d3c1b41870855b37ca
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "68867468"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034881"
 ---
 # <a name="show-multiple-views-with-appwindow"></a>使用 AppWindow 顯示多重檢視
 
@@ -34,7 +34,7 @@ ms.locfileid: "68867468"
 
 > _具有位置不固定的色彩選擇器和次要視窗的範例應用程式_
 
-> **重要 API**：[Windows.UI.WindowManagement namespace](/uwp/api/windows.ui.windowmanagement)、[AppWindow class](/uwp/api/windows.ui.windowmanagement.appwindow)
+> **重要 API** ： [Windows.UI.WindowManagement namespace](/uwp/api/windows.ui.windowmanagement)、 [AppWindow class](/uwp/api/windows.ui.windowmanagement.appwindow)
 
 ## <a name="api-overview"></a>API 概觀
 
@@ -296,7 +296,7 @@ public sealed partial class AppWindowPage : Page
 colorPickerAppWindow.RequestSize(new Size(300, 428));
 ```
 
-管理視窗位置的方法名為 _RequestMove*_ ：[RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview)、[RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow)、[RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion)、[RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion)。
+管理視窗位置的方法名為 _RequestMove*_ ： [RequestMoveAdjacentToCurrentView](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview)、 [RequestMoveAdjacentToWindow](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttowindow)、 [RequestMoveRelativeToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmoverelativetodisplayregion)、 [RequestMoveToDisplayRegion](/uwp/api/windows.ui.windowmanagement.appwindow.requestmovetodisplayregion)。
 
 在此範例中，此程式碼會將視窗移動到產生該視窗的主要檢視旁邊。
 

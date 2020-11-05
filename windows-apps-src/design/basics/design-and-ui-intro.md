@@ -1,5 +1,5 @@
 ---
-Description: 每個 UWP 應用程式都具有通用設計功能，可協助組建出能在各種裝置上美觀縮放的應用程式。
+description: 每個 UWP 應用程式都具有通用設計功能，可協助組建出能在各種裝置上美觀縮放的應用程式。
 title: Windows 應用程式設計簡介 (Windows 應用程式)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3179a553e0d30bd009765ec55640989720628c2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763083"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032441"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 應用程式設計簡介
 
@@ -47,7 +47,7 @@ UWP 應用程式會自動調整控 UI 元素的大小，因此在所有裝置和
 
 :::row:::
     :::column span:::
-在 UWP 應用程式中，UI 元素的大小、邊界及位置應一律為 **4 epx 的倍數**。
+在 UWP 應用程式中，UI 元素的大小、邊界及位置應一律為 **4 epx 的倍數** 。
 
 UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 400% 的縮放水準調整各種裝置。 基礎單位為 4，因為它是唯一可依非整數調整的整數 (例如 4*1.5 = 6)。 使用四的倍數將所有 UI 元素與整個像素對齊，並確保 UI 元素具有清晰、銳利的邊緣。 (請注意，文字並不具有此需求；文字可以有任何大小和位置。)
     :::column-end:::

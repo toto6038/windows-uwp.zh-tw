@@ -1,5 +1,5 @@
 ---
-Description: NavigationView 一種調適型控制項，用於實作應用程式最上層的瀏覽模式。
+description: NavigationView 一種調適型控制項，用於實作應用程式最上層的瀏覽模式。
 title: 瀏覽檢視
 template: detail.hbs
 ms.date: 09/24/2020
@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5c5a880cc7291e15e71315d4977b6a28f22b2f00
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 689f55393df5fc7af59af6ce1e51fb002f49b713
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749844"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031131"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -39,9 +39,9 @@ _瀏覽檢視支援頂端和左側瀏覽窗格或功能表_
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[Windows.UI.Xaml.Controls.NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
+> **平台 API** ： [Windows.UI.Xaml.Controls.NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
 >
-> **Windows UI 程式庫 API**：[Microsoft.UI.Xaml.Controls.NavigationView 類別](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+> **Windows UI 程式庫 API** ： [Microsoft.UI.Xaml.Controls.NavigationView 類別](/uwp/api/microsoft.ui.xaml.controls.navigationview)
 >
 > NavigationView 的一些功能 (例如「頂端」和「階層式」瀏覽) 需要 Windows 10 版本 1809年 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或 [Windows UI 程式庫](/uwp/toolkits/winui/)。
 
@@ -88,7 +88,7 @@ NavigationView 是調適型瀏覽控制項，適用於：
     :::column-end:::
 :::row-end:::
 
-對於下列情況建議_頂端_瀏覽：
+對於下列情況建議 _頂端_ 瀏覽：
 
 - 您有 5 個以內同樣重要的最上層瀏覽類別，以及其他任何最上層瀏覽類型，因此下拉式溢位功能表被視為較不重要。
 - 您需要在螢幕上顯示所有的瀏覽選項。
@@ -106,7 +106,7 @@ NavigationView 是調適型瀏覽控制項，適用於：
     :::column-end:::
 :::row-end:::
 
-對於下列情況建議_左側_瀏覽：
+對於下列情況建議 _左側_ 瀏覽：
 
 - 有 5 個至 10 個同樣重要的最上層瀏覽類別。
 - 您想要瀏覽類別相當顯著，而且其他應用程式內容的空間較少。
@@ -142,7 +142,7 @@ _瀏覽檢視預設調適型行為_
 
 ## <a name="anatomy"></a>結構
 
-這些圖片顯示對於_頂端_或_左側_瀏覽設定時窗格、頁首和控制項內容區域的配置。
+這些圖片顯示對於 _頂端_ 或 _左側_ 瀏覽設定時窗格、頁首和控制項內容區域的配置。
 
 ![頂端瀏覽檢視配置](images/topnav-anatomy.png)<br/>
 _頂端瀏覽配置_
@@ -160,7 +160,7 @@ NavigationView 窗格可以包含：
 - [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator) 物件。 瀏覽項目分組的分隔符號。 設定[不透明度](/uwp/api/windows.ui.xaml.uielement.opacity)屬性設為 0 會將分隔符號呈現為空格。
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader) 物件。 標記項目群組的標頭。
 - 選用的 [AutoSuggestBox](auto-suggest-box.md) 控制項，允許進行應用程式層級搜尋。 將控制項指派為 [NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox) 屬性。
-- [應用程式設定](../app-settings/guidelines-for-app-settings.md)的選擇性進入點。 若要隱藏設定項目，請將 [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) 屬性設定為 **false**。
+- [應用程式設定](../app-settings/guidelines-for-app-settings.md)的選擇性進入點。 若要隱藏設定項目，請將 [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible) 屬性設定為 **false** 。
 
 左窗格也包含：
 
@@ -249,7 +249,7 @@ _瀏覽檢視頁首_
 
 頁首區域與左側窗格位置的導覽按鈕垂直對齊，而且導覽按鈕在左側窗格位置，並位於頂端窗格位置中的窗格下方。 這有 52 px 的固定高度。 其目的是保留所選瀏覽類別的頁面標題。 頁首停駐在頁面頂端，並且做為內容區域的捲動裁剪點。
 
-頁首始終顯示，NavigationView 為基本顯示模式。 您可以選擇在其他用於較大視窗寬度的模式下隱藏頁首。 若要隱藏頁首，請將 [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) 屬性設定為 **false**。
+頁首始終顯示，NavigationView 為基本顯示模式。 您可以選擇在其他用於較大視窗寬度的模式下隱藏頁首。 若要隱藏頁首，請將 [AlwaysShowHeader](/uwp/api/windows.ui.xaml.controls.navigationview.AlwaysShowHeader) 屬性設定為 **false** 。
 
 ### <a name="content"></a>內容
 
@@ -324,7 +324,7 @@ _PaneDisplayMode 設定為 LeftMinimal 的瀏覽檢視_
 <NavigationView PaneDisplayMode="LeftMinimal" />
 ```
 
-如先前在_顯示模式_小節中所述，您可以設定窗格始終在頂端、始終展開、始終精簡，或始終基本。 您也可以自己的應用程式程式碼中自行管理顯示模式。 下一節將顯示這個的範例。
+如先前在 _顯示模式_ 小節中所述，您可以設定窗格始終在頂端、始終展開、始終精簡，或始終基本。 您也可以自己的應用程式程式碼中自行管理顯示模式。 下一節將顯示這個的範例。
 
 ### <a name="top-to-left-navigation"></a>頂端至左側瀏覽
 
@@ -376,7 +376,7 @@ _PaneDisplayMode 設定為 LeftMinimal 的瀏覽檢視_
 
 您可以處理任何一個事件來執行與要求的瀏覽相關的工作。 您應該處理哪一個取決於您的應用程式所需的行為。 一般而言，您會瀏覽至要求的頁面，並更新瀏覽檢視頁首，以回應這些事件。
 
-只要使用者點選瀏覽項目，即使是已選取的瀏覽項目，都會引發 **ItemInvoked**。 (也可以使用滑鼠、鍵盤或其他輸入，透過對等的動作叫用項目。 如需詳細資訊，請參閱[輸入和互動](../input/index.md)。)如果您在 ItemInvoked 處理常式中瀏覽，預設將重新載入頁面，而且重複的項目將新增至瀏覽堆疊。 如果您在叫用項目時瀏覽，您應該不允許重新載入頁面，或確定頁面重新載入時並未在瀏覽 backstack 中建立重複項目。 (參考程式碼範例。)
+只要使用者點選瀏覽項目，即使是已選取的瀏覽項目，都會引發 **ItemInvoked** 。 (也可以使用滑鼠、鍵盤或其他輸入，透過對等的動作叫用項目。 如需詳細資訊，請參閱[輸入和互動](../input/index.md)。)如果您在 ItemInvoked 處理常式中瀏覽，預設將重新載入頁面，而且重複的項目將新增至瀏覽堆疊。 如果您在叫用項目時瀏覽，您應該不允許重新載入頁面，或確定頁面重新載入時並未在瀏覽 backstack 中建立重複項目。 (參考程式碼範例。)
 
 **SelectionChanged** 可由使用者叫用目前未選取的項目來引發，也可透過程式設計方式變更選取的項目來引發。 如果由於使用者叫用項目而發生選取變更，會先發生 ItemInvoked 事件。 如果以程式設計方式進行選取變更，不會引發 ItemInvoked。
 
@@ -388,8 +388,8 @@ NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這�
 
 您可以設定這些屬性來隱藏或停用返回按鈕：
 
-- [IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible)：用來顯示和隱藏返回按鈕。 這個屬性會使用 [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible)列舉型別的值，並且預設設定為 **Auto**。 按鈕摺疊時，不會在配置中保留按鈕的空間。
-- [IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled)：用來啟用或停用返回按鈕。 您可以利用資料繫結將此屬性繫結至瀏覽畫面的 [CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback) 屬性。 如果 **IsBackEnabled** 是 **false**，不會引發 **BackRequested**。
+- [IsBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackButtonVisible)：用來顯示和隱藏返回按鈕。 這個屬性會使用 [NavigationViewBackButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationviewbackbuttonvisible)列舉型別的值，並且預設設定為 **Auto** 。 按鈕摺疊時，不會在配置中保留按鈕的空間。
+- [IsBackEnabled](/uwp/api/windows.ui.xaml.controls.navigationview.IsBackEnabled)：用來啟用或停用返回按鈕。 您可以利用資料繫結將此屬性繫結至瀏覽畫面的 [CanGoBack](/uwp/api/windows.ui.xaml.controls.frame.cangoback) 屬性。 如果 **IsBackEnabled** 是 **false** ，不會引發 **BackRequested** 。
 
 :::row:::
     :::column:::
@@ -407,11 +407,11 @@ NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這�
 > [!IMPORTANT]
 > 針對使用 Windows UI (WinUI) 程式庫工具組的任何專案，您會經歷相同的初步安裝步驟。 如需更多背景、安裝和支援資訊，請參閱[開始使用 Windows UI 程式庫](/uwp/toolkits/winui/getting-started)。
 
-此範例會示範如何對於大型視窗大小的頂端瀏覽窗格和小型視窗大小的左側瀏覽窗格使用 **NavigationView**。 這可移除 **VisualStateManager** 中的 *top* 瀏覽設定，而調適為僅左側瀏覽。
+此範例會示範如何對於大型視窗大小的頂端瀏覽窗格和小型視窗大小的左側瀏覽窗格使用 **NavigationView** 。 這可移除 **VisualStateManager** 中的 *top* 瀏覽設定，而調適為僅左側瀏覽。
 
 此範例示範對於許多常見情況設定適用瀏覽資料可用的建議方式。 這也會示範如何使用 **NavigationView** 的返回按鈕和鍵盤瀏覽來實作向後瀏覽。
 
-此程式碼假設您的應用程式包含將瀏覽的頁面，這些頁面的名稱如下：*HomePage*、*AppsPage*、*GamesPage*、*MusicPage*、*MyContentPage* 和 *SettingsPage*。 這些頁面的程式碼不會顯示。
+此程式碼假設您的應用程式包含將瀏覽的頁面，這些頁面的名稱如下： *HomePage* 、 *AppsPage* 、 *GamesPage* 、 *MusicPage* 、 *MyContentPage* 和 *SettingsPage* 。 這些頁面的程式碼不會顯示。
 
 > [!IMPORTANT]
 > 應用程式頁面的資訊會儲存在 [ValueTuple](/dotnet/api/system.valuetuple) 中。 此結構會要求應用程式專案的最小版本必須是 SDK 17763 或以上。 如果您使用 NavigationView 的 WinUI 版本鎖定舊版 Windows 10 為目標，您可以改為使用 [System.ValueTuple NuGet 套件](https://www.nuget.org/packages/System.ValueTuple/)。
@@ -647,7 +647,7 @@ private void On_Navigated(object sender, NavigationEventArgs e)
 ```
 
 > [!NOTE]
-> 如需此程式碼範例的 [C++/WinRT](../../cpp-and-winrt-apis/index.md) 版本，請先根據**空白應用程式 (C++/WinRT)** 專案範本建立新的專案，然後將清單中的程式碼加入至指定的原始程式碼檔案。 若要使用完全如清單中所示的原始程式碼，請將您的新專案命名為 *NavigationViewCppWinRT*
+> 如需此程式碼範例的 [C++/WinRT](../../cpp-and-winrt-apis/index.md) 版本，請先根據 **空白應用程式 (C++/WinRT)** 專案範本建立新的專案，然後將清單中的程式碼加入至指定的原始程式碼檔案。 若要使用完全如清單中所示的原始程式碼，請將您的新專案命名為 *NavigationViewCppWinRT*
 
 ```cppwinrt
 // MainPage.idl
@@ -1667,11 +1667,11 @@ MainPage::MainPage()
 
 > `IsTitleBarAutoPaddingEnabled` 屬性需要 [Windows UI 程式庫](/uwp/toolkits/winui/) 2.2 或更新版本。
 
-有些應用程式選擇[自訂其視窗標題列](../shell/title-bar.md)，可能會將其應用程式內容延伸到標題列區域。 當 NavigationView 是**使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**，在應用程式中延伸至標題列的根元素時，控制項會自動調整其互動式元素的位置，以避免與[可拖曳的區域](../shell/title-bar.md#draggable-regions)重疊。
+有些應用程式選擇[自訂其視窗標題列](../shell/title-bar.md)，可能會將其應用程式內容延伸到標題列區域。 當 NavigationView 是 **使用 [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API** ，在應用程式中延伸至標題列的根元素時，控制項會自動調整其互動式元素的位置，以避免與 [可拖曳的區域](../shell/title-bar.md#draggable-regions)重疊。
 
 ![延伸至標題列的應用程式](images/navigation-view-with-titlebar-padding.png)
 
-如果您的應用程式透過呼叫 [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) 方法指定可拖曳的區域，而您想要讓 [上一頁] 和 [功能表] 按鈕更接近應用程式視窗的頂端，請將 [IsTitleBarAutoPaddingEnabled](/uwp/api/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) 設定為 **false**。
+如果您的應用程式透過呼叫 [Window.SetTitleBar](/uwp/api/windows.ui.xaml.window.settitlebar) 方法指定可拖曳的區域，而您想要讓 [上一頁] 和 [功能表] 按鈕更接近應用程式視窗的頂端，請將 [IsTitleBarAutoPaddingEnabled](/uwp/api/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) 設定為 **false** 。
 
 ![應用程式延伸至標題列而不需額外填補](images/navigation-view-no-titlebar-padding.png)
 

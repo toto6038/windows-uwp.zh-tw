@@ -1,17 +1,17 @@
 ---
-Description: Build 2020 線上活動期間所述的 Windows 開發人員文件連結。
+description: Build 2020 線上活動期間所述的 Windows 開發人員文件連結。
 title: Build 期間的討論主題相關文件
 ms.topic: article
 ms.date: 05/11/2020
 ms.localizationpriority: medium
 ms.author: jken
 author: grantmestrength
-ms.openlocfilehash: 22dddfaea4297ef12fe449f08cda7723c2b52642
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d2690bd0a166856c92201e9d1693b622d3ecaa87
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157632"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031991"
 ---
 # <a name="microsoft-build---the-windows-documentation"></a>Microsoft Build - Windows 文件
 

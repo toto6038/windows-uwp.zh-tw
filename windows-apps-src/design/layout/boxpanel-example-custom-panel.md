@@ -1,5 +1,5 @@
 ---
-Description: 學習如何撰寫自訂 Panel 類別程式碼、實作 ArrangeOverride 和 MeasureOverride 方法，以及使用 Children 屬性。
+description: 學習如何撰寫自訂 Panel 類別程式碼、實作 ArrangeOverride 和 MeasureOverride 方法，以及使用 Children 屬性。
 MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -12,12 +12,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e44b95918a34e50af3c794b4f76e5d0f2d2f0517
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 4bd3318e02974e4409d40df3a60e9cb74b6b7ada
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220391"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034831"
 ---
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，自訂面板範例
 
@@ -25,11 +25,11 @@ ms.locfileid: "91220391"
 
 學習如何撰寫自訂 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 類別程式碼、實作 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 和 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 方法，以及使用 [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 屬性。 
 
-> **重要 API**：[**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel)、[**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、[**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
+> **重要 API** ： [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel)、 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride)、 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 
 
 範例程式碼示範一個自訂面板實作，但對於影響不同配置案例的自訂面板方法的配置概念則未多加說明。 如需有關這些配置概念以及如何才能套用到特定配置案例的詳細資訊，請參閱 [XAML 自訂面板概觀](custom-panels-overview.md)。
 
-「面板」是一個物件，可在 XAML 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 與 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 方法，提供可度量和排列子元素的邏輯，即可提供面板行為。 本範例衍生自 **Panel**。 當您從 **Panel** 開始時，**ArrangeOverride** 和 **MeasureOverride** 方法沒有開始行為。 您的程式碼是提供一個讓 XAML 配置系統知道子元素並在 UI 中轉譯的入口。 因此，您的程式碼務必說明所有子元素，並遵循配置系統預期的模式。
+「面板」是一個物件，可在 XAML 配置系統執行和轉譯 app UI 時，為其所含的子元素提供配置行為。 您可以從 [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) 類別衍生自訂類別，為 XAML 配置定義自訂面板。 透過覆寫 [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 與 [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 方法，提供可度量和排列子元素的邏輯，即可提供面板行為。 本範例衍生自 **Panel** 。 當您從 **Panel** 開始時， **ArrangeOverride** 和 **MeasureOverride** 方法沒有開始行為。 您的程式碼是提供一個讓 XAML 配置系統知道子元素並在 UI 中轉譯的入口。 因此，您的程式碼務必說明所有子元素，並遵循配置系統預期的模式。
 
 ## <a name="your-layout-scenario"></a>您的配置案例
 
@@ -125,16 +125,16 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-[  **MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 實作的必要模式是循環顯示 [**Panel.Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 方法。 **Measure** 有一個 [**Size**](/uwp/api/Windows.Foundation.Size) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
+[  **MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) 實作的必要模式是循環顯示 [**Panel.Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 方法。 **Measure** 有一個 [**Size**](/uwp/api/Windows.Foundation.Size) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure** 。
 
 `BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#the-scenario-for-boxpanel)。
 
-度量階段有何作用？ 它在呼叫 [**Measure**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 的每個元素上設定唯讀 [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.measure) 屬性的值。 因為步入排列階段之後，**DesiredSize** 會傳達進行排列時和最終轉譯中可有或應有的大小，所以最好能有 **DesiredSize** 值。 即使您自己的邏輯中不會使用 **DesiredSize**，但是系統仍需要它。
+度量階段有何作用？ 它在呼叫 [**Measure**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 的每個元素上設定唯讀 [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.measure) 屬性的值。 因為步入排列階段之後， **DesiredSize** 會傳達進行排列時和最終轉譯中可有或應有的大小，所以最好能有 **DesiredSize** 值。 即使您自己的邏輯中不會使用 **DesiredSize** ，但是系統仍需要它。
 
 還有可能在 *availableSize* 的高度元件為無限時，使用此面板。 若是如此，面板不會有可供劃分的已知高度。 在這種情況下，度量階段的邏輯會通知各個子系，高度尚無界限。 方法是針對 [**Size.Height**](/uwp/api/Windows.Foundation.Size) 為無限的子系，將 [**Size**](/uwp/api/windows.ui.xaml.uielement.measure) 傳送至 [**Measure**](/uwp/api/windows.foundation.size.height) 呼叫。 上述為有效做法。 呼叫 **Measure** 時，邏輯是將 [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 設定為下列各項的最小值：傳遞至 **Measure** 的項目，或來自明確設定的 [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) 與 [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) 等係數的元素原始大小。
 
 > [!NOTE]
-> [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 的內部邏輯也有這項行為：**StackPanel** 將無限的維度值傳送至子系的 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) ，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
+> [**StackPanel**](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) 的內部邏輯也有這項行為： **StackPanel** 將無限的維度值傳送至子系的 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) ，表示方向維度的子系沒有限制。 **StackPanel** 一般會動態調整本身的大小，以容納堆疊中在該維度不斷增加的所有子系。
 
 不過，面板本身不會從 [**MeasureOverride**](/uwp/api/Windows.Foundation.Size) 傳回無限值的 [**Size**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)；造成在配置期間擲回例外狀況。 因此，部分邏輯是要找出任何子系要求的最大高度，並在面板本身的大小限制未提供儲存格高度時，使用該高度做為儲存格高度。 以下是先前程式碼中參照的協助程式函式 `LimitUnboundedSize`，會接受上述的最大儲存格高度，並用它提供面板一個可傳回的有限高度，以及確保在起始排列階段之前，`cellheight` 會是有限數字：
 
@@ -182,9 +182,9 @@ protected override Size ArrangeOverride(Size finalSize)
 
 面板有時候需要裁剪內容。 若有必要執行上述動作，裁剪的大小即為 [**DesiredSize**](/uwp/api/windows.ui.xaml.uielement.desiredsize) 所示的大小，因為 [**Measure**](/uwp/api/windows.ui.xaml.uielement.measure) 邏輯將它設定為傳遞至 **Measure** 的項目或其他原始大小係數的最小值。 所以您通常不用在 [**Arrange**](/uwp/api/windows.ui.xaml.uielement.arrange) 期間特別檢查裁剪，系統會根據傳遞至每個 **Arrange** 呼叫的 **DesiredSize** 進行裁剪。
 
-如果您可以利用其他方法得知定義轉譯位置所需的所有資訊，就不必在執行迴圈時計數。 例如，在 [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) 配置邏輯中，[**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 集合中的位置並不重要。 放置 **Canvas** 中每個元素所需的所有資訊都可在排列邏輯中讀取子系的 [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](/dotnet/api/system.windows.controls.canvas.top) 值來得知。 `BoxPanel` 邏輯恰巧需要計數以便與 *colcount* 比較，因此在開始新列和位移 *y* 值時，已知該值。
+如果您可以利用其他方法得知定義轉譯位置所需的所有資訊，就不必在執行迴圈時計數。 例如，在 [**Canvas**](/uwp/api/Windows.UI.Xaml.Controls.Canvas) 配置邏輯中， [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) 集合中的位置並不重要。 放置 **Canvas** 中每個元素所需的所有資訊都可在排列邏輯中讀取子系的 [**Canvas.Left**](/dotnet/api/system.windows.controls.canvas.left) 和 [**Canvas.Top**](/dotnet/api/system.windows.controls.canvas.top) 值來得知。 `BoxPanel` 邏輯恰巧需要計數以便與 *colcount* 比較，因此在開始新列和位移 *y* 值時，已知該值。
 
-輸入 *finalSize* 和從 [**ArrangeOverride**](/uwp/api/Windows.Foundation.Size) 實作傳回的 [**Size**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 通常會相同。 如需有關原因的詳細資訊，請參閱 [XAML 自訂面板概觀](custom-panels-overview.md)的＜**ArrangeOverride**＞一節。
+輸入 *finalSize* 和從 [**ArrangeOverride**](/uwp/api/Windows.Foundation.Size) 實作傳回的 [**Size**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) 通常會相同。 如需有關原因的詳細資訊，請參閱 [XAML 自訂面板概觀](custom-panels-overview.md)的＜ **ArrangeOverride** ＞一節。
 
 ## <a name="a-refinement-controlling-the-row-vs-column-count"></a>微調：控制列與欄計數
 
@@ -209,7 +209,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 ## <a name="the-scenario-for-boxpanel"></a>BoxPanel 的案例
 
-`BoxPanel` 的特定案例是一個面板，其中如何劃分空間的主要決定因素之一，就是要知道子項目的數目，然後為面板劃分已知的可用空間。 面板原本呈矩形。 許多面板的運作方式是將其矩形空間再劃分成更多矩形；[**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 就是這樣處理其儲存格。 在 **Grid** 的案例中，是透過 [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 與 [**RowDefinition**](/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) 值來設定儲存格的大小，而且元素利用 [**Grid.Row**](/dotnet/api/system.windows.controls.grid.row) 與 [**Grid.Column**](/dotnet/api/system.windows.controls.grid.column) 附加屬性，明確宣告其所進入的儲存格。 **Grid** 要有美觀的配置，通常需要事先知道子元素的數目，如此才能有足夠的儲存格，每個子元素也才能設定符合本身儲存格的附加屬性。
+`BoxPanel` 的特定案例是一個面板，其中如何劃分空間的主要決定因素之一，就是要知道子項目的數目，然後為面板劃分已知的可用空間。 面板原本呈矩形。 許多面板的運作方式是將其矩形空間再劃分成更多矩形； [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 就是這樣處理其儲存格。 在 **Grid** 的案例中，是透過 [**ColumnDefinition**](/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition) 與 [**RowDefinition**](/uwp/api/Windows.UI.Xaml.Controls.RowDefinition) 值來設定儲存格的大小，而且元素利用 [**Grid.Row**](/dotnet/api/system.windows.controls.grid.row) 與 [**Grid.Column**](/dotnet/api/system.windows.controls.grid.column) 附加屬性，明確宣告其所進入的儲存格。 **Grid** 要有美觀的配置，通常需要事先知道子元素的數目，如此才能有足夠的儲存格，每個子元素也才能設定符合本身儲存格的附加屬性。
 
 但如果子系的數目不定怎麼辦？ 上述情況絕對可能發生；App 程式碼可以將項目加入集合，以回應您認為其重要性達到需要更新 UI 的任何動態執行階段狀況。 如果您使用資料繫結支援集合/商業物件，會自動處理這類更新和更新 UI，所以這通常是偏好使用的技術 (請參閱[深入了解資料繫結](../../data-binding/data-binding-in-depth.md))。
 

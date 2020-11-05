@@ -1,5 +1,5 @@
 ---
-Description: 日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。
+description: 日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。
 title: 日期選擇器
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a1f4b40734b39a6b908baab74f09ded32f250ef5
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: b196ba3c7475240ec1e7a5bdfc8c1ad9f39e4c50
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750474"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032341"
 ---
 # <a name="date-picker"></a>日期選擇器
 
@@ -40,7 +40,7 @@ ms.locfileid: "91750474"
    :::column-end:::
 :::row-end:::
 
-> **平台 API：** [DatePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、[Date 屬性](/uwp/api/windows.ui.xaml.controls.datepicker.date)
+> **平台 API：** [DatePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.DatePicker)、 [Date 屬性](/uwp/api/windows.ui.xaml.controls.datepicker.date)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

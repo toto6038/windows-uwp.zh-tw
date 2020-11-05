@@ -1,6 +1,6 @@
 ---
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
-Description: TextBox 控制項可讓使用者在應用程式中輸入文字。
+description: TextBox 控制項可讓使用者在應用程式中輸入文字。
 title: 文字方塊
 label: Text box
 template: detail.hbs
@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 794bf6e99701dd73ee74b07c289fe9a2e5ca9744
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 542822b27f356c9471ec8a6c6f5bec0aac2144ce
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749775"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034751"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -38,7 +38,7 @@ TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的�
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、[Text 屬性](/uwp/api/windows.ui.xaml.controls.textbox.text)
+> **平台 API** ： [TextBox 類別](/uwp/api/Windows.UI.Xaml.Controls.TextBox)、 [Text 屬性](/uwp/api/windows.ui.xaml.controls.textbox.text)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -109,7 +109,7 @@ string sampleText = SampleTextBox.Text;
 SampleTextBox.Text = "Sample text retrieved";
 ```
 
-您可以新增 [Header](/uwp/api/windows.ui.xaml.controls.textbox.header) (或標籤) 與 [PlaceholderText](/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext) (或浮水印) 至文字方塊，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 屬性，而不是 Header。 *如需設計資訊，請參閱標籤指導方針*。
+您可以新增 [Header](/uwp/api/windows.ui.xaml.controls.textbox.header) (或標籤) 與 [PlaceholderText](/uwp/api/windows.ui.xaml.controls.textbox.placeholdertext) (或浮水印) 至文字方塊，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](/uwp/api/windows.ui.xaml.controls.textbox.headertemplate) 屬性，而不是 Header。 *如需設計資訊，請參閱標籤指導方針* 。
 
 您可藉由設定 [MaxLength](/uwp/api/windows.ui.xaml.controls.textbox.maxlength) 屬性，限制使用者可以輸入的字元數目。 不過，MaxLength 不會限制已貼上文字的長度。 若對於應用程式而言具重要性，請使用 [Paste](/uwp/api/windows.ui.xaml.controls.textbox.paste) 事件來修改貼上的文字。
 
@@ -140,7 +140,7 @@ SampleTextBox.Text = "Sample text retrieved";
 
 ### <a name="make-a-text-box-read-only"></a>將文字方塊設為唯讀
 
-您可藉由將 [IsReadOnly](/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) 屬性設為 **true**，使文字方塊變為唯讀。 您通常會根據您應用程式中的條件，在應用程式程式碼中切換此屬性。 若文字必須一律設為唯讀，請考慮改用 TextBlock。
+您可藉由將 [IsReadOnly](/uwp/api/windows.ui.xaml.controls.textbox.isreadonly) 屬性設為 **true** ，使文字方塊變為唯讀。 您通常會根據您應用程式中的條件，在應用程式程式碼中切換此屬性。 若文字必須一律設為唯讀，請考慮改用 TextBlock。
 
 您可以藉由將 IsReadOnly 屬性設定成 true，使 TextBox 變成唯讀。 例如您可能希望僅在特定條件下，啟用 TextBox 讓使用者輸入註解。 您可將 TextBox 設為在符合條件前保持唯讀狀態。 若您僅需要顯示文字，請考慮改用 TextBlock 或 RichTextBlock。
 
@@ -152,14 +152,14 @@ IsEnabled
 
 您可使用兩種屬性來控制文字方塊是否採用多行方式顯示文字。 通常會同時設定這兩個屬性，以產生多行文字方塊。
 
-- 若要讓文字方塊允許並顯示新行或傳回字元，請將 [AcceptsReturn](/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 屬性設為 **true**。
-- 若要啟用文字換行，請將 [TextWrapping](/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
+- 若要讓文字方塊允許並顯示新行或傳回字元，請將 [AcceptsReturn](/uwp/api/windows.ui.xaml.controls.textbox.acceptsreturn) 屬性設為 **true** 。
+- 若要啟用文字換行，請將 [TextWrapping](/uwp/api/windows.ui.xaml.controls.textbox.textwrapping) 屬性設為 **Wrap** 。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 的 TextWrapping 屬性均不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，則會擲回無效的引數例外狀況。
 
 多行的文字方塊大小會隨著輸入文字而繼續垂直擴展 (除非您使用其 [Height](/uwp/api/windows.ui.xaml.frameworkelement.height) 或 [MaxHeight](/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 屬性，或是以父容器加以限制)。 您應測試多行文字方塊大小是否會擴展超出顯示範圍，並限制其擴展 (若確定會超出顯示範圍)。 我們建議您一律為多行文字方塊指定適當的高度，不讓其隨著使用者輸入文字而擴展。
 
-必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 設為 **Auto**，以顯示垂直捲軸 (如此處所示)。
+必要時會啟用使用滾輪或觸控方式捲動瀏覽。 不過，依預設不會顯示垂直捲軸。 您可在內嵌 ScrollViewer 上，將 [ScrollViewer.VerticalScrollBarVisibility](/uwp/api/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility) 設為 **Auto** ，以顯示垂直捲軸 (如此處所示)。
 
 ```xaml
 <TextBox AcceptsReturn="True" TextWrapping="Wrap"
@@ -229,7 +229,7 @@ rootGrid.Children.Add(textBox);
 全選 | TextBox 中有文字。
 復原 | 已變更文字。
 
-若要修改操作功能表中顯示的命令，請處理 [ContextMenuOpening](/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 如需這種情況的範例，請參閱 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML 控制項庫</a>中的**自訂 RichEditBox 的 CommandBarFlyout - 新增 'Share'** 範例。 如需設計資訊，請參閱[操作功能表](menus.md)的指導方針。
+若要修改操作功能表中顯示的命令，請處理 [ContextMenuOpening](/uwp/api/windows.ui.xaml.controls.textbox.contextmenuopening) 事件。 如需這種情況的範例，請參閱 <a href="xamlcontrolsgallery:/item/RichEditBox">XAML 控制項庫</a>中的 **自訂 RichEditBox 的 CommandBarFlyout - 新增 'Share'** 範例。 如需設計資訊，請參閱[操作功能表](menus.md)的指導方針。
 
 ### <a name="select-copy-and-paste"></a>選取、複製以及貼上
 
@@ -271,7 +271,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 TextBox 或 RichEditBox) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
-例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number**。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
+例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [InputScope](/uwp/api/windows.ui.xaml.controls.textbox.inputscope) 屬性設定為 **Number** 。 這會告訴系統顯示數字小鍵盤，方便使用者輸入 PIN。
 
 > **重要**&nbsp;&nbsp;輸入範圍並不會導致執行任何輸入驗證，也不會防止使用者透過硬體鍵盤或其他輸入裝置提供任何輸入。 您仍然必須視需要在程式碼中驗證輸入。
 

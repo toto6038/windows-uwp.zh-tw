@@ -1,5 +1,5 @@
 ---
-Description: 了解如何將身分識別授與非封裝的傳統型應用程式，以便您在這些應用程式中使用新式 Windows 10 功能。
+description: 了解如何將身分識別授與非封裝的傳統型應用程式，以便您在這些應用程式中使用新式 Windows 10 功能。
 title: 將身分識別授與非封裝的傳統型應用程式
 ms.date: 04/23/2020
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6c2adc41fd33692d3cc3deb78ed8dd0659709a11
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 30fab5da3727153b8e1f33924ffcb6177843eb4e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172702"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031161"
 ---
 # <a name="grant-identity-to-non-packaged-desktop-apps"></a>將身分識別授與非封裝的傳統型應用程式
 
@@ -21,7 +21,7 @@ ms.locfileid: "89172702"
 
 在 Windows 10 版本 2004 之前的作業系統版本中，將身分識別授與傳統型應用程式的唯一方法，就是[將其封裝在已簽署的 MSIX 套件](/windows/msix/desktop/desktop-to-uwp-root)中。 對於這些應用程式，身分識別會指定於套件資訊清單，而 MSIX 部署管線會根據資訊清單中的資訊來處理身分識別註冊。 套件資訊清單中參考的所有內容都會出現在 MSIX 套件內。
 
-從 Windows 10 版本 2004 開始，您可建置*疏鬆套件*並向您的應用程式進行註冊，以將套件識別資料授與未封裝在 MSIX 套件中的傳統型應用程式。 此支援可讓尚無法採用 MSIX 封裝進行部署的傳統型應用程式，使用需要套件識別資料的 Windows 10 擴充性功能。 如需更多背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
+從 Windows 10 版本 2004 開始，您可建置 *疏鬆套件* 並向您的應用程式進行註冊，以將套件識別資料授與未封裝在 MSIX 套件中的傳統型應用程式。 此支援可讓尚無法採用 MSIX 封裝進行部署的傳統型應用程式，使用需要套件識別資料的 Windows 10 擴充性功能。 如需更多背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/#HBMFEM843XORqOWx.97)。
 
 若要建置並註冊可將套件識別資料授與傳統型應用程式的疏鬆套件，請遵循下列步驟。
 
@@ -132,7 +132,7 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 
 ### <a name="add-the-package-identity-metadata-to-your-desktop-application-manifest"></a>將套件識別中繼資料新增至傳統型應用程式資訊清單
 
-您也必須包含[並存應用程式資訊清單，](/windows/win32/sbscs/application-manifests)與您的傳統型應用程式，並包含 [**msix**](/windows/win32/sbscs/application-manifests#msix) 元素，其中包含可宣告應用程式身分識別屬性的屬性。 當可執行檔啟動時，作業系統會使用這些屬性的值來判斷您應用程式的身分識別。
+您也必須包含 [並存應用程式資訊清單，](/windows/win32/sbscs/application-manifests)與您的傳統型應用程式，並包含 [**msix**](/windows/win32/sbscs/application-manifests#msix) 元素，其中包含可宣告應用程式身分識別屬性的屬性。 當可執行檔啟動時，作業系統會使用這些屬性的值來判斷您應用程式的身分識別。
 
 下列範例會顯示含有 **msix** 元素的並存應用程式資訊清單。
 

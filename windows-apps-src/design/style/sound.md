@@ -1,5 +1,5 @@
 ---
-Description: 音效有助於讓應用程式的使用者體驗變完整，並提供他們額外的音訊銳度，以符合所有平台的 Windows 操作方式。
+description: 音效有助於讓應用程式的使用者體驗變完整，並提供他們額外的音訊銳度，以符合所有平台的 Windows 操作方式。
 label: Sound
 title: 音效
 template: detail.hbs
@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c479a47a53c5f52bab1febf490957355264bfc4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: cd7c394f66eb1da585a605d96ed50804b8aab375
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89159872"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033181"
 ---
 # <a name="sound"></a>音效
 
@@ -49,26 +49,26 @@ UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，�
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer** 有三種不同的狀態︰**On**、**Off**、**Auto**。
+**ElementSoundPlayer** 有三種不同的狀態︰ **On** 、 **Off** 、 **Auto** 。
 
-如果設定為 **Off**，不論您的應用程式在何處執行，一律不會播放音效。 如果設定為 **On**，您的應用程式的音效將會在每個平台上播放。
+如果設定為 **Off** ，不論您的應用程式在何處執行，一律不會播放音效。 如果設定為 **On** ，您的應用程式的音效將會在每個平台上播放。
 
-啟用 ElementSoundPlayer 將會自動啟用空間音訊 (3D 音效)。 若要停用 3D 音效 (但保持音效開啟)，請停用 ElementSoundPlayer 的 **SpatialAudioMode**： 
+啟用 ElementSoundPlayer 將會自動啟用空間音訊 (3D 音效)。 若要停用 3D 音效 (但保持音效開啟)，請停用 ElementSoundPlayer 的 **SpatialAudioMode** ： 
 
 ```C#
 ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
 ```
 
 **SpatialAudioMode** 屬性可以具備下列值： 
-- **Auto**：當音效開啟時將會開啟空間音訊。 
-- **Off**：空間音訊一律關閉 (即使音訊開啟)。
-- **On**：一律播放空間音訊。
+- **Auto** ：當音效開啟時將會開啟空間音訊。 
+- **Off** ：空間音訊一律關閉 (即使音訊開啟)。
+- **On** ：一律播放空間音訊。
 
 若要深入了解空間音訊，以及 XAML 如何處理此功能，請參閱 [AudioGraph - 空間音訊](../../audio-video-camera/audio-graphs.md#spatial-audio)。
 
 ### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
-音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 **Auto**，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
+音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 **Auto** ，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
 若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](../devices/designing-for-tv.md)。
 
 ## <a name="sound-volume-override"></a>音效音量覆寫
@@ -85,7 +85,7 @@ ElementSoundPlayer.Volume = 0.5;
 
 如果不需要控制項的預設音效，可予以停用。 這可透過控制項上的 **ElementSoundMode** 來達成。
 
-**ElementSoundMode** 有兩種狀態︰[Off]  和 [Default]  。 未設定時，則為 **Default**。 如果設定為 **Off**，則控制項所播放的每個音效都會是靜音，但「焦點除外」  。
+**ElementSoundMode** 有兩種狀態︰[Off]  和 [Default]  。 未設定時，則為 **Default** 。 如果設定為 **Off** ，則控制項所播放的每個音效都會是靜音，但「焦點除外」  。
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -108,7 +108,7 @@ ButtonName.ElementSoundState = ElementSoundMode.Off;
 通常，只有在使用者透過[輸入裝置](../input/index.md)明確地以簡單控制項或控制項部分為目標時，才會播放這個音效。
 
 
-若要從任何控制項事件播放這個音效，只需從 **ElementSoundPlayer** 呼叫 Play 方法，然後傳入 **ElementSound.Invoke**：
+若要從任何控制項事件播放這個音效，只需從 **ElementSoundPlayer** 呼叫 Play 方法，然後傳入 **ElementSound.Invoke** ：
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 ```

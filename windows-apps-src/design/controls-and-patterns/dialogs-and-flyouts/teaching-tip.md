@@ -1,5 +1,5 @@
 ---
-Description: 教學提示是半持續性的內容豐富飛出視窗，可提供內容資訊。
+description: 教學提示是半持續性的內容豐富飛出視窗，可提供內容資訊。
 title: 教學提示
 template: detail.hbs
 ms.date: 09/24/2020
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: niallm
 ms.custom: 19H1
 ms.localizationpriority: medium
-ms.openlocfilehash: fbe23101861429f3aef9298f854a600521d20613
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 8d4322e5d5dcdfad768b9c87b555093e42becd7e
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750524"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93033311"
 ---
 # <a name="teaching-tip"></a>教學提示
 
@@ -171,10 +171,10 @@ PreferredPlacement 設定為 "BottomLeft" 的無目標教學提示，會顯示�
 ![範例應用程式，包含位在左下角的教學提示。 提示標題為 [自動儲存]，子標題為 [系統會在您工作時儲存您的變更，您永遠不需要再自行儲存了。]。 教學提示的右上角有關閉按鈕。](../images/teaching-tip-non-targeted-preferred-placement.png)
 
 以下圖表描述有目標教學提示可設定的所有 13 個 PreferredPlacement 模式。
-![圖解，包含 13 個教學提示，每個都示範不同有目標放置模式。 每個教學提示都標示它代表的模式。 教學提示會置中顯示在放置模式的第一個字所指出的目標該側。 教學提示的尾端會一律位在目標該側的中央，並且指向目標。 如果放置模式中有第二個字，教學提示的主體就不會置中，而會往指定的方向位移。 例如，放置模式 "TopRight" 會讓教學提示顯示在目標上方並向右位移，且其尾端向下指在目標頂端邊緣的中央。 因為主體向右位移，所以尾端幾乎位在教學提示主體的最左側邊緣，而教學提示則延伸超過目標的右側邊緣。 放置模式 "Center" 很特別，它會讓教學提示的尾端指在目標的中央，且教學提示會置中在目標的上半部。](../images/teaching-tip-targeted-preferred-placement-modes.png)
+![圖解，包含 13 個教學提示，每個都示範不同有目標放置模式。 每個教學提示都標示它代表的模式。  教學提示會置中顯示在放置模式的第一個字所指出的目標該側。 教學提示的尾端會一律位在目標該側的中央，並且指向目標。 如果放置模式中有第二個字，教學提示的主體就不會置中，而會往指定的方向位移。 例如，放置模式 "TopRight" 會讓教學提示顯示在目標上方並向右位移，且其尾端向下指在目標頂端邊緣的中央。 因為主體向右位移，所以尾端幾乎位在教學提示主體的最左側邊緣，而教學提示則延伸超過目標的右側邊緣。 放置模式 "Center" 很特別，它會讓教學提示的尾端指在目標的中央，且教學提示會置中在目標的上半部。](../images/teaching-tip-targeted-preferred-placement-modes.png)
 
 以下圖表描述無目標教學提示可設定的所有 13 個 PreferredPlacement 模式。
-![圖解，包含九個教學提示，每個都示範不同無目標放置模式。 每個教學提示都標示它代表的模式。 教學提示會置中顯示在放置模式的第一個字所指出的 XAML 根該側。 如果放置模式中有第二個字，教學提示會將自己往 XAML 根的指定角落放置。 例如，放置模式 "TopRight" 會讓教學提示顯示在 XAML 根的右上角。 對於無目標放置模式，兩個字的順序不影響位置。 TopRight 等同於 RightTop。 放置模式 "Center" 很特別，它會讓教學提示顯示在 XAML 根的垂直和水平中央。](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
+![圖解，包含九個教學提示，每個都示範不同無目標放置模式。 每個教學提示都標示它代表的模式。  教學提示會置中顯示在放置模式的第一個字所指出的 XAML 根該側。  如果放置模式中有第二個字，教學提示會將自己往 XAML 根的指定角落放置。 例如，放置模式 "TopRight" 會讓教學提示顯示在 XAML 根的右上角。 對於無目標放置模式，兩個字的順序不影響位置。 TopRight 等同於 RightTop。  放置模式 "Center" 很特別，它會讓教學提示顯示在 XAML 根的垂直和水平中央。](../images/teaching-tip-non-targeted-preferred-placement-modes.png)
 
 ### <a name="add-a-placement-margin"></a>新增放置邊界
 

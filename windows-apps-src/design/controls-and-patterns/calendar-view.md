@@ -1,5 +1,5 @@
 ---
-Description: 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。
+description: 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。
 title: 行事曆檢視
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c326e58fa71bba5deab0f86e872651c8a5ea140
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f26f2dce4847587869b35c7f04f0da2e45e3c0e2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750584"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030951"
 ---
 # <a name="calendar-view"></a>行事曆檢視
 
@@ -37,7 +37,7 @@ ms.locfileid: "91750584"
    :::column-end:::
 :::row-end:::
 
-> **平台 API：** [CalendarView 類別](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[SelectedDatesChanged 事件](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
+> **平台 API：** [CalendarView 類別](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、 [SelectedDatesChanged 事件](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 您可以使用行事曆檢視，讓使用者從一律顯示的行事曆中選取單一日期或日期範圍。
@@ -82,7 +82,7 @@ ms.locfileid: "91750584"
 
 ### <a name="selecting-dates"></a>選取日期
 
-根據預設，[SelectionMode](/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 屬性是設定為 **Single**。 這可讓使用者在行事曆中挑選單一日期。 將 SelectionMode 設定為 **None** 以停用日期選取功能。
+根據預設， [SelectionMode](/uwp/api/windows.ui.xaml.controls.calendarview.selectionmode) 屬性是設定為 **Single** 。 這可讓使用者在行事曆中挑選單一日期。 將 SelectionMode 設定為 **None** 以停用日期選取功能。
 
 將 SelectionMode 設定為 **Multiple** 以讓使用者選取多個日期。 您可以將 [DateTime](/dotnet/api/system.datetime)/[DateTimeOffset](/dotnet/api/system.datetimeoffset) 物件新增至 [SelectedDates](/uwp/api/windows.ui.xaml.controls.calendarview.selecteddates)集合，以選取多個日期，如下所示︰
 
@@ -143,7 +143,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 行事曆中的每一天都是由 [CalendarViewDayItem](/uwp/api/Windows.UI.Xaml.Controls.CalendarViewDayItem) 物件來表示。 若要存取個別的日期項目，並使用它的屬性和方法，請處理 [CalendarViewDayItemChanging](/uwp/api/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging) 事件並使用事件引數的 Item 屬性來存取 CalendarViewDayItem。
 
-您可以將 [CalendarViewDayItem.IsBlackout](/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.isblackout) 屬性設定為 **true**，以將行事曆中的某一個日期設定為無法選取。
+您可以將 [CalendarViewDayItem.IsBlackout](/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.isblackout) 屬性設定為 **true** ，以將行事曆中的某一個日期設定為無法選取。
 
 您可以呼叫 [CalendarViewDayItem.SetDensityColors](/uwp/api/windows.ui.xaml.controls.calendarviewdayitem.setdensitycolors) 方法，以顯示一天中活動密度的內容相關資訊。 您可以為每一天顯示 0 到 10 個密度列，並設定每一列的色彩。
 

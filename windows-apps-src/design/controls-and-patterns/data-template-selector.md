@@ -1,5 +1,5 @@
 ---
-Description: 使用資料範本選擇器，根據項目屬性自訂項目的樣式。
+description: 使用資料範本選擇器，根據項目屬性自訂項目的樣式。
 title: 選取資料範本
 label: Data template selection
 template: detail.hbs
@@ -7,18 +7,18 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 382e28b38347a4901e781a12637423260c4bd3e3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 5b10afc03a1936c033977a53bd12effdae1c2ead
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89160382"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93032331"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>選取資料範本：根據項目屬性設定項目的樣式
 
 集合控制項的自訂設計是由 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 管理。 資料範本會定義應該如何配置每個項目和設定其樣式，而且該標記會套用至集合中的每個項目。 本文說明如何使用 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)，在集合上套用不同的資料範本，並根據特定項目屬性或您選擇的值，選取要使用的資料範本。
 
-> **重要 API**：[DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)、[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
+> **重要 API** ： [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)、 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
 
 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 是啟用自訂範本選擇邏輯的類別。 它可讓您定義一些規則，指定要用於集合中特定項目的資料範本。 若要實作此邏輯，您可以在程式碼後置中建立 DataTemplateSelector 的子類別，並定義邏輯，以決定哪個資料範本用於哪個類別的項目 (例如，特定類型的項目或具有特定屬性值的項目等)。 您可在 XAML 檔案的 Resources 區段中宣告這個類別的執行個體，以及您將使用的資料範本定義。 您可以使用 `x:Key` 值來識別這些資源，讓您在 XAML 中參考它們。
 
@@ -133,4 +133,4 @@ public class MyDataTemplateSelector : DataTemplateSelector
 - _每個項目的元素減少_ - 將資料範本中的 UI 元素數目保持在合理的下限。
 - 含異質集合的容器回收
   - 使用 _ChoosingItemContainer 事件_ - 此事件是一種將不同資料範本用於不同項目的高效能方式。 為了實現最佳效能，您應該最佳化快取，並為特定資料選取最適合的資料範本。
-  - 使用_項目範本選擇器_ - 在某些情況中應該避免使用項目範本選擇器 (`DataTemplateSelector`)，因為它會對效能產生影響。
+  - 使用 _項目範本選擇器_ - 在某些情況中應該避免使用項目範本選擇器 (`DataTemplateSelector`)，因為它會對效能產生影響。

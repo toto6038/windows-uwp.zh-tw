@@ -1,5 +1,5 @@
 ---
-Description: 用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。
+description: 用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。
 title: 核取方塊
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7add5ca356f5d1c41ddeb1fa19ea54c69ef9e583
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: e18f750f7a442fdfe5d5ffc0119a8a64f5571407
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750564"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030961"
 ---
 # <a name="check-boxes"></a>核取方塊
 
@@ -39,18 +39,18 @@ ms.locfileid: "91750564"
    :::column-end:::
 :::row-end:::
 
-> **平台 API：** [ 類別](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、[Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、[IsChecked 屬性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
+> **平台 API：** [ 類別](/uwp/api/Windows.UI.Xaml.Controls.CheckBox)、 [Checked 事件](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked)、 [IsChecked 屬性](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-針對二元 (是/否) 選項 (例如用於 [記住我?]) 使用**單一核取方塊** 登入案例或是用於服務合約條款。
+針對二元 (是/否) 選項 (例如用於 [記住我?]) 使用 **單一核取方塊** 登入案例或是用於服務合約條款。
 
 ![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
-對於二元選項，**核取方塊**和[切換開關](toggles.md)之間的主要差異為核取方塊適用於狀態，而切換開關適用於動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
+對於二元選項， **核取方塊** 和 [切換開關](toggles.md)之間的主要差異為核取方塊適用於狀態，而切換開關適用於動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
 
-針對使用者從不會互斥的選項群組中，選擇一個或多個項目的複選案例，請使用**多個核取方塊**。
+針對使用者從不會互斥的選項群組中，選擇一個或多個項目的複選案例，請使用 **多個核取方塊** 。
 
 當使用者可以選取任何選項組合時，建立核取方塊群組。
 
@@ -60,7 +60,7 @@ ms.locfileid: "91750564"
 
 ![用來顯示混合選項的核取方塊](images/checkbox3.png)
 
-**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
+**核取方塊** 和 **選項按鈕** 控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
 
 ## <a name="examples"></a>範例
 
@@ -114,7 +114,7 @@ checkBox1.Content = "I agree to the terms of service.";
 </StackPanel>
 ```
 
-如果此核取方塊也可以是**不確定**狀態，我們會使用繫結的 [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) 屬性來指定代表此狀態的布林值。 在此情況下，我們也不想啟用 [提交] 按鈕：
+如果此核取方塊也可以是 **不確定** 狀態，我們會使用繫結的 [FallbackValue](/uwp/api/windows.ui.xaml.data.binding.fallbackvalue) 屬性來指定代表此狀態的布林值。 在此情況下，我們也不想啟用 [提交] 按鈕：
 
 ```xaml
 <Button Content="Submit" 
@@ -226,11 +226,11 @@ State | 屬性 | 值
 未核取 | IsChecked | **false** 
 不確定 | IsChecked | **null** 
 
-針對要報告不確定狀態的核取方塊，您必須將 [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) 屬性設為 **true**。 
+針對要報告不確定狀態的核取方塊，您必須將 [IsThreeState](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.isthreestate) 屬性設為 **true** 。 
 
 將選項分組時，您可以使用不確定的核取方塊來代表整個群組。 當使用者選取群組中部分而非全部的子項目時，請使用核取方塊的不確定狀態。
 
-在下列範例中，[全選] 核取方塊已將其 IsThreeState 屬性設為 **true**。 針對 [全選] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
+在下列範例中，[全選] 核取方塊已將其 IsThreeState 屬性設為 **true** 。 針對 [全選] 核取方塊，如果已核取所有子元素，就表示已核取，如果未核取所有子元素，就表示未核取，否則即為不確定狀態。
 
 ```xaml
 <StackPanel>

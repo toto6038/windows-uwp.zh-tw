@@ -1,5 +1,5 @@
 ---
-Description: TabView 可讓您在動態索引標籤中靈活組織多個文件
+description: TabView 可讓您在動態索引標籤中靈活組織多個文件
 title: 索引標籤檢視
 template: detail.hbs
 ms.date: 09/24/2020
@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3010feeb1a19f8c4d38883415cc315b8d863bb82
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749734"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034771"
 ---
 # <a name="tabview"></a>TabView
 
@@ -34,7 +34,7 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
    :::column-end:::
 :::row-end:::
 
-> **Windows UI 程式庫 API**：[TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> **Windows UI 程式庫 API** ： [TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、 [TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
 > 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
@@ -43,8 +43,8 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-在一般情況下，索引標籤式 UI 有兩個不同的樣式，其功能和外觀各有不同：**靜態索引標籤**是通常可在設定視窗中找到的索引標籤。 它們包含固定順序的數個頁面，這些頁面通常包含預先定義的內容。
-**文件索引標籤**是可在瀏覽器 (例如 Microsoft Edge) 中找到的索引標籤。 使用者可以建立、移除和重新排列索引標籤；在視窗之間移動索引標籤；並變更索引標籤的內容。
+在一般情況下，索引標籤式 UI 有兩個不同的樣式，其功能和外觀各有不同： **靜態索引標籤** 是通常可在設定視窗中找到的索引標籤。 它們包含固定順序的數個頁面，這些頁面通常包含預先定義的內容。
+**文件索引標籤** 是可在瀏覽器 (例如 Microsoft Edge) 中找到的索引標籤。 使用者可以建立、移除和重新排列索引標籤；在視窗之間移動索引標籤；並變更索引標籤的內容。
 
 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 為 UWP 應用程式提供文件索引標籤。 使用 TabView 的時機：
 

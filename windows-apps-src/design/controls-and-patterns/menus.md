@@ -1,5 +1,5 @@
 ---
-Description: 功能表和操作功能表會在使用者要求命令或選項時，顯示它們的清單。
+description: 功能表和操作功能表會在使用者要求命令或選項時，顯示它們的清單。
 title: 功能表和操作功能表
 label: Menus and context menus
 template: detail.hbs
@@ -13,12 +13,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 29f7f1420e8f4284f1a4ed0c835a70e15958f95f
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 1b93197288b165dbb7e8c79e90ca7a7abcf96ef2
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749924"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034511"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -42,7 +42,7 @@ ms.locfileid: "91749924"
 
 > **Windows UI 程式庫 API：** [MenuBar 類別](/uwp/api/microsoft.ui.xaml.controls.menubar) \(英文\)
 >
-> **平台 API：** [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)、[MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)、[ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、[FlyoutBase.AttachedFlyout 屬性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) \(英文\)
+> **平台 API：** [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)、 [MenuBar 類別](/uwp/api/windows.ui.xaml.controls.menubar)、 [ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)、 [FlyoutBase.AttachedFlyout 屬性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties) \(英文\)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

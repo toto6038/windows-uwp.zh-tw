@@ -1,5 +1,5 @@
 ---
-Description: 使用工具提示在要求使用者執行動作前顯示關於控制項的詳細資訊。
+description: 使用工具提示在要求使用者執行動作前顯示關於控制項的詳細資訊。
 title: 工具提示
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a9a5c6deb2ad7ea2b4dad8e7db3e9513700c2c3e
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 0c9d2f26acfe431eb1be895f1021d544f78b52fb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750624"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030801"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -39,7 +39,7 @@ ms.locfileid: "91750624"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[ToolTip 類別](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、[ToolTipService 類別](/uwp/api/windows.ui.xaml.controls.tooltipservice)
+> **平台 API** ： [ToolTip 類別](/uwp/api/Windows.UI.Xaml.Controls.ToolTip)、 [ToolTipService 類別](/uwp/api/windows.ui.xaml.controls.tooltipservice)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

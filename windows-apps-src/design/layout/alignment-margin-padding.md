@@ -1,17 +1,17 @@
 ---
-Description: 使用對齊、邊界、邊框間距屬性來排列頁面上元素的版面配置。
+description: 使用對齊、邊界、邊框間距屬性來排列頁面上元素的版面配置。
 title: 版面配置的對齊、邊界及邊框間距
 ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1982bdd60ea8f14d19b9b29556b143abd8931127
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2782118b2ed35578ac48f2996839ceefcf5b71b
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165662"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034891"
 ---
 # <a name="alignment-margin-padding"></a>對齊、邊界、邊框間距
 
@@ -22,9 +22,9 @@ UWP 應用程式中，大部分的使用者介面 (UI) 元素是從 [**Framework
 
 ![顯示維度的圖](images/dimensions.svg)
 
-- [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) 和 [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) 指定元素的大小。 預設值在數學上來說是 NaN (不是數字)。 您可以設定以[有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)衡量的固定值，或者可以使用 **Auto** 或適用於可變式行為的[等比例調整大小](layout-panels.md#grid)。
+- [**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) 和 [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) 指定元素的大小。 預設值在數學上來說是 NaN (不是數字)。 您可以設定以 [有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)衡量的固定值，或者可以使用 **Auto** 或適用於可變式行為的 [等比例調整大小](layout-panels.md#grid)。
 
-- [**ActualHeight**](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 和 [**ActualWidth**](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 是唯讀屬性，在執行階段提供元素的大小。 如果可變式版面配置擴大或縮小，則這些值會在 [**SizeChanged**](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)事件中變更。 請注意，[**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) 不會變更 ActualHeight 和 ActualWidth 值。
+- [**ActualHeight**](/uwp/api/windows.ui.xaml.frameworkelement.actualheight) 和 [**ActualWidth**](/uwp/api/windows.ui.xaml.frameworkelement.actualwidth) 是唯讀屬性，在執行階段提供元素的大小。 如果可變式版面配置擴大或縮小，則這些值會在 [**SizeChanged**](/uwp/api/windows.ui.xaml.frameworkelement.sizechanged)事件中變更。 請注意， [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) 不會變更 ActualHeight 和 ActualWidth 值。
 
 - [**MinWidth**](/uwp/api/windows.ui.xaml.frameworkelement.minwidth)/[**MaxWidth**](/uwp/api/windows.ui.xaml.frameworkelement.maxwidth) 和 [**MinHeight**](/uwp/api/windows.ui.xaml.frameworkelement.minheight)/[**MaxHeight**](/uwp/api/windows.ui.xaml.frameworkelement.maxheight) 指定的值會在允許可變式調整大小時限制元素大小。
 
@@ -36,8 +36,8 @@ UWP 應用程式中，大部分的使用者介面 (UI) 元素是從 [**Framework
 ![顯示對齊方式的圖](images/alignment.svg)
 
 - [**HorizontalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [**VerticalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 指定元素應該如何放置於其父容器內。
-    - 適用於 **HorizontalAlignment** 的值為 **Left**、**Center**、**Right** 和 **Stretch**。
-    - 適用於 **VerticalAlignment** 的值為 **Top**、**Center**、**Bottom** 和 **Stretch**。
+    - 適用於 **HorizontalAlignment** 的值為 **Left** 、 **Center** 、 **Right** 和 **Stretch** 。
+    - 適用於 **VerticalAlignment** 的值為 **Top** 、 **Center** 、 **Bottom** 和 **Stretch** 。
 
 - **Stretch** 是這兩個屬性的預設，且元素將填滿父容器中提供給它們的所有空間。 Height 和 Width 的實際數字會取消一個 Stretch 值，而這個值將反而做為 Center 值。 某些控制項 (像是 Button) 會在其預設樣式中覆寫預設 Stretch 值。
 
@@ -71,7 +71,7 @@ UWP 應用程式中，大部分的使用者介面 (UI) 元素是從 [**Framework
 -   [**Control.Padding**](/uwp/api/windows.ui.xaml.controls.control.padding)：會繼承到所有 [**Control**](/uwp/api/windows.ui.xaml.controls) 衍生類別。 不是所有控制項都有內容，因此對於這些控制項而言，設定此屬性沒有作用。 如果控制項有邊框，將會在該邊框內套用邊框間距。
 -   [**Border.Padding**](/uwp/api/windows.ui.xaml.controls.border.padding)：定義 [**BorderThickness**](/uwp/api/windows.ui.xaml.controls.border.borderthickness)/[**BorderBrush**](/uwp/api/windows.ui.xaml.controls.border.borderbrush) 所建立的矩形線條與 [**Child**](/uwp/api/windows.ui.xaml.controls.border.child) 元素之間的空間。
 -   [**ItemsPresenter.Padding**](/uwp/api/windows.ui.xaml.controls.itemspresenter.padding)：作用在項目控制項中的項目外觀，在每個項目周圍放上指定的邊框間距。
--   [**TextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.textblock.padding) 與 [**RichTextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.richtextblock.padding)：展開文字元素的文字周圍的周框方塊。 這些文字元素沒有 **Background**，可能不容易看出。 基於這個原因，改為在 [**Block**](/uwp/api/windows.ui.xaml.documents.block)容器上使用 [**Margin**](/uwp/api/windows.ui.xaml.documents.block.margin) 設定。
+-   [**TextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.textblock.padding) 與 [**RichTextBlock.Padding**](/uwp/api/windows.ui.xaml.controls.richtextblock.padding)：展開文字元素的文字周圍的周框方塊。 這些文字元素沒有 **Background** ，可能不容易看出。 基於這個原因，改為在 [**Block**](/uwp/api/windows.ui.xaml.documents.block)容器上使用 [**Margin**](/uwp/api/windows.ui.xaml.documents.block.margin) 設定。
 
 不論上述哪一種情況，元素也具有邊界屬性。 若同時套用邊界與邊框間距，兩者會相加：外部容器與任何內部內容之間的外觀距離等於邊界加上邊框間距。
 
@@ -97,7 +97,7 @@ UWP 應用程式中，大部分的使用者介面 (UI) 元素是從 [**Framework
 ## <a name="general-recommendations"></a>一般建議
 - 只將測量值套用到特定按鍵元素，其他元素則使用可變式配置行為。 視窗寬度變更時，這可提供給[回應式 UI](responsive-design.md)。
 
-- 如果您使用測量值，**所有維度、邊界、邊框間距皆應以 4 個有效像素 (epx) 遞增**。 當 UWP 使用[有效像素與縮放比例](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) 讓您的應用程式在所有裝置與螢幕尺寸上清楚可辨，它是以 4 的倍數縮放 UI 元素。 藉由符合整數像素，使用以 4 遞增的值，呈現最佳轉譯。
+- 如果您使用測量值， **所有維度、邊界、邊框間距皆應以 4 個有效像素 (epx) 遞增** 。 當 UWP 使用[有效像素與縮放比例](../basics/design-and-ui-intro.md#effective-pixels-and-scaling) 讓您的應用程式在所有裝置與螢幕尺寸上清楚可辨，它是以 4 的倍數縮放 UI 元素。 藉由符合整數像素，使用以 4 遞增的值，呈現最佳轉譯。
 
 - 針對小的視窗寬度 (小於 640 像素)，建議使用 12 epx 裝訂邊，較大的視窗寬度，建議使用 24 epx 裝訂邊。
 

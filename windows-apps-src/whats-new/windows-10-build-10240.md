@@ -1,19 +1,19 @@
 ---
-Description: Windows 10 組建 10240 和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。
+description: Windows 10 組建 10240 和開發人員工具的更新持續提供通用 Windows 平台所支援的工具、功能及使用經驗。
 title: Windows 10 組建 10240 中的新功能 - 2015 年 7 月
 keywords: Windows 10, 1507, 10240
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: eee6552ce26bbe3c24ae6c6647c8297ba7d7487b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 282026436355c1bcaab504d2818c2a30ff09e20d
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89172802"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93029911"
 ---
-# <a name="whats-new-in-windows10-for-developers-build-10240"></a>適用於開發人員的 Windows 10 (組建 10240) 的新功能
+# <a name="whats-new-in-windows-10-for-developers-build-10240"></a>適用於開發人員的 Windows 10 (組建 10240) 的新功能
 
 Windows 10 組建 10240 與更新的 SDK 提供提供工具、功能及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://developer.microsoft.com/windows/downloads#_blank) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或探索如何使用您在[Windows 上的現有應用程式碼](../porting/index.md)。
 
@@ -66,7 +66,7 @@ MenuFlyout 更新 | 在通用 Windows app 中，有新的 API 可讓您更輕鬆
 ContentPresenter、Grid 和 StackPanel 的新框線屬性 | 一般容器控制項具有新的框線屬性，可讓您沿著控制項繪製框線，而不需要在 XAML 中新增額外的框線元素。 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)、[Grid](/uwp/api/windows.ui.xaml.controls.grid) 和 [StackPanel](/uwp/api/windows.ui.xaml.controls.stackpanel) 具有下列新屬性：BorderBrush、BorderThickness、CornerRadius 和 Padding。
 ContentPresenter 上的新文字 API | [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter) 具有新的 API，可讓您更充分掌控文字顯示：LineHeight、LineStackingStrategy、MaxLines 和 TextWrapping。
 系統焦點視覺效果 | XAML 控制項的焦點視覺效果現在由系統所建立，而不是宣告為控制項範本中的 XAML 元素。 焦點視覺效果通常不需要在行動裝置上，讓系統視需要加以建立及管理，可改善應用程式效能。 如果您需要進一步控制焦點視覺效果，您可以覆寫系統行為，並提供一個定義焦點視覺效果的自訂控制項範本。 請參閱 [UseSystemFocusVisuals](/uwp/api/windows.ui.xaml.controls.control.usesystemfocusvisuals) 與 [IsTemplateFocusTarget](/uwp/api/windows.ui.xaml.controls.control.istemplatefocustargetproperty) 瞭解詳細資訊。
-PasswordBox.PasswordRevealMode | 在通用 Windows app 中，[PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) 屬性會取代 IsPasswordRevealButtonEnabled 屬性，以便在不同裝置之間提供一致的行為。 **注意**：在 Windows 10 之前，依預設不會顯示密碼顯示按鈕；在通用 Windows 應用程式中則預設為顯示。 如果您 app 的安全性需要一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
+PasswordBox.PasswordRevealMode | 在通用 Windows app 中，[PasswordRevealMode](/uwp/api/windows.ui.xaml.controls.passwordbox.passwordrevealmode) 屬性會取代 IsPasswordRevealButtonEnabled 屬性，以便在不同裝置之間提供一致的行為。 **注意** ：在 Windows 10 之前，依預設不會顯示密碼顯示按鈕；在通用 Windows 應用程式中則預設為顯示。 如果您 app 的安全性需要一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
 Control.IsTextScaleFactorEnabled | Windows Phone 8.1 上提供的 [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabledproperty) 屬性現在已可供可跨所有裝置系列使用的通用 Windows app 使用。
 AutoSuggestBox | 來自 Windows Phone 8.1 的 [AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.autosuggestbox) 控制項現在已可供可跨所有裝置系列使用的通用 Windows app 使用，而且您應該用它來取代 [SearchBox](/uwp/api/windows.ui.xaml.controls.searchbox)。 AutoSuggestBox 會在使用者輸入時提供建議，而且可以和各種輸入類型 (例如觸控、鍵盤輸入及輸入法) 搭配使用。 它也擁有以下兩個新成員，可讓其更完美地以像搜尋方塊一樣的方式運作：[QueryIcon](/uwp/api/windows.ui.xaml.controls.autosuggestbox.queryicon) 屬性與 [QuerySubmitted](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted) 活動。
 ContentDialog | 來自 Windows Phone 8.1 的 [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog) 控制項現在已可供可跨所有裝置系列使用的通用 Windows app 使用。 ContentDialog 可讓您顯示可自訂的強制回應對話方塊，此對話方塊可在各種裝置上完美地運作。
@@ -90,7 +90,7 @@ Windows 核心文字 API | 新的 [Windows.UI.Text.Core](/uwp/api/windows.ui.tex
 Cortana | 使用可在外部應用程式中啟動及執行單一動作的語音命令，來延伸 Cortana 的基本功能。 透過整合您 App 的基本功能，以及透過提供中央進入點讓使用者能在不直接開啟您的 App 的情況下完成大部分工作，Cortana 可以成為您的 App 與使用者之間的連絡橋樑。 在多數情況下，這可以為使用者節省很多時間和精力。 了解如何[將您的 App 整合到 Cortana 畫布中](/previous-versions/windows/apps/dn974230(v=win.10))。 如果您需要一些想法，您可以參考 [Universal Windows app 設計基本知識](../design/layout/index.md)中，Cortana 特定的設計建議與 UX 指導方針。
 檔案總管 | 新的 [Windows.System.Launcher.LaunchFolderAsync](/uwp/api/windows.system.launcher.launchfolderasync) 方法可讓您啟動 [檔案總管] 並顯示您指定的資料夾內容。
 共用存放裝置 | 新的 [Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) 類別與其方法，可讓您在使用 URI 啟用啟動其他應用程式時，透過傳遞共用權杖來與另一個應用程式共用檔案。 目標應用程式會兌換權杖，以取得來源應用程式的共用檔案。
-Settings | 搭配 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法使用 ms-settings 通訊協定，顯示內建設定頁面。 例如，下列程式碼會顯示 Wi-Fi 設定的頁面：**bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));** <br /><br />如需您可以顯示之設定頁面的清單，請參閱[如何使用 ms-settings 通訊協定顯示內建設定頁面](/previous-versions/windows/apps/jj207014(v=vs.105))。
+Settings | 搭配 [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) 方法使用 ms-settings 通訊協定，顯示內建設定頁面。 例如，下列程式碼會顯示 Wi-Fi 設定的頁面： **bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings://network/wifi"));** <br /><br />如需您可以顯示之設定頁面的清單，請參閱[如何使用 ms-settings 通訊協定顯示內建設定頁面](/previous-versions/windows/apps/jj207014(v=vs.105))。
 App 間通訊 | Windows 10 中新的 [App 間通訊](/previous-versions/windows/apps/dn997827(v=win.10)) API，讓 Windows 應用程式 (及 Windows Web 應用程式) 可以互相啟動並交換資料和檔案。 使用這些新的 API，就能流暢地處理需要使用者使用多個應用程式的複雜工作。 例如，您的應用程式可以啟動社交網路 app 來選擇一位連絡人，或啟動結帳應用程式來完成付款程序。
 應用程式服務 | app 服務是 app 對 Windows 10 中的其他app 提供服務的一項途徑。 app 服務會採用背景工作的形式執行。 前景應用程式可呼叫另一個 app 中的 app 服務，以在背景中執行工作。 如需應用程式服務 API 的參考資訊，請參閱 [Windows.ApplicationModel.AppService](/uwp/api/Windows.ApplicationModel.AppService)。
 應用程式套件資訊清單 | 針對新增、移除和變更之 Windows 10 內含元素的[套件資訊清單結構描述](/uwp/schemas/appxpackage/appx-package-manifest)參考更新。 如需結構描述中所有元素、屬性和類型的參考資訊，請參閱[元素階層](/uwp/schemas/appxpackage/uapmanifestschema/root-elements)。
@@ -100,7 +100,7 @@ App 間通訊 | Windows 10 中新的 [App 間通訊](/previous-versions/windows/
 功能 | 說明
  :---- | :----
 Microsoft Surface Hub | Microsoft Surface Hub 是功能強大的小組共同作業裝置和大型螢幕平台，適用於從 Surface Hub 或是您已連接的裝置原生執行的通用 Windows app。 利用大型螢幕、觸控及手寫輸入，以及各種內建硬體 (例如攝影機與感應器) 的優點，針對您的商務特性設計及建立您自己的 App。<br /><br />請參考[通用 Windows App 設計基本知識](../design/layout/index.md)中 Surface Hub 特定的設計建議與 UX 指導方針。 這些文件說明通用 Windows App 的回應式設計技術。 <br /><br />如需支援公用的共用應用程式的相關詳細資料，請參閱 [SharedModeSettings](/uwp/api/windows.system.profile.sharedmodesettings)。 如需新的 [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) 控制項之手寫輸入與多點手寫輸入支援的相關詳細資料，請參閱 [Windows.UI.Input.Inking](/uwp/api/windows.ui.input.inking) 與 [Windows.UI.Input.Inking.Core](/uwp/api/windows.ui.input.inking.core)。 如需如何處理感應器輸入的資訊，請參閱[整合裝置、印表機以及感應器](/previous-versions/windows/apps/br229563(v=win.10))。
-位置 | Windows 10 導入了新方法 [RequestAccessAsync](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)，可以詢問使用者是否可存取其位置。 使用者可以使用 [設定] 應用程式中的 [位置隱私權設定] 來設定其位置資料的隱私權。 您的應用程式只能在下列情況下存取使用者的位置：[此裝置的位置] 已開啟 *(Windows 10 手機版不適用)* ，位置服務設定 [位置] 已開啟，且 [選擇可以使用您的位置的應用程式] 底下，您的應用程式設為開啟。 <br /><br />請務必先呼叫 **RequestAccessAsync**，才能存取使用者的位置。 此時，您的 app 必須在前景，且 **RequestAccessAsync** 必須是從 UI 執行緒呼叫。 在使用者授與您的 app 存取其位置的權限之前，您的 app 將無法存取位置資料。
+位置 | Windows 10 導入了新方法 [RequestAccessAsync](/uwp/api/windows.devices.geolocation.geolocator.requestaccessasync)，可以詢問使用者是否可存取其位置。 使用者可以使用 [設定] 應用程式中的 [位置隱私權設定] 來設定其位置資料的隱私權。 您的應用程式只能在下列情況下存取使用者的位置：[此裝置的位置] 已開啟 *(Windows 10 手機版不適用)* ，位置服務設定 [位置] 已開啟，且 [選擇可以使用您的位置的應用程式] 底下，您的應用程式設為開啟。 <br /><br />請務必先呼叫 **RequestAccessAsync** ，才能存取使用者的位置。 此時，您的 app 必須在前景，且 **RequestAccessAsync** 必須是從 UI 執行緒呼叫。 在使用者授與您的 app 存取其位置的權限之前，您的 app 將無法存取位置資料。
 AllJoyn | [Windows.Devices.AllJoyn](/uwp/api/windows.devices.alljoyn) Windows 執行階段命名空間引進了 Microsoft 的 AllJoyn 開放原始碼軟體架構和服務的實作。 這些 API 可實現讓您的通用 Windows 裝置 app 參與 AllJoyn 所驅動的物聯網 (IoT) 案例中的其他裝置。 如需關於 AllJoyn C API 的詳細資料，請於 [AllSeen 聯盟](https://allseenalliance.org/)下載文件。 使用此版本中包含的 [AllJoynCodeGen](/previous-versions/windows/apps/dn913809(v=win.10)) 工具，以產生可用來啟用您裝置 App 中 AllJoyn 案例的 Windows 元件。 <br /><br />**注意：** Windows 10 IoT 核心版現在已適用於新型的小型裝置，可讓您使用 Windows 和 Visual Studio 建立「物聯網」(IoT) 裝置。 深入了解 [Windows 開發人員中心上的 Windows IoT](https://developer.microsoft.com/windows/iot)。
 在行動裝置 (XAML) 上列印 API | 還有一組單一且整合的 API，可讓您跨裝置系列從您的 XAML 型 UWP 應用程式進行列印，包括行動裝置。 您現在可以使用 Windows.Graphics.Printing 和 Windows.UI.Xaml.Printing 命名空間中熟悉的列印相關 API，將列印功能加入您的行動裝置應用程式。
 電池 | [Windows.Devices.Power](/uwp/api/windows.devices.power) 命名空間中的電池 API，可以讓應用程式清楚得知執行您應用程式之裝置所連接的任何電池。 建立[電池](/uwp/api/windows.devices.power.battery)物件以代表個別的電池控制器，或是所有電池控制器的彙總 (當由 [FromIdAsync](/uwp/api/windows.devices.power.battery.fromidasync) 或 [AggregateBattery](/uwp/api/windows.devices.power.battery.aggregatebattery) 個別建立時)。 使用 [GetReport](/uwp/api/windows.devices.power.battery.getreport) 方法傳回指示相對應電池的充電、容量及狀態的 [BatteryReport](/uwp/api/windows.devices.power.batteryreport) 物件。
@@ -121,7 +121,7 @@ SoftwareBitmapSource | 在通用 Windows app 中，您可以使用新的 [Softwa
 功能 | 說明
  :---- | :----
 HTTP 即時資料流 | 您可以使用新的 [AdaptiveMediaSource](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 類別，將彈性視訊串流功能新增到您的應用程式。 將物件指向資料流資訊清單檔案，物件即會初始化。 支援的資訊清單格式包括 HTTP 即時資料流 (HLS) 與透過 HTTP 的動態彈性資料流 (DASH)。 一旦物件繫結至 XAML 媒體元素，彈性播放隨即開始。 資料流的屬性 (例如可用、最小和最大位元速率) 可供查詢，並在適當情況下設定。
-媒體基礎轉換 (MFT) 的媒體基礎轉碼視訊處理器 (XVP) 支援 | 使用媒體基礎轉換 (MFT) 的 Windows 應用程式現在可以使用**媒體基礎轉碼視訊處理器** (XVP) 來轉換、縮放以及轉換原始視訊資料︰新的 [MF_XVP_CALLER_ALLOCATES_OUTPUT](/windows/desktop/medfound/mf-xvp-caller-allocates-output) 屬性支援對呼叫端配置紋理的輸出 (即使在 Microsoft DirectX 視訊加速 (DXVA) 模式中也支援)。 新的 [IMFVideoProcessorControl2](/windows/desktop/api/mfidl/nn-mfidl-imfvideoprocessorcontrol2) 介面可讓您的應用程式啟用硬體效果、查詢支援的硬體效果，以及覆寫影片處理器所執行的旋轉作業。
+媒體基礎轉換 (MFT) 的媒體基礎轉碼視訊處理器 (XVP) 支援 | 使用媒體基礎轉換 (MFT) 的 Windows 應用程式現在可以使用 **媒體基礎轉碼視訊處理器** (XVP) 來轉換、縮放以及轉換原始視訊資料︰新的 [MF_XVP_CALLER_ALLOCATES_OUTPUT](/windows/desktop/medfound/mf-xvp-caller-allocates-output) 屬性支援對呼叫端配置紋理的輸出 (即使在 Microsoft DirectX 視訊加速 (DXVA) 模式中也支援)。 新的 [IMFVideoProcessorControl2](/windows/desktop/api/mfidl/nn-mfidl-imfvideoprocessorcontrol2) 介面可讓您的應用程式啟用硬體效果、查詢支援的硬體效果，以及覆寫影片處理器所執行的旋轉作業。
 轉碼 | 新的 [MediaProcessingTrigger](/uwp/api/Windows.ApplicationModel.Background.MediaProcessingTrigger) API 可讓您的應用程式在背景工作中執行媒體轉碼，因此即使終止前景應用程式，轉碼作業仍然可以繼續執行。
 MediaElement 媒體失敗事件 | 在通用 Windows app 中，[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 可播放包含多個串流的內容，即使其中一個串流發生解碼錯誤，只要媒體內容包含至少一個有效串流，便可繼續播放。 例如，如果包含音訊和視訊串流之內容中的視訊串流失敗，[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 仍然會播放音訊串流。 [PartialMediaFailureDetected](/uwp/api/windows.ui.xaml.controls.mediaelement.partialmediafailuredetected) 會通知您無法解碼串流中的一個串流。 它也可以讓您了解何種類型的串流失敗，讓您可在 UI 中反映該項資訊。 如果媒體串流中的所有串流皆失敗，就會引發 [MediaFailed](/uwp/api/windows.ui.xaml.controls.mediaelement.mediafailed) 活動。
 使用 MediaElement 的彈性視訊資料流的支援 | [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 具有新的 [SetPlaybackSource](/uwp/api/windows.ui.xaml.controls.mediaelement.setplaybacksource) 方法，以支援彈性影片串流。 請使用此方法將您的媒體來源設定為 AdaptiveMediaSource。

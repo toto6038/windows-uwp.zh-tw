@@ -1,22 +1,22 @@
 ---
-Description: 使用 ApplicationView 類別，在不同的視窗中檢視應用程式的不同組件。
+description: 使用 ApplicationView 類別，在不同的視窗中檢視應用程式的不同組件。
 title: 使用 ApplicationView 類別，顯示應用程式的次要視窗
 ms.date: 07/19/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2005f254118c44b386879f771cc4e5c0ae2cadc4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2cdee3c0844fc5a01d0749e4e6219d92cd8178a0
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165622"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034851"
 ---
 # <a name="show-multiple-views-with-applicationview"></a>使用 ApplicationView 顯示多重檢視
 
 讓使用者在個別的視窗中檢視您應用程式的獨立部分，以協助他們提高生產力。 如果您為 app 建立多個視窗，則每個視窗的行為都是各自獨立的。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都以自己的執行緒運作。
 
-> **重要 API**：[**ApplicationViewSwitcher**](/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher) \(英文\)、[**CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) \(英文\)
+> **重要 API** ： [**ApplicationViewSwitcher**](/uwp/api/Windows.UI.ViewManagement.ApplicationViewSwitcher) \(英文\)、 [**CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) \(英文\)
 
 ## <a name="what-is-a-view"></a>什麼是檢視？
 
@@ -24,9 +24,9 @@ ms.locfileid: "89165622"
 
 檢視是由 [**CoreApplication**](/uwp/api/Windows.ApplicationModel.Core.CoreApplication) 物件管理。 您可以呼叫 [**CoreApplication.CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) \(英文\) 來建立 [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView) \(英文\) 物件。 **CoreApplicationView** 會將 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 與 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 組合在一起 (儲存在 [**CoreWindow**](/uwp/api/windows.applicationmodel.core.coreapplicationview.corewindow) 與 [**Dispatcher**](/uwp/api/windows.applicationmodel.core.coreapplicationview.dispatcher) 屬性中)。 您可以將 **CoreApplicationView** 想像成 Windows 執行階段用來與核心 Windows 系統互動的物件。
 
-您通常不會直接使用 [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)。 取而代之的是，「Windows 執行階段」會在 [**Windows.UI.ViewManagement**](/uwp/api/Windows.UI.ViewManagement.ApplicationView) 命名空間中提供 [**ApplicationView**](/uwp/api/Windows.UI.ViewManagement) 類別。 這個類別會提供您當 app 與視窗化系統互動時，所需使用的屬性、方法及事件。 若要使用**ApplicationView**，請呼叫靜態 [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) 方法，此方法會取得繫結到目前 **CoreApplicationView** 的執行緒的 **ApplicationView** 執行個體。
+您通常不會直接使用 [**CoreApplicationView**](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)。 取而代之的是，「Windows 執行階段」會在 [**Windows.UI.ViewManagement**](/uwp/api/Windows.UI.ViewManagement.ApplicationView) 命名空間中提供 [**ApplicationView**](/uwp/api/Windows.UI.ViewManagement) 類別。 這個類別會提供您當 app 與視窗化系統互動時，所需使用的屬性、方法及事件。 若要使用 **ApplicationView** ，請呼叫靜態 [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) 方法，此方法會取得繫結到目前 **CoreApplicationView** 的執行緒的 **ApplicationView** 執行個體。
 
-XAML 架構同樣也會將 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 物件包裝在 [**Windows.UI.XAML.Window**](/uwp/api/Windows.UI.Xaml.Window) 物件中。 在 XAML app 中，您通常是與 **Window** 物件互動，而不是直接使用 **CoreWindow**。
+XAML 架構同樣也會將 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 物件包裝在 [**Windows.UI.XAML.Window**](/uwp/api/Windows.UI.Xaml.Window) 物件中。 在 XAML app 中，您通常是與 **Window** 物件互動，而不是直接使用 **CoreWindow** 。
 
 ## <a name="show-a-new-view"></a>顯示新的檢視
 
@@ -75,9 +75,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
     在 XAML 中，您通常會將 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) 新增到 [**Window**](/uwp/api/Windows.UI.Xaml.Window) 的 [**Content**](/uwp/api/windows.ui.xaml.window.content) 屬性，然後將 **Frame** 導覽到您已定義 app 內容的 XAML [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page)。 如需框架與頁面的詳細資訊，請參閱[兩個頁面之間的對等瀏覽](../basics/navigate-between-two-pages.md)。
 
-    在填入新的 [**Window**](/uwp/api/Windows.UI.Xaml.Window) 之後，您必須呼叫 **Window** 的 [**Activate**](/uwp/api/windows.ui.xaml.window.activate) 方法，以便在稍後顯示 **Window**。 這項工作會在新檢視的執行緒上發生，因此會啟用新的 **Window**。
+    在填入新的 [**Window**](/uwp/api/Windows.UI.Xaml.Window) 之後，您必須呼叫 **Window** 的 [**Activate**](/uwp/api/windows.ui.xaml.window.activate) 方法，以便在稍後顯示 **Window** 。 這項工作會在新檢視的執行緒上發生，因此會啟用新的 **Window** 。
 
-    最後，取得您稍後用來顯示檢視的新檢視 [**Id**](/uwp/api/windows.ui.viewmanagement.applicationview.id)。 這項工作同樣是在新檢視的執行緒上進行，因此 [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) 會取得新檢視的 **Id**。
+    最後，取得您稍後用來顯示檢視的新檢視 [**Id**](/uwp/api/windows.ui.viewmanagement.applicationview.id)。 這項工作同樣是在新檢視的執行緒上進行，因此 [**ApplicationView.GetForCurrentView**](/uwp/api/windows.ui.viewmanagement.applicationview.getforcurrentview) 會取得新檢視的 **Id** 。
 
     ```csharp
     await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
@@ -105,7 +105,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 您 app 啟動時建立的第一個檢視稱為「主要檢視」  。 這個檢視是儲存在 [**CoreApplication.MainView**](/uwp/api/windows.applicationmodel.core.coreapplication.mainview) 屬性中，並且其 [**IsMain**](/uwp/api/windows.applicationmodel.core.coreapplicationview.ismain) 屬性為 true。 您不需建立這個檢視；它是由 app 所建立。 主要檢視的執行緒會做為 app 的管理員，而所有的 app 啟用事件都會在這個執行緒上傳遞。
 
-開啟次要檢視時，可以隱藏主要檢視的視窗 (例如按一下視窗標題列中的關閉 (x) 按鈕)，但是其執行緒會維持為使用中。 在主要檢視的 [**Window**](/uwp/api/Windows.UI.Xaml.Window) 上呼叫 [**Close**](/uwp/api/windows.ui.xaml.window.close) 會導致發生 **InvalidOperationException**。 (使用 [**Application.Exit**](/uwp/api/windows.ui.xaml.application.exit) \(英文\) 關閉您的應用程式。)如果主要檢視的執行緒終止，應用程式就會關閉。
+開啟次要檢視時，可以隱藏主要檢視的視窗 (例如按一下視窗標題列中的關閉 (x) 按鈕)，但是其執行緒會維持為使用中。 在主要檢視的 [**Window**](/uwp/api/Windows.UI.Xaml.Window) 上呼叫 [**Close**](/uwp/api/windows.ui.xaml.window.close) 會導致發生 **InvalidOperationException** 。 (使用 [**Application.Exit**](/uwp/api/windows.ui.xaml.application.exit) \(英文\) 關閉您的應用程式。)如果主要檢視的執行緒終止，應用程式就會關閉。
 
 ## <a name="secondary-views"></a>次要檢視
 

@@ -1,5 +1,5 @@
 ---
-Description: 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。
+description: 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。
 title: 控制項和模式的簡介
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
@@ -11,18 +11,18 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: bfbb50668b7270dc39353a7526878d7b48d9dfd5
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 507286445e4ebb5ebf4f9e88596a648709c56cfb
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217301"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031021"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
 在 Windows 應用程式開發中，「控制項」  是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
 
-> **重要 API**：[Windows.UI.Xaml.Controls 命名空間](/uwp/api/windows.ui.xaml.controls)
+> **重要 API** ： [Windows.UI.Xaml.Controls 命名空間](/uwp/api/windows.ui.xaml.controls)
 
 「模式」  是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[主版/詳細資料](master-details.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽應用程式的方式。 同樣地，您可以自訂 [NavigationView](navigationview.md) 控制項的範本來實作索引標籤模式。
 

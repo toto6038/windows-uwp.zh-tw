@@ -1,5 +1,5 @@
 ---
-Description: 網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容。 超連結也可以在網頁檢視控制項中顯示和運作。
+description: 網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容。 超連結也可以在網頁檢視控制項中顯示和運作。
 title: 網頁檢視
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
@@ -8,18 +8,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46fc3c0eb087891de4fe622f0770bc7f1b2955d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f2f3bf022210e5b5f329cb5824cb36708154b977
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163302"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034381"
 ---
 # <a name="web-view"></a>網頁檢視
 
 網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容。 超連結也可以在網頁檢視控制項中顯示和運作。
 
-> **重要 API**：[WebView 類別](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+> **重要 API** ： [WebView 類別](/uwp/api/Windows.UI.Xaml.Controls.WebView)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -80,7 +80,7 @@ Web 檢視會提供數個 API 以供基本導覽：[GoBack](/uwp/api/windows.ui.
 
 Source 屬性可以設定在程式碼中，但是，如果不這麼做，您通常會使用其中一種 **Navigate** 方法來載入程式碼中的內容。 
 
-若要載入網頁內容，請使用 [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate) 方法搭配使用 http 或 https 配置的 **Uri**。 
+若要載入網頁內容，請使用 [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate) 方法搭配使用 http 或 https 配置的 **Uri** 。 
 
 ```csharp
 webView1.Navigate("http://www.contoso.com");
@@ -88,15 +88,15 @@ webView1.Navigate("http://www.contoso.com");
 
 若要瀏覽至具有 POST 要求和 HTTP 標頭的 URI，請使用 [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage) 方法。 此方法僅支援 [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method) 屬性值的 [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) 和 [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get)。 
 
-若要從您應用程式的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 資料存放區載入未壓縮和未加密的內容，請使用 **Navigate** 方法搭配使用 [ms-appdata 結構描述](../../app-resources/uri-schemes.md)的 **Uri**。 這個配置的網頁檢視支援需要您將您的內容放入本機或暫存資料夾的子資料夾中。 這樣可瀏覽至 URI (例如 ms-appdata:///local/*folder*/*file*.html 和ms-appdata:///temp/*folder*/*file*.html)。 (若要載入壓縮或加密的檔案，請參閱 [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)。) 
+若要從您應用程式的 [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder) 或 [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) 資料存放區載入未壓縮和未加密的內容，請使用 **Navigate** 方法搭配使用 [ms-appdata 結構描述](../../app-resources/uri-schemes.md)的 **Uri** 。 這個配置的網頁檢視支援需要您將您的內容放入本機或暫存資料夾的子資料夾中。 這樣可瀏覽至 URI (例如 ms-appdata:///local/ *folder*/*file*.html 和ms-appdata:///temp/ *folder*/*file*.html)。 (若要載入壓縮或加密的檔案，請參閱 [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri)。) 
 
-所有這些第一層子資料夾都是與其他第一層子資料夾中的內容隔離。 例如，您可以瀏覽至 ms-appdata:///temp/folder1/file.html，但此檔案中不能有 ms-appdata:///temp/folder2/file.html 的連結。 不過，您仍然可以使用 **ms-appx-web 配置**來連結至應用程式套件中的 HTML 內容，以及使用 **http** 和 **https** URI 配置來連結至 Web 內容。
+所有這些第一層子資料夾都是與其他第一層子資料夾中的內容隔離。 例如，您可以瀏覽至 ms-appdata:///temp/folder1/file.html，但此檔案中不能有 ms-appdata:///temp/folder2/file.html 的連結。 不過，您仍然可以使用 **ms-appx-web 配置** 來連結至應用程式套件中的 HTML 內容，以及使用 **http** 和 **https** URI 配置來連結至 Web 內容。
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-若要從應用程式套件中載入內容，請使用 **Navigate** 方法搭配使用 [ms-appx-web 配置](/previous-versions/windows/apps/jj655406(v=win.10)) 的 **Uri**。 
+若要從應用程式套件中載入內容，請使用 **Navigate** 方法搭配使用 [ms-appx-web 配置](/previous-versions/windows/apps/jj655406(v=win.10)) 的 **Uri** 。 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
@@ -171,7 +171,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 }
 ```
 
-針對網頁檢視內容中的每個 **iframe**，類似事件的發生順序都相同︰ 
+針對網頁檢視內容中的每個 **iframe** ，類似事件的發生順序都相同︰ 
 - [FrameNavigationStarting](/uwp/api/windows.ui.xaml.controls.webview.framenavigationstarting) - 發生在網頁檢視中的框架瀏覽至新的內容之前。 
 - [FrameContentLoading](/uwp/api/windows.ui.xaml.controls.webview.framecontentloading) - 發生在網頁檢視中的框架開始載入新的內容時。 
 - [FrameDOMContentLoaded](/uwp/api/windows.ui.xaml.controls.webview.framedomcontentloaded) - 發生在網頁檢視中的框架完成剖析其目前 HTML 內容時。 
@@ -181,7 +181,7 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 
 您可以回應內容的潛在問題，例如長時間執行的指令碼、網頁檢視無法載入的內容，以及不安全內容的警告。 
 
-指令碼正在執行時，您的應用程式看起來會像沒有回應。 如果網頁檢視執行 JavaScript 並且可以中斷指令碼，則 [LongRunningScriptDetected](/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected) 事件會定期發生。 若要判斷指令碼已執行多久的時間，請檢查 [WebViewLongRunningScriptDetectedEventArgs](/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) 的 [ExecutionTime](/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime) 屬性。 若要停止指令碼，請將事件引數 [StopPageScriptExecution](/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution)屬性設定為 **true**。 除非在後續網頁檢視瀏覽期間重新載入停止的指令碼，否則不會再次執行停止的指令碼。 
+指令碼正在執行時，您的應用程式看起來會像沒有回應。 如果網頁檢視執行 JavaScript 並且可以中斷指令碼，則 [LongRunningScriptDetected](/uwp/api/windows.ui.xaml.controls.webview.longrunningscriptdetected) 事件會定期發生。 若要判斷指令碼已執行多久的時間，請檢查 [WebViewLongRunningScriptDetectedEventArgs](/uwp/api/Windows.UI.Xaml.Controls.WebViewLongRunningScriptDetectedEventArgs) 的 [ExecutionTime](/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime) 屬性。 若要停止指令碼，請將事件引數 [StopPageScriptExecution](/uwp/api/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution)屬性設定為 **true** 。 除非在後續網頁檢視瀏覽期間重新載入停止的指令碼，否則不會再次執行停止的指令碼。 
 
 網頁檢視控制項無法裝載任意的檔案類型。 嘗試載入網頁檢視無法裝載的內容時，會發生 [UnviewableContentIdentified](/uwp/api/windows.ui.xaml.controls.webview.unviewablecontentidentified) 事件。 您可以處理此事件並通知使用者，或使用 [Launcher](/uwp/api/Windows.System.Launcher) 類別將檔案重新導向至外部瀏覽器或另一個應用程式。
 

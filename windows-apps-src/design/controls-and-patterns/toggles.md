@@ -1,5 +1,5 @@
 ---
-Description: 切換開關相當於實體開關，讓使用者能夠開啟或關閉選項。
+description: 切換開關相當於實體開關，讓使用者能夠開啟或關閉選項。
 title: 切換開關控制項的指導方針
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c8df28335bf67c00f0429d6967e9013c73ec351
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 03714fef129ccb51bd84a73317bfda702317f313
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154192"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034711"
 ---
 # <a name="toggle-switches"></a>切換開關
 
@@ -25,7 +25,7 @@ ms.locfileid: "89154192"
 
 若要建立切換開關控制項，請使用 [ToggleSwitch 類別](/uwp/api/windows.ui.xaml.controls.toggleswitch)。
 
-> **平台 API**：[ToggleSwitch 類別](/uwp/api/windows.ui.xaml.controls.toggleswitch)、[IsOn 屬性](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、[Toggled 事件](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
+> **平台 API** ： [ToggleSwitch 類別](/uwp/api/windows.ui.xaml.controls.toggleswitch)、 [IsOn 屬性](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、 [Toggled 事件](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

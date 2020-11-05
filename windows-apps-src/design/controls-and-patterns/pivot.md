@@ -1,5 +1,5 @@
 ---
-Description: Pivot 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
+description: Pivot 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
 title: 樞紐分析
 template: detail.hbs
 ms.date: 09/24/2020
@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b6662eb7bbfc08563dd9f7313aa0ea7d0a0e18
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: eaef3bb57eb8719ac4183f21b764ece98cae22fe
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749704"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93030851"
 ---
 # <a name="pivot"></a>樞紐分析
 
@@ -37,7 +37,7 @@ ms.locfileid: "91749704"
    :::column-end:::
 :::row-end:::
 
-> **平台 API**：[Pivot 類別](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
+> **平台 API** ： [Pivot 類別](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、 [NavigationView 類別](/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
 
 ## <a name="examples"></a>範例
 
@@ -199,7 +199,7 @@ Pivot 是一種 [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)�
 - 點選樞紐標籤會瀏覽到對應的頁面，且使用中的樞紐標籤會浮動切換到第一個位置。
 - 各樞紐項目會浮動循環切換，從最後一個接到第一個樞紐區段。
 
-> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false**。
+> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false** 。
 
 ## <a name="recommendations"></a>建議
 

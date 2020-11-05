@@ -1,5 +1,5 @@
 ---
-Description: 命令列飛出視窗可讓使用者以內嵌方式存取您應用程式最常見的工作。
+description: 命令列飛出視窗可讓使用者以內嵌方式存取您應用程式最常見的工作。
 title: 命令列飛出視窗
 label: Command bar flyout
 template: detail.hbs
@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a2f6e61373ae343d8d683d6e5f9169cc399f1594
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 3ca79795264fd0629c19877f22bdc3eb332fa69f
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750544"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93031491"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -46,9 +46,9 @@ ms.locfileid: "91750544"
    :::column-end:::
 :::row-end:::
 
->**Windows UI 程式庫 API**：[CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
+>**Windows UI 程式庫 API** ： [CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 >
->**平台 API**：[CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、[TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、[AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、[AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、[AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>**平台 API** ： [CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、 [AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、 [AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、 [AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator)
 >
 > CommandBarFlyout 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或是 [Windows UI 程式庫](/uwp/toolkits/winui/)。
 
@@ -143,7 +143,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 當您主動顯示關聯式命令時，預設應該只會顯示主要命令 (命令列飛出視窗應該摺疊起來)。 將最重要的命令放在主要命令集合中，以及將傳統上納入操作功能表中的其他命令放在次要命令集合中。
 
-若要主動顯示命令，通常會處理 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 或 [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) 事件以顯示命令列飛出視窗。 將飛出視窗的 [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 設定為 **Transient** or **TransientWithDismissOnPointerMoveAway**，不需取得焦點，即可在其摺疊模式中開啟飛出視窗。
+若要主動顯示命令，通常會處理 [Click](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 或 [Tapped](/uwp/api/windows.ui.xaml.uielement.tapped) 事件以顯示命令列飛出視窗。 將飛出視窗的 [ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 設定為 **Transient** or **TransientWithDismissOnPointerMoveAway** ，不需取得焦點，即可在其摺疊模式中開啟飛出視窗。
 
 從 Windows 10 Insider Preview 開始，文字控制項都有 **SelectionFlyout** 屬性。 當您將飛出視窗指派給這個屬性時，它會在選取文字時自動顯示。
 
@@ -415,8 +415,8 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性：[Pr
 
 TextCommandBarFlyout 無法加以自訂，並由每個文字控制項自動管理。 不過，您可以自訂命令取代預設 TextCommandBarFlyout。
 
-- 若要取代文字選取範圍上顯示的預設 TextCommandBarFlyout，您可以建立自訂 CommandBarFlyout (或其他飛出視窗類型)，並將它指派給 **SelectionFlyout** 屬性。 如果您將 SelectionFlyout 設定為 **null**，則選取範圍上沒有顯示任何命令。
-- 若要取代顯示為操作功能表的預設 TextCommandBarFlyout，請將自訂 CommandBarFlyout (或其他飛出視窗類型) 指派給文字控制項上的 **ContextFlyout** 屬性。 如果您將 ContextFlyout 設定為 **null**，則會顯示舊版文字控制項中顯示的功能表飛出視窗，而不會顯示 TextCommandBarFlyout。
+- 若要取代文字選取範圍上顯示的預設 TextCommandBarFlyout，您可以建立自訂 CommandBarFlyout (或其他飛出視窗類型)，並將它指派給 **SelectionFlyout** 屬性。 如果您將 SelectionFlyout 設定為 **null** ，則選取範圍上沒有顯示任何命令。
+- 若要取代顯示為操作功能表的預設 TextCommandBarFlyout，請將自訂 CommandBarFlyout (或其他飛出視窗類型) 指派給文字控制項上的 **ContextFlyout** 屬性。 如果您將 ContextFlyout 設定為 **null** ，則會顯示舊版文字控制項中顯示的功能表飛出視窗，而不會顯示 TextCommandBarFlyout。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
