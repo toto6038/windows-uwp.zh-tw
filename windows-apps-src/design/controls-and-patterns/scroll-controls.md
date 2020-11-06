@@ -1,5 +1,5 @@
 ---
-Description: 移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
+description: 移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
 title: 捲動檢視器控制項
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f4fb37250817087bf7b8a41144bf9e4841a9048
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 60a8e8f204591e455e2ccf52b09684a878b67452
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174462"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063030"
 ---
 # <a name="scroll-viewer-controls"></a>捲動檢視器控制項
 
@@ -25,7 +25,7 @@ ms.locfileid: "89174462"
 
 當您要顯示的 UI 內容多到超過區域所能容納的範圍時，請使用捲動檢視器控制項。
 
-> **重要 API**：[ScrollViewer 類別](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) \(英文\)、[ScrollBar 類別](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar) \(英文\)
+> **重要 API** ： [ScrollViewer 類別](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) \(英文\)、 [ScrollBar 類別](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar) \(英文\)
 
 捲動檢視器可讓內容延伸到檢視區 (可見區域) 的界限外。 使用者能透過觸控、滑鼠滾輪、鍵盤或遊戲控制器操縱捲動檢視器表面，或是使用滑鼠或手寫筆游標與捲動檢視器的捲軸互動，以觸達此內容。 此圖顯示捲動檢視器控制項的幾個範例。
 
@@ -144,6 +144,9 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 - 如果使用者將捲動很冗長的文字訊息，請將捲動檢視器設定為只能垂直捲動。
 - 使用捲動檢視器以只限包含一個物件。 請注意，這一個物件可以是配置面板，其本身可以包含數目不拘的物件。
 - 請不要將 [Pivot](pivot.md) 控制項放入捲動檢視器內，以避免與樞紐的捲動邏輯發生衝突。
+- 如果您需要在可捲動的檢視中處理 [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) 的指標事件 (例如 ScrollViewer 或 ListView)，則必須藉由呼叫 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)，明確停用對於此檢視元素上操作事件的支援。 若要在檢視中重新啟用操作事件，請呼叫 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
+
+
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

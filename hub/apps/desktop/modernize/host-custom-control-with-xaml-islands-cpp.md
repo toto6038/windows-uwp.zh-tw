@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 3f12c3d16cabcbe834ca9bb55a437e3f932bbf78
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 99b0c362613cd1da2050b5f96b9963ca922f75d2
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933049"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049519"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項
 
@@ -21,7 +21,7 @@ ms.locfileid: "91933049"
 
 若要裝載自訂 UWP XAML 控制項，您將在此逐步解說的過程中建立下列專案和元件：
 
-* **Windows 傳統型應用程式專案**。 此專案會實作原生的 C++ Win32 傳統型應用程式。 您將在此專案中新增程式碼，以使用 UWP XAML 裝載 API 來裝載自訂 UWP XAML 控制項。
+* **Windows 傳統型應用程式專案** 。 此專案會實作原生的 C++ Win32 傳統型應用程式。 您將在此專案中新增程式碼，以使用 UWP XAML 裝載 API 來裝載自訂 UWP XAML 控制項。
 
 * **UWP 應用程式專案 (C++/WinRT)** 。 此專案會實作自訂 UWP XAML 控制項。 同時也會實作根中繼資料提供者，以便在專案中載入自訂 UWP XAML 類型的中繼資料。
 
@@ -33,7 +33,7 @@ ms.locfileid: "91933049"
 
 ## <a name="create-a-desktop-application-project"></a>建立傳統型應用程式專案
 
-1. 在 Visual Studio 中，建立名為 **MyDesktopWin32App** 的新 **Windows 傳統型應用程式**專案。 此專案範本可在 **C++** 、**Windows** 和**傳統型**專案篩選中取得。
+1. 在 Visual Studio 中，建立名為 **MyDesktopWin32App** 的新 **Windows 傳統型應用程式** 專案。 此專案範本可在 **C++** 、 **Windows** 和 **傳統型** 專案篩選中取得。
 
 2. 在 [方案總管]  中，以滑鼠右鍵按一下解決方案節點、按一下 [重定解決方案目標]  、選取 [10.0.18362.0]  或更新的 SDK 版本，然後按一下 [確定]  。
 
@@ -48,7 +48,13 @@ ms.locfileid: "91933049"
     * [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) (最新的穩定版本)。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
     * [Microsoft.VCRTForwarders.140](https://www.nuget.org/packages/Microsoft.VCRTForwarders.140) \(英文\)。
 
-5. 建置解決方案並確認已成功建置。
+5. 新增 Windows 執行階段中繼資料的參考：
+   1. 在 [方案總管] 中，以滑鼠右鍵按一下專案的 [參考] 節點，然後選取 [新增參考]。
+   2. 按一下頁面底部的 [瀏覽] 按鈕，然後瀏覽至 SDK 安裝路徑中的 UnionMetadata 資料夾。 SDK 預設會安裝到 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`。 
+   3. 然後，選取以您要瞄準的 Windows 版本 (例如 10.0.18362.0) 所命名的資料夾，然後在該資料夾內挑選 `Windows.winmd` 檔案。
+   4. 按一下 [確定] 以關閉 [新增參考] 對話方塊。
+
+6. 建置解決方案並確認已成功建置。
 
 ## <a name="create-a-uwp-app-project"></a>建立 UWP 應用程式專案
 
@@ -56,7 +62,7 @@ ms.locfileid: "91933049"
 
 1. 在 [方案總管]  中，在方案節點上按一下滑鼠右鍵，然後選取 [新增]   -> [新增專案]  。
 
-2. 在您的解決方案中新增**空白應用程式 (C++/WinRT)** 專案。 將專案命名為 **MyUWPApp**，並確定目標版本和最小版本都設定為 **Windows 10 1903 版**或更新版本。
+2. 在您的解決方案中新增 **空白應用程式 (C++/WinRT)** 專案。 將專案命名為 **MyUWPApp** ，並確定目標版本和最小版本都設定為 **Windows 10 1903 版** 或更新版本。
 
 3. 在 **MyUWPApp** 專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) NuGet 套件。 此套件會定義稍後將在本逐步解說中使用的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文\) 類別。
 
@@ -74,7 +80,7 @@ ms.locfileid: "91933049"
 6. 在 **MyUWPApp** 專案中新增預留位置可執行檔。 Visual Studio 需要這個預留位置可執行檔，才能產生必要的專案檔，並正確地建置專案。
 
     1. 在 [方案總管]  中，以滑鼠右鍵按一下 [MyUWPApp]  專案節點，然後選取 [新增]   -> [新增項目]  。
-    2. 在 [新增項目]  對話方塊中，選取頁面左側的 [公用程式]  ，然後選取 [文字檔 (.txt)]  。 輸入名稱 **placeholder.exe**，然後按一下 [新增]  。
+    2. 在 [新增項目]  對話方塊中，選取頁面左側的 [公用程式]  ，然後選取 [文字檔 (.txt)]  。 輸入名稱 **placeholder.exe** ，然後按一下 [新增]  。
       ![新增文字檔](images/xaml-islands/xaml-island-cpp-3.png)
     3. 在 [方案總管]  中，選取 **placeholder.exe** 檔案。 在 [屬性]  視窗中，確定已將 [內容]  屬性設定為 [True]  。
     4. 在 [方案總管]  中，以滑鼠右鍵按一下 **MyUWPApp** 專案中的 **Package.appxmanifest** 檔案、選取 [開啟方式]  、選取 [XML (文字) 編輯器]  ，然後按一下 [確定]  。
@@ -149,7 +155,7 @@ ms.locfileid: "91933049"
 
 ### <a name="define-a-custom-uwp-xaml-control"></a>定義自訂 UWP XAML 控制項
 
-1. 在 [方案總管]  中，以滑鼠右鍵按一下 [MyUWPApp]  ，然後選取 [新增]   -> [新增項目]  。 在左窗格中選取 [Visual C++]  節點、選取 [空白使用者控制項 (C++/WinRT)]  、將其命名為 **MyUserControl**，然後按一下 [新增]  。
+1. 在 [方案總管]  中，以滑鼠右鍵按一下 [MyUWPApp]  ，然後選取 [新增]   -> [新增項目]  。 在左窗格中選取 [Visual C++]  節點、選取 [空白使用者控制項 (C++/WinRT)]  、將其命名為 **MyUserControl** ，然後按一下 [新增]  。
 2. 在 XAML 編輯器中，以下列 XAML 取代 **MyUserControl.xaml** 檔案的內容，然後儲存檔案。
 
     ```xml
@@ -183,9 +189,9 @@ ms.locfileid: "91933049"
 
 1. 在 [方案總管]  中，以滑鼠右鍵按一下 **MyUWPApp** 專案中的 **MainPage.xaml** 檔案。 依序按一下 [移除]  和 [刪除]  ，以從專案中永久刪除此檔案。
 2. 在 **MyUWPApp** 專案中，展開 **App.xaml** 檔案。
-3. 使用下列程式碼取代 **App.xaml**、**App.cpp**、**App.h** 和 **App.idl** 檔案的內容。
+3. 使用下列程式碼取代 **App.xaml** 、 **App.cpp** 、 **App.h** 和 **App.idl** 檔案的內容。
 
-    * **App.xaml**：
+    * **App.xaml** ：
 
         ```xml
         <Toolkit:XamlApplication
@@ -197,7 +203,7 @@ ms.locfileid: "91933049"
         </Toolkit:XamlApplication>
         ```
 
-    * **App.idl**：
+    * **App.idl** ：
 
         ```IDL
         namespace MyUWPApp
@@ -210,7 +216,7 @@ ms.locfileid: "91933049"
         }
         ```
 
-    * **App.h**：
+    * **App.h** ：
 
         ```cpp
         #pragma once
@@ -233,7 +239,7 @@ ms.locfileid: "91933049"
         }
         ```
 
-    * **App.cpp**：
+    * **App.cpp** ：
 
         ```cpp
         #include "pch.h"
@@ -257,7 +263,7 @@ ms.locfileid: "91933049"
         ```
 
         > [!NOTE]
-        > 當專案屬性的 [通用屬性] -> [C++/WinRT] 頁面上的 [已最佳化] 屬性設定為 [是] 時，就需要 `#include "App.g.cpp"` 陳述式。 這是新 C++/WinRT 專案的預設值。 如需**已最佳化** 屬性效果的詳細資訊，請參閱[本節](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
+        > 當專案屬性的 [通用屬性] -> [C++/WinRT] 頁面上的 [已最佳化] 屬性設定為 [是] 時，就需要 `#include "App.g.cpp"` 陳述式。 這是新 C++/WinRT 專案的預設值。 如需 **已最佳化** 屬性效果的詳細資訊，請參閱 [本節](/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access)。
 
 4. 將新的標頭檔新增至名為 **app.base.h** 的 **MyUWPApp** 專案。
 5. 將下列程式碼新增至 **app.base.h** 檔案、儲存檔案，然後加以關閉。
@@ -309,7 +315,7 @@ ms.locfileid: "91933049"
 
 您可以在 [MSIX 套件](/windows/msix)中封裝應用程式以供部署。 MSIX 是 Windows 的新式應用程式封裝技術，以 MSI、.appx、App-V 和 ClickOnce 安裝技術的組合為基礎。
 
-1. 將新的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的解決方案。 當您建立專案時，將其命名為 **MyDesktopWin32Project**，然後針對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
+1. 將新的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的解決方案。 當您建立專案時，將其命名為 **MyDesktopWin32Project** ，然後針對 [目標版本]  和 [最低版本]  選取 [Windows 10 版本 1903 (10.0；組建 18362)]  。
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式]  節點，然後選擇 [新增參考]  。 在專案清單中，選取 **MyDesktopWin32App** 專案旁的核取方塊，然後按一下 [確定]  。
     ![參考專案](images/xaml-islands/xaml-island-cpp-6.png)
@@ -323,7 +329,7 @@ ms.locfileid: "91933049"
 
 1. 以滑鼠右鍵按一下 [MyDesktopWin32App]  專案，然後選取 [新增]   -> [新增項目]  。 
 2. 在 [新增項目]  對話方塊中，按一下左窗格中的 [Web]  ，然後選取 [XML 檔案 (.xml)]  。 
-3. 將新檔案命名為 **app.manifest**，然後按一下 [新增]  。
+3. 將新檔案命名為 **app.manifest** ，然後按一下 [新增]  。
 4. 以下列 XML 取代新檔案的內容。 這個 XML 會在 **MyUWPApp** 專案中註冊自訂控制項類型。
 
     ```xml

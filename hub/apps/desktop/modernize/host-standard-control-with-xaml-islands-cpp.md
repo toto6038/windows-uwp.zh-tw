@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5acf1a017a55ddf75520eccf22b1a3b00ee8084b
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
+ms.openlocfilehash: fcad3bfeb5c31a6b3af85e5fd9a0ea72f11d65da
+ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253598"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93049509"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項
 
@@ -24,7 +24,7 @@ ms.locfileid: "92253598"
 
 ## <a name="create-a-desktop-application-project"></a>建立傳統型應用程式專案
 
-1. 在已安裝 Windows 10 1903 版 SDK (10.0.18362 版) 或更新版本的 Visual Studio 2019 中，建立新的 **Windows 傳統型應用程式**專案，並將其命名為 **MyDesktopWin32App**。 此專案類型可在 **C++** 、**Windows** 和**傳統型**專案篩選中取得。
+1. 在已安裝 Windows 10 1903 版 SDK (10.0.18362 版) 或更新版本的 Visual Studio 2019 中，建立新的 **Windows 傳統型應用程式** 專案，並將其命名為 **MyDesktopWin32App** 。 此專案類型可在 **C++** 、 **Windows** 和 **傳統型** 專案篩選中取得。
 
 2. 在 [方案總管]  中，以滑鼠右鍵按一下解決方案節點、按一下 [重定解決方案目標]  、選取 [10.0.18362.0]  或更新的 SDK 版本，然後按一下 [確定]  。
 
@@ -40,7 +40,7 @@ ms.locfileid: "92253598"
 
 5. 在您的[應用程式資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 中設定 `maxVersionTested` 值，以指定您的應用程式與 Windows 10 1903 版或更新版本相容。
 
-    1. 如果您的專案中還沒有應用程式資訊清單，請將新的 XML 檔案新增至您的專案並命名為 **app.manifest**。
+    1. 如果您的專案中還沒有應用程式資訊清單，請將新的 XML 檔案新增至您的專案並命名為 **app.manifest** 。
     2. 在您的應用程式資訊清單中，包含下列範例所示的 **compatibility** 元素及子元素。 以您要設為目標的 Windows 10 版本號碼 (必須是 10.0.18362 或更新版本) 來取代 **maxVersionTested** 元素的 **Id** 屬性。
 
         ```xml
@@ -55,6 +55,12 @@ ms.locfileid: "92253598"
             </compatibility>
         </assembly>
         ```
+
+6. 新增 Windows 執行階段中繼資料的參考：
+   1. 在 [方案總管] 中，以滑鼠右鍵按一下專案的 [參考] 節點，然後選取 [新增參考]。
+   2. 按一下頁面底部的 [瀏覽] 按鈕，然後瀏覽至 SDK 安裝路徑中的 UnionMetadata 資料夾。 SDK 預設會安裝到 `C:\Program Files (x86)\Windows Kits\10\UnionMetadata`。 
+   3. 然後，選取以您要瞄準的 Windows 版本 (例如 10.0.18362.0) 所命名的資料夾，然後在該資料夾內挑選 `Windows.winmd` 檔案。
+   4. 按一下 [確定] 以關閉 [新增參考] 對話方塊。
 
 ## <a name="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control"></a>使用 XAML 裝載 API 來裝載 WinRT XAML 控制項
 

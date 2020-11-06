@@ -1,5 +1,5 @@
 ---
-Description: 您可以定義附加的版面配置，來與 ItemsRepeater 控制項之類的容器搭配使用。
+description: 您可以定義附加的版面配置，來與 ItemsRepeater 控制項之類的容器搭配使用。
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be16e22a30f0b366ad55f323a0f3f2aa2b7b837
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 62ecc21d3ed9835ae7360d0c0dfdfa0b09cbdced
+ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220301"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93034861"
 ---
 # <a name="attached-layouts"></a>附加的版面配置
 
@@ -24,7 +24,7 @@ ms.locfileid: "91220301"
 | - |
 | 此控制項包含在 Windows UI 程式庫中；該程式庫是 NuGet 套件，其中包含適用於 Windows 應用程式的新控制項和 UI 功能。 如需詳細資訊 (包括安裝指示)，請參閱 [Windows UI 程式庫概觀](/uwp/toolkits/winui/)。 |
 
-> **重要 API**：
+> **重要 API** ：
 
 > * [ScrollViewer](/uwp/api/windows.ui.xaml.controls.scrollviewer)
 > * [ItemsRepeater](../controls-and-patterns/items-repeater.md)
@@ -58,13 +58,13 @@ ms.locfileid: "91220301"
 [ItemsRepeater](../controls-and-patterns/items-repeater.md) 的行為也與 Panel 類似，但與 Panel 不同的是，其不會公開 Children 屬性，此屬性允許以程式設計方式新增或移除 UIElement 子系。  相反地，其子系的存留期會由架構自動管理，以對應到資料項目的集合。  儘管其不是衍生自 Panel，但會運作且由 Panel 之類的架構來處理。
 
 > [!NOTE]
-> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 是衍生自 Panel 的容器，會將其邏輯委派給附加的 [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) 物件。  LayoutPanel 處於「預覽」  狀態，目前僅適用於 WinUI 套件的「發行前版本」  。
+> [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) 是衍生自 Panel 的容器，會將其邏輯委派給附加的 [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) 物件。  LayoutPanel 處於「預覽」狀態，目前僅適用於 WinUI 套件的「發行前版本」。
 
 #### <a name="containers"></a>容器
 
 概念上，[Panel](/uwp/api/windows.ui.xaml.controls.panel) 是元素的容器，也能夠轉譯適用於 [Background](/uwp/api/windows.ui.xaml.controls.panel.background) 的像素。  Panel 提供一種方式，可將通用版面配置邏輯封裝於易於使用的套件中。
 
-**附加的版面配置**的概念讓容器和版面配置這兩個角色之間的區別更清楚。  如果容器將其版面配置邏輯委派給另一個物件，我們會將該物件稱為附加的版面配置，如下列程式碼片段所示。 繼承自 [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement) 的容器 (例如 LayoutPanel) 會自動公開通用屬性，以便為 XAML 的版面配置程序 (例如，高度和寬度) 提供輸入。
+**附加的版面配置** 的概念讓容器和版面配置這兩個角色之間的區別更清楚。  如果容器將其版面配置邏輯委派給另一個物件，我們會將該物件稱為附加的版面配置，如下列程式碼片段所示。 繼承自 [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement) 的容器 (例如 LayoutPanel) 會自動公開通用屬性，以便為 XAML 的版面配置程序 (例如，高度和寬度) 提供輸入。
 
 ```xaml
 <LayoutPanel>
@@ -94,7 +94,7 @@ ms.locfileid: "91220301"
 <!-- ... --->
 ```
 
-在這種情況下，*ExampleLayout* 必須仔細考慮其在版面配置計算中所使用的狀態及該狀態的儲存位置，以避免一個面板中元素的版面配置會對另一個產生影響。  這類似於自訂 Panel，其 MeasureOverride 和 ArrangeOverride 邏輯取決於其「靜態」  屬性的值。
+在這種情況下， *ExampleLayout* 必須仔細考慮其在版面配置計算中所使用的狀態及該狀態的儲存位置，以避免一個面板中元素的版面配置會對另一個產生影響。  這類似於自訂 Panel，其 MeasureOverride 和 ArrangeOverride 邏輯取決於其「靜態」  屬性的值。
 
 #### <a name="layoutcontext"></a>LayoutContext
 
@@ -149,10 +149,10 @@ UI 虛擬化表示會將 UI 物件建立延遲到「需要時」  才進行。  
 
 1. 衍生自基底類型 [NonVirtualizingLayout](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout) (而不是 Panel)。
 2. (選擇性)  定義相依性屬性，在變更時將會使版面配置失效。
-3. (**新增**/選擇性)  將版面配置所需的任何狀態物件初始化，以作為 [InitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) 的一部分。 使用與內容一起提供的 [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)，將其與主控件容器一起隱藏。
+3. ( **新增** /選擇性)  將版面配置所需的任何狀態物件初始化，以作為 [InitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore) 的一部分。 使用與內容一起提供的 [LayoutState](/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate)，將其與主控件容器一起隱藏。
 4. 覆寫 [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride)，並在所有子系上呼叫 [Measure](/uwp/api/windows.ui.xaml.uielement.measure) 方法。
 5. 覆寫 [ArrangeOverride](/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride)，並在所有子系上呼叫 [Arrange](/uwp/api/windows.ui.xaml.uielement.arrange) 方法。
-6. (**新增**/選擇性)  清除任何已儲存的狀態，以作為 [UninitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) 的一部分。
+6. ( **新增** /選擇性)  清除任何已儲存的狀態，以作為 [UninitializeForCoNtextCore](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore) 的一部分。
 
 ### <a name="example-a-simple-stack-layout-varying-sized-items"></a>範例：簡單的堆疊版面配置 (大小不一的項目)
 
@@ -222,7 +222,7 @@ public class MyStackLayout : NonVirtualizingLayout
 > [!TIP]
 > [MeasureOverride](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout) 所傳回的值可用來作為虛擬化內容的大小。
 
-撰寫虛擬化的版面配置時，有兩種一般方法需要考量。  要選擇哪一種主要取決於「您將如何判斷元素的大小」。  如果其足以知道資料集中某個項目的索引，或資料本身就能決定其最終大小，則我們會將其視為**資料相依**。  這些更容易建立。  不過，如果判斷項目大小的唯一方式是建立並測量 UI，則我們會假設它是**內容相依**。  這些比較複雜。
+撰寫虛擬化的版面配置時，有兩種一般方法需要考量。  要選擇哪一種主要取決於「您將如何判斷元素的大小」。  如果其足以知道資料集中某個項目的索引，或資料本身就能決定其最終大小，則我們會將其視為 **資料相依** 。  這些更容易建立。  不過，如果判斷項目大小的唯一方式是建立並測量 UI，則我們會假設它是 **內容相依** 。  這些比較複雜。
 
 ### <a name="the-layout-process"></a>版面配置程序
 
@@ -272,7 +272,7 @@ VirtualizingLayoutCoNtext 提供兩個額外屬性，其專為建立內容相依
 
 ## <a name="data-dependent-virtualizing-layouts"></a>資料相依的虛擬化版面配置
 
-如果您知道每個項目的大小且不需測量要顯示的內容，虛擬化的版面配置就會更容易。  在此文件中，我們會將這個類別的虛擬化版面配置稱為**資料版面配置**，因為其通常涉及檢查資料。  根據資料，應用程式可能會挑選已知大小的視覺表示，可能是因為其資料部分或先前已透過設計來決定。
+如果您知道每個項目的大小且不需測量要顯示的內容，虛擬化的版面配置就會更容易。  在此文件中，我們會將這個類別的虛擬化版面配置稱為 **資料版面配置** ，因為其通常涉及檢查資料。  根據資料，應用程式可能會挑選已知大小的視覺表示，可能是因為其資料部分或先前已透過設計來決定。
 
 一般的方法是將版面配置用於：
 
@@ -295,7 +295,7 @@ VirtualizingLayoutCoNtext 提供兩個額外屬性，其專為建立內容相依
 
 ![Xbox 活動摘要](images/xaml-attached-layout-activityfeedscreenshot.png)
 
-下列程式碼將逐步解說適用於活動摘要的自訂虛擬化 UI 可能是什麼，以說明您可能會針對**資料版面配置**採取的一般方法。
+下列程式碼將逐步解說適用於活動摘要的自訂虛擬化 UI 可能是什麼，以說明您可能會針對 **資料版面配置** 採取的一般方法。
 
 <table>
 <td>
@@ -311,13 +311,13 @@ VirtualizingLayoutCoNtext 提供兩個額外屬性，其專為建立內容相依
 #### <a name="implementation"></a>實作
 
 ```csharp
-/// <summary>
-///  This is a custom layout that displays elements in two different sizes
-///  wide (w) and narrow (n). There are two types of rows 
-///  odd rows - narrow narrow wide
-///  even rows - wide narrow narrow
-///  This pattern repeats.
-/// </summary>
+/// <summary>
+///  This is a custom layout that displays elements in two different sizes
+///  wide (w) and narrow (n). There are two types of rows 
+///  odd rows - narrow narrow wide
+///  even rows - wide narrow narrow
+///  This pattern repeats.
+/// </summary>
 
 public class ActivityFeedLayout : VirtualizingLayout // STEP #1 Inherit from base attached layout
 {
@@ -662,7 +662,7 @@ internal class ActivityFeedLayoutState
 
 ## <a name="content-dependent-virtualizing-layouts"></a>資料相依的虛擬化版面配置
 
-如果您必須先測量項目的 UI 內容以找出其確切大小，則其為**內容相依的版面配置**。  您也可以將其視為版面配置，其中每個項目都必須自行調整大小，而不是由版面配置告訴該項目其大小。 屬於此類別的虛擬化版面配置更為相關。
+如果您必須先測量項目的 UI 內容以找出其確切大小，則其為 **內容相依的版面配置** 。  您也可以將其視為版面配置，其中每個項目都必須自行調整大小，而不是由版面配置告訴該項目其大小。 屬於此類別的虛擬化版面配置更為相關。
 
 > [!NOTE]
 > 內容相依的版面配置不會 (不應) 中斷資料虛擬化。

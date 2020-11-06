@@ -1,5 +1,5 @@
 ---
-Description: 當您想要建立新的傳統型應用程式時，首先必須決定要使用 Win32 和 COM API 還是 .NET。
+description: 當您想要建立新的傳統型應用程式時，首先必須決定要使用 Win32 和 COM API 還是 .NET。
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: 選擇您的應用程式平台
 ms.topic: article
@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 0aa439010138af80f91c4e02776163577658d6cc
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 46cf8a8e9a57384b85b3156b87697f898ff08ee8
+ms.sourcegitcommit: 37f570c7425a3fa953a0c375c19381bf9cf2b6a2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216731"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93191899"
 ---
 # <a name="choose-your-app-platform"></a>選擇您的應用程式平台
 
@@ -133,4 +133,4 @@ PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 1
 
 ### <a name="uno-platform"></a>Uno 平台
 
-Uno 平台可讓 Windows UWP 型的程式碼 (C# 和 XAML) 在 iOS、Android 和 WebAssembly 上執行。 其會針對 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) 中的 UWP 提供完整的 API 定義，以及部分 UWP API 的實作 (例如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041))，讓 UWP 應用程式可以在這些平台上執行。 如需詳細資訊，請參閱 [Uno 平台文件](https://platform.uno/docs/articles/intro.html)。
+Uno 平台可讓 Windows UWP 型的程式碼 (C# 和 XAML) 在 iOS、Android、macOS、Linux 和 WebAssembly 上執行。 其會針對 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) 中的 UWP 提供完整的 API 定義，以及部分 UWP API 的實作 (例如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041))，讓 UWP 應用程式可以在這些平台上執行。 如需詳細資訊，請參閱 [Uno 平台文件](https://platform.uno/docs/articles/intro.html)。

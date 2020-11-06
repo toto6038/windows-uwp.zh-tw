@@ -1,5 +1,5 @@
 ---
-description: 了解集合和清單可用來表示會一起出現的多個相關資料項目。 
+description: 了解集合和清單可用來表示會一起出現的多個相關資料項目。
 title: 集合和清單
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
@@ -12,18 +12,18 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 764d2d769a1455ff6a0815a6716866c055edf291
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 3fd6cfb7fb0ffd7102f32d7159aba2b4c1042b76
+ms.sourcegitcommit: da44cb95946440cd06ff36254d42ecefcdd87ce2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220021"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93063020"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
 集合和清單都可用來表示會一起出現的多個相關資料項目。 集合可透過多種方式以不同的集合控制項 (也可能稱為集合檢視) 來表示。 集合控制項會顯示並實現與集合型內容的互動，例如連絡人清單、日期清單、影像集合等等。
 
-> **重要 API**：[ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView 類別](/uwp/api/Windows.UI.Xaml.Controls.GridView)、[FlipView 類別](/uwp/api/windows.ui.xaml.controls.flipview)、[TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、[ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)
+> **重要 API** ： [ListView 類別](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 [GridView 類別](/uwp/api/Windows.UI.Xaml.Controls.GridView)、 [FlipView 類別](/uwp/api/windows.ui.xaml.controls.flipview)、 [TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、 [ItemsRepeater 類別](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater)
 
 本文涵蓋的控制項包括：
 
@@ -41,7 +41,7 @@ ms.locfileid: "91220021"
 
 本文未涵蓋的其中一個案例是在資料表中或跨多個資料欄顯示集合。 如果您想要以這種格式顯示集合，請考慮使用 [Windows 社群工具組](/windows/communitytoolkit/)中的 [DataGrid 控制項](/windows/communitytoolkit/controls/datagrid)。 
 
-> **Windows 10 Fall Creators 更新 - 行為變更**根據預設，主動式手寫筆現在會在 Windows 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
+> **Windows 10 Fall Creators 更新 - 行為變更** 根據預設，主動式手寫筆現在會在 Windows 應用程式中捲動/移動瀏覽清單 (如同觸控、觸控板和被動式手寫筆)，而不會執行選取。
 > 如果您的應用程式需仰賴先前的行為，則可以覆寫手寫筆捲動並還原至先前的行為。 如需詳細資料，請參閱針對 [ScrollViewer 類別](/uwp/api/windows.ui.xaml.controls.scrollviewer) 的 API 參照主題。
 
 ## <a name="examples"></a>範例
@@ -74,7 +74,9 @@ ms.locfileid: "91220021"
     - 建立訊息或訊息記錄的清單。
     - 建立連絡人清單。
     - 在[主要/詳細資料模式](master-details.md)中建立主要窗格。 主要/詳細資料是經常用於電子郵件應用程式的模式，其中一個窗格 (主要) 具有可選取項目的清單，而另一個窗格 (詳細資料) 具有已選取項目的詳細資料檢視。
-    
+
+> [!NOTE]
+> 如果您需要在可捲動的檢視中處理 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 的指標事件 (例如 ScrollViewer 或 ListView)，則必須藉由呼叫 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)，明確停用對於此檢視元素上操作事件的支援。 若要在檢視中重新啟用操作事件，請呼叫 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
 ### <a name="examples"></a>範例
 
@@ -140,6 +142,9 @@ ms.locfileid: "91220021"
 - 因應各種使用案例，包括下列常見情況：
     - 店面類型的使用者介面 (即瀏覽應用程式、歌曲、產品)
     - 互動式圖庫
+
+> [!NOTE]
+> 如果您需要在可捲動的檢視中處理 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 的指標事件 (例如 ScrollViewer 或 ListView)，則必須藉由呼叫 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)，明確停用對於此檢視元素上操作事件的支援。 若要在檢視中重新啟用操作事件，請呼叫 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
 
 ### <a name="examples"></a>範例
 
@@ -277,7 +282,7 @@ ItemsRepeater 與本頁面上所顯示的其餘集合控制項不同，其不會
 
 ### <a name="examples"></a>範例
 
-下列三個範例是繫結至相同資料來源 (數字集合) 的所有 ItemsRepeater 控制項。 數字集合以三種方式表示，下列的每個 ItemsRepeater 會使用不同的自訂[版面配置](/uwp/api/microsoft.ui.xaml.controls.layout)和不同的自訂 [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate?view=winui-2.2)。
+下列三個範例是繫結至相同資料來源 (數字集合) 的所有 ItemsRepeater 控制項。 數字集合以三種方式表示，下列的每個 ItemsRepeater 會使用不同的自訂[版面配置](/uwp/api/microsoft.ui.xaml.controls.layout)和不同的自訂 [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate)。
 
 ![具有橫條的 ItemsRepeater](images/itemsrepeater-1.png)
 ![具有直條的 ItemsRepeater](images/itemsrepeater-2.png)
