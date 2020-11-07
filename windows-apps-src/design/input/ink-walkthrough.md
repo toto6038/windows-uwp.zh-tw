@@ -6,12 +6,12 @@ keywords: 筆跡、筆跡、教學課程
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f726f4ab4a422cc94f00493261620ddff8b6122b
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: fb74b5d15b731a6b08a0adcec20a801b7e133a7f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860196"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339816"
 ---
 # <a name="tutorial-support-ink-in-your-windows-app"></a>教學課程：在您的 Windows 應用程式中支援筆墨
 
@@ -40,7 +40,7 @@ ms.locfileid: "91860196"
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 視您的設定而定，您可能需要安裝 [NETCore Microsoft.netcore.universalwindowsplatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並在您的系統設定中啟用 **開發人員模式** (設定-> 更新 & 的安全性 > 開發人員-> 使用開發人員功能) 。
 * 如果您不熟悉使用 Visual Studio 的 Windows 應用程式開發，請先參閱下列主題，再開始進行本教學課程：  
-    * [開始設定](../../get-started/get-set-up.md)
+    * [開始設定](/windows/apps/get-started/get-set-up)
     * [建立 Hello, world 應用程式 (XAML)](../../get-started/create-a-hello-world-app-xaml-universal.md)
 * **[選擇性]** 數位手寫筆和配備支援手寫筆輸入的顯示器的電腦。
 
@@ -52,10 +52,10 @@ ms.locfileid: "91860196"
 
 從 [GitHub](https://github.com/) 的 [windows-appsample-get-started-ink sample](https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink) 下載此 Visual Studio 範例和原始程式碼：
 
-1. 選取綠色的 **\[Clone or download\]**(複製或下載) 按鈕  
+1. 選取綠色的 **\[Clone or download\]** (複製或下載) 按鈕  
 ![複製存放庫。](images/ink/ink-clone.png)
 2. 如果您有 GitHub 帳戶，您可以選擇 **\[在 Visual Studio 中開啟\]** 將存放庫複製到您的本機電腦 
-3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]**(您必須定期返回以下載最新的更新)
+3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]** (您必須定期返回以下載最新的更新)
 
 > [!IMPORTANT]
 > 範例中大部分的程式碼已標示註解。當我們逐步進行每個步驟時，您會被要求取消註解各個不同區段的程式碼。 在 Visual studio 中，只要反白顯示程式碼行，並按 CTRL-K 然後按 CTRL-U。
@@ -64,7 +64,7 @@ ms.locfileid: "91860196"
 
 這些物件提供大量的 Windows 應用程式筆跡體驗。
 
-| 元件 | 描述 |
+| 元件 | 說明 |
 | --- | --- |
 | [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控制項，此控制項預設會接收來自畫筆的所有輸入，並顯示為筆墨筆劃或擦去筆劃。 |
 | [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 屬性所公開) 進行具現化。 此物件提供 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas)所公開的所有預設筆墨功能，以及一組完整的 api 來進行額外的自訂和個人化。 |
@@ -79,7 +79,7 @@ ms.locfileid: "91860196"
 3. 按下 F5 進行編譯、部署和執行。  
 
    > [!NOTE]
-   > 或者，您可以選取 [ **Debug**  >  **開始調試**] 功能表項目，或選取此處顯示的 [**本機電腦**執行] 按鈕。
+   > 或者，您可以選取 [ **Debug**  >  **開始調試** ] 功能表項目，或選取此處顯示的 [ **本機電腦** 執行] 按鈕。
    > ![Visual Studio 建立專案] 按鈕。](images/ink/ink-vsrun-small.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
@@ -159,7 +159,7 @@ ms.locfileid: "91860196"
 
 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 是 UWP 平台控制項，提供可自訂和可擴充的按鈕集合以啟用筆跡相關功能。 
 
-根據預設，[**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含一組基本的按鈕，可讓使用者迅速選取手寫筆、鉛筆、螢光筆或橡皮擦，當中的任何一個都可與樣板 (尺規或量角器) 一起使用。 手寫筆、鉛筆和螢光筆按鈕，每一個也都提供選取筆跡色彩和筆觸大小的飛出視窗。
+根據預設， [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含一組基本的按鈕，可讓使用者迅速選取手寫筆、鉛筆、螢光筆或橡皮擦，當中的任何一個都可與樣板 (尺規或量角器) 一起使用。 手寫筆、鉛筆和螢光筆按鈕，每一個也都提供選取筆跡色彩和筆觸大小的飛出視窗。
 
 若要新增預設的 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 到手寫筆跡應用程式，只要將它放在與 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 同一個頁面上並關聯兩個控制項即可。
 
@@ -177,7 +177,7 @@ ms.locfileid: "91860196"
 ```
 
 > [!NOTE]
-> 為盡可能整齊而簡單地保留 UI 和程式碼，請使用基本方格配置並在方格列中 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 的之後宣告 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)。 如果您在 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 之前宣告它，[**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 會先呈現在畫布下方，並且使用者無法存取。  
+> 為盡可能整齊而簡單地保留 UI 和程式碼，請使用基本方格配置並在方格列中 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 的之後宣告 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar)。 如果您在 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) 之前宣告它， [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 會先呈現在畫布下方，並且使用者無法存取。  
 
 現在，再次執行以查看 [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) 並試試一些工具。
 
@@ -210,9 +210,9 @@ ms.locfileid: "91860196"
 在此步驟中，我們使用 Windows Ink 的手寫辨識功能，嘗試解讀您的筆跡。
 
 > [!NOTE]
-> 手寫辨識可以透過**手寫筆和 Windows Ink** 設定改進︰
-> 1. 開啟 [開始] 功能表，然後選取 **\[設定\]**。
-> 2. 從 [設定] 畫面中，選取 [**裝置**  >  **畫筆 &] Windows Ink**。
+> 手寫辨識可以透過 **手寫筆和 Windows Ink** 設定改進︰
+> 1. 開啟 [開始] 功能表，然後選取 **\[設定\]** 。
+> 2. 從 [設定] 畫面中，選取 [ **裝置**  >  **畫筆 &] Windows Ink** 。
 > ![[畫筆 & Windows Ink 設定] 頁面的螢幕擷取畫面。](images/ink/ink-settings-small.png)
 > 3. 選取 **\[了解我的手寫內容\]** 以開啟 **\[個人化手寫\]** 對話方塊。
 > ![[手寫辨識個人化] 對話方塊的螢幕擷取畫面。](images/ink/ink-settings-handwritingpersonalization-small.png)

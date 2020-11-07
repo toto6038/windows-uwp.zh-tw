@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f9da8025936698ab7d72cd8b3d69896d8ec74da0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 2e4613b565545bfb7807c98fa74495b4b60b57bb
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174882"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339537"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
@@ -26,9 +26,9 @@ ms.locfileid: "89174882"
 -   [使用 c # 或 Visual Basic 建立 "Hello，World！" 應用程式](../get-started/create-a-hello-world-app-xaml-universal.md)
 -   [使用 C++/WinRT 來建立 "Hello, World!" 應用程式](../get-started/create-a-basic-windows-10-app-in-cppwinrt.md)
 -   [使用 c + +/CX 建立 "Hello，World！" 應用程式](../get-started/create-a-basic-windows-10-app-in-cpp.md)
--   [使用 JavaScript 建立「Hello，World！」應用程式](../get-started/create-a-hello-world-app-js-uwp.md)
+-   [使用 JavaScript 建立「Hello，World！」應用程式](/windows/apps/get-started/)
 
-**注意**   針對使用3D 圖形的應用程式，OpenGL 和 OpenGL ES 標準原生不適用於 UWP 應用程式。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列文章：
+**注意**  針對使用 3D 圖形的應用程式而言，OpenGL 和 OpenGL ES 標準對於 UWP 應用程式並非原生可用。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle** 。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列文章：
 -   [角度](https://bugs.chromium.org/p/angleproject/)
 -   [使用 DirectX 建立您的第一個 UWP 應用程式](/previous-versions/windows/apps/br229580(v=win.10))
 -   [使用 DirectX 的 UWP 應用程式範例](/samples/browse/?expanded=windows&products=windows-uwp&terms=directx)

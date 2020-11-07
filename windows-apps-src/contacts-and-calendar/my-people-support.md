@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2eea2d228ddf5ad6dfaef227bfaeb0bafb071490
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c0e174613357ad9e4e45d2776f3fbc618535b30
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170492"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339456"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 
@@ -21,9 +21,9 @@ ms.locfileid: "89170492"
 
 ![朋友圈聊天](images/my-people-chat.png)
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](../get-started/get-set-up.md)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](/windows/apps/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="overview"></a>概觀
@@ -38,7 +38,7 @@ ms.locfileid: "89170492"
 
 ## <a name="declaring-support-for-the-contract"></a>宣告合約的支援
 
-若要宣告支援朋友圈合約，請以 Visual Studio 開啟您的應用程式。 在 \[方案總管\]**** 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]****，然後選取 \[開啟方式\]****。 從功能表中，選取 \[XML (文字) 編輯器\]****，然後按一下 \[確定\]****。 對資訊清單進行以下變更：
+若要宣告支援朋友圈合約，請以 Visual Studio 開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 \[XML (文字) 編輯器\]，然後按一下 \[確定\]。 對資訊清單進行以下變更：
 
 **之前**
 
@@ -104,7 +104,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest**，然後尋找 \[封裝\] 索引標籤。在此，「App」是對應到應用程式啟動檢視的可啟用類別。
+“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest** ，然後尋找 \[封裝\] 索引標籤。在此，「App」是對應到應用程式啟動檢視的可啟用類別。
 
 ## <a name="allow-contacts-to-invite-new-potential-users"></a>允許連絡人邀請新的潛在使用者
 
@@ -176,13 +176,13 @@ override protected void OnActivated(IActivatedEventArgs e)
 
 ContactPanel 物件具有兩個您應用程式應聆聽的事件：
 + 當使用者已叫用 UI 元素且該元素要求整個應用程式以其自己的視窗啟動時，便會傳送 **LaunchFullAppRequested** 事件。  您的應用程式負責自我啟動，傳遞所有必要內容。  您可以任意地依您想要的式進行 (例如透過啟動通訊協定)。
-+ 當您的應用程式即將關閉時，便會傳送 **Closing event**，讓您可以儲存任何內容。
++ 當您的應用程式即將關閉時，便會傳送 **Closing event** ，讓您可以儲存任何內容。
 
 ContactPanel 物件也允許您設定連絡人面板標頭的背景色彩 (若未設定，則將預設為系統佈景主題)，並以程式設計方式關閉連絡人面板。
 
 ## <a name="supporting-notification-badging"></a>支援通知徽章
 
-如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 [快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)和易懂的[朋友圈通知](./my-people-notifications.md)中包含 **hint-people** 參數。
+如果您希望有來自您應用程式且與該連絡人相關的新通知時，釘選到工作列的連絡人可以收到徽章通知，則您必須在 [快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)和易懂的 [朋友圈通知](./my-people-notifications.md)中包含 **hint-people** 參數。
 
 ![朋友圈通知徽章](images/my-people-badging.png)
 
@@ -251,7 +251,7 @@ async Task PinMultipleContacts(Contact[] contacts)
 
 **注意：** 
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 + [朋友圈分享](my-people-sharing.md)
 + [朋友圈通知](my-people-notifications.md)
 + [在新增朋友圈支援至應用程式上的 Channel 9 影片](https://channel9.msdn.com/Events/Build/2017/P4056)

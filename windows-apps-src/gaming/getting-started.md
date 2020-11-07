@@ -6,12 +6,12 @@ ms.date: 01/25/2018
 ms.topic: article
 keywords: windows 10、uwp、遊戲、入門
 localizationpriority: medium
-ms.openlocfilehash: 7d3e50f5d32cd8c6a497ff3de67005972d3a0f7f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 3368186fdf860df48d7ae49e08d47e1abf667aa3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175312"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339446"
 ---
 # <a name="getting-started"></a>開始使用
 
@@ -37,7 +37,7 @@ ms.locfileid: "89175312"
 
 ### <a name="step-2-prepare-your-hardware-for-development"></a>步驟2：準備您的硬體以進行開發
 
-如果您是第一次進行開發，您必須在裝置上啟用開發人員模式。 如需詳細資訊，請參閱 [啟用您的裝置以進行開發](../get-started/enable-your-device-for-development.md)。
+如果您是第一次進行開發，您必須在裝置上啟用開發人員模式。 如需詳細資訊，請參閱 [啟用您的裝置以進行開發](/windows/apps/get-started/enable-your-device-for-development)。
 
 對於打算使用您的零售 Xbox 主控台開發 Xbox 遊戲的使用者，您也必須啟用並啟用其上的開發人員模式。 如需詳細資訊，請參閱在 Xbox 上 [Xbox One 開發人員模式啟用](../xbox-apps/devkit-activation.md) 和 [開始使用 UWP 應用程式開發](../xbox-apps/getting-started.md)。 
 
@@ -69,7 +69,7 @@ ms.locfileid: "89175312"
 
 如需詳細資訊，請參閱[發行 Windows 應用程式與遊戲](../publish/index.md)。
 
-## <a name="useful-links"></a>實用的連結
+## <a name="useful-links"></a>實用連結
 
 * [Windows 10 遊戲開發指南](e2e.md)
 * [什麼是 UWP 應用程式？](../get-started/universal-application-platform-guide.md)

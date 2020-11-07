@@ -5,12 +5,12 @@ ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76d52fe3ed7e7fb74ae5338e589ab34751bedebe
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8cbf82592e91b82e2d9d34d116d00aecf2ddd021
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173662"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339406"
 ---
 # <a name="my-people-sharing"></a>朋友圈分享
 
@@ -18,9 +18,9 @@ ms.locfileid: "89173662"
 
 ![朋友圈分享面板](images/my-people-sharing.png)
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](../get-started/get-set-up.md)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](/windows/apps/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="overview"></a>概觀
@@ -37,7 +37,7 @@ ms.locfileid: "89173662"
 
 ## <a name="declaring-support-for-the-share-contract"></a>宣告支援分享協定
 
-若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\]**** 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]****，然後選取 \[開啟方式\]****。 從功能表中，選取 [ **XML (Text) 編輯器** ]，然後按一下 **[確定]**。 接著，對資訊清單進行以下變更：
+若要宣告支援您的應用程式成為分享目標，請先在 Visual Studio 中開啟您的應用程式。 在 \[方案總管\] 中，以滑鼠右鍵按一下 \[Package.appxmanifest\]，然後選取 \[開啟方式\]。 從功能表中，選取 [ **XML (Text) 編輯器** ]，然後按一下 **[確定]** 。 接著，對資訊清單進行以下變更：
 
 
 **之前**
@@ -103,7 +103,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest**，然後尋找 \[封裝\] 索引標籤。在此，「App」是對應到 \[分享目標\] 檢視的 \[可啟用類別\]。
+“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，請使用預設的編輯器開啟 **Package.appxmanifest** ，然後尋找 \[封裝\] 索引標籤。在此，「App」是對應到 \[分享目標\] 檢視的 \[可啟用類別\]。
 
 ## <a name="running-as-a-my-people-share-target"></a>做為朋友圈分享目標執行
 
@@ -131,7 +131,7 @@ protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs arg
 }
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 + [新增朋友圈支援](my-people-support.md)
 + [ShareTarget 類別](/uwp/schemas/appxpackage/appxmanifestschema/element-sharetarget)
 + [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/ContactCardIntegration)

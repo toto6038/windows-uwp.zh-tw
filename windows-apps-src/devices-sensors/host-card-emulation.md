@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7075f0de1ce01e9157c520f28b0b0dd70260498
-ms.sourcegitcommit: bc8add1675070506371c1881b41c3727f1b55720
+ms.openlocfilehash: 4726f2169750cf69bba91f2494c0d01e609d6715
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90093120"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339706"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>建立 NFC 智慧卡應用程式
 
@@ -22,7 +22,7 @@ Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模�
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>開發 HCE 應用程式所需的項目
 
-若要開發適用於 Windows 10 行動裝置版且以 HCE 為基礎的卡片模擬應用程式，您需要開始設定開發環境。 您可以藉由安裝 Microsoft Visual Studio 2015 開始進行設定，其中包括 Windows 開發人員工具，以及具備 NFC 模擬支援的 Windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](../get-started/get-set-up.md)
+若要開發適用於 Windows 10 行動裝置版且以 HCE 為基礎的卡片模擬應用程式，您需要開始設定開發環境。 您可以藉由安裝 Microsoft Visual Studio 2015 開始進行設定，其中包括 Windows 開發人員工具，以及具備 NFC 模擬支援的 Windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](/windows/apps/get-started/get-set-up)
 
 或者，如果您想要使用實際的 Windows 10 行動裝置版裝置，而不是隨附的 Windows 10 行動裝置版模擬器來測試，也需要下列項目。
 
@@ -104,7 +104,7 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType)。 **EmulatorHostApplicationActivated**。 這表示每當要解析應用程式的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
+請注意，工作觸發程序已設定為 [**SmartCardTriggerType**](/uwp/api/Windows.Devices.SmartCards.SmartCardTriggerType)。 **EmulatorHostApplicationActivated** 。 這表示每當要解析應用程式的作業系統收到 SELECT AID 命令 APDU 時，您的背景工作即會啟動。
 
 ## <a name="receive-and-respond-to-apdus"></a>接收和回應 APDU
 
@@ -153,7 +153,7 @@ void BgTask::HandleHceActivation()
         // You must complete this deferal immediately after you have done processing the current transaction
         m_deferral = m_taskInstance->GetDeferral();
 
-        DebugLog(L"*** HCE Activation Background Task Started ***");
+        DebugLog(L"**_ HCE Activation Background Task Started _*_");
 
         // Set up a handler for if the background task is cancelled, we must immediately complete our deferral
         m_taskInstance->Canceled += ref new Windows::ApplicationModel::Background::BackgroundTaskCanceledEventHandler(
@@ -213,7 +213,7 @@ void BgTask::HandleHceActivation()
 
 大部分的付款卡都會針對同一個 AID (其為 PPSE AID) 以及其他付款網路卡特定的 AID 進行登錄。 每個 AID 群組都代表一張卡片，而且當使用者啟用該卡片時，群組中的所有 AID 都會啟用。 同樣地，當使用者會停用卡片時，群組中的所有 AID 都會停用。
 
-若要登錄 AID 群組，您需要建立 [**SmartCardAppletIdGroup**](/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup) 物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Payment**，而且應該將 [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+若要註冊輔助群組，您需要建立 [_ *SmartCardAppletIdGroup* *](/uwp/api/Windows.Devices.SmartCards.SmartCardAppletIdGroup)物件並設定其屬性，以反映這是以 HCE 為基礎的付款卡。 對使用者而言，您的顯示名稱應該具備描述性，因為它將會在 NFC 設定功能表以及使用者提示中顯示。 針對 HCE 付款卡，應該將 [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Payment** ，而且應該將 [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host** 。
 
 ```cppcx
 public static byte[] AID_PPSE =
@@ -231,7 +231,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Other**，而且應該將 [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host**。
+針對非付款 HCE 卡，應該將 [**SmartCardEmulationCategory**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory) 屬性設定為 **Other** ，而且應該將 [**SmartCardEmulationType**](/uwp/api/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) 屬性設定為 **Host** 。
 
 ```cppcx
 public static byte[] AID_OTHER =
@@ -250,13 +250,13 @@ var appletIdGroup = new SmartCardAppletIdGroup(
 
 您最多可以針對每個 AID 群組包含 9 個 AID (每個長度為 5-16 位元組)。
 
-使用 [**RegisterAppletIdGroupAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) 方法來向系統登錄您的 AID 群組，這樣將會傳回 [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 物件。 根據預設，會將登錄物件的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 屬性設定為 **Disabled**。 這表示即使您的 AID 已向系統登錄，但它們仍未啟用且將不會接收流量。
+使用 [**RegisterAppletIdGroupAsync**](/uwp/api/windows.devices.smartcards.smartcardemulator.registerappletidgroupasync) 方法來向系統登錄您的 AID 群組，這樣將會傳回 [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 物件。 根據預設，會將登錄物件的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 屬性設定為 **Disabled** 。 這表示即使您的 AID 已向系統登錄，但它們仍未啟用且將不會接收流量。
 
 ```cppcx
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-您可以使用 [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 類別的 [**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法來啟用登錄的卡片 (AID 群組)，如下所示。 由於系統上一次只能啟用單一付款卡，因此將付款 AID 群組的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 設定為 **Enabled**，與設定預設付款卡相同。 系統將提示使用者允許此卡片做為預設付款卡，不論是否已經選取預設付款卡。 如果您的應用程式已經是預設付款應用程式，而且只會在它自己的 AID 群組之間變更，則這個論點並不正確。 您最多可以針對每個應用程式登錄 10 個 AID 群組。
+您可以使用 [**SmartCardAppletIdGroupRegistration**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 類別的 [**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法來啟用登錄的卡片 (AID 群組)，如下所示。 由於系統上一次只能啟用單一付款卡，因此將付款 AID 群組的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 設定為 **Enabled** ，與設定預設付款卡相同。 系統將提示使用者允許此卡片做為預設付款卡，不論是否已經選取預設付款卡。 如果您的應用程式已經是預設付款應用程式，而且只會在它自己的 AID 群組之間變更，則這個論點並不正確。 您最多可以針對每個應用程式登錄 10 個 AID 群組。
 
 ```cppcx
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
@@ -288,7 +288,7 @@ bgTask = taskBuilder.Register();
 
 ## <a name="foreground-override-behavior"></a>前景覆寫行為
 
-您可以在您的應用程式仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 變更為 **ForegroundOverride**，而使用者將不會收到提示。 當使用者在您的應用程式仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的應用程式。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的應用程式離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景應用程式中變更付款或非付款卡的 **ActivationPolicy**，如下所示。 請注意，[**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法只能從前景應用程式呼叫，無法從背景工作呼叫。
+您可以在您的應用程式仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 變更為 **ForegroundOverride** ，而使用者將不會收到提示。 當使用者在您的應用程式仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的應用程式。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的應用程式離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景應用程式中變更付款或非付款卡的 **ActivationPolicy** ，如下所示。 請注意， [**RequestActivationPolicyChangeAsync**](/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法只能從前景應用程式呼叫，無法從背景工作呼叫。
 
 ```cppcx
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7116f1aa6f06eda1351183963ea8169625a8df70
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 3bc7fab8bff98fc2711747122d62031fb4d3a65d
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033021"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339776"
 ---
 # <a name="toast-content-schema"></a>快顯通知內容結構描述
 
@@ -21,7 +21,7 @@ ms.locfileid: "93033021"
 
 以下說明快顯通知內容中的所有屬性和元素。
 
-如果您想要使用原始 XML，而不使用 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，請參閱 [XML 結構描述](https://docs.microsoft.com/uwp/schemas/tiles/toastschema/schema-root)。
+如果您想要使用原始 XML，而不使用 [Notifications 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，請參閱 [XML 結構描述](/uwp/schemas/tiles/toastschema/schema-root)。
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -38,7 +38,7 @@ ms.locfileid: "93033021"
 ## <a name="toastcontent"></a>ToastContent
 ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最上層物件。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **發射**| 字串 | false | 快顯通知啟動應用程式時，傳遞給應用程式的字串。 此字串的格式和內容是由應用程式定義以供應用程式自己使用。 當使用者點選或按一下快顯通知來啟動其相關聯應用程式時，啟動字串會提供相關內容給應用程式，以允許應用程式向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。 |
 | **Visual** | [ToastVisual](#toastvisual) | true | 描述快顯通知的視覺效果部分。 |
@@ -57,7 +57,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | 值 | 意義 |
 |---|---|
 | **預設值** | 一般快顯通知行為。 |
-| **Reminder** | 提醒通知。 這會以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 |
+| **提醒** | 提醒通知。 這會以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 |
 | **警示** | 鬧鐘通知。 這會以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 音效預設會重複播放，並使用鬧鐘音效。 |
 | **IncomingCall** | 來電通知。 這會使用特殊通話格式以預先展開的方式顯示，並停留在使用者的螢幕上，直到關閉為止。 音效預設會重複播放，並使用鈴聲音效。 |
 
@@ -65,7 +65,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ## <a name="toastvisual"></a>ToastVisual
 快顯通知的視覺效果部分含有繫結，其中包含文字、影像、調適性內容等。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | 一般快顯通知繫結，可呈現在所有裝置上。 此繫結為必要項，但不可為 null。 |
 | **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
@@ -76,7 +76,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ## <a name="toastbindinggeneric"></a>ToastBindingGeneric
 泛型繫結是快顯通知的預設繫結，並且是您指定文字、影像、調適性內容等項目的位置。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **子系** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | 快顯通知的內文內容，其中可能包含文字、影像和群組 (年度更新版新增功能)。 文字元素必須放在任何其他元素前面，但僅支援 3 個文字元素。 如果將文字元素放在任何其他元素後面，不是將其提拉到頂端，就是捨棄。 總之，根子系文字元素不支援某些像是 HintStyle 的文字屬性，只能在 AdaptiveSubgroup 中使用。 如果您在沒有年度更新版的裝置上使用 AdaptiveGroup，就會直接捨棄群組內容。 |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | 要覆寫 App 標誌的選用標誌。 |
@@ -101,7 +101,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ## <a name="adaptivetext"></a>AdaptiveText
 調適性文字元素。 如果放置在最上層 ToastBindingGeneric.Children，則只會套用 HintMaxLines。 但要是放置做為群組/子群組的子系，則支援全文檢索樣式。
 
-| 屬性 | 類型 | 必要 |描述 |
+| 屬性 | 類型 | 必要 |說明 |
 |---|---|---|---|
 | **Text** | 字串或 [BindableString](#bindablestring) | false | 要顯示的文字。 Creators Update 新增的資料繫結支援，但僅適用於最上層文字元素。 |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | 此樣式會控制文字的字型大小、粗細和不透明度。 僅適用於群組/子群組內的文字元素。 |
@@ -115,7 +115,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ### <a name="bindablestring"></a>BindableString
 字串的繫結值。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **BindingName** | 字串 | true | 取得或設定對應至您資料繫結值的名稱。 |
 
@@ -134,7 +134,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 | **BaseSubtle** | 和 Base 一樣，只是有輕微不透明度。 |
 | **副標題** | H4 字型大小。 |
 | **SubtitleSubtle** | 和 Subtitle 一樣，只是有輕微不透明度。 |
-| **標題** | H3 字型大小。 |
+| **Title** (標題) | H3 字型大小。 |
 | **TitleSubtle** | 和 Title 一樣，只是有輕微不透明度。 |
 | **TitleNumeral** | 和 Title 一樣，只是上/下邊框間距已移除。 |
 | **Subheader.aboutdocs** | H2 字型大小。 |
@@ -160,7 +160,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ## <a name="adaptiveimage"></a>AdaptiveImage
 內嵌影像。
 
-| 屬性 | 類型 | 必要 |描述 |
+| 屬性 | 類型 | 必要 |說明 |
 |---|---|---|---|
 | **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | 年度更新版的新功能：控制影像所需的裁剪。 |
@@ -195,7 +195,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ## <a name="adaptivegroup"></a>AdaptiveGroup
 年度更新版的新功能：群組會在語意上識別，群組中的內容必須完整顯示，如果無法容納其中，則不顯示。 群組也允許建立多欄。
 
-| 屬性 | 類型 | 必要 |描述 |
+| 屬性 | 類型 | 必要 |說明 |
 |---|---|---|---|
 | **子系** | IList<[AdaptiveSubgroup](#adaptivesubgroup)> | false | 子群組會顯示為垂直欄。 要在 AdaptiveGroup 中提供任何內容，您必須使用子群組。 |
 
@@ -203,7 +203,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 ## <a name="adaptivesubgroup"></a>AdaptiveSubgroup
 年度更新版的新功能：子群組是可容納文字和影像的垂直欄。
 
-| 屬性 | 類型 | 必要 |描述 |
+| 屬性 | 類型 | 必要 |說明 |
 |---|---|---|---|
 | **子系** | IList<[IAdaptiveSubgroupChild](#iadaptivesubgroupchild)> | false | [AdaptiveText](#adaptivetext) 和 [AdaptiveImage](#adaptiveimage) 是子群組的有效子系。 |
 | **HintWeight** | int? | false | 藉由指定相對於其他子群組的粗細，控制這個子群組欄的寬度。 |
@@ -233,9 +233,9 @@ TextStacking 指定內容的垂直對齊方式。
 ## <a name="adaptiveprogressbar"></a>AdaptiveProgressBar
 Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15063 或更新版本的快顯通知。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
-| **標題** | 字串或 [BindableString](#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
+| **Title** (標題) | 字串或 [BindableString](#bindablestring) | false | 取得或設定選用標題字串。 支援資料繫結。 |
 | **ReplTest1** | double 或 [AdaptiveProgressBarValue](#adaptiveprogressbarvalue) 或 [BindableProgressBarValue](#bindableprogressbarvalue) | false | 取得或設定進度列的值。 支援資料繫結。 預設為 0。 |
 | **ValueStringOverride** | 字串或 [BindableString](#bindablestring) | false | 取得或設定要顯示的選用字串，用於取代預設百分比字串。 如果未提供此項，將會顯示「70%」之類的內容。 |
 | **狀態** | 字串或 [BindableString](#bindablestring) | true | 取得或設定狀態字串 (必要)，它會顯示在左側進度列的下方。 這個字串應該反映作業的狀態，例如「正在下載...」或「正在安裝...」 |
@@ -244,7 +244,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 ### <a name="adaptiveprogressbarvalue"></a>AdaptiveProgressBarValue
 類別，表示進度列的值。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **ReplTest1** | double | false | 取得或設定值 (0.0 - 1.0)，代表完成百分比。 |
 | **IsIndeterminate** | bool | false | 取得或設定值，指出進度列不確定。 如果這為 true，會略過 **Value** 。 |
@@ -253,7 +253,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 ### <a name="bindableprogressbarvalue"></a>BindableProgressBarValue
 可繫結的進度列值。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **BindingName** | 字串 | true | 取得或設定對應至您資料繫結值的名稱。 |
 
@@ -261,7 +261,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 ## <a name="toastgenericapplogo"></a>ToastGenericAppLogo
 要替代 App 標誌顯示的標誌。
 
-| 屬性 | 類型 | 必要 |描述 |
+| 屬性 | 類型 | 必要 |說明 |
 |---|---|---|---|
 | **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 Http 影像的大小必須是 200 KB 或更少。 |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | 指定想要裁剪影像的方式。 |
@@ -282,7 +282,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 ## <a name="toastgenericheroimage"></a>ToastGenericHeroImage
 精選「主角」影像，這會顯示在快顯通知和控制中心。
 
-| 屬性 | 類型 | 必要 |描述 |
+| 屬性 | 類型 | 必要 |說明 |
 |---|---|---|---|
 | **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 Http 影像的大小必須是 200 KB 或更少。 |
 | **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
@@ -292,7 +292,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 ## <a name="toastgenericattributiontext"></a>ToastGenericAttributionText
 顯示在快顯通知底部的屬性文字。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **Text** | 字串 | true | 要顯示的文字。 |
 | **語言** | 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 如果未提供，則改用系統地區設定。 |
@@ -312,7 +312,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 使用按鈕、文字方塊和選擇輸入等控制項，自行建立自訂動作和輸入。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **輸入** | IList<[IToastInput](#itoastinput)> | false | 像文字方塊和選擇輸入之類的輸入。 最多僅允許 5 項輸入。 |
 | **按鈕** | IList<[IToastButton](#itoastbutton)> | false | 按鈕會顯示在所有輸入之後 (如果當做快速回覆按鈕，則與輸入相鄰)。 最多僅允許 5 個按鈕 (如果還有操作功能表項目則更少)。 |
@@ -336,7 +336,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **標題** | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
+| **Title** (標題) | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
 | **PlaceholderContent** | 字串 | false | 使用者尚未輸入任何文字時，要顯示在文字方塊中的預留位置文字。 |
 | **DefaultInput** | 字串 | false | 要放在文字方塊中的初始文字。 如需空白文字方塊，請保持為 null。 |
 
@@ -358,7 +358,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **標題** | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
+| **Title** (標題) | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
 | **DefaultSelectionBoxItemId** | 字串 | false | 這會控制預設選取哪些項目，並且參考 [ToastSelectionBoxItem](#toastselectionboxitem) 的的 Id 屬性。 如果沒有提供這個屬性，預設選取項目會是空白 (使用者看不到任何項目)。 |
 | **項目** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | 使用者可以從這個 SelectionBox 中挑選的選取項目。 只能新增 5 個項目。 |
 
@@ -378,7 +378,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 使用者可以按一下的按鈕。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **內容** | 字串 | true | 必要。 要在按鈕上顯示的文字。 |
 | **引數** | 字串 | true | 必要。 App 定義的引數字串，如果使用者按一下此按鈕，App 稍後會收到該字串。 |
@@ -399,7 +399,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 ### <a name="toastactivationoptions"></a>ToastActivationOptions
 Creators Update 的新功能：與啟用相關的其他選項。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | Fall Creators Update 的新功能：取得或設定當使用者叫用此動作時，快顯通知應該使用的行為。 這只適用於桌上型電腦、[ToastButton](#toastbutton) 和 [ToastContextMenuItem](#toastcontextmenuitem)。 |
 | **ProtocolActivationTargetApplicationPfn** | 字串 | false | 如果您要使用 *ToastActivationType.Protocol* ，則可以選擇性指定目標 PFN，因此無論是否已註冊多個 App 來處理相同的通訊協定 URI，都一律會啟動您想要的 App。 |
@@ -419,7 +419,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 
 系統處理的延遲按鈕，此按鈕會自動處理通知延遲。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **CustomContent** | 字串 | false | 顯示在按鈕上的選擇性自訂文字，這會覆寫預設當地語系化的 "Snooze" 文字 (延遲)。 |
 
@@ -429,7 +429,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 
 系統處理的關閉按鈕，按一下時會關閉通知。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **CustomContent** | 字串 | false | 顯示在按鈕上的選擇性自訂文字，這會覆寫預設當地語系化的 "Dismiss" 文字 (關閉)。 |
 
@@ -439,7 +439,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 
 自動建構延遲間隔選取方塊並將按鈕延遲/關閉，全部自動進行當地語系化，並自動由系統處理延遲邏輯。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **ContextMenuItems** | IList<[ToastCoNtextMenuItem](#toastcontextmenuitem)> | false | 年度更新版的新功能：自訂操作功能表項目，如果使用者以滑鼠右鍵按一下通知，則會提供其他動作。 您最多只能有 5 個項目。 |
 
@@ -447,7 +447,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 ## <a name="toastcontextmenuitem"></a>ToastContextMenuItem
 操作功能表項目輸入。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **內容** | 字串 | true | 必要。 要顯示的文字。 |
 | **引數** | 字串 | true | 必要。 this button.App 定義的引數字串，當使用者按一下功能表項目時，只要 App 已啟用，稍後即可收到該字串。 |
@@ -458,7 +458,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 ## <a name="toastaudio"></a>ToastAudio
 指定收到快顯通知時要播放的音效。
 
-| 屬性 | 類型 | 必要 | 描述 |
+| 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **Src** | uri | false | 要取代預設音效播放的媒體檔案。 僅支援 ms-appx 和 ms-appdata。 |
 | **環** | boolean | false | 如果快顯通知顯示多久就要重複音效多久，則設定為 true。false 表示只播放一次 (預設)。 |
@@ -471,7 +471,7 @@ Creators Update 的新功能：將控制中心內多個通知群組一起的自�
 | 屬性 | 類型 | 必要 | 說明 |
 |---|---|---|---|
 | **識別碼** | 字串 | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
-| **標題** | 字串 | true | 標頭的標題。 |
+| **Title** (標題) | 字串 | true | 標頭的標題。 |
 | **引數**| 字串 | true | 取得或設定開發人員定義的引數字串，當使用者按下此標頭時會傳回至應用程式。 不可以是 null。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 取得或設定此標頭在使用者按一下時要使用的啟用類型。 預設為 Foreground。 請注意，只支援 Foreground 和 Protocol。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | 取得或設定與快顯通知標頭啟用相關的其他選項。 |

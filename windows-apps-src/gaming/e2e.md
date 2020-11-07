@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: c6cae9e2416eb992815f098649d6b02ee472da14
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: be63c7ec1e682924e2364a2c6ea8e4d2d81dee3f
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192968"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339506"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows 10 遊戲開發指南
 
@@ -217,15 +217,15 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>JavaScript 2D 遊戲範例</td>
-        <td><a href="../get-started/get-started-tutorial-game-js2d.md">使用 JavaScript 建立 UWP 遊戲</a></td>
+        <td><a href="/windows/uwp/get-started/">使用 JavaScript 建立 UWP 遊戲</a></td>
     </tr>
     <tr>
         <td>JavaScript 3D 遊戲範例</td>
-        <td><a href="../get-started/get-started-tutorial-game-js3d.md">使用 three.js 建立 3D JavaScript 遊戲</a></td>
+        <td><a href="/windows/uwp/get-started/">使用 three.js 建立 3D JavaScript 遊戲</a></td>
     </tr>
     <tr>
         <td>MonoGame 2D UWP 遊戲範例</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">使用 MonoGame 2D 建立 UWP 遊戲</a></td>
+        <td><a href="/windows/uwp/get-started/">使用 MonoGame 2D 建立 UWP 遊戲</a></td>
     </tr>
 </table>
 
@@ -512,7 +512,7 @@ C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向�
     </colgroup>
     <tr>
         <td>C# 程式設計指南與參考</td>
-        <td><a href="/dotnet/articles/csharp/csharp">C # 語言參考</a></td>
+        <td><a href="/dotnet/articles/csharp/csharp">C# 語言參考</a></td>
     </tr>
 </table>
 
@@ -752,7 +752,7 @@ MonoGame 是開放原始碼的跨平台遊戲開發架構，最初是以 Microso
     </tr>
     <tr>
         <td>MonoGame 2D UWP 遊戲範例</td>
-        <td><a href="../get-started/get-started-tutorial-game-mg2d.md">使用 MonoGame 2D 建立 UWP 遊戲</a></td>
+        <td><a href="/windows/uwp/get-started/">使用 MonoGame 2D 建立 UWP 遊戲</a></td>
     </tr>
 </table>
 
@@ -970,7 +970,7 @@ Windows 10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨
     </tr>
 </table>
 
-### <a name="windows-desktop-apisto-uwp"></a>Windows 傳統型 API 到 UWP
+### <a name="windows-desktop-apis-to-uwp"></a>Windows 傳統型 API 到 UWP
 
 以下提供一些連結，可幫助您將 Windows 傳統型遊戲移至 UWP。
 

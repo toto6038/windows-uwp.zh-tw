@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e00e3de9445a8b7c63ebaead70173c29b637b54
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9fa73c6fdd0a0cac69cb485d3426ddfc327591bd
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166322"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339666"
 ---
 # <a name="my-people-notifications"></a>朋友圈通知
 
@@ -18,9 +18,9 @@ ms.locfileid: "89166322"
 
 ![心型表情符號通知](images/heart-emoji-notification-small.gif)
 
-## <a name="requirements"></a>規格需求
+## <a name="requirements"></a>需求
 
-+ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](../get-started/get-set-up.md)。
++ Windows 10 和 Microsoft Visual Studio 2019。 如需安裝詳細資訊，請參閱[開始設定 Visual Studio](/windows/apps/get-started/get-set-up)。
 + C# 或類似物件導向程式設計語言的基本知識。 若要開始使用 C#，請參閱[建立 "Hello, world" 應用程式](../get-started/create-a-hello-world-app-xaml-universal.md)。
 
 ## <a name="how-it-works"></a>運作方式
@@ -150,7 +150,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 如果朋友圈通知遞補快顯通知，則會忽略第二個朋友圈特有的繫結，並只使用第一個繫結來顯示快顯通知。 這就是在第一個快顯通知繫結中提供遞補裝載如此重要的原因。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 + [朋友圈通知範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/MyPeopleNotifications)
 + [新增朋友圈支援](my-people-support.md)
 + [調適性快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)

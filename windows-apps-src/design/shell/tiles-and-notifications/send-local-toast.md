@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: b532e041ffbbcf4a2ecac0e3386430b65d833f2d
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 4142fb3d036bb19eb652ca9048a70325eb64b17d
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034481"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339806"
 ---
 # <a name="send-a-local-toast-notification-from-uwp-apps"></a>從 UWP 應用程式傳送本機快顯通知
 
@@ -262,7 +262,7 @@ var content = new ToastContentBuilder()
 
 當您在快顯通知 (或快顯通知內的按鈕) 上指定背景啟用時，將會執行背景工作，而不是啟用前景 App。
 
-如需背景工作的詳細資訊，請參閱[使用背景工作支援 App](/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+如需背景工作的詳細資訊，請參閱[使用背景工作支援 App](../../../launch-resume/support-your-app-with-background-tasks.md)。
 
 如果您的目標組建為 14393 或更高版本，則可以同處理序背景工作，這將情況大幅簡化了。 請注意，同處理序背景工作無法在舊版 Windows 上執行。 我們會在此程式碼範例中使用同處理序背景工作。
 
@@ -348,9 +348,9 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 
 如果想以程式設計方式移除或取代您傳送的通知，您必須使用 Tag 屬性 (並選擇性使用 Group 屬性) 提供通知的主索引鍵。 那麼，日後就可以使用這個主索引鍵來移除或取代通知。
 
-若要查看更多有關取代/移除已傳送快顯通知的詳細資料，請參閱[快速入門： 管理控制中心的快顯通知 (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+若要查看更多有關取代/移除已傳送快顯通知的詳細資料，請參閱[快速入門： 管理控制中心的快顯通知 (XAML)](/previous-versions/windows/apps/dn631260(v=win.10))。
 
-Tag 與 Group 結合可以做為主複合索引鍵。 Group 是較通用的識別碼，其中可以指定像是 "wallPosts"、"messages"、"friendRequests" 等群組。然而，Tag 則必須要在群組中唯一辨識通知本身。 然後可以使用一般群組，透過 [RemoveGroup API](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 移除該群組中的所有通知。
+Tag 與 Group 結合可以做為主複合索引鍵。 Group 是較通用的識別碼，其中可以指定像是 "wallPosts"、"messages"、"friendRequests" 等群組。然而，Tag 則必須要在群組中唯一辨識通知本身。 然後可以使用一般群組，透過 [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 移除該群組中的所有通知。
 
 ```csharp
 // Create toast content
@@ -381,10 +381,10 @@ Windows 只有在使用者明確按一下通知時，才會自動移除通知。
 
 1. 使用者在交談中收到多個關於新訊息的快顯通知
 2. 使用者點選其中一個的快顯通知來開啟交談
-3. App 開啟交談，然後清除該交談的所有快顯通知 (方法是針對該交談在 App 提供的群組上使用 [RemoveGroup](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_))
+3. App 開啟交談，然後清除該交談的所有快顯通知 (方法是針對該交談在 App 提供的群組上使用 [RemoveGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_))
 4. 使用者的控制中心現在會正確反映通知狀態，因為沒有該交談的任何過時通知留存在控制中心上。
 
-若要了解清除所有通知，或移除特定通知，請參閱[快速入門： 管理控制中心的快顯通知 (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/dn631260(v=win.10))。
+若要了解清除所有通知，或移除特定通知，請參閱[快速入門： 管理控制中心的快顯通知 (XAML)](/previous-versions/windows/apps/dn631260(v=win.10))。
 
 ```csharp
 ToastNotificationManager.History.Clear();

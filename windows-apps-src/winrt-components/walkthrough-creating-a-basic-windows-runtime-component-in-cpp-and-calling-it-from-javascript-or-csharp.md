@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c7f0e1ba5c78ce41a5326d3643b5afe80f380b3c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d343b2da4bdfee73479c3b5f3c45fd56a92ada35
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155172"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339786"
 ---
 # <a name="walkthrough-of-creating-a-ccx-windows-runtime-component-and-calling-it-from-javascript-or-c"></a>建立 C++/CX Windows 執行階段元件，並從 JavaScript 或 C# 呼叫該元件的逐步解說
 
@@ -26,16 +26,16 @@ ms.locfileid: "89155172"
 請注意，元件的主要類別包含屬性和方法定義的範例，以及事件宣告。 提供這些項目只是為了示範它的進行方式。 這些並不是必要項目，而且在此範例中，我們會以自己的程式碼來取代所有產生的程式碼。
 
 ### <a name="to-create-the-c-component-project"></a>**建立 C++ 元件專案**
-1. 在 [Visual Studio] 功能表列上，選擇 [檔案] **、[新增]、[專案**]。
+1. 在 [Visual Studio] 功能表列上，選擇 [檔案] **、[新增]、[專案** ]。
 
-2. 在 [**新增專案**] 對話方塊的左窗格中，展開 [**Visual C++**]，然後選取通用 Windows app 的節點。
+2. 在 [ **新增專案** ] 對話方塊的左窗格中，展開 [ **Visual C++** ]，然後選取通用 Windows app 的節點。
 
 3. 在中央窗格中，選取 [ **Windows 執行階段元件** ]，然後將 project WinRT \_ CPP 命名。
 
-4. 選擇 [確定] **** 按鈕。
+4. 選擇 [確定]  按鈕。
 
 ## <a name="to-add-an-activatable-class-to-the-component"></a>**將可啟用的類別加入至元件**
-可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New**，在 C++ 中則是 **ref new**) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed**。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
+可啟用的類別是用戶端程式碼可以使用 **new** 運算式 (在 Visual Basic 中是 **New** ，在 C++ 中則是 **ref new** ) 建立的類別。 在您的元件中，您會將它宣告為 **public ref class sealed** 。 事實上，Class1.h 和 .cpp 檔案已經有 ref 類別。 您可以變更名稱，但在這個範例中，我們會使用預設名稱 -- Class1。 如有必要，您可以在元件中定義其他 ref 類別或一般類別。 如需 ref 類別的詳細資訊，請參閱[類型系統 (C++/CX)](/cpp/cppcx/type-system-c-cx)。
 
 將這些 include 指示詞新增 \# 至 Class1：
 
@@ -275,19 +275,19 @@ IAsyncActionWithProgress<double>^ Class1::GetPrimesUnordered(int first, int last
 > Visual Studio 2019 不支援通用 Windows 平臺 (UWP) 專案。 請參閱 [Visual Studio 2019 中的 JavaScript 和 TypeScript](/visualstudio/javascript/javascript-in-vs-2019?view=vs-2019#projects)。 若要遵循本節的指示，建議您使用 Visual Studio 2017。 請參閱 [Visual Studio 2017 中的 JavaScript](/visualstudio/javascript/javascript-in-vs-2017)。
 
 ### <a name="to-create-a-javascript-project"></a>建立 JavaScript 專案
-1. 在方案總管 (Visual Studio 2017;請參閱上述) 的 **附注** ，開啟方案節點的快捷方式功能表，然後選擇 [ **加入]、[新增專案**]。
+1. 在方案總管 (Visual Studio 2017;請參閱上述) 的 **附注** ，開啟方案節點的快捷方式功能表，然後選擇 [ **加入]、[新增專案** ]。
 
-2. 展開 \[JavaScript\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)，然後選擇 **\[空白應用程式 (通用 Windows)\]**。
+2. 展開 \[JavaScript\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)，然後選擇 **\[空白應用程式 (通用 Windows)\]** 。
 
-3. &mdash; &mdash; 選擇 [**確定]** 按鈕，接受預設名稱 App1。
+3. &mdash; &mdash; 選擇 [ **確定]** 按鈕，接受預設名稱 App1。
 
-4. 開啟 App1 專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]**。
+4. 開啟 App1 專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]** 。
 
 5. 將專案參考加入至 WinRT_CPP：
 
-6. 開啟 [參考] 節點的捷徑功能表，然後選擇 **\[加入參考\]**。
+6. 開啟 [參考] 節點的捷徑功能表，然後選擇 **\[加入參考\]** 。
 
-7. 在 \[參考管理員\] 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]**。
+7. 在 \[參考管理員\] 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]** 。
 
 8. 在中央窗格，選取 [WinRT_CPP]，然後選擇 **\[確定\]** 按鈕。
 
@@ -426,7 +426,7 @@ function ButtonClear_Click() {
 }
 ```
 
-新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需詳細說明，請參閱 [建立 "Hello，World" 應用程式 (JS) ](../get-started/create-a-hello-world-app-js-uwp.md)。
+新增程式碼來加入事件接聽程式，方法是利用下列在 then 區塊中實作事件註冊的程式碼，來取代 default.js 中對於 app.onactivated 之 WinJS.UI.processAll 的現有呼叫。 如需詳細說明，請參閱 [建立 "Hello，World" 應用程式 (JS) ](/windows/apps/get-started/)。
 
 ```JavaScript
 args.setPromise(WinJS.UI.processAll().then( function completed() {
@@ -446,19 +446,19 @@ args.setPromise(WinJS.UI.processAll().then( function completed() {
 ## <a name="creating-a-c-client-app"></a>建立 C# 用戶端 App
 
 ### <a name="to-create-a-c-project"></a>建立 C# 專案
-1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 **\[加入\] 和 \[新增專案\]**。
+1. 在 [方案總管] 中，開啟 [方案] 節點的捷徑功能表，然後依序選擇 **\[加入\] 和 \[新增專案\]** 。
 
-2. 展開 \[Visual C#\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)、選取 **\[Windows\]**，接著選取左窗格中的 **\[通用\]**，然後選取中間窗格的 **\[空白應用程式\]**。
+2. 展開 \[Visual C#\] (它可能是以巢狀方式置於 **\[其他語言\]** 底下)、選取 **\[Windows\]** ，接著選取左窗格中的 **\[通用\]** ，然後選取中間窗格的 **\[空白應用程式\]** 。
 
 3. 將這個 app 命名為 CS_Client，然後選擇 **\[確定\]** 按鈕。
 
-4. 開啟 CS_Client 專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]**。
+4. 開啟 CS_Client 專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]** 。
 
 5. 將專案參考加入至 WinRT_CPP：
 
-   - 開啟 [ **參考** ] 節點的快捷方式功能表，然後選擇 [ **加入參考**]。
+   - 開啟 [ **參考** ] 節點的快捷方式功能表，然後選擇 [ **加入參考** ]。
 
-   - 在 **\[參考管理員\]** 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]**。
+   - 在 **\[參考管理員\]** 對話方塊的左窗格中，依序選取 **\[專案\]** 和 **\[方案\]** 。
 
    - 在中央窗格中，選取 [WinRT_CPP]，然後選擇 [ **確定]** 按鈕。
 
@@ -584,7 +584,7 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 ```
 
 ## <a name="running-the-app"></a>執行應用程式
-在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]**，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
+在 [方案總管] 中開啟專案節點的捷徑功能表，然後選擇 **\[設定為啟始專案\]** ，選取 C# 專案或 JavaScript 專案做為啟始專案。 然後，按 F5 開始執行並偵錯，或是按 Ctrl+F5 開始執行而不偵錯。
 
 ## <a name="inspecting-your-component-in-object-browser-optional"></a>在物件瀏覽器中檢查您的元件 (選擇性)
 在 [物件瀏覽器] 中，您可以檢查 .winmd 檔案中定義的所有 Windows 執行階段類型。 這包含 Platform 命名空間和預設命名空間中的類型。 不過，由於 Platform::Collections 命名空間中的類型是定義於標頭檔 collections.h (而非 winmd 檔案) 中，因此它們不會出現在 [物件瀏覽器] 中。
@@ -598,15 +598,15 @@ private void Clear_Button_Click(object sender, RoutedEventArgs e)
 若想獲得較佳的偵錯經驗，請從公用 Microsoft 符號伺服器下載偵錯符號：
 
 ### <a name="to-download-debugging-symbols"></a>**下載偵錯符號**
-1. 在功能表列上，選擇 [ **工具]、[選項**]。
+1. 在功能表列上，選擇 [ **工具]、[選項** ]。
 
-2. 在 **\[選項\]** 對話方塊中，展開 **\[偵錯\]**，然後選取 **\[符號\]**。
+2. 在 **\[選項\]** 對話方塊中，展開 **\[偵錯\]** ，然後選取 **\[符號\]** 。
 
-3. 選取 **\[Microsoft 符號伺服器\]**，然後選擇 **\[確定\]** 按鈕。
+3. 選取 **\[Microsoft 符號伺服器\]** ，然後選擇 **\[確定\]** 按鈕。
 
 第一次下載這些符號時可能需要一些時間。 若要縮短下載時間，當您下次按 F5 時，請指定用來快取符號的本機目錄。
 
-對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的機器碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 **\[屬性\]、\[偵錯\] 及 \[偵錯工具類型\]**。
+對含有元件 DLL 的 JavaScript 方案進行偵錯時，您可以設定偵錯工具以啟用逐步執行指令碼或逐步執行元件中的機器碼，但不可兩者同時啟用。 若要變更設定，請在 [方案總管] 中開啟 JavaScript 專案節點的捷徑功能表，然後依序選擇 **\[屬性\]、\[偵錯\] 及 \[偵錯工具類型\]** 。
 
 請務必在封裝設計工具中選取適當的功能。 您可以藉由開啟 Package.appxmanifest 檔案來開啟封裝設計工具。 例如，如果您嘗試以程式設計方式存取 [圖片] 資料夾中的檔案，請務必在封裝設計工具中的 **\[功能\]** 窗格中選取 **\[圖片庫\]** 核取方塊 。
 
