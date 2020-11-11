@@ -7,6 +7,15 @@
           href: desktop/index.md
         - name: 選擇您的應用程式平台
           href: desktop/choose-your-platform.md
+        - name: 開始設定
+          href: get-started/get-set-up.md
+          items:
+            - name: 啟用您的裝置以用於開發
+              href: get-started/enable-your-device-for-development.md
+            - name: 開發人員模式功能和偵錯
+              href: get-started/developer-mode-features-and-debugging.md
+            - name: 建立開發人員帳戶
+              href: get-started/sign-up.md
         - name: 適用於 Windows 應用程式的 Visual Studio 範本
           href: desktop/visual-studio-templates.md
         - name: 讓您的傳統型應用程式現代化
@@ -89,8 +98,10 @@
               href: winui/winui3/get-started-winui3-for-desktop.md
             - name: 開始使用適用於 UWP 應用程式的 WinUI 3
               href: winui/winui3/get-started-winui3-for-uwp.md
-            - name: 使用 C++/WinRT 製作的適用於 UWP 和 WinUI 3 應用程式的樣板化 XAML 控制項
-              href: winui/winui3/xaml-templated-controls-cppwinrt-winui3.md
+            - name: 使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
+              href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
+            - name: 使用 C# 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
+              href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
         - name: Windows UI 2.x 程式庫
           items:
             - name: 概觀
@@ -115,6 +126,8 @@
                   href: winui/winui2/release-notes/winui-2.1.md
                 - name: WinUI 2.0
                   href: winui/winui2/release-notes/winui-2.0.md
+        - name: WinUI API 參考資料
+          href: /uwp/api/overview/winui/
     - name: 針對 Windows 10X 進行開發
       items:
         - name: Windows 10X 開發人員常見問題
