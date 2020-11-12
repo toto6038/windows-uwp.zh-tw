@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 78ccbe1f18167c318ffa38f3614cfab61782d147
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032441"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339756"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 應用程式設計簡介
 
@@ -162,7 +162,7 @@ UWP 應用程式需依賴智慧型互動。 您可以針對按一下的互動來
 
 - 請參閱我們的[設計工具組頁面](../downloads/index.md)，以取得 XD、Illustrator、Photoshop、Framer 和 Sketch 工具組，及其他的設計工具與字型下載。
 
-- 若要將您的電腦設定好，以便編寫 UWP 應用程式程式碼，請參閱我們的[開始使用&gt;開始設定](../../get-started/get-set-up.md)文章。
+- 若要將您的電腦設定好，以便編寫 UWP 應用程式程式碼，請參閱我們的[開始使用&gt;開始設定](/windows/apps/get-started/get-set-up)文章。
 
 - 若想獲得一些如何實作 UWP UI 的靈感，請看看我們的完整[範例 UWP 應用程式](https://developer.microsoft.com/windows/samples)。
 

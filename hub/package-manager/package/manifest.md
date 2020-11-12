@@ -4,12 +4,12 @@ description: 如果您想要將軟體封裝提交至 Windows 封裝管理員存�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a3a1acebf2b48e767fbd16998967145976305434
-ms.sourcegitcommit: 94841d1d59703897b42b11597c28a9d966626f47
+ms.openlocfilehash: c0c01d87dc7e02b356a4fba20b01519e3361b28a
+ms.sourcegitcommit: 36ae65013da22930c8e838fc65a63564a0bafee2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110572"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94377794"
 ---
 # <a name="create-your-package-manifest"></a>建立封裝資訊清單
 
@@ -31,7 +31,7 @@ YAML 是專為封裝資訊清單所選擇的格式，因為相對於其他 Micro
 本文會使用以下慣例：
 
 * `:` 的左邊是用於資訊清單定義的常值關鍵字。
-* `:` 的右邊是資料類型。 資料類型可以是基本類型 (例如 **字串**) 或本文中其他位置所定義的豐富結構參考。
+* `:` 的右邊是資料類型。 資料類型可以是基本類型 (例如 **字串** ) 或本文中其他位置所定義的豐富結構參考。
 * `[` *datatype* `]` 標記法表示所述資料類型的陣列。 例如，`[ string ]` 是字串陣列。
 * `{` *datatype* `:` *datatype* `}` 標記法表示一種資料類型對應到另一種資料類型。 例如，`{ string: string }` 是字串與字串的對應。
 
@@ -166,7 +166,7 @@ ManifestVersion: 0.1.0
 
 ## <a name="installer-switches"></a>安裝程式參數
 
-您通常可藉由從命令列將 `-?` 傳遞至安裝程式，找出安裝程式可使用的無訊息 `Switches`。 以下是一些可用於不同安裝程式類型的常見無訊息 `Swtiches`。
+您通常可藉由從命令列將 `-?` 傳遞至安裝程式，找出安裝程式可使用的無訊息 `Switches`。 以下是一些可用於不同安裝程式類型的常見無訊息 `Switches`。
 
 | 安裝程式 | 命令  | 文件 |  
 | :--- | :-- | :--- |  
@@ -177,7 +177,7 @@ ManifestVersion: 0.1.0
 
 ## <a name="tips-and-best-practices"></a>訣竅和最佳做法
 
-* 若要在尋找及安裝軟體時獲得最佳的客戶體驗，建議您盡可能納入必要結構描述以外的多個選用項目。 例如，`AppMoniker` 欄位是選擇性的。 不過，如果您包含此欄位，在執行 [search](../winget/search.md) 命令時，客戶會看到與 `AppMoniker` 值相關聯的結果 (例如，**vscode** 代表 **Visual Studio Code**)。 如果只有一個應用程式具有指定的 `AppMoniker` 值，則客戶可以藉由指定別名來安裝應用程式，而不是指定完整識別碼。
+* 若要在尋找及安裝軟體時獲得最佳的客戶體驗，建議您盡可能納入必要結構描述以外的多個選用項目。 例如，`AppMoniker` 欄位是選擇性的。 不過，如果您包含此欄位，在執行 [search](../winget/search.md) 命令時，客戶會看到與 `AppMoniker` 值相關聯的結果 (例如， **vscode** 代表 **Visual Studio Code** )。 如果只有一個應用程式具有指定的 `AppMoniker` 值，則客戶可以藉由指定別名來安裝應用程式，而不是指定完整識別碼。
 * `Id` 必須是唯一的。 您不能以相同封裝識別碼進行多次提交。 請避免使用空格，因為在使用 [winget](../index.md) 用戶端時，這會要求使用者在 `Id` 前後加上引號。
 * 請避免建立多個發行者資料夾。 例如，如果已經有 "Contoso" 資料夾，請勿再建立 "Contoso Ltd"。 建立資料夾時也請避免使用空格。
 * 如果可能的話，所有封裝都應該以無訊息安裝的方式提交。 如果您的可執行檔不支援無訊息安裝，則會降低使用者體驗的品質。

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 了解如何建立 "Hello, world" 應用程式 (XAML)
-description: 使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立以 Windows 10 上通用 Windows 平台 (UWP) 為目標的簡單 Hello, world 應用程式。
+description: 使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, first app, hello world, 第一個應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: dda1c0f9a7b61c13965ff2f71c8100a8e771bd7d
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: b602970b2b1f37a4511e2a87eb1be72fba7f5423
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860076"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339836"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 "Hello, World!" 應用程式 (XAML)
 
-本教學課程會教您如何使用 XAML 和 C# 建立適用於 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。 透過 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的應用程式。
+本教學課程會教您如何使用 XAML 和 C#，為 Windows 10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 您將在此處了解如何：
 
@@ -28,7 +28,7 @@ ms.locfileid: "91860076"
 ## <a name="before-you-start"></a>開始之前...
 
 -   [什麼是 Windows 通用應用程式？](universal-application-platform-guide.md)
--   [下載 Visual Studio 2017 (和 Windows 10)](https://developer.microsoft.com/windows/downloads)。 如果您需要協助，請了解如何[開始設定](get-set-up.md)。
+-   [下載 Visual Studio 2017 (和 Windows 10)](https://developer.microsoft.com/windows/downloads)。 如果您需要協助，請了解如何[開始設定](/windows/apps/get-started/get-set-up)。
 -   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以在 [視窗] 功能表中使用 [重設視窗配置] 命令來重設它。
 
 > [!NOTE]
@@ -46,7 +46,7 @@ ms.locfileid: "91860076"
 
 3.  從左邊的範本清單中，選擇 [已安裝] > [Visual C#] > [Windows 通用] 來查看 UWP 專案範本的清單。
 
-    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並加入 UWP 支援，方法是按一下 [新增專案] 對話方塊上的 [開啟 Visual Studio 安裝程式]。 請參閱[開始設定](get-set-up.md)。)
+    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP 應用程式的元件。 您可以重複安裝程序並加入 UWP 支援，方法是按一下 [新增專案] 對話方塊上的 [開啟 Visual Studio 安裝程式]。 請參閱[開始設定](/windows/apps/get-started/get-set-up)。)
 
     ![如何重複安裝程序](images/win10-cs-install.png)
 
@@ -55,7 +55,7 @@ ms.locfileid: "91860076"
     ![[新增專案] 視窗](images/win10-cs-01.png)
 
 > [!NOTE]
-> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 [開發人員模式]，按一下 [是]，並關閉對話方塊。
+> 如果這是您第一次使用 Visual Studio，您可能會看到 [設定] 對話方塊要求您啟用 [開發人員模式]。 開發人員模式是啟用某些功能的特殊設定，例如，直接執行應用程式的權限，而非只執行來自 Microsoft Store 的。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](/windows/apps/get-started/enable-your-device-for-development)。 若要繼續使用此指南，請選取 [開發人員模式]，按一下 [是]，並關閉對話方塊。
 
  ![啟用開發人員模式對話方塊](images/win10-cs-00.png)
 
@@ -231,7 +231,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>摘要
 
-恭喜！您已經建立您的第一個適用於 Windows 10 和 UWP 的應用程式！
+恭喜！您已經完成適用於 Windows 10 和 UWP 的第一個應用程式了！
 
 若要了解如何使用 XAML 來配置應用程式將使用的控制項，請嘗試進行[格線教學課程](../design/layout/grid-tutorial.md)，或是直接進行[後續步驟](./create-uwp-apps.md)？
 
@@ -242,4 +242,4 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 * [開發 UWP 應用程式的操作說明文章](../develop/index.md)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 Windows 通用應用程式？](universal-application-platform-guide.md)
-* [註冊 Windows 帳戶](sign-up.md)
+* [註冊 Windows 帳戶](/windows/apps/get-started/sign-up)

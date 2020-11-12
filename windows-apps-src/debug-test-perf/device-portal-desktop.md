@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: f06a3c933060a7309604ae8dec49455ac3bd02ab
-ms.sourcegitcommit: 41dbee78d827107c224a9136c26f90be4dfe12ad
+ms.openlocfilehash: 1618b2de1f0db96989a7aedf5b53805fd70f535e
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90845567"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339566"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
@@ -32,10 +32,10 @@ Windows 裝置入口網站是一種偵錯工具，可讓您從網頁瀏覽器檢
 
 ### <a name="turn-on-developer-mode"></a>開啟開發人員模式
 
-從 Windows 10 版本 1607 開始，某些適用於桌上型電腦的新功能只有在啟用開發人員模式時才提供。 如需有關如何啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](../get-started/enable-your-device-for-development.md)。
+從 Windows 10 版本 1607 開始，某些適用於桌上型電腦的新功能只有在啟用開發人員模式時才提供。 如需有關如何啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](/windows/apps/get-started/enable-your-device-for-development)。
 
 > [!IMPORTANT]
-> 有時會因網路或相容性問題，致使開發人員模式無法正確安裝在您的裝置上。 如需協助進行這些問題的疑難排解，請參閱[相關的＜啟用您的裝置以用於開發＞一節](../get-started/enable-your-device-for-development.md#failure-to-install-developer-mode-package)。
+> 有時會因網路或相容性問題，致使開發人員模式無法正確安裝在您的裝置上。 如需協助進行這些問題的疑難排解，請參閱[相關的＜啟用您的裝置以用於開發＞一節](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)。
 
 ### <a name="turn-on-device-portal"></a>開啟裝置入口網站
 

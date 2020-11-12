@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站, 應用程式管理員, 部署, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fd5bf6be691974d956de0c71f4a1d11aa1a229f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 7006d32777e7b3ece5c5b6ed066bd23265b0bbb7
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166092"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339616"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>透過鬆散檔案註冊部署應用程式 
 
@@ -34,7 +34,7 @@ ms.locfileid: "89166092"
 Windows 提供多個開發人員工具，可在本機和遠端裝置上註冊鬆散檔案配置。 您可以選擇 `WinDeployAppCmd` (Windows SDK 工具)、Windows 裝置入口網站、PowerShell 及 [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network)。 以下我們將討論如何使用這些工具來註冊鬆散檔案。 但首先，請確定您已遵循下列設定：
 
 - 您的裝置必須是在 Windows 10 Creators Update (組建 14965) 或更新版本之上。
-- 您將需要在所有裝置上啟用[開發人員模式](../get-started/enable-your-device-for-development.md)和[裝置探索](../get-started/enable-your-device-for-development.md#device-discovery)。
+- 您將需要在所有裝置上啟用[開發人員模式](/windows/apps/get-started/enable-your-device-for-development)和[裝置探索](/windows/apps/get-started/enable-your-device-for-development#device-discovery)。
 
 > [!IMPORTANT]
 > 鬆散檔案註冊僅適用於支援網路共用 (SMB) 通訊協定的裝置：桌上型電腦和 Xbox。 
@@ -51,7 +51,7 @@ WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Addres
 
 **IP 位址** – 目標電腦的 IP 位址。
 
-**目標電腦** - 用於與目標裝置建立連線的 PIN (如為必要)。 如果需要驗證，系統會提示您使用 -`-pin` 選項重試。 如需瞭解如何取得 PIN，請參閱[裝置探索](../get-started/enable-your-device-for-development.md#device-discovery)。
+**目標電腦** - 用於與目標裝置建立連線的 PIN (如為必要)。 如果需要驗證，系統會提示您使用 -`-pin` 選項重試。 如需瞭解如何取得 PIN，請參閱[裝置探索](/windows/apps/get-started/enable-your-device-for-development#device-discovery)。
 
 ### <a name="windows-device-portal"></a>Windows 裝置入口網站
 
@@ -59,7 +59,7 @@ Windows 裝置入口網站能用於所有 Windows 10 裝置，供開發人員用
 
 若要在裝置入口網站中註冊鬆散檔案配置，請遵循下列步驟。
 
-1. 依照 [Windows 裝置入口網站概觀](device-portal.md)的**設定**中所述步驟，連線到裝置入口網站。
+1. 依照 [Windows 裝置入口網站概觀](device-portal.md)的 **設定** 中所述步驟，連線到裝置入口網站。
 1. 在 [應用程式管理員] 索引標籤中，選取 [從網路共用註冊]  。
 1. 輸入鬆散檔案配置的網路共用路徑。 
 1. 如果主機裝置沒有網路共用的存取權，系統會提示您輸入必要的認證。

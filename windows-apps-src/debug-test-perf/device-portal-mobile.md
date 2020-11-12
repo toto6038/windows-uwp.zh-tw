@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f0a91dd0370b8eda8763b63034d7c3ffaa1acd5
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 29a6f85dfb13e47617138e401c8444cb5b5f6809
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762999"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339576"
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
 從 Windows 10 版本 1511 開始，即針對行動裝置系列提供額外的開發人員功能。 只有在裝置上啟用開發人員模式時，才能使用這些功能。
 
-如需啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](../get-started/enable-your-device-for-development.md)。
+如需啟用開發人員模式的資訊，請參閱[啟用您的裝置以用於開發](/windows/apps/get-started/enable-your-device-for-development)。
 
 ![[裝置探索] 和 [裝置入口網站] 設定的螢幕擷取畫面。](images/device-portal/mob-dev-mode-options.png)
 

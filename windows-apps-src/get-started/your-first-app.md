@@ -6,12 +6,12 @@ ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a5491ef0e57399c9465697f933aa8fff92664cd
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: fe802fca1b17b49c11bf74b54f74d3b3107e6a9c
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011370"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339766"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個應用程式
 
@@ -41,7 +41,7 @@ ms.locfileid: "92011370"
 
 * [C++/WinRT](../cpp-and-winrt-apis/index.md)
 
-## <a name="visualc-component-extensions-ccx-and-xaml"></a>Visual C++ 元件擴充功能 (C++/CX) 和 XAML
+## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Visual C++ 元件延伸 (C++/CX) 和 XAML
 
 利用您的 C++ 程式設計專長，使用 Visual C++ 元件擴充功能 (C++/CX) 搭配可延伸應用程式標記語言 (XAML) 來建置應用程式。
 
@@ -57,7 +57,7 @@ ms.locfileid: "92011370"
 當您準備好要嘗試比 "Hello, World!" 更有趣的內容時，請嘗試下列教學課程。
 
 * [教學課程：建立使用者介面](../design/basics/xaml-basics-ui.md)
-* [Microsoft Learn 上的 Windows 應用程式](https://docs.microsoft.com/learn/browse/?products=windows)
+* [Microsoft Learn 上的 Windows 應用程式](/learn/browse/?products=windows)
 
 ## <a name="see-also"></a>另請參閱
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperfq1
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: f435631b575a06daae9cb4d34c5419e93ba8063f
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 3c6fd1f2ebee2e4e3a7d3ceb028f5def19e932c6
+ms.sourcegitcommit: 733d422fa1e3433cde842e2f200d3ef202767cc1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011353"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333283"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
@@ -48,7 +48,7 @@ UWP 應用程式在資訊清單中宣告他們所需的裝置功能，例如存�
 
 ### <a name="a-common-api-surface-across-all-devices"></a>跨所有裝置的通用 API 表面
 
-Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windows 10 的裝置上使用的通用應用程式平台。 UWP 核心 API 在所有 Windows 裝置上是相同的。 如果您的應用程式只使用核心 API，它會在任何 Windows 10 裝置上執行，無論您的目標是桌上型電腦、Xbox 或混合實境耳機等。
+Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windows 10 的裝置上使用的通用 App 平台。 UWP 核心 API 在所有 Windows 裝置上是相同的。 如果您的 App 只使用核心 API，它會在任何 Windows 10 裝置上執行，無論您的目標是桌上型電腦、Xbox 或混合實境耳機等。
 
 以 C++ /WinRT 或 C++ /CX 撰寫的 UWP 應用程式具有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 API 是由所有 Windows 10 裝置實作。
 
@@ -56,9 +56,9 @@ Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windo
 
 如果您的目標是通用 API，則應用程式可以在所有執行 Windows 10 的裝置上執行。 但如果您想要讓 UWP 應用程式利用裝置特定的 API，則您也可以這麼做。
 
-擴充功能 SDK 可讓您為不同裝置呼叫特殊的 API。 例如，如果您的 UWP 應用程式的目標是 IoT 裝置，您可以將 IoT 擴充功能 SDK 新增至您的專案，將特定功能瞄準 IoT 裝置。 如需新增擴充功能的 SDK 的詳細資訊，請參閱[使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overvieww#extension-sdks)中的**擴充功能 SDK** 一節。
+擴充功能 SDK 可讓您為不同裝置呼叫特殊的 API。 例如，如果您的 UWP 應用程式的目標是 IoT 裝置，您可以將 IoT 擴充功能 SDK 新增至您的專案，將特定功能瞄準 IoT 裝置。 如需新增擴充功能的 SDK 的詳細資訊，請參閱 [使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overvieww#extension-sdks)中的 **擴充功能 SDK** 一節。
 
-您可以撰寫您的應用程式，使其按照您所預期只在特定類型的裝置上執行，然後限定其從 Microsoft Store 發佈到僅該類型的裝置。 或者，您也可以條件式地測試執行階段出現的 API 並據以調整您的應用程式行為。 如需詳細資訊，請參閱[使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overview#writing-code)中的**撰寫程式碼**一節。<br>
+您可以撰寫您的應用程式，使其按照您所預期只在特定類型的裝置上執行，然後限定其從 Microsoft Store 發佈到僅該類型的裝置。 或者，您也可以條件式地測試執行階段出現的 API 並據以調整您的應用程式行為。 如需詳細資訊，請參閱 [使用擴充功能 SDK 進行程式設計](/uwp/extension-sdks/device-families-overview#writing-code)中的 **撰寫程式碼** 一節。<br>
 
 下列影片提供簡短的裝置系列概觀和調適型程式設計：
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
@@ -79,7 +79,7 @@ Windows 使用下列功能，協助您讓您的 UI 以多個裝置為目標：
 
 ### <a name="theres-one-store-for-all-devices"></a>還有一個適用於所有裝置的市集。
 
-整合的 App Store 可讓您的應用程式在 Windows 10 裝置上使用，例如個人電腦、平板電腦、Xbox、HoloLens、Surface Hub 及物聯網 (IoT) 裝置。 您可以將應用程式提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有應用程式。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
+整合的 App Store 可讓您的 App 在 Windows 10 裝置上使用，例如個人電腦、平板電腦、Xbox、HoloLens、Surface Hub 及物聯網 (IoT) 裝置。 您可以將應用程式提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有應用程式。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
 
 UWP 應用程式與 [Application Insights](https://azure.microsoft.com/services/application-insights/) 整合以進行詳細的遙測和分析，這是一項重要工具，可用以了解您的使用者並提升您的應用程式。
 
@@ -115,7 +115,6 @@ UWP 應用程式使用 Windows 執行階段，這是作業系統提供的原生 
 - DirectX UI 和 C++
 - JavaScript 和 HTML
 - WinUI
--
 
 ## <a name="links-to-help-you-get-going"></a>連結可協助您開始
 
