@@ -1,16 +1,16 @@
 ---
 description: '本逐步解說將示範如何使用 c #/WinRT 來產生 c + +/WinRT 元件的 .NET 5 投影。'
 title: 從 c + +/WinRT 元件產生 .NET 5 投影並散發 NuGet 的逐步解說
-ms.date: 10/12/2020
+ms.date: 11/12/2020
 ms.topic: article
 keywords: 'windows 10、c #、winrt、cswinrt、投影'
 ms.localizationpriority: medium
-ms.openlocfilehash: 817c4ec364040cbe64f8ab466a5bdf059d8c2dda
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 552eee6ab3f6f4f875202392c9aa3e3c848dbdb6
+ms.sourcegitcommit: 23bd1ef67dcb637b9ac7833e1b6a0c0dd56bd445
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339646"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94572797"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>逐步解說：從 c + +/WinRT 元件產生 .NET 5 投影並散發 NuGet
 
@@ -18,15 +18,12 @@ ms.locfileid: "94339646"
 
 您可以 [從 GitHub 下載](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample)本逐步解說的完整範例。
 
-> [!NOTE]
-> 本逐步解說是針對 c #/WinRT (RC2) 的最新預覽所撰寫。 我們預期即將推出的1.0 版本可進一步更新和改善開發人員體驗。
-
 ## <a name="prerequisites"></a>必要條件
 
 本逐步解說和對應的範例需要下列工具和元件：
 
-- [Visual Studio 16.8 Preview 3](https://visualstudio.microsoft.com/vs/preview/) (或更新版本) 已安裝通用 Windows 平臺開發工作負載。 在 **安裝詳細資料**  >  **通用 Windows 平臺開發** 中，檢查 **c + + (v14x) 通用 Windows 平臺工具** ] 選項。
-- [.Net 5.0 RC2 SDK](https://github.com/dotnet/installer)。
+- 已安裝通用 Windows 平臺開發工作負載的[Visual Studio 16.8](https://visualstudio.microsoft.com/downloads/) (或更新版本) 。 在 **安裝詳細資料**  >  **通用 Windows 平臺開發** 中，檢查 **c + + (v14x) 通用 Windows 平臺工具** ] 選項。
+- [.Net 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)。
 - C + + 的 c + + [/WINRT VSIX 擴充](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)功能/WinRT 專案範本。
 
 ## <a name="create-a-simple-cwinrt-runtime-component"></a>建立簡單的 c + +/WinRT 執行時間元件
@@ -75,26 +72,6 @@ namespace winrt::SimpleMathComponent::implementation
 
 4. 將專案參考加入至 **SimpleMathComponent** 專案。 在 **方案總管** 中，以滑鼠右鍵按一下 **SimpleMathProjection** 專案底下的 [相依性] 節點，選取 [ **加入專案參考** **]** ，然後選取 **SimpleMathComponent** 專案。
 
-    > [!NOTE]
-    > 如果您使用 Visual Studio 16.8 Preview 4 或更新版本，則在完成步驟4之後，就會完成本節的步驟。 如果您使用 Visual Studio 16.8 Preview 3，您也必須完成步驟5。
-
-5. 如果您使用 Visual Studio 16.8 Preview 3：在 **方案總管** 中，按兩下 [ **SimpleMathProjection** ] 節點以在編輯器中開啟專案檔，將下列元素加入至檔案，然後儲存並關閉檔案。
-
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="3.8.0-4.20472.6" />
-    </ItemGroup>
-
-    <PropertyGroup>
-      <RestoreSources>
-        https://api.nuget.org/v3/index.json;
-        https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-tools/nuget/v3/index.json
-      </RestoreSources>
-    </PropertyGroup>
-    ```
-
-    這些元素會安裝所需的 **Microsoft.Net** 版本，包括最新的 c # 編譯器。 本逐步解說會透過這些專案檔參考安裝此 NuGet 套件，因為預設公用 NuGet 摘要可能無法使用此套件的必要版本。
-
 在這些步驟之後，您的 **方案總管** 看起來應該像這樣。
 
 ![顯示投射專案相依性的方案總管](images/projection-dependencies.png)
@@ -128,10 +105,17 @@ namespace winrt::SimpleMathComponent::implementation
     - `CsWinRTIncludes`屬性會指定要投影的命名空間。
     - `CsWinRTGeneratedFilesDir`屬性會設定輸出目錄，其中會產生投射中的檔案，我們會在下一節中將其設定為從來源中建立。
 
-4. 本逐步解說的最新 c #/WinRT 版本可能需要指定 Windows 中繼資料。 這將在未來的 c # 版本中修正/Winrt 您可以使用下列其中一種方式來提供：
+4. 本逐步解說的最新 c #/WinRT 版本可能需要指定 Windows 中繼資料。 您可以使用下列其中一種方式來提供：
 
-    - 封裝參考，例如，對 [Microsoft.]( https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts/)。
-    - 使用屬性設定的明確值為 `CsWinRTWindowsMetadata` ：
+    - NuGet 套件參考，例如： Microsoft。 [合約]( https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts/)：
+
+      ```xml
+      <ItemGroup>
+        <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.19041.1" />
+      </ItemGroup>
+      ```
+
+    - 另一個選項是在 `CsWinRTWindowsMetadata` 步驟3中將下列屬性加入至 `PropertyGroup` ：
 
       ```xml
       <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
@@ -189,7 +173,7 @@ namespace winrt::SimpleMathComponent::implementation
           <group targetFramework="UAP10.0" />
           <group targetFramework=".NETFramework4.6" />
           <group targetFramework="net5.0">
-            <dependency id="Microsoft.Windows.CsWinRT" version="0.8.0" exclude="Build,Analyzers" />
+            <dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" exclude="Build,Analyzers" />
           </group>
         </dependencies>
       </metadata>
@@ -234,14 +218,14 @@ namespace winrt::SimpleMathComponent::implementation
     ```xml
     <PropertyGroup>
       <RestoreSources>
-          https://api.nuget.org/v3/index.json;
-          ../../CppWinRTProjectionSample/SimpleMathProjection/nuget
+        https://api.nuget.org/v3/index.json;
+        ../../CppWinRTProjectionSample/SimpleMathProjection/nuget
       </RestoreSources>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.VCRTForwarders.140" Version="1.0.6" />
-        <PackageReference Include="SimpleMathComponent" Version="0.1.0-prerelease" />
+      <PackageReference Include="Microsoft.VCRTForwarders.140" Version="1.0.6" />
+      <PackageReference Include="SimpleMathComponent" Version="0.1.0-prerelease" />
     </ItemGroup>
     ```
 
