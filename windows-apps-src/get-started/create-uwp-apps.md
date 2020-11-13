@@ -1,16 +1,16 @@
 ---
 title: 使用通用 Windows 平台建立應用程式
-description: 建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式比您所想得還要簡單。
+description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, get started, 開始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: a9230df47c9929ee902fc8e0b93f7de7a5ef70df
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 143e393a72aa24f81561e792148e4cc8b39bdeb4
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011368"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339796"
 ---
 # <a name="start-coding"></a>開始撰寫程式碼
 
@@ -57,7 +57,7 @@ ms.locfileid: "92011368"
 
 | 區域 | 說明 |
 | --- | --- |
-| **新功能？** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指導方針相關資訊，其中也包含新 API 的清單： </br>   [最新 Windows 10 版本中適用於發人員的新功能](../whats-new/windows-10-version-latest.md) |
+| **新功能？** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指導方針相關資訊，其中也包含新 API 的清單： </br>   [最新 Windows 10 版本中適用於發人員的新功能](../whats-new/windows-10-build-19041.md) |
 | **設計與 UI** | 包含在此文件區域中的視覺呈現與應用程式的 UI 上的所有資訊。如果您對 XAML 標記語言的特定項目感興趣，或只是想要建立獨特的文件外觀，請由此開始︰ </br>   [UWP 應用程式設計基本知識](../design/basics/index.md) |
 | **開發應用程式** | 如果您需要特定 Windows 10 功能的詳細資訊，或只是想了解您可如何進行 UWP 開發，請查看文件的此區域： </br>   [UWP 應用程式功能](../develop/index.md)。 </br> Windows 10 應用程式的 API 參照記載在一組相關文件中，您可在此處找到： </br>   [Windows UWP 命名空間](/uwp/api/) </br>   [檔案和 XML 結構描述](/uwp/schemas/) |
 | **開發遊戲** | 這些文件包含如何開發 Windows 或 Xbox 遊戲的資訊。 這包括的安裝指示、開發人員程式，以及使用 DirectX 或 Xbox 功能進行程式設計的指示。 </br>   [遊戲開發入門](../gaming/getting-started.md) |
@@ -70,5 +70,5 @@ ms.locfileid: "92011368"
 | Docs | 描述 |
 | --- | --- |
 | **Microsoft Azure** | 雲端開發和 Microsoft Azure 的相關資訊，都可在 [Microsoft Azure 開發人員文件](/azure/)中找到。 |
-| **Web 程式開發** | Microsoft Edge、WebVR 及其他 Windows Web 開發功能的資訊，可在 [Microsoft Edge 開發人員文件](/microsoft-edge/) \(英文\) 中找到。 |
+| **Web 開發** | Microsoft Edge、WebVR 及其他 Windows Web 開發功能的資訊，可在 [Microsoft Edge 開發人員文件](/microsoft-edge/) \(英文\) 中找到。 |
 | **Windows Mixed Reality** | 混合實境將現實世界和虛擬內容混合到實體和數位物件共存的體驗中。 建置 Microsoft HoloLens 應用程式和其他沉浸式頭戴裝置的資訊，可在 [Windows Mixed Reality 文件](/windows/mixed-reality/)中找到。|
