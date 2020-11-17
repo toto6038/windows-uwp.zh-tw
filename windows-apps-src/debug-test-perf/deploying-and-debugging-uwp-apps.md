@@ -6,18 +6,18 @@ ms.date: 04/08/2019
 ms.topic: article
 keywords: Windows 10, uwp, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: c21586bceef11b1a2c19900160796bf702578ffb
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: 1d537ca64e94d68a8cc9bbe9c59d341d04821cd9
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91763059"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339745"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP 應用程式
 
 本文會引導您完成以各種部署和偵錯目標為目標的步驟。
 
-Microsoft Visual Studio 可讓您在各種不同的 Windows 10 裝置上進行「通用 Windows 平台」(UWP) 應用程式的部署和偵錯。 Visual Studio 會處理在目標裝置上建立及註冊 App 的處理程序。
+Microsoft Visual Studio 可讓您在各種不同的 Windows 10 裝置上進行「通用 Windows 平台」(UWP) app 部署和偵錯。 Visual Studio 會處理在目標裝置上建立及註冊 App 的處理程序。
 
 ## <a name="picking-a-deployment-target"></a>挑選部署目標
 
@@ -25,8 +25,8 @@ Microsoft Visual Studio 可讓您在各種不同的 Windows 10 裝置上進行�
 
 ![偵錯裝置目標清單](images/debug-device-target-list.png)
 
-- [模擬器]  會將應用程式部署到您目前開發電腦上的模擬環境。 只有當您應用程式的**目標平台最低版本**小於或等於您開發電腦上的作業系統時，才可以使用此選項。
-- [本機電腦]  會將應用程式部署到您目前的開發電腦。 只有當您應用程式的**目標平台最低版本**小於或等於您開發電腦上的作業系統時，才可以使用此選項。
+- [模擬器]  會將應用程式部署到您目前開發電腦上的模擬環境。 只有當您應用程式的 **目標平台最低版本** 小於或等於您開發電腦上的作業系統時，才可以使用此選項。
+- [本機電腦]  會將應用程式部署到您目前的開發電腦。 只有當您應用程式的 **目標平台最低版本** 小於或等於您開發電腦上的作業系統時，才可以使用此選項。
 - [遠端電腦]  會讓您指定用來部署應用程式的遠端目標。 如需有關部署到遠端電腦的詳細資訊，請參閱[指定遠端裝置](#specifying-a-remote-device)。
 - [裝置]  會將應用程式部署到已透過 USB 連接的裝置。 裝置必須已由開發人員解除鎖定，並且畫面已解除鎖定。
 - [模擬器]  目標會開機，並以名稱中指定的設定將應用程式部署到模擬器。 模擬器僅在執行 Windows 8.1 或更新版本且支援 Hyper-V 的電腦上才有提供。
@@ -73,7 +73,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ### <a name="c-and-javascript"></a>C++ 和 JavaScript
 
-為 C++ 或 JavaScript UWP 應用程式指定遠端電腦目標：
+為 C++ 或 JavaScript UWP app 指定遠端電腦目標：
 
 1. 開啟 [方案總管]  ，在專案上按一下滑鼠右鍵，然後按一下 [屬性]  。
 2. 移至 [偵錯]  設定，在 [要啟動的偵錯工具]  底下選取 [遠端電腦]  。
@@ -92,7 +92,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 若要這樣做，請在 [開始]  功能表中搜尋 [遠端偵錯工具]  、開啟它，如果出現提示，請允許偵錯工具設定您的防火牆設定。 偵錯工具預設會使用 Windows 驗證啟動。 如果兩部電腦上的登入使用者不相同，這將會要求提供使用者認證。
 
-若要將它變更為 [無驗證]  ，請在 [遠端偵錯工具]  中移至 [工具]   -&gt; [選項]  ，然後將它設定為 [無驗證]  。 設定遠端偵錯工具之後，您也必須確定已將主機裝置設定為 [開發人員模式](../get-started/enable-your-device-for-development.md)。 之後，您便可以從您的開發電腦進行部署。
+若要將它變更為 [無驗證]  ，請在 [遠端偵錯工具]  中移至 [工具]   -&gt; [選項]  ，然後將它設定為 [無驗證]  。 設定遠端偵錯工具之後，您也必須確定已將主機裝置設定為 [開發人員模式](/windows/apps/get-started/enable-your-device-for-development)。 之後，您便可以從您的開發電腦進行部署。
 
 如需詳細資訊，請參閱 [Visual Studio 下載中心](https://visualstudio.microsoft.com/downloads/)頁面。
 
@@ -183,9 +183,9 @@ C++ UWP app 的屬性頁面會看起來如下。
 當您從網路登錄配置時，無法選取 [保留裝置上的所有檔案]  ，因為沒有任何檔案被實際複製到遠端裝置上。
 
 > [!NOTE]
-> 執行 Windows 10 年度更新版的 Xbox 以及執行 Windows 10 Creators Update 的電腦目前支援**從網路登錄配置**。
+> 執行 Windows 10 年度更新版的 Xbox 以及執行 Windows 10 Creators Update 的電腦目前支援 **從網路登錄配置**。
 
-在遠端裝置上，會將配置登錄到下列依裝置系列而異的預設位置︰`Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` - 這是**封裝註冊路徑**的符號連結；電腦不會使用符號連結，而是直接登錄**封裝註冊路徑**。
+在遠端裝置上，會將配置登錄到下列依裝置系列而異的預設位置︰`Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` - 這是 **封裝註冊路徑** 的符號連結；電腦不會使用符號連結，而是直接登錄 **封裝註冊路徑**。
 
 ## <a name="debugging-options"></a>偵錯選項
 
@@ -201,14 +201,14 @@ Visual Studio 專案以及已安裝在電腦上的應用程式皆支援偵錯，
 
   從 App 移除網路回送豁免：
 
-  - 在 C# 和 Visual Basic 的 [偵錯] **** 屬性頁面上，取消選取 [允許區域網路回送]  核取方塊。
+  - 在 C# 和 Visual Basic 的 **[偵錯]** 屬性頁面上，取消選取 **[允許區域網路回送]** 核取方塊。
   - 在 JavaScript 和 C++ 的 [偵錯]  屬性頁面上，將 [允許區域網路回送]  的值設定為 [否]  。
 
 - **不啟動，但在我的程式碼啟動時進行偵錯 / 啟動應用程式**
 
   將部署設定成在啟動 App 時自動啟動偵錯工作階段：
 
-  - 在 C# 和 Visual Basic 的 [偵錯] **** 屬性頁面上，選取 [不啟動，但在我的程式碼啟動時進行偵錯]  核取方塊。
+  - 在 C# 和 Visual Basic 的 **[偵錯]** 屬性頁面上，選取 **[不啟動，但在我的程式碼啟動時進行偵錯]** 核取方塊。
   - 在 JavaScript 和 C++ 的 [偵錯]  屬性頁面上，將 [啟動應用程式]  值設定為 [是]  。
 
 ## <a name="symbols"></a>符號

@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 2b0d6bb305490e05c2670f0e0a326601c51a8373
-ms.sourcegitcommit: 609441402c17d92e7bfac83a6056909bb235223c
+ms.openlocfilehash: bf460b8c05f1dbb274aa9015e6b892339df9f634
+ms.sourcegitcommit: 21a76fc02ae261f609a2dbb7a56c5de25844c068
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90837813"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93381388"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 Windows 執行階段 API
 
@@ -33,7 +33,7 @@ ms.locfileid: "90837813"
 
 ### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 Preview 8 和更新版本：使用目標 Framework Moniker 選項 
 
-只有使用 .NET 5 Preview 8 (或舊版) 並將 Windows 10 版本 1809 或更新作業系統版本設為目標的專案，才支援此選項。 如需更多關於此案例的背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
+只有使用 .NET 5 Preview 8 (或更新版本) 並將 Windows 10 版本 1809 或更新作業系統版本設為目標的專案，才支援此選項。 如需更多關於此案例的背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
 
 1. 在 Visual Studio 中開啟您的專案，在 [方案總管] 中您的專案上按一下滑鼠右鍵，然後選擇 [編輯專案檔]。 您的專案檔看起來應該類似這樣。
 
@@ -85,7 +85,7 @@ ms.locfileid: "90837813"
 
 ### <a name="configure-projects-that-multi-target-different-versions-of-net"></a>設定將不同版本 .NET 設為多重目標的專案
 
-如果您的專案將 .NET 5 Preview 8 (或更新版本) 和舊版 (包括 .NET Core 3.x 和 .NET Framework) 設為多重目標，您可以將專案檔設定為使用目標 Framework Moniker，以自動提取 .NET 5 Preview 8 (或更新版本) 的 WinRT API 參考，並使用舊版的 `Microsoft.Windows.SDK.Contracts` NuGet 套件。
+如果您的專案將 .NET 5 Preview 8 (或更新版本) 和舊版 (包括 .NET Core 3.x 和 .NET Framework) 設為多重目標，您可以將專案檔設定為使用目標 Framework Moniker，以自動提取 .NET 5 的 WinRT API 參考，並使用舊版的 `Microsoft.Windows.SDK.Contracts` NuGet 套件。
 
 1. 在 Visual Studio 中開啟您的專案，在 [方案總管] 中您的專案上按一下滑鼠右鍵，然後選擇 [編輯專案檔]。 下列範例示範應用程式的專案檔，該應用程式使用 .NET Core 3.1。
 
@@ -309,11 +309,11 @@ void UWP::ShowToast()
 
 對於該組建設定，請建立常數，用來識別呼叫 Windows 執行階段 API 的程式碼。  
 
-對於 .NET 型專案，此常數稱為**條件式編譯常數**。
+對於 .NET 型專案，此常數稱為 **條件式編譯常數**。
 
 ![條件式編譯常數](images/desktop-to-uwp/compilation-constants.png)
 
-對於 C++ 型專案，此常數稱為**前置處理器定義**。
+對於 C++ 型專案，此常數稱為 **前置處理器定義**。
 
 ![前置處理器定義常數](images/desktop-to-uwp/pre-processor.png)
 

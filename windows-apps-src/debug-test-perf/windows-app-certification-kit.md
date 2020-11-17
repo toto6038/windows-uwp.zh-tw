@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 06ac1525a91426f6d39e20c9a9416154ad3d6f3e
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
+ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174022"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94339346"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
@@ -23,7 +23,7 @@ ms.locfileid: "89174022"
 
 - 您必須安裝和執行 Windows 10。
 - 您必須安裝 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
-- 您必須[啟用您的裝置以進行開發](../get-started/enable-your-device-for-development.md)。
+- 您必須[啟用您的裝置以進行開發](/windows/apps/get-started/enable-your-device-for-development)。
 - 您必須將要測試的 Windows App 部署至電腦。
 
 > [!NOTE]
@@ -59,7 +59,7 @@ ms.locfileid: "89174022"
 
 1. 在命令視窗中，瀏覽到包含 Windows 應用程式認證套件的目錄。
 
-    **注意**  預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
+    **注意** 預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
 2. 依序輸入下列命令，以測試電腦上已安裝的 app：
 
@@ -75,9 +75,9 @@ ms.locfileid: "89174022"
 
 3. 測試完成之後，開啟名為 `[report file name]` 的報告檔案，然後檢閱測試結果。
 
-**注意**  Windows 應用程式認證套件可以從服務中執行，但是該服務必須在使用中的使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
+**注意** Windows 應用程式認證套件可以從服務中執行，但是該服務必須在使用中的使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
 
-**注意**  如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入 `appcert.exe /?` 命令
+**注意** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入 `appcert.exe /?` 命令
 
 ## <a name="testing-with-a-low-power-computer"></a>使用低功率電腦進行測試
 
