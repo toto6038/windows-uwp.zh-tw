@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ce223d4d70f883545114507ec49fcd9d7084d2a5
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 166a498ba7323869fe60f7d3392b93ac501dd331
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363901"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691546"
 ---
 # <a name="play-audio-and-video-with-mediaplayer"></a>使用 MediaPlayer 播放音訊和視訊
 
 本文說明如何使用 [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) 類別在您的通用 Windows app 中播放媒體。 在 Windows 10 1607 版中，已對媒體播放 Api 進行大幅改進，包括簡化的背景音訊單一程式設計、與系統媒體傳輸控制項的自動整合 (SMTC) 、同步處理多個媒體播放機的能力、將影片框架轉譯為 Windows 的功能，以及在內容中建立和排程媒體中斷的簡單介面。 若要充分利用這些改進的功能，對於媒體播放的建議最佳做法是使用 **MediaPlayer** 類別來播放媒體，而不是 **MediaElement**。 已經引入精簡的 XAML 控制項 [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)，讓您可以在 XAML 頁面中轉譯媒體內容。 許多 **MediaElement** 提供的播放控制項和狀態 API，都已經可以透過新的 [**MediaPlaybackSession**](/uwp/api/Windows.Media.Playback.MediaPlaybackSession) 物件取得。 **MediaElement** 會繼續支援回朔相容性，但不會再為此類別新增功能。
 
-本文會逐步說明一般媒體播放 App 中將使用的 **MediaPlayer** 功能。 請注意，**MediaPlayer** 對於所有媒體項目都是使用 [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 類別當作容器。 這個類別可讓您使用同一個介面，從許多不同的來源載入和播放媒體，這些來源包括本機檔案、記憶體資料流，以及網路來源。 也有可搭配 **MediaSource** 使用的高層級類別，像是 [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList)，它們提供更多進階功能，如播放清單，及管理包含多個音訊、視訊和中繼資料播放軌的媒體來源。 如需 **MediaSource** 和相關 API 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。
+本文會逐步說明一般媒體播放 App 中將使用的 **MediaPlayer** 功能。 請注意，**MediaPlayer** 對於所有媒體項目都是使用 [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 類別當作容器。 這個類別可讓您使用同一個介面，從許多不同的來源載入和播放媒體，這些來源包括本機檔案、記憶體資料流，以及網路來源。 也有可搭配 **MediaSource** 使用的高層級類別，像是 [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) 和 [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList)，它們提供更多進階功能，如播放清單，及管理包含多個音訊、視訊和中繼資料播放軌的媒體來源。 如需 **MediaSource** 和相關 API 的詳細資訊，請參閱 [媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。
 
 > [!NOTE] 
 > Windows 10 N 和 Windows 10 KN 版不含使用 **MediaPlayer** 播放所需的媒體功能。 這些功能可以手動安裝。 如需詳細資訊，請參閱[適用於 Windows 10 N 和 Windows 10 KN 版本的 Media Feature Pack](https://support.microsoft.com/help/3010081/media-feature-pack-for-windows-10-n-and-windows-10-kn-editions)。
@@ -53,7 +53,7 @@ ms.locfileid: "89363901"
 本節說明如何使用 **MediaPlayer** 的一些功能。
 
 ### <a name="set-the-audio-category"></a>設定音訊類別
-將 **MediaPlayer** 的 [**AudioCategory**](/uwp/api/windows.media.playback.mediaplayer.audiocategory) 屬性設為[**MediaPlayerAudioCategory**](/uwp/api/Windows.Media.Playback.MediaPlayerAudioCategory) 列舉的其中一個值，讓系統知道您播放的媒體是何種類型。 遊戲應將其音樂資料流的類別設為 **GameMedia**，這樣如果有其他應用程式於背景播放音樂，遊戲音樂就會自動靜音。 音樂或影片應用程式應將其資料流的類別設為 **Media** 或 **Movie**，使它們的優先順序高於 **GameMedia** 資料流。
+將 **MediaPlayer** 的 [**AudioCategory**](/uwp/api/windows.media.playback.mediaplayer.audiocategory) 屬性設為 [**MediaPlayerAudioCategory**](/uwp/api/Windows.Media.Playback.MediaPlayerAudioCategory) 列舉的其中一個值，讓系統知道您播放的媒體是何種類型。 遊戲應將其音樂資料流的類別設為 **GameMedia**，這樣如果有其他應用程式於背景播放音樂，遊戲音樂就會自動靜音。 音樂或影片應用程式應將其資料流的類別設為 **Media** 或 **Movie**，使它們的優先順序高於 **GameMedia** 資料流。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSetAudioCategory":::
 
@@ -122,7 +122,7 @@ ms.locfileid: "89363901"
 
 在某些情況下，系統可能會根據原則 (而非根據效能問題) 降低媒體項目的播放，例如降低解析度 (限制)。 例如，如果使用未簽署的視訊驅動程式進行播放，系統可能會降低視訊。 您可以呼叫 [**MediaPlaybackSession.GetOutputDegradationPolicyState**](/uwp/api/windows.media.playback.mediaplaybacksession.getoutputdegradationpolicystate#Windows_Media_Playback_MediaPlaybackSession_GetOutputDegradationPolicyState) 來判斷是否正在發生原則型降低及其原因，並警示使用者或記錄原因以用於遙測用途。
 
-下列範例顯示當播放機開啟新的媒體項目時，實作 **MediaPlayer.MediaOpened** 事件的處理程式。 在傳遞到處理常式的 **MediaPlayer** 上呼叫 **GetOutputDegradationPolicyState**。 [**VideoConstrictionReason**](/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) 的值指出影片受限制的原則原因。 如果值不是 **None**，此範例會記錄降低原因以供遙測之用。 此範例也示範將目前正在播放的 **AdaptiveMediaSource** 位元速率設定為最低頻寬以節省數據使用量 (既然影片受限制且不會以高解析度顯示)。 如需使用 **AdaptiveMediaSource** 的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+下列範例顯示當播放機開啟新的媒體項目時，實作 **MediaPlayer.MediaOpened** 事件的處理程式。 在傳遞到處理常式的 **MediaPlayer** 上呼叫 **GetOutputDegradationPolicyState**。 [**VideoConstrictionReason**](/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) 的值指出影片受限制的原則原因。 如果值不是 **None**，此範例會記錄降低原因以供遙測之用。 此範例也示範將目前正在播放的 **AdaptiveMediaSource** 位元速率設定為最低頻寬以節省數據使用量 (既然影片受限制且不會以高解析度顯示)。 如需使用 **AdaptiveMediaSource** 的詳細資訊，請參閱 [彈性資料流](adaptive-streaming.md)。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetPolicyDegradation":::
         
@@ -189,13 +189,13 @@ ms.locfileid: "89363901"
 請注意，如果播放器的位移值是對應負的播放位置，該剪輯會保持暫停直到位移達到零，然後開始播放。 同樣地，如果位移值對應到的播放位置大於媒體項目的長度，則會顯示最後一個畫面，如同單一媒體播放器到達其內容結尾時一樣。
 
 ## <a name="play-spherical-video-with-mediaplayer"></a>使用 MediaPlayer 播放球面視訊
-從 Windows 10 版本 1703 開始，**MediaPlayer**支援進行球面視訊播放的等距長方投影。 球面視訊內容與一般視訊不同，差異在於**MediaPlayer**只要支援視訊編碼，就會轉譯視訊。 如果球面視訊包含指定視訊使用等距長方投影的中繼資料標記，則**MediaPlayer**可以使用指定的視野範圍和檢視方向來轉譯視訊。 這會啟用具有頭戴式顯示器的虛擬實境視訊播放這類案例，或是只讓使用者透過滑鼠或鍵盤輸入移動瀏覽球面視訊內容。
+從 Windows 10 版本 1703 開始，**MediaPlayer** 支援進行球面視訊播放的等距長方投影。 球面視訊內容與一般視訊不同，差異在於 **MediaPlayer** 只要支援視訊編碼，就會轉譯視訊。 如果球面視訊包含指定視訊使用等距長方投影的中繼資料標記，則 **MediaPlayer** 可以使用指定的視野範圍和檢視方向來轉譯視訊。 這會啟用具有頭戴式顯示器的虛擬實境視訊播放這類案例，或是只讓使用者透過滑鼠或鍵盤輸入移動瀏覽球面視訊內容。
 
 若要播放球面視訊，請使用用於播放本文先前所述視訊內容的步驟。 另外一個步驟是註冊 [**MediaPlayer. MediaOpened**](/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) 事件的處理常式。 這個事件可讓您啟用和控制球面視訊播放參數。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetOpenSphericalVideo":::
 
-在 **MediaOpened**處理常式中，請先檢查新開啟之媒體項目的畫面格式，方法是檢查[**PlaybackSession.SphericalVideoProjection.FrameFormat**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.FrameFormat)屬性。 如果此值是[**SphericaVideoFrameFormat.Equirectangular**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat)，則系統可以自動投影視訊內容。 首先，請將[**PlaybackSession.SphericalVideoProjection.IsEnabled**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.IsEnabled)屬性設定為**true**。 您也可以調整屬性，例如媒體播放程式將用來投影視訊內容的檢視方向和視野範圍。 在此範例中，視野範圍設定為 120 度的寬幅值，方法是設定[**HorizontalFieldOfViewInDegrees**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.HorizontalFieldOfViewInDegrees)屬性。
+在 **MediaOpened** 處理常式中，請先檢查新開啟之媒體項目的畫面格式，方法是檢查 [**PlaybackSession.SphericalVideoProjection.FrameFormat**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.FrameFormat)屬性。 如果此值是 [**SphericaVideoFrameFormat.Equirectangular**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat)，則系統可以自動投影視訊內容。 首先，請將 [**PlaybackSession.SphericalVideoProjection.IsEnabled**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.IsEnabled)屬性設定為 **true**。 您也可以調整屬性，例如媒體播放程式將用來投影視訊內容的檢視方向和視野範圍。 在此範例中，視野範圍設定為 120 度的寬幅值，方法是設定 [**HorizontalFieldOfViewInDegrees**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.HorizontalFieldOfViewInDegrees)屬性。
 
 如果視訊內容是球面，但為等距長方以外的格式，則您可以使用媒體播放程式的畫面伺服器模式實作自己的投影演算法，來接收和處理個別畫面。
 
@@ -205,26 +205,26 @@ ms.locfileid: "89363901"
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSphericalOnKeyDown":::
 
-如果您的應用程式支援視訊播放清單，則您可能會想要找出 UI 中包含球面視訊的播放項目。 [媒體項目、播放清單與曲目](media-playback-with-mediasource.md)文章會詳細討論媒體播放清單。 下列範例示範如何建立新的播放清單、新增項目，以及註冊[**MediaPlaybackItem.VideoTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.VideoTracksChanged)事件的處理常式，而這個事件是在解析媒體項目的視訊播放軌時發生。
+如果您的應用程式支援視訊播放清單，則您可能會想要找出 UI 中包含球面視訊的播放項目。 [媒體項目、播放清單與曲目](media-playback-with-mediasource.md)文章會詳細討論媒體播放清單。 下列範例示範如何建立新的播放清單、新增項目，以及註冊 [**MediaPlaybackItem.VideoTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.VideoTracksChanged)事件的處理常式，而這個事件是在解析媒體項目的視訊播放軌時發生。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSphericalList":::
 
-在 **VideoTracksChanged**事件處理常式中，取得任何新增之視訊播放軌的編碼屬性，方法是呼叫[**VideoTrack.GetEncodingProperties**](/uwp/api/windows.media.core.videotrack.GetEncodingProperties)。 如果編碼屬性的[**SphericalVideoFrameFormat**](/uwp/api/windows.media.mediaproperties.videoencodingproperties.SphericalVideoFrameFormat)屬性是[**SphericaVideoFrameFormat.None**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat)以外的值，則視訊播放軌包含球面視訊，而且您可以自行選擇適當地更新 UI。
+在 **VideoTracksChanged** 事件處理常式中，取得任何新增之視訊播放軌的編碼屬性，方法是呼叫 [**VideoTrack.GetEncodingProperties**](/uwp/api/windows.media.core.videotrack.GetEncodingProperties)。 如果編碼屬性的 [**SphericalVideoFrameFormat**](/uwp/api/windows.media.mediaproperties.videoencodingproperties.SphericalVideoFrameFormat)屬性是 [**SphericaVideoFrameFormat.None**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat)以外的值，則視訊播放軌包含球面視訊，而且您可以自行選擇適當地更新 UI。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetSphericalTracksChanged":::
 
 ## <a name="use-mediaplayer-in-frame-server-mode"></a>以畫面伺服器模式使用 MediaPlayer
-從 Windows 10 版本 1703 開始，您可以透過畫面伺服器模式使用**MediaPlayer**。 在此模式下，**MediaPlayer**不會自動向相關**MediaPlayerElement**轉譯畫面。 相反地，您的應用程式會將目前畫面從**MediaPlayer**複製到實作[**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)的物件。 這項功能所啟用的主要案例將會使用像素著色器來處理**MediaPlayer**所提供的視訊畫面。 您的應用程式負責在處理後顯示每個畫面，例如透過在 XAML [**Image**](/uwp/api/windows.ui.xaml.controls.image) 控制項中顯示畫面。
+從 Windows 10 版本 1703 開始，您可以透過畫面伺服器模式使用 **MediaPlayer**。 在此模式下，**MediaPlayer** 不會自動向相關 **MediaPlayerElement** 轉譯畫面。 相反地，您的應用程式會將目前畫面從 **MediaPlayer** 複製到實作 [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)的物件。 這項功能所啟用的主要案例將會使用像素著色器來處理 **MediaPlayer** 所提供的視訊畫面。 您的應用程式負責在處理後顯示每個畫面，例如透過在 XAML [**Image**](/uwp/api/windows.ui.xaml.controls.image) 控制項中顯示畫面。
 
-在下列的範例中，會初始化新**MediaPlayer**，並載入視訊內容。 接下來，會登錄[**VideoFrameAvailable**](/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable)的處理常式。 畫面伺服器模式的啟用方式是將**MediaPlayer**物件的[**IsVideoFrameServerEnabled**](/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled)屬性設定為**true**。 最後，會使用[**Play**](/uwp/api/windows.media.playback.mediaplayer.Play)呼叫來啟動媒體播放。
+在下列的範例中，會初始化新 **MediaPlayer**，並載入視訊內容。 接下來，會登錄 [**VideoFrameAvailable**](/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable)的處理常式。 畫面伺服器模式的啟用方式是將 **MediaPlayer** 物件的 [**IsVideoFrameServerEnabled**](/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled)屬性設定為 **true**。 最後，會使用 [**Play**](/uwp/api/windows.media.playback.mediaplayer.Play)呼叫來啟動媒體播放。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetFrameServerInit":::
 
-下一個範例示範**VideoFrameAvailable**的處理常式，其使用[Win2D](https://github.com/Microsoft/Win2D)新增視訊之每個畫面的簡單模糊效果，然後透過 XAML [Image](/uwp/api/windows.ui.xaml.controls.image)控制項顯示處理過的畫面。
+下一個範例示範 **VideoFrameAvailable** 的處理常式，其使用 [Win2D](https://github.com/Microsoft/Win2D)新增視訊之每個畫面的簡單模糊效果，然後透過 XAML [Image](/uwp/api/windows.ui.xaml.controls.image)控制項顯示處理過的畫面。
 
-只要呼叫**VideoFrameAvailable**處理常式，就會使用[**CopyFrameToVideoSurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface)方法，將畫面內容複製到[**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)。 您也可以使用[**CopyFrameToStereoscopicVideoSurfaces**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces)將 3D 內容複製到兩個表面，以個別處理左眼和右眼內容。 若要取得實作**IDirect3DSurface**的物件，這個範例會建立[**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap)，然後使用該物件建立 Win2D **CanvasBitmap**，以實作所需的介面。 **CanvasImageSource**是可作為**Image**控制項來源的 Win2D 物件，因此會建立新項目，並將其設定為**Image**來源，而在其中顯示內容。 接下來，會建立 **CanvasDrawingSession**。 這是供 Win2D 用來轉譯模糊效果。
+只要呼叫 **VideoFrameAvailable** 處理常式，就會使用 [**CopyFrameToVideoSurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface)方法，將畫面內容複製到 [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface)。 您也可以使用 [**CopyFrameToStereoscopicVideoSurfaces**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces)將 3D 內容複製到兩個表面，以個別處理左眼和右眼內容。 若要取得實作 **IDirect3DSurface** 的物件，這個範例會建立 [**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap)，然後使用該物件建立 Win2D **CanvasBitmap**，以實作所需的介面。 **CanvasImageSource** 是可作為 **Image** 控制項來源的 Win2D 物件，因此會建立新項目，並將其設定為 **Image** 來源，而在其中顯示內容。 接下來，會建立 **CanvasDrawingSession**。 這是供 Win2D 用來轉譯模糊效果。
 
-具現化所有必要物件之後，會呼叫**CopyFrameToVideoSurface**，以將目前畫面從**MediaPlayer**複製到**CanvasBitmap**。 接下來，會建立 Win2D **GaussianBlurEffect**，而且**CanvasBitmap**設定為運算來源。 最後，呼叫**CanvasDrawingSession.DrawImage**，將套用模糊效果的來源影像繪製到與**Image**控制項相關的**CanvasImageSource**，以在 UI 中進行繪製。
+具現化所有必要物件之後，會呼叫 **CopyFrameToVideoSurface**，以將目前畫面從 **MediaPlayer** 複製到 **CanvasBitmap**。 接下來，會建立 Win2D **GaussianBlurEffect**，而且 **CanvasBitmap** 設定為運算來源。 最後，呼叫 **CanvasDrawingSession.DrawImage**，將套用模糊效果的來源影像繪製到與 **Image** 控制項相關的 **CanvasImageSource**，以在 UI 中進行繪製。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetVideoFrameAvailable":::
 
@@ -232,7 +232,7 @@ ms.locfileid: "89363901"
 
 **將 Win2D NuGet 套件新增到您的效果專案**
 
-1.  在**方案總管**中，對專案按一下滑鼠右鍵，然後選取 [管理 NuGet 套件]。
+1.  在 **方案總管** 中，對專案按一下滑鼠右鍵，然後選取 [管理 NuGet 套件]。
 2.  在視窗頂端，選取 [ **流覽** ] 索引標籤。
 3.  在搜尋方塊中輸入 **Win2D**。
 4.  選取 [ **Win2D**]，然後在右窗格中選取 [ **安裝** ]。
@@ -240,7 +240,7 @@ ms.locfileid: "89363901"
 6.  接受套件授權。
 
 ## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>偵測及回應系統進行的音量變更
-從 Windows 10 版本 1803 開始，您的應用程式可偵測系統將目前播放 **MediaPlayer** 的音量降低或設為靜音。 例如，系統可能會在鬧鈴響起時，降低 (或者「迴避」) 音訊播放音量。 如果您的應用程式未在應用程式資訊清單中宣告 *backgroundMediaPlayback* 功能，當您的應用程式進入背景時，系統會將其設為靜音。 [**AudioStateMonitor**](./uwp/api/windows.media.audio.audiostatemonitor) 類別可讓您註冊以在系統修改音訊資料流的音量時接收事件。 存取 **MediaPlayer** 的 **AudioStateMonitor** 屬性並註冊 [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件的處理常式，以在系統變更 **MediaPlayer** 的音量時收到通知。
+從 Windows 10 版本 1803 開始，您的應用程式可偵測系統將目前播放 **MediaPlayer** 的音量降低或設為靜音。 例如，系統可能會在鬧鈴響起時，降低 (或者「迴避」) 音訊播放音量。 如果您的應用程式未在應用程式資訊清單中宣告 *backgroundMediaPlayback* 功能，當您的應用程式進入背景時，系統會將其設為靜音。 [**AudioStateMonitor**](/uwp/api/windows.media.audio.audiostatemonitor) 類別可讓您註冊以在系統修改音訊資料流的音量時接收事件。 存取 **MediaPlayer** 的 **AudioStateMonitor** 屬性並註冊 [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件的處理常式，以在系統變更 **MediaPlayer** 的音量時收到通知。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaPlayer_RS1/cs/MainPage.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
 
@@ -260,7 +260,7 @@ ms.locfileid: "89363901"
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
-* [媒體項目、播放清單與曲目](media-playback-with-mediasource.md)
+* [媒體專案、播放清單和曲目](media-playback-with-mediasource.md)
 * [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)
 * [建立、排程與管理媒體中斷](create-schedule-and-manage-media-breaks.md)
 * [在背景播放媒體](background-audio.md)
@@ -269,6 +269,6 @@ ms.locfileid: "89363901"
 
 
 
- 
+ 
 
- 
+ 
