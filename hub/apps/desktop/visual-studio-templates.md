@@ -1,18 +1,18 @@
 ---
 description: 本文提供適用於 Windows 應用程式的 Visual Studio 專案和項目範本概觀。
 title: 適用於 Windows 應用程式的 Visual Studio 專案和項目範本
-ms.date: 07/02/2020
+ms.date: 11/17/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: 7e8500aab3c6eeaa1552dc61a95ea7404bf4d5d5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f84bd251bbae9c3f1a1326ab3ac3c7cf0fce3938
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174202"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691596"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>適用於 Windows 應用程式的 Visual Studio 專案和項目範本
 
@@ -25,14 +25,14 @@ Visual Studio 2019 提供許多專案和項目範本，協助您使用 C\# 或 C
 
 [Windows UI 程式庫 (WinUI)](../winui/index.md) 是適用於桌面 (.NET 和原生 Win32) 和 UWP 應用程式平台之間 Windows 應用程式的新型原生使用者介面 (UI) 平台。 [WinUI 3](../winui/winui3/index.md) (目前以開發人員預覽版形式提供) 是 WinUI 的最新主要版本，會將 WinUI 轉換成適用於桌面 Windows 應用程式的完整 UX 架構。
 
-WinUI 3 包含 Visual Studio 2019 的 VSIX 套件，可提供專案和項目範本，協助您開始使用以 WinUI 為基礎的介面來建置應用程式。 如需 WinUI 3 VSIX 套件及其所提供專案範本的詳細資訊，請參閱[本節](../winui/winui3/index.md#install-winui-3-preview-2)。
+WinUI 3 包含 Visual Studio 2019 的 VSIX 套件，可提供專案和項目範本，協助您開始使用以 WinUI 為基礎的介面來建置應用程式。 如需 WinUI 3 VSIX 套件及其所提供專案範本的詳細資訊，請參閱[本節](../winui/winui3/index.md#install-winui-3-preview-3)。
 
 > [!IMPORTANT]
 > WinUI 3 (包括相關的 Visual Studio 範本) 目前是以開發人員預覽版形式提供，其適用於早期評估以及從開發人員社群收集意見反應。 目前「不」應該用於生產應用程式。
 
 ## <a name="uwp-templates"></a>UWP 範本
 
-Visual Studio 提供各種專案範本，以使用 C# 或 C++ 來建置 UWP 應用程式。 若要使用這些專案範本，您必須在安裝 Visual Studio 時包含**通用 Windows 平台開發**工作負載。 針對 C++ 專案範本，您也必須包含適用於**通用 Windows 平台開發**工作負載的 **C++ (v142) 通用 Windows 平台工具**選用元件。
+Visual Studio 提供各種專案範本，以使用 C# 或 C++ 來建置 UWP 應用程式。 若要使用這些專案範本，您必須在安裝 Visual Studio 時包含 **通用 Windows 平台開發** 工作負載。 針對 C++ 專案範本，您也必須包含適用於 **通用 Windows 平台開發** 工作負載的 **C++ (v142) 通用 Windows 平台工具** 選用元件。
 
 ### <a name="project-templates-for-c-and-uwp"></a>適用於 C# 和 UWP 的專案範本
 
@@ -65,7 +65,7 @@ Visual Studio 提供各種專案範本，以使用 C# 或 C++ 來建置 UWP 應�
 若要在 Visual Studio 中建立新專案時存取 UWP C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為 **UWP**。 
 
 > [!NOTE]
-> 根據預設，Visual Studio 中的**通用 Windows 平台開發**工作負載只會提供 C++/CX 專案範本的存取權。 若要存取 C++/WinRT 專案範本，您必須安裝 [C++/WinRT VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) 套件。
+> 根據預設，Visual Studio 中的 **通用 Windows 平台開發** 工作負載只會提供 C++/CX 專案範本的存取權。 若要存取 C++/WinRT 專案範本，您必須安裝 [C++/WinRT VSIX](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) 套件。
 
 ![UWP C++ 專案範本](images/uwp-projects-cpp.png)
 
@@ -92,11 +92,11 @@ Visual Studio 提供各種專案範本，以使用 C# 或 C++ 來建置 UWP 應�
 
 ## <a name="cwin32-templates"></a>C++/Win32 範本
 
-Visual Studio 提供各種專案範本，可用來建置桌面 Windows 應用程式，該應用程式具有 WIN32 API 的原生 C++ 和直接存取權。 若要使用這些專案範本，您必須在安裝 Visual Studio 時包含**使用 C++ 的桌面開發**工作負載。 此工作負載包含用於建置桌面應用程式、主控台應用程式和程式庫的專案範本。
+Visual Studio 提供各種專案範本，可用來建置桌面 Windows 應用程式，該應用程式具有 WIN32 API 的原生 C++ 和直接存取權。 若要使用這些專案範本，您必須在安裝 Visual Studio 時包含 **使用 C++ 的桌面開發** 工作負載。 此工作負載包含用於建置桌面應用程式、主控台應用程式和程式庫的專案範本。
 
 ### <a name="project-templates-for-desktop-apps"></a>適用於桌面應用程式的專案範本
 
-若要在 Visual Studio 中建立新專案時存取適用於傳統桌面應用程式的 C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為**桌面**。
+若要在 Visual Studio 中建立新專案時存取適用於傳統桌面應用程式的 C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為 **桌面**。
 
 ![原生 C++ 應用程式專案範本](images/desktop-app-projects-cpp.png)
 
@@ -108,7 +108,7 @@ Visual Studio 提供各種專案範本，可用來建置桌面 Windows 應用程
 
 ### <a name="project-templates-for-console-apps"></a>適用於主控台應用程式的專案範本
 
-若要存取適用於主控台應用程式的 C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為**主控台**。
+若要存取適用於主控台應用程式的 C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為 **主控台**。
 
 ![原生 C++ 主控台專案範本](images/desktop-console-projects-cpp.png)
 
@@ -120,7 +120,7 @@ Visual Studio 提供各種專案範本，可用來建置桌面 Windows 應用程
 
 ### <a name="project-templates-for-libraries"></a>程式庫的專案範本
 
-若要存取適用於程式庫的 C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為**程式庫**。
+若要存取適用於程式庫的 C++ 專案範本，請將語言篩選為 **C++** 、將平台篩選為 **Windows**，以及將專案類型篩選為 **程式庫**。
 
 ![原生 C++ 程式庫專案範本](images/desktop-library-projects-cpp.png)
 
@@ -135,9 +135,9 @@ C++ 專案範本包含許多項目範本，您可以用來執行像是將新檔�
 
 ## <a name="net-templates"></a>.NET 範本
 
-Visual Studio 提供各種專案範本，可用來建置桌面 Windows 應用程式，該應用程式使用 .NET 和 C#。 若要使用這些專案範本，您必須在安裝 Visual Studio 時包含 **.NET 桌面開發**工作負載。
+Visual Studio 提供各種專案範本，可用來建置桌面 Windows 應用程式，該應用程式使用 .NET 和 C#。 若要使用這些專案範本，您必須在安裝 Visual Studio 時包含 **.NET 桌面開發** 工作負載。
 
-若要在 Visual Studio 中建立新專案時存取 .NET C# 專案範本，請將語言篩選為 **C#** 、將平台篩選為 **Windows**，以及將專案類型篩選為**桌面**。
+若要在 Visual Studio 中建立新專案時存取 .NET C# 專案範本，請將語言篩選為 **C#** 、將平台篩選為 **Windows**，以及將專案類型篩選為 **桌面**。
 
 ![.NET C# 專案範本](images/dotnet-projects-csharp.png)
 
