@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 4142fb3d036bb19eb652ca9048a70325eb64b17d
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 0a2e8c25aa7efcb96166b741a073122e3c077c08
+ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339806"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94941824"
 ---
 # <a name="send-a-local-toast-notification-from-uwp-apps"></a>從 UWP 應用程式傳送本機快顯通知
 
@@ -23,7 +23,7 @@ ms.locfileid: "94339806"
 > [!IMPORTANT]
 > 傳統型應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統非封裝的桌面應用程式) 有不同的步驟來傳送通知和處理啟用。 請參閱 [傳統型應用程式](toast-desktop-apps.md)文件以了解如何實作快顯通知。
 
-> **重要 API** ： [ToastNotification 類別](/uwp/api/Windows.UI.Notifications.ToastNotification)、 [ToastNotificationActivatedEventArgs 類別](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+> **重要 API**：[ToastNotification 類別](/uwp/api/Windows.UI.Notifications.ToastNotification)、[ToastNotificationActivatedEventArgs 類別](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 
 
 
@@ -62,7 +62,7 @@ var content = new ToastContentBuilder()
 var notif = new ToastNotification(content.GetXml());
 
 // And show it!
-ToastNotificationManager.CreateToastNotifier().Show();
+ToastNotificationManager.CreateToastNotifier().Show(notif);
 ```
 
 ## <a name="step-4-handling-activation"></a>步驟4：處理啟用
@@ -89,7 +89,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 ```
 
 > [!IMPORTANT]
-> 就像您的 **OnLaunched** 程式碼一樣，您必須初始化畫面並啟用視窗。 **如果使用者按一下您的快顯通知，並不會呼叫 OnLaunched** ，即使您的 App 已關閉，然後正在首次啟動，也不會。 我們經常建議將 **OnLaunched** 和 **OnActivated** 結合成 `OnLaunchedOrActivated` 方法，因為兩者都需要進行相同的初始設定。
+> 就像您的 **OnLaunched** 程式碼一樣，您必須初始化畫面並啟用視窗。 **如果使用者按一下您的快顯通知，並不會呼叫 OnLaunched**，即使您的 App 已關閉，然後正在首次啟動，也不會。 我們經常建議將 **OnLaunched** 和 **OnActivated** 結合成 `OnLaunchedOrActivated` 方法，因為兩者都需要進行相同的初始設定。
 
 
 ## <a name="activation-in-depth"></a>深入啟用
