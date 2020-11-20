@@ -4,12 +4,12 @@ description: 用於 Windows 應用程式開發的 WinUI 程式庫。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk, winui, Windows UI 程式庫
-ms.openlocfilehash: eb87744ed5d3eb5882b4ebae75b8dcf295d89f10
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 932b3c898737426db6d62d6699b11c8f8c1b484b
+ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166752"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94691506"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 程式庫 (WinUI)
 
@@ -37,7 +37,7 @@ WinUI 2.x 程式庫可與 [Windows 10 SDK](https://developer.microsoft.com/windo
 
 ![WinUI 2.x 平台支援](../images/platforms-winui2.png)
 
-**如需安裝指示，請參閱[開始使用 Windows UI 程式庫](winui2/getting-started.md)。**
+**如需安裝指示，請參閱 [開始使用 Windows UI 程式庫](winui2/getting-started.md)。**
 
 ### <a name="related-links-for-winui-2x"></a>WinUI 2.x 的相關連結
 
@@ -46,12 +46,12 @@ WinUI 2.x 程式庫可與 [Windows 10 SDK](https://developer.microsoft.com/windo
 - [原始程式碼](https://aka.ms/winui)
 - [XAML 控制項庫應用程式](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## <a name="windows-ui-3-library-preview-2"></a>Windows UI 3 程式庫 (預覽版 2)
+## <a name="windows-ui-3-library-preview-3"></a>Windows UI 3 程式庫 (預覽版 3)
 
 WinUI 3 是 WinUI 的下一個版本，這是與 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) 完全分離的原生 Windows 10 UI 平台。
 
 > [!Important]
-> WinUI 3 預覽版的目的是進行早期評估，並從開發人員社群收集意見反應。 **不會**用於生產應用程式。
+> WinUI 3 預覽版的目的是進行早期評估，並從開發人員社群收集意見反應。 **不會** 用於生產應用程式。
 >
 > 我們會繼續從 2020 年到 2021 年初提供 WinUI 3 的預覽版本，在這個日期之後，第一個正式版本就會推出。
 >
@@ -69,8 +69,8 @@ WinUI 是所有 Windows 應用程式向前邁進的路徑 - 您可以使用此�
 
 ### <a name="related-links-for-winui-3"></a>WinUI 3 的相關連結
 
-- [Windows UI 程式庫 3 預覽版 2 (2020 年 7 月)](winui3/index.md)
-- [XAML 控制項資源庫 (WinUI 3 預覽版 2) 應用程式](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Windows UI 程式庫 3 預覽版 3 (2020 年 11 月)](winui3/index.md)
+- [XAML 控制項資源庫 (WinUI 3 預覽版 3) 應用程式](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>WinUI 資源
 

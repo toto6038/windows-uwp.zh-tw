@@ -90,7 +90,7 @@
       items:
         - name: 概觀
           href: winui/index.md
-        - name: Windows UI 程式庫 3.0 預覽版 2
+        - name: Windows UI 程式庫 3 預覽版 3
           items:
             - name: 概觀和版本資訊
               href: winui/winui3/index.md
