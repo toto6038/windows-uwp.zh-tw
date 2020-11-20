@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk, winui, Windows UI 程式庫
 ms.custom: RS5
-ms.openlocfilehash: c7baa8fe74a45d1f7ba7f829f6d9f1228c70d44f
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 92a546dcd177639b8c9bc7d2fd3dd6ca1fc7d3e5
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691556"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933113"
 ---
 # <a name="windows-ui-library-2x"></a>Windows UI 程式庫 2.x
 
@@ -47,7 +47,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Windows UI 程式庫控制項的操作說明文章隨附於[通用 Windows 平台控制項文件](/windows/uwp/design/controls-and-patterns/)。
 
-API 參照文件位於此處：[Windows UI 程式庫 API](/uwp/api/overview/winui/)。
+API 參照文件位於此處：[Windows UI 程式庫 API](/windows/winui/api/)。
 
 ## <a name="install-and-use-the-windows-ui-library"></a>安裝及使用 Windows UI 程式庫
 
