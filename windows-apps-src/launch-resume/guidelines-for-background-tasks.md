@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10、uwp、背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 00717a64135ef32a99b06c61b31e2ff59a587878
-ms.sourcegitcommit: b66796c73f14da63794efa66c8ded2caa25da0f7
+ms.openlocfilehash: b73568c5fb4bae6392051fedcd6ca3dea078a98d
+ms.sourcegitcommit: 4491da3f509b1126601990a816c6eb301d35ecc6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89285449"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95416615"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -24,7 +24,7 @@ ms.locfileid: "89285449"
 
 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](../audio-video-camera/background-audio.md)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
-**同處理序與跨處理序背景工作︰** Windows 10 (版本 1607) 引進的[同處理序背景工作](create-and-register-an-inproc-background-task.md)可讓您在與前景應用程式相同的處理序中執行背景程式碼。 決定要使用同處理序或跨處理序的背景工作時，請考慮下列因素︰
+**同處理序與跨處理序背景工作︰** Windows 10 (版本 1607) 引進的 [同處理序背景工作](create-and-register-an-inproc-background-task.md)可讓您在與前景應用程式相同的處理序中執行背景程式碼。 決定要使用同處理序或跨處理序的背景工作時，請考慮下列因素︰
 
 |考量 | 影響 |
 |--------------|--------|
@@ -45,9 +45,9 @@ ms.locfileid: "89285449"
 
 **更新應用程式資訊清單：**  對於在處理程序外執行的背景工作，請在應用程式資訊清單中宣告各個背景工作，連同其所使用的觸發程序類型。 否則您的應用程式將無法在執行階段註冊背景工作。
 
-如果您有多個背景工作，請考慮是否應該先執行相同的主機程序，或分散到不同的主機處理程序。 如果您擔心一個背景工作失敗會擔擱其他背景工作，請分敗主機處理程序。  使用資訊清單設計工具中的**資源群組**項目，將背景工作分組到不同的主機的處理程序。 
+如果您有多個背景工作，請考慮是否應該先執行相同的主機程序，或分散到不同的主機處理程序。 如果您擔心一個背景工作失敗會擔擱其他背景工作，請分敗主機處理程序。  使用資訊清單設計工具中的 **資源群組** 項目，將背景工作分組到不同的主機的處理程序。 
 
-若要設定**資源群組**，請開啟 Package.appxmanifest 設計工具，選擇 **/[宣告/]**，並新增 **/[應用程式服務/]** 宣告：
+若要設定 **資源群組**，請開啟 Package.appxmanifest 設計工具，選擇 **/[宣告/]**，並新增 **/[應用程式服務/]** 宣告：
 
 ![資源群組設定](images/resourcegroup.png)
 
@@ -59,11 +59,11 @@ ms.locfileid: "89285449"
 
 **執行背景工作的要求：**
 
-> **重要**   從 Windows 10 開始，不再需要在鎖定畫面上將應用程式作為執行背景工作的先決條件。
+> **重要**  自 Windows 10 起，應用程式不再需要將位於鎖定畫面作為先決條件，也可執行背景工作。
 
-通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 確定 **GetAccessStatus** 不會傳回其中一個已拒絕的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉。 例如，如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回**BackgroundAccessStatus DeniedByUser。**
+通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須呼叫 [**GetAccessState**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並檢查應用程式在背景中不會被拒絕執行。 確定 **GetAccessStatus** 不會傳回其中一個已拒絕的 [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) 列舉。 例如，如果使用者已在裝置的設定中明確拒絕您應用程式的背景工作許可權，則此方法會傳回 **BackgroundAccessStatus DeniedByUser。**
 
-如果您的應用程式在背景中被拒絕執行，您的應用程式應該呼叫 [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.getaccessstatus) ，並確保在註冊背景工作之前，不會拒絕回應。
+如果您的應用程式在背景中被拒絕執行，您的應用程式應該呼叫 [**RequestAccessAsync**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) ，並確保在註冊背景工作之前，不會拒絕回應。
 
 如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](../debug-test-perf/optimize-background-activity.md)。 
 ## <a name="background-task-checklist"></a>背景工作檢查清單
@@ -89,13 +89,21 @@ ms.locfileid: "89285449"
 *僅適用於同處理序背景工作*
 
 - 取消工作時，請確認 `BackgroundActivated` 事件處理常式在取消發生或終止整個處理序之前結束。
--   撰寫短期背景工作。 背景工作的使用時間是限制為 30 秒時鐘時間。
--   不要依賴背景工作的使用者互動。
+-   撰寫短期背景工作。 大部分的背景工作限制為30秒的時鐘用量。
+
+
+*應避免事項*
+- 透過 COM 或 RPC 將處理序間通訊的使用降至最低。
+-   您嘗試進行通訊的處理常式可能不會處於執行中狀態，因此可能會造成停止回應。
+-   您可以花很長的時間來加速跨進程的通訊，而且會根據分配給執行背景工作的時間來計算。
+- 不要依賴背景工作的使用者互動。
+
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立並註冊同進程的背景](create-and-register-an-inproc-background-task.md)工作。
+* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
+* [建立並註冊 winmain COM 背景工作](create-and-register-a-winmain-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [在背景播放媒體](../audio-video-camera/background-audio.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
@@ -109,6 +117,6 @@ ms.locfileid: "89285449"
 * [偵錯背景工作](debug-a-background-task.md)
 * [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](/previous-versions/hh974425(v=vs.110))
 
- 
+ 
 
- 
+ 
