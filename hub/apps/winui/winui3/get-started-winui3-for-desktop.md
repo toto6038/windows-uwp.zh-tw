@@ -1,27 +1,27 @@
 ---
 description: 本指南將說明如何開始使用 WinUI 3 UI 來建立 .NET 和 C++/Win32 桌面應用程式。
 title: 開始使用適用於桌面應用程式的 WinUI 3
-ms.date: 05/19/2020
+ms.date: 11/17/2020
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 164ae035d3b9dda24137bcb09dd208e718db0319
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 067e6a6798fbfc2633c3e356be64ecae0403cc6d
+ms.sourcegitcommit: b69edc6d73370923f31df61c7e42b53de6c928ee
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933099"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94870916"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3
 
-WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET Core 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
+WinUI 3 預覽版 3 包含的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET Core 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必要條件
 
-若要使用本文所述適用於桌面的 WinUI 3 專案範本，請遵循[這裡](index.md#install-winui-3-preview-2)的指示來設定您的開發電腦以及安裝 WinUI 3 預覽版 2。
+若要使用本文所述適用於桌面的 WinUI 3 專案範本，請遵循[這裡](index.md#install-winui-3-preview-3)的指示來設定您的開發電腦以及安裝 WinUI 3 預覽版 3。
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>建立適用於 C# 和 .NET 5 的 WinUI 3 桌面應用程式
 
@@ -41,7 +41,7 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
 6. 此時，Visual Studio 會產生兩個專案：
 
-    * **專案名稱 (桌面)** ：此專案包含您的應用程式程式碼。 **App.xaml.cs** 程式碼檔案會定義代表您應用程式執行個體的 `Application` 類別，而 **MainWindow.xaml.cs** 程式碼檔案會定義 `MainWindow` 類別來代表您應用程式所顯示的主要視窗。 這些類別衍生自 **Microsoft.UI.Xaml** 命名空間 (由 WinUI 提供) 中的類型。
+    * **專案名稱 (桌面)** ：此專案包含您的應用程式程式碼。 **App.xaml** 檔案和 **App.xaml.cs** 程式碼後置檔案會定義一個 `Application` 類別，代表您的應用程式執行個體。 **Mainwindow.xaml** 檔案和 **MainWindow.xaml.cs** 程式碼後置檔案會定義一個 `MainWindow` 類別，代表您應用程式所顯示的主要視窗。 這些類別衍生自 **Microsoft.UI.Xaml** 命名空間 (由 WinUI 提供) 中的類型。
 
         ![Visual Studio 的螢幕擷取畫面，其中顯示 [方案總管] 窗格和主要 Windows XAML dot CS 檔案的內容。](images/WinUI-csharp-appproject.png)
 
@@ -87,9 +87,33 @@ WinUI 3 預覽版 2 引進了新的專案範本，可讓您使用完全以 WinUI
 
 8. 建立並執行您的解決方案，以確認應用程式可在沒有錯誤的情況下執行。
 
+   > [!NOTE]
+   > 只有封裝的專案會啟動，因此請確定已將其設定為啟始專案。
+
+## <a name="localizing-your-winui-desktop-app"></a>當地語系化您的 WinUI 傳統型應用程式
+
+若要在 WinUI 傳統型應用程式中支援多種語言，並確保封裝專案進行適當的當地語系化，請將適當的資源新增至專案 (請參閱 [應用程式資源和資源管理系統](/windows/uwp/app-resources/))，並在專案的 `package.appxmanifest` 檔案中宣告每個支援的語言。 建置專案時，會將指定的語言新增至產生的應用程式資訊清單 (`AppxManifest.xml`)，並使用對應的資源。
+
+1. 在文字編輯器中開啟 wapproj 的 `package.appxmanifest`，並找出下列區段：
+
+    ```xml
+    <Resources>
+        <Resource Language="x-generate"/>
+    </Resources>
+    ```
+
+2. 針對每個支援的語言，將 `<Resource Language="x-generate">` 取代為 `<Resource />` 元素。 例如，下列標記會指定 "en-US" 和 "es-ES" 當地語系化的資源可供使用：
+
+    ```xml
+    <Resources>
+        <Resource Language="en-US"/>
+        <Resource Language="es-ES"/>
+    </Resources>
+    ```
+
 ## <a name="known-issues-and-limitations"></a>已知的問題和限制
 
-如需已知問題和限制的清單，請參閱[本節](index.md#preview-2-limitations-and-known-issues)。
+如需已知問題和限制的清單，請參閱[本節](index.md#preview-3-limitations-and-known-issues)。
 
 ## <a name="related-topics"></a>相關主題
 
