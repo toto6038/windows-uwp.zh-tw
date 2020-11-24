@@ -3,12 +3,12 @@ title: WinUI 3 預覽版 3 (2020 年 11 月)
 description: WinUI 3 預覽版 3 的概觀。
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: d91d957434b2a39182e2c764aecf49fc43f7a601
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: ac641036af8505b1e51fb81385f5206a9aa44f40
+ms.sourcegitcommit: 29c8999fb7a941fc6e26b49cf10f4cc1fcb69641
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933173"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "95002913"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI 程式庫 3 預覽版 3 (2020 年 11 月)
 
@@ -16,7 +16,7 @@ Windows UI 程式庫 (WinUI) 3 是同時適用於 Windows 桌面和 UWP 應用�
 
 **WinUI 3 預覽版 3** 包含全新和改良的功能，以及重大的錯誤修正。
 
-**請參閱[預覽版 3 的限制和已知問題](#preview-3-limitations-and-known-issues)** 。
+**請參閱 [預覽版 3 的限制和已知問題](#preview-3-limitations-and-known-issues)** 。
 
 > [!Important]
 > WinUI 3 預覽版的目的是進行早期評估，並從開發人員社群收集意見反應。 **不會** 用於生產應用程式。
@@ -78,14 +78,14 @@ WinUI 3 預覽版 3 包含 Visual Studio 專案範本，可協助您開始使用
 
 您可以使用這些 WinUI 專案範本來建立應用程式。
 
-| 範本 | Language | 描述 |
+| 範本 | Language | 說明 |
 |----------|----------|-------------|
 | 已封裝的空白應用程式 (WinUI in Desktop) | C# 和 C++ | 使用以 WinUI 為基礎的使用者介面，建立桌面 .NET 5 (C#) 或原生 Win32 (C++) 應用程式。 產生的專案包含一個基本視窗，該視窗是從 WinUI 程式庫中的 **Microsoft.UI.Xaml.Window** 類別衍生，您可以用來開始建置您的 UI。 如需此專案類型的詳細資訊，請參閱[開始使用適用於桌面應用程式的 WinUI 3](get-started-winui3-for-desktop.md)。<p></p>解決方案也包含 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)，其已設定為將應用程式建置到 [MSIX 套件](/windows/msix/overview)。 這可提供新式部署體驗，透過套件擴充功能與 Windows 10 功能整合的能力，還有更多功能。  |
 | 空白應用程式 (WinUI in UWP)  | C# 和 C++ | 建立具有以 WinUI 為基礎的使用者介面的 UWP 應用程式。 產生的專案包含一個基本頁面，該頁面是從 WinUI 程式庫中的 **Microsoft.UI.Xaml.Controls.Page** 類別衍生，您可以用來開始建置您的 UI。 如需此專案類型的詳細資訊，請參閱[開始使用適用於 UWP 應用程式的 WinUI 3](get-started-winui3-for-uwp.md)。 |
 
 您可以使用這些 WinUI 專案範本來建置可供以 WinUI 為基礎的應用程式載入及使用的元件。
 
-| 範本 | Language | 描述 |
+| 範本 | Language | 說明 |
 |----------|----------|-------------|
 | 類別庫 (WinUI in Desktop) | 僅限 C# | 在 C# 中建立 .NET 5 受控類別庫 (DLL)，可供具有以 WinUI 為基礎的使用者介面的其他 .NET 5 桌面應用程式使用。  |
 | 類別庫 (WinUI in UWP)  | 僅限 C# | 在 C# 中建立受控類別程式庫 (DLL)，可供具有以 WinUI 為基礎的使用者介面的其他 UWP 應用程式使用。 |
@@ -177,6 +177,7 @@ WinUI 3 預覽版 3 可與執行 Windows 10 2018 年 4 月更新 (版本 1803 - 
 - 桌面應用程式支援 .NET 5 和 C# 9，而且必須在 MSIX 應用程式中加以封裝
 - UWP 應用程式支援 .NET Native 和 C# 7.3
 - 開發人員工具和 Intellisense 在 Visual Studio 16.8 版中可能無法正常運作。
+- 沒有 XAML 設計工具支援
 - 不支援新的 C++/CX 應用程式，不過，您現有的應用程式仍可繼續運作 (請盡速移至 C++/WinRT)
 - 桌面應用程式中的多重視窗支援仍在準備中，尚未完成也未穩定。
   - 如果您發現多重視窗行為上出現新問題或功能衰退，請在我們的存放庫中提出該問題。
