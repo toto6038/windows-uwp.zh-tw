@@ -5,12 +5,12 @@ keywords: 新增功能, 更新, 功能, 開發人員指引, Windows 10, 9 月
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d15cd0289b3de0c086a3ddc974e1b121447188c5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 064ffbcc8c254b50704b2e63579e424a78933b3c
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89155222"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933163"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>2018 年 9 月 Windows 開發人員文件的新增功能
 
@@ -34,7 +34,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 [Windows UI 程式庫](/uwp/toolkits/winui/)一組 NuGet 套件，可提供 UWP 應用程式的控制項和其他使用者介面元素。 這些套件也提供對舊版 Windows 10 的向下相容性，因此即便您的使用者沒有最新版本的作業系統，您的應用程式仍可運作。
 
-如需 Windows UI 程式庫的詳細資訊，請參閱 [NuGet 套件中所包含的此 API 命名空間清單](/uwp/api/overview/winui/) \(英文\)。
+如需 Windows UI 程式庫的詳細資訊，請參閱 [NuGet 套件中所包含的此 API 命名空間清單](/windows/winui/api/) \(英文\)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 

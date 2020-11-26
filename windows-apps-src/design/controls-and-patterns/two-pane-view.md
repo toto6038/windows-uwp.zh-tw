@@ -7,10 +7,10 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
+ms.lasthandoff: 11/26/2020
 ms.locfileid: "93034431"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
@@ -186,7 +186,7 @@ ms.locfileid: "93034431"
 
 ### <a name="specify-which-pane-to-display"></a>指定要顯示的窗格
 
-當兩個窗格檢視只能顯示單一窗格時，它會使用 [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) 屬性來決定要顯示哪一個窗格。 根據預設，PanePriority 會設定為 **Pane1** 。 以下是您可以在 XAML 或程式碼中設定此屬性的方式。
+當兩個窗格檢視只能顯示單一窗格時，它會使用 [PanePriority](/uwp/api/microsoft.ui.xaml.controls.twopaneview.panepriority) 屬性來決定要顯示哪一個窗格。 根據預設，PanePriority 會設定為 **Pane1**。 以下是您可以在 XAML 或程式碼中設定此屬性的方式。
 
 ```xaml
 <muxc:TwoPaneView x:Name="MyTwoPaneView" PanePriority="Pane2">
@@ -198,7 +198,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 ### <a name="pane-sizing"></a>調整窗格大小
 
-在單一螢幕上，窗格的大小取決於 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 屬性。 這些屬性會使用 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值，支援 _自動_ 和 _星號_ (\*)調整大小。 如需自動和以星號調整大小的說明，請參閱 [搭配 XAML 的回應式版面配置](../layout/layouts-with-xaml.md#layout-properties)的 _版面配置屬性_ 一節。
+在單一螢幕上，窗格的大小取決於 [Pane1Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane1length) 和 [Pane2Length](/uwp/api/microsoft.ui.xaml.controls.twopaneview.pane2length) 屬性。 這些屬性會使用 [GridLength](/uwp/api/windows.ui.xaml.gridlength) 值，支援 _自動_ 和 _星號_(\*)調整大小。 如需自動和以星號調整大小的說明，請參閱 [搭配 XAML 的回應式版面配置](../layout/layouts-with-xaml.md#layout-properties)的 _版面配置屬性_ 一節。
 
 根據預設，`Pane1Length` 會設定為 `Auto`，而且會自行調整大小以符合其內容。 `Pane2Length` 會設定為 `*`，且會使用所有剩餘的空間。
 

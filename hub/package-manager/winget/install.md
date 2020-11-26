@@ -5,11 +5,11 @@ ms.date: 04/28/2020
 ms.topic: overview
 ms.localizationpriority: medium
 ms.openlocfilehash: 5daae6dabee1201dd9df0b83dc56f98b06b15487
-ms.sourcegitcommit: 4df8c04fc6c22ec76cdb7bb26f327182f2dacafa
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85334520"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96025167"
 ---
 # <a name="install-command-winget"></a>install 命令 (winget)
 
@@ -77,7 +77,7 @@ winget install --id Microsoft.PowerToys --version 0.15.2
 
 如果提供給 **winget** 的查詢不會產生單一應用程式，則 **winget** 會顯示搜尋結果。 這會提供您額外的資料，讓您更精確地搜尋，以進行正確安裝。
 
-將選取範圍限制為一個檔案的最佳方式，就是使用與**確切**查詢選項結合的應用程式**識別碼**。  例如：
+將選取範圍限制為一個檔案的最佳方式，就是使用與 **確切** 查詢選項結合的應用程式 **識別碼**。  例如：
 
 ```CMD
 winget install --id Git.Git -e 
@@ -85,7 +85,7 @@ winget install --id Git.Git -e
 
 ## <a name="local-install"></a>本機安裝
 
-**資訊清單**選項可讓您直接將 YAML 檔案傳入用戶端，進而安裝應用程式。 **資訊清單**選項具有下列使用方式。
+**資訊清單** 選項可讓您直接將 YAML 檔案傳入用戶端，進而安裝應用程式。 **資訊清單** 選項具有下列使用方式。
 
 使用方式：`winget install --manifest \<file>`
 

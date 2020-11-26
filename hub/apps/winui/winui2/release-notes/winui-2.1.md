@@ -3,12 +3,12 @@ title: WinUI 2.1 版本資訊
 description: WinUI 2.1 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: f5087e9f5059a568e92f972c04b25d8c618015f2
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d743b5653a824753706cebbfe1f1a60c419debfe
+ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762880"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94933133"
 ---
 # <a name="windows-ui-library-21"></a>Windows UI 程式庫 2.1
 
@@ -87,7 +87,7 @@ https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 Windows UI 程式庫控制項的操作說明文章隨附於[通用 Windows 平台控制項文件](/windows/uwp/design/controls-and-patterns/)。
 
-API 參照文件位於此處：[Windows UI 程式庫 API](/uwp/api/overview/winui/)。
+API 參照文件位於此處：[Windows UI 程式庫 API](/windows/winui/api/)。
 
 ## <a name="microsoftuixaml-21-version-history"></a>Microsoft.UI.Xaml 2.1 版本歷程記錄
 
