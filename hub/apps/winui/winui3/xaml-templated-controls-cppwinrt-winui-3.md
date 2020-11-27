@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 9790db23160538e90e0386c34003831e5efb20ac
-ms.sourcegitcommit: aabd6f40df6cc82bb8ce3a43275e4abd568c236f
+ms.openlocfilehash: 1b06296dd77bb1501ed96bd7b87f6c3d3a43fb1a
+ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92061706"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95482890"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
 
@@ -23,13 +23,13 @@ ms.locfileid: "92061706"
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>建立空白應用程式 (BgLabelControlApp)
 
-請先在 Microsoft Visual Studio 中，建立新的專案。 在 [`Create a new project`] 對話方塊中，選取 [空白應用程式 (UWP 中的 WinUI)] 專案範本，並務必選取 C++ 語言版本。 將專案名稱設定為 "BgLabelControlApp"，讓檔案名稱與下列範例中的程式碼一致。 將 [目標版本] 設定為 Windows 10 版本 1903 (組建 18362)，並將 [最低版本] 設定為 Windows 10 版本 1803 (組建 17134)。 本逐步解說也適用於使用**已封裝的空白應用程式 (WinUI in Desktop)** 專案範本所建立的桌面應用程式，只是請務必執行 **BgLabelControlApp (Desktop)** 專案中的所有步驟。
+請先在 Microsoft Visual Studio 中，建立新的專案。 在 [`Create a new project`] 對話方塊中，選取 [空白應用程式 (UWP 中的 WinUI)] 專案範本，並務必選取 C++ 語言版本。 將專案名稱設定為 "BgLabelControlApp"，讓檔案名稱與下列範例中的程式碼一致。 將 [目標版本] 設定為 Windows 10 版本 1903 (組建 18362)，並將 [最低版本] 設定為 Windows 10 版本 1803 (組建 17134)。 本逐步解說也適用於使用 **已封裝的空白應用程式 (WinUI in Desktop)** 專案範本所建立的桌面應用程式，只是請務必執行 **BgLabelControlApp (Desktop)** 專案中的所有步驟。
 
 ![空白應用程式專案範本](images/WinUI-cpp-newproject-UWP.png)
 
 ## <a name="add-a-templated-control-to-your-app"></a>將樣板化控制項新增至您的應用程式
 
-若要新增樣板化控制項，請按一下工具列中的 [專案] 功能表，或以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [新增項目]。 在 [Visual C++ -> WinUI] 下選取 [自訂控制項 (WinUI)] 範本。 將新控制項命名為 "BgLabelControl"，然後按一下 [新增]。 這會將三個新檔案新增至您的專案。 `BgLabelControl.h` 是包含控制項宣告的標頭，`BgLabelControl.cpp` 包含控制項的 C++/WinRTmimplementation。 `BgLabelControl.idl` 是介面定義檔，可讓控制項具現化為執行階段類別。
+若要新增樣板化控制項，請按一下工具列中的 [專案] 功能表，或以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [新增項目]。 在 [Visual C++ -> WinUI] 下選取 [自訂控制項 (WinUI)] 範本。 將新控制項命名為 "BgLabelControl"，然後按一下 [新增]。 這會將三個新檔案新增至您的專案。 `BgLabelControl.h` 是包含控制項宣告的標頭，而 `BgLabelControl.cpp` 包含控制項的 C++/WinRT 實作。 `BgLabelControl.idl` 是介面定義檔，可讓控制項具現化為執行階段類別。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>實作 BgLabelControl 自訂控制項類別
 
@@ -170,7 +170,7 @@ namespace winrt::BgLabelControlApp::implementation
 </ResourceDictionary>
 ```
 
-在此情況下，預設樣式所設定的唯一屬性是控制項範本。 該範本是由方形 (其背景繫結至 XAML **控制項**類型的所有執行個體具有的**背景**屬性) 和文字元素 (其文字繫結至 **BgLabelControl::Label** 相依性屬性) 組成。
+在此情況下，預設樣式所設定的唯一屬性是控制項範本。 該範本是由方形 (其背景繫結至 XAML **控制項** 類型的所有執行個體具有的 **背景** 屬性) 和文字元素 (其文字繫結至 **BgLabelControl::Label** 相依性屬性) 組成。
 
 ## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>將 BgLabelControl 的執行個體新增至主要 UI 頁面
 
@@ -180,7 +180,7 @@ namespace winrt::BgLabelControlApp::implementation
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-此外，請將下列 include 指示詞新增到 `MainPage.h`，以讓 **MainPage** 類型 (編譯 XAML 標記和命令式程式碼的組合) 得知 **BgLabelControl** 樣板化控制項類型。 如果您想要使用其他 XAML 頁面的**BgLabelControl**，可以將同一個 include 指示詞新增到標頭檔。 或者，也可以在先行編譯的標頭檔中放入單個 include 指示詞。
+此外，請將下列 include 指示詞新增到 `MainPage.h`，以讓 **MainPage** 類型 (編譯 XAML 標記和命令式程式碼的組合) 得知 **BgLabelControl** 樣板化控制項類型。 如果您想要使用其他 XAML 頁面的 **BgLabelControl**，可以將同一個 include 指示詞新增到標頭檔。 或者，也可以在先行編譯的標頭檔中放入單個 include 指示詞。
 
 ```cppwinrt
 //MainPage.h
@@ -195,7 +195,7 @@ namespace winrt::BgLabelControlApp::implementation
 
 ## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>實作可覆寫函式，例如 **MeasureOverride** 和 **OnApplyTemplate**
 
-您可以從**控制項**執行階段類別衍生樣板化控制項，該類別本身則是衍生自基底執行階段類別。 **Control**、**FrameworkElement** 和 **UIElement** 也有一些可覆寫方法，您可以在衍生類別中覆寫。 以下程式碼範例會示範如何進行。
+您可以從 **控制項** 執行階段類別衍生樣板化控制項，該類別本身則是衍生自基底執行階段類別。 **Control**、**FrameworkElement** 和 **UIElement** 也有一些可覆寫方法，您可以在衍生類別中覆寫。 以下程式碼範例會示範如何進行。
 
 ```cppwinrt
 // Control overrides.
@@ -215,7 +215,7 @@ Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() 
 
 ## <a name="generating-the-control-source-files-without-using-a-template"></a>在不使用範本的情況下產生控制項來源檔案。
 
-本節說明如何產生必要的來源檔案來建立自訂控制項，而不需使用**自訂控制項**項目範本。 
+本節說明如何產生必要的來源檔案來建立自訂控制項，而不需使用 **自訂控制項** 項目範本。 
 
 首先，將新的 Midl 檔案 (.idl) 項目新增至專案。 從 [專案] 功能表中，選取 [新增新項目...]，並且在搜尋方塊中輸入 "MIDL" 以尋找 .idl 檔案項目。 將新檔案命名為 `BgLabelControl.idl`，讓名稱與本文中的步驟一致。 刪除 `BgLabelControl.idl` 的預設內容，並貼到上述步驟中所示的執行階段類別宣告。
 

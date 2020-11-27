@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: RS5
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: f5d1829d9fca4f5805a52ed34a1218723897c13d
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 55dfda48feb87538abc9ae206f93cd577dc63eb8
+ms.sourcegitcommit: 4f82bc9e2096d0212f10d633899f4bc19b7fe75d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91932989"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94973302"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>適用於 Windows 的 Fluent Design 系統應用程式建立者
 
@@ -166,7 +166,7 @@ Fluent 體驗以一致的方式使用控制項與模式，如此，使用者已�
         ![內含影像](images/fluent/thumbnail-inclusive.png)
     :::column-end:::
     :::column span="2":::
-**內含**妥善設計的應用程式可讓身心障礙人士存取。 加入一些額外的程式設計，您可以與世界各地的人分享您的應用程式。
+**內含** 妥善設計的應用程式可讓身心障礙人士存取。 加入一些額外的程式設計，您可以與世界各地的人分享您的應用程式。
 
 [了解可用性](/windows/uwp/design/usability/)
 :::row-end:::
@@ -251,7 +251,7 @@ Fluent Design 不是亮色效果。 它包含實體效果，其完全增強使�
 
 ## <a name="design-toolkits-and-code-samples"></a>設計工具組與程式碼範例
 
-想要開始建立您自己的應用程式與 Fluent Design 嗎？ 我們的工具組 Adobe XD、Adobe Illustrator、Adobe Photoshop、Framer，以及 Sketch 有助於快速建立您的設計，以及我們的範例有助於您更快速地設計程式。
+想要開始建立您自己的應用程式與 Fluent Design 嗎？ 我們的工具組 Figma、Adobe XD 以及 Sketch 有助於快速建立您的設計，以及我們的範例可協助您更快速地撰寫程式碼。
 
 :::row:::
     :::column:::
