@@ -51,35 +51,35 @@ RadioButtons 群組的單一行為會與[核取方塊](checkbox.md) (可支援�
 
 使用選項按鈕可讓使用者從兩個或更多互斥選項中選取。
 
-:::image type="content" source="images/radiobutton_basic.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobutton_basic.png" alt-text="一個 RadioButtons 群組，其中已選取一個選項按鈕":::
 
 當使用者需要先查看所有選項再做選擇時，請使用選項按鈕。 選項按鈕同等地強調所有選項，這表示有些選項可能會引起不必要或不想要的注意。
 
 除非所有選項都值得同等注意，否則請考慮使用其他控制項。 例如，若要為大多數使用者以及在大部分情況下建議單一最佳選項，請使用[下拉式方塊](combo-box.md)，將該最佳選項顯示為預設選項。
 
-:::image type="content" source="images/combo_box_collapsed.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/combo_box_collapsed.png" alt-text="顯示預設選項的下拉式方塊":::
 
 如果只有兩個可以明確表達為單一二元選擇的可能選項 (例如「開啟/關閉」或「是/否」)，請將這兩個選項結合成單一的[核取方塊](checkbox.md)或[切換開關](toggles.md)控制項。 例如，使用「我同意」的單一核取方塊來代替「我同意」和「我不同意」兩個選項按鈕。
 
 請勿對單一的二元選擇使用兩個選項按鈕：
 
-:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobutton-vs-checkbox-rb.png" alt-text="呈現二元選擇的兩個選項按鈕":::
 
 請改為使用核取方塊：
 
-:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="核取方塊是呈現二進位選擇的不錯替代方式":::
 
 使用者可以選取多個選項時，請使用[核取方塊](checkbox.md)。
 
-:::image type="content" source="images/checkbox2.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/checkbox2.png" alt-text="核取方塊支援多重選取":::
 
-當使用者的選項位於某個範圍內的值 (例如，*10、20、30、...100*) 時，請使用[滑桿](slider.md)控制項。
+當使用者的選項位於某個範圍內的值 (例如，*10、20、30、...100*) 時，請使用 [滑桿](slider.md)控制項。
 
-:::image type="content" source="images/controls/slider.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/controls/slider.png" alt-text="滑桿控制項，其中顯示值範圍內的某個值":::
 
 如果有超過 8 個選項，請使用[下拉式方塊](combo-box.md)。
 
-:::image type="content" source="images/combo_box_scroll.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/combo_box_scroll.png" alt-text="顯示多個選項的清單方塊":::
 
 如果可用的選項取決於應用程式目前的內容，或者可能會不斷地變化，請使用清單控制項。
 
@@ -263,7 +263,7 @@ RadioButtons 群組不會將焦點從第一列或第一欄換行至最後一列�
 |焦點移至未選取的項目<br> *(如果使用 Ctrl-方向鍵或 Xbox 遊戲台進行瀏覽，<br>這表示選取項目不會追隨焦點。)* | 「_名稱_ RadioButton 未選取第 _x_ 項，共 _N_ 項」  |
 
 > [!NOTE]
-> 朗讀程式針對每個項目所公告的_**名稱**_ 是 [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) 已連結屬性的值 (如果可供項目使用)；否則，該名稱會是項目的 [ToString](/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0) 方法所傳回的值。
+> 朗讀程式針對每個項目所公告的 _**名稱**_ 是 [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) 已連結屬性的值 (如果可供項目使用)；否則，該名稱會是項目的 [ToString](/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0) 方法所傳回的值。
 >
 > _**x**_ 是目前項目的編號。 _**N**_ 是群組中的項目總數。
 
@@ -294,7 +294,9 @@ RadioButtons 群組不會將焦點從第一列或第一欄換行至最後一列�
 
 結果如下所示：
 
-:::image type="content" source="images/radiobuttons-default-group.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕" (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`) 的 [Border](/uwp/api/windows.ui.xaml.controls.border) 元素背景色彩。
+:::image type="content" source="images/radiobuttons-default-group.png" alt-text="三個選項按鈕的群組":::
+
+若要在使用者選取選項時採取動作，請處理 [SelectionChanged](/uwp/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged) 事件。 在這裡，您會變更名為 "ExampleBorder" (`<Border x:Name="ExampleBorder" Width="100" Height="100"/>`) 的 [Border](/uwp/api/windows.ui.xaml.controls.border) 元素背景色彩。
 
 ```csharp
 private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -342,7 +344,7 @@ private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEve
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobuttons-symbolicon.png" alt-text="具有符號圖示的群組選項按鈕":::
 
 您也可以使用個別的 [RadioButton](/uwp/api/Windows.UI.Xaml.Controls.RadioButton) 控制項來填入 `RadioButtons` 項目。 我們稍後會討論這個特殊案例。 請參閱 [RadioButtons 群組中的 RadioButton 控制項]()。
 
@@ -441,7 +443,7 @@ public sealed partial class MainPage : Page
 </muxc:RadioButtons>
 ```
 
-:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobuttons-multi-column.png" alt-text="兩個三欄群組中的選項按鈕":::
 
 > [!TIP]
 > 若要讓項目排列在單一水平列中，請將 `MaxColumns` 設定為等於群組中的項目數。
@@ -550,7 +552,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 這兩個 `RadioButton` 控制項群組看起來像這樣：
 
-:::image type="content" source="images/radio-button-groups.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radio-button-groups.png" alt-text="兩個群組中的選項按鈕":::
 
 ### <a name="radio-button-states"></a>選項按鈕狀態
 
@@ -576,9 +578,9 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 下列影像顯示群組中的選項按鈕慣用間距。
 
-:::image type="content" source="images/radiobutton-layout.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobutton-layout.png" alt-text="顯示一組選項按鈕的影像，這些選項按鈕垂直排列":::
 
-:::image type="content" source="images/radiobutton-redline.png" alt-text="RadioButtons 群組的範例，其中已選取一個選項按鈕":::
+:::image type="content" source="images/radiobutton-redline.png" alt-text="顯示選項按鈕間距指導方針的影像":::
 
 > [!NOTE]
 > 如果您使用 WinUI RadioButtons 控制項，則間距、邊界和方向均已最佳化。
