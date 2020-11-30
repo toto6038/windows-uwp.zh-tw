@@ -6,12 +6,12 @@ ms.date: 06/06/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc0365ced06e85a99fa063c86cad0946526b3f26
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
+ms.openlocfilehash: 4ddd5ddddb31cf93977cb0d5bd9c16e916c4126b
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304660"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310196"
 ---
 # <a name="use-the-compass"></a>使用指南針
 
@@ -19,7 +19,7 @@ ms.locfileid: "89304660"
 **重要 API**
 
 -   [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
--   [**羅盤**](/uwp/api/Windows.Devices.Sensors.Compass)
+-   [**指南針**](/uwp/api/Windows.Devices.Sensors.Compass)
 
 **範例**
 
@@ -39,7 +39,7 @@ ms.locfileid: "89304660"
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單指南針應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-### <a name="instructions"></a>Instructions
+### <a name="instructions"></a>指示
 
 -   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
@@ -106,14 +106,14 @@ ms.locfileid: "89304660"
             }
         }
     }
-    ```
+```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
+您需要將之前程式碼片段中的命名空間重新命名為您專案的名稱。 例如，如果您已建立名為 **CompassCS** 的專案，則應該將 `namespace App1` 取代為 `namespace CompassCS`。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   開啟 MainPage.xaml 檔案，並以下列 XML 取代原始內容。
 
 ```xml
-        <Page
+    <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -134,11 +134,11 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **CompassCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="CompassCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:CompassCS"`。
 
--   按 F5 或選取 [ **Debug**  >  **開始調試**程式]，以建立、部署和執行應用程式。
+-   按 F5 或選取 [ **Debug**  >  **開始調試** 程式]，以建立、部署和執行應用程式。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
 
--   返回 Visual Studio 並按 Shift + F5 或選取 [ **Debug**停止錯] 以停止應用程式，以停止應用程式  >  **Stop Debugging** 。
+-   返回 Visual Studio 並按 Shift + F5 或選取 [ **Debug** 停止錯] 以停止應用程式，以停止應用程式  >  **Stop Debugging** 。
 
 ### <a name="explanation"></a>說明
 
@@ -173,6 +173,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
- 
+ 
 
- 
+ 

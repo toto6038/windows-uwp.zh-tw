@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: e9cb4a52e56862f9be27c72ef46afced895633c3
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
+ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860097"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310206"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -28,14 +28,14 @@ ms.locfileid: "91860097"
 > [!NOTE]
 > 鍵盤對身障使用者而言是不可或缺的工具 (請參閱[鍵盤協助工具](../accessibility/keyboard-accessibility.md))，對於希望透過它而能更有效率地與應用程式互動的使用者而言，也是重要工具。
 
-## <a name="overview"></a>概觀
+## <a name="overview"></a>總覽
 
 快速鍵通常包括功能鍵 F1 到 F12，或是一些標準按鍵與一個或多個輔助按鍵 (CTRL、Shift) 配對的組合。
 
 > [!NOTE]
-> UWP 平臺控制項有內建的鍵盤快速鍵。 例如，ListView 支援用於選取清單中所有項目的 Ctrl+A，而 RichEditBox 支援在文字方塊中插入 Tab 的 Ctrl+Tab。 這些內建鍵盤快速鍵稱為**控制項快速鍵**，只有在焦點位於元素或其中一個子系時才會執行。 使用此處討論之鍵盤快速鍵 API 所定義的鍵盤快速鍵稱為**應用程式快速鍵**。
+> UWP 平臺控制項有內建的鍵盤快速鍵。 例如，ListView 支援用於選取清單中所有項目的 Ctrl+A，而 RichEditBox 支援在文字方塊中插入 Tab 的 Ctrl+Tab。 這些內建鍵盤快速鍵稱為 **控制項快速鍵**，只有在焦點位於元素或其中一個子系時才會執行。 使用此處討論之鍵盤快速鍵 API 所定義的鍵盤快速鍵稱為 **應用程式快速鍵**。
 
-鍵盤快速鍵並非所有的動作都適用，但通常與功能表中公開的命令有關聯 (而且應該以功能表項目內容來指定)。快速鍵也可以和沒有對等功能表項目的動作建立關聯。 不過，使用者依賴應用程式的功能表來探索並了解可用的命令集，因此必須盡可能嘗試讓探索快速鍵的方式變得簡單 (使用標籤或已建立的模式會很有幫助)。
+鍵盤快速鍵並非所有的動作都適用，但通常與功能表中公開的命令有關聯 (而且應該以功能表項目內容來指定)。 快速鍵也可以和沒有對等功能表項目的動作建立關聯。 不過，使用者依賴應用程式的功能表來探索並了解可用的命令集，因此必須盡可能嘗試讓探索快速鍵的方式變得簡單 (使用標籤或已建立的模式會很有幫助)。
 
 ![功能表項目標籤中鍵盤快速鍵的螢幕擷取畫面。](images/accelerators/accelerators_menuitemlabel.png)  
 *功能表項目標籤中描述的鍵盤快速鍵*
@@ -127,11 +127,11 @@ ms.locfileid: "91860097"
 ```
 
 ![工具提示中鍵盤快速鍵的螢幕擷取畫面。](images/accelerators/accelerators_tooltip.png)  
-***工具提示中描述的鍵盤快速鍵***
+**_工具提示中所描述的鍵盤快速鍵_* _
 
 [UIElement](/uwp/api/windows.ui.xaml.uielement) 物件具有 [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 集合 [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)，您可在其他指定自訂 KeyboardAccelerator 物件，並定義鍵盤快速鍵的按鍵輸入：
 
--   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - 鍵盤快速鍵使用的 [VirtualKey](/uwp/api/windows.system.virtualkey)。
+-   _ 索引 *[鍵](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**-用於鍵盤對應鍵的 [VirtualKey](/uwp/api/windows.system.virtualkey) 。
 
 -   **[Modifiers](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – 鍵盤快速鍵使用的 [VirtualKeyModifiers](/uwp/api/windows.system.virtualkeymodifiers)。 如果 Modifiers 未設定，則預設值為 None。
 
@@ -189,7 +189,7 @@ ms.locfileid: "91860097"
 </ListView>
 ```
 
-MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 會將快速鍵標示為已限定範圍，而不是全域 (預設為 null 或全域)。 如需詳細資訊，請參閱本主題稍後的**解析快速鍵**一節。
+MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 會將快速鍵標示為已限定範圍，而不是全域 (預設為 null 或全域)。 如需詳細資訊，請參閱本主題稍後的 **解析快速鍵** 一節。
 
 ## <a name="invoke-a-keyboard-accelerator"></a>叫用鍵盤快速鍵 
 
@@ -202,7 +202,7 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，按鈕控制
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -211,7 +211,7 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，按鈕控制
 1.  叫用 (Button)
 2.  切換 (Checkbox)
 3.  選取 (ListView)
-4.  展開/摺疊 (ComboBox) 
+4.  展開/摺疊 (ComboBox) 
 
 如果沒有識別出相符項目，則快速鍵無效，系統會提供偵錯訊息 (「找不到此元件的自動化模式。 請在 Invoked 事件中實作所有想要的行為。 將事件處理常式中的 Handled 設定為 true 將會隱藏此訊息。」)
 
@@ -228,8 +228,8 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，按鈕控制
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
 </ListView>
 ```
@@ -285,10 +285,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -308,18 +308,18 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -347,21 +347,21 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 新增次要項目 | Ctrl + Shift + N |
 | 刪除選取的項目 (可以復原) | Del、Ctrl+D |
 | 刪除選取的項目 (無法復原) | Shift + Del |
-| 粗體 | Ctrl + B |
+| 粗體字 | Ctrl + B |
 | Underline | Ctrl + U |
 | 斜體 | Ctrl + I |
 | **導覽** | |
 | 尋找焦點所在控制項或視窗中的內容 | Ctrl + F |
 | 移至下一個搜尋結果 | F3 |
 | **其他動作** | |
-| 新增我的最愛 | Ctrl + D | 
-| 重新整理 | F5 或 Ctrl + R | 
-| 放大 | Ctrl + + | 
-| 縮小 | Ctrl + - | 
-| 縮放至預設檢視大小 | Ctrl + 0 | 
-| 儲存 | Ctrl + S | 
-| 關閉 | Ctrl + W | 
-| 列印 | Ctrl + P | 
+| 新增我的最愛 | Ctrl + D | 
+| 重新整理 | F5 或 Ctrl + R | 
+| 放大 | Ctrl + + | 
+| 縮小 | Ctrl + - | 
+| 縮放至預設檢視大小 | Ctrl + 0 | 
+| 儲存 | Ctrl + S | 
+| 關閉 | Ctrl + W | 
+| 列印 | Ctrl + P | 
 
 請注意，有些組合不適用於 Windows 的當地語系化版本。 例如，在 Windows 的西班牙文版本中，設定粗體要使用 Ctrl+N 而不是 Ctrl+B。 如果應用程式已當地語系化，建議您提供當地語系化的鍵盤快速鍵。
 
@@ -526,14 +526,24 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 預覽輸入事件會在任何其他事件之前引發。 如果不處理這些事件，就會引發焦點所在元素的快速鍵，後面接著引發 KeyDown 事件。 兩個事件都會反昇直到已處理為止。
 
 
-![顯示主要事件順序索引 ](images/accelerators/accelerators_keyevents.png)
- ***鍵事件順序***的圖表
+![顯示主要事件順序索引鍵 ](images/accelerators/accelerators_keyevents.png) 
+* **事件順序** _ 的圖表
 
 事件的順序：
 
-預覽 KeyDown 事件...
-應用程式快速鍵、OnKeyDown 方法、KeyDown 事件、上層之上層 KeyDown 事件的上層 OnKeyDown 方法的應用程式快速鍵 (執行事件反昇至根)…
-CharacterReceived 事件、PreviewKeyUp 事件、KeyUpEvents
+預覽 KeyDown 事件<br>
+…<br>
+應用程式加速器<br>
+OnKeyDown 方法<br>
+KeyDown 事件<br>
+父代上的應用程式加速器<br>
+父系上的 OnKeyDown 方法<br>
+父系上的 KeyDown 事件<br>
+ (會反升至根) <br>
+…<br>
+CharacterReceived 事件<br>
+PreviewKeyUp 事件<br>
+KeyUpEvents<br>
 
 處理快速鍵事件時，也會將 KeyDown 事件標示為已處理。 KeyUp 事件仍保持未處理狀態。
 
@@ -572,8 +582,7 @@ protected override void OnProcessKeyboardAccelerators(
 
 我們建議將所有的鍵盤快速鍵當地語系化。 您可以在 XAML 宣告中使用標準 UWP 資源 (.resw) 檔案和 x:Uid 屬性來進行此作業。 在此範例中，Windows 執行階段會自動載入資源。
 
-![使用 uwp 資源的鍵盤快速鍵當地語系化圖表檔 ](images/accelerators/accelerators_localization.png)
- ***鍵盤加速器當地語系化與 uwp 資源檔***
+![使用 uwp 資源檔的鍵盤快速鍵當地語系化圖 ](images/accelerators/accelerators_localization.png) _ *_使用 uwp 資源檔的鍵盤快速鍵當地語系化_**
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">
