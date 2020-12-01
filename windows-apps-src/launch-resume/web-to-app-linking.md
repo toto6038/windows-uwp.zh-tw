@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: fcffbf9fd3f333aa4aea4f155c5508d2867c2776
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 493a9936fa5d97ef2ac8d8d67bec15ce2f4df3c2
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158724"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420367"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>使用 App URI 處理常式啟用網站的應用程式
 
@@ -59,8 +59,8 @@ ms.locfileid: "89158724"
 
 ``` JSON
 [{
-  "packageFamilyName": "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
-  "paths": [ "*" ],
+  "packageFamilyName" : "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
+  "paths" : [ "*" ],
   "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
@@ -73,10 +73,10 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 
 | **通 配 符** | **描述**               |
 |--------------|-------------------------------|
-| **\***       | 代表任何子字串      |
-| **?**        | 代表單一字元 |
+| **\** _       | 代表任何子字串      |
+| _ *?**        | 代表單一字元 |
 
-例如， `"excludePaths" : [ "/news/*", "/blog/*" ]` 在上述範例中，您的應用程式將支援以網站位址開頭的所有路徑 (例如，msn.com) ， **除了** 和以外的路徑 `/news/` `/blog/` 。 將支援**msn.com/weather.html** ，但無法**msn.com/news/topnews.html**。
+例如， `"excludePaths" : [ "/news/*", "/blog/*" ]` 在上述範例中，您的應用程式將支援以網站位址開頭的所有路徑 (例如，msn.com) ， **除了** 和以外的路徑 `/news/` `/blog/` 。 將支援 **msn.com/weather.html** ，但無法 **msn.com/news/topnews.html**。
 
 ### <a name="multiple-apps"></a>多個應用程式
 
