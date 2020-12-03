@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 資料, 類型
 ms.localizationpriority: medium
-ms.openlocfilehash: d61de7acdfa2fc3b563aa77630a9eb8043bce3d7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9e4c759cef4869f3270a59bb66f2b999cb35f19e
+ms.sourcegitcommit: bbf5451c3240e260fb8f9baadbdadf772ffe96ba
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154332"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96537302"
 ---
 # <a name="standard-c-data-types-and-cwinrt"></a>標準 C++ 資料類型與 C++/WinRT
 
@@ -61,7 +61,7 @@ IAsyncOperation<IMap<winrt::hstring, IInspectable>> StorageItemContentProperties
 您可以像這樣使用初始設定式清單呼叫該 API。
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" }) };
 }
@@ -103,7 +103,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 但您無法傳遞 **std::vector&lt;std::wstring&gt;** 其中預期一個 Windows 執行階段集合。 這是因為發生轉換至適當的 **std::wstring** Windows 執行階段集合，C++ 語言不會強制該集合的類型參數。 因此，下列程式碼範例不會編譯 (而且解決方法是改為傳遞 **std::vector&lt;winrt::hstring&gt;** ，如上所示)。
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<std::wstring> vecW)
 {
     auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)) }; // error! Can't convert from vector of wstring to async_iterable of hstring.
 }
@@ -131,7 +131,7 @@ dataWriter.WriteBytes(fromRange); // the winrt::array_view is passed to WriteByt
 如需詳細範例和資訊，請參閱 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API 參考主題。
 
 ## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** 和標準反覆運算建構
-[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) 是一種 Windows 執行階段 API，會傳回類型 [**IVector&lt;T&gt;** ](/uwp/api/windows.foundation.collections.ivector_t_) 的集合 (投射至 C++/WinRT 成為 **winrt::Windows::Foundation::Collections::IVector&lt;T&gt;** )。 您可以搭配標準反覆運算建構 (例如範圍架構的 `for`) 使用此類型。
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items) 是一種 Windows 執行階段 API，會傳回類型 [**IVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.ivector_t_) 的集合 (投射至 C++/WinRT 成為 **winrt::Windows::Foundation::Collections::IVector&lt;T&gt;** )。 您可以搭配標準反覆運算建構 (例如範圍架構的 `for`) 使用此類型。
 
 ```cppwinrt
 // main.cpp

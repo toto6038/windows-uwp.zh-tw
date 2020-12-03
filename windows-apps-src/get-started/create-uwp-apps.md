@@ -5,12 +5,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, get started, 開始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 143e393a72aa24f81561e792148e4cc8b39bdeb4
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: efc9a2d7d4cf775a53b94bcfa01f416512f30a34
+ms.sourcegitcommit: 25063560ff0a37fb404bc50e3b6e66759ee1051d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339796"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96420357"
 ---
 # <a name="start-coding"></a>開始撰寫程式碼
 
@@ -18,7 +18,7 @@ ms.locfileid: "94339796"
 
 歡迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在這個頁面上，我們將指向開始程式設計您想要建立的 Windows 10 應用程式所需的正確資訊。
 
-開始開發之前，您應該要[開始設定。](/windows/apps/get-started/get-set-up.md)
+開始開發之前，您應該要[開始設定。](/windows/apps/get-started/get-set-up)
 
 ## <a name="learning-tracks"></a>學習路線
 
