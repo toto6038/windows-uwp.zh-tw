@@ -5,43 +5,40 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 844d8441777e7c95e2b562cf7dff748600a072e9
-ms.sourcegitcommit: 861c381a31e4a5fd75f94ca19952b2baaa2b72df
+ms.openlocfilehash: 9c0bc2445ce6369599749e1741ab7a703b0367b6
+ms.sourcegitcommit: ca661dd72852b109f4b8b1d7d7e2149180fcb3ee
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92171135"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96517115"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
-> [!IMPORTANT]
-> C#/WinRT 處於公開預覽狀態，最終發行之前可能會經過大幅修改。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
-
 C#/WinRT 是 NuGet 封裝的工具組，其針對 C# 語言提供 Windows 執行階段 (WinRT) 投影支援。 「投影」是指 interop 組件之類的轉譯層，可讓您以自然且熟悉的方式，針對目標語言進行 WinRT API 程式設計。 例如，C#/WinRT 投影會隱藏 C# 和 WinRT 介面之間的 interop 詳細資料，並將許多 WinRT 類型對應提供給適當的 .NET 對等項目，例如字串、URI、通用值類型和泛型集合。
 
-C#/WinRT 目前提供使用 WinRT 類型的支援，而目前的預覽版可讓您[建立](#create-an-interop-assembly)和[參考](#reference-an-interop-assembly) WinRT interop 元件。 C# /WinRT 的未來版本將會新增以 C# 撰寫 WinRT 類型的支援。
+C#/WinRT 目前提供使用 WinRT 類型的支援，而最新版可讓您 [建立](#create-an-interop-assembly) 和 [參考](#reference-an-interop-assembly) WinRT interop 組件。 C# /WinRT 的未來版本將會新增以 C# 撰寫 WinRT 類型的支援。
 
 如需有關 C#/WinRT 的詳細資訊，請參閱 [C#/WinRT GitHub 存放庫](https://aka.ms/cswinrt/repo)。
 
 ## <a name="motivation-for-cwinrt"></a>C#/WinRT 的動機
 
-[.Net Core](/dotnet/core/) 是 .NET 平台的重點，而 .NET 5 則是下一個主要版本。 此架構是開放原始碼的跨平台執行階段，可用來建置裝置、雲端和 IoT 應用程式。
+[.Net Core](/dotnet/core/) 是 .NET 平台的重點，而 .NET 5 則是最新的主要版本。 此架構是開放原始碼的跨平台執行階段，可用來建置裝置、雲端和 IoT 應用程式。
 
 舊版 .NET Framework 和 .NET Core 已內建 Windows 特有技術 WinRT 的知識。 為了支援 .NET 5 的可攜性和效率目標，我們已從 .NET 編譯器和執行階段提取 WinRT 投影支援，並將其移至 C#/WinRT 工具組。 C#/WinRT 的目標是提供等同於舊版 C# 編譯器和 .NET 執行階段內建 WinRT 支援的架構。 如需詳細資訊，請參閱 [Windows 執行階段類型的 .NET 對應](../winrt-components/net-framework-mappings-of-windows-runtime-types.md)。
 
 C#/WinRT 也支援 WinUI 3.0。 此版 WinUI 會從作業系統中提取原生的 Microsoft UI 控制項和功能。 這可讓應用程式開發人員使用 Windows 10 1803 版和更新版本上的最新控制項和視覺效果。
 
-最後，C# /WinRT 是一般的工具組，目的是為了支援無法在 C# 編譯器或 .NET 執行階段中使用內建 WinRT 支援的其他案例。 C#/WinRT 支援相容於 .NET Standard 2.0 的 .NET 執行階段版本，例如 Mono 5.4。
+最後，C# /WinRT 是一般的工具組，目的是為了支援無法在 C# 編譯器或 .NET 執行階段中使用內建 WinRT 支援的其他案例。
 
 ## <a name="create-an-interop-assembly"></a>建立 interop 組件
 
-WinRT API 定義於 Windows 中繼資料 (*.winmd) 檔案中。 C#/WinRT NuGet 套件 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 包含 C# /WinRT 編譯器 (**cswinrt**)，可讓您用來處理 Windows 中繼資料檔案並產生 .NET 5.0 C# 程式碼。 您可以將這些來源檔案編譯成 interop 組件，類似於 [C++/WinRT](../cpp-and-winrt-apis/index.md) 產生 C++ 語言投影標頭的方式。 接著，除了 C#/WinRT 執行階段組件，您還可以散發 C#/WinRT interop 組件讓應用程式參考。
+WinRT API 定義於 Windows 中繼資料 (*.winmd) 檔案中。 C#/WinRT NuGet 套件 ([Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)) 包含 C# /WinRT 編譯器 (**cswinrt.exe**)，可讓您用來處理 Windows 中繼資料檔案並產生 .NET 5.0 C# 程式碼。 您可以將這些來源檔案編譯成 interop 組件，類似於 [C++/WinRT](../cpp-and-winrt-apis/index.md) 產生 C++ 語言投影標頭的方式。 接著，除了 C#/WinRT 執行階段組件，您還可以散發 C#/WinRT interop 組件讓應用程式參考。
 
 如需示範如何建立和散發 Interop 組件 (如 NuGet 套件) 的逐步解說，請參閱[逐步解說：從 C++/WinRT 元件產生 .NET 5.0 投影並更新 NuGet](net-projection-from-cppwinrt-component.md)。
 
 ### <a name="invoke-cswinrtexe"></a>叫用 cswinrt.exe
 
-若要從專案叫用 cswinrt.exe，請安裝最新的 [C#/WinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 接著，您可以在 **C# 程式庫**專案中設定 C#/WinRT 特定的專案屬性，以產生 Interop 組件。 下列專案片段會示範 **cswinrt** 的簡單叫用，以在 Contoso 命名空間中產生各類型的投影來源。 這些來源接著會包含在專案組建中。
+若要從專案叫用 cswinrt.exe，請安裝最新的 [C#/WinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 接著，您可以在 **C# 程式庫** 專案中設定 C#/WinRT 特定的專案屬性，以產生 Interop 組件。 下列專案片段會示範 **cswinrt** 的簡單叫用，以在 Contoso 命名空間中產生各類型的投影來源。 這些來源接著會包含在專案組建中。
 
 ```xml
 <PropertyGroup>
@@ -53,7 +50,7 @@ WinRT API 定義於 Windows 中繼資料 (*.winmd) 檔案中。 C#/WinRT NuGet �
 
 ### <a name="distribute-the-interop-assembly"></a>散發 interop 組件
 
-Interop 組件通常會散發為 NuGet 套件，而且在 C#/WinRT NuGet 套件上還有用於必要 C#/WinRT 執行階段組件的相依性 **winrt.runtime.dll**。
+Interop 組件通常會散發為 NuGet 套件，而且在 C#/WinRT NuGet 套件上還有用於必要 C#/WinRT 執行階段組件的相依性 **WinRT.Runtime.dll**。
 
 為確保 .NET 5.0 應用程式部署了 C#/WinRT 執行階段的正確版本，請在 .nuspec 檔案中包含 `targetFramework`條件，該條件相依於 C#/WinRT NuGet 套件。
 
@@ -63,7 +60,7 @@ Interop 組件通常會散發為 NuGet 套件，而且在 C#/WinRT NuGet 套件�
   <metadata>
     <dependencies>
       <group targetFramework="net5.0">
-        <dependency id="Microsoft.Windows.CsWinRT" version="0.9.0" />
+        <dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" />
       </group>
     </dependencies>
   </metadata>
@@ -71,7 +68,7 @@ Interop 組件通常會散發為 NuGet 套件，而且在 C#/WinRT NuGet 套件�
 ```
 
 > [!NOTE]
-> .NET 5.0 的目標 Framework Moniker 已從 ".NETCoreApp5.0" 變更為 "net5.0"。 
+> .NET 5.0 的目標 Framework Moniker 已從 ".NETCoreApp5.0" 變更為 "net5.0"。
 
 ## <a name="reference-an-interop-assembly"></a>參考 interop 組件
 
@@ -95,7 +92,7 @@ C#/WinRT 會使用 [LoadLibrary 替代搜尋順序](/windows/win32/dlls/dynamic-
 
 ## <a name="known-issues"></a>已知問題
 
-目前的 C#/WinRT 預覽版中有一些已知的 interop 相關效能問題。 這些問題會在 2020 年年底的最終版本之前解決。 其他已知問題和重大變更會在 [C#/WinRT GitHub 存放庫](https://aka.ms/cswinrt/repo)中註明。
+已知問題和重大變更會在 [C#/WinRT GitHub 存放庫](https://aka.ms/cswinrt/repo)中註明。
 
 如果您在 C# /WinRT NuGet 套件、cswinrt.exe 編譯器或產生的投影來源上遇到任何功能問題，請透過 [C#/WinRT 問題頁面](https://github.com/microsoft/CsWinRT/issues)，將問題提交給我們。
 
