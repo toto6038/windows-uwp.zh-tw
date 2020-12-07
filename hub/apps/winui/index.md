@@ -4,12 +4,12 @@ description: 用於 Windows 應用程式開發的 WinUI 程式庫。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk, winui, Windows UI 程式庫
-ms.openlocfilehash: 3b2b18ab35f46b132ec3017bb0f3c6564b7be9ee
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: cd96367579c61223dcaf2be2f336026244a6ed9b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933123"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603685"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 程式庫 (WinUI)
 
@@ -29,7 +29,7 @@ WinUI 將 [Fluent Design 系統](https://www.microsoft.com/design/fluent/#/)併�
 WinUI 2.x 可以在 UWP 應用程式中使用，並透過使用 [XAML Islands](../desktop/modernize/xaml-islands.md) 合併到新的或現有的桌面應用程式中。
 
 > [!NOTE]
-> WinUI 2.4 是最新的 WinUI 2.x 版本。 如需下一版中的計畫工作清單，請參閱 [WinUI 2.5 里程碑](https://github.com/microsoft/microsoft-ui-xaml/milestone/10)。
+> WinUI 2.5 是最新的 WinUI 2.x 版本。 如需下一版中的計畫工作清單，請參閱 [WinUI 2.6 里程碑](https://github.com/microsoft/microsoft-ui-xaml/milestone/11)。
 
 WinUI 2.x 程式庫可與 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) 緊密結合，並提供適用於 UWP 應用程式的官方原生 Windows UI 控制項和其他 UI 元素。
 

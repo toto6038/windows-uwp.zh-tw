@@ -216,6 +216,8 @@
           href: controls-and-patterns/progress-controls.md
         - name: 工具提示
           href: controls-and-patterns/tooltips.md
+        - name: 資訊列
+          href: controls-and-patterns/infobar.md
     - name: Text
       items:
         - name: 概觀

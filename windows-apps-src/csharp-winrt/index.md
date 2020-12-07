@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c0bc2445ce6369599749e1741ab7a703b0367b6
-ms.sourcegitcommit: ca661dd72852b109f4b8b1d7d7e2149180fcb3ee
+ms.openlocfilehash: 107c85b7e2562edb9995a6bfd76e47904750536b
+ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96517115"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96577090"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -89,6 +89,18 @@ C#/WinRT 支援啟用作業系統所裝載的 WinRT 類型，以及 [Win2D](http
 3. Contoso.dll
 
 C#/WinRT 會使用 [LoadLibrary 替代搜尋順序](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications)來尋找實作 DLL。 依賴此後援行為的應用程式應該會將實作 DLL 連同應用程式模組封裝在一起。
+
+## <a name="common-errors-with-net-5"></a>.NET 5+ 的常見錯誤
+
+在以比其任何相依性還舊的 .NET SDK 版本所建置的專案中，您可能會遇到下列錯誤或警告。
+
+| 錯誤或警告訊息 | 原因 |
+|--------------------------|--------|
+| System.IO.FileLoadException | 在未公開 Windows SDK 類型的程式庫中呼叫 API 時，就會發生此執行階段錯誤。 |
+| 警告 MSB3277：無法解決在不同的 Microsoft.Windows.SDK.NET 版本之間發現的衝突。 | 如果參考的程式庫在其 API 介面上公開 Windows SDK 類型，就會發生此組建錯誤。 |
+| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705)：組件 'AssemblyName1' 使用的 'TypeName' 版本高於所參考的組件 'AssemblyName2' | 如果參考並取用程式庫中公開的 Windows SDK 類型，就會發生此組建編譯器錯誤。 |
+
+若要修正這些錯誤，請將您的 .NET SDK 更新為最新版本。 這麼做可確保應用程式所使用的執行階段和 Windows SDK 組件版本會與所有相依性相容。 .NET 5 SDK 的早期服務/功能更新可能會發生這些錯誤，因為執行階段修正可能需要更新組件版本。
 
 ## <a name="known-issues"></a>已知問題
 
