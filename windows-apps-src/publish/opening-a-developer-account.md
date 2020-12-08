@@ -6,12 +6,12 @@ ms.date: 3/30/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f205770f789e2530ac35317f35b545c18592b0c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: e16446321ccb8dc2494f59feec88fbb0a52aed94
+ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174762"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857409"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
@@ -35,7 +35,7 @@ ms.locfileid: "89174762"
 5.  輸入您想要使用 (50 個字元或較少) 的 **發行者顯示名稱** 。 請謹慎選取此名稱，因為客戶會在瀏覽時看到此名稱，並透過此名稱認識您的 app。 如果是公司帳戶，請務必使用您組織的註冊公司名稱或是平時營業名稱。 如果您輸入其他人已選取的名稱，或有其他人有權使用該名稱，則不允許您使用它。
 
     > [!NOTE]
-    > 請確定您有權使用自己在這裡輸入的名稱。 如果其他人對您所選擇的名稱具有商標權或著作權，您的帳戶可能會被關閉。 如需詳細資訊，請參閱 [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement) 。 如果被其他人用走的發行者顯示名稱是您具有商標權或其他法律權利的名稱，請[連絡 Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html)。    
+    > 請確定您有權使用自己在這裡輸入的名稱。 如果其他人對您所選擇的名稱具有商標權或著作權，您的帳戶可能會被關閉。 如需詳細資訊，請參閱 [應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement) 。 如果被其他人用走的發行者顯示名稱是您具有商標權或其他法律權利的名稱，請[連絡 Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html)。    
 
 6.  輸入您要用於開發人員帳戶的連絡資訊。
 
@@ -50,7 +50,7 @@ ms.locfileid: "89174762"
 
 9.  檢閱您的帳戶資訊，並確認所有項目都正確。 接著，請閱讀並接受[應用程式開發人員合約](/legal/windows/agreements/app-developer-agreement)的條款及條件。 核取此方塊，表示您已閱讀這些條款並接受這些條款。
 
-10.  選取 [完成]**** 以確認您的註冊。 系統將會處理您的付款，並將確認訊息傳送至您的電子郵件地址。
+10.  選取 [完成] 以確認您的註冊。 系統將會處理您的付款，並將確認訊息傳送至您的電子郵件地址。
 
 註冊之後，您的帳戶就會經過驗證。 針對個別帳戶，我們會檢查以確定另一位使用者尚未使用您的發行者顯示名稱。 若是公司帳戶，這個程序需要較長的時間，因為我們必須確定您有權代替您的公司設定帳戶。 這項驗證可能需要幾天到幾周的時間，而且通常會包含對您公司的電話通話。 您可以在 [ **帳戶設定** ] 頁面上檢查您的驗證狀態。
 
@@ -62,7 +62,7 @@ ms.locfileid: "89174762"
 
 如果您想要讓多位人員使用開啟 (該帳戶的 Microsoft 帳戶登入，而不是將個別使用者新增至帳戶) ，請參閱下列指導方針：
 
--   使用尚未屬於您或其他個人的電子郵件地址建立 Microsoft 帳戶，例如 MyCompany_PartnerCenter@outlook.com 。 請勿使用公司網域中的電子郵件地址，特別是當您的公司已使用 Azure AD。 如先前所述，您可以稍後再從公司的 Azure AD 服務新增其他使用者。
+-   電子郵件擁有權可確認主要連絡人 (主要電子郵件) 地址是否有效。 主要連絡人電子郵件地址必須是受監視、且可以傳送/接收電子郵件的工作帳戶。 合作夥伴 **不** 應使用： (1) 未與公司網域相關聯的個人電子郵件地址，或 (2) 未與電子郵件相關聯的租使用者使用者登入 (例如 jsmith@testcompany.onmicrosoft.com) 。
 -   將此 Microsoft 帳戶的存取許可權制為最少可能的使用者數目。
 -   設定公司電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的所有人。 將此電子郵件地址新增至 [與 Microsoft 帳戶相關聯的安全性資訊](https://account.microsoft.com/security)。 這種方法可讓清單上的所有員工接收傳送至此別名的安全碼。 如果設定通訊群組清單不可行，您可以將個人的電子郵件地址新增至您的安全性資訊。 但是，當 (系統提示時，該電子郵件地址的擁有者將是唯一可以存取和共用安全程式碼的人員，例如，當新的安全性資訊新增至帳戶時，或從新裝置) 存取帳戶時。
 -   將公司電話號碼新增至 Microsoft 帳戶的安全性資訊。 請嘗試使用不需要擴充功能的數位，並可供重要小組成員存取。
