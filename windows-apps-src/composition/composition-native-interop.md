@@ -1,17 +1,17 @@
 ---
-ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: 組合原生交互操作
 description: Windows.UI.Composition API 提供可將內容直接移到撰寫器中的原生交互操作介面。
-ms.date: 06/22/2018
+ms.date: 12/07/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b89e4107ea92dce241977b048d28d6a85e2fd34
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
+ms.openlocfilehash: 4ae214f99cad9d8d2db644b184c12172a56a443b
+ms.sourcegitcommit: 7d01748e3ef084fcf04cc0e2830c8ec66e8d1252
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166432"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96849472"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>組合 DirectX 與 Direct2D 的原生交互操作
 
@@ -37,13 +37,31 @@ Windows.UI.Composition API 提供可將內容直接移到撰寫器中的 [**ICom
 
 基於效能考量，當應用程式呼叫 [**BeginDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) 時，所傳回的紋理內容並不保證是先前的表面內容。 應用程式必須假設內容是隨機的，因此，應用程式必須藉由在轉譯之前先清除表面，或藉由繪製足夠的不透明內容來涵蓋整個更新的矩形，以確保觸及所有像素。 藉由這樣的做法，再結合紋理指標只有在 **BeginDraw** 與 [**EndDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) 呼叫之間才有效的事實，應用程式便無法從表面複製先前的內容。 基於這個理由，我們提供了 [**Scroll**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-scroll) 方法，可讓應用程式執行相同表面像素複製。
 
-## <a name="usage-example"></a>使用範例
+## <a name="cwinrt-usage-example"></a>C + +/WinRT 使用範例
 
 下列程式碼範例說明互通性案例。 此範例結合了 Windows Composition 的 Windows 執行階段架構介面區中的型別，以及 interop 標頭中的型別，以及使用以 COM 為基礎的 DirectWrite 和 Direct2D Api 來呈現文字的程式碼。 此範例會使用 [**BeginDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) 和 [**EndDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) 讓這些技術之間的互通性順暢。 此範例會使用 DirectWrite 來配置文字，然後使用 Direct2D 來呈現文字。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓 **BeginDraw** 傳回 **ID2D1DeviceCoNtext** 介面指標，這比讓應用程式建立 Direct2D 內容以包裝每個繪圖作業的傳回 ID3D11Texture2D 介面更為有效率。
 
-以下是兩個程式碼範例。 首先， [c + +/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 範例 () ，然後使用 c + +/cx 程式碼範例 (省略範例) 的 DirectWrite 和 Direct2D 部分。
+若要試用以下的 c + +/WinRT 程式碼範例，請先在 Visual Studio (中建立新的 **核心應用程式 (c + +/WinRT)** 專案，以取得 [Visual Studio 的 c + +/WinRT) 支援](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) 。 `pch.h`以下列程式代碼清單取代和原始程式碼檔案的內容 `App.cpp` ，然後建立並執行。 應用程式會呈現 "Hello，World！" 字串 透明背景的黑色文字。
 
-若要使用下面的 c + +/WinRT 程式碼範例，請先在 Visual Studio (中建立新的 **核心應用程式 (c + +/WinRT) ** 專案，以取得 [Visual Studio 的 c + +/WinRT) 支援](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) 。 建立專案時，請選取做為您的目標版本 **Windows 10，版本 1803 (10.0;組建 17134) **。 這是用來建立及測試此程式碼的版本。 將原始程式碼檔的內容取代 `App.cpp` 為下面的程式代碼清單，然後建立並執行。 應用程式會呈現 "Hello，World！" 字串 透明背景的黑色文字。
+```cppwinrt
+// pch.h
+#pragma once
+#include <windows.h>
+#include <D2d1_1.h>
+#include <D3d11_4.h>
+#include <Dwrite.h>
+#include <Windows.Graphics.DirectX.Direct3D11.interop.h>
+#include <Windows.ui.composition.interop.h>
+#include <unknwn.h>
+
+#include <winrt/Windows.ApplicationModel.Core.h>
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.Graphics.DirectX.h>
+#include <winrt/Windows.Graphics.DirectX.Direct3D11.h>
+#include <winrt/Windows.UI.Composition.h>
+#include <winrt/Windows.UI.Core.h>
+#include <winrt/Windows.UI.Input.h>
+```
 
 ```cppwinrt
 // App.cpp
@@ -62,16 +80,6 @@ Windows.UI.Composition API 提供可將內容直接移到撰寫器中的 [**ICom
 //*********************************************************
 
 #include "pch.h"
-
-#include <D2d1_1.h>
-#include <D3d11_4.h>
-#include <Dwrite.h>
-#include <Windows.Graphics.DirectX.Direct3D11.interop.h>
-#include <Windows.ui.composition.interop.h>
-#include <winrt/Windows.Foundation.h>
-#include <winrt/Windows.Graphics.DirectX.h>
-#include <winrt/Windows.Graphics.DirectX.Direct3D11.h>
-#include <winrt/Windows.UI.Composition.h>
 
 using namespace winrt;
 using namespace winrt::Windows::ApplicationModel::Core;
@@ -117,11 +125,11 @@ struct SampleText
         // own redrawing our pixels.
         m_deviceReplacedEventToken = m_compositionGraphicsDevice.RenderingDeviceReplaced(
             [this](CompositionGraphicsDevice const&, RenderingDeviceReplacedEventArgs const&)
-        {
-            // Draw the text again.
-            DrawText();
-            return S_OK;
-        });
+            {
+                // Draw the text again.
+                DrawText();
+                return S_OK;
+            });
     }
 
     ~SampleText()
@@ -312,7 +320,7 @@ struct SampleApp : implements<SampleApp, IFrameworkViewSource, IFrameworkView>
         return *this;
     }
 
-    void Initialize(CoreApplicationView const &)
+    void Initialize(CoreApplicationView const&)
     {
     }
 
@@ -527,7 +535,14 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 }
 ```
 
-```cpp
+## <a name="ccx-usage-example"></a>C + +/CX 使用範例
+
+> [!NOTE]
+> 這個程式碼範例有助您維護 c + +/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
+
+下列 c + +/CX 程式碼範例會省略範例中的 DirectWrite 和 Direct2D 部分。
+
+```cppcx
 //------------------------------------------------------------------------------
 //
 // Copyright (C) Microsoft. All rights reserved.

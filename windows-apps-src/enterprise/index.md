@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: 此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) 應用程式的重要企業功能。
+description: 此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) app 的重要企業功能。
 title: 企業
 ms.date: 01/16/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff96cd25c32418f518f6b1807e08eb72c3e14c6a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4bd6c92729766b99630958d4b33514ef4791d4bf
+ms.sourcegitcommit: 3153ef4838c35084a64173c7ed88719c8864f8cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168432"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96755285"
 ---
 # <a name="enterprise"></a>企業
 
@@ -19,8 +19,7 @@ ms.locfileid: "89168432"
 
 ## <a name="feature-highlights"></a>功能要點
 
-<a id="template-studio" />
-
+<a id="template-studio"></a>
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
 Windows Template Studio 是 Visual Studio 2019 的擴充功能，可讓您更快速地使用精靈式體驗建立新的通用 Windows 平台 (UWP) 應用程式。 產生的 UWP 專案是語式正確且容易閱讀的程式碼，並且會在實作經過實證的模式和最佳做法時包含最新的 Windows 10 功能。
@@ -29,8 +28,7 @@ Windows Template Studio 是 Visual Studio 2019 的擴充功能，可讓您更快
 
 請參閱 [Windows Template Studio](https://marketplace.visualstudio.com/items?itemName=WASTeamAccount.WindowsTemplateStudio)
 
-<a id="desktop-style-UI" />
-
+<a id="desktop-style-UI"></a>
 ### <a name="controls-to-create-desktop-style-uis"></a>用來建立桌面樣式 UI 的控制項
 
 我們發行了新的 UWP XAML 控制項，用以填補傳統桌面應用程式 UI 與 UWP UI 之間的差距。
@@ -39,8 +37,7 @@ Windows Template Studio 是 Visual Studio 2019 的擴充功能，可讓您更快
 
 ![MenuBar](images/menu-bar.png)
 
-<a id="enterprise" />
-
+<a id="enterprise"></a>
 ### <a name="controls-to-support-enterprise-scenarios"></a>用來支援企業案例的控制項
 
 [DataGridView](/windows/communitytoolkit/controls/datagrid) 可讓您靈活顯示資料列和資料行中的資料集合。
@@ -58,16 +55,14 @@ Windows UI 程式庫是一組 NuGet 套件，可提供 UWP 應用程式的控制
 
 請參閱 [Windows UI 程式庫 (預覽版)](/uwp/toolkits/winui/)。
 
-<a id="xaml-islands" />
-
+<a id="xaml-islands"></a>
 ### <a name="uwp-controls-in-desktop-applications-xaml-islands"></a>傳統型應用程式中的 UWP 控制項 (XAML Island)
 
 Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用程式中使用 UWP 控制項，其使用的功能名為 *XAML Islands*。 這表示您可以使用只能透過 UWP 控制項 (例如 Windows Ink) 和支援 Fluent Design 系統的控制項存取的最新 Windows 10 UI 功能，來增強現有傳統型應用程式的外觀與風格和功能。 這項功能稱為 XAML Islands。
 
 請參閱[傳統型應用程式中的 UWP 控制項](/windows/apps/desktop/modernize/xaml-islands)。
 
-<a id="standard" />
-
+<a id="standard"></a>
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
 .NET Standard 包含的 API 比 .NET Standard 1.x 多出 20,000 餘個。 因此，要移轉現有的 .NET Framework 程式庫，然後在不同的 .NET 應用程式 (包括您的 UWP 應用程式) 之間使用這些程式庫，將比以往容易得多。
@@ -76,16 +71,14 @@ Windows 10 現在可讓您在 WPF、Windows Forms 和 C++ Win32 傳統型應用�
 
 請參閱[在傳統型應用程式與 UWP 應用程式之間共用程式碼](../porting/desktop-to-uwp-migrate.md)。
 
-<a id="sql-server" />
-
+<a id="sql-server"></a>
 ### <a name="sql-server-connectivity"></a>SQL Server 連線
 
 您的應用程式可以直接連線到 SQL Server 資料庫，然後使用 [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) 命名空間中的類別儲存和擷取資料。
 
 請參閱[在 UWP app 中使用 SQL Server 資料庫](../data-access/sql-server-databases.md)。
 
-<a id="MSIX" />
-
+<a id="MSIX"></a>
 ### <a name="msix-deployment"></a>MSIX 部署
 
 MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、.appx、App-V 和 ClickOnce 的最佳功能，以對所有 Windows 應用程式提供現代化且可靠的封裝體驗。 MSIX 套件格式除了支援對 Win32、WPF 和 Windows Forms 應用程式的新式封裝和部署功能，也保留了現有應用程式套件和安裝檔案的功能。 
@@ -94,11 +87,10 @@ MSIX 是一種 Windows 應用程式套件格式，結合了 MSI、.appx、App-V 
 
 請參閱 [MSIX 文件](/windows/msix/)。
 
-<a id="distribution" />
-
+<a id="distribution"></a>
 ## <a name="security"></a>安全性
 
-Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使用者的身分識別、公司網路的安全性以及裝置上儲存的任何商務資料。 Windows 10 的新增功能是 Microsoft Passport，一種可使用 PIN 或 Windows Hello 存取的易部署雙因素密碼替代方式，可提供企業級安全性，以及支援指紋、臉部和虹膜辨識。
+Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者的身分識別、公司網路的安全性以及裝置上儲存的任何商務資料。 Windows 10 的新增功能是 Microsoft Passport，一種可使用 PIN 或 Windows Hello 存取的易部署雙因素密碼替代方式，可提供企業級安全性，以及支援指紋、臉部和虹膜辨識。
 
 | 主題 | 描述 |
 |-------|-------------|
@@ -173,6 +165,6 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護其使
 
 如需 Prism 的詳細資訊，請參閱 [GitHub 存放庫](https://github.com/PrismLibrary/Prism)。
 
- 
+ 
 
- 
+ 
