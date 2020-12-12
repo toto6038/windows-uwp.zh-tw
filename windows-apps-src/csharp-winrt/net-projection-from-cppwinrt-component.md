@@ -5,30 +5,30 @@ ms.date: 11/12/2020
 ms.topic: article
 keywords: 'windows 10、c #、winrt、cswinrt、投影'
 ms.localizationpriority: medium
-ms.openlocfilehash: 552eee6ab3f6f4f875202392c9aa3e3c848dbdb6
-ms.sourcegitcommit: 23bd1ef67dcb637b9ac7833e1b6a0c0dd56bd445
+ms.openlocfilehash: 45fa8a7858077438d9707835b548bdacd34e5d11
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94572797"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214190"
 ---
-# <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>逐步解說：從 c + +/WinRT 元件產生 .NET 5 投影並散發 NuGet
+# <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>逐步解說：從 C++/WinRT 元件產生 .NET 5.0 投影並散發 NuGet
 
 本逐步解說將示範如何使用 [c #/WinRT](index.md) 來產生 c + +/WinRT 元件的 .net 5 投射、建立相關聯的 nuget 套件，以及從 .Net 5 c # 主控台應用程式參考 NuGet 套件。
 
-您可以 [從 GitHub 下載](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample)本逐步解說的完整範例。
+您可以 [從 GitHub 下載](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample)本逐步解說的完整範例。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 本逐步解說和對應的範例需要下列工具和元件：
 
-- 已安裝通用 Windows 平臺開發工作負載的[Visual Studio 16.8](https://visualstudio.microsoft.com/downloads/) (或更新版本) 。 在 **安裝詳細資料**  >  **通用 Windows 平臺開發** 中，檢查 **c + + (v14x) 通用 Windows 平臺工具** ] 選項。
+- 已安裝通用 Windows 平臺開發工作負載的[Visual Studio 16.8](https://visualstudio.microsoft.com/downloads/) (或更新版本) 。 在 **安裝詳細資料**  >  **通用 Windows 平臺開發** 中，檢查 **c + + (v14x) 通用 Windows 平臺工具**] 選項。
 - [.Net 5.0 SDK](https://dotnet.microsoft.com/download/dotnet/5.0)。
 - C + + 的 c + + [/WINRT VSIX 擴充](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)功能/WinRT 專案範本。
 
 ## <a name="create-a-simple-cwinrt-runtime-component"></a>建立簡單的 c + +/WinRT 執行時間元件
 
-若要遵循這個逐步解說，您必須先有要建立 .NET 5 投影的 c + +/WinRT 元件。 本逐步解說會 [使用 GitHub 的](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample/SimpleMathComponent)相關範例中的 **SimpleMathComponent** 專案。 這是使用 [c + +/WINRT VSIX 擴充](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)功能所建立 **(c + +/WinRT) 專案的 Windows 執行階段元件** 。 將專案複製到您的開發電腦之後，請在 Visual Studio 2019 Preview 中開啟解決方案。
+若要遵循這個逐步解說，您必須先有要建立 .NET 5 投影的 c + +/WinRT 元件。 本逐步解說會 [使用 GitHub 的](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample/SimpleMathComponent)相關範例中的 **SimpleMathComponent** 專案。 這是使用 [c + +/WINRT VSIX 擴充](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)功能所建立 **(c + +/WinRT) 專案的 Windows 執行階段元件**。 將專案複製到您的開發電腦之後，請在 Visual Studio 2019 Preview 中開啟解決方案。
 
 此專案中的程式碼提供以下標頭檔中所示之基本數學運算的功能。 
 
@@ -51,7 +51,7 @@ namespace winrt::SimpleMathComponent::implementation
 如需有關建立 c + +/WinRT 元件和產生 winmd 檔案的詳細步驟，請參閱 [使用 c + +/WinRT Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)。
 
 > [!NOTE]
-> 如果您要在元件中執行 [IInspectable：： GetRuntimeClassName](/windows/win32/api/inspectable/nf-inspectable-iinspectable-getruntimeclassname) ，它 **必須** 傳回有效的 WinRT 類別名稱。 由於 c #/WinRT 會使用類別名稱字串來進行 interop，因此不正確的運行時類別名稱將引發 **InvalidCastException** 。
+> 如果您要在元件中執行 [IInspectable：： GetRuntimeClassName](/windows/win32/api/inspectable/nf-inspectable-iinspectable-getruntimeclassname) ，它 **必須** 傳回有效的 WinRT 類別名稱。 由於 c #/WinRT 會使用類別名稱字串來進行 interop，因此不正確的運行時類別名稱將引發 **InvalidCastException**。
 
 ## <a name="add-a-projection-project-to-the-component-solution"></a>將投射專案加入至元件方案
 
@@ -59,18 +59,18 @@ namespace winrt::SimpleMathComponent::implementation
 
 1. 在您的方案中加入新的 **類別庫 ( .Net Core)** 專案。
 
-    1. 在 **方案總管** 中，以滑鼠右鍵按一下方案節點，然後按一下 [ **加入**  ->  **新專案** ]。
-    2. 在 [ **加入新專案] 對話方塊** 中，搜尋 **類別庫 ( .net Core)** 專案範本。 選取範本，然後按 **[下一步]** 。
-    3. 將新專案命名為 **SimpleMathProjection** ，然後按一下 [ **建立** ]。
+    1. 在 **方案總管** 中，以滑鼠右鍵按一下方案節點，然後按一下 [**加入**  ->  **新專案**]。
+    2. 在 [ **加入新專案] 對話方塊** 中，搜尋 **類別庫 ( .net Core)** 專案範本。 選取範本，然後按 **[下一步]**。
+    3. 將新專案命名為 **SimpleMathProjection** ，然後按一下 [ **建立**]。
 
 2. 從專案中刪除空白的 **Class1.cs** 檔案。
 
 3. 安裝 [c #/WinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT)。
 
-    1. 在 **方案總管** 中，以滑鼠右鍵按一下 **SimpleMathProjection** 專案，然後選取 [ **管理 NuGet 套件** ]。 
+    1. 在 **方案總管** 中，以滑鼠右鍵按一下 **SimpleMathProjection** 專案，然後選取 [ **管理 NuGet 套件**]。 
     2. 搜尋 **CsWinRT** NuGet 套件，並安裝最新版本。
 
-4. 將專案參考加入至 **SimpleMathComponent** 專案。 在 **方案總管** 中，以滑鼠右鍵按一下 **SimpleMathProjection** 專案底下的 [相依性] 節點，選取 [ **加入專案參考** **]** ，然後選取 **SimpleMathComponent** 專案。
+4. 將專案參考加入至 **SimpleMathComponent** 專案。 在 **方案總管** 中，以滑鼠右鍵按一下 **SimpleMathProjection** 專案底下的 [相依性] 節點，選取 [**加入專案參考** **]** ，然後選取 **SimpleMathComponent** 專案。
 
 在這些步驟之後，您的 **方案總管** 看起來應該像這樣。
 
@@ -125,7 +125,7 @@ namespace winrt::SimpleMathComponent::implementation
 
 ## <a name="build-projects-out-of-source"></a>從來源建立專案
 
-在 [相關的範例](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample)中，會使用 **.props** 檔案來設定組建。 建立 **SimpleMathComponent** 和 **SimpleMathProjection** 專案所產生的檔案會出現在方案層級的 *_build* 資料夾中。 若要將您的專案設定為從來源中建立，請將下面的 **.props** 檔案複製到包含方案檔的目錄。
+在 [相關的範例](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample)中，會使用 **.props** 檔案來設定組建。 建立 **SimpleMathComponent** 和 **SimpleMathProjection** 專案所產生的檔案會出現在方案層級的 *_build* 資料夾中。 若要將您的專案設定為從來源中建立，請將下面的 **.props** 檔案複製到包含方案檔的目錄。
 
 ```xml
 <Project>
@@ -145,8 +145,8 @@ namespace winrt::SimpleMathComponent::implementation
 
 1. 將 NuGet 規格 (. nuspec) 檔案新增至 **SimpleMathProjection** 專案。
 
-    1. 在 **方案總管** 中，以滑鼠右鍵按一下 [ **SimpleMathProjection** ] 節點 **，選擇 [**  ->  **新增資料夾** ]，然後將資料夾命名為 **nuget** 。 
-    2. 以滑鼠右鍵按一下 [ **nuget** ] 資料夾，選擇 [ **加入**  ->  **新專案** ]，選擇 XML 檔案，並將它命名為 **SimpleMathProjection. nuspec** 。 
+    1. 在 **方案總管** 中，以滑鼠右鍵按一下 [ **SimpleMathProjection** ] 節點 **，選擇 [**  ->  **新增資料夾**]，然後將資料夾命名為 **nuget**。 
+    2. 以滑鼠右鍵按一下 [ **nuget** ] 資料夾，選擇 [**加入**  ->  **新專案**]，選擇 XML 檔案，並將它命名為 **SimpleMathProjection. nuspec**。 
 
 2. 將下列各項新增至 **SimpleMathProjection** ，以自動產生封裝。 這些屬性會指定 `NuspecFile` 要產生 NuGet 套件的和目錄。
 
@@ -190,19 +190,19 @@ namespace winrt::SimpleMathComponent::implementation
 
 ## <a name="build-the-solution-to-generate-the-projection-and-nuget-package"></a>建立解決方案來產生投射和 NuGet 套件
 
-現在您可以建立方案：以滑鼠右鍵按一下方案節點，然後選取 [ **建立方案** ]。 這會先建立元件專案，然後再建立投射專案。 除了元件專案中的中繼資料檔案之外，還會在輸出目錄中產生 interop **.cs** 檔和元件。 您也可以在 **nuget** 資料夾中看到產生的 Nuget 套件 **simplemathcomponent 0.1.0-搶鮮版（nupkg）** 。
+現在您可以建立方案：以滑鼠右鍵按一下方案節點，然後選取 [ **建立方案**]。 這會先建立元件專案，然後再建立投射專案。 除了元件專案中的中繼資料檔案之外，還會在輸出目錄中產生 interop **.cs** 檔和元件。 您也可以在 **nuget** 資料夾中看到產生的 Nuget 套件 **simplemathcomponent 0.1.0-搶鮮版（nupkg）** 。
 
 ![顯示產生投射的方案總管](images/projection-generated-files.png)
 
 ## <a name="reference-the-nuget-package-in-a-c-net-50-console-application"></a>參考 c # .NET 5.0 主控台應用程式中的 NuGet 套件
 
-若要取用投射的 **SimpleMathComponent** ，您可以直接在應用程式中新增新建立之 NuGet 套件的參考。 下列步驟示範如何在不同的解決方案中建立簡單的主控台應用程式來執行這項操作。
+若要取用投射的 **SimpleMathComponent**，您可以直接在應用程式中新增新建立之 NuGet 套件的參考。 下列步驟示範如何在不同的解決方案中建立簡單的主控台應用程式來執行這項操作。
 
 1. 使用主控台應用程式建立新的解決方案， **( .Net Core)** 專案。
 
     1. 在 Visual Studio 中，選取 [檔案] ->  [新增] ->  [專案]。
-    2. 在 [ **加入新專案] 對話方塊** 中，搜尋 **( .net Core) 專案範本的主控台應用程式** 。 選取範本，然後按 **[下一步]** 。
-    3. 將新專案命名為 **SampleConsoleApp** ，然後按一下 [ **建立** ]。 在新的方案中建立此專案，可讓您分別還原 **SimpleMathComponent** NuGet 套件。
+    2. 在 [ **加入新專案] 對話方塊** 中，搜尋 **( .net Core) 專案範本的主控台應用程式** 。 選取範本，然後按 **[下一步]**。
+    3. 將新專案命名為 **SampleConsoleApp** ，然後按一下 [ **建立**]。 在新的方案中建立此專案，可讓您分別還原 **SimpleMathComponent** NuGet 套件。
 
 2. 在 **方案總管** 中，按兩下 [ **SampleConsoleApp** ] 節點開啟 [ **SampleConsoleApp** ] 專案檔，然後更新目標 framework 的 [標記] 和 [平臺設定]，如下列範例所示。
 
@@ -248,4 +248,4 @@ namespace winrt::SimpleMathComponent::implementation
 
 ## <a name="resources"></a>資源
 
-- [本逐步解說的完整程式碼範例](https://github.com/microsoft/CsWinRT/tree/master/Samples/Net5ProjectionSample)
+- [本逐步解說的完整程式碼範例](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample)
