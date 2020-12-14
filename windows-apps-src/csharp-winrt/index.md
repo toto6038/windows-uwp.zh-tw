@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 107c85b7e2562edb9995a6bfd76e47904750536b
-ms.sourcegitcommit: a15bc17aa0640722d761d0d33f878cb2a822e8ed
+ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
+ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96577090"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090682"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -96,9 +96,9 @@ C#/WinRT 會使用 [LoadLibrary 替代搜尋順序](/windows/win32/dlls/dynamic-
 
 | 錯誤或警告訊息 | 原因 |
 |--------------------------|--------|
-| System.IO.FileLoadException | 在未公開 Windows SDK 類型的程式庫中呼叫 API 時，就會發生此執行階段錯誤。 |
-| 警告 MSB3277：無法解決在不同的 Microsoft.Windows.SDK.NET 版本之間發現的衝突。 | 如果參考的程式庫在其 API 介面上公開 Windows SDK 類型，就會發生此組建錯誤。 |
-| [CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705)：組件 'AssemblyName1' 使用的 'TypeName' 版本高於所參考的組件 'AssemblyName2' | 如果參考並取用程式庫中公開的 Windows SDK 類型，就會發生此組建編譯器錯誤。 |
+| 警告 MSB3277：無法解決在不同的 WinRT.Runtime 或 Microsoft.Windows.SDK.NET 版本之間發現的衝突。 | 如果參考的程式庫在其 API 介面上公開 Windows SDK 類型，就會發生此組建警告。 |
+| [錯誤 CS1705](/dotnet/csharp/language-reference/compiler-messages/cs1705)：組件 'AssemblyName1' 使用的 'TypeName' 版本高於所參考的組件 'AssemblyName2' | 如果參考並取用程式庫中公開的 Windows SDK 類型，就會發生此組建編譯器錯誤。 |
+| System.IO.FileLoadException | 在未公開 Windows SDK 類型的程式庫中呼叫 API 時，可能會發生此執行階段錯誤。 |
 
 若要修正這些錯誤，請將您的 .NET SDK 更新為最新版本。 這麼做可確保應用程式所使用的執行階段和 Windows SDK 組件版本會與所有相依性相容。 .NET 5 SDK 的早期服務/功能更新可能會發生這些錯誤，因為執行階段修正可能需要更新組件版本。
 
