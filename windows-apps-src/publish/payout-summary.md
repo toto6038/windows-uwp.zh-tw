@@ -6,12 +6,12 @@ ms.date: 08/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
-ms.openlocfilehash: 11d83031702a642fa21a711edfdbaff69661c853
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 996f77db55d959fb1e328e4e722166cc466a8dbd
+ms.sourcegitcommit: d5ad11e2289d1d04319405a78dd02aaacf866e3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93035021"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97390356"
 ---
 # <a name="payout-reports"></a>支出報告
 
@@ -34,9 +34,9 @@ ms.locfileid: "93035021"
 
 ## <a name="transaction-history-page"></a>[交易記錄] 頁面
 
-此頁面會顯示所有的個人收益，包括日期、類型和每個項目的收益。 您可選取要檢視的時間間隔，也可透過註冊識別碼、計劃、付款識別碼、收益類型、控制桿和狀態等進行篩選。 其中提供目前會計年度 (7 月 1 日到 6 月 30 日) 及前兩個會計年度的資料。
+此頁面會顯示所有的個人收益，包括日期、類型和每個項目的收益。 您可以選取要查看的時段，也可以依註冊識別碼、程式、付款識別碼、收益類型、杠杆、估計的付款月份、調整和狀態進行篩選。 其中提供目前會計年度 (7 月 1 日到 6 月 30 日) 及前兩個會計年度的資料。
 
-若要查看收益的詳細資料，請選取位於頁面右側的向下箭號。 這將會顯示控制桿、收入金額和產品。 如果因為某些原因而無法使用這項資料，但您需要存取它，請聯絡 [支援](https://developer.microsoft.com/windows/support)人員。 如果收益是調整的結果，而不是交易，則不會顯示產品欄位。
+若要查看收益的詳細資料，請選取位於頁面右側的向下箭號。 這會顯示 [杠杆]、[收入金額]、[估計的付款月份] 和 [產品]。 如果因為某些原因而無法使用這項資料，但您需要存取它，請聯絡 [支援](https://developer.microsoft.com/windows/support)人員。 如果收益是調整的結果，而不是交易，則不會顯示產品欄位。 除非有調整，且已選取調整篩選，否則調整原因將不會顯示。
 
 若要匯出此頁面上的任何交易資料，請選取 [匯出]，然後依照 [匯出資料] 頁面上的指示進行。 從 [交易歷程記錄] 頁面匯出的檔案會顯示交易貨幣中的資料、交易貨幣和美元的收益，以及付費的付費值（以貨幣為單位）。
 
