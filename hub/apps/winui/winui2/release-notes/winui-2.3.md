@@ -3,16 +3,16 @@ title: WinUI 2.3 版本資訊
 description: WinUI 2.3 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: ad589b15b5481b5b7ff402fc2043afd71c139479
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: e3f6aca344fb86725e6addc7758110aca9eaf01b
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933063"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603845"
 ---
 # <a name="windows-ui-library-23"></a>Windows UI 程式庫 2.3
 
-WinUI 2.3 是 Windows UI 程式庫 (WinUI) 的最新官方版本。
+WinUI 2.3 是 Windows UI 程式庫 (WinUI) 2020 年 1 月的發行版本。
 
 WinUI 是開放原始碼專案，裝載於 GitHub 上的 [Windows UI 程式庫存放庫](https://aka.ms/winui)。 請在此存放庫中註冊所有錯誤報告、功能要求和社群程式碼參與。
 

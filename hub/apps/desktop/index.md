@@ -7,12 +7,12 @@ keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 34b860916b90d1adc8ae9e7ae8c8ac7950125ce7
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216741"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214265"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -20,10 +20,11 @@ ms.locfileid: "91216741"
 
 ## <a name="platforms-for-desktop-apps"></a>適用於傳統型應用程式的平台
 
-建立適用於 Windows PC 的傳統型應用程式有四個主要平台。 每個平台都提供一個應用程式模型，該模型定義應用程式的生命週期、完整 UI 架構、一組 UI 控制項 (可讓您建立像是 Word、Excel 和 Photoshop 的桌面應用程式)，以及用來使用 Windows 功能的一組全方位受控或原生 API 的存取權限。 如需這些平台的深入比較以及每個平台的其他資源，請參閱[選擇您的應用程式平台](choose-your-platform.md)。
+建立適用於 Windows PC 的傳統型應用程式有四個主要平台。 每個平台都提供一個應用程式模型，該模型定義應用程式的生命週期、完整 UI 架構、一組 UI 控制項 (可讓您建立像是 Word、Excel 和 Photoshop 的桌面應用程式)，以及用來使用 Windows 功能的一組全方位受控或原生 API 的存取權限。 
+
+如需這些平台的深入比較以及每個平台的其他資源，請參閱[選擇您的應用程式平台](choose-your-platform.md)。
 
 <br/>
-
 <table>
 <colgroup>
 <col width="20%" />
@@ -61,8 +62,17 @@ ms.locfileid: "91216741"
 </tbody>
 </table>
 
-> [!NOTE]
-> 在 Windows 10 上，所有這些平台都支援使用 Windows UI (WinUI) 程式庫來建立使用者介面。 若要深入了解適用於桌面應用程式的 WinUI，請參閱[本節](choose-your-platform.md#windows-ui-library)。
+### <a name="future-roadmap"></a>未來藍圖
+
+展望未來，我們正以 Windows UI (WinUI) 程式庫和 Project Reunion 來發展 Windows 應用程式開發平台。
+
+* **WinUI** 是適用於 Windows 10 應用程式的原生使用者體驗 (UX) 架構。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 UWP 控制項。 WinUI 已擴大範圍，從 WinUI 3 (目前為預覽版) 開始，現在已是適用於 UWP、.NET 和 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。 
+
+    如需詳細資訊，請參閱 [Windows UI (WinUI) 程式庫](../winui/index.md)。
+
+* **Project Reunion** (目前為預覽版) 是一組廣泛的新開發人員元件和工具的程式碼名稱，其代表的是 Windows 應用程式開發平台的新一代進化。 Project Reunion 提供了一組整合的 API 和工具，可供一組廣泛的目標 Windows 10 OS 版本上的任何應用程式以一致的方式進行使用。 Project Reunion 會透過一組可讓開發人員在這些平台上仰賴的通用 API 和工具，來與現有的 Windows 應用程式平台和架構 (例如 UWP 和原生 Win32 以及 .NET) 互補。 
+
+    如需詳細資訊，請參閱 [Project Reunion](../project-reunion/index.md)。
 
 ## <a name="update-existing-desktop-apps-for-windows-10"></a>更新現有適用於 Windows 10 的傳統型應用程式
 

@@ -130,6 +130,14 @@
                   href: winui/winui2/release-notes/winui-2.0.md
         - name: WinUI API 參考資料
           href: /windows/winui/api/
+    - name: 使用 Project Reunion 建置 Windows 應用程式 (發行前版本)
+      items:
+        - name: 概觀
+          href: project-reunion/index.md
+        - name: MRT 核心
+          href: project-reunion/mrtcore/mrtcore-overview.md
+        - name: DWriteCore
+          href: project-reunion/dwritecore.md
     - name: 針對 Windows 10X 進行開發
       items:
         - name: Windows 10X 開發人員常見問題

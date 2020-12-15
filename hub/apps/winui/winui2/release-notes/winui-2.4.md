@@ -3,16 +3,16 @@ title: WinUI 2.4 版本資訊
 description: WinUI 2.4 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
 ms.topic: reference
-ms.openlocfilehash: 5e2ff23b3b0ea63002ad54a367e82e81ee1cd542
-ms.sourcegitcommit: a30808f38583f7c88fb5f54cd7b7e0b604db9ba6
+ms.openlocfilehash: d6c6f029b63ea8ad32f1b0109ed983b74f2b4c4d
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91762922"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603695"
 ---
 # <a name="windows-ui-library-24"></a>Windows UI 程式庫 2.4
 
-WinUI 2.4 是 Windows UI 程式庫 (WinUI) 的最新官方版本。
+WinUI 2.4 是 Windows UI 程式庫 (WinUI) 2020 年 5 月的發行版本。
 
 WinUI 是開放原始碼專案，裝載於 GitHub 上的 [Windows UI 程式庫存放庫](https://aka.ms/winui)。 請在此存放庫中註冊所有錯誤報告、功能要求和社群程式碼參與。
 
@@ -83,17 +83,17 @@ TabView 控制項更新可讓您更充分掌控索引標籤的轉譯方式。
 
 ### <a name="hierarchical-navigation"></a>階層式瀏覽
 
-[NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4) 控制項現在支援階層式瀏覽，包括 Left、Top 和 LeftCompact 顯示模式。 階層式 NavigationView 適用於顯示頁面類別、識別具有相關子頁面的頁面，或是在有中樞樣式頁面連結到其他許多頁面的應用程式內使用。
+[NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true) 控制項現在支援階層式瀏覽，包括 Left、Top 和 LeftCompact 顯示模式。 階層式 NavigationView 適用於顯示頁面類別、識別具有相關子頁面的頁面，或是在有中樞樣式頁面連結到其他許多頁面的應用程式內使用。
 
 ![階層式 NavigationView 控制項](..\images\HierarchicalNavView.gif)<br>*階層式 NavigationView 控制項*
 
 [使用方針](/windows/uwp/design/controls-and-patterns/navigationview#hierarchical-navigation)
 
-[API 參考](/uwp/api/microsoft.ui.xaml.controls.navigationview)
+[API 參考](/uwp/api/microsoft.ui.xaml.controls.navigationview?view=winui-2.4&preserve-view=true)
 
 ## <a name="samples"></a>範例
 
-**XAML 控制項庫**提供上述每個 WinUI 2.4 功能的範例。
+**XAML 控制項庫** 提供上述每個 WinUI 2.4 功能的範例。
 
 如果您尚未安裝 XAML 控制項庫應用程式，請從 [Microsoft Store](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt) 取得。
 

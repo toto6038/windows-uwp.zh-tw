@@ -4,16 +4,16 @@ description: 如何安裝及使用 Windows UI 程式庫。
 ms.topic: reference
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: e3b0daae3f053daabe153f8a0058953ff76e3b90
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
+ms.openlocfilehash: 670254b8ca9ba8641e9adf1410aef918be73f705
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691566"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603835"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>開始使用 Windows UI 2.x 程式庫
 
-[WinUI 2.4](release-notes/winui-2.4.md) 是 WinUI 的最新穩定版本，生產環境中的應用程式應使用此版本。
+[WinUI 2.5](release-notes/winui-2.5.md) 是 WinUI 的最新穩定版本，生產環境中的應用程式應使用此版本。
 
 程式庫會以 NuGet 套件的形式來提供，可供新增至任何新的或現有的 Visual Studio 專案。
 
@@ -27,7 +27,7 @@ ms.locfileid: "94691566"
 2. 開啟現有專案，或使用 [Visual C#] -> [Windows] -> [通用] 底下的 [空白應用程式] 範本建立新專案 (也可以使用適用於您語言投影的適當範本來建立)。  
 
     > [!IMPORTANT]
-    > 若要使用 WinUI 2.4，您必須在專案屬性中設定 TargetPlatformVersion >= 10.0.18362.0 和 TargetPlatformMinVersion >= 10.0.15063.0。
+    > 若要使用 WinUI 2.5，您必須在專案屬性中設定 TargetPlatformVersion >= 10.0.18362.0 和 TargetPlatformMinVersion >= 10.0.15063.0。
 
 3. 在 [方案總管] 面板中，以滑鼠右鍵按一下專案名稱，然後選取 [管理 NuGet 套件]。 選取 [瀏覽] 索引標籤，然後搜尋 **Microsoft.UI.Xaml** 或 **WinUI**。 然後選擇您要使用的 [[Windows UI 程式庫 NuGet 套件]](nuget-packages.md)。
 **Microsoft.UI.Xaml** 套件包含適用於所有應用程式的 Fluent 控制項和功能。  

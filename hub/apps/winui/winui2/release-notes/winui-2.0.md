@@ -3,16 +3,16 @@ title: WinUI 2.0 版本資訊
 description: WinUI 2.0 的版本資訊。
 ms.date: 07/15/2020
 ms.topic: article
-ms.openlocfilehash: d6b362f78049cc6bb1ed6dfe341c2e5b083484a4
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
+ms.openlocfilehash: 0e6c1bed21619d9ab12f5699c6a446754576cc29
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933083"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603815"
 ---
 # <a name="windows-ui-library-20"></a>Windows UI 程式庫 2.0
 
-WinUI 2.0 是 Windows UI 程式庫的第一個公開發行版本。
+WinUI 2.0 是 Windows UI 程式庫的第一個公開發行版本 (於 2018 年 10 月發行)。
 
 WinUI 可讓您以最簡單的方式為 Windows 打造絕佳 Fluent Design 體驗。
 

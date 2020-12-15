@@ -6,16 +6,21 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 強式, 弱式, 參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2176fe1ee5893b7150b27edf4ea753ae368b41ee
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9ca3ae231a70b69f9f41bb1077b875dca798eb05
+ms.sourcegitcommit: e6a7749f9ddc0fe165b68506b0be465d4ca51ab6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154267"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935980"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的強式和弱式參考
 
 Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考 (以及不是這兩者的參考，例如隱含 this  指標) 的重要性以及之間的區別。 您將在本主題中了解，針對順利執行的可靠系統和針對會意外當機的系統，正確管理這些參考的方式可能會有差異。 藉由提供可深入支援語言投影的協助程式函式，[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 可讓您輕鬆且正確地建置更複雜的系統。
+
+> [!NOTE]
+> 只有少數例外狀況，針對您在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 中使用或撰寫的 Windows 執行階段類型，預設會開啟弱式參考支援。 **Windows.UI.Composition** 和 **Windows.Devices.Input.PenDevice** 都是例外狀況的範例，&mdash;也就是弱式參考支援「不會」針對這些類型開啟的命名空間。 另請參閱[如果您的自動撤銷委派無法註冊](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register)。
+> 
+> 如果您要撰寫類型，請參閱本主題中的 [C++/WinRT 中的弱式參考](#weak-references-in-cwinrt)一節。
 
 ## <a name="safely-accessing-the-this-pointer-in-a-class-member-coroutine"></a>安全地存取類別成員協同程式中的 this  指標
 
@@ -81,7 +86,7 @@ int main()
 
     auto myclass_instance{ winrt::make_self<MyClass>() };
     auto async{ myclass_instance->RetrieveValueAsync() };
-    myclass_instance = nullptr; // Simulate the class instance going out of scope.
+    myclass_instance = nullptr; // Simulate the class instance going out of scope.
 
     winrt::hstring result{ async.get() }; // Behavior is now undefined; crashing is likely.
     std::wcout << result.c_str() << std::endl;
@@ -108,7 +113,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 C++/WinRT 類別會直接或間接從 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 範本衍生。 因此，C++/WinRT 物件可以呼叫其受保護的 [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 成員函式，以擷取其 this 指標的強式參考。 請注意，您不需要在上述程式碼範例中確實使用 `strong_this` 變數，只要呼叫 **get_strong** 來累加 C++/WinRT 物件的參考計數，並讓其隱含的 this  指標保持有效即可。
 
 > [!IMPORTANT]
-> 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱[使用 C++/WinRT 撰寫 API](./author-apis.md)。
+> 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱 [使用 C++/WinRT 撰寫 API](./author-apis.md)。
 
 此方法解決了我們先前在步驟 4 時遇到的問題。 即使指向類別執行個體的所有其他參考都消失，協同程式已有保證其相依性穩定的預防措施。
 
@@ -256,7 +261,7 @@ event_source.Event([this](auto&& ...)
 解決方案是擷取強式參考 (或者，如我們所見，若弱式參考更為適當，則擷取之)。 強式參考「會」  累加參考計數，並且「會」  讓目前物件存留下來。 您只需宣告擷取變數 (在此範例中稱為 `strong_this`)，並藉由對 [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) 發出呼叫來將其初始化，此呼叫會擷取我們的 this 指標的強式參考。
 
 > [!IMPORTANT]
-> 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱[使用 C++/WinRT 撰寫 API](./author-apis.md)。
+> 由於 **get_strong** 是 **winrt::implements** 結構範本的成員函式，因此您只能從直接或間接衍生自 **winrt::implements** 的類別 (例如 C++/WinRT 類別) 中呼叫該函式。 如需有關衍生自 **winrt::implements** 的資訊和範例，請參閱 [使用 C++/WinRT 撰寫 API](./author-apis.md)。
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -361,7 +366,7 @@ Lamba 擷取子句中，已建立暫存變數，代表 this  的弱式參考。 
 
 在上述內容中，我們已看到正在使用的弱式參考。 一般情況下，此方式適合用來中斷循環參考。 例如，XAML 型 UI 架構的原生實作需要 C++/WinRT 中的弱式參考機制才能處理循環參考&mdash;因為架構的歷史設計&mdash;。 不過，除了 XAML，您可能不需要使用弱式參考 (請注意任何在本質上是 XAML 特有內容的項目)。 您應該多以這種方法來設計自己的 C++/WinRT API，以避免循環參考和弱式參考的需求。 
 
-針對您宣告的任何指定類型，當弱式參考是必要的，是否無法馬上看得出來是 C++/WinRT。 因此，C++/WinRT 自動在結構範本[**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 上提供弱式參考支援，您的 C++/WinRT 類型直接或間接從其中衍生。 它是使用付費，其中您不需要支付任何項目除非確實針對 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) 查詢您的物件。 且您可以明確選擇[退出該支援](#opting-out-of-weak-reference-support)。
+針對您宣告的任何指定類型，當弱式參考是必要的，是否無法馬上看得出來是 C++/WinRT。 因此，C++/WinRT 自動在結構範本 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 上提供弱式參考支援，您的 C++/WinRT 類型直接或間接從其中衍生。 它是使用付費，其中您不需要支付任何項目除非確實針對 [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) 查詢您的物件。 且您可以明確選擇[退出該支援](#opting-out-of-weak-reference-support)。
 
 ### <a name="code-examples"></a>程式碼範例
 [**winrt::weak_ref**](/uwp/cpp-ref-for-winrt/weak-ref)結構範本是取得類別執行個體的弱式參考選項之一。

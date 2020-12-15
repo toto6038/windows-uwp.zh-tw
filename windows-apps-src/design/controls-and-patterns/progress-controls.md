@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ccdea35b8923c756489f6b671d394fc516a960c
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
+ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749744"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96603881"
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -61,11 +61,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 ## <a name="types-of-progress"></a>進度的類型
 
-有兩種控制項會向使用者顯示操作正在進行中：ProgressBar 或 ProgressRing。
+有兩種控制項會向使用者顯示操作正在進行中：ProgressBar 或 ProgressRing。 ProgressBar 和 ProgressRing 都有兩個狀態，可傳達使用者是否可與應用程式互動。 
 
--   ProgressBar 的「確定」  (determinate) 狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，但其進度不應封鎖使用者與應用程式的互動。
--   ProgressBar 的「不確定」  (indeterminate) 狀態會顯示操作正在進行中，它不會封鎖使用者與 App 的互動，且無法得知完成的時間。
--   ProgressRing 只有「不確定」  (indeterminate) 狀態，且應用於直到作業完成前，任何進一步使用者互動都會被封鎖的情況。
+-   ProgressBar 和 ProgressRing 的「確定」狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，但其進度不應封鎖使用者與應用程式的互動。
+-   ProgressBar 的「不確定」 (indeterminate) 狀態會顯示作業正在進行中，其不會封鎖使用者與應用程式的互動，且無法得知完成的時間。
+-   ProgressRing 的「不確定」 (indeterminate) 狀態會顯示作業正在進行中，其會封鎖使用者與應用程式的互動，且無法得知完成的時間。
+
 
 此外，進度控制項是唯讀的，無法互動。 表示使用者無法叫用或直接使用這些控制項。
 
@@ -73,7 +74,8 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 |---|---|
 | 不確定的 ProgressBar | ![ProgressBar 不確定](images/progressbar-indeterminate.gif) |
 | 確定的 ProgressBar | ![ProgressBar 確定](images/progressbar-determinate.png)|
-| 不確定的 ProgressRing | ![ProgressRing 狀態](images/progressring-indeterminate.gif)|
+| 不確定的 ProgressRing | ![不確定 ProgressRing 狀態](images/progressring-indeterminate.gif)|
+| 確定 ProgressRing | ![確定 ProgressRing 狀態](images/progress_ring.jpg)|
 
 
 ## <a name="examples"></a>範例
@@ -117,11 +119,15 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 -   **該作業是否會導致使用者必須等候才能繼續？**
 
-    如果作業完成之前會需要所有與 App 的互動先等候，則 ProgressRing 是較佳的選項。 ProgressRing 控制項是用於強制回應的互動，表示直到 ProgressRing 消失之前，使用者都會被封鎖。
+    如果作業完成之前會需要所有 (或大部分) 與應用程式的互動先等候，則不確定 ProgressRing 是較佳的選項。
+
+    -   **控制項是否有已定義的持續時間或可預測的結束時間？**
+
+    如果您希望視覺效果是環形而非長條形，請使用確定 ProgressRing，並據以更新百分比或值。 
 
 -   **應用程式是否在等候使用者完成工作？**
 
-    如果是，請使用 ProgressRing，因為它們專門用來為使用者指示未知的等候時間。
+    如果是，請使用不確定 ProgressRing，因為其專門用來為使用者指示未知的等候時間。
 
 -   **關鍵字**
 
@@ -169,6 +175,12 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 ![「不確定」的 ProgressRing 範例](images/PR_IndeterminateExample.png)
 
 當使用者與應用程式之間任何進一步的互動停止時，或應用程式正在等候使用者輸入以繼續時，會使用不確定的 ProgressRing。 上方的「正在登入...」範例是絕佳的 ProgressRing 案例，使用者必須等到簽署完成後，才能繼續使用應用程式。
+
+**ProgressRing - 確定**
+
+![確定 ProgressRing 範例](images/progress_ring_determinate_example.png)
+
+當作業的持續時間是已知且希望是環形視覺效果 (如正在安裝、下載、設定等時候)，則確定 ProgressRing 是最佳的選項。
 
 ## <a name="customizing-a-progress-control"></a>自訂進度控制項
 
