@@ -1,5 +1,5 @@
 ---
-description: 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
+description: 瞭解如何使用徽章通知來傳達您的應用程式特定的摘要或狀態資訊。
 title: Windows 應用程式的徽章通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 64d5595bcc315b24228401ff23a1a59d29282eae
-ms.sourcegitcommit: cbdfac0e2d8bead6c225e815e7d6dffe1f5ef864
+ms.openlocfilehash: a1edb80db6858c7b8ccbbf443df2a0c01d3ede5d
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344962"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598879"
 ---
 # <a name="badge-notifications-for-windows-apps"></a>Windows 應用程式的徽章通知
 
@@ -50,7 +50,7 @@ activity | :::image type="icon" source="images/badges/badge-activity.png"::: | `
 可供使用 | :::image type="icon" source="images/badges/badge-available.png"::: | `<badge value="available"/>`
 離開 (away) | :::image type="icon" source="images/badges/badge-away.png"::: | `<badge value="away"/>`
 忙碌 (busy) | :::image type="icon" source="images/badges/badge-busy.png"::: | `<badge value="busy"/>`
-錯誤 | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
+error | :::image type="icon" source="images/badges/badge-error.png"::: | `<badge value="error"/>`
 新訊息 (newMessage) | :::image type="icon" source="images/badges/badge-newMessage.png"::: | `<badge value="newMessage"/>`
 暫停 (paused) | :::image type="icon" source="images/badges/badge-paused.png"::: | `<badge value="paused"/>`
 正在播放 (playing) | :::image type="icon" source="images/badges/badge-playing.png"::: | `<badge value="playing"/>`
