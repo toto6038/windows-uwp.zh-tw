@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5f06d5e804d41b1751c72af4d07224fa346323b2
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 3660417f6e88268dd2ad814ce4dba62354029828
+ms.sourcegitcommit: 05f9bb0c563e12daaacf7732d46f1c7f578dbe6a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860105"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97529280"
 ---
 # <a name="typography-in-windows-apps"></a>Windows 應用程式中的印刷樣式
 
@@ -123,7 +123,7 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 :::row:::
     :::column:::
-![[綠色長條的第四個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+![綠色長條的第四個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 每行維持 50–60 個字母以利閱讀。
     :::column-end:::
     :::column:::
@@ -143,7 +143,7 @@ Windows 字體坡形可在頁面的類型之間建立重要關係，協助使用
 
 :::row:::
     :::column:::
-![[綠色長條的第五個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
+![綠色長條的第五個螢幕擷取畫面，內有綠色核取記號和 Do 一字。](images/do.svg)
 裁剪文字，如果啟用多行則換行。
     :::column-end:::
     :::column:::
