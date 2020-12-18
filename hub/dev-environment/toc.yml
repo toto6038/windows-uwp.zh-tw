@@ -106,7 +106,33 @@
                 - name: 將您的資訊清單提交至存放庫
                   href: ../package-manager/package/repository.md
         - name: PowerToys
-          href: 'https://github.com/microsoft/PowerToys'
+          items:
+            - name: 概觀
+              items:
+                - name: 關於 PowerToys
+                  href: ../powertoys/index.md
+                - name: 安裝 PowerToys
+                  href: ../powertoys/install.md
+                - name: 在系統管理員模式中執行
+                  href: ../powertoys/administrator.md
+            - name: 色彩選擇器
+              href: ../powertoys/color-picker.md
+            - name: FancyZones
+              href: ../powertoys/fancyzones.md
+            - name: 檔案總管
+              href: ../powertoys/file-explorer.md
+            - name: 圖像大小調整器
+              href: ../powertoys/image-resizer.md
+            - name: 鍵盤管理器
+              href: ../powertoys/keyboard-manager.md
+            - name: PowerRename
+              href: ../powertoys/powerrename.md
+            - name: PowerToys Run
+              href: ../powertoys/run.md
+            - name: 快捷鍵指南
+              href: ../powertoys/shortcut-guide.md
+            - name: 視訊會議靜音
+              href: ../powertoys/video-conference-mute.md
         - name: VS 程式碼
           href: 'https://code.visualstudio.com/docs'
         - name: Visual Studio

@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 04357cc43ed227b109d4aab20c509077261360ee
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 051d7a31afac09a6372f527355efcd6b925cb71f
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636598"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598859"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 

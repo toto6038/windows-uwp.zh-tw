@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: fcad3bfeb5c31a6b3af85e5fd9a0ea72f11d65da
-ms.sourcegitcommit: caf4dba6bdfc3c6d9685d10aa9924b170b00bed8
+ms.openlocfilehash: ccd5efd5270ed12d17992f53b3c9ee50feddec4b
+ms.sourcegitcommit: 6b64741cba279ac17f23f07baaf4a92a2696e8e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93049509"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97502878"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項
 
@@ -24,7 +24,7 @@ ms.locfileid: "93049509"
 
 ## <a name="create-a-desktop-application-project"></a>建立傳統型應用程式專案
 
-1. 在已安裝 Windows 10 1903 版 SDK (10.0.18362 版) 或更新版本的 Visual Studio 2019 中，建立新的 **Windows 傳統型應用程式** 專案，並將其命名為 **MyDesktopWin32App** 。 此專案類型可在 **C++** 、 **Windows** 和 **傳統型** 專案篩選中取得。
+1. 在已安裝 Windows 10 1903 版 SDK (10.0.18362 版) 或更新版本的 Visual Studio 2019 中，建立新的 **Windows 傳統型應用程式** 專案，並將其命名為 **MyDesktopWin32App**。 此專案類型可在 **C++** 、**Windows** 和 **傳統型** 專案篩選中取得。
 
 2. 在 [方案總管]  中，以滑鼠右鍵按一下解決方案節點、按一下 [重定解決方案目標]  、選取 [10.0.18362.0]  或更新的 SDK 版本，然後按一下 [確定]  。
 
@@ -40,7 +40,7 @@ ms.locfileid: "93049509"
 
 5. 在您的[應用程式資訊清單](/windows/desktop/SbsCs/application-manifests) \(英文\) 中設定 `maxVersionTested` 值，以指定您的應用程式與 Windows 10 1903 版或更新版本相容。
 
-    1. 如果您的專案中還沒有應用程式資訊清單，請將新的 XML 檔案新增至您的專案並命名為 **app.manifest** 。
+    1. 如果您的專案中還沒有應用程式資訊清單，請將新的 XML 檔案新增至您的專案並命名為 **app.manifest**。
     2. 在您的應用程式資訊清單中，包含下列範例所示的 **compatibility** 元素及子元素。 以您要設為目標的 Windows 10 版本號碼 (必須是 10.0.18362 或更新版本) 來取代 **maxVersionTested** 元素的 **Id** 屬性。
 
         ```xml
@@ -273,11 +273,9 @@ ms.locfileid: "93049509"
     > [!NOTE]
     > 您可能會看到數個建置警告，包括 `warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'` 和 `manifest authoring warning 81010002: Unrecognized Element "maxversiontested" in namespace "urn:schemas-microsoft-com:compatibility.v1"`。 這些警告是目前工具和 NuGet 套件的已知問題，可加以忽略。
 
-如需示範如何使用 XAML 裝載 API 來裝載標準 WinRT XAML 控制項的完整範例，請參閱下列程式碼檔案：
+如需示範如何使用 XAML 裝載 API 來裝載 WinRT XAML 控制項的完整範例，請參閱下列程式碼檔案：
 
-* **C++ Win32：**
-  * 請參閱 [HelloWindowsDesktop.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/CppWinRT_Basic_Win32App/Win32DesktopApp/HelloWindowsDesktop.cpp) 檔案。
-  * 請參閱 [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp) 檔案。
+* **C++ Win32：** 請參閱 [XAML Islands 程式碼範例存放庫](https://github.com/microsoft/Xaml-Islands-Samples)中的 [XamlBridge.cpp](https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/Contoso/App/XamlBridge.cpp) 檔案。
 * **WPF：** 請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs) 和 [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs) 檔案。  
 * **Windows Forms：** 請參閱 Windows 社群工具組中的 [WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs) 和 [WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs) 檔案。
 

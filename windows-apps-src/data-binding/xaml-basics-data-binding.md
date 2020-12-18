@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3435718794cb22745e1438ef634db29076ed33c1
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: f84ba4e77369730ef9883ab7f14b52751182b773
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636658"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598829"
 ---
 # <a name="tutorial-create-data-bindings"></a>教學課程：建立資料繫結
 
@@ -153,7 +153,7 @@ PhotoLab 範例應用程式有兩個頁面。 「主頁面」  會顯示影像�
 
 ## <a name="part-2-use-binding-to-connect-the-gallery-ui-to-the-images"></a>第 2 部分：使用繫結將圖庫 UI 連接至影像
 
-這裡會在頁面 XAML 中建立一次性繫結，將圖庫檢視連接至影像集合，並取代在程式碼後置中執行此作業的現有程序性程式碼。 此外，還會建立**刪除**按鈕，用來查看圖庫檢視在影像自集合中移除時的變化情況。 在此同時，您將會了解如何將事件繫結至事件處理常式，以取得比傳統事件處理常式所能提供的還要大的彈性。
+這裡會在頁面 XAML 中建立一次性繫結，將圖庫檢視連接至影像集合，並取代在程式碼後置中執行此作業的現有程序性程式碼。 此外，還會建立 **刪除** 按鈕，用來查看圖庫檢視在影像自集合中移除時的變化情況。 在此同時，您將會了解如何將事件繫結至事件處理常式，以取得比傳統事件處理常式所能提供的還要大的彈性。
 
 目前為止所探討的繫結都是在資料範本之內進行，並參考由 `x:DataType` 值所指示的類別的屬性。 頁面中 XAML 的其餘部分又會是怎樣呢？
 

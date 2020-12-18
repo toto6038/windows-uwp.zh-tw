@@ -4,12 +4,12 @@ description: 建立描述應用程式的封裝資訊清單之後，您就可以�
 ms.date: 04/29/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ef94a77d5012adcedf31ae1ecfddc036bcc3a059
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: fef6cc96604639f84ee2c81e2de4fb28442e3f8d
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166502"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598799"
 ---
 # <a name="submit-your-manifest-to-the-repository"></a>將您的資訊清單提交至存放庫
 
@@ -96,7 +96,7 @@ winget validate \<manifest-file>
 
 ### <a name="step-5-create-a-pull-request"></a>步驟 5：建立提取要求
 
-推送變更之後，請返回 [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) 並建立提取要求，以將您的分叉 (fork) 或分支 (branch) 合併至**主要**分支。
+推送變更之後，請返回 [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) 並建立提取要求，以將您的分叉 (fork) 或分支 (branch) 合併至主要分支。
 
 ![提取要求索引標籤的圖片](images\pull-request.png)
 

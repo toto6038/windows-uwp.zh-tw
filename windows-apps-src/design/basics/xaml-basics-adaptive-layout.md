@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f71eb48264570df384fce672b1ca895d98e1109
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 6919a2dc15aac7c5e589f2c0355f9c1cc13bfc7a
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636588"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598809"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -197,7 +197,7 @@ ms.locfileid: "91636588"
 
             <!-- Large window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource LargeWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -207,7 +207,7 @@ ms.locfileid: "91636588"
 
             <!-- Medium window trigger -->
             <VisualState.StateTriggers>
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>
@@ -217,7 +217,7 @@ ms.locfileid: "91636588"
 
             <!-- Small window trigger -->
             <VisualState.StateTriggers >
-                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowSnapPoint}"/>
+                <AdaptiveTrigger MinWindowWidth="{StaticResource MinWindowBreakpoint}"/>
             </VisualState.StateTriggers>
 
         </VisualState>

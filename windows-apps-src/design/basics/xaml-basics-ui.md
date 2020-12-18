@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 942b2ff4af0fa093a0b343c37074185970f8209d
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
+ms.openlocfilehash: c1754edd6901b5de778b40294078b16c03dc0dda
+ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829549"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "97598819"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
 
@@ -142,7 +142,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. 在 [屬性] 面板的搜尋方塊中輸入 **textwrapping**，即可輕鬆找到 `TextWrapping` 屬性。 選取 `TextWrapping` 屬性的_屬性標記_以開啟其功能表。 (屬性標記是小方塊符號，位於每個屬性值右邊。 屬性標記是黑色的，表示屬性設定為非預設值)。在 [屬性] 功能表上，選取 [重設] 來重設 `TextWrapping` 屬性。
+9. 在 [屬性] 面板的搜尋方塊中輸入 **textwrapping**，即可輕鬆找到 `TextWrapping` 屬性。 選取 `TextWrapping` 屬性的 _屬性標記_ 以開啟其功能表。 (屬性標記是小方塊符號，位於每個屬性值右邊。 屬性標記是黑色的，表示屬性設定為非預設值)。在 [屬性] 功能表上，選取 [重設] 來重設 `TextWrapping` 屬性。
 
     Visual Studio 會新增此屬性，但這已經在您套用的樣式中設定，因此這裡不需要該屬性。
 

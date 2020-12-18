@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: cdd21279e987f329024c53434e47777e427b95ab
-ms.sourcegitcommit: b69edc6d73370923f31df61c7e42b53de6c928ee
+ms.openlocfilehash: 7ed2d4100bc827dbc0db93897f534b77e1292b7e
+ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94870904"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "97214349"
 ---
 # <a name="choose-your-windows-app-platform"></a>選擇您的 Windows 應用程式平台
 
@@ -68,7 +68,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 * [Windows Form 使用者入門](/dotnet/framework/winforms/getting-started-with-windows-forms)
 * [專案範本](visual-studio-templates.md#net-templates)
 * [建立您的第一個 Windows Forms 應用程式](/dotnet/framework/winforms/creating-a-new-windows-form)
-* [教學課程：建立圖片檢視器](/visualstudio/ide/tutorial-1-create-a-picture-viewer?view=vs-2019)
+* [教學課程：建立圖片檢視器](/visualstudio/ide/tutorial-1-create-a-picture-viewer)
 * [API 參照 (.NET)](/dotnet/api/index)
 * [增強 Windows Forms 應用程式](/dotnet/framework/winforms/advanced/)
 
@@ -103,6 +103,14 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 * 您可以將現有的 WPF、Windows Forms 和 C++/Win32 應用程式更新為使用 [XAML Islands](modernize/xaml-islands.md)，以在應用程式中裝載 WinUI 2.x 控制項。
 * 從 [WinUi 3.0](../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../winui/winui3/get-started-winui3-for-desktop.md)。
 
+## <a name="project-reunion-preview"></a>Project Reunion (預覽)
+
+Project Reunion 是一組廣泛的新開發人員元件和工具的程式碼名稱，其代表的是 Windows 應用程式開發平台的新一代進化。 Project Reunion 提供了一組整合的 API 和工具，可供一組廣泛的目標 Windows 10 OS 版本上的任何應用程式以一致的方式進行使用。 Project Reunion 會透過一組可讓開發人員在這些平台上仰賴的通用 API 和工具，來與現有的 Windows 應用程式平台和架構 (例如 UWP 和原生 Win32 以及 .NET) 互補。
+
+Project Reunion 目前提供早期開發人員預覽。 建議您在開發環境中試用此版本。 但請注意，Project Reunion 的現行版本與最終版本之間，會在許多方面有所變化。 在生產環境中使用的應用程式不支援 Project Reunion。
+
+如需詳細資訊，請參閱 [Project Reunion](../project-reunion/index.md) 以及我們的 [GitHub 存放庫](https://github.com/microsoft/ProjectReunion/)。
+
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比較：UWP、WPF 和 Windows Forms
 
 下表詳細比較 Windows Forms、WPF 和 UWP 的各種特性。
@@ -133,4 +141,4 @@ PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 1
 
 ### <a name="uno-platform"></a>Uno 平台
 
-Uno 平台可讓 Windows UWP 型的程式碼 (C# 和 XAML) 在 iOS、Android、macOS、Linux 和 WebAssembly 上執行。 其會針對 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) 中的 UWP 提供完整的 API 定義，以及部分 UWP API 的實作 (例如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents?view=winrt-19041))，讓 UWP 應用程式可以在這些平台上執行。 如需詳細資訊，請參閱 [Uno 平台文件](https://platform.uno/docs/articles/intro.html)。
+Uno 平台可讓 Windows UWP 型的程式碼 (C# 和 XAML) 在 iOS、Android、macOS、Linux 和 WebAssembly 上執行。 其會針對 [Windows 10 2004 (19041)](/windows/uwp/whats-new/windows-10-build-19041) 中的 UWP 提供完整的 API 定義，以及部分 UWP API 的實作 (例如 [Windows.UI.Xaml](/uwp/api/windows.ui.xaml.documents))，讓 UWP 應用程式可以在這些平台上執行。 如需詳細資訊，請參閱 [Uno 平台文件](https://platform.uno/docs/articles/intro.html)。
