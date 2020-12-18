@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ad25d4ba5d8dfe638d3de3e210f69ea204c48a14
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 2f550fc90a8035d2c7e355d70b7ddd2b9a9e17fc
+ms.sourcegitcommit: f83f2f582f8c7c3447ec62df40a8f0724f7f3bbc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220011"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97675789"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -42,6 +42,7 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 |[ms-tonepicker:](#tone-picker-uri-scheme) | 音調選擇器 |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
 |[msnweather:](#weather-app-uri-scheme) | 氣象應用程式 |
+|[microsoft edge：](#microsoft-edge-uri-scheme) | Microsoft Edge 瀏覽器 |
 
 <br>
 例如，下列 URI 會開啟預設瀏覽器，並顯示 Bing 網站。
@@ -119,7 +120,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 呼叫 [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) 的來源 app 可要求在 URI 啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理 URI 的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 您也可以使用 **DesiredRemainingView**，指示來源 app 在 URI 啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-**注意**   當 Windows 判斷來源應用程式的最終視窗大小時，Windows 會考慮許多不同的因素，例如，來源應用程式的喜好設定、畫面上的應用程式數目、螢幕方向等等。 設定 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源應用程式的特定視窗行為。
+**注意** Windows 在判斷來源應用程式的最終視窗大小時，會考量多種不同因素，例如來源應用程式的喜好設定、螢幕上的應用程式數目、螢幕方向等。 設定 [**DesiredRemainingView**](/uwp/api/windows.system.launcheroptions.desiredremainingview) 並無法保證來源應用程式的特定視窗行為。
 
 ```cs
 // Set the desired remaining view.
@@ -161,7 +162,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="maps-app-uri-schemes"></a>地圖 App URI 配置
 
-使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** URI 配置，針對特定的地圖、方向和搜尋結果[啟動 Windows 地圖應用程式](launch-maps-app.md)。 例如，下列 URI 會開啟 Windows 地圖 app，並顯示以紐約市為中心的地圖。
+使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** URI 配置，針對特定的地圖、方向和搜尋結果 [啟動 Windows 地圖應用程式](launch-maps-app.md)。 例如，下列 URI 會開啟 Windows 地圖 app，並顯示以紐約市為中心的地圖。
 
 `bingmaps:?cp=40.726966~-74.006076`
 
@@ -215,14 +216,14 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 配置 |結果 |
 |------------|--------|
-| ms-photos:viewer?fileName={filename} | 啟動「相片」應用程式檢視指定的影像，其中 {filename} 是完整路徑名稱。 例如： `c:\users\userName\Pictures\ImageToView.jpg` |
+| ms-photos:viewer?fileName={filename} | 啟動「相片」應用程式檢視指定的影像，其中 {filename} 是完整路徑名稱。 例如：`c:\users\userName\Pictures\ImageToView.jpg` |
 | ms-photos:videoedit?InputToken={input token} | 以影片編輯模式為由檔案語彙基元代表的檔案啟動「相片」應用程式。 **InputToken** 為必要。 使用 [SharedStorageAccessManager](/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager) 取得檔案的語彙基元。 |
-| ms-photos:videoedit?Action={action} | 參數，指出要在其中開啟相片應用程式的影片編輯模式，其中 {action} 是下列其中一個： **SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、 **筆墨**。 需要**採取動作**。 |
+| ms-photos:videoedit?Action={action} | 參數，指出要在其中開啟相片應用程式的影片編輯模式，其中 {action} 是下列其中一個： **SlowMotion**、 **FrameExtraction**、 **Trim**、 **View**、 **筆墨**。 需要 **採取動作**。 |
 | ms-photos:videoedit?StartTime={timespan} | 選擇性參數，可指定開始播放影片的位置。 `{timespan}` 的格式必須是 `"hh:mm:ss.ffff"` 。 如果未指定，則預設為 `00:00:00.0000` |
 
 ### <a name="settings-app-uri-scheme"></a>設定應用程式 URI 配置
 
-使用 **ms-settings:** URI 配置[啟動 Windows 設定應用程式](launch-settings-app.md)。 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 例如，下列 URI 會開啟設定 app，並顯示相機隱私權設定。
+使用 **ms-settings:** URI 配置 [啟動 Windows 設定應用程式](launch-settings-app.md)。 啟動設定 app 是撰寫隱私權感知 app 的重要部分。 如果您的 app 無法存取敏感資源，建議讓使用者能夠方便地連結到該資源的隱私權設定。 例如，下列 URI 會開啟設定 app，並顯示相機隱私權設定。
 
 `ms-settings:privacy-webcam`
 
@@ -232,7 +233,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 ### <a name="store-app-uri-scheme"></a>Store 應用程式 URI 配置
 
-使用 **ms-windows-store:** URI 配置[啟動 UWP 應用程式](launch-store-app.md)。 開啟產品詳細資料頁面、產品檢閱頁面及搜尋頁面等等。例如，下列 URI 會開啟 UWP 應用程式，並啟動 \[Microsoft Store\] 的首頁。
+使用 **ms-windows-store:** URI 配置 [啟動 UWP 應用程式](launch-store-app.md)。 開啟產品詳細資料頁面、產品檢閱頁面及搜尋頁面等等。例如，下列 URI 會開啟 UWP 應用程式，並啟動 \[Microsoft Store\] 的首頁。
 
 `ms-windows-store://home/`
 
@@ -245,3 +246,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 | URI 配置 | 結果 |
 |------------|---------|
 | msnweather：//forecast？ la = \[ 緯度 \]&lo = \[ 經度\] | 根據位置地理座標，在 [預測] 頁面中啟動氣象應用程式。<br>`latitude` 指的是位置的緯度。<br> `longitude` 指的是位置的經度。<br> |
+
+### <a name="microsoft-edge-uri-scheme"></a>Microsoft Edge URI 配置
+
+使用 **microsoft edge：** URI 配置來啟動 Microsoft Edge 瀏覽器至指定的 URL。
+
+| URI 配置 | 結果 |
+|------------|---------|
+| microsoft edge： https://example.com/ ] | 開啟 Microsoft Edge 瀏覽器並流覽至 https://example.com/<br> |
