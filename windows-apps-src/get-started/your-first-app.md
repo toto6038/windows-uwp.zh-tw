@@ -6,12 +6,12 @@ ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: fe802fca1b17b49c11bf74b54f74d3b3107e6a9c
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: d24c5952d7432c123ff6f4d3e9b93593d08ac777
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339766"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860277"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個應用程式
 
@@ -49,8 +49,8 @@ ms.locfileid: "94339766"
 
 在這裡深入了解 C++。
 
-* [適用於 UWP 應用程式的 C++](/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
-* [適用於傳統型應用程式的 C++](/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
+* [適用於 UWP 應用程式的 C++](/cpp/cppcx/universal-windows-apps-cpp)
+* [適用於傳統型應用程式的 C++](/cpp/windows/desktop-applications-visual-cpp)
 
 ## <a name="next-steps"></a>接下來的步驟
 

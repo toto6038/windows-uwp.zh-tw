@@ -3,12 +3,12 @@ title: WinUI 2.5 版本資訊
 description: WinUI 2.5 的版本資訊，包括新功能和錯誤修正。
 ms.date: 12/01/2020
 ms.topic: reference
-ms.openlocfilehash: d1b7873e874ff38037fbf766ef16b1e924edec16
-ms.sourcegitcommit: 03308873eafd0f768e1c518f4d1cc4e4fe0b70b7
+ms.openlocfilehash: 1fe64ea547b3e8966ea0ec085e77225a3a1895df
+ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96606025"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97657665"
 ---
 # <a name="windows-ui-library-25"></a>Windows UI 程式庫 2.5
 
@@ -26,7 +26,7 @@ NuGet 套件下載：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsof
 
 ### <a name="infobar"></a>資訊列
 
-[資訊列](/uwp/design/controls-and-patterns/infobar)控制項是用來將全應用程式狀態訊息顯示給高度可見且非侵入的使用者。 控制項包含嚴重性屬性，可指出所顯示的訊息類型，以及指定您自己的動作或超連結按鈕的選項。 當資訊列與其他 UI 內容內嵌時，您也可以指定控制項是否一律可見，或使用者是否可加以關閉。
+[資訊列](/windows/uwp/design/controls-and-patterns/infobar)控制項是用來將全應用程式狀態訊息顯示給高度可見且非侵入的使用者。 控制項包含嚴重性屬性，可指出所顯示的訊息類型，以及指定您自己的動作或超連結按鈕的選項。 當資訊列與其他 UI 內容內嵌時，您也可以指定控制項是否一律可見，或使用者是否可加以關閉。
 
 這個範例會顯示具有關閉按鈕和訊息的預設狀態資訊列。
 
@@ -42,7 +42,7 @@ NuGet 套件下載：[Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsof
 
 ### <a name="determinate-progressring"></a>確定 ProgressRing
 
-[ProgressRing](/uwp/design/controls-and-patterns/progress-controls) 的「確定」狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，以及用於作業進度不應封鎖使用者與 App 的互動。
+[ProgressRing](/windows/uwp/design/controls-and-patterns/progress-controls) 的「確定」狀態會顯示工作已完成的百分比。 此控制項應用於已知持續時間的作業，以及用於作業進度不應封鎖使用者與 App 的互動。
 
 下列動畫影像示範確定 ProgressRing 控制項。
 

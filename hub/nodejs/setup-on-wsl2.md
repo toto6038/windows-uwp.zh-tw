@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 Node, wsl 上的 Node, linux 或 windows 上的 Node, 在 windows 上安裝 Node, nodejs 與 vs code, 在 windows 上使用 Node 進行開發, 在 windows 上使用 nodejs 進行開發, 在 WSL 上安裝 Node, Windows 子系統 Linux 版上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 07/28/2020
-ms.openlocfilehash: 4fa1a53e3d0e5ba22cd3a261b3e2672012330bca
-ms.sourcegitcommit: 00349b7b7cad3d161485ec06fee4e4109452c36a
+ms.openlocfilehash: 4e0477c91470d69f9ec5fd726079a1164e2cf276
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814649"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880531"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 設定您的 Node.js 開發環境
 
@@ -63,7 +63,7 @@ ms.locfileid: "91814649"
     ![未顯示任何 Node 版本的 NVM 清單](../images/nvm-no-node.png)
 
 6. 安裝目前的 Node.js 版本 (用以測試最新的功能改進，但較可能發生問題)：`nvm install node`
-7. 安裝 Node.js 的最新穩定 LTS 版本 (建議)：`nvm install node --lts`
+7. 安裝 Node.js 的最新穩定 LTS 版本 (建議)：`nvm install --lts`
 8. 列出已安裝的 Node 版本：`nvm ls` ... 現在您應該會看到您剛安裝的兩個版本。
 
     ![顯示 LTS 和目前 Node 版本的 NVM 清單](../images/nvm-node-installed.png)

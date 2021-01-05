@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b0cb92c15b39a0bee10e7fe70bc8c4e1581af3c
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 6aef8f2d7ec61ddbff9083ac19c1be866ade1ac2
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031821"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860189"
 ---
 # <a name="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others"></a>載入針對縮放比例、佈景主題、高對比及其他設定量身打造的影像和資產
 您的應用程式可以載入包含針對[顯示縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)、佈景主題、高對比及其他執行階段內容量身打造的影像資源檔案 (或其他資產檔案)。 可以從命令式程式碼或 XAML 標記中參考這些影像，例如 **Image** 的 **Source** 屬性。 也可以出現在應用程式套件資訊清單來源檔案 (`Package.appxmanifest` 檔案) 中 &mdash; 例如，在 Visual Studio 資訊清單設計工具的 \[視覺資產\] 索引標籤上做為 \[App 圖示\] 的值 &mdash; 或顯示在您的磚和快顯通知上。 您可以在影像檔案名稱中使用限定詞，並借助 [**ResourceContext**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live) 選擇性動態載入這些檔案，以便載入最符合使用者顯示縮放比例、佈景主題、高對比、語言及其他內容之執行階段設定的最適當影像檔案。
@@ -86,7 +86,7 @@ var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsy
 this.myXAMLWebViewElement.Source = new Uri("ms-appx-web:///Pages/default.html");
 ```
 
-在這些範例示範的案例中，請使用會推斷 [UriKind](/dotnet/api/system.urikind) 的 [Uri 建構函式](/dotnet/api/system.uri.-ctor?view=netcore-2.0#System_Uri__ctor_System_String_)多載。 指定有效的絕對 URI (包括配置和授權單位)，或直接讓授權單位預設為應用程式的套件，如上述範例所示。
+在這些範例示範的案例中，請使用會推斷 [UriKind](/dotnet/api/system.urikind) 的 [Uri 建構函式](/dotnet/api/system.uri.-ctor?view=netcore-2.0&preserve-view=true#System_Uri__ctor_System_String_)多載。 指定有效的絕對 URI (包括配置和授權單位)，或直接讓授權單位預設為應用程式的套件，如上述範例所示。
 
 注意這些範例中的 URI 配置 ("`ms-appx`" 或 "`ms-appx-web`") 如何在後面加上 "`://`"，再後接絕對路徑。 在絕對路徑中，前置 `/` 會導致路徑從套件的根目錄開始進行解譯。
 
@@ -158,7 +158,7 @@ bitmapImage.SetSourceAsync(imageFileStream);
 this.myXAMLImageElement.Source = bitmapImage;
 ```
 
-為了在全域層級達到相同效果。您 *可以* 覆寫預設 **ResourceContext** 中的限定詞值。 但我們建議您改為呼叫 [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)。 您可以透過呼叫 **SetGlobalQualifierValue** 將值設定一次，然後這些值就會在每次您用來進行查閱時，於預設 **ResourceContext** 中生效。 根據預設， [**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 類別會使用預設 **ResourceContext** 。
+為了在全域層級達到相同效果。您 *可以* 覆寫預設 **ResourceContext** 中的限定詞值。 但我們建議您改為呼叫 [**ResourceContext.SetGlobalQualifierValue**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)。 您可以透過呼叫 **SetGlobalQualifierValue** 將值設定一次，然後這些值就會在每次您用來進行查閱時，於預設 **ResourceContext** 中生效。 根據預設，[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live) 類別會使用預設 **ResourceContext**。
 
 ```csharp
 Windows.ApplicationModel.Resources.Core.ResourceContext.SetGlobalQualifierValue("Contrast", "high");

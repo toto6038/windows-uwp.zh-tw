@@ -4,12 +4,12 @@ description: 此公用程式可讓使用者重新定義鍵盤上的按鍵
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c2f8f146e02cf9006e4ac74ce3426ccba0d6000c
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
+ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618547"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97865463"
 ---
 # <a name="keyboard-manager-utility"></a>鍵盤管理員公用程式
 
@@ -26,7 +26,10 @@ Powertoy 鍵盤管理員必須啟用 (Powertoy 在) 背景中執行的，才能�
 ![Powertoy 鍵盤管理員重新對應快速鍵螢幕擷取畫面](../images/powertoys-keyboard-shortcuts.png)
 
 > [!NOTE]
-> 有些 [金鑰/OS 保留的快捷方式無法取代](https://github.com/microsoft/PowerToys/wiki/Keyboard-Manager-Overview#14-keys-that-cannot-be-remapped)。
+> 有一些為作業系統保留的快速鍵，無法取代。 無法重新對應的索引鍵包括：
+> - `⊞ Win`+`L`和無法重新對應， `Ctrl`  +  `Alt`  +  `Del` 因為它們是由 Windows OS 所保留。
+> - `Fn`在大部分的情況下， (函式) 索引鍵不能重新對應 () 。 `F1` - `F12` (和) 的索引 `F13` - `F24` 鍵都可以對應。
+> - `Pause` 只會傳送 sngle 的 keydown 事件。 例如，將它與倒退鍵和按下 + 按住的對應只會刪除單一字元。
 
 ## <a name="settings"></a>設定
 

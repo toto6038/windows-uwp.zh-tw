@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 7ed2d4100bc827dbc0db93897f534b77e1292b7e
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 51d799a4779f6d3ecee2119277b6c41485e0d377
+ms.sourcegitcommit: e1c182ea23da9b0bd9e89425f7f1a00baec81136
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214349"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97826269"
 ---
 # <a name="choose-your-windows-app-platform"></a>選擇您的 Windows 應用程式平台
 
@@ -133,7 +133,7 @@ Project Reunion 目前提供早期開發人員預覽。 建議您在開發環境
 
 ### <a name="progressive-web-apps-pwas"></a>漸進式 Web 應用程式 (PWA)
 
-PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 10 電腦上安裝並且像應用程式一般執行。 如需詳細資訊，請參閱[漸進式 Web 應用程式](/microsoft-edge/progressive-web-apps/get-started)。
+PWA 可讓開發人員封裝他們的網站程式碼，以便能夠在 Windows 10 電腦上安裝並且像應用程式一般執行。 如需詳細資訊，請參閱[漸進式 Web 應用程式](/microsoft-edge/progressive-web-apps-chromium/get-started)。
 
 ### <a name="xamarin"></a>Xamarin
 

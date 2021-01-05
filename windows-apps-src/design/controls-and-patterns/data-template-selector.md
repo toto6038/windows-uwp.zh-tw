@@ -7,18 +7,18 @@ ms.date: 10/18/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: 5b10afc03a1936c033977a53bd12effdae1c2ead
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 0d9a35c3e66a4d4189016ca87d3da51da5bf5be4
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032331"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860396"
 ---
 # <a name="data-template-selection-styling-items-based-on-their-properties"></a>選取資料範本：根據項目屬性設定項目的樣式
 
 集合控制項的自訂設計是由 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 管理。 資料範本會定義應該如何配置每個項目和設定其樣式，而且該標記會套用至集合中的每個項目。 本文說明如何使用 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)，在集合上套用不同的資料範本，並根據特定項目屬性或您選擇的值，選取要使用的資料範本。
 
-> **重要 API** ： [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)、 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
+> **重要 API**：[DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector)、[DataTemplate](/uwp/api/windows.ui.xaml.datatemplate)
 
 [DataTemplateSelector](/uwp/api/windows.ui.xaml.controls.datatemplateselector) 是啟用自訂範本選擇邏輯的類別。 它可讓您定義一些規則，指定要用於集合中特定項目的資料範本。 若要實作此邏輯，您可以在程式碼後置中建立 DataTemplateSelector 的子類別，並定義邏輯，以決定哪個資料範本用於哪個類別的項目 (例如，特定類型的項目或具有特定屬性值的項目等)。 您可在 XAML 檔案的 Resources 區段中宣告這個類別的執行個體，以及您將使用的資料範本定義。 您可以使用 `x:Key` 值來識別這些資源，讓您在 XAML 中參考它們。
 
@@ -124,7 +124,7 @@ public class MyDataTemplateSelector : DataTemplateSelector
 一旦您的程式碼進行編譯，每個集合項目就會透過 `MyDataTemplateSelector` 中覆寫的 `SelectTemplateCore` 方法執行，而且將會以適當的 DataTemplate 呈現。
 
 > [!IMPORTANT]
-> 搭配 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2) 使用 `DataTemplateSelector` 時，您可以將 `DataTemplateSelector` 繫結至 `ItemTemplate` 屬性。 `ItemsRepeater` 沒有 `ItemTemplateSelector` 屬性。
+> 搭配 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true) 使用 `DataTemplateSelector` 時，您可以將 `DataTemplateSelector` 繫結至 `ItemTemplate` 屬性。 `ItemsRepeater` 沒有 `ItemTemplateSelector` 屬性。
 
 ## <a name="datatemplateselector-performance-considerations"></a>DataTemplateSelector 效能考量
 

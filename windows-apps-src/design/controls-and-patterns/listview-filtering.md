@@ -7,15 +7,15 @@ ms.date: 12/3/2019
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: anawish
-ms.openlocfilehash: a62ec52fe2b8f6caac2ac27cfc4d002ec44a5b32
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: cd78d46abacd57be5b08d6caf057e9c703b32560
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034531"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860366"
 ---
 # <a name="filtering-collections-and-lists-through-user-input"></a>透過使用者輸入篩選集合和清單
-如果集合顯示許多項目，或高度繫結至使用者互動，則篩選是一項可實作的實用功能。 使用本文所述的方法進行篩選可對大部分的集合控制項實作，包括 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2)。 許多類型的使用者輸入都可以用來篩選集合 (例如核取方塊、選項按鈕和滑杆)，但本文將著重於採用以文字為基礎的使用者輸入，並根據使用者的搜尋，將其用於即時更新 ListView。 
+如果集合顯示許多項目，或高度繫結至使用者互動，則篩選是一項可實作的實用功能。 使用本文所述的方法進行篩選可對大部分的集合控制項實作，包括 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、[GridView](/uwp/api/windows.ui.xaml.controls.gridview) 和 [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true)。 許多類型的使用者輸入都可以用來篩選集合 (例如核取方塊、選項按鈕和滑杆)，但本文將著重於採用以文字為基礎的使用者輸入，並根據使用者的搜尋，將其用於即時更新 ListView。 
 
 > [!NOTE]
 > 本文將著重於使用 ListView 進行篩選。 請注意，此篩選方法也可套用至其他集合控制項，例如 GridView、ItemsRepeater 或 TreeView。

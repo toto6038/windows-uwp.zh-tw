@@ -4,12 +4,12 @@ description: 安裝 Powertoy，這是使用可執行檔或封裝管理員 (WinGe
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f051d44609653029a1bab40d2978eca91a4499c
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: c695be3784ff2145788e4887b5f9022fcc7a6999
+ms.sourcegitcommit: ea1115b921d18c7bbddc95dba9275568ff57af02
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612099"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "97794224"
 ---
 # <a name="install-powertoys"></a>安裝 PowerToys
 
@@ -19,12 +19,12 @@ ms.locfileid: "97612099"
 - [Windows 封裝管理員](#install-with-windows-package-manager-preview) *(Preview)*
 - *(未正式支援* 的 [社區驅動安裝工具](#community-driven-install-tools)) 
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 - Windows 10 1803 (組建 17134) 或更新版本。
 - [.Net Core 3.1 桌面運行](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer)時間。 Powertoy 安裝程式將會處理這項需求。
 
-若要確定您的電腦符合這些需求，請選取 [ **⊞ Win** *(Windows 金鑰])*  +  **D**，然後輸入 **winver**，選取 **[確定]**，以檢查您的 Windows 10 版本和組建編號。 (或在 Windows 命令提示字元中輸入 `ver` 命令)。 您可以在 [**設定**] 功能表中 [更新至最新的 Windows 版本](ms-settings:windowsupdate)。
+若要確定您的電腦符合這些需求，請選取 [ **⊞ Win]** *(Windows key)*  +  **R**，然後輸入 **winver**，選取 **[確定]**，以檢查您的 Windows 10 版本和組建編號。 (或在 Windows 命令提示字元中輸入 `ver` 命令)。 您可以在 [**設定**] 功能表中 [更新至最新的 Windows 版本](ms-settings:windowsupdate)。
 
 ## <a name="install-with-windows-executable-file"></a>使用 Windows 可執行檔安裝
 

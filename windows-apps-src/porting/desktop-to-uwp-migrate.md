@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 62f1c6462e56b14396e3fdaed16221698c0333fd
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933159"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860449"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>從桌面應用程式移至 UWP
 
@@ -70,7 +70,7 @@ ms.locfileid: "91933159"
 &nbsp;
 > [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
-如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](/dotnet/api/?view=netstandard-2.0)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
+如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](/dotnet/api/?view=netstandard-2.0&preserve-view=true)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
 
 ![Dot Net 選項](images/desktop-to-uwp/dot-net-option.png)
 
@@ -112,7 +112,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-您可以使用 [.NET API 瀏覽器](/dotnet/api/?view=netstandard-2.0)尋找替代方式。 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 類別全都以 .NET Standard 2.0 提供，所以我們可以改為使用它們。  
+您可以使用 [.NET API 瀏覽器](/dotnet/api/?view=netstandard-2.0&preserve-view=true)尋找替代方式。 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 類別全都以 .NET Standard 2.0 提供，所以我們可以改為使用它們。  
 
 此修訂版本使用這些類別來取得客戶清單，但要建立 ``DbConnection`` 類別，就必須傳入我們在用戶端應用程式中建立的 Factory 物件。
 

@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 288795b2dc189dae7b350a30446410b40044d08f
-ms.sourcegitcommit: e39b569626804d2ce4246353ac2c03a916dc9737
+ms.openlocfilehash: 9cda36c6027ae74df9beb5d1de68f69f273dc5f0
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92192948"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860110"
 ---
 # <a name="windows-runtime-components-with-ccx"></a>Windows 執行階段元件與 C++/CX
 
@@ -543,7 +543,7 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言會看到 c + + 公用�
 ## <a name="asynchronous-methods"></a>非同步方法
 若要使用其他 Windows 執行階段物件所公開的非同步方法，請使用 [task 類別 (並行執行階段)](/cpp/parallel/concrt/reference/task-class)。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)](/cpp/parallel/concrt/task-parallelism-concurrency-runtime)。
 
-若要在 c + +/CX 中執行非同步方法，請使用 ppltasks.h 中所定義的 [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017) 函數。 如需詳細資訊，請參閱 [在 c + +/cx 中為 UWP 應用程式建立異步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 如需範例，請參閱 [建立 c + +/cx Windows 執行階段元件，以及從 JavaScript 或 c # 呼叫它的逐步](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)解說。 .NET 語言會使用 c + +/CX 非同步方法，就像在 .NET 中定義的任何非同步方法一樣。
+若要在 c + +/CX 中執行非同步方法，請使用 ppltasks.h 中所定義的 [create \_ async](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true) 函數。 如需詳細資訊，請參閱 [在 c + +/cx 中為 UWP 應用程式建立異步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。 如需範例，請參閱 [建立 c + +/cx Windows 執行階段元件，以及從 JavaScript 或 c # 呼叫它的逐步](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)解說。 .NET 語言會使用 c + +/CX 非同步方法，就像在 .NET 中定義的任何非同步方法一樣。
 
 ## <a name="exceptions"></a>例外狀況
 您可以擲回 Windows 執行階段所定義的任何例外狀況類型。 您無法從任何 Windows 執行階段例外狀況類型衍生自訂類型。 不過，您可以擲回 COMException，並提供自訂的 HRESULT，以供攔截到例外狀況的程式碼存取。 您無法在 COMException 中指定自訂訊息。

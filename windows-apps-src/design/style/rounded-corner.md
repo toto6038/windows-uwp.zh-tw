@@ -4,12 +4,12 @@ description: 了解圓角原則、設計方法和自訂選項。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 邊角半徑, 修圓
-ms.openlocfilehash: 044ae628ffe397005113f658191398e06fd245f5
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
+ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636528"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860197"
 ---
 # <a name="corner-radius"></a>圓角半徑
 
@@ -22,7 +22,7 @@ ms.locfileid: "91636528"
 當您安裝適用於 WinUI 2.2 或更新版本的 NuGet 套件時，會同時為 WinUI 控制項和平台控制項安裝新的預設樣式。 當您在應用程式中使用 WinUI 2.2 時，會自動使用這些樣式；您不需要採取任何進一步的動作，就能使用新的樣式。 不過，本文稍後會示範如何自訂圓角 (如果您需要這麼做)。
 
 > [!IMPORTANT]
-> 有些控制項同時適用於平台 ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) 和 WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2))，例如 **TreeView** 或 **ColorPicker**。 當您在應用程式中使用 WinUI 時，您應該使用控制項的 WinUI 版本。 搭配 WinUI 使用時，邊角修圓可能不會一致地套用於平台版本。
+> 有些控制項同時適用於平台 ([Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls)) 和 WinUI ([Microsoft.UI.Xaml.Controls](/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&preserve-view=true))，例如 **TreeView** 或 **ColorPicker**。 當您在應用程式中使用 WinUI 時，您應該使用控制項的 WinUI 版本。 搭配 WinUI 使用時，邊角修圓可能不會一致地套用於平台版本。
 
 > **重要 API**：[Control.CornerRadius 屬性](/uwp/api/windows.ui.xaml.controls.control.cornerradius)
 

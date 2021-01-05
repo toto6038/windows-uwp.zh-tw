@@ -4,15 +4,15 @@ title: Windows 桌面的裝置入口網站
 description: 了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。
 ms.date: 08/20/2020
 ms.topic: article
-ms.custom: contperfq1
+ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 1618b2de1f0db96989a7aedf5b53805fd70f535e
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: 42f6f35fe2cea38d4c1f194fbc740b7a8290ea8c
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339566"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860337"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 

@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ccf994e273c683ec458b9a2eded0b13cb58c41c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 908754c56f9c5062f63b09cffc5cbafffbd8277a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158212"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860369"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
@@ -39,7 +39,7 @@ TCP (傳輸控制通訊協定) 通訊端為長期連線提供雙向的低階網�
 
 也建構 [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket)、連線到伺服器、傳送要求，及接收回應。
 
-建立名為 `StreamSocketAndListenerPage` 的**頁面**。 將 XAML 標記放入 `StreamSocketAndListenerPage.xaml`，並將命令式程式碼放入 `StreamSocketAndListenerPage` 類別中。
+建立名為 `StreamSocketAndListenerPage` 的 **頁面**。 將 XAML 標記放入 `StreamSocketAndListenerPage.xaml`，並將命令式程式碼放入 `StreamSocketAndListenerPage` 類別中。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -562,7 +562,7 @@ UDP (使用者資料包通訊協定) 通訊端與 TCP 通訊端類似，也提�
 
 建構另一個 **DatagramSocket** 扮演 echo 用戶端的角色、繫結至特定連接埠號碼、傳送 UDP 訊息，然後接收回應。
 
-建立名為 `DatagramSocketPage` 的**頁面**。 將 XAML 標記放入 `DatagramSocketPage.xaml`，並將命令式程式碼放入 `DatagramSocketPage` 類別中。
+建立名為 `DatagramSocketPage` 的 **頁面**。 將 XAML 標記放入 `DatagramSocketPage.xaml`，並將命令式程式碼放入 `DatagramSocketPage` 類別中。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -1277,7 +1277,7 @@ private:
 -   在同步寫入完成之前，您無法對正在寫入的 **IBuffer** 執行個體修改內容。
 -   **FlushAsync** 模式只適用於 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
 -   **FlushAsync** 模式只適用於 Windows 10 和後續版本。
--   在其他情況下，請改用 [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___)，而不要使用 **FlushAsync** 模式。
+-   在其他情況下，請改用 [**Task.WaitAll**](/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0&preserve-view=true#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___)，而不要使用 **FlushAsync** 模式。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的連接埠共用
 您可以設定 [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket) 與繫結至相同地址/連接埠的其他 Win32 或 UWP 多點傳送通訊端並存。 在繫結或連接通訊端之前將 [**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly) 設定為 `true`，執行此動作。 您可以從 **DatagramSocket** 物件本身存取 **DatagramSocketControl** 執行個體 (透過其 [**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control) 屬性)。

@@ -6,12 +6,12 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7cdffd484c426faa9b877240f45f122ccc5ec4
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1c0798a1d58d3a97d02e030bcd0094f8a7364d16
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161752"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860382"
 ---
 # <a name="asynchronous-programming"></a>非同步程式設計
 本主題說明通用 Windows 平臺 (UWP) 的非同步程式設計，以及在 c #、Microsoft Visual Basic .NET、c + + 和 JavaScript 中的標記法。
@@ -58,9 +58,9 @@ ms.locfileid: "89161752"
 使用 c + +/WinRT，您可以使用協同程式和 **co_await** 運算子。 如需詳細資訊和程式碼範例，請參閱 [c + + 中的非同步程式設計/WinRT](../cpp-and-winrt-apis/concurrency.md)。
 
 ## <a name="asynchronous-patterns-in-uwp-with-ccx"></a>使用 c + +/CX 的 UWP 中的非同步模式
-在 C++/CX 中，非同步程式設計的基礎在於 [**task class**](/cpp/parallel/concrt/reference/task-class) 以及其 [**then method**](/cpp/parallel/concrt/reference/task-class?view=vs-2017)。 語法和 JavaScript Promise 的語法類似。 **task 類別**以及相關類型也會提供取消和管理執行緒內容的功能。 如需詳細資訊，請參閱 [c + +/cx 中的非同步程式設計](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
+在 C++/CX 中，非同步程式設計的基礎在於 [**task class**](/cpp/parallel/concrt/reference/task-class) 以及其 [**then method**](/cpp/parallel/concrt/reference/task-class?view=vs-2017&preserve-view=true)。 語法和 JavaScript Promise 的語法類似。 **task 類別** 以及相關類型也會提供取消和管理執行緒內容的功能。 如需詳細資訊，請參閱 [c + +/cx 中的非同步程式設計](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)。
 
-[**Create \_ async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017)函式提供的支援可讓您產生可從 JavaScript 取用的非同步 api，或任何其他支援 UWP 的語言。 如需詳細資訊，請參閱 [在 c + +/cx 中建立異步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。
+[**Create \_ async**](/cpp/parallel/concrt/reference/concurrency-namespace-functions?view=vs-2017&preserve-view=true)函式提供的支援可讓您產生可從 JavaScript 取用的非同步 api，或任何其他支援 UWP 的語言。 如需詳細資訊，請參閱 [在 c + +/cx 中建立異步操作](/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)。
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>使用 JavaScript 的 UWP 中的非同步模式
 在 JavaScript 中，非同步程式設計採用 [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) 建議的標準，讓非同步方法傳回 Promise 物件。 Promise 可用於 UWP 以及適用於 JavaScript 的 Windows Library。
@@ -70,6 +70,6 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 在許多情況下，呼叫非同步函式幾乎和呼叫傳統函式一樣容易。 其中的差異在於您是使用 [**then**](/previous-versions/windows/apps/br229728(v=win.10)) 或 [**done**](/previous-versions/windows/apps/hh701079(v=win.10)) 方法，為結果或錯誤指派處理常式以及啟動作業。
 
 ## <a name="related-topics"></a>相關主題
-* [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
+* [以 c # 或 Visual Basic 呼叫非同步 Api](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [使用 Async 和 Await 設計非同步程式 (C# 和 Visual Basic)](/previous-versions/visualstudio/visual-studio-2012/hh191443(v=vs.110))
 * [黑白棋範例功能案例：非同步程式碼](/previous-versions/windows/apps/jj712233(v=win.10))

@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e2648cc9a85c538d71f87f69d8525b171d2bed98
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
+ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031511"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709647"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -101,7 +101,7 @@ _**螢幕擷取畫面中顯示的所有電影都可在 Microsoft 影片 & 電視
 
 ![變更文字、app 與其他項目的大小](images/designing-for-tv/ui-scaling.png)
 
-Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，預設會針對 XAML app 將它們調整為 **200%** ，以及針對 HTML app 調整為 **150%** 。
+Xbox One 上沒有這類系統設定。不過，如果要適當調整 UWP UI 元素的大小以適用於電視，預設會針對 XAML app 將它們調整為 **200%**，以及針對 HTML app 調整為 **150%**。
 只要 UI 元素能針對其他裝置適當調整大小，就能針對電視適當調整大小。
 Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此，從電腦等其他裝置帶入 app 時，請確定採用[調適型技術](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)，以 100% 縮放比例讓 UI 呈現 960 x 540 像素的最佳外觀 (或針對 HTML app 以 100% 縮放比例呈現 1280 x 720 像素的最佳外觀)。
 
@@ -241,7 +241,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 [CommandBar](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) 是另一個常放在 app 一邊或多邊附近的窗格範例，也因此其背景應該延伸到電視螢幕邊緣。 它通常也包含 **更多** 按鈕，以 "..." 表示。應該保留在 TV 安全區域中的右側。 以下是可達到所需的互動和視覺效果的幾個不同策略。
 
-**選項 1** ︰將 `CommandBar` 背景色彩變更為透明或與頁面背景相同的色彩︰
+**選項 1**︰將 `CommandBar` 背景色彩變更為透明或與頁面背景相同的色彩︰
 
 ```xml
 <CommandBar x:Name="topbar"
@@ -252,7 +252,7 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 這麼做會讓 `CommandBar` 看起來就像位在與頁面其餘部分相同的背景上，因此背景會順暢地延伸到螢幕邊緣。
 
-**選項 2** ︰新增一個填滿色彩與 `CommandBar` 背景相同的背景矩形，並將它置於 `CommandBar` 底下且延伸到頁面的其餘部分︰
+**選項 2**︰新增一個填滿色彩與 `CommandBar` 背景相同的背景矩形，並將它置於 `CommandBar` 底下且延伸到頁面的其餘部分︰
 
 ```xml
 <Rectangle VerticalAlignment="Top"
@@ -403,7 +403,7 @@ UWP 提供了一種方便的方式，可公開使用者從其系統設定中選�
 
 另外，Xbox One 上的使用者色彩組與電腦、手機和其他裝置上的不同。
 
-只要您的 app 使用筆刷資源 (例如 **SystemControlForegroundAccentBrush** ) 或色彩資源 ( **SystemAccentColor** )，或直接透過 [UIColorType.Accent*](/uwp/api/Windows.UI.ViewManagement.UIColorType) API 改為呼叫輔色，這些色彩就會取代為適合電視的 Xbox One 可用輔色。 高對比的筆刷色彩也會從系統 (就像在電腦和手機上一樣) 提取。
+只要您的 app 使用筆刷資源 (例如 **SystemControlForegroundAccentBrush**) 或色彩資源 (**SystemAccentColor**)，或直接透過 [UIColorType.Accent*](/uwp/api/Windows.UI.ViewManagement.UIColorType) API 改為呼叫輔色，這些色彩就會取代為適合電視的 Xbox One 可用輔色。 高對比的筆刷色彩也會從系統 (就像在電腦和手機上一樣) 提取。
 
 若要深入了解一般的輔色，請參閱[輔色](../style/color.md#accent-color)。
 
@@ -436,9 +436,11 @@ UWP 提供了一種方便的方式，可公開使用者從其系統設定中選�
 
 您可以將 [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](../controls-and-patterns/pivot.md)。
 
-### <a name="navigation-pane"></a>瀏覽窗格 <a name="navigation-pane" />
+<a name="navigation-pane"></a>
 
-流覽窗格 (也稱為 *漢堡功能表* ) 是 UWP 應用程式常用的導覽控制項。 它一般會是一個含有清單樣式功能表的窗格，功能表中有數個可供選擇的選項，可將使用者帶到不同的頁面。 這個窗格通常一開始會摺疊起來以節省空間，使用者按一下按鈕即可將它開啟。
+### <a name="navigation-pane"></a>瀏覽窗格
+
+流覽窗格 (也稱為 *漢堡功能表*) 是 UWP 應用程式常用的導覽控制項。 它一般會是一個含有清單樣式功能表的窗格，功能表中有數個可供選擇的選項，可將使用者帶到不同的頁面。 這個窗格通常一開始會摺疊起來以節省空間，使用者按一下按鈕即可將它開啟。
 
 使用滑鼠和觸控可以很容易存取瀏覽窗格，但使用遊戲台/遙控器遠端則較難存取瀏覽窗格，因為使用者必須瀏覽到按鈕才能開啟窗格。 因此，最好的做法是讓 [View] \ （ **View** ）按鈕開啟導覽窗格，並允許使用者在頁面左邊的所有方向流覽，以開啟它。 如何實作這個設計模式的程式碼範例位於[程式設計焦點瀏覽](../input/focus-navigation-programmatic.md#split-view-code-sample)文件。 這將讓使用者非常容易存取窗格的內容。 如需有關瀏覽窗格在不同螢幕大小中如何運作的詳細資訊，以及適用於遊戲台/遙控器瀏覽的最佳做法，請參閱[瀏覽窗格](../controls-and-patterns/navigationview.md)。
 
@@ -468,7 +470,7 @@ UWP 提供了一種方便的方式，可公開使用者從其系統設定中選�
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素提供預設的播放體驗，讓使用者可以與其媒體互動 (播放、暫停、開啟隱藏式輔助字幕等等)。 此控制項是 [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的屬性，而且支援兩種版面配置選項： *單一資料列* 和 *雙重資料列* 。 在單列配置中，滑桿與播放按鈕都會在同一列上，且播放/暫停按鈕會在滑桿左邊。 在雙列配置中，滑桿會自成一列，而播放按鈕則位於下方另一列上。 針對 10 英呎體驗設計時，應使用雙列配置，因為它能為控制器提供較佳的瀏覽。 若要啟用雙列配置，請在 `MediaPlayerElement` 的 [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 屬性中的 `MediaTransportControls` 元素上設定 `IsCompact="False"`。
+[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 元素提供預設的播放體驗，讓使用者可以與其媒體互動 (播放、暫停、開啟隱藏式輔助字幕等等)。 此控制項是 [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 的屬性，而且支援兩種版面配置選項： *單一資料列* 和 *雙重資料列*。 在單列配置中，滑桿與播放按鈕都會在同一列上，且播放/暫停按鈕會在滑桿左邊。 在雙列配置中，滑桿會自成一列，而播放按鈕則位於下方另一列上。 針對 10 英呎體驗設計時，應使用雙列配置，因為它能為控制器提供較佳的瀏覽。 若要啟用雙列配置，請在 `MediaPlayerElement` 的 [TransportControls](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) 屬性中的 `MediaTransportControls` 元素上設定 `IsCompact="False"`。
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -482,7 +484,8 @@ UWP 提供了一種方便的方式，可公開使用者從其系統設定中選�
 
 如需深入了解將媒體加入 App，請參閱[媒體播放](../controls-and-patterns/media-playback.md)。
 
-> ![NOTE] `MediaPlayerElement` 只能在 Windows 10 版本 1607 及更新版本中取得。 如果您是針對先前版本的 Windows 10 開發 App，便必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
+> [!NOTE]
+> `MediaPlayerElement` 僅適用于1607版和更新版本的 Windows 10。 如果您是針對先前版本的 Windows 10 開發 App，便必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
 
 ### <a name="search-experience"></a>搜尋體驗
 
@@ -560,7 +563,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>總結
 
 針對 10 英呎經驗的設計已納入特殊考量，使其有別於其他所有平台的設計。 您當然可以直接將 UWP app 移植至 Xbox One 且它亦可運作，但它不一定是針對 10 英呎體驗最佳化，且會讓使用者感到失望。 遵循本文所述的指導方針，以確定 app 在電視上仍可呈現優異效果。
 

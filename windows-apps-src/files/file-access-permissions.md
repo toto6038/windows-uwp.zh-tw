@@ -11,13 +11,13 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.custom: contperfq1
-ms.openlocfilehash: 6bb0e44fa5ea31d73feebdfb9ced9951cc2bc937
-ms.sourcegitcommit: 2050175043c8c175be3312f17769b4af241b3275
+ms.custom: contperf-fy21q1
+ms.openlocfilehash: fa37bc45ae85456aff177417a3875d724b0ebd54
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027647"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860251"
 ---
 # <a name="file-access-permissions"></a>檔案存取權限
 
@@ -266,7 +266,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
 
 | 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載、桌面、OneDrive 等。 | **broadFileSystemAccess**<br><br>這是受限的功能。 存取權可在 [設定] > [隱私權] > [檔案系統] 中設定。 由於使用者隨時都可以在 [設定] 中授與或拒絕權限，您應該確定應用程式針對那些變更具備復原性。 如果您發現應用程式沒有存取權，則可以選擇向使用者提供 [Windows 10 檔案系統存取權與隱私權](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy)一文的連結，來提示他們變更設定。 請注意，使用者必須關閉應用程式，切換該設定，然後再重新啟動應用程式。 如果他們在應用程式執行期間切換該設定，平台將會暫停您的應用程式以讓您儲存狀態，然後強制終止該應用程式以套用新設定。 在 2018 年 4 月更新中，該權限的預設值為 [開啟]。 在 2018 年 10 月更新中，預設值為 [關閉]。<br /><br />如果您將應用程式提交至會宣告此功能的 Microsoft Store，則須提供其他描述以說明應用程式為何需要此功能，以及其意圖使用此功能的方式。<br/><br/>此功能適用於 [**Windows.Storage**](/uwp/api/Windows.Storage) \(英文\) 命名空間中的 API。 請參閱本文結尾的＜範例＞**** 小節，以取得在應用程式中啟用此功能的範例。<br/><br/>**注意：** Xbox 不支援這項功能。 | n/a |
+| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載、桌面、OneDrive 等。 | **broadFileSystemAccess**<br><br>這是受限的功能。 存取權可在 [設定] > [隱私權] > [檔案系統] 中設定。 由於使用者隨時都可以在 [設定] 中授與或拒絕權限，您應該確定應用程式針對那些變更具備復原性。 如果您發現應用程式沒有存取權，則可以選擇向使用者提供 [Windows 10 檔案系統存取權與隱私權](https://support.microsoft.com/help/4468237/windows-10-file-system-access-and-privacy-microsoft-privacy)一文的連結，來提示他們變更設定。 請注意，使用者必須關閉應用程式，切換該設定，然後再重新啟動應用程式。 如果他們在應用程式執行期間切換該設定，平台將會暫停您的應用程式以讓您儲存狀態，然後強制終止該應用程式以套用新設定。 在 2018 年 4 月更新中，該權限的預設值為 [開啟]。 在 2018 年 10 月更新中，預設值為 [關閉]。<br /><br />如果您將應用程式提交至會宣告此功能的 Microsoft Store，則須提供其他描述以說明應用程式為何需要此功能，以及其意圖使用此功能的方式。<br/><br/>此功能適用於 [**Windows.Storage**](/uwp/api/Windows.Storage) \(英文\) 命名空間中的 API。 請參閱本文結尾的＜範例＞小節，以取得在應用程式中啟用此功能的範例。<br/><br/>**注意：** Xbox 不支援這項功能。 | n/a |
 | 文件 | **documentsLibrary**<br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>如果您的 app 符合下列條件，則可使用此功能：<br>- 使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取<br>- 在離線時自動將開啟的檔案儲存到使用者的 OneDrive | [KnownFolders.DocumentsLibrary](/uwp/api/windows.storage.knownfolders.documentslibrary) \(英文\) |
 | 音樂     | **musicLibrary** <br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](/uwp/api/windows.storage.knownfolders.musiclibrary) \(英文\) |    
 | 圖片  | **picturesLibrary**<br> 另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) \(英文\) |  

@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 1338b45dd5ccc7558725dd1ad1d210f3c5e7232b
-ms.sourcegitcommit: 0c4bbaf1c119a84002748cdcf02e1449835559c3
+ms.openlocfilehash: b88f65ba45a2b8a79d822eba525733550f965372
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132991"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860173"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
@@ -53,7 +53,7 @@ ms.locfileid: "92132991"
     <DesktopAppMigration>
         <DesktopApp AumId="[your_app_aumid]" />
         <DesktopApp ShortcutPath="[path]" />
-    </DesktopAppMigration>
+    </DesktopAppMigration>
 </Extension>
 ```
 
@@ -80,7 +80,7 @@ ms.locfileid: "92132991"
             <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\[my_app].lnk" />
             <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk" />
             <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk"/>
-         </rescap3:DesktopAppMigration>
+         </rescap3:DesktopAppMigration>
         </rescap3:Extension>
       </Extensions>
     </Application>
@@ -109,11 +109,11 @@ ms.locfileid: "92132991"
 
 ```XML
 <Extension Category="windows.fileTypeAssociation">
-    <FileTypeAssociation Name="[Name]">
-         <MigrationProgIds>
-            <MigrationProgId>"[ProgID]"</MigrationProgId>
-        </MigrationProgIds>
-    </FileTypeAssociation>
+    <FileTypeAssociation Name="[Name]">
+         <MigrationProgIds>
+            <MigrationProgId>"[ProgID]"</MigrationProgId>
+        </MigrationProgIds>
+    </FileTypeAssociation>
 </Extension>
 ```
 
@@ -137,11 +137,11 @@ ms.locfileid: "92132991"
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap3:FileTypeAssociation Name="myfiletypes">
-            <rescap3:MigrationProgIds>
-              <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
+            <rescap3:MigrationProgIds>
+              <rescap3:MigrationProgId>Foo.Bar.1</rescap3:MigrationProgId>
               <rescap3:MigrationProgId>Foo.Bar.2</rescap3:MigrationProgId>
-            </rescap3:MigrationProgIds>
-          </uap3:FileTypeAssociation>
+            </rescap3:MigrationProgIds>
+          </uap3:FileTypeAssociation>
         </uap:Extension>
       </Extensions>
     </Application>
@@ -513,7 +513,7 @@ ms.locfileid: "92132991"
 * ``Single``:您的應用程式會針對第一個選取的檔案啟動一次。 系統會忽略其他的檔案。
 * ``Document``:針對每個所選檔案，個別啟動應用程式的新執行個體。
 
- 您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如，您可以會想要在 *Document* 模式中開啟*文件*，以及在 *Player* 模式中開啟*影像*。
+ 您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如，您可以會想要在 *Document* 模式中開啟 *文件*，以及在 *Player* 模式中開啟 *影像*。
 
 #### <a name="example"></a>範例
 
@@ -672,11 +672,11 @@ ms.locfileid: "92132991"
 
 ### <a name="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer"></a>讓使用者在檔案總管中使用種類欄位群組檔案
 
-您可以透過**種類**欄位使您的檔案類型與一或多個預先定義的值產生關聯。
+您可以透過 **種類** 欄位使您的檔案類型與一或多個預先定義的值產生關聯。
 
 在檔案總管中，使用者可以使用該欄位群組這些檔案。 系統元件也會根據不同用途使用此欄位，例如：編製索引。
 
-如需有關**種類**欄位以及您可以使用於此欄位中的詳細資訊，請參閱[使用種類名稱](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
+如需有關 **種類** 欄位以及您可以使用於此欄位中的詳細資訊，請參閱 [使用種類名稱](/windows/desktop/properties/building-property-handlers-user-friendly-kind-names)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -688,13 +688,13 @@ ms.locfileid: "92132991"
 ```XML
 <Extension Category="windows.fileTypeAssociation">
     <FileTypeAssociation Name="[Name]">
-        <SupportedFileTypes>
-            <FileType>"[FileExtension]"</FileType>
-        </SupportedFileTypes>
-        <KindMap>
-            <Kind value="[KindValue]">
-        </KindMap>
-    </FileTypeAssociation>
+        <SupportedFileTypes>
+            <FileType>"[FileExtension]"</FileType>
+        </SupportedFileTypes>
+        <KindMap>
+            <Kind value="[KindValue]">
+        </KindMap>
+    </FileTypeAssociation>
 </Extension>
 ```
 
@@ -719,16 +719,16 @@ ms.locfileid: "92132991"
       <Extensions>
         <uap:Extension Category="windows.fileTypeAssociation">
            <uap:FileTypeAssociation Name="mediafiles">
-             <uap:SupportedFileTypes>
-               <uap:FileType>.m4a</uap:FileType>
-               <uap:FileType>.mta</uap:FileType>
-             </uap:SupportedFileTypes>
-             <rescap:KindMap>
-               <rescap:Kind value="Item">
+             <uap:SupportedFileTypes>
+               <uap:FileType>.m4a</uap:FileType>
+               <uap:FileType>.mta</uap:FileType>
+             </uap:SupportedFileTypes>
+             <rescap:KindMap>
+               <rescap:Kind value="Item">
                <rescap:Kind value="Communications">
                <rescap:Kind value="Task">
-             </rescap:KindMap>
-          </uap:FileTypeAssociation>
+             </rescap:KindMap>
+          </uap:FileTypeAssociation>
       </uap:Extension>
       </Extensions>
     </Application>
@@ -874,7 +874,7 @@ ms.locfileid: "92132991"
         <com:Extension Category="windows.comServer">
           <com:ComServer>
             <com:SurrogateServer AppId="d0c8bceb-28eb-49ae-bc68-454ae84d6264" DisplayName="ContosoHandler"">
-              <com:Class Id="Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
+              <com:Class Id="d0c8bceb-28eb-49ae-bc68-454ae84d6264" Path="ExplorerCommandVerb.dll" ThreadingModel="STA"/>
             </com:SurrogateServer>
           </com:ComServer>
         </com:Extension>

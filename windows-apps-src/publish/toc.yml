@@ -169,23 +169,6 @@
       href: ../publish/advertising-performance-report.md
     - name: 下載分析報告
       href: ../publish/download-analytic-reports.md
-- name: 取得付款
-  href: ../publish/getting-paid-apps.md
-  items:
-    - name: 設定支出帳戶和稅賦形式
-      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-    - name: 支付臨界值、方法和時間範圍
-      href: ../publish/payment-thresholds-methods-and-timeframes.md
-    - name: 支出報告
-      href: ../publish/payout-summary.md
-    - name: 納稅詳細資料
-      href: ../publish/tax-details-for-paid-apps.md
-    - name: 了解 IRS 稅單
-      href: ../publish/understand-irs-tax-forms.md
-    - name: 電信業者帳單
-      href: ../publish/mobile-operator-billing.md
-    - name: VAT 資訊
-      href: ../publish/vat-info.md
 - name: Microsoft Store 原則與管理辦法
   href: ../publish/store-policies-and-code-of-conduct.md
   items:

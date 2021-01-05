@@ -5,12 +5,12 @@ keywords: 新功能, 新增功能, Windows, Windows 10, 更新, 多項更新, �
 ms.date: 05/12/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a6138841a19629523b452eab2f3e7b5d125c37
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 04fba2a6fd1f7a13dae3e3509ccb3a0470396dad
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174422"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860141"
 ---
 # <a name="whats-new-for-developers-in-windows-10-build-19041"></a>Windows 10 提供給開發人員的新功能 (組建 19041)
 
@@ -31,7 +31,7 @@ Direct3D | [使用 DirectX 搭配高動態範圍顯示器和進階色彩](/windo
 Direct3D 12 | 已新增 [Direct3D 12 Core 1.0 功能層級](/windows/win32/direct3d12/core-feature-levels)，供僅限計算的裝置使用。 </br> 已針對 [ID3D12Debug3 介面](/windows/win32/api/d3d12sdklayers/nn-d3d12sdklayers-id3d12debug3)新增主題。
 Direct ML | 已將 18 個運算子新增至 DirectML，這是在其中建置 WinML 的低層級硬體加速 API。 例如，[DML_ACTIVATION_SHRINK_OPERATOR_DESC 結構](/windows/win32/api/directml/ns-directml-dml_activation_shrink_operator_desc)。
 錯誤報告 | RoFailFastWithErrorContextInternal2 函式已新增至 Win32，會引發例外狀況，其中可能包含額外的錯誤內容。
-機器學習 | Windows Machine Learning [現在支援 ONNX 1.4 版和 opset 9](/windows/ai/windows-ml/release-notes)。 </br>  [CloseModelOnSessionCreation](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation?view=winrt-19041) API 可讓您在不再需要學習模型後，自動將其關閉來節省記憶體。
+機器學習 | Windows Machine Learning [現在支援 ONNX 1.4 版和 opset 9](/windows/ai/windows-ml/release-notes)。 </br>  [CloseModelOnSessionCreation](/uwp/api/windows.ai.machinelearning.learningmodelsessionoptions.closemodelonsessioncreation) API 可讓您在不再需要學習模型後，自動將其關閉來節省記憶體。
 Wi-Fi | 已新增數個新的原生 WiFi 函式和結構，例如 [WlanDeviceServiceCommand 函式](/windows/win32/api/wlanapi/nf-wlanapi-wlandeviceservicecommand)。
 Wi-Fi 熱點 2 | [透過網站佈建 Wi-Fi 設定檔](/windows/win32/nativewifi/prov-wifi-profile-via-website) 描述 Wi-Fi 熱點 2 的新功能。
 Windows 全像攝影版 Interop | 已新增 [`windows.graphics.holographic.interop.h`](/windows/win32/api/windows.graphics.holographic.interop) 標頭，包含 17 個 Win32 API。 API 可用於 Win32 與 Windows 執行階段之間的交互作業。 在 Windows 10 組建 18362 中新增 API 時，此為組建 19041 的新標頭。
@@ -58,7 +58,7 @@ MSIX | 自上次發行 Windows 10 SDK 以來，已對 [MSIX 封裝格式](/windo
 使用服務進行封裝 | MSIX 和 MSIX 封裝工具[現在支援包含服務的應用程式套件](/windows/msix/packaging-tool/convert-an-installer-with-services)。
 MSIX 套件中的指令碼 | 您可以[使用套件支援架構 (PSF) 在 MSIX 應用程式套件中執行指令碼](/windows/msix/psf/run-scripts-with-package-support-framework)，讓 IT 專業人員在使用 MSIX 封裝後，將應用程式動態自訂到使用者的環境。
 強制執行的封裝完整性 | 您現在可以使用封裝資訊清單中的 [uap10： PackageIntegrity 元素](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-packageintegrity)，針對 MSIX 封裝的內容強制執行封裝完整性。 當您透過 MSIX 封裝工具建立 MSIX 套件時，也可以強制執行封裝完整性。
-疏鬆套件 | 您可建置*疏鬆套件*並向您的應用程式進行註冊，以[將套件識別資料授與未封裝在 MSIX 套件中的傳統型應用程式](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)。 此功能可讓尚無法採用 MSIX 封裝進行部署的傳統型應用程式，使用需要套件識別資料的 Windows 10 擴充性功能。
+疏鬆套件 | 您可建置 *疏鬆套件* 並向您的應用程式進行註冊，以 [將套件識別資料授與未封裝在 MSIX 套件中的傳統型應用程式](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)。 此功能可讓尚無法採用 MSIX 封裝進行部署的傳統型應用程式，使用需要套件識別資料的 Windows 10 擴充性功能。
 託管應用程式 | 您現在可以[建立託管應用程式](../launch-resume/hosted-apps.md)。 裝載的應用程式與父主機應用程式共用相同的可執行檔和定義，但其外觀和行為類似系統上的個別應用程式。 裝載的應用程式適用於您想要元件 (例如可執行檔或指令碼檔案) 行為類似獨立 Windows 10 應用程式，但元件需要主機處理序才能執行的情況。 裝載的應用程式可以有自己的開始磚、身分識別，以及與 Windows 10 功能 (例如背景工作、通知、磚和共用目標) 的深度整合。
 
 ## <a name="windows-ui-library-winui"></a>Windows UI 程式庫 (WinUI)

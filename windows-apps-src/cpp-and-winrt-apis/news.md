@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 新聞, 新功能
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0d7c42b1346805c9c03714eb9bbb3944fe940ccf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f5cfe5dc66df98e3dd4d4290023cac1874ae797a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154462"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860286"
 ---
 # <a name="whats-new-in-cwinrt"></a>C++/WinRT 的新功能
 
@@ -34,7 +34,7 @@ C++/WinRT 和 C++ 編譯器小組已共同合作，盡可能縮短組建時間�
 
 ### <a name="improved-msbuild-support"></a>已改善 MSBuild 支援
 
-我們已投注大量心力來改善對各種不同方案的 [MSBuild](/visualstudio/msbuild/msbuild?view=vs-2019) 支援。
+我們已投注大量心力來改善對各種不同方案的 [MSBuild](/visualstudio/msbuild/msbuild) 支援。
 
 ### <a name="even-faster-factory-caching"></a>更快速的處理站快取
 
@@ -96,7 +96,7 @@ C++/WinRT 協同程式已經順利執行，但我們會繼續尋找改善的方�
 
 #### <a name="open-source"></a>開放原始碼
 
-`cppwinrt.exe` 工具採用 Windows 執行階段中繼資料 (`.winmd`) 檔案，並從中產生以標頭檔案為基礎的標準 C++ 程式庫，其*投影*中繼資料中所述的 API。 如此一來，便可從 C++/WinRT 程式碼中使用取用這些 API。
+`cppwinrt.exe` 工具採用 Windows 執行階段中繼資料 (`.winmd`) 檔案，並從中產生以標頭檔案為基礎的標準 C++ 程式庫，其 *投影* 中繼資料中所述的 API。 如此一來，便可從 C++/WinRT 程式碼中使用取用這些 API。
 
 此工具目前是完全開放的原始碼專案，可在 GitHub 上找到。 瀏覽 [Microsoft\/cppwinrt](https://github.com/microsoft/cppwinrt)。
 
@@ -107,9 +107,9 @@ C++/WinRT 協同程式已經順利執行，但我們會繼續尋找改善的方�
 #### <a name="fewer-dependencies"></a>較低的相依性
 
 由於 xlang 中繼資料讀取器，`cppwinrt.exe` 工具本身具有較低的相依性。 這使其更有彈性，並且可以在更多情況下使用 &mdash; 尤其是在受限制的建置環境中。 值得注意的是，它不再依賴 `RoMetadata.dll`。
- 
+ 
 以下為 `cppwinrt.exe` 2.0 的相依性。
- 
+ 
 - ADVAPI32.dll
 - KERNEL32.dll
 - SHLWAPI.dll
@@ -142,7 +142,7 @@ C++/WinRT 協同程式已經順利執行，但我們會繼續尋找改善的方�
 - api-ms-win-core-threadpool-l1-2-0.dll
 - api-ms-win-core-com-l1-1-0.dll
 - api-ms-win-core-com-l1-1-1.dll
-- api-ms-win-core-synch-l1-2-0.dll 
+- api-ms-win-core-synch-l1-2-0.dll 
 
 #### <a name="the-windows-runtime-noexcept-attribute"></a>Windows 執行階段 `noexcept` 屬性
 
@@ -171,14 +171,14 @@ printf("%ls\n", projected.ToString().c_str());
 ```cpp
 int32_t Function() noexcept
 {
-    try
-    {
-        // code here constitutes unique value.
-    }
-    catch (...)
-    {
-        // code here is always duplicated.
-    }
+    try
+    {
+        // code here constitutes unique value.
+    }
+    catch (...)
+    {
+        // code here is always duplicated.
+    }
 }
 ```
 
@@ -228,14 +228,14 @@ using namespace Windows::System;
 ...
 fire_and_forget Async(DispatcherQueueController controller)
 {
-    bool queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(queued);
+    bool queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(queued);
 
-    // This is just to simulate queue failure...
-    co_await controller.ShutdownQueueAsync();
+    // This is just to simulate queue failure...
+    co_await controller.ShutdownQueueAsync();
 
-    queued = co_await resume_foreground(controller.DispatcherQueue());
-    assert(!queued);
+    queued = co_await resume_foreground(controller.DispatcherQueue());
+    assert(!queued);
 }
 ```
 
@@ -259,27 +259,27 @@ fire_and_forget Async(DispatcherQueueController controller)
 
 此更新新增對消除彈跳引用計數的支援，確保一旦達到零之後，就永遠無法重新啟動；同時仍然允許將 QI 用於解構期間所需的任何暫存。 在某些 XAML 應用程式/控制項中，無法避免此過程，而 C++/WinRT 現在具有彈性。
 
-您可以藉由在您的實作類型上提供靜態 **final_release** 函式來延遲解構。 物件的最後一個剩餘指標 (**std::unique_ptr**形式) 會傳遞至您的 **final_release**。 然後，您可以選擇將該指標的擁有權移至其他某些內容。 您可以安全地對指標使用 QI，而不觸發雙重解構。 但參考計數的淨變更在解構物件之處必須是零。
+您可以藉由在您的實作類型上提供靜態 **final_release** 函式來延遲解構。 物件的最後一個剩餘指標 (**std::unique_ptr** 形式) 會傳遞至您的 **final_release**。 然後，您可以選擇將該指標的擁有權移至其他某些內容。 您可以安全地對指標使用 QI，而不觸發雙重解構。 但參考計數的淨變更在解構物件之處必須是零。
 
-**final_release**的傳回值可以是 `void`，也就是 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 或 **winrt::fire_and_forget** 等非同步作業物件。
+**final_release** 的傳回值可以是 `void`，也就是 [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction) 或 **winrt::fire_and_forget** 等非同步作業物件。
 
 ```cppwinrt
 struct Sample : implements<Sample, IStringable>
 {
-    hstring ToString()
-    {
-        return L"Sample";
-    }
+    hstring ToString()
+    {
+        return L"Sample";
+    }
 
-    ~Sample()
-    {
-        // Called when the unique_ptr below is reset.
-    }
+    ~Sample()
+    {
+        // Called when the unique_ptr below is reset.
+    }
 
-    static void final_release(std::unique_ptr<Sample> self) noexcept
-    {
-        // Move 'self' as needed to delay destruction.
-    }
+    static void final_release(std::unique_ptr<Sample> self) noexcept
+    {
+        // Move 'self' as needed to delay destruction.
+    }
 };
 ```
 
@@ -290,27 +290,27 @@ struct Sample : implements<Sample, IStringable>
 ```cppwinrt
 struct MainPage : PageT<MainPage>
 {
-    MainPage()
-    {
-    }
+    MainPage()
+    {
+    }
 
-    ~MainPage()
-    {
-        DataContext(nullptr);
-    }
+    ~MainPage()
+    {
+        DataContext(nullptr);
+    }
 
-    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
-    {
-        co_await 5s;
+    static IAsyncAction final_release(std::unique_ptr<MainPage> self)
+    {
+        co_await 5s;
 
-        co_await resume_foreground(self->Dispatcher());
-        co_await self->resource.CloseAsync();
+        co_await resume_foreground(self->Dispatcher());
+        co_await self->resource.CloseAsync();
 
-        // The object is destructed normally at the end of final_release,
+        // The object is destructed normally at the end of final_release,
         // when the std::unique_ptr<MyClass> destructs. If you want to destruct
-        // the object earlier than that, then you can set *self* to `nullptr`.
-        self = nullptr;
-    }
+        // the object earlier than that, then you can set *self* to `nullptr`.
+        self = nullptr;
+    }
 };
 ```
 
@@ -330,7 +330,7 @@ struct MainPage : PageT<MainPage>
 
 #### <a name="coroutine-local-variables-are-now-destroyed-before-the-coroutine-returns"></a>協同程式區域變數現在會在協同程式傳回之前終結
 
-實作協同程式類型的傳統方式可能會讓協同程式內的區域變數在協同程式傳回/完成*之後* (而不是在最終暫停之前) 終結。 現在必須延遲到最後暫停，才能重新恢復任何等候程序，以避免這個問題並產生其他好處。
+實作協同程式類型的傳統方式可能會讓協同程式內的區域變數在協同程式傳回/完成 *之後* (而不是在最終暫停之前) 終結。 現在必須延遲到最後暫停，才能重新恢復任何等候程序，以避免這個問題並產生其他好處。
 
 ## <a name="news-and-changes-in-windows-sdk-version-100177630-windows-10-version-1809"></a>Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809) 中的新聞和變更
 
@@ -343,13 +343,13 @@ struct MainPage : PageT<MainPage>
 | 有一些新函式和基底類別有助於將集合物件傳遞給 Windows 執行階段函式，或者實作您自己的集合屬性和集合類別。 | 請參閱[使用 C++/WinRT 的集合](collections.md)。 |
 | 您可以將 [{Binding}](../xaml-platform/binding-markup-extension.md) 標記延伸與 C++/WinRT 執行階段類別搭配使用。 | 如需更多資訊與程式碼範例，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。 |
 | 支持取消協同程式可讓您註冊取消回呼。 | 如需更多資訊和程式碼範例，請參閱[取消非同步作業，以及取消回呼](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks)。 |
-| 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱[使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的**如果您使用成員函式作為委派**子小節。 |
+| 建立指向成員函式的委派時，可以在註冊處理常式的位置建立對目前物件 (而不是原始的「this」  指標) 的強式參考或弱式參考。 | 如需更多資訊和程式碼範例，請參閱 [使用事件處理委派安全地存取「this」  指標](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)小節的 **如果您使用成員函式作為委派** 子小節。 |
 | 修正 Visual Studio 對於 C++ 標準改善一致性未涵蓋的錯誤。 LLVM 和 Clang 工具鏈也可以更好地用於驗證 C++/WinRT 的標準一致性。 | 您將不再遇到[為什麼無法編譯我的新專案？我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 SDK 版本 17134](faq.md#why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134) 中描述的問題 |
 
 其他變更。
 
-- **重大變更**。 [**winrt::get_abi(winrt::hstring const&)** ](/uwp/cpp-ref-for-winrt/get-abi) 現在會傳回 `void*`，而不是 `HSTRING`。 您可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 以取得 HSTRING。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
-- **重大變更**。 [**winrt::put_abi(winrt::hstring&)** ](/uwp/cpp-ref-for-winrt/put-abi) 現在會傳回 `void**`，而不是 `HSTRING*`。 您可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 以取得 HSTRING*。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
+- **重大變更**。 [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) 現在會傳回 `void*`，而不是 `HSTRING`。 您可以使用 `static_cast<HSTRING>(get_abi(my_hstring));` 以取得 HSTRING。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
+- **重大變更**。 [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) 現在會傳回 `void**`，而不是 `HSTRING*`。 您可以使用 `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` 以取得 HSTRING*。 請參閱[交互操作 ABI 的 HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring)。
 - **重大變更**。 HRESULT 現在投影為 **winrt::hresult**。 如果您需要 HRESULT (以進行類別檢查，或支援類型特性)，您可以 `static_cast`**winrt::hresult**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::hresult** 會轉換成 HRESULT。
 - **重大變更**。 GUID 現在投影為 **winrt::guid**。 對於您實作的 API，必須為 GUID 參數使用 **winrt::guid**。 否則，只要您在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h`，**winrt::guid** 會轉換成 GUID。 請參閱[交互操作 ABI 的 GUID 結構](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct)。
 - **重大變更**。 [**winrt::handle_type 建構函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor)已透過明確宣告而強化 (現在很難使用它撰寫錯誤的程式碼)。 如果需要指派原始的控制碼值，請改由呼叫 [**handle_type::attach 函式**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function)。
@@ -383,7 +383,7 @@ struct MainPage : PageT<MainPage>
 
 但是，有另外兩種方法可以在 Visual Studio 中重定專案目標。
 
-- 移至專案屬性 [一般]  \>[Windows SDK 版本]  ，然後選取 [所有組態]  和 [所有平台]  。 將 **Windows SDK 版本**設為您要設定目標的版本。
+- 移至專案屬性 [一般]  \>[Windows SDK 版本]  ，然後選取 [所有組態]  和 [所有平台]  。 將 **Windows SDK 版本** 設為您要設定目標的版本。
 - 在 [方案總管]  中，在專案節點上按一下滑鼠右鍵，按一下 [重定專案目標]  ，選擇您要重定目標的版本，然後按一下 [確定]  。
 
 如果使用這兩種方法之一後，遇到任何編譯器或連接器錯誤，則可以先嘗試清除解決方案 ([建置]   > [清除解決方案]  及/或手動刪除所有暫存資料夾和檔案)，然後再嘗試建置。

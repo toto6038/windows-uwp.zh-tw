@@ -6,12 +6,12 @@ ms.date: 02/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, .net, unity
 ms.localizationpriority: medium
-ms.openlocfilehash: dcacb227205c0049cfc3467c9906784b0b55728f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b687f3ec09a99ae6ccb81e5c205eb454e0af0e04
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165232"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860115"
 ---
 # <a name="missing-net-apis-in-unity-and-uwp"></a>Unity 和 UWP 中遺失 .NET API
 
@@ -27,7 +27,7 @@ ms.locfileid: "89165232"
 
 每個版本的 UWP SDK 符合不同層級的 .NET Standard。 例如，16299 SDK (Fall Creators Update) .NET Standard 2.0。
 
-如果您想要知道特定 .NET API 在您的目標 UWP 版本中是否受支援，您可以檢查 [.NET Standard API 參考](/dotnet/api/index?view=netstandard-2.0)，然後選取該版本的 UWP 支援的 .NET Standard 版本。
+如果您想要知道特定 .NET API 在您的目標 UWP 版本中是否受支援，您可以檢查 [.NET Standard API 參考](/dotnet/api/index?view=netstandard-2.0&preserve-view=true)，然後選取該版本的 UWP 支援的 .NET Standard 版本。
 
 ## <a name="scripting-backend-configuration"></a>指令碼後端設定
 
@@ -115,7 +115,7 @@ private void UsingThreads()
 
 ### <a name="security"></a>安全性
 
-部分 **System.Security.*** 命名空間，例如 [System.Security.Cryptography.X509Certificates](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0)，在您建置適用於 UWP 的 Unity 遊戲時不會提供。 在這些案例中，請使用 **Windows.Security.*** API，其涵蓋幾乎相同的功能。
+部分 **系統安全性。** _ 當您建立 UWP 的 Unity 遊戲時，無法使用 [system.security.cryptography.x509certificates.x509certificate2](/dotnet/api/system.security.cryptography.x509certificates?view=netstandard-2.0&preserve-view=true)命名空間（例如，）。 在這些情況下，請使用 _*Windows 安全性。* *_ Api，其中涵蓋許多相同的功能。
 
 下列範例只會取得憑證存放區中具指定名稱的憑證：
 
@@ -138,11 +138,11 @@ private async void GetCertificatesAsync(string certStoreName)
 
 ### <a name="networking"></a>網路功能
 
-部分 **System&period;Net.*** 命名空間，例如 [System.Net.Mail](/dotnet/api/system.net.mail?view=netstandard-2.0)，也在建置適用於 UWP 的 Unity 遊戲時不會提供。 對於這些 API 大部分，請使用對應的 **Windows.Networking.*** 和 **Windows.Web.*** WinRT API 來取得類似的功能。 如需詳細資訊，請參閱[網路和 web 服務](../networking/index.md)。
+當您建立 UWP 的 Unity 遊戲時，也無法使用某些 _* *system &period; net.tcp*_ 命名空間，例如 [system .net. Mail](/dotnet/api/system.net.mail?view=netstandard-2.0&preserve-view=true)。 針對大部分的 api，請使用對應的 _*Windows.* *_ 和 _*windows* *_ . 網路。WinRT Api 來取得類似的功能。 如需詳細資訊，請參閱[網路和 web 服務](../networking/index.md)。
 
-在 **System.Net.Mail** 的案例中，使用 [Windows.ApplicationModel.Email](/uwp/api/windows.applicationmodel.email) 命名空間。 如需詳細資訊，請參閱[傳送電子郵件](../contacts-and-calendar/sending-email.md)。
+如果是 _ * System .Net. Mail * *，請使用 [ApplicationModel](/uwp/api/windows.applicationmodel.email) 命名空間。 如需詳細資訊，請參閱[傳送電子郵件](../contacts-and-calendar/sending-email.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 * [通用 Windows 平台︰.NET 指令碼後端遺失 .NET 類型](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
 * [用於 UWP App 的 .NET 概觀](/previous-versions/windows/apps/br230302(v=vs.140))

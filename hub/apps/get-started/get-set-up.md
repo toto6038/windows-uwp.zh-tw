@@ -1,23 +1,23 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 開始設定
-description: 開始設定比您想像中容易。 請依照下列指示操作，並開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
+description: 開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
 ms.date: 10/13/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b0991e4d1173bc665e0cf14786e1901e26e4823c
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 6c80bb9a3b9fe59550dff0603bdbe1b87e5b2982
+ms.sourcegitcommit: 3eb43ba2a6c52ad83523d63d825ac5d4d9050cd3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011863"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97811959"
 ---
 # <a name="get-set-up"></a>開始設定
 
 ![準備好使用 Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-開始操作比您想像中容易。 請依照下列指示操作，並開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
+開始操作比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
 
 ## <a name="1-download-or-update-visual-studio"></a>1.下載或更新 Visual Studio
 
@@ -57,8 +57,8 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 
 在您安裝工具並啟用裝置以進行開發之後，請查看有關如何開始建立 Windows 10 應用程式的指導方針。
 
--   [選擇您的平台](/windows/desktop/apps/choose-your-platform.md)
--   [開始撰寫 UWP 應用程式的程式碼](/windows/uwp/get-started/create-uwp-apps.md)
+-   [選擇您的平台](../desktop/choose-your-platform.md)
+-   [開始撰寫 UWP 應用程式的程式碼](/windows-apps-src/get-started/create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 開發設定指令碼
 
@@ -73,5 +73,5 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 ## <a name="see-also"></a>另請參閱
 
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
-* [什麼是 UWP 應用程式？](/windows/uwp/get-started/universal-application-platform-guide.md)
+* [什麼是 UWP 應用程式？](/windows-apps-src/get-started/universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

@@ -6,16 +6,16 @@ ms.date: 11/18/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: contperfq2
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 309568b80d51cc8bd6cd2394317ef3bb8266a212
-ms.sourcegitcommit: 2a23972e9a0807256954d6da5cf21d0bbe7afb0a
+ms.openlocfilehash: 78d843ff9bdd0625b7172af0bc973581d8bd988a
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94941814"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860411"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -278,7 +278,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 檔案系統 | ms-settings:privacy-broadfilesystemaccess |
 | 一般 | ms 設定：隱私權或 ms 設定：隱私權-一般 |
 | 筆跡 & 鍵入 |ms-settings:privacy-speechtyping |
-| Location | ms-settings:privacy-location |
+| 位置 | ms-settings:privacy-location |
 | Messaging (傳訊) | ms-settings:privacy-messaging |
 | 麥克風 | ms-settings:privacy-microphone |
 | 動作 | ms-settings:privacy-motion |
@@ -344,7 +344,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 | 日期與時間 | ms-settings:dateandtime |
 | 日文 IME 設定 | ms-settings:regionlanguage-jpnime (適用於 Microsoft 日文輸入法編輯器有安裝時) |
 | 區域 | ms-settings： regionformatting |
-| Language | ms 設定：鍵盤<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-拼音-domainlexicon<br/>ms-settings： regionlanguage-chsime-拼音-keyconfig<br/>ms-settings： regionlanguage-chsime-拼音-udp<br/>ms-settings： regionlanguage-chsime-wubi-udp<br/>ms-settings： regionlanguage-quickime |
+| 語言 | ms 設定：鍵盤<br/>ms-settings:regionlanguage<br/>ms-settings： regionlanguage-bpmfime<br/>ms-settings： regionlanguage-cangjieime<br/>ms-settings： regionlanguage-chsime-拼音-domainlexicon<br/>ms-settings： regionlanguage-chsime-拼音-keyconfig<br/>ms-settings： regionlanguage-chsime-拼音-udp<br/>ms-settings： regionlanguage-chsime-wubi-udp<br/>ms-settings： regionlanguage-quickime |
 | 拼音輸入法設定 | ms-settings:regionlanguage-chsime-pinyin (適用於 Microsoft 拼音輸入法編輯器有安裝時) |
 | 語音 | ms-settings:speech |
 | 五筆輸入法設定  | ms-settings:regionlanguage-chsime-wubi (適用於 Microsoft 五筆輸入法編輯器有安裝時) |
@@ -354,7 +354,7 @@ bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Founda
 |設定頁面| URI |
 |-------------|-----|
 | 啟用 | ms-settings:activation |
-| 備份 | ms-settings:backup |
+| Backup | ms-settings:backup |
 | 傳遞最佳化 | ms-settings:delivery-optimization |
 | 尋找我的裝置 | ms-settings:findmydevice |
 | 開發人員 | ms-settings:developers |
