@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: d3e2385b1e15334b26663f6f17b3ef47ab015eec
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
+ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91216633"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911008"
 ---
 # <a name="page-transitions"></a>頁面轉換
 
@@ -104,4 +104,4 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 ## <a name="related-topics"></a>相關主題
 
 - [在兩個頁面之間瀏覽](../basics/navigate-between-two-pages.md)
-- [UWindowsWP apps 中的動作](index.md)
+- [UWP app 裡的動作](index.md)
