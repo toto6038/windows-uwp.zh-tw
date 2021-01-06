@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cdd1904dad82e0145305fe2709360be01518a7f
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: e18c7bcffe7249f6c191fc456422e0dd0c7300ef
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878481"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927801"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -35,10 +35,10 @@ ms.locfileid: "91878481"
 
 依預設，當您將使用者、群組或 Azure AD 應用程式新增至合作夥伴中心帳戶時，會顯示一組標準角色供您選擇。 每個角色都具備一組特定權限，以便在帳戶內執行特定功能。 
 
-除非選取 **\[自訂權限\]** 來選擇定義[自訂權限](#custom)，否則您新增到帳戶的每個使用者、群組或 Azure AD 應用程式至少必須被指派下列其中一個標準角色。 
+除非選取 **\[自訂權限\]** 來選擇定義 [自訂權限](#custom)，否則您新增到帳戶的每個使用者、群組或 Azure AD 應用程式至少必須被指派下列其中一個標準角色。 
 
 > [!NOTE]
-> 帳戶的**擁有者**是第一位使用 Microsoft 帳戶建立它的人 (而不是任何透過 Azure AD 新增的使用者)。 這個帳戶擁有者是唯一具備帳戶完整存取權的人，包括能夠刪除 App、建立和編輯所有帳戶使用者，以及變更所有財務和帳戶設定。 
+> 帳戶的 **擁有者** 是第一位使用 Microsoft 帳戶建立它的人 (而不是任何透過 Azure AD 新增的使用者)。 這個帳戶擁有者是唯一具備帳戶完整存取權的人，包括能夠刪除 App、建立和編輯所有帳戶使用者，以及變更所有財務和帳戶設定。 
 
 
 | 角色                 | 描述              |
@@ -53,9 +53,9 @@ ms.locfileid: "91878481"
 
 |                                                       |    帳戶擁有者                 |    Manager                       |    開發人員                     |    商務參與者    |    財務參與者    |    行銷人員                      |
 |-------------------------------------------------------|----------------------------------|----------------------------------|----------------------------------|----------------------------|---------------------------|----------------------------------|
-|    **取得報表 (包括近乎即時的資料) ** |    可檢視                      |    可檢視                      |    無存取權                     |    無存取權               |    可檢視               |    無存取權                     |
+|    **取得報表 (包括近乎即時的資料)** |    可檢視                      |    可檢視                      |    無存取權                     |    無存取權               |    可檢視               |    無存取權                     |
 |    **意見反應報告/回應**                          |    可檢視並傳送意見反應    |    可檢視並傳送意見反應    |    可檢視並傳送意見反應    |    無存取權               |    無存取權              |    可檢視並傳送意見反應    |
-|    **健康情況報告 (包括近乎即時的資料) **      |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    無存取權              |    無存取權                     |
+|    **健康情況報告 (包括近乎即時的資料)**      |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    無存取權              |    無存取權                     |
 |    **使用方式報告**                                       |    可檢視                      |    可檢視                      |    可檢視                      |    可檢視                |    無存取權              |    無存取權                     |
 |    **支付帳戶**                                     |    可更新                    |    無存取權                     |    無存取權                     |    無存取權               |    可更新             |    無存取權                     |
 |    **稅金設定檔**                                        |    可更新                    |    無存取權                     |    無存取權                     |    無存取權               |    可更新             |    無存取權                     |
@@ -77,9 +77,9 @@ ms.locfileid: "91878481"
 - **無存取權**：使用者將不具有指示的權限。
 - **唯讀**：使用者有權檢視指示區域相關的功能，但無法進行變更。 
 - **讀/寫**：使用者有權進行區域相關的變更和檢視。
-- **混合式**︰您無法直接選取這個選項，但如果您允許該權限有存取權組合，則會顯示**混合式**指示器。 例如，如果您針對**所有產品**的**定價和可用性**授與**唯讀**存取權，然後針對特定產品授與**定價和可用性**的**讀/寫**存取權，則**所有產品**的**定價和可用性**指示器會顯示為「混合式」。 如果某些產品具有**無存取權** 的權限，但其他產品具有**讀/寫**和/或**唯讀**存取權，則情況一樣。
+- **混合式**︰您無法直接選取這個選項，但如果您允許該權限有存取權組合，則會顯示 **混合式** 指示器。 例如，如果您針對 **所有產品** 的 **定價和可用性** 授與 **唯讀** 存取權，然後針對特定產品授與 **定價和可用性** 的 **讀/寫** 存取權，則 **所有產品** 的 **定價和可用性** 指示器會顯示為「混合式」。 如果某些產品具有 **無存取權** 的權限，但其他產品具有 **讀/寫** 和/或 **唯讀** 存取權，則情況一樣。
 
-針對某些權限 (例如和檢視分析資料相關的權限)，您只能授與**唯讀**存取權。 請注意，在目前的實作中，有些權限沒有區別**唯讀**和**讀/寫**存取權。 請檢閱每個權限的詳細資料，以了解**唯讀**和/或**讀/寫**存取權賦予的特定能力。
+針對某些權限 (例如和檢視分析資料相關的權限)，您只能授與 **唯讀** 存取權。 請注意，在目前的實作中，有些權限沒有區別 **唯讀** 和 **讀/寫** 存取權。 請檢閱每個權限的詳細資料，以了解 **唯讀** 和/或 **讀/寫** 存取權賦予的特定能力。
 
 下表說明每個權限相關的特定詳細資料。
 
@@ -101,19 +101,19 @@ ms.locfileid: "91878481"
     </tr>
     </thead>
     <tbody>
-<tr><td align="left">    <b>帳戶設定</b>                    </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中查看所有頁面，包括 <a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡人資訊</a>。       </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中查看所有頁面。 可變更<a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
+<tr><td align="left">    <b>帳戶設定</b>                    </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中查看所有頁面，包括 <a href="/partner-center/partner-center-account-setup">連絡人資訊</a>。       </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中查看所有頁面。 可變更<a href="/partner-center/partner-center-account-setup">連絡資訊</a>和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
 <tr><td align="left">    <b>帳戶使用者</b>                       </td><td align="left">  可檢視已加入 <b>\[使用者\]</b> 區段中的帳戶的使用者。          </td><td align="left">  可在 <b>\[使用者\]</b> 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
-<tr><td align="left">    <b>帳戶層級 ad 效能報表</b> </td><td align="left">  可檢視帳戶層級的<a href="advertising-performance-report.md">廣告效益報告</a>。      </td><td align="left">  N/A   </td></tr>
+<tr><td align="left">    <b>帳戶層級 ad 效能報表</b> </td><td align="left">  可檢視帳戶層級的<a href="advertising-performance-report.md">廣告效益報告</a>。      </td><td align="left">  不適用   </td></tr>
 <tr><td align="left">    <b>廣告活動</b>                        </td><td align="left">  可檢視帳戶中建立的<a href="/windows/uwp/monetize/">廣告活動</a>。      </td><td align="left">  可建立、管理和檢視帳戶中建立的<a href="/windows/uwp/monetize/">廣告活動</a>。          </td></tr>
 <tr><td align="left">    <b>Ad 中繼</b>                        </td><td align="left">  可檢視帳戶中所有產品的廣告流量分配設定。    </td><td align="left">  可檢視和變更帳戶中所有產品的廣告流量分配設定。        </td></tr>
-<tr><td align="left">    <b>Ad 中繼報告</b>                </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/advertising-performance-report">廣告流量分配報告</a>。    </td><td align="left">  N/A    </td></tr>
-<tr><td align="left">    <b>Ad 效能報告</b>              </td><td align="left">  可檢視帳戶中所有產品的<a href="advertising-performance-report.md">廣告效益報告</a>。       </td><td align="left">  N/A         </td></tr>
+<tr><td align="left">    <b>Ad 中繼報告</b>                </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/advertising-performance-report">廣告流量分配報告</a>。    </td><td align="left">  不適用    </td></tr>
+<tr><td align="left">    <b>Ad 效能報告</b>              </td><td align="left">  可檢視帳戶中所有產品的<a href="advertising-performance-report.md">廣告效益報告</a>。       </td><td align="left">  不適用         </td></tr>
 <tr><td align="left">    <b>Ad 單位</b>                            </td><td align="left">  可檢視已為帳戶建立的<a href="in-app-ads.md">廣告單位</a>。    </td><td align="left">  可建立、管理及檢視帳戶的<a href="in-app-ads.md">廣告單位</a>。             </td></tr>
 <tr><td align="left">    <b>分支機搆廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/in-app-ads">聯盟廣告</a>使用量。    </td><td align="left">  可管理和檢視帳戶中所有產品的<a href="/windows/uwp/publish/in-app-ads">聯盟廣告</a>使用量。                </td></tr>
-<tr><td align="left">    <b>關係企業效能報告</b>      </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/advertising-performance-report">聯盟績效報告</a>。   </td><td align="left">  N/A   </td></tr>
-<tr><td align="left">    <b>應用程式安裝 ads 報表</b>             </td><td align="left">  可檢視<a href="/windows/uwp/publish/ad-campaign-report">廣告活動報告</a>。           </td><td align="left">  N/A   </td></tr>
+<tr><td align="left">    <b>關係企業效能報告</b>      </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/publish/advertising-performance-report">聯盟績效報告</a>。   </td><td align="left">  不適用   </td></tr>
+<tr><td align="left">    <b>應用程式安裝 ads 報表</b>             </td><td align="left">  可檢視<a href="/windows/uwp/publish/ad-campaign-report">廣告活動報告</a>。           </td><td align="left">  不適用   </td></tr>
 <tr><td align="left">    <b>社區廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="/windows/uwp/monetize/">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="/windows/uwp/monetize/">社群廣告</a>使用量。               </td></tr>
-<tr><td align="left">    <b>連絡人資訊</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="/windows/uwp/publish/manage-account-settings-and-profile">連絡資訊</a>。            </td></tr>
+<tr><td align="left">    <b>連絡人資訊</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="/partner-center/partner-center-account-setup">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="/partner-center/partner-center-account-setup">連絡資訊</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 合規性</b>                    </td><td align="left">  可檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
 <tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可以)  (區段和已知的使用者群組，來查看 <a href="create-customer-groups.md">客戶群組</a> 。      </td><td align="left">  可以建立、編輯及查看 <a href="create-customer-groups.md">客戶群組</a> (區段和已知的使用者群組) 。       </td></tr>
 <tr><td align="left">    <b>管理產品群組</b>&nbsp;*                            </td><td align="left">  可檢視新的產品群組建立頁面，但實際上不能在帳戶中建立新的產品群組。    </td><td align="left">  可以建立和編輯產品群組。     </td></tr>
@@ -124,7 +124,7 @@ ms.locfileid: "91878481"
 <tr><td align="left">    <b>付款摘要</b>                      </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。       </td><td align="left">  可檢視<a href="payout-summary.md">支付摘要</a>以存取和下載支付報告資訊。   </td></tr>
 <tr><td align="left">    <b>信賴憑證者</b>&nbsp;*                   </td><td align="left">  可檢視信賴憑證者以擷取 XTokens。    </td><td align="left">  可管理和檢視信賴憑證者以擷取 XTokens。     </td></tr>
 <tr><td align="left">    <b>沙箱</b>&nbsp;*                         </td><td align="left">  可以存取 <b>沙箱</b> 頁面，並查看帳戶中的沙箱以及這些沙箱的任何適用設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。 </td><td align="left">  可以存取 <b>沙箱</b> 頁面，並查看和管理帳戶中的沙箱，包括建立和刪除沙箱，以及管理其設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。    </td></tr>
-<tr><td align="left">    <b>商店銷售活動</b>&nbsp;*                            </td><td align="left">  N/A    </td><td align="left">  可以設定自動將產品包含在 Microsoft Store 銷售事件中的選項。     </td></tr>
+<tr><td align="left">    <b>商店銷售活動</b>&nbsp;*                            </td><td align="left">  不適用    </td><td align="left">  可以設定自動將產品包含在 Microsoft Store 銷售事件中的選項。     </td></tr>
 <tr><td align="left">    <b>稅務設定檔</b>                         </td><td align="left">  可以在<b>帳戶設定</b>中查看<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅務設定檔資訊和表單</a>。     </td><td align="left">  可以在<b>帳戶設定</b>中填寫稅務表單，並更新<a href="setting-up-your-payout-account-and-tax-forms.md#tax-forms">稅務設定檔資訊</a>。     </td></tr>
 <tr><td align="left">    <b>測試帳戶</b>&nbsp;*                     </td><td align="left">  可檢視用於測試 Xbox Live 設定的帳戶。      </td><td align="left">  可建立、管理和檢視用於測試 Xbox Live 設定的帳戶。      </td></tr>
 <tr><td align="left">    <b>Xbox 裝置</b>                        </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中，查看為帳戶啟用的 Xbox 開發主控台。       </td><td align="left">  可以在 [ <b>帳戶設定</b> ] 區段中，新增、移除和查看為帳戶啟用的 Xbox 開發主控台。     </td></tr>
@@ -138,9 +138,9 @@ ms.locfileid: "91878481"
 
 本節中的權限可授與帳戶中的所有產品，或可自訂為只允許一或多個特定產品的權限。 
 
-產品層級的權限分成四種類別︰**分析**、**創造營收**、**發佈**和 **Xbox Live**。 您可以展開這些類別，以檢視每個類別中的個別權限。 您也可以選擇啟用一或多個特定產品的**所有權限**。
+產品層級的權限分成四種類別︰**分析**、**創造營收**、**發佈** 和 **Xbox Live**。 您可以展開這些類別，以檢視每個類別中的個別權限。 您也可以選擇啟用一或多個特定產品的 **所有權限**。
 
-若要為帳戶中的每個產品授與權限，請在標示 **\[所有產品\]** 的列中針對該權限做選擇 (切換方塊以指示**唯讀**或**讀/寫**)。 
+若要為帳戶中的每個產品授與權限，請在標示 **\[所有產品\]** 的列中針對該權限做選擇 (切換方塊以指示 **唯讀** 或 **讀/寫**)。 
  
 > [!TIP]
 > 對 **\[所有產品\]** 做的選擇將適用於目前帳戶中的每個產品，以及未來在帳戶建立的任何產品。 若要防止權限套用到未來的產品，請個別選取所有產品，而不要選擇 **\[所有產品\]**。
@@ -149,7 +149,7 @@ ms.locfileid: "91878481"
 
 每個附加元件都會列在其父產品下的個別資料列中，以及 **所有附加** 元件資料列。 針對 **所有附加** 元件所做的選擇會套用至該產品的所有目前附加元件，以及針對該產品所建立的任何未來附加元件。
 
-請注意，附加元件無法設定一部分的權限。 這是因為它們不適用於附加元件 (例如**客戶回函**權限)，或因為在父產品層級授與的權限適用於該產品的所有附加元件 (例如**促銷碼**)。 但請注意，附加元件適用的任何權限都必須個別設定；附加元件不會繼承為父產品所做的選擇。 例如，如果您想允許使用者選擇附加元件的定價和可用性，則無論是否已授與父產品的**定價和可用性**權限，您都必須啟用附加元件 (或**所有附加元件**) 的**定價和可用性**權限。 
+請注意，附加元件無法設定一部分的權限。 這是因為它們不適用於附加元件 (例如 **客戶回函** 權限)，或因為在父產品層級授與的權限適用於該產品的所有附加元件 (例如 **促銷碼**)。 但請注意，附加元件適用的任何權限都必須個別設定；附加元件不會繼承為父產品所做的選擇。 例如，如果您想允許使用者選擇附加元件的定價和可用性，則無論是否已授與父產品的 **定價和可用性** 權限，您都必須啟用附加元件 (或 **所有附加元件**) 的 **定價和可用性** 權限。 
 
 
 ### <a name="analytics"></a>分析
@@ -165,11 +165,11 @@ ms.locfileid: "91878481"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">     (包括近乎即時資料) 的<b>收購</b> </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    N/A    </td><td>    N/A (父產品的設定包含附加元件的 [ **收購** ] 報告)         </td><td>    N/A                         </td></tr>
-    <tr><td align="left">    <b>使用</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    N/A       </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>健全狀況</b> (包括近乎即時的資料)  </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    N/A     </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>客戶意見反應</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    N/A (回應意見反應或評論，必須授 <b>與 Contact 客戶</b> 的許可權)    </td><td>    N/A     </td><td>    N/A         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可以查看產品的 <a href="xbox-analytics-report.md">Xbox 分析報表</a> 。    </td><td>    N/A   </td><td>    N/A       </td><td>    N/A          </td></tr>
+    <tr><td align="left">     (包括近乎即時資料) 的<b>收購</b> </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    不適用    </td><td>    N/A (父產品的設定包含附加元件的 [ **收購** ] 報告)         </td><td>    不適用                         </td></tr>
+    <tr><td align="left">    <b>使用</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    不適用     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>健全狀況</b> (包括近乎即時的資料)  </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    不適用     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>客戶意見反應</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    N/A (回應意見反應或評論，必須授 <b>與 Contact 客戶</b> 的許可權)    </td><td>    不適用     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可以查看產品的 <a href="xbox-analytics-report.md">Xbox 分析報表</a> 。    </td><td>    不適用   </td><td>    不適用       </td><td>    不適用          </td></tr>
     </tbody>
     </table>
 
@@ -187,9 +187,9 @@ ms.locfileid: "91878481"
     </thead>
     <tbody>
     <tr><td align="left">    <b>促銷代碼</b>     </td><td>    可檢視產品和其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單與使用量資訊，並可檢視使用量資訊。         </td><td>    可檢視、管理及建立產品及其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單，並可檢視使用量資訊。          </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td></tr>
-    <tr><td align="left">    <b>目標優惠</b>     </td><td>    可檢視產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。         </td><td>    可檢視、管理及建立產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。          </td><td>    N/A     </td><td>    N/A      </td></tr>
-    <tr><td align="left">    <b>聯絡客戶</b>  </td><td>    只要一併授與<b>客戶回函</b>權限，即可檢視<a href="respond-to-customer-feedback.md">對客戶回函的回應</a>和<a href="respond-to-customer-reviews.md">對客戶評論的回應</a>。 也可檢視已為產品建立的<a href="send-push-notifications-to-your-apps-customers.md">特定對象的通知</a>。    </td><td>    只要授與客戶<b>意見</b>反應許可權，就可以<a href="respond-to-customer-feedback.md">回應客戶的意見</a>反應並<a href="respond-to-customer-reviews.md">回應客戶評論</a>。 也可為產品<a href="send-push-notifications-to-your-apps-customers.md">建立和傳送特定對象的通知</a>。                   </td><td>    N/A         </td><td>    N/A                          </td></tr>
-    <tr><td align="left">    <b>測試</b></td><td>    可檢視 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視實驗資料。     </td><td>    N/A  </td><td>    N/A                 </td></tr>
+    <tr><td align="left">    <b>目標優惠</b>     </td><td>    可檢視產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。         </td><td>    可檢視、管理及建立產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。          </td><td>    不適用     </td><td>    不適用      </td></tr>
+    <tr><td align="left">    <b>聯絡客戶</b>  </td><td>    只要一併授與<b>客戶回函</b>權限，即可檢視<a href="respond-to-customer-feedback.md">對客戶回函的回應</a>和<a href="respond-to-customer-reviews.md">對客戶評論的回應</a>。 也可檢視已為產品建立的<a href="send-push-notifications-to-your-apps-customers.md">特定對象的通知</a>。    </td><td>    只要授與客戶<b>意見</b>反應許可權，就可以<a href="respond-to-customer-feedback.md">回應客戶的意見</a>反應並<a href="respond-to-customer-reviews.md">回應客戶評論</a>。 也可為產品<a href="send-push-notifications-to-your-apps-customers.md">建立和傳送特定對象的通知</a>。                   </td><td>    不適用         </td><td>    不適用                          </td></tr>
+    <tr><td align="left">    <b>測試</b></td><td>    可檢視 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視實驗資料。     </td><td>    不適用  </td><td>    不適用                 </td></tr>
     <tr><td align="left">    <b>商店銷售活動</b>&nbsp;*</td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td></tr>
     </tbody>
     </table>
@@ -215,10 +215,10 @@ ms.locfileid: "91878481"
     <tr><td align="left">    <b>商店清單</b>  </td><td>    可以查看產品 <a href="create-app-store-listings.md">) 的 Store 清單頁面 (</a> 。  </td><td>    可以查看和編輯產品 <a href="create-app-store-listings.md">) 的 Store 清單 (頁面 </a> ，也可以新增不同語言的新商店清單。     </td><td>    可以查看附加元件的 <a href="create-add-on-store-listings.md">Store 清單頁面 () </a> 。            </td><td>    可以查看和編輯附加元件 <a href="create-add-on-store-listings.md">)  (的 Store 清單頁面 </a> ，也可以新增不同語言的商店清單。                 </td></tr>
     <tr><td align="left">    <b>提交商店</b>     </td><td>    若此權限設為唯讀，則不會授與任何存取權。           </td><td>    可將產品提交到市集和檢視認證報告。 包含新的與更新的提交。 </td><td>若此權限設為唯讀，則不會授與任何存取權。     </td><td>    可將附加元件提交到市集和檢視認證報告。 包含新的與更新的提交。</td></tr>
     <tr><td align="left">    <b>建立新提交</b>       </td><td>    若此權限設為唯讀，則不會授與任何存取權。        </td><td>    可為產品建立新的<a href="app-submissions.md">提交</a>。  </td><td>    若此權限設為唯讀，則不會授與任何存取權。   </td><td>    可為附加元件建立新的<a href="add-on-submissions.md">提交</a>。        </td></tr>
-    <tr><td align="left">    <b>新附加元件</b>    </td><td>    若此權限設為唯讀，則不會授與任何存取權。 </td><td>    可為產品<a href="set-your-add-on-product-id.md">建立新的附加元件</a>。 </td><td>    N/A    </td><td>    N/A        </td></tr>
+    <tr><td align="left">    <b>新附加元件</b>    </td><td>    若此權限設為唯讀，則不會授與任何存取權。 </td><td>    可為產品<a href="set-your-add-on-product-id.md">建立新的附加元件</a>。 </td><td>    不適用    </td><td>    不適用        </td></tr>
     <tr><td align="left">    <b>名稱保留</b>   </td><td>    可檢視產品的<a href="manage-app-names.md">管理 app 名稱</a>頁面。</td><td>    可檢視和編輯產品的<a href="manage-app-names.md">管理 app 名稱</a>頁面，包括保留其他名稱及刪除保留名稱。 </td><td>   可檢視附加元件的保留名稱。    </td><td>   可檢視和編輯附加元件的保留名稱。          </td></tr>
-    <tr><td align="left">    <b>光碟要求</b>   </td><td>    可以在 [要求] 頁面上查看光碟。 </td><td>    可以建立光碟要求。 </td><td>   N/A    </td><td>   N/A          </td></tr>
-    <tr><td align="left">    <b>光碟版稅 </b>   </td><td>    可以在 [版稅] 頁面中查看光碟。</td><td>    可以建立光碟版稅。 </td><td>   N/A    </td><td>   N/A          </td></tr>
+    <tr><td align="left">    <b>光碟要求</b>   </td><td>    可以在 [要求] 頁面上查看光碟。 </td><td>    可以建立光碟要求。 </td><td>   不適用    </td><td>   不適用          </td></tr>
+    <tr><td align="left">    <b>光碟版稅 </b>   </td><td>    可以在 [版稅] 頁面中查看光碟。</td><td>    可以建立光碟版稅。 </td><td>   不適用    </td><td>   不適用          </td></tr>
     </tbody>
     </table>
 
@@ -235,15 +235,15 @@ ms.locfileid: "91878481"
     </tr>
     </thead>
     <tbody>
-    <tr><td align="left">    <b>信賴憑證者</b>&nbsp;*</td><td>    可以查看帳戶的 [信賴憑證者] 頁面。   </td><td>    可以查看和編輯帳戶的 [信賴憑證者] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>合作夥伴服務</b>&nbsp;*</td><td>    可以查看帳戶的 [Web 服務] 頁面。  </td><td>    可以查看和編輯帳戶的 [Web 服務] 頁面。      </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox 測試帳戶</b>&nbsp;*</td><td>    可以查看帳戶的 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯帳戶的 [Xbox Test 帳戶] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>每個沙箱的 Xbox Test 帳戶</b>&nbsp;*</td><td>    只能針對特定的沙箱帳戶，查看 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯 Xbox Test。   <tr><td align="left">    <b>帳戶的僅限指定沙箱的 [帳戶] 頁面    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>Xbox 裝置</b>&nbsp;*</td><td>    可以查看帳戶的 Xbox one 開發主控台頁面。  </td><td>    可以查看和編輯帳戶的 Xbox one 開發主控台頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>每一沙箱的 Xbox 裝置</b>&nbsp;*</td><td>    只能針對特定的沙箱帳戶，查看 [Xbox one 開發主控台] 頁面。  </td><td>    只能針對特定的沙箱帳戶，查看及編輯 [Xbox one 開發主控台] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>應用程式通道</b>&nbsp;*</td><td>    N/A  </td><td>    可將宣傳影片頻道發佈到 Xbox 主機，以透過OneGuide 檢視。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>服務設定</b>&nbsp;*</td><td>    可以查看產品的 Xbox Live 服務設定] 頁面。  </td><td>    可以查看和編輯產品的 Xbox Live 服務設定] 頁面。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
-    <tr><td align="left">    <b>工具存取</b>&nbsp;*</td><td>    可以在產品上執行 Xbox Live 工具，以僅查看資料。  </td><td>    可以在產品上執行 Xbox Live 工具來查看和編輯資料。    </td><td>    N/A    </td><td>    N/A                      </td></tr>
+    <tr><td align="left">    <b>信賴憑證者</b>&nbsp;*</td><td>    可以查看帳戶的 [信賴憑證者] 頁面。   </td><td>    可以查看和編輯帳戶的 [信賴憑證者] 頁面。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>合作夥伴服務</b>&nbsp;*</td><td>    可以查看帳戶的 [Web 服務] 頁面。  </td><td>    可以查看和編輯帳戶的 [Web 服務] 頁面。      </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>Xbox 測試帳戶</b>&nbsp;*</td><td>    可以查看帳戶的 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯帳戶的 [Xbox Test 帳戶] 頁面。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>每個沙箱的 Xbox Test 帳戶</b>&nbsp;*</td><td>    只能針對特定的沙箱帳戶，查看 [Xbox Test 帳戶] 頁面。  </td><td>    可以查看和編輯 Xbox Test。   <tr><td align="left">    <b>帳戶的僅限指定沙箱的 [帳戶] 頁面    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>Xbox 裝置</b>&nbsp;*</td><td>    可以查看帳戶的 Xbox one 開發主控台頁面。  </td><td>    可以查看和編輯帳戶的 Xbox one 開發主控台頁面。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>每一沙箱的 Xbox 裝置</b>&nbsp;*</td><td>    只能針對特定的沙箱帳戶，查看 [Xbox one 開發主控台] 頁面。  </td><td>    只能針對特定的沙箱帳戶，查看及編輯 [Xbox one 開發主控台] 頁面。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>應用程式通道</b>&nbsp;*</td><td>    不適用  </td><td>    可將宣傳影片頻道發佈到 Xbox 主機，以透過OneGuide 檢視。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>服務設定</b>&nbsp;*</td><td>    可以查看產品的 Xbox Live 服務設定] 頁面。  </td><td>    可以查看和編輯產品的 Xbox Live 服務設定] 頁面。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
+    <tr><td align="left">    <b>工具存取</b>&nbsp;*</td><td>    可以在產品上執行 Xbox Live 工具，以僅查看資料。  </td><td>    可以在產品上執行 Xbox Live 工具來查看和編輯資料。    </td><td>    不適用    </td><td>    不適用                      </td></tr>
 </tbody>
 </table>
 

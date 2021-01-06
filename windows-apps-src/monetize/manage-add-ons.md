@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f02e222cf495f56352a645ac3a366da39dc5e3a
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9ec2213f5a46318f3aaddbbe5d55b58f6816fcce
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89158412"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927780"
 ---
 # <a name="manage-add-ons"></a>管理附加元件
 
@@ -49,7 +49,7 @@ ms.locfileid: "89158412"
 <td align="left"><a href="create-an-add-on.md">建立附加元件</a></td>
 </tr>
 <tr>
-<td align="left">刪除</td>
+<td align="left">DELETE</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">刪除附加元件</a></td>
 </tr>
@@ -97,7 +97,7 @@ ms.locfileid: "89158412"
 
 此資源具有下列值。
 
-| 值      | 類型   | 說明        |
+| 值      | 類型   | 描述        |
 |------------|--------|--------------|
 | 應用程式所需      | array  | 包含一個[應用程式資源](#application-object)的陣列，其代表與此附加元件相關聯之應用程式。 此陣列只支援一個項目。  |
 | id | 字串  | 附加元件的 Store 識別碼。 此值由 Microsoft Store 所提供。  Store 識別碼範例為 9NBLGGH4TNMP。  |
@@ -128,10 +128,10 @@ ms.locfileid: "89158412"
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述        |
-|-----------------|---------|-----------|
-| value            | 物件 (object)  |  此物件包含下列值： <br/><br/> <ul><li>*id*。應用程式的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](../publish/view-app-identity-details.md)。</li><li>*>resourcelocation*。 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取應用程式完整資料的相對路徑。</li></ul>   |
-| totalCount   | int  | 回應內文的 applications** 陣列中的應用程式物件數目。                                                                                                                                                 |
+| 值 | 類型 | 描述 |
+|-------|------|-------------|
+| value | 物件 (object) | 此物件包含下列值： <ul><li>*id*。應用程式的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](../publish/view-app-identity-details.md)。</li><li>*>resourcelocation*。 您可以附加到基底 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 以抓取應用程式完整資料的相對路徑。</li></ul> |
+| totalCount | int | 回應內文的 applications 陣列中的應用程式物件數目。 |
 
 <span id="submission-object" />
 
@@ -153,8 +153,8 @@ ms.locfileid: "89158412"
 | 值           | 類型    | 描述     |
 |-----------------|---------|------------------|
 | id            | 字串  | 提交的識別碼。    |
-| resourceLocation   | 字串  | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。     |
- 
+| resourceLocation   | 字串  | 您可以附加到基底 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 以抓取提交完整資料的相對路徑。     |
+
 <span/>
 
 ## <a name="related-topics"></a>相關主題

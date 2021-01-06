@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX 應用程式物件
 ms.localizationpriority: medium
-ms.openlocfilehash: 29eaba70a7114624474275b8f98ec77f8038b2b0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 08d2039bd7b3b8aa248acca31615d34635929aa1
+ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163162"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97927771"
 ---
 # <a name="the-app-object-and-directx"></a>App 物件和 DirectX
 
@@ -34,7 +34,7 @@ ms.locfileid: "89163162"
 
 ## <a name="the-windows-runtime-app-object"></a>Windows 執行階段 App 物件
 
-在您的 UWP app 中，您想取得一個視窗和一個檢視提供者，然後透過這個檢視提供者取得檢視，並將您的交換鏈結 (顯示緩衝區) 連接到這個檢視提供者。 您也可以將這個檢視與執行中 app 的視窗專屬事件連結。 若要取得應用程式物件的父視窗（由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 類型定義），請建立實 [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的型別。 如需示範如何執行**IFrameworkViewSource**的[c + +/WinRT](../cpp-and-winrt-apis/index.md)程式碼範例，請參閱[使用 DirectX 和 Direct2D 組合原生交互操作](../composition/composition-native-interop.md)。
+在您的 UWP app 中，您想取得一個視窗和一個檢視提供者，然後透過這個檢視提供者取得檢視，並將您的交換鏈結 (顯示緩衝區) 連接到這個檢視提供者。 您也可以將這個檢視與執行中 app 的視窗專屬事件連結。 若要取得應用程式物件的父視窗（由 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 類型定義），請建立實 [**IFrameworkViewSource**](/uwp/api/Windows.ApplicationModel.Core.IFrameworkViewSource)的型別。 如需示範如何執行 **IFrameworkViewSource** 的 [c + +/WinRT](../cpp-and-winrt-apis/index.md)程式碼範例，請參閱 [使用 DirectX 和 Direct2D 組合原生交互操作](../composition/composition-native-interop.md)。
 
 以下是使用核心使用者介面架構取得視窗的一組基本步驟。
 
@@ -94,12 +94,13 @@ ms.locfileid: "89163162"
 
 您可以使用 [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) 類型，判斷針對視窗分派之事件的執行緒行為。 在這個類型上，只有一個特別重要的方法：[**CoreDispatcher.ProcessEvents**](/uwp/api/windows.ui.core.coredispatcher.processevents) 方法，這個方法會啟動視窗事件處理程序。 使用錯誤的選項為 App 呼叫這個方法，會導致各種非預期的事件處理行為。
 
-| CoreProcessEventsOption 選項                                                           | 說明                                                                                                                                                                                                                                  |
-|------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 在佇列中分派所有目前可用的事件。 如果沒有擱置的事件，會等待下一個新事件。                                                                                                                                 |
-| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | 如果佇列中有擱置的事件，則會分派一個事件。 如果沒有擱置的事件，不要等待新事件出現，而是立即返回。                                                                                          |
-| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)        | 等待新事件，並分派所有可用的事件。 繼續這個行為，直到視窗關閉，或是應用程式呼叫 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 執行個體上的 [**Close**](/uwp/api/windows.ui.core.corewindow.close) 方法為止。 |
-| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption)     | 在佇列中分派所有目前可用的事件。 如果沒有擱置的事件，則立即返回。                                                                                                                                          |
+| CoreProcessEventsOption 選項 | 描述 |
+|--------------------------------|-------------|
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 在佇列中分派所有目前可用的事件。 如果沒有擱置的事件，會等待下一個新事件。 |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 如果佇列中有擱置的事件，則會分派一個事件。 如果沒有擱置的事件，不要等待新事件出現，而是立即返回。 |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 等待新事件，並分派所有可用的事件。 繼續這個行為，直到視窗關閉，或是應用程式呼叫 [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) 執行個體上的 [**Close**](/uwp/api/windows.ui.core.corewindow.close) 方法為止。 |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) | 在佇列中分派所有目前可用的事件。 如果沒有擱置的事件，則立即返回。 |
+
 使用 DirectX 的 UWP 應該使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](/uwp/api/Windows.UI.Core.CoreProcessEventsOption) 選項來防止干擾圖形更新的封鎖行為。
 
 ## <a name="asta-considerations-for-directx-devs"></a>DirectX 開發人員的 ASTA 考量
