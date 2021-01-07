@@ -5,12 +5,12 @@ ms.date: 11/12/2020
 ms.topic: article
 keywords: 'windows 10、c #、winrt、cswinrt、投影'
 ms.localizationpriority: medium
-ms.openlocfilehash: 45fa8a7858077438d9707835b548bdacd34e5d11
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: 57bc5c49d47dacee910cd3d80964f797633ef587
+ms.sourcegitcommit: 6da85cc75c02a5a7417966abddc8824ac87fb619
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214190"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964731"
 ---
 # <a name="walkthrough-generate-a-net-5-projection-from-a-cwinrt-component-and-distribute-the-nuget"></a>逐步解說：從 C++/WinRT 元件產生 .NET 5.0 投影並散發 NuGet
 
@@ -18,7 +18,7 @@ ms.locfileid: "97214190"
 
 您可以 [從 GitHub 下載](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/Net5ProjectionSample)本逐步解說的完整範例。
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>先決條件
 
 本逐步解說和對應的範例需要下列工具和元件：
 
@@ -141,7 +141,7 @@ namespace winrt::SimpleMathComponent::implementation
 
 ## <a name="create-a-nuget-package-from-the-projection"></a>從投影建立 NuGet 套件
 
-若要散發和使用 interop 元件，您可以在建立方案時自動建立 NuGet 套件，方法是新增一些額外的專案屬性。 此封裝將包含 interop 元件，以及所需 c #/WinRT 執行時間元件的 c #/WinRT NuGet 套件相依性。 此執行時間元件的名稱為 .NET 5.0 目標的 **winrt.runtime.dll** 。
+若要散發和使用 interop 元件，您可以在建立方案時自動建立 NuGet 套件，方法是新增一些額外的專案屬性。 針對 .NET 5.0 目標，套件應該包含 interop 元件、實元件，以及所需 c #/WinRT 執行時間元件的 c #/WinRT NuGet 套件相依性， **WinRT.Runtime.dll**。
 
 1. 將 NuGet 規格 (. nuspec) 檔案新增至 **SimpleMathProjection** 專案。
 
@@ -158,7 +158,7 @@ namespace winrt::SimpleMathComponent::implementation
       <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
-3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example of a C++/WinRT component NuGet spec. Notice the `dependency` on CsWinRT for the `net5.0` target framework moniker, as well as the target for `lib\net5.0\SimpleMathProjection.dll`, which points to the projection assembly **SimpleMathComponent.dll** instead of **SimpleMathComponent.winmd**. This behavior is new in .NET 5.0 and enabled by C#/WinRT.
+3. Open the **SimpleMathProjection.nuspec** file to edit the package creation properties. Below is an example NuGet spec for distributing the interop assembly from the C++/WinRT component. Note that for .NET 5.0 targets, under the `dependencies` node there is a dependency on CsWinRT, and under the `files` node **SimpleMathProjection.dll** is specified instead of **SimpleMathComponent.winmd** for the target `lib\net5.0\SimpleMathProjection.dll`. This behavior is new in .NET 5.0 and enabled by C#/WinRT. The implementation assembly, **SimpleMathComponent.dll**, must also be deployed for .NET 5.0 targets. 
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -178,7 +178,7 @@ namespace winrt::SimpleMathComponent::implementation
         </dependencies>
       </metadata>
       <files>
-        <!--Support net46+, netcore3, net5, uap, c++ -->
+        <!--Support netcore3, uap, net46+, net5, c++ -->
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\netcoreapp3.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\uap10.0\SimpleMathComponent.winmd" />
         <file src="..\..\_build\x64\Debug\SimpleMathComponent\bin\SimpleMathComponent\SimpleMathComponent.winmd" target="lib\net46\SimpleMathComponent.winmd" />
