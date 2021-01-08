@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 769366cd45b4734987e3f558c11a6e0e105cfe21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
+ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164452"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97978573"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 
@@ -59,11 +59,13 @@ ms.locfileid: "89164452"
 5.  在您的 [應用程式資訊清單](/azure/active-directory/develop/active-directory-application-manifest)中新增數個必要的物件 uri。 在左窗格中，按一下 [資訊清單]。 按一下 [ **編輯**]，將 `"identifierUris"` 區段取代為下列文字，然後按一下 [ **儲存**]。
 
     ```json
-    "identifierUris" : [                                
-            "https://onestore.microsoft.com",
-            "https://onestore.microsoft.com/b2b/keys/create/collections",
-            "https://onestore.microsoft.com/b2b/keys/create/purchase"
+    "accessTokenAcceptedVersion": 1,
+    "identifierUris": [
+        "https://onestore.microsoft.com",
+        "https://onestore.microsoft.com/b2b/keys/create/collections",
+        "https://onestore.microsoft.com/b2b/keys/create/purchase"
         ],
+    "signInAudience": "AzureADMyOrg",
     ```
 
     這些字串代表您應用程式所支援的對象。 在後續的步驟中，您將會建立與這些對象值中每個相關聯的 Azure AD 存取權杖。
@@ -124,7 +126,7 @@ grant_type=client_credentials
 
 * 若為 *用戶端 \_ 識別碼* 和 *用戶端 \_ 秘密* 參數，請為您從 [Azure 管理入口網站](https://portal.azure.com/)取出的應用程式指定應用程式識別碼和用戶端密碼。 為了要建立 Microsoft Store 集合 API 或購買 API 所需驗證層級的存取權杖，這兩個參數都是必要的。
 
-* 對於 *resource* 參數，指定[上一節](#access-tokens)中列出的其中一個對象 URI，視您要建立的存取權杖類型而定。
+* 對於 *resource* 參數，指定 [上一節](#access-tokens)中列出的其中一個對象 URI，視您要建立的存取權杖類型而定。
 
 存取權杖到期之後，您可以按照[這裡](/azure/active-directory/azuread-dev/v1-protocols-oauth-code#refreshing-the-access-tokens)的指示，重新整理權杖。 如需有關存取權杖結構的詳細資訊，請參閱[支援的權杖和宣告類型](/azure/active-directory/develop/id-tokens)。
 
@@ -215,7 +217,7 @@ Microsoft Store 識別碼金鑰就是 JSON Web 權杖 (JWT)，代表您想要存
 * `nbf`： &nbsp; &nbsp; &nbsp; 識別將接受標記以進行處理的時間。 此宣告的值會顯示為 Epoch 時間。
 * `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`： &nbsp; &nbsp; &nbsp; 識別開發人員的用戶端識別碼。
 * `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`： &nbsp; &nbsp; &nbsp; 透明承載 (加密和 Base64 編碼的) ，其中包含僅供 Microsoft Store 服務使用的資訊。
-* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`： &nbsp; &nbsp; &nbsp; 在您的服務內容中識別目前使用者的使用者識別碼。 此值與您傳遞給[用來建立金鑰的方法](#step-4)之選擇性 *publisherUserId* 參數的值相同。
+* `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`： &nbsp; &nbsp; &nbsp; 在您的服務內容中識別目前使用者的使用者識別碼。 此值與您傳遞給 [用來建立金鑰的方法](#step-4)之選擇性 *publisherUserId* 參數的值相同。
 * `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri`： &nbsp; &nbsp; &nbsp; 您可以用來更新金鑰的 URI。
 
 以下是已解碼的 Microsoft Store 識別碼金鑰標頭範例。
