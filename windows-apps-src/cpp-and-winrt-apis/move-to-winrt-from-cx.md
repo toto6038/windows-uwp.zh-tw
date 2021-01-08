@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e25f9cdb091f96b648ddc00d5f5cc96bf18d1d1
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 035003be1c9b8ef84d0563af6be9f5b3a01978c7
+ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750594"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860135"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -26,7 +26,7 @@ ms.locfileid: "91750594"
 
 ### <a name="porting-in-one-pass"></a>一次性的移植
 
-如果您能夠一次移植整個專案，則只需閱讀本主題即可取得所需的資訊 (無須閱讀本主題後續的*相互操作*主題)。 建議您先使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新的專案 (請參閱 [C++/WinRT 的 Visual Studio 支援](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，將您的原始程式碼檔案移至該新專案，同時將所有 C++/CX 原始程式碼移植到 C++/WinRT。
+如果您能夠一次移植整個專案，則只需閱讀本主題即可取得所需的資訊 (無須閱讀本主題後續的 *相互操作* 主題)。 建議您先使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新的專案 (請參閱 [C++/WinRT 的 Visual Studio 支援](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，將您的原始程式碼檔案移至該新專案，同時將所有 C++/CX 原始程式碼移植到 C++/WinRT。
 
 或者，如果您想要在現有的 C++/CX 專案中執行移植工作，則必須在其中新增 C++/WinRT 支援。 如需該作業所需的步驟，請參閱[取用 C++/CX 專案並新增 C++/WinRT 支援](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)。 當您完成移植時，純 C++/CX 專案將會轉換為純 C++/WinRT 專案。
 
@@ -39,7 +39,7 @@ ms.locfileid: "91750594"
 
 若要將專案做好準備以進行逐步移植程序，其中一個選項是將 C++/WinRT 支援新增至您的 C++/CX 專案。 如需該作業所需的步驟，請參閱[取用 C++/CX 專案並新增 C++/WinRT 支援](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support)。 然後，您即可從該處逐步移植。
 
-另一個選項是使用一個 C++/WinRT 專案範本在 Visual Studio 中建立新的專案 (請參閱 [C++/WinRT 的 Visual Studio 支援](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，將 C++/CX 支援新增至該專案。 如需該作業所需的步驟，請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support)。 如此，您即可開始將原始程式碼移至該程式碼，同時將*部分* C++/CX 原始程式碼移植到 C++/WinRT。
+另一個選項是使用一個 C++/WinRT 專案範本在 Visual Studio 中建立新的專案 (請參閱 [C++/WinRT 的 Visual Studio 支援](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 然後，將 C++/CX 支援新增至該專案。 如需該作業所需的步驟，請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support)。 如此，您即可開始將原始程式碼移至該程式碼，同時將 *部分* C++/CX 原始程式碼移植到 C++/WinRT。
 
 無論採用哪個選項，您都可以在C++/WinRT 程式碼與尚未移植的任何 C++/CX 程式碼之間進行相互操作 (雙向)。
 
@@ -49,7 +49,7 @@ ms.locfileid: "91750594"
 #### <a name="porting-a-xaml-project-gradually"></a>逐步移植 XAML 專案
 
 > [!IMPORTANT]
-> 對於使用 XAML 的專案，您所有的 XAML 頁面類型無論何時都必須完全是 C++/CX 或完全是 C++/WinRT。 您仍然可以在相同專案內的 XAML 頁面類型*以外*混用 C++/CX 和 C++/WinRT (在您的模型和 ViewModel 中，以及其他位置)。
+> 對於使用 XAML 的專案，您所有的 XAML 頁面類型無論何時都必須完全是 C++/CX 或完全是 C++/WinRT。 您仍然可以在相同專案內的 XAML 頁面類型 *以外* 混用 C++/CX 和 C++/WinRT (在您的模型和 ViewModel 中，以及其他位置)。
 
 在此案例中，我們建議的工作流程是建立新的 C++/WinRT 專案，並從 C++/CX 專案將原始程式碼和標記複製過去。 只要您所有的 XAML 頁面類型都是 C++/WinRT，您就可以使用 [專案]\>[新增項目...] 來新增 XAML 頁面。\>**Visual C++**  > **空白頁 (C++/WinRT)** 。
 
@@ -65,7 +65,7 @@ ms.locfileid: "91750594"
 
 - **一次性移植**。 使用一個 C++/WinRT 專案範本，在 Visual Studio 中建立新的專案。 將檔案從 C++/CX 專案移至該新專案，並移植 C++/CX 原始程式碼。
 - **逐步移植非 XAML 專案**。 您可以選擇將 C++/WinRT 支援新增 C++/CX 專案 (請參閱[取用 C++/CX 專案並新增 C++/WinRT 支援](./interop-winrt-cx.md#taking-a-ccx-project-and-adding-cwinrt-support))，然後逐步移植。 或者，您可以選擇建立新的 C++/WinRT 專案，並為其新增 C++/CX 支援 (請參閱[取用 C++/WinRT 專案並新增 C++/CX 支援](./interop-winrt-cx.md#taking-a-cwinrt-project-and-adding-ccx-support))、將檔案移過去，然後逐步移植。
-- **逐步移植 XAML 專案**。 建立新的 C++/WinRT 專案、將檔案移過去，然後逐步移植。 您的 XAML 頁面類型無論何時都必須完全是 C++/WinRT *或*完全是 C++/CX。
+- **逐步移植 XAML 專案**。 建立新的 C++/WinRT 專案、將檔案移過去，然後逐步移植。 您的 XAML 頁面類型無論何時都必須完全是 C++/WinRT *或* 完全是 C++/CX。
 
 無論您選擇哪一種移植策略，都適用本主題的其餘內容。 其中包含將原始程式碼從 C++/CX 移植到 C++/WinRT 所牽涉到的技術詳細資料目錄。 如果您要逐步移植，則建議您也參閱 [C++/WinRT 與 C++/CX 之間的相互操作](./interop-winrt-cx.md)和 [C++/WinRT 與 C++/CX 之間的非同步和相互操作](./interop-winrt-cx-async.md)。
 
@@ -328,9 +328,9 @@ C++ 集合類型會使用預設建構函式，這可能導致非預期的物件�
 
 ### <a name="more-about-collections-of-empty-references"></a>深入了解空白參考的集合
 
-每當您的 C++/CX 中有 **Platform::Array\^** 時 (請參閱[移植 **Platform::Array\^** ](#port-platformarray))，您可以選擇將其移植到 C++/WinRT 中的 **std::vector** (事實上，任何連續的容器皆可)，而不將其保留為陣列。 選擇 **std::vector** 有某些優點。
+每當您的 C++/CX 中有 **Platform::Array\^** 時 (請參閱 [移植 **Platform::Array\^**](#port-platformarray))，您可以選擇將其移植到 C++/WinRT 中的 **std::vector** (事實上，任何連續的容器皆可)，而不將其保留為陣列。 選擇 **std::vector** 有某些優點。
 
-例如，雖然在建立空白參考固定大小的向量時有速記 (請參閱上表)，但在建立空白參考的*陣列*時則沒有這類速記。 您必須針對陣列中的每個元素重複 `nullptr`。 如果您的元素過少，則會有額外的預設建構元素。
+例如，雖然在建立空白參考固定大小的向量時有速記 (請參閱上表)，但在建立空白參考的 *陣列* 時則沒有這類速記。 您必須針對陣列中的每個元素重複 `nullptr`。 如果您的元素過少，則會有額外的預設建構元素。
 
 針對向量，您可以在初始化時為其填入空白參考 (如上表所示)，或者，您可以在初始化後，使用如下列的程式碼填入空白參考。
 
@@ -350,7 +350,7 @@ boxes.resize(10, nullptr); // 10 empty references.
 
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>從基礎執行階段類別轉換至衍生的執行階段類別
 
-讓您所知的 reference-to-base 參考到衍生類型的物件，算是相當常見。 在 C++/CX 中，要使用 `dynamic_cast` 將 reference-to-base *轉換*為 reference-to-derived。 `dynamic_cast` 實際上只是對 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 的隱藏呼叫。 這是一個典型的範例&mdash;您在處理相依性屬性變更事件，而且希望從 **DependencyObject** 轉換回擁有相依性屬性的實際類型。
+讓您所知的 reference-to-base 參考到衍生類型的物件，算是相當常見。 在 C++/CX 中，要使用 `dynamic_cast` 將 reference-to-base *轉換* 為 reference-to-derived。 `dynamic_cast` 實際上只是對 [**QueryInterface**](/windows/desktop/api/unknwn/nf-unknwn-iunknown-queryinterface(q_)) 的隱藏呼叫。 這是一個典型的範例&mdash;您在處理相依性屬性變更事件，而且希望從 **DependencyObject** 轉換回擁有相依性屬性的實際類型。
 
 ```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
@@ -490,7 +490,7 @@ C++/CX 會自動將純量 Box 處理為物件。 C++/WinRT 會要求您明確地
 
 字串在某些方面是實值類型，而在其他方面則是參考類型。 C++/CX 和 C++/WinRT 會以不同的方式處理字串。
 
-ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_) 內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
+ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>**](/uwp/api/windows.foundation.ireference_t_) 內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
 
 C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將字串投影為實值類型。 這表示已進行 Box 處理的 null 字串可以有不同的表示法 (取決於您達成的方式)。
 
@@ -528,14 +528,14 @@ C++/CX 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT �
 
 如需詳細資訊和程式碼範例，請參閱[使用標記中的物件](./binding-property.md#consuming-objects-from-xaml-markup)。
 
-## <a name="mapping-ccx-platform-types-to-cwinrt-types"></a>將 C++/CX **平台**類型對應至 C++/WinRT 類型
+## <a name="mapping-ccx-platform-types-to-cwinrt-types"></a>將 C++/CX **平台** 類型對應至 C++/WinRT 類型
 
-C++/CX 在**平台**命名空間中提供幾種資料類型。 這些類型不是標準 C++，因此您只能在啟用 Windows 執行階段語言擴充功能時使用它們 (Visual Studio 專案屬性 **C/C++**  > **一般** >  **使用 Windows 執行階段擴充功能** > **是 (/ZW)** )。 下列表格有助於您從**平台**類型移植至 C++/WinRT 中的對等項目。 完成後，由於 C++/WinRT 是標準的 C++，您可以關閉 `/ZW` 選項。
+C++/CX 在 **平台** 命名空間中提供幾種資料類型。 這些類型不是標準 C++，因此您只能在啟用 Windows 執行階段語言擴充功能時使用它們 (Visual Studio 專案屬性 **C/C++**  > **一般** >  **使用 Windows 執行階段擴充功能** > **是 (/ZW)** )。 下列表格有助於您從 **平台** 類型移植至 C++/WinRT 中的對等項目。 完成後，由於 C++/WinRT 是標準的 C++，您可以關閉 `/ZW` 選項。
 
 | C++/CX | C++/WinRT |
 | ---- | ---- |
 | **Platform::Agile\^** | [**winrt::agile_ref**](/uwp/cpp-ref-for-winrt/agile-ref) |
-| **Platform::Array\^** | 請參閱[移植 **Platform::Array\^** ](#port-platformarray) |
+| **Platform::Array\^** | 請參閱 [移植 **Platform::Array\^**](#port-platformarray) |
 | **Platform::Exception\^** | [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) |
 | **Platform::InvalidArgumentException\^** | [**winrt::hresult_invalid_argument**](/uwp/cpp-ref-for-winrt/error-handling/hresult-invalid-argument) |
 | **Platform::Object\^** | **winrt::Windows::Foundation::IInspectable** |
@@ -559,7 +559,7 @@ winrt::agile_ref<Windows::UI::Core::CoreWindow> m_window;
 
 ### <a name="port-platformarray"></a>移植 **Platform::Array\^**
 
-在 C++/CX 要求您使用陣列的情況下，C++/WinRT 可讓您使用任何連續的容器。 若要了解 **std::vector** 為何是不錯的選擇，請參閱[預設建構函式對於集合的影響](#how-the-default-constructor-affects-collections)。
+在 C++/CX 要求您使用陣列的情況下，C++/WinRT 可讓您使用任何連續的容器。 若要了解 **std::vector** 為何是不錯的選擇，請參閱 [預設建構函式對於集合的影響](#how-the-default-constructor-affects-collections)。
 
 因此，每當 C++/CX 中有 **Platform::Array\^** 時，使用初始設定式清單 (**std::array** 或 **std::vector**) 都將是您的移植選項之一。 如需詳細資訊以及程式碼範例，請參閱[標準初始化清單](./std-cpp-data-types.md#standard-initializer-lists)和[標準陣列和向量](./std-cpp-data-types.md#standard-arrays-and-vectors)。
 
@@ -599,7 +599,7 @@ C++/WinRT 提供這些例外類別。
 | [**winrt::hresult_out_of_bounds**](/uwp/cpp-ref-for-winrt/error-handling/hresult-out-of-bounds) | **winrt::hresult_error** | E_BOUNDS |
 | [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/error-handling/hresult-wrong-thread) | **winrt::hresult_error** | RPC_E_WRONG_THREAD |
 
-請注意，每個類別 (透過 **hresult_error** 基底類別) 提供一個 [**to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) 函式，傳回錯誤的 HRESULT，以及一個[**訊息**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function)函式，傳回該 HRESULT 的字串表示方法。
+請注意，每個類別 (透過 **hresult_error** 基底類別) 提供一個 [**to_abi**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorto_abi-function) 函式，傳回錯誤的 HRESULT，以及一個 [**訊息**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function)函式，傳回該 HRESULT 的字串表示方法。
 
 以下是在 C++/CX 中擲回例外狀況的範例。
 
@@ -625,7 +625,7 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 **Platform::String\^** 等同於 Windows 執行階段 HSTRING ABI 類型。 對於 C++/WinRT，對等項目是 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。 但使用 C++/WinRT，您可以使用 C++ 標準程式庫寬字串類型 (例如 **std::wstring**) 來呼叫 Windows 執行階段 API，及/或寬字串常值。 如需詳細資訊和程式碼範例，請參閱 [C++/WinRT 中的字串處理](strings.md)。
 
-使用 C++/CX，您可以存取 [**Platform::String::Data**](/cpp/cppcx/platform-string-class?view=vs-2019#data) 屬性來擷取字串做為 C-style **const wchar_t\*** 陣列 (例如，將它傳遞至 **std::wcout**)。
+使用 C++/CX，您可以存取 [**Platform::String::Data**](/cpp/cppcx/platform-string-class#data) 屬性，來擷取字串做為 C-style **const wchar_t\* *_ array (例如，將它傳遞至 _* std::wcout**)。
 
 ```cppcx
 auto var{ titleRecord->TitleName->Data() };
@@ -724,7 +724,7 @@ C++/CX 和 C++/WinR 會延遲為標準 **std::wstringstream** 以便建立字串
 
 #### <a name="more-examples"></a>更多範例
 
-在下列範例中，*ws* 是 **std::wstring**類型的變數。 此外，雖然 C++/CX 可以從 8 位元字串建構 **Platform::String**，但是 C++/WinRT 不會這麼做。
+在下列範例中，*ws* 是 **std::wstring** 類型的變數。 此外，雖然 C++/CX 可以從 8 位元字串建構 **Platform::String**，但是 C++/WinRT 不會這麼做。
 
 | 操作 | C++/CX | C++/WinRT |
 | - | - | - |

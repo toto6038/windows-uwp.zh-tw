@@ -5,12 +5,12 @@ keywords: XAML, UWP, 開始使用
 ms.date: 08/20/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6919a2dc15aac7c5e589f2c0355f9c1cc13bfc7a
-ms.sourcegitcommit: 40b890c7b862f333879887cc22faff560c49eae6
+ms.openlocfilehash: e9db25c822d524ec36c6e512e132e49a69a2bd7d
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97598809"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691522"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -266,10 +266,7 @@ ms.locfileid: "97598809"
 
 現在完成了這個實習課程，您已具備充足的調整型配置知識，可以進一步自行實驗。 若要進行更大的挑戰，請嘗試最佳化較大螢幕大小的版面配置，例如 Surface Hub。 如果您想要測試 Surface Hub 版面配置，請參閱[使用 Visual Studio 測試 Surface Hub 應用程式](../../debug-test-perf/test-surface-hub-apps-using-visual-studio.md)。
 
-如果遇到困難，您可以在[使用 XAML 回應式版面配置](../layout/layouts-with-xaml.md)的下列各節中找到更多指引。
-
-+ [視覺狀態與狀態觸發程序](../layout/layouts-with-xaml.md#adaptive-layouts-with-visual-states-and-state-triggers)
-+ [量身訂做的版面配置](../layout/layouts-with-xaml.md#tailored-layouts)
+如果遇到困難，您可以在[使用 XAML 回應式版面配置](../layout/layouts-with-xaml.md)中找到更多指導。
 
 或者，如果您想要深入了解最初的編輯相片應用程式是如何建置，請參閱 XAML [使用者介面](../basics/xaml-basics-ui.md)及[資料繫結](../../data-binding/xaml-basics-data-binding.md)的那些教學課程。
 

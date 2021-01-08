@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 搭配 wsl 的 python web, 搭配 windows 子系統 linux 版的 python web 應用程式, 在 windows 上進行 python web 開發, windows 上的 flask 應用程式, windows 上的 django 應用程式, python web, 在 windows 上進行 flask web 開發, 在 windows 上進行 django web 開發, 使用 python 進行 windows web 開發, vs code python web 開發, 遠端 wsl 延伸模組, ubuntu, wsl, venv, pip, microsoft python 延伸模組, 在 windows 上執行 python, 在 windows 上使用 python, 在 windows 上使用 python 進行建置
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 187195133dd614818d3c68473cc53b71a0b32333
-ms.sourcegitcommit: 27552ed7d3d889f50d8e01776a24b8d486a8d97c
+ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91958741"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880551"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>開始在 Windows 上使用 Python 進行 Web 開發
 
@@ -60,7 +60,7 @@ ms.locfileid: "91958741"
 ![Ubuntu 終端機](../images/ubuntu-terminal.png)
 
 > [!TIP]
-> 使用 Windows 子系統 Linux 版 (WSL) 時，必須記住的重要事項是**您現在正在兩個不同的檔案系統之間工作**：1) 您的 Windows 檔案系統，以及 2) 您的 Linux 檔案系統 (WSL)，即我們範例中使用的 Ubuntu。 您必須注意安裝套件和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件，以及在 Linux 檔案系統中安裝完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具，反之亦然。 WSL 會將您電腦上的固定磁碟機掛接在 Linux 發行版本的 `/mnt/<drive>` 資料夾底下。 例如，您的 Windows C: 磁碟機掛接在 `/mnt/c/` 底下。 您可以從 Ubuntu 終端機存取 Windows 檔案，並在這些檔案上使用 Linux 應用程式和工具，反之亦然。 建議您在適用於 Python Web 開發的 Linux 檔案系統中工作，這是因為大部分的 Web 工具原本是針對 Linux 所撰寫，並部署在 Linux 生產環境中。 它也可避免混用檔案系統語意 (例如，Windows 在檔案名稱方面不區分大小寫)。 話雖如此，WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍，因此您可以在其中一個檔案上裝載您的檔案。 [深入了解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。
+> 使用 Windows 子系統 Linux 版 (WSL) 時，必須記住的重要事項是 **您現在正在兩個不同的檔案系統之間工作**：1) 您的 Windows 檔案系統，以及 2) 您的 Linux 檔案系統 (WSL)，即我們範例中使用的 Ubuntu。 您必須注意安裝套件和儲存檔案的位置。 您可以在 Windows 檔案系統中安裝一個或多個版本的工具或套件，以及在 Linux 檔案系統中安裝完全不同的版本。 更新 Windows 檔案系統中的工具將不會影響 Linux 檔案系統中的工具，反之亦然。 WSL 會將您電腦上的固定磁碟機掛接在 Linux 發行版本的 `/mnt/<drive>` 資料夾底下。 例如，您的 Windows C: 磁碟機掛接在 `/mnt/c/` 底下。 您可以從 Ubuntu 終端機存取 Windows 檔案，並在這些檔案上使用 Linux 應用程式和工具，反之亦然。 建議您在適用於 Python Web 開發的 Linux 檔案系統中工作，這是因為大部分的 Web 工具原本是針對 Linux 所撰寫，並部署在 Linux 生產環境中。 它也可避免混用檔案系統語意 (例如，Windows 在檔案名稱方面不區分大小寫)。 話雖如此，WSL 現在支援在 Linux 和 Windows 檔案系統之間進行跳躍，因此您可以在其中一個檔案上裝載您的檔案。 [深入了解](https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/)。
 
 ## <a name="install-python-pip-and-venv"></a>安裝 Python、pip 和 venv
 
@@ -202,7 +202,7 @@ Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、A
 
 14. 將您的預設網頁瀏覽器開啟至轉譯的頁面，**按住 Ctrl 並按一下** 終端機中的 http://127.0.0.1:5000/ URL。 您應該會在瀏覽器中看到下列訊息：
 
-    ![Hello, Flask!](../images/hello-flask.png)
+    ![Hello World! 我正在使用 Flask。](../images/hello-flask.png)
 
 15. 請注意，當您造訪 "/" 之類的 URL 時，有一則訊息會出現在偵錯終端機中，其中顯示 HTTP 要求：
 
@@ -264,7 +264,7 @@ Python 是一種解譯的語言，並支援不同類型的解譯器 (Python2、A
     Quit the server with CONTROL-C.
     ```
 
-    當您第一次執行伺服器時，它會在檔案 `db.sqlite3` 中建立預設 SQLite 資料庫，這是專供開發之用，但可用於小量 Web 應用程式的生產中。 此外，Django 的內建 Web 伺服器*僅*供本機開發之用。 不過，當您部署至 Web 主機時，Django 會改為使用主機的 Web 伺服器。 Django 專案中的 `wsgi.py` 模組負責連結至生產伺服器。
+    當您第一次執行伺服器時，它會在檔案 `db.sqlite3` 中建立預設 SQLite 資料庫，這是專供開發之用，但可用於小量 Web 應用程式的生產中。 此外，Django 的內建 Web 伺服器 *僅* 供本機開發之用。 不過，當您部署至 Web 主機時，Django 會改為使用主機的 Web 伺服器。 Django 專案中的 `wsgi.py` 模組負責連結至生產伺服器。
 
     如果您想要使用與預設 8000 不同的連接埠，請在命令列上指定連接埠號碼，例如 `python3 manage.py runserver 5000`。
 

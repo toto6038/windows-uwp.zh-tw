@@ -5,38 +5,39 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: contperf-fy21q2
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: fd2f755153b29c9be766d39fb685a3f923868946
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 4c2ff55b0f89e913cd2093add37f008c38e9312f
+ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750415"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97691535"
 ---
 # <a name="responsive-layouts-with-xaml"></a>使用 XAML 的回應式版面配置
 
-XAML 版面配置系統提供自動調整大小、版面配置面板、視覺狀態，甚至將 UI 定義分開來建立回應式 UI。 有了回應式版面配置，您就可以讓應用程式在不同應用程式視窗尺寸、解析度、像素密度與方向的螢幕上看起來更美觀。 您也可以使用 XAML 調整位置、調整大小、顯示/隱藏、取代，或重新設計您應用程式的 UI，如同[回應式設計技術](responsive-design.md)中所討論。 以下，我們討論如何搭配 XAML 實作回應式版面配置。
+XAML 版面配置系統提供自動調整元素大小、版面配置面板、視覺狀態等功能，來協助您建立回應式 UI。 有了回應式版面配置，您就可以讓應用程式在不同應用程式視窗尺寸、解析度、像素密度與方向的螢幕上看起來更美觀。 您也可以使用 XAML 調整位置、調整大小、顯示/隱藏、取代，或重新設計您應用程式的 UI，如同[回應式設計技術](responsive-design.md)中所討論。 以下，我們討論如何搭配 XAML 實作回應式版面配置。
 
 ## <a name="fluid-layouts-with-properties-and-panels"></a>具有屬性與面板的流暢版面配置
 
-回應式版面配置的基礎在於適當地使用 XAML 版面配置屬性和面板，在流暢方式中進行內容的重新置放、調整大小及自動重排。 
+回應式版面配置的基礎在於適當地使用 XAML 版面配置屬性和面板，在流暢方式中進行內容的重新置放、調整大小及自動重排。
 
-XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中，您提供控制項明確的像素大小與位置。 當使用者變更裝置的解析度或方向時，UI 不會變更。 靜態版面配置在不同的硬體規格、畫面大小中會遭到裁剪。 相反的，流暢的版面配置可縮小、放大和自動重排，以回應裝置上的可用視覺空間。 
+XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中，您提供控制項明確的像素大小與位置。 當使用者變更裝置的解析度或方向時，UI 不會變更。 靜態版面配置在不同的硬體規格、畫面大小中會遭到裁剪。 相反的，流暢的版面配置可縮小、放大和自動重排，以回應裝置上的可用視覺空間。
 
 實際上，可以使用靜態與流暢元素的組合來建立 UI。 您仍然會在某些地方使用靜態元素與值，但請確定整體 UI 是否回應不同的解析度、螢幕大小及檢視。
 
 我們將在此處討論如何使用 XAML 屬性和版面配置面板，建立流暢版面配置。
 
 ### <a name="layout-properties"></a>版面配置屬性
-版面配置屬性控制元素的大小與位置。 若要建立流暢版面配置，請針對元素使用自動或等比例調整大小，並視需要允許版面配置面板放置其子系。 
+版面配置屬性控制元素的大小與位置。 若要建立流暢版面配置，請針對元素使用自動或等比例調整大小，並視需要允許版面配置面板放置其子系。
 
 以下是一些常見的版面配置屬性，以及如何加以使用來建立流暢版面配置。
 
 **Height 與 Width**
 
-[**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) \(英文\) 與 [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) \(英文\) 屬性指定元素的大小。 您可以使用以有效像素衡量的固定值，或者可以使用自動或等比例調整大小。 
+[**Height**](/uwp/api/windows.ui.xaml.frameworkelement.height) \(英文\) 與 [**Width**](/uwp/api/windows.ui.xaml.frameworkelement.width) \(英文\) 屬性指定元素的大小。 您可以使用以有效像素衡量的固定值，或者可以使用自動或等比例調整大小。
 
 自動調整大小會調整 UI 元素大小，以符合其的內容或父容器。 您也可以使用自動調整大小搭配方格的列與欄。 若要使用自動調整大小，請將 UI 元素的 Height 和/或 Width 設定為 **Auto**。
 
@@ -47,7 +48,7 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 
 這個範例會在具有 4 欄的 [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) 中結合固定、自動和等比例調整大小。
 
-| 資料行 | 調整大小 | 描述 |
+| Column | 調整大小 | 描述 |
 | ------ | ------ | ----------- |
 Column_1 | **Auto** | 會調整欄的大小以容納其內容。
 Column_2 | * | 計算 Auto 欄之後，這個欄會分配到一部分的剩餘寬度。 Column_2 會是 Column_4 的一半寬度。
@@ -89,7 +90,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 利用 **Stretch** 對齊方式，元素將可填滿父容器中提供給它們的所有空間。 Stretch 是這兩個對齊屬性的預設值。 不過，某些控制項 (像是 [**Button**](/uwp/api/Windows.UI.Xaml.Controls.Button)) 會在其預設樣式中覆寫這個值。
 任何可含有子元素的元素都能以獨特的方式來處理 HorizontalAlignment 和 VerticalAlignment 屬性的 Stretch 值。 例如，使用放置於 Grid 中之預設 Stretch 值的元素，會向兩邊延伸以填滿包含它的儲存格。 放置於 Canvas 中的相同元素會調整大小以符合其內容。 如需每個面板如何處理 Stretch 值的詳細資訊，請參閱[版面配置面板](layout-panels.md)文章。
 
-如需詳細資訊，請參閱[對齊方式、邊界及邊框間距](alignment-margin-padding.md)文章，以及 [**HorizontalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [**VerticalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 參考頁面。
+如需詳細資訊，請參閱 [對齊方式、邊界及邊框間距](alignment-margin-padding.md)文章，以及 [**HorizontalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment) 和 [**VerticalAlignment**](/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment) 參考頁面。
 
 **可見度**
 
@@ -127,9 +128,9 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 ## <a name="adaptive-layouts-with-visual-states-and-state-triggers"></a>使用視覺效果狀態和狀態觸發程序的彈性版面配置
 使用視覺效果狀態，根據視窗大小或其他變更，大幅更改您的 UI。
 
-當應用程式視窗放大或縮小的範圍超過一定數量時，您可能想要更改版面配置屬性，以重新置放、調整大小、自動重排或取代 UI 的區段。 您可以為 UI 定義不同的視覺狀態，並在視窗寬度或視窗長度超出指定閾值時套用它們。 
+當應用程式視窗放大或縮小的範圍超過一定數量時，您可能想要更改版面配置屬性，以重新置放、調整大小、自動重排或取代 UI 的區段。 您可以為 UI 定義不同的視覺狀態，並在視窗寬度或視窗長度超出指定閾值時套用它們。
 
-[  **AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 提供一種簡單的方法來設定套用狀態的閾值 (也稱為中斷點)。 [  **VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 會定義在其處於特殊狀態時要套用到元素的屬性值。 您會在 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) 中群組視覺狀態，在符合特定條件時套用適當的 VisualState。
+[  **VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 會定義在其處於特殊狀態時要套用到元素的屬性值。 您會在 [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) 中群組視覺狀態，在符合特定條件時套用適當的 VisualState。 [ **AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 提供一種簡單的方法，來設定在 XAML 套用狀態的閾值 (也稱為「中斷點」)。 或者，您可以在程式碼中呼叫 [**VisualStateManager.GoToState**](/uwp/api/windows.ui.xaml.visualstatemanager.gotostate) 方法，來套用視覺狀態。 這兩種方式的範例會在下一節中顯示。
 
 ### <a name="set-visual-states-in-code"></a>在程式碼中設定視覺狀態
 
@@ -139,7 +140,6 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 
 > [!NOTE]
 > Windows 不會針對您的應用程式提供一個偵測執行您應用程式之特定裝置的方法。 它能夠告知您執行應用程式的裝置系列 (行動、桌面等)、實際解析度，以及應用程式可用的螢幕空間量 (應用程式的視窗大小)。 我們建議為[螢幕大小與中斷點](screen-sizes-and-breakpoints-for-responsive-design.md)定義視覺狀態。
-
 
 ```xaml
 <Page ...
@@ -345,82 +345,8 @@ void YourPage::CurrentWindow_SizeChanged(IInspectable const& sender, SizeChanged
 </Page>
 ```
 
-## <a name="tailored-layouts"></a>量身訂做的版面配置
-
-當您大幅變更不同裝置上的 UI 版面配置時，會發現更簡便的方式是使用為該裝置量身訂做的版面配置來定義個別 UI，而不是調整單一 UI。 如果功能在各個裝置上都一樣，您就可以定義個別的 XAML 檢視來共用同一個程式碼檔案。 如果檢視和功能在不同裝置上有顯著的差異，則可定義個別的 Page，然後選擇要在應用程式載入時瀏覽到哪一個 Page。
-
-### <a name="separate-xaml-views-per-device-family"></a>每個裝置系列都有不同的 XAML 檢視
-
-使用 XAML 檢視，建立不同的 UI 定義來共用相同的程式碼後置。 您可以針對每個裝置系列提供獨特的 UI 定義。 請依照下列步驟來將 XAML 檢視新增到應用程式。
-
-**將 XAML 檢視新增到應用程式**
-1. 依序選取 [專案] &gt; [加入新項目]。 隨即開啟 [加入新項目] 對話方塊。
-    > **提示**&nbsp;&nbsp;確定在 [方案總管] 中選取的是資料夾或專案，而不是解決方案。
-2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
-3. 在中央窗格，挑選 [XAML 檢視]。
-4. 輸入檢視的名稱。 檢視必須以正確方式命名。 如需命名的詳細資訊，請參閱本節的其餘部分。
-5. 按一下 [新增]。 檔案即會新增到專案。
-
-先前步驟只會建立一個 XAML 檔案，但不會建立相關聯的程式碼後置檔案。 而是會使用 DeviceName 限定詞 (此為檔案或資料夾名稱的一部分)，將 XAML 檢視關聯至現有的程式碼後置檔案。 這個限定詞名稱可對應到代表應用程式目前執行所在之裝置的裝置系列的字串值，例如，"Desktop"、"Tablet" 和其他裝置系列的名稱 (請參閱 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.qualifiervalues) \(英文\))。
-
-您可以將限定詞新增到檔案名稱，或者將檔案新增到具有限定詞名稱的資料夾。
-
-**使用檔案名稱**
-
-若要使用限定詞名稱搭配檔案，請使用下列格式： *[pageName]* .DeviceFamily- *[qualifierString]* .xaml。
-
-讓我們看一個名為 MainPage.xaml 的檔案範例。 若要建立適用於平板電腦裝置的檢視，請將 XAML 檢視命名為 MainPage.DeviceFamily-Tablet.xaml。 若要建立適用於電腦裝置的檢視，請將檢視命名為 MainPage.DeviceFamily-Desktop.xaml。 以下是方案在 Microsoft Visual Studio 中看起來的樣子。
-
-![含有完整檔案名稱的 XAML 檢視](images/xaml-layout-view-ex-1.png)
-
-**使用資料夾名稱**
-
-若要在 Visual Studio 專案中使用資料夾組織檢視，您可以使用限定詞名稱搭配資料夾。 若要這樣做，請依下列方式命名資料夾：DeviceFamily- *[qualifierString]* 。 在此案例中，每個 XAML 檢視檔案都具有相同名稱。 請勿在檔案名稱中包含限定詞。
-
-以下提供一個範例，再次提醒，這適用於名為 MainPage.xaml 的檔案。 若要建立適用於平板電腦裝置的檢視，請建立名為 DeviceFamily-Tablet 的資料夾，並將名為 MainPage.xaml 的 XAML 檢視放置到其中。 若要建立適用於電腦裝置的檢視，請建立名為 "DeviceFamily-Desktop" 的資料夾，並將另一個名為 MainPage.xaml 的 XAML 檢視放置到其中。 以下是方案在 Visual Studio 中看起來的樣子。
-
-![資料夾中的 XAML 檢視](images/xaml-layout-view-ex-2.png)
-
-在這兩個案例中，有一個獨特的檢視適用於平板電腦裝置與電腦裝置。 如果其執行所在的裝置不符合任何裝置系列特定的檢視，即會使用預設的 MainPage.xaml 檔案。
-
-### <a name="separate-xaml-pages-per-device-family"></a>每個裝置系列都有不同的 XAML 頁面
-
-若要提供獨特的檢視和功能，您可以建立個別的 Page 檔案 (XAML 和程式碼)，然後在需要某個頁面時瀏覽到適當的頁面。
-
-**將 XAML 頁面新增到應用程式**
-1. 依序選取 [專案] &gt; [加入新項目]。 隨即開啟 [加入新項目] 對話方塊。
-    > **提示**&nbsp;&nbsp;確定在 [方案總管] 選取的是專案而不是解決方案。
-2. 在左窗格的 [Visual C#] 或 [Visual Basic] 下方，挑選 [XAML] 範本類型。
-3. 在中央窗格，選取 [空白頁]。
-4. 輸入頁面的名稱。 例如，"MainPage_Tablet"。 同時建立 MainPage_Tablet.xaml 與 MainPage_Tablet.xaml.cs/vb/cpp 程式碼檔案。
-5. 按一下 [新增]。 檔案即會新增到專案。
-
-在執行階段，檢查應用程式執行所在的裝置系列，然後瀏覽到正確的頁面，如下。
-
-```csharp
-if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Tablet")
-{
-    rootFrame.Navigate(typeof(MainPage_Tablet), e.Arguments);
-}
-else
-{
-    rootFrame.Navigate(typeof(MainPage), e.Arguments);
-}
-```
-```cppwinrt
-if (Windows::System::Profile::AnalyticsInfo::VersionInfo().DeviceFamily() == L"Windows.Tablet")
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage_Tablet>(), box_value(e.Arguments()));
-}
-else
-{
-    rootFrame.Navigate(xaml_typename<WinRT_UWP::MainPage>(), box_value(e.Arguments()));
-}
-```
-
-您也可以使用不同的準則來判斷要瀏覽到哪一個頁面。 如需更多範例，請參閱[量身打造的多個檢視](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)範例，它會使用 [**GetIntegratedDisplaySize**](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getintegrateddisplaysize) 函式來檢查整合式顯示器的實體大小。
-
 ## <a name="related-topics"></a>相關主題
+
 - [教學課程：建立調適型版面配置](../basics/xaml-basics-adaptive-layout.md)
 - [回應技術範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlResponsiveTechniques) \(英文\)
 - [狀態觸發程序範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers) \(英文\)

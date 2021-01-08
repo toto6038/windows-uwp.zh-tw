@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 學習 python, windows 上適用於初學者的 python, 利用 microsoft store 安裝 python, python 搭配 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 076c62658431ba75bdbd7f385ced86f27fb2f7d0
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: f225932685e71cb2374249ad96efeac11184d000
+ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174142"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97880541"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>開始在 Windows 上使用適用於初學者的 Python
 
@@ -31,7 +31,7 @@ ms.locfileid: "89174142"
 
 1. 移至 [開始]  功能表 (左下方的 Windows 圖示)，鍵入 "Microsoft Store"，選取連結以開啟市集。
 
-2. 市集開啟之後，從右上方功能表中選取 [搜尋]  ，然後輸入 "Python"。 從 [應用程式] 底下的結果開啟 "Python 3.7"。 選取 [取得]  。
+2. 市集開啟之後，從右上方功能表中選取 [搜尋]  ，然後輸入 "Python"。 從 [應用程式] 底下的結果開啟 "Python 3.9"。 選取 [取得]  。
 
 3. 當 Python 下載結束並完成安裝程序之後，請使用 [開始]  功能表 (左下方的 Windows 圖示) 開啟 Windows PowerShell。 開啟 PowerShell 之後，請輸入 `Python --version` 以確認 Python3 已安裝在您的電腦上。
 
@@ -99,7 +99,7 @@ Python 是一種解譯的語言。 與編譯的語言相較之下，您撰寫的
 
 ## <a name="hello-world-tutorial-for-using-python-with-vs-code"></a>使用 Python 搭配 VS Code 的 Hello World 教學課程
 
-VS Code 團隊結合了絕佳的[開始使用 Python](https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder) 教學課程，逐步解說如何使用 Python 建立 Hello World 程式、執行程式檔案、設定和執行偵錯工具，以及安裝 *matplotlib* 和 *numpy* 之類的套件，以在虛擬環境內建立圖形化繪圖。
+VS Code 團隊結合了絕佳的 [開始使用 Python](https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder) 教學課程，逐步解說如何使用 Python 建立 Hello World 程式、執行程式檔案、設定和執行偵錯工具，以及安裝 *matplotlib* 和 *numpy* 之類的套件，以在虛擬環境內建立圖形化繪圖。
 
 1. 開啟 PowerShell 並建立名為 "hello" 的空資料夾、瀏覽至此資料夾，然後在 VS Code 中開啟它：
 
