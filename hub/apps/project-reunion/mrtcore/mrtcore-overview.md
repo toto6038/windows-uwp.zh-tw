@@ -7,18 +7,18 @@ keywords: MRT.LOG，MRTCore，pri，makepri，資源，資源載入
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: 0039d2a585f850bd7a15afc619d3500c092de50b
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: ce07491dcab2a11738bd5407e9094d8d780ea219
+ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97349376"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043057"
 ---
 # <a name="introduction-to-mrt-core-project-reunion"></a> (Project 留尼旺島) 的 MRT.LOG 核心簡介
 
 MRT.LOG Core 是新式 Windows [資源管理系統](/windows/uwp/app-resources/resource-management-system) 的精簡版，隨著 [Project 留尼旺島](../index.md)的一部分散發。
 
-MRT.LOG 核心具有組建時間和執行時間功能。 在建置期間，系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 此索引套件資源索引或 PRI，並且也會包含在您的應用程式套件中。 在執行階段，系統偵測到已生效的使用者與電腦設定，查詢 PRI 中的資訊，並自動載入最符合這些設定的資源。
+MRT.LOG 核心具有組建時間和執行時間功能。 在建置期間，系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 此索引套件資源索引或 PRI，並且也會包含在您的應用程式套件中。
 
 ## <a name="package-resource-index-pri-file"></a>套件資源索引 (PRI) 檔案
 
@@ -43,17 +43,13 @@ MRT.LOG 核心具有組建時間和執行時間功能。 在建置期間，系�
 
 [ResourceCandidate](/windows/winui/api/microsoft.applicationmodel.resources.resourcecandidate) 物件代表單一實體資源值及其限定詞，例如針對英文的字串「Hello World」或做為合格影像資源的「logo.scale-100.jpg」，其為 scale-100 特定的解析度。
 
-App 可用的資源儲存在階層集合中，您可以存取 [ResourceMap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemap) 物件。 **ResourceManager** 類別提供 App 所使用各種最上層 **ResourceMap** 執行個體的存取權，對應至 App 的各種不同套件。 [MainResourceMap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager.mainresourcemap)值會對應至目前應用程式套件的資源對應，並排除任何參考的架構套件。 各個 **ResourceMap** 會針對套件資訊清單中指定的套件名稱命名。 在 **windows.applicationmodel.resources.core.resourcemap** 中是子樹 (請參閱 [Windows.applicationmodel.resources.core.resourcemap. GetSubtree]/windows/winui/api/microsoft.applicationmodel.resources.resourcemap.getsubtree) # A2，這會進一步包含 **NamedResource** 物件。 子樹系通常對應至包含資源的資源檔案。
-
-注意：資源識別碼會被視為統一資源識別項 (URI) 語意受統一資源識別碼 (URI) 片段，遵照 URI 語意。 例如，`GetValue("Caption%20")` 被視為 `GetValue("Caption ")`。 勿在資源識別碼中使用「?」或「#」，因為它們會終止資源路徑評估。 例如，「MyResource?3」會被視為「MyResource」。
+App 可用的資源儲存在階層集合中，您可以存取 [ResourceMap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemap) 物件。 **ResourceManager** 類別提供 App 所使用各種最上層 **ResourceMap** 執行個體的存取權，對應至 App 的各種不同套件。 [MainResourceMap](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager.mainresourcemap)值會對應至目前應用程式套件的資源對應，並排除任何參考的架構套件。 各個 **ResourceMap** 會針對套件資訊清單中指定的套件名稱命名。 **Windows.applicationmodel.resources.core.resourcemap** 中的子樹 (參閱 [windows.applicationmodel.resources.core.resourcemap. GetSubtree](/windows/winui/api/microsoft.applicationmodel.resources.resourcemap.getsubtree)) 。 子樹系通常對應至包含資源的資源檔案。
 
 **ResourceManager** 不只支援存取 App 的字串資源，也維護列舉和檢查各種不同檔案資源的能力。 為避免檔案和源自檔案內其他資源之間發生衝突，已建立索引的檔案路徑均在保留的「檔案」**ResourceMap** 子樹系內。 例如，檔案 ' \Images\logo.png ' 對應至資源名稱 ' Files/images/logo.png '。
 
-[StorageFile](https://docs.microsoft.com/uwp/api/Windows.Storage.StorageFile) API 無障礙地處理檔案參照為資源，並且適用於常見使用案例。 **ResourceManager** 應僅用於進階案例，例如當您想要覆寫目前內容時。
-
 ### <a name="resourcecontext"></a>ResourceContext
 
-資源候選項目的選擇是根據特定 [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)，這是資源限定詞值的集合 (語言、縮放比例，對比等)。 預設內容會使用 App 目前針對每個限定詞值的設定，除非被覆寫。 例如，影像之類的資源可以縮放，從一部監視器到另一部都不同，從一個應用程式檢視到另一個也不同。 基於這個原因，每個應用程式檢視具有不同的預設內容。 指定檢視的預設內容可使用 [ResourceContext.GetForCurrentView](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext) 取得。 每當您擷取資源候選項目時，您應該在 **ResourceContext** 執行個體中傳遞，為指定的檢視取得最適當的值。
+資源候選項目的選擇是根據特定 [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)，這是資源限定詞值的集合 (語言、縮放比例，對比等)。 預設內容會使用 App 目前針對每個限定詞值的設定，除非被覆寫。 例如，影像之類的資源可以縮放，從一部監視器到另一部都不同，從一個應用程式檢視到另一個也不同。 基於這個原因，每個應用程式檢視具有不同的預設內容。 每當您擷取資源候選項目時，您應該在 **ResourceContext** 執行個體中傳遞，為指定的檢視取得最適當的值。
 
 ### <a name="important-apis"></a>重要 API
 
