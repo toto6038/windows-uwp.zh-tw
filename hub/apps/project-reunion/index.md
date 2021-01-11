@@ -2,17 +2,17 @@
 description: 了解 Project Reunion、其為開發人員提供的好處、現已準備好供開發人員使用的功能，以及如何提供意見反應。
 title: Project Reunion
 ms.topic: article
-ms.date: 11/17/2020
+ms.date: 01/07/2021
 keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d5969afacc0f811e3a5c40488f45bb5b421c4b3
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
+ms.openlocfilehash: de1115281859ba322a03e3bab7a8d0e4ef71440d
+ms.sourcegitcommit: 044c75ea0c6fb3463a0150acdae1ff867dc05f29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97349353"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972122"
 ---
 # <a name="build-windows-apps-with-project-reunion-prerelease"></a>使用 Project Reunion 建置 Windows 應用程式 (發行前版本)
 
@@ -61,11 +61,12 @@ Project Reunion 0.1 發行前版本包含適用於下列功能區域的新 API�
 
 1. 確定您的開發電腦已安裝 Windows 10 版本 1809 (組建 17763) 或更新的 OS 版本。
 
-2. 安裝 [Visual Studio 2019 (版本 16.9 預覽 2 (或更新版本))](https://visualstudio.microsoft.com/vs/preview/) 安裝 Visual Studio 時，您必須包含下列工作負載：
-    - .NET 桌面開發
-    - 通用 Windows 平台開發
-    - 使用 C++ 的傳統型開發
-    - **C++ (v142) 通用 Windows 平台工具**，通用 Windows 平台工作負載的選用元件 (請參閱安裝程式右側窗格中 [通用 Windows 平台開發] 區段底下的 [安裝詳細資料])
+2. 安裝 [Visual Studio 2019 (版本 16.9 預覽 2 (或更新版本))](https://visualstudio.microsoft.com/vs/preview/) 請確定已在 Visual Studio 安裝程式中選取下列項目：
+    - 在 [工作負載] 索引標籤上，確定已選取下列工作負載。
+        - **.NET 桌面開發**
+        - **使用 C++ 開發桌面**
+        - **通用 Windows 平台開發** (也請確定在 **安裝詳細資料** 窗格中，已為此工作負載選取 **C++ (v142) 通用 Windows 平台工具** 選用元件)
+    - 在 [個別元件] 索引標籤上，請確定已在 [SDK、程式庫和架構] 區段中選取 [Windows 10 SDK (10.0.19041.0)]。
 
 3. 從 Visual Studio Marketplace 安裝最新版的 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)。
 
