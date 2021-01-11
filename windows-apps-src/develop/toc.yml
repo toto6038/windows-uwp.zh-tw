@@ -310,17 +310,15 @@
         - name: Windows 裝置入口網站
           href: ../debug-test-perf/device-portal.md
           items:
-            - name: 傳統型裝置的 Device Portal
+            - name: 傳統型裝置的 Windows 裝置入口網站
               href: ../debug-test-perf/device-portal-desktop.md
-            - name: 行動裝置的 Device Portal
+            - name: 行動裝置的 Windows 裝置入口網站
               href: ../debug-test-perf/device-portal-mobile.md
-            - name: HoloLens 的裝置入口網站
-              href: ../debug-test-perf/device-portal-hololens.md
-            - name: Device Portal 核心 API
+            - name: Windows 裝置入口網站核心 REST API
               href: ../debug-test-perf/device-portal-api-core.md
-            - name: 撰寫裝置入口網站的自訂外掛程式
+            - name: 撰寫 Windows 裝置入口網站的自訂外掛程式
               href: ../debug-test-perf/device-portal-plugin.md
-            - name: 使用自訂 SSL 憑證佈建裝置入口網站
+            - name: 使用自訂 SSL 憑證佈建 Windows 裝置入口網站
               href: ../debug-test-perf/device-portal-ssl.md
         - name: Windows 應用程式認證套件
           href: ../debug-test-perf/windows-app-certification-kit.md
