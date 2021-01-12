@@ -5,12 +5,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e27333c87b596948afcb430eb1cf1ef4998e851
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: fef8499ca10f65c2eeeb9cc37bc96b482db8ad24
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860449"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104629"
 ---
 # <a name="move-from-a-desktop-application-to-uwp"></a>從桌面應用程式移至 UWP
 
@@ -20,7 +20,7 @@ ms.locfileid: "97860449"
 
 您可以在 MSIX 套件中封裝桌面應用程式，以存取更多 Windows 10 功能。 MSIX 是新式 Windows 應用程式套件格式，為所有 Windows 應用程式提供通用封裝體驗，包括 UWP、WPF、Windows Forms 及 Win32 應用程式。 將您的傳統型 Windows 應用程式封裝在 MSIX 套件中，可讓您存取強固的安裝和更新體驗、具有彈性功能系統的受控安全性模型、Microsoft Store 的支援、企業管理，以及許多自訂散發模型。 您可以封裝您的應用程式是否有原始程式碼，或者您是否只有現有的安裝程式檔案 (例如 MSI 或 App-v 安裝程式) 。 封裝您的應用程式之後，您可以整合 UWP 功能，例如封裝延伸模組和其他 UWP 元件。
 
-如需詳細資訊，請參閱 [封裝桌面應用程式 (傳統型橋接器) ](/windows/msix/desktop/desktop-to-uwp-root) 以及 [需要套件身分識別的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)。
+如需詳細資訊，請參閱 [從您的程式碼](/windows/msix/desktop/desktop-to-uwp-root) 和 [需要套件身分識別的功能](/windows/apps/desktop/modernize/modernize-packaged-apps)建立 MSIX 套件。
 
 ## <a name="use-windows-runtime-apis"></a>使用 Windows 執行階段 Api
 

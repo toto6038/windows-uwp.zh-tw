@@ -6,12 +6,12 @@ ms.date: 02/18/2020
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: c12d79b97010826b05bf42a9de46780dd2f93756
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 3b4c49c08deb793614bacb0e30136dd4bd8cdfb3
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933119"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104649"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
@@ -103,7 +103,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 當您完成使用 ads 開發應用程式之後，您可以在合作夥伴中心中 [提交已更新的應用程式](../publish/app-submissions.md) ，使其可在存放區中使用。 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](/legal/windows/agreements/app-developer-agreement)的額外要求。
 
-當您的應用程式已發佈且可在存放區中使用之後，您可以在合作夥伴中心中檢查您的 [廣告效能報表](../publish/advertising-performance-report.md) ，並繼續對您的中繼設定進行變更，以優化廣告的效能。 您的廣告收益包含在[付款摘要](../publish/payout-summary.md)中。
+當您的應用程式已發佈且可在存放區中使用之後，您可以在合作夥伴中心中檢查您的 [廣告效能報表](../publish/advertising-performance-report.md) ，並繼續對您的中繼設定進行變更，以優化廣告的效能。 您的廣告收益包含在[付款摘要](/partner-center/payout-statement)中。
 
 <span id="additional-help" />
 
@@ -111,9 +111,9 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 如需使用 Microsoft Advertising SDK 的其他說明，請使用下列資源。
 
-|  Task    | 資源 |               
+|  工作    | 資源 |               
 |----------|-------|
-| 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/windows/support)，然後選擇 **\[用程式內廣告\]**。        |
+| 回報錯誤或取得針對廣告的支援。     | 請造訪 [支援頁面](https://developer.microsoft.com/windows/support)，然後選擇 **\[用程式內廣告\]**。        |
 | 取得社群支援     | 造訪[論壇](https://social.msdn.microsoft.com/forums/windowsapps/en-US/home?category=windowsapps)。       |
 | 下載示範如何將橫幅廣告和插入式廣告新增到應用程式的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)。       |
 | 了解最新的 Windows App 獲利機會     | 瀏覽[從您的應用程式獲利](https://developer.microsoft.com/store/monetize)。        |

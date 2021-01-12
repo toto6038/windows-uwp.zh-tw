@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a316a729fc1c2042dde5541e2b187bf8903188
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b7a8920b13b7e28947138a000fd46165abcb58b7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171182"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104679"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP 應用程式開發的方式
 
@@ -48,7 +48,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
 -   [適用於 iOS 的 Windows 橋接器](https://github.com/Microsoft/WinObjC)
 
-    也稱為 Project Islandwood，這是一個仍在開發中的工具，可以直接將 Xcode 專案匯入 Visual Studio。 可從 Visual Studio 內建置並偵錯 Objective-C 程式碼。 如果您的專案針對圖形使用 Cocos 這類程式庫，您可能會發現這是一個很好用的方式快速移植 App。
+    這是一項仍在開發中的工具，可將 Xcode 專案直接匯入 Visual Studio。 可從 Visual Studio 內建置並偵錯 Objective-C 程式碼。 如果您的專案針對圖形使用 Cocos 這類程式庫，您可能會發現這是一個很好用的方式快速移植 App。
 
 -   重新調整您的 C++ 程式碼。
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 獲利
 ms.localizationpriority: medium
-ms.openlocfilehash: c827c257947ea0f365bafe497e627841b501d40d
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 009d4740fed47c7cde392d41bf52384071715106
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878581"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104619"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -38,7 +38,7 @@ ms.locfileid: "91878581"
 ### <a name="base-price"></a>基本價格
 
 遊戲的基本價格取決於您的遊戲是否分類為 _付費_ 或 _免費_。 您可以使用 [合作夥伴中心](https://partner.microsoft.com/dashboard) 根據國家/地區和地區設定基本價格。
-決定價格的程序可能包括您[在不同國家銷售時的納稅義務](../publish/tax-details-for-paid-apps.md)，以及[特定市場的成本考量](../publish/define-market-selection.md)。 您也可以[針對特定市場設定自訂價格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
+決定價格的程序可能包括您[在不同國家銷售時的納稅義務](/partner-center/tax-details-marketplace)，以及[特定市場的成本考量](../publish/define-market-selection.md)。 您也可以[針對特定市場設定自訂價格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>銷售價格
 
@@ -47,7 +47,7 @@ ms.locfileid: "91878581"
 
 ## <a name="in-game-purchases"></a>遊戲內購買
 
-遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store 中，這些產品稱為 _附加_元件。 [附加元件會](../publish/add-on-submissions.md) 透過合作夥伴中心發佈。 您也會需要在遊戲的程式碼中啟用附加元件。
+遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store 中，這些產品稱為 _附加_ 元件。 [附加元件會](../publish/add-on-submissions.md) 透過合作夥伴中心發佈。 您也會需要在遊戲的程式碼中啟用附加元件。
 
 ### <a name="types-of-add-ons"></a>附加元件的類型
 
@@ -69,7 +69,7 @@ ms.locfileid: "91878581"
 |遊戲內的動作 / 活動                                                | 遊戲的背景工作                  |
 |--------------------------------------------------------------------------|----------------------------------------|
 |玩家進入商店。 跳出商店功能表以顯示可取得的附加元件和購買價格 |  遊戲會[抓取附加元件的產品資訊](../monetize/get-product-info-for-apps-and-add-ons.md)，[判斷附加元件是否有適當的授權](../monetize/get-license-info-for-apps-and-add-ons.md)，並顯示可供玩家在商店功能表購買的附加元件。                           |
-|玩家按一下 __購買__ 即可購買專案             |__購買__動作會傳送要求以購買專案，並開始付款程式來取得它。 實作會根據項目類型而有所不同。 如果它是[耐久品或一次性購買項目](../monetize/enable-in-app-purchases-of-apps-and-add-ons.md)，則在它到期之前客戶只能擁有一個該項目。 如果它是[消費性產品](../monetize/enable-consumable-add-on-purchases.md)，則客戶可以擁有一或多個該項目。 |
+|玩家按一下 __購買__ 即可購買專案             |__購買__ 動作會傳送要求以購買專案，並開始付款程式來取得它。 實作會根據項目類型而有所不同。 如果它是[耐久品或一次性購買項目](../monetize/enable-in-app-purchases-of-apps-and-add-ons.md)，則在它到期之前客戶只能擁有一個該項目。 如果它是[消費性產品](../monetize/enable-consumable-add-on-purchases.md)，則客戶可以擁有一或多個該項目。 |
 
 ### <a name="test-in-game-purchases-during-game-development"></a>在遊戲開發期間測試遊戲內購買
 
@@ -89,7 +89,7 @@ ms.locfileid: "91878581"
 建立可上傳到市集的檔案：
 
 1. 在 Visual Studio 中開啟您的遊戲方案。
-2. 在 Visual Studio 中，移至__Project__  >  __Store__的 [  >  __建立應用程式套件__]。
+2. 在 Visual Studio 中，移至 __Project__  >  __Store__ 的 [  >  __建立應用程式套件__]。
 3. 針對 [ __您要建立封裝以上傳至 Microsoft Store 嗎？__ ] 選項，選取 __[是]__。
 4. 登入您的 [合作夥伴中心](https://partner.microsoft.com/dashboard) 開發人員帳戶。 如果您還沒有開發人員帳戶，可以[註冊](https://developer.microsoft.com/store/register)一個。
 5. 選取一個要建立上傳套件的 App。 如果您尚未建立 App 提交，請提供新的 App 名稱以建立新的提交。 如需詳細資訊，請參閱[透過保留名稱建立您的 App](../publish/create-your-app-by-reserving-a-name.md)。
@@ -103,7 +103,7 @@ ms.locfileid: "91878581"
 3. 在 [ __應用程式總覽__ ] 頁面上，按一下 [ __開始提交__]。
 4. 設定這個新的提交。 在提交頁面上：
     * 按一下 [ __定價和可用性__]。 在 [ __可見度__ ] 區段中，選擇 [__隱藏此應用程式並防止取得 ...__]，以確保只有您的開發小組可以存取該遊戲。 如需詳細資訊，請移至[配送和可見性](../publish/set-app-pricing-and-availability.md)。
-    * 按一下 __[屬性]__ 。 在 [ __類別目錄和子類別目錄__ ] 區段中，選擇 [ __遊戲__ ]，然後選擇適合您遊戲的子類別。
+    * 按一下 __[屬性]__。 在 [ __類別目錄和子類別目錄__ ] 區段中，選擇 [ __遊戲__ ]，然後選擇適合您遊戲的子類別。
     * 按一下 [ __年齡分級__]。 準確地填寫問卷。
     * 按一下 [ __封裝__]。 上傳在先前步驟中建立的遊戲套件。
 5. 遵循儀表板中的任何其他提交提示，您就能成功發佈該遊戲並讓它維持對大眾隱藏。
@@ -117,7 +117,7 @@ ms.locfileid: "91878581"
 
 在 Visual Studio 中開啟您的遊戲方案：
 
-1. 前往__Project__  >  __store__  >  __將應用程式與存放區建立關聯__.。。
+1. 前往 __Project__  >  __store__  >  __將應用程式與存放區建立關聯__.。。
 2. 登入您的合作夥伴中心開發人員帳戶，然後選取要與此方案產生關聯的應用程式名稱。
 3. 按兩下 __Package.appxmanifest.xml__ 檔案，然後移至 [ __封裝__ ] 索引標籤，檢查是否已正確關聯該遊戲。
 
@@ -129,8 +129,8 @@ ms.locfileid: "91878581"
 
 1. 移至 [合作夥伴中心](https://partner.microsoft.com/dashboard) 並登入。
 2. 從 __儀表板總覽__ 或 __所有應用程式__ 頁面，按一下您想要為其建立附加元件的應用程式。
-3. 在 [ __應用程式總覽__ ] 頁面的 [ __附加__ 元件] 區段中，選取 [ __建立新的附加__元件]。
-4. 選取附加元件的產品類型： __由開發人員管理__的取用、 __商店管理的__取用或 __持久__。
+3. 在 [ __應用程式總覽__ ] 頁面的 [ __附加__ 元件] 區段中，選取 [ __建立新的附加__ 元件]。
+4. 選取附加元件的產品類型： __由開發人員管理__ 的取用、 __商店管理的__ 取用或 __持久__。
 5. 輸入唯一的產品識別碼，將此附加元件整合到遊戲程式碼中的時候，會用它當作字串變數。 消費者不會看到這個識別碼。 如需詳細資訊，請參閱[設定您的 App 產品類型與產品識別碼](../publish/set-your-add-on-product-id.md)。
 
 附加元件的其他設定包括：
@@ -138,7 +138,7 @@ ms.locfileid: "91878581"
 * [價格與可用性](../publish/set-add-on-pricing-and-availability.md)
 * [Store 清單](../publish/create-add-on-store-listings.md)
 
-如果您的遊戲有許多附加元件，您可以使用 __Microsoft Store 提交 API__以程式設計方式建立它們。 如需詳細資訊，請參閱 [使用 Microsoft Store 服務來建立和管理提交](../monetize/create-and-manage-submissions-using-windows-store-services.md)。
+如果您的遊戲有許多附加元件，您可以使用 __Microsoft Store 提交 API__ 以程式設計方式建立它們。 如需詳細資訊，請參閱 [使用 Microsoft Store 服務來建立和管理提交](../monetize/create-and-manage-submissions-using-windows-store-services.md)。
 
 ## <a name="display-ads-in-your-game"></a>在您的遊戲中顯示廣告
 
@@ -225,7 +225,7 @@ Smaato 可讓您將橫幅廣告整合到 UWP App 和遊戲。 下載 [SDK](https
 
 ## <a name="related-links"></a>相關連結
 
-* [獲得報酬](../publish/getting-paid-apps.md)
+* [獲得報酬](/partner-center/marketplace-get-paid)
 * [帳戶類型、位置和費用](../publish/account-types-locations-and-fees.md)
 * [分析](../publish/analytics.md)
 * [全球化和當地語系化](../design/globalizing/globalizing-portal.md)

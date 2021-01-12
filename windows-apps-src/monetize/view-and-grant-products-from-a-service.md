@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 700749c45c563be0bb78de557cac3550767846bd
-ms.sourcegitcommit: fc7fb82121a00e552eaebafba42e5f8e1623c58a
+ms.openlocfilehash: 1447a8f7a689b3405ac1ebb8807c1c68b81294db
+ms.sourcegitcommit: ad33b2b191c7e62dc68a46bd349a87ff8ca7cef8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97978573"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108921"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 
@@ -33,7 +33,6 @@ ms.locfileid: "97978573"
 2.  [在合作夥伴中心中，將您的 Azure AD 應用程式識別碼與應用](#step-2)程式產生關聯。
 3.  在您的服務中，[建立代表您發行者身分識別的 Azure AD 存取權杖](#step-3)。
 4.  在您的用戶端 Windows 應用程式中， [建立 MICROSOFT STORE 識別碼金鑰](#step-4) 以代表目前使用者的身分識別，並將此金鑰傳遞回您的服務。
-5.  在您擁有必要的 Azure AD 存取權杖和 Microsoft Store 識別碼金鑰之後，[從您的服務呼叫 Microsoft Store 集合 API 或購買 API](#step-5)。
 
 此端對端程式牽涉到兩個執行不同工作的軟體元件：
 
@@ -182,29 +181,6 @@ grant_type=client_credentials
 下圖說明建立 Microsoft Store 識別碼金鑰的程式。
 
   ![建立 Windows Store 識別碼機碼](images/b2b-1.png)
-
-<span id="step-5"/>
-
-## <a name="step-5-call-the-microsoft-store-collection-api-or-purchase-api-from-your-service"></a>步驟 5：從您的服務呼叫 Microsoft Store 集合 API 或購買 API
-
-在您的服務擁有可存取特定使用者的產品擁有權資訊的 Microsoft Store 識別碼之後，依照下列指示讓您的服務呼叫 Microsoft Store 集合 API 或購買 API。
-
-* [查詢產品](query-for-products.md)
-* [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
-* [授與免費產品](grant-free-products.md)
-* [取得使用者訂閱](get-subscriptions-for-a-user.md)
-* [變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)
-
-請針對每個案例，將下列資訊傳遞給 API：
-
--   在要求標頭中，傳遞具有對象 URI 值 `https://onestore.microsoft.com` 的 Azure AD 存取權杖。 這是您[先前在步驟 3](#step-3) 中建立的權杖。 此權杖代表您的發行者身分識別。
--   在要求本文中，傳遞您[先前在步驟 4](#step-4) 中，從應用程式的用戶端程式碼擷取的 Microsoft Store 識別碼金鑰。 此金鑰代表您想要存取其產品擁有權資訊之使用者的身分識別。
-
-### <a name="diagram"></a>圖表
-
-下圖說明從您的服務呼叫 Microsoft Store collection API 或購買 API 中的方法的程式。
-
-  ![呼叫集合或購買 API](images/b2b-2.png)
 
 ## <a name="claims-in-a-microsoft-store-id-key"></a>Microsoft Store 識別碼金鑰中的宣告
 

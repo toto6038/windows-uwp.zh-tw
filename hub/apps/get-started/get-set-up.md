@@ -6,12 +6,12 @@ ms.date: 1/8/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 928b8fa82e4a06f82f0e85ca34ab838562b08435
-ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
+ms.openlocfilehash: bb64345ff14d26a14095feb8065b250598aa78f0
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043067"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104549"
 ---
 # <a name="get-set-up"></a>開始設定
 
@@ -58,7 +58,7 @@ Microsoft Visual Studio 2019 可協助您設計、撰寫、測試您的應用程
 在您安裝工具並啟用裝置以進行開發之後，請查看有關如何開始建立 Windows 10 應用程式的指導方針。
 
 -   [選擇您的平台](../desktop/choose-your-platform.md)
--   [開始撰寫程式碼](https://docs.microsoft.com/windows/uwp/get-started/create-uwp-apps)
+-   [開始撰寫程式碼](/windows/uwp/get-started/create-uwp-apps)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 開發設定指令碼
 
