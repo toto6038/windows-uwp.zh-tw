@@ -6,18 +6,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 促銷, Microsoft Store 服務
 ms.localizationpriority: medium
-ms.openlocfilehash: f2516a1708948f0322d197bf4fdd524ede6ba0b0
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: 29dcc02375358c7f16f38748ca92dbaeaf3ebdb7
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878541"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104699"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 
 Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Microsoft Store 提供許多的功能，可讓您透過與使用者互動，從您的應用程式賺更多的錢並獲得客戶。 本節中的主題說明如何在您的應用程式中建置這些功能。
 
-如需深入了解 Microsoft Store 收取的費用，以及取得應用程式銷售款項的方法，請參閱[獲得報酬](../publish/getting-paid-apps.md)。
+如需深入了解 Microsoft Store 收取的費用，以及取得應用程式銷售款項的方法，請參閱[獲得報酬](/partner-center/marketplace-get-paid)。
 
 ## <a name="choose-a-pricing-model"></a>選擇計價模式
 
@@ -126,7 +126,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 利用下列報告，追蹤您的應用程式在 Microsoft Store 內的成效表現。
 
-- [支付摘要](../publish/payout-summary.md)
+- [支付摘要](/partner-center/payout-statement)
 - [下載數報告](../publish/acquisitions-report.md)
 - [附加元件下載數報告](../publish/add-on-acquisitions-report.md)
 - [廣告績效報告](../publish/advertising-performance-report.md)

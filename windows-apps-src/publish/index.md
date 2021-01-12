@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7f5b2e34bb9de99adaf5ea79fa015cae76ed0b
-ms.sourcegitcommit: 5d84d8fe60e83647fa363b710916cf8b92c6e331
+ms.openlocfilehash: fe4dc46b7f6d5a9f55ecf8b5fe8ee58da27850de
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91878551"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104599"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
 
@@ -59,7 +59,7 @@ ms.locfileid: "91878551"
         <img src="https://docs.microsoft.com/media/illustrations/team-services-get-started-account-manager.svg" alt="Payment icon" />
         <h3 style="margin-top: 10px; margin-bottom: 0px">付款與報告</h3>
         <a href="account-types-locations-and-fees.md">帳戶類型、位置和費用</a><br/>
-        <a href="getting-paid-apps.md">獲得報酬</a><br/>
+        <a href="/partner-center/marketplace-get-paid">獲得報酬</a><br/>
         <a href="in-app-ads.md">應用程式內廣告</a><br/>
         <a href="analytics.md">分析報告</a><br/>
     :::column-end:::

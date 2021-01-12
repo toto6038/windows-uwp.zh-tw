@@ -4,12 +4,12 @@ description: Microsoft PowerToys 是一組自訂 Windows 10 的公用程式。 �
 ms.date: 12/02/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f441c7ef9fc4268b35c041f1100cb7f116318a5
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: 5e7e88e8ff179ebbb63aa7369c22149b645c9838
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611828"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104579"
 ---
 # <a name="microsoft-powertoys-utilities-to-customize-windows-10"></a>Microsoft PowerToys：自訂 Windows 10 的公用程式
 
@@ -21,8 +21,8 @@ Microsoft PowerToys 是一組公用程式，可協助大量使用者調整及簡
 ## <a name="processor-support"></a>處理器支援
 
 - **x64**:支援
-- **x86**:開發中 (請參閱[問題 #602](https://github.com/microsoft/PowerToys/issues/602))
-- **ARM**：開發中 (請參閱[問題 #490](https://github.com/microsoft/PowerToys/issues/490))
+- **x86**:開發中 (請參閱 [問題 #602](https://github.com/microsoft/PowerToys/issues/602))
+- **ARM**：開發中 (請參閱 [問題 #490](https://github.com/microsoft/PowerToys/issues/490))
 
 ## <a name="current-powertoy-utilities"></a>目前的 PowerToy 公用程式
 
@@ -149,11 +149,11 @@ PowerToys 歡迎您的參與！ PowerToys 開發團隊很高興能夠與進階�
 
 - 撰寫[技術規格](https://codeburst.io/on-writing-tech-specs-6404c9791159)
 - 提交[設計概念或建議](https://www.microsoft.com/design/inclusive/)
-- [參與編輯文件](https://docs.microsoft.com/contribute/)
+- [參與編輯文件](/contribute/)
 - 識別並修正[原始程式碼](https://github.com/microsoft/PowerToys/tree/master/src)中的 Bug
 - [撰寫新功能和 PowerToy 公用程式的程式碼](https://github.com/microsoft/PowerToys/tree/master/doc/devdocs)
 
-開始處理您想要參與的功能之前，請 **閱讀[參與者指南](https://github.com/microsoft/PowerToys/blob/master/CONTRIBUTING.md)** 。 PowerToys 團隊很樂意與您合作找出最佳的方法、提供整個功能開發的指引和導師計劃，並協助避免任何浪費或重複的工作。
+開始處理您想要參與的功能之前，請 **閱讀 [參與者指南](https://github.com/microsoft/PowerToys/blob/master/CONTRIBUTING.md)** 。 PowerToys 團隊很樂意與您合作找出最佳的方法、提供整個功能開發的指引和導師計劃，並協助避免任何浪費或重複的工作。
 
 ## <a name="powertoys-release-notes"></a>PowerToys 版本資訊
 
