@@ -6,12 +6,12 @@ ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: fc7a9ebd3ebe9ce86f4c44e7e13ea25d5a01240e
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: 7d9679b591b64f804ae9c84badc5849cac28de99
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97611456"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104659"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 原則
 
@@ -24,7 +24,7 @@ ms.locfileid: "97611456"
 > 如需本合約近期變更的摘要，請參閱[變更歷程記錄](store-policies-change-history.md)。
 
 > [!NOTE]
-> **2020 年 12 月 16 日原則更新通知**：針對以透過 [Xbox Live 創作者計畫](https://www.xbox.com/developers/creators-program/)所開發主控台為目標的遊戲產品，已不再適用與 XBL 服務整合的需求。 特定原則 ([原則 10.13.1](https://docs.microsoft.com/windows/uwp/publish/store-policies#1013-gaming-and-xbox)) 將會更新，以在下一次更新「商店原則」文件時反映這項變更，但從這項通知起生效，將不再針對「XBL 創作者計畫」強制執行此原則。 
+> **2020 年 12 月 16 日原則更新通知**：針對以透過 [Xbox Live 創作者計畫](https://www.xbox.com/developers/creators-program/)所開發主控台為目標的遊戲產品，已不再適用與 XBL 服務整合的需求。 特定原則 ([原則 10.13.1](#1013-gaming-and-xbox)) 將會更新，以在下一次更新「商店原則」文件時反映這項變更，但從這項通知起生效，將不再針對「XBL 創作者計畫」強制執行此原則。 
 
 感謝您有意為 Microsoft Store<sup>1</sup> 開發產品。 「產品」表示所提交的任何形式內容，包括但不限於應用程式、遊戲、作品以及任何在產品中販售或提供的其他內容。 我們致力為全世界的客戶提供各式各樣的產品。 Microsoft Store 中的產品必須符合我們公司的認證標準、提供客戶真正實用且有趣的體驗，並且適合出現在 Microsoft Store。
 
