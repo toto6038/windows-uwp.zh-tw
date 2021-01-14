@@ -7,12 +7,12 @@ ms.topic: article
 ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: 6871512e26b4c1f960034a5e97d88ade0b211094
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
+ms.openlocfilehash: e0d6991f261a9ee207a7e36f3dc5ad6a145f3b12
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860422"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104669"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) 應用程式？
 
@@ -144,7 +144,7 @@ Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳
 
 [合作夥伴中心](https://partner.microsoft.com/dashboard)可讓您集中管理和提交您為 Windows 裝置開發的所有應用程式。 請參閱[發佈 Windows 應用程式和遊戲](../publish/index.md)以了解如何提交您的應用程式，以便在 Microsoft Store 中發佈。
 
-新功能不只簡化程序，同時還讓您更好控制。 您在這裡還能找到結合[支付詳細資料](../publish/payout-summary.md)的詳細[分析報告](../publish/analytics.md)、[促銷應用程式和吸引客戶](../publish/attract-customers-and-promote-your-apps.md)的方式，以及更多好用功能。
+新功能不只簡化程序，同時還讓您更好控制。 您在這裡還能找到結合[支付詳細資料](/partner-center/payout-statement)的詳細[分析報告](../publish/analytics.md)、[促銷應用程式和吸引客戶](../publish/attract-customers-and-promote-your-apps.md)的方式，以及更多好用功能。
 
 如需更多的簡介資料，請參閱[建置適用於 Windows 10 裝置的 Windows 應用程式的簡介](/archive/msdn-magazine/2015/may/windows-10-an-introduction-to-building-windows-apps-for-windows-10-devices)
 

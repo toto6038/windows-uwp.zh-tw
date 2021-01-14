@@ -6,19 +6,19 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 強式, 弱式, 參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9ca3ae231a70b69f9f41bb1077b875dca798eb05
-ms.sourcegitcommit: e6a7749f9ddc0fe165b68506b0be465d4ca51ab6
+ms.openlocfilehash: 46b62c202d090a7760445b3e07bca073d2636c66
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96935980"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104479"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>C++/WinRT 中的強式和弱式參考
 
 Windows 執行階段是參考計數式系統；在這樣的系統中，請務必了解強式和弱式參考 (以及不是這兩者的參考，例如隱含 this  指標) 的重要性以及之間的區別。 您將在本主題中了解，針對順利執行的可靠系統和針對會意外當機的系統，正確管理這些參考的方式可能會有差異。 藉由提供可深入支援語言投影的協助程式函式，[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 可讓您輕鬆且正確地建置更複雜的系統。
 
 > [!NOTE]
-> 只有少數例外狀況，針對您在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 中使用或撰寫的 Windows 執行階段類型，預設會開啟弱式參考支援。 **Windows.UI.Composition** 和 **Windows.Devices.Input.PenDevice** 都是例外狀況的範例，&mdash;也就是弱式參考支援「不會」針對這些類型開啟的命名空間。 另請參閱[如果您的自動撤銷委派無法註冊](/windows/uwp/cpp-and-winrt-apis/handle-events#if-your-auto-revoke-delegate-fails-to-register)。
+> 只有少數例外狀況，針對您在 [C++/WinRT](./index.md) 中使用或撰寫的 Windows 執行階段類型，預設會開啟弱式參考支援。 **Windows.UI.Composition** 和 **Windows.Devices.Input.PenDevice** 都是例外狀況的範例，&mdash;也就是弱式參考支援「不會」針對這些類型開啟的命名空間。 另請參閱[如果您的自動撤銷委派無法註冊](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register)。
 > 
 > 如果您要撰寫類型，請參閱本主題中的 [C++/WinRT 中的弱式參考](#weak-references-in-cwinrt)一節。
 

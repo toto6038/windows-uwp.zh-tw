@@ -6,12 +6,12 @@ ms.date: 06/05/2019
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c937a0cacd0dc198c3ad2bd979850efafcb2aa05
-ms.sourcegitcommit: aa444aff3371f73243c2544cf6afaf8e58875ee9
+ms.openlocfilehash: b3a46d04cec817dfcacb9c2bab8433a3eb4e363b
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93298257"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104689"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -27,7 +27,7 @@ ms.locfileid: "93298257"
 
 [  **Windows.Web.Http**](/uwp/api/Windows.Web.Http) 命名空間和相關 [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers) 與 [**Windows.Web.Http.Filters**](/uwp/api/Windows.Web.Http.Filters)命名空間中的類別提供了適用於通用 Windows 平台 (UWP) app 的程式設計介面，可做為 HTTP 用戶端來執行基本的 GET 要求或實作下列更進階的 HTTP 功能。
 
--   適用於常見動詞 ( **DELETE** 、 **GET** 、 **PUT** 及 **POST** ) 的方法。 每一個要求在傳送時，會以非同步作業的方式進行。
+-   適用於常見動詞 (**DELETE**、**GET**、**PUT** 及 **POST**) 的方法。 每一個要求在傳送時，會以非同步作業的方式進行。
 
 -   常見驗證設定與模式的支援。
 
@@ -45,7 +45,7 @@ ms.locfileid: "93298257"
 
 -   [**HttpBufferContent**](/uwp/api/Windows.Web.Http.HttpBufferContent)。 緩衝區形式的內容
 -   [**HttpFormUrlEncodedContent**](/uwp/api/Windows.Web.Http.HttpFormUrlEncodedContent)。 形式為以 **application/x-www-form-urlencoded** MIME 類型編碼之名稱/值 Tuple 的內容
--   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent)。 格式為 * *multipart/\** _ MIME 類型的內容。
+-   [**HttpMultipartContent**](/uwp/api/Windows.Web.Http.HttpMultipartContent)。 格式為 **multipart/\** _ MIME 類型的內容。
 -   [_ *HttpMultipartFormDataContent**](/uwp/api/Windows.Web.Http.HttpMultipartFormDataContent)。 以 **multipart/form-data** MIME 類型編碼的內容。
 -   [**HttpStreamContent**](/uwp/api/Windows.Web.Http.HttpStreamContent)。 串流形式的內容 (HTTP GET 方法用來接收資料以及 HTTP POST 方法用來上傳資料的內部類型)
 -   [**HttpStringContent**](/uwp/api/Windows.Web.Http.HttpStringContent)。 字串形式的內容
@@ -57,7 +57,7 @@ ms.locfileid: "93298257"
 
 ## <a name="send-a-simple-get-request-over-http"></a>透過 HTTP 傳送簡單 GET 要求
 
-如本文先前所述， [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 類別將 GET 要求傳送至 http:\//www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
+如本文先前所述，[**Windows.Web.Http**](/uwp/api/Windows.Web.Http) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 類別將 GET 要求傳送至 http:\//www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) 類別讀取 GET 要求的回應。
 
 ```csharp
 //Create an HTTP client object
@@ -337,12 +337,12 @@ int main()
 
 [  **Windows.Web.Http**](/uwp/api/Windows.Web.Http) 缺少便利的函式。 所以使用 [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-在使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 的應用程式中， [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 結構代表應用程式執行期間引發的例外狀況。 [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) 函式會傳回指派給特定例外狀況的 **HRESULT** 。 [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) 函式會傳回與 **HRESULT** 值相關聯的系統提供字串。 如需詳細資訊，請參閱[使用 C++/WinRT 處理錯誤](/windows/uwp/cpp-and-winrt-apis/error-handling)
+在使用 [C++/WinRT](../cpp-and-winrt-apis/index.md) 的應用程式中，[**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 結構代表應用程式執行期間引發的例外狀況。 [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) 函式會傳回指派給特定例外狀況的 **HRESULT**。 [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) 函式會傳回與 **HRESULT** 值相關聯的系統提供字串。 如需詳細資訊，請參閱[使用 C++/WinRT 處理錯誤](../cpp-and-winrt-apis/error-handling.md)
 
 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 您的 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
-在使用 C#、VB.NET 之 .NET Framework 4.5 的應用程式中，[System.Exception](/dotnet/api/system.exception) 代表例外狀況發生時應用程式執行期間的錯誤。 [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) 屬性會傳回指派給特定例外狀況的 **HRESULT** 。 [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) 屬性會傳回描述例外狀況的訊息。
+在使用 C#、VB.NET 之 .NET Framework 4.5 的應用程式中，[System.Exception](/dotnet/api/system.exception) 代表例外狀況發生時應用程式執行期間的錯誤。 [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) 屬性會傳回描述例外狀況的訊息。
 
-C++/CX 已由 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) 取代。 但在使用 C++/CX 的 app 中，[Platform::Exception](/cpp/cppcx/platform-exception-class) 代表 app 執行期間發生例外狀況時的錯誤。 [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) 屬性會傳回指派給特定例外狀況的 **HRESULT** 。 [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。
+C++/CX 已由 [C++/WinRT](../cpp-and-winrt-apis/index.md) 取代。 但在使用 C++/CX 的 app 中，[Platform::Exception](/cpp/cppcx/platform-exception-class) 代表 app 執行期間發生例外狀況時的錯誤。 [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。
 
-針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG** 。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL** 。
+針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對某些不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
