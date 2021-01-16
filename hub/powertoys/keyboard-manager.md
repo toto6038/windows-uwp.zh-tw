@@ -4,12 +4,12 @@ description: 此公用程式可讓使用者重新定義鍵盤上的按鍵
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eb17cd5a7ad76728e6b063f76369c8d194a5e12c
-ms.sourcegitcommit: 1a997d7e0100e58886150f9fba33d7b205f41df1
+ms.openlocfilehash: a8ffd782a1b23d1e439be0462300ebdf20593913
+ms.sourcegitcommit: 375cf20e0583335805ec246d65819dc1674a2e32
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97865463"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98240998"
 ---
 # <a name="keyboard-manager-utility"></a>鍵盤管理員公用程式
 
@@ -33,7 +33,7 @@ Powertoy 鍵盤管理員必須啟用 (Powertoy 在) 背景中執行的，才能�
 
 ## <a name="settings"></a>設定
 
-若要建立與鍵盤管理員的對應，您可以選擇下列選項：
+若要建立與鍵盤管理員的對應，您必須開啟 [Powertoy 設定] (在 Windows [開始] 功能表中搜尋 Powertoy 應用程式，然後選取該應用程式將會開啟 [Powertoy 設定] 視窗) 。 在 [Powertoy 設定] 中的 [鍵盤管理員] 索引標籤上，您會看到下列選項：
 
 - 選取 [重新對應索引<kbd>鍵] 以</kbd>啟動重新對應的鍵盤設定視窗
 - 選取 [重新對應<kbd>快捷方式</kbd>]，啟動重新對應快速鍵設定視窗
