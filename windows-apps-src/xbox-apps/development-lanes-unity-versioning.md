@@ -4,12 +4,12 @@ description: 瞭解如何使用通用 Windows 平臺 (UWP) ，搭配適用于 Xb
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: 1c0eb9bfc6ee758b854754b0531299fb30b51d1c
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: 67c4ec927d83ecba1257eb73fec451e3281333b2
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91749854"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254163"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：針對您的 UWP 專案進行版本控制
 
@@ -17,9 +17,9 @@ ms.locfileid: "91749854"
 
 有幾個不同的理由會讓您想要將產生的 UWP 目錄新增到版本控制，其中一個是新增相依性 (例如 Xbox Live SDK)。  我們會在本教學課程中以此案例做為範例，希望它會有助於您解決專案的個別需求。
 
-***免責聲明：我們將使用 Git 作為版本控制解決方案。 如果您有不同的概念，這些概念仍應轉譯。***
+***免責聲明：我們將使用 Git 作為版本控制解決方案。 如果您有不同的概念，這些概念仍應轉譯。** _
 
-為了重新整理您的記憶，以下是我們的遊戲 ***ScrapyardPhoenix*** 的目錄，目前看起來如下：
+若要重新整理您的記憶體，這是我們的遊戲的目錄 _*_ScrapyardPhoenix_*_，目前看起來像這樣：
 
 ![建置目的地資料夾](images/build-destination.png)
 
@@ -27,9 +27,9 @@ ms.locfileid: "91749854"
 
 ![UWP VS 解決方案](images/uwp-vs-solution.png)
 
-在此目錄中，我們只需關注 ***ScrapyardPhoenix*** (請以您的遊戲名稱取代) 資料夾。  在我們的版本控制中，所有其他項目都可以忽略。
+在這個目錄中，我們只在意一個資料夾， _*_ScrapyardPhoenix_*_ (在這裡插入您的遊戲名稱) 資料夾。  在我們的版本控制中，所有其他項目都可以忽略。
 
-***不熟悉 .gitignore 檔案是什麼？ 請參閱 [.gitignore](https://git-scm.com/docs/gitignore)。***
+_*_不熟悉 .gitignore 檔案是什麼？ 請參閱 [.gitignore](https://git-scm.com/docs/gitignore)。_*_
 
 ```console
 ##################################################################
@@ -41,7 +41,7 @@ ms.locfileid: "91749854"
 ...
 
 # ignore the whole UWP directory
-/UWP/**
+/UWP/_*
 
 # except we want to keep... (this line will be modified and removed further down)
 !/UWP/ScrapyardPhoenix/
@@ -53,19 +53,23 @@ ms.locfileid: "91749854"
 
 ## <a name="folders"></a>資料夾  
 
-`Assets` | ***包含*** |包含 Microsoft Store 映射  
-`Data`   | ***忽略*** |Unity 會將您的專案編譯成 (場景、著色器、腳本、Prefabs 等 )   
-`Dependencies` | ***包含*** |這是我建立的資料夾，用來保留所有 UWP 相依性 (例如 XboxLiveSDK.dll)   
-`Properties` | ***包含*** |包含其他可由開發人員修改的 advanced 設定  
-`Unprocessed` | ***忽略*** |包含 Unity `.dll` 和 `.pdb` 檔案  
+| 資料夾名稱 | 設定 | 說明 |
+|-------------|---------|-------------|
+| `Assets` | **_包含_* _ | 包含 Microsoft Store 映射 |
+| `Data` | _*_忽略_*_ | Unity 會將您的專案編譯成 (場景、著色器、腳本、Prefabs 等 )  |
+| `Dependencies` | _*_包括_*_ | 這是我建立的資料夾，用來保留所有 UWP 相依性 (例如 XboxLiveSDK.dll)  |
+| `Properties` | _*_包括_*_ | 包含其他可由開發人員修改的 advanced 設定 |
+| `Unprocessed` | _*_忽略_*_ | 包含 Unity `.dll` 和 `.pdb` 檔案 |
 
 ## <a name="files"></a>檔案儲存體  
 
-`App.cs` | ***包含*** |UWP 應用程式的進入點;您可以使用其他原始檔來修改和延伸此檔案  
-`Package.appxmanifest` | ***包含*** |Msix 或 .appx 封裝的應用程式套件資訊清單原始程式檔  
-`project.json` | ***包含***|描述您相依的 NuGet 套件 `*.csproj`  
-`ScrapyardPhoenix.csproj` | ***包含*** |描述您的 UWP 組建目標;如果您將其他相依性新增至 UWP 專案，此檔案 `*.csproj` 將包含該資訊  
-`ScrapyardPhoenix.csproj.user` | ***忽略*** |此檔案包含本機使用者資訊
+| 資料夾名稱 | 設定 | 說明 |
+|-------------|---------|-------------|
+| `App.cs` | _*_包含_*_ | UWP 應用程式的進入點;您可以使用其他原始檔來修改和延伸此檔案 |
+| `Package.appxmanifest` | _*_包括_*_ | Msix 或 .appx 封裝的應用程式套件資訊清單原始程式檔 |
+| `project.json` | _*_包括_*_ | 描述您相依的 NuGet 套件 `_.csproj` |
+| `ScrapyardPhoenix.csproj` | ***包含** _ | 描述您的 UWP 組建目標;如果您將其他相依性新增至 UWP 專案，此檔案 `_.csproj` 將包含該資訊 |
+| `ScrapyardPhoenix.csproj.user` | ***忽略** _ | 此檔案包含本機使用者資訊 |
 
 ## <a name="resulting-gitignore"></a>產生的 .gitignore
 
@@ -79,7 +83,7 @@ ms.locfileid: "91749854"
 ...
 
 # ignore the whole UWP directory
-/UWP/**
+/UWP/_*
 
 # except we want to keep...
 !/UWP/ScrapyardPhoenix/Assets/*
@@ -101,8 +105,9 @@ ms.locfileid: "91749854"
 
 ![UWP 方案](images/uwp-solution.PNG)
 
-***ScrapyardPhoenix (通用 Windows)*** 是您會將參考新增至如 Xbox Live SDK 等的專案。
+**_ScrapyardPhoenix (通用 Windows)_** 是您要新增參考的專案，例如 Xbox Live SDK。
 
 ## <a name="see-also"></a>另請參閱
+
 - [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)

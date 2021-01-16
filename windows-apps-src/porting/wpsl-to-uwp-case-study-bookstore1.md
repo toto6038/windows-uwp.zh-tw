@@ -1,19 +1,19 @@
 ---
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: 本主題提供將一個非常簡單的 Windows Phone Silverlight App 移植到 Windows 10 通用 Windows 平台 (UWP) App 的案例研究。
-title: Windows Phone Silverlight 至 UWP 案例研究、Bookstore1
+title: Windows Phone Silverlight 至 UWP 案例研究：Bookstore1
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ea840a3f4e1f80fa7a5a60ce4a7bfd1aaef8074
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 8c771de3f5ad0d042d278c0851849c306e7edb4d
+ms.sourcegitcommit: b0a82c2a132212eb5fb72b67f0789cac1014642f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171192"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98254233"
 ---
-# <a name="windowsphone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight 至 UWP 案例研究：Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight 至 UWP 案例研究：Bookstore1
 
 
 本主題提供將一個非常簡單的 Windows Phone Silverlight App 移植到 Windows 10 通用 Windows 平台 (UWP) App 的案例研究。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 請參閱 [UWP app 指南](../get-started/universal-application-platform-guide.md)。
@@ -22,7 +22,7 @@ ms.locfileid: "89171192"
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
-**注意**   \_在 Visual Studio 中開啟 Bookstore1Universal 10 時，如果您看到「需要更新 Visual Studio」訊息，請遵循在[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md)中選取目標平臺版本設定的步驟。
+**注意**  \_在 Visual Studio 中開啟 Bookstore1Universal 10 時，如果您看到「需要更新 Visual Studio」訊息，請遵循在 [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md)中選取目標平臺版本設定的步驟。
 
 ## <a name="downloads"></a>下載
 
@@ -30,17 +30,17 @@ ms.locfileid: "89171192"
 
 [下載 Bookstore1Universal \_ 10 Windows 10 應用程式](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10)。
 
-## <a name="the-windowsphone-silverlight-app"></a>Windows Phone Silverlight app
+## <a name="the-windows-phone-silverlight-app"></a>Windows Phone Silverlight app
 
 以下是我們即將移植的 Bookstore1WPSL8 app 的外觀。 它是一個垂直捲動的書籍清單方塊，位於 app 名稱的標題和網頁標題下方：
 
 ![bookstore1wpsl8 的外觀](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## <a name="porting-to-a-windows10-project"></a>移植到 Windows 10 專案
+## <a name="porting-to-a-windows-10-project"></a>移植到 Windows 10 專案
 
 這是一項非常快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore1WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 將它命名為 Bookstore1Universal \_ 10。 這些是要從 Bookstore1WPSL8 複製到 Bookstore1Universal 10 的檔案 \_ 。
 
--   複製包含書籍封面影像 PNG 檔案的資料夾 (該資料夾是 \\ \\ CoverImages) 的資產。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 以滑鼠右鍵按一下您複製的資料夾，然後按一下 [ **包含在專案中**]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次複製檔案或資料夾時，請按一下**方案總管**中的 [重新整理]，**然後在專案**中包含檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像 PNG 檔案的資料夾 (該資料夾是 \\ \\ CoverImages) 的資產。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 以滑鼠右鍵按一下您複製的資料夾，然後按一下 [ **包含在專案中**]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次複製檔案或資料夾時，請按一下 **方案總管** 中的 [重新整理]，**然後在專案** 中包含檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含視圖模型來源檔案的資料夾 (資料夾 \\ ViewModel) 。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -76,7 +76,7 @@ ms.locfileid: "89171192"
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>清償負債項目，以及一些初始樣式
 
-預設支援所有方向。 不過，Windows Phone Silverlight 應用程式明確地將本身限制為僅限直向，因此債務專案 \# 1 和 \# 2 會藉由進入新專案中的應用程式套件資訊清單，並在**支援的方向**進行**縱向**檢查來支付費用。
+預設支援所有方向。 不過，Windows Phone Silverlight 應用程式明確地將本身限制為僅限直向，因此債務專案 \# 1 和 \# 2 會藉由進入新專案中的應用程式套件資訊清單，並在 **支援的方向** 進行 **縱向** 檢查來支付費用。
 
 針對此應用程式， \# 因為預設會顯示狀態列 (先前稱為系統匣) ，所以專案3不是債務。 針對專案 \# 4 和 \# 5，我們需要找出四個通用 WINDOWS 平臺 (UWP)  **TextBlock** 樣式，以對應至我們所使用的 Windows Phone Silverlight 樣式。 我可以在模擬器中執行 Windows Phone Silverlight app，並將它與[文字](wpsl-to-uwp-porting-xaml-and-ui.md)區段中的圖例互相比較。 那樣做並查看 Windows Phone Silverlight 系統樣式的屬性之後，我們便可製作出下表：
 
@@ -86,8 +86,8 @@ ms.locfileid: "89171192"
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
- 
-若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，請以滑鼠右鍵按一下 **TextBlock** ，然後按一下 [ **編輯樣式**套用 &gt; **資源**]。 若要使用專案範本中的 **TextBlock**來這麼做，請以滑鼠右鍵按一下 **ListBox** ，然後按一下 [ **編輯其他範本**]， &gt; **編輯產生的專案 (ItemTemplate) **。
+
+若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，請以滑鼠右鍵按一下 **TextBlock** ，然後按一下 [ **編輯樣式** 套用 &gt; **資源**]。 若要使用專案範本中的 **TextBlock** 來這麼做，請以滑鼠右鍵按一下 **ListBox** ，然後按一下 [ **編輯其他範本**]， &gt; **編輯產生的專案 (ItemTemplate)**。
 
 項目後方有 80% 不透明的白色背景，因為 **ListBox** 控制項的預設樣式將其背景設定為 `ListBoxBackgroundThemeBrush` 系統資源。 在 **ListBox** 上設定 `Background="Transparent"` 以清除該背景。 若要將項目範本中的 **TextBlock** 靠左對齊，請以上述方式再次編輯它，然後將兩個 **TextBlock** 上的 **Margin** 都設定為 `"9.6,0"`。
 
