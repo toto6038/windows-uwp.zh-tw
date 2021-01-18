@@ -10,12 +10,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 ms.custom: 20H2
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d2cb0874abe2fbe767a75d718cd1f0637ccee
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
+ms.openlocfilehash: f790e4ed1d16ac42c95f9a835a3b9cc7f3598190
+ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96604903"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98104539"
 ---
 # <a name="infobar"></a>資訊列
 [資訊列] 控制項是用來將全應用程式狀態訊息顯示給高度可見但非侵入的使用者。 包含內建的嚴重性層級，可輕鬆地指出所顯示的訊息類型，以及包含您自己喚起行動或超連結按鈕的選項。 因為資訊列會與其他 UI 內容一起內嵌，所以該選項可讓控制項一律顯示或由使用者關閉。 
@@ -182,7 +182,7 @@ public MainPage()
 
 ### <a name="add-an-action-button"></a>新增動作按鈕
 
-您可以定義自己的按鈕 (繼承 [ButtonBase](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) 並在 ActionButton 屬性中加以設定)，以新增其他動作按鈕。 自訂樣式會套用至[按鈕](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button)和 [HyperlinkButton](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 類型的動作按鈕，以取得一致性和可存取性。 除了 ActionButton 屬性之外，還可以透過自訂內容新增其他動作按鈕，且這些按鈕將出現在訊息下方。
+您可以定義自己的按鈕 (繼承 [ButtonBase](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase) 並在 ActionButton 屬性中加以設定)，以新增其他動作按鈕。 自訂樣式會套用至[按鈕](/uwp/api/Windows.UI.Xaml.Controls.Button)和 [HyperlinkButton](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton) 類型的動作按鈕，以取得一致性和可存取性。 除了 ActionButton 屬性之外，還可以透過自訂內容新增其他動作按鈕，且這些按鈕將出現在訊息下方。
 
 
 ```xaml
@@ -240,7 +240,7 @@ public MainPage()
     Message="Your documents are being saved to the cloud"
     IsClosable="False">
     <muxc:InfoBar.Content>
-        <ProgressBar IsIndeterminate="True" Margin="0,0,0,6"/>
+        <muxc:ProgressBar IsIndeterminate="True" Margin="0,0,0,6" MaxWidth="200"/>
     </muxc:InfoBar.Content>
 </muxc:InfoBar>
 ```
@@ -249,13 +249,14 @@ public MainPage()
 
 ### <a name="lightweight-styling"></a>輕量型樣式設定
 
-您可以修改預設樣式和 ControlTemplate，為控制項提供獨特的外觀。 如需詳細資訊，請參閱[樣式控制項](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)文章的[輕量型樣式設定](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)一節。
+您可以修改預設樣式和 ControlTemplate，為控制項提供獨特的外觀。 如需可用主題資源的清單，請參閱資訊列 API 文件的＜[控制項樣式和範本](/windows/winui/api/microsoft.ui.xaml.controls.infobar#control-style-and-template)＞一節。
+如需詳細資訊，請參閱[樣式控制項](./xaml-styles.md)文章的[輕量型樣式設定](./xaml-styles.md#lightweight-styling)一節。 
 
-例如，下列各項會造成頁面資訊列上的標題列字型大小為 22pt：
+例如，下列動作會導致頁面上所有資訊資訊列的背景色彩變成藍色：
 
 ```xaml
 <Page.Resources>
-    <x:Double x:Key="InfoBarTitleFontSize">22</x:Double>
+    <x:SolidColorBrush x:Key="InfoBarInformationalSeverityBackgroundBrush" Color="LightBlue"></x:SolidColorBrush>
 </Page.Resources>
 ```
 ### <a name="canceling-close"></a>取消關閉

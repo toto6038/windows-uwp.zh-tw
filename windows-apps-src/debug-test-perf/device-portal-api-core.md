@@ -1,22 +1,22 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal 核心 API 參考資料
+title: Windows 裝置入口網站核心 REST API 參考資料
 description: 了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。
 ms.custom: 19H1
-ms.date: 04/19/2019
+ms.date: 01/08/2021
 ms.topic: article
-keywords: windows 10, uwp, 裝置入口網站
+keywords: windows 10, uwp, 裝置入口網站, REST
 ms.localizationpriority: medium
-ms.openlocfilehash: c8615620e09d6f00881c1bb229d98f876a95978c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 33e914d124520b8f4eacd120c191ed63715a3168
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173612"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056051"
 ---
-# <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
+# <a name="windows-device-portal-core-rest-api-reference"></a>Windows 裝置入口網站核心 REST API 參考資料
 
-所有裝置入口網站功能都是以 REST API 建置，開發人員可直接呼叫這些 API 來存取資源，並透過程式設計的方式控制其裝置。
+所有 Windows 裝置入口網站 (WDP) 功能都是以 REST API 建置，開發人員可直接呼叫這些 API 來存取資源，並透過程式設計的方式控制其裝置。
 
 ## <a name="app-deployment"></a>應用程式部署
 
@@ -3226,7 +3226,7 @@ DeviceType 看起來會像 "Windows.Xbox"、"Windows.Desktop" 等。
 | op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。|
 | ssid   | (**如果 *op* == connect，則為必要**) 要連線的 SSID。 |
 | 索引鍵   | (**如果 *op* == connect 且網路需要授權，則為必要**) 共用金鑰。 |
-| createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 |
+| createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為 **是** 或 **否**。 |
 
 **要求標頭**
 

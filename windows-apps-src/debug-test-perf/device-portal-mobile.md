@@ -1,19 +1,19 @@
 ---
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: 行動裝置的 Device Portal
+title: 行動裝置的 Windows 裝置入口網站
 description: 了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。
-ms.date: 02/08/2017
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a6f85dfb13e47617138e401c8444cb5b5f6809
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
+ms.openlocfilehash: b661c1b8249f4244049a19ecb3ccab865218aab2
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339576"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98055991"
 ---
-# <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
+# <a name="windows-device-portal-for-mobile"></a>行動裝置的 Windows 裝置入口網站
 
 從 Windows 10 版本 1511 開始，即針對行動裝置系列提供額外的開發人員功能。 只有在裝置上啟用開發人員模式時，才能使用這些功能。
 
@@ -21,11 +21,11 @@ ms.locfileid: "94339576"
 
 ![[裝置探索] 和 [裝置入口網站] 設定的螢幕擷取畫面。](images/device-portal/mob-dev-mode-options.png)
 
-## <a name="set-up-device-portal-on-windows-phone"></a>在 Windows Phone 上設定 Device Portal
+## <a name="set-up-windows-device-portal-on-windows-phone"></a>在 Windows Phone 上設定 Windows Device Portal
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>開啟裝置探索和配對
 
-若要連線到裝置入口網站，必須在手機的設定中啟用裝置探索和裝置入口網站。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
+若要連線到 Windows 裝置入口網站 (WDP)，必須在手機的設定中啟用裝置探索和裝置入口網站。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
 
 第一次連線到 Device Portal 時，系統會要求您提供 6 個字元且區分大小寫的安全性驗證碼。 這可確保您具備手機的存取權，並讓您保持安全免於受到攻擊者入侵。 按下手機上的 [配對] 按鈕，即會產生並顯示驗證碼，接著請在瀏覽器的文字方塊中輸入這 6 個字元。
 

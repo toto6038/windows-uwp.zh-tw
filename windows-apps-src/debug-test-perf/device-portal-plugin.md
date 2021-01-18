@@ -1,21 +1,21 @@
 ---
 ms.assetid: 82ab5fc9-3a7f-4d9e-9882-077ccfdd0ec9
-title: 撰寫裝置入口網站的自訂外掛程式
+title: 撰寫 Windows 裝置入口網站的自訂外掛程式
 description: 了解如何撰寫 UWP 應用程式以使用 Windows 裝置入口網站來裝載網頁，以及提供診斷資訊。
-ms.date: 07/06/2020
+ms.date: 01/08/2021
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: f66650291e2966d6a3a6ac2b5d794006382d2fbf
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c01cc48f78abba95b99dc05e1372640241d9af49
+ms.sourcegitcommit: 02d220ef0ec0ecd7ed733086ba164ee9653d9602
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170022"
+ms.lasthandoff: 01/09/2021
+ms.locfileid: "98056001"
 ---
-# <a name="write-a-custom-plugin-for-device-portal"></a>撰寫裝置入口網站的自訂外掛程式
+# <a name="write-a-custom-plugin-for-windows-device-portal"></a>撰寫 Windows 裝置入口網站的自訂外掛程式
 
-了解如何撰寫 UWP 應用程式以使用 Windows 裝置入口網站來裝載網頁，以及提供診斷資訊。
+了解如何撰寫 UWP 應用程式以使用 Windows 裝置入口網站 (WDP) 來裝載網頁，以及提供診斷資訊。
 
 從 Windows 10 Creators Update (版本 1703，組建 15063) 開始，您可以使用裝置入口網站來管理應用程式的診斷介面。 本文涵蓋為您的應用程式建立 DevicePortalProvider 所需的三個部分 – [應用程式封裝資訊清單變更](/uwp/schemas/appxpackage/appx-package-manifest)、設定應用程式的[裝置入口網站服務](./device-portal.md)連線、處理傳入要求。
 
@@ -88,7 +88,7 @@ namespace MySampleProvider {
     }
 ```
 
-請確定其名稱符合 AppService EntryPoint ("MySampleProvider.SampleProvider") 所設定的命名空間和類別名稱。 第一次對 Device Portal 提供者提出要求時，Device Portal 會隱藏要求、啟動應用程式的背景工作、呼叫其**Run**方法，並傳入 [**IBackgroundTaskInstance**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance)。 應用程式接著會使用它來設定 [**DevicePortalConnection**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection) 執行個體。
+請確定其名稱符合 AppService EntryPoint ("MySampleProvider.SampleProvider") 所設定的命名空間和類別名稱。 第一次對 Device Portal 提供者提出要求時，Device Portal 會隱藏要求、啟動應用程式的背景工作、呼叫其 **Run** 方法，並傳入 [**IBackgroundTaskInstance**](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance)。 應用程式接著會使用它來設定 [**DevicePortalConnection**](/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnection) 執行個體。
 
 ```csharp
 // Implement background task handler with a DevicePortalConnection
@@ -136,9 +136,9 @@ private void DevicePortalConnection_RequestReceived(DevicePortalConnection sende
 }
 ```
 
-在此範例要求處理常式中，我們會先從*args*參數中提取要求和回應物件，接著建立含有要求 URL 和某些其他 HTML 格式的字串。 這會加入作為 [**HttpStringContent**](/uwp/api/windows.web.http.httpstringcontent) 執行個體的回應物件。 也允許使用其他 [**IHttpContent**](/uwp/api/windows.web.http.ihttpcontent) 類別，如「字串」和「緩衝區」的類別。
+在此範例要求處理常式中，我們會先從 *args* 參數中提取要求和回應物件，接著建立含有要求 URL 和某些其他 HTML 格式的字串。 這會加入作為 [**HttpStringContent**](/uwp/api/windows.web.http.httpstringcontent) 執行個體的回應物件。 也允許使用其他 [**IHttpContent**](/uwp/api/windows.web.http.ihttpcontent) 類別，如「字串」和「緩衝區」的類別。
 
-回應接著會設定為 HTTP 回應，並指定 200 (確定) 狀態碼。 它應該如預期呈現在進行原始呼叫的瀏覽器中。 請注意，傳回**RequestReceived**事件處理常式時，會自動將回應訊息傳回給使用者代理程式︰不需要任何其他 "send" 方法。
+回應接著會設定為 HTTP 回應，並指定 200 (確定) 狀態碼。 它應該如預期呈現在進行原始呼叫的瀏覽器中。 請注意，傳回 **RequestReceived** 事件處理常式時，會自動將回應訊息傳回給使用者代理程式︰不需要任何其他 "send" 方法。
 
 ![裝置入口網站回應訊息](images/device-portal/plugin-response-message.png)
 
@@ -172,14 +172,14 @@ if (req.RequestUri.LocalPath.ToLower().Contains("/www/")) {
 ![設定靜態內容檔案複製](images/device-portal/plugin-file-copying.png)
 
 ## <a name="using-existing-device-portal-resources-and-apis"></a>使用現有的裝置入口網站資源和 API
-裝置入口網站提供者所提供的靜態內容，是在與核心裝置入口網站服務相同的連接埠上提供。  這表示您可以在 HTML 中使用簡單 `<link>` 和 `<script>` 標記，來參考 Device Portal 隨附的現有 JS 和 CSS。 一般而言，建議使用*rest.js*將所有核心 Device Portal REST API 包裝到方便使用的 webbRest 物件中，以及使用*common.css*檔案讓您設定內容樣式以符合 Device Portal UI 的其他部分。 您可以在範例所含的 index.html 頁面中查看這項作業的範例。 它會使用 rest.js 從裝置入口網站擷取裝置名稱和執行中程序。 
+裝置入口網站提供者所提供的靜態內容，是在與核心裝置入口網站服務相同的連接埠上提供。  這表示您可以在 HTML 中使用簡單 `<link>` 和 `<script>` 標記，來參考 Device Portal 隨附的現有 JS 和 CSS。 一般而言，建議使用 *rest.js* 將所有核心 Device Portal REST API 包裝到方便使用的 webbRest 物件中，以及使用 *common.css* 檔案讓您設定內容樣式以符合 Device Portal UI 的其他部分。 您可以在範例所含的 index.html 頁面中查看這項作業的範例。 它會使用 rest.js 從裝置入口網站擷取裝置名稱和執行中程序。 
 
 ![裝置入口網站外掛程式的輸出](images/device-portal/plugin-output.png)
  
 重要的是，在 webbRest 上使用 HttpPost/DeleteExpect200 方法，將會自動執行[CSRF 處理](/aspnet/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks)(英文)，如此可讓您的網頁呼叫狀態變更 REST API。  
 
 > [!NOTE] 
-> 裝置入口網站隨附的靜態內容並未保證具有重大變更。 雖然不預期 API 會經常變更，但可能會，尤其是在提供者不應該使用的*common.js*和*controls.js*檔案中。 
+> 裝置入口網站隨附的靜態內容並未保證具有重大變更。 雖然不預期 API 會經常變更，但可能會，尤其是在提供者不應該使用的 *common.js* 和 *controls.js* 檔案中。 
 
 ## <a name="debugging-the-device-portal-connection"></a>偵錯裝置入口網站連線
 為了要對背景工作進行偵錯，您必須變更 Visual Studio 執行程式碼的方式。 請遵循下列步驟，對應用程式服務連線進行偵錯，以檢查您的提供者如何處理 HTTP 要求︰

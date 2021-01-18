@@ -5,14 +5,17 @@ ms.date: 07/15/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 遷移, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 353ca9922bc633efa5f53b2c3a3f4d7a4cad5986
-ms.sourcegitcommit: 39fb8c0dff1b98ededca2f12e8ea7977c2eddbce
+ms.openlocfilehash: f107de951c527b9ca4405d1f22870389a219f441
+ms.sourcegitcommit: 2e691ec4998467c8c5525031a00f0213dcce3b6b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91750614"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98193200"
 ---
 # <a name="move-to-cwinrt-from-c"></a>從 C# 移到 C++/WinRT
+
+> [!TIP]
+> 如果您先前已閱讀過本主題，並且因為想了解特定工作而返回此處，您可以跳至＜[根據正在執行的工作來尋找內容](#find-content-based-on-the-task-youre-performing)＞一節。
 
 本主題詳細說明將 [C#](/visualstudio/get-started/csharp) 專案中的原始程式碼移植到其在 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 中的對等項目時所涉及的技術詳細資料。
 
@@ -24,12 +27,28 @@ ms.locfileid: "91750614"
 
 就預期的移植變更種類而言，您可以將其分為四個類別。
 
-- [**移植語言投影**](#changes-that-involve-the-language-projection)。 Windows 執行階段 (WinRT) 會「投影」到各種程式設計語言中。 每一個語言投影都會設計成所述程式設計語言慣用的型態。 針對 C#，某些 Windows 執行階段類型會投影為 .NET 類型。 例如，您會將 [**System.Collections.Generic.IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1) 轉譯回 [**Windows.Foundation.Collections.IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)。 此外，在 C# 中，某些 Windows 執行階段作業會投影為方便的 C# 語言功能。 例如，您會在 C# 使用 `+=` 運算子語法來註冊事件處理委派。 因此，您會把這類語言功能轉譯回要執行的基本作業 (在此範例中為事件註冊)。
+- [**移植語言投影**](#changes-that-involve-the-language-projection)。 Windows 執行階段 (WinRT) 會「投影」到各種程式設計語言中。 每一個語言投影都會設計成所述程式設計語言慣用的型態。 針對 C#，某些 Windows 執行階段類型會投影為 .NET 類型。 例如，您會將 [**System.Collections.Generic.IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1) 轉譯回 [**Windows.Foundation.Collections.IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1)。 此外，在 C# 中，某些 Windows 執行階段作業會投影為方便的 C# 語言功能。 例如，您會在 C# 使用 `+=` 運算子語法來註冊事件處理委派。 因此，您會把這類語言功能轉譯回要執行的基本作業 (在此範例中為事件註冊)。
 - [**移植語言語法**](#changes-that-involve-the-language-syntax)。 這些變更有許多都是簡單的機械轉換，也就是將符號取代為另一個符號。 例如，將點 (`.`) 變更為雙冒號 (`::`)。
 - [**移植語言程序**](#changes-that-involve-procedures-within-the-language)。 這其中有一些是簡單的重複變更 (例如將 `myObject.MyProperty` 變更為 `myObject.MyProperty()`)。 而其他則是更深入的變更 (例如，將牽涉到使用 **System.Text.StringBuilder** 的程序移植到涉及使用 **std::wostringstream** 的程序)。
 - [**C++/WinRT 特定的移植相關工作**](#porting-related-tasks-that-are-specific-to-cwinrt)。 Windows 執行階段的特定詳細資料會透過 C# 在幕後進行處理。 這些詳細資料會在 C++/WinRT 中明確執行。 例如，您可以使用 `.idl` 檔案來定義您的執行階段類別。
 
-此主題的其餘部分會根據該分類法進行結構化。
+在接下來的工作型索引之後，本主題中的其餘章節會根據上述分類進行結構化。
+
+## <a name="find-content-based-on-the-task-youre-performing"></a>根據正在執行的工作來尋找內容
+
+| 工作 | Content |
+| - | - |
+|撰寫 Windows 執行階段元件 (WRC)|某些功能 (或某些 API 呼叫) 只能使用 C++ 來達成。 您可以將該功能納入 C++/WinRT WRC，然後從 C# 應用程式之類的項目中取用 WRC。 請參閱[使用 C++/WinRT 的 Windows 執行階段元件](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)和[如果您正在 Windows 執行階段元件中撰寫執行階段類別](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。|
+|移植非同步方法|建議您將 C++/WinRT 執行階段類別中非同步方法的第一行設定為 `auto lifetime = get_strong();` (請參閱[安全地存取類別成員協同程式中的 this 指標](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine))。<br><br>從 `Task` 移植，請參閱<a href="#id_async_action">非同步動作</a>。<br>從 `Task<T>` 移植，請參閱<a href="#id_async_operation">非同步作業</a>。<br>從 `async void` 移植，請參閱<a href="#id_fire_and_forget">射後不理 (Fire-and-Forget) 方法</a>。|
+|移植類別|首先，決定類別是否必須是執行階段類別，或是否可以是一般類別。 為協助您做決定，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis) 的最初部分。 接下來，請參閱下面三個資料列。|
+|移植執行階段類別|在 C++ 應用程式外部共用功能的類別，或用於 XAML 資料繫結中的類別。 請參閱[如果您正在 Windows 執行階段元件中撰寫執行階段類別](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)，或是[如果您正在撰寫要在 XAML UI 中參考的執行階段類別](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)。<br><br>這些連結會更詳細地說明這一點，但必須在 IDL 中宣告執行階段類別。 如果您的專案已經包含 IDL 檔案 (例如 `Project.idl`)，則建議您在該檔案中宣告任何新的執行階段類別。 在 IDL 中，宣告將在您應用程式外部使用或將在 XAML 中使用的任何方法和資料成員。 更新 IDL 檔案之後，在您專案的 `Generated Files` 資料夾重建並查看產生的 stub 檔案 (`.h` 和 `.cpp`) (在已選取專案節點的 **方案總管** 中，確定 [顯示所有檔案] 已切換為開啟)。 比較 stub 檔案與專案中已經存在的檔案，並視需要新增檔案或新增/更新函式簽章。 stub 檔案語法一律是正確的，因此我們建議您使用此檔案來將組建錯誤降至最低。 一旦專案中的 stub 與 stub 檔案中的項目相符，您就可以藉由移植 C# 程式碼來繼續並加以實作。 |
+|移植一般類別|請參閱[如果您「不」撰寫執行階段類別](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。|
+|撰寫 IDL|[Microsoft 介面定義語言 3.0 的簡介](/uwp/midl-3/intro)<br>[如果您正在撰寫要在 XAML UI 中參考的執行階段類別](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)<br>[取用 XAML 標記中的物件](/windows/uwp/cpp-and-winrt-apis/binding-property#consuming-objects-from-xaml-markup)<br>[定義 IDL 中的執行階段類別](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#define-your-runtime-classes-in-idl)|
+|移植集合|[使用 C++/WinRT 的集合](/windows/uwp/cpp-and-winrt-apis/collections)<br>[讓資料來源可供 XAML 標記使用](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">關聯容器</a><br><a href="#id_vector_member_access">向量成員存取</a>|
+|移植事件|<a href="#id_event_handler_delegate_as_class_member">事件處理常式委派為類別成員</a><br><a href="#id_revoke_event_handler_delegate">撤銷事件處理常式委派</a>|
+|移植方法|從 C#：`private async void SampleButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { ... }`<br>至 C++/WinRT `.h` 檔案：`fire_and_forget SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&);`<br>至 C++/WinRT `.cpp` 檔案：`fire_and_forget OcrFileImage::SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&) {...}`<br>|
+|移植字串|[C++/WinRT 中的字串處理](/windows/uwp/cpp-and-winrt-apis/strings)<br>[ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)<br>[字串建立](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#string-building)<br>[進行字串的 Box 處理和 Unbox 處理](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#boxing-and-unboxing-a-string)|
+|類型轉換 (類型轉型)|C#: `o.ToString()`<br>C++/WinRT：`to_hstring(static_cast<int>(o))`<br>另請參閱 [ToString](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp#tostring)。<br><br>C#: `(Value)o`<br>C++/WinRT：`unbox_value<Value>(o)`<br>unboxing 失敗時擲回。 另請參閱 [Boxing 與 unboxing](/windows/uwp/cpp-and-winrt-apis/boxing)。<br><br>C#: `o as Value? ?? fallback`<br>C++/WinRT：`unbox_value_or<Value>(o, fallback)`<br>unboxing 失敗時傳回後援。 另請參閱 [Boxing 與 unboxing](/windows/uwp/cpp-and-winrt-apis/boxing)。<br><br>C#: `(Class)o`<br>C++/WinRT：`o.as<Class>()`<br>轉換失敗時擲回。<br><br>C#: `o as Class`<br>C++/WinRT：`o.try_as<Class>()`<br>如果轉換失敗，則傳回 null。|
 
 ## <a name="changes-that-involve-the-language-projection"></a>涉及語言投射的變更
 
@@ -39,18 +58,18 @@ ms.locfileid: "91750614"
 |投影命名空間|`using System;`|`using namespace Windows::Foundation;`||
 ||`using System.Collections.Generic;`|`using namespace Windows::Foundation::Collections;`||
 |集合的大小|`collection.Count`|`collection.Size()`|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
-|典型集合類型|[**IList\<T\>** ](/dotnet/api/system.collections.generic.ilist-1)，然後 [新增] 以新增元素。|[**IVector\<T\>** ](/uwp/api/windows.foundation.collections.ivector-1)，然後 [附加] 以新增元素。 如果您使用 **std::vector** 任何位置，則 **push_back** 以新增元素。||
-|唯讀集合類型|[**IReadOnlyList\<T\>** ](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>** ](/uwp/api/windows.foundation.collections.ivectorview-1)|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
-|事件處理常式委派為類別成員|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
-|撤銷事件處理常式委派|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
-|關聯容器|[**IDictionary\<K, V\>** ](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>** ](/uwp/api/windows.foundation.collections.imap-2)||
-|向量成員存取|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
+|典型集合類型|[**IList\<T\>**](/dotnet/api/system.collections.generic.ilist-1)，然後 [新增] 以新增元素。|[**IVector\<T\>**](/uwp/api/windows.foundation.collections.ivector-1)，然後 [附加] 以新增元素。 如果您使用 **std::vector** 任何位置，則 **push_back** 以新增元素。||
+|唯讀集合類型|[**IReadOnlyList\<T\>**](/dotnet/api/system.collections.generic.ireadonlylist-1)|[**IVectorView\<T\>**](/uwp/api/windows.foundation.collections.ivectorview-1)|[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)|
+|<a name="id_event_handler_delegate_as_class_member"></a>事件處理常式委派為類別成員|`myObject.EventName += Handler;`|`token = myObject.EventName({ get_weak(), &Class::Handler });`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|<a name="id_revoke_event_handler_delegate"></a>撤銷事件處理常式委派|`myObject.EventName -= Handler;`|`myObject.EventName(token);`|[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)|
+|<a name="id_associative_container"></a>關聯容器|[**IDictionary\<K, V\>**](/dotnet/api/system.collections.generic.idictionary-2)|[**IMap\<K, V\>**](/uwp/api/windows.foundation.collections.imap-2)||
+|<a name="id_vector_member_access"></a>向量成員存取|`x = v[i];`<br>`v[i] = x;`|`x = v.GetAt(i);`<br>`v.SetAt(i, x);`||
 
 ### <a name="registerrevoke-an-event-handler"></a>註冊/撤銷事件處理常式
 
-在 C++/WinRT 中，您有數個語法選項可供您註冊/撤銷事件處理常式委派，如[藉由在 C++/WinRT 使用委派來處理事件](./handle-events.md)中所述。 另請參閱[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
+在 C++/WinRT 中，您有數個語法選項可供您註冊/撤銷事件處理常式委派，如[藉由在 C++/WinRT 使用委派來處理事件](./handle-events.md)中所述。 另請參閱 [移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
 
-例如，有時候事件收件者 (處理事件的物件) 即將終結時，您可以撤銷事件處理常式，讓事件來源 (引發事件的物件) 不會呼叫已終結的物件。 請參閱[撤銷已註冊的委派](./handle-events.md#revoke-a-registered-delegate)。 在這種情況下，請為事件處理常式建立 **event_token** 成員變數。 如需範例，請參閱[移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)。
+例如，有時候事件收件者 (處理事件的物件) 即將終結時，您可以撤銷事件處理常式，讓事件來源 (引發事件的物件) 不會呼叫已終結的物件。 請參閱[撤銷已註冊的委派](./handle-events.md#revoke-a-registered-delegate)。 在這種情況下，請為事件處理常式建立 **event_token** 成員變數。 如需範例，請參閱 [移植 **EnableClipboardContentChangedNotifications** 方法](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications)。
 
 您也可以在 XAML 標記中註冊事件處理常式。
 
@@ -60,7 +79,7 @@ ms.locfileid: "91750614"
 
 在 C# 中，**OpenButton_Click** 方法可以是私有的，而且 XAML 仍可將其連線到 *OpenButton* 所引發的 [**ButtonBase.Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件。
 
-在 C++/WinRT 中，「如果您想要在 XAML 標記中註冊 **OpenButton_Click** 方法」，則該方法在[實作類型](./author-apis.md)中必須是公用的。 如果您只在命令式程式碼中註冊事件處理常式，則事件處理常式不需要是公用的。
+在 C++/WinRT 中，「如果您想要在 XAML 標記中註冊 **OpenButton_Click** 方法」，則該方法在 [實作類型](./author-apis.md)中必須是公用的。 如果您只在命令式程式碼中註冊事件處理常式，則事件處理常式不需要是公用的。
 
 ```cppwinrt
 namespace winrt::MyProject::implementation
@@ -90,7 +109,7 @@ namespace winrt::MyProject::implementation
 };
 ```
 
-最後一個案例是您要移植的 C# 專案從標記*繫結*到事件處理常式 (如需更多案例背景，請參閱 [Functions in x:Bind](../data-binding/function-bindings.md))。
+最後一個案例是您要移植的 C# 專案從標記 *繫結* 到事件處理常式 (如需更多案例背景，請參閱 [Functions in x:Bind](../data-binding/function-bindings.md))。
 
 ```xaml
 <Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
@@ -103,7 +122,7 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 ```
 
 > [!NOTE]
-> 將函式宣告為 `void` (即使您*實作*為[「射後不理」(Fire and Forget)](./concurrency-2.md#fire-and-forget))。
+> 將函式宣告為 `void` (即使您 *實作* 為 [「射後不理」(Fire and Forget)](./concurrency-2.md#fire-and-forget))。
 
 ## <a name="changes-that-involve-the-language-syntax"></a>涉及語言語法的變更
 
@@ -111,9 +130,9 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | -------- | -- | --------- | -------- |
 |存取修飾詞|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[移植 **Button_Click** 方法](./clipboard-to-winrt-from-csharp.md#button_click)|
 |存取資料成員|`this.variable`|`this->variable`||
-|非同步動作|`async Task ...`|`IAsyncAction ...`||
-|非同步作業|`async Task<T> ...`|`IAsyncOperation<T> ...`||
-|射後不理 (Fire-and-forget) 方法 (暗指非同步)|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
+|<a name="id_async_action"></a>非同步動作|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** 介面](/uwp/api/windows.foundation.iasyncaction)，[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_async_operation"></a>非同步作業|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** 介面](/uwp/api/windows.foundation.iasyncoperation)，[使用 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_fire_and_forget"></a>射後不理 (Fire-and-forget) 方法 (暗指非同步)|`async void ...`|`winrt::fire_and_forget ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)，[射後不理 (Fire-and-forget)](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget)|
 |存取列舉常數|`E.Value`|`E::Value`|[移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |合作等待|`await ...`|`co_await ...`|[移植 **CopyButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |作為私人欄位的預測類型集合|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
@@ -131,23 +150,23 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |逐字/原始字串常值|`@"verbatim string literal"`|`LR"(raw string literal)"`|[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)|
 
 > [!NOTE]
-> 如果標頭檔不包含指定命名空間的 `using namespace` 指示詞，則您必須完整限定該命名空間的所有類型名稱；或者至少要限定在足以讓編譯器找到這些名稱的範圍。 如需範例，請參閱[移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)。
+> 如果標頭檔不包含指定命名空間的 `using namespace` 指示詞，則您必須完整限定該命名空間的所有類型名稱；或者至少要限定在足以讓編譯器找到這些名稱的範圍。 如需範例，請參閱 [移植 **DisplayToast** 方法](./clipboard-to-winrt-from-csharp.md#displaytoast)。
 
 ### <a name="porting-classes-and-members"></a>移植類別與成員
 
 針對每個 C# 類型，您都必須決定要將其移植到 Windows 執行階段類型，還是一般 C++ 類別/結構/列舉。 如需詳細資訊，以及說明如何做出這些決策的詳細範例，請參閱[將剪貼簿範例從 C# 移植到 C++/WinRT](./clipboard-to-winrt-from-csharp.md)。
 
-C# 屬性通常會成為存取子函式、更動子函式和支援資料成員。 如需詳細資訊和範例，請參閱[移植 **IsClipboardContentChangedEnabled** 屬性](./clipboard-to-winrt-from-csharp.md#isclipboardcontentchangedenabled)。
+C# 屬性通常會成為存取子函式、更動子函式和支援資料成員。 如需詳細資訊和範例，請參閱 [移植 **IsClipboardContentChangedEnabled** 屬性](./clipboard-to-winrt-from-csharp.md#isclipboardcontentchangedenabled)。
 
 對於非靜態欄位，請將其設為 [實作類型](./author-apis.md)的資料成員。
 
-C# 靜態欄位會成為 C++/WinRT 靜態存取子和 (或) 更動子涵式。 如需詳細資訊和範例，請參閱[移植建構函式 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)。
+C# 靜態欄位會成為 C++/WinRT 靜態存取子和 (或) 更動子涵式。 如需詳細資訊和範例，請參閱 [移植建構函式 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)。
 
 同樣地，對於成員函式，您必須決定每個成員函式是否屬於 IDL，或是否為實作類型的公用或私有成員函式。 如需詳細資訊，以及如何決定的範例，請參閱 [**MainPage** 類型的 IDL](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type)。
 
 ### <a name="porting-xaml-markup-and-asset-files"></a>移植 XAML 標記和資產檔案
 
-在[將剪貼簿範例從 C# 移植到 C++/WinRT](./clipboard-to-winrt-from-csharp.md) 案例中，我們可以在 C# 和 C++/WinRT 專案中使用「相同」XAML 標記 (包括資源) 和資產檔案。 在某些情況下，您需要編輯標記來達到此目的。 請參閱[複製完成移植 **MainPage** 所需的 XAML 和樣式](./clipboard-to-winrt-from-csharp.md#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
+在[將剪貼簿範例從 C# 移植到 C++/WinRT](./clipboard-to-winrt-from-csharp.md) 案例中，我們可以在 C# 和 C++/WinRT 專案中使用「相同」XAML 標記 (包括資源) 和資產檔案。 在某些情況下，您需要編輯標記來達到此目的。 請參閱 [複製完成移植 **MainPage** 所需的 XAML 和樣式](./clipboard-to-winrt-from-csharp.md#copy-the-xaml-and-styles-necessary-to-finish-up-porting-mainpage)。
 
 ## <a name="changes-that-involve-procedures-within-the-language"></a>涉及語言內程序的變更
 
@@ -170,14 +189,14 @@ C# 靜態欄位會成為 C++/WinRT 靜態存取子和 (或) 更動子涵式。 �
 |ToString()|`myObject.ToString()`|`winrt::to_hstring(myObject)`|[ToString()](#tostring)|
 |Windows 執行階段字串的語言字串|不適用|`winrt::hstring{ s }`||
 |字串建立|`StringBuilder builder;`<br>`builder.Append(...);`|`std::wostringstream builder;`<br>`builder << ...;`|[字串建立](#string-building)|
-|字串插補|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 和 (或) [**winrt::hstring::operator+** ](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)|
+|字串插補|`$"{i++}) {s.Title}"`|[**winrt::to_hstring**](/uwp/cpp-ref-for-winrt/to-hstring) 和 (或) [**winrt::hstring::operator+**](/uwp/cpp-ref-for-winrt/hstring#operator-concatenation-operator)|[移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)|
 |用於比較的空字串|**System.String.Empty**|[**winrt::hstring::empty**](/uwp/cpp-ref-for-winrt/hstring#hstringempty-function)|[移植 **UpdateStatus** 方法](./clipboard-to-winrt-from-csharp.md#updatestatus)|
 |建立空白字串|`var myEmptyString = String.Empty;`|`winrt::hstring myEmptyString{ L"" };`||
 |字典作業|`map[k] = v; // replaces any existing`<br>`v = map[k]; // throws if not present`<br>`map.ContainsKey(k)`|`map.Insert(k, v); // replaces any existing`<br>`v = map.Lookup(k); // throws if not present`<br>`map.HasKey(k)`||
 |類型轉換 (失敗時擲回)|`(MyType)v`|`v.as<MyType>()`|[移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)|
 |類型轉換 (失敗時為 null)|`v as MyType`|`v.try_as<MyType>()`|[移植 **PasteButton_Click** 方法](./clipboard-to-winrt-from-csharp.md#pastebutton_click)|
 |具有 x:Name 的 XAML 元素是屬性|`MyNamedElement`|`MyNamedElement()`|[移植建構函式 **Current** 和 **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|切換至 UI 執行緒|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync**或 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)，以及[移植 **HistoryAndRoaming** 方法](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
+|切換至 UI 執行緒|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync** 或 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)，以及 [移植 **HistoryAndRoaming** 方法](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
 |XAML 頁面中命令式程式碼的 UI 元素結構|請參閱 [UI 元素結構](#ui-element-construction)|請參閱 [UI 元素結構](#ui-element-construction)||
 
 下列各節將詳細說明資料表中的某些項目。
@@ -260,7 +279,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 
 這些繫結會執行所繫結屬性的 **winrt::to_hstring**。 在第二個範例 (**StatusEnum**) 的情況下，您必須提供自己的 **winrt::to_hstring** 多載，否則會收到編譯器錯誤。
 
-另請參閱[移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
+另請參閱 [移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
 
 ### <a name="string-building"></a>字串建立
 
@@ -273,7 +292,7 @@ Most recent status is <Run Text="{x:Bind LatestOperation.Status}"/>.
 | 加入新行 |`builder.Append(Environment.NewLine);` | `builder << std::endl;` |
 | 存取結果 | `s = builder.ToString();` | `ws = builder.str();` |
 
-另請參閱[移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)，以及[移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)。
+另請參閱 [移植 **BuildClipboardFormatsOutputString** 方法](./clipboard-to-winrt-from-csharp.md#buildclipboardformatsoutputstring)，以及 [移植 **DisplayChangedFormats** 方法](./clipboard-to-winrt-from-csharp.md#displaychangedformats)。
 
 ### <a name="running-code-on-the-main-ui-thread"></a>在主要 UI 執行緒上執行程式碼 
 
@@ -301,17 +320,17 @@ winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformat
 }
 ```
 
-如果您需要以預設值以外的優先順序來執行工作，請參閱 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函式，其有採用 priority 的多載。 如需示範如何等候對 **winrt::resume_foreground** 呼叫的程式碼範例，請參閱[考量使用執行緒親和性程式設計](./concurrency-2.md#programming-with-thread-affinity-in-mind)。
+如果您需要以預設值以外的優先順序來執行工作，請參閱 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 函式，其有採用 priority 的多載。 如需示範如何等候對 **winrt::resume_foreground** 呼叫的程式碼範例，請參閱 [考量使用執行緒親和性程式設計](./concurrency-2.md#programming-with-thread-affinity-in-mind)。
 
 ## <a name="porting-related-tasks-that-are-specific-to-cwinrt"></a>C++/WinRT 特定的移植相關工作
 
 ### <a name="define-your-runtime-classes-in-idl"></a>定義 IDL 中的執行階段類別
 
-請參閱 [**MainPage** 類型的 IDL](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type) 及[合併 `.idl` 檔案](./clipboard-to-winrt-from-csharp.md#consolidate-your-idl-files)。
+請參閱 [**MainPage** 類型的 IDL](./clipboard-to-winrt-from-csharp.md#idl-for-the-mainpage-type) 及 [合併 `.idl` 檔案](./clipboard-to-winrt-from-csharp.md#consolidate-your-idl-files)。
 
 ### <a name="include-the-cwinrt-windows-namespace-header-files-that-you-need"></a>包含您需要的 C++/WinRT Windows 命名空間標頭檔案
 
-在 C++/WinRT 中，每當您要使用 Windows 命名空間的類型時，您必須包含對應的 C++/WinRT Windows 命名空間標頭檔案。 如需範例，請參閱[移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)。
+在 C++/WinRT 中，每當您要使用 Windows 命名空間的類型時，您必須包含對應的 C++/WinRT Windows 命名空間標頭檔案。 如需範例，請參閱 [移植 **NotifyUser** 方法](./clipboard-to-winrt-from-csharp.md#notifyuser)。
 
 ### <a name="boxing-and-unboxing"></a>Box 處理和 Unbox 處理
 
@@ -340,13 +359,13 @@ C# 會自動將純量 Box 處理為物件。 C++/WinRT 會要求您明確地呼�
 | 進行 int 的 Unbox 處理，若為 null 則使用遞補；若為其他任何項目則會毀損 | `i = o != null ? (int)o : fallback;` | `i = o ? unbox_value<int>(o) : fallback;` |
 | 可能的話，進行 int 的 Unbox 處理；其他任何項目使用遞補 | `i = as int? ?? fallback;` | `i = unbox_value_or<int>(o, fallback);` |
 
-如需範例，請參閱[移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)，以及[移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
+如需範例，請參閱 [移植 **OnNavigatedTo** 方法](./clipboard-to-winrt-from-csharp.md#onnavigatedto)，以及 [移植 **Footer_Click** 方法](./clipboard-to-winrt-from-csharp.md#footer_click)。
 
 #### <a name="boxing-and-unboxing-a-string"></a>進行字串的 Box 處理和 Unbox 處理
 
 字串在某些方面是實值類型，而在其他方面則是參考類型。 C# 和 C++/WinRT 會以不同的方式處理字串。
 
-ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>** ](/uwp/api/windows.foundation.ireference_t_) 內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
+ABI 類型 [**HSTRING**](/windows/win32/winrt/hstring) 是參考計數字串的指標。 但是它並非衍生自 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable)，因此在技術上並不是「物件」。 此外, null **HSTRING** 代表空字串。 將非衍生自 **IInspectable** 的項目包裝在 [**IReference\<T\>**](/uwp/api/windows.foundation.ireference_t_) 內，即可完成 Box 處理，而 Windows 執行階段會以 [**PropertyValue**](/uwp/api/windows.foundation.propertyvalue) 物件形式提供標準實作 (自訂類型會回報為 [**PropertyType::OtherType**](/uwp/api/windows.foundation.propertytype))。
 
 C# 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將字串投影為實值類型。 這表示已進行 Box 處理的 null 字串可以有不同的表示法 (取決於您達成的方式)。
 
@@ -382,9 +401,9 @@ C# 表示作為參考類型的 Windows 執行階段字串；而 C++/WinRT 會將
 
 ### <a name="making-a-data-source-available-to-xaml-markup"></a>讓資料來源可供 XAML 標記使用
 
-在 C++/WinRT 2.0.190530.8 版和更新版本中，[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 會建立可觀察的向量，其同時支援 **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** 和 **IObservableVector\<IInspectable\>** 。 如需範例，請參閱[移植 **Scenarios** 屬性](./clipboard-to-winrt-from-csharp.md#scenarios)。
+在 C++/WinRT 2.0.190530.8 版和更新版本中，[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) 會建立可觀察的向量，其同時支援 **[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)\<T\>** 和 **IObservableVector\<IInspectable\>** 。 如需範例，請參閱 [移植 **Scenarios** 屬性](./clipboard-to-winrt-from-csharp.md#scenarios)。
 
-您可以撰寫如下所示的 **Midl 檔案 (.idl)** (另請參閱[將執行階段類別分解成 Midl 檔檔案 (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl))。
+您可以撰寫如下所示的 **Midl 檔案 (.idl)** (另請參閱 [將執行階段類別分解成 Midl 檔檔案 (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl))。
 
 ```idl
 namespace Bookstore
@@ -441,7 +460,7 @@ XAML 資料繫結要求項目來源實作 **[IIterable](/uwp/api/windows.foundat
 - **IVector\<IInspectable\>**
 - **IBindableIterable** (會逐一查看元素並儲存至私用集合)
 
-在執行階段無法偵測 **IVector\<T\>** 等一般介面。 每個 **IVector\<T\>** 都有不同的介面識別碼 (IID)，這是 **T**的函式。任何開發人員都可以任意擴充 **T** 集合，所以顯然 XAML 繫結程式碼永遠不會知道要查詢的完整集合。 該限制不是 C# 的問題，因為每個實作 **IEnumerable\<T\>** 的 CLR 物件都會實作 **IEnumerable**。 在 ABI 層級，這表示每個實作 **IObservableVector\<T\>** 的物件都會自動實作 **IObservableVector\<IInspectable\>** 。
+在執行階段無法偵測 **IVector\<T\>** 等一般介面。 每個 **IVector\<T\>** 都有不同的介面識別碼 (IID)，這是 **T** 的函式。任何開發人員都可以任意擴充 **T** 集合，所以顯然 XAML 繫結程式碼永遠不會知道要查詢的完整集合。 該限制不是 C# 的問題，因為每個實作 **IEnumerable\<T\>** 的 CLR 物件都會實作 **IEnumerable**。 在 ABI 層級，這表示每個實作 **IObservableVector\<T\>** 的物件都會自動實作 **IObservableVector\<IInspectable\>** 。
 
 C++/WinRT 不提供該保證。 如果 C++/WinRT 執行階段類別會實作 **IObservableVector\<T\>** ，我們無法假設也會提供 **IObservableVector\<IInspectable\>** 的實作。
 
