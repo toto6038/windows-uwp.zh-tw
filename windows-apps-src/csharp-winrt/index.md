@@ -5,12 +5,12 @@ ms.date: 05/19/2020
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c#, winrt, cswinrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: ef6fad694dd45e80d462f6a0c5c73ac5539fe16a
-ms.sourcegitcommit: c063d0d130944558afa20181dd294ffe7a187a3f
+ms.openlocfilehash: 0704a7e9c731c6f60c59615b964b51e0ded242c2
+ms.sourcegitcommit: 1022e8819e75484ca0cd94f8baf4f4d11900e0e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97090682"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98206087"
 ---
 # <a name="cwinrt"></a>C#/WinRT
 
@@ -38,7 +38,7 @@ WinRT API 定義於 Windows 中繼資料 (*.winmd) 檔案中。 C#/WinRT NuGet �
 
 ### <a name="invoke-cswinrtexe"></a>叫用 cswinrt.exe
 
-若要從專案叫用 cswinrt.exe，請安裝最新的 [C#/WinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 接著，您可以在 **C# 程式庫** 專案中設定 C#/WinRT 特定的專案屬性，以產生 Interop 組件。 下列專案片段會示範 **cswinrt** 的簡單叫用，以在 Contoso 命名空間中產生各類型的投影來源。 這些來源接著會包含在專案組建中。
+若要從專案叫用 cswinrt.exe，請安裝最新的 [C#/WinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/)。 接著，您可以在 **C# 類別庫 (.NET Core)** 專案中設定 C#/WinRT 特定的專案屬性，以產生 Interop 組件。 下列專案片段會示範 **cswinrt** 的簡單叫用，以在 Contoso 命名空間中產生各類型的投影來源。 這些來源接著會包含在專案組建中。
 
 ```xml
 <PropertyGroup>
@@ -90,7 +90,25 @@ C#/WinRT 支援啟用作業系統所裝載的 WinRT 類型，以及 [Win2D](http
 
 C#/WinRT 會使用 [LoadLibrary 替代搜尋順序](/windows/win32/dlls/dynamic-link-library-search-order#alternate-search-order-for-desktop-applications)來尋找實作 DLL。 依賴此後援行為的應用程式應該會將實作 DLL 連同應用程式模組封裝在一起。
 
-## <a name="common-errors-with-net-5"></a>.NET 5+ 的常見錯誤
+## <a name="common-errors-and-troubleshooting"></a>常見的錯誤以及疑難排解
+
+- 錯誤：「未提供或未偵測到 Windows 中繼資料。」
+
+  您可以使用 `<CsWinRTWindowsMetadata>` 專案屬性來指定 Windows 中繼資料，例如：
+  ```xml
+  <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+  ```
+  
+- 錯誤 CS0246：找不到名為 'Windows' 的類型或命名空間名稱 (是否遺漏 using 指示詞或組件參考？)
+
+  若要解決此錯誤，請編輯 `<TargetFramework>` 屬性，以特定的 Windows 版本為目標，例如：
+  ```xml
+  <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+  ```
+  如需指定 `<TargetFramework>` 屬性的詳細資訊，請參閱[呼叫 Windows 執行階段 API](/windows/apps/desktop/modernize/desktop-to-uwp-enhance) 上的文件。
+
+
+### <a name="net-sdk-versioning-errors"></a>.NET SDK 版本設定錯誤
 
 在以比其任何相依性還舊的 .NET SDK 版本所建置的專案中，您可能會遇到下列錯誤或警告。
 
