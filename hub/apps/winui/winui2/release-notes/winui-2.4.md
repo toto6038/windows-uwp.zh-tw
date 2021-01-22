@@ -2,13 +2,13 @@
 title: WinUI 2.4 版本資訊
 description: WinUI 2.4 的版本資訊，包括新功能和錯誤修正。
 ms.date: 07/15/2020
-ms.topic: reference
-ms.openlocfilehash: d6c6f029b63ea8ad32f1b0109ed983b74f2b4c4d
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
-ms.translationtype: HT
+ms.topic: article
+ms.openlocfilehash: f649a72d2875a26d9802f547dfcf72e218b0878d
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603695"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669518"
 ---
 # <a name="windows-ui-library-24"></a>Windows UI 程式庫 2.4
 

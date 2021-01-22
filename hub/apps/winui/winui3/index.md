@@ -3,12 +3,12 @@ title: WinUI 3 預覽版 3 (2020 年 11 月)
 description: WinUI 3 預覽版 3 的概觀。
 ms.date: 11/17/2020
 ms.topic: article
-ms.openlocfilehash: 69855aea647b608d9253e4f71b6d7d38917def61
-ms.sourcegitcommit: a4ca8ba143862411cd1104515cfeb98f1bcdb780
-ms.translationtype: HT
+ms.openlocfilehash: cbda5dc7ea58111ef40c0b9f92aef192bd61e422
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857419"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669535"
 ---
 # <a name="windows-ui-library-3-preview-3-november-2020"></a>Windows UI 程式庫 3 預覽版 3 (2020 年 11 月)
 
@@ -37,9 +37,11 @@ WinUI 3 預覽版 3 包含 Visual Studio 專案範本，可協助您開始使用
 2. 安裝 [Visual Studio 2019 (16.9 預覽版)](https://visualstudio.microsoft.com/vs/preview/)
 
     安裝 Visual Studio 時，您必須包含下列工作負載：
-    - .NET 桌面開發 (這也會安裝 .NET 5)
     - 通用 Windows 平台開發
 
+    若要建立 .NET 應用程式，您也必須包含下列工作負載：
+    - .NET 桌面開發 (這也會安裝 .NET 5)
+    
     若要建立 C++ 應用程式，您也必須包含下列工作負載：
     - 使用 C++ 的傳統型開發
     - *C++ (v142) 通用 Windows 平台工具*，通用 Windows 平台工作負載的選用元件 (請參閱右側窗格中 [通用 Windows 平台開發] 區段底下的 [安裝詳細資料])

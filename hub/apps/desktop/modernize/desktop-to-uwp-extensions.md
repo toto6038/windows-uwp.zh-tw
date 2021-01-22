@@ -8,16 +8,16 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b88f65ba45a2b8a79d822eba525733550f965372
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
-ms.translationtype: HT
+ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
+ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860173"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669530"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
-如果您的傳統型應用程式具備[套件識別資料](modernize-packaged-apps.md)，您可以使用延伸模組，藉由使用[封裝資訊清單](/uwp/schemas/appxpackage/uapmanifestschema/schema-root)中預先定義的延伸模組，將您的應用程式與 Windows 10 整合。
+如果您的桌面應用程式具有 [套件身分識別](modernize-packaged-apps.md)，您可以使用 [套件資訊清單中](/uwp/schemas/appxpackage/uapmanifestschema/extensions)預先定義的延伸模組，利用擴充功能將應用程式與 Windows 10 整合。
 
 例如：使用延伸模組建立防火牆例外，讓您的應用程式成為某一種檔案類型的預設應用程式，或將開始畫面磚指向您的應用程式。 若要使用延伸模組，您只需要將一些 XML 加入應用程式的封裝資訊清單檔案。 不需要程式碼。
 

@@ -1,15 +1,15 @@
 ---
 title: 開始使用 Windows UI 程式庫
 description: 如何安裝及使用 Windows UI 程式庫。
-ms.topic: reference
+ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: 670254b8ca9ba8641e9adf1410aef918be73f705
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
-ms.translationtype: HT
+ms.openlocfilehash: 939da99d7fce59a9f242fe0ce8ed203a3f52eab6
+ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603835"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98669519"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>開始使用 Windows UI 2.x 程式庫
 
