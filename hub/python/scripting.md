@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系統管理, python 檔案自動化, windows 上的 python 指令碼, 在 windows 上設定 python, windows 上的 python 開發人員環境, windows 上的 python 開發環境, python 搭配 powershell, 適用於檔案系統工作的 python 指令碼
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: d465d46a0524345a45dff9b1cc7c425e4cb468a4
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
-ms.translationtype: HT
+ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253675"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691323"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>開始在 Windows 上使用 Python 進行指令碼處理和自動化
 
@@ -176,6 +176,9 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
 
 恭喜！ 您剛撰寫了自動化系統管理指令碼，它會讀取您所建立的目錄和檔案，並使用 Python 來顯示它們，然後將目錄結構列印至它自己的文字檔。
 
+> [!NOTE]
+> 如果您無法從 Microsoft Store 安裝 Python 3，請參閱此 [問題](https://github.com/MicrosoftDocs/windows-uwp/issues/2901) ，以取得如何處理此範例腳本之路徑的範例。
+
 ## <a name="example-script-to-modify-all-files-in-a-directory"></a>修改目錄中所有檔案的範例指令碼
 
 此範例會使用您剛才建立的檔案和目錄，藉由將檔案的上次修改日期新增至檔案名稱開頭，來重新命名每個檔案。
@@ -210,7 +213,7 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
 
 3. 執行下列命令來測試您的 update-filenames.py 指令碼：`python3 update-filenames.py`，然後再次執行 list-directory-contents.py 指令碼：`python3 list-directory-contents.py`
 
-4. 您應該會看到如下所示的輸出：
+4. 您應該會看到如下輸出：
 
     ```powershell
     Renaming: ..\food\fruits\banana.txt to: ..\food\fruits\2019-07-18 12.24.46.385185_banana.txt
@@ -250,7 +253,7 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
 
 ## <a name="additional-resources"></a>其他資源
 
-- [Python 文件：檔案和目錄存取](https://docs.python.org/3.7/library/filesys.html)：此 Python 文件描述如何使用檔案系統和模組，來讀取檔案屬性、以可攜方式操作路徑，以及建立暫存檔案。
-- [了解 Python：String_Formatting 教學課程](https://www.learnpython.org/en/String_Formatting)：有關使用 "%" 運算子進行字串格式化的詳細資訊。
-- [10 種您應該知道的 Python 檔案系統方法](https://towardsdatascience.com/10-python-file-system-methods-you-should-know-799f90ef13c2)：有關使用 `os` 和 `shutil` 操作檔案和資料夾的中級文章。
-- [Python 的 Hitchhikers 指南：系統管理](https://docs.python-guide.org/scenarios/admin/)：一種「武斷指南」，提供 Python 相關主題的概觀和最佳做法。 本節涵蓋系統管理工具和架構。 本指南裝載於 GitHub，讓您可以提出問題並投稿。
+- [Python 檔：檔案和目錄存取](https://docs.python.org/3.7/library/filesys.html)：有關使用檔案系統的 Python 檔，以及使用模組讀取檔案的內容、以可移植方式操作路徑，以及建立暫存檔案。
+- [瞭解 Python： String_Formatting 教學](https://www.learnpython.org/en/String_Formatting)課程：有關使用 "%" 運算子進行字串格式化的詳細資訊。
+- [您應該知道的10種 Python 檔案系統方法](https://towardsdatascience.com/10-python-file-system-methods-you-should-know-799f90ef13c2)：使用和操作檔案和資料夾的中文 `os` `shutil` 。
+- [Python 的 Hitchhikers 指南：系統管理](https://docs.python-guide.org/scenarios/admin/)：「固定指南」，提供與 Python 相關之主題的總覽和最佳作法。 本節涵蓋系統管理工具和架構。 本指南裝載於 GitHub，讓您可以提出問題並投稿。

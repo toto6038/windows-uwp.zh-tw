@@ -8,30 +8,51 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, 檔案路徑, PYTHONPATH, python 部署, python 封裝
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 4504e7550d19d2cc713284abebed43b6305b5dbd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
+ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174122"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98691303"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>在 Windows 上使用 Python 的常見問題
 
-## <a name="why-cant-i-pip-install-a-certain-package"></a>為什麼我無法「pip 安裝」某個套件？
+## <a name="trouble-installing-a-package-with-pip-install"></a>使用 pip 安裝安裝套件時發生問題
 
-安裝失敗的原因有很多，在大部分情況下，正確的解決方案就是與套件開發人員連絡。
+安裝會失敗的原因有很多--在許多情況下，正確的解決方案是與套件開發人員聯繫。
 
-問題最常見的原因是嘗試安裝至您沒有權限修改的位置。 例如，預設安裝位置可能需要系統管理權限，但根據預設，Python 沒有該權限。 最佳的解決方案是建立虛擬環境並在該處安裝。
+常見的問題原因是嘗試安裝到您沒有修改許可權的位置。 例如，預設安裝位置可能需要系統管理權限，但根據預設，Python 沒有該權限。 最好的解決方法是建立 [虛擬環境](./web-frameworks.md#create-a-virtual-environment) ，並在該處安裝。
 
 某些套件包括需要 C 或C++編譯器才能安裝的機器碼。 一般來說，套件開發人員應該發佈預先編譯的版本，但通常不會。 如果您[安裝 Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019)，並選取 C++ 選項，則其中部分套件可能會運作，但是在大部分情況下，您需要連絡套件開發人員。
 
-[跟隨 Stack Overflow 上的討論](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)。
+[遵循 StackOverflow 的討論](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)
+
+### <a name="trouble-installing-pip-with-wsl"></a>使用 WSL 安裝 pip 時發生問題
+
+例如，在 Windows 子系統 Linux 版 (WSL 或 WSL2) 上安裝具有 pip 的封裝 (像是 Flask) ，例如 `python3 -m pip install flask` ，您可能會特別遇到如下所示的錯誤：
+
+```bash
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None))
+after connection broken by 'NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection
+object at 0x7f655471da30>: Failed to establish a new connection: [Errno -3]
+Temporary failure in name resolution')': /simple/flask/
+```
+
+當您研究此問題時，可能會導致幾個兔子的漏洞，而這些漏洞都不會因為 WSL linux 散發而特別具生產力。  (警告：在 WSL 上不嘗試編輯時 `resolv.conf` ，該檔案是符號連結，而修改它是蠕蟲) 的一種。 除非您執行的是 aftermarket 防火牆，否則可能的解決方法是只重新安裝 pip：
+
+```bash
+sudo apt -y purge python3-pip
+sudo python3 -m pip uninstall pip
+sudo apt -y install python3-pip --fix-missing
+```
+
+**在 [GitHub 上 WSL 產品](https://github.com/microsoft/WSL/issues/4020)存放庫中的進一步討論。感謝我們的使用者群參與檔的 [問題](https://github.com/MicrosoftDocs/windows-uwp/issues/2679) 。*
 
 ## <a name="what-is-pyexe"></a>什麼是 py.exe？
 
 您最終可能會在電腦上安裝多個版本的 Python，因為您正在處理不同類型的 Python 專案。 因為這些全都使用 `python` 命令，所以您使用的 Python 版本可能不明顯。 做為標準，建議使用 `python3` 命令 (或 `python3.7` 來選取特定版本)。
 
-[py.exe 啟動器](https://docs.python.org/3/using/windows.html#launcher)會自動選取您已安裝的最新 Python 版本。 您也可以使用 `py -3.7` 之類的命令來選取特定版本，或使用 `py --list` 來查看可以使用的版本。 **不過**，只有在您使用從 [python.org](https://www.python.org/downloads/windows/) 安裝的 Python 版本時，.py 啟動器才會運作。從 Microsoft Store 安裝 Python 時，**不會**包含 `py` 命令。 若為 Linux、macOS、WSL 和 Microsoft Store 版本的 Python，您應該使用 `python3` (或 `python3.7`) 命令。
+[py.exe 啟動器](https://docs.python.org/3/using/windows.html#launcher)會自動選取您已安裝的最新 Python 版本。 您也可以使用 `py -3.7` 之類的命令來選取特定版本，或使用 `py --list` 來查看可以使用的版本。 **不過**，只有在您使用從 [python.org](https://www.python.org/downloads/windows/) 安裝的 Python 版本時，.py 啟動器才會運作。從 Microsoft Store 安裝 Python 時，**不會** 包含 `py` 命令。 若為 Linux、macOS、WSL 和 Microsoft Store 版本的 Python，您應該使用 `python3` (或 `python3.7`) 命令。
 
 ## <a name="why-does-running-pythonexe-open-the-microsoft-store"></a>為什麼執行 python .exe 會開啟 Microsoft Store？
 
@@ -39,7 +60,7 @@ ms.locfileid: "89174122"
 
 執行搭配任何命令列引數的捷徑可執行檔將會傳回錯誤碼，指出尚未安裝 Python。 這是為了防止批次檔和指令碼在可能非預期的情況下開啟 Store 應用程式。
 
-如果您使用 [python.org](https://www.python.org/downloads/windows/) 中的安裝程式來安裝 Python，並選取 [新增至路徑] 選項，新的 `python` 命令會優先於捷徑。 請注意，其他安裝程式可能會以_低於_內建捷徑的優先順序來新增 `python`。
+如果您使用 [python.org](https://www.python.org/downloads/windows/) 中的安裝程式來安裝 Python，並選取 [新增至路徑] 選項，新的 `python` 命令會優先於捷徑。 請注意，其他安裝程式可能會以 _低於_ 內建捷徑的優先順序來新增 `python`。
 
 您可以停用捷徑而不安裝 Python，方法是從 [開始] 開啟 [管理應用程式執行別名]、尋找 [應用程式安裝程式] Python 項目，並將它們切換為 [關閉]。
 
@@ -59,7 +80,7 @@ Python 會使用 PYTHONPATH 環境變數來指定可從中匯入模組的目錄�
 
 若要從 PowerShell 設定此變數，請在啟動 Python 之前，才使用 `$env:PYTHONPATH=’list;of;paths’`。
 
-**不**建議透過**環境變數**設定全域設定此變數，因為任何版本的 Python 都可使用它，而不是您想要使用的版本。
+**不** 建議透過 **環境變數** 設定全域設定此變數，因為任何版本的 Python 都可使用它，而不是您想要使用的版本。
 
 ## <a name="where-can-i-find-help-with-packaging-and-deployment"></a>哪裡可以找到封裝和部署方面的協助？
 
