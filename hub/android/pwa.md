@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: windows、pwa、android、cordova、ionic、phonegap、混合式 web 應用程式上的 android
 ms.date: 04/28/2020
-ms.openlocfilehash: 482fd02ed7b5d978d81ec52309006034f70b7e47
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 4559e795b4a9737bf68129790029f6f9136b4f81
+ms.sourcegitcommit: 99f5544d9642c87a16e3bd21f76c2fcbc97c20d2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89163982"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743591"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>開始開發適用于 Android 的 PWA 或混合式 web 應用程式
 
@@ -26,7 +26,7 @@ ms.locfileid: "89163982"
 
 - **混合式 web 應用程式**：程式碼 (HTML、JS、CSS) 封裝在 APK 中，並可透過 Google Play 商店散發。 觀賞引擎會與使用者的網際網路瀏覽器隔離，而不會共用會話或快取。
 
-- **漸進式 Web Apps (pwa) **：程式碼 (HTML、JS、CSS) 存在於 Web 上，因此不需要封裝為 APK。 系統會視需要使用服務工作者來下載和更新資源。 Chrome 瀏覽器會轉譯並顯示您的應用程式，但看起來會是原生，而不包含一般瀏覽器網址列等等。您可以使用瀏覽器來共用儲存體、快取和會話。 這基本上就像是在特殊模式下安裝 Chrome 瀏覽器的快捷方式。 Pwa 也可以使用信任的 Web 活動列在 Google Play 商店中。
+- **漸進式 Web Apps (pwa)**：程式碼 (HTML、JS、CSS) 存在於 Web 上，因此不需要封裝為 APK。 系統會視需要使用服務工作者來下載和更新資源。 Chrome 瀏覽器會轉譯並顯示您的應用程式，但看起來會是原生，而不包含一般瀏覽器網址列等等。您可以使用瀏覽器來共用儲存體、快取和會話。 這基本上就像是在特殊模式下安裝 Chrome 瀏覽器的快捷方式。 Pwa 也可以使用信任的 Web 活動列在 Google Play 商店中。
 
 Pwa 和混合式 web 應用程式與原生 Android 應用程式非常類似，因為它們：
 
@@ -49,13 +49,13 @@ Pwa 也有一些獨特的功能：
 
 有兩個常用的 Cordova 散發套件：
 
-- [PhoneGap](https://phonegap.com/)
+- [PhoneGap](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c)： Adobe 已停止支援。
 
 - [Ionic](https://ionicframework.com/)
 
 ## <a name="adobe-phonegap"></a>Adobe PhoneGap
 
-[PhoneGap](https://phonegap.com/)： Adobe 所支援的架構，可支援具有其他工具（例如 [命令列](http://docs.phonegap.com/getting-started/1-install-phonegap/cli/)、傳統型 [應用程式](https://phonegap.com/products#desktop-app-section)和 [PhoneGap 組建](https://build.phonegap.com/)）的 Cordova，這項服務可讓您將程式碼上傳至 adobe 伺服器，以為您建立原生應用程式，而不需要在本機電腦上安裝原生 sdk。 這可讓您進行一些動作，例如使用您的 Windows 電腦建立 iOS 應用程式。
+目前已停用支援。 如需詳細資訊，請參閱 Adobe 的這 [篇 blog 文章](https://blog.phonegap.com/update-for-customers-using-phonegap-and-phonegap-build-cc701c77502c)。
 
 ### <a name="install-phonegap"></a>安裝 PhoneGap
 
