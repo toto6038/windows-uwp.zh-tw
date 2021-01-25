@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: a8f5b141e5726d19651aeafeb9b6d432e20c2f47
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
-ms.translationtype: HT
+ms.openlocfilehash: 1ecf69b014241287961e4be5af8770ce08f500ca
+ms.sourcegitcommit: b0d0055625b1b2deebebdb047609ffa85677dd15
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671527"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759225"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML Islands 在 WPF 應用程式中裝載標準 WinRT XAML 控制項
 
@@ -56,11 +56,11 @@ ms.locfileid: "91671527"
     > [!NOTE]
     > Windows Forms 應用程式必須使用 [Microsoft.Toolkit.Forms.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) 套件。
 
-5. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 在以**任何 CPU** 為目標的專案中，不支援大部分的 XAML Islands 案例。
+5. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 在以 **任何 CPU** 為目標的專案中，不支援大部分的 XAML Islands 案例。
 
     1. 在 [方案總管] 中，以滑鼠右鍵按一下方案節點，然後選取 [屬性] -> [設定屬性] -> [設定管理員]。 
-    2. 在 [使用中的方案平台] 中，選取 [新增]。 
-    3. 在 [新增方案平台] 對話方塊中，選取 [x64] 或 [x86]，然後按 [確定]。 
+    2. 在 [使用中的方案平台]  中，選取 [新增]  。 
+    3. 在 [新增方案平台]  對話方塊中，選取 [x64]  或 [x86]  ，然後按 [確定]  。 
     4. 關閉已開啟的對話方塊。
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 應用程式專案中定義 XamlApplication 類別
@@ -71,7 +71,7 @@ ms.locfileid: "91671527"
 > 雖然裝載第一方 WinRT XAML 控制項不需要執行此步驟，但您的應用程式需要 `XamlApplication` 物件來支援完整範圍的 XAML Island 案例，包括裝載自訂 WinRT XAML 控制項。 因此，我們建議您一律在任何使用 XAML Islands 的方案中定義 `XamlApplication` 物件。
 
 1. 在 [方案總管] 中，在方案節點上按一下滑鼠右鍵，然後選取 [新增] -> [新增專案]。
-2. 將 [空白應用程式 (通用 Windows)] 專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。
+2. 將 [空白應用程式 (通用 Windows)]  專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。
 3. 在 UWP 應用程式專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件 (最新的穩定版本)。
 4. 開啟 **pp.xaml** 檔案，並以下列 XAML 取代此檔案的內容。 以您 UWP 應用程式專案的命名空間取代 `MyUWPApp`。
 
@@ -100,7 +100,7 @@ ms.locfileid: "91671527"
     }
     ```
 
-6. 從 UWP 應用程式專案中刪除 **MainPage.xaml**檔案。
+6. 從 UWP 應用程式專案中刪除 **MainPage.xaml** 檔案。
 7. 建置 UWP 應用程式專案。
 
 ## <a name="add-a-reference-to-the-uwp-project-in-your-wpf-project"></a>在 WPF 專案中新增 UWP 專案的參考
@@ -186,7 +186,7 @@ ms.locfileid: "91671527"
             Title="MainWindow" Height="800" Width="800">
     ```
 
-3. 在 **Mainwindow.xaml** 檔案中，以下列 XAML 取代現有的 `<Grid>` 元素。 此 XAML 會將 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 控制項 (前面加上您先前定義為命名空間的 **Controls**關鍵字) 新增至 `<Grid>`。
+3. 在 **Mainwindow.xaml** 檔案中，以下列 XAML 取代現有的 `<Grid>` 元素。 此 XAML 會將 [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) 和 [InkToolbar](/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) 控制項 (前面加上您先前定義為命名空間的 **Controls** 關鍵字) 新增至 `<Grid>`。
 
     ```xml
     <Grid Margin="10,50,10,10">
@@ -317,9 +317,12 @@ ms.locfileid: "91671527"
 > [!NOTE]
 > 如果您選擇不要在 [MSIX 套件](/windows/msix)中封裝應用程式以供部署，則執行您應用程式的電腦必須安裝 [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)。
 
-1. 將新的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，同時對 [目標版本] 和 [最低版本] 選取 [Windows 10 版本 1903 (10.0；組建 18362)]。
+1. 將新的 [Windows 應用程式封裝專案](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)新增到您的方案。 當您建立專案時，請選取和您為 UWP 專案所選取的值相同的 [目標版本] 和 [最小版本]。
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式] 接點，然後選擇 [新增參考]。 在專案清單中，選取您方案中的 WPF 專案，然後按一下 [確定]。
+
+    > [!NOTE]
+    > 如果您想要在 Microsoft Store 中發佈您的應用程式，您必須在封裝專案中新增 UWP 專案的參考。
 
 3. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 這是使用 Windows 應用程式封裝專案將 WPF 應用程式建置到 MSIX 套件中的必要條件。
 
@@ -329,7 +332,7 @@ ms.locfileid: "91671527"
     4. 在 [新的方案平台] 對話方塊中，選取 [x64] 或 [x86] (您針對 [使用中的方案平台] 選取的相同平台)，然後按一下 [確定]。
     5. 關閉已開啟的對話方塊。
 
-5. 建置和執行封裝專案。 確認 WPF 可執行，而且 UWP 自訂控制項如預期般顯示。
+5. 建置和執行封裝專案。 確認 WPF 執行，而且 UWP 控制項如預期般顯示。
 
 ## <a name="related-topics"></a>相關主題
 

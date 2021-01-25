@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: cdfdf9b7396943e3ee5345249f38a35d48beb128
-ms.sourcegitcommit: c2e4bbe46c7b37be1390cdf3fa0f56670f9d34e9
-ms.translationtype: HT
+ms.openlocfilehash: b73f7bd33abb71252d4af4bbc9a8e57b405481f5
+ms.sourcegitcommit: b0d0055625b1b2deebebdb047609ffa85677dd15
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92253622"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759238"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>在 WPF 應用程式中使用 XAML Islands 裝載自訂 WinRT XAML 控制項
 
@@ -56,7 +56,7 @@ ms.locfileid: "92253622"
     > [!NOTE]
     > Windows Forms 應用程式必須使用 [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) 套件。
 
-6. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 以 **任何 CPU**為目標的專案不支援自訂 WinRT XAML 控制項。
+6. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 以 **任何 CPU** 為目標的專案不支援自訂 WinRT XAML 控制項。
 
     1. 在 [方案總管]  中，以滑鼠右鍵按一下方案節點，然後選取 [屬性]   -> [設定屬性]   -> [設定管理員]  。
     2. 在 [使用中的方案平台]  中，選取 [新增]  。 
@@ -97,7 +97,7 @@ ms.locfileid: "92253622"
     }
     ```
 
-6. 從 UWP 應用程式專案中刪除 **MainPage.xaml**檔案。
+6. 從 UWP 應用程式專案中刪除 **MainPage.xaml** 檔案。
 7. 清除 UWP 應用程式專案，然後加以建置。
 
 ## <a name="add-a-reference-to-the-uwp-project-in-your-wpf-project"></a>在 WPF 專案中新增 UWP 專案的參考
@@ -322,7 +322,18 @@ ms.locfileid: "92253622"
 
 2. 在封裝專案中，以滑鼠右鍵按一下 [應用程式] 接點，然後選擇 [新增參考]。 在專案清單中，選取您方案中的 WPF 專案，然後按一下 [確定]。
 
-3. 建置和執行封裝專案。 確認 WPF 可執行，而且 UWP 自訂控制項如預期般顯示。
+    > [!NOTE]
+    > 如果您想要在 Microsoft Store 中發佈您的應用程式，您必須在封裝專案中新增 UWP 專案的參考。
+
+3. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 這是使用 Windows 應用程式封裝專案將 WPF 應用程式建置到 MSIX 套件中的必要條件。
+
+    1. 在 [方案總管] 中，以滑鼠右鍵按一下方案節點，然後選取 [屬性] -> [設定屬性] -> [設定管理員]。
+    2. 在 [使用中的方案平台] 中，選取 [x64] 或 [x86]。
+    3. 在 WPF 專案的資料列中，選取 [平台] 資料行中的 [新增]。
+    4. 在 [新的方案平台] 對話方塊中，選取 [x64] 或 [x86] (您針對 [使用中的方案平台] 選取的相同平台)，然後按一下 [確定]。
+    5. 關閉已開啟的對話方塊。
+
+4. 建置和執行封裝專案。 確認 WPF 可執行，而且 UWP 自訂控制項如預期般顯示。
 
 ## <a name="related-topics"></a>相關主題
 
