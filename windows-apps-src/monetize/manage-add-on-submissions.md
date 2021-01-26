@@ -6,12 +6,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b5926fbd55c215eccf3517454c972edc86f3dfd
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 16c9fa0f4fa4b7b6ac3ec8e0fb005b80ab1b7872
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164572"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811307"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
@@ -89,10 +89,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
     ```
 
-    回應主體包含[附加元件提交](#add-on-submission-object)資源，其中包括新提交的識別碼、用於上傳提交至 Azure Blob 儲存體的任何附加元件圖示的共用存取簽章 (SAS) URI，以及新提交的所有資料 (例如清單和定價資訊)。
+    回應主體包含附加元件 [提交](#add-on-submission-object) 資源，其中包含新提交的識別碼、共用存取簽章 (SAS) URI，用來上傳提交至 Azure Blob 儲存體的任何附加元件圖示，以及新提交 (的所有資料，例如清單和定價資訊) 。
 
     > [!NOTE]
-    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS URI 及使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分︰了解 SAS 模型](/azure/storage/common/storage-sas-overview)和[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](/azure/storage/common/storage-sas-overview)。
+    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS Uri 及其搭配 Azure Blob 儲存體使用的背景資訊，請參閱 [共用存取簽章，第1部分：瞭解 sas 模型](/azure/storage/common/storage-sas-overview) 和 [共用存取簽章，第2部分：透過 Blob 儲存體建立和使用 sas](/azure/storage/common/storage-sas-overview)。
 
 4. 如果您要新增提交的新圖示，請[準備圖示](../publish/create-add-on-store-listings.md)並將它們新增到 ZIP 封存。
 
@@ -104,13 +104,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
       > [!NOTE]
       > 如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
-4. 如果您要新增提交的新圖示，請使用您稍早呼叫之 POST 方法回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](/azure/storage/storage-introduction#blob-storage)。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
+4. 如果您要新增提交的新圖示，請使用您稍早呼叫之 POST 方法的回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](/azure/storage/storage-introduction#blob-storage) 。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
 
     * [適用於 .NET 的 Azure 儲存體用戶端程式庫](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage SDK for Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [適用于 Python 的 Azure 儲存體 SDK](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    下列 C# 程式碼範例示範如何在適用於 .NET 的 Azure 儲存體用戶端程式庫中，使用 [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 類別上傳 ZIP 封存。 此範例假設已將 ZIP 封存寫入串流物件。
+    下列 c # 程式碼範例示範如何使用適用于 .NET 的 Azure 儲存體用戶端程式庫中的 [>cloudblockblob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 類別，將 ZIP 封存上傳至 Azure Blob 儲存體。 此範例假設已將 ZIP 封存寫入串流物件。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -239,7 +239,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 | targetPublishMode           | 字串  | 提交的發佈模式。 這個值可以是下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
 | 標籤           | 字串  |  附加元件的 [自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊先前稱為 *標記*) 。   |
-| 可見性  | 字串  |  附加元件的可見度。 這個值可以是下列其中一個值： <ul><li>Hidden</li><li>公開</li><li>私人</li><li>NotSet</li></ul>  |
+| 可見性  | 字串  |  附加元件的可見度。 這個值可以是下列其中一個值： <ul><li>Hidden</li><li>公用</li><li>私人</li><li>NotSet</li></ul>  |
 | status  | 字串  |  提交的狀態。 這個值可以是下列其中一個值： <ul><li>無</li><li>已取消</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>發佈</li><li>已發行</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>認證</li><li>CertificationFailed</li><li>版本</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件 (object)  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
 | fileUploadUrl           | 字串  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立附加元件提交](#create-an-add-on-submission)。  |
@@ -263,7 +263,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 此資源包含附加元件清單的圖示資料。 此資源具有下列值。
 
-| 值           | 類型    | 說明     |
+| 值           | 類型    | 描述     |
 |-----------------|---------|------|
 |  fileName               |    字串     |   圖示檔案的名稱，位於您針對提交所上傳的 ZIP封存中。 圖示必須是 .png 檔案，大小必須是 300 x 300 像素。   |     
 |  fileStatus               |   字串      |  圖示檔案的狀態。 這個值可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>已上傳</li><li>PendingDelete</li></ul>   |
@@ -274,12 +274,12 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 此資源包含附加元件的定價資訊。 此資源具有下列值。
 
-| 值           | 類型    | 說明    |
+| 值           | 類型    | 描述    |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    物件 (object)     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](../publish/set-add-on-pricing-and-availability.md)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
-|  sales               |   array      |  已**淘汰**。 包含附加元件的銷售資訊的[銷售資源](#sale-object)陣列。     |     
+|  sales               |   array      |  已 **淘汰**。 包含附加元件的銷售資訊的[銷售資源](#sale-object)陣列。     |     
 |  priceId               |   字串      |  指定附加元件[基本價格](../publish/set-add-on-pricing-and-availability.md)的[價格區間](#price-tiers)。    |    
-|  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**Note** &nbsp; 注意 &nbsp;此欄位是唯讀的。   |
+|  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/> &nbsp; 注意 &nbsp;此欄位是唯讀的。   |
 
 
 <span id="sale-object" />
@@ -309,7 +309,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 此資源包含關於提交狀態的其他詳細資料。 此資源具有下列值。
 
-| 值           | 類型    | 說明       |
+| 值           | 類型    | 描述       |
 |-----------------|---------|------|
 |  錯誤               |    物件 (object)     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。   |     
 |  warnings               |   物件 (object)      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。     |
@@ -332,7 +332,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 此資源提供提交認證報告資料的存取。 此資源具有下列值。
 
-| 值           | 類型    | 說明               |
+| 值           | 類型    | 描述               |
 |-----------------|---------|------|
 |     date            |    字串     |  產生報表的日期和時間，格式為 ISO 8601。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
@@ -347,12 +347,12 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 下列值代表附加元件提交的[價格資源](#pricing-object)資源的可用價格區間。
 
-| 值           | 說明       |
+| 值           | 描述       |
 |-----------------|------|
 |  基本               |   未設定價格區間；使用附加元件的基本價格。      |     
 |  NotAvailable              |   特定區域中無法使用此附加元件。    |     
 |  免費              |   附加元件是免費的。    |    
-|  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看可供您的開發人員帳戶使用的完整定價層資料表，包括與每個階層相關聯的市場特定價格，請移至合作夥伴中心中任何提交應用程式的 [**定價和可用性**] 頁面，然後按一下 [**市場] 和 [自訂價格**] 區段中的 [ **view table** ] 連結 (針對某些開發人員帳戶，此連結位於 [**定價**]) 區段中     |
+|  層 *xxxx*               |   指定附加元件的價格區間的字串，格式為 **第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果 [價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為 **true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果 [價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為 **false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看可供您的開發人員帳戶使用的完整定價層資料表，包括與每個階層相關聯的市場特定價格，請移至合作夥伴中心中任何提交應用程式的 [**定價和可用性**] 頁面，然後按一下 [**市場] 和 [自訂價格**] 區段中的 [ **view table** ] 連結 (針對某些開發人員帳戶，此連結位於 [**定價**]) 區段中     |
 
 <span id="submission-status-code" />
 

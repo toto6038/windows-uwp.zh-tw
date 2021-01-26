@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 雲端服務
 ms.localizationpriority: medium
-ms.openlocfilehash: ca575975b27a71798b7cad1cac0cc83ec870d756
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 9252e6c2b47e51f51f7cb3cd28f49de08478019d
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173172"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811251"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
@@ -21,7 +21,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 
 ##  <a name="what-is-cloud-computing"></a>什麼是雲端運算？
 
-雲端運算透過網際網路使用隨選 IT 資源和應用程式，來為您的裝置儲存和處理資料。 _雲端_一詞是一種隱喻，代表外面 (本機資源之外) 可供使用的大量資源，而您可以從非特定位置存取這些資源。
+雲端運算透過網際網路使用隨選 IT 資源和應用程式，來為您的裝置儲存和處理資料。 _雲端_ 一詞是一種隱喻，代表外面 (本機資源之外) 可供使用的大量資源，而您可以從非特定位置存取這些資源。
 雲端運算的原則，提供使用資源與軟體的新方式。 使用者不再需要預先支付整套完整的產品或資源，而能以服務的方式使用平台、軟體及資源。 雲端提供者通常會根據客戶的使用量或服務方案供應項目來計費。
 
 ##  <a name="why-use-cloud-services"></a>為什麼要使用雲端服務？
@@ -49,7 +49,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
     </colgroup>
     <tr class="header" align="left">
         <th>開發人員</th>
-        <th>說明</th>
+        <th>描述</th>
         <th>主要遊戲案例</th>
         <th>深入了解</th>
     </tr>
@@ -112,7 +112,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
     </tr>
     <tr>
         <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
-        <td>Pixel Squad 使用 Unity 遊戲引擎與 Azure 開發 <b>Crime Coast</b>。 <b>Crime Coast</b> 是一款社交策略遊戲，可在 Android、iOS 和 Windows 平台上取得。 他們在遊戲中使用 Azure Blob 儲存體、受管理的 Azure Redis Cache、負載平衡的 IIS VM 陣列，以及 Microsoft 通知中樞。 了解他們如何管理調整，並處理同時湧入的 5000 名玩家。
+        <td>Pixel Squad 使用 Unity 遊戲引擎與 Azure 開發 <b>Crime Coast</b>。 <b>Crime Coast</b> 是一款社交策略遊戲，可在 Android、iOS 和 Windows 平台上取得。 Azure Blob 儲存體，受管理的 Azure Redis 快取、一組負載平衡的 IIS Vm 和 Microsoft 通知中樞已在其遊戲中使用。 了解他們如何管理調整，並處理同時湧入的 5000 名玩家。
         </td>
         <td>
             <ul>
@@ -150,7 +150,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 
     平台即服務 (PaaS) 就像 IaaS，不過它也包含基礎結構 (例如伺服器、儲存體和網路) 的管理。 因此在不購買實體伺服器與資料中心基礎結構的基礎上，您也不需要購買和管理軟體授權、基礎的應用程式基礎結構、中介軟體、開發工具或其他資源。
 
-* [軟體即服務 (SaaS)](https://azure.microsoft.com/overview/what-is-saas/)
+* [軟體即服務 (SaaS) ](https://azure.microsoft.com/overview/what-is-saas/)
 
     軟體即服務 (SaaS) 可讓使用者透過網際網路連線至雲端應用程式並加以使用。 這可提供您按照隨用即付方式向雲端解決方案提供者購買的完整軟體解決方案。  常見的範例包括電子郵件、行事曆和 office 工具 (例如 Microsoft 365 Office 應用程式) 。 您為自己的組織租用應用程式，您的使用者再透過網際網路 (通常使用網頁瀏覽器) 連接至該應用程式。 所有的基礎結構、中介軟體、應用程式軟體和應用程式資料都位於服務提供者的資料中心。 服務提供者會管理硬體和軟體，並在適當服務合約的規範下，確保遊戲以及您的資料的可用性與安全性。 SaaS 可讓您的組織以最低的前期成本快速啟動並執行應用程式。
 
@@ -159,7 +159,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 
 以下是可以針對遊戲使用 Azure 雲端供應項目的一些方法。 Azure 可以搭配 Windows、Linux，以及 Ruby、Python、Java 和 PHP 等常見的開放原始碼技術使用。 如需詳細資訊，請參閱[用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)。
 
-| 規格需求                 | 活動案例                            | 產品供應項目                      | 產品功能                                    |
+| 需求                 | 活動案例                            | 產品供應項目                      | 產品功能                                    |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | 在雲端託管您的網域     | 有效率地回應 DNS 查詢            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 以具有高效能和可用性的方式託管您的網域  |
 | 登入、身分識別驗證      | 已驗證玩家登入和玩家身分識別  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 使用多重要素驗證來單一登入至任何雲端與內部部署 Web 應用程式            | 
@@ -228,6 +228,6 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mi
 * [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

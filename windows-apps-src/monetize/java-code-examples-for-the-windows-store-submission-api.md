@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, java
 ms.localizationpriority: medium
-ms.openlocfilehash: d10390dbb5364ff4f05de211167551d91dfab858
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 383514a7390e00ce0406be1d846fb38621007745
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363931"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811286"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
@@ -73,7 +73,7 @@ ms.locfileid: "89363931"
 1. 一開始，此方法[為指定的應用程式取得資料](get-an-app.md)。
 2. 接下來，它會[刪除應用程式的擱置中提交](delete-an-app-submission.md) (如果有的話)。
 3. 然後它會[為此應用程式建立新的提交](create-an-app-submission.md) (新的提交是最後一個已發佈提交的複本)。
-4. 它會變更新提交的部分詳細資料，並將此提交的新套件上傳到 Azure Blob 儲存體。
+4. 它會變更新提交的一些詳細資料，並上傳新的套件以提交至 Azure Blob 儲存體。
 5. [接著，](commit-an-app-submission.md)它會[更新](update-an-app-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-app-submission.md)，直到此提交認可成功為止。
 
@@ -88,7 +88,7 @@ ms.locfileid: "89363931"
 1. 一開始，此方法會[針對指定的附加元件取得資料](get-an-add-on.md)。
 2. 接下來，它會[刪除附加元件的擱置中提交](delete-an-add-on-submission.md) (如果有的話)。
 3. 然後它會[為此附加元件建立新的提交](create-an-add-on-submission.md) (新的提交是最後一個已發佈提交的複本)。
-4. 它會將包含此提交圖示的 ZIP 封存上傳到 Azure Blob 儲存體。
+4. 它會上傳包含提交給 Azure Blob 儲存體之圖示的 ZIP 封存。
 5. [接著，](commit-an-add-on-submission.md)它會[更新](update-an-add-on-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
@@ -103,7 +103,7 @@ ms.locfileid: "89363931"
 1. 一開始，此方法會[為指定的套件正式發行前小眾測試版取得資料](get-a-flight.md)。
 2. 接下來，它會[刪除套件正式發行前小眾測試版的擱置中提交](delete-a-flight-submission.md) (如果有的話)。
 3. 然後它會[為套件正式發行前小眾測試版建立新的提交](create-a-flight-submission.md) (新的提交是最後一個已發佈提交的複本)。
-4. 它會將此提交的新套件上傳到 Azure Blob 儲存體。
+4. 它會上傳新的套件以供提交 Azure Blob 儲存體。
 5. [接著，](commit-a-flight-submission.md)它會[更新](update-a-flight-submission.md)並認可新提交至 PartnerCenter。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-a-flight-submission.md)，直到此提交認可成功為止。
 
@@ -115,7 +115,7 @@ ms.locfileid: "89363931"
 
 這些公用程式方法示範這些工作︰
 
-* 如何將包含應用程式或附加元件提交之新資產的 ZIP 封存上傳到 Azure Blob 儲存體。 如需將 ZIP 封存上傳到 Azure Blob 儲存體進行應用程式和附加元件提交的詳細資訊，請參閱[建立應用程式提交](manage-app-submissions.md#create-an-app-submission)、[建立附加元件提交](manage-add-on-submissions.md#create-an-add-on-submission)和[建立套件正式發行前小眾測試版提交](manage-flight-submissions.md#create-a-package-flight-submission)中的相關指示。
+* 如何將包含新資產的 ZIP 封存上傳至 Azure Blob 儲存體的應用程式或附加元件提交。 如需有關將 ZIP 封存上傳至應用程式和附加元件的 Azure Blob 儲存體的詳細資訊，請參閱 [建立應用程式提交](manage-app-submissions.md#create-an-app-submission)、 [建立附加元件提交](manage-add-on-submissions.md#create-an-add-on-submission)，以及 [建立套件航班提交](manage-flight-submissions.md#create-a-package-flight-submission)的相關指示。
 * 如何處理要求回應
 
 :::code language="java" source="~/../snippets-windows/windows-uwp/monetize/StoreServicesExamples_Submission/java/CompleteExample.java" range="433-490":::

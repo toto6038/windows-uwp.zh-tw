@@ -6,12 +6,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, python
 ms.localizationpriority: medium
-ms.openlocfilehash: f551a7de85e493f4fbc1a027fb3ab9c3ca2dd598
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 3fd29164dd91199b1557496985577ea956893250
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363861"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811255"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
@@ -57,7 +57,7 @@ ms.locfileid: "89363861"
 1. 一開始，此範例會[為指定的應用程式取得資料](get-an-app.md)。
 2. 接下來，它會[刪除應用程式的擱置中提交](delete-an-app-submission.md) (如果有的話)。
 3. 然後它會[為此應用程式建立新的提交](create-an-app-submission.md) (新的提交是最後一個已發佈提交的複本)。
-4. 它會變更新提交的部分詳細資料，並將此提交的新套件上傳到 Azure Blob 儲存體。
+4. 它會變更新提交的一些詳細資料，並上傳新的套件以提交至 Azure Blob 儲存體。
 5. [接著，](commit-an-app-submission.md)它會[更新](update-an-app-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-app-submission.md)，直到此提交認可成功為止。
 
@@ -72,7 +72,7 @@ ms.locfileid: "89363861"
 1. 一開始，此範例會[為指定的附加元件取得資料](get-an-add-on.md)。
 2. 接下來，它會[刪除附加元件的擱置中提交](delete-an-add-on-submission.md) (如果有的話)。
 3. 然後它會[為此附加元件建立新的提交](create-an-add-on-submission.md) (新的提交是最後一個已發佈提交的複本)。
-4. 它會將包含此提交圖示的 ZIP 封存上傳到 Azure Blob 儲存體。 如需詳細資訊，請參閱[建立附加元件提交](manage-add-on-submissions.md#create-an-add-on-submission)中有關上傳 ZIP 封存到 Azure Blob 儲存體的相關指示。
+4. 它會上傳包含提交給 Azure Blob 儲存體之圖示的 ZIP 封存。 如需詳細資訊，請參閱 [建立附加元件提交](manage-add-on-submissions.md#create-an-add-on-submission)中有關上傳 ZIP 封存至 Azure Blob 儲存體的相關指示。
 5. [接著，](commit-an-add-on-submission.md)它會[更新](update-an-add-on-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
@@ -87,7 +87,7 @@ ms.locfileid: "89363861"
 1. 一開始，此範例會[為指定的套件正式發行前小眾測試版取得資料](get-a-flight.md)。
 2. 接下來，它會[刪除套件正式發行前小眾測試版的擱置中提交](delete-a-flight-submission.md) (如果有的話)。
 3. 然後它會[為套件正式發行前小眾測試版建立新的提交](create-a-flight-submission.md) (新的提交是最後一個已發佈提交的複本)。
-4. 它會將此提交的新套件上傳到 Azure Blob 儲存體。 如需詳細資訊，請參閱[建立套件正式發行前小眾測試版提交](manage-flight-submissions.md#create-a-package-flight-submission)中有關上傳 ZIP 封存到 Azure Blob 儲存體的相關指示。
+4. 它會上傳新的套件以供提交 Azure Blob 儲存體。 如需詳細資訊，請參閱 [建立封裝航班提交](manage-flight-submissions.md#create-a-package-flight-submission)中有關上傳 ZIP 封存至 Azure Blob 儲存體的相關指示。
 5. [接著，](commit-a-flight-submission.md)它會[更新](update-a-flight-submission.md)並認可新提交合作夥伴中心。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-a-flight-submission.md)，直到此提交認可成功為止。
 

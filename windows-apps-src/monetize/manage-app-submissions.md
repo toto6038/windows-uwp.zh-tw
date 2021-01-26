@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 提交 API、App 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: de612607da2192af3358c94874e0896557ca6d08
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 00820f00360575f0a335d37aa0859b94648709e3
+ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89171362"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811284"
 ---
 # <a name="manage-app-submissions"></a>管理應用程式提交
 
@@ -95,10 +95,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
     ```
 
-    回應主體包含 [App 提交](#app-submission-object)資源，其中包含新提交的識別碼、用於上傳提交至 Azure Blob 儲存體的任何相關檔案 (例如應用程式套件、清單影像和預告片檔案) 的共用存取簽章 (SAS) URI，以及新提交的所有資料 (例如清單和定價資訊)。
+    回應主體包含提交新提交識別碼的 [應用程式提交](#app-submission-object) 資源、共用存取簽章 (SAS) URI，以便上傳至 Azure Blob 儲存體 (例如應用程式套件、列出影像和結尾檔案，以及新提交) 的所有資料，例如清單和定價資訊 (。
 
     > [!NOTE]
-    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS URI 及使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分︰了解 SAS 模型](/azure/storage/common/storage-sas-overview)和[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](/azure/storage/common/storage-sas-overview)。
+    > SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS Uri 及其搭配 Azure Blob 儲存體使用的背景資訊，請參閱 [共用存取簽章，第1部分：瞭解 sas 模型](/azure/storage/common/storage-sas-overview) 和 [共用存取簽章，第2部分：透過 Blob 儲存體建立和使用 sas](/azure/storage/common/storage-sas-overview)。
 
 4. 如果您要新增提交的新套件、清單影像或預告片檔案，請[準備應用程式套件](../publish/app-package-requirements.md)並[準備應用程式螢幕擷取畫面、影像與預告片](../publish/app-screenshots-and-images.md)。 將所有這些檔案新增到 ZIP 封存。
 
@@ -110,13 +110,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
       > [!NOTE]
       > 如果您要新增提交的新檔案，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
-4. 如果您要新增提交的新套件、清單影像或預告片檔案，請使用您稍早呼叫之 POST 方法回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](/azure/storage/storage-introduction#blob-storage)。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
+4. 如果您要新增套件、列出影像或結尾檔案以進行提交，請使用您稍早呼叫之 POST 方法的回應主體中提供的 SAS URI，將 ZIP 封存檔上傳至 [Azure Blob 儲存體](/azure/storage/storage-introduction#blob-storage) 。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
 
     * [適用於 .NET 的 Azure 儲存體用戶端程式庫](/azure/storage/storage-dotnet-how-to-use-blobs)
     * [Azure Storage SDK for Java](/azure/storage/storage-java-how-to-use-blob-storage)
     * [適用于 Python 的 Azure 儲存體 SDK](/azure/storage/storage-python-how-to-use-blob-storage)
 
-    下列 C# 程式碼範例示範如何在適用於 .NET 的 Azure 儲存體用戶端程式庫中，使用 [CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 類別上傳 ZIP 封存。 此範例假設已將 ZIP 封存寫入串流物件。
+    下列 c # 程式碼範例示範如何使用適用于 .NET 的 Azure 儲存體用戶端程式庫中的 [>cloudblockblob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob) 類別，將 ZIP 封存上傳至 Azure Blob 儲存體。 此範例假設已將 ZIP 封存寫入串流物件。
 
     ```csharp
     string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -340,7 +340,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | id            | 字串  | 提交的識別碼。 此識別碼可用於要求 [建立 App 提交](create-an-app-submission.md)、 [取得所有 App](get-all-apps.md) 和 [取得 App](get-an-app.md) 的回應資料中。 針對合作夥伴中心中建立的提交，此識別碼也可在 [提交] 頁面的 URL 中找到合作夥伴中心。  |
 | applicationCategory           | 字串  |   指定 App [類別和/或子類別](../publish/category-and-subcategory-table.md)的字串。 類別與子類別會使用底線 '_' 字元結合為單一字串，例如 **BooksAndReference_EReader**。      |  
 | 定價           |  物件 (object)  | [定價資源](#pricing-object)包含應用程式的定價資訊。        |   
-| 可見性           |  字串  |  App 的可見度。 這個值可以是下列其中一個值： <ul><li>Hidden</li><li>公開</li><li>私人</li><li>NotSet</li></ul>       |   
+| 可見性           |  字串  |  App 的可見度。 這個值可以是下列其中一個值： <ul><li>Hidden</li><li>公用</li><li>私人</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | 字串  | 提交的發佈模式。 這個值可以是下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |  
 | listings           |   物件 (object)  |  索引鍵/值組的字典，其中每個索引鍵都是國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含應用程式的清單資訊。       |   
@@ -370,13 +370,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式的定價資訊。 此資源具有下列值。
 
-| 值           | 類型    | 說明        |
+| 值           | 類型    | 描述        |
 |-----------------|---------|------|
 |  trialPeriod               |    字串     |  可針對應用程式指定試用期的字串。 這個值可以是下列其中一個值： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    物件 (object)     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的應用程式在特定市場中的自訂價格](../publish/define-market-selection.md)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。      |     
-|  sales               |   array      |  已**淘汰**。 包含應用程式的銷售資訊的[銷售資源](#sale-object)陣列。   |     
+|  sales               |   array      |  已 **淘汰**。 包含應用程式的銷售資訊的[銷售資源](#sale-object)陣列。   |     
 |  priceId               |   字串      |  指定應用程式[基本價格](../publish/define-market-selection.md)的[價格區間](#price-tiers)。   |     
-|  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**Note** &nbsp; 注意 &nbsp;此欄位是唯讀的。   |
+|  isAdvancedPricingModel               |   boolean      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/> &nbsp; 注意 &nbsp;此欄位是唯讀的。   |
 
 
 <span id="sale-object" />
@@ -386,7 +386,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 此資源包含應用程式的銷售資訊。
 
 > [!IMPORTANT]
-> **銷售**資源不再支援，目前您無法使用 Microsoft Store 提交 API 取得或修改應用程式提交的銷售資料。 我們將來會更新「Microsoft Store 提交 API」來導入新的方法，以程式設計方式存取應用程式提交的銷售資訊。
+> **銷售** 資源不再支援，目前您無法使用 Microsoft Store 提交 API 取得或修改應用程式提交的銷售資料。 我們將來會更新「Microsoft Store 提交 API」來導入新的方法，以程式設計方式存取應用程式提交的銷售資訊。
 >    * 在呼叫 [GET 方法以取得應用程式提交](get-an-app-submission.md)之後，*sales* 值將會空白。 您可以繼續使用合作夥伴中心取得提交應用程式的銷售資料。
 >    * 呼叫 [PUT 方法以更新應用程式提交](update-an-app-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用合作夥伴中心來變更提交應用程式的銷售資料。
 
@@ -407,7 +407,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式的清單資訊。 此資源具有下列值。
 
-| 值           | 類型    | 說明                  |
+| 值           | 類型    | 描述                  |
 |-----------------|---------|------|
 |  baseListing               |   物件 (object)      |  應用程式的[基本清單](#base-listing-object)資訊，這會定義適用於所有平台的預設清單資訊。   |     
 |  platformOverrides               | 物件 (object) |   索引鍵/值組的字典，其中每個索引鍵都是字串，可識別要覆寫清單資訊的平台，而每個值都是[清單](#base-listing-object)資源 (只包含從 description 到 title 的值)，可指定要針對指定平台進行覆寫的清單資訊。 索引鍵可以具有下列值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
@@ -418,7 +418,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式的基本清單資訊。 此資源具有下列值。
 
-| 值           | 類型    | 說明       |
+| 值           | 類型    | 描述       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   字串      |  選擇性的[著作權及/或商標資訊](../publish/create-app-store-listings.md)。  |
 |  關鍵字                |  array       |  [關鍵字](../publish/create-app-store-listings.md)陣列，可協助讓您的應用程式出現在搜尋結果中。    |
@@ -445,7 +445,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式清單的影像和圖示資料。 如需可用於應用程式列出之影像和圖示的詳細資訊，請參閱 [應用程式螢幕擷取畫面與影像](../publish/app-screenshots-and-images.md)。 此資源具有下列值。
 
-| 值           | 類型    | 說明           |
+| 值           | 類型    | 描述           |
 |-----------------|---------|------|
 |  fileName               |    字串     |   影像檔的名稱，位於您針對提交所上傳的 ZIP封存中。    |     
 |  fileStatus               |   字串      |  影像檔的狀態。 這個值可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>已上傳</li><li>PendingDelete</li></ul>   |
@@ -486,7 +486,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明        |
+| 值           | 類型    | 描述        |
 |-----------------|---------|------|
 |  內容類型               |    array     |  一或多個下列字串的陣列，描述遊戲的類型： <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
 |  isLocalMultiplayer               |    boolean     |  指出遊戲是否支援本機多人遊戲。      |     
@@ -499,10 +499,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |  localCooperativeMaxPlayers               |   int      |   指定遊戲支援本機合作的最多玩家數。  |     
 |  isBroadcastingPrivilegeGranted               |   boolean      |  指出遊戲是否支援廣播。   |     
 |  isCrossPlayEnabled               |   boolean      |   指出遊戲是否支援在 Windows 10 電腦和 Xbox 之間的多人工作階段。  |     
-|  kinectDataForExternal               |   字串      |  下列其中一個值，指出遊戲是否可以收集 Kinect 資料並將其傳送到外部服務： <ul><li>NotSet</li><li>Unknown</li><li>啟用</li><li>已停用</li></ul>   |
+|  kinectDataForExternal               |   字串      |  下列其中一個值，指出遊戲是否可以收集 Kinect 資料並將其傳送到外部服務： <ul><li>NotSet</li><li>Unknown</li><li>啟用</li><li>停用</li></ul>   |
 
 > [!NOTE]
-> 在 Microsoft Store 提交 API 首次向開發人員發佈後，2017 年 5 月新增 *gamingOptions* 資源。 如果您在引進此資源前透過提交 API 為應用程式建立了提交，並且此提交仍在進行中，則在確認成功提交或刪除提交之前，此資源將不適用於應用程式的提交。 如果 *gamingOptions* 資源不適用於應用程式的提交，則由 [取得應用程式](get-an-app.md) 方法傳回的[應用程式資源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 欄位為 false。
+> 在 Microsoft Store 提交 API 首次向開發人員發佈後，2017 年 5 月新增 *gamingOptions* 資源。 如果您在引進此資源前透過提交 API 為應用程式建立了提交，並且此提交仍在進行中，則在確認成功提交或刪除提交之前，此資源將不適用於應用程式的提交。 如果 *gamingOptions* 資源不適用於應用程式的提交，則由 [取得應用程式](get-an-app.md) 方法傳回的 [應用程式資源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 欄位為 false。
 
 <span id="status-details-object" />
 
@@ -510,7 +510,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含關於提交狀態的其他詳細資料。 此資源具有下列值。
 
-| 值           | 類型    | 說明         |
+| 值           | 類型    | 描述         |
 |-----------------|---------|------|
 |  錯誤               |    物件 (object)     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。    |     
 |  warnings               |   物件 (object)      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。      |
@@ -565,11 +565,11 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 此資源具有下列值。  
 
 > [!NOTE]
-> 在呼叫[更新應用程式提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值則由合作夥伴中心填入。
+> 在呼叫 [更新應用程式提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值則由合作夥伴中心填入。
 
-| 值           | 類型    | 說明                   |
+| 值           | 類型    | 描述                   |
 |-----------------|---------|------|
-| fileName   |   字串      |  封裝名稱。    |  
+| fileName   |   字串      |  封裝的名稱。    |  
 | fileStatus    | 字串    |  套件的狀態。 這個值可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>已上傳</li><li>PendingDelete</li></ul>    |  
 | id    |  字串   |  唯一識別套件的識別碼。 此值是由合作夥伴中心提供。   |     
 | version    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](../publish/package-version-numbering.md)。   |   
@@ -588,7 +588,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源提供提交認證報告資料的存取。 此資源具有下列值。
 
-| 值           | 類型    | 說明             |
+| 值           | 類型    | 描述             |
 |-----------------|---------|------|
 |     date            |    字串     |  產生報表的日期和時間，格式為 ISO 8601。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
@@ -617,7 +617,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明        |
+| 值           | 類型    | 描述        |
 |-----------------|---------|------|
 | packageRollout   |   物件 (object)      |  [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。   |  
 | isMandatoryUpdate    | boolean    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝應用程式更新的強制套件詳細資訊，請參閱[下載與安裝應用程式的套件更新](../packaging/self-install-package-updates.md)。    |  
@@ -629,7 +629,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含提交的漸進式[套件推出設定](#manage-gradual-package-rollout)。 此資源具有下列值。
 
-| 值           | 類型    | 說明        |
+| 值           | 類型    | 描述        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  指出是否已為提交啟用漸進式套件推出。    |  
 | packageRolloutPercentage    | FLOAT    |  將接收漸進式推出中套件的使用者百分比。    |  
@@ -637,7 +637,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
 
 > [!NOTE]
-> *PackageRolloutStatus*和*fallbackSubmissionId*值是由合作夥伴中心指派，且不適合由開發人員設定。 如果您將這些值包含在要求本文中，則會忽略這些值。
+> *PackageRolloutStatus* 和 *fallbackSubmissionId* 值是由合作夥伴中心指派，且不適合由開發人員設定。 如果您將這些值包含在要求本文中，則會忽略這些值。
 
 <span id="trailer-object" />
 
@@ -681,7 +681,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |  trailerAssets               |   物件 (object)      |  機碼和值組的字典，其中每個機碼都是語言代碼，而每個值都是[預告片資產資源](#trailer-assets-object)，其中包含預告片的其他地區設定資產。 如需有關支援的語言代碼的詳細資訊，請參閱 [支援的語言](../publish/supported-languages.md)。    |     
 
 > [!NOTE]
-> 在 Microsoft Store 提交 API 首次向開發人員發佈後，2017 年 5 月新增*預告片*資源。 如果您在引進此資源前透過提交 API 為應用程式建立了提交，並且此提交仍在進行中，則在確認成功提交或刪除提交之前，此資源將不適用於應用程式的提交。 如果*預告片*資源不適用於應用程式的提交，則由 [取得應用程式](get-an-app.md) 方法傳回的[應用程式資源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 欄位為 false。
+> 在 Microsoft Store 提交 API 首次向開發人員發佈後，2017 年 5 月新增 *預告片* 資源。 如果您在引進此資源前透過提交 API 為應用程式建立了提交，並且此提交仍在進行中，則在確認成功提交或刪除提交之前，此資源將不適用於應用程式的提交。 如果 *預告片* 資源不適用於應用程式的提交，則由 [取得應用程式](get-an-app.md) 方法傳回的 [應用程式資源](get-app-data.md#application_object) 的 *hasAdvancedListingPermission* 欄位為 false。
 
 <span id="trailer-assets-object" />
 
@@ -689,7 +689,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含[預告片資源](#trailer-object)中所定義之預告片的其他地區設定資產。 此資源具有下列值。
 
-| 值           | 類型    | 說明        |
+| 值           | 類型    | 描述        |
 |-----------------|---------|------|
 | title   |   字串      |  當地語系化的預告片標題。 當使用者以全螢幕模式播放預告片時，會顯示此標題。     |  
 | imageList    | array    |   陣列，其中包含提供預告片縮圖影像的[影像](#image-for-trailer-object)資源。 此陣列中只能包含一個[影像](#image-for-trailer-object)資源。  |   
@@ -701,7 +701,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源描述預告片的縮圖影像。 此資源具有下列值。
 
-| 值           | 類型    | 說明           |
+| 值           | 類型    | 描述           |
 |-----------------|---------|------|
 |  fileName               |    字串     |   縮圖影像檔的名稱，位於您針對提交所上傳的 ZIP 封存中。    |     
 |  id  |  字串  | 縮圖影像的識別碼。 此值是由合作夥伴中心提供。  |
@@ -719,12 +719,12 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 下列值代表應用程式提交的[價格資源](#pricing-object)資源的可用價格區間。
 
-| 值           | 說明        |
+| 值           | 描述        |
 |-----------------|------|
 |  基本               |   未設定價格區間；使用應用程式的基本價格。      |     
 |  NotAvailable              |   指定的區域中無法使用此應用程式。    |     
 |  免費              |   這個應用程式是免費的。    |    
-|  第 *xxx* 層               |   指定應用程式的價格區間的字串，格式為**第 <em>xxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看可供您的開發人員帳戶使用的完整定價層資料表，包括與每個階層相關聯的市場特定價格，請移至合作夥伴中心中任何提交應用程式的 [**定價和可用性**] 頁面，然後按一下 [**市場] 和 [自訂價格**] 區段中的 [ **view table** ] 連結 (針對某些開發人員帳戶，此連結位於 [**定價**]) 區段中    |
+|  第 *xxx* 層               |   指定應用程式的價格區間的字串，格式為 **第 <em>xxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果 [價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為 **true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果 [價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為 **false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看可供您的開發人員帳戶使用的完整定價層資料表，包括與每個階層相關聯的市場特定價格，請移至合作夥伴中心中任何提交應用程式的 [**定價和可用性**] 頁面，然後按一下 [**市場] 和 [自訂價格**] 區段中的 [ **view table** ] 連結 (針對某些開發人員帳戶，此連結位於 [**定價**]) 區段中    |
 
 
 <span id="enterprise-licensing" />
