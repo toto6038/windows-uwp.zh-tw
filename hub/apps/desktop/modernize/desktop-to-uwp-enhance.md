@@ -1,19 +1,19 @@
 ---
 description: 使用 Windows 執行階段 API 增強適用於 Windows 10 使用者的傳統型應用程式。
 title: 在傳統型應用程式中呼叫 Windows 執行階段 API
-ms.date: 08/20/2019
+ms.date: 01/28/2021
 ms.topic: article
 keywords: windows 10, uwp
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: bf460b8c05f1dbb274aa9015e6b892339df9f634
-ms.sourcegitcommit: 21a76fc02ae261f609a2dbb7a56c5de25844c068
-ms.translationtype: HT
+ms.openlocfilehash: 2dc56597dccf00a15ffc672f60ca2e1f0936f14f
+ms.sourcegitcommit: 6f15cc14e0c4c13999c862664fa7a70de8730b74
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93381388"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98981867"
 ---
 # <a name="call-windows-runtime-apis-in-desktop-apps"></a>在傳統型應用程式中呼叫 Windows 執行階段 API
 
@@ -31,9 +31,9 @@ ms.locfileid: "93381388"
 * 若為舊版 .NET，您可以安裝 `Microsoft.Windows.SDK.Contracts` NuGet 套件，以將所有必要參考新增至您的專案。 將 Windows 10 版本 1803 或更新版本設為目標的專案支援此選項。
 * 如果您的專案將 .NET 5 Preview 8 (或更新版本) 和舊版 .NET 設為多重目標，您可以將專案檔設定為使用這兩個選項。
 
-### <a name="net-5-preview-8-and-later-use-the-target-framework-moniker-option"></a>.NET 5 Preview 8 和更新版本：使用目標 Framework Moniker 選項 
+### <a name="net-5-use-the-target-framework-moniker-option"></a>.NET 5：使用目標 Framework 標記選項
 
-只有使用 .NET 5 Preview 8 (或更新版本) 並將 Windows 10 版本 1809 或更新作業系統版本設為目標的專案，才支援此選項。 如需更多關於此案例的背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
+只有使用 .NET 5 (或更新版本) 和目標 Windows 10 版本1809或更新版本的 OS 版本的專案才支援這個選項。 如需更多關於此案例的背景資訊，請參閱[這篇部落格文章](https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/)。
 
 1. 在 Visual Studio 中開啟您的專案，在 [方案總管] 中您的專案上按一下滑鼠右鍵，然後選擇 [編輯專案檔]。 您的專案檔看起來應該類似這樣。
 
