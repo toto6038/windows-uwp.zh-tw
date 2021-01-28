@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 1ecf69b014241287961e4be5af8770ce08f500ca
-ms.sourcegitcommit: b0d0055625b1b2deebebdb047609ffa85677dd15
+ms.openlocfilehash: 4d98877fb0d48d2c3c677af5f2b89d9fd65c05f1
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759225"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922750"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML Islands 在 WPF 應用程式中裝載標準 WinRT XAML 控制項
 
-本文示範使用 [XAML Islands](xaml-islands.md)，在 WPF 應用程式中裝載標準 WinRT XAML 控制項 (也就是 Windows SDK 所提供的第一方 WinRT XAML 控制項) 的兩種方式：
+本文示範兩種使用 [XAML 孤島](xaml-islands.md) 來裝載標準 WinRT xaml 控制項的方式， (也就是以 .net Core 3.1 為目標的 WPF 應用程式中，由 Windows SDK) 所提供的第一方 WinRT xaml 控制項：
 
 * 其會示範如何使用 Windows 社群工具組中[包裝的控制項](xaml-islands.md#wrapped-controls)來裝載 UWP [InkCanvas](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 和 [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) 控制項。 這些控制項會包裝一小部分有用 WinRT XAML 控制項的介面和功能。 您可以直接將控制項新增至 WPF 或 Windows Forms 專案的設計介面，然後像設計工具中的任何其他 WPF 或 Windows Forms 控制項一樣來使用它們。
 
@@ -25,11 +25,14 @@ ms.locfileid: "98759225"
 
 雖然本文示範如何在 WPF 應用程式中裝載 WinRT XAML 控制項，但此程序類似於 Windows Forms 應用程式。
 
+> [!NOTE]
+> 目前只有以 .NET Core 3.x 為目標的應用程式才支援使用 XAML 孤島來裝載 WPF 中的 WinRT XAML 控制項和 Windows Forms 應用程式。 以 .NET 5 為目標的應用程式，或任何 .NET Framework 版本的應用程式中，尚不支援 XAML 孤島。
+
 ## <a name="required-components"></a>必要元件
 
 若要在 WPF (或 Windows Forms) 應用程式中裝載 WinRT XAML 控制項，您的方案需要有下列元件。 本文提供建立每個元件的指示。
 
-* **應用程式的專案和原始程式碼**。 在以 .NET Core 3.x 為目標的應用程式中，支援使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載 WinRT XAML 控制項。
+* **應用程式的專案和原始程式碼**。 目前只有以 .NET Core 3.x 為目標的應用程式才支援使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載 WinRT XAML 控制項。
 
 * **UWP 應用程式專案，可定義從 XamlApplication 衍生的根應用程式類別**。 您的 WPF 或 Windows Forms 專案必須能存取 Windows 社群工具組所提供 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) \(英文)\ 類別的執行個體，讓其能夠探索和載入自訂 UWP XAML 控制項。 建議的做法是在個別的 UWP 應用程式專案中定義此物件，而該專案屬於 WPF 或 Windows Forms 應用程式的方案。 
 
@@ -59,8 +62,8 @@ ms.locfileid: "98759225"
 5. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 在以 **任何 CPU** 為目標的專案中，不支援大部分的 XAML Islands 案例。
 
     1. 在 [方案總管] 中，以滑鼠右鍵按一下方案節點，然後選取 [屬性] -> [設定屬性] -> [設定管理員]。 
-    2. 在 [使用中的方案平台]  中，選取 [新增]  。 
-    3. 在 [新增方案平台]  對話方塊中，選取 [x64]  或 [x86]  ，然後按 [確定]  。 
+    2. 在 [使用中的方案平台] 中，選取 [新增]。 
+    3. 在 [新增方案平台] 對話方塊中，選取 [x64] 或 [x86]，然後按 [確定]。 
     4. 關閉已開啟的對話方塊。
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 應用程式專案中定義 XamlApplication 類別
@@ -71,7 +74,7 @@ ms.locfileid: "98759225"
 > 雖然裝載第一方 WinRT XAML 控制項不需要執行此步驟，但您的應用程式需要 `XamlApplication` 物件來支援完整範圍的 XAML Island 案例，包括裝載自訂 WinRT XAML 控制項。 因此，我們建議您一律在任何使用 XAML Islands 的方案中定義 `XamlApplication` 物件。
 
 1. 在 [方案總管] 中，在方案節點上按一下滑鼠右鍵，然後選取 [新增] -> [新增專案]。
-2. 將 [空白應用程式 (通用 Windows)]  專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。
+2. 將 [空白應用程式 (通用 Windows)] 專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。
 3. 在 UWP 應用程式專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件 (最新的穩定版本)。
 4. 開啟 **pp.xaml** 檔案，並以下列 XAML 取代此檔案的內容。 以您 UWP 應用程式專案的命名空間取代 `MyUWPApp`。
 

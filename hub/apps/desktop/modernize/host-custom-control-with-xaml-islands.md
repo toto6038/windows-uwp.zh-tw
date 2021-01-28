@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: b73f7bd33abb71252d4af4bbc9a8e57b405481f5
-ms.sourcegitcommit: b0d0055625b1b2deebebdb047609ffa85677dd15
+ms.openlocfilehash: 16dc1b59147cb937a09eb085c716ebac0e1cef7b
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759238"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922736"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>在 WPF 應用程式中使用 XAML Islands 裝載自訂 WinRT XAML 控制項
 
@@ -21,11 +21,14 @@ ms.locfileid: "98759238"
 
 雖然本文示範如何在 WPF 應用程式中執行這項作業，但此程序類似於 Windows Forms 應用程式。 如需在 WPF 和 Windows Forms 應用程式中裝載 WinRT XAML 控制項的概觀，請參閱[這篇文章](xaml-islands.md#wpf-and-windows-forms-applications)。
 
+> [!NOTE]
+> 目前只有以 .NET Core 3.x 為目標的應用程式才支援使用 XAML 孤島來裝載 WPF 中的 WinRT XAML 控制項和 Windows Forms 應用程式。 以 .NET 5 為目標的應用程式，或任何 .NET Framework 版本的應用程式中，尚不支援 XAML 孤島。
+
 ## <a name="required-components"></a>必要元件
 
 若要在 WPF (或 Windows Forms) 應用程式中裝載自訂 WinRT XAML 控制項，您的方案需要有下列元件。 本文提供建立每個元件的指示。
 
-* **應用程式的專案和原始程式碼**。 只有在以 .NET Core 3.x 為目標的應用程式中，才支援使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載自訂控制項。 以 .NET Framework 為目標的應用程式不支援此案例。
+* **應用程式的專案和原始程式碼**。 只有在以 .NET Core 3.x 為目標的應用程式中，才支援使用 [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) 控制項來裝載自訂控制項。
 
 * **自訂 WinRT XAML 控制項**。 您需要想裝載之自訂控制項的原始程式碼，才能使用您的應用程式進行編譯。 自訂控制項通常會定義於 UWP 類別庫專案，而您會在與 WPF 或 Windows Forms 專案相同的方案中參考該專案。
 
@@ -47,8 +50,8 @@ ms.locfileid: "98759238"
 
 3. 請確定已啟用[套件參考](/nuget/consume-packages/package-references-in-project-files)：
 
-    1. 在 Visual Studio 中，按一下 [工具] -> [NuGet 套件管理員]-> [套件管理員設定]  。
-    2. 確定已針對 [預設套件管理格式]  選取 [PackageReference]  。
+    1. 在 Visual Studio 中，按一下 [工具] -> [NuGet 套件管理員]-> [套件管理員設定]。
+    2. 確定已針對 [預設套件管理格式] 選取 [PackageReference]。
 
 4. 請以滑鼠右鍵按一下 [方案總管]  中的 WPF 專案，然後選擇 [管理 NuGet 套件]  。
 

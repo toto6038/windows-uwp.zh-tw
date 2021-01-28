@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 752b02f4bbf6faaca1fd04007c85cfe41f6c28f9
-ms.sourcegitcommit: b8d0e2c6186ab28fe07eddeec372fb2814bd4a55
-ms.translationtype: HT
+ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
+ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91671547"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98922764"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 WinRT XAML 控制項 (XAML Islands)
 
@@ -40,12 +40,12 @@ XAML Islands 具有下列執行階段需求：
 
 ## <a name="wpf-and-windows-forms-applications"></a>WPF 和 Windows Form 應用程式
 
+> [!NOTE]
+> 目前只有以 .NET Core 3.x 為目標的應用程式才支援使用 XAML 孤島來裝載 WPF 中的 WinRT XAML 控制項和 Windows Forms 應用程式。 以 .NET 5 為目標的應用程式，或任何 .NET Framework 版本的應用程式中，尚不支援 XAML 孤島。
+
 我們建議 WPF 和 Windows Forms 應用程式使用「Windows 社區工具組」中提供的 XAML Island .NET 控制項。 這些控制項會提供物件模型，模擬 (或提供存取) 對應 WinRT XAML 控制項的屬性、方法和事件。 它們也會處理鍵盤導覽和版面配置變更之類的行為。
 
 WPF 和 Windows Forms 應用程式有兩組 XAML Island 控制項：「包裝的控制項」和「主控制項」。 
-
-> [!NOTE]
-> 只有在以 .NET Core 3.x 為目標的 WPF 和 Windows Forms 應用程式中，才支援使用 XAML Islands 來裝載 WinRT XAML 控制項。 以 .NET Framework 為目標的應用程式不支援 XAML Islands。
 
 ### <a name="wrapped-controls"></a>包裝的控制項
 
@@ -69,7 +69,7 @@ WPF 和 Windows Forms 應用程式可以使用 XAML Island 控制項的選項，
 |-----------------|-------------------------------|-------------|
 | [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) | Windows 10 (版本 1903) | 可以裝載衍生自 [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement) 的任何 WinRT XAML 控制項，包括 Windows SDK 所提供的任何第一方 WinRT XAML 控制項，以及自訂控制項。 |
 
-如需示範如何使用 **WindowsXamlHost** 控制項的逐步解說，請參閱[在 WPF 應用程式中裝載標準 WinRT XAML 控制項](host-standard-control-with-xaml-islands.md)和[使用 XAML Islands 在 WPF 應用程式中裝載自訂 WinRT XAML 控制項](host-custom-control-with-xaml-islands.md)。
+如需示範如何使用 **WindowsXamlHost** 控制項的逐步解說，請參閱 [在 WPF 應用程式中裝載標準 WinRT XAML 控制項](host-standard-control-with-xaml-islands.md)和 [使用 XAML Islands 在 WPF 應用程式中裝載自訂 WinRT XAML 控制項](host-custom-control-with-xaml-islands.md)。
 
 <span id="requirements" />
 
