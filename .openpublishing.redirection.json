@@ -128,17 +128,17 @@
     {
       "source_path": "windows-apps-src/get-started/enable-your-device-for-development.md",
       "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/get-started/get-set-up.md",
       "redirect_url": "/windows/apps/get-started/get-set-up",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/get-started/sign-up.md",
       "redirect_url": "/windows/apps/get-started/sign-up",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "windows-apps-src/get-started/adding-webvr-to-a-babylonjs-game.md",
@@ -206,43 +206,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "windows-apps-src/input-and-devices/cortana-design-guidelines.md",
-      "redirect_url": "/cortana/skills/#pivot=start&panel=designskill",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/deep-link-into-your-app-from-cortana.md",
-      "redirect_url": "/cortana/voice-commands/deep-link-into-your-app-from-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
-      "redirect_url": "/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "windows-apps-src/input-and-devices/guidelines-for-user-interaction.md",
       "redirect_url": "/windows/uwp/input-and-devices/touch-interactions",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/interact-with-a-background-app-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/interact-with-a-background-app-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/launch-a-background-app-with-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/launch-a-foreground-app-with-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/support-natural-language-voice-commands-in-cortana.md",
-      "redirect_url": "/cortana/voice-commands/support-natural-language-voice-commands-in-cortana",
       "redirect_document_id": false
     },
     {
@@ -1223,11 +1188,6 @@
     {
       "source_path": "windows-apps-src/input-and-devices/convert-ink-to-text.md",
       "redirect_url": "/windows/uwp/design/input/convert-ink-to-text",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "windows-apps-src/input-and-devices/cortana-interactions.md",
-      "redirect_url": "/windows/uwp/design/input/cortana-interactions",
       "redirect_document_id": true
     },
     {
