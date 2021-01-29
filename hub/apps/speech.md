@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: 語音（Windows 10、語音、語音、對話、win32 語音應用程式、UWP 語音應用程式、WPF 語音應用程式、WinForms 語音應用程式）
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d810f08a2db60309e4528167bcb4bddc95d850c6
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
+ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89174152"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "98988700"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Windows 10 中的語音、語音和對話
 
@@ -72,13 +72,15 @@ ms.locfileid: "89174152"
 
       **Azure 語音服務**
 
-      使用 Azure 語音服務來設計、建立及測試可存取的網站。
+      將語音處理整合到應用程式和服務中。
 
       [語音轉換文字](https://azure.microsoft.com/services/cognitive-services/speech-to-text/)
 
       [文字轉換語音](https://azure.microsoft.com/services/cognitive-services/text-to-speech/)
       
       [語音翻譯](https://azure.microsoft.com/services/cognitive-services/speech-translation/)
+
+      [說話者辨識](https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/)
 
       [語音優先虛擬助理](/azure/cognitive-services/speech-service/voice-first-virtual-assistants)
    :::column-end:::
@@ -87,16 +89,21 @@ ms.locfileid: "89174152"
    :::column span="2":::
       **舊版功能**
 
-      舊版、已淘汰及/或不支援的 Microsoft 語音技術版本。
+      舊版、已淘汰及/或不支援的 Microsoft 語音和對話技術版本。
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column:::
+      [Cortana 技能套件](/cortana/skills/)
+
+      我們的目標是將 Cortana 加入 Microsoft 365，以轉換新式產能體驗，我們即將淘汰適用于取用者 (開發人員) 平臺的 Cortana 技能套件，以及在此平臺上建立的所有技能。
+   :::column-end:::
+   :::column:::
+
       [Microsoft 代理程式](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft 語音應用程式軟體發展工具組 (SASDK) 1.0 版](https://www.microsoft.com/download/details.aspx?id=2200)
-   :::column-end:::
-   :::column:::
+
       [Microsoft Speech API (SAPI) 5。3](/previous-versions/windows/desktop/ms723627(v=vs.85))
 
       [Microsoft Speech API (SAPI) 5。4](/previous-versions/windows/desktop/ee125663(v=vs.85))
