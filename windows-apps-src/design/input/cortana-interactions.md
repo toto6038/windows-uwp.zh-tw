@@ -8,12 +8,12 @@ keywords: Cortana, Cortana 畫布, Cortana 設計, 使用者介面, 語音命令
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fca4da482585ddd4b7f9d54008c1905e372ca030
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988730"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057559"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 應用程式中的 Cortana 互動
 
@@ -22,7 +22,7 @@ ms.locfileid: "98988730"
 
 使用在 Windows 應用程式中啟動和執行單一動作的語音命令，擴充 **Cortana** 的基本功能。
 
-您可以在前景中啟動目標應用程式 (應用程式取得焦點，並在背景中關閉 **cortana**) 或在背景中啟動 (**cortana** 會保留焦點，但會根據互動的複雜度，從應用程式) 提供結果。 一般而言，需要額外內容或使用者輸入的語音命令最好在前景應用程式中處理，而基本命令可透過背景應用程式在 **Cortana** 中處理。 
+您可以在前景中啟動目標應用程式 (應用程式取得焦點，並在背景中關閉 **cortana**) 或在背景中啟動 (**cortana** 會保留焦點，但會根據互動的複雜度，從應用程式) 提供結果。 一般而言，需要額外內容或使用者輸入的語音命令最好在前景應用程式中處理，而基本命令可透過背景應用程式在 **Cortana** 中處理。
 
 藉由整合應用程式的基本功能，並為使用者提供中央進入點來完成大部分的工作，而不直接開啟您的應用程式， **Cortana** 就成為您的應用程式與使用者之間的聯絡。 為應用程式功能提供此快捷方式，並減少切換應用程式的需求，可以節省使用者大量時間和精力。
 
@@ -45,12 +45,6 @@ ms.locfileid: "98988730"
 
 ## <a name="related-articles"></a>相關文章
 
-* [VCD 元素和屬性 v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
-
-### <a name="designers"></a>設計工具
-
-* [Cortana 設計指導方針](cortana-design-guidelines.md)
-
-### <a name="samples"></a>範例
-
-* [Cortana 語音命令範例](https://go.microsoft.com/fwlink/p/?LinkID=619899)
+- [VCD 元素和屬性 v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana 設計指導方針](cortana-design-guidelines.md)
+- [Cortana 語音命令範例](https://go.microsoft.com/fwlink/p/?LinkID=619899)

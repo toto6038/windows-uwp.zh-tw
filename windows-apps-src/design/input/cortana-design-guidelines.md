@@ -8,12 +8,12 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: cortana，設計
 ms.localizationpriority: medium
-ms.openlocfilehash: 008a2612b808f1ca9dac5d55fd4472f23d39cef3
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0d1f27c2e70ce8bf9d77f07dd0871cf09a441bdc
+ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "99041505"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99057569"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana 設計指導方針
 
@@ -26,7 +26,7 @@ ms.locfileid: "99041505"
 
 雖然使用者應該覺得 **cortana** 要盡可能讓程式變得很簡單，但您可能也想要 **cortana** 明確指出您的應用程式完成工作。
 
-我們會使用名為 [ **艾德公司** ] 的行程規劃和管理應用程式，並整合至 **Cortana** UI （如下所示），以示範我們所討論的許多概念和功能。
+我們會使用名為 [ **艾德公司** ] 的行程規劃和管理應用程式，並整合至 **Cortana** UI （如下所示），以示範我們所討論的許多概念和功能。 如需詳細資訊，請參閱 [Cortana voice 命令範例](https://go.microsoft.com/fwlink/p/?LinkID=619899)。
 
 :::image type="content" source="images/cortana/cortana-overview.png" alt-text="Cortana 畫布的螢幕擷取畫面":::
 
@@ -179,9 +179,9 @@ ms.locfileid: "99041505"
 
 ### <a name="handoff"></a>遞交
 
-:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Cortana 畫布的螢幕擷取畫面，其中使用 AdventureWorks 取消行程（沒有":::任何提交 *的 Adventureworks）「取消行程」（沒有切換畫面*）的 cortana 畫布背景工作流程
+:::image type="content" source="images/cortana/cortana-backgroundapp-result.png" alt-text="Cortana 畫布的螢幕擷取畫面，其中使用 adventureworks 即將推出的「適用于端對端 cortana 背景應用程式流程」的螢幕擷取畫面":::**
 
-螢幕擷取畫面：使用 AdventureWorks 取消行程搭配 *具有切換畫面的「取消行程* :::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="」進行端對端 cortana 背景應用程式流程的 cortana 畫布":::
+:::image type="content" source="images/cortana/cortana-backgroundapp-progress-result.png" alt-text="Cortana 畫布的螢幕擷取畫面，其中使用 adventureworks 即將推出":::的「使用 adventureworks 的往返」背景應用程式流程，並透過 *遞交畫面推出 Adventureworks 「即將推出*」
 
 針對您的應用程式所花費的時間不超過500毫秒，且不需要使用者提供任何額外資訊，就可以在不需進一步參與 **Cortana** 的情況下完成，除了顯示完成畫面之外。
 
@@ -350,4 +350,6 @@ GUI 和 TTS 字串可以相同，但不需要。 請嘗試保持 GUI 字串的�
 
 ## <a name="related-articles"></a>相關文章
 
-[Windows 應用程式中的 Cortana 互動](cortana-interactions.md)
+- [Windows 應用程式中的 Cortana 互動](cortana-interactions.md)
+- [VCD 元素和屬性 v1.2](/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2)
+- [Cortana 語音命令範例](https://go.microsoft.com/fwlink/p/?LinkID=619899)

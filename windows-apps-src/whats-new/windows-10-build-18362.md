@@ -6,12 +6,12 @@ ms.date: 04/19/2019
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 5c5b4867d8a58779aa716245130a468374054288
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
-ms.translationtype: HT
+ms.openlocfilehash: 3db6ce85e81f4478a9776cec6a4e38caee0a2c9c
+ms.sourcegitcommit: a7d49538d7ad762d34d41579fdfad2fb4422d667
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860125"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99061415"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-18362"></a>適用於開發人員的 Windows 10 (組建 18362) 最新動向
 
@@ -101,10 +101,10 @@ Microsoft Learn 為 Microsoft 開發人員提供新的實際操作學習和訓�
 
 在 One Dev Question 影片系列中，資深的 Microsoft 開發人員會談論一系列關於 Windows 開發、團隊文化和歷史的問題。
 
-* [Raymond Chen：關於 Windows 開發與歷史](https://www.youtube.com/playlist?list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7)
+* [Raymond Chen：關於 Windows 開發與歷史](https://www.youtube.com/watch?v=teV0gjCacug&list=PLlrxD0HtieHge3_8Dm48C0Ns61I6bHThc)
 
-* [Larry Osterman：關於 Windows 開發與歷史](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPUkYGpJU0RzvY6PBSEA4K)
+* [Larry Osterman：關於 Windows 開發與歷史](https://www.youtube.com/watch?v=_34CokLwodE&list=PLlrxD0HtieHhDTjMijDOd0BSJcpSFabfE)
 
-* [Aaron Gustafson：漸進式 Web 應用程式](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [VS Code 的 Chris Heilmann](https://www.youtube.com/watch?v=cYRn5ONWAqo&list=PLlrxD0HtieHjQX77y-0sWH9IZBTmv1tTx)
 
-* [Chris Heilmann：webhint 工具](https://www.youtube.com/playlist?list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [Aaron Gustafson：漸進式 Web 應用程式](https://www.youtube.com/watch?v=ks3CYvPBO2k&ab_channel=MicrosoftDeveloper)
