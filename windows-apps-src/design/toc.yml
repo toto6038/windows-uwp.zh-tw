@@ -499,19 +499,19 @@
       href: input/cortana-interactions.md
       items:
         - name: 設計指導方針
-          href: /cortana/voice-commands/voicecommand-design-guidelines
+          href: input/cortana-design-guidelines.md
         - name: 啟用前景應用程式
-          href: /cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-foreground-app-with-voice-commands.md
         - name: 修改 VCD 片語清單
-          href: /cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+          href: input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md
         - name: 啟動背景應用程式
-          href: /cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+          href: input/cortana-launch-a-background-app-with-voice-commands.md
         - name: 與背景應用程式互動
-          href: /cortana/voice-commands/interact-with-a-background-app-in-cortana
+          href: input/cortana-interact-with-a-background-app.md
         - name: 背景應用程式的深層連結
-          href: /cortana/voice-commands/deep-link-into-your-app-from-cortana
+          href: input/cortana-deep-link-into-your-app.md
         - name: 支援自然語言語音命令
-          href: /cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+          href: input/cortana-support-natural-language-voice-commands.md
     - name: 多重輸入
       href: input/multiple-input-design-guidelines.md
     - name: 輸入插入
