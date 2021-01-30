@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 1b06296dd77bb1501ed96bd7b87f6c3d3a43fb1a
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
-ms.translationtype: HT
+ms.openlocfilehash: d319374791eeb0a02b0291c66f25f55e31bcbc4b
+ms.sourcegitcommit: 6759309a3fbb6ede498c95c04c05f57a074ab070
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95482890"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069165"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
 
@@ -107,6 +107,7 @@ namespace winrt::BgLabelControlApp::factory_implementation
 #include "BgLabelControl.h"
 #if __has_include("BgLabelControl.g.cpp")
 #include "BgLabelControl.g.cpp"
+#endif
 
 namespace winrt::BgLabelControlApp::implementation
 {

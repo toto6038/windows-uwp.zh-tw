@@ -5,12 +5,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 10/13/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e42b9f35866f07a07122043ced803045bf99d6
-ms.sourcegitcommit: 56e9cab45d1c6e54841d61fdf23044fa01f50c43
+ms.openlocfilehash: 85c64cd4baed7be9edde0dfc008ab90c1d537ca4
+ms.sourcegitcommit: d0eef123b167dc63f482a9f4432a237c1c6212db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92011871"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99077226"
 ---
 # <a name="developer-mode-features-and-debugging"></a>開發人員模式功能和調試
 
@@ -28,12 +28,13 @@ ms.locfileid: "92011871"
 
 若要深入了解裝置入口網站，請參閱 [Windows 裝置入口網站概觀](/windows/uwp/debug-test-perf/device-portal.md)。
 
+
 如需裝置特定的安裝指示，請參閱︰
-- [傳統型裝置的裝置入口網站](/windows/uwp/debug-test-perf/device-portal-desktop.md)
+- [傳統型裝置的裝置入口網站](/windows/uwp/debug-test-perf/device-portal-desktop)
 - [HoloLens 的裝置入口網站](/windows/mixed-reality/using-the-windows-device-portal)
-- [IoT 的裝置入口網站](/windows/iot-core/manage-your-device/DevicePortal)
-- [行動裝置的行動裝置](/windows/uwp/debug-test-perf/device-portal-mobile.md)
-- [Xbox 的裝置入口網站](/windows/xbox-apps/device-portal-xbox.md)
+- [IoT 的裝置入口網站](/windows/iot-core/manage-your-device/deviceportal)
+- [行動裝置的行動裝置](/windows/uwp/debug-test-perf/device-portal-mobile)
+- [Xbox 的裝置入口網站](/windows/uwp/xbox-apps/device-portal-xbox)
 
 如果您遇到啟用開發人員模式或裝置入口網站方面的問題，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)論壇，以尋找這些問題的因應措施，或造訪[無法安裝開發人員模式套件或啟動裝置入口網站](#failure-to-install-developer-mode-package)，以取得其他詳細資訊及了解要允許哪些 WSUS KB 才能將開發人員模式套件解除封鎖。
 
@@ -93,7 +94,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 -   您可以使用[裝置入口網站](/windows/uwp/debug-test-perf/device-portal.md)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用 Device Portal 中的 **[App](/windows/uwp/debug-test-perf/device-portal.md#apps-manager)** 頁面來上傳應用程式套件 (.appx)，並將它安裝在裝置上。
 
 ## <a name="failure-to-install-developer-mode-package"></a>無法安裝開發人員模式套件
-有時會因網路或系統管理方面的問題，致使開發人員模式無法正確安裝。 必須有開發人員模式套件，才能**遠端**部署至此電腦上 (從瀏覽器使用裝置入口網站或使用 [裝置探索] 來啟用 SSH)，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 在本機部署您的應用程式，或從此裝置部署到另一個裝置。
+有時會因網路或系統管理方面的問題，致使開發人員模式無法正確安裝。 必須有開發人員模式套件，才能 **遠端** 部署至此電腦上 (從瀏覽器使用裝置入口網站或使用 [裝置探索] 來啟用 SSH)，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 在本機部署您的應用程式，或從此裝置部署到另一個裝置。
 
 若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。
 

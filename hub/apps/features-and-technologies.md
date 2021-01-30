@@ -2,24 +2,24 @@
 description: 本節協助您了解如何在不同應用程式平台中支援特定重要 Windows 功能，以及如何開始在您的程式碼中使用這些功能。
 title: 功能和技術
 ms.topic: article
-ms.date: 05/08/2019
+ms.date: 01/29/2021
 ms.localizationpriority: medium
 ms.author: mcleans
 author: mcleanbyron
-ms.openlocfilehash: bf8e6797339d7d14542fe310d62606ef55f3d08b
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: 9a77b10fe22d1d0706fd6cf913f19e40c3c37390
+ms.sourcegitcommit: 6759309a3fbb6ede498c95c04c05f57a074ab070
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031071"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069175"
 ---
 # <a name="features-and-technologies-for-windows-apps"></a>Windows 應用程式的功能和技術
 
-無論您正在建置何種類型的應用程式，或是以哪個裝置作為目標，Windows 都會支援許多功能，而這些功能正是重要應用程式案例的關鍵建置組塊。 其中一些功能會以不同的方式顯示在通用 Windows 平台 (UWP)、Win32 (Windows API) 和其他應用程式平台中。 下列文章協助您了解如何在不同應用程式平台中支援特定 Windows 功能，以及如何開始在您的程式碼中使用這些功能。
+無論您正在建置何種類型的應用程式，或是以哪個裝置作為目標，Windows 都會支援許多功能，而這些功能正是重要應用程式案例的關鍵建置組塊。 其中某些功能會以不同方式公開給 Windows 執行階段 (WinRT) 和通用 Windows 平臺 (UWP) 、Win32 (Windows API) 和其他應用程式平臺。 下列文章協助您了解如何在不同應用程式平台中支援特定 Windows 功能，以及如何開始在您的程式碼中使用這些功能。
 
-本文提供量身打造的文章清單，以深入閱讀如何存取 UWP、Win32 (Windows API)、WPF 和 Windows Forms 應用程式平台中的重要 Windows 功能與技術。 如需每個平台開發功能的完整資訊，請參閱下列資源：
+本文提供一份量身打造的文章，以深入瞭解如何以 WinRT、Win32 (Windows API) 、WPF 和 Windows Forms 應用程式平臺來存取重要的 Windows 功能和技術。 如需每個平台開發功能的完整資訊，請參閱下列資源：
 
-* [UWP 文件](/windows/uwp/index)
+* [WinRT/UWP 檔](/windows/uwp/index)
 * [Win32 (Windows API) 文件](/windows/desktop/index)
 * [WPF 文件](/dotnet/framework/wpf/index)
 * [Windows Forms 文件](/dotnet/framework/winforms/index)
@@ -56,46 +56,52 @@ Windows 提供多種方式，將語音辨識和文字轉換語音 (也稱為 TTS
 
 ## <a name="features-and-technologies-by-platform"></a>依平台的功能和技術
 
-下列各節提供有用的連結，以深入了解如何與主要應用程式平台中的核心 Windows 功能和技術整合：UWP、Win32 (Windows API)、WPF 和 Windows Forms。
+下列各節提供有用的連結，以深入瞭解如何整合主要應用程式平臺的核心 Windows 功能和技術： WinRT/UWP、Win32 (Windows API) 、WPF 和 Windows Forms。
 
 ### <a name="user-interface-and-accessibility"></a>使用者介面和協助工具
 
-|  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [設計](/windows/uwp/design/basics/)<br/><br/>[配置](/windows/uwp/design/layout/)<br/><br/>[控制項](/windows/uwp/design/controls-and-patterns/)<br/><br/>[輸入](/windows/uwp/design/input/)<br/><br/>[磚](/windows/uwp/design/shell/tiles-and-notifications/creating-tiles)<br/><br/>[視覺層](/windows/uwp/composition/visual-layer)<br/><br/>[XAML 平台](/windows/uwp/xaml-platform/)<br/><br/>[啟動、繼續和背景工作](/windows/uwp/launch-resume/)<br/><br/>[Windows 協助工具](/windows/uwp/design/accessibility/accessibility)<br/><br/>[語音互動](/windows/uwp/design/input/speech-interactions)<br/><br/> |  [傳統型使用者介面](/windows/desktop/windows-application-ui-development)<br/><br/>[傳統型環境和命令介面](/windows/desktop/user-interface)<br/><br/>[Windows 控制項](/windows/desktop/controls/window-controls)<br/><br/>[傳統型應用程式中的 UWP 控制項 (XAML Islands)](./desktop/modernize/xaml-islands.md)<br/><br/>[傳統型應用程式中的 UWP 視覺層](./desktop/modernize/visual-layer-in-desktop-apps.md)<br/><br/>[Windows 和訊息](/windows/desktop/winmsg/windowing)<br/><br/>[功能表和其他資源](/windows/desktop/menurc/resources)<br/><br/>[高 DPI](/windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows)<br/><br/>[協助工具](/windows/desktop/accessibility)<br/><br/>[Microsoft 語音平台 - 軟體開發套件 (SDK) (版本 11)](https://www.microsoft.com/download/details.aspx?id=27226)<br/><br/>[Microsoft 語音 SDK，版本 5.1](https://www.microsoft.com/download/details.aspx?id=10121)<br/><br/>  |  [WPF 中的視窗](/dotnet/framework/wpf/app-development/windows-in-wpf-applications)<br/><br/>[瀏覽概觀](/dotnet/framework/wpf/app-development/navigation-overview)<br/><br/>[WPF 中的 XAML](/dotnet/framework/wpf/advanced/xaml-in-wpf)<br/><br/>[控制項](/dotnet/framework/wpf/controls/)<br/><br/>[視覺層程式設計](/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)<br/><br/>[輸入](/dotnet/framework/wpf/advanced/input-wpf)<br/><br/>[協助工具](/dotnet/framework/ui-automation/)<br/><br/>[適用於 .NET Framework 的 System.Speech 程式設計指南](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))<br/><br/>  | [建立 Windows Form](/dotnet/framework/winforms/creating-a-new-windows-form)<br/><br/>[控制項](/dotnet/framework/winforms/controls/)<br/><br/>[對話方塊](/dotnet/framework/winforms/dialog-boxes-in-windows-forms)<br/><br/>[使用者輸入](/dotnet/framework/winforms/user-input-in-windows-forms)<br/><br/>[Windows Forms 協助工具](/dotnet/framework/winforms/advanced/windows-forms-accessibility)<br/><br/>[適用於 .NET Framework 的 System.Speech 程式設計指南](/previous-versions/office/developer/speech-technologies/hh361625(v=office.14))<br/><br/> |
 
 ### <a name="audio-video-and-graphics"></a>音訊、視訊和圖形
 
-|  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [音訊、視訊和相機](/windows/uwp/audio-video-camera/)<br/><br/>[媒體播放](/windows/uwp/audio-video-camera/media-playback/)<br/><br/>[視覺層](/windows/uwp/composition/visual-layer)<br/><br/>[XAML 平台](/windows/uwp/xaml-platform/) |  [音訊與視訊](/windows/desktop/audio-and-video)<br/><br/>[圖形和遊戲](/windows/desktop/graphics-and-multimedia)<br/><br/>[DirectX](/windows/desktop/getting-started-with-directx-graphics)<br/><br/>[Direct2D](/windows/desktop/direct2d/direct2d-portal)<br/><br/>[Direct3D](/windows/desktop/direct3d)<br/><br/>[Windows GDI](/windows/desktop/gdi/windows-gdi)<br/><br/>[GDI+](/windows/desktop/gdiplus/-gdiplus-gdi-start)  |  [圖形](/dotnet/framework/wpf/graphics-multimedia/graphics)<br/><br/>[多媒體](/dotnet/framework/wpf/graphics-multimedia/multimedia-overview)  |  [圖形和繪圖](/dotnet/framework/winforms/advanced/graphics-and-drawing-in-windows-forms)<br/><br/>[SoundPlayer 類別](/dotnet/framework/winforms/controls/soundplayer-class-overview)  |
 
 ### <a name="data-access-and-app-resources"></a>資料存取和應用程式資源
 
-|  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [資料存取](/windows/uwp/data-access/)<br/><br/>[資料繫結](/windows/uwp/data-binding/)<br/><br/>[檔案、資料夾和媒體櫃](/windows/uwp/files/)<br/><br/>[應用程式資源](/windows/uwp/app-resources/) |  [資料存取與儲存](/windows/desktop/data-access-and-storage)<br/><br/>[本機檔案系統](/windows/desktop/fileio/file-systems)<br/><br/>[資源概觀](/windows/desktop/menurc/resources-overviews)</li>  |  [資料與模型化](/dotnet/framework/data/)<br/><br/>[資料繫結](/dotnet/framework/wpf/data/data-binding-wpf)<br/><br/>[.NET 應用程式中的資源](/dotnet/framework/resources/)<br/><br/>[應用程式資源、內容和資料檔案](/dotnet/framework/wpf/app-development/wpf-application-resource-content-and-data-files)  |  [資料與模型化](/dotnet/framework/data/)<br/><br/>[資料繫結](/dotnet/framework/winforms/windows-forms-data-binding)<br/><br/>[.NET 應用程式中的資源](/dotnet/framework/resources/)<br/><br/>[應用程式設定](/dotnet/framework/winforms/advanced/application-settings-for-windows-forms)  |
 
 ### <a name="devices-documents-and-printing"></a>裝置、文件和列印
 
-|  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [啟用裝置功能](/windows/uwp/devices-sensors/enable-device-capabilities)<br/><br/>[列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[感應器](/windows/uwp/devices-sensors/sensors)<br/><br/>[Bluetooth](/windows/uwp/devices-sensors/bluetooth)<br/><br/>[列印與掃描](/windows/uwp/devices-sensors/printing-and-scanning)<br/><br/>[NFC](/windows/uwp/devices-sensors/nfc) | [感應器 API](/windows/desktop/sensorsapi/portal)<br/><br/>[列印](/desktop/printdocs/printdocs-printing)<br/><br/>[UPnP API](/desktop/upnp/universal-plug-and-play-start-page) |  [列印和列印系統管理](/dotnet/framework/wpf/advanced/printing-and-print-system-management)  |  [列印支援](/dotnet/framework/winforms/advanced/windows-forms-print-support)  |
 
 ### <a name="system-network-and-power"></a>系統、網路和電源
 
-|  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [列舉裝置](/windows/uwp/devices-sensors/enumerate-devices)<br/><br/>[取得電池資訊](/windows/uwp/devices-sensors/get-battery-info)<br/><br/>[執行緒和非同步程式設計](/windows/uwp/threading-async/)<br/><br/>[網路和 Web 服務](/windows/uwp/networking/) | [系統服務](/windows/desktop/system-services)<br/><br/>[記憶體管理](/windows/desktop/memory/memory-management)<br/><br/>[電源管理](/windows/desktop/power/power-management-portal)<br/><br/>[處理序和執行緒](/windows/desktop/procthread/processes-and-threads)<br/><br/>[網路功能和網際網路](/windows/desktop/networking)<br/><br/>[Windows 系統資訊](/windows/desktop/sysinfo/windows-system-information) |  [執行緒模型](/dotnet/framework/wpf/advanced/threading-model)<br/><br/>[以 .NET Framework 進行網路程式設計](/dotnet/framework/network-programming/)  |  [系統資訊](/dotnet/framework/winforms/advanced/system-information-and-windows-forms)<br/><br/>[電源管理](/dotnet/framework/winforms/advanced/power-management-in-windows-forms)<br/><br/>[以 .NET Framework 進行網路程式設計](/dotnet/framework/network-programming/)<br/><br/>[Windows Forms 中的網路功能](/dotnet/framework/winforms/advanced/networking-in-windows-forms-applications)  |
 
+### <a name="security"></a>安全性
+
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|-------|----------------------|-------|-----------------|
+| [安全性](/windows/uwp/security)<br/><br/>[驗證和使用者識別](/windows/uwp/security/authentication-and-user-identity)<br/><br/>[Web 帳戶管理員](/windows/uwp/security/web-account-manager)<br/><br/>[Web 驗證代理人](/windows/uwp/security/web-authentication-broker)<br/><br/>[碼編譯](/windows/uwp/security/cryptography) | [安全性與身分識別](/windows/win32/security)<br/><br/>[驗證](/win32/secauthn/authentication-portal)<br/><br/>[碼編譯](/windows/win32/seccng/cng-portal) |  [.NET 的安全性](/dotnet/standard/security/)<br/><br/>[安全性 (WPF)](/dotnet/desktop/wpf/security-wpf)  |  [.NET 的安全性](/dotnet/standard/security/)<br/><br/>[Windows Form 安全性](/dotnet/desktop/winforms/windows-forms-security)  |
+
 ### <a name="debugging-and-performance"></a>偵錯和效能
 
-|  UWP  |  Win32 (Windows API) |  WPF 和 Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF 和 Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [偵錯、測試及效能](/windows/uwp/debug-test-perf)<br/><br/>[部署和偵錯 UWP 應用程式](/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)<br/><br/>[Windows 應用程式認證套件](/windows/uwp/debug-test-perf/windows-app-certification-kit)<br/><br/>[效能](/windows/uwp/debug-test-perf/performance-and-xaml-ui)| [偵錯和錯誤處理](/windows/win32/debugging-and-error-handling)<br/><br/>[Windows 的偵錯工具](/windows-hardware/drivers/debugger/)<br/><br/>[Windows 事件追蹤 (ETW)](/windows/win32/etw/event-tracing-portal)<br/><br/>[.NET TraceProcessing API](./trace-processing/index.yml)<br/><br/>[TraceLogging](/windows/win32/tracelogging/trace-logging-portal)<br/><br/>[效能計數器](/windows/win32/perfctrs/performance-counters-portal) |  [偵錯、追蹤和程式碼剖析](/dotnet/framework/debug-trace-profile/)<br/><br/>[追蹤和檢測應用程式](/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)<br/><br/>[使用 Managed 偵錯助理診斷錯誤](/dotnet/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants)<br/><br/>[執行階段分析](/dotnet/framework/debug-trace-profile/runtime-profiling)<br/><br/>[效能計數器](/dotnet/framework/debug-trace-profile/performance-counters)<br/><br/>[Windows Forms 的 ClickOnce 部署](/dotnet/framework/winforms/clickonce-deployment-for-windows-forms)  |
 
 ### <a name="packaging-and-deployment"></a>封裝和部署
 
-|  UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
+|  WinRT/UWP  |  Win32 (Windows API) |  WPF  |  Windows Forms  |
 |-------|----------------------|-------|-----------------|
 | [封裝應用程式](/windows/uwp/packaging/)<br/><br/>[MSIX](/windows/msix/)<br/><br/>[應用程式套件資訊清單結構描述](/uwp/schemas/appxpackage/uapmanifestschema/schema-root) | [封裝 Windows 傳統型應用程式 (MSIX)](/windows/msix/desktop/desktop-to-uwp-root)<br/><br/>[應用程式安裝和維護](/windows/desktop/application-installing-and-servicing)<br/><br/>[Windows Installer](/windows/desktop/msi/windows-installer-portal) |  [封裝 Windows 傳統型應用程式 (MSIX)](/windows/msix/desktop/desktop-to-uwp-root)<br/><br/>[部署 .NET Framework 和應用程式](/dotnet/framework/deployment/)<br/><br/>[部署 WPF 應用程式](/dotnet/framework/wpf/app-development/deploying-a-wpf-application-wpf)  |  [封裝 Windows 傳統型應用程式 (MSIX)](/windows/msix/desktop/desktop-to-uwp-root)<br/><br/>[部署 .NET Framework 和應用程式](/dotnet/framework/deployment/)<br/><br/>[Windows Forms 的 ClickOnce 部署](/dotnet/framework/winforms/clickonce-deployment-for-windows-forms)  |
