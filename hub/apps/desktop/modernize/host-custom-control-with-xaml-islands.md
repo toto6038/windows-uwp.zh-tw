@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 16dc1b59147cb937a09eb085c716ebac0e1cef7b
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 714573c91b8352bb52bb895347867862bd0642b3
+ms.sourcegitcommit: 41251e85b2168704e33b9d3ee92606ab84c24769
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922736"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99478523"
 ---
 # <a name="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>在 WPF 應用程式中使用 XAML Islands 裝載自訂 WinRT XAML 控制項
 
@@ -68,7 +68,7 @@ ms.locfileid: "98922736"
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 應用程式專案中定義 XamlApplication 類別
 
-接著，將 UWP 應用程式專案新增至您的方案，並修訂此專案中的預設 `App` 類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadaraProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 
+接著，將 UWP 應用程式專案新增至您的方案，並修訂此專案中的預設 `App` 類別，以便從 Windows 社群工具組所提供的 [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) 類別衍生。 這個類別支援 [IXamlMetadataProvider](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider) 介面，該介面可讓您的應用程式在執行時探索和載入自訂 UWP XAML 控制項的中繼資料，而這些中繼資料位於應用程式目前目錄組件中。 這個類別也會初始化目前執行緒的 UWP XAML 架構。 
 
 1. 在 [方案總管]  中，在方案節點上按一下滑鼠右鍵，然後選取 [新增]   -> [新增專案]  。
 2. 將 [空白應用程式 (通用 Windows)]  專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。
