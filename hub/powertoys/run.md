@@ -4,16 +4,16 @@ description: 適用于 power 使用者的快速啟動程式，其中包含一些
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9be1d54946ec2286d95dbe7d4518a631efd471e9
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618527"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534397"
 ---
 # <a name="powertoys-run-utility"></a>Powertoy 執行公用程式
 
-Powertoy Run 是適用于 power users 的快速啟動程式，其中包含一些額外的功能，而不會犧牲效能。 它是開放原始碼，而且是適用于其他外掛程式的模組化。
+Powertoy Run 是適用于 power users 的快速啟動程式，其中包含一些額外的功能，而不會犧牲效能。 其為開放原始碼，並可針對其他外掛程式進行模組化。
 
 若要使用 powertoy 執行，請選取<kbd>Alt</kbd> + <kbd>空格鍵</kbd>，然後開始鍵入！
 
@@ -21,7 +21,7 @@ Powertoy Run 是適用于 power users 的快速啟動程式，其中包含一些
 
 ![Powertoy 執行示範開啟應用程式](../images/pt-powerrun-demo.gif)
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 - Windows 10 版本1903或更高版本
 - 安裝之後，必須在背景中啟用和執行 Powertoy，此公用程式才能運作
@@ -75,6 +75,22 @@ Powertoy 執行功能包括：
   | `//` | 僅限 Url。 `//docs.microsoft.com`讓您的預設瀏覽器移至的範例https://docs.microsoft.com |
   | `<` | 僅執行進程。 `<outlook`尋找包含 outlook 的所有進程的範例 |
   | `>` | 僅限 Shell 命令。 `>ping localhost`執行 ping 查詢的範例 |
+  | `:` | 僅限登錄機碼。 搜尋 HKEY_CURRENT_USER 登錄機碼的範例 `:hkcu` |
+  | `!` | 僅限 Windows 服務。 `!alu`搜尋要啟動或停止的應用層閘道服務的範例 |
+
+## <a name="system-commands"></a>系統命令
+
+使用 Powertoy v 0.31 和 on，您現在可以執行系統層級的動作。
+
+  | **動作金鑰**   |   **動作** |
+  | ------------------ | ---------------------------------------------------------------------------------|
+  | `Shutdown` | 關閉電腦 |
+  | `Restart` | 重新開機電腦 |
+  | `Sign Out` | 將目前的使用者登入 |
+  | `Lock` | 鎖定電腦 |
+  | `Sleep` | 睡眠電腦 |
+  | `Hibernate` | 休眠電腦 |
+  | `Empty Recycle Bin` | 清空回收站 |
 
 ## <a name="indexer-settings"></a>索引子設定
 

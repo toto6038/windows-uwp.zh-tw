@@ -3,17 +3,17 @@ description: 當您想要建立新的 Windows 傳統型應用程式時，首先�
 ms.assetid: 82705644-F1F0-40F3-99B1-7A97BFB32831
 title: 選擇您的 Windows 應用程式平台
 ms.topic: article
-ms.date: 11/04/2019
+ms.date: 02/03/2021
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 51d799a4779f6d3ecee2119277b6c41485e0d377
-ms.sourcegitcommit: e1c182ea23da9b0bd9e89425f7f1a00baec81136
-ms.translationtype: HT
+ms.openlocfilehash: 62567b36d16e01fc6091f9514137c60dc352942a
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826269"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534377"
 ---
 # <a name="choose-your-windows-app-platform"></a>選擇您的 Windows 應用程式平台
 
@@ -23,7 +23,7 @@ ms.locfileid: "97826269"
 * [WPF](#wpf) 和 [Windows Forms](#windows-forms)：這些 .NET 型平台會針對受控應用程式提供一般類型的系統、API 和應用程式模型。
 * [Win32](#win32)：這是適用於原生 C/C++ Windows 應用程式的原創平台，需要直接存取 Windows 和硬體。 這讓 Win32 API 成為應用程式的首選平台，因為這些應用程式需要最高階效能及直接存取系統硬體。
 
-所有這些應用程式平台都包含完整的使用者介面架構和一組 UI 控制項，可讓您建立在傳統 Windows 桌面上執行的桌面應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 在 Windows 10 上，所有這些平台都支援使用 [Windows UI (WinUI) 程式庫](#windows-ui-library)來建立其使用者介面。
+所有這些應用程式平台都包含完整的使用者介面架構和一組 UI 控制項，可讓您建立在傳統 Windows 桌面上執行的桌面應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 在 Windows 10 上，這些平臺也支援使用 [WINDOWS UI 程式庫 (WinUI) ](#use-the-windows-ui-library-with-windows-apps) 來建立使用者介面。
 
 其中有些平台會共用一些特性，而且更適合特定類型的應用程式。 例如，UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
 
@@ -93,24 +93,6 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 * [API 參考](/windows/win32/apiindex/windows-api-list/)
 * [範例](https://github.com/Microsoft/Windows-classic-samples)
 
-## <a name="windows-ui-library"></a>Windows UI 程式庫
-
-在 Windows 10 上，每一個主要的桌面平台都支援使用 [Windows UI (WinUI) 程式庫](../winui/index.md)來建立其使用者介面。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 UWP 控制項。 WinUI 已擴大範圍，現在是適用於 UWP、.NET 和 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。
-
-您可以透過下列方式在桌面應用程式中使用 WinUI：
-
-* UWP 應用程式可以使用 WinUI 控制項來取代 Windows SDK 所提供的 UWP 控制項。
-* 您可以將現有的 WPF、Windows Forms 和 C++/Win32 應用程式更新為使用 [XAML Islands](modernize/xaml-islands.md)，以在應用程式中裝載 WinUI 2.x 控制項。
-* 從 [WinUi 3.0](../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../winui/winui3/get-started-winui3-for-desktop.md)。
-
-## <a name="project-reunion-preview"></a>Project Reunion (預覽)
-
-Project Reunion 是一組廣泛的新開發人員元件和工具的程式碼名稱，其代表的是 Windows 應用程式開發平台的新一代進化。 Project Reunion 提供了一組整合的 API 和工具，可供一組廣泛的目標 Windows 10 OS 版本上的任何應用程式以一致的方式進行使用。 Project Reunion 會透過一組可讓開發人員在這些平台上仰賴的通用 API 和工具，來與現有的 Windows 應用程式平台和架構 (例如 UWP 和原生 Win32 以及 .NET) 互補。
-
-Project Reunion 目前提供早期開發人員預覽。 建議您在開發環境中試用此版本。 但請注意，Project Reunion 的現行版本與最終版本之間，會在許多方面有所變化。 在生產環境中使用的應用程式不支援 Project Reunion。
-
-如需詳細資訊，請參閱 [Project Reunion](../project-reunion/index.md) 以及我們的 [GitHub 存放庫](https://github.com/microsoft/ProjectReunion/)。
-
 ## <a name="platform-comparison-uwp-wpf-and-windows-forms"></a>平台比較：UWP、WPF 和 Windows Forms
 
 下表詳細比較 Windows Forms、WPF 和 UWP 的各種特性。
@@ -128,6 +110,22 @@ Project Reunion 目前提供早期開發人員預覽。 建議您在開發環境
 <sup>1</sup> 我們已公開宣佈的功能，可在未來的 Windows 10 版本中解決此案例。
 
 <sup>2</sup> 雖然平台缺少此案例的第一級 API 支援，但開發人員可以透過因應措施來支援此案例。
+
+## <a name="use-the-windows-ui-library-with-windows-apps"></a>使用 Windows UI 程式庫搭配 Windows 應用程式
+
+若要補充主要 Windows 應用程式平臺，您也可以在應用程式中使用 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md) 。 WinUI 是以工具組的形式開始，為以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽) ，WinUI 在範圍內不斷成長，成為頂級的原生使用者介面 (UI) 架構，以在 UWP、.NET 和 Win32 應用程式平臺之間 Windows 10 應用程式。
+
+您可以透過下列方式，在 Windows 應用程式中使用 WinUI。
+
+* [WinUI](../winui/winui2/index.md)2.x：
+  * UWP 應用程式可以使用 WinUI 2.x 控制項來取代 Windows SDK 所提供的 WinRT 控制項。 這些 WinUI 版本包括新的控制項，以及 Windows SDK 中現有控制項的更新版本。
+  * 您可以使用 [XAML 島](modernize/xaml-islands.md)，將現有的 WPF、Windows Forms 和 c + +/Win32 應用程式更新為裝載 WinUI 2.x 控制項。
+
+* [WinUI 3 (preview) ](../winui/winui3/index.md)：
+  * 從 WinUI 3 開始，您可以建立 [.net 和 c + +/Win32 應用程式](../winui/winui3/get-started-winui3-for-desktop.md) ，以及使用完全以 WinUI 為基礎之 UI 的 [UWP 應用程式](../winui/winui3/get-started-winui3-for-uwp.md) 。 此版本包含 Visual Studio 專案範本，可提供建立這些應用程式所需的所有專案。
+
+> [!NOTE]
+> WinUI 3 仍處於預覽狀態，不應該用於生產應用程式。
 
 ## <a name="other-app-platforms"></a>其他應用程式平台
 

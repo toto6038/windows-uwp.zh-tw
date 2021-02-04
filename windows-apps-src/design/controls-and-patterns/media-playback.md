@@ -1,34 +1,33 @@
 ---
-Description: 媒體播放器可用來檢視及聆聽視訊、音訊及影像。
-title: 媒體播放器
+description: 媒體播放牽涉到透過內嵌或專屬全螢幕體驗來觀看及聆聽影片和音訊。
+title: 媒體播放機
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
-label: Media player
+label: Media playback controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7f575f22a56c7c97700e1949494848402d239c6
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
-ms.translationtype: HT
+ms.openlocfilehash: a1471eb468e85bb1c4706c5432e38e501c4c1469
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218691"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534407"
 ---
-# <a name="media-player"></a>媒體播放器
+# <a name="media-players"></a>媒體播放機
 
+媒體播放牽涉到透過內嵌 (內嵌于頁面中或透過其他控制項群組) 或專屬全螢幕體驗，來觀看及聆聽影片和音訊。
 
-
-媒體播放器可用來檢視及聆聽視訊和音訊。 媒體播放功能可以內嵌 (內嵌在頁面中或內嵌在一組其他的控制項中)，或以專用的全螢幕檢視方式顯示。 您可以修改播放器的按鈕集、變更控制列的背景，以及自行調整版面配置。 但請記住，使用者只想要一組基本的控制項 (播放/暫停、倒轉跳過、快轉跳過)。
+使用者預期會有基本的控制項集，例如播放/暫停、略過、跳過，您可以視需要修改它 (包括媒體播放程式的按鈕、控制列的背景，以及控制項相片順序或版面配置) 。
 
 ![具有傳輸控制項的媒體播放器元素](images/controls/mtc_double_video_inprod.png)
 
 > **重要 API**：[MediaPlayerElement 類別](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)、[MediaTransportControls 類別](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
 
-
-> [!NOTE]
-> **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您是針對舊版 Windows 10 開發 app，便必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 此頁面上的所有建議也適用於 MediaElement。
+> [!Important]
+> **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您正在開發舊版 Windows 10 的應用程式，則必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 控制項。 此處所做的所有建議也適用于 MediaElement。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -97,9 +96,9 @@ Windows 10 入門 app 中的媒體播放器。
 ### <a name="set-the-media-source"></a>設定媒體來源
 若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [MediaSource](/uwp/api/windows.media.core.mediasource) 的 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定為檔案的路徑。
 
-**提示：**   若要從網際網路開啟檔案，您需要在應用程式資訊清單 (Package.appxmanifest) 中宣告**網際網路 (用戶端)** 功能。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](../../packaging/app-capability-declarations.md)。
+**提示：** 若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告 **網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](../../packaging/app-capability-declarations.md)。
 
- 
+ 
 
 此程式碼會嘗試將 XAML 中定義之 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定為在 [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 中輸入的檔案路徑。
 
@@ -386,7 +385,7 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 如果您有螢幕實際可用空間，或是正在設計 10 呎體驗，請使用雙列配置。 它能比精簡的單列配置提供更多的控制項空間，而且能夠針對 10 呎體驗提供更佳的控制器瀏覽支援。
 
-> **注意**&nbsp;&nbsp; 如需了解 10 英呎體驗最佳化應用程式的詳細資訊，請造訪[專為 Xbox 和電視設計](../devices/designing-for-tv.md)一文。
+> **注意**&nbsp;&nbsp; 如需了解 10 英呎體驗最佳化應用程式的詳細資訊，請造訪 [專為 Xbox 和電視設計](../devices/designing-for-tv.md)一文。
 
 預設控制項已針對媒體播放最佳化，不過，您可以將所需的自訂選項新增至媒體播放器，以為您的 app 提供最佳體驗。 若要深入了解新增自訂控制項，請造訪[建立自訂傳輸控制項](custom-transport-controls.md)。
 

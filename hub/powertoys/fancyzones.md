@@ -4,12 +4,12 @@ description: 視窗管理員公用程式，可將視窗排列和貼齊有效率�
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 00b849e19d3ae8fcf76e1f2a63dc1915353aad30
-ms.sourcegitcommit: 5dac88ad541b71ebe85b78951e6b357a3db176cc
+ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612120"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534427"
 ---
 # <a name="fancyzones-utility"></a>FancyZones 公用程式
 
@@ -35,17 +35,17 @@ FancyZones 是一種視窗管理員公用程式，可將視窗排列和貼齊至
 
 ## <a name="choose-your-layout-layout-editor"></a>選擇版面配置 (配置編輯器) 
 
-第一次啟動時，[區域編輯器] 會顯示一份版面配置清單，可由監視器上的 windows 數目來調整。 選擇版面配置會在監視器上顯示該版面配置的預覽。 選取 [將組態集套用至監視器]。  
+第一次啟動時，[區域編輯器] 會顯示一份版面配置清單，可由監視器上的 windows 數目來調整。 選擇版面配置會在監視器上顯示該版面配置的預覽。 選取的版面配置會自動套用。  
 
 ![FancyZones 選擇器螢幕擷取畫面](../images/pt-fancyzones-picker.png)
 
-如果有多個顯示正在使用中，編輯器將會偵測可用的監視器，並顯示這些監視器供使用者選擇。 選擇的監視會在套用時成為所選版面配置的目標。
+如果有多個顯示正在使用中，編輯器將會偵測可用的監視器，並顯示這些監視器供使用者選擇。 選擇的監視將會成為所選版面配置的目標。
 
 ![FancyZones 選擇器多個監視器](../images/pt-fancyzones-multimon.png)
 
 ### <a name="space-around-zones"></a>區域周圍的空間
 
-[在 **區域周圍顯示空間** ] 核取方塊可讓您判斷框線或邊界的順序將會圍繞每個 FancyZone 視窗。 [ **區域周圍的空間** ] 欄位可讓您設定框線寬度的自訂值。
+[在 **區域周圍顯示空間** ] 切換可讓您判斷框線或邊界的順序將會圍繞每個 FancyZone 視窗。 [ **區域周圍的空間** ] 欄位可讓您設定框線寬度的自訂值。
 
 **醒目提示相鄰區域的距離**，可讓您為 FancyZone 視窗之間的空間量設定自訂值，直到它們合併在一起，或在兩者反白顯示之後，讓它們合併在一起。
 
@@ -55,19 +55,19 @@ FancyZones 是一種視窗管理員公用程式，可將視窗排列和貼齊至
 
 ### <a name="creating-a-custom-layout"></a>建立自訂版面配置
 
-區域編輯器也支援建立和儲存自訂版面配置。 在 [區域編輯器] 上方功能表中，選取 [**範本**] 旁的 [**自訂**] 索引標籤。
+區域編輯器也支援建立和儲存自訂版面配置。 選取右下角的 [ **+ 建立新的版面** 配置] 按鈕。
   
-有兩種方式可建立自訂區域配置：視窗版面配置和資料表配置。 這些也可以視為加法和 subtractive 模型。  
+有兩種方式可建立自訂區域配置： **格線** 版面配置和 **畫布** 版面配置。 這些也可以視為 subtractive 和加法模型。  
 
-加總視窗配置模型的開頭為空白配置，並且支援新增可以拖曳和調整大小的區域，類似于 windows。
-
-![FancyZones 視窗編輯器模式](../images/pt-fancyzones-windoweditor.png)
-
-Subtractive 資料表配置模型的開頭是資料表配置，可讓您藉由分割和合併區域，然後調整區域間的裝訂邊大小來建立區域。
+Subtractive **方格** 模型會以三個數據行格線開始，並允許透過分割和合併區域來建立區域，視需要調整區域間的裝訂邊大小。
 
 若要合併兩個區域，請選取並按住滑鼠左鍵並拖曳滑鼠，直到選取了第二個區域為止，然後放開按鈕，就會顯示快顯功能表。
 
-![FancyZones 資料表編輯器模式](../images/pt-fancyzones-tableeditor.png)
+![FancyZones 資料表編輯器模式](../images/pt-fancyzones-grideditor.png)
+
+加總 **畫布** 模型的開頭是空白配置，並且支援新增可以拖曳和調整大小的區域，類似于 windows。
+
+![FancyZones 視窗編輯器模式](../images/pt-fancyzones-canvaseditor.png)
 
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>將視窗貼到兩個或多個區域
 

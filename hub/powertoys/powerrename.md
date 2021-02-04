@@ -4,12 +4,12 @@ description: 用於大量重新命名檔案的 windows shell 擴充功能
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 39e06685b6948ed3d3935c69a8b4dafeb9ecc2ea
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691333"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534387"
 ---
 # <a name="powerrename-utility"></a>PowerRename 公用程式
 
@@ -44,6 +44,8 @@ PowerRename 是一種大量重新命名工具，可讓您：
 ### <a name="options---use-regular-expressions"></a>選項-使用正則運算式
 
 若選取此選項，則會將搜尋值視為 [正則運算式](https://wikipedia.org/wiki/Regular_expression) (RegEx) 。 取代值也可以包含 RegEx 變數 (請參閱以下) 範例。  如果未核取，則會將搜尋值轉譯為純文字，以取代欄位中的文字取代。
+
+如需有關 `Use Boost library` 擴充 RegEx 功能 [設定] 功能表中選項的詳細資訊，請參閱 [正則運算式一節](#regular-expressions)。
 
 ### <a name="options---case-sensitive"></a>選項-區分大小寫
 
@@ -139,11 +141,13 @@ PowerRename 是一種大量重新命名工具，可讓您：
 
 **注意：** 使用正則運算式時，您可能會想要選取 [符合所有出現專案]。
 
+若要使用 [提升程式庫](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) ，而不是標準程式庫，請核取 `Use Boost library` [powertoy] 設定中的選項。 它會啟用 `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` 標準程式庫不支援的擴充功能，例如。
+
 ### <a name="examples-of-regular-expressions"></a>正則運算式的範例
 
 #### <a name="simple-matching-examples"></a>簡單的相符範例
 
-| 搜尋       | Description                                           |
+| 搜尋       | 描述                                           |
 | ---------------- | ------------- |
 | `^`              | 符合檔案名開頭                   |
 | `$`              | 符合檔案名的結尾                         |
@@ -158,12 +162,13 @@ PowerRename 是一種大量重新命名工具，可讓您：
 
 *使用變數時，必須啟用 [符合所有出現專案] 選項。*
 
-| 搜尋   | 取代為    | Description                                |
+| 搜尋   | 取代為    | 描述                                |
 | ------------ | --------------- |--------------------------------------------|
 | `(.*).png`   | `foo_$1.png`   | 在現有的檔案名前面加上 "foo \_ " |
 | `(.*).png`   | `$1_foo.png`   | 將 " \_ foo" 附加至現有的檔案名  |
 | `(.*)`       | `$1.txt`        | 將 ".txt" 副檔名附加至現有的檔案名 |
 | `(^\w+\.$)|(^\w+$)` | `$2.txt` | 只有在沒有副檔名時，才會將 ".txt" 副檔名附加至現有的檔案名 |
+|  `(\d\d)-(\d\d)-(\d\d\d\d)` | `$3-$2-$1` | 移動檔案名中的數位： "29-03-2020" 會變成 "2020-03-29" |
 
 ### <a name="additional-resources-for-learning-regular-expressions"></a>學習正則運算式的其他資源
 

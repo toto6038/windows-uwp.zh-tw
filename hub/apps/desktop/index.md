@@ -2,17 +2,17 @@
 description: 了解如何開始建置 Windows PC 適用的傳統型應用程式，包括如何為新應用程式選擇正確的應用程式平台，以及如何為 Windows 10 讓現有應用程式現代化。
 title: 建置 Windows PC 適用的傳統型應用程式
 ms.topic: article
-ms.date: 9/10/2020
+ms.date: 02/03/2021
 keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 554869625c0db7a2a19dc7c01837e47029bd28e6
-ms.sourcegitcommit: cddc595969c658ce30fbc94ded92db4a8ad1bf66
-ms.translationtype: HT
+ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97214265"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534367"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -64,11 +64,11 @@ ms.locfileid: "97214265"
 
 ### <a name="future-roadmap"></a>未來藍圖
 
-展望未來，我們正以 Windows UI (WinUI) 程式庫和 Project Reunion 來發展 Windows 應用程式開發平台。
+未來，我們將使用 Windows UI 程式庫 (WinUI) 和專案留尼旺島來發展 Windows 應用程式開發平臺。
 
-* **WinUI** 是適用於 Windows 10 應用程式的原生使用者體驗 (UX) 架構。 WinUI 一開始是以工具組的形式提供，旨在針對舊版 Windows 10 提供適用於 UWP 應用程式的全新或更新版 UWP 控制項。 WinUI 已擴大範圍，從 WinUI 3 (目前為預覽版) 開始，現在已是適用於 UWP、.NET 和 Win32 上 Windows 10 應用程式的新式原生使用者介面 (UI) 平台。 
+* **WinUI** 是適用於 Windows 10 應用程式的原生使用者體驗 (UX) 架構。 WinUI 是以工具組的形式開始，為以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽) ，WinUI 在範圍內不斷成長，成為頂級的原生使用者介面 (UI) 架構，以在 UWP、.NET 和 Win32 應用程式平臺之間 Windows 10 應用程式。
 
-    如需詳細資訊，請參閱 [Windows UI (WinUI) 程式庫](../winui/index.md)。
+    如需詳細資訊，請參閱 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md)。
 
 * **Project Reunion** (目前為預覽版) 是一組廣泛的新開發人員元件和工具的程式碼名稱，其代表的是 Windows 應用程式開發平台的新一代進化。 Project Reunion 提供了一組整合的 API 和工具，可供一組廣泛的目標 Windows 10 OS 版本上的任何應用程式以一致的方式進行使用。 Project Reunion 會透過一組可讓開發人員在這些平台上仰賴的通用 API 和工具，來與現有的 Windows 應用程式平台和架構 (例如 UWP 和原生 Win32 以及 .NET) 互補。 
 

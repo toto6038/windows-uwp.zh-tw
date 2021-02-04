@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 36397e64215bfe4b57aac32e9eccc94182495688
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: c84595a8d5aadfb22f84a5fe780e93b9518490dc
+ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033301"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99534477"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -41,7 +41,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ## <a name="appbars-and-commands"></a>應用程式列與命令
 
 ### <a name="app-bar"></a>應用程式列
-顯示應用程式特定命令的工具列。 請參閱＜命令列＞。
+顯示應用程式特定命令的工具列。 請參閱 [命令列](#command-bar)。
 
 參考：[AppBar](/uwp/api/Windows.UI.Xaml.Controls.AppBar) 
 
@@ -105,7 +105,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 設計和作法︰[按鈕控制項指南](buttons.md) 
 
 ### <a name="hyperlink"></a>Hyperlink
-請參閱＜超連結按鈕＞。
+請參閱 [超連結按鈕](#hyperlink-button)。
 
 ### <a name="hyperlink-button"></a>超連結按鈕
 顯示為標記文字並且會在瀏覽器中開啟指定 URI 的按鈕。
@@ -248,7 +248,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 ## <a name="flyouts"></a>飛出視窗
 
 ### <a name="context-menu"></a>操作功能表
-請參閱＜功能表飛出視窗＞和＜快顯功能表＞。
+請參閱[功能表飛出](#menu-flyout)[視窗和快顯功能表](#popup-menu)。
 
 ### <a name="flyout"></a>飛出視窗
 顯示一則要求使用者互動的訊息。 (與對話方塊不同的是，飛出視窗不會建立另一個視窗，也不會封鎖其他使用者互動)。
@@ -416,7 +416,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 參考：[Grid](/uwp/api/Windows.UI.Xaml.Controls.Grid)
  
 ### <a name="panning-scroll-viewer"></a>移動瀏覽捲動檢視器
-請參閱＜捲動檢視器＞。
+請參閱 [捲軸檢視器](#scroll-viewer)。
 
 ### <a name="relativepanel"></a>RelativePanel
 一個面板，可讓您定位及排列彼此有關係或與上層面板有關係的子物件。
@@ -433,7 +433,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 參考：[RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel)
 
 ### <a name="scroll-bar"></a>捲軸
-請參閱＜捲動檢視器＞。 (ScrollBar 是 ScrollViewer 的元素。 您通常不會將它做為獨立控制項)。
+請參閱 [捲軸檢視器](#scroll-viewer)。 (ScrollBar 是 ScrollViewer 的元素。 您通常不會將它做為獨立控制項)。
 
 參考：[ScrollBar](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ScrollBar)
  
@@ -511,23 +511,28 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 參考：[Viewbox](/uwp/api/Windows.UI.Xaml.Controls.Viewbox)
  
 ### <a name="zooming-scroll-viewer"></a>縮放捲動檢視器
-請參閱＜捲動檢視器＞。
+請參閱 [捲軸檢視器](#scroll-viewer)。
 
 ## <a name="media-controls"></a>媒體控制項
 
 ### <a name="audio"></a>音訊
-請參閱＜媒體元素＞。
 
-### <a name="media-element"></a>媒體元素
+請參閱 [Media player 元素](#media-player-element)。
+
+### <a name="media-player-element"></a>Media player 元素
+
 播放音訊和視訊內容的控制項。
 
 ```xaml
-<MediaElement x:Name="myMediaElement"/>
+<MediaPlayerElement x:Name="myMediaPlayerElement"/>
 ```
 
-參考：[MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 
+> [!Important]
+> **MediaPlayerElement** 只能在 Windows 10 版本 1607 及以上的版本中取得。 如果您正在開發舊版 Windows 10 的應用程式，則必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) 控制項。
 
-設計和作法︰[媒體元素控制項指南](media-playback.md)
+參考： [MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)
+
+設計與操作說明： [播放媒體播放](media-playback.md)
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 為 MediaElement 提供播放控制項的控制項。
@@ -540,12 +545,12 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[MediaTransportControls](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) 
 
-設計和作法︰[媒體元素控制項指南](media-playback.md) 
+設計與操作說明： [播放媒體播放](media-playback.md)
 
 範例程式碼：[媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls)
 
 ### <a name="video"></a>視訊
-請參閱＜媒體元素＞。
+請參閱 [Media player 元素](#media-player-element)。
 
 ## <a name="navigation"></a>瀏覽
 
@@ -666,7 +671,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 範例程式碼：[AutoSuggestBox 移轉範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlAutoSuggestBox)
 
 ### <a name="multi-line-text-box"></a>多行文字方塊
-請參閱＜文字方塊＞。
+請參閱 [文字方塊](#text-box)。
 
 ### <a name="password-box"></a>密碼方塊
 用於輸入密碼的控制項。
@@ -698,13 +703,13 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 範例程式碼：[XAML 文字範例](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208))
 
 ### <a name="search-box"></a>搜尋方塊
-請參閱＜自動建議方塊＞。
+請參閱 [自動建議](#auto-suggest-box)方塊。
 
 ### <a name="single-line-text-box"></a>單行文字方塊
-請參閱＜文字方塊＞。
+請參閱 [文字方塊](#text-box)。
 
 ### <a name="static-textparagraph"></a>靜態文字/段落
-請參閱＜文字區塊＞。
+請參閱 [文字區塊](#text-block)。
 
 ### <a name="text-block"></a>文字區塊
 顯示文字的控制項。
