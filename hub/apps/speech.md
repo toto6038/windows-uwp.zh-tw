@@ -6,12 +6,12 @@ ms.date: 09/12/2019
 keywords: 語音（Windows 10、語音、語音、對話、win32 語音應用程式、UWP 語音應用程式、WPF 語音應用程式、WinForms 語音應用程式）
 ms.author: kbridge
 author: Karl-Bridge-Microsoft
-ms.openlocfilehash: d157d33316925db6112ab892e13b2c849cfcaa5d
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 0051ecb0556b72f768c142f04c38f3f34b2dd334
+ms.sourcegitcommit: 99a3f996a57ecc5df7382fb46bc9b8ba75614a53
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988700"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99579009"
 ---
 # <a name="speech-voice-and-conversation-in-windows-10"></a>Windows 10 中的語音、語音和對話
 
@@ -43,7 +43,8 @@ ms.locfileid: "98988700"
 
       [對話代理程式](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana voice 命令](/cortana/voice-commands/vcd)
+      [Cortana voice 命令](/cortana/voice-commands/vcd)<br>
+      Windows 10 2020 版更新和更新版本中不支援 () 
    :::column-end:::
    :::column:::
       ![Win32 平台應用程式](images/platform-win32.png)
@@ -96,7 +97,7 @@ ms.locfileid: "98988700"
    :::column:::
       [Cortana 技能套件](/cortana/skills/)
 
-      我們的目標是將 Cortana 加入 Microsoft 365，以轉換新式產能體驗，我們即將淘汰適用于取用者 (開發人員) 平臺的 Cortana 技能套件，以及在此平臺上建立的所有技能。
+      我們的目標是要將 Cortana 更深入地 [Microsoft 365](/microsoft-365/admin/misc/cortana-integration)，以轉換新式生產力體驗，我們即將淘汰 Cortana 技能套件開發人員平臺，以及此平臺上的所有技能。
    :::column-end:::
    :::column:::
 
