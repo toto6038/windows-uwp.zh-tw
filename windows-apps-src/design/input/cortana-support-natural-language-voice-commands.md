@@ -7,17 +7,19 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 94f3d6323649737f978128e442c95449bce94075
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057756"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99605993"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>支援 Cortana 的自然語音命令
 
 >[!WARNING]
 > 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+>
+> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 使用更具彈性且自然的語音命令來擴充 **Cortana** ，讓使用者可以在命令中的任何位置說出您的應用程式名稱。
 

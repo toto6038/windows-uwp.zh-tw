@@ -5,17 +5,19 @@ ms.assetid: e42917dc-aece-4880-813f-80b897f9126c
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 111f945c548d34f614305e31c1c79ce9197f0925
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 835a2f60d2b86e5bef49195d4f937fa844f4d921
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057757"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606073"
 ---
 # <a name="interact-with-a-background-app-in-cortana"></a>利用 Cortana 與背景應用程式互動
 
 >[!WARNING]
 > 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+>
+> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 執行語音命令時，透過 **Cortana** 畫布中的語音和文字輸入，讓使用者與背景應用程式互動。
 

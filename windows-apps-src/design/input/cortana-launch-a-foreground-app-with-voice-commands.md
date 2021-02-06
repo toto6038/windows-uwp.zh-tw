@@ -5,17 +5,19 @@ ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: a9df2d107482234fa8783d92a1f4fbb075e7d505
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6e4e1b30d7d6e259ff66cdccebeed325ded57c18
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057753"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606013"
 ---
 # <a name="activate-a-foreground-app-with-voice-commands-through-cortana"></a>透過 Cortana 語音命令啟用前景應用程式
 
 >[!WARNING]
 > 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+>
+> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 除了在 **cortana** 內使用語音命令來存取系統功能以外，您也可以使用應用程式的功能來擴充 **cortana** 。 使用語音命令可讓您的應用程式啟動至前景，以及在應用程式內執行的動作或命令。
 

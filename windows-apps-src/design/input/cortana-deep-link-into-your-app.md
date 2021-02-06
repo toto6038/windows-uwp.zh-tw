@@ -5,17 +5,19 @@ ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 5d0f841ed653adac6770089a9ec9c1be0335e346
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: d96e54604c5def61802a77625a6c18c556db909d
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057777"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606053"
 ---
 # <a name="deep-link-from-a-background-app-in-cortana-to-a-foreground-app"></a>從 Cortana 中的背景應用程式到前景應用程式的深層連結
 
 >[!WARNING]
 > 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+>
+> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 從 **Cortana** 中的背景應用程式提供深層連結，以在特定狀態或內容中啟動應用程式至前景。
 

@@ -8,17 +8,19 @@ keywords: Cortana, Cortana 畫布, Cortana 設計, 使用者介面, 語音命令
 ms.date: 01/27/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ca9f77d10f6e22d4e244b102cb8b85e1f75113fc
-ms.sourcegitcommit: d7efd35c1749f695aebbc0db99d8b62b70fb72da
+ms.openlocfilehash: 6187022f4fcce254d142c61f1c2fe222c11bd8a5
+ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99057559"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99606043"
 ---
 # <a name="cortana-interactions-in-windows-apps"></a>Windows 應用程式中的 Cortana 互動
 
 >[!WARNING]
 > 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+>
+> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 使用在 Windows 應用程式中啟動和執行單一動作的語音命令，擴充 **Cortana** 的基本功能。
 
