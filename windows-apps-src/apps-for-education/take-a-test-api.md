@@ -6,18 +6,22 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, 教育
 ms.localizationpriority: medium
-ms.openlocfilehash: 29a5d2749531e12ef7ce9b44cd6598c38cd089db
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: d4ed3bf3062deac308b9ed39ff7be709bcee4af3
+ms.sourcegitcommit: 3be258523c5ee3666498d6a98ed2648b27b2907d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031521"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99973098"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
 [進行測驗](/education/windows/take-tests-in-windows-10) 是以瀏覽器為基礎的 UWP 應用程式，可針對高風險測試轉譯鎖定的線上評量，讓教師能夠專注于評量內容，而不是如何提供安全的測試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](https://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
 如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](/education/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
+
+> [!NOTE]
+> 本文包含「詞彙封鎖項」的參考，這是 Microsoft 不再使用的詞彙。 從軟體中移除該字詞時，我們也會將其從本文中移除。
+
 
 ## <a name="reference-documentation"></a>參考文件
 進行測驗 API 存在於下列命名空間。 請注意，所有的 API 都相依於全域 `SecureBrowser` 物件。
@@ -62,7 +66,7 @@ ms.locfileid: "93031521"
 * `onSuccess` -[選擇性] 已成功啟用或停用鎖定之後要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 * `onError` -[選擇性] 鎖定作業失敗時要呼叫的函式。 這必須是 `Function(Boolean currentlockdownstate)` 的格式。  
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -85,7 +89,7 @@ Windows 10 (版本 1709)
 }
 ```
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -106,7 +110,7 @@ Windows 10 (版本 1709)
     * `brand` 代表安全的瀏覽器商標 (例如： OAKS、CA、SmarterApp 等等 ) 
     * `model` 只代表行動裝置的裝置型號;適用于桌面瀏覽器的 null/未使用。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -123,9 +127,9 @@ Windows 10 (版本 1709)
 * `blacklistedProcessList` -測試應用程式已列入封鎖清單的進程清單。  
 `callback` -找到使用中的進程之後，要叫用的函數。 這必須使用下列格式：`Function(String foundBlacklistedProcesses)`，其中 `foundBlacklistedProcesses` 的格式為：`"['process1.exe','process2.exe','processEtc.exe']"`。 如果找不到任何列入封鎖清單的處理程序，這會是空白。 如果為 null，這表示原始函式呼叫發生錯誤。
 
-**備註** ：清單不包含系統處理程序。
+**備註**：清單不包含系統處理程序。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -141,9 +145,9 @@ Windows 10 (版本 1709)
 **參數**  
 * `restart` -這個參數會被忽略，但必須提供。
 
-**備註** ：在 Windows 10 版本 1607 中，一開始必須鎖定裝置。 在較新版本中，這個方法會關閉瀏覽器，不論是否鎖定裝置。
+**備註**：在 Windows 10 版本 1607 中，一開始必須鎖定裝置。 在較新版本中，這個方法會關閉瀏覽器，不論是否鎖定裝置。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -159,7 +163,7 @@ Windows 10 (版本 1709)
 **參數**  
 * `callback` -此呼叫完成時要叫用的函數。 這必須使用下列格式：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 表示瀏覽器目前是否處於寬鬆模式。 如果未定義或為 null，則會在取得作業中發生錯誤。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -176,7 +180,7 @@ Windows 10 (版本 1709)
 * `enable` -指出預期的寬鬆模式狀態的布林值。  
 * `callback` -此呼叫完成時要叫用的函數。 這必須使用下列格式：`Function(Boolean permissiveMode)`，其中 `permissiveMode` 表示瀏覽器目前是否處於寬鬆模式。 如果未定義或為 null，則會在設定作業中發生錯誤。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -189,7 +193,7 @@ Windows 10 (版本 1709)
 **語法**  
 `void SecureBrowser.security.emptyClipBoard();`
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -208,7 +212,7 @@ Windows 10 (版本 1709)
 **備註**  
 依賴來源 IP 位址區分考試伺服器內的終端使用者電腦並不容易，因為學校的防火牆/NAT/Proxy 通常都在使用中。 MAC 位址可讓應用程式區分一般診斷用防火牆後方的終端用戶端電腦。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -224,7 +228,7 @@ Windows 10 (版本 1709)
 **返回**  
 表示考試應用程式啟動時間的 DateTime 物件。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -241,7 +245,7 @@ Windows 10 (版本 1709)
 `feature` -用來判斷要查詢之功能的字串。 有效的功能字串是 "screenMonitoring"、"printing" 和 "textSuggestions" (區分大小寫)。
 
 **傳回值**  
-此函式會傳回 JavaScript 物件或常值，格式為：`{<feature>:true|false}`。 如果啟用查詢的功能，則為 **true** ，如果未啟用功能，或功能字串無效，則為 **false** 。
+此函式會傳回 JavaScript 物件或常值，格式為：`{<feature>:true|false}`。 如果啟用查詢的功能，則為 **true**，如果未啟用功能，或功能字串無效，則為 **false**。
 
 **需求** Windows 10 版本 1703
 
@@ -277,9 +281,9 @@ Windows 10 (版本 1709)
 `Boolean SecureBrowser.security.isRemoteSession();`
 
 **傳回值**  
-如果目前的工作階段在遠端，則為 **true** ，否則為 **false** 。
+如果目前的工作階段在遠端，則為 **true**，否則為 **false**。
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
@@ -293,12 +297,12 @@ Windows 10 (版本 1709)
 `Boolean SecureBrowser.security.isVMSession();`
 
 **傳回值**  
-如果目前的工作階段正在虛擬機器中執行，則為 **true** ，否則為 **false** 。
+如果目前的工作階段正在虛擬機器中執行，則為 **true**，否則為 **false**。
 
 **備註**  
 此 API 檢查只能偵測實作適當 API 之特定 Hypervisor 內正在執行的 VM 工作階段
 
-**Requirements**  
+**需求**  
 Windows 10 (版本 1709)
 
 ---
