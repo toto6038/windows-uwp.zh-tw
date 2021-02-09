@@ -78,8 +78,6 @@
       href: controls-and-patterns/controls-and-events-intro.md
     - name: 命令簡介
       href: controls-and-patterns/commanding.md
-    - name: 依功能排序的控制項索引
-      href: controls-and-patterns/controls-by-function.md
     - name: 基本輸入
       items:
         - name: 按鈕
