@@ -7,12 +7,12 @@ keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: f84bd251bbae9c3f1a1326ab3ac3c7cf0fce3938
-ms.sourcegitcommit: 75e1f49be211e8b4b3e825978d67625776f992f5
-ms.translationtype: HT
+ms.openlocfilehash: 7f288d301583c08b0fd4104802b643a7c31ad99f
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94691596"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335107"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>適用於 Windows 應用程式的 Visual Studio 專案和項目範本
 
@@ -25,7 +25,7 @@ Visual Studio 2019 提供許多專案和項目範本，協助您使用 C\# 或 C
 
 [Windows UI 程式庫 (WinUI)](../winui/index.md) 是適用於桌面 (.NET 和原生 Win32) 和 UWP 應用程式平台之間 Windows 應用程式的新型原生使用者介面 (UI) 平台。 [WinUI 3](../winui/winui3/index.md) (目前以開發人員預覽版形式提供) 是 WinUI 的最新主要版本，會將 WinUI 轉換成適用於桌面 Windows 應用程式的完整 UX 架構。
 
-WinUI 3 包含 Visual Studio 2019 的 VSIX 套件，可提供專案和項目範本，協助您開始使用以 WinUI 為基礎的介面來建置應用程式。 如需 WinUI 3 VSIX 套件及其所提供專案範本的詳細資訊，請參閱[本節](../winui/winui3/index.md#install-winui-3-preview-3)。
+WinUI 3 包含 Visual Studio 2019 的 VSIX 套件，可提供專案和項目範本，協助您開始使用以 WinUI 為基礎的介面來建置應用程式。 如需 WinUI 3 VSIX 套件和提供的專案範本的詳細資訊，請參閱 [安裝 WinUI 3 Preview 4](../winui/winui3/index.md#install-winui-3-preview-4) 。
 
 > [!IMPORTANT]
 > WinUI 3 (包括相關的 Visual Studio 範本) 目前是以開發人員預覽版形式提供，其適用於早期評估以及從開發人員社群收集意見反應。 目前「不」應該用於生產應用程式。

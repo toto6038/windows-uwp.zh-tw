@@ -7,12 +7,12 @@ keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: de1115281859ba322a03e3bab7a8d0e4ef71440d
-ms.sourcegitcommit: 044c75ea0c6fb3463a0150acdae1ff867dc05f29
-ms.translationtype: HT
+ms.openlocfilehash: e4b5507c36da520c7356b07857b8532162e05785
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972122"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335091"
 ---
 # <a name="build-windows-apps-with-project-reunion-prerelease"></a>使用 Project Reunion 建置 Windows 應用程式 (發行前版本)
 
@@ -72,7 +72,7 @@ Project Reunion 0.1 發行前版本包含適用於下列功能區域的新 API�
 
 4. 請確定您的系統已針對 **nuget.org** 啟用 NuGet 套件來源。如需詳細資訊，請參閱 [常見的 NuGet 設定](/nuget/consume-packages/configuring-nuget-behavior)。
 
-5. 下載及安裝 [WinUI 3 預覽版 3 VSIX 套件](https://aka.ms/winui3/preview3-download)。 只有在已設定為使用 WinUI 3 的 Hello World 和 MRT 核心範例中，才需要執行此步驟。 如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
+5. 下載並安裝 [WinUI 3 Preview 4 VSIX 套件](https://aka.ms/winui3/preview3-download)。 只有在已設定為使用 WinUI 3 的 Hello World 和 MRT 核心範例中，才需要執行此步驟。 如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
 
 6. 複製並探索下列範例：
     - [DWriteCore 資源庫範例](https://github.com/microsoft/Project-Reunion-Samples/tree/main/DWriteCore/DWriteCoreGallery)：此範例應用程式會示範 [DWriteCore](dwritecore.md) API。

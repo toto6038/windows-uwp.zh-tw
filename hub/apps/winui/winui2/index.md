@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk, winui, Windows UI 程式庫
 ms.custom: RS5
-ms.openlocfilehash: 92a546dcd177639b8c9bc7d2fd3dd6ca1fc7d3e5
-ms.sourcegitcommit: 67c4d4ecda4ffe5f1a233de5e8555ca2228e8489
-ms.translationtype: HT
+ms.openlocfilehash: 69e70431303d809ea7303d29a002c72a1c63480a
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94933113"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334947"
 ---
 # <a name="windows-ui-library-2x"></a>Windows UI 程式庫 2.x
 
@@ -21,7 +21,7 @@ Windows UI 程式庫可為 Windows 應用程式提供官方原生 Windows UI 控
 其保持舊版 Windows 10 的向下相容性，因此即便使用者沒有最新的作業系統，您的應用程式仍可運作。
 
 > [!NOTE]
-> 請查看 [Windows UI 程式庫 3 預覽版 3 (2020 年 11 月)](../winui3/index.md)，這是 Windows 10 UI 平台的重大更新。
+> 查看 [WINDOWS ui 程式庫 3 Preview 4 (2021 年2月) ](../winui3/index.md)，這是 Windows 10 UI 平臺的重大更新。
 
 ## <a name="features"></a>功能
 

@@ -4,12 +4,12 @@ description: 如何安裝及使用 Windows UI 程式庫。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk
-ms.openlocfilehash: 939da99d7fce59a9f242fe0ce8ed203a3f52eab6
-ms.sourcegitcommit: 617344ae1a1f5b580c938b61e910d99120b73626
+ms.openlocfilehash: 801c1f578c08df627264f542cbe1496d275afc0a
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669519"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334962"
 ---
 # <a name="getting-started-with-the-windows-ui-2x-library"></a>開始使用 Windows UI 2.x 程式庫
 
@@ -18,7 +18,7 @@ ms.locfileid: "98669519"
 程式庫會以 NuGet 套件的形式來提供，可供新增至任何新的或現有的 Visual Studio 專案。
 
 > [!NOTE]
-> 如需試用 WinUI 3 早期預覽版的詳細資訊，請參閱 [Windows UI 程式庫 3 預覽版 3 (2020 年 11 月)](../winui3/index.md)。
+> 如需試用 WinUI 3 早期預覽的詳細資訊，請參閱 [WINDOWS UI 程式庫 3 Preview 4 (2021 年2月) ](../winui3/index.md)。
 
 ## <a name="download-and-install-the-windows-ui-library"></a>下載並安裝 Windows UI 程式庫
 
@@ -29,44 +29,61 @@ ms.locfileid: "98669519"
     > [!IMPORTANT]
     > 若要使用 WinUI 2.5，您必須在專案屬性中設定 TargetPlatformVersion >= 10.0.18362.0 和 TargetPlatformMinVersion >= 10.0.15063.0。
 
-3. 在 [方案總管] 面板中，以滑鼠右鍵按一下專案名稱，然後選取 [管理 NuGet 套件]。 選取 [瀏覽] 索引標籤，然後搜尋 **Microsoft.UI.Xaml** 或 **WinUI**。 然後選擇您要使用的 [[Windows UI 程式庫 NuGet 套件]](nuget-packages.md)。
-**Microsoft.UI.Xaml** 套件包含適用於所有應用程式的 Fluent 控制項和功能。  
-您可以選擇性地核取 [包含發行前版本]，以查看包含實驗性新功能的最新發行前版本。
+3. 在 [方案總管] 面板中，以滑鼠右鍵按一下專案名稱，然後選取 [管理 NuGet 套件]。 
 
-    ![[方案總管] 面板的螢幕擷取畫面，已使用滑鼠右鍵按一下專案，且醒目提示 [管理 NuGet 套件] 選項。](images/ManageNugetPackages.png "管理 NuGet 套件映像")
+    :::image type="content" source="images/ManageNugetPackages.png" alt-text="[方案總管] 面板的螢幕擷取畫面，已使用滑鼠右鍵按一下專案，且醒目提示 [管理 NuGet 套件] 選項。":::<br/>*以滑鼠右鍵按一下專案，並反白顯示 [管理 NuGet 封裝] 選項的方案總管面板。*
 
-    ![[NuGet 套件管理員] 對話方塊的螢幕擷取畫面，其中顯示搜尋欄位中含有 winui 的 [瀏覽] 索引標籤。](images/NugetPackages.png)
+4. 在 **NuGet 封裝管理員** 中，選取 [**流覽**] 索引標籤 ，然後搜尋 **WinUI**。 選取您想要使用 (的 [WINDOWS ui 程式庫 NuGet 套件](nuget-packages.md) 。 **Xaml** 套件包含適用于所有應用程式) 的流暢控制項和功能。 按一下 [安裝]。 
 
-4. 將 Windows UI (WinUI) 佈景主題資源新增至 App.xaml 資源。 視您是否有額外的應用程式資源而定，您可以透過兩種方式來執行此動作。
+    勾選 [包含發行前版本] 核取方塊，以查看包含實驗性新功能的最新發行前版本。
 
-    a. 如果您沒有其他應用程式資源，請將 `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` 新增至您的 Application.Resources：
+    :::image type="content" source="images/NugetPackages.png" alt-text="[NuGet 封裝管理員] 對話方塊的螢幕擷取畫面，其中顯示 [搜尋] 欄位中包含 winui 的 [流覽] 索引標籤，並且包含 [已核取":::<br/>*[NuGet 封裝管理員] 對話方塊中，顯示 [搜尋] 欄位中包含 winui 的 [流覽] 索引標籤，並包含 [已核取*
+
+5. 將 Windows UI (WinUI) 主題資源新增至您的 app.xaml 檔案。
+
+    視您是否有額外的應用程式資源而定，您可以透過兩種方式來執行此動作。
+
+    a. 如果您不需要其他應用程式資源，請新增 WinUI resources 元素， `<XamlControlsResources` 如下列範例所示：
 
     ``` XAML
-    <Application>
+    <Application
+        x:Class="ExampleApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RequestedTheme="Light">
+
         <Application.Resources>
             <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
         </Application.Resources>
+
     </Application>
     ```
 
-    b. 否則，如果您有多組應用程式資源，則請將 `<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>` 新增至 Application.Resources.MergedDictionaries：
+    b. 如果您需要一個以上的應用程式資源，請在中新增 WinUI resources 元素， `<XamlControlsResources` `<ResourceDictionary.MergedDictionaries>` 如下所示：
 
     ``` XAML
-    <Application>
+    <Application
+        x:Class="ExampleApp.App"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RequestedTheme="Light">
+
         <Application.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                    <ResourceDictionary Source="/Styles/Styles.xaml"/>
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Application.Resources>
+
     </Application>
     ```
 
     > [!IMPORTANT]
     > 資源新增至 ResourceDictionary 的順序會影響其套用順序。 `XamlControlsResources` 字典會覆寫許多預設的資源索引鍵，因此應先將其新增至 `Application.Resources`，以免其覆寫您應用程式中的任何其他自訂樣式或資源。 如需如何載入資源的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](/windows/uwp/design/controls-and-patterns/resourcedictionary-and-xaml-resource-references)。
 
-5. 將工具組的參考新增至 XAML 頁面和程式碼後置頁面。
+6. 將 WinUI 封裝的參考新增至 XAML 頁面和/或程式碼後端頁面。
 
     * 在 XAML 頁面中，於頁面頂端新增參考
 

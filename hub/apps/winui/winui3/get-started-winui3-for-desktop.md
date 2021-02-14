@@ -1,27 +1,27 @@
 ---
 description: 本指南將說明如何開始使用 WinUI 3 UI 來建立 .NET 和 C++/Win32 桌面應用程式。
 title: 開始使用適用於桌面應用程式的 WinUI 3
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 067e6a6798fbfc2633c3e356be64ecae0403cc6d
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
-ms.translationtype: HT
+ms.openlocfilehash: 12217aa066c7269a42ea5b5ae274b8ca136d96d0
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025154"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335011"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3
 
-WinUI 3 預覽版 3 包含的專案範本，可讓您使用完全以 WinUI 為基礎的使用者介面來建立受控的桌面版 C#/.NET Core 和原生 C++/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
+WinUI 3 Preview 4 包含專案範本，可讓您使用完全 WinUI 型的使用者介面，建立 managed desktop c #/.NET Core 和原生 c + +/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必要條件
 
-若要使用本文所述適用於桌面的 WinUI 3 專案範本，請遵循[這裡](index.md#install-winui-3-preview-3)的指示來設定您的開發電腦以及安裝 WinUI 3 預覽版 3。
+若要使用本文中所述的 WinUI 3 for desktop 專案範本，請依照 [此處](index.md#install-winui-3-preview-4)的指示，設定您的開發電腦並安裝 WinUI 3 Preview 4。
 
 ## <a name="create-a-winui-3-desktop-app-for-c-and-net-5"></a>建立適用於 C# 和 .NET 5 的 WinUI 3 桌面應用程式
 
@@ -113,8 +113,8 @@ WinUI 3 預覽版 3 包含的專案範本，可讓您使用完全以 WinUI 為�
 
 ## <a name="known-issues-and-limitations"></a>已知的問題和限制
 
-如需已知問題和限制的清單，請參閱[本節](index.md#preview-3-limitations-and-known-issues)。
+請參閱[WINDOWS UI 程式庫 3 Preview 4 (2021 年2月) ](index.md)的[限制和已知問題](index.md#limitations-and-known-issues)一節。
 
 ## <a name="related-topics"></a>相關主題
 
-* [Windows UI 程式庫 3](index.md)
+* [Windows UI 程式庫 3 Preview 4 (2021 年2月) ](index.md)

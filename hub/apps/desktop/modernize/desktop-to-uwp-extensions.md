@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b5e975c40b7c9642cd452b3c67045c7be1127d
-ms.sourcegitcommit: 069f5ab4be85a7d638fc2a426afaed824e5dfeae
+ms.openlocfilehash: 9da6b1acf2ce27fa6b4ec6c1b4e4274a28491b8b
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98669530"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335105"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
@@ -157,7 +157,7 @@ ms.locfileid: "98669530"
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>將已封裝的應用程式和一組檔案類型建立關聯
 
-您可以將已封裝的應用程式和檔案類型副檔名產生關聯。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [開啟檔案]  選項，您的應用程式會出現在建議清單中。
+您可以將封裝的應用程式與檔案類型副檔名產生關聯。 如果使用者以滑鼠右鍵按一下檔案總管中的檔案，然後選取 [ **開啟檔案** ] 選項，則您的應用程式會出現在建議清單中。 如需使用此延伸模組的詳細資訊，請參閱 [將封裝的桌面應用程式與檔案總管整合](integrate-packaged-app-with-file-explorer.md)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -178,9 +178,9 @@ ms.locfileid: "98669530"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|類別 |一律為 ``windows.fileTypeAssociation``。
+|類別 |一定是 ``windows.fileTypeAssociation``。
 |名稱 | 檔案類型關聯的名稱。 您可以使用此名稱來組織檔案類型，並將其分組。 名稱必須全部是小寫，而且沒有任何空格。   |
 |FileType |您的應用程式支援的副檔名。 |
 
@@ -215,9 +215,7 @@ ms.locfileid: "98669530"
 
 ### <a name="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type"></a>將選項新增至具有特定檔案類型的檔案操作功能表
 
-在大部分的情況下，使用者會在檔案上按兩下以開啟檔案。 如果使用者以滑鼠右鍵按一下檔案，就會出現各種不同選項。
-
-您可以將選項新增至該功能表。 這些選項可為使用者提供更多與您檔案互動的方式，例如，列印、編輯，或預覽檔案。
+此延伸模組可讓您將選項新增至使用者以滑鼠右鍵按一下檔案總管中的檔案時所顯示的內容功能表。這些選項可讓使用者以其他方式與您的檔案互動，例如列印、編輯或預覽檔案。 如需使用此延伸模組的詳細資訊，請參閱 [將封裝的桌面應用程式與檔案總管整合](integrate-packaged-app-with-file-explorer.md)。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -239,9 +237,9 @@ ms.locfileid: "98669530"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|類別 | 一律為 ``windows.fileTypeAssociation``。
+|類別 | 一定是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織檔案類型，並將其分組。 名稱必須全部是小寫，而且沒有任何空格。 |
 |動詞 |在 [檔案總管] 操作功能表中出現的名稱。 此字串可使用 ```ms-resource``` 進行當地語系化。|
 |Id |動詞的唯一識別碼。 若您的應用程式為 UWP 應用程式，則此識別碼會傳送至應用程式做為啟用事件引數的一部分，以便能夠適當處理使用者的選擇。 如果您的應用程式是完全信任的封裝應用程式，則該應用程式會改為接收參數 (請參閱下一個項目符號)。 |
@@ -303,9 +301,9 @@ ms.locfileid: "98669530"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|類別 |一律為 ``windows.fileTypeAssociation``。
+|類別 |一定是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織檔案類型，並將其分組。 名稱必須全部是小寫，而且沒有任何空格。 |
 |UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您未設定這個值，每當您的應用程式嘗試使用 URL 開啟檔案時，都會讓系統先將檔案下載至本機電腦。 |
 |參數 | 選用參數。 |
@@ -369,7 +367,7 @@ ms.locfileid: "98669530"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
 |類別 |一律為 ``windows.firewallRules``|
 |執行檔 |您想要新增到防火牆例外清單的可執行檔名稱 |

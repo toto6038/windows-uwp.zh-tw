@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d319374791eeb0a02b0291c66f25f55e31bcbc4b
-ms.sourcegitcommit: 6759309a3fbb6ede498c95c04c05f57a074ab070
+ms.openlocfilehash: 154177c8c909f0ea30f4fbe2323a0b28222eb932
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99069165"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335002"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
 
@@ -29,7 +29,7 @@ ms.locfileid: "99069165"
 
 ## <a name="add-a-templated-control-to-your-app"></a>將樣板化控制項新增至您的應用程式
 
-若要新增樣板化控制項，請按一下工具列中的 [專案] 功能表，或以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [新增項目]。 在 [Visual C++ -> WinUI] 下選取 [自訂控制項 (WinUI)] 範本。 將新控制項命名為 "BgLabelControl"，然後按一下 [新增]。 這會將三個新檔案新增至您的專案。 `BgLabelControl.h` 是包含控制項宣告的標頭，而 `BgLabelControl.cpp` 包含控制項的 C++/WinRT 實作。 `BgLabelControl.idl` 是介面定義檔，可讓控制項具現化為執行階段類別。
+若要新增樣板化控制項，請按一下工具列中的 [專案] 功能表，或以滑鼠右鍵按一下 [方案總管] 中的專案，然後選取 [新增項目]。 在 [Visual C++ -> WinUI] 下選取 [自訂控制項 (WinUI)] 範本。 將新控制項命名為 "BgLabelControl"，然後按一下 [新增]。 這會將三個新檔案新增至您的專案。 `BgLabelControl.h` 是包含控制項宣告的標頭，而 `BgLabelControl.cpp` 包含控制項的 C++/WinRT 實作。 `BgLabelControl.idl` 是介面定義檔，允許將控制項具現化為執行時間類別。
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>實作 BgLabelControl 自訂控制項類別
 
@@ -148,7 +148,7 @@ namespace winrt::BgLabelControlApp::implementation
 
 在 **BgLabelControl** 的建構函式中，其會設定本身的預設樣式索引鍵。 樣板化控制項需要有包含預設控制項範本的預設樣式，以便在控制項的取用者不設定樣式及/或範本的情況下，用來自行轉譯。 在本節中，我們會將標記檔案新增到包含預設樣式的專案。
 
-確定 [顯示所有檔案] 仍切換成開啟 (在 [方案總管] 中)。 請在您的專案節點下，建立新的資料夾 (不是篩選器而是資料夾)，並將其命名為「Themes」。 在 `Themes` 底下，新增 **Visual C++ > WinUI > 資源字典 (WinUI)** 類型的新項目，並且命名為 "Generic.xaml"。 資料夾和檔案名稱必須類似如此，XAML 架構才能找到樣板化控制項的預設樣式。 刪除 Generic.xaml 的預設內容，並且貼到下列標記中。
+確定 [顯示所有檔案] 仍切換成開啟 (在 [方案總管] 中)。 請在您的專案節點下，建立新的資料夾 (不是篩選器而是資料夾)，並將其命名為「Themes」。 在底下 `Themes` ，將類型 **Visual C++ > WinUI > 資源字典** 中的新專案加入 (WinUI) ，並將其命名為 "Generic. xaml"。 資料夾和檔案名稱必須類似如此，XAML 架構才能找到樣板化控制項的預設樣式。 刪除 Generic.xaml 的預設內容，並且貼到下列標記中。
 
 ```xaml
 <!-- \Themes\Generic.xaml -->

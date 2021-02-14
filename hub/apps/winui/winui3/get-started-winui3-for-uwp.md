@@ -1,25 +1,25 @@
 ---
 description: 本指南將說明如何開始使用 WinUI 3 UI 來建立 UWP 應用程式。
 title: 開始使用適用於 UWP 應用程式的 WinUI 3
-ms.date: 11/17/2020
+ms.date: 02/09/2021
 ms.topic: article
 keywords: windows 10, uwp, winui
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 5da4944b38fc764eb11bdc2f6daed0cab54ea445
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
-ms.translationtype: HT
+ms.openlocfilehash: d13acb2181160ec214070dc1276e844dc1f203ad
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96025134"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334904"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>開始使用適用於 UWP 應用程式的 WinUI 3
 
-WinUI 3 預覽版 3 包含新的專案範本，可讓您使用完全建置在 WinUI 上的使用者介面，建立通用 Windows 平台 (UWP) 應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和樣式來實作。 如需受支援 WinUI 3 專案範本的完整清單，請參閱[適用於 WinUI 3 的專案範本](index.md#project-templates-for-winui-3)。
+WinUI 3 Preview 4 包含新的專案範本，可讓您建立通用 Windows 平臺 (UWP) 應用程式，並將使用者介面完全建置於 WinUI 上。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和樣式來實作。 如需受支援 WinUI 3 專案範本的完整清單，請參閱[適用於 WinUI 3 的專案範本](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必要條件
 
-若要使用本文所述適用於 UWP 的 WinUI 3 專案範本，請設定您的開發電腦以及[安裝 WinUI 3 預覽版 3](index.md#install-winui-3-preview-3)。
+若要使用本文中所述的 WinUI 3 for UWP 專案範本，請設定您的開發電腦並 [安裝 WinUI 3 Preview 4](index.md#install-winui-3-preview-4)。
 
 ## <a name="create-a-winui-3-app-in-uwp-for-c"></a>針對 C# 建立 "WinUI 3 app in UWP"
 
@@ -48,7 +48,7 @@ WinUI 3 預覽版 3 包含新的專案範本，可讓您使用完全建置在 Wi
 
 6. Visual Studio 會使用下列物件，產生 **WinUI in UWP** 專案：
 
-    - **_專案名稱_ (通用 Windows)** ：包含您的應用程式程式碼。 這是您專案解決方案的預設啟始專案。
+    - ***專案名稱* (通用 Windows)** ：包含您的應用程式程式碼。 這是您專案解決方案的預設啟始專案。
 
     :::image type="content" source="images/WinUI-and-UWP/vs2019-project.png" alt-text="已醒目提示通用 Windows 解決方案的方案總管面板螢幕擷取畫面。":::
 
@@ -84,9 +84,9 @@ WinUI 3 預覽版 3 包含新的專案範本，可讓您使用完全建置在 Wi
 
 ## <a name="known-issues-and-limitations"></a>已知的問題和限制
 
-如需已知問題和限制的清單，請參閱[本節](index.md#preview-3-limitations-and-known-issues)。
+請參閱[WINDOWS UI 程式庫 3 Preview 4 (2021 年2月) ](index.md)的[限制和已知問題](index.md#limitations-and-known-issues)一節。
 
 ## <a name="related-topics"></a>相關主題
 
-- [WinUI 3](index.md)
+- [Windows UI 程式庫 3 Preview 4 (2021 年2月) ](index.md)
 - [建立您的第一個應用程式](/windows/uwp/get-started/your-first-app)

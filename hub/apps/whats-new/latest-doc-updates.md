@@ -2,313 +2,442 @@
 description: 探索 Windows 開發人員文件中最新的新增內容。
 title: Windows 開發人員文件的最新更新
 ms.topic: article
-ms.date: 12/8/2020
+ms.date: 2/10/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: b613c7a688110b5c8c2388b113a077c8e05cd574
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
-ms.translationtype: HT
+ms.openlocfilehash: 754dccc3b2122a1ce44e6b378739db5f834b4057
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104469"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100335024"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 開發人員文件的最新更新
 
-Windows 開發人員文件會定期更新，並提供新的和改進的資訊及內容。 以下是 2020 年 12 月 8 日的變更摘要。
+Windows 開發人員文件會定期更新，並提供新的和改進的資訊及內容。 以下是2021年2月10日的變更摘要。
 
 注意：如需新增為 Windows 10 組建 19041 (也稱為 2004) 一部分的特定 API 清單，請參閱[此清單](/windows/uwp/whats-new/windows-10-build-19041-api-diff)。
 
+如需最新的 Windows 開發人員檔新聞，或與我們分享意見和問題，我們的 Twitter 控制碼為 [@WindowsDocs](https://twitter.com/windowsdocs) 。
 
+我們繼續在整個檔集內搜尋和移除 insenstive 語言的使用方式。
+
+如需參與 Microsoft 檔的詳細資訊，請參閱《 [參與者指南》](https://docs.microsoft.com/contribute/)。
 
 本月重點包括：
 
-### <a name="new-videos"></a>新影片
+### <a name="new-content"></a>新內容
 
-* [索引標籤與空格第 6 集](https://www.youtube.com/watch?v=XkLjxr9iQ-8)
 
-### <a name="new-topics"></a>新增主題
-
-* [WinUI 3 預覽 3](../winui/winui3/index.md)
-* [WinUI 2.5 版本](../winui/winui2/release-notes/winui-2.5.md)
-* [Segoe MDL2 Assets 圖示文章](/windows/uwp/design/style/segoe-ui-symbol-font)
-
-* [使用 C#/WinRT 的敏捷式物件](/windows/uwp/csharp-winrt/agile-objects)
+* [從 c + +/WinRT 移植到 c #](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)
+* [逐步解說：建立 c #/WinRT 元件並從 c + +/WinRT 使用它](https://docs.microsoft.com/windows/uwp/csharp-winrt/create-windows-runtime-component-cswinrt)
+* [診斷 c #/WinRT 元件錯誤](https://docs.microsoft.com/windows/uwp/csharp-winrt/authoring-diagnostics)
+* 影片的新集 [與空格](https://channel9.msdn.com/Shows/Tabs-vs-Spaces)
 
 
 
 
+### <a name="updated-topics"></a>更新的主題
 
-### <a name="other-content-of-interest"></a>其他感興趣的內容
-
-* [Azure 通訊服務](/azure/communication-services/overview)
-* [Azure 應用程式組態 Python 快速入門](/azure/azure-app-configuration/quickstart-python)
-
-
-### <a name="updated-documentation"></a>已更新的文件
-
-* [DirectML 內容](/windows/win32/direct3d12/dml-version-history)
+* 使用 c + +/WinRT 範例程式碼重寫導覽控制項主題： 
+    * [Windows 應用程式的瀏覽歷程記錄和向後瀏覽](https://docs.microsoft.com/windows/uwp/design/basics/navigation-history-and-backwards-navigation)
+    * [瀏覽檢視](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview)
+* [高階著色器語言 (HLSL) ](https://docs.microsoft.com/windows/win32/direct3dhlsl/dx-graphics-hlsl)
+* [WinHttpQueryDataAvailable](https://docs.microsoft.com/windows/win32/api/winhttp/nf-winhttp-winhttpquerydataavailable)
+* [如何在 .NET Core 應用程式中使用功能旗標的教學課程 | Microsoft Docs](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core)
+* [WinUI 2](https://docs.microsoft.com/windows/apps/winui/winui2/)和[WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/)檔的連續更新。
+* 在涵蓋 WSL 和 Windows 終端機 [Windows 10 上設定開發環境的](https://docs.microsoft.com/windows/dev-environment/overview) 定期更新。
+* Windows 終端機中新 [設定 UI](https://docs.microsoft.com/windows/terminal/customize-settings/startup) 的資訊。
 
 在下列參考主題可看到過去一個月的重大更新：
 
 ## <a name="winrt-conceptual"></a>WinRT 概念
 
 <ul>
-<li><a href="/windows/uwp/audio-video-camera/playready-client-sdk">PlayReady DRM</a></li>
-<li><a href="/windows/uwp/composition/composition-native-interop">組合原生交互操作</a></li>
-<li><a href="/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types">標準 C++ 資料類型與 C++/WinRT</a></li>
-<li><a href="/windows/uwp/csharp-winrt/agile-objects">使用 C#/WinRT 的敏捷式物件</a></li>
-<li><a href="/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
-<li><a href="/windows/uwp/debug-test-perf/device-portal-desktop">Windows 桌面的裝置入口網站</a></li>
-<li><a href="/windows/uwp/debug-test-perf/loose-file-registration">透過鬆散檔案註冊部署應用程式</a></li>
-<li><a href="/windows/uwp/design/basics/design-and-ui-intro">Windows 應用程式設計簡介 (Windows 應用程式)</a></li>
-<li><a href="/windows/uwp/design/controls-and-patterns/infobar">資訊列</a></li>
-<li><a href="/windows/uwp/design/controls-and-patterns/navigationview">瀏覽檢視</a></li>
-<li><a href="/windows/uwp/design/controls-and-patterns/progress-controls">進度控制項的指導方針</a></li>
-<li><a href="/windows/uwp/design/input/ink-walkthrough">在您的 Windows 應用程式中支援筆跡</a></li>
-<li><a href="/windows/uwp/design/input/keyboard-accelerators">鍵盤快速操作</a></li>
-<li><a href="/windows/uwp/design/input/radialcontroller-walkthrough">在您的 Windows 應用程式中支援 Surface Dial (及其他轉盤裝置)</a></li>
-<li><a href="/windows/uwp/design/layout/grid-tutorial">使用 Grid 與 StackPanel 建立簡單的應用程式。</a></li>
-<li><a href="/windows/uwp/design/shell/tiles-and-notifications/toast-schema">快顯通知內容結構描述</a></li>
-<li><a href="/windows/uwp/design/style/segoe-ui-symbol-font">Segoe MDL2 Assets 圖示</a></li>
-<li><a href="/windows/uwp/devices-sensors/host-card-emulation">建立 NFC 智慧卡應用程式</a></li>
-<li><a href="/windows/uwp/devices-sensors/use-the-compass">使用指南針</a></li>
-<li><a href="/windows/uwp/enterprise/index">企業</a></li>
-<li><a href="/windows/uwp/gaming/e2e">Windows 10 遊戲開發指南</a></li>
-<li><a href="/windows/uwp/get-started/create-a-basic-windows-10-app-in-cpp">使用 C++/CX 建立 Hello World 應用程式 (Windows 10)</a></li>
-<li><a href="/windows/uwp/get-started/create-uwp-apps">使用通用 Windows 平台建立應用程式</a></li>
-<li><a href="/windows/uwp/get-started/universal-application-platform-guide">何謂通用 Windows 平台 (UWP) 應用程式？</a></li>
-<li><a href="/windows/uwp/launch-resume/app-lifecycle">Windows 10 UWP App 週期</a></li>
-<li><a href="/windows/uwp/launch-resume/guidelines-for-background-tasks">背景工作的指導方針</a></li>
-<li><a href="/windows/uwp/launch-resume/web-to-app-linking">使用 App URI 處理常式啟用網站的應用程式</a></li>
-<li><a href="/windows/uwp/monetize/run-app-experiments-with-a-b-testing">使用 A/B 測試執行應用程式實驗</a></li>
-<li><a href="/windows/uwp/packaging/app-capability-declarations">應用程式功能宣告</a></li>
-<li><a href="/windows/uwp/xbox-apps/devkit-activation">啟用 Xbox One 開發人員模式</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/composition/relation-animations">關聯式動畫</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp">從 C# 移到 C++/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/authoring-diagnostics">診斷 c #/WinRT 元件錯誤</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/create-windows-runtime-component-cswinrt">建立 c #/WinRT 元件並從 c + +/WinRT 使用它</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/csharp-winrt/index">C#/WinRT</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-api-core">Windows 裝置入口網站核心 REST API 參考資料</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop">傳統型裝置的 Windows 裝置入口網站</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-mobile">行動裝置的 Windows 裝置入口網站</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal">Windows 裝置入口網站概觀</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data">儲存及擷取設定和其他應用程式資料</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/basics/navigation-history-and-backwards-navigation">瀏覽歷程記錄和向後瀏覽</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/infobar">資訊列</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/media-playback">媒體播放機</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">瀏覽檢視</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-deep-link-into-your-app">從 Cortana 中的背景應用程式到前景應用程式的深層連結-Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-design-guidelines">Cortana 設計指導方針-Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists">動態修改 Cortana VCD 片語清單-Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-interact-with-a-background-app">與 Cortana 中的背景應用程式互動-Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-interactions">Windows 應用程式中的 Cortana 互動</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-launch-a-background-app-with-voice-commands">使用語音命令啟用 Cortana 中的背景應用程式 |Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-launch-a-foreground-app-with-voice-commands">使用語音命令透過 Cortana 啟用前景應用程式-Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/design/input/cortana-support-natural-language-voice-commands">在 Cortana 中支援更自然的語音命令-Cortana UWP 設計與開發</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/gaming/about-the-uwp-user-interface-and-directx">App 物件和 DirectX</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/graphics-concepts/graphics-pipeline">圖形管線</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/get-the-stack-trace-for-an-error-in-your-desktop-application">取得傳統型應用程式中錯誤的堆疊追蹤</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-add-on-submissions">管理附加元件提交</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-add-ons">管理附加元件</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-app-submissions">管理應用程式提交</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/manage-flight-submissions">管理套件正式發行前小眾測試版提交</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/monetize/view-and-grant-products-from-a-service">管理服務的產品權利</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/publish/set-custom-permissions-for-account-users">設定帳戶使用者的角色或自訂權限</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/development-lanes-unity-versioning">Unity：針對您的 UWP 專案進行版本控制</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-deployinfo-api">裝置入口網站部署資訊 API 參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-networkcredentials-api">Device Portal 網路認證 API 參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-remoteinput-api">裝置入口網站遠端輸入 API 參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-remoteinput-controllers-api">裝置入口網站控制器 API 參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-sshpins-api">裝置入口網站 SSH Pin API 參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/wdp-media-capture-api">媒體擷取 API 參考</a></li>
 </ul>
 
 ## <a name="win32-conceptual"></a>Win32 概念
 
 <ul>
-<li><a href="/windows/desktop/TermServ/win32-tslicensekeypack">Win32_TSLicenseKeyPack 類別</a></li>
-<li><a href="/windows/desktop/direct3d12/direct3d-directml-constants">DirectML 常數</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_axis_direction">DML_AXIS_DIRECTION</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_depth_space_order">DML_DEPTH_SPACE_ORDER</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_graph_edge_type">DML_GRAPH_EDGE_TYPE</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ne-directml-dml_graph_node_type">DML_GRAPH_NODE_TYPE</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/nf-directml-dmlcreatedevice1">DMLCreateDevice1 函式</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/nn-directml-idmldevice1">IDMLDevice1</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_graph_desc">DML_GRAPH_DESC</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_graph_edge_desc">DML_GRAPH_EDGE_DESC</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_graph_node_desc">DML_GRAPH_NODE_DESC</a></li>
-<li><a href="/windows/desktop/direct3d12/directml/ns-directml-dml_scalar_union">DML_SCALAR_UNION</a></li>
-<li><a href="/windows/desktop/direct3d12/queries">查詢</a></li>
-<li><a href="/windows/desktop/direct3dhlsl/dx-graphics-hlsl-variable-syntax">語法變數</a></li>
-<li><a href="/windows/desktop/dlgbox/color-dialog-box">色彩對話方塊</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/api.jetopentemptable3-method">Api.JetOpenTempTable3 方法</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/database-parameters">資料庫參數</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esenterrorexception-class">EsentErrorException 類別</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentioexception-class">EsentIOException 類別</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentmemoryexception-class">EsentMemoryException 類別</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentquotaexception-class">EsentQuotaException 類別</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/esentresourceexception-class">EsentResourceException 類別</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/index-parameters">索引參數</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columnbase-structure">JET_COLUMNBASE 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columncreate-structure">JET_COLUMNCREATE 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columndef-structure">JET_COLUMNDEF 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-columnlist-structure">JET_COLUMNLIST 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc-structure">JET_DBINFOMISC 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc2-structure">JET_DBINFOMISC2 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc3-structure">JET_DBINFOMISC3 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfomisc4-structure">JET_DBINFOMISC4 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-dbinfoupgrade-structure">JET_DBINFOUPGRADE 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-enumcolumn-structure">JET_ENUMCOLUMN 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-indexcreate-structure">JET_INDEXCREATE 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-indexcreate2-structure">JET_INDEXCREATE2 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-indexlist-structure">JET_INDEXLIST 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-objectinfo-structure">JET_OBJECTINFO 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-objectlist-structure">JET_OBJECTLIST 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-retrievecolumn-structure">JET_RETRIEVECOLUMN 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-sesid">JET_SESID</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tablecreate-structure">JET_TABLECREATE 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tablecreate2-structure">JET_TABLECREATE2 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tablecreate3-structure">JET_TABLECREATE3 結構</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jet-tableid">JET_TABLEID</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetaddcolumn-function">JetAddColumn 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetattachdatabase-function">JetAttachDatabase 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetattachdatabase2-function">JetAttachDatabase2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbackup-function">JetBackup 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbackupinstance-function">JetBackupInstance 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbeginsession-function">JetBeginSession 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbegintransaction-function">JetBeginTransaction 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbegintransaction2-function">JetBeginTransaction2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetbegintransaction3-function">JetBeginTransaction3 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcommittransaction-function">JetCommitTransaction 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreatedatabase-function">JetCreateDatabase 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreatedatabase2-function">JetCreateDatabase2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex-function">JetCreateIndex 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex2-function">JetCreateIndex2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex3-function">JetCreateIndex3 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateindex4w-function">JetCreateIndex4W 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateinstance-function">JetCreateInstance 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreateinstance2-function">JetCreateInstance2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetcreatetable-function">JetCreateTable 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdelete-function">JetDelete 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdetachdatabase-function">JetDetachDatabase 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdetachdatabase2-function">JetDetachDatabase2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetdupcursor-function">JetDupCursor 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetendexternalbackup-function">JetEndExternalBackup 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetenumeratecolumns-function">JetEnumerateColumns 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetescrowupdate-function">JetEscrowUpdate 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetexternalrestore2-function">JetExternalRestore2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetattachinfo-function">JetGetAttachInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetcolumninfo-function">JetGetColumnInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetdatabaseinfo-function">JetGetDatabaseInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetindexinfo-function">JetGetIndexInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetobjectinfo-function">JetGetObjectInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgetrecordposition-function">JetGetRecordPosition 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgettableindexinfo-function">JetGetTableIndexInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetgettableinfo-function">JetGetTableInfo 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetinit-function">JetInit 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetinit2-function">JetInit2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetinit3-function">JetInit3 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetintersectindexes-function">JetIntersectIndexes 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetmakekey-function">JetMakeKey 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetmove-function">JetMove 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopendatabase-function">JetOpenDatabase 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopenfile-function">JetOpenFile 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopenfileinstance-function">JetOpenFileInstance 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentable-function">JetOpenTable 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentemptable-function">JetOpenTempTable 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentemptable2-function">JetOpenTempTable2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetopentemptable3-function">JetOpenTempTable3 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetossnapshotfreeze-function">JetOSSnapshotFreeze 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetossnapshotprepare-function">JetOSSnapshotPrepare 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetreadfileinstance-function">JetReadFileInstance 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetregistercallback-function">JetRegisterCallback 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetrestore-function">JetRestore 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetrestore2-function">JetRestore2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetrestoreinstance-function">JetRestoreInstance 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetretrievecolumn-function">JetRetrieveColumn 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetretrievecolumns-function">JetRetrieveColumns 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetretrievekey-function">JetRetrieveKey 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcolumn-function">JetSetColumn 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcolumns-function">JetSetColumns 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex-function">JetSetCurrentIndex 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex2-function">JetSetCurrentIndex2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex3-function">JetSetCurrentIndex3 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetcurrentindex4-function">JetSetCurrentIndex4 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetindexrange-function">JetSetIndexRange 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetsetls-function">JetSetLS 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetstopservice-function">JetStopService 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetterm-function">JetTerm 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetterm2-function">JetTerm2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetupdate-function">JetUpdate 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/jetupdate2-function">JetUpdate2 函式</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/transaction-log-parameters">交易記錄檔參數</a></li>
-<li><a href="/windows/desktop/extensible-storage-engine/transactions">交易 (Windows 事件)</a></li>
-<li><a href="/windows/desktop/security">安全性和身分識別</a></li>
-<li><a href="/windows/desktop/shell/handlers">建立 Shell 擴充功能處理常式</a></li>
-<li><a href="/windows/desktop/shell/nf-shobjidl-istorageprovidercopyhook-copycallback">IStorageProviderCopyHook::CopyCallback</a></li>
-<li><a href="/windows/desktop/shell/nn-shobjidl-istorageprovidercopyhook">IStorageProviderCopyHook 介面</a></li>
-<li><a href="/windows/desktop/shell/shell-shellexecute">Shell.ShellExecute 方法 (Shldisp.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Bits/using-windows-powershell-to-create-bits-transfer-jobs">使用 Windows PowerShell 建立 BITS 傳送工作</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Bits/using-winrm-windows-powershell-cmdlets-to-manage-bits-transfer-jobs">使用 WinRM Windows PowerShell Cmdlet 來管理 BITS 傳送工作</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-optionalfeature">Win32_OptionalFeature 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/CIMWin32Prov/win32-pnpdeviceproperty">Win32_PnPDeviceProperty 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Controls/toolbar-standard-button-image-index-values">工具列標準按鈕影像索引值 (CommCtrl .h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/border">框線效果</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Direct2D/profiling-directx-applications">分析 DirectX 應用程式</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DirectWrite/dwritecore-overview">DWriteCore 總覽</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/DxTechArts/installing-and-using-input-method-editors">安裝和使用輸入法編輯器</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/HyperV_v2/getting-the-virtual-system-dns-name">取得虛擬機器 DNS 名稱</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/LearnWin32/appendix--matrix-transforms">附錄矩陣轉換</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/-target">/target 參數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/declare-guid">declare_guid 屬性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-composition">sh_composition 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-event">sh_event 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-file">sh_file 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-job">sh_job 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-mutex">sh_mutex 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-pipe">sh_pipe 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-process">sh_process 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-reg-key">sh_reg_key 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-section">sh_section 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-semaphore">sh_semaphore 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-socket">sh_socket 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-thread">sh_thread 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/sh-token">sh_token 關鍵字</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Midl/system-handle">system_handle 屬性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Msi/patching-per-user-managed-applications">修補 Per-User 受控應用程式</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Multimedia/buffered-services">緩衝的服務</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/NDF/using-network-monitor-to-view-etl-files">使用網路監視器來查看 ETL 檔案</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glfogf">glFogf 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glfogfv">glFogfv 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glfogi">glFogi 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glfogiv">glFogiv 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glmap1d">glMap1d 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glmap1f">glMap1f 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glmap2d">glMap2d 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/OpenGL/glmap2f">glMap2f 函式 (Gl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/ProcThread/using-thread-local-storage">使用執行緒區域儲存區</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/protocols-in-tls-ssl--schannel-ssp-">TLS/SSL (Schannel SSP) 的通訊協定 </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecAuthN/schannel-cipher-suites-in-windows-vista">Windows Vista 中的 TLS 加密套件</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/alternatives-to-using-capicom">使用 CAPICOM 的替代方案</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/SecCrypto/cryptuidlgselectcertificate">CryptUIDlgSelectCertificate 函式</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Sync/synchronization-and-multiprocessor-issues">同步處理和多處理器問題</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/VDS/volume-and-lun-binding">磁片區和 LUN 系結</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/VSS/setting-vss-restore-methods">設定 VSS 還原方法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/Win7AppQual/preventing-hangs-in-windows-applications">防止 Windows 應用程式停止回應</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinProg/large-integer-structures">大型整數結構</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinProg64/shared-registry-keys">受 WOW64 影響的登錄機碼</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinRM/winrm-powershell-commandlets">WinRM Windows PowerShell 命令類別的受控參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinSock/ipproto-ip-socket-options">IPPROTO_IP 通訊端選項</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinSock/ipproto-ipv6-socket-options">IPPROTO_IPV6 通訊端選項</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/WinSock/winsock-ioctls">Winsock IOCTLs (Winsock2.h)</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/application-installing-and-servicing">應用程式安裝與服務</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/cossdk/configuring-security-for-library-applications">設定程式庫應用程式的安全性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/delivery_optimization/ibackgroundcopymanager-createjob">IBackgroundCopyManager >batchclient.joboperations.createjob 方法 (>deliveryoptimization .h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/creating-a-basic-direct3d-12-component">建立基本的 Direct3D 12 元件</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/d3d12decomposesubresource">D3D12DecomposeSubresource 函式 (D3dx12) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_depth_space_order">DML_DEPTH_SPACE_ORDER</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_graph_edge_type">DML_GRAPH_EDGE_TYPE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ne-directml-dml_graph_node_type">DML_GRAPH_NODE_TYPE</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_depth_to_space1_operator_desc">DML_DEPTH_TO_SPACE1_OPERATOR_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_graph_desc">DML_GRAPH_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_graph_edge_desc">DML_GRAPH_EDGE_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_graph_node_desc">DML_GRAPH_NODE_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_max_pooling_grad_operator_desc">DML_MAX_POOLING_GRAD_OPERATOR_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_random_generator_operator_desc">DML_RANDOM_GENERATOR_OPERATOR_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_space_to_depth1_operator_desc">DML_SPACE_TO_DEPTH1_OPERATOR_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/directml/ns-directml-dml_top_k1_operator_desc">DML_TOP_K1_OPERATOR_DESC</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d12/dynamic-indexing-using-hlsl-5-1">使用 HLSL 5.1 的動態索引</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3d9/d3dxboxboundprobe">D3DXBoxBoundProbe 函式 (D3DX9Mesh) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl-state-object">狀態物件</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/direct3dhlsl/dx-graphics-hlsl">高階著色器語言 (HLSL) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/directx-sdk--august-2009-">DirectX SDK 在哪裡？</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/columnvalueofstruct-t-class">ColumnValueOfStruct (T) 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentcorruptionexception-class">EsentCorruptionException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentfatalexception-class">EsentFatalException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentfragmentationexception-class">EsentFragmentationException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentinconsistentexception-class">EsentInconsistentException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentmemoryexception-class">EsentMemoryException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentobsoleteexception-class">EsentObsoleteException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentoperationexception-class">EsentOperationException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentstateexception-class">EsentStateException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/extensible-storage-engine/esentusageexception-class">EsentUsageException 類別</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/gdiplus/-gdiplus-flatapi-flat">GDI+ Flat API</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/inputdev/using-raw-input">使用原始輸入</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/inputmsg/wm-pointerup">WM_POINTERUP 訊息</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/lwef/animations">動畫</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/lwef/creating-animations">建立動畫</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/lwef/iagentcharacterex--getanimationnames">IAgentCharacterEx GetAnimationNames</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/lwef/toolbar-buttons-"> (Microsoft Agent 字元編輯器) 的工具列按鈕 </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/lwef/toolbar-buttons"> (語言資訊音效編輯工具的工具列按鈕) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/medfound/direct3d-video-motion-estimation">Direct3D 影片移動估計</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/shell/band-objects">建立自訂瀏覽器列、工具區和桌上區</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/tablet/security-and-trust">安全性與信任</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/tablet/using-the-managed-library">使用受管理的程式庫</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/index">更新 Orchestrator API</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/universalorchestrator-hasmoratoriumpassed">IUniversalOrchestrator::HasMoratoriumPassed</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/universalorchestrator-iuniversalorchestrator">IUniversalOrchestrator 介面</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/universalorchestrator-schedulework">IUniversalOrchestrator::ScheduleWork</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/updateorchestrator/universalorchestrator-workcompleted">IUniversalOrchestrator::WorkCompleted</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/cmd-toolbars">工具列</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/ctrl-balloons">汽球</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/ctrl-command-buttons">命令按鈕</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/ctrl-command-links">命令連結</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/ctrl-drop">下拉式清單方塊</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/ctrl-group-boxes">群組方塊</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/ctrl-search-boxes">搜尋方塊</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/glossary">詞彙 (設計基本概念) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/inter-mouse">滑鼠和指標</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/inter-pen">筆</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/inter-touch">觸控</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/mess-confirm">確認</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/mess-error"> (設計基礎) 的錯誤訊息 </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/vis-animations">動畫和轉換</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/vis-graphic">圖形元素</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/vis-icons"> (設計基本概念的圖示) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/vis-std-icons">標準圖示</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/win-wizards">精靈</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/uxguide/winenv-notification">通知區域</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/w8cookbook/secured-boot">早期啟動反惡意程式碼</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/a">A</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/about-windows-color-system-version-1-0">關於 Windows Color System 版本1。0</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/additive-primary-colors">加法主要色彩</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/advanced-functions-for-use-outside-of-a-device-context">在裝置內容之外使用的 Advanced 函數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/alphabetical-list-of-all-wcs-functions">所有 WCS 函數的字母順序清單</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/b">B</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/basic-color-management-concepts">基本色彩管理概念</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/basic-functions-for-use-within-a-device-context">在裝置內容中使用的基本函數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/c">C</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/cmm-transform-creation-flags">CMM 轉換建立旗標</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/cmy-and-cmyk-color-spaces">CMY 和 CMYK 色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/color-conversion-and-color-matching">色彩轉換和色彩比對</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/color-in-imaging">影像中的色彩</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/color-space-constants">色彩空間常數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/color-space-type-identifiers">色彩空間類型識別碼</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/color-spaces">色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/common-color-messages">一般色彩訊息</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/d">D</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/describing-color">描述色彩</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/device-calibration-and-characterization-functions">裝置校正和特性函數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/device-dependent-color-spaces">裝置相關的色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/device-independent-color-spaces">與裝置無關的色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/enumerations">列舉</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/error-codes-specific-to-wcs">WCS 特定的錯誤碼</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/functions">函數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/further-information">詳細資訊</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/g">G</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/h">H</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/hls-color-spaces">HLS 色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/hsv-color-spaces">HSV 色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/human-color-perception">人類色彩認知</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/icmprogressproccallback">ICMProgressProcCallback 回呼函式</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/interfaces">介面</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/l">我</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/macros-for-cmyk-values-and-colors">CMYK 值和色彩的宏</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/obsolete-wcs-functions">過時的 WCS 函數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/p">P</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/profile-management-functions">設定檔管理功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/r">R</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/reference">參考</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/rendering-intents">轉譯意圖</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/rgb-color-spaces">RGB 色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/s">S</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/security-considerations--windows-color-system">安全性考慮 Windows 色彩系統</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/srgb--a-standard-color-space">sRGB 標準色彩空間</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/structures">結構</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/subtractive-primary-colors">Subtractive 主要色彩</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/t">T</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-color-management-modules--cmm">使用色彩管理模組 (CMM) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-color-management-on-the-internet">使用網際網路上的色彩管理</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-device-profiles-with-wcs">使用裝置設定檔搭配 WCS</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-gdi-functions-with-wcs">使用 GDI 函數搭配 WCS</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-structures-in-wcs-1-0">在 WCS 1.0 中使用結構</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-the-color-mapping-process-with-wcs">使用具有 WCS 的色彩對應進程</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/using-wcs-1-0">使用 WCS 1。0</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/w">W</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-1-0-availability">WCS 1.0 可用性</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-1-0-glossary">WCS 1.0 詞彙</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-calibration-schema">WCS 校正架構</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-color-appearance-model-profile-schema-and-algorithm">WCS 色彩外觀模型設定檔架構和演算法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-color-device-model-profile-schema-and-algorithms">WCS 色彩裝置模型設定檔架構和演算法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-constants">WCS 常數</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-functions-for-color-management-modules--cmms--to-implement">色彩管理模組的 WCS 函式 (要執行的 Cmm) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-gamut-map-model-profile-schema-and-algorithms">WCS Gamut 地圖模型設定檔架構和演算法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-registry-keys">WCS 登錄機碼</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/wcs-transform-creation-algorithms">WCS 轉換建立演算法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/what-s-new-in-version-1-0-of-wcs">WCS 1.0 版的新功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/what-s-new-in-windows-vista">Windows Vista 的新功能</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/windows-color-system-common-profile-types-schema--versioning-and-localization-strategies">Windows Color System 一般配置檔案類型架構、版本控制和當地語系化策略</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/windows-color-system-schemas-and-algorithms">Windows 色彩系統架構和演算法</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wcs/windows-color-system">Windows 色彩系統</a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wmformat/drm-for-more-information">如需詳細資訊 (Microsoft Windows Media DRM 用戶端) </a></li>
+<li><a href="https://docs.microsoft.com/windows/desktop/wmformat/for-more-information">如需詳細資訊 (Windows Media Format SDK) </a></li>
 </ul>
 
 ## <a name="win32-api-reference"></a>Win32 API 參考
 
 <ul>
-<li><a href="/windows/win32/api/directml/ne-directml-dml_operator_type">DML_OPERATOR_TYPE </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_gather_operator_desc">DML_GATHER_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_gru_operator_desc">DML_GRU_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_join_operator_desc">DML_JOIN_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_lstm_operator_desc">DML_LSTM_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_one_hot_operator_desc">DML_ONE_HOT_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_padding_operator_desc">DML_PADDING_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_reduce_operator_desc">DML_REDUCE_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_scatter_operator_desc">DML_SCATTER_OPERATOR_DESC (DML_SCATTER_ELEMENTS_OPERATOR_DESC) </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_split_operator_desc">DML_SPLIT_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/directml/ns-directml-dml_top_k_operator_desc">DML_TOP_K_OPERATOR_DESC </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header0">FWPM_NET_EVENT_HEADER0 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header1">FWPM_NET_EVENT_HEADER1 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header2">FWPM_NET_EVENT_HEADER2 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_net_event_header3">FWPM_NET_EVENT_HEADER3 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_provider_context1">FWPM_PROVIDER_CONTEXT1 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmtypes/ns-fwpmtypes-fwpm_provider_context2">FWPM_PROVIDER_CONTEXT2 (fwpmtypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpmu/nf-fwpmu-fwpmfilteradd0">FwpmFilterAdd0 函式 (fwpmu.h) </a></li>
-<li><a href="/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter0">FWPS_FILTER0 (fwpstypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter1">FWPS_FILTER1 (fwpstypes.h) </a></li>
-<li><a href="/windows/win32/api/fwpstypes/ns-fwpstypes-fwps_filter2">FWPS_FILTER2 (fwpstypes.h) </a></li>
-<li><a href="/windows/win32/api/fwptypes/ns-fwptypes-fwp_condition_value0">FWP_CONDITION_VALUE0 (fwptypes.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/cimfs/index">cimfs </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/commctrl/nf-commctrl-loadiconmetric">LoadIconMetric 函式 (commctrl) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/ne-d3d12-d3d12_pipeline_state_subobject_type">D3D12_PIPELINE_STATE_SUBOBJECT_TYPE (D3D12) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nf-d3d12-id3d12device2-createpipelinestate">ID3D12Device2：： CreatePipelineState (d3d12 .h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/nf-d3d12-id3d12pipelinelibrary1-loadpipeline">ID3D12PipelineLibrary1：： LoadPipeline (d3d12 .h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/d3d12/ns-d3d12-d3d12_pipeline_state_stream_desc">D3D12_PIPELINE_STATE_STREAM_DESC (D3D12) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/dxgi/nf-dxgi-idxgifactory-makewindowassociation">IDXGIFactory：： MakeWindowAssociation (dxgi .h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nc-icm-pbmcallbackfn">PBMCALLBACKFN </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nc-icm-pcmscallbacka">PCMSCALLBACKA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nc-icm-pcmscallbackw">PCMSCALLBACKW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ne-icm-bmformat">BMFORMAT </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ne-icm-colordatatype">COLORDATATYPE </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ne-icm-colorprofilesubtype">COLORPROFILESUBTYPE </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ne-icm-colorprofiletype">COLORPROFILETYPE </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ne-icm-colortype">COLORTYPE </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-associatecolorprofilewithdevicea">AssociateColorProfileWithDeviceA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-associatecolorprofilewithdevicew">AssociateColorProfileWithDeviceW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-checkbitmapbits">CheckBitmapBits </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-checkcolors">CheckColors </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-closecolorprofile">CloseColorProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcheckcolors">CMCheckColors </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcheckcolorsingamut">CMCheckColorsInGamut </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmconvertcolornametoindex">CMConvertColorNameToIndex </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmconvertindextocolorname">CMConvertIndexToColorName </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcreatedevicelinkprofile">CMCreateDeviceLinkProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcreatemultiprofiletransform">CMCreateMultiProfileTransform </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcreateprofile">CMCreateProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcreateprofilew">CMCreateProfileW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcreatetransform">CMCreateTransform </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmcreatetransformw">CMCreateTransformW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmdeletetransform">CMDeleteTransform </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmgetinfo">CMGetInfo </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmgetnamedprofileinfo">CMGetNamedProfileInfo </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmgetps2colorrenderingdictionary">CMGetPS2ColorRenderingDictionary </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmgetps2colorspacearray">CMGetPS2ColorSpaceArray </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmisprofilevalid">CMIsProfileValid </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmtranslatecolors">CMTranslateColors </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-cmtranslatergbsext">CMTranslateRGBsExt </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradaptergetdisplaycurrentstateid">ColorAdapterGetDisplayCurrentStateID </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradaptergetdisplaytransformdata">ColorAdapterGetDisplayTransformData </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradaptergetsystemmodifywhitepointcaps">ColorAdapterGetSystemModifyWhitePointCaps </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradapterregisteroemcolorservice">ColorAdapterRegisterOEMColorService </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradapterunregisteroemcolorservice">ColorAdapterUnregisterOEMColorService </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradapterupdatedeviceprofile">ColorAdapterUpdateDeviceProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-coloradapterupdatedisplaygamma">ColorAdapterUpdateDisplayGamma </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-colorprofileadddisplayassociation">ColorProfileAddDisplayAssociation </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-colorprofilegetdisplaydefault">ColorProfileGetDisplayDefault </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-colorprofilegetdisplaylist">ColorProfileGetDisplayList </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-colorprofilegetdisplayuserscope">ColorProfileGetDisplayUserScope </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-colorprofileremovedisplayassociation">ColorProfileRemoveDisplayAssociation </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-colorprofilesetdisplaydefaultassociation">ColorProfileSetDisplayDefaultAssociation </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-createcolortransforma">CreateColorTransformA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-createcolortransformw">CreateColorTransformW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-createdevicelinkprofile">CreateDeviceLinkProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-createmultiprofiletransform">CreateMultiProfileTransform </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-createprofilefromlogcolorspacea">CreateProfileFromLogColorSpaceA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-createprofilefromlogcolorspacew">CreateProfileFromLogColorSpaceW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-deletecolortransform">DeleteColorTransform </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-enumcolorprofilesa">EnumColorProfilesA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-enumcolorprofilesw">EnumColorProfilesW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getcmminfo">GetCMMInfo </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getcolorprofileelement">GetColorProfileElement </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getcolorprofileelementtag">GetColorProfileElementTag </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getcolorprofilefromhandle">GetColorProfileFromHandle </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getcolorprofileheader">GetColorProfileHeader </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getcountcolorprofileelements">GetCountColorProfileElements </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getnamedprofileinfo">GetNamedProfileInfo </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getps2colorrenderingdictionary">GetPS2ColorRenderingDictionary </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getps2colorspacearray">GetPS2ColorSpaceArray </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getstandardcolorspaceprofilea">GetStandardColorSpaceProfileA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-getstandardcolorspaceprofilew">GetStandardColorSpaceProfileW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-installcolorprofilea">InstallColorProfileA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-installcolorprofilew">InstallColorProfileW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-iscolorprofiletagpresent">IsColorProfileTagPresent </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-iscolorprofilevalid">IsColorProfileValid </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-opencolorprofilea">OpenColorProfileA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-opencolorprofilew">OpenColorProfileW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-selectcmm">SelectCMM </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-setcolorprofileelement">SetColorProfileElement </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-setcolorprofileelementreference">SetColorProfileElementReference </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-setcolorprofileelementsize">SetColorProfileElementSize </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-setcolorprofileheader">SetColorProfileHeader </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-setupcolormatchinga">SetupColorMatchingA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-setupcolormatchingw">SetupColorMatchingW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-translatebitmapbits">TranslateBitmapBits </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-translatecolors">TranslateColors </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-unregistercmma">UnregisterCMMA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-unregistercmmw">UnregisterCMMW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsassociatecolorprofilewithdevice">WcsAssociateColorProfileWithDevice </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcscheckcolors">WcsCheckColors </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcscreateiccprofile">WcsCreateIccProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsdisassociatecolorprofilefromdevice">WcsDisassociateColorProfileFromDevice </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsenumcolorprofiles">WcsEnumColorProfiles </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsenumcolorprofilessize">WcsEnumColorProfilesSize </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsgetcalibrationmanagementstate">WcsGetCalibrationManagementState </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsgetdefaultcolorprofile">WcsGetDefaultColorProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsgetdefaultcolorprofilesize">WcsGetDefaultColorProfileSize </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsgetdefaultrenderingintent">WcsGetDefaultRenderingIntent </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsgetuseperuserprofiles">WcsGetUsePerUserProfiles </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsopencolorprofilea">WcsOpenColorProfileA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcsopencolorprofilew">WcsOpenColorProfileW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcssetcalibrationmanagementstate">WcsSetCalibrationManagementState </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcssetdefaultcolorprofile">WcsSetDefaultColorProfile </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcssetdefaultrenderingintent">WcsSetDefaultRenderingIntent </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcssetuseperuserprofiles">WcsSetUsePerUserProfiles </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/nf-icm-wcstranslatecolors">WcsTranslateColors </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-cmykcolor">CMYKCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-displaystateid">DisplayStateID </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-displaytransformlut">DisplayTransformLut </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-enumtypea">ENUMTYPEA </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-enumtypew">ENUMTYPEW </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-generic3channel">GENERIC3CHANNEL </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-graycolor">GRAYCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-hificolor">HiFiCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-labcolor">LabCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-named_profile_info">NAMED_PROFILE_INFO </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-namedcolor">NAMEDCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-profile">配置 檔 </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-profileheader">PROFILEHEADER </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-rgbcolor">RGBCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-xyypoint">XYYPoint </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-xyzcolor">XYZCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/icm/ns-icm-yxycolor">YxyCOLOR </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess">TerminateProcess 函式 (processthreadsapi) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/projectedfslib/ns-projectedfslib-prj_callbacks">PRJ_CALLBACKS (projectedfslib) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/propidl/ns-propidl-propvariant">PROPVARIANT (propidl.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/ns-shellapi-shellexecuteinfoa">SHELLEXECUTEINFOA (shellapi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shellapi/ns-shellapi-shellexecuteinfow">SHELLEXECUTEINFOW (shellapi.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/shobjidl_core/nf-shobjidl_core-shassocenumhandlers">SHAssocEnumHandlers 函數 (shobjidl_core .h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-createprocesswithlogonw">CreateProcessWithLogonW 函式 (winbase.h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-createprocesswithtokenw">CreateProcessWithTokenW 函式 (winbase) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/winsock2/nf-winsock2-recvfrom">recvfrom 函式 (winsock2. h) </a></li>
+<li><a href="https://docs.microsoft.com/windows/win32/api/wmp/nf-wmp-iwmpsettings-get_baseurl">IWMPSettings：： get_baseURL (wmp .h) </a></li>
 </ul>
 
 ## <a name="uwp-api-reference"></a>UWP API 參考
 
 <ul>
-<li><a href="/uwp/api/windows.applicationmodel.activation.applicationexecutionstate">Windows.ApplicationModel.Activation.ApplicationExecutionState</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.activation.searchactivatedeventargs">Windows.ApplicationModel.Activation.SearchActivatedEventArgs</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.background.maintenancetrigger">Windows.ApplicationModel.Background.MaintenanceTrigger</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.provider.contactpickerui">Windows.ApplicationModel.Contacts.Provider.ContactPickerUI</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.contact.fields">Windows.ApplicationModel.Contacts.Contact.Fields</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.contact.name">Windows.ApplicationModel.Contacts.Contact.Name</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.contacts.contactinformation">Windows.ApplicationModel.Contacts.ContactInformation</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.namedresource">Windows.ApplicationModel.Resources.Core.NamedResource</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecandidate">Windows.ApplicationModel.Resources.Core.ResourceCandidate</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecandidatevectorview">Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecontext">Windows.ApplicationModel.Resources.Core.ResourceContext</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcemap">Windows.ApplicationModel.Resources.Core.ResourceMap</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcequalifier">Windows.ApplicationModel.Resources.Core.ResourceQualifier</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.resources.core.resourcequalifiervectorview">Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpane.language">Windows.ApplicationModel.Search.SearchPane.Language</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpane.querysubmitted">Windows.ApplicationModel.Search.SearchPane.QuerySubmitted</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpane.visible">Windows.ApplicationModel.Search.SearchPane.Visible</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpanequerylinguisticdetails">Windows.ApplicationModel.Search.SearchPaneQueryLinguisticDetails</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpanequerysubmittedeventargs">Windows.ApplicationModel.Search.SearchPaneQuerySubmittedEventArgs</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchpanesuggestionsrequest">Windows.ApplicationModel.Search.SearchPaneSuggestionsRequest</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchsuggestioncollection">Windows.ApplicationModel.Search.SearchSuggestionCollection</a></li>
-<li><a href="/uwp/api/windows.applicationmodel.search.searchsuggestioncollection.size">Windows.ApplicationModel.Search.SearchSuggestionCollection.Size</a></li>
-<li><a href="/uwp/api/windows.devices.enumeration.deviceinformationupdate">Windows.Devices.Enumeration.DeviceInformationUpdate</a></li>
-<li><a href="/uwp/api/windows.devices.enumeration.devicewatcher">Windows.Devices.Enumeration.DeviceWatcher</a></li>
-<li><a href="/uwp/api/windows.devices.serialcommunication.serialdevice.readtimeout">Windows.Devices.SerialCommunication.SerialDevice.ReadTimeout</a></li>
-<li><a href="/uwp/api/windows.devices.serialcommunication.serialdevice.writetimeout">Windows.Devices.SerialCommunication.SerialDevice.WriteTimeout</a></li>
-<li><a href="/uwp/api/windows.graphics.display.brightnessoverride">Windows.Graphics.Display.BrightnessOverride</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printbindingoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintBindingOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printborderingoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintBorderingOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcollationoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintCollationOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcolormodeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintColorModeOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcopiesoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintCopiesOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printcustomitemdetails">Windows.Graphics.Printing.OptionDetails.PrintCustomItemDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printduplexoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintDuplexOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printholepunchoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintHolePunchOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printmediasizeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintMediaSizeOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printmediatypeoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintMediaTypeOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printqualityoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintQualityOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printstapleoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintStapleOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails">Windows.Graphics.Printing.OptionDetails.PrintTaskOptionDetails</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printmanager">Windows.Graphics.Printing.PrintManager</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printtask">Windows.Graphics.Printing.PrintTask</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printtaskrequest">Windows.Graphics.Printing.PrintTaskRequest</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.printtasksourcerequestedargs">Windows.Graphics.Printing.PrintTaskSourceRequestedArgs</a></li>
-<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions">Windows.Graphics.Printing.StandardPrintTaskOptions</a></li>
-<li><a href="/uwp/api/windows.media.playlists.playlist">Windows.Media.Playlists.Playlist</a></li>
-<li><a href="/uwp/api/windows.networking.proximity.peerwatcher.stop">Windows.Networking.Proximity.PeerWatcher.Stop</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdregistrationresult">Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationResult</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdregistrationstatus">Windows.Networking.ServiceDiscovery.Dnssd.DnssdRegistrationStatus</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdservicewatcher">Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcher</a></li>
-<li><a href="/uwp/api/windows.networking.servicediscovery.dnssd.dnssdservicewatcherstatus">Windows.Networking.ServiceDiscovery.Dnssd.DnssdServiceWatcherStatus</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.createtimer">Windows.System.DispatcherQueue.CreateTimer</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.getforcurrentthread">Windows.System.DispatcherQueue.GetForCurrentThread</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.shutdowncompleted">Windows.System.DispatcherQueue.ShutdownCompleted</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueue.shutdownstarting">Windows.System.DispatcherQueue.ShutdownStarting</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuecontroller.dispatcherqueue">Windows.System.DispatcherQueueController.DispatcherQueue</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuepriority">Windows.System.DispatcherQueuePriority</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueueshutdownstartingeventargs">Windows.System.DispatcherQueueShutdownStartingEventArgs</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer">Windows.System.DispatcherQueueTimer</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.interval">Windows.System.DispatcherQueueTimer.Interval</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.isrepeating">Windows.System.DispatcherQueueTimer.IsRepeating</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.isrunning">Windows.System.DispatcherQueueTimer.IsRunning</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.start">Windows.System.DispatcherQueueTimer.Start</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.stop">Windows.System.DispatcherQueueTimer.Stop</a></li>
-<li><a href="/uwp/api/windows.system.dispatcherqueuetimer.tick">Windows.System.DispatcherQueueTimer.Tick</a></li>
-<li><a href="/uwp/api/windows.ui.core.animationmetrics.animationdescription">Windows.UI.Core.AnimationMetrics.AnimationDescription</a></li>
-<li><a href="/uwp/api/windows.ui.input.pointerpointproperties">Windows.UI.Input.PointerPointProperties</a></li>
-<li><a href="/uwp/api/windows.ui.startscreen.secondarytile">Windows.UI.StartScreen.SecondaryTile</a></li>
-<li><a href="/uwp/api/windows.ui.startscreen.secondarytile.requestdeleteasync">Windows.UI.StartScreen.SecondaryTile.RequestDeleteAsync</a></li>
+<li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.debugsettings.enableframeratecounter">DebugSettings. EnableFrameRateCounter。</a></li>
+</ul>
+
+
+
+

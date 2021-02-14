@@ -5,12 +5,12 @@ ms.date: 06/01/2018
 ms.topic: article
 keywords: windows 10, uwp, 裝置入口網站, 應用程式管理員, 部署, sdk
 ms.localizationpriority: medium
-ms.openlocfilehash: 7006d32777e7b3ece5c5b6ed066bd23265b0bbb7
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
-ms.translationtype: HT
+ms.openlocfilehash: 34302b421f51fcc9fdf408baabc178190c7ed335
+ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339616"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100334886"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>透過鬆散檔案註冊部署應用程式 
 
@@ -31,7 +31,7 @@ ms.locfileid: "94339616"
 
 ## <a name="how-to-register-a-loose-file-layout"></a>如何註冊鬆散檔案配置
 
-Windows 提供多個開發人員工具，可在本機和遠端裝置上註冊鬆散檔案配置。 您可以選擇 `WinDeployAppCmd` (Windows SDK 工具)、Windows 裝置入口網站、PowerShell 及 [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network)。 以下我們將討論如何使用這些工具來註冊鬆散檔案。 但首先，請確定您已遵循下列設定：
+Windows 提供多個開發人員工具，可在本機和遠端裝置上註冊鬆散檔案配置。 您可以選擇 `WinAppDeployCmd` (Windows SDK 工具)、Windows 裝置入口網站、PowerShell 及 [Visual Studio](./deploying-and-debugging-uwp-apps.md#register-layout-from-network)。 以下我們將討論如何使用這些工具來註冊鬆散檔案。 但首先，請確定您已遵循下列設定：
 
 - 您的裝置必須是在 Windows 10 Creators Update (組建 14965) 或更新版本之上。
 - 您將需要在所有裝置上啟用[開發人員模式](/windows/apps/get-started/enable-your-device-for-development)和[裝置探索](/windows/apps/get-started/enable-your-device-for-development#device-discovery)。
@@ -39,9 +39,9 @@ Windows 提供多個開發人員工具，可在本機和遠端裝置上註冊鬆
 > [!IMPORTANT]
 > 鬆散檔案註冊僅適用於支援網路共用 (SMB) 通訊協定的裝置：桌上型電腦和 Xbox。 
 
-### <a name="register-with-windeployappcmd"></a>使用 WinDeployAppCmd 進行註冊
+### <a name="register-with-winappdeploycmd"></a>向 Winappdeploycmd.exe 註冊
 
-如果您使用 Windows 10 Creators Update (組建14965) 或更新版本相對應的 SDK 工具，就可以在命令提示字元中使用 `WinDeployAppCmd` 命令。
+如果您使用 Windows 10 Creators Update (組建14965) 或更新版本相對應的 SDK 工具，就可以在命令提示字元中使用 `WinAppDeployCmd` 命令。
 
 ```cmd
 WinAppDeployCmd.exe registerfiles -remotedeploydir <Network Path> -ip <IP Address> -pin <target machine PIN>

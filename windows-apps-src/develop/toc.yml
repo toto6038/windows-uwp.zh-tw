@@ -825,7 +825,7 @@
           href: ../csharp-winrt/index.md
         - name: 逐步解說：從 C++/WinRT 元件產生 .NET 5.0 投影
           href: ../csharp-winrt/net-projection-from-cppwinrt-component.md
-        - name: '建立 c #/WinRT 元件並從 c + +/WinRT 使用它'
+        - name: '逐步解說：建立 c #/WinRT 元件並從 c + +/WinRT 使用它'
           href: ../csharp-winrt/create-windows-runtime-component-cswinrt.md
         - name: 診斷元件錯誤
           href: ../csharp-winrt/authoring-diagnostics.md
