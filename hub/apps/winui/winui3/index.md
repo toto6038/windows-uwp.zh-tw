@@ -3,12 +3,12 @@ title: 'WinUI 3 Preview 4 (2021 年2月) '
 description: WinUI 3 Preview 4 版本的總覽。
 ms.date: 02/09/2021
 ms.topic: article
-ms.openlocfilehash: 772a49658b581a3afa3f1a06e68b45dcffeb7bb4
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 7bbc5c4983f77080366942ecaf702e7e1f844886
+ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100334983"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524994"
 ---
 # <a name="windows-ui-library-3-preview-4-february-2021"></a>Windows UI 程式庫 3 Preview 4 (2021 年2月) 
 
@@ -258,6 +258,21 @@ WinUI 3 Preview 4 與執行 Windows 10 2018 年4月更新 (版本 1803-組建 17
 - 此版本不支援 XAML Islands
 - 第三方生態系統程式庫的功能不完整
 - IME 無法運作
+- 桌面應用程式中不支援 CoreWindow、ApplicationView、CoreApplicationView、CoreDispatcher 及其相依性 (請參閱下文) 
+
+#### <a name="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps"></a>桌面應用程式中的 CoreWindow、ApplicationView、CoreApplicationView 和 CoreDispatcher
+
+Preview4、 [CoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)、 [ApplicationView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)、 [CoreApplicationView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)CoreDispatcher 及其相依性的新功能， 
+ [](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)無法在桌面應用程式中使用。
+
+例如，[ [發送器]](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 屬性一律是 null，但 DispatcherQueue 屬性可以用來做為替代方案。
+
+這些 Api 只能在 UWP 應用程式中運作。
+在過去的預覽中，它們也已在桌面應用程式中部分運作，但在 Preview4 中，它們已完全停用。
+這些 Api 是針對 UWP 案例所設計，其中每個執行緒只有一個視窗，而 WinUI3 的其中一項功能是啟用多個。
+
+這些 Api 會在內部相依于並存這些 Api，因此桌面應用程式不支援這些 api。 這些 Api 通常有靜態 `GetForCurrentView` 方法。 例如 [UIViewSettings. GetForCurrentView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView)。
+
 
 ### <a name="known-issues"></a>已知問題
 

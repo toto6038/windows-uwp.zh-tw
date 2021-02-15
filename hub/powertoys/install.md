@@ -4,12 +4,12 @@ description: 安裝 Powertoy，這是使用可執行檔或封裝管理員 (WinGe
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: 3effdd927b89a53b2ff92efeb422fb32293f98ba
-ms.sourcegitcommit: 447382282a6f549825480c2ff5b3cec9568d0e47
+ms.openlocfilehash: 7b6cf15e7d21eca9e24fcc2d81f9409b2cd94b6f
+ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "99624627"
+ms.lasthandoff: 02/15/2021
+ms.locfileid: "100524984"
 ---
 # <a name="install-powertoys"></a>安裝 PowerToys
 
@@ -78,6 +78,7 @@ choco upgrade powertoys
 若要使用 [內幕](https://scoop.sh/)安裝 powertoy，請從命令列/PowerShell 執行下列命令：
 
 ```powershell
+scoop bucket add extras
 scoop install powertoys
 ```
 
