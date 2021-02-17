@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 12217aa066c7269a42ea5b5ae274b8ca136d96d0
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: dcf3309f9b4a82019e867789bbeabb07c724ea0d
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335011"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632699"
 ---
 # <a name="get-started-with-winui-3-for-desktop-apps"></a>開始使用適用於桌面應用程式的 WinUI 3
 
-WinUI 3 Preview 4 包含專案範本，可讓您使用完全 WinUI 型的使用者介面，建立 managed desktop c #/.NET Core 和原生 c + +/Win32 桌面應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
+WinUI 3 Preview 4 包含專案範本，可讓您使用完整 WinUI 型使用者介面建立 managed c #/.NET Core 和原生 c + +/Win32 desktop 應用程式。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和其他 UI 類型來實作。 如需專案範本的完整清單，請參閱[本節](index.md#project-templates-for-winui-3)。
 
 ## <a name="prerequisites"></a>必要條件
 

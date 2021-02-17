@@ -1,20 +1,20 @@
 ---
-description: 本主題將逐步引導您完成在 C++/WinRT 專案內新增 WinUI 簡單支援的程序。
+description: 本主題將逐步引導您完成在 c + +/WinRT 專案中加入 WinUI 基本支援的流程。
 title: C++/WinRT Windows UI 程式庫簡單範例
 ms.date: 07/12/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, Windows UI 程式庫, WinUI
 ms.localizationpriority: medium
-ms.openlocfilehash: 8242055e3c448e2720226859f2ea10e1ae54794f
-ms.sourcegitcommit: db48036af630f33f0a2f7a908bfdfec945f3c241
-ms.translationtype: HT
+ms.openlocfilehash: b7323ba63bedfc1ed560effb4da8ea61d1527897
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437132"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632679"
 ---
-# <a name="a-simple-cwinrt-windows-ui-library-example"></a>C++/WinRT Windows UI 程式庫簡單範例
+# <a name="a-basic-cwinrt-windows-ui-library-example"></a>基本 c + +/WinRT Windows UI 程式庫範例
 
-本主題將逐步引導您完成將 [Windows UI (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) 程式庫的簡單支援新增至 C++/WinRT 專案的程序。 順便一提，Windows UI 程式庫本身是以 C++/WinRT 撰寫。
+本主題將逐步引導您將 [WINDOWS UI (WinUI) 程式庫](https://github.com/Microsoft/microsoft-ui-xaml) 的基本支援新增至 c + +/WinRT 專案。 順便一提，Windows UI 程式庫本身是以 C++/WinRT 撰寫。
 
 > [!NOTE]
 > Windows UI (WinUI) 程式庫工具組是以 NuGet 套件的形式提供，您可以使用 Visual Studio 將這些套件新增至任何現有或新的專案 (如我們將在本主題中所見)。 如需更多背景、安裝和支援資訊，請參閱[開始使用 Windows UI 程式庫](/uwp/toolkits/winui/getting-started)。
@@ -41,7 +41,7 @@ ms.locfileid: "84437132"
 
 ## <a name="add-a-winui-control-to-mainpage"></a>將 WinUI 控制項新增至 MainPage
 
-接下來，開啟 `MainPage.xaml`。 現有的開頭 **Page** 標記中有一些 xml 命名空間宣告。 新增 xml 命名空間宣告 `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`。 然後，在現有開頭與結尾 **Page**標記之間貼上下列標記，並覆寫現有的 **StackPanel**元素。
+接下來，開啟 `MainPage.xaml`。 現有的開頭 **Page** 標記中有一些 xml 命名空間宣告。 新增 xml 命名空間宣告 `xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`。 然後，在現有開頭與結尾 **Page** 標記之間貼上下列標記，並覆寫現有的 **StackPanel** 元素。
 
 ```xaml
 <muxc:NavigationView PaneTitle="Welcome">

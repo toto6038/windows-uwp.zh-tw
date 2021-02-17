@@ -6,12 +6,12 @@ ms.date: 10/02/2020
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 99bb68ff7d990b0b633df0c4efa2d8eafad759cd
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: e57a3fc5444a4afa2217cc128dabec76844ef549
+ms.sourcegitcommit: 71701f5ffc540951f86d6f77a52416c6d75fe305
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031061"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100632669"
 ---
 # <a name="modernize-your-desktop-apps"></a>讓您的傳統型應用程式現代化
 
@@ -28,8 +28,8 @@ Windows UI 程式庫一組 NuGet 套件，可提供 Windows 10 應用程式的�
 
 您可以透過下列方式在桌面應用程式中使用 WinUI：
 
-* 您可以將現有的 WPF、Windows Forms 和 C++/Win32 應用程式更新為使用 [XAML Islands](xaml-islands.md)，以在應用程式中裝載 WinUI 2.x 控制項。
-* 從 [WinUi 3.0 預覽版 1](../../winui/winui3/index.md) 開始，您可以建立 [.NET 和 C++ /Win32 應用程式來使用完全以 WinUI 為基礎的 UI](../../winui/winui3/get-started-winui3-for-desktop.md)。
+* 您可以使用 [XAML 島](xaml-islands.md) 和主機 WinUI 2.x 控制項來更新現有的 WPF、Windows Forms 和 c + +/Win32 應用程式。
+* 使用預覽版中的 [WinUi 3.0](../../winui/winui3/index.md) () ，利用全 WinUi 型使用者介面來建立受控 [c #/.NET Core 和原生 c + +/Win32 desktop 應用程式](../../winui/winui3/get-started-winui3-for-desktop.md) 。
 
 請參閱 [Windows UI (WinUI) 程式庫](../../winui/index.md)。
 
