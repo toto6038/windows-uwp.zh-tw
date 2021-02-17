@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d8aa92ec320c18b1947cb9b3fa7777070e19726
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 5fdc3f6a38e6115e211eb5ea0644ad82df840301
+ms.sourcegitcommit: 06d59b59a95aad009acb947a0dac7432116bdb60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220081"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544638"
 ---
 # <a name="title-bar-customization"></a>標題列自訂
 
@@ -75,6 +75,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 - 使用系統 [返回] 按鈕時，按鈕色彩屬性會套用至該按鈕 (請參閱[瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md))。
 - 將色彩屬性設定為 **null** 會將其重設為預設系統色彩。
 - 您無法設定透明色彩。 將會忽略色彩的 Alpha 色板。
+- 螢幕上的色彩可能與您的選擇不同，例如，由於色彩篩選或高對比模式等設定。 請勿完全依賴色彩來傳達重要資訊。
 
 Windows 提供選項讓使用者將選取的[輔色](../style/color.md#accent-color)套用至標題列。 如果您設定任何標題列色彩，我們建議您明確設定所有色彩。 這樣可確保不會因為使用者定義色彩設定而出現非預期的色彩組合。
 
@@ -253,7 +254,7 @@ private void UpdateTitleBarLayout(CoreApplicationViewTitleBar coreTitleBar)
 
 ### <a name="full-screen-and-tablet-mode"></a>全螢幕和平板電腦模式
 
-應用程式在_全螢幕_或_平板電腦模式_下執行時，系統會隱藏標題列和標題控制項按鈕。 不過，使用者可以叫用標題列，使之顯示為應用程式 UI 上面的覆疊。
+應用程式在 _全螢幕_ 或 _平板電腦模式_ 下執行時，系統會隱藏標題列和標題控制項按鈕。 不過，使用者可以叫用標題列，使之顯示為應用程式 UI 上面的覆疊。
 您可以處理 [CoreApplicationViewTitleBar.IsVisibleChanged](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.IsVisibleChanged) 事件，以便在隱藏或叫用標題列時收到通知，並視需要顯示或隱藏自訂標題列內容。
 
 此範例示範如何處理 IsVisibleChanged 以顯示或隱藏先前所述的 `AppTitleBar` 元素。
@@ -284,7 +285,7 @@ private void CoreTitleBar_IsVisibleChanged(CoreApplicationViewTitleBar sender, o
 ```
 
 >[!NOTE]
->只有在應用程式支援_全螢幕_模式時，才能進入該模式。 如需詳細資訊，請參閱 [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板電腦模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支援的硬體上的使用者選項，因此使用者可以選擇在平板電腦模式下執行任何應用程式。
+>只有在應用程式支援 _全螢幕_ 模式時，才能進入該模式。 如需詳細資訊，請參閱 [ApplicationView.IsFullScreenMode](/uwp/api/windows.ui.viewmanagement.applicationview.IsFullScreenMode)。 [_平板電腦模式_](https://support.microsoft.com/help/17210/windows-10-use-your-pc-like-a-tablet)是支援的硬體上的使用者選項，因此使用者可以選擇在平板電腦模式下執行任何應用程式。
 
 ## <a name="full-customization-example"></a>完整自訂範例
 
