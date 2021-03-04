@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 上使用 Python 進行 Web 開發
-description: 如何開始在 Windows 上使用 Python 進行 Web 開發，包括針對 Flask 和 Django 等架構進行設定。
+description: 在 Windows 上開始使用 Python 進行網頁程式開發的逐步指南，包括針對 Flask 和 Django 等架構進行設定。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, windows 上的 python, 搭配 wsl 的 python web, 搭配 windows 子系統 linux 版的 python web 應用程式, 在 windows 上進行 python web 開發, windows 上的 flask 應用程式, windows 上的 django 應用程式, python web, 在 windows 上進行 flask web 開發, 在 windows 上進行 django web 開發, 使用 python 進行 windows web 開發, vs code python web 開發, 遠端 wsl 延伸模組, ubuntu, wsl, venv, pip, microsoft python 延伸模組, 在 windows 上執行 python, 在 windows 上使用 python, 在 windows 上使用 python 進行建置
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 3b5ed80b746d0aa1441bf77e6468101deee320a6
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
-ms.translationtype: HT
+ms.openlocfilehash: ae9084541656ababf9ace4207cbfa84e30f7417a
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880551"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823622"
 ---
 # <a name="get-started-using-python-for-web-development-on-windows"></a>開始在 Windows 上使用 Python 進行 Web 開發
 

@@ -1,6 +1,6 @@
 ---
 title: 適合初學者在 Windows 上開始使用 NodeJS
-description: 協助初學者在 Windows 上開始使用 Node.js 開發的指南。
+description: 協助初學者開始在 Windows 上進行 Node.js 開發的完整指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 node, 適合初學者在 windows 上使用 node, 使用 windows 上的 node 進行開發, 在 windows 上使用 nodejs 的開發人員
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: 5737316ae2de0520e5443f69cefaec25679a228f
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: ab06ba36e2c77a105912a6a7b73abcdfa992c0ad
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166632"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823892"
 ---
 # <a name="get-started-using-nodejs-on-windows-for-beginners"></a>適合初學者在 Windows 上開始使用 Node.js
 

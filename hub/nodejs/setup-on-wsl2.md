@@ -1,6 +1,6 @@
 ---
 title: 在 WSL 2 上設定 NodeJS
-description: 協助您在 Windows 子系統 Linux 版 (WSL) 上設定 Node.js 開發環境的指南。
+description: 協助您在適用于 Linux 的 Windows 子系統 (WSL) 上設定 Node.js 開發環境的逐步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 Node, wsl 上的 Node, linux 或 windows 上的 Node, 在 windows 上安裝 Node, nodejs 與 vs code, 在 windows 上使用 Node 進行開發, 在 windows 上使用 nodejs 進行開發, 在 WSL 上安裝 Node, Windows 子系統 Linux 版上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 07/28/2020
-ms.openlocfilehash: 4e0477c91470d69f9ec5fd726079a1164e2cf276
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
-ms.translationtype: HT
+ms.openlocfilehash: 70a9e067cc69eb4f040e5f579883113cdeb2ef47
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880531"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823642"
 ---
 # <a name="set-up-your-nodejs-development-environment-with-wsl-2"></a>使用 WSL 2 設定您的 Node.js 開發環境
 

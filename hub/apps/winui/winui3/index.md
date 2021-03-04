@@ -3,12 +3,12 @@ title: 'WinUI 3 Preview 4 (2021 年2月) '
 description: WinUI 3 Preview 4 版本的總覽。
 ms.date: 02/09/2021
 ms.topic: article
-ms.openlocfilehash: 7bbc5c4983f77080366942ecaf702e7e1f844886
-ms.sourcegitcommit: 884318ec5118cade85a31f4d5644436614e9f272
+ms.openlocfilehash: a6c74ac64e3384b5a1f5cdc466b4faf441f14445
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100524994"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824082"
 ---
 # <a name="windows-ui-library-3-preview-4-february-2021"></a>Windows UI 程式庫 3 Preview 4 (2021 年2月) 
 
@@ -25,7 +25,7 @@ Windows UI 程式庫 (WinUI) 3 是同時適用於 Windows 桌面和 UWP 應用�
 
 ## <a name="install-winui-3-preview-4"></a>安裝 WinUI 3 Preview 4
 
-WinUI 3 Preview 4 包含 Visual Studio 的專案範本，可協助您開始使用以 WinUI 為基礎的使用者介面來建立應用程式，以及包含 WinUI 程式庫的 NuGet 套件。 若要安裝 WinUI 3 Preview 4，請遵循下列步驟。
+WinUI 3 Preview 4 包含 Visual Studio 專案範本，可協助您開始使用以 WinUI 為基礎的使用者介面來建立應用程式，以及包含 WinUI 程式庫的 NuGet 套件。 若要安裝 WinUI 3 Preview 4，請遵循下列步驟。
 
 > [!NOTE]
 > 您也可以複製和建立 WinUI 3 Preview 4 版的 [XAML 控制項庫](#xaml-controls-gallery-winui-3-preview-4-branch)。
@@ -50,7 +50,7 @@ WinUI 3 Preview 4 包含 Visual Studio 的專案範本，可協助您開始使�
 
     如需如何將 VSIX 套件新增至 Visual Studio 的指示，請參閱[尋找和使用 Visual Studio 擴充功能](/visualstudio/ide/finding-and-using-visual-studio-extensions#install-without-using-the-manage-extensions-dialog-box)。
 
-5. 若要使用 [即時視覺化樹狀結構]、[熱重新載入] 和 [即時屬性瀏覽器] 這類 WinUI 的工具，您必須啟用具有 Visual Studio 預覽功能的 WinUI 3 工具（如 [這裡的指示](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述）。
+5. 若要使用 [即時視覺化樹狀]、[熱重載] 和 [即時屬性瀏覽器] 這類 WinUI 3 工具，您必須使用 Visual Studio Preview 功能啟用 WinUI 3 工具，如 [這裡的指示](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。
 
 #### <a name="webview2"></a>WebView2
 若要使用 WebView2 搭配 WinUI 3 Preview 4，請下載在 [此頁面](https://developer.microsoft.com/microsoft-edge/webview2/)上找到的最長的啟動載入器或 Alwayson 獨立安裝程式。 
@@ -111,7 +111,7 @@ WinUI 3 Preview 4 包含 Visual Studio 的專案範本，可協助您開始使�
 
 ### <a name="visual-studio-support"></a>Visual Studio 支援
 
-為了充分利用新增至 WinUI 3 Preview 4 （例如熱重新載入、即時視覺化樹狀結構和即時屬性瀏覽器）的最新工具功能，您必須使用最新的 Visual Studio preview 版本搭配最新的 WinUI 3 preview，並務必在 Visual Studio 預覽功能中啟用 WinUI 工具，如 [以下指示](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表顯示 WinUI 3 Preview 4 未來版本的相容性：
+為了充分利用新增至 WinUI 3 Preview 4 （例如熱重載、即時視覺化樹狀結構和即時屬性瀏覽器）的最新工具功能，您必須使用最新的 Visual Studio 預覽版本搭配最新的 WinUI 3 preview，並務必在 Visual Studio Preview 功能中啟用 WinUI 工具，如 [以下指示](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表顯示 WinUI 3 Preview 4 未來版本的相容性：
 
 | VS 版本  | WinUI 3 Preview 4  |
 |---|---|
@@ -130,14 +130,14 @@ WinUI 3 Preview 4 包含 Visual Studio 的專案範本，可協助您開始使�
 
 以下是小組自 Preview 3 以來修正的使用者對應 bug 清單。 另外還有許多關於穩定的工作，並改善我們的測試。
 
-- 此版本已在新版的 CS/WinRT 和 Windows SDK 上進行，其修正了下列 bug：
+- 此版本已在新版的 CS/WinRT 和 Windows SDK 上執行，其修正了下列 bug：
   - 使用 {Binding} 系結至 URI 屬性時發生損毀
   - C #/WinRT 封送處理函式無法與 .NET 5 正確地交互操作
 
 - 在 Windows 測試人員組建上執行時，WinUI 3 損毀
   - 感謝多個可在 GitHub 上報告此錯誤的社區參與者！ 
 - WebView2 不會將主機應用程式的語言/地區設定套用至 CoreWebView2Environment
-- Windows 社群工具組 DataGrid 控制項在啟動時/當機時，會控制損毀應用程式
+- Windows 社區工具組 DataGrid 控制項在啟動時/當機時，即會損毀應用程式
   - 感謝多個可在 GitHub 上報告此錯誤的社區參與者！
 - 顯示模式變更時，頁面轉譯處於不良狀態
 - 在 CalendarView 中使用語言下拉式方塊時發生損毀
@@ -227,7 +227,7 @@ Preview 4 版本只是預覽版本。 特別是與桌面版應用程式相關的
 
 ### <a name="platform-and-os-support"></a>平台和 OS 支援
 
-WinUI 3 Preview 4 與執行 Windows 10 2018 年4月更新 (版本 1803-組建 17134) 和更新版本的電腦相容。
+WinUI 3 Preview 4 與執行 Windows 10 2018 年4月更新 (1803 版-組建 17134) 和更新版本的電腦相容。
 
 ### <a name="developer-tools"></a>開發人員工具
 
@@ -262,36 +262,36 @@ WinUI 3 Preview 4 與執行 Windows 10 2018 年4月更新 (版本 1803-組建 17
 
 #### <a name="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps"></a>桌面應用程式中的 CoreWindow、ApplicationView、CoreApplicationView 和 CoreDispatcher
 
-Preview4、 [CoreWindow](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow)、 [ApplicationView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationView)、 [CoreApplicationView](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)CoreDispatcher 及其相依性的新功能， 
- [](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreDispatcher)無法在桌面應用程式中使用。
+Preview4、 [CoreWindow](/uwp/api/Windows.UI.Core.CoreWindow)、 [ApplicationView](/uwp/api/Windows.UI.ViewManagement.ApplicationView)、 [CoreApplicationView](/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView)CoreDispatcher 及其相依性的新功能， 
+ [](/uwp/api/Windows.UI.Core.CoreDispatcher)無法在桌面應用程式中使用。
 
-例如，[ [發送器]](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 屬性一律是 null，但 DispatcherQueue 屬性可以用來做為替代方案。
+例如，[ [發送器]](/uwp/api/Windows.UI.Xaml.Window.Dispatcher) 屬性一律是 null，但 DispatcherQueue 屬性可以用來做為替代方案。
 
 這些 Api 只能在 UWP 應用程式中運作。
 在過去的預覽中，它們也已在桌面應用程式中部分運作，但在 Preview4 中，它們已完全停用。
 這些 Api 是針對 UWP 案例所設計，其中每個執行緒只有一個視窗，而 WinUI3 的其中一項功能是啟用多個。
 
-這些 Api 會在內部相依于並存這些 Api，因此桌面應用程式不支援這些 api。 這些 Api 通常有靜態 `GetForCurrentView` 方法。 例如 [UIViewSettings. GetForCurrentView](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView)。
+這些 Api 會在內部相依于並存這些 Api，因此桌面應用程式不支援這些 api。 這些 Api 通常有靜態 `GetForCurrentView` 方法。 例如 [UIViewSettings. GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView)。
 
 
 ### <a name="known-issues"></a>已知問題
 
 - Alt + F4 不會關閉桌面應用程式視窗。
 
-- 由於 [CoreWindow](https://docs.microsoft.com/uwp/api/windows.ui.core.corewindow)的變更，下列 WinRT api 可能無法再如預期般使用 **桌面** 應用程式：
-  - [`ApplicationView`](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationview) 而且所有相關的 Api 都將無法再運作。
-  - [`CoreApplicationView`](https://docs.microsoft.com/uwp/api/windows.applicationmodel.core.coreapplicationview) 而且所有相關的 Api 都將無法再運作。
-  - `GetForCurrentView`例如，可能不支援所有 api [`CoreInputView.GetForCurrentView`](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView) 。
-  - [`CoreWindow.GetForCurrentThread`](https://docs.microsoft.com/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) 現在會傳回 null。
+- 由於 [CoreWindow](/uwp/api/windows.ui.core.corewindow)的變更，下列 WinRT api 可能無法再如預期般使用 **桌面** 應用程式：
+  - [`ApplicationView`](/uwp/api/windows.ui.viewmanagement.applicationview) 而且所有相關的 Api 都將無法再運作。
+  - [`CoreApplicationView`](/uwp/api/windows.applicationmodel.core.coreapplicationview) 而且所有相關的 Api 都將無法再運作。
+  - `GetForCurrentView`例如，可能不支援所有 api [`CoreInputView.GetForCurrentView`](/uwp/api/Windows.UI.ViewManagement.Core.CoreInputView.GetForCurrentView) 。
+  - [`CoreWindow.GetForCurrentThread`](/uwp/api/Windows.UI.Core.CoreWindow.GetForCurrentThread) 現在會傳回 null。
 
-  如需在 WinUI 3 傳統型應用程式中使用 WinRT Api 的詳細資訊，請參閱 [Windows 執行階段適用于桌面應用程式的 api](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-supported-api
+  如需在 WinUI 3 傳統型應用程式中使用 WinRT Api 的詳細資訊，請參閱 [適用于桌面應用程式的 Windows 執行時間 api](../../desktop/modernize/desktop-to-uwp-supported-api.md
 )。
 
-- 桌面應用程式已不再支援 [UISettings. ColorValuesChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) 和 [AccessibilitySettings. HighContrastChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) 。 如果您使用它來偵測 Windows 主題的變更，這可能會造成問題。 
+- 桌面應用程式已不再支援 [UISettings. ColorValuesChanged 事件](/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged) 和 [AccessibilitySettings. HighContrastChanged 事件](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) 。 如果您使用它來偵測 Windows 主題的變更，這可能會造成問題。 
 
 - 此版本包含一些實驗性 Api。 小組尚未徹底測試這些專案，而且可能有未知的問題。 如果您遇到任何問題，請在存放庫中提出 [錯誤](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) 。 
 
-- 在過去，若要取得 CompositionCapabilities 實例，您可以呼叫 [CompositionCapabilites GetForCurrentView () ](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview)。 不過，此呼叫所傳回的功能並 *不* 相依于視圖。 為了解決並反映這一點，我們已在此版本中刪除 GetForCurrentView () 靜態，因此您現在可以直接建立 [CompositionCapabilties](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities) 物件。
+- 在過去，若要取得 CompositionCapabilities 實例，您可以呼叫 [CompositionCapabilites GetForCurrentView () ](/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview)。 不過，此呼叫所傳回的功能並 *不* 相依于視圖。 為了解決並反映這一點，我們已在此版本中刪除 GetForCurrentView () 靜態，因此您現在可以直接建立 [CompositionCapabilties](/uwp/api/windows.ui.composition.compositioncapabilities) 物件。
 
 - 針對 C# UWP 應用程式：
 

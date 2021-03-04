@@ -1,32 +1,32 @@
 ---
-title: Windows 上適用于 Android 開發的 React Native
-description: 開始使用 Windows 上的 Xamarin 原生開發 Android 應用程式。
+title: 在 Windows 上回應原生的 Android 開發
+description: 逐步指南說明如何在 Windows 上開始使用回應原生，以建立可在 Android 裝置上運作的跨平臺應用程式。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android、windows、回應原生、模擬器、博覽會、metro 搭配程式、終端機
 ms.date: 04/28/2020
-ms.openlocfilehash: 50c117154b103ca4e201f21bc643e7cbfa609b84
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 82bf078d6c29c8968ce3e0cc19ce4d6f803e6d71
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157712"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823222"
 ---
-# <a name="get-started-developing-for-android-using-react-native"></a>開始使用 React Native 開發 Android
+# <a name="get-started-developing-for-android-using-react-native"></a>開始使用回應原生開發 Android
 
-本指南將協助您開始使用 Windows 上的 React Native 來建立可在 Android 裝置上運作的跨平臺應用程式。
+本指南將協助您開始使用 Windows 上的回應原生，以建立可在 Android 裝置上運作的跨平臺應用程式。
 
 ## <a name="overview"></a>概觀
 
-React Native 是 Facebook 所建立的 [開放原始](https://github.com/facebook/react-native) 碼行動應用程式架構。 它是用來開發適用于 Android、iOS、Web 和 UWP 的應用程式 (Windows) 提供原生 UI 控制項和原生平臺的完整存取權。 使用 React Native 需要瞭解 JavaScript 的基本概念。
+回應原生是 Facebook 所建立的 [開放原始](https://github.com/facebook/react-native) 碼行動應用程式架構。 它是用來開發適用于 Android、iOS、Web 和 UWP 的應用程式 (Windows) 提供原生 UI 控制項和原生平臺的完整存取權。 使用回應原生需要瞭解 JavaScript 的基本概念。
 
-## <a name="get-started-with-react-native-by-installing-required-tools"></a>安裝必要的工具以開始使用 React Native
+## <a name="get-started-with-react-native-by-installing-required-tools"></a>藉由安裝必要的工具，開始使用回應原生
 
 1. [安裝 Visual Studio Code](https://code.visualstudio.com) (或選擇) 的程式碼編輯器。
 
-2. [安裝適用于 Windows 的 Android Studio](https://developer.android.com/studio)。 Android Studio 預設會安裝最新的 Android SDK。 React Native 需要 Android 6.0 (Marshmallow) SDK 或更新版本。 我們建議使用最新的 SDK。
+2. [安裝適用于 Windows 的 Android Studio](https://developer.android.com/studio)。 Android Studio 預設會安裝最新的 Android SDK。 回應原生需要 Android 6.0 (Marshmallow) SDK 或更高版本。 我們建議使用最新的 SDK。
 
 3. 建立 JAVA SDK 和 Android SDK 的環境變數路徑：
     - 在 [Windows 搜尋] 功能表中，輸入：「編輯系統內容變數」，這會開啟 [ **系統屬性** ] 視窗。
@@ -40,17 +40,17 @@ React Native 是 Facebook 所建立的 [開放原始](https://github.com/faceboo
 4. [安裝適用于 Windows 的 NodeJS](https://nodejs.org/en/) 如果您將使用多個專案和 NodeJS 版本，您可能會想要考慮使用 [Node 版本管理員 (nvm) For Windows](https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows) 。 建議您為新專案安裝最新的 LTS 版本。
 
 > [!NOTE]
-> 您也可能想要考慮安裝和使用 [Windows 終端機](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) ，以使用 (CLI) 的慣用命令列介面，以及 [Git 進行版本控制](https://git-scm.com/downloads)。 [JAVA JDK](https://www.oracle.com/java/technologies/javase-downloads.html)隨附 Android Studio 的 2.2 +，但如果您需要從 Android Studio 個別更新 JDK，請使用[Windows x64 安裝程式](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)。
+> 您也可能想要考慮安裝和使用 [Windows 終端](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab) 機， (CLI) ，以及 [Git 進行版本控制](https://git-scm.com/downloads)，以使用您慣用的命令列介面。 [JAVA JDK](https://www.oracle.com/java/technologies/javase-downloads.html)隨附于 android studio 2.2 +，但如果您需要與 android studio 分開更新 JDK，請使用[Windows x64 安裝程式](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)。
 
-## <a name="create-a-new-project-with-react-native"></a>使用 React Native 建立新的專案
+## <a name="create-a-new-project-with-react-native"></a>建立具有回應原生的新專案
 
-1. 您可以使用 npm，從 Windows 命令提示字元、PowerShell、 [Windows 終端機](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)或 VS Code (View > 整合式終端機) 中的整合式終端機，來安裝 [[博覽會 CLI](https://docs.expo.io/versions/latest/)命令列公用程式]。
+1. 您可以使用 npm，從 Windows 命令提示字元、PowerShell、 [Windows 終端](https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)機或 VS Code 中的整合式終端機，在 VS Code (View > 整合式終端) 中，安裝「[博覽會 CLI](https://docs.expo.io/versions/latest/)命令列公用程式」。
 
     ```powershell
     npm install -g expo-cli
     ```
 
-2. 使用博覽會來建立可在 iOS、Android 和 web 上執行的 React Native 應用程式。 然後，您必須在專案範本之間進行選擇，包括 **空白**、 **空白 (TypeScript) **、 **使用** 「回應導覽」 (範例畫面) 、「 **基本**」或「 **基本」 (TypeScript) **。
+2. 使用博覽會來建立可在 iOS、Android 和 web 上執行的回應原生應用程式。 然後，您必須在專案範本之間進行選擇，包括 **空白**、 **空白 (TypeScript)**、 **使用** 「回應導覽」 (範例畫面) 、「 **基本**」或「 **基本」 (TypeScript)**。
 
     ```powershell
     expo init my-new-app
@@ -73,13 +73,13 @@ React Native 是 Facebook 所建立的 [開放原始](https://github.com/faceboo
 
     ![瀏覽器中 Metro 搭配程式的螢幕擷取畫面](../images/metro-bundler.png)
 
-5. 若要查看在 Android 裝置上執行的專案，您必須先使用 Android 裝置上 [的 Google Play 商店來安裝該用戶端應用程式](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) 。 安裝了「展覽用戶端」應用程式之後，請在裝置上開啟該應用程式，然後選取 [ **掃描 QR 代碼**]。 註冊 QR 代碼之後，您就可以在您的裝置上，以及在瀏覽器的 localhost 上執行的 Metro 搭配程式視窗中看到套件組建。
+5. 若要查看您在 Android 裝置上執行的專案，您必須先在 Android 裝置上 [安裝具有 Google Play 商店的博覽會用戶端應用程式](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_US) 。 安裝了「展覽用戶端」應用程式之後，請在裝置上開啟該應用程式，然後選取 [ **掃描 QR 代碼**]。 註冊 QR 代碼之後，您就可以在您的裝置上，以及在瀏覽器的 localhost 上執行的 Metro 搭配程式視窗中看到套件組建。
 
-6. 若要查看在 Android 模擬器上執行的專案，您必須先開啟 Android Studio，然後建立並啟動虛擬裝置。 **工具**  > **AVD 管理員**  > **[+ 建立虛擬裝置 ...](https://developer.android.com/studio/run/managing-avds#createavd)** 建立虛擬裝置之後，請選取 [Android 虛擬裝置管理員] 中 [**動作**] 資料行下的 [啟動] 按鈕▷，以開始模擬裝置。 虛擬裝置開啟後，請返回在網際網路瀏覽器視窗中執行的 Metro 搭配程式視窗，然後從左側資料行選取 [在 Android 裝置/模擬器上執行]。 您應該會看到一個快顯視窗，讓您知道 Metro 搭配程式「正在嘗試開啟模擬器 ...」然後，查看在您模擬的 Android 裝置中開啟的博覽會用戶端應用程式，一旦完成下載 JavaScript 套件組合，您就會看到您的 React Native 應用程式顯示。  (如果您遇到問題，請 [檢查 [博覽會 Android 模擬器](https://docs.expo.io/workflow/android-studio-emulator/)] 檔。 ) 
+6. 若要查看在 Android 模擬器上執行的專案，您必須先開啟 Android Studio，然後建立並啟動虛擬裝置。 **工具**  > **AVD 管理員**  > **[+ 建立虛擬裝置 ...](https://developer.android.com/studio/run/managing-avds#createavd)** 建立虛擬裝置之後，請選取 [Android 虛擬裝置管理員] 的 [**動作**] 欄下的 [啟動] 按鈕▷，以開始模擬裝置。 虛擬裝置開啟後，請返回在網際網路瀏覽器視窗中執行的 Metro 搭配程式視窗，然後從左側資料行選取 [在 Android 裝置/模擬器上執行]。 您應該會看到一個快顯視窗，讓您知道 Metro 搭配程式「正在嘗試開啟模擬器 ...」然後，查看在您模擬的 Android 裝置中開啟的博覽會用戶端應用程式，一旦完成下載 JavaScript 套件組合，您就會看到您的回應原生應用程式顯示。  (如果您遇到問題，請 [檢查 [博覽會 Android 模擬器](https://docs.expo.io/workflow/android-studio-emulator/)] 檔。 ) 
 
-7. 開啟您的 React Native 專案，開始處理您的應用程式。 您應該會在執行的應用程式中看到您的變更已自動更新，而該應用程式是透過您裝置或 Android Emulator 中的使用者。
+7. 開啟您的回應原生專案以開始使用您的應用程式。 您應該會在執行的應用程式中，看到透過您裝置上或在 Android 模擬器中執行的應用程式自動更新的變更。
 
-8. 請嘗試變更登陸網頁檢視文字，以說： "Hello World！"。 您可以在您選擇的 IDE 中進行這項作業。  (建議 VS Code 或 Android Studio。根據您選擇的範本，) 登陸頁面檔案將會有所不同。 它可能是 `App.js` 、 `App.tsx` 或 `HomeScreen.js` 。
+8. 請嘗試變更登陸網頁檢視文字，例如： "Hello World！"。 您可以在您選擇的 IDE 中進行這項作業。  (建議採用 VS Code 或 Android Studio。根據您選擇的範本，) 登陸頁面檔案將會有所不同。 它可能是 `App.js` 、 `App.tsx` 或 `HomeScreen.js` 。
 
     ```typescript
     export default function App() {
@@ -105,7 +105,7 @@ React Native 是 Facebook 所建立的 [開放原始](https://github.com/faceboo
     ```
 
 > [!TIP]
-> 如果您想要新增 React Native 應用程式的支援，使其以 Windows 10 應用程式執行，請參閱 [開始使用 Windows](https://microsoft.github.io/react-native-windows/docs/getting-started) 檔的 React Native。
+> 如果您想要新增回應原生應用程式的支援，使其以 Windows 10 應用程式的形式執行，請參閱 [開始使用 windows 檔的原生回應](https://microsoft.github.io/react-native-windows/docs/getting-started) 。
 
 ## <a name="additional-resources"></a>其他資源
 

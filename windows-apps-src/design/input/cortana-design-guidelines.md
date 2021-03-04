@@ -8,19 +8,19 @@ ms.date: 01/27/2021
 ms.topic: article
 keywords: cortana，設計
 ms.localizationpriority: medium
-ms.openlocfilehash: b7711f9fd653bbd635582a0b2268a5eb0ed7417b
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: ae5f1ce3c481e833ce80d0ebd52d64f6efba7e78
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606083"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823272"
 ---
 # <a name="cortana-design-guidelines"></a>Cortana 設計指導方針
 
 >[!WARNING]
-> 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+> Windows 10 2020 版更新 (2004 版 codename "20H1" ) ，不再支援此功能。
 >
-> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
+> 查看 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 這些指導方針和建議會說明您的應用程式如何充分利用 **Cortana** 與使用者互動、協助他們完成工作，以及清楚地傳達其運作情形。
 
@@ -118,17 +118,17 @@ ms.locfileid: "99606083"
 
 您應避免冗長的 GUI 字串。 **Cortana** 畫布提供三行回應，而且會截斷超過該回應的字串。
 
-如需詳細資訊，請參閱 [全球化和當地語系化一節](/windows/uwp/design/globalizing/guidelines-and-checklist-for-globalizing-your-app)。
+如需詳細資訊，請參閱 [全球化和當地語系化一節](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)。
 
 ## <a name="image-resources-and-scaling"></a>影像資源和縮放比例
 
-通用 Windows 平臺 (UWP) 應用程式可以根據特定設定和裝置功能，自動選取最適當的應用程式標誌影像 (高對比、有效的圖元、地區設定等) 。 您只需要提供影像，並確保您在應用程式專案內針對不同的資源版本使用適當的命名慣例和資料夾組織。 如果您未提供建議的資源版本，可存取性、當地語系化和影像品質可能會受到影響，視使用者的喜好設定、能力、裝置類型和位置而定。
+ (UWP) 應用程式的通用 Windows 平臺可根據特定設定和裝置功能，自動選取最適當的應用程式標誌影像 (高對比、有效圖元、地區設定等) 。 您只需要提供影像，並確保您在應用程式專案內針對不同的資源版本使用適當的命名慣例和資料夾組織。 如果您未提供建議的資源版本，可存取性、當地語系化和影像品質可能會受到影響，視使用者的喜好設定、能力、裝置類型和位置而定。
 
-如需高對比和縮放比例影像資源的詳細資訊，請參閱 [磚和圖示資產的指導方針](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)。
+如需高對比和縮放比例影像資源的詳細資訊，請參閱 [磚和圖示資產的指導方針](../../app-resources/images-tailored-for-scale-theme-contrast.md)。
 
 您可以使用限定詞來命名資源。 資源限定詞是資料夾和檔案名修飾詞，用來識別應該使用特定版本資源的內容。
 
-標準命名慣例為 "資料夾名稱/qualifiername-值 \[ \_ qualifiername-值 \] /filename.qualifiername-value \[ \_ qualifiername-值 \] ext"。 例如： images/標誌。 scale 1-100 值 \_contrast-white.png 只會在程式碼中使用根資料夾和 filename： images/logo.png 參考。 請參閱 [管理語言和區域](/windows/uwp/design/globalizing/manage-language-and-region) 以及 [如何使用限定詞命名資源](/previous-versions/windows/apps/hh965324(v=win.10))。
+標準命名慣例為 "資料夾名稱/qualifiername-值 \[ \_ qualifiername-值 \] /filename.qualifiername-value \[ \_ qualifiername-值 \] ext"。 例如： images/標誌。 scale 1-100 值 \_contrast-white.png 只會在程式碼中使用根資料夾和 filename： images/logo.png 參考。 請參閱 [管理語言和區域](../globalizing/manage-language-and-region.md) 以及 [如何使用限定詞命名資源](/previous-versions/windows/apps/hh965324(v=win.10))。
 
 建議您將字串資源檔上的預設語言標示 (例如 "en-us \\ resources. .resw" ) 以及影像上的預設縮放比例 (例如 "logo.scale-100.png" ) ，即使您目前未規劃提供當地語系化或多個解析資源。 不過，我們至少建議您提供100、200和400規模調整因素的資產。
 
@@ -147,7 +147,7 @@ ms.locfileid: "99606083"
 
 以下是支援的範本 (與範例) ：
 
-| Name | 範例 |
+| 名稱 | 範例 |
 | --- | --- |
 | 僅標題  | :::image type="content" source="images/cortana/voicecommandcontenttiletype-titleonly-small.png" alt-text="Cortana 畫布的螢幕擷取畫面，其中只顯示標題"::: |
 | 具有文字的標題 | :::image type="content" source="images/cortana/voicecommandcontenttiletype-titlewithtext-small.png" alt-text="Cortana 畫布的螢幕擷取畫面，其中顯示具有文字的標題"::: |

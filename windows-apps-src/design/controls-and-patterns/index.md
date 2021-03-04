@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a06c75b37b62436c4ef0ebcb8ccae2a6153b85
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
-ms.translationtype: HT
+ms.openlocfilehash: 1e568dfb35f273b4efe045a6a16c944007f1ee7f
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829424"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824472"
 ---
 # <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
 
@@ -56,7 +56,7 @@ ms.locfileid: "91829424"
 
 ## <a name="alphabetical-index"></a>依字母排序的索引
 
-特定控制項和模式的相關詳細資訊。 (如需依功能排序的清單，請參閱[依功能排序的控制項索引](controls-by-function.md))。
+特定控制項和模式的相關詳細資訊。 
 
 :::row:::
     :::column:::
@@ -138,7 +138,7 @@ ms.locfileid: "91829424"
 
 ## <a name="xaml-controls-gallery"></a>XAML 控制項庫
 
-從 Microsoft Store 取得 _XAML 控制項庫_應用程式，以查看這些控制項與 Fluent Design 系統的運作情形。 此應用程式是此網站的互動小幫手。 安裝過後，您就可以使用個別控制頁面上的連結，啟動此應用程式並查看控制項的運作情形。
+從 Microsoft Store 取得 _XAML 控制項庫_ 應用程式，以查看這些控制項與 Fluent Design 系統的運作情形。 此應用程式是此網站的互動小幫手。 安裝過後，您就可以使用個別控制頁面上的連結，啟動此應用程式並查看控制項的運作情形。
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a>
 

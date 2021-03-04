@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 上使用 Python 的常見問題
-description: 檢閱在 Windows 上使用 Python 進行開發的常見問題 (FAQ) 解答以取得協助。
+description: 取得有關在 Windows 上使用 Python 進行開發的常見問題)  (常見問題的解答。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, pip, py.exe, 檔案路徑, PYTHONPATH, python 部署, python 封裝
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: c1cada0fef5968846100f66bb41b3dd70ea5b59a
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 7bc1d159bac5ebc9877db5d879b6acd82c51079b
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691303"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823552"
 ---
 # <a name="frequently-asked-questions-about-using-python-on-windows"></a>在 Windows 上使用 Python 的常見問題
 
@@ -29,7 +29,7 @@ ms.locfileid: "98691303"
 
 ### <a name="trouble-installing-pip-with-wsl"></a>使用 WSL 安裝 pip 時發生問題
 
-例如，在 Windows 子系統 Linux 版 (WSL 或 WSL2) 上安裝具有 pip 的封裝 (像是 Flask) ，例如 `python3 -m pip install flask` ，您可能會特別遇到如下所示的錯誤：
+例如，在適用于 Linux 的 Windows 子系統上安裝具有 pip 的 Flask)  (（例如，在 Linux (WSL 或 WSL2) ）時， `python3 -m pip install flask` 您可能會特別遇到類似以下的錯誤：
 
 ```bash
 WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None))

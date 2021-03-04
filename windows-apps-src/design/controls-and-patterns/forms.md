@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 0c55d98d0680142ad1d4f319b8910fd335fe8d5f
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
-ms.translationtype: HT
+ms.openlocfilehash: 7a4c33bbdae980029cdeeb650375b9f8cb38bbf9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219461"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823342"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -147,7 +147,7 @@ ms.locfileid: "91219461"
 [TimePicker](time-picker.md) | 挑選單一時間值
 
 ### <a name="additional-controls"></a>其他控制項 
-如需 UWP 控制項的完整清單，請參閱[依函式排序的控制項索引](controls-by-function.md)。
+如需 UWP 控制項的完整清單，請參閱[依函式排序的控制項索引](./index.md)。
 
 如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
 
@@ -234,7 +234,7 @@ ms.locfileid: "91219461"
 ```
 
 ## <a name="customer-orders-database-sample"></a>客戶訂單資料庫範例
-![客戶訂單資料庫螢幕擷取畫面](images/customerorderform.png) 若要了解如何將表單輸入連線到 **Azure** 資料庫並查看完全實作的表單，請參閱[客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database)應用程式範例。
+![客戶訂單資料庫螢幕擷取畫面](images/customerorderform.png) 若要了解如何將表單輸入連線到 **Azure** 資料庫並查看完全實作的表單，請參閱 [客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database)應用程式範例。
 
 ## <a name="related-topics"></a>相關主題
 - [輸入控制項](controls-and-events-intro.md)

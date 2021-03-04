@@ -9,12 +9,12 @@ metadata:
   ms.author: tedhudek
   ms.topic: hub-page
   uhfHeaderId: MSDocsHeader-DocsL1
-  ms.openlocfilehash: f536faa2a68269dc8a4ff89fcfb928434854d1e3
-  ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
-  ms.translationtype: HT
+  ms.openlocfilehash: 5b19de5f2358bda3f7a780e271ca4e6b208110ba
+  ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+  ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 01/11/2021
-  ms.locfileid: "98104519"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "101823912"
 productDirectory:
   items:
   - title: 應用程式開發人員
@@ -36,7 +36,7 @@ productDirectory:
   - title: Windows for IoT
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: 建立具有安全裝置的 IoT 解決方案，其可快速佈建、輕鬆管理和順暢地連接到整體雲端策略。
-    url: /windows/iot-core/
+    url: https://docs.microsoft.com/windows/iot/
   - title: Windows 測試人員計畫
     imageSrc: https://docs.microsoft.com/media/logos/logo_Windows.svg
     summary: 對業界發展洞燭機先，並透過執行 Windows 10 測試人員預覽版提供意見反應，以協助開發 Windows 的未來。

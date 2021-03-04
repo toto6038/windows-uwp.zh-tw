@@ -5,19 +5,19 @@ ms.assetid: b497145b-c7a0-454a-8329-6bc1228953bb
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 1f61a08e9eeb66371ed39b44eb39dacbc1bf3cf5
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 5c28330a975b66c2f04baba1d0df58b38d684356
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606033"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824412"
 ---
 # <a name="dynamically-modify-cortana-vcd-phrase-lists"></a>動態修改 Cortana VCD 片語清單
 
 >[!WARNING]
-> 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+> Windows 10 2020 版更新 (2004 版 codename "20H1" ) ，不再支援此功能。
 >
-> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
+> 查看 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 使用語音辨識結果，在執行時間 (VCD) 檔中，存取並更新支援的片語清單 (**PhraseList** 元素) 在語音命令定義中。
 
@@ -47,8 +47,8 @@ ms.locfileid: "99606033"
 >
 > 如果您是開發通用 Windows 平台 (UWP) App 的新手，請仔細閱讀這些主題以熟悉這裡討論的技術。
 >
-> - [建立您的第一個應用程式](/windows/uwp/get-started/your-first-app)
-> - 請參閱[事件與路由事件概觀](/windows/uwp/xaml-platform/events-and-routed-events-overview)，以了解事件相關資訊
+> - [建立您的第一個應用程式](../../get-started/your-first-app.md)
+> - 請參閱[事件與路由事件概觀](../../xaml-platform/events-and-routed-events-overview.md)，以了解事件相關資訊
 >
 > **使用者經驗指導方針**
 >

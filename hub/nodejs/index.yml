@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: 在 Windows 上使用 Node.js 進行開發
-summary: 開始使用 Windows 的 Node.js 進行開發。
+summary: 開始使用 Windows 上的 Node.js 進行開發。 請參閱資源以設定您的開發環境、web 架構、資料基底和容器。
 metadata:
   author: mattwojo
   description: 開始使用 Windows 上的 Node.js 進行開發。
@@ -10,12 +10,12 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-nodejs
   ms.topic: landing-page
-  ms.openlocfilehash: 862a1a13e8617ed055adee403b18674f4ed2aded
-  ms.sourcegitcommit: 7aa0e1108fd1a19ebc5632acbc9f66ea9af2b321
-  ms.translationtype: HT
+  ms.openlocfilehash: 04ba800e1b2ac247ae158fbdcead6f53446c26c2
+  ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+  ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 12/18/2020
-  ms.locfileid: "97691507"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "101823582"
 landingContent:
 - title: 設定您的 Node.js 開發環境
   linkLists:

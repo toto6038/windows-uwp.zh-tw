@@ -1,18 +1,18 @@
 ---
 title: 在 Windows 上進行 Android 開發的 PWA 方法
-description: 開始使用 Windows 上的 PWA 方法開發 Android 應用程式。
+description: 如何在 Windows 上 (PWA) 開始建立混合式 web 應用程式或漸進式 Web 應用程式的逐步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: windows、pwa、android、cordova、ionic、phonegap、混合式 web 應用程式上的 android
 ms.date: 04/28/2020
-ms.openlocfilehash: 4559e795b4a9737bf68129790029f6f9136b4f81
-ms.sourcegitcommit: 99f5544d9642c87a16e3bd21f76c2fcbc97c20d2
+ms.openlocfilehash: 8115de0dedaa561c7a71621904d060ca62b5ac47
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98743591"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823152"
 ---
 # <a name="get-started-developing-a-pwa-or-hybrid-web-app-for-android"></a>開始開發適用于 Android 的 PWA 或混合式 web 應用程式
 
@@ -24,20 +24,20 @@ ms.locfileid: "98743591"
 
 有兩種主要類型的 web 應用程式可以安裝在 Android 裝置上。 主要的差異在於，您的應用程式程式碼是否內嵌在應用程式套件 (混合式) 或裝載于 web 伺服器 (pwa) 。
 
-- **混合式 web 應用程式**：程式碼 (HTML、JS、CSS) 封裝在 APK 中，並可透過 Google Play 商店散發。 觀賞引擎會與使用者的網際網路瀏覽器隔離，而不會共用會話或快取。
+- **混合式 web 應用程式**：程式碼 (HTML、JS、CSS) 會封裝在 APK 中，並可透過 Google Play 商店散發。 觀賞引擎會與使用者的網際網路瀏覽器隔離，而不會共用會話或快取。
 
-- **漸進式 Web Apps (pwa)**：程式碼 (HTML、JS、CSS) 存在於 Web 上，因此不需要封裝為 APK。 系統會視需要使用服務工作者來下載和更新資源。 Chrome 瀏覽器會轉譯並顯示您的應用程式，但看起來會是原生，而不包含一般瀏覽器網址列等等。您可以使用瀏覽器來共用儲存體、快取和會話。 這基本上就像是在特殊模式下安裝 Chrome 瀏覽器的快捷方式。 Pwa 也可以使用信任的 Web 活動列在 Google Play 商店中。
+- **漸進式 Web 應用程式 (pwa)**：程式碼 (HTML、JS、CSS) 存在於 Web 上，而且不需要封裝為 APK。 系統會視需要使用服務工作者來下載和更新資源。 Chrome 瀏覽器會轉譯並顯示您的應用程式，但看起來會是原生，而不包含一般瀏覽器網址列等等。您可以使用瀏覽器來共用儲存體、快取和會話。 這基本上就像是在特殊模式下安裝 Chrome 瀏覽器的快捷方式。 Pwa 也可以使用信任的 Web 活動列在 Google Play 商店中。
 
 Pwa 和混合式 web 應用程式與原生 Android 應用程式非常類似，因為它們：
 
-- 可以透過 App Store (Google Play 商店和/或 Microsoft Store 進行安裝) 
+- 可以透過 App Store 安裝 (Google Play 商店及/或 Microsoft Store) 
 - 可以存取原生裝置功能，例如相機、GPS、藍牙、通知和連絡人清單
 - 離線工作 (沒有網際網路連線) 
 
 Pwa 也有一些獨特的功能：
 
-- 可以直接從 web (安裝在 Android 首頁畫面上，而不需 App Store) 
-- 也可以透過[使用受信任 Web 活動](https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/)的 Google Play 商店來安裝
+- 可以直接從 web (安裝在 Android 首頁畫面上，而不需要 App Store) 
+- 也可以[使用信任的 Web 活動](https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/)，透過 Google Play 商店進行安裝
 - 可以透過 web 搜尋進行探索，或透過 URL 連結來共用
 - 依賴 [服務工作者](https://developers.google.com/web/fundamentals/primers/service-workers) 以避免需要封裝機器碼
 
@@ -61,7 +61,7 @@ Pwa 也有一些獨特的功能：
 
 若要開始使用 PhoneGap 建立 PWA 或混合式 web 應用程式，您應該先安裝下列工具：
 
-- Node.js 與 Ionic 生態系統互動。 [下載 NodeJS For Windows](https://nodejs.org/en/) ，或遵循使用 WINDOWS 子系統 LINUX 版 (WSL) 的《 [NodeJS 安裝指南》](../nodejs/setup-on-wsl2.md) 。 如果您將使用多個專案和 NodeJS 版本，您可能會想要考慮使用 [Node 版本管理員 (nvm) ](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) 。
+- Node.js 與 Ionic 生態系統互動。 [下載 NodeJS For windows](https://nodejs.org/en/) ，或遵循使用適用于 Linux 的 Windows 子系統 (WSL) 的 [NodeJS 安裝指南](../nodejs/setup-on-wsl2.md) 。 如果您將使用多個專案和 NodeJS 版本，您可能會想要考慮使用 [Node 版本管理員 (nvm) ](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) 。
 
 在命令列中輸入下列命令，以安裝 PhoneGap：
 
@@ -82,11 +82,11 @@ npm install -g phonegap
 
 若要開始使用 Ionic 建立 PWA 或混合式 web 應用程式，您應該先安裝下列工具：
 
-- Node.js 與 Ionic 生態系統互動。 [下載 NodeJS For Windows](https://nodejs.org/en/) ，或遵循使用 WINDOWS 子系統 LINUX 版 (WSL) 的《 [NodeJS 安裝指南》](../nodejs/setup-on-wsl2.md) 。 如果您將使用多個專案和 NodeJS 版本，您可能會想要考慮使用 [Node 版本管理員 (nvm) ](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) 。
+- Node.js 與 Ionic 生態系統互動。 [下載 NodeJS For windows](https://nodejs.org/en/) ，或遵循使用適用于 Linux 的 Windows 子系統 (WSL) 的 [NodeJS 安裝指南](../nodejs/setup-on-wsl2.md) 。 如果您將使用多個專案和 NodeJS 版本，您可能會想要考慮使用 [Node 版本管理員 (nvm) ](../nodejs/setup-on-wsl2.md#install-nvm-nodejs-and-npm) 。
 
-- 撰寫程式碼 VS Code。 [下載適用于 Windows 的 VS Code](https://code.visualstudio.com/)。 如果您想要使用 Linux 命令列來建立應用程式，您可能也會想要安裝 [WSL 遠端擴充](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) 功能。
+- 撰寫程式碼的 VS Code。 [下載適用于 Windows 的 VS Code](https://code.visualstudio.com/)。 如果您想要使用 Linux 命令列來建立應用程式，您可能也會想要安裝 [WSL 遠端擴充](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) 功能。
 
-- Windows 終端機，以 (CLI) 使用您慣用的命令列介面。 [從 Microsoft Store 安裝 Windows 終端機](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)。
+- 使用您慣用命令列介面 (CLI) 的 Windows 終端機。 [從 Microsoft Store 安裝 Windows 終端](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab)機。
 
 - 版本控制的 Git。 [下載 Git](https://git-scm.com/downloads)。
 
@@ -199,7 +199,7 @@ ionic cordova run android
 
 若要在 Android 裝置模擬器上測試您的 Ionic 應用程式，您必須：
 
-1. [安裝必要元件--JAVA 開發工具組 (JDK) 、Gradle 和 Android SDK](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#installing-the-requirements)。
+1. [安裝必要元件--JAVA 開發工具組 (JDK) 、Gradle 和 ANDROID SDK](https://cordova.apache.org/docs/en/latest/guide/platforms/android/#installing-the-requirements)。
 
 2. [建立 Android 虛擬裝置 (AVD) ](https://developer.android.com/studio/run/managing-avds.html)。
 

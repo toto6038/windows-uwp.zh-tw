@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 上使用 Python 進行指令碼處理和自動化
-description: 如何開始在 Windows 上使用 Python 進行指令碼處理、自動化和系統管理。
+description: 在 Windows 上開始使用 Python 進行腳本、自動化和系統管理的逐步指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系統管理, python 檔案自動化, windows 上的 python 指令碼, 在 windows 上設定 python, windows 上的 python 開發人員環境, windows 上的 python 開發環境, python 搭配 powershell, 適用於檔案系統工作的 python 指令碼
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: a8f13243f3501b2af42d38c13bff580be2e5b42a
-ms.sourcegitcommit: 8040760f5520bd1732c39aedc68144c4496319df
+ms.openlocfilehash: 8b6ce391d810fc26ab9964f39939ce8c5a9958e9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98691323"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823572"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>開始在 Windows 上使用 Python 進行指令碼處理和自動化
 
@@ -26,7 +26,7 @@ ms.locfileid: "98691323"
 
 使用 Python 撰寫執行檔案系統作業的指令碼時，建議您從 [Microsoft Store 安裝 Python](https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab)。 透過 Microsoft Store 進行安裝會使用基本 Python3 解譯器，但會處理目前使用者的 PATH 設定 (避免需要系統管理員存取權)，而且還會提供自動更新。
 
-如果您在 Windows 上使用 Python 進行  **Web 開發**，建議您使用 Windows 子系統 Linux 版進行不同的設定。 在我們的指南中尋找逐步解說：[開始在 Windows 上使用 Python 進行 Web 開發](./web-frameworks.md)。 如果您初次使用 Python，請試用我們的指南：[開始在 Windows 上使用適用於初學者的 Python](./beginners.md)。 對於某些進階案例 (例如，需要存取/修改 Python 的安裝檔案、製作二進位檔的複本，或直接使用 Python DL)，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
+如果您在 Windows 上使用 Python 進行 **Web 開發**，建議您使用 Windows 子系統 Linux 版進行不同的設定。 在我們的指南中尋找逐步解說：在 [Windows 上開始使用 Python 進行網頁程式開發](./web-frameworks.md)。 如果您是 Python 的新手，請試試我們的指南： [開始在 Windows 上使用 python 作為初學者](./beginners.md)。 對於某些進階案例 (例如，需要存取/修改 Python 的安裝檔案、製作二進位檔的複本，或直接使用 Python DL)，您可能會想要考慮直接從 [python.org](https://www.python.org/downloads/) 下載特定的 Python 版本，或考慮安裝[替代項目](https://www.python.org/download/alternatives)，例如 Anaconda、Jython、PyPy、WinPython、IronPython 等。只有當您是資深 Python 程式設計人員，且有選擇替代實作的特定原因時，才建議這樣做。
 
 ## <a name="install-python"></a>安裝 Python
 
@@ -44,26 +44,26 @@ ms.locfileid: "98691323"
 
 藉由使用 VS Code 做為文字編輯器/整合式開發環境 (IDE)，您可以利用 [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) (協助完成程式碼)、[Linting](https://code.visualstudio.com/docs/python/linting) (協助避免在程式碼中發生錯誤)、[偵錯支援](https://code.visualstudio.com/docs/python/debugging) (在執行程式碼之後，協助您在其中找出錯誤)、[程式碼片段](https://code.visualstudio.com/docs/editor/userdefinedsnippets) (小型可重覆使用程式碼區塊的範本)，以及[單元測試](https://code.visualstudio.com/docs/python/unit-testing) (以不同類型的輸入來測試程式碼的介面)。
 
-下載 VS Code for Windows，並遵循安裝指示：[https://code.visualstudio.com](https://code.visualstudio.com)。
+下載適用于 Windows 的 VS Code，並遵循安裝指示： [https://code.visualstudio.com](https://code.visualstudio.com) 。
 
 ## <a name="install-the-microsoft-python-extension"></a>安裝 Microsoft Python 延伸模組
 
 您必須安裝 Microsoft Python 延伸模組，才能利用 VS Code 支援功能。 [深入了解](https://code.visualstudio.com/docs/languages/python)。
 
-1. 輸入 **Ctrl+Shift+X** (或使用功能表瀏覽至 [檢視]   >  [延伸模組]  )，以開啟 VS Code 延伸模組視窗。
+1. 輸入 **Ctrl+Shift+X** (或使用功能表瀏覽至 [檢視] >  [延伸模組])，以開啟 VS Code 延伸模組視窗。
 
-2. 在頂端 [搜尋 Marketplace 中的延伸模組]  方塊中，輸入：**Python**。
+2. 在頂端 [搜尋 Marketplace 中的延伸模組] 方塊中，輸入：**Python**。
 
-3. 尋找 **Python (ms-python.python) by Microsoft** 延伸模組，然後選取綠色 [安裝]  按鈕。
+3. 尋找 **Python (ms-python.python) by Microsoft** 延伸模組，然後選取綠色 [安裝] 按鈕。
 
 ## <a name="open-the-integrated-powershell-terminal-in-vs-code"></a>在 VS Code 中開啟整合式 PowerShell 終端機
 
 VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integrated-terminal)，可讓您使用 PowerShell 開啟 Python 命令列，以在程式碼編輯器與命令列之間建立順暢的工作流程。
 
-1. 在 VS Code 中開啟終端機、選取 [檢視]   >  [終端機]  ，或者使用快速鍵 **Ctrl+`** (使用倒單引號字元)。
+1. 在 VS Code 中開啟終端機，選取 [**視圖**  >  **終端** 機]，或使用 [倒引號] 字元) 中的快捷方式 **Ctrl + '** (。
 
     > [!NOTE]
-    > 預設終端機應該是 PowerShell，但如果您需要變更它，請使用 **Ctrl+Shift+P** 以進入命令面板。 輸入 **Terminal:Select Default Shell**，此時將會顯示終端機選項清單，其中包含 PowerShell、命令提示字元、WSL 等。選取您想要使用的終端機選項，並輸入 **Ctrl+Shift+`** (使用倒單引號) 來開啟新的終端機。
+    > 預設終端機應該是 PowerShell，但如果您需要變更它，請使用 **Ctrl+Shift+P** 以進入命令面板。 輸入 **終端機：選取預設 Shell** ，終端機選項清單會顯示包含 PowerShell、命令提示字元、WSL 等。選取您要使用的帳戶，然後輸入 **Ctrl + Shift + '** (使用倒引號) 來建立新的終端機。
 
 2. 在 VS Code 終端機內，輸入下列命令來開啟 Python：`python`
 
@@ -89,7 +89,7 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
 
 讓我們從一個簡單的指令碼開始，它會逐步解說目錄樹狀結構並顯示目錄結構。
 
-1. 使用 [開始]  功能表 (左下方的 Windows 圖示) 來開啟 PowerShell。
+1. 使用 [開始] 功能表 (左下方的 Windows 圖示) 來開啟 PowerShell。
 
 2. 建立專案的目錄：`mkdir python-scripts`，然後開啟該目錄：`cd python-scripts`。
 
@@ -114,14 +114,14 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
 
 6. 輸入下列命令，在 VS Code 中開啟您的專案：`code .`
 
-7. 輸入 **Ctrl+Shift+E** 來開啟 [VS Code 檔案總管] 視窗 (或使用功能表瀏覽至 [檢視]   >  [總管]  )，然後選取您剛建立的 list-directory-contents.py 檔案。 Microsoft Python 延伸模組將會自動載入 Python 解譯器。 您可以 VS Code 視窗底部查看已載入哪個解譯器。
+7. 輸入 **Ctrl+Shift+E** 來開啟 [VS Code 檔案總管] 視窗 (或使用功能表瀏覽至 [檢視] >  [總管])，然後選取您剛建立的 list-directory-contents.py 檔案。 Microsoft Python 延伸模組將會自動載入 Python 解譯器。 您可以 VS Code 視窗底部查看已載入哪個解譯器。
 
     > [!NOTE]
-    > Python 是一種解譯的語言，這表示它會作為虛擬機器，模擬實體電腦。 有不同類型的 Python 解譯器可供您使用：Python 2、Python 3、Anaconda、PyPy 等。若要執行 Python 程式碼，並取得 Python IntelliSense，您必須告訴 VS Code 使用哪個解譯器。 除非您有特定原因，非選擇不同的解譯器不可，否則建議您堅持使用 VS Code 預設選擇的解譯器 (我們案例中的 Python 3)。 若要變更 Python 解譯器，請選取目前顯示在 VS Code 視窗底部藍色列中的解譯器，或開啟 [命令選擇區]  (Ctrl+Shift+P)，然後輸入命令 **Python:Select Interpreter**。 這會顯示您目前已安裝的 Python 解譯器清單。 [深入了解如何設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
+    > Python 是一種解譯的語言，這表示它會作為虛擬機器，模擬實體電腦。 有不同類型的 Python 解譯器可供您使用： Python 2、Python 3、Anaconda、PyPy 等。若要執行 Python 程式碼並取得 Python IntelliSense，您必須告訴 VS Code 要使用的解譯器。 除非您有特定原因，非選擇不同的解譯器不可，否則建議您堅持使用 VS Code 預設選擇的解譯器 (我們案例中的 Python 3)。 若要變更 Python 解譯器，請選取 VS Code 視窗底部藍色列中目前顯示的解譯器，或開啟 **命令** 選擇區 (Ctrl + Shift + P) 然後輸入 [ **Python：選取解釋** 器] 命令。 這會顯示您目前已安裝的 Python 解譯器清單。 [深入了解如何設定 Python 環境](https://code.visualstudio.com/docs/python/environments)。
 
     ![選取 VS Code 中的 Python 解譯器](../images/interpreterselection.gif)
 
-8. 將下列程式碼貼至您的 list-directory-contents.py 檔案中，然後選取 [儲存]  ：
+8. 將下列程式碼貼至您的 list-directory-contents.py 檔案中，然後選取 [儲存]：
 
     ```python
     import os
@@ -136,7 +136,7 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
         print()
     ```
 
-9. 開啟 VS Code 整合式終端機 (**Ctrl+`** ，使用倒單引號字元)，然後輸入您剛才儲存 Python 指令碼的 src 目錄：
+9. 開啟 VS Code 整合式終端機 (**Ctrl+`**，使用倒單引號字元)，然後輸入您剛才儲存 Python 指令碼的 src 目錄：
 
     ```powershell
     cd src
@@ -148,7 +148,7 @@ VS Code 包含[內建終端機](https://code.visualstudio.com/docs/editor/integr
     python3 .\list-directory-contents.py
     ```
 
-    您應該會看到如下所示的輸出：
+    您應該會看到如下輸出：
 
     ```powershell
     Directory: ..\food

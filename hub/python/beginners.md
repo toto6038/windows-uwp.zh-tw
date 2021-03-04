@@ -1,6 +1,6 @@
 ---
 title: 開始在 Windows 上使用適用於初學者的 Python
-description: 如果您初次在 Windows 上使用 Python，本指南可協助開始。
+description: 這是新初學者的逐步指南，有興趣使用 Windows 10 學習 Python。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, 學習 python, windows 上適用於初學者的 python, 利用 microsoft store 安裝 python, python 搭配 vs code, windows 上的 pygame
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: f225932685e71cb2374249ad96efeac11184d000
-ms.sourcegitcommit: 3fafc6b6d548a03e6191fa95ebf9384c42396a30
-ms.translationtype: HT
+ms.openlocfilehash: 614e78b3dc4295b52b58645f04a0c02007bff4d4
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880541"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823612"
 ---
 # <a name="get-started-using-python-on-windows-for-beginners"></a>開始在 Windows 上使用適用於初學者的 Python
 

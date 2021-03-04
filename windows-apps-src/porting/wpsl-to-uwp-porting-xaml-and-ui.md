@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a6f78d30b1366078f2094aa17ab15c65a050c43
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: c421f071cb3e13e1ebb24b8d2cd9f8aec3341c2b
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89164342"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824532"
 ---
-#  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
+#  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>將 Windows Phone Silverlight XAML 和 UI 移植到 UWP
 
 
 
@@ -68,13 +68,13 @@ ms.locfileid: "89164342"
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-**BitmapImage** 位於 Windows Phone Silverlight 的 **System.Windows.Media.Imaging**命名空間中，而同一檔案中的 using 指示詞可允許在不加命名空間限定的情況下使用 **BitmapImage**，如上述程式碼片段所示。 在這種情況下，您可以在 Visual Studio 中於類型名稱 (**BitmapImage**) 上按一下滑鼠右鍵，然後使用操作功能表上的 [**解析**] 命令將新的命名空間指示詞新增到檔案中。 在此情況下，會新增 [**Windows.UI.Xaml.Media.Imaging**](/uwp/api/Windows.UI.Xaml.Media.Imaging) 命名空間，這是類型在 UWP 中的所在位置。 您可以移除 **System.Windows.Media.Imaging** using 指示詞，只要這樣就可以移植如上述程式碼片段中那樣的程式碼。 當您完成時，即已移除所有 Windows Phone Silverlight 命名空間。
+**BitmapImage** 位於 Windows Phone Silverlight 的 **System.Windows.Media.Imaging** 命名空間中，而同一檔案中的 using 指示詞可允許在不加命名空間限定的情況下使用 **BitmapImage**，如上述程式碼片段所示。 在這種情況下，您可以在 Visual Studio 中於類型名稱 (**BitmapImage**) 上按一下滑鼠右鍵，然後使用操作功能表上的 [**解析**] 命令將新的命名空間指示詞新增到檔案中。 在此情況下，會新增 [**Windows.UI.Xaml.Media.Imaging**](/uwp/api/Windows.UI.Xaml.Media.Imaging) 命名空間，這是類型在 UWP 中的所在位置。 您可以移除 **System.Windows.Media.Imaging** using 指示詞，只要這樣就可以移植如上述程式碼片段中那樣的程式碼。 當您完成時，即已移除所有 Windows Phone Silverlight 命名空間。
 
 在像這樣的簡單案例中，亦即將舊命名空間中的類型對應到新命名空間中的相同類型，您可以使用 Visual Studio 的 [**尋找和取代**] 命令對原始程式碼進行大量變更。 [**解析**] 命令是一個探索類型之新命名空間的絕佳方法。 再舉一例，您可以使用 "Windows.UI.Xaml" 來取代所有 "System.Windows"。 基本上，這將會移植所有 using 指示詞和所有參考該命名空間的完整類型名稱。
 
 在移除所有舊的 using 指示詞並加入新的指示詞之後，您便可以使用 Visual Studio 的 [**組合管理 Using**] 命令來排序您的指示詞及移除不使用的指示詞。
 
-有時候，修正命令式程式碼就像變更參數類型一樣，只是小事一樁。 其他時候，您將需要使用 Windows 執行階段 Api，而不是 Windows 執行階段8.x 應用程式的 .NET Api。 若要識別支援的 Api，請使用此移植指南的其餘部分搭配 [.net for Windows 執行階段8.x 應用程式總覽](/previous-versions/windows/apps/br230302(v=vs.140)) 和 [Windows 執行階段參考](/uwp/api/)。
+有時候，修正命令式程式碼就像變更參數類型一樣，只是小事一樁。 其他時候，您將需要使用 windows 執行時間 Api，而不是 Windows 執行時間8.x 應用程式的 .NET Api。 若要識別支援的 Api，請使用此移植指南的其餘部分搭配 [適用于 Windows 執行時間8.x 應用程式總覽的 .net](/previous-versions/windows/apps/br230302(v=vs.140)) 和 [windows 執行時間參考](/uwp/api/)。
 
 而如果您只是想要到達專案建置階段，您可以將任何非必要程式碼標成註解或清除。 然後逐一查看問題，並參閱本節 (與上一個主題：[疑難排解](wpsl-to-uwp-troubleshooting.md)) 中的下列主題，直到任何建置與執行階段問題都已解決，且您的移植已完成為止。
 
@@ -196,14 +196,14 @@ Windows Phone Silverlight app 會使用 **Microsoft.Phone.Controls** 命名空�
 | ControlTiltEffect.TiltEffect 類別 | 來自 UWP 動畫庫的動畫已內建至通用控制項的預設「樣式」中。 請參閱[讓指標動作產生動畫效果](/previous-versions/windows/apps/jj649432(v=win.10))。 |
 | LongListSelector 搭配已分組的資料 | Windows Phone Silverlight LongListSelector 有兩種運作方式，而這兩種方式可以一起使用。 首先，可以顯示依索引鍵分組的資料，例如依第一個字母分組的名稱清單。 其次，可以在下列兩種語意式檢視之間「縮放」：已分組的項目 (例如名稱) 清單和只有群組索引鍵本身 (例如第一個字母) 的清單。 運用 UWP，您可以使用[清單和格線檢視控制項的指導方針](../design/controls-and-patterns/lists.md)來顯示已分組的資料。 |
 | LongListSelector 搭配一般資料 | 基於效能考量，對於很長的清單，即使是一般、非分組的資料，我們也建議使用 LongListSelector，而不使用 Windows Phone Silverlight 清單方塊。 在 UWP app 中，針對長的項目清單 (不論是否可將資料加以分組)，皆建議使用 [GridView](/uwp/api/Windows.UI.Xaml.Controls.GridView)。 |
-| Panorama | Windows Phone Silverlight 全景控制項對應至 Windows 執行階段 8.x [應用程式中中樞控制項的指導方針](../design/basics/navigation-basics.md) 和中樞控制項的指導方針。 <br/> 請注意，Panorama 控制項會將最後一個區段迴繞到第一個區段，且其背景影像會以和區段相對的視差方式移動。 [Hub](/uwp/api/Windows.UI.Xaml.Controls.Hub) 區段不會迴繞，且不會使用視差。 |
+| Panorama | Windows Phone Silverlight 全景控制項對應至 [Windows 執行時間8.x 應用程式中中樞控制項的指導方針](../design/basics/navigation-basics.md) ，以及中樞控制項的指導方針。 <br/> 請注意，Panorama 控制項會將最後一個區段迴繞到第一個區段，且其背景影像會以和區段相對的視差方式移動。 [Hub](/uwp/api/Windows.UI.Xaml.Controls.Hub) 區段不會迴繞，且不會使用視差。 |
 | 樞紐 | UWP 中與 Windows Phone Silverlight Pivot 控制項相等的是 [Windows.UI.Xaml.Controls.Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)。 它適用於所有裝置系列。 |
 
-**注意**   PointerOver 視覺狀態與 Windows 10 apps 中的自訂樣式/範本相關，但不 Windows Phone Silverlight 應用程式中。 還有其他原因造成現有自訂樣式/範本不適用於 Windows 10 app，包括您正在使用的系統資源索引鍵、對所使用之虛擬狀態集所做的變更，以及對 Windows 10 預設樣式/範本所做的效能改進。 我們建議您針對 Windows 10 編輯控制項之預設範本的全新副本，然後對其重新套用您的樣式與範本自訂項目。
+**注意** PointerOver 視覺狀態在 Windows 10 app 的自訂樣式/範本中是相關的，但在 Windows Phone Silverlight app 中不是。 還有其他原因造成現有自訂樣式/範本不適用於 Windows 10 app，包括您正在使用的系統資源索引鍵、對所使用之虛擬狀態集所做的變更，以及對 Windows 10 預設樣式/範本所做的效能改進。 我們建議您針對 Windows 10 編輯控制項之預設範本的全新副本，然後對其重新套用您的樣式與範本自訂項目。
 
-如需 UWP 控制項的詳細資訊，請參閱[依功能分類的控制項](../design/controls-and-patterns/controls-by-function.md)、[控制項清單](../design/controls-and-patterns/index.md)，以及[控制項的指導方針](../design/controls-and-patterns/index.md)。
+如需 UWP 控制項的詳細資訊，請參閱[依功能分類的控制項](../design/controls-and-patterns/index.md)、[控制項清單](../design/controls-and-patterns/index.md)，以及[控制項的指導方針](../design/controls-and-patterns/index.md)。
 
-##  <a name="design-language-in-windows10"></a>Windows 10 中的設計語言
+##  <a name="design-language-in-windows-10"></a>Windows 10 中的設計語言
 
 Windows Phone Silverlight 應用程式和 Windows 10 應用程式之間的設計語言有一些差異。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
@@ -241,7 +241,7 @@ Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 屬性
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-在這裡，winrt \_check.png 是點陣圖形式的 Alpha 遮罩，就像 wpslcheck.png 一樣 \_ ，它也可以是同一個檔案。 不過，您可能會想要提供數種不同的 winrtcheck.png 大小， \_ 以用於不同的縮放比例因素。 如需有關該事項的詳細資訊，以及對 **Width** 和 **Height** 值所做之變更的說明，請參閱本主題中的[檢視或有效像素、檢視距離及縮放比例](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
+在這裡，winrt \_check.png 是點陣圖形式的 Alpha 遮罩，就像 wpslcheck.png 一樣 \_ ，它也可以是同一個檔案。 不過，您可能會想要提供數種不同的 winrtcheck.png 大小， \_ 以用於不同的縮放比例因素。 如需有關該事項的詳細資訊，以及對 **Width** 和 **Height** 值所做之變更的說明，請參閱本主題中的 [檢視或有效像素、檢視距離及縮放比例](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
 
 如果點陣圖的淺色和深色形式有差異，有一個適合此情況的更普遍方法，就是使用兩個影像資產：一個具有深色前景 (用於淺色佈景主題)，另一個具有淺色前景 (用於深色佈景主題)。 如需有關如何命名這組點陣圖資產的進一步詳細資訊，請參閱 [針對語言、級別和其他限定詞量身打造資源](../app-resources/tailor-resources-lang-scale-contrast.md)。 正確命名一組影像檔之後，您便可以在摘要中使用它們的根名稱來參考它們，就像這樣：
 
@@ -305,7 +305,7 @@ URI 對應和片段瀏覽是 URI 瀏覽技術，因此不適用於並非以 URI 
 
 系統匣 (在 XAML 標記中以 `shell:SystemTray.IsVisible` 設定) 現在稱為狀態列，並且預設會顯示。 您可以在命令式程式碼中，藉由呼叫 [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](/uwp/api/windows.ui.viewmanagement.statusbar.showasync) 和 [**HideAsync**](/uwp/api/windows.ui.viewmanagement.statusbar.hideasync) 方法來控制其可見度。
 
-## <a name="text"></a>文字
+## <a name="text"></a>Text
 
 文字 (或印刷樣式) 是 UWP app 中的一個重要層面，在移植時，您可以重新檢閱檢視的視覺設計，以確保它們不會與新的設計語言產生違和感。 請使用這些插圖說明來找出可用的 UWP  **TextBlock** 系統樣式。 尋找與您使用的 Windows Phone Silverlight 樣式相對應的樣式。 您也可以選擇建立自己的通用樣式，然後從 Windows Phone Silverlight 系統樣式將屬性複製到這些通用樣式中。
 
@@ -319,7 +319,7 @@ URI 對應和片段瀏覽是 URI 瀏覽技術，因此不適用於並非以 URI 
 
 在 Windows Phone Silverlight 應用程式中，預設佈景主題為深色。 Windows 10 裝置的預設佈景主題已經變更，但是您可以透過在 App.xaml 中宣告要求的佈景主題來控制所使用的佈景主題。 例如，若要在所有裝置上使用深色佈景主題，可將 `RequestedTheme="Dark"` 新增到根應用程式元素。
 
-## <a name="tiles"></a>圖格
+## <a name="tiles"></a>磚
 
 UWP app 磚的行為與 Windows Phone Silverlight app 的「動態磚」類似，雖然仍有些微差異。 例如，程式碼如果會呼叫 **Microsoft.Phone.Shell.ShellTile.Create** 方法來建立次要磚，應該移植並改成呼叫 [**SecondaryTile.RequestCreateAsync**](/uwp/api/windows.ui.startscreen.secondarytile.requestcreateasync)。 以下是移植前和移植後的對照範例，首先是 Windows Phone Silverlight 版本：
 
@@ -374,7 +374,7 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的
 
 為使您的應用程式在所有顯示器上都能有最佳體驗，建議您在某個大小範圍內個別建立適用於各個特定縮放比例的點陣圖資產。 提供 100%、200% 及 400% 的縮放比例 (並以此順序做為其優先順序)，可讓您在大部分情況下利用所有的中繼縮放係數獲得絕佳的結果。
 
-**注意**   如果基於任何原因，您無法建立多個大小的資產，則請建立100% 規模的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
+**注意** 如果您無法建立多種大小的資產 (無論原因為何)，請建立縮放比例為 100% 的資產。 在 Microsoft Visual Studio 中，UWP app 的預設專案範本只會提供一種大小的商標資產 (磚影像和標誌)，但其縮放比例不是 100%。 在為您自己的應用程式製作資產時，請遵循本節中的指導方針，提供 100%、 200%及 400% 的大小，並使用資產套件。
 
 如果您有複雜的圖檔，您可以用更多大小來提供您的資產。 如果您開始使用向量藝術，則使用任何縮放比例來產生高品質的資產，相對來說就容易許多。
 

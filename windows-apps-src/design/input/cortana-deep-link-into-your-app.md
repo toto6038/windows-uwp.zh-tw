@@ -5,19 +5,19 @@ ms.assetid: 6fe5fcc5-9ee4-4c04-92f4-7b1bf7ef5651
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: d96e54604c5def61802a77625a6c18c556db909d
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: 5096e4897d5a75be70deaf272ec52c151c1ad871
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99606053"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823492"
 ---
 # <a name="deep-link-from-a-background-app-in-cortana-to-a-foreground-app"></a>從 Cortana 中的背景應用程式到前景應用程式的深層連結
 
 >[!WARNING]
-> 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+> Windows 10 2020 版更新 (2004 版 codename "20H1" ) ，不再支援此功能。
 >
-> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
+> 查看 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 從 **Cortana** 中的背景應用程式提供深層連結，以在特定狀態或內容中啟動應用程式至前景。
 
@@ -44,7 +44,7 @@ ms.locfileid: "99606053"
 
 我們將在這裡討論深層連結。
 
-當 Cortana 和您的 app service 做為您的全功能應用程式的閘道時，深層連結會很有用 (而不需要使用者透過 [開始] 功能表) 啟動應用程式，或在您的應用程式內提供無法透過 Cortana 存取更豐富的詳細資料和功能。 深層連結是增加可用性及推廣應用程式的另一種方式。
+當 Cortana 和您的 app service 做為您的全功能應用程式的閘道時，深層連結會很有用 (而不需要使用者透過 [開始] 功能表) 啟動應用程式，或在應用程式內提供無法透過 Cortana 存取更豐富的詳細資料和功能。 深層連結是增加可用性及推廣應用程式的另一種方式。
 
 有三種方式可以提供深層連結：
 
@@ -230,7 +230,7 @@ await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 
 ## <a name="protocol-contract"></a>通訊協定合約
 
-您的應用程式會使用 [**通訊協定**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 合約，透過統一資源識別項 (URI) 啟用來啟動至前景。 您的應用程式必須覆寫應用程式的 [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application)事件，並檢查是否有 **通訊協定** **ActivationKind** 。 如需詳細資訊，請參閱 [控制碼 URI 啟用](/windows/uwp/launch-resume/handle-uri-activation)。
+您的應用程式會使用 [**通訊協定**](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) 合約，透過統一資源識別項 (URI) 啟用來啟動至前景。 您的應用程式必須覆寫應用程式的 [**OnActivated**](/uwp/api/Windows.UI.Xaml.Application)事件，並檢查是否有 **通訊協定** **ActivationKind** 。 如需詳細資訊，請參閱 [控制碼 URI 啟用](../../launch-resume/handle-uri-activation.md)。
 
 在這裡，我們會將 [**ProtocolActivatedEventArgs**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) 提供的 URI 解碼，以存取啟動引數。 在此範例中， [**Uri**](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs) 會設定為 "personalassistantlaunch：？LaunchCoNtext = 拉斯維加斯（拉斯維加斯）」。
 

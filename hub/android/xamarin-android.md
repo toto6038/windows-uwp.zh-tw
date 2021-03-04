@@ -1,57 +1,57 @@
 ---
 title: 使用 Xamarin 建立簡單的 Android 應用程式
-description: 如何開始使用 Xamarin 撰寫 Android 應用程式
+description: 逐步指南說明如何在 Windows 上開始使用 Xamarin，以建立可在 Android 裝置上運作的跨平臺應用程式。
 author: hickeys
 ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: android、windows、xamarin、教學課程、xaml
 ms.date: 04/28/2020
-ms.openlocfilehash: c731b5f96243333e4a4ad150de499ac9459113bc
-ms.sourcegitcommit: 24b19e7ee06e5bb11a0dae334806741212490ee9
+ms.openlocfilehash: 3bcecf24fe6bb90dc2b94dfa62a5768481b298e5
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82255202"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823172"
 ---
 # <a name="get-started-developing-for-android-using-xamarinandroid"></a>開始使用 Xamarin 進行 Android 開發
 
-本指南將協助您開始在 Windows 上使用 Xamarin，以建立可在 Android 裝置上執行的跨平臺應用程式。
+本指南將協助您開始在 Windows 上使用 Xamarin，以建立可在 Android 裝置上運作的跨平臺應用程式。
 
 在本文中，您將使用 Xamarin. Android 和 Visual Studio 2019 建立簡單的 Android 應用程式。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 若要使用本教學課程，您需要下列各項：
 
 - Windows 10
-- [Visual Studio 2019：社區、專業或企業](https://visualstudio.microsoft.com/downloads/)（請參閱附注）
+- [Visual Studio 2019：社區、專業或企業](https://visualstudio.microsoft.com/downloads/) (請參閱附注) 
 - Visual Studio 2019 的「使用 .NET 進行行動開發」工作負載
 
 > [!NOTE]
-> 本指南將與 Visual Studio 2017 或2019搭配使用。 如果您使用 Visual Studio 2017，某些指示可能會因為 Visual Studio 的兩個版本之間的 UI 差異而不正確。
+> 本指南將適用于 Visual Studio 2017 或2019。 如果您使用 Visual Studio 2017，某些指令可能會因為兩個 Visual Studio 版本之間的 UI 差異而不正確。
 
-您也會有 Android 手機或設定的模擬器，以在其中執行您的應用程式。 請參閱設定[Android 模擬器](emulator.md)。
+您也會有 Android 手機或已設定的模擬器，可在其中執行您的應用程式。 請參閱設定 [Android 模擬器](emulator.md)。
 
 ## <a name="create-a-new-xamarinandroid-project"></a>建立新的 Xamarin.Android 專案
 
-啟動 Visual Studio。 選取 [檔案] > [新增 > 專案]，以建立新的專案。
+啟動 Visual Studio。 選取 [檔案 > 新的 > 專案]，以建立新專案。
 
-在 [新增專案] 對話方塊中，選取 [ **Android 應用程式（Xamarin）** ] 範本，然後按 **[下一步]**。
+在 [新增專案] 對話方塊中，選取 [ **Xamarin) 範本 (的 Android 應用程式** ，然後按 **[下一步]**。
 
-將專案命名為**TimeChangerAndroid** ，然後按一下 [**建立**]。
+將專案命名為 **TimeChangerAndroid** ，然後按一下 [ **建立**]。
 
-在 [新增跨平臺應用程式] 對話方塊中，選取 [**空白應用程式**]。 在 [**最低 Android 版本**] 中，選取 [ **Android 5.0 （棒糖）**]。 按一下 [確定]  。
+在 [新的跨平臺應用程式] 對話方塊中，選取 [ **空白應用程式**]。 在 [ **最小 Android 版本**] 中，選取 [ **Android 5.0 (棒)**。 按一下 [確定]  。
 
-Xamarin 會使用名為**TimeChangerAndroid**的單一專案來建立新的方案。
+Xamarin 會使用名為 **TimeChangerAndroid** 的單一專案來建立新的方案。
 
 ## <a name="create-a-ui-with-xaml"></a>使用 XAML 建立 UI
 
-在專案的**Resources\layout**目錄中，開啟**activity_main .xml**。 此檔案中的 XML 會定義使用者開啟 TimeChanger 時將看到的第一個畫面。
+在專案的 **Resources\layout** 目錄中，開啟 **activity_main.xml**。 此檔案中的 XML 會定義使用者開啟 TimeChanger 時所看到的第一個畫面。
 
-TimeChanger 的 UI 很簡單。 它會顯示目前的時間，並具有按鈕來調整一小時的增量時間。 它會使用垂直`LinearLayout`對齊按鈕上方的時間和水準`LinearLayout`並排排列按鈕。 內容會在畫面中置中，其方式是將**android：重力**屬性設定為`LinearLayout`垂直**中央**。
+TimeChanger 的 UI 很簡單。 它會顯示目前的時間，並有按鈕可調整以一小時為單位的增量時間。 它會使用垂直 `LinearLayout` 對齊按鈕上方的時間，並使用水準 `LinearLayout` 來並排排列按鈕。 將 [ **android：重力** ] 屬性設定為 [置中] 的垂直位置，以將內容 **置** 中在畫面上 `LinearLayout` 。
 
-將**activity_main**的內容取代為下列程式碼。
+以下列程式碼取代 **activity_main.xml** 的內容。
 
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,21 +85,21 @@ TimeChanger 的 UI 很簡單。 它會顯示目前的時間，並具有按鈕來
 </LinearLayout>
 ```
 
-此時，您可以執行**TimeChangerAndroid** ，並查看您已建立的 UI。 在下一節中，您將在 UI 中新增功能，以顯示目前的時間，並啟用按鈕來執行動作。
+現在您可以執行 **TimeChangerAndroid** ，並查看您所建立的 UI。 在下一節中，您會將功能加入至 UI，以顯示目前的時間，並啟用按鈕以執行動作。
 
 ## <a name="add-logic-code-with-c"></a>使用 C 新增邏輯程式碼#
 
-開啟 **MainActivity.cs**。 此檔案包含程式碼後置邏輯，其會將功能加入至 UI。
+開啟 **MainActivity.cs**。 此檔案包含可將功能新增至 UI 的程式碼後端邏輯。
 
 ### <a name="set-the-current-time"></a>設定目前的時間
 
-首先，取得將會顯示時間`TextView`的參考。 使用**FindViewById**來搜尋所有 UI 元素，其中包含正確的**android： id** （在上一個步驟的`"@+id/timeDisplay"` xml 中設定為）。 這是`TextView`會顯示目前時間的。
+首先，取得 `TextView` 將顯示時間的參考。 使用 **FindViewById** 來搜尋具有正確 **android： id** (的所有 UI 元素，此專案是在 `"@+id/timeDisplay"` 上一個步驟) 的 xml 中設定為。 這是 `TextView` 將會顯示目前時間的。
 
 ```csharp
 var timeDisplay = FindViewById<TextView>(Resource.Id.timeDisplay);
 ```
 
-Ui 控制項必須在 UI 執行緒上更新。 從另一個執行緒所做的變更，可能無法在控制項于螢幕上顯示時適當地更新。 由於不保證此程式碼一律會在 UI 執行緒上執行，因此請使用**RunOnUiThread**方法，以確保任何更新都能正確顯示。 以下是完整`UpdateTimeLabel`的方法。
+Ui 控制項必須在 UI 執行緒上更新。 從另一個執行緒所做的變更，可能無法適當地更新控制項在畫面上顯示的內容。 因為不保證此程式碼永遠會在 UI 執行緒上執行，所以請使用 **RunOnUiThread** 方法來確定是否有任何更新正確顯示。 以下是完整的 `UpdateTimeLabel` 方法。
 
 ```csharp
 private void UpdateTimeLabel(object state = null)
@@ -113,7 +113,7 @@ private void UpdateTimeLabel(object state = null)
 
 ### <a name="update-the-current-time-once-every-second"></a>每秒更新一次目前的時間
 
-此時，在 TimeChangerAndroid 啟動之後，目前的時間會精確到最多一秒。 標籤必須定期更新，以保持正確的時間。 **計時器**物件會定期呼叫會以目前時間更新標籤的回呼方法。
+目前，在 TimeChangerAndroid 啟動之後，目前的時間會是正確的，最多隻會有一秒的時間。 標籤必須定期更新，才能保持精確的時間。 **計時器** 物件會定期呼叫回呼方法，以使用目前的時間來更新標籤。
 
 ```csharp
 var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel, state: null);
@@ -121,21 +121,21 @@ var clockRefresh = new Timer(dueTime: 0, period: 1000, callback: UpdateTimeLabel
 
 ### <a name="add-houroffset"></a>新增 HourOffset
 
-[上移] 和 [下移] 按鈕會以一小時的增量來調整時間。 加入**HourOffset**屬性來追蹤目前的調整。
+向上和向下按鈕會以一小時的增量來調整時間。 加入 **HourOffset** 屬性以追蹤目前的調整。
 
 ```csharp
 public int HourOffset { get; private set; }
 ```
 
-現在更新 UpdateTimeLabel 方法，以瞭解 HourOffset 屬性。
+現在，更新 UpdateTimeLabel 方法以留意 HourOffset 屬性。
 
 ```csharp
 TimeDisplay.Text = DateTime.Now.AddHours(HourOffset).ToLongTimeString();
 ```
 
-### <a name="create-the-button-click-event-handlers"></a>建立按鈕的 Click 事件處理常式
+### <a name="create-the-button-click-event-handlers"></a>建立按鈕 Click 事件處理常式
 
-[向上] 和 [向下] 按鈕必須執行 [遞增] 或 [遞減] HourOffset 屬性，並呼叫 UpdateTimeLabel。
+所有的向上和向下按鈕都需要遞增或遞減 HourOffset 屬性，然後呼叫 UpdateTimeLabel。
 
 ```csharp
 public void UpButton_Click(object sender, System.EventArgs e)
@@ -145,18 +145,18 @@ public void UpButton_Click(object sender, System.EventArgs e)
 }
 ```
 
-### <a name="wire-up-the-up-and-down-buttons-to-their-corresponding-event-handlers"></a>將向上和向下按鈕連接到其對應的事件處理常式
+### <a name="wire-up-the-up-and-down-buttons-to-their-corresponding-event-handlers"></a>將向上和向下按鈕連接至其對應的事件處理常式
 
-若要將按鈕與對應的事件處理常式產生關聯，請先使用 FindViewById 來依識別碼尋找按鈕。 一旦有了按鈕物件的參考之後，您就可以將事件處理常式加入其`Click`事件中。
+若要將按鈕與其對應的事件處理常式產生關聯，請先使用 FindViewById 依識別碼尋找按鈕。 一旦有了 button 物件的參考之後，就可以將事件處理常式加入其 `Click` 事件中。
 
 ```csharp
 Button upButton = FindViewById<Button>(Resource.Id.upButton);
 upButton.Click += UpButton_Click;
 ```
 
-## <a name="completed-mainactivitycs-file"></a>已完成的 MainActivity.cs 檔案
+## <a name="completed-mainactivitycs-file"></a>完成的 MainActivity.cs 檔案
 
-當您完成時，MainActivity.cs 看起來應該像這樣：
+當您完成時，MainActivity.cs 應該看起來像這樣：
 
 ```csharp
 using Android.App;
@@ -217,9 +217,9 @@ namespace TimeChangerAndroid
 }
 ```
 
-## <a name="run-your-app"></a>執行您的應用程式
+## <a name="run-your-app"></a>執行應用程式
 
-若要執行應用程式，請按**F5**或按一下 [Debug] > 開始進行偵錯工具。 視[偵錯工具的設定](emulator.md)方式而定，您的應用程式將會在裝置或模擬器中啟動。
+若要執行應用程式，請按 **F5** 或按一下 [Debug > 開始偵錯工具]。 視 [偵錯工具的設定](emulator.md)方式而定，您的應用程式將會在裝置上或模擬器中啟動。
 
 ## <a name="related-links"></a>相關連結
 

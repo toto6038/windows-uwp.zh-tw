@@ -8,12 +8,12 @@ keywords: pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆,
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: bae166c1671421c13302df0d2f85e505985d3f2e
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 80360ef30b50229beda813ae211966f398744941
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030741"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824672"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
@@ -21,7 +21,7 @@ ms.locfileid: "93030741"
 
 > [!Important]
 > 只有在需求明確且定義清楚，而且沒有平台控制項支援的互動可以支援您的情況時，才能建立自訂互動。  
-> 若您在您的 Windows 應用程式中自訂互動體驗，使用者會預期他們一致、直覺化且可搜尋到。 基於這些理由，我們建議您在[平台控制項](../controls-and-patterns/controls-by-function.md)支援的項目上為您的自訂互動建模。 平臺控制項可提供完整的 Windows 應用程式使用者互動體驗，包括標準互動、動畫物理效果、視覺效果意見反應和協助工具。 
+> 若您在您的 Windows 應用程式中自訂互動體驗，使用者會預期他們一致、直覺化且可搜尋到。 基於這些理由，我們建議您在[平台控制項](../controls-and-patterns/index.md)支援的項目上為您的自訂互動建模。 平臺控制項可提供完整的 Windows 應用程式使用者互動體驗，包括標準互動、動畫物理效果、視覺效果意見反應和協助工具。 
 
 ## <a name="important-apis"></a>重要 API
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
@@ -43,7 +43,7 @@ ms.locfileid: "93030741"
 Windows 應用程式可以接聽下列指標事件：
 
 > [!NOTE]
-> 藉由在指標事件處理常式中的該項目上呼叫 [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer) 來輸入特定 UI 項目的限制指標。 當項目擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 [**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact) (按下滑鼠，接觸觸控或手寫筆) 必須為 true， **CapturePointer** 才會成功。
+> 藉由在指標事件處理常式中的該項目上呼叫 [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer) 來輸入特定 UI 項目的限制指標。 當項目擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 [**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact) (按下滑鼠，接觸觸控或手寫筆) 必須為 true，**CapturePointer** 才會成功。
 
 <table>
 <colgroup>
@@ -240,7 +240,7 @@ public MainPage()
 -   這個處理常式會管理 [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 事件。 我們將事件新增到事件記錄檔、將指標新增到作用中的指標字典，並顯示指標詳細資料。
 
     > [!NOTE]
-    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件不一定會成對出現。 您的應用程式應接聽和處理可能得出指標向下 (例如 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)、 [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)、 以及 [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)) 的任何事件。
+    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) 和 [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) 事件不一定會成對出現。 您的應用程式應接聽和處理可能得出指標向下 (例如 [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)、[**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)、 以及 [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)) 的任何事件。
          
 
 ```csharp

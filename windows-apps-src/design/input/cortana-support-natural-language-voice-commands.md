@@ -7,19 +7,19 @@ ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
 ms.topic: article
 keywords: cortana
-ms.openlocfilehash: 7716d4d623653c6b2d943135f2e2cf1ac9a40343
-ms.sourcegitcommit: 8fe992f3a6d8f7975af4911ad88e855bee50083e
+ms.openlocfilehash: c6777a0c7ad9a8e2658b759e516b659bbd4eb9a9
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99605993"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101824502"
 ---
 # <a name="support-natural-language-voice-commands-in-cortana"></a>支援 Cortana 的自然語音命令
 
 >[!WARNING]
-> 這項功能已不再支援，因為 Windows 10 2020 版更新 (2004 版（codename "20H1" ) ）。
+> Windows 10 2020 版更新 (2004 版 codename "20H1" ) ，不再支援此功能。
 >
-> 請參閱 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
+> 查看 [Microsoft 365 中](/microsoft-365/admin/misc/cortana-integration) cortana 如何改造新式生產力體驗的 cortana。
 
 使用更具彈性且自然的語音命令來擴充 **Cortana** ，讓使用者可以在命令中的任何位置說出您的應用程式名稱。
 
@@ -46,8 +46,8 @@ ms.locfileid: "99605993"
 >
 > 如果您是開發通用 Windows 平台 (UWP) App 的新手，請仔細閱讀這些主題以熟悉這裡討論的技術。
 >
-> - [建立您的第一個應用程式](/windows/uwp/get-started/your-first-app)
-> - 請參閱[事件與路由事件概觀](/windows/uwp/xaml-platform/events-and-routed-events-overview)，以了解事件相關資訊
+> - [建立您的第一個應用程式](../../get-started/your-first-app.md)
+> - 請參閱[事件與路由事件概觀](../../xaml-platform/events-and-routed-events-overview.md)，以了解事件相關資訊
 >
 > **使用者經驗指導方針**
 >
@@ -148,9 +148,9 @@ ms.locfileid: "99605993"
 
 在 **Cortana** 中的使用者從未提到語音命令的方式中支援更大的變化，也會增加應用程式的一般可用性。
 
-避免將「嘿 \[ 應用程式名稱」 \] 作為 **AppName**。 使用者比較有可能會說「嗨 Cortana」，透過語音啟用叫用 Cortana，而 \[ 語句中的「嗨應用程式名稱」並 \] 不自然。 例如，「嗨 Cortana，請顯示我的下一次前往內華達州的「嗨的公司」。
+避免將「嘿 \[ 應用程式名稱」 \] 作為 **AppName**。 使用者更可能會說：「嗨 Cortana」透過語音啟用叫用 Cortana，而 \[ 語句中的「嗨應用程式名稱」並 \] 不自然。 例如，「嗨，Cortana，請向我的下一步說，嗨
 
-請考慮將中置/後置詞的變化新增至現有的語音命令。 如這裡所示，將額外的屬性新增至您現有的 **ListenFor** 專案並支援尾碼變異並不需要太多努力。 更自然的說：「嗨 Cortana，顯示我的下一次旅程在艾德作品上的「不是」嗨 Cortana，艾德作品，顯示我的下一步到拉斯維加斯的旅程」。
+請考慮將中置/後置詞的變化新增至現有的語音命令。 如這裡所示，將額外的屬性新增至您現有的 **ListenFor** 專案並支援尾碼變異並不需要太多努力。 更自然的說：「嘿，「嗨 Cortana」、「我的下一次旅程」與「嘿」、「您好的 Cortana」、「您好的公司」、「我的下一次旅程」。
 
 請考慮使用您的應用程式名稱做為前置詞，以在語音命令與現有 **Cortana** 功能相衝突的情況下， (呼叫、訊息傳送等) 。 例如，「艾德公司，訊息 \[ 旅遊代理程式 \] 關於內華達州旅程」。
 

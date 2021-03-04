@@ -1,18 +1,18 @@
 ---
 title: Windows 上的 Android 開發概觀
-description: 協助您在 Windows 上開始開發 Android 的指南。
+description: 開始在 Windows 上針對 Android 進行開發，包括原生 Android 開發、跨平臺開發和 Android 遊戲開發。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: windows 上的 android、xamarin、回應原生、cordova、ionic、phonegap、c + + android 遊戲、windows defender、模擬器
 ms.date: 04/28/2020
-ms.openlocfilehash: e215d9e08fcef7ddb1caae40bd8f3a83e183d197
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: b839972033c9edfad3524909345380e7fac9462e
+ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89157702"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101823162"
 ---
 # <a name="overview-of-android-development-on-windows"></a>Windows 上的 Android 開發概觀
 
@@ -41,13 +41,13 @@ ms.locfileid: "89157702"
 
 雖然跨平臺架構的外觀和感覺盡可能接近原生應用程式，但它們永遠不會與原生開發的應用程式緊密整合，而且可能會降低速度和效能降低。 此外，用來建立跨平臺應用程式的工具可能不會有每個不同裝置平臺所提供的所有功能，可能需要因應措施。
 
-程式碼基底通常是由 **UI 程式碼**所組成，用來建立使用者介面，例如頁面、按鈕控制項、標籤、清單等，以及用來呼叫 web 服務、存取資料庫、叫用硬體功能和管理狀態的 **邏輯程式碼**。 平均來說，90% 的可重複使用，不過通常需要針對每個裝置平臺自訂程式碼。 這項一般化主要取決於您所建立的應用程式類型，但提供了一些希望能協助您進行決策的內容。  
+程式碼基底通常是由 **UI 程式碼** 所組成，用來建立使用者介面，例如頁面、按鈕控制項、標籤、清單等，以及用來呼叫 web 服務、存取資料庫、叫用硬體功能和管理狀態的 **邏輯程式碼**。 平均來說，90% 的可重複使用，不過通常需要針對每個裝置平臺自訂程式碼。 這項一般化主要取決於您所建立的應用程式類型，但提供了一些希望能協助您進行決策的內容。  
 
 ## <a name="choosing-a-cross-platform-framework"></a>選擇跨平臺架構
 
 [Xamarin Native (Xamarin. Android) ](xamarin-android.md)
 
-- UI 程式碼：具有 Android Designer 的 XML 和材質主題
+- UI 程式碼：具有 Android 設計工具的 XML 和材質主題
 - 邏輯程式碼： c # 或 F#
 - 仍能利用一些原生的 Android 元素，但適用于其他平臺 (iOS、Windows) 的程式碼基底。
 - 只有邏輯程式碼會跨平臺共用，而不是 UI 程式碼。
@@ -55,7 +55,7 @@ ms.locfileid: "89157702"
 
 [Xamarin 表單 (Xamarin) ](xamarin-forms.md)
 
-- UI 程式碼：具有 Visual Studio) 的 XAML 和 .NET (
+- UI 程式碼：使用 Visual Studio) 的 XAML 和 .NET (
 - 邏輯程式碼： C#
 - 在 Android、iOS 和 Windows 裝置應用程式之間共用大約60–90% 的邏輯和 UI 程式碼。 
 - 使用常用的使用者控制項，例如按鈕、標籤、專案、ListView、StackLayout、行事曆、TabbedPage 等等。建立按鈕和 Xamarin 表單，將會找出如何使用系結程式庫從 c # 呼叫 JAVA 或 Swift 程式碼，來呼叫每個平臺的原生按鈕。
@@ -65,9 +65,9 @@ ms.locfileid: "89157702"
 
 - UI 程式碼： JavaScript
 - 邏輯程式碼： JavaScript
-- React Native 的目標不是只要撰寫程式碼一次，就可以在任何平臺上執行，而不是一次 () 和寫入任何地方的回應方式。
-- 此社區新增了像是博覽會的工具，並建立 React Native 應用程式，以協助在不使用 Xcode 或 Android Studio 的情況下建立應用程式。
-- 類似于 Xamarin (c # ) ，React Native (JavaScript) 會呼叫原生 UI 元素 (而不需要撰寫 JAVA/Kotlin 或 Swift) 。
+- 回應原生的目標不是撰寫程式碼一次，而是在任何平臺上執行，而是一次 () 和寫入的回應方式。
+- 此社區新增了像是博覽會的工具，並建立回應原生應用程式，以協助在不使用 Xcode 或 Android Studio 的情況下建立應用程式。
+- 類似于 Xamarin (c # ) ，回應原生 (JavaScript) 呼叫原生 UI 元素 (而不需要撰寫 JAVA/Kotlin 或 Swift) 。
 
 [漸進式 Web 應用程式 (PWA)](pwa.md)
 
@@ -82,14 +82,14 @@ ms.locfileid: "89157702"
 
 Android 的遊戲開發通常是開發標準 Android 應用程式的唯一方式，因為遊戲通常會使用自訂轉譯邏輯，通常是以 OpenGL 或 Vulkan 撰寫。 基於這個理由，以及支援遊戲開發的許多 C 程式庫，開發人員通常會使用 [C/c + + 搭配 Visual Studio](/cpp/cross-platform/?view=vs-2019)，以及 Android [原生開發工具組 (NDK) ](/cpp/cross-platform/create-an-android-native-activity-app?view=vs-2019)，以建立適用于 android 的遊戲。 [開始使用 C/c + + 進行遊戲開發](native-android.md#use-c-or-c-for-android-game-development)。
 
-開發 Android 遊戲的另一個常見路徑是使用遊戲引擎。 有許多可用的免費和開放原始碼引擎（例如 [Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019)），例如 Visual Studio、 [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html)、 [MonoGame With xamarin](/xamarin/graphics-games/monogame/introduction/)、 [UrhoSharp with Xamarin](/xamarin/graphics-games/urhosharp/introduction)、 [SkiaSharp with Xamarin](/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) CocoonJS、App 遊戲套件、融合、Corona SDK、科科2d 等等。
+開發 Android 遊戲的另一個常見路徑是使用遊戲引擎。 有許多免費的開放原始碼引擎可供使用，例如 [Unity 與 Visual Studio](/visualstudio/cross-platform/visual-studio-tools-for-unity?view=vs-2019)、 [Unreal Engine](https://docs.unrealengine.com/en-US/Platforms/Mobile/Android/GettingStarted/index.html)、 [MonoGame with xamarin](/xamarin/graphics-games/monogame/introduction/)、 [UrhoSharp with](/xamarin/graphics-games/urhosharp/introduction)Xamarin、 [SkiaSharp With xamarin](/xamarin/xamarin-forms/user-interface/graphics/skiasharp/) COCOONJS、應用程式遊戲套件、融合、Corona SDK、科科2d 等等。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 - [開始在 Windows 上使用原生 Android 開發](native-android.md)
 - [開始使用 Xamarin 進行 Android 開發](xamarin-android.md)
 - [開始使用 Xamarin 進行 Android 開發](xamarin-forms.md)
-- [開始使用 React Native 開發 Android](react-native.md)
+- [開始使用回應原生開發 Android](react-native.md)
 - [開始開發適用于 Android 的 PWA](pwa.md)
 - [開發適用于 Android 的雙螢幕應用程式，並取得 Surface 雙核裝置 SDK](/dual-screen/android/)
 - [新增 Windows Defender 排除專案以改善效能](defender-settings.md)
