@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 自訂音效, 通知, 音訊, 音效
 ms.localizationpriority: medium
-ms.openlocfilehash: d2d32b9545cccfb25790d394aec028fd29904ca5
-ms.sourcegitcommit: 140bbbab0f863a7a1febee85f736b0412bff1ae7
+ms.openlocfilehash: 54f890ceb0031b4c244e387e1f7068615a2fedc1
+ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91984404"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102029821"
 ---
 # <a name="custom-audio-on-toasts"></a>自訂快顯通知的音效
 

@@ -5,12 +5,12 @@ ms.date: 07/11/2020
 ms.topic: article
 keywords: windows 10, uwp, cppwinrt, C++/WinRT
 ms.localizationpriority: medium
-ms.openlocfilehash: bb6a76f2e8096d63907daf5ededdb6a22eb72a6c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 706b0aceb203fe6a333c281dfd2b691eb35b65b2
+ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175202"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102029831"
 ---
 # <a name="create-a-hello-world-app-using-cwinrt"></a>使用 C++/WinRT 建立 "Hello, World!" 應用程式
 
@@ -30,7 +30,7 @@ C++/WinRT 是 Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語�
 
 我們的第一個應用程式是 "Hello, World!" 應用程式，其會示範互動功能、配置及樣式的某些基本功能。
 
-請先在 Microsoft Visual Studio 中，建立新的專案。 建立**空白應用程式 (C++/WinRT)** 專案，並將其命名為 *HelloWorldCppWinRT*。 確定已取消核取 [將方案和專案放置於同一個目錄]。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
+請先在 Microsoft Visual Studio 中，建立新的專案。 建立 **空白應用程式 (C++/WinRT)** 專案，並將其命名為 *HelloWorldCppWinRT*。 確定已取消核取 [將方案和專案放置於同一個目錄]。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
 
 在本主題稍後的章節中，會引導您建立專案 (但請勿在進行到該小節前先行建立)。
 
@@ -52,7 +52,7 @@ C++/WinRT 是 Windows 執行階段 (WinRT) API 的完全標準現代 C++17 語�
 
 如您所知，在以 C# 撰寫的通用 Windows 平台 (UWP) 應用程式中，其所有類別都是 Windows 執行階段類型。 但是當您在 C++/WinRT 應用程式中撰寫類型時，可以選擇該類型為 Windows 執行階段類型，還是一般 C++ 類別/結構/列舉。
 
-您專案中的任何 XAML 頁面類型都必須是 Windows 執行階段類型。 因此，**MainPage** 是 Windows 執行階段類型。 具體而言，這是*執行階段類別*。 XAML 頁面所取用的任何類型也必須是 Windows 執行階段類型。 當您撰寫 [Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)，且想要撰寫可從另一個應用程式取用的類型時，將會撰寫 Windows 執行階段類型。 在其他情況下，您的類型可以是一般 C++ 類型。 一般來說，您可以使用任何 Windows 執行階段語言來取用 Windows 執行階段類型。
+您專案中的任何 XAML 頁面類型都必須是 Windows 執行階段類型。 因此，**MainPage** 是 Windows 執行階段類型。 具體而言，這是 *執行階段類別*。 XAML 頁面所取用的任何類型也必須是 Windows 執行階段類型。 當您撰寫 [Windows 執行階段元件](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)，且想要撰寫可從另一個應用程式取用的類型時，將會撰寫 Windows 執行階段類型。 在其他情況下，您的類型可以是一般 C++ 類型。 一般來說，您可以使用任何 Windows 執行階段語言來取用 Windows 執行階段類型。
 
 若要適當地指出類型為 Windows 執行階段類型，請在介面定義語言 (`.idl`) 檔案內的 [Microsoft 介面定義語言 (MIDL)](/uwp/midl-3/) 中定義該類型。 讓我們以 **MainPage** 做為範例。
 
@@ -192,7 +192,7 @@ namespace winrt::HelloWorldCppWinRT::implementation
 
 在本節中，我們將變更文字的外觀 (例如，讓字型大小變大)。
 
-在 `MainPage.xaml` 中，尋找 "What's your name?" **TextBlock**。 將其[**樣式**](/uwp/api/windows.ui.xaml.style)屬性設定為參考 *BaseTextBlockStyle* 系統資源索引鍵。
+在 `MainPage.xaml` 中，尋找 "What's your name?" **TextBlock**。 將其 [**樣式**](/uwp/api/windows.ui.xaml.style)屬性設定為參考 *BaseTextBlockStyle* 系統資源索引鍵。
 
 ```xaml
 <TextBlock Text="What's your name?" Style="{ThemeResource BaseTextBlockStyle}"/>
@@ -242,13 +242,14 @@ namespace winrt::HelloWorldCppWinRT::implementation
                 </VisualState.Setters>
             </VisualState>
         </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
     ...
 </StackPanel>
 ```
 
 建置並執行應用程式。 請注意，除非調整大小後的視窗小於 641 裝置獨立畫素 (DIP)，否則 UI 看起來會和以前一樣。 此時，會套用 *narrowState* 視覺狀態，並連同針對該狀態定義的所有屬性 Setter。
 
-名為 `wideState` 的 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 有一個 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的[**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 641。 這表示只有在視窗寬度不小於最小值 641 DIP 時才會套用狀態。 您不需為此狀態定義任何 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 物件，因此其會使用您在 XAML 頁面內容中所定義的配置屬性。
+名為 `wideState` 的 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) 有一個 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的 [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 641。 這表示只有在視窗寬度不小於最小值 641 DIP 時才會套用狀態。 您不需為此狀態定義任何 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 物件，因此其會使用您在 XAML 頁面內容中所定義的配置屬性。
 
 第二個 [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState) (`narrowState`) 有一個 [**AdaptiveTrigger**](/uwp/api/Windows.UI.Xaml.AdaptiveTrigger) 的 [**MinWindowWidth**](/uwp/api/windows.ui.xaml.adaptivetrigger.minwindowwidth) 屬性設為 0。 當視窗寬度大於 0 但小於 641 DIP 時，會套用這個狀態。 只有 641 DIP `wideState` 有效。 在 `narrowState` 中，您定義 [**Setter**](/uwp/api/Windows.UI.Xaml.Setter) 物件，以變更 UI 中控制項的配置屬性：
 
