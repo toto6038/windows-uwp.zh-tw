@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 設定 windows, 開發環境, 開發工具, 開發路徑, Microsoft, Windows, 開發人員, 秘訣, 效能, WSL, 終端機, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 58c68522fdb3ffe11c4e11dff48fb49faa79b830
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 834412d52c93d8b0e173bb75c7f7ad8c10e26cca
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824032"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192962"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上設定開發環境
 
@@ -65,6 +65,14 @@ ms.locfileid: "101824032"
        [![PowerShell 圖示](../images/powershell.png)](/powershell/)<br>
         **[開始使用 PowerShell](/powershell/)**<br>
         使用 PowerShell (一項命令列命令介面和指令碼語言)，開始使用跨平台工作自動化和組態管理。
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![Rust 圖示](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Rust 入門](./rust/index.yml)**<br>
+        開始使用 Rust 進行程式設計， &mdash; 包括如何使用 *windows* 安裝程式來設定 windows 的 Rust。
     :::column-end:::
 :::row-end:::
 

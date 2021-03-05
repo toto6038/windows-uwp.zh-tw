@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: faf88751f5008c5a819bb39bb461a4224180edf2
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
-ms.translationtype: HT
+ms.openlocfilehash: b9786f285fc0da5f67180224699f03acb67cecfb
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363011"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102193000"
 ---
 # <a name="background-transfers"></a>背景傳輸
 使用背景傳輸 API 在網路上可靠地複製檔案。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
@@ -40,16 +40,16 @@ ms.locfileid: "89363011"
 
 儘管背景傳輸功能有它自己的網路狀態變更處理機制，網路連線的應用程式還有其他一般連線考量。 請參閱[利用可用的網路連線資訊](/previous-versions/windows/apps/hh452983(v=win.10))來取得其他資訊。
 
-> **注意：**   在行動裝置上執行的應用程式中，有些功能讓使用者能夠根據連線類型、漫遊狀態及使用者數據傳輸方案來監視和限制傳輸的資料量。 因此，即使 [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
+> **注意：** 在行動裝置上執行的應用程式中，有些功能讓使用者能夠根據連線類型、漫遊狀態及使用者行動數據方案來監視和限制傳輸的資料量。 因此，即使 [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
 
 下表說明每個 [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) 值何時可在手機上允許背景傳輸 (根據手機的目前狀態)。 您可以使用 [**ConnectionCost**](/uwp/api/Windows.Networking.Connectivity.ConnectionCost) 類別來判定電話的目前狀態。
 
-| 裝置狀態                                                                                                                      | 僅無限制 | Default | 永遠 |
+| 裝置狀態                                                                                                                      | 僅無限制 | 預設 | 一律 |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
-| 連線到 WiFi                                                                                                                 | 允許            | 允許   | 允許  |
-| 計量付費連線、非漫遊、低於資料限制、追蹤以維持低於限制                                                   | 拒絕             | 允許   | 允許  |
-| 計量付費連線、非漫遊、低於資料限制、追蹤是否超過限制                                                       | 拒絕             | 拒絕    | 允許  |
-| 計量付費連線、漫遊、低於資料限制                                                                                     | 拒絕             | 拒絕    | 允許  |
+| 連線到 WiFi                                                                                                                 | Allow            | Allow   | Allow  |
+| 計量付費連線、非漫遊、低於資料限制、追蹤以維持低於限制                                                   | 拒絕             | Allow   | Allow  |
+| 計量付費連線、非漫遊、低於資料限制、追蹤是否超過限制                                                       | 拒絕             | 拒絕    | Allow  |
+| 計量付費連線、漫遊、低於資料限制                                                                                     | 拒絕             | 拒絕    | Allow  |
 | 計量付費連線、超過資料限制 只有當使用者啟用「限制資料感應 UI 中的背景資料」時才會發生這個狀態。 | 拒絕             | 拒絕    | 拒絕   |
 
 ## <a name="uploading-files"></a>上傳檔案
@@ -198,8 +198,8 @@ promise = download.startAsync().then(complete, error, progress);
 
 1.  您現在可以使用填入的清單重新啟動擱置的作業。
 
-## <a name="post-processing"></a>後續處理
-Windows 10 的新功能是能夠在背景傳輸完成時 (即使應用程式未執行) 執行應用程式程式碼。 例如，您的 app 可能會想要在影片完成下載後更新可用的影片清單，而不是每次啟動 app 時掃描新的影片。 或者，您的 app 可能會想要嘗試使用不同的伺服器或連接埠，重新處理失敗的檔案傳輸。 成功和失敗的傳輸都會叫用後續處理，因此您可以用它來實作自訂的錯誤處理和重試邏輯。
+## <a name="post-processing"></a>後處理
+Windows 10 的新功能是能夠在背景傳輸完成時 (即使 app 未執行) 執行 app 程式碼。 例如，您的 app 可能會想要在影片完成下載後更新可用的影片清單，而不是每次啟動 app 時掃描新的影片。 或者，您的 app 可能會想要嘗試使用不同的伺服器或連接埠，重新處理失敗的檔案傳輸。 成功和失敗的傳輸都會叫用後續處理，因此您可以用它來實作自訂的錯誤處理和重試邏輯。
 
 Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背景工作，並將它與傳輸建立關聯之後再開始傳輸。 傳輸接著會在背景執行，並在完成時呼叫您的背景工作以執行後續處理。
 
@@ -231,7 +231,7 @@ Task<DownloadOperation> startTask = download.StartAsync().AsTask();
 startTask.ContinueWith(ForegroundCompletionHandler);
 
 // Do not enable the CompletionGroup until after all downloads are created.
-downloader.CompletinGroup.Enable();
+downloader.CompletionGroup.Enable();
 ```
 
 3.  背景工作中的程式碼會從觸發詳細資料中擷取操作清單，您的程式碼接著可以檢查每個操作的詳細資料，並為每個操作執行適當的後續處理。
@@ -260,7 +260,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立連線之後，將中止任何在兩分鐘內未收到回應的 HTTP 要求訊息。
 
-> **注意：**   在任一種情況下，假設有網際網路連線，背景傳輸最多會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
+> **注意：** 在任一種情況下，假設有網際網路連線，背景傳輸最多會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
 
 ## <a name="debugging-guidance"></a>偵錯指導方針
 在 Microsoft Visual Studio 中停止偵錯工作階段就等同於關閉 app；PUT 上傳會被暫停，POST 上傳會被終止。 即使在偵錯時，應用程式應該列舉然後重新啟動或取消任何之前仍然存在的下載。 例如，如果偵錯工作階段與之前的操作無關，您可以在應用程式啟動時，讓應用程式取消已列舉的持續上傳作業。
@@ -274,21 +274,21 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 -   您使用與現有專案相同的名稱但不同的語言 (例如，從 C++ 變更為 C#) 建立新的專案。
 -   您變更現有專案中的目標架構 (例如，從 x86 變更為 x64)。
 -   您變更現有專案中的文化特性 (例如，從中性變更為 en-US)。
--   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 [企業驗證]  )。
+-   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 **\[企業驗證\]**)。
 
 一般應用程式服務，包括新增或移除功能的資訊清單更新，並不會在應用程式的一般使用者部署上引起這個問題。
-若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 [開始]  畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
+若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 **\[開始\]** 畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的例外狀況
 如果傳送到 [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：** [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 型別在 C# 和 VB 中顯示為 [**System.Uri**](/dotnet/api/system.uri)。
+**.Net：** 在 c # 和 VB 中， [**Windows. uri**](/uwp/api/Windows.Foundation.Uri) 型別會顯示為 [**system.object**](/dotnet/api/system.uri) 。
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](/dotnet/api/system.uri) 類別和其中一個 [**System.Uri.TryCreate**](/dotnet/api/system.uri.trycreate#overloads) 方法來測試接收自應用程式使用者的字串，以避免發生這個錯誤。
 
 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果應用程式取得使用者為 [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
-[  **Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空間具備便利的協助程式方法，可以在 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間中使用列舉來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
+[**Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空間具備便利的協助程式方法，可以在 [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) 命名空間中使用列舉來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
 
 在 [**Windows.Networking.backgroundTransfer**](/uwp/api/Windows.Networking.BackgroundTransfer) 命名空間中非同步方法內遇到的錯誤會以 **HRESULT** 值的形式傳回。 使用 [**BackgroundTransferError.GetStatus**](/uwp/api/windows.networking.backgroundtransfer.backgroundtransfererror.getstatus) 方法，將背景傳輸作業的網路錯誤轉換為 [**WebErrorStatus**](/uwp/api/Windows.Web.WebErrorStatus) 列舉值。 大多數 **WebErrorStatus** 列舉值都會對應到原始 HTTP 或 FTP 用戶端作業所傳回的錯誤。 app 可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
@@ -297,4 +297,4 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 ## <a name="important-apis"></a>重要 API
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)
 * [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)
-* [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets)
+* [**Windows. 通訊端**](/uwp/api/Windows.Networking.Sockets)

@@ -5,12 +5,12 @@ ms.date: 07/08/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5c515760d0a03e163fa663da1f97a728a6da2c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: e81b635d4c5bc2819aa126e4d685b49b044aa6ca
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154592"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192950"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -29,7 +29,9 @@ ms.locfileid: "89154592"
 
 ## <a name="if-youre-not-authoring-a-runtime-class"></a>如果您「不」  撰寫執行階段類別
 
-最簡單的案例是，您在實作供區域取用的 Windows 執行階段介面。 您不需要執行階段類別；只需要一般 C++ 類別。 例如，您可能在撰寫以 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 為基礎的應用程式。
+最簡單的情況是您的型別會在其中執行 Windows 執行時間介面，而您將在相同的應用程式中使用該類型。 在這種情況下，您的型別不需要是執行時間類別;只是一般的 c + + 類別。 例如，您可能在撰寫以 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 為基礎的應用程式。
+
+如果您的類型是由 XAML UI 所參考， *則它必須* 是執行時間類別， *即使它與 XAML 位於相同的專案中* 也一樣。 若是這樣的情況，請參閱一節， [如果您要撰寫要在 XAML UI 中參考的執行時間類別](#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)。
 
 > [!NOTE]
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
@@ -126,7 +128,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果您正在 Windows 執行階段元件中撰寫執行階段類別
 
-如果您的類型為了取用一個應用程式，已封裝在 Windows 執行階段元件中，則它必須是執行階段類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl)。
+如果您的型別封裝在 Windows 執行時間元件中，以便從另一個二進位檔取用 (另一個二進位檔通常是) 的應用程式，則您的型別必須是執行時間類別。 您可以在 Microsoft 介面定義語言 (IDL) (.idl) 檔案中宣告執行階段類別 (請參閱[將執行階段類別分解成 Midl 檔案 (.idl)](#factoring-runtime-classes-into-midl-files-idl)。
 
 每個 IDL 檔案都會產生 `.winmd` 檔案，而 Visual Studio 會將這些檔案合併為單一檔案，其名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件取用者將參照的檔案。
 
@@ -316,7 +318,7 @@ iclosable.Close();
 > [!NOTE]
 > 如果您尚未安裝 Windows SDK 10.0.17763.0 版 (Windows 10 1809 版) 或更新版本，則您必須呼叫 [**winrt::from_abi**](/uwp/cpp-ref-for-winrt/from-abi)，而不是呼叫 [**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
-以下是範例。 這是[實作 **BgLabelControl** 自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)的另一個範例。
+以下是範例。 這是 [實作 **BgLabelControl** 自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)的另一個範例。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -406,7 +408,7 @@ void FreeFunction(MyProject::MyOtherClass const& oc)
 
 ## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>從有非預設建構函式的類型衍生
 
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)** ](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是非預設建構函式的範例。 它沒有預設建構函式，若要建構 **ToggleButtonAutomationPeer**，您必須傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供一個接受 *owner* 的建構函式，並將它傳遞給基底。 讓我們看看實際上看起來如何。
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是非預設建構函式的範例。 它沒有預設建構函式，若要建構 **ToggleButtonAutomationPeer**，您必須傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供一個接受 *owner* 的建構函式，並將它傳遞給基底。 讓我們看看實際上看起來如何。
 
 ```idl
 // MySpecializedToggleButton.idl
@@ -508,7 +510,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 
 本節說明加入的 C++/WinRT 2.0 功能，雖然預設會針對新專案啟用。 對於現有專案，您必須藉由設定 `cppwinrt.exe` 工具來加入。 在 Visual Studio 中，將 [通用屬性]   > [C++/WinRT]   > [最佳化]  設為 [是]  。 此動作會將 `<CppWinRTOptimized>true</CppWinRTOptimized>` 新增至您的專案檔。 而且這與從命令列叫用 `cppwinrt.exe` 時，新增參數的效果一樣。
 
-`-opt[imize]`參數可啟用通常稱為「統一建構」  的項目。 透過統一 (或*聯合*) 建構，您可使用 C++/WinRT 語言投影本身來建立及使用您的實作類型 (由您的元件所實作的類型，以供應用程式取用)，而不會遇到任何載入器難題。
+`-opt[imize]`參數可啟用通常稱為「統一建構」  的項目。 透過統一 (或 *聯合*) 建構，您可使用 C++/WinRT 語言投影本身來建立及使用您的實作類型 (由您的元件所實作的類型，以供應用程式取用)，而不會遇到任何載入器難題。
 
 在描述此功能之前，讓我們先展示「沒有」  統一建構的情況。 為了說明，我們將從這個範例 Windows 執行階段類別開始。
 
@@ -537,7 +539,7 @@ MyClass::StaticMethod();
 
 而且，如果所顯示的取用程式碼不在實作此類別的相同元件內，這就完全合理。 作為語言投影，C++/WinRT 會從 ABI (Windows 執行階段定義的 COM 型應用程式二進位介面) 以開發人員的身分保護您。 C++/WinRT 不會直接在實作中呼叫，而會經歷整個 ABI。
 
-因此，在您要建構建立 **MyClass**物件 (`MyClass c;`) 的該行程式碼上，C++/WinRT 投影會呼叫 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory)以擷取類別或啟用處理站，然後使用該處理站來建立物件。 最後一行程式碼同樣會使用處理站，讓它看起來像是靜態方法呼叫。 這需要註冊您的類別，而您的模組也需實作 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 進入點。 C++/WinRT 有非常快速的處理站快取，因此不會對取用您元件的應用程式造成問題。 問題在於，在您的元件中，您剛處理了有點問題的項目。
+因此，在您要建構建立 **MyClass** 物件 (`MyClass c;`) 的該行程式碼上，C++/WinRT 投影會呼叫 [**RoGetActivationFactory**](/windows/win32/api/roapi/nf-roapi-rogetactivationfactory)以擷取類別或啟用處理站，然後使用該處理站來建立物件。 最後一行程式碼同樣會使用處理站，讓它看起來像是靜態方法呼叫。 這需要註冊您的類別，而您的模組也需實作 [**DllGetActivationFactory**](/previous-versions/br205771(v=vs.85)) 進入點。 C++/WinRT 有非常快速的處理站快取，因此不會對取用您元件的應用程式造成問題。 問題在於，在您的元件中，您剛處理了有點問題的項目。
 
 首先，無論 C++/WinRT 處理站快取的速度為何，透過 **RoGetActivationFactory** 呼叫 (或甚至透過處理站快取的後續呼叫) 一律會比直接在實作中呼叫還要慢。 對於本機定義的類型，呼叫 **RoGetActivationFactory**，然後依序呼叫 [**IActivationFactory::ActivateInstance**](/windows/win32/api/activation/nf-activation-iactivationfactory-activateinstance) 和 [**QueryInterface**](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void))，顯然不會像使用 C++ `new` 運算式一樣有效率。 因此，在元件內建立物件時，經驗豐富的 C++/WinRT 開發人員習慣使用 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 或 [**winrt::make_self**](/uwp/cpp-ref-for-winrt/make-self)協助程式函式。
 
@@ -718,9 +720,9 @@ namespace winrt::MyNamespace::implementation
 
 階層為 [**Windows::UI::Xaml::Controls::Page**](/uwp/api/windows.ui.xaml.controls.page) \<- **BasePage** \<- **DerivedPage**。 **BasePage::OnNavigatedFrom** 方法會正確覆寫 [**Page::OnNavigatedFrom**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom)，但 **DerivedPage::OnNavigatedFrom** 不會覆寫 **BasePage::OnNavigatedFrom**。
 
-在此，**DerivedPage** 會重複使用 **BasePage**中的 **IPageOverrides** vtable，這表示它無法覆寫 **IPageOverrides::OnNavigatedFrom**方法。 其中一個可能解決方案要求 **BasePage** 本身是範本類別，且完全在標頭檔中實作，但這會讓事情變得出奇的複雜。
+在此，**DerivedPage** 會重複使用 **BasePage** 中的 **IPageOverrides** vtable，這表示它無法覆寫 **IPageOverrides::OnNavigatedFrom** 方法。 其中一個可能解決方案要求 **BasePage** 本身是範本類別，且完全在標頭檔中實作，但這會讓事情變得出奇的複雜。
 
-因應措施是在基底類別中將 **OnNavigatedFrom** 方法宣告為明確虛擬。 如此一來，當 **DerivedPage::IPageOverrides::OnNavigatedFrom** 的 vtable 項目呼叫 **BasePage::IPageOverrides::OnNavigatedFrom**時，生產者會呼叫 **BasePage::OnNavigatedFrom**(由於其虛擬程度)，最後會呼叫 **DerivedPage::OnNavigatedFrom**。
+因應措施是在基底類別中將 **OnNavigatedFrom** 方法宣告為明確虛擬。 如此一來，當 **DerivedPage::IPageOverrides::OnNavigatedFrom** 的 vtable 項目呼叫 **BasePage::IPageOverrides::OnNavigatedFrom** 時，生產者會呼叫 **BasePage::OnNavigatedFrom**(由於其虛擬程度)，最後會呼叫 **DerivedPage::OnNavigatedFrom**。
 
 ```cppwinrt
 namespace winrt::MyNamespace::implementation

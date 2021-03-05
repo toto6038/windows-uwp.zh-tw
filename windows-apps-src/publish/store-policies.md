@@ -1,30 +1,42 @@
 ---
 title: Microsoft Store 原則
 description: Microsoft Store 中的產品必須符合我們公司的認證標準、提供客戶真正實用且有趣的體驗，並且適合出現在 Microsoft Store。
-ms.date: 12/16/2020
+ms.date: 03/04/2021
 ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
-ms.openlocfilehash: 7d9679b591b64f804ae9c84badc5849cac28de99
-ms.sourcegitcommit: afc4ff2c89f148d32073ab1cc42063ccdc573a8c
-ms.translationtype: HT
+ms.openlocfilehash: 4a762410011a369e79956f5fb858d030169307b2
+ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104659"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102192990"
 ---
 # <a name="microsoft-store-policies"></a>Microsoft Store 原則
 
 
 **文件版本：7.12**
 
-**文件日期：2019 年 10 月 1 日**
+**檔日期：2021年3月4日**
 
 > [!NOTE]
 > 如需本合約近期變更的摘要，請參閱[變更歷程記錄](store-policies-change-history.md)。
 
 > [!NOTE]
-> **2020 年 12 月 16 日原則更新通知**：針對以透過 [Xbox Live 創作者計畫](https://www.xbox.com/developers/creators-program/)所開發主控台為目標的遊戲產品，已不再適用與 XBL 服務整合的需求。 特定原則 ([原則 10.13.1](#1013-gaming-and-xbox)) 將會更新，以在下一次更新「商店原則」文件時反映這項變更，但從這項通知起生效，將不再針對「XBL 創作者計畫」強制執行此原則。 
+>**2021年3月4日原則更新通知**
+>
+>Microsoft Store 將在本月更新其商店原則，並以規劃的有效日期為目標，以2021年4月結束。  金鑰原則變更包括：
+>
+>- 更新原則10.8.6：電腦遊戲訂用帳戶產品將可使用 Microsoft 的應用程式內購買 API 或安全的協力廠商帳單服務，以透過訂用帳戶服務提供的遊戲中進行遊戲內購買。 此外，包含在這類訂閱服務中的遊戲可能會傳遞給商店以外的訂閱者。
+>- 更新原則11.12，以闡明與使用者產生的內容相關的原則需求。
+>
+>根據要求，如果適用的產品會符合上述的更新，Microsoft 將會授與例外狀況給任何依據此通知的更新。
+
+>[!NOTE]
+>**2020年12月16日原則更新通知**
+>
+>針對透過 Xbox Live 建立者計畫開發之主控台的遊戲產品，與 XBL 服務整合的需求不再適用。 特定原則 (原則 10.13.1) 將會更新，以在下一次更新「商店原則」文件時反映這項變更，但從這項通知起生效，將不再針對「XBL 創作者計畫」強制執行此原則。
 
 感謝您有意為 Microsoft Store<sup>1</sup> 開發產品。 「產品」表示所提交的任何形式內容，包括但不限於應用程式、遊戲、作品以及任何在產品中販售或提供的其他內容。 我們致力為全世界的客戶提供各式各樣的產品。 Microsoft Store 中的產品必須符合我們公司的認證標準、提供客戶真正實用且有趣的體驗，並且適合出現在 Microsoft Store。
 

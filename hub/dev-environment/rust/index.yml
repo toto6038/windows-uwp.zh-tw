@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: 在 Windows 上使用 Rust 進行開發
+summary: 開始使用 Windows 進行 Rust 開發，包括開發環境的設定、適用于 Windows 的 Rust 和程式碼範例。
+metadata:
+  author: stevewhims
+  description: 開始使用 Windows 進行 Rust 開發，包括開發環境的設定、適用于 Windows 的 Rust 和程式碼範例。
+  manager: jken
+  ms.author: stwhi
+  ms.date: 03/04/2021
+  ms.prod: dev-environment
+  ms.technology: windows-rust
+  ms.topic: landing-page
+  ms.openlocfilehash: dddb2575da4215f2be7168581221a33b329cb3db
+  ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+  ms.translationtype: MT
+  ms.contentlocale: zh-TW
+  ms.lasthandoff: 03/05/2021
+  ms.locfileid: "102194502"
+landingContent:
+- title: 概觀
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 什麼是 Rust？
+      url: ./overview.md
+    - text: Rust 開發工具組/生態系統的各項
+      url: ./overview.md#the-pieces-of-the-rust-development-toolsetecosystem
+    - text: 適用于 Windows 的 Rust 和 windows 包裝箱
+      url: ./rust-for-windows.md
+- title: 設定開發環境
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 在 Windows 上設定開發環境以進行 Rust
+      url: ./setup.md
+- title: 教學課程
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 'Hello, world! 使用 VS Code (Rust 的教學課程) '
+      url: ./setup.md#hello-world-tutorial-rust-with-vs-code
+    - text: 使用 VS Code) Rust for Windows 的 RSS 讀取程式教學課程 (
+      url: ./rss-reader-rust-for-windows.md
+- title: 其他資源
+  linkLists:
+  - linkListType: learn
+    links:
+    - text: Rust 網站
+      url: https://www.rust-lang.org/
+    - text: Windows API 的 Rust 檔
+      url: https://microsoft.github.io/windows-docs-rs/doc/bindings/windows/
+    - text: 掃雷範例應用程式
+      url: https://github.com/robmikh/minesweeper-rs
