@@ -4,12 +4,12 @@ description: winget 命令列工具可讓開發人員在 Windows 10 電腦上探
 ms.date: 10/22/2020
 ms.topic: overview
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbd2aa76fa6a9b787e73c0bbd5ce7e56b5e6a4a
-ms.sourcegitcommit: c105eb358bf693d34dfdd7a44255af69c1d5a3cd
-ms.translationtype: HT
+ms.openlocfilehash: 39b48114242c8de1fad80bbf78860644b1c0dcd9
+ms.sourcegitcommit: 9842e0e5c369a52594336d2278af877ccf40b049
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92434458"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102196981"
 ---
 # <a name="use-the-winget-tool-to-install-and-manage-applications"></a>使用 winget 工具來安裝和管理應用程式
 
@@ -23,34 +23,34 @@ ms.locfileid: "92434458"
 
 安裝 **winget** 工具的方法有好幾種：
 
-* **winget** 工具包含在正式發行前的 [Windows 應用程式安裝程式](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab)小眾測試版或預覽版中。 您必須安裝 **應用程式安裝程式** 的預覽版本，才能使用 **winget** 。 若要取得早期版本的存取權，請將您的要求提交至 [Windows 封裝管理員的測試人員計畫](https://aka.ms/AppInstaller_InsiderProgram)。 參與正式發行前小眾測試版的更新通道，可確保您能看到最新的預覽版更新。
+* **winget** 工具包含在正式發行前的 [Windows 應用程式安裝程式](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab)小眾測試版或預覽版中。 您必須安裝 **應用程式安裝程式** 的預覽版本，才能使用 **winget**。 若要取得早期版本的存取權，請將您的要求提交至 [Windows 封裝管理員的測試人員計畫](https://aka.ms/AppInstaller_InsiderProgram)。 參與正式發行前小眾測試版的更新通道，可確保您能看到最新的預覽版更新。
 
 * 參與 [Windows 測試人員的正式發行前小眾測試版更新通道](https://insider.windows.com)。
 
-* 安裝 [winget 存放庫](https://github.com/microsoft/winget-cli)發行資料夾中的 Windows 桌面應用程式安裝程式套件。
+* 在 winget 存放庫的 [ [發行] 頁面](https://github.com/microsoft/winget-cli/releases)上安裝 Windows 桌面應用程式安裝程式套件。
 
 > [!NOTE]
 > **winget** 工具需要 Windows 10 1709 版 (10.0.16299) 或更新版本的 Windows 10。
 
 ## <a name="administrator-considerations"></a>系統管理員考量
 
-安裝程式行為可能會根據您是否以系統管理員權限執行 **winget** ，而有所不同。
+安裝程式行為可能會根據您是否以系統管理員權限執行 **winget**，而有所不同。
 
-* 如果在沒有系統管理員權限的情況下執行 **winget** ，則可能需要提供某些應用程式的 [權限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/)才能安裝。 當安裝程式執行時，Windows 會提示您[提高權限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control)。 如果您選擇不提高權限，應用程式將無法安裝。  
+* 如果在沒有系統管理員權限的情況下執行 **winget**，則可能需要提供某些應用程式的 [權限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control/)才能安裝。 當安裝程式執行時，Windows 會提示您[提高權限](https://docs.microsoft.com/windows/security/identity-protection/user-account-control)。 如果您選擇不提高權限，應用程式將無法安裝。  
 
 * 在系統管理員命令提示字元中執行 **winget** 時，您將不會看到應用程式需要的 [提高權限提示](/windows/security/identity-protection/user-account-control/how-user-account-control-works)。 以系統管理員身分執行命令提示字元時，請務必小心，並且只安裝您信任的應用程式。
 
 ## <a name="use-winget"></a>使用 winget
 
-安裝 **應用程式安裝程式** 之後，您可以在命令提示字元中輸入 'winget' 來執行 **winget** 。
+安裝 **應用程式安裝程式** 之後，您可以在命令提示字元中輸入 'winget' 來執行 **winget**。
 
 其中一個最常見的使用案例是搜尋並安裝最愛的工具。
 
-1. 若要[搜尋](search.md)工具，請輸入 `winget search \<appname>`。
-2. 確認您想要的工具可供使用之後，您就可以輸入 `winget install \<appname>`來[安裝](install.md)工具。 **winget** 工具會啟動安裝程式，並將應用程式安裝在您的電腦上。
+1. 若要[搜尋](search.md)工具，請輸入 `winget search <appname>`。
+2. 確認您想要的工具可供使用之後，您就可以輸入 `winget install <appname>`來[安裝](install.md)工具。 **winget** 工具會啟動安裝程式，並將應用程式安裝在您的電腦上。
     ![winget 命令列](images\install.png)
 
-3. 除了安裝和搜尋之外， **winget** 還提供一些其他命令，可讓您 [顯示應用程式的詳細資料](show.md)、 [變更來源](source.md)和 [驗證封裝](validate.md)。 如需完整的命令清單，請輸入：`winget --help`。
+3. 除了安裝和搜尋之外，**winget** 還提供一些其他命令，可讓您 [顯示應用程式的詳細資料](show.md)、[變更來源](source.md)和 [驗證封裝](validate.md)。 如需完整的命令清單，請輸入：`winget --help`。
     ![winget 說明](images\help.png)
 
 ### <a name="commands"></a>命令
@@ -73,13 +73,13 @@ ms.locfileid: "92434458"
 
 | 選項 | 描述 |
 |--------------|-------------|
-| **-v,--version** | 此選項會傳回目前的 winget 版本。 |
-| **--info** |  info 會提供您有關 winget 的所有詳細資訊，包括授權和隱私權聲明的連結。 |
-| **-?, --help** |  取得 winget 的其他說明 |
+| **-v,--version** | 傳回 winget 的目前版本。 |
+| **--info** |  提供 winget 的所有詳細資訊，包括授權和隱私權聲明的連結。 |
+| **-?, --help** |  顯示 winget 的其他說明。 |
 
 ## <a name="supported-installer-formats"></a>支援的安裝程式格式
 
-目前的 **winget** 工具預覽版支援下列類型的安裝程式。
+目前的 **winget** 工具預覽支援下列類型的安裝程式：
 
 * EXE
 * MSIX
@@ -87,7 +87,7 @@ ms.locfileid: "92434458"
 
 ## <a name="scripting-winget"></a>以指令碼撰寫 winget
 
-您可以撰寫批次指令碼和 powershell 指令碼來安裝多個應用程式。
+您可以撰寫批次腳本和 PowerShell 腳本來安裝多個應用程式。
 
 ``` CMD
 @echo off  
@@ -101,11 +101,11 @@ if %ERRORLEVEL% EQU 0 Echo Terminal installed successfully.   %ERRORLEVEL%
 ```
 
 > [!NOTE]
-> 撰寫指令碼後， **winget** 會依照指定的順序啟動應用程式。 當安裝程式傳回成功或失敗時， **winget** 將會啟動下一個安裝程式。 如果安裝程式啟動另一個程序，其可能會提前傳回 **winget** 。 這會導致 **winget** 在先前的安裝程式完成之前，就安裝下一個安裝程式。
+> 撰寫指令碼後，**winget** 會依照指定的順序啟動應用程式。 當安裝程式傳回成功或失敗時，**winget** 將會啟動下一個安裝程式。 如果安裝程式啟動另一個程序，其可能會提前傳回 **winget**。 這會導致 **winget** 在先前的安裝程式完成之前，就安裝下一個安裝程式。
 
 ## <a name="missing-tools"></a>缺少工具
 
-如果[社群存放庫](../package/repository.md)未包含您的工具或應用程式。 請將封裝提交至我們的[存放庫](https://github.com/microsoft/winget-pkgs)。 新增您最愛的工具，以便您和其他人使用。
+如果「 [社區](../package/repository.md) 」存放庫不包含您的工具或應用程式，請將套件提交至存放 [庫](https://github.com/microsoft/winget-pkgs)。 新增您最愛的工具，以便您和其他人使用。
 
 ## <a name="customize-winget-settings"></a>自訂 winget 設定
 

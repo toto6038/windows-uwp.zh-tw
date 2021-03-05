@@ -9,12 +9,12 @@ dev_langs:
 - vb
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: 26de7699f9f261bba6e02bc3664e335c46e4ac3d
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: be8d63a446c05998948327d7055b4385c5e88761
+ms.sourcegitcommit: 9842e0e5c369a52594336d2278af877ccf40b049
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218661"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102196971"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -31,7 +31,7 @@ ms.locfileid: "91218661"
 
 在 **Windows** 中找到的 api 需要在您的應用程式資訊清單中宣告一般功能：
 
-1. 在**方案總管**中開啟**package.appxmanifest** 。
+1. 開啟 [**方案** package.appxmanifest] 中的 [**封裝**]。
 2. 選取 [功能] 索引標籤。
 3. 檢查 **圖形捕捉**。
 
@@ -116,6 +116,9 @@ Await window.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
 ## <a name="create-a-capture-frame-pool-and-capture-session"></a>建立擷取畫面集區與擷取工作階段
 
 使用 **GraphicsCaptureItem**，您將會建立具有 D3D 裝置的 [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool) 、支援的像素格式 (**DXGI \_ 格式 \_ B8G8R8A8 \_ UNORM**) 、所需的框架數目 (可以是任何整數) 和框架大小。 **GraphicsCaptureItem** 類別的 **ContentSize** 屬性可以當做畫面的大小：
+
+> [!NOTE]
+> 在啟用 Windows HD 色彩的系統上，內容像素格式可能不一定是 **DXGI \_ 格式的 \_ B8G8R8A8 \_ UNORM**。 若要避免圖元 overclipping (亦即，捕捉的內容在捕獲 HDR 內容時看似沖蝕) ，請考慮針對捕捉管線中的每個元件使用 **DXGI \_ 格式 \_ R16G16B16A16 \_ FLOAT** ，包括 [Direct3D11CaptureFramePool](/uwp/api/windows.graphics.capture.direct3d11captureframepool)、目標目的地（例如 [CanvasBitmap](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm)）。 視需要而定，可能需要額外的處理，例如儲存至 HDR 內容格式或 HDR 至 SDR 的音調對應。 本文將著重于 SDR 內容的捕捉。 如需詳細資訊，請參閱 [使用具有高動態範圍的 DirectX 顯示和先進的色彩](/windows/win32/direct3darticles/high-dynamic-range)。
 
 ```csharp
 private GraphicsCaptureItem _item;
@@ -241,7 +244,7 @@ CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
     frame.Surface);
 ```
 
-**CanvasBitmap**之後，就可以將它儲存為影像檔案。 在下列範例中，我們會在使用者的 [ **儲存的圖片** ] 資料夾中，將它儲存為 PNG 檔案。
+**CanvasBitmap** 之後，就可以將它儲存為影像檔案。 在下列範例中，我們會在使用者的 [ **儲存的圖片** ] 資料夾中，將它儲存為 PNG 檔案。
 
 ```csharp
 StorageFolder pictureFolder = KnownFolders.SavedPictures;
