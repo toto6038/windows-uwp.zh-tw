@@ -7,12 +7,12 @@ manager: jken
 ms.topic: article
 keywords: 網頁程式開發、網頁程式開發、windows 上的 web、api、邊緣
 ms.date: 01/06/2021
-ms.openlocfilehash: 1e33fbfebe037afcf64d13494b2e9eecb87389cf
-ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+ms.openlocfilehash: 3149e49b258f970989df75b87300a2dce23ff1f2
+ms.sourcegitcommit: 5e40a6f8755aca1e97226ce8f85cda239bdcdad0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/06/2021
-ms.locfileid: "102255076"
+ms.locfileid: "102259147"
 ---
 # <a name="web-development-on-windows-10"></a>Windows 10 上的 Web 開發
 
@@ -49,7 +49,7 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
 :::row:::
     :::column:::
        [![Microsoft Edge 圖示](../images/microsoftedge.png)](https://www.microsoft.com/en-us/edge)<br>
-        **[Microsoft Edge](https://www.microsoft.com/en-us/edge)**<br>
+        **[適用于開發人員的 Microsoft Edge](https://developer.microsoft.com/microsoft-edge/)**<br>
         新的 Microsoft Edge 是以 Chromium 為基礎，可建立更好的 web 相容性，並減少基礎 web 平臺的片段。 2020年1月15日發行，Windows、macOS、iOS 和 Android 都支援此功能。 <br>
         [安裝新的 Microsoft Edge](https://www.microsoft.com/edge)
     :::column-end:::
