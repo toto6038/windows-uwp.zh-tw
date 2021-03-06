@@ -1,6 +1,6 @@
 ---
 title: 在 Windows 10 上設定開發環境
-description: 完整的指南，可協助您在 Windows 上設定開發環境，並安裝您慣用的工具和程式碼語言。
+description: 協助您在 Windows 上設定開發環境，並安裝偏好的工具和程式碼語言的指南。 無論您偏好使用 Python、NodeJS、VS Code、Git、Bash、Linux 工具和命令、Android Studio，我們都能運用 Windows 終端機和 WSL 等絕佳的新工具來幫助您。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: 設定 windows, 開發環境, 開發工具, 開發路徑, Microsoft, Windows, 開發人員, 秘訣, 效能, WSL, 終端機, nodejs, python
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: 834412d52c93d8b0e173bb75c7f7ad8c10e26cca
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: 3a577ca4241f102bcff2a84419a0e3523f812b74
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102192962"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254632"
 ---
 # <a name="set-up-your-development-environment-on-windows-10"></a>在 Windows 10 上設定開發環境
 

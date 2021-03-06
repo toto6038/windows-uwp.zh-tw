@@ -1,6 +1,6 @@
 ---
-title: 在原生視窗上設定 NodeJS
-description: 協助您直接在 Windows 上設定 Node.js 開發環境的逐步指南。
+title: 在原生視窗上設定 Node.js
+description: 協助您直接在 Windows 上設定 Node.js 開發環境的指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Node.js，windows 10，原生 windows，直接在 windows 上
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bb950dcda9fddd6cf1b4b77da657f88ce2687785
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 34ef6f65e57256170d7d1f82b08653b70fe117e9
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823592"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254571"
 ---
 # <a name="set-up-your-nodejs-development-environment-directly-on-windows"></a>直接在 Windows 上設定您的 Node.js 開發環境
 

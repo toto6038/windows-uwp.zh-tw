@@ -1,6 +1,6 @@
 ---
-title: 協助從 Mac (Unix) 移至 Windows
-description: 此指南可協助您從 Mac (Unix) 轉換至也包含快速鍵對應的 Windows 開發環境。
+title: 從 Mac (Unix) 移至 Windows
+description: 本指南可幫助您從 Mac (Unix) 轉換至 Windows 開發環境，包括快速鍵對應，以及 Mac 和 Windows 之間不同概念的簡要概述。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Mac 到 Windows, 快速鍵對應, 從 Unix 移至 Windows, 從 Mac 轉換至 Windows, 協助從 MacBook 移至 Surface, 如何為 Macintosh 使用者使用 Windows, 從 Macintosh 切換至 Windows, 協助變更開發環境, Mac OS X 至 Windows, 協助從 Mac 移至電腦
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: c23bceecc09677dbecbda7b4e4065377c514cc0d
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 782f0d50c8b1f577f8530628b76b3df75673c083
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823942"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254591"
 ---
 # <a name="guide-for-changing-your-dev-environment-from-mac-to-windows"></a>將開發環境從 Mac 變更為 Windows 的指南
 

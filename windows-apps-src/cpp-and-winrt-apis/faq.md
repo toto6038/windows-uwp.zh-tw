@@ -5,12 +5,12 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a05dbb666b33739a083c517395359a64fee9df
-ms.sourcegitcommit: 7aaf0740a5d3a17ebf9214aa5e5d056924317673
-ms.translationtype: HT
+ms.openlocfilehash: 289c6e89899184d2a59edb39a4ff89782c8a2b23
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92297654"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254611"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 有關於使用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -77,11 +77,11 @@ C++/WinRT 組建支援 (屬性/目標) 列載於 Microsoft.Windows.CppWinRT NuGe
 
 如您想以「不」需要統一建構的方式具現化本機上實作的執行階段類別，請參閱 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md)。
 
-## <a name="should-i-implement-windowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，該如何進行？
-如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。
+## <a name="should-i-implement-windowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 Windows::Foundation::IClosable，如果是，該如何進行？
+如果您的執行時間類別會釋出其函式中的資源，且該執行時間類別設計為要從其執行編譯單位之外取用 (它是 windows 執行時間用戶端應用程式) 一般取用的 Windows 執行時間元件，則建議您也執行 [**windows.foundation.iclosable**](/uwp/api/windows.foundation.iclosable) ，以支援對執行時間類別的耗用量不具決定性的最終用途。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。
 
-## <a name="do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume"></a>我需要在我使用的執行階段類別上呼叫 [**IClosable::Close**](/uwp/api/windows.foundation.iclosable.close) 嗎？
-**IClosable** 存在以支援不確定完成的語言。 因此，您通常不需要從 C++/WinRT 呼叫 **IClosable::Close**。 但請考慮這些對一般規則的例外狀況。
+## <a name="do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume"></a>我需要在我使用的執行階段類別上呼叫 IClosable::Close 嗎？
+[**Windows.foundation.iclosable**](/uwp/api/windows.foundation.iclosable.close) 的存在，可支援缺乏決定性最終的語言。 因此，您通常不需要從 C++/WinRT 呼叫 **IClosable::Close**。 但請考慮這些對一般規則的例外狀況。
 - 有非常少數案例牽涉到關機競爭或半致命採用，在這些案例中您的確需要呼叫 **IClosable::Close**。 如果您正使用 **Windows.UI.Composition** 類型，以此為例，您可能會遇到想在一組序列中處置物件的案例，允許 C++/WinRT 包裝函式的解構函式為您執行工作，做為替代方案。
 - 如果您無法保證對物件仍保有最後的參考 (因為您已將它傳遞給其他 API，而這些 API 可能會保留參考)，則呼叫 **IClosable::Close** 是個不錯的主意。
 - 當不確定時，安全的作法是手動呼叫 **IClosable::Close**，而不是等待包裝函式在解構時呼叫它。
@@ -122,7 +122,7 @@ windows.com
 
 Visual Studio 是我們支援和為 C++/WinRT 建議的開發工具。 請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>為什麼針對唯讀屬性產生的實作函式沒有 `const` 限定詞？
+## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>為什麼針對唯讀屬性產生的實函數沒有 const 限定詞？
 當您在 [MIDL 3.0](/uwp/midl-3/) 中宣告唯讀屬性時，您預期 `cppwinrt.exe` 工具會為您產生限定 `const` (const 函式會將「此」指標視為 const) 的實作函式。
 
 我們無疑會建議您盡可能使用 const，但 `cppwinrt.exe` 工具本身不會嘗試推斷哪些實作函式理論上可能是 const，哪些可能不是。 您可以和本範例一樣選擇讓任何實作函式成為 const。
@@ -179,7 +179,7 @@ a.f();
 
 如上所示的建議模式不只適用於 C++/WinRT，還適用於所有 Windows 執行階段語言投影。
 
-## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何讓字串變為類型 &mdash; 舉例來說，為了瀏覽？
+## <a name="how-do-i-turn-a-string-into-a-type-for-navigation-for-example"></a>如何將字串轉換為導覽的類型 (例如) ？
 [瀏覽檢視程式碼範例](../design/controls-and-patterns/navigationview.md#code-example) (大部分使用 C#) 結尾有 C++/WinRT 程式碼片段會示範如何執行這項操作。
 
 ## <a name="how-do-i-resolve-ambiguities-with-getcurrenttime-andor-try"></a>如何解決 GetCurrentTime 和/或 TRY 意義不明的狀況？

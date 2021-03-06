@@ -1,6 +1,6 @@
 ---
-title: 在 Windows 10 上改善開發工作流程的秘訣
-description: 有助於改善效能，並讓您的開發工作流程在 Windows 10 上更有效率且更有樂趣的秘訣。
+title: Windows 10 的工作流程和效能秘訣
+description: 在 Windows 10 上改善開發工作流程的秘訣。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 開發人員, 秘訣, 效能, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: ef7ee52e778f49e35f68acb4ea02351d4208b3b7
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 9df1bd3e903854281306825a9dba3f181e8c8030
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823952"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254618"
 ---
 # <a name="tips-for-improving-performance-and-development-workflows"></a>改善效能和開發工作流程的秘訣
 

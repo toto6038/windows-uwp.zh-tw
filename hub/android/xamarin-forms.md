@@ -1,18 +1,18 @@
 ---
-title: 使用 Xamarin 建立簡單的 Android 應用程式
-description: 逐步指南說明如何在 Windows 上開始使用 Xamarin 來建立可在 Android 裝置上運作的跨平臺應用程式。
+title: 使用 Xamarin 建立 Android 應用程式
+description: 如何使用 Xamarin 開始撰寫 Android 應用程式
 author: hickeys
 ms.author: hickeys
 manager: jken
 ms.topic: article
 keywords: android、windows、xamarin、xaml、教學課程
 ms.date: 04/28/2020
-ms.openlocfilehash: b1364d8ac19176ec25ee6d45664c7e765accfe1e
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: b6c6a00c430dcc04994c0f8fd537d7c5c2083d4e
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823192"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254253"
 ---
 # <a name="get-started-developing-for-android-using-xamarinforms"></a>開始使用 Xamarin 進行 Android 開發
 

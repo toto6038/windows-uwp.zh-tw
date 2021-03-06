@@ -1,18 +1,18 @@
 ---
-title: Windows 上的 Android 開發概觀
-description: 開始在 Windows 上針對 Android 進行開發，包括原生 Android 開發、跨平臺開發和 Android 遊戲開發。
+title: Windows 上的 Android 開發
+description: 協助您在 Windows 上開始開發 Android 的指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: windows 上的 android、xamarin、回應原生、cordova、ionic、phonegap、c + + android 遊戲、windows defender、模擬器
 ms.date: 04/28/2020
-ms.openlocfilehash: b839972033c9edfad3524909345380e7fac9462e
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 315c32eb6219deafe2817ba8df36b4f9d1cb1dae
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823162"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254291"
 ---
 # <a name="overview-of-android-development-on-windows"></a>Windows 上的 Android 開發概觀
 

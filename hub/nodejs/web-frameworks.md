@@ -1,6 +1,6 @@
 ---
-title: 開始使用 Windows 上的 Node.js Web 架構
-description: 協助您在 Windows 上開始使用 Node.js web 架構的逐步指南，包括 Next.js、Nuxt.js 和 Gatsby。
+title: 在 Windows 上 Node.js web 架構
+description: 協助您開始使用 Windows 上的 Node.js web 架構的指南。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: NodeJS, Node.js, windows 10, microsoft, 了解 nodejs, windows 上的 Node, wsl 上的 Node, linux 或 windows 上的 Node, 在 windows 上安裝 Node, nodejs 與 vs code, 在 windows 上使用 Node 進行開發, 在 windows 上使用 nodejs 進行開發, 在 WSL 上安裝 Node, Windows 子系統 Linux 版上的 NodeJS
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: af23ec1374d5fce727579171113402536221e5f2
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: c4f2d679c50dab94beea2b15d0f4650f0967097d
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823602"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254275"
 ---
 # <a name="get-started-with-nodejs-web-frameworks-on-windows"></a>開始使用 Windows 上的 Node.js Web 架構
 

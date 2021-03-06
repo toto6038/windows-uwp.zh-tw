@@ -1,5 +1,5 @@
 ---
-title: 開始在 Node.js 中使用 Docker 容器
+title: 具有 Node.js 的 Docker 容器
 description: 此逐步指南可協助您開始使用 Docker 容器搭配您的 Node.js 應用程式。
 author: mattwojo
 ms.author: mattwoj
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: ''
 ms.localizationpriority: medium
 ms.date: 09/19/2019
-ms.openlocfilehash: bd9b912dfd4b733f57aaacfe6e8f246985e3b4f5
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
-ms.translationtype: HT
+ms.openlocfilehash: 5a6ba80f96410ead8195e6175063916d2519ed91
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933079"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254558"
 ---
 # <a name="get-started-using-docker-containers-with-nodejs"></a>開始在 Node.js 中使用 Docker 容器
 
@@ -83,7 +83,7 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建置、管理及�
 
 1. 在 VS Code 中開啟 [擴充功能]  視窗 (Ctrl+Shift+X)，然後搜尋 **Docker**。
 
-2. 選取 [Microsoft Docker 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)並進行**安裝**。 您必須在安裝之後重新載入 VS Code，才能啟用擴充功能。
+2. 選取 [Microsoft Docker 擴充功能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)並進行 **安裝**。 您必須在安裝之後重新載入 VS Code，才能啟用擴充功能。
 
     ![VS Code 上採用 Remote-WSL 的 Docker 擴充功能](../images/docker-vscode-extension.png)
 
@@ -93,7 +93,7 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建置、管理及�
 
 ## <a name="create-a-container-image-with-dockerfile"></a>使用 DockerFile 建立容器映像
 
-**容器映像**可儲存您的應用程式程式碼、程式庫、組態檔、環境變數及執行階段。 使用映像可確保容器中的環境已標準化，而且只包含建置和執行應用程式所需的項目。
+**容器映像** 可儲存您的應用程式程式碼、程式庫、組態檔、環境變數及執行階段。 使用映像可確保容器中的環境已標準化，而且只包含建置和執行應用程式所需的項目。
 
 **DockerFile** - 包含建置新容器映像所需的指示。 換句話說，此檔案會建置可定義應用程式環境的容器映像，以便在任何地方重現。
 
@@ -141,9 +141,9 @@ Docker 擴充功能可讓您輕鬆地從 Visual Studio Code 建置、管理及�
 
 ## <a name="upload-your-container-image-to-a-repository"></a>將您的容器映像上傳至存放庫
 
-**容器存放庫**會將您的容器映像儲存在雲端。 容器存放庫通常會包含相關映像的集合 (例如不同版本)，這些映像全都可用於輕鬆設定和快速部署。 一般來說，您可透過安全的 HTTPs 端點來存取容器存放庫上的映像，進而讓您透過任何系統、硬體或 VM 執行個體來提取、推送或管理映像。
+**容器存放庫** 會將您的容器映像儲存在雲端。 容器存放庫通常會包含相關映像的集合 (例如不同版本)，這些映像全都可用於輕鬆設定和快速部署。 一般來說，您可透過安全的 HTTPs 端點來存取容器存放庫上的映像，進而讓您透過任何系統、硬體或 VM 執行個體來提取、推送或管理映像。
 
-另一方面，**容器登錄**會儲存存放庫的集合，以及索引、存取控制規則和 API 路徑。 您可以公開或私下裝載這些項目。 [Docker Hub](https://hub.docker.com/) 是一個開放原始碼的 Docker 登錄，以及在執行 `docker push` 和 `docker pull` 命令時所使用的預設值。 公用存放庫免費，而私人存放庫則需要付費。
+另一方面，**容器登錄** 會儲存存放庫的集合，以及索引、存取控制規則和 API 路徑。 您可以公開或私下裝載這些項目。 [Docker Hub](https://hub.docker.com/) 是一個開放原始碼的 Docker 登錄，以及在執行 `docker push` 和 `docker pull` 命令時所使用的預設值。 公用存放庫免費，而私人存放庫則需要付費。
 
 若要將新的容器映像上傳至 Docker Hub 上裝載的存放庫：
 

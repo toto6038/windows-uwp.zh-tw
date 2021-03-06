@@ -1,5 +1,5 @@
 ---
-title: 熱門開發教學課程
+title: 開發教學課程和課程
 description: 常見的開發工作和案例的熱門教學課程、線上課程和程式碼範例清單。
 author: mattwojo
 ms.author: mattwoj
@@ -9,12 +9,12 @@ ms.technology: windows-nodejs
 keywords: Microsoft, Windows, 開發人員, 熱門教學課程, 課程, 程式碼範例, WSL
 ms.localizationpriority: medium
 ms.date: 07/24/2020
-ms.openlocfilehash: ad37ef190a2bc34a0c067bb01b3502228a2c5ad5
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 2792d9b0f33dec7cef4d4328044afee454477fca
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89168732"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254518"
 ---
 # <a name="popular-tutorials-courses-and-code-samples"></a>熱門教學課程、課程和程式碼範例
 

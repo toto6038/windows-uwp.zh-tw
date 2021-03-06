@@ -8,12 +8,12 @@ ms.topic: article
 keywords: rust、windows 10、microsoft、learning rust、windows 上適用于初學者的 rust、使用 vs code 的 rust、rust for windows
 ms.localizationpriority: medium
 ms.date: 03/04/2021
-ms.openlocfilehash: 929c6a016294559a049eb329454cee59bb1c980e
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: b55faf6d44395989cb7eec39fb9cdd1ee7128aa7
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102194478"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254544"
 ---
 # <a name="rss-reader-tutorial-rust-for-windows-with-vs-code"></a>使用 VS Code) Rust for Windows 的 RSS 讀取程式教學課程 (
 
@@ -131,7 +131,7 @@ ms.locfileid: "102194478"
 
    請注意，我們使用的是 **windows：： Result** 做為 **main** 函式的傳回型別。 這可讓事情變得更容易，因為處理作業系統 (作業系統) Api 的錯誤很常見。
 
-   您可以在建立 **Uri** 的程式程式碼結尾看到問號運算子。 為了節省輸入，我們要利用 Rust 的錯誤傳播和最少運算邏輯。 這表示我們不需要針對這個簡單的範例，進行一堆手動錯誤處理。
+   您可以在建立 **Uri** 的程式程式碼結尾看到問號運算子。 為了節省輸入，我們要利用 Rust 的錯誤傳播和最少運算邏輯。 這表示我們不需要針對這個簡單的範例，進行一堆手動錯誤處理。 如需 Rust 的這項功能的詳細資訊，請參閱 [？運算子以簡化錯誤處理](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html)。
 
 11. 若要下載此 RSS 摘要，我們將建立新的 **SyndicationClient** 物件。
 
@@ -185,7 +185,7 @@ ms.locfileid: "102194478"
    }
    ```
 
-14. 現在讓我們來確認是否可以建立和執行，方法是按一下 [**執行**  >  **執行但不 (調試** 程式]，或按 **Ctrl + F5**) 。 此外，也有內嵌在文字編輯器內的 **Debug** 和 **Run** 命令。
+14. 現在讓我們來確認是否可以建立和執行，方法是按一下 [**執行**  >  **執行但不 (調試** 程式]，或按 **Ctrl + F5**) 。 此外，也有內嵌在文字編輯器內的 **Debug** 和 **Run** 命令。 或者，您可以 `cargo run` 從命令提示字元 (將命令提交 `cd` 至 `rss_reader` 資料夾第一個) ，它將會建立然後執行。
 
    ![內嵌于文字編輯器中的 Debug 和 Run 命令](../../images/rust-rss-reader-2.png)
 
@@ -199,3 +199,4 @@ ms.locfileid: "102194478"
 
 * [適用于 Windows 的 Rust 和 windows 包裝箱](rust-for-windows.md)
 * [ECMA-335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
+* [，?方便處理錯誤的運算子](https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html)

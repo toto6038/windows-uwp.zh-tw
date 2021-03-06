@@ -1,6 +1,6 @@
 ---
-title: 在 Windows 上使用 Python 進行指令碼處理和自動化
-description: 在 Windows 上開始使用 Python 進行腳本、自動化和系統管理的逐步指南。
+title: 使用 Python 進行腳本和自動化
+description: 如何開始在 Windows 上使用 Python 進行指令碼處理、自動化和系統管理。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, windows 10, microsoft, python 系統管理, python 檔案自動化, windows 上的 python 指令碼, 在 windows 上設定 python, windows 上的 python 開發人員環境, windows 上的 python 開發環境, python 搭配 powershell, 適用於檔案系統工作的 python 指令碼
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: 8b6ce391d810fc26ab9964f39939ce8c5a9958e9
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 9123aed078a2af243b201b92d2cd0565be53efe3
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823572"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254541"
 ---
 # <a name="get-started-using-python-on-windows-for-scripting-and-automation"></a>開始在 Windows 上使用 Python 進行指令碼處理和自動化
 

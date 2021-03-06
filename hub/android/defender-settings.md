@@ -1,18 +1,18 @@
 ---
-title: 藉由更新 Defender 設定來改善效能速度
-description: 藉由更新 Windows Defender 設定以排除檢查指定的檔案類型，來改善整體效能速度和組建時間的指南。
+title: Windows Defender 安全性設定
+description: 瞭解如何藉由更新 Windows Defender 設定來排除檢查指定的檔案類型，以改善效能速度和建立時間。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android、windows、windows defender、設定、設定、排除專案、% USERPROFILE%、devenv.exe、效能、速度、組建、gradle
 ms.date: 04/28/2020
-ms.openlocfilehash: e762e595bf2b8aa9b8420d41f68d2890e7d5dfe0
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: f7b2a44f31bf4ec84a4c7f014a3a502350dca748
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823202"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254314"
 ---
 # <a name="update-windows-defender-settings-to-improve-performance"></a>更新 Windows Defender 設定以來改善效能
 

@@ -1,18 +1,18 @@
 ---
-title: 在 Windows 上回應原生的 Android 開發
-description: 逐步指南說明如何在 Windows 上開始使用回應原生，以建立可在 Android 裝置上運作的跨平臺應用程式。
+title: 回應原生以進行 Android 開發
+description: 開始使用 Windows 上的 Xamarin 原生開發 Android 應用程式。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: android、windows、回應原生、模擬器、博覽會、metro 搭配程式、終端機
 ms.date: 04/28/2020
-ms.openlocfilehash: 82bf078d6c29c8968ce3e0cc19ce4d6f803e6d71
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 099dc073e36ee153376f4247b5d7c0526c3a8646
+ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823222"
+ms.lasthandoff: 03/06/2021
+ms.locfileid: "102254323"
 ---
 # <a name="get-started-developing-for-android-using-react-native"></a>開始使用回應原生開發 Android
 
