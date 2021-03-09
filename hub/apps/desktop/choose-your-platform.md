@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 62567b36d16e01fc6091f9514137c60dc352942a
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 11605902b334025c50847103e2de9b10e49c3a0f
+ms.sourcegitcommit: 432cc11c460e9ddf855d28bcd59852741408c823
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534377"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "102474838"
 ---
 # <a name="choose-your-windows-app-platform"></a>選擇您的 Windows 應用程式平台
 
@@ -25,7 +25,7 @@ ms.locfileid: "99534377"
 
 所有這些應用程式平台都包含完整的使用者介面架構和一組 UI 控制項，可讓您建立在傳統 Windows 桌面上執行的桌面應用程式 (例如 Word、Excel 和 Photoshop)，並充分利用該環境的特定功能。 在 Windows 10 上，這些平臺也支援使用 [WINDOWS UI 程式庫 (WinUI) ](#use-the-windows-ui-library-with-windows-apps) 來建立使用者介面。
 
-其中有些平台會共用一些特性，而且更適合特定類型的應用程式。 例如，UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
+其中有些平臺會共用某些特性，而且更適合特定的應用程式類型。 例如，UWP 和 .NET 都與 Visual Studio 進行深度整合。 這可提供許多優點，特別是在開發人員生產力、精細且可自訂的使用者介面，以及應用程式安全性等方面。 由於這些架構支援視覺化設計工具和 UI 標記來快速建立 UI，因此特別適用於企業營運應用程式。
 
 > [!NOTE]
 > 無論您選擇哪一個應用程式平台，都可以使用眾多 Windows 10 功能為您的應用程式提供現代化體驗。 例如，即使您的桌面應用程式是使用 WPF、Windows Forms 或 Win32 API 建置的，您仍然可以使用 MSIX 套件部署。 如需有關如何讓桌面應用程式現代化的詳細資訊，請參閱[讓您的桌面應用程式現代化](modernize/index.md)。
@@ -113,16 +113,16 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 
 ## <a name="use-the-windows-ui-library-with-windows-apps"></a>使用 Windows UI 程式庫搭配 Windows 應用程式
 
-若要補充主要 Windows 應用程式平臺，您也可以在應用程式中使用 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md) 。 WinUI 是以工具組的形式開始，為以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽) ，WinUI 在範圍內不斷成長，成為頂級的原生使用者介面 (UI) 架構，以在 UWP、.NET 和 Win32 應用程式平臺之間 Windows 10 應用程式。
+若要補充主要 Windows 應用程式平臺，您也可以在應用程式中使用 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md) 。 WinUI 是以工具組的形式啟動，可針對以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽階段) ，WinUI 在範圍內不斷成長，成為適用于在 UWP、.NET 和 Win32 應用程式平臺上，適用于 Windows 10 應用程式的頂級原生使用者介面 (UI) framework。
 
 您可以透過下列方式，在 Windows 應用程式中使用 WinUI。
 
 * [WinUI](../winui/winui2/index.md)2.x：
-  * UWP 應用程式可以使用 WinUI 2.x 控制項來取代 Windows SDK 所提供的 WinRT 控制項。 這些 WinUI 版本包括新的控制項，以及 Windows SDK 中現有控制項的更新版本。
+  * UWP 應用程式可以使用 WinUI 2.x 控制項來取代 Windows SDK 提供的 WinRT 控制項。 這些版本的 WinUI 包含新的控制項，以及 Windows SDK 現有控制項的更新版本。
   * 您可以使用 [XAML 島](modernize/xaml-islands.md)，將現有的 WPF、Windows Forms 和 c + +/Win32 應用程式更新為裝載 WinUI 2.x 控制項。
 
 * [WinUI 3 (preview) ](../winui/winui3/index.md)：
-  * 從 WinUI 3 開始，您可以建立 [.net 和 c + +/Win32 應用程式](../winui/winui3/get-started-winui3-for-desktop.md) ，以及使用完全以 WinUI 為基礎之 UI 的 [UWP 應用程式](../winui/winui3/get-started-winui3-for-uwp.md) 。 此版本包含 Visual Studio 專案範本，可提供建立這些應用程式所需的所有專案。
+  * 從 WinUI 3 開始，您可以建立 [.net 和 c + +/Win32 應用程式](../winui/winui3/get-started-winui3-for-desktop.md) ，以及使用完全以 WinUI 為基礎之 UI 的 [UWP 應用程式](../winui/winui3/get-started-winui3-for-uwp.md) 。 此版本包含 Visual Studio 專案範本，可提供建立這些應用程式所需的一切。
 
 > [!NOTE]
 > WinUI 3 仍處於預覽狀態，不應該用於生產應用程式。
