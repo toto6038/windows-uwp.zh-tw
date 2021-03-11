@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, C#, 範例, 剪貼簿, 案例研究
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a7ec46b28a8ddf0b4accadb37b40e786ac8c47a
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
-ms.translationtype: HT
+ms.openlocfilehash: f862dd01e91d99e19fb6996921dbc20a33d714da
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "89170412"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629366"
 ---
 # <a name="porting-the-clipboard-sample-to-cwinrt-from-cmdasha-case-study"></a>將剪貼簿範例從 C# 移植到 C++/WinRT &mdash; 案例研究
 
@@ -286,9 +286,9 @@ namespace winrt::SDKTemplate::implementation
 建置 C++/WinRT 專案之前，請先尋找 **Clipboard** 命名空間的任何宣告和參考，然後將其變更為 **SDKTemplate**。
 
 - `MainPage.xaml` 和 `App.xaml`。 命名空間會出現在 `x:Class` 和 `xmlns:local` 屬性的值中。
-- `App.idl`。
-- `App.h`。
-- `App.cpp`。 有兩個 `using namespace` 指示詞 (搜尋子字串 `using namespace Clipboard`) 和兩個 **MainPage** 類型的資格 (搜尋 `Clipboard::MainPage`)。 這些需要變更。
+- `App.idl`.
+- `App.h`.
+- `App.cpp`. 有兩個 `using namespace` 指示詞 (搜尋子字串 `using namespace Clipboard`) 和兩個 **MainPage** 類型的資格 (搜尋 `Clipboard::MainPage`)。 這些需要變更。
 
 我們已從 **MainPage** 移除事件處理常式，因此也請移至 `MainPage.xaml`，並從標記中刪除 **Button** 元素。
 
@@ -778,7 +778,7 @@ using namespace Windows::UI::Notifications;
 - 在堆疊上建構 C++/WinRT 物件，而不是在堆積上。
 - 將屬性 get 存取子的呼叫取代為 function-call 語法 (`()`)。
 
-編譯器/連結器錯誤的一個非常常見的原因是忘記納入所需的 C++/WinRT Windows 命名空間標頭檔。 如需有關一個可能錯誤的詳細資訊，請參閱[為何連結器顯示「LNK2019:無法解析的外部符號」錯誤？](./faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)。
+編譯器/連結器錯誤的一個非常常見的原因是忘記納入所需的 C++/WinRT Windows 命名空間標頭檔。 如需有關一個可能錯誤的詳細資訊，請參閱[為何連結器顯示「LNK2019:無法解析的外部符號」錯誤？](./faq.yml#why-is-the-linker-giving-me-a--lnk2019--unresolved-external-symbol--error-)。
 
 如果您想要依照逐步解說，自行移植 **DisplayToast**，可以將結果與您所下載之 [剪貼簿範例](/samples/microsoft/windows-universal-samples/clipboard/)原始程式碼 ZIP 中 C++/WinRT 版本的程式碼進行比較。
 
@@ -1352,7 +1352,7 @@ if (imageReceived)
 }
 ```
 
-C++/WinRT 物件會實作 **IClosable**，主要用於取得不具決定性最終處理的語言優點。 C++/WinRT 具決定性最終處理，因此我們在撰寫 C++/WinRT 時，通常不需要呼叫 **IClosable::Close**。 但有時候非常適合於呼叫它，而且這是其中一個時間。 在這裡，*imageStream* 識別碼是基礎 Windows 執行階段物件周圍的參考計數包裝函式 (在此案例中，指的是實作 [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype) 的物件)。 雖然我們可以判斷 *imageStream* (其解構函式) 的完成項會在封閉範圍 (大括弧) 的結尾執行，但是無法確定完成項將會呼叫 **Close**。 這是因為我們已將 *imageStream* 傳遞至其他 API，而且它們可能仍會參與基礎 Windows 執行階段物件的參考計數。 因此，在此情況下，最好明確地呼叫 **Close**。 如需詳細資訊，請參閱[我需要在我使用的執行階段類別上呼叫 IClosable::Close 嗎？](./faq.md#do-i-need-to-call-iclosableclose-on-runtime-classes-that-i-consume)。
+C++/WinRT 物件會實作 **IClosable**，主要用於取得不具決定性最終處理的語言優點。 C++/WinRT 具決定性最終處理，因此我們在撰寫 C++/WinRT 時，通常不需要呼叫 **IClosable::Close**。 但有時候非常適合於呼叫它，而且這是其中一個時間。 在這裡，*imageStream* 識別碼是基礎 Windows 執行階段物件周圍的參考計數包裝函式 (在此案例中，指的是實作 [**IRandomAccessStreamWithContentType**](/uwp/api/windows.storage.streams.irandomaccessstreamwithcontenttype) 的物件)。 雖然我們可以判斷 *imageStream* (其解構函式) 的完成項會在封閉範圍 (大括弧) 的結尾執行，但是無法確定完成項將會呼叫 **Close**。 這是因為我們已將 *imageStream* 傳遞至其他 API，而且它們可能仍會參與基礎 Windows 執行階段物件的參考計數。 因此，在此情況下，最好明確地呼叫 **Close**。 如需詳細資訊，請參閱[我需要在我使用的執行階段類別上呼叫 IClosable::Close 嗎？](./faq.yml#do-i-need-to-call-iclosable--close-on-runtime-classes-that-i-consume-)。
 
 接下來，請考慮 C# 運算式 `(uint)(imageDecoder.OrientedPixelWidth * 0.5)`，您可以在 **OnDeferredImageRequestedHandler** 事件處理常式中找到此運算式。 該運算式會將 `uint` 乘以 `double`，因而產生 `double`。 然後，將該結果轉換為 `uint`。 在 C++/WinRT 中，我們 *可以* 使用外表類似的 C 樣式轉換 (`(uint32_t)(imageDecoder.OrientedPixelWidth() * 0.5)`)，但最好是讓它清楚明白我們想要的轉換類型，在此情況下，我們會使用 `static_cast<uint32_t>(imageDecoder.OrientedPixelWidth() * 0.5)` 來執行此動作。
 

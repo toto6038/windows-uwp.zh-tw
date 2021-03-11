@@ -4,12 +4,12 @@ description: 用於 Windows 應用程式開發的 WinUI 程式庫。
 ms.topic: article
 ms.date: 07/15/2020
 keywords: windows 10, uwp, 工具組 sdk, winui, Windows UI 程式庫
-ms.openlocfilehash: 7b41e6cf1729831e6fa7a7d7f690306abb28ec27
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: d90101cfd674ddb2d422b200443fe7c8552f8f7a
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100334972"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629276"
 ---
 # <a name="windows-ui-library-winui"></a>Windows UI 程式庫 (WinUI)
 
@@ -46,20 +46,22 @@ WinUI 2.x 程式庫可與 [Windows 10 SDK](https://developer.microsoft.com/windo
 - [原始程式碼](https://aka.ms/winui)
 - [XAML 控制項庫應用程式](https://www.microsoft.com/p/xaml-controls-gallery/9msvh128x2zt)
 
-## <a name="windows-ui-3-library-preview-4"></a>Windows UI 3 程式庫 (Preview 4) 
+## <a name="windows-ui-3-library-project-reunion-05-preview"></a>Windows UI 3 程式庫 (Project 留尼旺島 0.5 Preview) 
 
 WinUI 3 是 WinUI 的下一個版本，這是與 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) 完全分離的原生 Windows 10 UI 平台。
 
 > [!Important]
-> WinUI 3 預覽版的目的是進行早期評估，並從開發人員社群收集意見反應。 **不會** 用於生產應用程式。
+> 此 WinUI 3 Preview 旨在搶先評估並從開發人員群體收集意見反應。 **不會** 用於生產應用程式。
 >
-> 我們會繼續從 2020 年到 2021 年初提供 WinUI 3 的預覽版本，在這個日期之後，第一個正式版本就會推出。
+> 我們將在2021年3月的第一期推出第一次正式支援的版本。 它將會是 Project 留尼旺島0.5 套件的一部分。
 >
 > 請使用 [WinUI GitHub 存放庫](https://github.com/microsoft/microsoft-ui-xaml)以提供意見反應及記錄建議和問題。
 
 因為 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk/) 與 XAML、撰寫和輸入 API 完全分離，所以 WinUI 3.0 的範圍包含完整的 Windows 10 原生 UI 平台。
 
-WinUI 是所有 Windows 應用程式向前邁進的路徑 - 您可以使用此平台作為原生 UWP 或 Win32 應用程式上的 UI 層，也可以搭配 [XAML Islands](../desktop/modernize/xaml-islands.md) 來逐一現代化您的桌面應用程式。
+WinUI 3 是 [Project 留尼旺島](../project-reunion/index.md)的元件，它提供一組整合的 api 和工具，可讓您在一組廣泛的目標 WINDOWS 10 作業系統版本上，以一致的方式使用這些應用程式。 作為專案留尼旺島的元件，WinUI 3 隨附于專案留尼旺島套件中; 如需詳細資訊，請參閱 [WINDOWS UI 程式庫 3-Project 留尼旺島 0.5 Preview (3 月 2021) ](winui3/index.md) 。
+
+WinUI 3 是所有 Windows 應用程式的前進路徑，您可以使用它做為原生 UWP 或 Win32 應用程式的 UI 層，也可以使用 [XAML 孤島](../desktop/modernize/xaml-islands.md)逐漸將桌面應用程式現代化。
 
 所有新的 XAML 功能最終都會隨附在 WinUI 中。 隨附於作業系統的現有 UWP XAML API 將不會再收到新的功能更新。 不過會隨著 Windows 10 支援週期，繼續收到安全性更新和重大修正程式。
 
@@ -69,11 +71,11 @@ WinUI 是所有 Windows 應用程式向前邁進的路徑 - 您可以使用此�
 
 ### <a name="related-links-for-winui-3"></a>WinUI 3 的相關連結
 
-- [Windows UI 程式庫 3 Preview 4 (2021 年2月) ](winui3/index.md)
-- [XAML 控制項資源庫 (WinUI 3 Preview 4) 應用程式](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
+- [Windows UI 程式庫 3-Project 留尼旺島 0.5 Preview (3 月 2021) ](winui3/index.md)
+- [XAML 控制項資源庫 (WinUI 3 Preview) 應用程式](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview)
 
 ## <a name="winui-resources"></a>WinUI 資源
 
 **Github**：WinUI 是裝載於 Github 上的開放原始碼專案。 使用 [WinUI 存放庫](https://github.com/microsoft/microsoft-ui-xaml)，提出功能要求或錯誤、與 WinUI 小組互動，以及從[藍圖](https://github.com/microsoft/microsoft-ui-xaml/blob/master/docs/roadmap.md)中檢視小組的 WinUI 3 計畫及其他事項。
 
-**網站**：[WinUI 網站](https://aka.ms/winui)上有產品的比較、說明 WinUI 的各種優點，以及協助持續關注產品和產品小組最新資訊。
+**網站**： [WinUI 網站](https://aka.ms/winui) 具有產品比較、說明 WinUI 的各種優點，並提供與產品和產品團隊保持聯繫的方式。

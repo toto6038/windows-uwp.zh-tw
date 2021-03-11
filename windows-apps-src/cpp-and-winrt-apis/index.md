@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ad3a204b2eb4b288e3d3c313a0832bea124de0
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
-ms.translationtype: HT
+ms.openlocfilehash: 7812eca3263e266820f3624f88aad41b2d6e6ef5
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219891"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629376"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -22,7 +22,7 @@ C++/WinRT 適用於任何對寫出漂亮且快速的 Windows 程式碼感興趣�
 &nbsp;
 > [!VIDEO https://www.youtube.com/embed/TLSul1XxppA]
 
-C++ 程式設計語言同時用於企業和** 獨立軟體廠商 (ISV) 區段，適用於需要高正確性、品質和效能價值的應用程式。 例如：系統程式設計；資源受限內嵌和行動裝置系統；遊戲和圖形；裝置驅動程式；以及業界、科學和醫療應用程式等等。
+C++ 程式設計語言同時用於企業和獨立軟體廠商 (ISV) 區段，適用於需要高正確性、品質和效能價值的應用程式。 例如：系統程式設計；資源受限內嵌和行動裝置系統；遊戲和圖形；裝置驅動程式；以及業界、科學和醫療應用程式等等。
 
 從語言的觀點來看，C++ 向來與類型豐富且輕量的撰寫和使用抽象概念有關。 但因為原始指標、原始迴圈和詳細的記憶體配置與 C++98 發行，語言有了大幅度的變更。 現代化 C++ (從 C++ 11 後續版本) 是關於清楚運算式的想法、簡單、可讀性和較低引入錯誤的可能性。
 
@@ -40,7 +40,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 - 從 WRL 移到 [C++/WinRT](./move-to-winrt-from-wrl.md)
 - [從 C# 移到 C++/WinRT](./move-to-winrt-from-csharp.md)
 
-另請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](./faq.md#where-can-i-find-cwinrt-sample-apps)
+另請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](./faq.yml#where-can-i-find-c---winrt-sample-apps-)
 
 ### <a name="topics-about-cwinrt"></a>C++/WinRT 相關主題
 
@@ -49,12 +49,12 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [C++/WinRT 的簡介](./intro-to-using-cpp-with-winrt.md) | C++/ WinRT&mdash;Windows 執行階段 API 的標準 C++ 語言投影的簡介。 |
 | [開始使用 C++/WinRT](./get-started.md) | 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。 |
 | [C++/WinRT 的新功能](./news.md) | C++/WinRT 的新聞和變更。 |
-| [常見問題集](./faq.md) | 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。 |
+| [常見問題集](./faq.yml) | 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。 |
 | [疑難排解](./troubleshooting.md) | 無論您是剪下新的程式碼或移植現有的應用程式，本主題中的疑難排解問題和解決方式表格可能對您會很有幫助。 |
-| [Photo Editor C++/WinRT 範例應用程式](./photo-editor-sample.md) | Photo Editor 是 UWP 範例應用程式，展示使用 C++/WinRT 語言投影進行開發。 範例應用程式可讓您從**圖片**庫擷取相片，然後以混合的相片效果編輯所選的影像。 | 
+| [Photo Editor C++/WinRT 範例應用程式](./photo-editor-sample.md) | Photo Editor 是 UWP 範例應用程式，展示使用 C++/WinRT 語言投影進行開發。 範例應用程式可讓您從 **圖片** 庫擷取相片，然後以混合的相片效果編輯所選的影像。 | 
 | [字串處理](./strings.md) | 使用 C++/WinRT，您可以使用標準 C++ 寬字串類型呼叫 Windows 執行階段 API，或可以使用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 類型。 |
 | [標準 C++ 資料類型與 C++/WinRT](./std-cpp-data-types.md) | 使用 C++/WinRT，您可以使用標準 C++ 資料類型呼叫 Windows 執行階段 API。 |
-| [將純量數值 Boxing 和 unboxing 到 IInspectable](./boxing.md) | 在傳遞至需要 **IInspectable** 的函示之前，必須將純量數值包裝在參考資料類別物件中。 該包裝程序稱為「boxing」** 值。 |
+| [將純量數值 Boxing 和 unboxing 到 IInspectable](./boxing.md) | 在傳遞至需要 **IInspectable** 的函示之前，必須將純量數值包裝在參考資料類別物件中。 該包裝程序稱為「boxing」值。 |
 | [使用 C++/WinRT 取用 API](./consume-apis.md) | 本主題示範如何取用 C++/WinRT API，無論 Windows、第三方元件廠商或您自己是否實作它們。 |
 | [使用 C++/WinRT 撰寫 API](./author-apis.md) | 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。 |
 | [使用 C++/WinRT 處理錯誤](./error-handling.md) | 本主題討論使用 C++/WinRT 程式設計時處理錯誤的策略。 |
@@ -64,7 +64,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [並行和非同步作業](./concurrency.md) | 本主題示範的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件。 |
 | [更進階的並行和非同步](./concurrency-2.md) | C++/WinRT 中具有並行和非同步的更進階案例。 |
 | [XAML 控制項；繫結至一個 C++/WinRT 屬性](./binding-property.md) | 可有效地繫結至 XAML 控制項屬性稱為「可觀察的」屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。 |
-| [XAML 項目控制項；繫結至一個 C++/WinRT 集合](./binding-collection.md) | 可有效地繫結至 XAML 項目控制項的集合稱為「可觀察的」** 集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。 |
+| [XAML 項目控制項；繫結至一個 C++/WinRT 集合](./binding-collection.md) | 可有效地繫結至 XAML 項目控制項的集合稱為「可觀察的」集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。 |
 | [使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項](./xaml-cust-ctrl.md) | 本主題會逐步引導您完成使用 C++/WinRT 建立簡單自訂控制項。 您可以根據這裡的資訊，替自己建立功能豐富且可自訂的 UI 控制項。 |
 | [將參數傳入到 ABI 界限](./pass-parms-to-abi.md) | C++/WinRT 藉由在一般情況提供自動轉換，簡化將參數傳入 ABI 界線的過程。 |
 | [使用 C++/WinRT 取用 COM 元件](./consume-com.md) | 本主題使用完整的 Direct2D 程式碼範例來示範如何使用 C++/WinRT 來取用 COM 類別和介面。 |

@@ -1,6 +1,6 @@
 ---
 description: NavigationView 一種調適型控制項，用於實作應用程式最上層的瀏覽模式。
-title: 瀏覽檢視
+title: NavigationView
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
@@ -14,19 +14,19 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: af52032a0ebdf60e72f8bad0dd853696b717a05a
-ms.sourcegitcommit: 9bd23e0e08ed834accebde4db96fc87f921d983d
+ms.openlocfilehash: 4da8d370c76f18b243930bb478bc28975d6444a9
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98949142"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784859"
 ---
-# <a name="navigation-view"></a>瀏覽檢視
+# <a name="navigationview"></a>NavigationView
 
 NavigationView 控制項提供您的應用程式最上層瀏覽。 其可配合各種不同的螢幕大小，並且同時支援「頂端」和「左側」的瀏覽樣式。
 
 ![頂端瀏覽](images/nav-view-header.png)<br/>
-_瀏覽檢視支援頂端和左側瀏覽窗格或功能表_
+_NavigationView 支援左上和左導覽窗格或功能表_
 
 **取得 Windows UI 程式庫**
 
@@ -138,19 +138,19 @@ NavigationView 是調適型瀏覽控制項，適用於：
 
 ### <a name="auto"></a>自動
 
-PaneDisplayMode 預設設定為 [自動]。在自動模式中，瀏覽檢視會切換為 LeftMinimal (視窗變窄時)、LeftCompact 和 Left (視窗變寬時)。 如需詳細資訊，請參閱[調適型行為](#adaptive-behavior)一節。
+根據預設，PaneDisplayMode 會設定為 Auto。在自動模式中，NavigationView 會在視窗縮小、LeftCompact，然後在視窗變寬時，于 LeftMinimal 之間調整。 如需詳細資訊，請參閱[調適型行為](#adaptive-behavior)一節。
 
 ![左側瀏覽預設調適型行為](images/displaymode-auto.png)<br/>
-_瀏覽檢視預設調適型行為_
+_NavigationView 預設調適型行為_
 
 ## <a name="anatomy"></a>結構
 
 這些圖片顯示對於 _頂端_ 或 _左側_ 瀏覽設定時窗格、頁首和控制項內容區域的配置。
 
-![頂端瀏覽檢視配置](images/topnav-anatomy.png)<br/>
+![Top NavigationView 版面配置](images/topnav-anatomy.png)<br/>
 _頂端瀏覽配置_
 
-![左側瀏覽檢視配置](images/leftnav-anatomy.png)<br/>
+![左方 NavigationView 版面配置](images/leftnav-anatomy.png)<br/>
 _左側瀏覽配置_
 
 ### <a name="pane"></a>窗格
@@ -169,13 +169,13 @@ NavigationView 窗格可以包含：
 
 - 切換開啟和關閉窗格的功能表按鈕。 在較大的應用程式視窗上，當窗格開啟時，您可以選擇使用 [IsPaneToggleButtonVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsPaneToggleButtonVisible) 屬性隱藏此按鈕。
 
-瀏覽檢視有放置在窗格左上角的返回按鈕。 不過，這會自動處理向後瀏覽，並將內容新增至返回堆疊。 若要啟用向後瀏覽，請參閱[向後瀏覽](#backwards-navigation)一節。
+NavigationView 有一個放在窗格左上角的 [上一頁] 按鈕。 不過，這會自動處理向後瀏覽，並將內容新增至返回堆疊。 若要啟用向後瀏覽，請參閱[向後瀏覽](#backwards-navigation)一節。
 
 以下是頂端和左側窗格位置的詳細的窗格結構。
 
 #### <a name="top-navigation-pane"></a>頂端瀏覽窗格
 
-![瀏覽檢視頂端窗格結構](images/navview-pane-anatomy-horizontal.png)
+![NavigationView 頂端窗格剖析](images/navview-pane-anatomy-horizontal.png)
 
 1. 標頭
 1. 瀏覽項目
@@ -185,7 +185,7 @@ NavigationView 窗格可以包含：
 
 #### <a name="left-navigation-pane"></a>左側瀏覽窗格
 
-![瀏覽檢視左側窗格結構](images/navview-pane-anatomy-vertical.png)
+![NavigationView 左窗格剖析](images/navview-pane-anatomy-vertical.png)
 
 1. 功能表按鈕
 1. 瀏覽項目
@@ -260,8 +260,8 @@ NavigationView 窗格可以包含：
 
 您可以設定 [Header](/uwp/api/windows.ui.xaml.controls.navigationview.header) 屬性新增頁面標題。
 
-![瀏覽檢視頁首區域的範例](images/nav-header.png)<br/>
-_瀏覽檢視頁首_
+![NavigationView 標頭區域的範例](images/nav-header.png)<br/>
+_NavigationView 標頭_
 
 頁首區域與左側窗格位置的導覽按鈕垂直對齊，而且導覽按鈕在左側窗格位置，並位於頂端窗格位置中的窗格下方。 這有 52 px 的固定高度。 其目的是保留所選瀏覽類別的頁面標題。 頁首停駐在頁面頂端，並且做為內容區域的捲動裁剪點。
 
@@ -269,8 +269,8 @@ _瀏覽檢視頁首_
 
 ### <a name="content"></a>內容
 
-![瀏覽檢視內容區域的範例](images/nav-content.png)<br/>
-_瀏覽檢視內容_
+![NavigationView 內容區域的範例](images/nav-content.png)<br/>
+_NavigationView 內容_
 
 內容區域是顯示所選瀏覽類別大部分資訊的位置。
 
@@ -278,7 +278,7 @@ _瀏覽檢視內容_
 
 ## <a name="adaptive-behavior"></a>調適性行為
 
-瀏覽檢視預設會根據其可用的螢幕空間量自動變更顯示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) 和 [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) 屬性會指定顯示模式變更的中斷點。 您可以修改這些值，以自訂調適性顯示模式行為。
+根據預設，NavigationView 會根據可用的螢幕空間量，自動變更其顯示模式。 [CompactModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.compactmodethresholdwidth) 和 [ExpandedModeThresholdWidth](/uwp/api/windows.ui.xaml.controls.navigationview.expandedmodethresholdwidth) 屬性會指定顯示模式變更的中斷點。 您可以修改這些值，以自訂調適性顯示模式行為。
 
 ### <a name="default"></a>Default
 
@@ -291,7 +291,7 @@ PaneDisplayMode 是設定為 **Auto** 的預設值，調適性行為會顯示：
 如需調適性行為視窗大小的詳細資訊，請參閱[螢幕大小和中斷點](../layout/screen-sizes-and-breakpoints-for-responsive-design.md)。
 
 ![左側瀏覽預設調適型行為](images/displaymode-auto.png)<br/>
-_瀏覽檢視預設調適型行為_
+_NavigationView 預設調適型行為_
 
 ### <a name="minimal"></a>基本
 
@@ -303,7 +303,7 @@ _瀏覽檢視預設調適型行為_
 - 您的瀏覽類別無法以圖示清楚表示。
 
 ![左側瀏覽基本調適型行為](images/adaptive-behavior-minimal.png)<br/>
-_瀏覽檢視「基本」調適型行為_
+_NavigationView 「基本」適應性行為_
 
 若要設定此行為，請將 CompactModeThresholdWidth 設訂為想要窗格摺疊的寬度。 在其中，這是從預設的 640 變更為 1007。 您也應該設定 ExpandedModeThresholdWidth 以確保值不衝突。
 
@@ -321,7 +321,7 @@ _瀏覽檢視「基本」調適型行為_
 - 您的瀏覽類別能夠以圖示清楚表示。
 
 ![左側瀏覽精簡調適型行為](images/adaptive-behavior-compact.png)<br/>
-_瀏覽檢視「精簡」調適型行為_
+_NavigationView 「compact」適應性行為_
 
 若要設定此行為，請將 CompactModeThresholdWidth 設定為 0。
 
@@ -334,7 +334,7 @@ _瀏覽檢視「精簡」調適型行為_
 若要停用調適性行為，請將 PaneDisplayMode 設定為 Auto 以外的值。在其中，這是設定為 LeftMinimal，因此，無論視窗的寬度為何，功能表按鈕都會顯示。
 
 ![左側瀏覽無調適型行為](images/adaptive-behavior-none.png)<br/>
-_PaneDisplayMode 設定為 LeftMinimal 的瀏覽檢視_
+_將 PaneDisplayMode 設定為 LeftMinimal 的 NavigationView_
 
 ```xaml
 <NavigationView PaneDisplayMode="LeftMinimal" />
@@ -384,13 +384,13 @@ _PaneDisplayMode 設定為 LeftMinimal 的瀏覽檢視_
 ```
 
 > [!TIP]
-> 您使用 AdaptiveTrigger.MinWindowWidth 時，在視窗超出指定最小寬度的情況下，會觸發視覺狀態。 這表示預設 XAML 定義窄視窗，而且 VisualState 定義視窗變寬時套用的修改。 瀏覽檢視的預設 PaneDisplayMode 為 Auto，因此，視窗寬度小於或等於 CompactModeThresholdWidth 時，會使用 LeftMinimal 瀏覽。 視窗變寬時，VisualState 會覆寫預設值，並使用頂端瀏覽。
+> 您使用 AdaptiveTrigger.MinWindowWidth 時，在視窗超出指定最小寬度的情況下，會觸發視覺狀態。 這表示預設 XAML 定義窄視窗，而且 VisualState 定義視窗變寬時套用的修改。 NavigationView 的預設 PaneDisplayMode 為 Auto，因此當視窗寬度小於或等於 CompactModeThresholdWidth 時，就會使用 LeftMinimal 導覽。 視窗變寬時，VisualState 會覆寫預設值，並使用頂端瀏覽。
 
 ## <a name="navigation"></a>瀏覽
 
-瀏覽檢視不會自動執行任何瀏覽工作。 使用者點選瀏覽項目時，瀏覽檢視會將該項目顯示為已選取，並引發 [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) 事件。 如果點選的動作導致不斷選取到某個新項目，也會引發 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) 事件。
+NavigationView 不會自動執行任何導覽工作。 當使用者按下流覽專案時，NavigationView 會將該專案顯示為已選取，並引發 [ItemInvoked](/uwp/api/windows.ui.xaml.controls.navigationview.ItemInvoked) 事件。 如果點選的動作導致不斷選取到某個新項目，也會引發 [SelectionChanged](/uwp/api/windows.ui.xaml.controls.navigationview.SelectionChanged) 事件。
 
-您可以處理任何一個事件來執行與要求的瀏覽相關的工作。 您應該處理哪一個取決於您的應用程式所需的行為。 一般而言，您會瀏覽至要求的頁面，並更新瀏覽檢視頁首，以回應這些事件。
+您可以處理任何一個事件來執行與要求的瀏覽相關的工作。 您應該處理哪一個取決於您的應用程式所需的行為。 通常，您會流覽至要求的頁面，並更新 NavigationView 標頭以回應這些事件。
 
 只要使用者點選瀏覽項目，即使是已選取的瀏覽項目，都會引發 **ItemInvoked**。 (也可以使用滑鼠、鍵盤或其他輸入，透過對等的動作叫用項目。 如需詳細資訊，請參閱[輸入和互動](../input/index.md)。)如果您在 ItemInvoked 處理常式中瀏覽，預設將重新載入頁面，而且重複的項目將新增至瀏覽堆疊。 如果您在叫用項目時瀏覽，您應該不允許重新載入頁面，或確定頁面重新載入時並未在瀏覽 backstack 中建立重複項目。 (參考程式碼範例。)
 
@@ -402,7 +402,7 @@ _PaneDisplayMode 設定為 LeftMinimal 的瀏覽檢視_
 
 NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這不會自動執行向後瀏覽。 使用者點選返回按鈕時，會引發 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) 事件。 您可以處理這個事件來執行向後瀏覽。 如需詳細資訊和程式碼範例，請參閱[瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
 
-在基本或精簡模式中，瀏覽檢視窗格是以飛出視窗開啟。 在此情況下，按一下返回按鈕會關閉窗格，並引發 **PaneClosing** 事件。
+在 [最短] 或 [壓縮] 模式中，[NavigationView] 窗格會開啟為飛出視窗。 在此情況下，按一下返回按鈕會關閉窗格，並引發 **PaneClosing** 事件。
 
 您可以設定這些屬性來隱藏或停用返回按鈕：
 
@@ -411,11 +411,11 @@ NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這�
 
 :::row:::
     :::column:::
-        ![左側瀏覽窗格中的瀏覽檢視返回按鈕](images/leftnav-back.png)<br/>
+        ![左方流覽窗格中的 [NavigationView 上一頁] 按鈕](images/leftnav-back.png)<br/>
         _左側瀏覽窗格中的返回按鈕_
     :::column-end:::
     :::column:::
-        ![上方瀏覽窗格中的瀏覽檢視返回按鈕](images/topnav-back.png)<br/>
+        ![上方流覽窗格中的 [NavigationView 上一頁] 按鈕](images/topnav-back.png)<br/>
         _上方瀏覽窗格中的返回按鈕_
     :::column-end:::
 :::row-end:::
@@ -1651,7 +1651,7 @@ MainPage::MainPage()
 
 ### <a name="keyboarding-within-hierarchical-navigationview"></a>階層式 NavigationView 內的鍵盤輸入
 
-使用者可以使用其[鍵盤](../input/keyboard-interactions.md)，將焦點移到瀏覽檢視的周圍。 方向鍵會在窗格內公開「內部瀏覽」，並遵循 [樹狀檢視](./tree-view.md)中提供的互動。 按鍵動作會在瀏覽 NavigationView 或其飛出視窗功能表 (其顯示在 HierarchicalNavigationView 的頂端和左側精簡模式中) 時變更。 以下是每個按鍵可在階層式 NavigationView 中採取的特定動作：
+使用者可以使用其 [鍵盤](../input/keyboard-interactions.md)將焦點移到 NavigationView 周圍。 方向鍵會在窗格內公開「內部瀏覽」，並遵循 [樹狀檢視](./tree-view.md)中提供的互動。 按鍵動作會在瀏覽 NavigationView 或其飛出視窗功能表 (其顯示在 HierarchicalNavigationView 的頂端和左側精簡模式中) 時變更。 以下是每個按鍵可在階層式 NavigationView 中採取的特定動作：
 
 | 按鍵      |      在左側模式中      |  在頂端模式中 | 在飛出視窗中  |
 |----------|------------------------|--------------|------------|
@@ -1666,7 +1666,7 @@ MainPage::MainPage()
 
 *請注意，項目不需要在視覺上相鄰，焦點會從窗格清單中的最後一個項目移至 [設定] 項目。 
 
-## <a name="navigation-view-customization"></a>瀏覽檢視自訂
+## <a name="navigationview-customization"></a>NavigationView 自訂
 
 ### <a name="pane-backgrounds"></a>窗格背景
 

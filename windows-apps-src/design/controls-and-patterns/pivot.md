@@ -10,14 +10,19 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eaef3bb57eb8719ac4183f21b764ece98cae22fe
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: c5462eecbb4b15e74fc6932da9bbbbe37fcdbd92
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030851"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784839"
 ---
 # <a name="pivot"></a>樞紐分析
+
+> [!Important]
+> 不再建議使用 **[Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)** 控制項，而且可以在未來的 Windows UI 程式庫版本中移除 (WinUI) 。 請注意，本主題中的資訊和影像可能已過期。
+>
+> 請改用具有 *上方* 導覽樣式的 **[NavigationView](navigationview.md)** 控制項 (或顯示模式) 。
 
 [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\) 控制項可讓使用者在一小組內容區段之間進行觸控撥動。
 
@@ -37,7 +42,7 @@ ms.locfileid: "93030851"
    :::column-end:::
 :::row-end:::
 
-> **平台 API** ： [Pivot 類別](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、 [NavigationView 類別](/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
+> **平台 API**：[Pivot 類別](/uwp/api/Windows.UI.Xaml.Controls.Pivot) \(英文\)、[NavigationView 類別](/uwp/api/Windows.UI.Xaml.Controls.NavigationView) \(英文\)
 
 ## <a name="examples"></a>範例
 
@@ -199,7 +204,7 @@ Pivot 是一種 [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl)�
 - 點選樞紐標籤會瀏覽到對應的頁面，且使用中的樞紐標籤會浮動切換到第一個位置。
 - 各樞紐項目會浮動循環切換，從最後一個接到第一個樞紐區段。
 
-> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false** 。
+> **注意** Pivot 標頭不應在 [10 英呎環境](../devices/designing-for-tv.md)中進行浮動切換。 如果您的應用程式會在 Xbox 上執行，請將 [IsHeaderItemsCarouselEnabled](/uwp/api/Windows.UI.Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled) \(英文\) 屬性設為 **false**。
 
 ## <a name="recommendations"></a>建議
 

@@ -4,12 +4,12 @@ description: 了解圓角原則、設計方法和自訂選項。
 ms.date: 10/08/2019
 ms.topic: article
 keywords: windows 10, uwp, 邊角半徑, 修圓
-ms.openlocfilehash: 33432ac0083c0d6660d0669ea43805e0ae73f37e
-ms.sourcegitcommit: 4cafc1c55511741dd1e5bfe4496d9950a9b4de1b
-ms.translationtype: HT
+ms.openlocfilehash: 14abadb968e31c52e49d7597241eb017f5ebead7
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97860197"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784809"
 ---
 # <a name="corner-radius"></a>圓角半徑
 
@@ -94,7 +94,6 @@ ms.locfileid: "97860197"
 **控制項**
 
 - NavigationView 選取指標
-- 樞紐選取指標
 - ProgressBar
 - ScrollBar (當 `IndicatorMode=TouchIndicator` 時)
 - 滑桿

@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ee0c92ec81f7bbabc2218afbf263000a167d2057
-ms.sourcegitcommit: e81227399ba0f286e74e4977d757237829440a2e
+ms.openlocfilehash: 6f712dd8e845b3beb52981be4a17df128c48845d
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96310206"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784739"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -28,7 +28,7 @@ ms.locfileid: "96310206"
 > [!NOTE]
 > 鍵盤對身障使用者而言是不可或缺的工具 (請參閱[鍵盤協助工具](../accessibility/keyboard-accessibility.md))，對於希望透過它而能更有效率地與應用程式互動的使用者而言，也是重要工具。
 
-## <a name="overview"></a>總覽
+## <a name="overview"></a>概觀
 
 快速鍵通常包括功能鍵 F1 到 F12，或是一些標準按鍵與一個或多個輔助按鍵 (CTRL、Shift) 配對的組合。
 
@@ -127,11 +127,11 @@ ms.locfileid: "96310206"
 ```
 
 ![工具提示中鍵盤快速鍵的螢幕擷取畫面。](images/accelerators/accelerators_tooltip.png)  
-**_工具提示中所描述的鍵盤快速鍵_* _
+***工具提示中描述的鍵盤快速鍵***
 
 [UIElement](/uwp/api/windows.ui.xaml.uielement) 物件具有 [KeyboardAccelerator](/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 集合 [KeyboardAccelerators](/uwp/api/windows.ui.xaml.uielement.KeyboardAccelerators)，您可在其他指定自訂 KeyboardAccelerator 物件，並定義鍵盤快速鍵的按鍵輸入：
 
--   _ 索引 *[鍵](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)**-用於鍵盤對應鍵的 [VirtualKey](/uwp/api/windows.system.virtualkey) 。
+-   **[Key](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Key)** - 鍵盤快速鍵使用的 [VirtualKey](/uwp/api/windows.system.virtualkey)。
 
 -   **[Modifiers](/uwp/api/windows.ui.xaml.input.keyboardaccelerator.Modifiers)** – 鍵盤快速鍵使用的 [VirtualKeyModifiers](/uwp/api/windows.system.virtualkeymodifiers)。 如果 Modifiers 未設定，則預設值為 None。
 
@@ -331,7 +331,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由於功能在應用程式之間各有不同，此建議不一定可行。
 
-| **編輯** | **常見鍵盤快速操作** |
+| **編輯中** | **常見鍵盤快速操作** |
 | ------------- | ----------------------------------- |
 | 開始編輯模式 | Ctrl + E |
 | 選取焦點所在控制項或視窗中的所有項目 | Ctrl + A |
@@ -347,7 +347,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 新增次要項目 | Ctrl + Shift + N |
 | 刪除選取的項目 (可以復原) | Del、Ctrl+D |
 | 刪除選取的項目 (無法復原) | Shift + Del |
-| 粗體字 | Ctrl + B |
+| 粗體 | Ctrl + B |
 | Underline | Ctrl + U |
 | 斜體 | Ctrl + I |
 | **導覽** | |
@@ -371,7 +371,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由於鍵盤快速鍵通常不會直接在 Windows 應用程式的 UI 中描述，因此您可以透過 [工具提示](../controls-and-patterns/tooltips.md)來改善可搜尋性，這會在使用者將焦點移至、按下並按住滑鼠指標或將滑鼠指標停留在控制項上時自動顯示。 工具提示可識別控制項是否有相關聯的鍵盤快速操作，以及快速按鍵組合為何 (若有的話)。
 
-**Windows 10，版本 1803 (2018 年4月更新) 和更新版本**
+**Windows 10 版本 1803 (2018 年4月更新) 和更新版本**
 
 根據預設，當宣告鍵盤快速鍵時，除了 [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) 和 [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 以外的所有控制項 (，) 會在工具提示中顯示對應的按鍵組合。
 
@@ -466,7 +466,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 </Button>
 ```
 
-在某些案例中，您可能需要在相對於其他元素的位置顯示工具提示 (通常是容器物件)。 例如，使用 Pivot 標頭顯示 PivotItem 工具提示的 Pivot 控制項。 
+在某些案例中，您可能需要在相對於其他元素的位置顯示工具提示 (通常是容器物件)。 
 
 在這裡，我們示範如何使用 KeyboardAcceleratorPlacementTarget 屬性顯示附帶 Grid 容器之 Save 按鈕 (而非按鈕) 的鍵盤快速按鍵組合。
 
@@ -526,8 +526,8 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 預覽輸入事件會在任何其他事件之前引發。 如果不處理這些事件，就會引發焦點所在元素的快速鍵，後面接著引發 KeyDown 事件。 兩個事件都會反昇直到已處理為止。
 
 
-![顯示主要事件順序索引鍵 ](images/accelerators/accelerators_keyevents.png) 
-* **事件順序** _ 的圖表
+![顯示主要事件順序索引 ](images/accelerators/accelerators_keyevents.png)
+ ***鍵事件順序*** 的圖表
 
 事件的順序：
 
@@ -582,7 +582,8 @@ protected override void OnProcessKeyboardAccelerators(
 
 我們建議將所有的鍵盤快速鍵當地語系化。 您可以在 XAML 宣告中使用標準 UWP 資源 (.resw) 檔案和 x:Uid 屬性來進行此作業。 在此範例中，Windows 執行階段會自動載入資源。
 
-![使用 uwp 資源檔的鍵盤快速鍵當地語系化圖 ](images/accelerators/accelerators_localization.png) _ *_使用 uwp 資源檔的鍵盤快速鍵當地語系化_**
+![使用 uwp 資源的鍵盤快速鍵當地語系化圖表檔 ](images/accelerators/accelerators_localization.png)
+ ***鍵盤加速器當地語系化與 uwp 資源檔***
 
 ``` xaml
 <Button x:Uid="myButton" Click="OnSave">

@@ -1,20 +1,20 @@
 ---
 description: '對 MRT.LOG 核心元件的總覽，以及它們如何運作以將應用程式資源載入 (Project 留尼旺島) '
-title: " (Project 留尼旺島) 的 MRT.LOG 核心簡介"
+title: '管理資源的 MRT.LOG 核心 (Project 留尼旺島) '
 ms.topic: article
-ms.date: 12/11/2020
+ms.date: 03/09/2021
 keywords: MRT.LOG，MRTCore，pri，makepri，資源，資源載入
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: ce07491dcab2a11738bd5407e9094d8d780ea219
-ms.sourcegitcommit: 30d1a27fd78d198cec5c50af5621f9e65c7b965e
+ms.openlocfilehash: bde540ff99e763a2d5c622eba1d292f722008ef6
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043057"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629207"
 ---
-# <a name="introduction-to-mrt-core-project-reunion"></a> (Project 留尼旺島) 的 MRT.LOG 核心簡介
+# <a name="manage-resources-with-mrt-core-project-reunion"></a>使用 MRT.LOG Core (Project 留尼旺島) 管理資源
 
 MRT.LOG Core 是新式 Windows [資源管理系統](/windows/uwp/app-resources/resource-management-system) 的精簡版，隨著 [Project 留尼旺島](../index.md)的一部分散發。
 
@@ -37,7 +37,7 @@ MRT.LOG 核心具有組建時間和執行時間功能。 在建置期間，系�
 
 以程式設計方式存取應用程式資源最簡單的方式，就是使用 [ApplicationModel](/windows/winui/api/microsoft.applicationmodel.resources) 命名空間和 ResourceLoader 類別。 ResourceLoader 提供您資源檔案集、參考媒體櫃或其他套件的字串資源的基本存取權。
 
-### <a name="resource-manager-advanced-functionality"></a>Resource Manager (advanced 功能) 
+### <a name="resource-manager-advanced-functionality"></a>資源管理員 (advanced 功能) 
 
 [ResourceManager](/windows/winui/api/microsoft.applicationmodel.resources.resourcemanager)類別提供資源的其他相關資訊，例如列舉和檢查。 這超出 **ResourceLoader** 類別所提供的。
 

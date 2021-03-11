@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f34e2a882746ac833d2b78373a96496c1f079864
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: ecb4f0dd59c5e48d348821c55ed33f2b27495da3
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034771"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784829"
 ---
 # <a name="tabview"></a>TabView
 
@@ -34,7 +34,7 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
    :::column-end:::
 :::row-end:::
 
-> **Windows UI 程式庫 API** ： [TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、 [TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> **Windows UI 程式庫 API**：[TabView 類別](/uwp/api/microsoft.ui.xaml.controls.tabview)、[TabViewItem 類別](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!TIP]
 > 在這整份文件中，我們使用 XAML 中的 **muxc** 別名來代表我們已加入專案中的 Windows UI 程式庫 API。 我們已將此新增至我們的 [Page](/uwp/api/windows.ui.xaml.controls.page) 元素：`xmlns:muxc="using:Microsoft.UI.Xaml.Controls"`
@@ -43,7 +43,7 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-在一般情況下，索引標籤式 UI 有兩個不同的樣式，其功能和外觀各有不同： **靜態索引標籤** 是通常可在設定視窗中找到的索引標籤。 它們包含固定順序的數個頁面，這些頁面通常包含預先定義的內容。
+在一般情況下，索引標籤式 UI 有兩個不同的樣式，其功能和外觀各有不同：**靜態索引標籤** 是通常可在設定視窗中找到的索引標籤。 它們包含固定順序的數個頁面，這些頁面通常包含預先定義的內容。
 **文件索引標籤** 是可在瀏覽器 (例如 Microsoft Edge) 中找到的索引標籤。 使用者可以建立、移除和重新排列索引標籤；在視窗之間移動索引標籤；並變更索引標籤的內容。
 
 [TabView](/uwp/api/microsoft.ui.xaml.controls.tabview) 為 UWP 應用程式提供文件索引標籤。 使用 TabView 的時機：
@@ -52,7 +52,7 @@ TabView 控制項是一種顯示索引標籤組合以及其各自內容的方式
 - 使用者將能夠直接在索引標籤中開啟文件或網頁。
 - 使用者將能夠在視窗之間拖放索引標籤。
 
-如果 TabView 不適合您的應用程式，請考慮使用 [Pivot](./pivot.md) 或[NavigationView](./navigationview.md) 等控制項。
+如果 TabView 不適合您的應用程式，請考慮使用 [NavigationView](./navigationview.md) 控制項。
 
 ## <a name="anatomy"></a>結構
 
@@ -339,4 +339,3 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 - [MasterDetails](./master-details.md)
 - [NavigationView](./navigationview.md)
-- [樞紐分析](./pivot.md)

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: f38269acd9f1d6e2e830b51b3fcfa3a9014f2d7e
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
-ms.translationtype: HT
+ms.openlocfilehash: 994ca6c28fab60528f9c533fad9587525c003e43
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91219901"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629326"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -129,7 +129,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 
 移至專案屬性 [一般]\>[Windows SDK 版本]，然後選取 [所有組態] 和 [所有平台]。 請確認 [Windows SDK 版本] 已設為 10.0.17134.0 (Windows 10 版本 1803) 或更新版本。
 
-確認您未受[我的新專案為什麼不會編譯？](./faq.md)影響。
+確認您未受[我的新專案為什麼不會編譯？](./faq.yml)影響。
 
 因為 C++/ WinRT 使用來自 C++17 標準的功能，因此請將專案屬性 [C/C++] > [語言] > [語言標準] 設為 [ISO C++17 標準 (/std:c++17)]。
 
@@ -183,7 +183,7 @@ C++/WinRT 語言投影取決於某些 Windows 執行階段的可用 (非成員) 
 
 ## <a name="sample-apps-written-in-cwinrt"></a>以 C++/WinRT 撰寫的範例應用程式
 
-請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](./faq.md#where-can-i-find-cwinrt-sample-apps)。
+請參閱[我可以在哪裡找到 C++/WinRT 範例應用程式？](./faq.yml#where-can-i-find-c---winrt-sample-apps-)。
 
 ## <a name="important-apis"></a>重要 API
 * [SyndicationClient::RetrieveFeedAsync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)

@@ -5,12 +5,12 @@ ms.date: 07/23/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 並行, async, 非同步的, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: e916465d664b5658eeb155874dfa00795a772622
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: d5dc755fbb5247c47cd0acd8a3e1f3147f061ccf
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170392"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784649"
 ---
 # <a name="more-advanced-concurrency-and-asynchrony-with-cwinrt"></a>採用 C++/WinRT 的更進階並行和非同步
 
@@ -73,7 +73,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 只要從建立 **TextBlock** 的 UI 執行緒呼叫上述的協同程式，然後這項技術便可運作。 在您確定的應用程式中將有許多案例。
 
-如需更通用的 UI 更新解決方案 (可涵蓋您對呼叫執行緒不是很確定的案例)，您可以對 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 進行 `co_await` 來切換至特定前景執行緒。 在下列程式碼範例中，我們透過傳遞與 **TextBlock** (透過存取其[**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 屬性) 相關聯的發送器物件，來指定前景執行緒。 **winrt::resume_foreground** 的實作在發送器物件上呼叫 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，來執行協同程式中之後的工作。
+如需更通用的 UI 更新解決方案 (可涵蓋您對呼叫執行緒不是很確定的案例)，您可以對 [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) 進行 `co_await` 來切換至特定前景執行緒。 在下列程式碼範例中，我們透過傳遞與 **TextBlock** (透過存取其 [**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 屬性) 相關聯的發送器物件，來指定前景執行緒。 **winrt::resume_foreground** 的實作在發送器物件上呼叫 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，來執行協同程式中之後的工作。
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -92,7 +92,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 ## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>在協同程式中執行內容、繼續和切換
 
-概括來說，在協同程式中的暫停點之後，執行作業的原始執行緒可能會消失，因此繼續作業可能會在任何執行緒上發生 (換句話說，任何執行緒都有可能會呼叫非同步作業的**已完成**方法)。
+概括來說，在協同程式中的暫停點之後，執行作業的原始執行緒可能會消失，因此繼續作業可能會在任何執行緒上發生 (換句話說，任何執行緒都有可能會呼叫非同步作業的 **已完成** 方法)。
 
 但如果您對四種 Windows 執行階段非同步作業類型 (**IAsyncXxx**) 的任何一種進行 `co_await`，則 C++/WinRT 會在您進行 `co_await` 的時間點擷取呼叫內容。 而且，其可確保接續繼續執行時，您仍在該內容上。 C++/WinRT 能做到這一點的方法是，確認您是否已在該呼叫內容上，如果不在，則切換至該內容。 如果您在進行 `co_await` 之前位於單一執行緒 Apartment (STA) 執行緒上，則之後也會在同一個執行緒上；如果您在進行 `co_await` 之前位於多執行緒 Apartment (MTA) 執行緒上，則之後也會在該執行緒上。
 
@@ -558,32 +558,39 @@ IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
 
     co_await 1s;
     double pi_so_far{ 3.1 };
+    progress.set_result(pi_so_far);
     progress(0.2);
 
     co_await 1s;
     pi_so_far += 4.e-2;
+    progress.set_result(pi_so_far);
     progress(0.4);
 
     co_await 1s;
     pi_so_far += 1.e-3;
+    progress.set_result(pi_so_far);
     progress(0.6);
 
     co_await 1s;
     pi_so_far += 5.e-4;
+    progress.set_result(pi_so_far);
     progress(0.8);
 
     co_await 1s;
     pi_so_far += 9.e-5;
+    progress.set_result(pi_so_far);
     progress(1.0);
+
     co_return pi_so_far;
 }
 
 IAsyncAction DoMath()
 {
     auto async_op_with_progress{ CalcPiTo5DPs() };
-    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    async_op_with_progress.Progress([](auto const& sender, double progress)
     {
-        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << L". "
+                   << L"Value so far: " << sender.GetResults() << std::endl;
     });
     double pi{ co_await async_op_with_progress };
     std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
@@ -596,6 +603,13 @@ int main()
     DoMath().get();
 }
 ```
+
+若要報告進度，請以進度值叫用進度權杖作為引數。 若要設定暫時性的結果，請 `set_result()` 在進度 token 上使用方法。
+
+> [!NOTE]
+> 報告臨時結果需要 c + +/WinRT 2.0.210309.3 或更新版本。
+
+上述範例會選擇為每個進度報表設定暫時性結果。 您可以隨時選擇報告暫時性結果（如果有的話）。 它不需要與進度報表結合。
 
 > [!NOTE]
 > 對非同步動作或作業實作多個「完成處理常式」  不是正確的操作。 要為其已完成的事件準備單一委派還是對其進行 `co_await`，您只能擇一來做。 如果兩者都做，第二個便會失敗。 下列兩種完成處理常式的任何一個都可以；但不能讓同一個非同步物件同時使用兩種。
@@ -804,11 +818,11 @@ case AsyncStatus::Started:
 - 請記住，**AsyncStatus::Completed** 表示非同步物件已順利完成，而您可呼叫 **get** 函式來擷取任何結果。
 - **AsyncStatus::Canceled** 表示非同步物件已取消。 取消作業通常是由呼叫端提出要求，因此很少需要處理此狀態。 一般來說，已取消的非同步物件只是被捨棄。
 - **AsyncStatus::Error** 表示非同步物件在某些方面失敗。 您可以視需要利用 **get** 重新擲回例外狀況。
-- **AsyncStatus::Started**表示非同步物件仍在執行中。 Windows 執行階段非同步模式不允許多次等候，也不允許多位等候者。 這表示您無法在迴圈中呼叫 **wait_for**。 如果等候實際上逾時，您會有幾個選擇。 您可以放棄物件，也可以先輪詢其狀態，然後再呼叫 **get** 來擷取任何結果。 但在此時最好捨棄物件。
+- **AsyncStatus::Started** 表示非同步物件仍在執行中。 Windows 執行階段非同步模式不允許多次等候，也不允許多位等候者。 這表示您無法在迴圈中呼叫 **wait_for**。 如果等候實際上逾時，您會有幾個選擇。 您可以放棄物件，也可以先輪詢其狀態，然後再呼叫 **get** 來擷取任何結果。 但在此時最好捨棄物件。
 
 ## <a name="returning-an-array-asynchronously"></a>以非同步方式傳回陣列
 
-以下是 [MIDL 3.0](/uwp/midl-3/) 的範例，會產生*錯誤 MIDL2025：[msg]語法錯誤 [context]：預期應大於或接近 "["* 。
+以下是 [MIDL 3.0](/uwp/midl-3/) 的範例，會產生 *錯誤 MIDL2025：[msg]語法錯誤 [context]：預期應大於或接近 "["* 。
 
 ```idl
 Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();

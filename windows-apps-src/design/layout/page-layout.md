@@ -5,18 +5,18 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: e4875e7d34f36104cb5ed64bb56ea289de2db92e
-ms.sourcegitcommit: 6cb20dca1cb60b4f6b894b95dcc2cc3a166165ad
-ms.translationtype: HT
+ms.openlocfilehash: 46d63a5f0bf929c391e9080e621023dc9eaafdd0
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91636568"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784719"
 ---
 # <a name="page-layout"></a>頁面配置
 
 在 Windows 應用程式中，每個 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) (頁面) 通常都有瀏覽、命令和內容元素。 
 
-您的應用程式可以有多個頁面：當使用者啟動 Windows 應用程式時，應用程式程式碼會建立一個 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) (框架)，放在應用程式的 [**Window**](/uwp/api/windows.ui.xaml.window) (視窗) 中。 然後，Frame 可以在應用程式的 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) 實例之間[導覽](../basics/navigate-between-two-pages.md)。 
+您的應用程式可以有多個頁面：當使用者啟動 Windows 應用程式時，應用程式程式碼會建立一個 [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) (框架)，放在應用程式的 [**Window**](/uwp/api/windows.ui.xaml.window) (視窗) 中。 然後，Frame 可以在應用程式的 [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) 實例之間 [導覽](../basics/navigate-between-two-pages.md)。 
 
 大部分的頁面都遵循通用的版面配置結構，本文涵蓋您需要的 UI 元素，以及它們在頁面上的位置。 
 
@@ -51,7 +51,7 @@ ms.locfileid: "91636568"
 
 頂端導覽也可以做為最上層導覽。 左側導覽可摺疊，但頂端導覽一律是可見的。 [NavigationView](../controls-and-patterns/navigationview.md) 控制項會實作 UWP 的頂端導覽與索引標籤模式。
 
-![頂端導覽](images/pivot-large.svg)
+:::image type="content" source="../controls-and-patterns/images/displaymode-top.png" alt-text="頂端導覽":::
 
 ## <a name="command-bar"></a>命令列
 

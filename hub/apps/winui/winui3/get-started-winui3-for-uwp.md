@@ -1,25 +1,27 @@
 ---
 description: 本指南將說明如何開始使用 WinUI 3 UI 來建立 UWP 應用程式。
 title: 開始使用適用於 UWP 應用程式的 WinUI 3
-ms.date: 02/09/2021
+ms.date: 03/08/2021
 ms.topic: article
 keywords: windows 10, uwp, winui
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: d13acb2181160ec214070dc1276e844dc1f203ad
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 6216dd85579e606f6de04c44b2f7cab6277a8df5
+ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100334904"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102629306"
 ---
 # <a name="get-started-with-winui-3-for-uwp-apps"></a>開始使用適用於 UWP 應用程式的 WinUI 3
 
-WinUI 3 Preview 4 包含新的專案範本，可讓您建立通用 Windows 平臺 (UWP) 應用程式，並將使用者介面完全建置於 WinUI 上。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和樣式來實作。 如需受支援 WinUI 3 專案範本的完整清單，請參閱[適用於 WinUI 3 的專案範本](index.md#project-templates-for-winui-3)。
+WinUI 3-Project 留尼旺島 0.5 Preview 包含專案範本，可讓您建立通用 Windows 平臺 (UWP) 應用程式，並將使用者介面完全建置於 WinUI 上。 當您使用這些專案範本來建立應用程式時，應用程式的整個使用者介面都會使用 WinUI 3 提供的視窗、控制項和樣式來實作。 如需受支援 WinUI 3 專案範本的完整清單，請參閱[適用於 WinUI 3 的專案範本](index.md#project-templates-for-winui-3)。
+
+自 WinUI 3-Project 留尼旺島 0.5 Preview 開始，WinUI 3 現在隨附于專案留尼旺島套件中。 這會稍微變更您的安裝指示，並提供您更多加入宣告功能，但不會變更您開發 WinUI 3 應用程式的體驗。 如需專案留尼旺島的詳細資訊，請參閱 [使用 Project 留尼旺島建立 Windows 應用程式 (0.5 Preview) ](../../project-reunion/index.md)
 
 ## <a name="prerequisites"></a>必要條件
 
-若要使用本文中所述的 WinUI 3 for UWP 專案範本，請設定您的開發電腦並 [安裝 WinUI 3 Preview 4](index.md#install-winui-3-preview-4)。
+若要使用本文中所述的 WinUI 3 for UWP 專案範本，請設定您的開發電腦，並 [安裝 Project 留尼旺島 0.5 Preview](../../project-reunion/index.md#set-up-your-development-environment)。
 
 ## <a name="create-a-winui-3-app-in-uwp-for-c"></a>針對 C# 建立 "WinUI 3 app in UWP"
 
@@ -42,7 +44,7 @@ WinUI 3 Preview 4 包含新的專案範本，可讓您建立通用 Windows 平�
 
 :::image type="content" source="images/WinUI-and-UWP/vs2019-configure-new-project-dialog.png" alt-text="[設定您的新專案] 對話方塊的螢幕擷取畫面，其中已醒目提示 [位置] 文字方塊和 [建立] 選項。":::
 
-5. 在下列對話方塊中，將 [目標版本] 設定為 Windows 10 1903 版 (組建 18362)，並將 [最低版本] 設定為 Windows 10 1803 版 (組建 17134)，然後按一下 [確定]。
+5. 在下列對話方塊中，將 **目標版本** 設為 windows 10，版本 1903 (組建 18362) 和 **最低版本** 設定為 windows 10，版本 1809 (組建 17763) 然後按一下 **[確定]**。
 
 :::image type="content" source="images/WinUI-min-target-version.png" alt-text="目標和最低版本對話方塊":::
 
@@ -84,9 +86,9 @@ WinUI 3 Preview 4 包含新的專案範本，可讓您建立通用 Windows 平�
 
 ## <a name="known-issues-and-limitations"></a>已知的問題和限制
 
-請參閱[WINDOWS UI 程式庫 3 Preview 4 (2021 年2月) ](index.md)的[限制和已知問題](index.md#limitations-and-known-issues)一節。
+請參閱 Windows UI 程式庫3的 [限制和已知問題](index.md#limitations-and-known-issues) 一節 [- (年3月 2021) 的 Project 留尼旺島 0.5 Preview ](index.md)。
 
 ## <a name="related-topics"></a>相關主題
 
-- [Windows UI 程式庫 3 Preview 4 (2021 年2月) ](index.md)
+- [Windows UI 程式庫 3-Project 留尼旺島 0.5 Preview (3 月 2021) ](index.md)
 - [建立您的第一個應用程式](/windows/uwp/get-started/your-first-app)

@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ae88d30988ff2c3ccb4e7b32e1fefbf4d8bb9fde
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: c5dc119edefbdd3ef4dd155c9de9d2e69fee193b
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031121"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784769"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 
@@ -204,22 +204,6 @@ ms.locfileid: "93031121"
 - 您想要讓使用者能夠動態開啟、關閉或重新排列索引標籤。
 - 您預期可能會有一次開啟大量索引標籤的情形。
 - 您希望使用者能夠輕鬆地在使用索引標籤的應用程式中，於視窗之間移動索引標籤，情形類似 Microsoft Edge 等網頁瀏覽器。
-
-:::row-end:::
-
-:::row:::
-    :::column:::
-         ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
-    :::column-end:::
-        :::column span="2":::
-    [**Pivot**](../controls-and-patterns/pivot.md)
-    
-類似於[瀏覽檢視](../controls-and-patterns/navigationview.md)，但有針對觸控和稍微不同瀏覽行為的額外支援。
-    
-在以下情況使用樞紐分析：
-- 您希望應用程式允許在兩個類別之間觸控撥動
-- 您希望瀏覽選項無限地浮動切換
-- 您不需要大規模控制類別之間的瀏覽行為
 
 :::row-end:::
 

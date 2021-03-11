@@ -752,7 +752,7 @@
         - name: 新功能
           href: ../cpp-and-winrt-apis/news.md
         - name: 常見問題集
-          href: ../cpp-and-winrt-apis/faq.md
+          href: ../cpp-and-winrt-apis/faq.yml
         - name: 疑難排解
           href: ../cpp-and-winrt-apis/troubleshooting.md
         - name: Photo Editor 範例應用程式
@@ -819,7 +819,7 @@
           items:
             - name: 值類別，以及參考
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-        - name: '撰寫 c # Windows 執行階段元件以從 c + +/WinRT 應用程式使用'
+        - name: '撰寫用來從 c + +/WinRT 應用程式使用的 c # Windows 執行時間元件'
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
     - name: C#/WinRT
       items:

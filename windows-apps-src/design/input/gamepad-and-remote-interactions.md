@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11cde619b783292e4880927c68b6ae8ff38323
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 7ad6c173596c4f716f58b64f51d9068b6a689905
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91217182"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784789"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
@@ -24,7 +24,7 @@ ms.locfileid: "91217182"
 
 在您的 Windows 應用程式中建立互動體驗，確保您的應用程式可透過電腦、膝上型電腦和平板電腦的傳統輸入類型 (滑鼠、鍵盤、觸控等) ，以及電視和 Xbox *10 英尺* 體驗的一般輸入類型（例如遊戲台和遠端控制）來使用和存取。
 
-如需 Windows 應用程式的一般設計指導方針，請參閱*10 英尺*體驗的[設計 Xbox 和電視](../devices/designing-for-tv.md)。
+如需 Windows 應用程式的一般設計指導方針，請參閱 *10 英尺* 體驗的 [設計 Xbox 和電視](../devices/designing-for-tv.md)。
 
 ## <a name="overview"></a>概觀
 
@@ -147,18 +147,18 @@ private bool BackRequested()
 > [!NOTE]
 > 如果使用 B 功能鍵來回復，則不會在 UI 中顯示 [上一頁] 按鈕。 如果您正使用 [瀏覽檢視](../controls-and-patterns/navigationview.md)，將會自動隱藏 [上一頁] 按鈕。 如需回溯導覽的詳細資訊，請參閱 [適用于 Windows 應用程式的流覽歷程記錄和向後流覽](../basics/navigation-history-and-backwards-navigation.md)。
 
-Xbox One 上的 Windows 應用程式也支援按下 **功能表** 按鈕來開啟內容功能表。 如需詳細資訊，請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout)。
+Xbox one 上的 Windows 應用程式也支援按下 **功能表** 按鈕來開啟內容功能表。 如需詳細資訊，請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout)。
 
 ### <a name="accelerator-support"></a>快速鍵支援
 
-快速鍵可用來加速瀏覽 UI。 不過可能只有某些輸入裝置才有這些按鈕，所以請記住，並非所有使用者都能使用這些功能。 事實上，現在只有在 Xbox One 上，遊戲台是支援 Windows 應用程式加速器功能的輸入裝置。
+快速鍵可用來加速瀏覽 UI。 不過可能只有某些輸入裝置才有這些按鈕，所以請記住，並非所有使用者都能使用這些功能。 事實上，「遊戲台」是目前唯一支援 Xbox One 上 Windows 應用程式加速器功能的輸入裝置。
 
 下表列出 UWP 內建，以及您可自行實作的快速鍵支援。 請在您自訂的 UI 利用這些行為，以提供一致、友善的使用者體驗。
 
 | 互動   | 鍵盤/滑鼠   | 遊戲台      | 內建於︰  | 建議用於： |
 |---------------|------------|--------------|----------------|------------------|
 | 向上一頁/向下一頁  | 向上一頁/向下一頁 | LT 鍵/RT 鍵 | [CalendarView](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)、[ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[ComboBox](/uwp/api/Windows.UI.Xaml.Controls.ComboBox)、[FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支援垂直捲動的檢視
-| 向左一頁/向右一頁 | 無 | LB 鍵/RB 鍵 | [Pivot](/uwp/api/Windows.UI.Xaml.Controls.Pivot)、[ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)、[ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、[ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、`ScrollViewer`、[Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、[LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、[FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支援水平捲動的檢視
+| 向左一頁/向右一頁 | 無 | LB 鍵/RB 鍵 | [ListBox](/uwp/api/Windows.UI.Xaml.Controls.ListBox)、 [ListViewBase](/uwp/api/Windows.UI.Xaml.Controls.ListViewBase)、 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView)、 `ScrollViewer` 、 [Selector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector)、 [LoopingSelector](/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector)、 [FlipView](/uwp/api/Windows.UI.Xaml.Controls.FlipView) | 支援水平捲動的檢視
 | 放大/縮小        | CTRL +/- | LT 鍵/RT 鍵 | 無 | `ScrollViewer`、支援放大和縮小的檢視 |
 | 開啟/關閉瀏覽窗格 | 無 | 檢視 | 無 | 瀏覽窗格​​ |
 | 搜尋 | 無 | Y 按鈕 | 無 | App 中主要搜尋功能的快速鍵 |
@@ -174,7 +174,7 @@ Xbox One 上的 Windows 應用程式也支援按下 **功能表** 按鈕來開�
 如果正確實作鍵盤支援，您的 app 應該可以正確運作，不過可能需要一些額外的工作才能支援每種狀況。 請思考您的 app 特定需求，以盡可能提供最佳的使用者體驗。
 
 > [!IMPORTANT]
-> 在 Xbox One 上執行的 Windows 應用程式預設會啟用滑鼠模式。 若要停用滑鼠模式及啟用 XY 焦點瀏覽，請設定 `Application.RequiresPointerMode=WhenRequested`。
+> 針對 Xbox One 上執行的 Windows 應用程式，預設會啟用滑鼠模式。 若要停用滑鼠模式及啟用 XY 焦點瀏覽，請設定 `Application.RequiresPointerMode=WhenRequested`。
 
 ### <a name="debugging-focus-issues"></a>針對焦點問題進行偵錯
 
@@ -226,19 +226,19 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 ```xml
 <StackPanel>
-    <Button x:Name="MyBtnLeft"
+    <Button x:Name="MyBtnLeft"
             Content="Search" />
-    <Button x:Name="MyBtnRight"
+    <Button x:Name="MyBtnRight"
             Content="Delete"/>
-    <Button x:Name="MyBtnTop"
+    <Button x:Name="MyBtnTop"
             Content="Update" />
-    <Button x:Name="MyBtnDown"
+    <Button x:Name="MyBtnDown"
             Content="Undo" />
-    <Button Content="Home"  
+    <Button Content="Home"  
             XYFocusLeft="{x:Bind MyBtnLeft}"
-            XYFocusRight="{x:Bind MyBtnRight}"
-            XYFocusDown="{x:Bind MyBtnDown}"
-            XYFocusUp="{x:Bind MyBtnTop}" />
+            XYFocusRight="{x:Bind MyBtnRight}"
+            XYFocusDown="{x:Bind MyBtnDown}"
+            XYFocusUp="{x:Bind MyBtnTop}" />
 </StackPanel>
 ```
 
@@ -247,8 +247,8 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 若要防止焦點從某個特定方向移出控制項，請使用 `XYFocus*` 屬性，以將它指向相同的控制項︰
 
 ```xml
-<Button Name="HomeButton"  
-        Content="Home"  
+<Button Name="HomeButton"  
+        Content="Home"  
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
@@ -313,7 +313,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 #### <a name="problem-ui-elements-located-after-long-scrolling-listgrid"></a>問題：UI 元素位於長的捲動清單/格線之後 <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-下圖中所示的屬性 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一份很長的捲動清單。 如果在上*不*需要[engagement](#focus-engagement) `ListView` ，當使用者流覽至清單時，焦點會放在清單中的第一個專案。 若要讓使用者連線到 **上一個** 按鈕或 **[下一步]** 按鈕，他們必須逐一查看清單中的所有專案。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
+下圖中所示的屬性 [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) 是一份很長的捲動清單。 如果在上 *不* 需要 [engagement](#focus-engagement) `ListView` ，當使用者流覽至清單時，焦點會放在清單中的第一個專案。 若要讓使用者連線到 **上一個** 按鈕或 **[下一步]** 按鈕，他們必須逐一查看清單中的所有專案。 要求使用者瀏覽整個清單會非常痛苦&mdash;如果清單夠短，這還算可以接受&mdash;，所以您可能要考慮其他方案。
 
 ![房地產 app︰50 個項目的清單需要點選 51 次才能到達下面的按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
@@ -329,7 +329,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 **專注參與 <a name="engagement"></a>**
 
-當 *需要*參與時，整個 `ListView` 會成為單一焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
+當 *需要* 參與時，整個 `ListView` 會成為單一焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
 
 ![房地產 app︰設定需要佔用，只需按 1 次就可到達 [上一個/下一個] 按鈕](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
@@ -355,7 +355,7 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 
 對於這些案例，您應該對整個頁面或對某個頁面內的某個控制項要求指標 (滑鼠模式)。
 例如，您的 app 可以有一個有 `WebView` 控制項的頁面，只有在這個控制項當中才使用滑鼠模式，而在其他地方則仍使用 XY 焦點瀏覽。
-若要要求指標，您可以指定是否要 **在控制項或頁面參與** 時，或是 **當頁面具有焦點**時，想要它。
+若要要求指標，您可以指定是否要 **在控制項或頁面參與** 時，或是 **當頁面具有焦點** 時，想要它。
 
 > [!NOTE]
 > 不支援在控制項取得焦點時要求指標。
@@ -473,7 +473,7 @@ public App()
 
 ### <a name="light-dismiss-overlay"></a>消失關閉重疊
 
-為了讓使用者注意使用者目前使用遊戲控制器或遠端控制操作的 UI 元素，UWP 會自動加入「冒煙」層，以在應用程式于 Xbox One 上執行時，涵蓋快顯視窗 UI 以外的區域。 這不需要任何額外的工作，但是設計您的 UI 時要記住這一點。 您可以在任何 `FlyoutBase` 上設定 `LightDismissOverlayMode` 屬性以啟用或停用煙霧層；它預設為 `Auto`，表示在 Xbox 上會啟用，在其他地方則會停用。 如需詳細資訊，請參閱[強制回應與消失關閉](../controls-and-patterns/menus.md)。
+為了讓使用者注意使用者目前使用遊戲控制器或遠端控制操作的 UI 元素，UWP 會自動加入「冒煙」層，其涵蓋快顯視窗 UI 以外的區域（當應用程式正在 Xbox One 上執行時）。 這不需要任何額外的工作，但是設計您的 UI 時要記住這一點。 您可以在任何 `FlyoutBase` 上設定 `LightDismissOverlayMode` 屬性以啟用或停用煙霧層；它預設為 `Auto`，表示在 Xbox 上會啟用，在其他地方則會停用。 如需詳細資訊，請參閱[強制回應與消失關閉](../controls-and-patterns/menus.md)。
 
 ## <a name="focus-engagement"></a>焦點佔用
 
@@ -538,7 +538,7 @@ public App()
 
 [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) 與這些控制項稍有不同，其具有待考量的個別原因。 如果您有具可設定焦點內容的 `ScrollViewer`，瀏覽至 `ScrollViewer` 預設可讓您在其可設定焦點的元素之間移動。 就像在 `ListView` 中一樣，您必須捲動每個項目才能瀏覽到 `ScrollViewer` 之外。
 
-如果沒有 `ScrollViewer` 可*no*設定焦點的內容 &mdash; ，例如，如果它只包含 &mdash; 您可以設定的文字， `IsFocusEngagementEnabled="True"` 使用者就可以 `ScrollViewer` 使用 [ **A]/[選取**] 按鈕來參與。 參與之後，他們就可以使用 **D-pad/left**鍵來滾動文字，然後按下 **B/上一步** 按鈕，在完成時將它鬆開。
+如果沒有 `ScrollViewer` 可設定焦點的內容 &mdash; ，例如，如果它只包含 &mdash; 您可以設定的文字， `IsFocusEngagementEnabled="True"` 使用者就可以 `ScrollViewer` 使用 [ **A]/[選取**] 按鈕來參與。 參與之後，他們就可以使用 **D-pad/left** 鍵來滾動文字，然後按下 **B/上一步** 按鈕，在完成時將它鬆開。
 
 另一種方法是在上設定，如此一來 `IsTabStop="True"` `ScrollViewer` ，使用者就不必參與控制項，只要將 &mdash; 焦點放在控制項上，然後在中沒有可設定焦點的專案時，就會使用 **D-pad/left** 來進行滾動 `ScrollViewer` 。
 
@@ -561,7 +561,7 @@ public App()
 
 ## <a name="summary"></a>摘要
 
-您可以建立針對特定裝置或經驗優化的 Windows 應用程式，但通用 Windows 平臺也可讓您建立應用程式，以在跨裝置、2英尺和10英尺的體驗，以及輸入裝置或使用者能力的情況下成功使用。 使用本文中的建議可確保您的應用程式可以在電視和電腦上正常進行。
+您可以建立針對特定裝置或經驗優化的 Windows 應用程式，但通用 Windows 平臺也可讓您建立應用程式，以在跨裝置、2英尺和10英尺的體驗，以及輸入裝置或使用者的能力之間順利使用。 使用本文中的建議可確保您的應用程式可以在電視和電腦上正常進行。
 
 ## <a name="related-articles"></a>相關文章
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 21cb4c105cc4c95c3a14c4c5bd0049265682f91c
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: d15f0b1dccbdb165cb2bbcf39628e16859a42ed5
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220581"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784729"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -46,7 +46,7 @@ ms.locfileid: "91220581"
 </tr>
 <tr class="even">
 <td align="left"><strong>使用者介面標記語言。</strong> <br><br>轉譯和描述 UI 及其元件的標記語言。 每個平台都為視覺與標記編輯提供編輯器。<br/></td>
-<td align="left">使用<strong>Android Studio</strong>或<strong>Eclipse</strong>編輯的<strong>XML 版面</strong>配置。</td>
+<td align="left"><strong>XML 版面</strong>配置，使用 <strong>Android Studio</strong> 或 <strong>Eclipse</strong>進行編輯。</td>
 <td align="left"><strong>XIB</strong> 和 <strong>Storyboard (腳本)</strong>，使用 Xcode 內的 <strong>Interface Builder (介面建立器)</strong> 編輯。</td>
 <td align="left"><strong><a href="/windows/uwp/xaml-platform/xaml-overview">XAML</a></strong>，使用 <strong><a href="https://visualstudio.microsoft.com/">Microsoft Visual Studio</a></strong> 和 <strong><a href="/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong> 編輯。<br/><br/><a href="/windows/uwp/xaml-platform/index">XAML 平台</a><br/><br/><a href="/windows/uwp/design/basics/xaml-basics-ui">使用 XAML 建立 UI</a><br/><br/><a href="/windows/uwp/layout/layouts-with-xaml">使用 XAML 定義版面配置</a></td>
 </tr>
@@ -69,7 +69,7 @@ ms.locfileid: "91220581"
 <td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您可以使用 <strong><a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a></strong> 標記延伸來利用高效能系結或 <strong><a href="/windows/uwp/xaml-platform/binding-markup-extension">{binding}</a></strong> 來利用更多功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="/windows/uwp/data-binding/index">資料系結</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>消費者介面自動化。</strong> <br><br>以程式設計方式存取 UI 元素，讓輔助技術產品可以存取 app，以及讓自動化測試指令碼與您的 UI 互動。</td>
+<td align="left"><strong>使用者介面自動化。</strong> <br><br>以程式設計方式存取 UI 元素，讓輔助技術產品可以存取 app，以及讓自動化測試指令碼與您的 UI 互動。</td>
 <td align="left"><strong>文字標籤</strong>、 <strong>contentDescription</strong> 和 <strong>提示</strong> 值有助於確保自動化可以找到 UI 元素。 Android Studio 可讓您使用 <strong>UI Automator</strong> 和 <strong>Espresso</strong> 測試架構撰寫 UI 測試。</td>
 <td align="left"><strong>Automation instrument (自動化檢測)</strong> 可讓您撰寫自動化的 UI 測試指令碼，識別使用 <strong>accessibility (協助工具)</strong> 設定的元素或識別元素在 <strong>element hierarchy (元素階層)</strong> 中的位置。</td>
 <td align="left">透過<strong><a href="/windows/desktop/WinAuto/uiauto-uiautomationoverview">使用者介面自動化</a></strong>，您能以程式設計方式直接存取 UWP 中的內建 UI 元素。<br/><strong><a href="/windows/uwp/accessibility/custom-automation-peers">自訂自動化對等</a></strong>可讓您為自己的自訂 UI 類別提供自動化支援。 Visual Studio 中的自動程式化 <strong><a href="/visualstudio/test/use-ui-automation-to-test-your-code?view=vs-2015">UI 測試專案</a></strong> 可讓您透過 UI 自動測試整個應用程式，或以隔離方式測試 UI。</td>
@@ -127,7 +127,7 @@ ms.locfileid: "91220581"
 <td align="left"><strong>對等導覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
 <td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong> 提供<strong>橫式瀏覽</strong>。</td>
 <td align="left">索引標籤列<strong>控制器</strong>、<strong>分割視圖控制器</strong>和<strong>頁面流覽控制器</strong>允許在相等階層的視圖之間進行導覽。</td>
-<td align="left">您可以使用<strong><a href="/windows/uwp/controls-and-patterns/tabs-pivot">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 [ <strong><a href="/windows/uwp/controls-and-patterns/split-view">流覽] 窗格/[分割] 視圖</a></strong> 可讓您連同內容一起顯示連結清單。<br/><br/><a href="/windows/uwp/layout/navigation-basics">導覽</a><br/><br/><a href="/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
+<td align="left">您可以使用 <strong><a href="/windows/uwp/controls-and-patterns/navigationview">NavigationView</a></strong>，在內容上方顯示連結/索引標籤的持續清單。 [ <strong><a href="/windows/uwp/controls-and-patterns/split-view">流覽] 窗格/[分割] 視圖</a></strong> 可讓您連同內容一起顯示連結清單。<br/><br/><a href="/windows/uwp/layout/navigation-basics">導覽</a><br/><br/><a href="/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式導覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
@@ -266,9 +266,9 @@ ms.locfileid: "91220581"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Ide。</strong> <br><br>用來建立 app 的工具組。</td>
-<td align="left"><strong>Android Studio</strong> 和 <strong>Eclipse</strong>，讓 Google 推送開發人員以使用 Android Studio。</td>
+<td align="left"><strong>Android studio</strong> 和 <strong>Eclipse</strong>，讓 Google 將開發人員導向使用 Android studio。</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://visualstudio.microsoft.com/features/universal-windows-platform-vs">Visual Studio</a></strong> 和 <strong><a href="/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for Visual Studio</a></strong> 具有您撰寫程式碼、設計、連接、偵測、分析、優化及測試 UWP 應用程式所需的所有工具。 Visual Studio 也為您提供適用於 Windows 10 裝置的<strong><a href="/windows/uwp/debug-test-perf/test-with-the-emulator">模擬器</a></strong>，以便您在各種模擬的裝置上測試 app。<br/><br/><a href="https://developer.microsoft.com/windows/downloads">適用於 UWP 的下載項目與工具</a></td>
+<td align="left"><strong><a href="https://visualstudio.microsoft.com/features/universal-windows-platform-vs">Visual studio</a></strong> 和 <strong><a href="/visualstudio/designers/creating-a-ui-by-using-blend-for-visual-studio?view=vs-2015">Blend for visual studio</a></strong> 擁有您撰寫程式碼、設計、連接、偵測、分析、優化及測試 UWP 應用程式所需的所有工具。 Visual Studio 也為您提供適用於 Windows 10 裝置的<strong><a href="/windows/uwp/debug-test-perf/test-with-the-emulator">模擬器</a></strong>，以便您在各種模擬的裝置上測試 app。<br/><br/><a href="https://developer.microsoft.com/windows/downloads">適用於 UWP 的下載項目與工具</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>程式碼組織。</strong> <br><br>App 的基本資料夾結構 (通常從初始範本建立)。</td>
@@ -278,7 +278,7 @@ ms.locfileid: "91220581"
 </tr>
 </tbody>
 </table>
-<h2 id="app-lifecycle">應用程式生命週期</h2>
+<h2 id="app-lifecycle">應用程式週期</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />

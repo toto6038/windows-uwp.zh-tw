@@ -13,16 +13,16 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac5b8c34f007e18e04eb8299d9ccddd583ad29
-ms.sourcegitcommit: 9378b1b2c2a5ba6e774ae76b53d755cbc5215af2
+ms.openlocfilehash: 51dc59f9390e2f4bbbf8dda35ed8fad6de0135a4
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709647"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784779"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
-設計您的 Windows 應用程式，使其在 Xbox One 和電視畫面上看起來良好且功能良好。
+設計您的 Windows 應用程式，讓它在 Xbox One 和電視畫面上看起來良好且功能良好。
 
 請參閱 [遊戲台和遠端控制互動](../input/gamepad-and-remote-interactions.md) ，以取得 UWP 應用程式中在 *10 英尺* 體驗內互動體驗的指導方針。
 
@@ -70,7 +70,7 @@ _**螢幕擷取畫面中顯示的所有電影都可在 Microsoft 影片 & 電視
 | -------------------------------------------------------------- |--------------------------------|
 | [調整 UI 元素大小](#ui-element-sizing)  | 通用 Windows 平台使用[縮放與有效像素](../basics/design-and-ui-intro.md#effective-pixels-and-scaling)，根據檢視距離來調整 UI。 了解如何調整大小並套用到整個 UI，可協助最佳化 10 英呎環境的 app。  |
 |  [電視安全區域](#tv-safe-area) | UWP 預設會自動避免在電視不安全的區域 (接近螢幕邊緣的區域) 中顯示任何 UI。 不過，這會產生一種「被框住」的效果，UI 看起來就像信箱一樣。 為了讓您的 app 能真正融入電視螢幕，您要加以修改，讓 app 在支援的電視能延伸到螢幕的邊緣。 |
-| [色彩](#colors)  |  UWP 支援色彩主題，而遵循系統主題的應用程式在 Xbox One 上預設為 **深色** 。 如果您的 app 有特定的色彩佈景主題，您應該考慮到有些色彩不適合電視，應盡量避免使用。 |
+| [色彩](#colors)  |  UWP 支援色彩主題，而遵循系統主題的應用程式在 Xbox One 上會預設為 **深色** 。 如果您的 app 有特定的色彩佈景主題，您應該考慮到有些色彩不適合電視，應盡量避免使用。 |
 | [音效](../style/sound.md)    | 音效聲音在 10 英呎體驗中扮演關鍵角色，其為使用者提供身歷其境的體驗與回應。 在 Xbox One 上執行 app 時，UWP 可提供針對通用控制項自動開啟音效的功能。 深入了解關於 UWP 內建音效支援及如何善用的詳細資訊。    |
 | [UI 控制項的指導方針](#guidelines-for-ui-controls)  |  提供數種可針對多部裝置良好運作的 UI 控制項，但當在電視上使用時具有特定考量。 深入了解有關針對 10 英呎體驗進行設計時使用這些控制項的一些最佳做法。 |
 | [適用於 Xbox 的自訂視覺狀態觸發程序](#custom-visual-state-trigger-for-xbox) | 若要針對10英尺體驗量身打造您的 UWP 應用程式，建議您使用自訂 *視覺狀態觸發* 程式，以在應用程式偵測到它已在 Xbox 主控台上啟動時進行版面配置變更。 |
@@ -391,7 +391,7 @@ private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoVie
 
 UWP 也能讓 app 根據執行的裝置所提供的系統設定，動態設定佈景主題。
 雖然 UWP 一律會優先採用使用者指定的佈景主題設定，但是每個裝置也會提供適當的預設佈景主題。
-由於 Xbox One 的本質，其預期會有比 *生產力* 體驗更多的 *媒體* 體驗，因此會預設為深色系統主題。
+因為 Xbox One 的本質，預期會有比 *生產力* 體驗更多的 *媒體* 體驗，所以會預設為深色系統主題。
 如果您的 app 佈景主題是根據系統設定，在 Xbox One 上就會預設為深色。
 
 ### <a name="accent-color"></a>輔色
@@ -427,14 +427,6 @@ UWP 提供了一種方便的方式，可公開使用者從其系統設定中選�
 ## <a name="guidelines-for-ui-controls"></a>UI 控制項的指導方針
 
 提供數種可針對多部裝置良好運作的 UI 控制項，但當在電視上使用時具有特定考量。 深入了解有關針對 10 英呎體驗進行設計時使用這些控制項的一些最佳做法。
-
-### <a name="pivot-control"></a>Pivot 控制項
-
-[樞紐](/uwp/api/Windows.UI.Xaml.Controls.Pivot)可讓您在 App 內透過選取不同的標頭或索引標籤，快速瀏覽檢視。 控制項會在成為焦點的標頭加上底線，以便在使用遊戲台/遙控器時，更加凸顯目前選取的標頭。
-
-![樞紐底線](images/designing-for-tv/pivot-underline.png)
-
-您可以將 [Pivot.IsHeaderItemsCarouselEnabled](/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](../controls-and-patterns/pivot.md)。
 
 <a name="navigation-pane"></a>
 
@@ -485,7 +477,7 @@ UWP 提供了一種方便的方式，可公開使用者從其系統設定中選�
 如需深入了解將媒體加入 App，請參閱[媒體播放](../controls-and-patterns/media-playback.md)。
 
 > [!NOTE]
-> `MediaPlayerElement` 僅適用于1607版和更新版本的 Windows 10。 如果您是針對先前版本的 Windows 10 開發 App，便必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
+> `MediaPlayerElement` 只有在 Windows 10 1607 版和更新版本中才可使用。 如果您是針對先前版本的 Windows 10 開發 App，便必須改為使用 [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
 
 ### <a name="search-experience"></a>搜尋體驗
 
@@ -563,7 +555,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
 
 接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 
 
-## <a name="summary"></a>總結
+## <a name="summary"></a>摘要
 
 針對 10 英呎經驗的設計已納入特殊考量，使其有別於其他所有平台的設計。 您當然可以直接將 UWP app 移植至 Xbox One 且它亦可運作，但它不一定是針對 10 英呎體驗最佳化，且會讓使用者感到失望。 遵循本文所述的指導方針，以確定 app 在電視上仍可呈現優異效果。
 

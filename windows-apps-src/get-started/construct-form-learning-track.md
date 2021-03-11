@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a674514bfeb2acbc545e59cf1b3fc6e59d697215
-ms.sourcegitcommit: 5481bb34def681bc60fbfa42d9779053febec468
-ms.translationtype: HT
+ms.openlocfilehash: 86d352aff0b091a698e4b91cbee9cfdc8b1f8340
+ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89304520"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "102784659"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -19,13 +19,13 @@ ms.locfileid: "89304520"
 
 這不是教學課程。 如果您需要，請參閱我們的[調適型版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)，將為您提供逐步導覽體驗。
 
-我們將討論哪些 **XAML 控制項**要放進表單，如何在頁面上做最佳排列，以及如何最佳化您的表單以符合變更螢幕大小。 但因為表單與視覺元素相關，讓我們先討論使用 XAML 的版面配置。
+我們將討論哪些 **XAML 控制項** 要放進表單，如何在頁面上做最佳排列，以及如何最佳化您的表單以符合變更螢幕大小。 但因為表單與視覺元素相關，讓我們先討論使用 XAML 的版面配置。
 
 ## <a name="what-do-you-need-to-know"></a>您需要知道哪些事項？
 
 UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進行設定。 相反地，您將需要透過排列頁面上 UI 元素的集合來建立表單。
 
-若要這樣做，您必須了解**版面配置面板**。 其為保留應用程式 UI 元素的容器，允許您排列和群組它們。 將版面配置面板放置於其他版面配置面板中，可讓您控制您的項目。要在哪裡以及如何顯示彼此之間的關係。 這也可以讓您的應用程式更容易適應變更螢幕大小。
+若要這樣做，您必須了解 **版面配置面板**。 其為保留應用程式 UI 元素的容器，允許您排列和群組它們。 將版面配置面板放置於其他版面配置面板中，可讓您控制您的項目。要在哪裡以及如何顯示彼此之間的關係。 這也可以讓您的應用程式更容易適應變更螢幕大小。
 
 閱讀[版面配置面板上的此份文件](../design/layout/layout-panels.md)。 通常會在一個或多個垂直欄位中顯示表單，因此您要在 **StackPanel** 中群組相似的項目，並在 **RelativePanel** 中排列，如果您有需要的話。 現在開始將一些版面放在一起，如果您需要參考資料，以下是兩欄表單的基本版面配置架構：
 
@@ -57,7 +57,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="format-controls-in-your-layout"></a>版面配置中的格式控制項
 
-您知道如何排列版面配置面板和擁有您想要新增的項目，但應如何將它們格式化呢？ [表單](../design/controls-and-patterns/forms.md)頁面有一些特定的設計指導方針。 閱讀**表單類型**和**版面配置**上的章節，取得有用的建議。 我們稍後將討論協助工具與相對版面配置。
+您知道如何排列版面配置面板和擁有您想要新增的項目，但應如何將它們格式化呢？ [表單](../design/controls-and-patterns/forms.md)頁面有一些特定的設計指導方針。 閱讀 **表單類型** 和 **版面配置** 上的章節，取得有用的建議。 我們稍後將討論協助工具與相對版面配置。
 
 請牢記該建議，您應該開始將選擇的控制項新增至您的版面配置，確保給其正確的標籤與間隔。 例如，以下是使用上述版面配置、控制項和設計指導方針的單一頁面表單基本外框：
 
@@ -92,11 +92,11 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 使用者可能會在各種不同螢幕寬度的裝置上檢視您的 UI。 不論他們的螢幕為何，為了確保他們有良好的體驗，您應該使用[回應式設計](../design/layout/responsive-design.md)。 仔細閱讀該頁面，以獲得設計原則的良好建議，在您繼續時牢記在心。
 
-[使用 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md)頁面提供如何實作這個的詳細概觀。 現在，我們會著重於**流暢版面配置**和 **XAML 中的視覺狀態**。
+[使用 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md)頁面提供如何實作這個的詳細概觀。 現在，我們會著重於 **流暢版面配置** 和 **XAML 中的視覺狀態**。
 
-我們已整合的基本表單外框已是**流暢版面配置**，因為它主要根據控制項的相對位置，只需使用特定的像素大小與位置。 儘管如此，為了將來可能建立更多的 UI，請記住此指導方針。
+我們已整合的基本表單外框已是 **流暢版面配置**，因為它主要根據控制項的相對位置，只需使用特定的像素大小與位置。 儘管如此，為了將來可能建立更多的 UI，請記住此指導方針。
 
-對於回應式版面配置更重要的是**視覺狀態**。 當指定的條件為 true 時，視覺狀態會定義要套用到指定元素的屬性值。 [請閱讀如何在 xaml 中執行此操作](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup)，然後將它們實作到您的表單。 以下是我們之前範例中最基本的一個： 
+對於回應式版面配置更重要的是 **視覺狀態**。 當指定的條件為 true 時，視覺狀態會定義要套用到指定元素的屬性值。 [請閱讀如何在 xaml 中執行此操作](../design/layout/layouts-with-xaml.md#set-visual-states-in-xaml-markup)，然後將它們實作到您的表單。 以下是我們之前範例中最基本的一個： 
 
 ```xaml
 <Page ...>
@@ -144,7 +144,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 隨時回顧我們已連結的文件，並在您的表單中進行實驗，新增新的 UI 功能，並進一步修改使用者體驗。 如果您想要透過更詳細的版面配置功能獲得逐步指導方針，請參閱我們的[調適型版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)
 
-表單也不一定要與世隔絕，您可以往前一個步驟，將您的表單嵌入[主要/詳細資料模式](../design/controls-and-patterns/master-details.md)或[樞紐控制項](../design/controls-and-patterns/pivot.md)。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的[事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
+表單也不一定要存在於清理中-您可以進一步將其內嵌在 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [NavigationView](../design/controls-and-patterns/navigationview.md)中。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的[事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
@@ -170,7 +170,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 | [表單](../design/controls-and-patterns/forms.md) | 建立表單的整體指導方針。 |
 | [版面配置面板](../design/layout/layout-panels.md) | 提供版面配置面板類型的概觀，以及使用這些類型的位置。 |
 | [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) | 設計模式可在一個或多個表單中實作。 |
-| [樞紐分析控制項](../design/controls-and-patterns/pivot.md) | 一個控制項可包含一個或多個表單。 |
+| [NavigationView](../design/controls-and-patterns/navigationview.md) | 一個控制項可包含一個或多個表單。 |
 | [回應式設計](../design/layout/responsive-design.md) | 大型回應式設計原則的概觀。 |
 | [使用 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md) | 視覺狀態和其他回應式設計實作的特定資訊。 |
 | [回應式設計的螢幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 哪些螢幕大小應將回應式版面配置的範圍限制在哪個範圍內的指導方針。 |
