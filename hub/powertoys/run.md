@@ -1,15 +1,15 @@
 ---
-title: Windows 10 的 Powertoy 執行公用程式
+title: 適用于 Windows 10 的 Powertoy 執行公用程式
 description: 適用于 power 使用者的快速啟動程式，其中包含一些額外的功能，而不會犧牲效能。
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 126c38cd98f0d8ff1102c7f53f14cb95ec7e38c5
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 5b6f86636cb5753d93422a5658e6ae661151d0f9
+ms.sourcegitcommit: eb203b55b1332d0ed135abccd50f3fc287f89a5a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534397"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193293"
 ---
 # <a name="powertoys-run-utility"></a>Powertoy 執行公用程式
 
@@ -26,7 +26,7 @@ Powertoy Run 是適用于 power users 的快速啟動程式，其中包含一些
 - Windows 10 版本1903或更高版本
 - 安裝之後，必須在背景中啟用和執行 Powertoy，此公用程式才能運作
 
-## <a name="features"></a>特性
+## <a name="features"></a>功能
 
 Powertoy 執行功能包括：
 
@@ -59,7 +59,7 @@ Powertoy 執行功能包括：
   | Alt + 空格鍵 | 開啟或隱藏 Powertoy 執行 |
   | Esc | 隱藏 Powertoy 執行 |
   | Ctrl+Shift+Enter |  (僅適用于應用程式) 以系統管理員身分開啟選取的應用程式 |
-  | CTRL+SHIFT+E |  (僅適用于應用程式和檔案) 在檔案總管中開啟包含資料夾 |
+  | CTRL+SHIFT+E |  (僅適用于應用程式和檔案) 在檔案瀏覽器中開啟包含資料夾 |
   | Ctrl+C |  (僅適用于) 複製路徑位置的資料夾和檔案 |
   | 索引標籤 | 流覽搜尋結果和內容功能表按鈕 |
 
@@ -76,7 +76,7 @@ Powertoy 執行功能包括：
   | `<` | 僅執行進程。 `<outlook`尋找包含 outlook 的所有進程的範例 |
   | `>` | 僅限 Shell 命令。 `>ping localhost`執行 ping 查詢的範例 |
   | `:` | 僅限登錄機碼。 搜尋 HKEY_CURRENT_USER 登錄機碼的範例 `:hkcu` |
-  | `!` | 僅限 Windows 服務。 `!alu`搜尋要啟動或停止的應用層閘道服務的範例 |
+  | `!` | 僅限 Windows 服務。 `!alg`搜尋要啟動或停止的應用層閘道服務的範例 |
 
 ## <a name="system-commands"></a>系統命令
 
@@ -98,13 +98,13 @@ Powertoy 執行功能包括：
 
 ![Powertoy 執行索引子警告](../images/pt-run-warning.png)
 
-您可以關閉 [Powertoy] 設定中的警告，或選取警告來展開正在編制索引的磁片磁碟機。 選取警告之後，會開啟 [搜尋 Windows] Windows 10 設定] 選項。
+您可以關閉 [Powertoy] 設定中的警告，或選取警告來展開正在編制索引的磁片磁碟機。 選取警告之後，將會開啟 Windows 10 設定的 [搜尋視窗] 選項。
 
 ![編制索引設定](../images/pt-run-indexing.png)
 
 在此 [搜尋視窗] 功能表中，您可以：
 
-- 選取 [增強] 模式可讓您在 Windows 10 機上的所有磁片磁碟機上進行索引編制。
+- 選取 [增強] 模式可讓您在 Windows 10 電腦上的所有磁片磁碟機上進行索引編制。
 - 指定要排除的檔案夾路徑。
 - 選取功能表選項底部附近的 [先進搜尋索引子設定] (，) 以設定 Advanced index 設定、新增或移除搜尋位置、編制加密檔案的索引等。
 
