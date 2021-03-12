@@ -6,12 +6,12 @@ ms.date: 3/11/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 09466c804c86487dfdaf9e98328f779d84f07f0e
-ms.sourcegitcommit: 72eace5db95ee6d7a38c008caf92a79022fa4e30
+ms.openlocfilehash: 3e4f45bc7f236d507afb1ac4cb81d3c39726f4c0
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103213160"
+ms.locfileid: "103226112"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 開發人員文件的最新更新
 
@@ -29,8 +29,8 @@ Windows 開發人員文件會定期更新，並提供新的和改進的資訊及
 
 ### <a name="new-content"></a>新內容
 
-* [WinUI 2.6 檔](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/)
-* [在 Windows 上使用 Rust 進行開發](https://docs.microsoft.com/windows/dev-environment/rust/)
+* [WinUI 2.6 檔](../winui/winui2/index.md)
+* [在 Windows 上使用 Rust 進行開發](/windows/dev-environment/rust/)
 * [Azure 物件錨點](https://techcommunity.microsoft.com/t5/mixed-reality-blog/azure-object-anchors-is-now-in-private-preview/ba-p/1696157)
 * 新影片： [Visual Studio Code：利用容器進行遠端開發 & Codespaces](https://www.youtube.com/watch?v=ruIoLtqIdNc)
 

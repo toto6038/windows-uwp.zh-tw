@@ -7,12 +7,12 @@ ms.date: 04/09/2020
 ms.topic: article
 keywords: windows 10、uwp、排程的快顯通知、scheduledtoastnotification、操作說明、快速入門、使用者入門、程式碼範例、逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a138458634f0246d7e6bed9d6d65c2479dac3c9
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 488972d4f7d84967299f0a097bd5bbb8e0599aee
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93030691"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226102"
 ---
 # <a name="schedule-a-toast-notification"></a>排程快顯通知
 
@@ -23,10 +23,10 @@ ms.locfileid: "93030691"
 > [!IMPORTANT]
 > 桌面應用程式 (MSIX/sparse 套件和傳統桌面) 都有稍微不同的步驟來傳送通知和處理啟用。 請依照下列指示操作，但將取代為 `ToastNotificationManager` `DesktopNotificationManagerCompat` [桌面應用程式](toast-desktop-apps.md) 檔中的類別。
 
-> **重要 api** ： [ScheduledToastNotification 類別](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **重要 api**： [ScheduledToastNotification 類別](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>必要條件
 
 要完全了解本主題，下列項目將有所幫助...
 
@@ -42,10 +42,7 @@ ms.locfileid: "93030691"
 
 ## <a name="step-2-add-namespace-declarations"></a>步驟2：加入命名空間宣告
 
-`Windows.UI.Notifications` 包含快顯通知 Api。
-
 ```csharp
-using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
@@ -55,20 +52,12 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 我們將使用以文字為基礎的簡單通知，提醒學生今天所關注的作業。 建立通知和排程！
 
 ```csharp
-// Construct the content
-var content = new ToastContentBuilder()
-    .AddToastActivationInfo("itemsDueToday", ToastActivationType.Foreground)
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
     .AddText("ASTR 170B1")
     .AddText("You have 3 items due today!");
-    .GetToastContent();
-
-    
-// Create the scheduled notification
-var toast = new ScheduledToastNotification(content.GetXml(), DateTime.Now.AddSeconds(5));
-
-
-// Add your scheduled toast to the schedule
-ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
+    .Schedule(DateTime.Now.AddSeconds(5));
 ```
 
 
@@ -81,8 +70,16 @@ ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
 Tag 與 Group 結合可以做為主複合索引鍵。 Group 是較通用的識別碼，其中可以指定像是 "wallPosts"、"messages"、"friendRequests" 等群組。然而，Tag 則必須要在群組中唯一辨識通知本身。 然後可以使用一般群組，透過 [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_) 移除該群組中的所有通知。
 
 ```csharp
-toast.Tag = "18365";
-toast.Group = "ASTR 170B1";
+// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!");
+    .Schedule(DateTime.Now.AddSeconds(5), toast =>
+    {
+        toast.Tag = "18365";
+        toast.Group = "ASTR 170B1";
+    });
 ```
 
 
@@ -90,11 +87,11 @@ toast.Group = "ASTR 170B1";
 
 若要取消已排程的通知，您必須先取得所有排程通知的清單。
 
-然後，尋找符合標記 (的排程快顯，並選擇性地分組您先前指定的) ，然後呼叫 RemoveFromSchedule ( # A3。
+然後，尋找符合標記 (的排程快顯，並選擇性地分組您先前指定的) ，然後呼叫 RemoveFromSchedule () 。
 
 ```csharp
 // Create the toast notifier
-ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
 
 // Get the list of scheduled toasts that haven't appeared yet
 IReadOnlyList<ScheduledToastNotification> scheduledToasts = notifier.GetScheduledToastNotifications();
@@ -107,6 +104,9 @@ if (toRemove != null)
     notifier.RemoveFromSchedule(toRemove);
 }
 ```
+
+> [!IMPORTANT]
+> Win32 非 MSIX/sparse 應用程式必須使用如上所示的 ToastNotificationManagerCompat 類別。 如果您使用 ToastNotificationManager 本身，您將會收到「找不到元素」例外狀況。 所有類型的應用程式都可以使用相容性類別，且會正確運作。
 
 
 ## <a name="activation-handling"></a>啟用處理

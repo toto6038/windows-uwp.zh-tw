@@ -7,12 +7,12 @@ ms.date: 12/15/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 自訂音效, 通知, 音訊, 音效
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f890ceb0031b4c244e387e1f7068615a2fedc1
-ms.sourcegitcommit: 98ca28fd0b5d306d35f3919fe9dd4d5a0222235e
+ms.openlocfilehash: 905292155dfc43a82c464edb651b2d176aeab960
+ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "102029821"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103226122"
 ---
 # <a name="custom-audio-on-toasts"></a>自訂快顯通知的音效
 
@@ -27,11 +27,8 @@ ms.locfileid: "102029821"
 
 ## <a name="add-namespace-declarations"></a>新增命名空間宣告
 
-`Windows.UI.Notifications` 包含磚和快顯通知 API。 `Microsoft.Toolkit.Uwp.Notifications` 包含通知程式庫。
-
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
-using Windows.UI.Notifications;
 ```
 
 
@@ -61,7 +58,8 @@ if (supportsCustomAudio)
     contentBuilder.AddAudio(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
 }
 
-// TODO: Send the toast
+// Send the toast
+contentBuilder.Show();
 ```
 
 支援的音訊檔案類型包括...
@@ -76,7 +74,7 @@ if (supportsCustomAudio)
 
 ## <a name="send-the-notification"></a>傳送通知
 
-傳送包含音訊的通知與傳送一般通知的方式相同。 若要深入瞭解，請參閱 [傳送本機](send-local-toast.md) 快顯通知。
+傳送包含音訊的通知與傳送一般通知 (直接呼叫 Show 方法) 一樣。 若要深入瞭解，請參閱 [傳送本機](send-local-toast.md) 快顯通知。
 
 
 ## <a name="related-topics"></a>相關主題
