@@ -1,19 +1,19 @@
 ---
-title: Windows 10 的 Powertoy 影像調整工具公用程式
+title: 適用于 Windows 10 的 Powertoy 影像調整工具公用程式
 description: 用於大量影像調整大小的 Windows shell 擴充功能
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 486eb90b8515ec8422e8a475c9f03ced070dafa1
-ms.sourcegitcommit: 46a7e9db64e17a645ee6e888f62a9b04632c56af
+ms.openlocfilehash: e417a70e34ae1e5fdba95e2838a6221b3236e1c6
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618579"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417065"
 ---
 # <a name="image-resizer-utility"></a>影像調整工具公用程式
 
-影像調整器是適用于大量影像調整大小的 Windows shell 擴充功能。 安裝 Powertoy 之後，以滑鼠右鍵按一下檔案總管中的一或多個選取的影像檔，然後從功能表中選取 [ **調整圖片大小** ]。
+影像調整器是適用于大量影像調整大小的 Windows shell 擴充功能。 安裝 Powertoy 之後，在 [檔案瀏覽器] 中，以滑鼠右鍵按一下一或多個選取的影像檔，然後從功能表中選取 [ **調整圖片大小** ]。
 
 ![影像調整尺寸示範](../images/powertoys-resize-images.gif)
 
@@ -41,7 +41,6 @@ ms.locfileid: "97618579"
 
 您可以交換指定大小的寬度和高度，以符合目前影像 (縱向/橫向) 的方向。 若要一律使用指定的寬度和高度，取消勾選： **忽略圖片的方向**。
 
-![影像調整的設定](../images/powertoys-resize-settings.gif)
 
 ### <a name="fallback-encoding"></a>回溯編碼
 

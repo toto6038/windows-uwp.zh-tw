@@ -1,15 +1,15 @@
 ---
-title: Windows 10 的 Powertoy PowerRename 公用程式
+title: 適用于 Windows 10 的 Powertoy PowerRename 公用程式
 description: 用於大量重新命名檔案的 windows shell 擴充功能
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c751624c93fec5996885c766e73b5ab1849fd4c
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 26eee9fcb954a0a97ba6f30fae8a9d09395403a3
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534387"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417099"
 ---
 # <a name="powerrename-utility"></a>PowerRename 公用程式
 
@@ -29,7 +29,7 @@ PowerRename 是一種大量重新命名工具，可讓您：
 
 ## <a name="powerrename-menu"></a>PowerRename 功能表
 
-選取 [Windows 檔案總管中的某些檔案之後，以滑鼠右鍵按一下並選取 [ *PowerRename* ] (只有在 powertoy) 中啟用時，才會顯示 [PowerRename] 功能表。 您所選取) 的專案數目 (將會顯示，以及搜尋和取代值、選項清單，以及顯示搜尋結果和取代您所輸入之值的預覽視窗。
+在 [Windows 檔案瀏覽器] 中選取某些檔案之後，以滑鼠右鍵按一下並選取 *PowerRename* (只有在 powertoy) 中啟用時，才會出現 [PowerRename] 功能表。 您所選取) 的專案數目 (將會顯示，以及搜尋和取代值、選項清單，以及顯示搜尋結果和取代您所輸入之值的預覽視窗。
 
 ![PowerRename 功能表螢幕擷取畫面](../images/powerrename-menu.png)
 
@@ -141,13 +141,13 @@ PowerRename 是一種大量重新命名工具，可讓您：
 
 **注意：** 使用正則運算式時，您可能會想要選取 [符合所有出現專案]。
 
-若要使用 [提升程式庫](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) ，而不是標準程式庫，請核取 `Use Boost library` [powertoy] 設定中的選項。 它會啟用 `[lookbehind](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)` 標準程式庫不支援的擴充功能，例如。
+若要使用 [提升程式庫](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html) ，而不是標準程式庫，請核取 `Use Boost library` [powertoy] 設定中的選項。 它會啟用標準程式庫不支援的擴充功能，例如，「 [先行預測](https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind)」。
 
 ### <a name="examples-of-regular-expressions"></a>正則運算式的範例
 
 #### <a name="simple-matching-examples"></a>簡單的相符範例
 
-| 搜尋       | 描述                                           |
+| 搜尋       | Description                                           |
 | ---------------- | ------------- |
 | `^`              | 符合檔案名開頭                   |
 | `$`              | 符合檔案名的結尾                         |
@@ -162,7 +162,7 @@ PowerRename 是一種大量重新命名工具，可讓您：
 
 *使用變數時，必須啟用 [符合所有出現專案] 選項。*
 
-| 搜尋   | 取代為    | 描述                                |
+| 搜尋   | 取代為    | Description                                |
 | ------------ | --------------- |--------------------------------------------|
 | `(.*).png`   | `foo_$1.png`   | 在現有的檔案名前面加上 "foo \_ " |
 | `(.*).png`   | `$1_foo.png`   | 將 " \_ foo" 附加至現有的檔案名  |

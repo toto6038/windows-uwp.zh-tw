@@ -2,16 +2,16 @@
 description: 探索 Windows 開發人員文件中最新的新增內容。
 title: Windows 開發人員文件的最新更新
 ms.topic: article
-ms.date: 3/11/2021
+ms.date: 3/12/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: 3e4f45bc7f236d507afb1ac4cb81d3c39726f4c0
-ms.sourcegitcommit: 5e718720d1032a7089dea46a7c5aefa6cda3385f
+ms.openlocfilehash: cd6d523023b2ad0a65400a4a3642180cae7f7477
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103226112"
+ms.locfileid: "103417039"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 開發人員文件的最新更新
 

@@ -4,12 +4,12 @@ description: 適用于 power 使用者的快速啟動程式，其中包含一些
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b6f86636cb5753d93422a5658e6ae661151d0f9
-ms.sourcegitcommit: eb203b55b1332d0ed135abccd50f3fc287f89a5a
+ms.openlocfilehash: ce71ac5f4667952be8beb790b0890aadd0d8eb54
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/12/2021
-ms.locfileid: "103193293"
+ms.locfileid: "103417109"
 ---
 # <a name="powertoys-run-utility"></a>Powertoy 執行公用程式
 
@@ -50,7 +50,7 @@ Powertoy 執行功能包括：
   | 略過全螢幕模式的快捷方式 |  在全螢幕 (F11) 的情況下，執行將不會與快捷方式一起參與 |
   | 結果數目上限 |  顯示而不需要滾動的結果數目上限 |
   | 在啟動時清除先前的查詢 | 啟動時，不會反白顯示先前的搜尋 |
-  | 停用磁片磁碟機偵測警告 | 警告：如果您所有的磁片磁碟機都未建立索引，將不再顯示 |
+  | 停用磁片磁碟機偵測警告 | 警告：如果您所有的磁片磁碟機都未建立索引，將不再顯示。 |
 
 ## <a name="keyboard-shortcuts"></a>鍵盤快速鍵
 
@@ -65,13 +65,13 @@ Powertoy 執行功能包括：
 
 ## <a name="action-key"></a>動作金鑰
 
-這些會強制 Powertoy 只執行到目標外掛程式。
+這些預設啟用片語會強制 Powertoy 只執行到目標外掛程式。
 
   | **動作金鑰** | **動作** |
   | --- | --- |
   | `=` | 只有計算機。 範例 `=2+2` |
   | `?` | 僅搜尋檔案。 `?road`要尋找的範例`roadmap.txt` |
-  | `.` | 只搜尋已安裝的應用程式。 `.code`取得 Visual Studio Code 的範例 |
+  | `.` | 僅限已安裝的程式。 `.code`取得 Visual Studio Code 的範例。 請參閱 [程式參數](#program-parameters) ，以取得將參數加入程式啟動時的選項。 |
   | `//` | 僅限 Url。 `//docs.microsoft.com`讓您的預設瀏覽器移至的範例https://docs.microsoft.com |
   | `<` | 僅執行進程。 `<outlook`尋找包含 outlook 的所有進程的範例 |
   | `>` | 僅限 Shell 命令。 `>ping localhost`執行 ping 查詢的範例 |
@@ -80,7 +80,7 @@ Powertoy 執行功能包括：
 
 ## <a name="system-commands"></a>系統命令
 
-使用 Powertoy v 0.31 和 on，您現在可以執行系統層級的動作。
+Powertoy 執行會啟用一組可以執行的系統層級動作。
 
   | **動作金鑰**   |   **動作** |
   | ------------------ | ---------------------------------------------------------------------------------|
@@ -92,13 +92,33 @@ Powertoy 執行功能包括：
   | `Hibernate` | 休眠電腦 |
   | `Empty Recycle Bin` | 清空回收站 |
 
-## <a name="indexer-settings"></a>索引子設定
+## <a name="plugin-manager"></a>外掛程式管理員
 
-如果索引子設定未設定為涵蓋所有磁片磁碟機，您將會收到下列警告：
+使用 Powertoy v 0.33 和 on 時，[Powertoy 執行設定] 功能表包含一個外掛程式管理員，可讓您啟用/停用目前可用的各種外掛程式。 藉由選取和展開區段，您可以自訂每個外掛程式所使用的啟用片語。 此外，您可以選取外掛程式是否出現在全域結果中，以及設定可用的其他外掛程式選項。 
+
+## <a name="program-parameters"></a>程式參數
+
+使用 Powertoy v 0.33 和更新版本時，Powertoy 執行程式外掛程式可讓您在啟動應用程式時新增程式引數。 程式引數必須遵循程式的命令列介面所定義的預期格式。
+
+例如，啟動 Visual Studio Code 時，您可以指定要開啟的資料夾：
+
+`Visual Studio Code -- C:\myFolder`
+
+Visual Studio Code 也支援一組 [命令列參數](https://code.visualstudio.com/docs/editor/command-line)，可搭配 powertoy Run to 中的對應引數使用，例如，查看檔案之間的差異：
+
+`Visual Studio Code -d C:\foo.txt C:\bar.txt` 
+
+如果未選取 [在全域結果中包含] 程式外掛程式的選項，請務必在預設的情況下包含啟用片語， `.` 以叫用外掛程式的行為：
+
+`.Visual Studio Code -- C:\myFolder`
+
+## <a name="windows-search-settings"></a>Windows 搜尋設定
+
+如果未將 Windows 搜尋外掛程式設定為涵蓋所有磁片磁碟機，您將會收到下列警告：
 
 ![Powertoy 執行索引子警告](../images/pt-run-warning.png)
 
-您可以關閉 [Powertoy] 設定中的警告，或選取警告來展開正在編制索引的磁片磁碟機。 選取警告之後，將會開啟 Windows 10 設定的 [搜尋視窗] 選項。
+您可以關閉 Windows 搜尋的 [Powertoy 執行外掛程式管理員] 選項中的警告，或選取警告來展開正在編制索引的磁片磁碟機。 選取警告之後，Windows 10 設定的 [搜尋視窗] 選項功能表隨即開啟。
 
 ![編制索引設定](../images/pt-run-indexing.png)
 

@@ -316,16 +316,14 @@
           href: shell/tiles-and-notifications/toast-ux-guidance.md
         - name: 傳送本機快顯通知
           items:
-            - name: UWP 應用程式
+            - name: C# 應用程式
               href: shell/tiles-and-notifications/send-local-toast.md
-            - name: 傳統型應用程式
-              items:
-                - name: 概觀
-                  href: shell/tiles-and-notifications/toast-desktop-apps.md
-                - name: C# 應用程式
-                  href: shell/tiles-and-notifications/send-local-toast-desktop.md
-                - name: C++ WRL 應用程式
-                  href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: C + + UWP 應用程式
+              href: shell/tiles-and-notifications/send-local-toast-cpp-uwp.md
+            - name: C++ WRL 應用程式
+              href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+            - name: 其他應用程式
+              href: shell/tiles-and-notifications/send-local-toast-other-apps.md
         - name: 快顯通知內容
           items:
             - name: Content

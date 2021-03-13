@@ -1,15 +1,15 @@
 ---
-title: Windows 10 的 Powertoy FancyZones 公用程式
+title: 適用于 Windows 10 的 Powertoy FancyZones 公用程式
 description: 視窗管理員公用程式，可將視窗排列和貼齊有效率的版面配置
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b1f417307c173e868284254c0a1721e4e6ef5536
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 4e297467f6681d3060e085ee4b60fe8c51f1ec21
+ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534427"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103417121"
 ---
 # <a name="fancyzones-utility"></a>FancyZones 公用程式
 
@@ -27,7 +27,7 @@ FancyZones 是一種視窗管理員公用程式，可將視窗排列和貼齊至
 
 使用 [powertoy 設定] 功能表中的按鈕或按 [ (<kbd>Win</kbd> ] 來啟動 [區域編輯器 + <kbd>`</kbd> ]，請注意，您可以在 [設定] 對話方塊中變更此快捷方式) 。  
 
-![FancyZones 設定 UI](../images/pt-fancyzones-settings1.png) 
+![FancyZones 設定 UI](../images/pt-fancyzones-settings.png) 
 
 ### <a name="elevated-permission-admin-apps"></a>提升許可權管理應用程式
 
@@ -86,11 +86,11 @@ Subtractive **方格** 模型會以三個數據行格線開始，並允許透過
 | Win ⊞ + \` |Windows 鍵 + 倒引號 (⊞ + \` ) 會啟動編輯器 (此快捷方式可在 [設定] 對話方塊中編輯)  |
 | Win ⊞ + 向左/向右箭號 | 只有在開啟設定時，才會在區域之間移動焦點視窗 (`Override Windows Snap hotkeys` ，在此情況下，只 `Windows ⊞ key + Left Arrow` 會覆 `Windows key ⊞ + Right Arrow` 寫和，而 `Win ⊞ + Up Arrow` 並 `Win ⊞ + Down Arrow` 保持正常運作)  |
 
-FancyZones 不會覆寫 Windows 10 `Win ⊞ + Shift + Arrow` ，以快速將視窗移到連續的監視器。
+FancyZones 不會覆寫 Windows 10 `Win ⊞ + Shift + Arrow` 來快速將視窗移到連續的監視器。
 
 ## <a name="settings"></a>設定
 
-| 設定 | 描述 |
+| 設定 | Description |
 | --------- | ------------- |
 | 設定區域編輯器熱鍵 | 若要變更預設熱鍵，請按一下文字方塊， (不需要選取或刪除文字) 然後按鍵盤上所需的按鍵組合 |
 | 按住 Shift 鍵以在拖曳時啟動區域 | 切換自動貼齊模式與拖曳按鍵，在拖曳和手動貼齊模式期間停用貼齊，以便在拖曳時按 shift 鍵 |
