@@ -7,12 +7,12 @@ keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2354e7f42ab9c487275c66c9f709f8791ba5005e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 9e2e4bda8440a9a504cba78286de491236d6bd49
+ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629231"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366233"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05-preview-march-2021"></a>使用 Project 留尼旺島 0.5 Preview 建立桌面 Windows 應用程式 () 年3月2021
 
@@ -59,7 +59,10 @@ Project 留尼旺島 0.5 Preview 包含下列元件。
 
 1. 確定您的開發電腦已安裝 Windows 10 版本 1809 (組建 17763) 或更新的 OS 版本。
 
-2. 如果您尚未安裝 [Visual Studio 2019、16.10 版 Preview](https://visualstudio.microsoft.com/vs/preview/) (或更新版本，請) 。
+2. 如果您尚未安裝 [Visual Studio 2019、16.10 版 Preview](https://visualstudio.microsoft.com/vs/preview/) (或更新版本，請) 。 
+
+    > [!NOTE]
+    > Visual Studio 2019 16.9 版也支援 Project 留尼旺島，但不支援 WinUI 3 工具功能。 如需 WinUI 3 工具支援的詳細資訊，請參閱 Windows UI 程式庫 3-Project 留尼旺島 0.5 Preview (3 月 2021) 。
 
     安裝 Visual Studio 時，您必須包含下列元件：
     - 在 [ **工作負載** ] 索引標籤上，確認已選取 [ **通用 Windows 平臺開發** ]。

@@ -3,12 +3,12 @@ title: 'WinUI 3 Project 留尼旺島 0.5 Preview (3 月 2021) '
 description: WinUI 3 Project 留尼旺島 0.5 preview 的總覽。
 ms.date: 03/08/2021
 ms.topic: article
-ms.openlocfilehash: 8e5dea7ee18fe305cd9550ab42d30c561b9d803e
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: de00c3fa2a9dba5eae3ceadc7e6ad16c10286f77
+ms.sourcegitcommit: 2a71bb5c56bed80f26fb67a47ae8f9198c431760
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629258"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103366243"
 ---
 # <a name="windows-ui-library-3---project-reunion-05-preview-march-2021"></a>Windows UI 程式庫 3-Project 留尼旺島 0.5 Preview (3 月 2021) 
 
@@ -94,14 +94,14 @@ WinUI 3 API 參考檔可在此處取得： [WinUI 3 Api 參考](/windows/winui/a
 
 ### <a name="visual-studio-support"></a>Visual Studio 支援
 
-為了充分利用新增至 WinUI 3 （例如熱重載、即時視覺化樹狀結構和即時屬性瀏覽器）的最新工具功能，您必須使用最新的 Visual Studio 預覽版本搭配最新的 WinUI 3 preview，並務必在 Visual Studio Preview 功能中啟用 WinUI 工具，如 [這裡的指示](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表顯示未來版本與 WinUI 3-Project 留尼旺島 0.5 Preview 的相容性：
+為了充分利用新增至 WinUI 3 （例如熱重載、即時視覺化樹狀結構和即時屬性瀏覽器）的最新工具功能，您必須使用最新的 Visual Studio **預覽** 版本搭配最新的 WinUI 3 preview，並務必在 Visual Studio preview 功能中啟用 WinUI 工具，如 [這裡的指示](https://github.com/microsoft/microsoft-ui-xaml/issues/4140)所述。 下表顯示未來版本與 WinUI 3-Project 留尼旺島 0.5 Preview 的相容性：
 
 | VS 版本  | WinUI 3-Project 留尼旺島 0.5 Preview  |
 |---|---|
 | 16.8 RTM  | 否   |
-| 16.9 預覽版  | 是  | 
-| 16.9 RTM  | 否   |
-| 16.10 預覽版  | 是   |
+| 16.9 預覽版  | 是，使用工具  | 
+| 16.9 RTM  | 是，但沒有工具   |
+| 16.10 預覽版  | 是，使用工具   |
 
 ## <a name="major-changes-introduced-in-this-release"></a>此版本中引進的重大變更
 
