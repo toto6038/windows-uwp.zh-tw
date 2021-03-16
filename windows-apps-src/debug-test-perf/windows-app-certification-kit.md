@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: be02f9b049a1beb1866d21c97f11fe3efeb815f3
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
-ms.translationtype: HT
+ms.openlocfilehash: a8be8ff09b962456b70d604a6a44203ceddb8cbc
+ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339346"
+ms.lasthandoff: 03/16/2021
+ms.locfileid: "103496685"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
@@ -22,12 +22,36 @@ ms.locfileid: "94339346"
 測試通用 Windows app 的先決條件：
 
 - 您必須安裝和執行 Windows 10。
-- 您必須安裝 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/downloads/app-certification-kit/)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
+- 您必須安裝 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
 - 您必須[啟用您的裝置以進行開發](/windows/apps/get-started/enable-your-device-for-development)。
 - 您必須將要測試的 Windows App 部署至電腦。
 
 > [!NOTE]
 > **就地升級：** 安裝較新的 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)會取代任何先前安裝的套件版本。
+
+## <a name="whats-new"></a>最新消息
+
+套件現在支援 Windows [桌面橋接器應用程式](/windows/msix/desktop/source-code-overview) 的測試。 [Windows 傳統型橋接器應用程式測試](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests) 可讓您的應用程式在 Microsoft Store 上發行或獲得認證的最佳機會。
+
+您現在可以將套件整合到自動化測試中，其中沒有任何互動式使用者會話可用。
+
+不再支援應用程式預先啟動驗證測試。
+
+## <a name="known-issues"></a>已知問題
+
+以下是 Windows 應用程式認證套件的已知問題清單：
+
+在測試期間，如果安裝程式終止，但讓使用中的進程或 windows 正在執行，則應用程式認證套件可能會偵測到安裝程式仍有工作。 在此情況下，套件會顯示為執行「處理安裝追蹤檔案」工作，而且無法使用 UI 繼續進行。
+
+**解決方式：** 在安裝程式完成之後，請手動關閉安裝程式所產生的任何作用中進程或 windows。
+
+若為 ARM UWA 或任何不是以裝置系列桌面或 OneCore 為目標的 UWA 應用程式，則會在最後一份報告中出現一則訊息，指出「並非所有測試都是在驗證期間執行。 這可能會影響您的商店提交。」。 當使用者未手動取消選取測試時，此訊息不適用。
+
+**解決方式：** n/a
+
+針對使用 Windows SDK 版本10.0.15063 的傳統型橋接器應用程式，請略過應用程式資訊清單資源中的任何失敗測試，如果這些維度只是一個圖元，則會將您的影像標示為不會確認為預期的維度。 測試應該具有 +/-1 圖元的容錯。 例如 在125% 的小磚會 88.75 x 88.75 px 如果進位至89x89px，這會導致88x88px 的大小限制失敗。
+
+**解決方式：** n/a
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>以互動方式使用 Windows 應用程式認證套件來驗證 Windows 應用程式
 
@@ -89,5 +113,7 @@ Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效
 
 ## <a name="related-topics"></a>相關主題
 
+- [使用 Windows 應用程式認證套件](/windows/win32/win_cert/using-the-windows-app-certification-kit)
+- [Windows 桌面應用程式的認證需求](/windows/win32/win_cert/certification-requirements-for-windows-desktop-apps)
 - [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)
 - [Microsoft Store 原則](/legal/windows/agreements/store-policies)
