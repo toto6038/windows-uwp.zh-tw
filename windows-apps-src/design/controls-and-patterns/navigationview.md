@@ -14,12 +14,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 4da8d370c76f18b243930bb478bc28975d6444a9
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: f49d30e5ef3d2b7d4130d2141da711c99f8969bb
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784859"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804722"
 ---
 # <a name="navigationview"></a>NavigationView
 
@@ -402,7 +402,7 @@ NavigationView 不會自動執行任何導覽工作。 當使用者按下流覽�
 
 NavigationView 有內建的返回按鈕；但是，和向前瀏覽一樣，這不會自動執行向後瀏覽。 使用者點選返回按鈕時，會引發 [BackRequested](/uwp/api/windows.ui.xaml.controls.navigationview.BackRequested) 事件。 您可以處理這個事件來執行向後瀏覽。 如需詳細資訊和程式碼範例，請參閱[瀏覽歷程記錄和向後瀏覽](../basics/navigation-history-and-backwards-navigation.md)。
 
-在 [最短] 或 [壓縮] 模式中，[NavigationView] 窗格會開啟為飛出視窗。 在此情況下，按一下返回按鈕會關閉窗格，並引發 **PaneClosing** 事件。
+在 [基本] 或 [精簡模式] 中，[NavigationView] 窗格會開啟為飛出視窗。 在此情況下，按一下返回按鈕會關閉窗格，並引發 **PaneClosing** 事件。
 
 您可以設定這些屬性來隱藏或停用返回按鈕：
 
@@ -1761,6 +1761,6 @@ MainPage::MainPage()
 ## <a name="related-topics"></a>相關主題
 
 - [NavigationView 類別](/uwp/api/windows.ui.xaml.controls.navigationview)
-- [主要/詳細資料](master-details.md)
+- [清單/詳細資料](list-details.md)
 - [瀏覽基本知識](../basics/navigation-basics.md)
 - [Fluent Design 概觀](/windows/apps/fluent-design-system)

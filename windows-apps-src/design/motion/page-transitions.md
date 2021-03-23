@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b676cf274121ae991066f908b18f1be705d1c580
-ms.sourcegitcommit: 77903451ae8ab1ba854494488f79184e674707df
+ms.openlocfilehash: 0b2bdb95c6383559899e6baf06c391bbd250f3ca
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911008"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804982"
 ---
 # <a name="page-transitions"></a>頁面轉換
 
@@ -99,7 +99,7 @@ myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 
 當向後瀏覽時，您可以使用 `Frame.GoBack(NavigationTransitionInfo)` 播放特定的轉換。
 
-當您根據螢幕大小動態修改瀏覽行為，例如在回應式主要/詳細案例中，這個做法是非常實用的。
+當您根據畫面大小動態修改導覽行為時，這會很有用;例如，在回應式清單/詳細案例中。
 
 ## <a name="related-topics"></a>相關主題
 

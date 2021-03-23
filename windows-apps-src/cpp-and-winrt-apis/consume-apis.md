@@ -5,19 +5,26 @@ ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 已投影, 投影, 實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: eb667c27b937b252f0fe3c883730646938bf19d9
-ms.sourcegitcommit: a93a309a11cdc0931e2f3bf155c5fa54c23db7c3
-ms.translationtype: HT
+ms.openlocfilehash: 5d696295c81aac18a0f11004a104f7a058bf76e0
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91646271"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804742"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 取用 API
 
 本主題示範如何取用 [C++/WinRT](./intro-to-using-cpp-with-winrt.md) API，不管是否為 Windows 的一部分，皆由第三方元件廠商或您自己來實作。
 
+> [!IMPORTANT]
+> 因此，本主題中的程式碼範例很短，而且可讓您輕鬆試用，您可以建立新的 **Windows 主控台應用程式 (c + +/WinRT)** 專案，然後複製貼上程式碼，來重現這些範例。 不過，您無法從未封裝的應用程式取用任意的自訂 (協力廠商) Windows 執行階段類型。 您只能以這種方式使用 Windows 類型。
+>
+> 若要從主控台應用程式使用自訂 (協力廠商) Windows 執行階段型別，您必須為應用程式提供 *套件身分識別* ，讓它能夠解析取用的自訂類型註冊。 如需詳細資訊，請參閱 [Windows 應用程式封裝專案](/windows/msix/desktop/source-code-overview)。
+>
+> 或者，從空白應用程式建立新的專案 **(c + +/WinRT)**、 **Core App (c + +/WinRT)** 或 **Windows 執行階段元件 (c + +/WinRT)** 專案範本。 這些應用程式類型已經有 *套件身分識別*。
+
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 位在 Windows 命名空間中
-這是取用 Windows 執行階段 API 最常見的案例。 對於中繼資料中定義的 Windows 命名空間的每種類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為*投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ 語法的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
+這是取用 Windows 執行階段 API 最常見的案例。 對於中繼資料中定義的 Windows 命名空間的每種類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為 *投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ 語法的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
 
 以下是簡單的程式碼範例。 如果您想要將下列程式碼範例直接複製並貼到 **Windows 主控台應用程式 (C++/WinRT)** 專案的主要原始程式碼檔，請先在專案屬性中設定 [不使用預先編譯的標頭]  。
 
@@ -41,7 +48,7 @@ int main()
 > [!TIP]
 > 每當您要使用來自 Windows 命名空間的類型時，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 指示詞是選擇性的，但很便利。
 
-上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)** ](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
+上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
 事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為 **Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影值成員的呼叫透過智慧型指標確實委派至支援物件；其為狀態發生變更的位置。
 
@@ -50,7 +57,7 @@ int main()
 當 `contosoUri` 值超出範圍時，會解構並將其參考資料發行至預設介面。 如果該參考是支援 Windows 執行階段 **Windows.Foundation.Uri** 物件的最後一個參考，則支援物件也會解構。
 
 > [!TIP]
-> *投影類型*是一種透過執行階段類別為媒介的包裝函式，目的是取用其 API。 *投影介面*是一種透過 Windows 執行階段介面為媒介的包裝函式。
+> *投影類型* 是一種透過執行階段類別為媒介的包裝函式，目的是取用其 API。 *投影介面* 是一種透過 Windows 執行階段介面為媒介的包裝函式。
 
 ## <a name="cwinrt-projection-headers"></a>C++/WinRT 投影標頭
 若要從 C++/WinRT 取用 Windows 命名空間 API，請包含 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt` 資料夾的標頭。 附屬命名空間中的類型通常在其直接父系命名空間中參考類型。 因此，每個 C++/WinRT 投影標頭自動包含其父系命名空間標頭檔案；讓您不「需要」  明確包含它。 不過，如果您這麼做，也不會有任何錯誤。
@@ -152,7 +159,7 @@ int main()
 
 投影類型的所有建構函式 (除了 **std::nullptr_t** 建構函式以外) 皆會促使系統建立支援 Windows 執行階段物件。 **std::nullptr_t** 建構函式基本上是沒有選項。 預期之後會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
 
-此考量會影響您叫用預設建構函數的其他位置，例如向量和地圖。 考量此程式碼範例，您需要**空白的應用程式 (C++/WinRT)** 專案。
+此考量會影響您叫用預設建構函數的其他位置，例如向量和地圖。 考量此程式碼範例，您需要 **空白的應用程式 (C++/WinRT)** 專案。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -266,7 +273,7 @@ auto smallBox{
 > [!NOTE]
 > 如需安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援) 的資訊，請參閱 [C++/WinRT 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-在您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生標準的 C++ 程式庫，完整描述 &mdash; 或*投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
+在您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生標準的 C++ 程式庫，完整描述 &mdash; 或 *投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
 
 然後，就像 Windows 命名空間類型一樣，您包含標頭並透過其中一個建構函式建構投影類型。 您的應用程式專案啟動程式碼註冊執行階段類別，且投影類別的建構函式呼叫 [**RoActivateInstance**](/windows/desktop/api/roapi/nf-roapi-roactivateinstance)，以從參考的元件啟動執行階段類別。
 
@@ -448,7 +455,7 @@ struct MyPage : Page
 }
 ```
 
-在上述情況下，編譯器會認為您要將 [**FrameworkElement.Style()** ](/uwp/api/windows.ui.xaml.frameworkelement.style) (在 C++/WinRT 中為成員函式) 當作範本參數傳遞至 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 解決方法是強制將名稱 `Style` 解譯為類型 [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style)。
+在上述情況下，編譯器會認為您要將 [**FrameworkElement.Style()**](/uwp/api/windows.ui.xaml.frameworkelement.style) (在 C++/WinRT 中為成員函式) 當作範本參數傳遞至 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 解決方法是強制將名稱 `Style` 解譯為類型 [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style)。
 
 ```cppwinrt
 struct MyPage : Page

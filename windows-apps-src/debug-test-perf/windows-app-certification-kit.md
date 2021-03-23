@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: a8be8ff09b962456b70d604a6a44203ceddb8cbc
-ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.openlocfilehash: 6f63ad960993ade83bdfa52283a33b76e2d80db2
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496685"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804812"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
@@ -31,7 +31,7 @@ ms.locfileid: "103496685"
 
 ## <a name="whats-new"></a>最新消息
 
-套件現在支援 Windows [桌面橋接器應用程式](/windows/msix/desktop/source-code-overview) 的測試。 [Windows 傳統型橋接器應用程式測試](/windows/uwp/debug-test-perf/windows-desktop-bridge-app-tests) 可讓您的應用程式在 Microsoft Store 上發行或獲得認證的最佳機會。
+套件現在支援 Windows [傳統型橋接器應用程式](/windows/msix/desktop/source-code-overview) 的測試。 [Windows 傳統型橋接器應用程式測試](./windows-desktop-bridge-app-tests.md) 可讓您的應用程式在 Microsoft Store 或獲得認證時，獲得最大的機會。
 
 您現在可以將套件整合到自動化測試中，其中沒有任何互動式使用者會話可用。
 
@@ -49,7 +49,7 @@ ms.locfileid: "103496685"
 
 **解決方式：** n/a
 
-針對使用 Windows SDK 版本10.0.15063 的傳統型橋接器應用程式，請略過應用程式資訊清單資源中的任何失敗測試，如果這些維度只是一個圖元，則會將您的影像標示為不會確認為預期的維度。 測試應該具有 +/-1 圖元的容錯。 例如 在125% 的小磚會 88.75 x 88.75 px 如果進位至89x89px，這會導致88x88px 的大小限制失敗。
+針對使用 Windows SDK 版本10.0.15063 的傳統型橋接器應用程式，請略過應用程式資訊清單資源測試中的任何失敗，如果這些維度只在一個圖元之間，則會標示您的影像未確認為預期的維度。 測試應該具有 +/-1 圖元的容錯。 例如 在125% 的小磚會 88.75 x 88.75 px 如果進位至89x89px，這會導致88x88px 的大小限制失敗。
 
 **解決方式：** n/a
 

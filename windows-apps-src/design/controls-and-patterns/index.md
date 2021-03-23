@@ -8,12 +8,12 @@ ms.date: 03/23/2020
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e568dfb35f273b4efe045a6a16c944007f1ee7f
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: df9acd948ea2dc964989803a550d9ee57ea5caf6
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824472"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804792"
 ---
 # <a name="controls-for-windows-apps"></a>Windows 應用程式控制項
 
@@ -86,9 +86,9 @@ ms.locfileid: "101824472"
 - [超連結按鈕](hyperlinks.md#create-a-hyperlinkbutton)
 - [影像與影像筆刷](images-imagebrushes.md)
 - [筆跡控制項](inking-controls.md)
+- [清單/詳細資料](list-details.md) (模式) 
 - [清單檢視](listview-and-gridview.md)
 - [地圖控制項](../../maps-and-location/display-maps.md)
-- [主要/詳細資料](master-details.md) (模式)
 - [媒體播放](media-playback.md)
 - [功能表列](menus.md#create-a-menu-bar) :::image type="icon" source="images/winui-logo-16x16.png":::
 - [功能表飛出視窗](menus.md)

@@ -11,12 +11,12 @@ pm-contact: chigy
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 319bf762d54ed341672a99d15d9e760c91d93cff
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
-ms.translationtype: HT
+ms.openlocfilehash: 2dcbbeda200e6d8d07cc3735fa6aad9aa66d68b9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829453"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804642"
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
@@ -58,7 +58,7 @@ ms.locfileid: "91829453"
 
 建立清單 UI 時，請先確定您已考慮到 Windows 支援的所有輸入方法。 如需不同輸入種類的詳細資訊，請參閱[輸入基本資訊](../input/index.md)。
 
-在您確定應用程式可支援 Windows 支援的所有輸入之後，您應該決定該應用程式的次要動作是否具有足夠的重要性，而需在主要清單中公開為加速器。 請記得，公開越多動作，將會使 UI 變得越加複雜。 您是否真的需要在主要清單 UI 中公開次要動作？還是可以將它們放到別處？
+確定您的應用程式支援 Windows 支援的所有輸入之後，您應該決定您應用程式的次要動作是否很重要，才能在主要清單中公開為快速鍵。 請記得，公開越多動作，將會使 UI 變得越加複雜。 您是否真的需要在主要清單 UI 中公開次要動作？還是可以將它們放到別處？
 
 如果有其他動作是所有輸入隨時都需要使用的，您可以考慮在主要清單 UI 中公開那些動作。
 
@@ -66,9 +66,9 @@ ms.locfileid: "91829453"
 
 ### <a name="put-secondary-actions-on-the-detail-page"></a>將次要動作放在詳細資料頁面上
 
-將次要動作放在按下清單項目後會瀏覽到的頁面上。 當您使用主要/詳細資料模式時，詳細資料頁面通常是個放置次要動作的好位置。
+在清單專案按下時流覽至的頁面上，放置次要動作。 當您使用清單/詳細資料模式時，詳細資料頁面通常是放置次要動作的好地方。
 
-如需詳細資訊，請參閱[主要/詳細資料模式](master-details.md)。
+如需詳細資訊，請參閱 [清單/詳細資料模式](list-details.md)。
 
 ### <a name="put-secondary-actions-in-a-context-menu"></a>將次要動作放在操作功能表中
 

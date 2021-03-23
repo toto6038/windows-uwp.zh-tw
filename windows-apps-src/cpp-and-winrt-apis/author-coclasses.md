@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, COM, 元件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 83ea8b5cea95f034b5cdfe4f1750a0ffd0166f49
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 641d8bd5828fb02321663a6212ce073e228bc657
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154572"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804612"
 ---
 # <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
@@ -21,23 +21,29 @@ ms.locfileid: "89154572"
 
 C++/ WinRT 的 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 範本是直接或間接衍生您執行階段類別和啟用處理站的基底。
 
-根據預設，**winrt::implements** 僅支援 [**IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 架構的介面，並會以無訊息方式忽略傳統 COM 介面。 任何針對傳統 COM 介面發出的 **QueryInterface** (QI) 呼叫都會因為 **E_NOINTERFACE** 而失敗。
+依預設， **winrt：： implements** 會以無訊息方式忽略傳統 COM 介面。 任何針對傳統 COM 介面發出的 **QueryInterface** (QI) 呼叫都會因為 **E_NOINTERFACE** 而失敗。 根據預設， **winrt：： implements** 僅支援 c + +/WinRT 介面。
 
-稍後您會看到如何克服該情況，但以下程式碼範例會先說明預設行為。
+* **winrt：： IUnknown** 是 c + +/WinRT 介面，因此 **winrt：： implements** 支援 **winrt：： iunknown** 型介面。
+* **winrt：： implements** 預設不支援 [**：： IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 本身。
+
+稍後您會看到如何克服預設不支援的案例。 但是，首先要說明一個程式碼範例，以說明預設會發生什麼事。
 
 ```idl
 // Sample.idl
-runtimeclass Sample
+namespace MyProject 
 {
-    Sample();
-    void DoWork();
+    runtimeclass Sample
+    {
+        Sample();
+        void DoWork();
+    }
 }
 
 // Sample.h
 #include "pch.h"
 #include <shobjidl.h> // Needed only for this file.
 
-namespace winrt::MyProject
+namespace winrt::MyProject::implementation
 {
     struct Sample : implements<Sample, IInitializeWithWindow>
     {
@@ -53,13 +59,42 @@ namespace winrt::MyProject
 // Client.cpp
 Sample sample; // Construct a Sample object via its projection.
 
-// This next line crashes, because the QI for IInitializeWithWindow fails.
+// This next line doesn't compile yet.
 sample.as<IInitializeWithWindow>()->Initialize(hwnd); 
 ```
 
-好消息是，若要讓 **winrt::implements** 支援傳統 COM 介面，只需在加入任何 C++/WinRT 標頭之前，先加入 `unknwn.h` 即可。
+### <a name="enabling-classic-com-support"></a>啟用傳統 COM 支援
+
+好消息是，在您包含任何 c + +/WinRT 標頭之前，讓 **winrt：： implements** 支援傳統 COM 介面所採取的所有動作都是 `unknwn.h` 先包含標頭檔。
 
 您可能可以明確地執行該動作，或藉由包括一些其他標頭檔 (例如 `ole2.h`) 來間接執行。 其中一個建議方法是加入 `wil\cppwinrt.h`標頭檔，這是 [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) 的一部分。 `wil\cppwinrt.h` 標頭檔不只可確保 `unknwn.h` 在 `winrt/base.h` 之前加入，還可以設定項目，讓 C++/WinRT 和 WIL 了解彼此的例外狀況和錯誤代碼。
+
+然後，您可以將 **<>** 用於傳統 COM 介面，而上述範例中的程式碼會進行編譯。
+
+> [!NOTE]
+> 在上述範例中，即使在用戶端中啟用傳統 COM 支援 (程式碼) 的程式碼，如果您還沒有在伺服器中啟用傳統 COM 支援 () 執行類別的程式碼，則在用戶端中， **as<>** 的呼叫將會損毀，因為 **IInitializeWithWindow** 的 QI 將會失敗。
+
+### <a name="a-local-non-projected-class"></a>區域 (非投射的) 類別
+
+區域類別是在相同的編譯單位 (應用程式或其他二進位) 中執行和取用的類別;因此沒有它的投射。
+
+以下是僅實作為 *傳統 COM 介面* 的區域類別範例。
+
+```cppwinrt
+struct LocalObject :
+    winrt::implements<LocalObject, IInitializeWithWindow>
+{
+    ...
+};
+```
+
+如果您執行該範例，但未啟用傳統 COM 支援，則下列程式碼會失敗。
+
+```cppwinrt
+winrt::make<LocalObject>(); // error: ‘first_interface’: is not a member of ‘winrt::impl::interface_list<>’
+```
+
+同樣地， **IInitializeWithWindow** 不會被辨識為 COM 介面，因此 c + +/WinRT 會忽略它。 在 **LocalObject** 範例的情況下，忽略 COM 介面的結果表示 **LocalObject** 完全沒有介面。 但每個 COM 類別都必須執行至少一個介面。
 
 ## <a name="a-simple-example-of-a-com-component"></a>COM 元件的簡單範例
 
@@ -467,9 +502,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>如何測試範例應用程式
 
-請組建應用程式，然後以系統管理員身分執行至少一次，以便執行註冊、其他設定和程式碼。 有一種方法是以系統管理員身分執行 Visual Studio，然後從 Visual Studio 執行該應用程式。 在工作列中的 Visual Studio 上按右鍵，即會顯示捷徑清單，請在捷徑清單上的 Visual Studio 按右鍵，然後按一下 [以系統管理員身分執行]  。 同意提示，然後開啟專案。 當您執行應用程式時，會顯示訊息，註明是否正在以系統管理員身分執行應用程式。 如果不是，則不會執行註冊和其他設定。 該註冊和其他設定必須執行至少一次，才能使應用程式正常運作。
+請組建應用程式，然後以系統管理員身分執行至少一次，以便執行註冊、其他設定和程式碼。 有一種方法是以系統管理員身分執行 Visual Studio，然後從 Visual Studio 執行該應用程式。 在工作列中的 Visual Studio 上按右鍵，即會顯示捷徑清單，請在捷徑清單上的 Visual Studio 按右鍵，然後按一下 [以系統管理員身分執行]。 同意提示，然後開啟專案。 當您執行應用程式時，會顯示訊息，註明是否正在以系統管理員身分執行應用程式。 如果不是，則不會執行註冊和其他設定。 該註冊和其他設定必須執行至少一次，才能使應用程式正常運作。
 
-無論是否以系統管理員的身分執行應用程式，按 T 會顯示快顯通知。 您也可以直接在彈出的快顯通知或控制中心中，按一下 [回呼 ToastAndCallback]  按鈕，如此會啟動您的應用程式，將 coclass 具現化，並執行 **INotificationActivationCallback::Activate** 方法。
+無論是否以系統管理員的身分執行應用程式，按 T 會顯示快顯通知。 您也可以直接在彈出的快顯通知或控制中心中，按一下 [回呼 ToastAndCallback] 按鈕，如此會啟動您的應用程式，將 coclass 具現化，並執行 **INotificationActivationCallback::Activate** 方法。
 
 ## <a name="in-process-com-server"></a>同處理序 COM 伺服器
 
@@ -479,7 +514,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ### <a name="create-a-dynamic-link-library-dll-project"></a>建立動態連結程式庫 (DLL) 專案
 
-您可以在 Microsoft Visual Studio 中建立新專案，藉此開始建立同處理序 COM 伺服器的任務。 建立 **Visual C++**  > **Windows 桌面** > **動態連結程式庫 (DLL)** 專案。
+您可以在 Microsoft Visual Studio 中建立新專案，藉此開始建立同處理序 COM 伺服器的任務。 ) 專案中建立 **Visual C++**  >  **Windows 桌面**  >  **動態連結程式庫 (DLL** 。
 
 若要將 C++/WinRT 支援新增至新專案，請依照[修改 Windows 傳統型應用程式專案以新增 C++/WinRT 支援](./get-started.md#modify-a-windows-desktop-application-project-to-add-cwinrt-support)所述的步驟進行。
 

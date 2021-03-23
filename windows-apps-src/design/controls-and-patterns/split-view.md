@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c942c5748ef1d62dc86f6fa3d041bae651167f2
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: fb12e251f56a8eb90b507d1bac40381789504926
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173902"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804932"
 ---
 # <a name="split-view-control"></a>分割檢視控制項
 
@@ -32,11 +32,11 @@ ms.locfileid: "89173902"
 
  分割檢視的內容區域一律會顯示。 窗格可以展開或摺疊或維持在開啟狀態，並且可以從應用程式視窗的左邊或右邊顯示。 窗格有四種模式︰
 
--   **Overlay**
+-   **覆蓋**
 
     窗格在開啟之前是隱藏的。 開啟窗格時，窗格會與內容區域重疊。
 
--   **Inline**
+-   **內嵌**
 
     一律顯示窗格，而且不會和內容區域重疊。 窗格和內容區域會劃分螢幕實際可用空間。
 
@@ -50,7 +50,7 @@ ms.locfileid: "89173902"
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-分割檢視控制項可以用來建立任何「抽屜」體驗，讓使用者可以開啟和關閉補充的窗格。 例如，您可以使用 SplitView 建置[主要/詳細資料](master-details.md)模式。
+分割檢視控制項可以用來建立任何「抽屜」體驗，讓使用者可以開啟和關閉補充的窗格。 例如，您可以使用 SplitView 來建立 [清單/詳細資料](list-details.md) 模式。
 
 如果您想要使用展開/摺疊按鈕及瀏覽項目清單來建置瀏覽功能表，請使用 [NavigationView](navigationview.md) 控制項。
 
@@ -100,4 +100,4 @@ ms.locfileid: "89173902"
 ## <a name="related-topics"></a>相關主題
 - [瀏覽窗格模式](navigationview.md)
 - [清單檢視](lists.md)
-- [主要/詳細資料](master-details.md)
+- [清單/詳細資料](list-details.md)

@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1304032243c7675c4aba6cbda7e7899e8deddb
-ms.sourcegitcommit: e252ccb4a76c4883c7073083d73007957202b84d
-ms.translationtype: HT
+ms.openlocfilehash: c21d7deb96f4788a1f9b4a23dad1455cf80c8956
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657675"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804922"
 ---
 # <a name="collections-and-lists"></a>集合和清單
 
@@ -73,7 +73,7 @@ ms.locfileid: "97657675"
 - 因應各種使用案例，包括下列常見情況：
     - 建立訊息或訊息記錄的清單。
     - 建立連絡人清單。
-    - 在[主要/詳細資料模式](master-details.md)中建立主要窗格。 主要/詳細資料是經常用於電子郵件應用程式的模式，其中一個窗格 (主要) 具有可選取項目的清單，而另一個窗格 (詳細資料) 具有已選取項目的詳細資料檢視。
+    - 在 [清單/詳細資料模式](list-details.md)中建立 [清單] 窗格。 清單/詳細資料模式通常用於電子郵件應用程式，其中一個窗格具有可選取專案的清單，而另一個窗格 (詳細資料) 具有所選取專案的詳細觀點。
 
 > [!NOTE]
 > 如果您需要在可捲動的檢視中處理 [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) 的指標事件 (例如 ScrollViewer 或 ListView)，則必須藉由呼叫 [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations)，明確停用對於此檢視元素上操作事件的支援。 若要在檢視中重新啟用操作事件，請呼叫 [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation)。
@@ -330,7 +330,7 @@ ItemsRepeater 與本頁面上所顯示的其餘集合控制項不同，其不會
 ## <a name="related-articles"></a>相關文章
 
 **設計和 UX 指導方針**
-- [主要/詳細資料](master-details.md)
+- [清單/詳細資料](list-details.md)
 - [瀏覽窗格](navigationview.md)
 - [語意式縮放](semantic-zoom.md)
 - [拖放功能](../input/drag-and-drop.md)

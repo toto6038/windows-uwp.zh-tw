@@ -5,12 +5,12 @@ template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp, fluent
-ms.openlocfilehash: 7a4c33bbdae980029cdeeb650375b9f8cb38bbf9
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 8c394e4f1168f986cfb97d218d2ef477b19028f7
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823342"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804802"
 ---
 # <a name="forms"></a>表單
 表單是一組控制項，會收集和提交使用者的資料。 表單通常用於 [設定] 頁面、問卷調查、建立帳戶等等。 
@@ -152,7 +152,7 @@ ms.locfileid: "101823342"
 如需更多複雜和自訂 UI 控制項，請查看各家公司所提供的資源，例如 [Telerik](https://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/uwp-ui-controls)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](https://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](https://www.actiprosoftware.com/products/controls/universal)。
 
 ## <a name="one-column-form-example"></a>一欄表單範例
-這個範例會使用 Acrylic [主要/詳細資料](master-details.md)[清單檢視](lists.md)和 [NavigationView](navigationview.md) 控制項。
+此範例會使用 Acrylic[清單/詳細資料](list-details.md)[清單視圖](lists.md)和[NavigationView](navigationview.md)控制項。
 ![另一個表單範例的螢幕擷取畫面](images/FormExample2.png)
 ```xaml
 <StackPanel>

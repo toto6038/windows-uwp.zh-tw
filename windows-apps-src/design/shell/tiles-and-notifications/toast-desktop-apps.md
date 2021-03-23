@@ -7,12 +7,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、win32、desktop、快顯通知、傳統型橋接器、msix、sparse 套件、傳送快顯通知、com 伺服器、com activator、com、假 com、無 com、無 com、傳送快顯通知的選項
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cdd8e57311400c8603f4eb99e9bfd1a2230f2ce
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 1f7c29c8819f293384e3b38483f02a49d3f65cf6
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93033091"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804942"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 
@@ -36,7 +36,7 @@ ms.locfileid: "93033091"
 
 ## <a name="preferred-option---com-activator"></a>偏好的選項 - COM 啟動器
 
-這是適用于桌面應用程式的慣用選項，支援所有通知功能。 不用擔心「COM 啟動器」，我們有程式庫[適用於 C#](send-local-toast-desktop.md) 和 [C++ 應用程式](send-local-toast-desktop-cpp-wrl.md)，可讓這非常簡單，即使您從未撰寫過 COM 伺服器。<br/><br/>
+這是適用于桌面應用程式的慣用選項，支援所有通知功能。 不用擔心「COM 啟動器」，我們有程式庫[適用於 C#](./send-local-toast.md) 和 [C++ 應用程式](send-local-toast-desktop-cpp-wrl.md)，可讓這非常簡單，即使您從未撰寫過 COM 伺服器。<br/><br/>
 
 | 視覺效果 | 動作 | 輸入 | 在處理程序中啟用 |
 | -- | -- | -- | -- |
@@ -54,7 +54,7 @@ ms.locfileid: "93033091"
 > [!NOTE]
 > 如果您將 COM 啟動項新增至現有的 MSIX/sparse 封裝應用程式，前景/背景和舊版通知啟用現在將會啟動您的 COM activator，而不是命令列。
 
-若要瞭解如何使用此選項，請參閱 [從桌面 c # 應用程式傳送本機](send-local-toast-desktop.md) 快顯通知，或 [從 Win32 c + + WRL 應用程式傳送本機](send-local-toast-desktop-cpp-wrl.md)快顯通知。
+若要瞭解如何使用此選項，請參閱 [從桌面 c # 應用程式傳送本機](./send-local-toast.md) 快顯通知，或 [從 Win32 c + + WRL 應用程式傳送本機](send-local-toast-desktop-cpp-wrl.md)快顯通知。
 
 
 ## <a name="alternative-option---no-com--stub-clsid"></a>其他選項 - No COM / Stub CLSID
@@ -81,6 +81,6 @@ ms.locfileid: "93033091"
 
 ## <a name="resources"></a>資源
 
-* [從傳統型 C# 應用程式傳送本機快顯通知](send-local-toast-desktop.md)
+* [從傳統型 C# 應用程式傳送本機快顯通知](./send-local-toast.md)
 * [從 Win32 c + + WRL 應用程式傳送本機快顯通知](send-local-toast-desktop-cpp-wrl.md)
 * [快顯通知內容文件](adaptive-interactive-toasts.md)

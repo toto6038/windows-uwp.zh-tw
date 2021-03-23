@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 738efe43afaf5c278425d5636bddc72cecadf47a
-ms.sourcegitcommit: d51c3dd64d58c7fa9513ba20e736905f12df2a9a
+ms.openlocfilehash: 27250869d02c901825af72fe6fb1a3c0cd887e07
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98988760"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804412"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-windows-apps"></a>Windows 應用程式的瀏覽歷程記錄和向後瀏覽
 
@@ -827,7 +827,7 @@ private:
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>列舉項目</strong>
-<p>App 會顯示螢幕項目的內容，例如主要/詳細資料清單中所選項目的詳細資料。</p></td>
+<p>應用程式會顯示幕幕上專案的內容，例如 [清單/詳細資料] 清單中所選取專案的詳細資料。</p></td>
 <td style="vertical-align:top;"><strong>否</strong>
 <p>列舉項目類似於在對等群組中瀏覽。 當使用者按下返回時，會返回目前頁面之前有項目列舉的頁面。</p>
 <p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>

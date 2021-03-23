@@ -5,12 +5,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
-ms.openlocfilehash: 46d63a5f0bf929c391e9080e621023dc9eaafdd0
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 238f341373e08f2ae73b22a01020e37e4fe68673
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784719"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804442"
 ---
 # <a name="page-layout"></a>頁面配置
 
@@ -79,11 +79,11 @@ ms.locfileid: "102784719"
 
 集合可讓使用者瀏覽內容或資料群組。 [方格檢視](../controls-and-patterns/item-templates-gridview.md)是相片或媒體為主內容的理想選擇，而[清單檢視](../controls-and-patterns/item-templates-listview.md)是文字為主內容或資料的理想選擇。
 
-## <a name="masterdetail"></a>主要/詳細資料
+## <a name="listdetail"></a>清單/詳細資料
 
-![主要詳細資料](images/master-detail.svg)
+![清單詳細資料](images/master-detail.svg)
 
-[主要/詳細資料](../controls-and-patterns/master-details.md)模型是由清單檢視 (主要) 與內容檢視 (詳細資料) 所組成。 這兩個窗格都是固定的，並可垂直捲動。 當使用者選取清單檢視中的一個項目，內容檢視會隨之更新。 
+[清單/詳細資料](../controls-and-patterns/list-details.md)模型是由清單視圖和內容視圖組成 (詳細資料) 。 這兩個窗格都是固定的，並可垂直捲動。 當使用者選取清單檢視中的一個項目，內容檢視會隨之更新。
 
 ## <a name="forms"></a>表單
 ![顯示空白文字方塊和按鈕的表單螢幕擷取畫面。](images/form.svg)

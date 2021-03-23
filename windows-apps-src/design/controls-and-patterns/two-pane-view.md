@@ -6,16 +6,16 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76a6264a8ce1704e9bd209a6246c81ba9665265f
-ms.sourcegitcommit: 4df27104a9e346d6b9fb43184812441fe5ea3437
-ms.translationtype: HT
+ms.openlocfilehash: 8306b819b583edc9d2145c976d978c415c93183e
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "93034431"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804882"
 ---
 # <a name="two-pane-view"></a>兩個窗格檢視
 
-[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) 是一種版面配置控制項，可協助您管理具有 2 個不同內容區域的應用程式顯示，例如主要/詳細資料檢視。
+[TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) 是一種版面配置控制項，可協助您管理具有2個不同內容區域（例如清單/詳細資料檢視）之應用程式的顯示。
 
 > [!IMPORTANT]
 > 本文說明處於公開預覽狀態的功能和指導方針，在正式推出之前可能會大幅修改。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
@@ -206,7 +206,7 @@ MyTwoPaneView.PanePriority = Microsoft.UI.Xaml.Controls.TwoPaneViewPriority.Pane
 
 > _具有預設大小的窗格_
 
-預設值適用於一般主要/詳細資料版面配置，其中，您可在 `Pane1` 中取得項目清單，在 `Pane2` 中取得許多詳細資料。 不過，視您的內容而定，您可能會想要以不同的方式分割空間。 在這裡，`Pane1Length` 設定為 `2*`，因此所取得的空間會是 `Pane2` 的兩倍。
+預設值適用于一般清單/詳細資料版面配置，其中包含中的專案清單 `Pane1` ，以及中的許多詳細資料 `Pane2` 。 不過，視您的內容而定，您可能會想要以不同的方式分割空間。 在這裡，`Pane1Length` 設定為 `2*`，因此所取得的空間會是 `Pane2` 的兩倍。
 
 ```xaml
 <muxc:TwoPaneView x:Name="MyTwoPaneView" Pane1Length="2*">

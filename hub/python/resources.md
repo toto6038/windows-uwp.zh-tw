@@ -8,12 +8,12 @@ ms.topic: article
 keywords: python, microsoft, windows 10, 教學課程, 線上課程, 部落格, 事件
 ms.localizationpriority: medium
 ms.date: 07/19/2019
-ms.openlocfilehash: e5ae3eb09a015a5ae1385612d5410c41a43b005b
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 3736802249eb0bce10b8d0730d361e4a70df5e8c
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89175772"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804552"
 ---
 # <a name="resources-for-developing-with-python-on-windows"></a>在 Windows 上使用 Python 進行開發的資源
 
@@ -44,6 +44,8 @@ ms.locfileid: "89175772"
 - [使用 Python 的 Azure 程式碼範例](https://azure.microsoft.com/resources/samples/?platform=python&sort=0):了解如何使用 Python 程式碼與 Azure 服務互動。
 
 - [Python 與 Visual Studio Code](https://code.visualstudio.com/docs/languages/python):概述如何搭配使用 Python 與 VS Code。
+
+- [適用于 windows 的 Python 版本](https://www.python.org/downloads/windows/)：適用于 windows 的官方 python 版本。
 
 ## <a name="online-courses"></a>線上課程
 

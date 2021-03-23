@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 4170efdf7e3133f216d26a3a4b5098664f3d4af4
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: fe0081a1558bfce9bd00eaaa0a7e4268320ce91b
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101823262"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804762"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
@@ -24,7 +24,7 @@ ms.locfileid: "101823262"
 
 > **重要 API**：[Windows.UI.Xaml.Controls 命名空間](/uwp/api/windows.ui.xaml.controls)
 
-「模式」  是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[主版/詳細資料](master-details.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽應用程式的方式。 同樣地，您可以自訂 [NavigationView](navigationview.md) 控制項的範本來實作索引標籤模式。
+「模式」  是可修改控制項或結合數個控制項以創造新項目的方法。 例如， [清單/詳細資料](list-details.md) 模式是您可以使用 [SplitView](split-view.md) 控制項進行應用程式流覽的一種方式。 同樣地，您可以自訂 [NavigationView](navigationview.md) 控制項的範本來實作索引標籤模式。
 
 在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
 

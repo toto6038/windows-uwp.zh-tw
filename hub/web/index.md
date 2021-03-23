@@ -1,22 +1,22 @@
 ---
 title: Windows 10 上的 Web 開發
-description: Windows 10 上的 網頁程式開發指南，其中包含 Microsoft 提供的工具、api 和各種資源連結。
+description: Windows 10 的 網頁程式開發指南，其中包含各種 Microsoft 的工具、api 和各種資源的連結。
 author: mattwojo
 ms.author: mattwoj
 manager: jken
 ms.topic: article
 keywords: 網頁程式開發、網頁程式開發、windows 上的 web、api、邊緣
 ms.date: 01/06/2021
-ms.openlocfilehash: 3149e49b258f970989df75b87300a2dce23ff1f2
-ms.sourcegitcommit: 5e40a6f8755aca1e97226ce8f85cda239bdcdad0
+ms.openlocfilehash: 98b5d1443869baec9dd46796088ff7b71521237d
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102259147"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804482"
 ---
 # <a name="web-development-on-windows-10"></a>Windows 10 上的 Web 開發
 
-Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Windows 10 進行 web 程式開發的新工具和功能。 本指南涵蓋許多可用的工具，並提供可讓您在網路上為您的理想環境進行開發的 [意見](../dev-environment/overview.md#additional-resources) 反應。 如需 Api 的清單，請參閱 [網頁程式開發的 api](/apis.md)。 如需開始使用的詳細說明，請參閱 [在 Windows 10 上設定開發環境](../dev-environment/overview.md)。
+Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Windows 10 進行 網頁程式開發的新工具和功能。 本指南涵蓋許多可用的工具，並提供可讓您在網路上為您的理想環境進行開發的 [意見](../dev-environment/overview.md#additional-resources) 反應。 如需 Api 的清單，請參閱 [網頁程式開發的 api](/apis.md)。 如需開始使用的詳細說明，請參閱 [在 Windows 10 上設定開發環境](../dev-environment/overview.md)。
 
 ## <a name="webview-devtools-pwas"></a>Web 視圖、DevTools、Pwa
 
@@ -39,7 +39,7 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
     :::column:::
        [![PWA 圖示](../images/pwa-icon.png)](/microsoft-edge/progressive-web-apps-chromium/)<br>
         **[Windows 上的漸進式 Web 應用程式](/microsoft-edge/progressive-web-apps-chromium/)**<br>
-        漸進式 Web 應用程式 (Pwa) 為使用者提供自訂的原生、類似應用程式的體驗，並針對其裝置進行自訂。 它們是逐漸增強的網站，可在支援的平臺上以原生應用程式的形式運作。<br>
+        漸進式 Web Apps (Pwa) 為您的使用者提供自訂的原生、類似應用程式的體驗，並針對其裝置進行自訂。 它們是逐漸增強的網站，可在支援的平臺上以原生應用程式的形式運作。<br>
         [Pwa 入門](/microsoft-edge/progressive-web-apps-chromium/get-started)
     :::column-end:::
 :::row-end:::
@@ -54,16 +54,16 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
         [安裝新的 Microsoft Edge](https://www.microsoft.com/edge)
     :::column-end:::
     :::column:::
-        [![商務用 Microsoft Edge](../images/microsoftedge-enterprise.png)](/deployedge/)<br>
-        **[商務用 Microsoft Edge](/deployedge/)**<br>
+        [![商務 Microsoft Edge](../images/microsoftedge-enterprise.png)](/deployedge/)<br>
+        **[商務 Microsoft Edge](/deployedge/)**<br>
         Microsoft Edge 是以 Chromium 為基礎，並提供企業支援。 取得如何設定及部署多個可用通道的逐步指引。<br>
         [下載 Microsoft Edge 頻道](https://www.microsoft.com/edge/business/download)
     :::column-end:::
     :::column:::
         [![Microsoft Edge Insider 圖示](../images/microsoftedge-beta.png)](https://www.microsoftedgeinsider.com/whats-new)<br>
         **[Microsoft Edge Insider](https://www.microsoftedgeinsider.com/whats-new)**<br>
-        我們每天都會為 Microsoft Edge 建立新的內容。 深入瞭解我們最近的進度，以及您可以如何參與。
-        [下載 Microsoft Edge Beta 版](https://www.microsoftedgeinsider.com/)
+        我們每天都在 Microsoft Edge 建立新的內容。 深入瞭解我們最近的進度，以及您可以如何參與。
+        [下載 Microsoft Edge Beta 版本](https://www.microsoftedgeinsider.com/)
     :::column-end:::
     :::column:::
         [![Microsoft Edge 支援圖示](../images/microsoftedge-support.png)](https://support.microsoft.com/microsoft-edge)<br>
@@ -79,13 +79,13 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
     :::column:::
        [![VS Marketplace Edge 偵錯工具擴充功能](../images/visualstudio-edge-debugger.png)](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)<br>
         **[VS Code：適用于 Microsoft Edge 的偵錯工具](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge/)**<br>
-        使用這個 VS Code 擴充功能，在 Microsoft Edge 瀏覽器中進行 JavaScript 程式碼的偵錯工具。 也可以從 Visual Studio 中的 ASP.NET 專案使用。<br>
-        [安裝 VS Code-適用于 Microsoft Edge 的偵錯工具](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)
+        使用這個 VS Code 擴充功能，在 Microsoft Edge 瀏覽器中偵測 JavaScript 程式碼。 也可以從 Visual Studio 中的 ASP.NET 專案使用。<br>
+        [安裝 VS Code-Microsoft Edge 的偵錯工具](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge)
     :::column-end:::
     :::column:::
        [![虛擬機器圖示](../images/virtualmachine.png)](https://developer.microsoft.com/microsoft-edge/tools/vms/)<br>
         **[用於測試的虛擬機器](https://developer.microsoft.com/microsoft-edge/tools/vms/)**<br>
-        使用您在本機下載及管理的免費 Windows 10 虛擬機器，測試 IE11 和 Microsoft Edge 舊版。<br>
+        使用您在本機下載及管理的免費 Windows 10 虛擬機器，測試 IE11 和舊版 Microsoft Edge。<br>
         [下載虛擬機器](https://developer.microsoft.com/microsoft-edge/tools/vms/)
     :::column-end:::
     :::column:::
@@ -97,9 +97,9 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
         [安裝 CLI](https://webhint.io/docs/user-guide/)
     :::column-end:::
     :::column:::
-       [![WebDriver 圖示](../images/webdriver.png)](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)<br>
-        **[WebDriver](https://docs.microsoft.com/microsoft-edge/webdriver-chromium/)**<br>
-        在 Microsoft Edge 中使用 Microsoft WebDriver 自動化測試您的網站，以在開發週期結束迴圈。<br>
+       [![WebDriver 圖示](../images/webdriver.png)](/microsoft-edge/webdriver-chromium/)<br>
+        **[WebDriver](/microsoft-edge/webdriver-chromium/)**<br>
+        使用 Microsoft WebDriver 在 Microsoft Edge 中自動化測試您的網站，以在開發週期結束迴圈。<br>
         [安裝 WebDriver](https://developer.microsoft.com/microsoft-edge/tools/webdriver/)
     :::column-end:::
 :::row-end:::
@@ -122,18 +122,18 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
     :::column:::
        [![VS Code marketplace 圖示](../images/vs-code-marketplace.png)](https://marketplace.visualstudio.com/vscode)<br>
         **[適用于擴充功能的 VS Code Marketplace](https://marketplace.visualstudio.com/vscode)**<br>
-        探索可用來自訂 Visual Studio 程式碼編輯器的許多不同擴充功能。<br>
+        探索可用來自訂您的 Visual Studio Code 編輯器的許多不同擴充功能。<br>
         [安裝延伸模組](https://marketplace.visualstudio.com/vscode)
     :::column-end:::
     :::column:::
        [![Visual Studio marketplace 圖示](../images/vs-marketplace.png)](https://marketplace.visualstudio.com/vs/)<br>
-        **[適用于擴充功能的 Visual Studio Marketplace](https://marketplace.visualstudio.com/vs)**<br>
-        探索可用來自訂 Visual Studio 整合式開發環境的許多不同擴充功能。<br>
+        **[擴充功能的 Visual Studio Marketplace](https://marketplace.visualstudio.com/vs)**<br>
+        探索可用來自訂您的 Visual Studio 整合式開發環境的許多不同擴充功能。<br>
         [安裝延伸模組](https://marketplace.visualstudio.com/vs)
     :::column-end:::
 :::row-end:::
 
-## <a name="wsl-terminal-package-manager-docker-desktop"></a>WSL、終端機、套件管理員、Docker Desktop
+## <a name="wsl-terminal-package-manager-docker-desktop"></a>WSL、Terminal、封裝管理員、Docker Desktop
 
 :::row:::
     :::column:::
@@ -204,11 +204,11 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
         [提出效能問題](https://github.com/microsoft/WinDev/issues)
     :::column-end:::
     :::column:::
-       [![檔圖示](../images/docs.png)](https://docs.microsoft.com/contribute/)<br>
-        **[參與文件編輯](https://docs.microsoft.com/contribute/)**<br>
+       [![檔圖示](../images/docs.png)](/contribute/)<br>
+        **[參與文件編輯](/contribute/)**<br>
         Microsoft 的大部分檔集都是開放原始碼並裝載在 GitHub 上。 藉由提出問題或撰寫提取要求來參與。
         <br>
-        [瞭解如何](https://docs.microsoft.com/contribute/)
+        [瞭解如何](/contribute/)
     :::column-end:::
 :::row-end:::
 
@@ -246,19 +246,19 @@ Microsoft 為 網頁程式開發人員提供各種資源，包括支援使用 Wi
         [開始使用](../dev-environment/overview.md)
     :::column-end:::
     :::column:::
-       [![回應原生的 Windows 圖示](../images/reactnative-windows.png)](https://microsoft.github.io/react-native-windows/)<br>
-        **[回應原生的 Windows + macOS](https://microsoft.github.io/react-native-windows/)**<br>
-        對 Windows 10 SDK 和 macOS 10.13 SDK 帶來回應原生支援。 使用 JavaScript 為 Windows 10 所支援的所有裝置（包括電腦、平板電腦、2個內建、Xbox、混合式現實裝置等），以及 macOS 桌上型電腦和膝上型電腦生態系統建立原生 Windows 應用程式。
+       [![適用于 Windows 的 React Native 圖示](../images/reactnative-windows.png)](https://microsoft.github.io/react-native-windows/)<br>
+        **[適用于 Windows + macOS 的 React Native](https://microsoft.github.io/react-native-windows/)**<br>
+        將 React Native 支援帶到 Windows 10 SDK 和 macOS 10.13 SDK。 使用 JavaScript 針對 Windows 10 所支援的所有裝置建立原生 Windows 應用程式，包括電腦、平板電腦、2個內建、Xbox、混合現實裝置等，以及 macOS 桌上型電腦和膝上型電腦生態系統。
         <br>
-        [安裝 Windows 的回應原生](https://microsoft.github.io/react-native-windows/docs/getting-started)<br>
-        [安裝 macOS 的回應原生](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
+        [安裝適用于 Windows 的 React Native](https://microsoft.github.io/react-native-windows/docs/getting-started)<br>
+        [安裝適用于 macOS 的 React Native](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
     :::column-end:::
     :::column:::
-       [![學習圖示](../images/learn-icon.png)](https://docs.microsoft.com/learn/browse/?terms=web)<br>
-        **[Microsoft 學習與 網頁程式開發相關的課程](https://docs.microsoft.com/learn/browse/?terms=web)**<br>
-        Microsoft 學習提供免費的線上課程，以學習各種新的技能，並透過逐步指引來探索 Microsoft 產品和服務。
+       [![學習圖示](../images/learn-icon.png)](/learn/browse/?terms=web)<br>
+        **[與 網頁程式開發相關的 Microsoft Learn 課程](/learn/browse/?terms=web)**<br>
+        Microsoft Learn 提供免費的線上課程，以瞭解各種新的技巧，並利用逐步指引來探索 Microsoft 產品和服務。
         <br>
-        [開始學習](https://docs.microsoft.com/learn/browse/?terms=web)
+        [開始學習](/learn/browse/?terms=web)
     :::column-end:::
 :::row-end:::
 

@@ -19,8 +19,8 @@
     - name: Windows 終端機
       href: /windows/terminal/
     - name: Windows 封裝管理員
-      href: /windows/package-manager/
+      href: ../package-manager/index.md
     - name: 適用於 Windows 的 Docker Desktop \(英文\)
-      href: /windows/dev-environment/docker/overview/
+      href: ../dev-environment/docker/overview.md
     - name: Azure 雲端服務
       href: /azure/

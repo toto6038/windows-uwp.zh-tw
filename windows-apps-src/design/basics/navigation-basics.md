@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c5dc119edefbdd3ef4dd155c9de9d2e69fee193b
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 36a5489ab4fa278163fd5fad53be4d28156d4cf4
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784769"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804455"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 
@@ -224,17 +224,17 @@ ms.locfileid: "102784769"
         
 :::row:::
     :::column:::
-        ![主要詳細資料影像](images/nav/thumbnail-master-detail.svg)
+        ![列出詳細資料影像](images/nav/thumbnail-list-detail.svg)
     :::column-end:::
     :::column span="2":::
-        [**主要/詳細資料**](../controls-and-patterns/master-details.md)
+        [**清單/詳細資料**](../controls-and-patterns/list-details.md)
 
-顯示項目的清單 (主要檢視)。 選取在詳細區段中顯示其相對應頁面的項目。 使用時機：
+顯示專案清單。 選取在詳細區段中顯示其相對應頁面的項目。 使用時機：
         
 - 您預期使用者會在子項目之間頻繁切換。
 - 您想讓使用者對個別項目或項目群組執行高層級操作 (例如刪除或排序)，並且也想讓使用者能夠檢視或更新每個項目的詳細資料。
 
-主要/詳細資料適合電子郵件收件匣、連絡人清單及資料項目。
+清單/詳細資料非常適合電子郵件收件匣、連絡人清單和資料輸入。
 :::row-end:::
 
 :::row:::

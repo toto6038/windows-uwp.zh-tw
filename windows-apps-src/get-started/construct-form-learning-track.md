@@ -1,17 +1,17 @@
 ---
 title: 了解追蹤建構和設定表單
 description: 了解如何在通用 Windows 平台 (UWP) 應用程式中，建構及設定強固的表單以處理大量資訊的輸入。
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解追蹤, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 86d352aff0b091a698e4b91cbee9cfdc8b1f8340
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 9d9fe2ee2c4d68084460293f91f65b728fabd4da
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784659"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804972"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -144,7 +144,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 隨時回顧我們已連結的文件，並在您的表單中進行實驗，新增新的 UI 功能，並進一步修改使用者體驗。 如果您想要透過更詳細的版面配置功能獲得逐步指導方針，請參閱我們的[調適型版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)
 
-表單也不一定要存在於清理中-您可以進一步將其內嵌在 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [NavigationView](../design/controls-and-patterns/navigationview.md)中。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的[事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
+表單也不一定要存在於真空中，您可以進一步將其內嵌在 [清單/詳細資料模式](../design/controls-and-patterns/list-details.md) 或 [NavigationView](../design/controls-and-patterns/navigationview.md)中。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的[事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
@@ -156,7 +156,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 |------|---------------|
 | [適用於表單的控制項](../design/controls-and-patterns/forms.md#input-controls) | 用於建立表單的實用輸入控制項清單，以及在什麼地方使用它們的基本指導方針。 |
 | [方格](/uwp/api/Windows.UI.Xaml.Controls.Grid) | 用於在多列與多欄版面配置中排列控制項的面板。 |
-| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | 適用於排列對應於其他元素與面板界限之項目的面板。 |
+| [RelativePanel](/uwp/api/Windows.UI.Xaml.Controls.RelativePanel) | 用來排列專案相對於其他元素和麵板邊界的面板。 |
 | [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) | 適用於在單一水平或垂直行中排列元素的面板。 |
 | [VisualState](/uwp/api/Windows.UI.Xaml.VisualState) | 當他們在特定狀態下，可讓您設定的 UI 元素的外觀。 |
 
@@ -169,7 +169,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 | [事件概觀](../xaml-platform/events-and-routed-events-overview.md) | 新增與建構事件以處理 UI 動作的詳細資訊。 |
 | [表單](../design/controls-and-patterns/forms.md) | 建立表單的整體指導方針。 |
 | [版面配置面板](../design/layout/layout-panels.md) | 提供版面配置面板類型的概觀，以及使用這些類型的位置。 |
-| [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) | 設計模式可在一個或多個表單中實作。 |
+| [清單/詳細資料模式](../design/controls-and-patterns/list-details.md) | 設計模式可在一個或多個表單中實作。 |
 | [NavigationView](../design/controls-and-patterns/navigationview.md) | 一個控制項可包含一個或多個表單。 |
 | [回應式設計](../design/layout/responsive-design.md) | 大型回應式設計原則的概觀。 |
 | [使用 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md) | 視覺狀態和其他回應式設計實作的特定資訊。 |

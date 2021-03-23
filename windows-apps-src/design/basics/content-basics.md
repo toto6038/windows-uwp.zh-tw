@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3933910d77249476e76c4d87dfd96af66bd418a8
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: 4f076911fc1ed4770c9f1d69125c4fc6d0cecdf9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93031572"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804864"
 ---
 # <a name="content-design-basics-for-windows-apps"></a>Windows 應用程式的內容設計基本知識
 
@@ -39,11 +39,11 @@ ms.locfileid: "93031572"
 集合可讓使用者瀏覽內容或資料群組。 [方格檢視](../controls-and-patterns/item-templates-gridview.md)是相片或媒體為主內容的理想選擇，而[清單檢視](../controls-and-patterns/item-templates-listview.md)是文字為主內容或資料的理想選擇。
 
 
-### <a name="masterdetail"></a>主要/詳細資料
+### <a name="listdetail"></a>清單/詳細資料
 
-![主要詳細資料](images/content-basics/master-detail.png)
+![清單詳細資料](images/content-basics/list-detail.png)
 
-[主要/詳細資料](../controls-and-patterns/master-details.md)模型是由清單檢視 (主要) 與內容檢視 (詳細資料) 所組成。 這兩個窗格都是固定的，並可垂直捲動。 清單項目與內容檢視之間有清楚的關係：只要選取主要檢視中的項目，詳細資料檢視就會對應更新。 除了提供詳細資料檢視瀏覽之外，還可新增和移除主要檢視中的項目。
+[清單/詳細資料](../controls-and-patterns/list-details.md)模型是由清單視圖和內容視圖組成 (詳細資料) 。 這兩個窗格都是固定的，並可垂直捲動。 清單專案和內容視圖之間有清楚的關聯性：已選取清單視圖中的專案，而且詳細資料檢視也會更新。 除了提供詳細資料檢視導覽之外，還可以加入和移除清單視圖中的專案。
 
 ### <a name="details"></a>詳細資料
 

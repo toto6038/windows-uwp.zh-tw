@@ -6,12 +6,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40752da17591c9eca16f46fbd244d4507a38b1fb
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
+ms.openlocfilehash: 178ab2e8787621b6df42cbb850895c058bb3eb7e
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91220001"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804902"
 ---
 # <a name="animations-in-xaml"></a>XAML 中的動畫
 
@@ -28,7 +28,7 @@ Windows 執行階段動畫庫中的動畫有下列優點：
 
 例如，當使用者將項目新增到清單時，新項目不會立即出現在清單中，新項目會以動畫方式就定位。 清單中的其他項目則會在短時間內，以動畫方式移至它們的新位置，以便將空間讓給新增的項目。 對使用者而言，這裡的轉換行為會使控制項互動更為明顯。
 
-Windows 10 版本 1607 針對實作動畫引進新的 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API，元素會在瀏覽期間顯示在檢視之間的動畫。 這個 API 的使用模式與其他動畫程式庫 API 不同。 **ConnectedAnimationService** 的用法涵蓋在[參考頁面](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)。
+Windows 10 版本 1607 針對實作動畫引進新的 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API，元素會在瀏覽期間顯示在檢視之間的動畫。 這個 API 的使用模式與其他動畫程式庫 API 不同。 **ConnectedAnimationService** 的用法涵蓋在 [參考頁面](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)。
 
 然而動畫庫無法為每種可能的狀況提供動畫。 在某些狀況下，您可能會希望以 XAML 建立自訂動畫。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。
 
@@ -40,15 +40,15 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 
 -   *主題轉換* 會在 UI 中的某些條件變更時自動套用，其中涉及來自預先定義 WINDOWS 執行階段 XAML UI 類型的控制項或元素。 這些都稱為 *主題轉換* ，因為動畫支援 Windows 外觀和操作，並定義當應用程式從某個互動模式變更為另一個互動模式時，針對特定 UI 案例的用途。 這些佈景主題轉換是動畫庫的一部分。
 -   *主題動畫* 是預先定義之 WINDOWS 執行階段 XAML UI 類型的一個或多個屬性的動畫。 佈景主題動畫與佈景主題轉換不同，因為佈景主題動畫會針對某個特定元素，並存在於某個控制項內的特定視覺狀態中，而佈景主題轉換則會指派給存在於視覺狀態外部控制項的屬性，而且會影響這些狀態之間的轉換。 許多 Windows 執行階段 XAML 控制項在屬於其控制項範本一部分的腳本內，都包含佈景主題動畫以及由視覺狀態觸發的動畫。 只要您沒有修改範本，您所擁有的這些內建佈景主題動畫就可供您 UI 中的控制項使用。 不過，如果您取代了範本，則也將移除內建的控制項佈景主題動畫。 若要回復這些佈景主題動畫，您必須定義一個腳本，在控制項的這組視覺狀態內包含佈景主題動畫。 您也可以從不在視覺狀態內的腳本執行佈景主題動畫，並使用 [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin) 方法啟動這些佈景主題動畫，但這比較少見。 佈景主題動畫是動畫庫的一部分。
--   當控制項從其定義的其中一個視覺狀態轉換成另一個狀態時，就會套用*視覺效果轉換*。 它們是您撰寫的自訂動畫，通常與您針對控制項撰寫的自訂範本以及該範本內的視覺狀態定義有關。 這個動畫只會在狀態與狀態之間執行；執行時間通常很短，頂多只有幾秒鐘。 如需詳細資訊，請參閱[視覺狀態的腳本動畫的 "VisualTransition" 區段](/previous-versions/windows/apps/jj819808(v=win.10))。
+-   當控制項從其定義的其中一個視覺狀態轉換成另一個狀態時，就會套用 *視覺效果轉換*。 它們是您撰寫的自訂動畫，通常與您針對控制項撰寫的自訂範本以及該範本內的視覺狀態定義有關。 這個動畫只會在狀態與狀態之間執行；執行時間通常很短，頂多只有幾秒鐘。 如需詳細資訊，請參閱[視覺狀態的腳本動畫的 "VisualTransition" 區段](/previous-versions/windows/apps/jj819808(v=win.10))。
 -   *Storyboarded 動畫* 會在一段時間內建立 Windows 執行階段相依性屬性值的動畫。 腳本可定義為視覺轉換的一部分，或是在執行階段由應用程式所觸發。 如需詳細資訊，請參閱[腳本動畫](storyboarded-animations.md)。 如需相依性屬性及其存在位置的詳細資訊，請參閱[相依性屬性概觀](../../xaml-platform/dependency-properties-overview.md)。
--   新的[**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API 所提供的*連接動畫*可讓開發人員輕鬆地建立一個效果，讓專案在導覽期間顯示于視圖之間的動畫。 Windows 10 版本 1607 起可以取得此 API。 如需詳細資訊，請參閱 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)。
+-   新的 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice) API 所提供的 *連接動畫* 可讓開發人員輕鬆地建立一個效果，讓專案在導覽期間顯示于視圖之間的動畫。 Windows 10 版本 1607 起可以取得此 API。 如需詳細資訊，請參閱 [**ConnectedAnimationService**](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)。
 
 ## <a name="animations-available-in-the-library"></a>動畫庫中可用的動畫
 
 動畫庫提供下列動畫。 按一下動畫名稱，以深入了解動畫的主要使用狀況、定義動畫的方式，以及查看動畫的範例。
 
--   [頁面轉換](#page-transition)：在[**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)中以動畫方式進行頁面轉換。
+-   [頁面轉換](#page-transition)：在 [**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)中以動畫方式進行頁面轉換。
 -   [內容和入場轉換](#content-transition-and-entrance-transition)：讓一個或一組內容以動畫方式進入或離開檢視。
 -   [淡入/淡出以及淡入與淡出](#fade-in-out-and-crossfade)：顯示暫時性元素或控制項，或重新整理內容區域。
 -   [指標向上/向下](#pointer-up-down)：在點選或按一下磚時提供的視覺化回饋。
@@ -68,7 +68,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 
 使用內容轉換動畫 ([**ContentThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.ContentThemeTransition))，將內容片段或一組內容移入或移出目前的檢視。 例如，內容轉換動畫會顯示最初載入頁面時或變更頁面區段內容時，尚未準備顯示的內容。
 
-[**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 代表先載入頁面或大型 UI 區段時可套用至內容的動作。 因此在內容第一次出現時，可以提供與內容變更不同的回饋。 [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 等同於具預設參數的 [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)，但可在[**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)之外使用。
+[**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 代表先載入頁面或大型 UI 區段時可套用至內容的動作。 因此在內容第一次出現時，可以提供與內容變更不同的回饋。 [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) 等同於具預設參數的 [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition)，但可在 [**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)之外使用。
  
  
 <span id="fade-in-out-and-crossfade"/>
@@ -134,7 +134,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 | 任何 UI 容器的內容 | [**ContentThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
 | 用於控制項，或者沒有其他適用的動畫 | [**FadeInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation) 和 [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) |
 
- 
+ 
 
 ## <a name="transition-animation-examples"></a>轉換動畫範例
 
@@ -293,7 +293,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 | API | 描述 |
 |-----|-------------|
-| [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) | 針對[**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)中的頁面瀏覽，提供 Windows 個人化動畫效果。 |
+| [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) | 針對 [**畫面**](/uwp/api/Windows.UI.Xaml.Controls.Frame)中的頁面瀏覽，提供 Windows 個人化動畫效果。 |
 | [**AddDeleteThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition) | 提供控制項新增或刪除子項或內容時的動畫轉換行為。 通常控制項就是一個項目容器。 |
 | [**ContentThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.ContentThemeTransition) | 提供控制項內容變更時的動畫轉換行為。 除了 [**AddDeleteThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition) 之外，您也可以套用此項目。 |
 | [**EdgeUIThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition) | 為 (小) 邊緣 UI 轉換提供動畫轉換行為。 |
@@ -303,7 +303,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 | [**ReorderThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.ReorderThemeTransition) | 提供清單檢視控制項項目變更順序時的動畫轉換行為。 通常會在拖放作業時產生這種情況。 不同的控制項和佈景主題會具備不同的動畫特性。 |
 | [**RepositionThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition) | 提供控制項變更位置時的動畫轉換行為。 |
 
- 
+ 
 
 ## <a name="theme-animation-examples"></a>佈景主題動畫範例
 
@@ -349,9 +349,9 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 與轉換動畫不同，佈景主題動畫沒有自動執行的內建觸發程序 (轉換)。 當您以 XAML 定義佈景主題動畫時，必須使用 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 以包含該佈景主題動畫。 您也可以變更動畫的預設行為。 例如，可藉由提高 [**FadeOutThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation) 上的 [**Duration**](/uwp/api/windows.ui.xaml.media.animation.timeline.duration) 時間值，使淡出的速度變慢。
 
-**注意**   基於顯示基本動畫技術的目的，我們使用應用程式程式碼，藉由呼叫腳本的方法來啟動[**動畫。**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 您可以使用 [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin)、[**Stop**](/uwp/api/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) 與 [**Resume**](/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](/previous-versions/windows/apps/jj819808(v=win.10))主題的一部分。
+**注意：** 基於說明基本動畫技術的目的，我們將使用應用程式程式碼呼叫 [**Storyboard**](/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard) 的方法來啟動動畫。 您可以使用 [**Begin**](/uwp/api/windows.ui.xaml.media.animation.storyboard.begin)、[**Stop**](/uwp/api/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](/uwp/api/windows.ui.xaml.media.animation.storyboard.pause) 與 [**Resume**](/uwp/api/windows.ui.xaml.media.animation.storyboard.resume) **Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](/previous-versions/windows/apps/jj819808(v=win.10))主題的一部分。
 
- 
+ 
 
 您可以在 UI 元素套用數個其他佈景主題動畫，以建立動畫效果。 這些 API 的名稱都包含 "ThemeAnimation"：
 
@@ -369,10 +369,10 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**RepositionThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation) | 重新放置物件時套用的預先設定動畫。 |
 | [**SplitCloseThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation) | 隱藏目標 UI 的預先設定動畫，會使用 [**ComboBox**](/uwp/api/windows.ui.xaml.controls.combobox) 開啟與關閉樣式中的動畫。 |
 | [**SplitOpenThemeAnimation**](/uwp/api/Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation) | 顯示目標 UI 的預先設定動畫，會使用 [**ComboBox**](/uwp/api/windows.ui.xaml.controls.combobox) 開啟與關閉樣式中的動畫。 |
-| [**DrillInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation) | 顯示使用者在邏輯階層中正向瀏覽時執行的預先設定動畫，例如從主要頁面瀏覽至詳細資料頁面。 |
-| [**DrillOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation) | 顯示使用者在邏輯階層中反向瀏覽時執行的預先設定動畫，例如從詳細資料頁面瀏覽至主要頁面。 |
+| [**DrillInThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation) | 表示當使用者在邏輯階層中向前導覽時所執行的預先設定動畫，例如從清單頁面到詳細資料頁面。 |
+| [**DrillOutThemeAnimation**](/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation) | 表示當使用者在邏輯階層中向後（例如從詳細資料頁面到清單頁面）向前導覽時，所執行的預先設定動畫。 |
 
- 
+ 
 
 ## <a name="create-your-own-animations"></a>建立自己的動畫
 
@@ -382,6 +382,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 您以 XAML 定義控制項之視覺狀態的一個狀況是，您將定義自訂腳本動畫所在 XAML 中最大的應用程式 UI 定義區域。 這麼做的原因是，您要建立新的控制項類別，或是您要在其控制項範本中，為具有視覺狀態的現有控制項重新建立範本。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](/previous-versions/windows/apps/jj819808(v=win.10))。
 
- 
+ 
 
- 
+ 

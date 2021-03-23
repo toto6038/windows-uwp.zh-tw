@@ -1,17 +1,17 @@
 ---
 title: 學習追蹤 - 在清單中顯示客戶
 description: 了解您必須執行什麼作業來在清單中顯示 Customer 物件的集合。
-ms.date: 05/07/2018
+ms.date: 03/17/2021
 ms.topic: article
 keywords: get started, uwp, windows 10, learning track, data binding, list, 開始使用, 學習追蹤, 資料繫結, 清單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 097105d16d6d17807235ab61d36ab1fe185c8ca3
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: bf116dc1e7861cb9b135b57bc8be236b4ad2bb9c
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165052"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804242"
 ---
 # <a name="display-customers-in-a-list"></a>在清單中顯示客戶
 
@@ -19,11 +19,11 @@ ms.locfileid: "89165052"
 
 這不是教學課程。 如果您需要參考教學課程，請參閱我們的[資料繫結教學課程](../data-binding/xaml-basics-data-binding.md)，其能為您提供逐步引導體驗。
 
-作為開始，我們將快速討論資料繫結，包含其內容和運作方式。 然後我們會將 **List View** 新增至 UI，新增資料繫結，然後使用額外功能自訂該資料繫結。
+我們將從資料系結的快速討論開始，也就是它的運作方式。 然後我們會將 **List View** 新增至 UI，新增資料繫結，然後使用額外功能自訂該資料繫結。
 
 ## <a name="what-do-you-need-to-know"></a>您需要知道哪些事項？
 
-資料繫結是在應用程式的 UI 中顯示其資料的方式。 這可在您的應用程式中實現*不同考量的分離*，以讓您的 UI 與其他程式碼區分開來。 這會建立較為清楚的概念模型，以讓您可更輕鬆地讀取和維護它。
+資料繫結是在應用程式的 UI 中顯示其資料的方式。 這可在您的應用程式中實現 *不同考量的分離*，以讓您的 UI 與其他程式碼區分開來。 這會建立更簡潔的概念模型，讓您更容易讀取和維護。
 
 每個資料繫結都有兩個部分：
 
@@ -95,18 +95,18 @@ public sealed partial class MainPage : Page
 [資料繫結概觀](../data-binding/data-binding-quickstart.md#binding-to-a-collection-of-items)在其有關繫結至項目集合的小節中，會引導您處理類似的問題。 我們的範例會示範下列重要步驟：
 
 * 在 UI 的程式碼後置中，建立 **ObservableCollection<T>** 類型的屬性來保存您的 Customer 物件。
-* 將 ListView 的 **ItemSource** 繫結至該屬性。
+* 將您的 ListView **ItemSource** 系結至該屬性。
 * 為 ListView 提供基本的 **ItemTemplate**，其將會設定每個項目在清單中的顯示方式。
 
 如果您想要自訂版面配置、新增項目選取，或是調整您剛建立的 **DataTemplate**，您可以回頭查看 [ListView](../design/controls-and-patterns/listview-and-gridview.md) 文件。 如果您想要編輯客戶，該怎麼辦？
 
 ## <a name="edit-your-customers-through-the-ui"></a>透過 UI 編輯客戶
 
-您已在清單中顯示客戶，但資料繫結可讓您達成更多工作。 您甚至可以直接從 UI 編輯您的資料。 若要這樣做，我們先來討論資料繫結的三個模式：
+您已將客戶顯示在清單中，但資料系結可讓您進行更多作業。 您甚至可以直接從 UI 編輯您的資料。 若要這樣做，讓我們先談談資料系結的三種模式：
 
-* *單次*：此資料繫結只會啟用一次，且不會對變更做出反應。
-* *單向*：此資料繫結會以對資料來源所做的任何變更來更新 UI。
-* *雙向*：此資料繫結會以對資料來源所做的任何變更來更新 UI，也會以在 UI 內所做的任何變更來更新資料。
+* 單次：此資料系結只會啟用 *一次，* 且不會回應變更。
+* *單向*：此資料繫結將用對資料來源所做的任何變更來更新 UI。
+* *雙向*：此資料繫結將用對資料來源所做的任何變更來更新 UI，並且也會用在 UI 內所做的任何變更來更新資料。
 
 如果您已按照先前的程式碼片段執行，您所做的繫結會使用 x:Bind 且不指定模式，這使它成為「單次」繫結。 如果您想要直接從 UI 編輯您的客戶，您需要將它變更為「雙向」繫結，來使資料的變更會傳送回 Customer 物件。 [深入了解資料繫結](../data-binding/data-binding-in-depth.md)中會提供詳細資訊。
 
@@ -155,7 +155,7 @@ public class Customer : INotifyPropertyChanged
 
 ## <a name="going-further"></a>更進一步
 
-您已經建立具有雙向繫結的客戶清單，歡迎返回我們先前為您提供的文件連結，並進一步實驗。 如果您想要基本和進階繫結的逐步解說，也可以查看我們的[資料繫結教學課程](../data-binding/xaml-basics-data-binding.md)；您也可以研究[主要/詳細資訊模式](../design/controls-and-patterns/master-details.md)之類的控制項，以開發出更為強大的 UI。
+現在您已經建立了具有雙向系結的客戶清單，您可以隨意回頭查看我們已連結的檔並進行實驗。 如果您需要基本和 advanced 系結的逐步解說，或調查[清單/詳細資料模式](../design/controls-and-patterns/list-details.md)等控制項，以建立更健全的 UI，您也可以查看我們的資料系結[教學](../data-binding/xaml-basics-data-binding.md)課程。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
@@ -163,28 +163,28 @@ public class Customer : INotifyPropertyChanged
 
 ### <a name="useful-apis"></a>實用的 API
 
-| API | 說明 |
+| API | 描述 |
 |------|---------------|
-| [DataTemplate](/uwp/api/Windows.UI.Xaml.DataTemplate) \(英文\) | 描述資料物件的視覺化結構，以允許在 UI 中顯示特定元素。 |
-| [x:Bind](../xaml-platform/x-bind-markup-extension.md) | 關於建議的 x:Bind 標記延伸的文件。 |
+| [資料範本](/uwp/api/Windows.UI.Xaml.DataTemplate) | 描述資料物件的視覺化結構，以允許在 UI 中顯示特定元素。 |
+| [x：Bind](../xaml-platform/x-bind-markup-extension.md) | 關於建議的 x:Bind 標記延伸的文件。 |
 | [繫結](../xaml-platform/binding-markup-extension.md) | 關於較舊的 Binding 標記延伸的文件。 |
-| [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) \(英文\) | 以垂直堆疊顯示資料項目的 UI 控制項。 |
-| [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) \(英文\) | 用來在 UI 中顯示可編輯文字資料的基本文字控制項。 |
+| [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) | 以垂直堆疊顯示資料項目的 UI 控制項。 |
+| [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) | 用來在 UI 中顯示可編輯文字資料的基本文字控制項。 |
 | [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) \(英文\) | 使資料變成可觀察，並將其提供至資料繫結的介面。 |
-| [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) \(英文\) | 此類別的 **ItemsSource** 屬性能允許 ListView 繫結至資料來源。 |
+| [ItemsControl](/uwp/api/Windows.UI.Xaml.Controls.ItemsControl) | 此類別的 **ItemsSource** 屬性能允許 ListView 繫結至資料來源。 |
 
 ### <a name="useful-docs"></a>實用的文件
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 |-------|----------------|
 | [深入了解資料繫結](../data-binding/data-binding-in-depth.md) | 資料繫結原則的基本概觀 |
-| [資料繫結概觀](../data-binding/data-binding-quickstart.md) | 有關資料繫結的詳細概念性資訊。 |
-| [清單檢視](../design/controls-and-patterns/listview-and-gridview.md) | 建立和設定 ListView 的相關資訊，包括 **DataTemplate** 的實作 |
+| [資料系結總覽](../data-binding/data-binding-quickstart.md) | 有關資料繫結的詳細概念性資訊。 |
+| [清單視圖](../design/controls-and-patterns/listview-and-gridview.md) | 建立和設定 ListView 的相關資訊，包括 **DataTemplate** 的實作 |
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
 | 程式碼範例 | 說明 |
 |-----------------|---------------|
 | [資料繫結教學課程](../data-binding/xaml-basics-data-binding.md) | 資料繫結基本概念的逐步引導體驗。 |
-| [ListView 和 GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) \(英文\) | 透過資料繫結探索更詳細的 ListView。 |
-| [QuizGame](https://github.com/Microsoft/Windows-appsample-networkhelper) \(英文\) | 查看資料繫結的運作方式，包括適用於 **INotifyPropertyChanged** 之標準實作的 **BindableBase** 類別 (位於 Common 資料夾中)。 |
+| [ListView 和 GridView](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView) | 透過資料繫結探索更詳細的 ListView。 |
+| [QuizGame](https://github.com/Microsoft/Windows-appsample-networkhelper) | 查看資料繫結的運作方式，包括適用於 **INotifyPropertyChanged** 之標準實作的 **BindableBase** 類別 (位於 Common 資料夾中)。 |

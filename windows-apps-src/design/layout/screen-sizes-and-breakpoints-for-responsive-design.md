@@ -6,16 +6,16 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c7d1d0069c074b95bfe93ee5894854734e3a3052
-ms.sourcegitcommit: eda7bbe9caa9d61126e11f0f1a98b12183df794d
-ms.translationtype: HT
+ms.openlocfilehash: a18094ad4cc76df41b12b9746ecdea3938d87d0b
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91218511"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804582"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
-Windows 應用程式可在執行 Windows，包括手機、平板電腦、桌機、電視，以及更多的任何裝置上執行。 Windows 10 生態系統跨越大量裝置目標與螢幕大小，與其針對每個裝置最佳化您的 UI，我們建議設計幾個重要的寬度類別 (也稱為「中斷點」) ： 
+Windows 應用程式可在執行 Windows，包括手機、平板電腦、桌機、電視，以及更多的任何裝置上執行。 我們建議使用跨 Windows 10 生態系統的大量裝置目標與螢幕大小，而不是最佳化您每個裝置的 UI，來設計幾個重要的寬度類別 (也稱為「中斷點」) ： 
 - 小型 (小於 640 像素)
 - 中型 (641 - 1007 像素)
 - 大型 (1008 和更高像素)
@@ -82,7 +82,7 @@ UWP 應用程式會自動調整您的 UI 以確保應用程式在所有 Windows 
 - 一次使用 1 個欄/區域。
 - 使用圖示來表示搜尋 (不顯示搜尋方塊)。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以重疊模式放置，以節省螢幕空間。
-- 如果您使用[主要詳細資料模式](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。
+- 如果您使用的是 [ [清單詳細資料](../controls-and-patterns/list-details.md)] 模式，請使用堆疊簡報模式來儲存螢幕空間。
 
 ### <a name="medium"></a>中
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。

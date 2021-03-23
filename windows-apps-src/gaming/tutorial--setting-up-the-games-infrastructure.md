@@ -6,17 +6,17 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 86c7b80ba7125547c2a45dae434c40a67a758b0d
-ms.sourcegitcommit: 8bface2162e091999b1cf2218340edda2389da89
+ms.openlocfilehash: 8e2e93ad43f866e26b448e2cbcd2cb480054cbc9
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "103496695"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804262"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
 > [!NOTE]
-> 本主題是使用 DirectX 教學課程系列 [建立簡單的通用 Windows 平臺 (UWP) 遊戲](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 該連結的主題會設定數列的內容。
+> 本主題是使用 DirectX 教學課程系列 [建立簡單通用 Windows 平臺 (UWP) 遊戲](tutorial--create-your-first-uwp-directx-game.md) 的一部分。 該連結的主題會設定數列的內容。
 
 開發遊戲的第一個步驟是在 Microsoft Visual Studio 中建立專案。 當您設定專門用於遊戲開發的專案之後，您稍後可以將其重新使用為一種範本。
 
@@ -30,13 +30,13 @@ ms.locfileid: "103496695"
 ## <a name="create-a-new-project-in-visual-studio"></a>在 Visual Studio 中建立新專案
 
 > [!NOTE]
-> 如需安裝和為 C++/WinRT 開發設定 Visual Studio 的相關資訊&mdash;包括如何安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援)&mdash;，請參閱 [C++/WinRT 的 Visual Studio 支援](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如需安裝和為 C++/WinRT 開發設定 Visual Studio 的相關資訊&mdash;包括如何安裝和使用 C++/WinRT Visual Studio 延伸模組 (VSIX) 與 NuGet 套件 (一起提供專案範本和建置支援)&mdash;，請參閱 [C++/WinRT 的 Visual Studio 支援](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
-首先安裝 (或更新版本，) 最新版的 c + +/WinRT Visual Studio 擴充功能 (VSIX) ;請參閱上面的附注。 然後，在 Visual Studio 中，根據 **Core App (c + +/WinRT)** 專案範本建立新專案。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
+首先安裝 (或更新) 最新版的 c + +/WinRT Visual Studio 延伸模組 (VSIX) ;請參閱上面的附注。 然後，在 Visual Studio 中，根據 **Core 應用程式 (c + +/WinRT)** 專案範本建立新專案。 以 Windows SDK 最新的正式推出版本 (即非預覽版本) 為目標。
 
 ## <a name="review-the-app-class-to-understand-iframeworkviewsource-and-iframeworkview"></a>查看 **應用程式** 類別以瞭解 **IFrameworkViewSource** 和 **IFrameworkView**
 
-在您的核心應用程式專案中，開啟原始程式碼檔 `App.cpp` 。 在中， **應用程式** 類別的實，代表應用程式及其生命週期。 當然，在這種情況下，我們知道應用程式是一項遊戲。 但是，我們會將它稱為 *應用程式* ，以深入探討通用 Windows 平臺 (UWP) 應用程式如何初始化。
+在您的核心應用程式專案中，開啟原始程式碼檔 `App.cpp` 。 在中， **應用程式** 類別的實，代表應用程式及其生命週期。 當然，在這種情況下，我們知道應用程式是一項遊戲。 但是，我們會將它稱為 *應用程式* ，以更普遍地深入瞭解通用 WINDOWS 平臺 (UWP) 應用程式如何初始化。
 
 ### <a name="the-wwinmain-function"></a>WWinMain 函式
 
@@ -159,9 +159,9 @@ void GameMain::Run()
 
 ## <a name="review-and-update-the-packageappxmanifest-file"></a>檢視並更新 package.appxmanifest 檔案
 
-**Package.appxmanifest** 檔案包含 UWP 專案的相關中繼資料。 這些中繼資料是用來封裝和啟動您的遊戲，以及提交到 Microsoft Store。 此檔案也包含播放程式系統用來提供遊戲需要執行之系統資源存取權的重要資訊。
+**Package.appxmanifest** 檔案包含 UWP 專案的相關中繼資料。 這些中繼資料會用於封裝和啟動您的遊戲，以及提交至 Microsoft Store。 此檔案也包含播放程式系統用來提供遊戲需要執行之系統資源存取權的重要資訊。
 
-按兩下 [**方案** **package.appxmanifest** ] 中的封裝，以啟動 **資訊清單設計** 工具。
+按兩下 **方案總管** 中的 **package.appxmanifest** 檔案，以啟動 **資訊清單設計** 工具。
 
 ![package.appx 資訊清單編輯器的螢幕擷取畫面。](images/simple-dx-game-setup-app-manifest.png)
 

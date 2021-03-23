@@ -8,12 +8,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b3f3388951dc2e3d854fcb97269e5bfb0449a6e
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: d1608c88473bf8fdf615141c18ab8a85aed07797
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032401"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804632"
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
@@ -62,9 +62,9 @@ ms.locfileid: "93032401"
 
 對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的 [更多] 溢位功能表內。
 
-**主要/詳細資料**
+**清單-詳細資料**
 
-不要將應用程式設定的進入點深藏在主要/詳細資料窗格內，而是使它成為主要窗格最上層的最後一個釘選項目。
+不要 burying 清單-詳細資料窗格中的應用程式設定進入點，而是將它設為 [清單] 窗格最上層的最後一個釘選項目。
 
 ## <a name="layout"></a>版面配置
 

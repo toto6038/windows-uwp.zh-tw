@@ -7,19 +7,19 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10、uwp、win32、desktop、快顯通知、傳送快顯通知、傳送本機快顯通知、桌面橋接器、msix、sparse 套件、c + +、cpp、>cplusplus、WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 1913eef17ac768b8d7e1f047ac318da9aa1b2925
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: ed35d013d518ac4662bf43318c0dcbcfe3423e63
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034491"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804272"
 ---
 # <a name="send-a-local-toast-notification-from-win32-c-wrl-apps"></a>從 Win32 c + + WRL 應用程式傳送本機快顯通知
 
 Win32 應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overview) 應用程式、使用 [稀疏套件](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) 來取得套件身分識別的應用程式，以及傳統的非封裝 Win32 應用程式) 可以傳送互動式快顯通知，就像 Windows 應用程式一樣。 不過，Win32 應用程式有幾個特殊步驟是因為不同的啟用配置，以及如果您不是使用 MSIX 或稀疏套件，可能缺乏套件識別。
 
 > [!IMPORTANT]
-> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C#](send-local-toast-desktop.md)。
+> 如果您在撰寫 UWP app，請參閱 [UWP 文件](send-local-toast.md)。 對於其他傳統型語言，請參閱[傳統型 C#](./send-local-toast.md)。
 
 
 ## <a name="step-1-enable-the-windows-10-sdk"></a>步驟 1：啟用 Windows 10 SDK
@@ -29,11 +29,11 @@ Win32 應用程式 (包括封裝 [MSIX](/windows/msix/desktop/source-code-overvi
 1. 新增 `runtimeobject.lib` 到 **\[其他相依性\]**
 2. 以 Windows 10 SDK 為目標
 
-以滑鼠右鍵按一下您的專案，選取 **\[內容\]** 。
+以滑鼠右鍵按一下您的專案，選取 **\[內容\]**。
 
-在上方 **\[設定\]** 功能表中，選取 **\[所有設定\]** ，將下列變更套用至偵錯與發行版本。
+在上方 **\[設定\]** 功能表中，選取 **\[所有設定\]**，將下列變更套用至偵錯與發行版本。
 
-在 **\[連結器 -> 輸入\]** 下方，新增 `runtimeobject.lib` 至 **\[其他相依性\]** 。
+在 **\[連結器 -> 輸入\]** 下方，新增 `runtimeobject.lib` 至 **\[其他相依性\]**。
 
 然後在 **\[一般\]** 下方，確定 **\[Windows SDK 版本\]** 設為 10.0 或更高版本 (而非 Windows 8.1)。
 
@@ -98,9 +98,9 @@ CoCreatableClass(NotificationActivator);
 
 1. **xmlns:com** 的宣告
 2. **xmlns:desktop** 的宣告
-3. 在 **IgnorableNamespaces** 屬性中， **com** 和 **desktop**
-4. 使用步驟 #4 的 GUID，新增 COM 啟動者的 **com:Extension** 。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
-5. **windows.toastNotificationActivation** 的 **desktop:Extension** ，宣告您的快顯通知啟動者 CLSID (步驟 #4 的 GUID)。
+3. 在 **IgnorableNamespaces** 屬性中，**com** 和 **desktop**
+4. 使用步驟 #4 的 GUID，新增 COM 啟動者的 **com:Extension**。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
+5. **windows.toastNotificationActivation** 的 **desktop:Extension**，宣告您的快顯通知啟動者 CLSID (步驟 #4 的 GUID)。
 
 「Package.appxmanifest」
 
@@ -193,7 +193,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 ## <a name="step-7-send-a-notification"></a>步驟 7：傳送通知
 
-傳送通知與 UWP app 相同，除了您將使用 **DesktopNotificationManagerCompat** 來建立 **ToastNotifier** 。 相容性程式庫會自動處理 MSIX/sparse 封裝和傳統 Win32 之間的差異，因此您不需要將程式碼派生。 對於傳統型 Win32，Compat 程式庫會快取您在呼叫 **RegisterAumidAndComServer** 時提供的 AUMID，因此您不必擔心何時要提供或不提供 AUMID。
+傳送通知與 UWP app 相同，除了您將使用 **DesktopNotificationManagerCompat** 來建立 **ToastNotifier**。 相容性程式庫會自動處理 MSIX/sparse 封裝和傳統 Win32 之間的差異，因此您不需要將程式碼派生。 對於傳統型 Win32，Compat 程式庫會快取您在呼叫 **RegisterAumidAndComServer** 時提供的 AUMID，因此您不必擔心何時要提供或不提供 AUMID。
 
 請務必使用如下所示的 **ToastGeneric** 繫結，因為舊版 Windows 8.1 快顯通知範本不會啟用您在步驟 #4 所建立的 COM 通知啟動者。
 
@@ -377,7 +377,7 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 
 ## <a name="step-9-remove-and-manage-notifications"></a>步驟 9：移除和管理通知
 
-移除和管理通知與 UWP app 相同。 不過，我們建議您使用我們的 Compat 程式庫來取得 **DesktopNotificationHistoryCompat** ，使用傳統型 Win32 時就無需擔心提供 AUMID。
+移除和管理通知與 UWP app 相同。 不過，我們建議您使用我們的 Compat 程式庫來取得 **DesktopNotificationHistoryCompat**，使用傳統型 Win32 時就無需擔心提供 AUMID。
 
 ```cpp
 std::unique_ptr<DesktopNotificationHistoryCompat> history;
@@ -438,7 +438,7 @@ if (IsWindows10OrGreater())
 
 ## <a name="known-issues"></a>已知問題
 
-**已修正：按一下快顯通知之後應用程式不會成為焦點** ：在組建 15063 與更早版本中，當我們啟用 COM 伺服器時前景權限無法傳輸至您的應用程式。 因此，當您嘗試將它移動到前景時，您的應用程式只會閃爍。 此問題沒有解決方法。 我們在組建 16299 與更高版本中已修正這個問題。
+**已修正：按一下快顯通知之後應用程式不會成為焦點**：在組建 15063 與更早版本中，當我們啟用 COM 伺服器時前景權限無法傳輸至您的應用程式。 因此，當您嘗試將它移動到前景時，您的應用程式只會閃爍。 此問題沒有解決方法。 我們在組建 16299 與更高版本中已修正這個問題。
 
 
 ## <a name="resources"></a>資源

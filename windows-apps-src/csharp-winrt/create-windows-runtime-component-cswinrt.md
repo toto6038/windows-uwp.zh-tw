@@ -4,28 +4,28 @@ title: '建立 c #/WinRT 元件並從 c + +/WinRT 使用它'
 ms.date: 01/28/2021
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f5157f97163a72ccce1ce9fc3f560fb4e16b1df
-ms.sourcegitcommit: 61a874d00991f7ca06466a99a557ef0777bd0f7c
+ms.openlocfilehash: be19b88860be127b0db826dffa22554cb86d21a1
+ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99989648"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104804684"
 ---
 # <a name="walkthrough-create-a-cwinrt-component-and-consume-it-from-cwinrt"></a>逐步解說：建立 c #/WinRT 元件並從 c + +/WinRT 使用它
 
 > [!NOTE]
-> 本文中所述的 c #/WinRT 撰寫支援目前為預覽版本，自 c #/WinRT 版本 1.1.2-發行前版本。210208.6。 在此版本中，它只能用於早期的意見反應和評估。
+> 本文章中所述的 c #/WinRT 撰寫支援目前在 c #/WinRT 1.1.4 版中處於預覽狀態。 在此版本中，它只能用於早期的意見反應和評估。
 
-C #/WinRT 可讓 .NET 5 開發人員使用類別庫專案，在 c # 中撰寫自己的 Windows 執行階段元件。 撰寫的元件可以在原生桌面應用程式中做為封裝參考，或做為專案參考來取用，但有幾項修改。
+C #/WinRT 可讓 .NET 5 + 開發人員使用類別庫專案，在 c # 中撰寫自己的 Windows 執行階段元件。 撰寫的元件可以在原生桌面應用程式中做為封裝參考，或做為專案參考來取用，但有幾項修改。
 
-本逐步解說示範如何使用 c #/WinRT 建立簡單的 Windows 執行階段元件、將元件發佈為 NuGet 套件，以及從 c + +/WinRT 主控台應用程式取用元件。 您可以 [在 Github 上](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo)找到此逐步解說的範例程式碼。
+本逐步解說示範如何使用 c #/WinRT 建立簡單的 Windows 執行階段元件、將元件發佈為 NuGet 套件，以及從 c + +/WinRT 主控台應用程式取用元件。 如需提供本文程式碼的完整範例，請參閱 [c #/WinRT 撰寫範例](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo)。 如需撰寫的詳細資訊，請參閱 [撰寫元件](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md)。
 
 撰寫您的執行時間元件時，請遵循本文中所述的指導方針和類型限制 [。](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) 就內部而言，您的元件中的 Windows 執行階段類型可以使用 UWP 應用程式中允許的任何 .NET 功能。 如需詳細資訊，請參閱適用 [于 UWP 應用程式的 .net](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)。 就外部而言，您的型別成員只能公開其參數和傳回值的 Windows 執行階段類型。
 
 > [!NOTE]
 > 有一些 [對應至 .net 類型](../winrt-components/net-framework-mappings-of-windows-runtime-types.md#uwp-types-that-map-to-net-types-with-a-different-name-andor-namespace)的 Windows 執行階段類型。 這些 .NET 型別可用於 Windows 執行階段元件的公用介面，並且會顯示給元件的使用者，作為對應的 Windows 執行階段類型。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 本逐步解說需要下列工具和元件：
 
@@ -55,7 +55,7 @@ C #/WinRT 可讓 .NET 5 開發人員使用類別庫專案，在 c # 中撰寫自
 
     a. 在方案總管中，以滑鼠右鍵按一下專案節點，然後選取 [ **管理 NuGet 套件**]。
 
-    b. 搜尋 **CsWinRT** NuGet 套件，並安裝最新版本。 本逐步解說使用 c #/WinRT 版本 1.1.2-搶鮮版（210208.6）。
+    b. 搜尋 **CsWinRT** NuGet 套件，並安裝最新版本。 本逐步解說使用 c #/WinRT 1.1.4 版。
 
 3. 加入 `PropertyGroup` 設定數個 c #/WinRT 屬性的新元素。
 
@@ -71,7 +71,7 @@ C #/WinRT 可讓 .NET 5 開發人員使用類別庫專案，在 c # 中撰寫自
     - `CsWinRTComponent`屬性指定您的專案是 Windows 執行階段元件，以便為元件產生 WinMD 檔案。
     - `CsWinRTWindowsMetadata`屬性提供 Windows 中繼資料的來源。 這是版本1.1.1 的必要項。
 
-4. 您可以使用程式庫 **( .cs)** 類別檔案來撰寫您的執行時間類別。 以滑鼠右鍵按一下 **Class1.cs** 檔案，然後將它重新命名為 **Example.cs**。 將下列程式碼加入至這個檔案，這個檔案會將公用屬性和方法加入至執行時間類別。 請記得將您想要在執行時間元件中公開的任何類別標示 **為公開。**
+4. 您可以使用程式庫 **( .cs)** 類別檔案來撰寫您的執行時間類別。 以滑鼠右鍵按一下 **Class1** 檔案，然後將它重新命名為 **.cs**。 將下列程式碼加入至這個檔案，這個檔案會將公用屬性和方法加入至執行時間類別。 請記得將您想要在執行時間元件中公開的任何類別標示 **為公開。**
 
     ```csharp
     namespace AuthoringDemo
@@ -136,36 +136,9 @@ C #/WinRT 撰寫 Windows 執行階段元件可以從原生應用程式使用，�
         
         a. 以滑鼠右鍵按一下 [ **CppConsoleApp** ] 專案，然後選取 [**加入**  ->  **參考**]。 在 [ **專案** ] 節點底下，加入 **AuthoringDemo** 專案的參考。 在此預覽版本中，您也需要從 [**流覽]** 節點將檔案參考加入至 **AuthoringDemo。** 產生的 winmd 檔案可以在 **AuthoringDemo** 專案的輸出目錄中找到。
 
-        b. 針對此預覽，您也必須將下列屬性群組新增至 **CppConsoleApp. .vcxproj**。 若要編輯原生應用程式專案檔案，請先以滑鼠右鍵按一下 **CppConsoleApp** 專案節點，然後選取 **[卸載專案**]。
+3. 若要協助裝載元件，您必須為可啟動的類別註冊新增資訊清單檔。 如需裝載受管理元件的詳細資訊，請參閱 [管理元件裝載](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md)。
 
-        ```xml
-        <PropertyGroup>
-            <TargetFrameworkVersion>net5.0</TargetFrameworkVersion>
-            <TargetFramework>native</TargetFramework>
-            <TargetRuntime>Native</TargetRuntime>
-        </PropertyGroup>
-        ```
-
-3. 若要協助裝載元件，您必須在檔案和資訊清單檔案中新增 runtimeconfig.js。 如需受管理元件裝載的詳細資訊，請參閱 [這些裝載](https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md)檔。
-
-    a. 若要將 runtimeconfig.js加入檔案，請以滑鼠右鍵按一下專案，然後選擇 [ **加入-> 新專案**]。 搜尋 **文字檔** 範本，並將它命名為 **WinRT.Host.runtimeconfig.js**。 貼上下列內容：
-
-    ```json
-    {
-        "runtimeOptions": {
-            "tfm": "net5.0",
-            "rollForward": "LatestMinor",
-            "framework": {
-                "name": "Microsoft.NETCore.App",
-                "version": "5.0.0"
-            }
-        }
-    }
-    ```
-
-    請注意，在此 `tfm` 專案中，您可以使用 DOTNET_ROOT 環境變數參考自訂的獨立 .net 5 安裝。
-
-    b. 若要加入資訊清單檔，請以滑鼠右鍵按一下專案，然後選擇 [ **加入-> 新專案**]。 搜尋 **文字檔** 範本，並將它命名為 **CppConsoleApp.exe 資訊清單**。 貼上下列內容：
+    a. 若要加入資訊清單檔，請以滑鼠右鍵按一下專案，然後選擇 [ **加入-> 新專案**]。 搜尋 **文字檔** 範本，並將它命名為 **CppConsoleApp.exe 資訊清單**。 貼上下列內容：
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -182,9 +155,9 @@ C #/WinRT 撰寫 Windows 執行階段元件可以從原生應用程式使用，�
 
     非封裝的應用程式需要資訊清單檔案。 在此檔案中，您可以使用如上所示的「可以啟動的類別註冊專案」來指定執行時間類別。
 
-4. 在部署專案時，修改專案以在輸出中包含 runtimeconfig.js和資訊清單檔案。 針對 **WinRT.Host.runtimeconfig.json** 和 **CppConsoleApp.exe 資訊清單** 檔案，請在 **方案總管** 中按一下該檔案，然後將 [ **內容** ] 屬性設定為 [ **True**]。 以下是這類內容的範例。
+    b. 修改專案，以在部署專案時將資訊清單檔案包含在輸出中。 按一下 **方案總管** 中 **CppConsoleApp.exe 的資訊清單** 檔，並將 [**內容**] 屬性設定為 [ **True**]。 以下是這類內容的範例。
 
-    ![部署內容](images/deploy-content.png)
+    ![部署內容](images/deploy-content.png) 
 
 5. 在專案的標頭檔底下開啟 **pch** ，然後加入下列程式程式碼來包含您的元件。
 
