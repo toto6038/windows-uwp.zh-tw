@@ -172,8 +172,8 @@
           href: controls-and-patterns/menus.md
     - name: 瀏覽
       items:
-        - name: 主要/詳細資料
-          href: controls-and-patterns/master-details.md
+        - name: 清單/詳細資料
+          href: controls-and-patterns/list-details.md
         - name: 瀏覽檢視
           href: controls-and-patterns/navigationview.md
         - name: 樞紐分析
