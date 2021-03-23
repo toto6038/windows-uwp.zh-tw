@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 撰寫, COM, 元件
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 641d8bd5828fb02321663a6212ce073e228bc657
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: 286c2f87b004622d274b334cfe2852d88ab8cab3
+ms.sourcegitcommit: 0901104aa41f49674a99e6970233416c01166c71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804612"
+ms.locfileid: "104859607"
 ---
 # <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
@@ -24,7 +24,7 @@ C++/ WinRT 的 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 範本
 依預設， **winrt：： implements** 會以無訊息方式忽略傳統 COM 介面。 任何針對傳統 COM 介面發出的 **QueryInterface** (QI) 呼叫都會因為 **E_NOINTERFACE** 而失敗。 根據預設， **winrt：： implements** 僅支援 c + +/WinRT 介面。
 
 * **winrt：： IUnknown** 是 c + +/WinRT 介面，因此 **winrt：： implements** 支援 **winrt：： iunknown** 型介面。
-* **winrt：： implements** 預設不支援 [**：： IInspectable**](/windows/win32/api/inspectable/nn-inspectable-iinspectable) 本身。
+* **winrt：： implements** 預設不支援 [**：： IUnknown**](/windows/win32/api/unknwn/nn-unknwn-iunknown) 本身。
 
 稍後您會看到如何克服預設不支援的案例。 但是，首先要說明一個程式碼範例，以說明預設會發生什麼事。
 
@@ -255,7 +255,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上面的 coclass 的實作遵循的是[使用 C++/WinRT 撰寫 API](./author-apis.md#if-youre-not-authoring-a-runtime-class) 中示範的模式。 因此，您可以使用相同的技巧來實作 COM 介面以及 Windows 執行階段介面。 COM 元件和 Windows 執行階段類別會透過介面公開其功能。 每個 COM 介面最終都是衍生自 [**IUnknown 介面**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)介面。 Windows 執行階段是以 COM 為基礎 &mdash; 差別在於 Windows 執行階段介面最終是衍生自 [**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (而 **IInspectable** 衍生自 **IUnknown**)。
+上面的 coclass 的實作遵循的是[使用 C++/WinRT 撰寫 API](./author-apis.md#if-youre-not-authoring-a-runtime-class) 中示範的模式。 因此，您可以使用相同的技巧來實作 COM 介面以及 Windows 執行階段介面。 COM 元件和 Windows 執行階段類別會透過介面公開其功能。 每個 COM 介面最終都是衍生自 [**IUnknown 介面**](/windows/win32/api/unknwn/nn-unknwn-iunknown)介面。 Windows 執行階段是以 COM 為基礎 &mdash; 差別在於 Windows 執行階段介面最終是衍生自 [**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (而 **IInspectable** 衍生自 **IUnknown**)。
 
 在上述程式碼的 coclass 中，要實作 **INotificationActivationCallback::Activate** 方法，使用者在快顯通知上點擊回呼按鈕時，所呼叫的函式即是該方法。 但是在呼叫該函式之前，需要先建立一個 coclass 執行個體，這是 **IClassFactory::CreateInstance** 函式的工作。
 
