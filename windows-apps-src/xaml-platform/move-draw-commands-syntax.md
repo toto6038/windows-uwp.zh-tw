@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5942dfbcd2f72d456ac352785bce73e75454330
-ms.sourcegitcommit: aa88679989ef3c8b726e1bf5a0ed17c1206a414f
+ms.openlocfilehash: d8fac685e341ab78357bfb2ab3ea4e668a78918a
+ms.sourcegitcommit: 34f532fd023af2849c3e975baf7aa6771d7e53b9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687787"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104893848"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移動與繪製命令語法
 
@@ -20,26 +20,24 @@ ms.locfileid: "92687787"
 
 ## <a name="properties-that-use-move-and-draw-command-strings"></a>使用移動與繪製命令字串的屬性
 
-移動與繪製命令語法受到 XAML 的內部類型轉換器支援，這個轉換器會剖析命令並產生執行階段圖形表示法。 這個表示法基本上是一組可供呈現的已完成向量。 向量本身並不會完成呈現詳細資料；您仍然需要設定元素的其他值。 以 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件來說，您還需要 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)、 [**Stroke**](/uwp/api/windows.ui.xaml.shapes.shape.stroke) 及其他屬性的值，然後該 **Path** 必須以某種方式連接到視覺化樹狀結構。 針對 [**PathIcon**](/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 物件，請設定 [**Foreground**](/uwp/api/windows.ui.xaml.controls.iconelement.foreground) 屬性。
+移動與繪製命令語法受到 XAML 的內部類型轉換器支援，這個轉換器會剖析命令並產生執行階段圖形表示法。 這個表示法基本上是一組可供呈現的已完成向量。 向量本身並不會完成呈現詳細資料；您仍然需要設定元素的其他值。 以 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件來說，您還需要 [**Fill**](/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill)、[**Stroke**](/uwp/api/windows.ui.xaml.shapes.shape.stroke) 及其他屬性的值，然後該 **Path** 必須以某種方式連接到視覺化樹狀結構。 針對 [**PathIcon**](/uwp/api/Windows.UI.Xaml.Controls.PathIcon) 物件，請設定 [**Foreground**](/uwp/api/windows.ui.xaml.controls.iconelement.foreground) 屬性。
 
-Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字串： [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 與 [**PathIcon.Data**](/uwp/api/windows.ui.xaml.controls.pathicon.data)。 如果藉由指定移動與繪製命令來設定其中一個屬性，您通常會將它設為 XAML 屬性值以及該元素的其他必要屬性。 在不探討內容的情況下，它看起來就像以下這樣：
+Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字串：[**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 與 [**PathIcon.Data**](/uwp/api/windows.ui.xaml.controls.pathicon.data)。 如果藉由指定移動與繪製命令來設定其中一個屬性，您通常會將它設為 XAML 屬性值以及該元素的其他必要屬性。 在不探討內容的情況下，它看起來就像以下這樣：
 
 ```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 物件與 [**GeometryGroup**](/uwp/api/Windows.UI.Xaml.Media.GeometryGroup) 物件中的其他 [**Geometry**](/uwp/api/Windows.UI.Xaml.Media.Geometry) 類型結合，然後用來做為 [**Path.Data**](/uwp/api/windows.ui.xaml.shapes.path.data) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
-
 ## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>使用移動與複製命令與使用 **PathGeometry** 比較
 
-對 Windows 執行階段 XAML 而言，移動與繪製命令會產生一個含有單一 [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) 物件搭配 [**Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures) 屬性值的 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)。 每個繪製命令都會在該單一 **PathFigure** 的 [**Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments) 集合中產生一個 [**PathSegment**](/uwp/api/Windows.UI.Xaml.Media.PathSegment) 衍生類別，移動命令會變更 [**StartPoint**](/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)，如果有關閉命令，則會將 [**IsClosed**](/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) 設定為 **true** 。 如果您在執行階段檢查 **Data** 值，可以將這個結構當做物件模型來瀏覽。
+對 Windows 執行階段 XAML 而言，移動與繪製命令會產生一個含有單一 [**PathFigure**](/uwp/api/Windows.UI.Xaml.Media.PathFigure) 物件搭配 [**Figures**](/uwp/api/windows.ui.xaml.media.pathgeometry.figures) 屬性值的 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry)。 每個繪製命令都會在該單一 **PathFigure** 的 [**Segments**](/uwp/api/windows.ui.xaml.media.pathfigure.segments) 集合中產生一個 [**PathSegment**](/uwp/api/Windows.UI.Xaml.Media.PathSegment) 衍生類別，移動命令會變更 [**StartPoint**](/uwp/api/windows.ui.xaml.media.pathfigure.startpoint)，如果有關閉命令，則會將 [**IsClosed**](/uwp/api/windows.ui.xaml.media.pathfigure.isclosed) 設定為 **true**。 如果您在執行階段檢查 **Data** 值，可以將這個結構當做物件模型來瀏覽。
 
 ## <a name="the-basic-syntax"></a>基本語法
 
 移動和繪製命令的語法摘要說明如下：
 
-1.  從選用的填滿規則開始。 通常只有在不想要 **EvenOdd** 預設值時，才會指定這個選項。 (稍後將進一步說明 **EvenOdd** )。
+1.  從選用的填滿規則開始。 通常只有在不想要 **EvenOdd** 預設值時，才會指定這個選項。 (稍後將進一步說明 **EvenOdd**)。
 2.  明確指定一個移動命令。
 3.  指定一或多個繪製命令。
 4.  指定一個關閉命令。 您可以省略關閉命令，但會讓圖形保持開放 (這並不常見)。
@@ -63,7 +61,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 **填滿規則**
 
-選用的填滿規則有兩個可能值： **F0** 或 **F1** 。 ( **F** 一律為大寫) **F0** 是預設值；它會產生 **EvenOdd** 填滿行為，因此您通常不會指定。 使用 **F1** 可以取得 **Nonzero** 填滿行為。 這些填滿值與 [**FillRule**](/uwp/api/Windows.UI.Xaml.Media.FillRule) 列舉的值一致。
+選用的填滿規則有兩個可能值：**F0** 或 **F1**。 (**F** 一律為大寫) **F0** 是預設值；它會產生 **EvenOdd** 填滿行為，因此您通常不會指定。 使用 **F1** 可以取得 **Nonzero** 填滿行為。 這些填滿值與 [**FillRule**](/uwp/api/Windows.UI.Xaml.Media.FillRule) 列舉的值一致。
 
 **移動命令**
 
@@ -119,7 +117,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | Syntax |
 |--------|
-| `V `_y_ <br/> - 或 - <br/> `v `_y_ |
+| `V ` _y_ <br/> - 或 - <br/> `v ` _y_ |
 
 | 詞彙 | 描述 |
 |------|-------------|
@@ -127,7 +125,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 **三次方貝茲曲線命令**
 
-使用兩個指定的控制點 ( *controlPoint1* 與 *controlPoint2* ) 在目前的點與指定的終點之間建立一條三次方貝茲曲線。 `C 100,200 200,400 300,200` 為有效曲線命令的範例。 以 [**BezierSegment**](/uwp/api/Windows.UI.Xaml.Media.BezierSegment) 物件定義 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 物件的對等物件。
+使用兩個指定的控制點 (*controlPoint1* 與 *controlPoint2*) 在目前的點與指定的終點之間建立一條三次方貝茲曲線。 `C 100,200 200,400 300,200` 為有效曲線命令的範例。 以 [**BezierSegment**](/uwp/api/Windows.UI.Xaml.Media.BezierSegment) 物件定義 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 物件的對等物件。
 
 | Syntax |
 |--------|
@@ -141,7 +139,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 **二次方貝茲曲線命令**
 
-使用指定的控制點 ( *controlPoint* ) 在目前的點與指定的終點之間建立一條二次方貝茲曲線。 `q 100,200 300,200` 是有效二次方貝茲曲線命令的範例。 以 [**QuadraticBezierSegment**](/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment) 定義 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的對等物件。
+使用指定的控制點 (*controlPoint*) 在目前的點與指定的終點之間建立一條二次方貝茲曲線。 `q 100,200 300,200` 是有效二次方貝茲曲線命令的範例。 以 [**QuadraticBezierSegment**](/uwp/api/Windows.UI.Xaml.Media.QuadraticBezierSegment) 定義 [**PathGeometry**](/uwp/api/Windows.UI.Xaml.Media.PathGeometry) 的對等物件。
 
 | Syntax |
 |--------|
@@ -208,7 +206,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | Syntax |
 |--------|
-| *x* 、 *y*<br/> - 或 - <br/>*x* *y* |
+| *x*、*y*<br/> - 或 - <br/>*x* *y* |
 
 | 詞彙 | 描述 |
 |------|-------------|
@@ -219,9 +217,9 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 除了標準數值，您也可以使用下列特殊值。 這些值區分大小寫。
 
--   **Infinity** ：代表 **PositiveInfinity** 。
--   **\- 無限大** ：代表 **NegativeInfinity** 。
--   **NaN** ：代表 **NaN** 。
+-   **Infinity**：代表 **PositiveInfinity**。
+-   **\- 無限大**：代表 **NegativeInfinity**。
+-   **NaN**：代表 **NaN**。
 
 您可以使用科學記號標記法代替使用小數或整數。 例如，`+1.e17` 是有效的值。
 
