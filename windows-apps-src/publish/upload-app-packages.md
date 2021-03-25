@@ -2,20 +2,20 @@
 description: '[套件] 頁面可讓您上傳所提交應用程式的所有套件檔案 ( .appxupload、.appx、.appxbundle 和/或 .xap) 。'
 title: 上傳應用程式套件
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
-ms.date: 09/24/2020
+ms.date: 02/26/2021
 ms.topic: article
 keywords: windows 10、uwp、套件、上傳、封裝上傳
 ms.localizationpriority: medium
-ms.openlocfilehash: c2e72a767b9d50f81fba548531965d75d4ce0b56
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
+ms.openlocfilehash: 4c83318f749d5b63e38b819085643aa69de64463
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034951"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099799"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 
-[ **套件** ] 頁面可讓您上傳所提交應用程式的所有套件檔案， ( msix、. msixupload、msixbundle、.appx、.appxupload 及/或 .appxbundle) 。 您可以在此頁面上傳相同應用程式的所有套件，當客戶下載您的應用程式時，存放區會自動為每個客戶提供最適合其裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
+[應用程式提交程式](app-submissions.md)的 [**套件**] 頁面頁面，您可以在其中上傳所提交應用程式的所有套件檔案 ( msix、. msixupload、. msixbundle、.appx、.appxupload 及/或 .appxbundle) 。 您可以在此頁面上傳相同應用程式的所有套件，當客戶下載您的應用程式時，存放區會自動為每個客戶提供最適合其裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
 
 > [!IMPORTANT]
 > 您無法再上傳使用 Windows Phone 8.x SDK (s) 建立的新 XAP 套件。 已存在於 XAP 套件中的應用程式將會繼續在 Windows 10 行動裝置版裝置上運作。 如需詳細資訊，請參閱這 [篇 blog 文章](https://blogs.windows.com/windowsdeveloper/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store)。
@@ -37,16 +37,16 @@ ms.locfileid: "93034951"
 
 ## <a name="device-family-availability"></a>裝置系列可用性
 
-在您的套件成功上傳之後， **\[裝置系列可用性\]** 區段會顯示一個資料表以排序方式指出哪個套件將提供給特定的 Windows 10 裝置系列 (以及舊版 OS，如果適用的話)。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
+在您的套件成功上傳之後，**\[裝置系列可用性\]** 區段會顯示一個資料表以排序方式指出哪個套件將提供給特定的 Windows 10 裝置系列 (以及舊版 OS，如果適用的話)。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
 
 如需詳細資訊，請參閱[裝置系列可用性](device-family-availability.md)。
 
 
 ## <a name="package-details"></a>套件詳細資料
 
-這裡列出您上傳的套件，依目標作業系統分組。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 **\[顯示詳細資料\]** 。
+這裡列出您上傳的套件，依目標作業系統分組。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 **\[顯示詳細資料\]**。
 
-如果您需要從提交中移除套件，請按一下每個套件 **詳細資料** 區段底部的 [ **移除** ] 連結。
+如果您需要從提交中移除套件，請按一下每個套件 **詳細資料** 區段底部的 [**移除**] 連結。
 
 
 ## <a name="removing-redundant-packages"></a>移除重複的套件

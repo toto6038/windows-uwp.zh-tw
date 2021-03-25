@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e2e93ad43f866e26b448e2cbcd2cb480054cbc9
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: c6e3a84b2f483f0b6d2d590181cac232f68f2b72
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804262"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099809"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
@@ -94,11 +94,11 @@ struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 struct App : winrt::implements<App, IFrameworkViewSource, IFrameworkView>
 {
     ...
-    void Initialize(Windows::ApplicationModel::CoreCoreApplicationView const& applicationView) { ... }
+    void Initialize(Windows::ApplicationModel::Core::CoreApplicationView const& applicationView) { ... }
     void SetWindow(Windows::UI::Core::CoreWindow const& window) { ... }
     void Load(winrt::hstring const& entryPoint) { ... }
     void OnActivated(
-        Windows::ApplicationModel::CoreCoreApplicationView const& applicationView,
+        Windows::ApplicationModel::Core::CoreApplicationView const& applicationView,
         Windows::ApplicationModel::Activation::IActivatedEventArgs const& args) { ... }
     void Run() { ... }
     void Uninitialize() { ... }
@@ -179,7 +179,7 @@ void GameMain::Run()
 
 以下是 **Simple3DGameDX** 中某些檔案的簡短問卷調查，您可以在範本中找到這些檔案（如果您有的話）。 在任何情況下，瞭解 **Simple3DGameDX** 本身的運作方式也同樣重要。
 
-|來源檔案|檔案資料夾|描述|
+|來源檔案|檔案資料夾|Description|
 |------------------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |DeviceResources.h/.cpp|公用程式|定義 **DeviceResources** 類別，此類別會控制所有 DirectX [裝置資源](tutorial--assembling-the-rendering-pipeline.md#resource)。 也會定義 **IDeviceNotify** 介面，用來通知應用程式圖形介面卡裝置已遺失或重新建立。|
 |DirectXSample.h|公用程式|執行 helper 函數，例如 **ConvertDipsToPixels**。 **ConvertDipsToPixels** 會將裝置獨立像素 (DIP) 中的長度轉換為實體像素的長度。|

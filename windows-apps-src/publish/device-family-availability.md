@@ -1,20 +1,20 @@
 ---
 description: 成功上傳套件之後，您會看到一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。
 title: 裝置系列可用性
-ms.date: 03/21/2019
+ms.date: 02/26/2021
 ms.topic: article
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: 48cbb0fd9ecf27c9926d55e22abc17d039d3674b
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
+ms.openlocfilehash: 3885a5f85a8380e87d753721c6b9ca8b0facc475
+ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89411962"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105099789"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 
-在 **\[套件\]** 頁面成功上傳套件之後，**\[裝置系列可用性\]** 區段會顯示一個依排名順序顯示將會提供哪些套件給特定 Windows 10 裝置系列 (以及舊版 OS，如果適用的話) 的表格。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
+[成功上傳 **套件** 頁面上](upload-app-packages.md)的套件之後，[**裝置系列可用性**] 區段會顯示一張表格，指出哪些套件將提供給特定 Windows 10 裝置系列 (和較早的 OS 版本（如果適用) ）（依排名順序）。 本區段也可讓您選擇是否要針對特定 Windows 10 裝置系列的客戶提供提交。
 
 > [!NOTE]
 > 如果您尚未上傳套件，**\[裝置系列可用性\]** 區段將會顯示 Windows 10 裝置系列，並有核取方塊讓您表示是否要將提交提供給那些裝置系列上的客戶。 表格會在您上傳一個或多個套件之後出現。
@@ -26,7 +26,7 @@ ms.locfileid: "89411962"
 
 如果您上傳以一個個別裝置系列為目標的套件，我們會核取此方塊，以便將這些套件提供給使用該裝置類型的新客戶。 例如，如果套件的目標設為 Windows.Desktop，就會核取該套件的 **\[Windows 10 Desktop\]** 方塊 (而且您無法核取其他裝置系列的方塊)。
 
-目標設為 Windows.Universal 裝置系列的套件可以在任何 Windows 10 裝置 (包括 Xbox One) 上執行。 根據預設，我們會在 Xbox *以外*的所有裝置類型上，讓這些套件可供新客戶使用。
+目標設為 Windows.Universal 裝置系列的套件可以在任何 Windows 10 裝置 (包括 Xbox One) 上執行。 根據預設，我們會在 Xbox *以外* 的所有裝置類型上，讓這些套件可供新客戶使用。
 
 如果您不希望將您的提交提供給該裝置類型上的使用者，您可以取消選取任何 Windows 10 裝置系列的方塊。 如果未選取裝置系列的方塊，該裝置類型上的新客戶就無法取得 App (雖然已經有 App 的客戶仍然可以使用，且取得您所提交的任何更新)。
 
@@ -34,7 +34,7 @@ ms.locfileid: "89411962"
 
 <span id="xbox" />
 
-Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]**。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或完成[概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
+Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]**。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators)或完成 [概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
 
 > [!IMPORTANT]
 > 為了讓您的 App 在 Xbox 裝置上啟動，您必須包含使用 Windows SDK 版本 14393 或更新版本編譯的中性或 x64 套件。 不過，如果您選取 **\[Windows 10 Xbox\]**，您可用於 Xbox 的最高版本套件 (也就是以 Xbox 或通用裝置系列為目標的中性或 x64 套件) 將一律提供給 Xbox 上的客戶，即使套件是以舊版 SDK 編譯。 基於這個原因，確保適用於 Xbox 的最高版本套件是以 Windows SDK 版本 14393 或更高版本進行編譯非常重要。 如果不是，您會看到錯誤訊息，指出 Xbox 客戶不能啟動您的 App。 
@@ -48,12 +48,12 @@ Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 *
 
 如果您提交適用於 Windows 10 IoT 核心版的 UWP app，在上傳套件之後您不應變更預設選項。針對 Windows 10 IoT 沒有不同的核取方塊。 如需發佈 IoT 核心版 UWP app 的詳細資訊，請參閱[適用於 IoT 核心版 UWP app 的 Microsoft Store 支援](/windows/iot-core/commercialize-your-device/installingandservicing)。
 
-如果您提交先前發佈的應用程式包含可在 **Windows 8/8.1** 上執行的套件，以及 **Windows Phone 8.x 及更早**版本的套件，則這些套件將會提供給這些作業系統版本的客戶使用。 若要停止將您的 App 提供給這些客戶，請從您的提交移除對應的套件。
+如果您提交先前發佈的應用程式包含可在 **Windows 8/8.1** 上執行的套件，以及 **Windows Phone 8.x 及更早** 版本的套件，則這些套件將會提供給這些作業系統版本的客戶使用。 若要停止將您的 App 提供給這些客戶，請從您的提交移除對應的套件。
 
 > [!IMPORTANT]
 > 若要完全防止特定的 Windows 10 裝置系列進行提交，請更新資訊清單中的 [**y**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 專案，使其僅以您想要 (支援的裝置系列為目標（例如，windows Mobile 或 Windows. Desktop) ），而不是將其保留為預設) 包含在資訊清單中之通用裝置系列 Microsoft Visual Studio 的通用值 (。
 
-請務必注意您在 **\[裝置系列可用性\]** 區段所做的選擇僅會套用至新擷取。 已經有您的 App 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除其裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 App 的客戶。 例如，如果您有已發佈的應用程式搭配 Windows Phone 8.1 套件，且您新增了以 Windows 通用裝置系列為目標的 Windows 10 (UWP) 套件，則即使您已取消選取 **Windows 10**的方塊，Windows Phone Windows 10 (套件的行動8.1 客戶也會收到此) Windows 10 行動裝置版 UWP 套件的更新。
+請務必注意您在 **\[裝置系列可用性\]** 區段所做的選擇僅會套用至新擷取。 已經有您的 App 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除其裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 App 的客戶。 例如，如果您有已發佈的應用程式搭配 Windows Phone 8.1 套件，且您新增了以 Windows 通用裝置系列為目標的 Windows 10 (UWP) 套件，則即使您已取消選取 **Windows 10** 的方塊，Windows Phone Windows 10 (套件的行動8.1 客戶也會收到此) Windows 10 行動裝置版 UWP 套件的更新。
 
 如需裝置系列的詳細資訊，請參閱 [使用延伸模組 sdk 進行程式設計](/uwp/extension-sdks/device-families-overview)。
 
