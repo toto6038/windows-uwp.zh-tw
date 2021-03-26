@@ -10,12 +10,12 @@ metadata:
   ms.prod: dev-environment
   ms.technology: windows-python
   ms.topic: landing-page
-  ms.openlocfilehash: 3a0299396e9ca9b3c665d977a1bca5e0b7f74a23
-  ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+  ms.openlocfilehash: 8346adabde7fe5963d79ba4f527fb5b2cd9731eb
+  ms.sourcegitcommit: 60fd5f1428e27d2cdcab0d46960fdc4cc8e98dc9
   ms.translationtype: MT
   ms.contentlocale: zh-TW
-  ms.lasthandoff: 03/06/2021
-  ms.locfileid: "102254491"
+  ms.lasthandoff: 03/25/2021
+  ms.locfileid: "105555246"
 landingContent:
 - title: 初學者入門
   linkLists:
@@ -66,7 +66,7 @@ landingContent:
   - linkListType: reference
     links:
     - text: 常見問題集
-      url: faqs.md
+      url: faqs.yml
   - linkListType: learn
     links:
     - text: 在本簡介課程中試用 Python (不需安裝任何項目)
