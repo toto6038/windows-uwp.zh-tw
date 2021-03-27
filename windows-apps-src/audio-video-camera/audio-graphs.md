@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 72a6fe2e704bc419306c74f410ed51e8e8560fa6
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 31889f94eaa489bdb6955b578c0ad4b18af6b606
+ms.sourcegitcommit: dacbb7eef2cfffd7a8639e3a24ebda7b4eefae38
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89362971"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105616781"
 ---
 # <a name="audio-graphs"></a>音訊圖
 
@@ -19,13 +19,12 @@ ms.locfileid: "89362971"
 
 本文說明如何使用 [**Windows. Media**](/uwp/api/Windows.Media.Audio) 命名空間中的 api 來建立音訊路線、混合和處理案例的音訊圖形。
 
-「音訊圖」** 是一組用以傳送音訊資料的互連音訊節點。 
+「音訊圖」是一組用以傳送音訊資料的互連音訊節點。 
 
-- 「音訊輸入節點」** 會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 
+- 「音訊輸入節點」會從音訊輸入裝置、音訊檔案，或從自訂程式碼將音訊資料提供給此圖形。 lat
+- 「音訊輸出節點」是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 
 
-- 「音訊輸出節點」** 是此圖形所處理之音訊的目的地。 音訊可以從此圖形路由傳送至音訊輸出裝置、音訊檔案或自訂程式碼。 
-
-- 「副混音節點」** 會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 
+- 「副混音節點」會從一或多個節點取得音訊，然後將它們結合成可路由傳送至圖形中其他節點的單一輸出。 
 
 已建立所有節點並設定它們之間的連線後，您只需啟動音訊圖形，音訊資料就會從輸入節點經由任何副混音節點傳送至輸出節點。 此模型可讓您快速且輕鬆地實作案例，例如：從裝置的麥克風錄製到音訊檔、將檔案中的音訊播放到裝置的喇叭，或混合來自多個來源的音訊。
 
@@ -109,7 +108,7 @@ Windows 執行階段音訊圖 API：
 
 ##  <a name="mediasource-input-node"></a>MediaSource 輸入節點
 
-[**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式，可能是磁碟上的檔案、串流或彈性資料流網路來源)。 [**MediaSourceAudioInputNode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) 節點可讓您將音訊資料從 **MediaSource** 引導至音訊圖中。 藉由呼叫 [**CreateMediaSourceAudioInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_)、在代表您要播放內容的 **MediaSource** 物件中傳遞，建立 **MediaSourceAudioInputNode**。 會傳回 [**CreateMediaSourceAudioInputNodeResult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，您可透過檢查 [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 屬性用來判斷作業狀態。 如果狀態為 **Success**，您可透過存取 [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 屬性來取得建立的 **MediaSourceAudioInputNode**。 下列範例顯示從 AdaptiveMediaSource 物件 (代表在網路上串流內容) 建立節點。 如需使用 **MediaSource** 的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。 如需在網際網路上串流媒體內容的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
+[**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) 類別提供一個常見的方法來參考和播放來自不同來源的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式，可能是磁碟上的檔案、串流或彈性資料流網路來源)。 [**MediaSourceAudioInputNode](/uwp/api/windows.media.audio.mediasourceaudioinputnode) 節點可讓您將音訊資料從 **MediaSource** 引導至音訊圖中。 藉由呼叫 [**CreateMediaSourceAudioInputNodeAsync**](/uwp/api/windows.media.audio.audiograph.createmediasourceaudioinputnodeasync#Windows_Media_Audio_AudioGraph_CreateMediaSourceAudioInputNodeAsync_Windows_Media_Core_MediaSource_)、在代表您要播放內容的 **MediaSource** 物件中傳遞，建立 **MediaSourceAudioInputNode**。 會傳回 [**CreateMediaSourceAudioInputNodeResult](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult)，您可透過檢查 [**Status**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.status) 屬性用來判斷作業狀態。 如果狀態為 **Success**，您可透過存取 [**Node**](/uwp/api/windows.media.audio.createmediasourceaudioinputnoderesult.node) 屬性來取得建立的 **MediaSourceAudioInputNode**。 下列範例顯示從 AdaptiveMediaSource 物件 (代表在網路上串流內容) 建立節點。 如需使用 **MediaSource** 的詳細資訊，請參閱 [媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。 如需在網際網路上串流媒體內容的詳細資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetDeclareMediaSourceInputNode":::
 
@@ -165,7 +164,7 @@ Windows 執行階段音訊圖 API：
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetGenerateAudioData":::
 
--   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
+-   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性] 頁面、按一下 [建置] 屬性頁，然後選取 [容許 Unsafe 程式碼] 核取方塊。
 -   將所需的緩衝區大小傳入至建構函式，以在 **Windows.Media** 命名空間中初始化 [**AudioFrame**](/uwp/api/Windows.Media.AudioFrame) 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
 -   透過呼叫 [**LockBuffer**](/uwp/api/windows.media.audioframe.lockbuffer)，以取得音訊框架的 [**AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer)。
 -   呼叫 [**CreateReference**](/uwp/api/windows.media.audiobuffer.createreference)，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](/previous-versions/mt297505(v=vs.85)) COM 介面的執行個體。
@@ -199,7 +198,7 @@ Windows 執行階段音訊圖 API：
 
 ## <a name="node-connections-and-submix-nodes"></a>節點連線和副混音節點
 
-所有輸入節點類型都會公開 **AddOutgoingConnection**方法，此方法會將節點所產生的音訊路由傳送至傳入方法中的節點。 下列範例會將 [**AudioFileInputNode**](/uwp/api/Windows.Media.Audio.AudioFileInputNode) 連接到 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)，這是可供在裝置的喇叭上播放音訊檔案的簡單設定。
+所有輸入節點類型都會公開 **AddOutgoingConnection** 方法，此方法會將節點所產生的音訊路由傳送至傳入方法中的節點。 下列範例會將 [**AudioFileInputNode**](/uwp/api/Windows.Media.Audio.AudioFileInputNode) 連接到 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode)，這是可供在裝置的喇叭上播放音訊檔案的簡單設定。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddOutgoingConnection1":::
 
@@ -230,7 +229,7 @@ Windows 執行階段音訊圖 API：
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetAddEffect":::
 
 -   所有音訊效果都會實作 [**IAudioEffectDefinition**](/uwp/api/Windows.Media.Effects.IAudioEffectDefinition)。 每個節點都會公開 **EffectDefinitions** 屬性，以表示套用至該節點的效果清單。 將效果的定義物件新增至清單，即可新增該效果。
--   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 其中包含：
+-   **Windows.Media.Audio** 命名空間中提供了數個效果定義類別。 這些包括：
     -   [**EchoEffectDefinition**](/uwp/api/Windows.Media.Audio.EchoEffectDefinition)
     -   [**EqualizerEffectDefinition**](/uwp/api/Windows.Media.Audio.EqualizerEffectDefinition)
     -   [**LimiterEffectDefinition**](/uwp/api/Windows.Media.Audio.LimiterEffectDefinition)
@@ -250,7 +249,7 @@ Windows 執行階段音訊圖 API：
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetCreateEmitter":::
 
-將音訊來自圖形的音訊輸出給使用者的 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 會有接聽器物件，可利用 [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) 屬性加以存取，其可用來表示使用者在 3D 空間中的位置、方向及速度。 圖形中的所有發射器的位置都會相對於發射器物件的位置和方向。 根據預設，接聽器是位於朝 Z 軸的原點 (0,0,0)，但是您可以使用 [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) 和 [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) 屬性來設定它的位置和方向。
+將音訊來自圖形的音訊輸出給使用者的 [**AudioDeviceOutputNode**](/uwp/api/Windows.Media.Audio.AudioDeviceOutputNode) 會有接聽器物件，可利用 [**Listener**](/uwp/api/windows.media.audio.audiodeviceoutputnode.listener) 屬性加以存取，其可用來表示使用者在 3D 空間中的位置、方向及速度。 圖形中所有發射器的位置都相對於接聽程式物件的位置和方向。 根據預設，接聽器是位於朝 Z 軸的原點 (0,0,0)，但是您可以使用 [**Position**](/uwp/api/windows.media.audio.audionodelistener.position) 和 [**Orientation**](/uwp/api/windows.media.audio.audionodelistener.orientation) 屬性來設定它的位置和方向。
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AudioGraph/cs/MainPage.xaml.cs" id="SnippetListener":::
 
@@ -266,6 +265,6 @@ Windows 執行階段音訊圖 API：
 
 ## <a name="see-also"></a>另請參閱
 - [媒體播放](media-playback.md)
- 
+ 
 
- 
+ 

@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a1471eb468e85bb1c4706c5432e38e501c4c1469
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: 2207ef71314b9af1153bfb070f0691d1bfcbc6e5
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534407"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619524"
 ---
 # <a name="media-players"></a>媒體播放機
 
@@ -59,7 +59,7 @@ Windows 10 入門 app 中的媒體播放器。
 此 XAML 會建立 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 並將其 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定成指向 app 的本機視訊檔案 URI。 **MediaPlayerElement** 會在頁面載入之後開始播放。 若要抑制媒體立即播放，您可以將 [AutoPlay](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.autoplay) 屬性設為 **false**。
 
 ```xaml
-<MediaPlayerElement x:Name="mediaSimple"
+<MediaPlayerElement x:Name="mediaPlayerElement"
                     Source="ms-appx:///Videos/video1.mp4"
                     Width="400" AutoPlay="True"/>
 ```
@@ -68,7 +68,7 @@ Windows 10 入門 app 中的媒體播放器。
 
 
 ```xaml
-<MediaPlayerElement x:Name="mediaPlayer"
+<MediaPlayerElement x:Name="mediaPlayerElement"
                     Source="ms-appx:///Videos/video1.mp4"
                     Width="400"
                     AutoPlay="False"
@@ -97,8 +97,6 @@ Windows 10 入門 app 中的媒體播放器。
 若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [MediaSource](/uwp/api/windows.media.core.mediasource) 的 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定為檔案的路徑。
 
 **提示：** 若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告 **網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](../../packaging/app-capability-declarations.md)。
-
- 
 
 此程式碼會嘗試將 XAML 中定義之 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) 屬性設定為在 [TextBox](/uwp/api/Windows.UI.Xaml.Controls.TextBox) 中輸入的檔案路徑。
 
@@ -129,7 +127,7 @@ private void LoadMediaFromString(string path)
     try
     {
         Uri pathUri = new Uri(path);
-        mediaPlayer.Source = MediaSource.CreateFromUri(pathUri);
+        mediaPlayerElement.Source = MediaSource.CreateFromUri(pathUri);
     }
     catch (Exception ex)
     {
@@ -152,7 +150,7 @@ private void LoadEmbeddedAppFile()
     try
     {
         Uri pathUri = new Uri("ms-appx:///Videos/video1.mp4");
-        mediaPlayer.Source = MediaSource.CreateFromUri(pathUri);
+        mediaPlayerElement.Source = MediaSource.CreateFromUri(pathUri);
     }
     catch (Exception ex)
     {
@@ -186,7 +184,7 @@ private void LoadEmbeddedAppFile()
 這個範例示範如何使用 [FileOpenPicker](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) 來選擇檔案，並將該檔案設定為 [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) 的 [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source)。
 
 ```xaml
-<MediaPlayerElement x:Name="mediaPlayer"/>
+<MediaPlayerElement x:Name="mediaPlayerElement"/>
 ...
 <Button Content="Choose file" Click="Button_Click"/>
 ```
@@ -208,12 +206,12 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
     var file = await openPicker.PickSingleFileAsync();
 
-    // mediaPlayer is a MediaPlayerElement defined in XAML
+    // mediaPlayerElement is a MediaPlayerElement control defined in XAML
     if (file != null)
     {
-        mediaPlayer.Source = MediaSource.CreateFromStorageFile(file);
+        mediaPlayerElement.Source = MediaSource.CreateFromStorageFile(file);
 
-        mediaPlayer.MediaPlayer.Play();
+        mediaPlayerElement.MediaPlayer.Play();
     }
 }
 ```
@@ -260,13 +258,13 @@ private DisplayRequest appDisplayRequest = null;
     每個 [MediaPlayerElement.MediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) 都有一個 [MediaPlaybackSession](/uwp/api/windows.media.playback.mediaplaybacksession) 類型 的 [PlaybackSession](/uwp/api/windows.media.playback.mediaplayer.playbacksession)，可控制媒體播放的各種方面，例如 [PlaybackRate](/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate)、[PlaybackState](/uwp/api/windows.media.playback.mediaplaybacksession.playbackstate) 及 [Position](/uwp/api/windows.media.playback.mediaplaybacksession.position)。 在這裡，您將使用 [MediaPlayer.PlaybackSession](/uwp/api/windows.media.playback.mediaplayer.playbacksession) 上的 [PlaybackStateChanged](/uwp/api/windows.media.playback.mediaplaybacksession.playbackstatechanged) 事件，來偵測何時應該釋放顯示器要求。 然後，使用 [NaturalVideoHeight](/uwp/api/windows.media.playback.mediaplaybacksession.naturalvideoheight) 屬性來判斷是否正在播放音訊或視訊檔案，並只在播放視訊時才讓螢幕保持使用中狀態。
 
     ```xaml
-    <MediaPlayerElement x:Name="mpe" Source="ms-appx:///Media/video1.mp4"/>
+    <MediaPlayerElement x:Name="mediaPlayerElement" Source="ms-appx:///Media/video1.mp4"/>
     ```
 
     ```csharp
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
-        mpe.MediaPlayer.PlaybackSession.PlaybackStateChanged += MediaPlayerElement_CurrentStateChanged;
+        mediaPlayerElement.MediaPlayer.PlaybackSession.PlaybackStateChanged += MediaPlayerElement_CurrentStateChanged;
         base.OnNavigatedTo(e);
     }
 
@@ -288,7 +286,7 @@ private DisplayRequest appDisplayRequest = null;
             {
                 if(appDisplayRequest != null)
                 {
-                      // Deactivate the displayr request and set the var to null
+                      // Deactivate the display request and set the var to null
                       appDisplayRequest.RequestRelease();
                       appDisplayRequest = null;
                 }
@@ -319,7 +317,7 @@ private DisplayRequest appDisplayRequest = null;
 ```csharp
 private void FullWindow_Click(object sender, object e)
 {
-    mediaPlayer.IsFullWindow = !media.IsFullWindow;
+    mediaPlayerElement.IsFullWindow = !media.IsFullWindow;
 }
 ```
 
@@ -345,19 +343,19 @@ private void FullWindow_Click(object sender, object e)
 ```csharp
 private void PictureSize_Click(object sender, RoutedEventArgs e)
 {
-    switch (mediaPlayer.Stretch)
+    switch (mediaPlayerElement.Stretch)
     {
         case Stretch.Fill:
-            mediaPlayer.Stretch = Stretch.None;
+            mediaPlayerElement.Stretch = Stretch.None;
             break;
         case Stretch.None:
-            mediaPlayer.Stretch = Stretch.Uniform;
+            mediaPlayerElement.Stretch = Stretch.Uniform;
             break;
         case Stretch.Uniform:
-            mediaPlayer.Stretch = Stretch.UniformToFill;
+            mediaPlayerElement.Stretch = Stretch.UniformToFill;
             break;
         case Stretch.UniformToFill:
-            mediaPlayer.Stretch = Stretch.Fill;
+            mediaPlayerElement.Stretch = Stretch.Fill;
             break;
         default:
             break;
@@ -373,8 +371,8 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 
 ```csharp
-MediaPlayerElement mp = new MediaPlayerElement();
-mp.MediaPlayer.RealTimePlayback = true;
+MediaPlayerElement mediaPlayerElement = new MediaPlayerElement();
+mediaPlayerElement.MediaPlayer.RealTimePlayback = true;
 ```
 
 ## <a name="recommendations"></a>建議

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d84c6eb678bf884709e13ecefd81e64097ee738
-ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
+ms.openlocfilehash: 10a10e15c736d77e132543a54dff11455f08cde3
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57630203"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619514"
 ---
 # <a name="manage-targeting-profiles"></a>管理目標設定檔
 
@@ -25,13 +25,13 @@ ms.locfileid: "57630203"
 若要使用這些方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Microsoft Store 促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以取得新的權杖。
 
 ## <a name="request"></a>要求
 
 這些方法具有下列 URI。
 
-| 方法類型 | 要求 URI                                                      |  描述  |
+| 方法類型 | 要求 URI                                                      |  Description  |
 |--------|------------------------------------------------------------------|---------------|
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile``` |  建立新的目標設定檔。  |
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/targeting-profile/{targetingProfileId}``` |  編輯 *targetingProfileId* 指定的目標設定檔。  |
@@ -42,8 +42,8 @@ ms.locfileid: "57630203"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
-| 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 追蹤識別碼   | GUID   | 選擇性。 追蹤呼叫流程的識別碼。                                  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -139,26 +139,26 @@ Authorization: Bearer <your access token>
 
 下列方法的要求和回應本文包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求本文所需的欄位。
 
-| 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST 所需 |  
+| 欄位        | 類型   |  Description      |  唯讀  | 預設  | POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  目標設定檔的識別碼。     |   是    |       |   否      |       
-|  name   |  字串   |   目標設定檔的名稱。    |    否   |      |  是     |       
-|  targetingType   |  字串   |  下列其中一個值： <ul><li>**自動**：指定此值，以允許 Microsoft 選擇取決於您的應用程式，在合作夥伴中心內設定的目標設定檔。</li><li>**手動**：指定此值，以定義自己的目標設定檔。</li></ul>     |  否     |  自動    |   是    |       
-|  年齡   |  陣列   |   一或多個整數，識別目標使用者的年齡範圍。 如需整數的完整清單，請參閱本篇文章中的[年齡值](#age-values)。    |    否    |  null    |     否    |       
-|  gender   |  陣列   |  一或多個整數，識別目標使用者的性別。 如需整數的完整清單，請參閱本篇文章中的[性別值](#gender-values)。       |  否    |  null    |     否    |       
-|  國家/地區   |  陣列   |  一或多個整數，識別目標使用者的國碼 (地區碼)。 如需整數的完整清單，請參閱本篇文章中的[國碼 (地區碼) 值](#country-code-values)。    |  否    |  null   |      否   |       
-|  osVersion   |  陣列   |   一或多個整數，識別目標使用者的 OS 版本。 如需整數的完整清單，請參閱本篇文章中的[ OS 版本值](#osversion-values)。     |   否    |  null   |     否    |       
-|  deviceType   | 陣列    |  一或多個整數，識別目標使用者的裝置類型。 如需整數的完整清單，請參閱本篇文章中的[ 裝置類型值](#devicetype-values)。       |   否    |  null    |    否     |       
-|  supplyType   |  陣列   |  一或多個整數，識別將會顯示行銷活動廣告的廣告庫存類型。 如需整數的完整清單，請參閱本篇文章中的[ 供應類型值](#supplytype-values)。      |   否    |  null   |     否    |   |  
+|  NAME   |  字串   |   目標設定檔的名稱。    |    否   |      |  是     |       
+|  targetingType   |  字串   |  下列其中一個值： <ul><li>**自動**：指定此值可讓 Microsoft 根據合作夥伴中心中的應用程式設定，選擇目標設定檔。</li><li>**手動**︰指定這個值以定義您自己的目標設定檔。</li></ul>     |  No     |  自動    |   Yes    |       
+|  age   |  array   |   一或多個整數，識別目標使用者的年齡範圍。 如需整數的完整清單，請參閱本篇文章中的[年齡值](#age-values)。    |    No    |  null    |     No    |       
+|  gender   |  array   |  一或多個整數，識別目標使用者的性別。 如需整數的完整清單，請參閱本篇文章中的[性別值](#gender-values)。       |  No    |  null    |     No    |       
+|  country   |  array   |  一或多個整數，識別目標使用者的國碼 (地區碼)。 如需整數的完整清單，請參閱本篇文章中的[國碼 (地區碼) 值](#country-code-values)。    |  No    |  null   |      No   |       
+|  osVersion   |  array   |   一或多個整數，識別目標使用者的 OS 版本。 如需整數的完整清單，請參閱本篇文章中的[ OS 版本值](#osversion-values)。     |   No    |  null   |     No    |       
+|  deviceType   | array    |  一或多個整數，識別目標使用者的裝置類型。 如需整數的完整清單，請參閱本篇文章中的[ 裝置類型值](#devicetype-values)。       |   No    |  null    |    No     |       
+|  supplyType   |  array   |  一或多個整數，識別將會顯示行銷活動廣告的廣告庫存類型。 如需整數的完整清單，請參閱本篇文章中的[ 供應類型值](#supplytype-values)。      |   No    |  null   |     No    |
 
 
 <span id="age-values"/>
 
 ### <a name="age-values"></a>年齡值
 
-[TargetingProfile](#targeting-profile) 物件中的*年齡*欄位，包含下列一或多個整數，可識別目標使用者的年齡範圍。
+[TargetingProfile](#targeting-profile) 物件中的 *年齡* 欄位，包含下列一或多個整數，可識別目標使用者的年齡範圍。
 
-|  適用於*年齡*欄位的整數值  |  對應的年齡範圍  |  
+|  適用於 *年齡* 欄位的整數值  |  對應的年齡範圍  |  
 |---------------------------------|---------------------------|
 |     651     |            13 到 17 個             |
 |     652     |           18 到 24 個             |
@@ -166,7 +166,7 @@ Authorization: Bearer <your access token>
 |     654     |            35 到 49 個             |
 |     655     |            50 及以上             |
 
-若要以程式設計方式取得*年齡*欄位中支援的值，您可以呼叫以下 GET 方法。  針對```Authorization```標頭，傳遞您的 Azure AD 存取權杖格式**持有人** &lt; *k*&gt;。
+若要以程式設計方式取得 *年齡* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/age
@@ -193,14 +193,14 @@ Authorization: Bearer <your access token>
 
 ### <a name="gender-values"></a>性別值
 
-[TargetingProfile](#targeting-profile) 物件中的*性別*欄位，包含下列一或多個整數，可識別目標使用者的性別。
+[TargetingProfile](#targeting-profile) 物件中的 *性別* 欄位，包含下列一或多個整數，可識別目標使用者的性別。
 
-|  *性別*欄位的整數值  |  對應性別  |  
+|  *性別* 欄位的整數值  |  對應性別  |  
 |---------------------------------|---------------------------|
-|     3.     |            男性             |
-|     701     |           女性             |
+|     700     |            Male             |
+|     701     |           Female             |
 
-若要以程式設計方式取得*性別*欄位中支援的值，您可以呼叫以下 GET 方法。  針對```Authorization```標頭，傳遞您的 Azure AD 存取權杖格式**持有人** &lt; *k*&gt;。
+若要以程式設計方式取得 *性別* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/gender
@@ -227,7 +227,7 @@ Authorization: Bearer <your access token>
 
 [TargetingProfile](#targeting-profile) 物件中的 *osVersion* 欄位，包含下列一或多個整數，可識別目標使用者的 OS 版本。
 
-|  *osVersion*欄位的整數值  |  對應的 OS 版本  |  
+|  *osVersion* 欄位的整數值  |  對應的 OS 版本  |  
 |---------------------------------|---------------------------|
 |     500     |            Windows Phone 7             |
 |     501     |           Windows Phone 7.1             |
@@ -235,12 +235,12 @@ Authorization: Bearer <your access token>
 |     503     |           Windows Phone 7.8             |
 |     504     |           Windows Phone 8.0             |
 |     505     |           Windows Phone 8.1             |
-|     506     |           Windows 8.0             |
+|     506     |           Windows 8.0             |
 |     507     |           Windows 8.1             |
 |     508     |           Windows 10             |
-|     509     |           Windows 10 行動裝置版             |
+|     509     |           Windows 10 Mobile             |
 
-若要以程式設計方式取得 *osVersion* 欄位中支援的值，您可以呼叫以下 GET 方法。  針對```Authorization```標頭，傳遞您的 Azure AD 存取權杖格式**持有人** &lt; *k*&gt;。
+若要以程式設計方式取得 *osVersion* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/osversion
@@ -275,12 +275,12 @@ Authorization: Bearer <your access token>
 
 [TargetingProfile](#targeting-profile) 物件中的 *deviceType* 欄位，包含下列一或多個整數，可識別目標使用者的裝置類型。
 
-|  *deviceType* 欄位的整數值  |  對應的裝置類型  |  描述  |
+|  *deviceType* 欄位的整數值  |  對應的裝置類型  |  Description  |
 |---------------------------------|---------------------------|---------------------------|
 |     710     |  Windows   |  這表示執行 Windows 10 或 Windows 的傳統型版本的裝置 8.x。  |
-|     711     |  Phone     |  這表示執行 Windows 10 行動裝置版、Windows Phone 8.x 或 Windows Phone 7.x 的裝置。
+|     711     |  電話     |  這表示執行 Windows 10 行動裝置版、Windows Phone 8.x 或 Windows Phone 7.x 的裝置。
 
-若要以程式設計方式取得 *deviceType* 欄位中支援的值，您可以呼叫以下 GET 方法。  針對```Authorization```標頭，傳遞您的 Azure AD 存取權杖格式**持有人** &lt; *k*&gt;。
+若要以程式設計方式取得 *deviceType* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/devicetype
@@ -307,12 +307,12 @@ Authorization: Bearer <your access token>
 
 [TargetingProfile](#targeting-profile) 物件中的 *supplyType* 欄位包含下列一或多個整數，識別將會顯示行銷活動廣告的廣告庫存類型。
 
-|  *supplyType* 欄位的整數值  |  對應的供應類型  |  描述  |
+|  *supplyType* 欄位的整數值  |  對應的供應類型  |  Description  |
 |---------------------------------|---------------------------|---------------------------|
 |     11470     |  應用程式        |  這是指以應用程式顯示的廣告。  |
 |     11471     |  通用        |  這是指在網路上和在其他顯示表面以應用程式顯示的廣告。  |
 
-若要以程式設計方式取得 *supplyType* 欄位中支援的值，您可以呼叫以下 GET 方法。  針對```Authorization```標頭，傳遞您的 Azure AD 存取權杖格式**持有人** &lt; *k*&gt;。
+若要以程式設計方式取得 *supplyType* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/supplytype
@@ -340,7 +340,7 @@ Authorization: Bearer <your access token>
 
 |  *country* 欄位的整數值  |  對應的國碼 (地區碼)  |  
 |-------------------------------------|------------------------------|
-|     1      |            美國                  |
+|     1      |            US                  |
 |     2      |            AU                  |
 |     3      |            AT                  |
 |     4      |            BE                  |
@@ -388,7 +388,7 @@ Authorization: Bearer <your access token>
 |     46      |            PE                  |
 |     47      |            UA                  |
 |     48      |            AE                  |
-|     49      |            TH                  |
+|     49      |            二四                  |
 |     50      |            IQ                  |
 |     51      |            VN                  |
 |     52      |            CR                  |
@@ -470,7 +470,7 @@ Authorization: Bearer <your access token>
 |     225      |            RE                  |
 |     246      |            PR                  |
 
-若要以程式設計方式取得 *country* 欄位中支援的值，您可以呼叫以下 GET 方法。  針對```Authorization```標頭，傳遞您的 Azure AD 存取權杖格式**持有人** &lt; *k*&gt;。
+若要以程式設計方式取得 *country* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
 
 ```json
 GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/reference/country
@@ -619,8 +619,8 @@ Authorization: Bearer <your access token>
 
 ## <a name="related-topics"></a>相關主題
 
-* [執行使用 Microsoft Store 服務的廣告活動](run-ad-campaigns-using-windows-store-services.md)
-* [管理 ad 行銷活動](manage-ad-campaigns.md)
-* [管理 ad 行銷活動傳遞明細行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理 ad 行銷活動的素材](manage-creatives-for-ad-campaigns.md)
-* [取得 ad 行銷活動效能資料](get-ad-campaign-performance-data.md)
+* [使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md)
+* [管理廣告行銷活動](manage-ad-campaigns.md)
+* [管理廣告行銷活動的廣告播送行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理廣告行銷活動的廣告素材](manage-creatives-for-ad-campaigns.md)
+* [取得廣告活動績效資料](get-ad-campaign-performance-data.md)

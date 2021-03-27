@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, Windows 筆跡, DirectInk, InkPresenter, 
 ms.date: 09/24/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a29a7ed497fdcd463df0855b4aad3b65ce6408a
-ms.sourcegitcommit: d786d084dafee5da0268ebb51cead1d8acb9b13e
+ms.openlocfilehash: 231145a5f8a9b44b4dc6060a6b02d55e007704e4
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91860174"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619584"
 ---
 # <a name="pen-interactions-and-windows-ink-in-windows-apps"></a>Windows 應用程式中的手寫筆互動與 Windows Ink
 
@@ -45,7 +45,7 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 除了在使用者書寫或繪圖時抓取畫筆的基本位置和移動，您的 app 也可以追蹤並收集整個筆劃中所使用的壓力變動量。 此資訊以及適用於筆尖形狀、大小及旋轉、筆墨色彩和用途 (一般筆墨、清除、反白顯示及選取) 的設定，可讓您提供非常類似在紙上使用筆、鉛筆或筆刷書寫或繪圖的使用者經驗。
 
 > [!NOTE]
-> 您的 app 也可以支援來自其他指標型裝置的筆墨輸入，包括觸控數位板和滑鼠裝置。 
+> 您的 app 也可以支援來自其他指標型裝置的筆墨輸入，包括觸控數位板和滑鼠裝置。 
 
 筆跡平台的彈性非常大。 根據您的需求，它是專為支援各種不同層級的功能而設計。
 
@@ -108,14 +108,14 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 物件是利用每個 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項來具現化。
 
 > [!NOTE]
-> [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 不會直接具現化。 而是透過 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 的 [**InkPresenter**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 屬性來存取。 
+> [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 不會直接具現化。 而是透過 [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 的 [**InkPresenter**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 屬性來存取。 
 
 除了提供其對應 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項的所有預設筆墨行為，[**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) 也會提供一組完整的 API 來進行額外的筆劃自訂，並更細部地管理手寫筆輸入 (標準和已修改的)。 這包括筆劃屬性、支援的輸入裝置類型，以及輸入是否是由物件所處理或者會傳遞到應用程式進行處理。
 
 > [!NOTE]
 > 標準筆跡輸入 (從手寫筆筆尖或橡皮擦/按鈕) 不會使用次要硬體能供性 (例如手寫筆筒狀按鈕、滑鼠右鍵或類似的機制) 進行修改。 
 
-根據預設，筆跡功能只支援手寫筆輸入。 我們會在此處設定[**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃。 我們也會設定一些初始筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
+根據預設，筆跡功能只支援手寫筆輸入。 我們會在此處設定 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃。 我們也會設定一些初始筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)。
 
 若要啟用滑鼠和觸控筆跡，請將 [**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.InputDeviceTypes) 屬性的 [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) 設定為您想要的 [**CoreInputDeviceTypes**](/uwp/api/windows.ui.core.coreinputdevicetypes) 值的組合。
 
@@ -206,9 +206,22 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 這些影像說明 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 如何處理和自訂畫筆輸入。
 
-| ![顯示具有預設黑色筆墨筆觸之 InkCanvas 的螢幕擷取畫面。](images/ink-basic-custom-1-small.png) | ![InkCanvas 的螢幕擷取畫面，其中包含使用者選取的紅色筆墨筆劃。](images/ink-basic-custom-2-small.png) |
-| --- | --- |
-| 具有預設黑色筆墨筆觸的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。 | 含有使用者選取的紅色筆墨筆劃的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | 
+:::row:::
+   :::column span="":::
+      ![顯示具有預設黑色筆墨筆觸之 InkCanvas 的螢幕擷取畫面。](images/ink-basic-custom-1-small.png)
+   :::column-end:::
+   :::column span="":::
+      具有預設黑色筆墨筆觸的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 。
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+      ![InkCanvas 的螢幕擷取畫面，其中包含使用者選取的紅色筆墨筆劃。](images/ink-basic-custom-2-small.png)
+   :::column-end:::
+   :::column span="":::
+      含有使用者選取的紅色筆墨筆劃的 [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
+   :::column-end:::
+:::row-end:::
 
 若要提供筆墨和擦掉之後的功能 (例如選取筆劃)，您的 app 必須針對 [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) 識別出未經處理即可傳入的特定輸入，讓您的 app 來處理。
 

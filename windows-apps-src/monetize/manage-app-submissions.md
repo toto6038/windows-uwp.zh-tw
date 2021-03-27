@@ -6,12 +6,12 @@ ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 提交 API、App 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 00820f00360575f0a335d37aa0859b94648709e3
-ms.sourcegitcommit: 7e8dfd83b181fe720b4074cb42adc908e1ba5e44
+ms.openlocfilehash: 45f4dd26920d0e323bd1efc13a378aec6eb52468
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811284"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619334"
 ---
 # <a name="manage-app-submissions"></a>管理應用程式提交
 
@@ -340,7 +340,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | id            | 字串  | 提交的識別碼。 此識別碼可用於要求 [建立 App 提交](create-an-app-submission.md)、 [取得所有 App](get-all-apps.md) 和 [取得 App](get-an-app.md) 的回應資料中。 針對合作夥伴中心中建立的提交，此識別碼也可在 [提交] 頁面的 URL 中找到合作夥伴中心。  |
 | applicationCategory           | 字串  |   指定 App [類別和/或子類別](../publish/category-and-subcategory-table.md)的字串。 類別與子類別會使用底線 '_' 字元結合為單一字串，例如 **BooksAndReference_EReader**。      |  
 | 定價           |  物件 (object)  | [定價資源](#pricing-object)包含應用程式的定價資訊。        |   
-| 可見性           |  字串  |  App 的可見度。 這個值可以是下列其中一個值： <ul><li>Hidden</li><li>公用</li><li>私人</li><li>NotSet</li></ul>       |   
+| 可見性           |  字串  |  App 的可見度。 這個值可以是下列其中一個值： <ul><li>Hidden</li><li>公開</li><li>私人</li><li>NotSet</li></ul>       |   
 | targetPublishMode           | 字串  | 提交的發佈模式。 這個值可以是下列其中一個值： <ul><li>立即</li><li>手動</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |  
 | listings           |   物件 (object)  |  索引鍵/值組的字典，其中每個索引鍵都是國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含應用程式的清單資訊。       |   
@@ -370,7 +370,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式的定價資訊。 此資源具有下列值。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | Description        |
 |-----------------|---------|------|
 |  trialPeriod               |    字串     |  可針對應用程式指定試用期的字串。 這個值可以是下列其中一個值： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    物件 (object)     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的應用程式在特定市場中的自訂價格](../publish/define-market-selection.md)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。      |     
@@ -407,10 +407,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式的清單資訊。 此資源具有下列值。
 
-| 值           | 類型    | 描述                  |
+| 值           | 類型    | Description                  |
 |-----------------|---------|------|
 |  baseListing               |   物件 (object)      |  應用程式的[基本清單](#base-listing-object)資訊，這會定義適用於所有平台的預設清單資訊。   |     
-|  platformOverrides               | 物件 (object) |   索引鍵/值組的字典，其中每個索引鍵都是字串，可識別要覆寫清單資訊的平台，而每個值都是[清單](#base-listing-object)資源 (只包含從 description 到 title 的值)，可指定要針對指定平台進行覆寫的清單資訊。 索引鍵可以具有下列值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
+|  platformOverrides               | 物件 (object) |   索引鍵/值組的字典，其中每個索引鍵都是字串，可識別要覆寫清單資訊的平台，而每個值都是[清單](#base-listing-object)資源 (只包含從 description 到 title 的值)，可指定要針對指定平台進行覆寫的清單資訊。 索引鍵可以具有下列值： <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |
 
 <span id="base-listing-object" />
 
@@ -418,7 +418,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式的基本清單資訊。 此資源具有下列值。
 
-| 值           | 類型    | 描述       |
+| 值           | 類型    | Description       |
 |-----------------|---------|------|
 |  copyrightAndTrademarkInfo                |   字串      |  選擇性的[著作權及/或商標資訊](../publish/create-app-store-listings.md)。  |
 |  關鍵字                |  array       |  [關鍵字](../publish/create-app-store-listings.md)陣列，可協助讓您的應用程式出現在搜尋結果中。    |
@@ -445,7 +445,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含應用程式清單的影像和圖示資料。 如需可用於應用程式列出之影像和圖示的詳細資訊，請參閱 [應用程式螢幕擷取畫面與影像](../publish/app-screenshots-and-images.md)。 此資源具有下列值。
 
-| 值           | 類型    | 描述           |
+| 值           | 類型    | Description           |
 |-----------------|---------|------|
 |  fileName               |    字串     |   影像檔的名稱，位於您針對提交所上傳的 ZIP封存中。    |     
 |  fileStatus               |   字串      |  影像檔的狀態。 這個值可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>已上傳</li><li>PendingDelete</li></ul>   |
@@ -486,7 +486,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | Description        |
 |-----------------|---------|------|
 |  內容類型               |    array     |  一或多個下列字串的陣列，描述遊戲的類型： <ul><li>Games_ActionAndAdventure</li><li>Games_CardAndBoard</li><li>Games_Casino</li><li>Games_Educational</li><li>Games_FamilyAndKids</li><li>Games_Fighting</li><li>Games_Music</li><li>Games_Platformer</li><li>Games_PuzzleAndTrivia</li><li>Games_RacingAndFlying</li><li>Games_RolePlaying</li><li>Games_Shooter</li><li>Games_Simulation</li><li>Games_Sports</li><li>Games_Strategy</li><li>Games_Word</li></ul>    |
 |  isLocalMultiplayer               |    boolean     |  指出遊戲是否支援本機多人遊戲。      |     
@@ -510,7 +510,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含關於提交狀態的其他詳細資料。 此資源具有下列值。
 
-| 值           | 類型    | 描述         |
+| 值           | 類型    | Description         |
 |-----------------|---------|------|
 |  錯誤               |    物件 (object)     |   包含提交的錯誤詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。    |     
 |  warnings               |   物件 (object)      | 包含提交的警告詳細資料的[狀態詳細資料資源](#status-detail-object)陣列。      |
@@ -567,7 +567,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 > [!NOTE]
 > 在呼叫 [更新應用程式提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值則由合作夥伴中心填入。
 
-| 值           | 類型    | 描述                   |
+| 值           | 類型    | Description                   |
 |-----------------|---------|------|
 | fileName   |   字串      |  封裝的名稱。    |  
 | fileStatus    | 字串    |  套件的狀態。 這個值可以是下列其中一個值： <ul><li>無</li><li>PendingUpload</li><li>已上傳</li><li>PendingDelete</li></ul>    |  
@@ -588,7 +588,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源提供提交認證報告資料的存取。 此資源具有下列值。
 
-| 值           | 類型    | 描述             |
+| 值           | 類型    | Description             |
 |-----------------|---------|------|
 |     date            |    字串     |  產生報表的日期和時間，格式為 ISO 8601。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
@@ -617,7 +617,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | Description        |
 |-----------------|---------|------|
 | packageRollout   |   物件 (object)      |  [套件推出資源](#package-rollout-object)包含用於提交的漸進式套件推出設定。   |  
 | isMandatoryUpdate    | boolean    |  指出您是否要將這項提交中的套件視為自我安裝應用程式更新的強制項目。 如需有關自我安裝應用程式更新的強制套件詳細資訊，請參閱[下載與安裝應用程式的套件更新](../packaging/self-install-package-updates.md)。    |  
@@ -629,7 +629,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含提交的漸進式[套件推出設定](#manage-gradual-package-rollout)。 此資源具有下列值。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | Description        |
 |-----------------|---------|------|
 | isPackageRollout   |   boolean      |  指出是否已為提交啟用漸進式套件推出。    |  
 | packageRolloutPercentage    | FLOAT    |  將接收漸進式推出中套件的使用者百分比。    |  
@@ -689,7 +689,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源包含[預告片資源](#trailer-object)中所定義之預告片的其他地區設定資產。 此資源具有下列值。
 
-| 值           | 類型    | 描述        |
+| 值           | 類型    | Description        |
 |-----------------|---------|------|
 | title   |   字串      |  當地語系化的預告片標題。 當使用者以全螢幕模式播放預告片時，會顯示此標題。     |  
 | imageList    | array    |   陣列，其中包含提供預告片縮圖影像的[影像](#image-for-trailer-object)資源。 此陣列中只能包含一個[影像](#image-for-trailer-object)資源。  |   
@@ -701,7 +701,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 此資源描述預告片的縮圖影像。 此資源具有下列值。
 
-| 值           | 類型    | 描述           |
+| 值           | 類型    | Description           |
 |-----------------|---------|------|
 |  fileName               |    字串     |   縮圖影像檔的名稱，位於您針對提交所上傳的 ZIP 封存中。    |     
 |  id  |  字串  | 縮圖影像的識別碼。 此值是由合作夥伴中心提供。  |

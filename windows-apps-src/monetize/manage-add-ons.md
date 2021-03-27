@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ec2213f5a46318f3aaddbbe5d55b58f6816fcce
-ms.sourcegitcommit: 48702934676ae366fd46b7d952396c5e2fb2cbbe
+ms.openlocfilehash: 53fc255c85c3102d26110d05e20ebdee26b70ed9
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97927780"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619594"
 ---
 # <a name="manage-add-ons"></a>管理附加元件
 
@@ -49,14 +49,14 @@ ms.locfileid: "97927780"
 <td align="left"><a href="create-an-add-on.md">建立附加元件</a></td>
 </tr>
 <tr>
-<td align="left">DELETE</td>
+<td align="left">刪除</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}</td>
 <td align="left"><a href="delete-an-add-on.md">刪除附加元件</a></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
 
@@ -97,14 +97,14 @@ ms.locfileid: "97927780"
 
 此資源具有下列值。
 
-| 值      | 類型   | 描述        |
+| 值      | 類型   | Description        |
 |------------|--------|--------------|
 | 應用程式所需      | array  | 包含一個[應用程式資源](#application-object)的陣列，其代表與此附加元件相關聯之應用程式。 此陣列只支援一個項目。  |
 | id | 字串  | 附加元件的 Store 識別碼。 此值由 Microsoft Store 所提供。  Store 識別碼範例為 9NBLGGH4TNMP。  |
 | productId | 字串  | 附加元件的產品識別碼。 這是建立附加元件時，開發人員所提供的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](../publish/set-your-add-on-product-id.md)。 |
 | productType | 字串  | 附加元件的產品類型。 支援下列值︰**Durable** 和 **Consumable**。  |
 | lastPublishedInAppProductSubmission       | 物件 (object) | [提交資源](#submission-object)，其提供附加元件最新發行的提交相關資訊。         |
-| pendingInAppProductSubmission        | 物件 (object)  |  [提交資源](#submission-object)，其提供附加元件目前擱置提交的資訊。  |   |
+| pendingInAppProductSubmission        | 物件 (object)  |  [提交資源](#submission-object)，其提供附加元件目前擱置提交的資訊。  |
 
 <span id="application-object" />
 

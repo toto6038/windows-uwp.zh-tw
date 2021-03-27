@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfbad9d0aa2bfb69479f168ec262fe67bedb49c
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 120cb4d20299a8690f3d3814a8e937e763de1e7a
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89162412"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619604"
 ---
 # <a name="get-app-data"></a>取得應用程式資料
 
@@ -26,7 +26,7 @@ ms.locfileid: "89162412"
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [取得應用程式的附加元件](get-add-ons-for-an-app.md)         |
 | GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
 
@@ -68,12 +68,11 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 | primaryName   | 字串  | 應用程式的主要名稱。      |
 | packageFamilyName | 字串  | 應用程式的套件系列名稱      |
 | packageIdentityName          | 字串  | 應用程式的套件識別資料名稱。                       |
-| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到在合作夥伴中心中，應用程式的[應用程式識別](../publish/view-app-identity-details.md)頁面上顯示的 [**套件/識別/發行者]** 值。       |
+| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到在合作夥伴中心中，應用程式的 [應用程式識別](../publish/view-app-identity-details.md)頁面上顯示的 [**套件/識別/發行者]** 值。       |
 | firstPublishedDate      | 字串  | 第一次發佈應用程式的日期 (格式為 ISO 8601)。   |
 | lastPublishedApplicationSubmission       | 物件 (object) | [提交資源](#submission_object)，其提供應用程式最新發行提交的資訊。    |
 | pendingApplicationSubmission        | 物件 (object)  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   
-| hasAdvancedListingPermission        | boolean  |  指出您是否可以為應用程式的提交設定 [gamingOptions](manage-app-submissions.md#gaming-options-object) 或 [trailers](manage-app-submissions.md#trailer-object)。 這個值對 2017 年 5 月後建立的提交，設為提交。 |  |
-
+| hasAdvancedListingPermission        | boolean  |  指出您是否可以為應用程式的提交設定 [gamingOptions](manage-app-submissions.md#gaming-options-object) 或 [trailers](manage-app-submissions.md#trailer-object)。 這個值對 2017 年 5 月後建立的提交，設為提交。 |
 
 <span id="add-on-object" />
 
@@ -89,7 +88,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明         |
+| 值           | 類型    | Description         |
 |-----------------|---------|----------------------|
 | inAppProductId            | 字串  | 附加元件的 Store 識別碼。 此值由 Microsoft Store 所提供。  Store 識別碼範例為 9NBLGGH4TNMP。   |
 
@@ -121,7 +120,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明           |
+| 值           | 類型    | Description           |
 |-----------------|---------|------------------------|
 | flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 此值是由合作夥伴中心提供。  |
 | friendlyName           | 字串  | 開發人員指定的套件正式發行前小眾測試版名稱。   |
@@ -153,7 +152,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 | id                 | 字串 | 提交的識別碼。 |
 | resourceLocation   | 字串 | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。 |
 
- 
+ 
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 3411ee4c947d809009c2185389f5513a49afce98
-ms.sourcegitcommit: d1c3e13de3da3f7dce878b3735ee53765d0df240
+ms.openlocfilehash: 90a186a63104c0393cb871ceffee023a05a7d514
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66215037"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619634"
 ---
 # <a name="manage-creatives"></a>管理廣告素材
 
@@ -22,19 +22,19 @@ ms.locfileid: "66215037"
 > [!NOTE]
 > 使用此 API 上傳您自己的廣告素材時，允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這些方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Microsoft Store 促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您有 60 分鐘的使用時間，之後其便會到期。 權杖到期之後，您可以取得新的權杖。
 
 
 ## <a name="request"></a>要求
 
 這些方法具有下列 URI。
 
-| 方法類型 | 要求 URI     |  描述  |
+| 方法類型 | 要求 URI     |  Description  |
 |--------|-----------------------------|---------------|
 | POST   | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative``` |  建立新廣告素材。  |
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/promotion/creative/{creativeId}``` |  取得 *creativeId* 指定的廣告素材。  |
@@ -47,7 +47,7 @@ ms.locfileid: "66215037"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選擇性。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -113,32 +113,32 @@ Authorization: Bearer <your access token>
 
 下列方法的要求和回應本文包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求本文所需的欄位。
 
-| 欄位        | 類型   |  描述      |  唯讀  | 預設  |  POST 所需 |  
+| 欄位        | 類型   |  Description      |  唯讀  | 預設  |  POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  廣告素材的識別碼。     |   是    |      |    否   |       
 |  NAME   |  字串   |   廣告素材的名稱。    |    否   |      |  是     |       
-|  content   |  字串   |  廣告素材影像的內容，含 Base64 編碼格式。<br/><br/>**注意**&nbsp;&nbsp;允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。     |  否     |      |   是    |       
-|  height   |  整數   |   廣告素材的高度。    |    否    |      |   是    |       
+|  內容   |  字串   |  廣告素材影像的內容，含 Base64 編碼格式。<br/><br/> &nbsp; 注意 &nbsp;您創意的允許大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。     |  否     |      |   是    |       
+|  身高   |  整數   |   廣告素材的高度。    |    否    |      |   是    |       
 |  width   |  整數   |  廣告素材的寬度。     |  否    |     |    是   |       
-|  landingUrl   |  字串   |  如果您使用活動追蹤 AppsFlyer、 Kochava、 調整，Vungle 等服務來測量您的應用程式的安裝 analytics，指派您在此欄位中的追蹤 URL 時呼叫 POST 方法 （如果指定，此值必須是有效的 URI）。 如果您未使用行銷活動追蹤服務，當您呼叫 POST 方法時略過此值（在這個情況下，就會自動建立此 URL）。   |  否    |     |   是    |
-|  format   |  字串   |   廣告格式。 目前唯一支援的值為 **Banner**。    |   否    |  橫幅   |  否     |       
+|  landingUrl   |  字串   |  如果您使用活動追蹤服務（例如 AppsFlyer、Kochava、微調或 Vungle）來測量應用程式的安裝分析，請在呼叫 POST 方法時，在此欄位中指派您的追蹤 URL (如果有指定，此值必須是有效的 URI) 。 如果您未使用行銷活動追蹤服務，當您呼叫 POST 方法時略過此值（在這個情況下，就會自動建立此 URL）。   |  否    |     |   是    |
+|  format   |  字串   |   廣告格式。 目前唯一支援的值為 **Banner**。    |   No    |  橫幅   |  No     |       
 |  imageAttributes   | [ImageAttributes](#image-attributes)    |   提供廣告素材的屬性。     |   否    |      |   是    |       
-|  storeProductId   |  字串   |   此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。    |   否    |    |  否     |   |  
+|  storeProductId   |  字串   |   此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。    |   否    |    |  否     |
 
 
 <span id="image-attributes"/>
 
 ## <a name="imageattributes-object"></a>ImageAttributes 物件
 
-| 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST 所需 |  
+| 欄位        | 類型   |  Description      |  唯讀  | 預設值  | POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
-|  imageExtension   |   字串  |   下列其中一個值：**PNG**或是**JPG**。    |    否   |      |   是    |       |
+|  imageExtension   |   字串  |   下列其中一個值：**PNG** 或 **JPG**。    |    否   |      |   是    |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [執行使用 Microsoft Store 服務的廣告活動](run-ad-campaigns-using-windows-store-services.md)
-* [管理 ad 行銷活動](manage-ad-campaigns.md)
-* [管理 ad 行銷活動傳遞明細行](manage-delivery-lines-for-ad-campaigns.md)
-* [管理 ad 行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
-* [取得 ad 行銷活動效能資料](get-ad-campaign-performance-data.md)
+* [使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md)
+* [管理廣告行銷活動](manage-ad-campaigns.md)
+* [管理廣告行銷活動的廣告播送行](manage-delivery-lines-for-ad-campaigns.md)
+* [管理廣告行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
+* [取得廣告活動績效資料](get-ad-campaign-performance-data.md)

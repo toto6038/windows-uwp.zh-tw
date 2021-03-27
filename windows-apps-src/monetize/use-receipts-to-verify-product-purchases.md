@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ba818ffbe748a20491557f7404e3f06e10fd628a
-ms.sourcegitcommit: c3ca68e87eb06971826087af59adb33e490ce7da
+ms.openlocfilehash: 998cd5eda277a3e1865e1f51a8de5e4fbec16a40
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89363031"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619344"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
@@ -87,7 +87,7 @@ App 收據看起來如下。
 
 ## <a name="validating-a-receipt"></a>驗證收據
 
-若要驗證收據的真確性，您需要後端系統 (Web 服務或類似服務) 使用公開憑證來檢查收據的簽章。 若要取得此憑證，請使用 URL ```https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60, where ``` CertificateId ' ' ' 是收據中的 **CertificateId** 值。
+若要驗證收據的真確性，您需要後端系統 (Web 服務或類似服務) 使用公開憑證來檢查收據的簽章。 若要取得這個憑證，請使用 URL `https://lic.apps.microsoft.com/licensing/certificateserver/?cid=CertificateId%60%60%60`，其中 `CertificateId` 是收據中的 **CertificateId** 值。
 
 以下是該驗證程序的範例。 這個程式碼會在包含 **System.Security** 組件之參考的 .NET Framework 主控台應用程式中執行。
 
@@ -104,11 +104,11 @@ App 收據看起來如下。
 
 此檔案的根元素是 **Receipt** 元素，其中包含 App 與 App 內購買的相關資訊。 此元素包含下列子項元素。
 
-|  元素  |  必要  |  數量  |  描述   |
+|  元素  |  必要  |  數量  |  Description   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
-|  [ProductReceipt](#productreceipt)  |     否       |  0 或更多    |   包含目前 App 之 App 內購買的相關資訊。     |
-|  簽章  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](https://www.w3.org/TR/xmldsig-core/)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
+|  [AppReceipt](#appreceipt)  |    No        |  0 或 1  |  包含目前 App 的購買資訊。            |
+|  [ProductReceipt](#productreceipt)  |     No       |  0 或更多    |   包含目前 App 之 App 內購買的相關資訊。     |
+|  簽名  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](https://www.w3.org/TR/xmldsig-core/)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
 
 **Receipt** 具有下列屬性。
 
@@ -117,7 +117,7 @@ App 收據看起來如下。
 |  **版本**  |    收據的版本號碼。            |
 |  **CertificateId**  |     用來簽署收據的憑證指紋。          |
 |  **ReceiptDate**  |    簽署和下載收據的日期。           |  
-|  **ReceiptDeviceId**  |   識別用來要求此收據的裝置。         |  |
+|  **ReceiptDeviceId**  |   識別用來要求此收據的裝置。         |
 
 <span id="appreceipt" />
 
@@ -132,7 +132,7 @@ App 收據看起來如下。
 |  **識別碼**  |    識別購買。           |
 |  **AppId**  |     作業系統用於 App 的「套件系列名稱」值。           |
 |  **LicenseType**  |    如果使用者已購買完整版的 App，為 **Full**。 如果使用者下載試用版的 App，為 **Trial**。           |  
-|  **購買日期**  |    取得 App 的日期。          |  |
+|  **購買日期**  |    取得 App 的日期。          |
 
 <span id="productreceipt" />
 
@@ -148,8 +148,8 @@ App 收據看起來如下。
 |  **AppId**  |     識別使用者透過哪個 App 進行購買。           |
 |  **ProductId**  |     識別購買的產品。           |
 |  **ProductType**  |    決定產品類型。 目前僅支援 **Durable** 值。          |  
-|  **購買日期**  |    購買的日期。          |  |
+|  **購買日期**  |    購買的日期。          |
 
- 
+ 
 
- 
+ 

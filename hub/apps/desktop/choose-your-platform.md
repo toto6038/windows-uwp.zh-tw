@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 keywords: windows win32, 傳統型應用程式
-ms.openlocfilehash: 11605902b334025c50847103e2de9b10e49c3a0f
-ms.sourcegitcommit: 432cc11c460e9ddf855d28bcd59852741408c823
+ms.openlocfilehash: 2afa5e4ff1c116439f916b10a156c567bd7a2ac4
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "102474838"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619364"
 ---
 # <a name="choose-your-windows-app-platform"></a>選擇您的 Windows 應用程式平台
 
@@ -105,7 +105,7 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 | **開放原始碼** | [是 (僅限 Windows UI 程式庫)](https://github.com/Microsoft/microsoft-ui-xaml)  |  [是 (僅限 .NET Core)](https://github.com/dotnet/wpf) | [是 (僅限 .NET Core)](https://github.com/dotnet/winforms)  |
 | **支援 XAML** |   是   |  是  |   否   |
 | **優勢**  |  <ul><li>適用於 UI 的 XAML 標記</li><li>豐富且可自訂的 UX</li><li>您現有的程式碼基底相容於 .NET Standard</li><li>高 DPI 支援</li><li>支援跨 Windows 裝置的多種輸入類型 (包括觸控、手寫筆、遊戲台、滑鼠和鍵盤)</li><li>支援 Xbox、HoloLens、IoT 或 Surface Hub</li><li>選擇性密集 (精簡) UI</li><li>支援原生 C++</li><li>最佳化的電池使用時間</li><li>新式協助工具支援 (例如螢幕助讀程式)</li><li>Rich Text 格式資料功能 (例如內建的拼字檢查)</li><li>筆跡支援</li><li>透過應用程式容器保護執行安全 (例如，未受信任的內容會沙箱化)</li></ul>  |  <ul><li>適用於 UI 的 XAML 標記</li><li>豐富且可自訂的 UX</li><li>來自 Microsoft 和合作夥伴的大型控制項集合</li><li>密集 UI</li><li>支援 Windows 7</li><li>支援平台進行輸入驗證</li></ul> | <ul><li>快速應用程式開發</li><li>用於建置 UI 的 WYSIWYG 編輯器</li><li>來自 Microsoft 和合作夥伴的大型控制項集合</li><li>密集 UI</li><li>支援 Windows 7</li><li>鍵盤和滑鼠輸入</li></ul>          |
-| **有限支援的案例** |  <ul><li>多重視窗支援<sup>1</sup></li><li>支援平台進行輸入驗證<sup>1</sup></li><li>不支援 Windows 7</li><li>某些Windows 執行階段 API 需要特定的 Windows 10 最低版本</li><li>完整平台支援和命令介面整合 (例如，UWP 目前不支援系統匣整合或完整存取所有裝置)</li><li>直接存取磁碟上的所有檔案</li><li>ADO.NET</li><li>使用非 .NET Standard 或非 Windows 應用程式認證套件相容 API 的現有程式碼基底類別程式庫</li><li>區域網路回送支援 (亦即，如果您的應用程式需要與 localhost 通訊，而不在目標裝置上建立回送豁免)</li><li>密集檔案 I/O</li></ul>     |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li></ul>  |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li><li>可自訂的 UI</li><li>豐富的圖形和使用者體驗 (例如觸控和動畫)</li><li>豐富的視圖和資料模型抽象</li></ul>    |   |
+| **有限支援的案例** |  <ul><li>多重視窗支援<sup>1</sup></li><li>支援平台進行輸入驗證<sup>1</sup></li><li>不支援 Windows 7</li><li>某些Windows 執行階段 API 需要特定的 Windows 10 最低版本</li><li>完整平台支援和命令介面整合 (例如，UWP 目前不支援系統匣整合或完整存取所有裝置)</li><li>直接存取磁碟上的所有檔案</li><li>ADO.NET</li><li>使用非 .NET Standard 或非 Windows 應用程式認證套件相容 API 的現有程式碼基底類別程式庫</li><li>區域網路回送支援 (亦即，如果您的應用程式需要與 localhost 通訊，而不在目標裝置上建立回送豁免)</li><li>密集檔案 I/O</li></ul>     |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li></ul>  |  <ul><li>高 DPI 支援<sup>2</sup></li><li>觸控輸入<sup>2</sup></li><li>可自訂的 UI</li><li>豐富的圖形和使用者體驗 (例如觸控和動畫)</li><li>豐富的視圖和資料模型抽象</li></ul>    |
 
 <sup>1</sup> 我們已公開宣佈的功能，可在未來的 Windows 10 版本中解決此案例。
 
@@ -113,16 +113,16 @@ Windows Forms 是適用於受管理 Windows 應用程式的原創平台，具有
 
 ## <a name="use-the-windows-ui-library-with-windows-apps"></a>使用 Windows UI 程式庫搭配 Windows 應用程式
 
-若要補充主要 Windows 應用程式平臺，您也可以在應用程式中使用 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md) 。 WinUI 是以工具組的形式啟動，可針對以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽階段) ，WinUI 在範圍內不斷成長，成為適用于在 UWP、.NET 和 Win32 應用程式平臺上，適用于 Windows 10 應用程式的頂級原生使用者介面 (UI) framework。
+若要補充主要 Windows 應用程式平臺，您也可以在應用程式中使用 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md) 。 WinUI 是以工具組的形式開始，為以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽) ，WinUI 在範圍內不斷成長，成為頂級的原生使用者介面 (UI) 架構，以在 UWP、.NET 和 Win32 應用程式平臺之間 Windows 10 應用程式。
 
 您可以透過下列方式，在 Windows 應用程式中使用 WinUI。
 
 * [WinUI](../winui/winui2/index.md)2.x：
-  * UWP 應用程式可以使用 WinUI 2.x 控制項來取代 Windows SDK 提供的 WinRT 控制項。 這些版本的 WinUI 包含新的控制項，以及 Windows SDK 現有控制項的更新版本。
+  * UWP 應用程式可以使用 WinUI 2.x 控制項來取代 Windows SDK 所提供的 WinRT 控制項。 這些 WinUI 版本包括新的控制項，以及 Windows SDK 中現有控制項的更新版本。
   * 您可以使用 [XAML 島](modernize/xaml-islands.md)，將現有的 WPF、Windows Forms 和 c + +/Win32 應用程式更新為裝載 WinUI 2.x 控制項。
 
 * [WinUI 3 (preview) ](../winui/winui3/index.md)：
-  * 從 WinUI 3 開始，您可以建立 [.net 和 c + +/Win32 應用程式](../winui/winui3/get-started-winui3-for-desktop.md) ，以及使用完全以 WinUI 為基礎之 UI 的 [UWP 應用程式](../winui/winui3/get-started-winui3-for-uwp.md) 。 此版本包含 Visual Studio 專案範本，可提供建立這些應用程式所需的一切。
+  * 從 WinUI 3 開始，您可以建立 [.net 和 c + +/Win32 應用程式](../winui/winui3/get-started-winui3-for-desktop.md) ，以及使用完全以 WinUI 為基礎之 UI 的 [UWP 應用程式](../winui/winui3/get-started-winui3-for-uwp.md) 。 此版本包含 Visual Studio 專案範本，可提供建立這些應用程式所需的所有專案。
 
 > [!NOTE]
 > WinUI 3 仍處於預覽狀態，不應該用於生產應用程式。

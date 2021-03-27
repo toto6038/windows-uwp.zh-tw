@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7168895a690b8602e67b8e05832c74b8ddf4d67d
-ms.sourcegitcommit: 6009896ead442b378106d82870f249dc8b55b886
-ms.translationtype: HT
+ms.openlocfilehash: a24f4191541c289d4b26a07e69430a76e5f7bf67
+ms.sourcegitcommit: 80ea62d6c0ee25d73750437fe1e37df5224d5797
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89643818"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105619654"
 ---
 # <a name="transforms-overview"></a>轉換概觀
 
@@ -107,7 +107,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 如果您具有數學背景，或是熟悉也使用矩陣描述座標空間轉換的圖形程式設計技術，那麼轉換的數學描述可能對您很有用。 有一個 [**Transform**](/uwp/api/Windows.UI.Xaml.Media.Transform) 衍生類別可讓您以轉換的 3×3 矩陣來直接表示該轉換：[**MatrixTransform**](/uwp/api/Windows.UI.Xaml.Media.MatrixTransform)。 **MatrixTransform** 具有 [**Matrix**](/uwp/api/windows.ui.xaml.media.matrixtransform.matrix) 屬性，這個屬性有一個包含下列六個屬性的結構：[**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)、[**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)、[**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)、[**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)、[**OffsetX**](/uwp/api/windows.ui.xaml.media.matrix.offsetx) 及 [**OffsetY**](/uwp/api/windows.ui.xaml.media.matrix.offsety)。 每個 [**Matrix**](/uwp/api/Windows.UI.Xaml.Media.Matrix) 屬性都使用一個 **Double** 值，並且對應至仿射轉換矩陣的六個相關值 (第 1 與第 2 欄)。
 
-|                                             |                                             |     |
+|           第 1 欄                                  |         第 2 欄                                    | 第 3 欄 |
 |---------------------------------------------|---------------------------------------------|-----|
 | [**M11**](/uwp/api/windows.ui.xaml.media.matrix.m11)         | [**M12**](/uwp/api/windows.ui.xaml.media.matrix.m12)         | 0   |
 | [**M21**](/uwp/api/windows.ui.xaml.media.matrix.m21)         | [**M22**](/uwp/api/windows.ui.xaml.media.matrix.m22)         | 0   |
