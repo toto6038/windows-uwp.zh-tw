@@ -64,7 +64,7 @@
                   href: desktop/modernize/modernize-packaged-apps.md
                 - name: 整合套件擴充功能
                   href: desktop/modernize/desktop-to-uwp-extensions.md
-                - name: 整合已封裝的桌面應用程式與檔案瀏覽器
+                - name: 整合已封裝的桌面應用程式與檔案總管
                   href: desktop/modernize/integrate-packaged-app-with-file-explorer.md
                 - name: 取得已封裝應用程式的啟用資訊
                   href: desktop/modernize/get-activation-info-for-packaged-apps.md
@@ -88,10 +88,14 @@
                   href: desktop/modernize/modernize-wpf-tutorial-5.md
             - name: 將身分識別授與非封裝的傳統型應用程式
               href: desktop/modernize/grant-identity-to-nonpackaged-apps.md
-    - name: Project 留尼旺島0.5 預覽
+    - name: Project 留尼旺島0。5
       items:
         - name: 概觀
           href: project-reunion/index.md
+        - name: 開始使用 Project 留尼旺島
+          href: project-reunion/get-started-with-project-reunion.md
+        - name: 部署使用 Project 留尼旺島的應用程式
+          href: project-reunion/deploy-apps-that-use-project-reunion.md
         - name: 使用 MRT.LOG Core 管理資源
           href: project-reunion/mrtcore/mrtcore-overview.md
         - name: 使用 DWriteCore 轉譯文字
@@ -100,18 +104,31 @@
       items:
         - name: 概觀
           href: winui/index.md
-        - name: Windows UI 程式庫 3-Project 留尼旺島 0.5 Preview
+        - name: WinUI 3 與 WinUI 2 的比較
+          href: winui/winui3-winui2-comparison.md
+        - name: Windows UI 程式庫 3-Project 留尼旺島0。5
           items:
             - name: 概觀和版本資訊
               href: winui/winui3/index.md
-            - name: 開始使用適用於桌面應用程式的 WinUI 3
-              href: winui/winui3/get-started-winui3-for-desktop.md
-            - name: 開始使用適用於 UWP 應用程式的 WinUI 3
-              href: winui/winui3/get-started-winui3-for-uwp.md
-            - name: 使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
-              href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
-            - name: 使用 C# 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
-              href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
+            - name: 開發
+              items:
+                - name: Visual Studio 中的 WinUI 專案範本
+                  href: winui/winui3/winui-project-templates-in-visual-studio.md
+                - name: 開始使用適用於桌面應用程式的 WinUI 3
+                  href: winui/winui3/get-started-winui3-for-desktop.md
+                - name: 建立基本的 WinUI 3 傳統型應用程式
+                  href: winui/winui3/desktop-build-basic-winui3-app.md
+                - name: '開始使用適用于 UWP 應用程式的 WinUI 3 (Preview) '
+                  href: winui/winui3/get-started-winui3-for-uwp.md
+                - name: 使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
+                  href: winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
+                - name: 使用 C# 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
+                  href: winui/winui3/xaml-templated-controls-csharp-winui-3.md
+            - name: '版本資訊 archive (WinUI 3) '
+              href: winui/winui3/release-notes/index.md
+              items:
+                - name: 'Windows UI 程式庫 3-Project 留尼旺島 0.5 Preview (3 月 2021) '
+                  href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
         - name: Windows UI 2.x 程式庫
           items:
             - name: 概觀
@@ -122,10 +139,9 @@
                   href: winui/winui2/getting-started.md
                 - name: NuGet 套件清單
                   href: winui/winui2/nuget-packages.md
-            - name: 版本資訊
+            - name: '版本資訊 archive (WinUI 2) '
+              href: winui/winui2/release-notes/index.md
               items:
-                - name: 概觀
-                  href: winui/winui2/release-notes/index.md
                 - name: WinUI 2.5
                   href: winui/winui2/release-notes/winui-2.5.md
                 - name: WinUI 2.4
@@ -139,7 +155,18 @@
                 - name: WinUI 2.0
                   href: winui/winui2/release-notes/winui-2.0.md
         - name: WinUI API 參考資料
-          href: /windows/winui/api/
+          expanded: true
+          items:
+            - name: WinRT API 參考
+              href: /windows/winui/api/
+            - name: COM API 參考
+              items:
+                - name: IWindowNative
+                  items:
+                    - name: IWindowNative
+                      href: winui/reference/iwindownative.md
+                    - name: IWindowNative. WindowHandle
+                      href: winui/reference/iwindownative-windowhandle.md
     - name: 針對 Windows 10X 進行開發
       items:
         - name: Windows 10X 開發人員常見問題

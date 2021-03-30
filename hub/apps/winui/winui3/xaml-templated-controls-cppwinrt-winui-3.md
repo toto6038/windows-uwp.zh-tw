@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 154177c8c909f0ea30f4fbe2323a0b28222eb932
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: 1c2d77c9e109fdaf83a3ca328daf183c47bc639b
+ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335002"
+ms.lasthandoff: 03/29/2021
+ms.locfileid: "105730372"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-cwinrt"></a>使用 C++/WinRT 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
 
@@ -34,7 +34,6 @@ ms.locfileid: "100335002"
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>實作 BgLabelControl 自訂控制項類別
 
 在下列步驟中，您將會更新專案目錄中 `BgLabelControl.idl`、`BgLabelControl.h` 和 `BgLabelControl.cpp` 檔案中的程式碼，以實作執行階段類別。 
-
 
 樣板化控制項類別會從 XAML 標記具現化，基於這個原因，這會是執行階段類別。 當您建置完成的專案時，MIDL 編譯器 (midl.exe) 會使用 `BgLabelControl.idl` 檔案來產生控制項的 Windows 執行階段中繼資料檔案 (.winmd)，元件的取用者會參考此檔案。 如需建立執行階段類別的詳細資訊，請參閱[使用 C++/WinRT 撰寫 API](/windows/uwp/cpp-and-winrt-apis/author-apis)。
 
