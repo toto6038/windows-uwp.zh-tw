@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a837dc025023d529d9090fade401726a670c7561
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 6e20d56485ad7b5a54b9e951e8ad8ee331b5da8f
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89166192"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939113"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -177,7 +177,7 @@ NFC 索引標籤支援三種模式：
 -   右上角區段會列出記錄檔。 當您將一組裝置彼此輕觸 (或與 POS 終端機輕觸) 時，系統會記錄輕觸事件；而當裝置結束輕觸時，系統會記錄結束輕觸事件。 此區段也會記錄您的應用程式是否在連線中斷之前回應，或您是否在模擬器 UI 中採取任何其他動作 (以及其時間戳記)。 記錄檔在模式切換時仍會保留，而且您可以隨時點選 [記錄檔]  畫面上的 [清除]  按鈕來清除記錄檔。
 -   畫面下半部是訊息記錄檔，其中顯示目前所選連線上傳送或接收之訊息的文字記錄 (視選取的模式而定)。
 
-> **重要**   第一次啟動 Tapper 工具時，您會看到 Windows 防火牆提示。 您必須選取全部 3 個核取方塊，並允許該工具通過防火牆，否則該工具會失敗，而且不會顯示任何訊息。
+> **重要**  第一次啟動 Tapper 工具時，您會看到 Windows 防火牆提示。 您必須選取全部 3 個核取方塊，並允許該工具通過防火牆，否則該工具會失敗，而且不會顯示任何訊息。
 
 啟動快速啟動安裝程式之後，請確認您已按照上面的指示在防火牆提示上選取全部 3 個核取方塊。 此外，您也必須在已安裝 Microsoft 模擬器的相同實體主機電腦上安裝並使用 Tapper 工具。
 
@@ -365,7 +365,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 | 速限 | 路線的速限 | 不適用   | 以公布的速限越過該路線。 |
 | 步行     | 5 公里/小時                   | 1.39 公尺           | 以正常的步行速度 (5 公里/小時) 越過該路線。 |
 | 騎單車      | 25 公里/小時                  | 6.94 公尺           | 以正常騎單車的速度 (25 公里/小時) 越過該路線。 |
-| 快速        |                          |                  |以比公布的速限還快的速度越過該路線。 | 
+| 快速        |                          |                  |以比公布的速限還快的速度越過該路線。 |
 
 **路線模式**
 
@@ -452,7 +452,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
         -   如果您在同步操作正在進行的同時按一下 [取消同步]  ，即會退出記憶卡，而同步操作的結果是不完整的。
     -   [退出 SD 記憶卡]  按鈕會變更回 [插入 SD 記憶卡]  。
 
-> **注意**  由於手機使用的 SD 記憶卡是以 FAT32 檔案系統進行格式化，因此大小上限為 32GB。
+> **注意**  由於手機使用的 SD 記憶卡是以 FAT32 檔案系統進行格式化，因此大小上限為 32GB。
 
 系統會對從模擬的 SD 記憶卡讀取和寫入的速度進行流速控制，以模擬真實世界的速度。 存取 SD 記憶卡的速度會比存取電腦硬碟還要慢。
 
@@ -621,17 +621,17 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 
 ### <a name="error-message-failed-while-removing-virtual-ethernet-switch"></a>錯誤訊息：「移除虛擬乙太網路交換器時發生錯誤」
 
-在某些情況下 (包括在您更新為新的 Windows 10 正式發行前小眾測試版之後)，與模擬器相關聯的虛擬網路交換器會進入無法透過使用者介面加以刪除的狀態。
+在某些情況下 (包括在您更新為新的 Windows 10 正式發行前小眾測試版之後)，與模擬器相關聯的虛擬網路交換器會進入無法透過使用者介面刪除它的狀態。
 
 若要從此情況中復原，請從系統管理員命令提示字元執行 "netcfg -d"：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`。 當命令完成執行時，需重新啟動電腦，才能完成修復程序。
 
-**注意**  這個命令將會刪除所有網路裝置，而不只是與模擬器相關聯的那些裝置。 當您的電腦重新啟動時，將會自動探索所有硬體網路裝置。
- 
+**注意**  這個命令將會刪除所有網路裝置，而不只是與模擬器相關聯的裝置。 當您的電腦重新啟動時，將會自動探索所有硬體網路裝置。
+ 
 ### <a name="unable-to-launch-the-emulators"></a>無法啟動模擬器
 
 Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有的 VM、差異磁碟及模擬器特定的網路交換器，而它已經隨附於模擬器 (XDE) 二進位檔中。 如果模擬器 VM 進入錯誤狀態，您應該使用這個工具來清除這些 VM。 請從系統管理員命令提示字元執行此工具：`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **注意**  XDECleanup.exe 會刪除所有模擬器特定的 Hyper-V VM，而且也會刪除所有 VM 檢查點或儲存狀態。
+> **注意**  XDECleanup.exe 會刪除所有模擬器特定的 Hyper-V VM，而且也會刪除任何的 VM 檢查點或儲存狀態。
 
 ### <a name="uninstall-windows-10-for-mobile-image"></a>解除安裝 Windows 10 行動裝置版映像
 
@@ -660,6 +660,6 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ## <a name="related-topics"></a>相關主題
 
-* [在模擬器中執行 Windows Phone 應用程式](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015)
+* [在模擬器中執行 Windows Phone 應用程式](/visualstudio/debugger/run-windows-phone-apps-in-the-emulator?view=vs-2015&preserve-view=true)
 * [Windows 和 Windows Phone SDK 封存](https://developer.microsoft.com/windows/downloads/sdk-archive)
- 
+ 

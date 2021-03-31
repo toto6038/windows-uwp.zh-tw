@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d8fac685e341ab78357bfb2ab3ea4e668a78918a
-ms.sourcegitcommit: 34f532fd023af2849c3e975baf7aa6771d7e53b9
+ms.openlocfilehash: e1a0350cfcc9d77b0341fe90a92749faac5c63f2
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104893848"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939013"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移動與繪製命令語法
 
@@ -135,7 +135,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 |------|-------------|
 | *controlPoint1* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> 曲線的第一個控制點，它能決定曲線的起始正切函數。 |
 | *controlPoint2* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> 曲線的第二個控制點，它能決定曲線的結束正切函數。 |
-| *端點* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> 曲線要繪製到的點。 | 
+| *端點* | [**Point**](/uwp/api/Windows.Foundation.Point) <br/> 曲線要繪製到的點。 |
 
 **二次方貝茲曲線命令**
 

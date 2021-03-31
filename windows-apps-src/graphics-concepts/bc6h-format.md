@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f53ebf6a7326bd9e6a99272c01d9eeb5c03f580
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 668a95d92926ddce17d4003f66672ef1e7a3f34e
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89165072"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939043"
 ---
 # <a name="bc6h-format"></a>BC6H 格式
 
@@ -26,19 +26,20 @@ BC6H 格式針對使用了三個 HDR 色彩通道的影像，透過賦予每個�
 
 BC6H 是由下列 DXGI \_ 格式列舉值所指定：
 
--   **DXGI \_格式化 \_ BC6H \_ **無別。
+-   **DXGI \_格式化 \_ BC6H \_** 無別。
 -   **DXGI \_FORMAT \_ BC6H \_ UF16**。 此 BC6H 格式在 16 位元浮點數的色彩通道數值中，不會使用正負號位元。
 -   **DXGI \_FORMAT \_ BC6H \_ SF16**。 此 BC6H 格式在 16 位元浮點數的色彩通道數值中，使用正負號位元。
 
-**注意**   色彩通道的16位浮點數格式通常稱為「半」浮點數格式。 此格式以下列位元配置︰
-|                       |                                                 |
+**注意：** 色彩通道的 16 位元浮點數格式，通常會稱作「半」浮點數格式。 此格式以下列位元配置︰
+
+| 格式                      |      Layout                                           |
 |-----------------------|-------------------------------------------------|
 | UF16 (不帶正負號的浮點數) | 5 個指數位元 + 11 個尾數位元              |
 | SF16 (帶正負號的浮點數)   | 1 個正負號位元 + 5 個指數位元 + 10 個尾數位元 |
 
- 
+ 
 
- 
+ 
 
 BC6H 格式可用於 [Texture2D](/windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures) (包括陣列)、Texture3D，或 TextureCube (包括陣列) 紋理資源。 同樣地，此格式適用於任何與這些資源建立關聯的 Mipmap 表面。
 
@@ -93,7 +94,7 @@ decompress_bc6h(x, y, block)
 
 下表包含了 BC6H 區塊中 14 種可能格式個別的位元計數及其數值。
 
-| [模式] | 分割索引 | 資料分割 | 色彩端點                  | 模式位元      |
+| 模式 | 分割索引 | 資料分割 | 色彩端點                  | 模式位元      |
 |------|-------------------|-----------|----------------------------------|----------------|
 | 1    | 46 個位元           | 5 個位元    | 75 個位元 (10.555, 10.555, 10.555) | 2 個位元 (00)    |
 | 2    | 46 個位元           | 5 個位元    | 75 個位元 (7666, 7666, 7666)       | 2 個位元 (01)    |
@@ -110,7 +111,7 @@ decompress_bc6h(x, y, block)
 | 13   | 63 個位元           | 0 個位元    | 60 個位元 (12.8, 12.8, 12.8)       | 5 個位元 (01011) |
 | 14   | 63 個位元           | 0 個位元    | 60 個位元 (16.4, 16.4, 16.4)       | 5 個位元 (01111) |
 
- 
+ 
 
 此表格中的每個格式皆可利用其模式位元進行識別。 前 10 個模式使用於分割為兩個區域的磚，並且其模式位元欄位之長度可為二或五。 這些區塊也包含了壓縮色彩端點 (72 或 75 個位元)、分割 (5 個位元)，以及分割索引 (46 個位元) 的欄位。
 
@@ -156,7 +157,7 @@ decompress_bc6h(x, y, block)
 | by    | endpt \[ 1 \] 。A \[ 2\] |
 | bz    | endpt \[ 1 \] 。B \[ 2\] |
 
- 
+ 
 
 Endpt \[ i \] （0或1）分別是指第0個或第一組端點。
 ## <a name="span-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspanspan-idsign-extension-for-endpoint-valuesspansign-extension-for-endpoint-values"></a><span id="Sign-extension-for-endpoint-values"></span><span id="sign-extension-for-endpoint-values"></span><span id="SIGN-EXTENSION-FOR-ENDPOINT-VALUES"></span>端點數值的正負號擴充
@@ -323,8 +324,8 @@ unsigned short finish_unquantize(int comp)
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[紋理區塊壓縮](texture-block-compression.md)
+[材質區塊壓縮](texture-block-compression.md)
 
- 
+ 
 
- 
+ 

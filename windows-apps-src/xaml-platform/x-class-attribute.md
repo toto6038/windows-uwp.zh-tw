@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be238be3414fb17ff64a5c6d5da713f614c297be
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 1d5f1ce1b12e2cbc98744ba898a36c79ff5c6c4a
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89169082"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938983"
 ---
 # <a name="xclass-attribute"></a>x:Class 屬性
 
@@ -31,8 +31,8 @@ ms.locfileid: "89169082"
 
 | 詞彙 | 描述 |
 |------|-------------|
-| namespace | 選擇性。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
-| classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 | 
+| 命名空間 | 選擇性。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
+| classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 |
 
 ## <a name="remarks"></a>備註
 

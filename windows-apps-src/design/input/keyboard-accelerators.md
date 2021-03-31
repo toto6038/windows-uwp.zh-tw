@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f712dd8e845b3beb52981be4a17df128c48845d
-ms.sourcegitcommit: c5fdcc0779d4b657669948a4eda32ca3ccc7889b
+ms.openlocfilehash: 96df9555f567d8e8c1fd29847245e4e1a56a09bf
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102784739"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939103"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -354,14 +354,14 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 | 尋找焦點所在控制項或視窗中的內容 | Ctrl + F |
 | 移至下一個搜尋結果 | F3 |
 | **其他動作** | |
-| 新增我的最愛 | Ctrl + D | 
-| 重新整理 | F5 或 Ctrl + R | 
-| 放大 | Ctrl + + | 
-| 縮小 | Ctrl + - | 
-| 縮放至預設檢視大小 | Ctrl + 0 | 
-| 儲存 | Ctrl + S | 
-| 關閉 | Ctrl + W | 
-| 列印 | Ctrl + P | 
+| 新增我的最愛 | Ctrl + D |
+| 重新整理 | F5 或 Ctrl + R |
+| 放大 | Ctrl + + |
+| 縮小 | Ctrl + - |
+| 縮放至預設檢視大小 | Ctrl + 0 |
+| 儲存 | Ctrl + S |
+| 關閉 | Ctrl + W |
+| 列印 | Ctrl + P |
 
 請注意，有些組合不適用於 Windows 的當地語系化版本。 例如，在 Windows 的西班牙文版本中，設定粗體要使用 Ctrl+N 而不是 Ctrl+B。 如果應用程式已當地語系化，建議您提供當地語系化的鍵盤快速鍵。
 
@@ -371,7 +371,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 由於鍵盤快速鍵通常不會直接在 Windows 應用程式的 UI 中描述，因此您可以透過 [工具提示](../controls-and-patterns/tooltips.md)來改善可搜尋性，這會在使用者將焦點移至、按下並按住滑鼠指標或將滑鼠指標停留在控制項上時自動顯示。 工具提示可識別控制項是否有相關聯的鍵盤快速操作，以及快速按鍵組合為何 (若有的話)。
 
-**Windows 10 版本 1803 (2018 年4月更新) 和更新版本**
+**Windows 10，版本 1803 (2018 年4月更新) 和更新版本**
 
 根據預設，當宣告鍵盤快速鍵時，除了 [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) 和 [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem) 以外的所有控制項 (，) 會在工具提示中顯示對應的按鍵組合。
 

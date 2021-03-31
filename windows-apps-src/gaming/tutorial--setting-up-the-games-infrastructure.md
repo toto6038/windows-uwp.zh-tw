@@ -6,12 +6,12 @@ ms.date: 06/24/2020
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: c6e3a84b2f483f0b6d2d590181cac232f68f2b72
-ms.sourcegitcommit: e8ea2a36e4f2b9e0326958d226a36dd30c3efa57
+ms.openlocfilehash: 553069897cc71b45c34159749b7c16bd0af73c7b
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105099809"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939093"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
@@ -189,7 +189,7 @@ void GameMain::Run()
 |VertexShader. hlsl 和 VertexShaderFlat. hlsl|著色器|包含基本頂點著色器的高階著色器語言 (HLSL) 程式碼。|
 |無效. hlsl 和 PixelShaderFlat. hlsl|著色器|包含基本圖元著色器的高階著色器語言 (HLSL) 程式碼。|
 |ConstantBuffers.hlsli|著色器|包含常數緩衝區的資料結構定義，以及用來將模型視圖投射 (MVP) 矩陣和每個頂點資料傳遞給頂點著色器的著色器結構。|
-|pch.h/.cpp|N/A|包含通用 c + +/WinRT、Windows 和 DirectX 包含。| 
+|pch.h/.cpp|N/A|包含通用 c + +/WinRT、Windows 和 DirectX 包含。|
 
 ### <a name="next-steps"></a>下一步
 

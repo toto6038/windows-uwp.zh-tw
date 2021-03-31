@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45cdc3bcf766cd110498e357052da150ea96fa21
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 462a1323766a4fb2cc1c8bfdc119c72069fd59e4
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161692"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105938993"
 ---
 # <a name="xkey-attribute"></a>x:Key 屬性
 
@@ -39,7 +39,7 @@ ms.locfileid: "89161692"
 | 詞彙 | 描述 |
 |------|-------------|
 | 物件 (object) | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](../design/controls-and-patterns/resourcedictionary-and-xaml-resource-references.md)。 |
-| stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 | 
+| stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 |
 
 ##  <a name="xamlname-grammar"></a>XamlName 文法
 

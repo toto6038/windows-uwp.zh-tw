@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 使用者介面, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: eca248887985fc6d33ca6d6b552a0b61a98ce428
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
+ms.openlocfilehash: 0cc736bf58ea70068713218e0e8fc2e06c87ece5
+ms.sourcegitcommit: 249100d990cd5cf2854c59fa66803b7f83d5db96
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89173102"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105939083"
 ---
 # <a name="add-a-user-interface"></a>新增使用者介面
 
@@ -64,14 +64,14 @@ Direct2D 並不是專為使用者介面或 HTML 和 XAML 等版面配置所設�
 - 在 [移動外觀控制器](tutorial--adding-controls.md) boundries 的右下角有兩個矩形。 
 
 
-在遊戲中的標頭顯示狀態會以[**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)類別的[**GameHud：： Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358)方法繪製。 在此方法中，會更新代表 UI 的 Direct2D 重迭，以反映點擊次數、剩餘時間和層級數目的變更。
+在遊戲中的標頭顯示狀態會以 [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h)類別的 [**GameHud：： Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358)方法繪製。 在此方法中，會更新代表 UI 的 Direct2D 重迭，以反映點擊次數、剩餘時間和層級數目的變更。
 
 如果已初始化遊戲，我們會將 `TotalHits()` 、 `TotalShots()` 和新增 `TimeRemaining()` 至 [**swprintf_s**](/cpp/c-runtime-library/reference/sprintf-s-sprintf-s-l-swprintf-s-swprintf-s-l) 緩衝區，並指定列印格式。 然後我們可以使用 [**DrawText**](/windows/desktop/Direct2D/id2d1rendertarget-drawtext) 方法來繪製它。 針對目前的層級指標，我們會執行相同的動作、繪製空的數位來顯示未完成的層級（例如➀），以及➊等填滿的數位來顯示特定層級已完成。
 
 
 下列程式碼片段會逐步解說的 **GameHud：： Render** 方法的進程 
 - 使用[* * ID2D1RenderTarget：:D rawbitmap * *](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-drawbitmap(id2d1bitmap_constd2d1_rect_f__float_d2d1_bitmap_interpolation_mode_constd2d1_rect_f_))建立點陣圖
-- 使用[ **D2D1：： RECTF**將 UI 區域分割成矩形](/windows/desktop/api/dcommon/ns-dcommon-d2d_rect_f)
+- 使用 [ **D2D1：： RECTF** 將 UI 區域分割成矩形](/windows/desktop/api/dcommon/ns-dcommon-d2d_rect_f)
 - 使用 **DrawText** 來建立文字元素
 
 ```cppwinrt
@@ -228,7 +228,7 @@ if (game->IsActivePlay())
 auto windowBounds = m_deviceResources->GetLogicalSize();
 ```
 
-針對 UI 程式設計，取得遊戲視窗的大小是不可或缺的。 視窗的大小會以稱為 Dip (與裝置無關的圖元) 來提供，其中 DIP 的定義是以英寸為單位的1/96。 Direct2D 會在繪圖發生時將繪圖單位調整為實際圖元，如此一來，使用 Windows 每英寸的點 (DPI) 設定。 同樣地，當您使用 [**DirectWrite**](/windows/desktop/DirectWrite/direct-write-portal)繪製文字時，您可以為字型的大小指定 dip 而非點。 DIP 以浮點數表示。 
+針對 UI 程式設計，取得遊戲視窗的大小是不可或缺的。 視窗的大小會以稱為 Dip (與裝置無關的圖元) 來提供，其中 DIP 的定義是以英寸為單位的1/96。 Direct2D 會在繪圖發生時將繪圖單位調整為實際圖元，如此一來，使用 Windows 每英寸的點 (DPI) 設定。 同樣地，當您使用 [**DirectWrite**](/windows/desktop/DirectWrite/direct-write-portal)繪製文字時，您可以為字型的大小指定 dip 而非點。 DIP 以浮點數表示。 
 
 ### <a name="displaying-game-state-info"></a>顯示遊戲狀態資訊
 
@@ -238,13 +238,13 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
 ![重迭的狀態和動作](images/simple-dx-game-ui-finaloverlay.png)
 
-覆迭分為兩個區段： **狀態** 和 **動作**。 **狀態**secton 會進一步細分為**標題**和**主體**矩形。 [ **動作** ] 區段只有一個矩形。 每個矩形都有不同的用途。
+覆迭分為兩個區段： **狀態** 和 **動作**。 **狀態** secton 會進一步細分為 **標題** 和 **主體** 矩形。 [ **動作** ] 區段只有一個矩形。 每個矩形都有不同的用途。
 
 -   `titleRectangle` 包含標題文字。
 -   `bodyRectangle` 包含主體文字。
 -   `actionRectangle` 包含通知播放程式採取特定動作的文字。
 
-遊戲有六個可設定的狀態。 使用重迭 **狀態** 部分所傳達之遊戲的狀態。 **狀態**矩形會使用與下列狀態相對應的一些方法來更新。
+遊戲有六個可設定的狀態。 使用重迭 **狀態** 部分所傳達之遊戲的狀態。 **狀態** 矩形會使用與下列狀態相對應的一些方法來更新。
 
 - 載入
 - 初始開始/高分數統計資料
@@ -289,12 +289,12 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
 #### <a name="deviceresourcessetdpi"></a>DeviceResources：： SetDpi
 
-[**DeviceResources：： SetDpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527)方法會設定視窗的每英寸點。 當 DPI 變更時，就會呼叫這個方法，且需要重新調整，這會在調整遊戲視窗大小時發生。 更新 DPI 之後，這個方法也會呼叫[**DeviceResources：： CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487) ，以確保每次調整視窗大小時都會重新建立所需的資源。
+[**DeviceResources：： SetDpi**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L514-L527)方法會設定視窗的每英寸點。 當 DPI 變更時，就會呼叫這個方法，且需要重新調整，這會在調整遊戲視窗大小時發生。 更新 DPI 之後，這個方法也會呼叫 [**DeviceResources：： CreateWindowSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/Common/DeviceResources.cpp#L214-L487) ，以確保每次調整視窗大小時都會重新建立所需的資源。
 
 #### <a name="gameinfooverlaycreatewindowssizedependentresources"></a>GameInfoOverlay::CreateWindowsSizeDependentResources
 
 [**GameInfoOverlay：： CreateWindowsSizeDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L108-L225)方法是我們所有繪圖都會發生的位置。 以下是方法步驟的大綱。
-- 系統會建立三個矩形，以針對 **標題**、 **主體**和 **動作** 文字的 UI 文字進行區段。
+- 系統會建立三個矩形，以針對 **標題**、 **主體** 和 **動作** 文字的 UI 文字進行區段。
     ```cppwinrt 
     m_titleRectangle = D2D1::RectF(
         GameInfoOverlayConstant::SideMargin,
@@ -316,12 +316,12 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
         );
     ```
 
-- 會建立名為的點陣圖 `m_levelBitmap` ，並使用 **CreateBitmap**將目前的 DPI 納入考慮。
+- 會建立名為的點陣圖 `m_levelBitmap` ，並使用 **CreateBitmap** 將目前的 DPI 納入考慮。
 - `m_levelBitmap` 已設定為使用 [**ID2D1DeviceCoNtext：： SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget)的2d 轉譯目標。
 - 會清除點陣圖，並使用 [**ID2D1RenderTarget：： Clear**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-clear)將每個圖元設為黑色。
-- 呼叫[**ID2D1RenderTarget：： BeginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw)來起始繪製。 
-- 呼叫**DrawText**時 `m_titleString` ，會 `m_bodyString` `m_actionString` 使用對應的**ID2D1SolidColorBrush**，在 approperiate 矩形中繪製儲存在、和中的文字。
-- 呼叫[**ID2D1RenderTarget：： EndDraw**](ID2D1RenderTarget::EndDraw) ，以停止上的所有繪製作業 `m_levelBitmap` 。
+- 呼叫 [**ID2D1RenderTarget：： BeginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw)來起始繪製。 
+- 呼叫 **DrawText** 時 `m_titleString` ，會 `m_bodyString` `m_actionString` 使用對應的 **ID2D1SolidColorBrush**，在 approperiate 矩形中繪製儲存在、和中的文字。
+- 呼叫 [**ID2D1RenderTarget：： EndDraw**](ID2D1RenderTarget::EndDraw) ，以停止上的所有繪製作業 `m_levelBitmap` 。
 - 使用名為的 **CreateBitmap** 來建立另一個點陣圖 `m_tooSmallBitmap` ，以做為回復之用，僅顯示針對遊戲的顯示設定太小。
 - 針對在上繪製的重複 `m_levelBitmap` 程式 `m_tooSmallBitmap` ，這次只會 `Paused` 在主體中繪製字串。
 
@@ -407,9 +407,9 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 使用 **GameInfoOverlay** 物件初始化的 Direct2D 裝置內容，此方法會使用背景筆刷，以黑色填滿標題和主體矩形。 它會使用白色文字筆刷，在標題矩形中繪製 "High Score" 文字字串，並在內文矩形中繪製包含更新遊戲狀態資訊的字串。
 
 
-從**GameMain**物件上的方法，對[**GameInfoOverlay：： SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)的後續呼叫會更新動作矩形，此動作會提供**GameInfoOverlay：： SetAction**所需的遊戲狀態資訊，以判斷播放程式的正確訊息，例如「點擊以繼續」。
+從 **GameMain** 物件上的方法，對 [**GameInfoOverlay：： SetAction**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L522-L564)的後續呼叫會更新動作矩形，此動作會提供 **GameInfoOverlay：： SetAction** 所需的遊戲狀態資訊，以判斷播放程式的正確訊息，例如「點擊以繼續」。
 
-在 [**GameMain：： SetGameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/6370138b150ca8a34ff86de376ab6408c5587f5d/Samples/Simple3DGameXaml/cpp/GameMain.cpp#L606-L661) 方法中，選擇任何指定狀態的重迭，如下所示：
+在 [**GameMain：： SetGameInfoOverlay**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameMain.cpp#L606-L661) 方法中，選擇任何指定狀態的重迭，如下所示：
 
 ```cppwinrt
 void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -472,6 +472,6 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 
 現在遊戲有一種方式可以根據遊戲狀態將文字資訊傳達給播放程式，而我們也有辦法切換在遊戲中顯示的內容。
 
-### <a name="next-steps"></a>後續步驟
+### <a name="next-steps"></a>下一步
 
 在下一個主題中， [新增控制項](tutorial--adding-controls.md)時，我們會查看播放玩家如何與範例遊戲互動，以及輸入如何變更遊戲狀態。
