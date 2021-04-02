@@ -4,22 +4,26 @@ title: 網頁檢視
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 03/30/2021
 ms.topic: article
 keywords: windows 10, uwp
+ms.custom: contperf-fy21q3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bab93eca2318d7253df5acb16d866ac81d8ae6c
-ms.sourcegitcommit: 4ea59d5d18f79800410e1ebde28f97dd5e45eb26
+ms.openlocfilehash: 5344e42b7c06490a0e4cd0a3ceb3b5f7f7a52974
+ms.sourcegitcommit: d7783efb1c60b81e94898294fc5794c1d3320004
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "101824432"
+ms.lasthandoff: 03/30/2021
+ms.locfileid: "105982641"
 ---
 # <a name="web-view"></a>網頁檢視
 
-網頁檢視控制項會將檢視嵌入您的應用程式中，而應用程式使用 Microsoft Edge 轉譯引擎來轉譯網頁內容。 超連結也可以在網頁檢視控制項中顯示和運作。
+Web view 控制項會將一個視圖內嵌到您的應用程式，以使用舊版 Microsoft Edge 轉譯引擎來呈現 web 內容。 超連結也可以在網頁檢視控制項中顯示和運作。
 
 > **重要 API**：[WebView 類別](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+
+> [!IMPORTANT]
+> 此 `WebView2` 控制項使用 Microsoft Edge (Chromium) 作為轉譯引擎，以顯示應用程式中的 web 內容。 `WebView2` 可作為 [WINDOWS UI 程式庫3的一部分使用 (WinUI3) ](/windows/apps/winui/winui3)。 如需詳細資訊，請參閱 [Microsoft Edge WebView2 簡介](/microsoft-edge/webview2/)、 [WinUI 3 中的 WebView2 使用者入門 (Preview) ](/microsoft-edge/webview2/gettingstarted/winui)和 [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2) （WinUI API 參考）。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -83,7 +87,7 @@ Source 屬性可以設定在程式碼中，但是，如果不這麼做，您通�
 若要載入網頁內容，請使用 [Navigate](/uwp/api/windows.ui.xaml.controls.webview.navigate) 方法搭配使用 http 或 https 配置的 **Uri**。 
 
 ```csharp
-webView1.Navigate("http://www.contoso.com");
+webView1.Navigate(new Uri("http://www.contoso.com"));
 ```
 
 若要瀏覽至具有 POST 要求和 HTTP 標頭的 URI，請使用 [NavigateWithHttpRequestMessage](/uwp/api/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage) 方法。 此方法僅支援 [HttpRequestMessage.Method](/uwp/api/windows.web.http.httprequestmessage.method) 屬性值的 [HttpMethod.Post](/uwp/api/windows.web.http.httpmethod.post) 和 [HttpMethod.Get](/uwp/api/windows.web.http.httpmethod.get)。 
@@ -93,13 +97,13 @@ webView1.Navigate("http://www.contoso.com");
 所有這些第一層子資料夾都是與其他第一層子資料夾中的內容隔離。 例如，您可以流覽至 appdata：///temp/folder1/file.html，但此檔案中不能有連結到 appdata：///temp/folder2/file.html。 不過，您仍然可以使用 **ms-appx-web 配置** 來連結至應用程式套件中的 HTML 內容，以及使用 **http** 和 **https** URI 配置來連結至 Web 內容。
 
 ```csharp
-webView1.Navigate("ms-appdata:///local/intro/welcome.html");
+webView1.Navigate(new Uri("ms-appdata:///local/intro/welcome.html"));
 ```
 
 若要從應用程式套件中載入內容，請使用 **Navigate** 方法搭配使用 [ms-appx-web 配置](/previous-versions/windows/apps/jj655406(v=win.10)) 的 **Uri**。 
 
 ```csharp
-webView1.Navigate("ms-appx-web:///help/about.html");
+webView1.Navigate(new Uri("ms-appx-web:///help/about.html"));
 ```
 
 您可以使用 [NavigateToLocalStreamUri](/uwp/api/windows.ui.xaml.controls.webview.navigatetolocalstreamuri) 方法，透過自訂解析器載入本機內容。 這適用於更進階的案例，例如，下載和快取 Web 內容以進行離線使用，或是解壓縮壓縮檔中的內容。
@@ -297,7 +301,7 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 
 這個範例示範應用程式資訊清單的一個區段。 在這裡，本機 URI 具有 Windows 執行階段的存取權。 
 
-```csharp
+```xml
   <Applications>
     <Application Id="App"
       ...
@@ -341,3 +345,6 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 ## <a name="related-topics"></a>相關主題
 
 - [WebView 類別](/uwp/api/Windows.UI.Xaml.Controls.WebView)
+- [Microsoft Edge WebView2 簡介](/microsoft-edge/webview2/)
+- [開始使用 WinUI 3 的 WebView2 (預覽版) ](/microsoft-edge/webview2/gettingstarted/winui)
+- [WebView2](/windows/winui/api/microsoft.ui.xaml.controls.webview2)

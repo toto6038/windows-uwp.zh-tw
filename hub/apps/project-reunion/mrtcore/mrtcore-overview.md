@@ -2,17 +2,17 @@
 description: '對 MRT.LOG 核心元件的總覽，以及它們如何運作以將應用程式資源載入 (Project 留尼旺島) '
 title: '管理資源的 MRT.LOG 核心 (Project 留尼旺島) '
 ms.topic: article
-ms.date: 03/09/2021
+ms.date: 03/31/2021
 keywords: MRT.LOG，MRTCore，pri，makepri，資源，資源載入
 ms.author: hickeys
 author: hickeys
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b732deb0f387c11b2675193c047d33fa3e55ace
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 4b86e3d1b232a9c0da87808e8fa07a13b18ffdd6
+ms.sourcegitcommit: d793c82587b8368e241d74be1473f4f0af5bb9ee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730482"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "106164368"
 ---
 # <a name="manage-resources-with-mrt-core"></a>使用 MRT.LOG Core 管理資源 
 
@@ -28,7 +28,13 @@ PRI 檔案包含實際的字串資源。 內嵌的二進位檔和檔案路徑資
 
 PRI 檔案只包含資料，所以它們不使用可攜式執行檔 (PE) 的格式。 它們是特別設計成僅限資料。
 
-## <a name="access-app-resources"></a>存取應用程式資源
+> [!NOTE]
+> 您必須先確定已設定這些資源，以便在 resources 檔中編制索引，才能使用 MRT.LOG Core 在 WinUI 3 專案中取出使用 c #/.NET 5 的字串和影像。 否則，無法透過 MRT.LOG Core 抓取這些資源。
+>
+> * 若為字串資源檔 (. .resw) ，請確定檔案的 [ **組建動作** ] 屬性設定為 [ **PRIResource**]。
+> * 若為影像檔案，請確定檔案的 [ **組建動作** ] 屬性設定為 [ **內容**]。
+
+## <a name="access-app-resources-with-mrt-core"></a>使用 MRT.LOG 核心存取應用程式資源
 
 MRT.LOG Core 提供數種不同的方式來存取您的應用程式資源。
 
@@ -49,15 +55,6 @@ App 可用的資源儲存在階層集合中，您可以存取 [ResourceMap](/win
 ### <a name="qualify-resource-selection-with-resourcecontext"></a>使用 Windows.applicationmodel.resources.core.resourcecoNtext 限定資源選取範圍
 
 資源候選項目的選擇是根據特定 [ResourceContext](/windows/winui/api/microsoft.applicationmodel.resources.resourcecontext)，這是資源限定詞值的集合 (語言、縮放比例，對比等)。 預設內容會使用 App 目前針對每個限定詞值的設定，除非被覆寫。 例如，影像之類的資源可以縮放，從一部監視器到另一部都不同，從一個應用程式檢視到另一個也不同。 基於這個原因，每個應用程式檢視具有不同的預設內容。 每當您擷取資源候選項目時，您應該在 **ResourceContext** 執行個體中傳遞，為指定的檢視取得最適當的值。
-
-### <a name="load-images"></a>載入映射
-
-如果您想要使用 MRT.LOG 核心來抓取您新增至專案的影像，您必須將影像設定為以內容形式建立。 如果您沒有這麼做，則不會在 .resources 檔案中建立映射的索引，而且無法由 MRT.LOG Core 抓取。
-
-若要設定映射以建立為內容：
-
-* 在 c #/.NET 5 專案中，將影像的 [ **組建動作** ] 屬性設定為 [ **內容**]。
-* 在 c + +/WinRT 專案中，將影像的 [ **內容** ] 屬性設定為 [ **True**]。
 
 ## <a name="sample"></a>範例
 

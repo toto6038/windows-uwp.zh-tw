@@ -8,42 +8,42 @@ ms.topic: article
 keywords: rust、windows 10、microsoft、learning rust、windows 上適用于初學者的 rust、使用 vs code 的 rust
 ms.localizationpriority: medium
 ms.date: 03/04/2021
-ms.openlocfilehash: 5aac8dd9b9f760f6e1ed49ff0246e44c400d72c4
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: fa79808c2a2e69ec7e11c7b212d17021cc13cc50
+ms.sourcegitcommit: 2beecf3e403e9f057aefdc43c2f7db6f621793cd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102194480"
+ms.lasthandoff: 03/31/2021
+ms.locfileid: "106099793"
 ---
 # <a name="set-up-your-dev-environment-on-windows-for-rust"></a>在 Windows 上設定開發環境以進行 Rust
 
 在 [使用 Rust 主題開發 Windows 的簡介](overview.md) 中，我們引進了 Rust，並討論它是什麼，以及其主要的移動元件。 在本主題中，我們將設定開發環境。
 
-建議您在 Windows 上進行 Rust 開發。 但是，如果您打算在 Linux 上進行本機編譯和測試，則在適用于 Linux 的 Windows 子系統上使用 Rust 進行開發 [ (WSL) ](/windows/wsl/about) 也是選項。
+建議您在 Windows 上進行 Rust 開發。 但是，如果您打算在 Linux 上進行本機編譯和測試，則在 [Windows 子系統 Linux 版 (WSL) ](/windows/wsl/about) 上使用 Rust 進行開發也是選項。
 
 ## <a name="install-visual-studio-recommended-or-the-microsoft-c-build-tools"></a>安裝 Visual Studio (建議的) 或 Microsoft c + + Build Tools
 
 在 Windows 上，Rust 需要特定的 c + + build tools。
 
-您可以下載 [Microsoft c + + Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)，或 (建議的) 您可能只想要安裝 [microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)。
+您可以下載 [Microsoft c + + Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)，或 (建議的) 您可能只想要安裝 [Microsoft Visual Studio](https://visualstudio.microsoft.com/downloads/)。
 
 > [!NOTE]
-> 我們將使用 Visual Studio Code 作為 Rust 的整合式開發環境 (IDE) ，而不是 Visual Studio。 但是您仍然可以安裝 Visual Studio，而不需要支付費用。 有提供 &mdash; 免費的學生、開放原始碼參與者及個人版的社區版。
+> 我們將使用 Visual Studio Code 作為整合式開發環境 (IDE) Rust，而不是 Visual Studio。 但是您仍然可以安裝 Visual Studio 而不需要支付費用。 有提供 &mdash; 免費的學生、開放原始碼參與者及個人版的社區版。
 
-安裝 Visual Studio 時，有數個 Windows 工作負載建議您選取 &mdash; **.net 桌面開發**、**使用 c + + 進行桌面開發**，以及 **通用 Windows 平臺開發**。 您可能不認為您需要全部三個，但有可能是因為在需要時才會發生某些相依性，所以我們認為這三個都是比較簡單的選擇。
+安裝 Visual Studio 時，我們建議您選取 &mdash; **.net 桌面開發**、**使用 c + + 進行桌面開發**，以及 **通用 Windows 平臺開發** 工作負載。 您可能不認為您需要全部三個，但有可能是因為在需要時才會發生某些相依性，所以我們認為這三個都是比較簡單的選擇。
 
 新的 Rust 專案預設為使用 Git。 此外，也請將 **適用于 Windows** 的個別元件 Git 新增至混合 (使用 [搜尋] 方塊依名稱) 搜尋。
 
-![.NET 桌面開發、使用 c + + 的桌面開發和通用 Windows 平臺開發](../../images/rust-vs-workloads.png)
+![.NET 桌面開發、使用 c + + 的桌面開發，以及通用 Windows 平臺開發](../../images/rust-vs-workloads.png)
 
 ## <a name="install-rust"></a>安裝 Rust
 
-接下來， [從 Rust 網站安裝 Rust](https://www.rust-lang.org/tools/install)。 網站會偵測到您正在執行 Windows，並提供您 Windows 的64和32位安裝程式，以及將 `rustup` Rust 安裝至 [適用于 Linux 的 Windows 子系統 (WSL) ](/windows/wsl/about)的指示。
+接下來， [從 Rust 網站安裝 Rust](https://www.rust-lang.org/tools/install)。 網站偵測到您正在執行 Windows，並提供您的64和32位安裝 `rustup` 程式給 windows，以及安裝 Rust 至 [WINDOWS 子系統 LINUX 版 (WSL) ](/windows/wsl/about)的指示。
 
 > [!TIP]
 > Rust 在 Windows 上的運作方式很好;因此，您不需要前往 WSL route (，除非您打算在 Linux) 上進行本機編譯和測試。 由於您有 Windows，建議您只執行 `rustup` 64 位 windows 的安裝程式。 然後您就可以使用 Rust 來撰寫 *適用于 Windows 的* 應用程式。
 
-當 Rust 安裝程式完成時，您就可以開始使用 Rust 進行程式設計。 您還沒有方便的 IDE (我們會在下一節 &mdash; [安裝 Visual Studio Code](#install-visual-studio-code)) 。 您還沒有設定呼叫 Windows Api。 但是，您可以 (VS 或任何) 的 **X64 Native Tools 命令提示** 字元中啟動命令提示字元 `cmd.exe` ，而且可能會發出命令 `cargo --version` 。 如果您看到列印的版本號碼，則會確認 Rust 已正確安裝。
+當 Rust 安裝程式完成時，您就可以開始使用 Rust 進行程式設計。 您還不會有方便的 IDE (我們將在下一節 &mdash; [安裝 Visual Studio Code](#install-visual-studio-code)) 。 您還沒有設定呼叫 Windows Api。 但是，您可以啟動命令提示字元 (**VS** 或任何) 的 X64 Native Tools 命令提示字元， `cmd.exe` 而且可能會發出命令 `cargo --version` 。 如果您看到列印的版本號碼，則會確認 Rust 已正確安裝。
 
 如果您想知道 `cargo` 上述關鍵字的用法， *貨物* 是 Rust 開發環境中的工具名稱，可管理和建立您的專案 (更正確、 *封裝*) 及其相依性。
 
@@ -51,28 +51,28 @@ ms.locfileid: "102194480"
 
 ## <a name="install-visual-studio-code"></a>安裝 Visual Studio Code
 
-藉由使用 Visual Studio Code (VS Code) 做為您的文字編輯器/整合式開發環境 (IDE) ，您可以利用語言服務，例如程式碼完成、語法醒目提示、格式設定和偵錯工具。
+藉由使用 Visual Studio Code (VS Code) 做為您的文字編輯器/整合式開發環境 (IDE) ，您可以利用語言服務，例如程式碼完成、語法反白顯示、格式設定和偵錯工具。
 
-VS Code 也包含 [內建終端](https://code.visualstudio.com/docs/editor/integrated-terminal) 機，可讓您發出命令列引數 (來發出命令給貨物，例如) 。
+VS Code 也包含 [內建終端](https://code.visualstudio.com/docs/editor/integrated-terminal) 機，可讓您發出命令列引數 (來發出命令以進行貨物，例如) 。
 
 1. 首先，請下載並安裝 [適用于 Windows 的 Visual Studio Code](https://code.visualstudio.com)。
 
-2. 安裝 VS Code 之後，請安裝 **rust 分析器***擴充* 功能。 您可以 [從 Visual Studio Marketplace 安裝 rust 分析器擴充功能](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer)，也可以開啟 VS Code，並在 [延伸模組] 功能表中搜尋 **rust-analyzer** (Ctrl + Shift + X) 。
+2. 安裝 VS Code 之後，請安裝 **rust 分析器***擴充* 功能。 您可以 [從 Visual Studio Marketplace 安裝 rust 分析器擴充功能](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer)，也可以開啟 VS Code，然後在 [延伸模組] 功能表中搜尋 **rust-analyzer** (Ctrl + Shift + X) 。
 
-3. 如需偵錯工具支援，請安裝 **CodeLLDB** 延伸模組。 您可以 [從 Visual Studio Marketplace 安裝 CodeLLDB 延伸](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)模組，也可以開啟 VS Code，並在 [延伸模組] 功能表中搜尋 **CodeLLDB** (Ctrl + Shift + X) 。
+3. 如需偵錯工具支援，請安裝 **CodeLLDB** 延伸模組。 您可以 [從 Visual Studio Marketplace 安裝 CodeLLDB 延伸](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)模組，也可以開啟 VS Code，然後在 [延伸模組] 功能表中搜尋 **CodeLLDB** (Ctrl + Shift + X) 。
 
    > [!NOTE]
-   > **CodeLLDB** 延伸模組支援的替代方法是 Microsoft **C/c + +** 擴充功能。 **C/c + +** 擴充功能與 **CodeLLDB** 所做的一樣，也不會與 IDE 整合。 但是 **C/c + +** 延伸模組提供了絕佳的調試資訊。 因此，您可能會想要在需要的情況下使用。
+   > **CodeLLDB** 延伸模組支援的替代方法是 Microsoft **C/c + +** 擴充功能。 **C/c + +** 延伸模組並不會與 **CodeLLDB** 的 IDE 整合。 但是 **C/c + +** 延伸模組提供了絕佳的調試資訊。 因此，您可能會想要在需要的情況下使用。
    >
-   > 您可以 [從 Visual Studio Marketplace 安裝 C/c + + 延伸](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)模組，也可以開啟 VS Code，並在 [延伸模組] 功能表中搜尋 **C/c + +** (Ctrl + Shift + X) 。
+   > 您可以 [從 Visual Studio Marketplace 安裝 c/c + + 延伸](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)模組，也可以開啟 VS Code，然後在 [延伸模組] 功能表中搜尋 **C/c + +** (Ctrl + Shift + X) 。
 
-4. 如果您想要在 VS Code 中開啟終端機，請選取 [**視圖**  >  **終端** 機]，或使用 [倒引號] 字元) 中的快捷方式 **Ctrl + '** (。 預設終端機為 PowerShell。
+4. 如果您想要在 VS Code 中開啟終端機，請選取 [**視圖**  >  **終端** 機]，或使用 [倒引號字元) ] 的快捷方式 **Ctrl + '** (。 預設終端機為 PowerShell。
 
-## <a name="hello-world-tutorial-rust-with-vs-code"></a>Hello, world! 使用 VS Code (Rust 的教學課程) 
+## <a name="hello-world-tutorial-rust-with-vs-code"></a>Hello, world! 教學課程 (使用 VS Code 的 Rust) 
 
 讓我們使用簡單的「Hello，world！」來 Rust 旋轉 應用程式。
 
-1. 首先， (VS、或任何) 的 **X64 Native Tools 命令提示** 字元，以及要 `cmd.exe` `cd` 保留 Rust 專案的資料夾中，啟動命令提示字元。
+1. 首先，啟動命令提示字元 (VS、或任何) 的 **x64 Native Tools 命令提示字元**， `cmd.exe` 以及要 `cd` 保留 Rust 專案的資料夾。
 
 2. 然後使用下列命令，要求貨物為您建立新的 Rust 專案。
 
@@ -91,7 +91,7 @@ VS Code 也包含 [內建終端](https://code.visualstudio.com/docs/editor/integ
    code .
    ```
 
-4. 在 VS Code 的 Explorer 中開啟檔案，此檔案 `src`  >  `main.rs` 是 Rust 原始程式碼檔，其中包含應用程式的進入點 (名為 **main**) 的函式。 它看起來像下面這樣。
+4. 在 VS Code 的 Explorer 中開啟檔案，此檔案 `src`  >  `main.rs` 是包含應用程式進入點的 Rust 原始程式碼檔， (名為 **main**) 的函式。 它看起來像下面這樣。
 
    ```rust
    // main.rs
