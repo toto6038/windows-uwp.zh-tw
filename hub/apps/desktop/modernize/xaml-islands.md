@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: b8cb2670c09c5a93d2edd67e3f338a33eeb488ad
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 6e881fbb883d35d35b70eb8984b9264acd78191d
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922764"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270175"
 ---
 # <a name="host-winrt-xaml-controls-in-desktop-apps-xaml-islands"></a>在傳統型應用程式中裝載 WinRT XAML 控制項 (XAML Islands)
 
@@ -29,7 +29,7 @@ ms.locfileid: "98922764"
 您使用 XAML Islands 的方式取決於您的應用程式類型，以及您想要裝載的 WinRT XAML 控制項類型。
 
 > [!NOTE]
-> 如果您有關於 XAML Islands 的意見反應，請在 [Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中建立新問題，並留下您的意見。 如果您想要私下提交意見反應，可以將意見反應傳送到 XamlIslandsFeedback@microsoft.com。 您的深入解析和案例對我們而言非常重要。
+> 如果您有關於 XAML Islands 的意見反應，請在 [Microsoft.Toolkit.Win32 存放庫](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues)中建立新問題，並留下您的意見。
 
 ## <a name="requirements"></a>需求
 

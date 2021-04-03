@@ -7,12 +7,12 @@ keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 08d25334014d90f4aaec7119bc9ee84444547115
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: b427e3a5b26427e00c288f90bf6f63464ebd438a
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730782"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270198"
 ---
 # <a name="get-started-with-project-reunion"></a>開始使用 Project 留尼旺島
 
@@ -89,6 +89,9 @@ ms.locfileid: "105730782"
 如果您有想要使用 Project 留尼旺島的現有專案，可以在專案中安裝 Project 留尼旺島 0.5 NuGet 套件。 此案例有 [一些限制](#limitations-for-using-project-reunion-in-existing-projects)。
 
 1. 開啟現有的桌面專案 (Visual Studio 2019 中的 c #/.NET 5 或 c + +/WinRT) 或 UWP 專案。
+
+    > [!NOTE]
+    > 如果您有 c #/.NET 5 桌面專案，請確定專案檔中的 **TargetFramework** 元素已指派給 Windows 10 特定的 .net 5 的標記，例如 **NET 5.0-Windows 10.0.19041.0**，以便它可以呼叫 Windows 執行階段 api。 如需詳細資訊，請參閱[本節](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-5-use-the-target-framework-moniker-option)。
 
 2. 請確定已啟用[套件參考](/nuget/consume-packages/package-references-in-project-files)：
 

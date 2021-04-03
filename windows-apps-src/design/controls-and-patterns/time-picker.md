@@ -4,7 +4,7 @@ title: 時間選擇器
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/02/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,16 +12,15 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 507ce20c97767af435634b3c4db8e9c7e97db729
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: 4c3d5391e3d738e7de81362a5fd0e42dc6d007dd
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93034701"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270227"
 ---
 # <a name="time-picker"></a>時間選擇器
  
-
 時間選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選時間值。
 
 ![時間選擇器的範例](images/time-picker-closed.png)
@@ -40,7 +39,7 @@ ms.locfileid: "93034701"
    :::column-end:::
 :::row-end:::
 
-> **平台 API** ： [TimePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、 [Time 屬性](/uwp/api/windows.ui.xaml.controls.timepicker.time)
+> **平臺 api**： [TimePicker 類別](/uwp/api/Windows.UI.Xaml.Controls.TimePicker)、 [SelectedTime 屬性](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -85,8 +84,92 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時間選擇器的範例](images/time-picker-closed.png)
 
+### <a name="formatting-the-time-picker"></a>格式化時間選擇器
+
+根據預設，時間選擇器會顯示具有 AM/PM 選取器的12小時制。 您可以將 [ClockIdentifier](/uwp/api/windows.ui.xaml.controls.timepicker.clockidentifier) 屬性設定為 "24HourClock"，改為顯示24小時制。
+
+```xaml
+<TimePicker Header="12HourClock" SelectedTime="14:30"/>
+<TimePicker Header="24HourClock" SelectedTime="14:30" ClockIdentifier="24HourClock"/>
+```
+
+:::image type="content" source="images/date-time/time-picker-clocks.png" alt-text="時間選擇器顯示12小時制，而選擇器顯示24小時制。":::
+
+您可以設定 [MinuteIncrement](/uwp/api/windows.ui.xaml.controls.timepicker.minuteincrement) 屬性，以指出分鐘選擇器中顯示的時間增量。 例如，15指定 `TimePicker` 分鐘控制項只顯示選項00、15、30、45。
+
+```xaml
+<TimePicker MinuteIncrement="15"/>
+```
+
+:::image type="content" source="images/date-time/time-picker-minute-increment.png" alt-text="時間選擇器顯示15分鐘的增量。":::
+
+### <a name="time-values"></a>時間值
+
+時間選擇器控制項同時具有[time](/uwp/api/windows.ui.xaml.controls.timepicker.time) / [TimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.timechanged)和[SelectedTime](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime) / [SelectedTimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtimechanged) api。 這兩者之間的差異在於不可 `Time` 為 null，而可為 `SelectedTime` null。
+
+的值 `SelectedTime` 是用來填入時間選擇器，而且 `null` 預設為。 如果 `SelectedTime` 為 `null` ，則 `Time` 屬性會設定為時間[](/dotnet/api/system.timespan?view=dotnet-uwp-10.0&preserve-view=true)範圍 0; 否則， `Time` 值會與 `SelectedTime` 值同步。 當 `SelectedTime` 為時，選擇器為「取消設定」， `null` 並顯示功能變數名稱而不是時間。
+
+:::image type="content" source="images/date-time/time-picker-no-selected-time.png" alt-text="未選取時間的時間選擇器。":::
+
+#### <a name="initializing-a-time-value"></a>初始化時間值
+
+在程式碼中，您可以將時間屬性初始化為類型的值 `TimeSpan` ：
+
+```csharp
+TimePicker timePicker = new TimePicker
+{
+    SelectedTime = new TimeSpan(14, 15, 00) // Seconds are ignored.
+};
+```
+
+您可以在 XAML 中將時間值設定為屬性。 如果您已 `TimePicker` 在 XAML 中宣告物件，而不使用時間值的系結，這可能是最簡單的方法。 使用格式為 *hh： Mm* 的字串，其中 *hh* 是小時，而且可以介於0到23之間， *Mm* 是分鐘，而且可以介於0到59之間。
+
+```xaml
+<TimePicker SelectedTime="14:15"/>
+```
+
 > [!NOTE]
 > 如需日期及時間值的重要資訊，請參閱 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values) (位於  ＜日期及時間控制項＞文章中)。
+
+### <a name="using-the-time-values"></a>使用時間值
+
+若要在您的應用程式中使用 time 值，您通常會使用 [SelectedTime](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime) 或 [time](/uwp/api/windows.ui.xaml.controls.timepicker.time) 屬性的資料系結，直接在程式碼中使用 time 屬性，或處理 [SelectedTimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtimechanged) 或 [TimeChanged](/uwp/api/windows.ui.xaml.controls.timepicker.timechanged) 事件。
+
+> 如需使用 `DatePicker` 和 `TimePicker` 一起更新單一值的範例 `DateTime` ，請參閱行事 [曆、日期和時間控制項-同時使用日期選擇器和時間選擇器](/windows/uwp/design/controls-and-patterns/date-and-time#use-a-date-picker-and-time-picker-together)。
+
+在此， `SelectedTime` 屬性會用來比較所選時間與目前時間。
+
+請注意，因為 `SelectedTime` 此屬性可為 null，所以您必須明確地將它轉換成 `DateTime` ，如下所示： `DateTime myTime = (DateTime)(DateTime.Today + checkTimePicker.SelectedTime);` 。 `Time`不過，您可以在沒有轉換的情況下使用屬性，如下所示： `DateTime myTime = DateTime.Today + checkTimePicker.Time;` 。
+
+:::image type="content" source="images/date-time/time-picker-check.png" alt-text="時間選擇器、按鈕和文字標籤。":::
+
+```xaml
+<StackPanel>
+    <TimePicker x:Name="checkTimePicker"/>
+    <Button Content="Check time" Click="{x:Bind CheckTime}"/>
+    <TextBlock x:Name="resultText"/>
+</StackPanel>
+```
+
+```csharp
+private void CheckTime()
+{
+    // Using the Time property.
+    // DateTime myTime = DateTime.Today + checkTimePicker.Time;
+    // Using the SelectedTime property (nullable requires cast to DateTime).
+    DateTime myTime = (DateTime)(DateTime.Today + checkTimePicker.SelectedTime);
+    if (DateTime.Now >= myTime)
+    {
+        resultText.Text = "Your selected time has already past.";
+    }
+    else
+    {
+        string hrs = (myTime - DateTime.Now).Hours.ToString();
+        string mins = (myTime - DateTime.Now).Minutes.ToString();
+        resultText.Text = string.Format("Your selected time is {0} hours, {1} minutes from now.", hrs, mins);
+    }
+}
+```
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

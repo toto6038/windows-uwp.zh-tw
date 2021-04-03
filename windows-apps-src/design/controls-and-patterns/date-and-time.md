@@ -4,7 +4,7 @@ title: 日期和時間控制項的指導方針
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 04/02/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: kisai
@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a7afab6e226a86b7aa8979d5d849376cf83739c4
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
-ms.translationtype: HT
+ms.openlocfilehash: 239296cfb2de5b52b9f9ef1498b5c2c22e2be372
+ms.sourcegitcommit: 62a6e7b4d35f63c25cedd61c96dfc251ff19c80d
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829574"
+ms.lasthandoff: 04/03/2021
+ms.locfileid: "106286607"
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
@@ -56,7 +56,7 @@ ms.locfileid: "91829574"
 
 ### <a name="calendar-view"></a>行事曆檢視
 
-**行事曆檢視**可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。 使用者可以選取單一日期或日期範圍。 它沒有選擇器介面，而且行事曆一律會顯示。
+**行事曆檢視** 可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。 使用者可以選取單一日期或日期範圍。 它沒有選擇器介面，而且行事曆一律會顯示。
 
 行事曆檢視是由 3 個個別檢視所組成：月份檢視、年份檢視和十年份檢視。 行事曆啟動時預設以月份檢視開啟，但是您可以指定任何檢視做為啟動檢視。
 
@@ -103,6 +103,89 @@ ms.locfileid: "91829574"
 - [行事曆日期選擇器](calendar-date-picker.md)
 - [日期選擇器](date-picker.md)
 - [時間選擇器](time-picker.md)
+
+### <a name="use-a-date-picker-and-time-picker-together"></a>同時使用日期選擇器和時間選擇器
+
+這個範例示範如何 `DatePicker` 搭配使用， `TimePicker` 讓使用者選取他們的抵達日期和時間。 您可以處理 `SelectedDateChanged` 和 `SelectedTimeChanged` 事件，以更新名為的單一 [DateTime](/uwp/api/windows.foundation.datetime) 實例 `arrivalDateTime` 。 使用者也可以在設定之後清除日期和時間選擇器。
+
+:::image type="content" source="images/date-time/date-and-time-picker.png" alt-text="日期選擇器、時間選擇器、按鈕和文字標籤。":::
+
+```xaml
+<StackPanel>
+    <DatePicker x:Name="arrivalDatePicker" Header="Arrival date"
+                DayFormat="{}{day.integer} ({dayofweek.abbreviated})"
+                SelectedDateChanged="ArrivalDatePicker_SelectedDateChanged"/>
+    <StackPanel Orientation="Horizontal">
+        <TimePicker x:Name="arrivalTimePicker" Header="Arrival time"
+                MinuteIncrement="15"
+                SelectedTimeChanged="ArrivalTimePicker_SelectedTimeChanged"/>
+        <Button Content="Clear" Click="ClearDateButton_Click"
+                VerticalAlignment="Bottom" Height="30" Width="54"/>
+    </StackPanel>
+    <TextBlock x:Name="arrivalText" Margin="0,12"/>
+</StackPanel>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    DateTime arrivalDateTime;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set minimum to the current year and maximum to five years from now.
+        arrivalDatePicker.MinYear = DateTimeOffset.Now;
+        arrivalDatePicker.MaxYear = DateTimeOffset.Now.AddYears(5);
+    }
+
+    private void ArrivalTimePicker_SelectedTimeChanged(TimePicker sender, TimePickerSelectedValueChangedEventArgs args)
+    {
+        if (arrivalTimePicker.SelectedTime != null)
+        {
+            arrivalDateTime = new DateTime(arrivalDateTime.Year, arrivalDateTime.Month, arrivalDateTime.Day,
+                                           args.NewTime.Value.Hours, args.NewTime.Value.Minutes, args.NewTime.Value.Seconds);
+        }
+        arrivalText.Text = arrivalDateTime.ToString();
+    }
+
+    private void ArrivalDatePicker_SelectedDateChanged(DatePicker sender, DatePickerSelectedValueChangedEventArgs args)
+    {
+        if (arrivalDatePicker.SelectedDate != null)
+        {
+            if (VerifyDateIsFuture((DateTimeOffset)arrivalDatePicker.SelectedDate) == true)
+            {
+                arrivalDateTime = new DateTime(args.NewDate.Value.Year, args.NewDate.Value.Month, args.NewDate.Value.Day,
+                                               arrivalDateTime.Hour, arrivalDateTime.Minute, arrivalDateTime.Second);
+                arrivalText.Text = arrivalDateTime.ToString();
+            }
+            else
+            {
+                arrivalDatePicker.SelectedDate = null;
+                arrivalText.Text = "Arrival date must be later than today.";
+            }
+        }
+    }
+
+    private bool VerifyDateIsFuture(DateTimeOffset date)
+    {
+        if (date > DateTimeOffset.Now)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    private void ClearDateButton_Click(object sender, RoutedEventArgs e)
+    {
+        arrivalDateTime = new DateTime();
+        arrivalDatePicker.SelectedDate = null;
+        arrivalTimePicker.SelectedTime = null;
+        arrivalText.Text = string.Empty;
+    }
+}
+```
 
 ### <a name="globalization"></a>全球化
 

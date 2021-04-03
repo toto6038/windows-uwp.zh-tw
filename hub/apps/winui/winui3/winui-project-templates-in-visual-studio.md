@@ -3,12 +3,12 @@ title: 建立 WinUI 3 專案
 description: Visual Studio 中可用的 WinUI 3 專案和專案範本摘要。
 ms.date: 03/19/2021
 ms.topic: article
-ms.openlocfilehash: 2d6f9ebd495632158cef8efbe054ce41f097db5a
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 823a8698d2d97207a69b31655437d02b70d05857
+ms.sourcegitcommit: 99f7edfd79c44768751aca02dab30a03f41d2aae
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730863"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106218213"
 ---
 # <a name="winui-3-project-templates-in-visual-studio"></a>Visual Studio 中的 WinUI 3 專案範本
 
@@ -21,7 +21,7 @@ ms.locfileid: "105730863"
 
 Project 留尼旺島0.5 版有兩個 Visual Studio 擴充功能： **Project 留尼旺島 vsix**，以及 **PROJECT 留尼旺島 Preview VSIX**。 Project 留尼旺島 VSIX 包含專案範本，可用於建立 MSIX 封裝的桌面生產應用程式。 Project 留尼旺島 Preview VSIX 包含實驗性專案範本，可用來建立 MSIX 封裝的桌面或 UWP 應用程式。 
 
-### <a name="project-templates-for-winui-3"></a>WinUI 3 的專案範本
+## <a name="project-templates-for-winui-3"></a>WinUI 3 的專案範本
 
 您可以使用這些 WinUI 專案範本來建立應用程式。
 
@@ -39,7 +39,7 @@ Project 留尼旺島0.5 版有兩個 Visual Studio 擴充功能： **Project 留
 | Windows 執行階段元件 (WinUI 3)  | C++ | 使用以 WinUI 為基礎的使用者介面，建立以 c + +/WinRT 撰寫的 [Windows 執行階段元件](/windows/uwp/winrt-components/) ，不論應用程式在哪種程式設計語言中撰寫。 |
 | Windows 執行階段元件 (UWP) 中的 WinUI 3，實驗性 | C# | 建立以 C# 撰寫的 [Windows 執行階段元件](/windows/uwp/winrt-components/)，可以由具有 WinUI 架構使者介面的任何 UWP 應用程式取用，不論該應用程式是以何種程式設計語言撰寫。 |
 
-### <a name="item-templates-for-winui-3"></a>WinUI 3 的項目範本
+## <a name="item-templates-for-winui-3"></a>WinUI 3 的項目範本
 
 您可以在 WinUI 專案中使用下列項目範本。 若要存取這些 WinUI 項目範本，請以滑鼠右鍵按一下 [方案總管] 中的專案節點，選取 [新增]  ->  [新項目]，然後按一下 [新增新項目] 對話方塊中的 [WinUI]。
 

@@ -7,12 +7,12 @@ keywords: windows win32, 傳統型應用程式
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 2518d838ca41e5ca2faa6dbd5697d64ea9257922
-ms.sourcegitcommit: 382ae62f9d9bf980399a3f654e40ef4f85eae328
+ms.openlocfilehash: fcea88d91313893f93084716113ff506e502b03c
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99534367"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270125"
 ---
 # <a name="build-desktop-apps-for-windows-pcs"></a>建置 Windows PC 適用的傳統型應用程式
 
@@ -66,11 +66,11 @@ ms.locfileid: "99534367"
 
 未來，我們將使用 Windows UI 程式庫 (WinUI) 和專案留尼旺島來發展 Windows 應用程式開發平臺。
 
-* **WinUI** 是適用於 Windows 10 應用程式的原生使用者體驗 (UX) 架構。 WinUI 是以工具組的形式開始，為以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 (仍處於預覽) ，WinUI 在範圍內不斷成長，成為頂級的原生使用者介面 (UI) 架構，以在 UWP、.NET 和 Win32 應用程式平臺之間 Windows 10 應用程式。
+* **WinUI** 是適用於 Windows 10 應用程式的原生使用者體驗 (UX) 架構。 WinUI 是以工具組的形式開始，為以舊版 Windows 10 為目標的 UWP 應用程式提供新的和更新版本的 WinRT 控制項。 從 WinUI 3 開始，WinUI 的範圍日益成長，成為頂級的原生使用者介面， (UI) 架構，以在 UWP、.NET 和 Win32 應用程式平臺上 Windows 10 應用程式。
 
     如需詳細資訊，請參閱 [WINDOWS UI 程式庫 (WinUI) ](../winui/index.md)。
 
-* **Project Reunion** (目前為預覽版) 是一組廣泛的新開發人員元件和工具的程式碼名稱，其代表的是 Windows 應用程式開發平台的新一代進化。 Project Reunion 提供了一組整合的 API 和工具，可供一組廣泛的目標 Windows 10 OS 版本上的任何應用程式以一致的方式進行使用。 Project Reunion 會透過一組可讓開發人員在這些平台上仰賴的通用 API 和工具，來與現有的 Windows 應用程式平台和架構 (例如 UWP 和原生 Win32 以及 .NET) 互補。 
+* **Project 留尼旺島** 是一組廣泛的新開發人員元件和工具的程式碼名稱，代表 Windows 應用程式開發平臺的下一次演進。 Project Reunion 提供了一組整合的 API 和工具，可供一組廣泛的目標 Windows 10 OS 版本上的任何應用程式以一致的方式進行使用。 Project Reunion 會透過一組可讓開發人員在這些平台上仰賴的通用 API 和工具，來與現有的 Windows 應用程式平台和架構 (例如 UWP 和原生 Win32 以及 .NET) 互補。 
 
     如需詳細資訊，請參閱 [Project Reunion](../project-reunion/index.md)。
 

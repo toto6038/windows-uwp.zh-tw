@@ -8,16 +8,16 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: ccd5efd5270ed12d17992f53b3c9ee50feddec4b
-ms.sourcegitcommit: 6b64741cba279ac17f23f07baaf4a92a2696e8e1
-ms.translationtype: HT
+ms.openlocfilehash: 996b34d7e7497bc76f98da0966ce91378597d14d
+ms.sourcegitcommit: 112fdbb3cc545c9dc050608749845ad79e455a05
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97502878"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106232620"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-c-win32-app"></a>在 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項
 
-此文章示範如何使用 [UWP XAML 裝載 API](using-the-xaml-hosting-api.md)，在新的 C++ Win32 應用程式中裝載標準 WinRT XAML 控制項 (也就是 Windows SDK 所提供的控制項)。 此程式碼會以[簡單的 XAML Island 範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App)為基礎，而此節將討論程式碼中一些最重要的部分。 如果有現有的 C++ Win32 應用程式專案，則可針對您的專案調整這些步驟和程式碼範例。
+本文示範如何使用 [UWP xaml 裝載 API](using-the-xaml-hosting-api.md) 來裝載標準的 WinRT xaml 控制項， (也就是在新的 c + + Win32 應用程式中，由 Windows SDK) 所提供的控制項。 此程式碼會以[簡單的 XAML Island 範例](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App)為基礎，而此節將討論程式碼中一些最重要的部分。 如果有現有的 C++ Win32 應用程式專案，則可針對您的專案調整這些步驟和程式碼範例。
 
 > [!NOTE]
 > 此文章示範的案例不支援直接編輯應用程式中裝載之 WinRT XAML 控制項的 XAML 標記。 此案例限制您只能透過程式碼，修改裝載控制項的外觀和行為。 如需可讓您在裝載 WinRT XAML 控制項時直接編輯 XAML 標記的指示，請參閱[在 C++ Win32 應用程式中裝載自訂 WinRT XAML 控制項](host-custom-control-with-xaml-islands-cpp.md)。

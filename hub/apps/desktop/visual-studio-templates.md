@@ -7,12 +7,12 @@ keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: high
-ms.openlocfilehash: 2f82de8b8169e351975741466ccb1c8604865758
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 28da8ee088c5871e8267e1fcadbb039322f677c7
+ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730522"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "106270185"
 ---
 # <a name="visual-studio-project-and-item-templates-for-windows-apps"></a>適用於 Windows 應用程式的 Visual Studio 專案和項目範本
 
@@ -23,14 +23,11 @@ Visual Studio 2019 提供許多專案和項目範本，協助您使用 C\# 或 C
 
 ## <a name="winui-templates"></a>WinUI 範本
 
-[Windows UI 程式庫 (WinUI)](../winui/index.md) 是適用於桌面 (.NET 和原生 Win32) 和 UWP 應用程式平台之間 Windows 應用程式的新型原生使用者介面 (UI) 平台。 [WinUI 3](../winui/winui3/index.md) (目前以開發人員預覽版形式提供) 是 WinUI 的最新主要版本，會將 WinUI 轉換成適用於桌面 Windows 應用程式的完整 UX 架構。
+[Windows UI 程式庫 (WinUI)](../winui/index.md) 是適用於桌面 (.NET 和原生 Win32) 和 UWP 應用程式平台之間 Windows 應用程式的新型原生使用者介面 (UI) 平台。 [WinUI 3](../winui/winui3/index.md) 是 WinUI 最新的主要版本，它會將 WinUI 轉換成適用于桌面 Windows 應用程式的完整 UX 架構。
 
-目前的 WinUI 3 開發人員預覽版可作為 [Project 留尼旺島 0.5 preview](../project-reunion/index.md)的一部分。 此預覽包含適用于 Visual Studio 2019 的 VSIX 封裝，可提供專案和專案範本，協助您開始使用以 WinUI 為基礎的介面來建立應用程式。
+WinUI 3 可作為 [專案留尼旺島](../project-reunion/index.md)的一部分。 它包含適用于 Visual Studio 2019 的 VSIX 封裝，提供專案和專案範本，可協助您開始使用以 WinUI 為基礎的介面來建立應用程式。
 
-如需安裝 Project 留尼旺島 0.5 Preview VSIX 套件和 WinUI 專案範本的指示，請參閱 [設定您的開發環境](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment)。 如需可用 WinUI 專案和專案範本的詳細資訊，請參閱 [建立 WinUI 3 專案](../winui/winui3/winui-project-templates-in-visual-studio.md)。
-
-> [!IMPORTANT]
-> WinUI 3 (包括相關的 Visual Studio 範本) 目前是以開發人員預覽版形式提供，其適用於早期評估以及從開發人員社群收集意見反應。 目前「不」應該用於生產應用程式。
+如需安裝 Project 留尼旺島 VSIX 套件和 WinUI 專案範本的指示，請參閱 [設定您的開發環境](../project-reunion/get-started-with-project-reunion.md#set-up-your-development-environment)。 如需可用 WinUI 專案和專案範本的詳細資訊，請參閱 [建立 WinUI 3 專案](../winui/winui3/winui-project-templates-in-visual-studio.md)。
 
 ## <a name="uwp-templates"></a>UWP 範本
 
