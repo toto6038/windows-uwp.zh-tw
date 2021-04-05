@@ -7,12 +7,12 @@ keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: b427e3a5b26427e00c288f90bf6f63464ebd438a
-ms.sourcegitcommit: cc871be2508f52509b6a947fe879aeec360d0fd2
+ms.openlocfilehash: 5b07229f381575da29d25353ca8147e712482bef
+ms.sourcegitcommit: 3942f09c620e3f3065cae91dc51505e86ec0969b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "106270198"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106376586"
 ---
 # <a name="get-started-with-project-reunion"></a>開始使用 Project 留尼旺島
 
@@ -40,7 +40,10 @@ ms.locfileid: "106270198"
 
 3. 如果您先前已安裝 [Visual Studio 的 WinUI 3 Preview 延伸](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinUI.WinUIProjectTemplates)模組，請將擴充功能卸載。 如需有關如何卸載延伸模組的詳細資訊，請參閱 [管理 Visual Studio 的擴充](/visualstudio/ide/finding-and-using-visual-studio-extensions)功能。
 
-4. 請確定您的系統已針對 **nuget.org** 啟用 NuGet 套件來源。如需詳細資訊，請參閱 [常見的 NuGet 設定](/nuget/consume-packages/configuring-nuget-behavior)。
+4. 請確定您的系統已在上啟用正式 NuGet 服務索引的 NuGet 套件來源 `https://api.nuget.org/v3/index.json` 。 
+
+    1. 在 Visual Studio 中，選取 [**工具**  ->  ]**NuGet 封裝管理員**  ->  **封裝管理員設定**] 以開啟 [**選項**] 對話方塊。 
+    2. 在 [ **選項** ] 對話方塊的左窗格中，選取 [ **套件來源** ] 索引標籤，並確定有一個 **nuget.org** 的套件來源指向 `https://api.nuget.org/v3/index.json` 作為來源 URL。 如需詳細資訊，請參閱 [常見的 NuGet](/nuget/consume-packages/configuring-nuget-behavior)設定。
 
 5. 下載並安裝適用于 Visual Studio 的 Project 留尼旺島0.5 延伸模組。 延伸模組有兩個版本：一個適用于 desktop (c #/.NET 5 或 c + +/WinRT) 應用程式，另一個適用于 UWP 應用程式。
 
