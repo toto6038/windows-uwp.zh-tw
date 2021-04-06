@@ -5,12 +5,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, 互通性, ABI
 ms.localizationpriority: medium
-ms.openlocfilehash: 71ae6245fe217277c7408a7eb6b5150900cc45d9
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: ea9c41c134e1da0ffa131a597c856af7d75b5672
+ms.sourcegitcommit: 99a30cc48d02e4034d4365f45d5d154b4c1e37ae
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89170172"
+ms.lasthandoff: 04/06/2021
+ms.locfileid: "106442294"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 
@@ -69,7 +69,7 @@ namespace winrt::Windows::Foundation
 本主題適用的情況，是希望與在應用程式二進位介面 (ABI) 層運作的程式碼互通或移植的情況。
 
 ## <a name="converting-to-and-from-abi-types-in-code"></a>在程式碼中轉換為 ABI 類型和從 ABI 類型轉換
-為了安全和簡單起見，對於雙向轉換，只需使用 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)、[**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function)，與 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 以下是一個程式碼範例 (根據**主控台應用程式**專案範本)，也會示範您可以如何對不同孤立區使用命名空間別名，處理 C++/WinRT 投影與 ABI 之間可能產生的命名空間衝突。
+為了安全和簡單起見，對於雙向轉換，只需使用 [**winrt::com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)、[**com_ptr::as**](/uwp/cpp-ref-for-winrt/com-ptr#com_ptras-function)，與 [**winrt::Windows::Foundation::IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)。 以下是一個程式碼範例 (根據 **主控台應用程式** 專案範本)，也會示範您可以如何對不同孤立區使用命名空間別名，處理 C++/WinRT 投影與 ABI 之間可能產生的命名空間衝突。
 
 ```cppwinrt
 // pch.h
@@ -309,14 +309,14 @@ static_assert(std::is_same_v<winrt::default_interface<winrt::Sample>, winrt::ISa
 
 | 操作 | 如何執行此動作 | 附註 |
 |-|-|-|
-| 從 **winrt::Sample** 擷取 **ISample\*** | `p = reinterpret_cast<ISample*>(get_abi(s));` | s 仍然擁有物件。 |
-| 從 **winrt::Sample** 中斷連結 **ISample\*** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s 不再擁有物件。 |
-| 將 **ISample\*** 轉送至新的 **winrt::Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s 會取得物件的擁有權。 |
-| 將 **ISample\*** 設定到 **winrt::Sample** 中 | `*put_abi(s) = p;` | s 會取得物件的擁有權。 s 先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
-| 將 **ISample\*** 接收到 **winrt::Sample** 中 | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | s 會取得物件的擁有權。 s 先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
-| 取代 **winrt::Sample** 中的 **ISample\*** | `attach_abi(s, p);` | s 會取得物件的擁有權。 s 先前擁有的物件會釋出。 |
-| 將 **ISample\*** 設定到 **winrt::Sample** | `copy_from_abi(s, p);` | s 會對物件建立新的參考。 s 先前擁有的物件會釋出。 |
-| 將 **winrt::Sample** 複製到 **ISample\*** | `copy_to_abi(s, reinterpret_cast<void*&>(p));` | p 會接收物件的複本。 p 先前擁有的所有物件都會流失。 |
+| **\* *從 _* winrt：： Sample 解壓縮 ISample _** | `p = reinterpret_cast<ISample*>(get_abi(s));` | s 仍然擁有物件。 |
+| **\* *從 _* winrt：： Sample 卸離 ISample _** | `p = reinterpret_cast<ISample*>(detach_abi(s));` | s 不再擁有物件。 |
+| **將 ISample \* *_ 傳送至新的 _* winrt：： Sample** | `winrt::Sample s{ p, winrt::take_ownership_from_abi };` | s 會取得物件的擁有權。 |
+| 將 **ISample \* *_ 設定為 _* winrt：： Sample** | `*put_abi(s) = p;` | s 會取得物件的擁有權。 s 先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
+| 接收 **ISample \* *_ 到 _* winrt：： Sample** | `GetSample(reinterpret_cast<ISample**>(put_abi(s)));` | s 會取得物件的擁有權。 s 先前擁有的所有物件都會流失 (會在偵錯中宣告)。 |
+| 取代 **\* _ winrt：： Sample *中的 ISample _*** | `attach_abi(s, p);` | s 會取得物件的擁有權。 s 先前擁有的物件會釋出。 |
+| 將 **ISample \* *_ 複製到 _* winrt：： Sample** | `copy_from_abi(s, p);` | s 會對物件建立新的參考。 s 先前擁有的物件會釋出。 |
+| 將 **winrt：： Sample** 複製到 ** \* ISample* _ | `copy_to_abi(s, reinterpret_cast<void_&>(p));` | p 會接收物件的複本。 p 先前擁有的所有物件都會流失。 |
 
 ## <a name="interoperating-with-the-abis-guid-struct"></a>交互操作 ABI 的 GUID 結構
 
@@ -361,7 +361,17 @@ void GetString(_Out_ HSTRING* value);
 | 將 **HSTRING** 接收到 **hstring** 中 | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | s 會取得字串的擁有權。 s 先前擁有的所有字串都會流失 (會在偵錯中宣告)。 |
 | 取代 **hstring** 中的 **HSTRING** | `attach_abi(s, h);` | s 會取得字串的擁有權。 s 先前擁有的字串會釋出。 |
 | 將 **HSTRING** 複製到 **hstring** | `copy_from_abi(s, h);` | s 會建立字串的私用複本。 s 先前擁有的字串會釋出。 |
-| 將 **hstring**複製到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | h 會接收字串的複本。 h 先前擁有的所有字串都會流失。 |
+| 將 **hstring** 複製到 **HSTRING** | `copy_to_abi(s, reinterpret_cast<void*&>(h));` | h 會接收字串的複本。 h 先前擁有的所有字串都會流失。 |
+
+此外，Windows 執行程式庫 (是) [字串](https://github.com/microsoft/wil/wiki/String-helpers) 協助程式執行基本的字串操作。 To use the WIL string helpers, include [<wil/resource.h>](https://github.com/microsoft/wil/blob/master/include/wil/resource.h), and refer to the table below. 請依照表格中的連結來取得完整的詳細資料。
+
+| 作業 | 取得字串協助程式以取得詳細資訊 |
+|-|-|
+| 提供原始 Unicode 或 ANSI 字串指標和選擇性的長度;取得適當特製化的 **unique_any** 包裝函式 | [： make_something_string](https://github.com/microsoft/wil/wiki/String-helpers#wilmake_something_string) |
+| 解除包裝智慧物件，直到找到原始以 null 終止的 Unicode 字串指標為止 | [： str_raw_ptr](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_raw_ptr) |
+| 取得由智慧型指標物件所包裝的字串; `L""` 如果智慧型指標是空的，則為空字串。 | [： string_get_not_null](https://github.com/microsoft/wil/wiki/String-helpers#wilstring_get_not_null) |
+| 串連任意數目的字串 | [： str_concat](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_concat) |
+| 從 printf 樣式的格式字串和對應的參數清單取得字串 | [： str_printf](https://github.com/microsoft/wil/wiki/String-helpers#wilstr_printf) |
 
 ## <a name="important-apis"></a>重要 API
 * [AddRef 函式](/windows/desktop/api/unknwn/nf-unknwn-iunknown-addref)
