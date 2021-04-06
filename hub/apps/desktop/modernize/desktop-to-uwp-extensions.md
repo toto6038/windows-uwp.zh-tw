@@ -8,12 +8,12 @@ ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 9da6b1acf2ce27fa6b4ec6c1b4e4274a28491b8b
-ms.sourcegitcommit: 2b7f6fdb3c393f19a6ad448773126a053b860953
+ms.openlocfilehash: d6ad174a6f3a9795cced8a77accf3eac3bb2a477
+ms.sourcegitcommit: 261c582d23b5d70b5e7b0ff094c212f74246d28a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "100335105"
+ms.lasthandoff: 04/05/2021
+ms.locfileid: "106400776"
 ---
 # <a name="integrate-your-desktop-app-with-windows-10-and-uwp"></a>將傳統型應用程式與 Windows 10 和 UWP 整合
 
@@ -30,11 +30,93 @@ ms.locfileid: "100335105"
 
 協助使用者轉換至您已封裝的應用程式。
 
+* [將您現有的桌面應用程式重新導向至您的已封裝應用程式](#redirect)
 * [將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式](#point)
 * [使用您已封裝的應用程式開啟檔案，而非使用您的傳統型應用程式](#make)
-* [將已封裝的應用程式和一組檔案類型建立關聯](#associate)
+* [將您的已封裝應用程式與一組檔案類型產生關聯](#associate)
 * [將選項新增至具有特定檔案類型的檔案操作功能表](#add)
 * [使用 URL 直接開啟特定類型的檔案](#open)
+
+<a id="redirect"></a>
+
+### <a name="redirect-your-existing-desktop-app-to-your-packaged-app"></a>將您現有的桌面應用程式重新導向至您的已封裝應用程式
+
+當使用者啟動您現有的未封裝桌面應用程式時，您可以設定要改為開啟的 MSIX 封裝應用程式。 
+
+> [!NOTE]
+> Windows Insider Preview 組建21313和更新版本中支援這項功能。
+
+若要啟用此行為︰
+
+1. 新增登錄專案以將未封裝的桌面應用程式可執行檔重新導向至已封裝的應用程式。
+2. 註冊您的已封裝應用程式，以在未封裝的桌面應用程式可執行檔啟動時啟動。
+
+#### <a name="add-registry-entries-to-redirect-your-unpackaged-desktop-app-executable"></a>新增登錄專案以重新導向未封裝的桌面應用程式可執行檔
+
+1. 在登錄中，使用您的桌面應用程式可執行檔名稱，在 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options** 機碼底下建立子機碼。
+2. 在這個子機碼底下，新增下列值：
+    * **AppExecutionAliasRedirect** (DWORD) ：如果設定為1，系統就會檢查是否有與可執行檔名稱相同的 [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) 封裝延伸模組。 如果 **AppExecutionAlias** 延伸模組已啟用，則會使用該值來啟用已封裝的應用程式。
+    * **AppExecutionAliasRedirectPackages** (REG_SZ) ：系統將只會重新導向至列出的封裝。 套件會依其套件系列名稱列出，並以分號分隔。 如果使用特殊值 *，系統會從任何封裝重新導向至 **AppExecutionAlias** 。
+
+例如：
+
+```Ini
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\contosoapp.exe 
+    AppExecutionAliasRedirect = 1
+    AppExecutionAliasRedirectPackages = "Microsoft.WindowsNotepad_8weky8webbe" 
+```
+
+#### <a name="register-your-packaged-app-to-be-launched"></a>註冊要啟動的已封裝應用程式
+
+在您的套件資訊清單中，新增 [AppExecutionAlias](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias) 延伸模組，以註冊您未封裝的桌面應用程式可執行檔的名稱。 例如：
+
+```XML
+<Package
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  IgnorableNamespaces="uap3">
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension Category="windows.appExecutionAlias" EntryPoint="Windows.FullTrustApplication">
+          <uap3:AppExecutionAlias>
+            <desktop:ExecutionAlias Alias="contosoapp.exe" />
+          </uap3:AppExecutionAlias>
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+```
+
+#### <a name="disable-the-redirection"></a>停用重新導向
+
+使用者可以關閉重新導向，並透過下列選項啟動未封裝的應用程式可執行檔：
+
+* 他們可以卸載應用程式的 MSIX 套件版本。
+* 使用者可以在 [**設定**] 的 [**應用程式執行別名**] 頁面中，針對 MSIX 封裝的應用程式停用 **AppExecutionAlias** 專案。
+
+#### <a name="xml-namespaces"></a>XML 命名空間
+
+* `http://schemas.microsoft.com/appx/manifest/uap/windows10/3`
+* `http://schemas.microsoft.com/appx/manifest/desktop/windows10`
+
+#### <a name="elements-and-attributes-of-this-extension"></a>此延伸模組的元素和屬性
+
+```XML
+<uap3:Extension
+    Category="windows.appExecutionAlias"
+    EntryPoint="Windows.FullTrustApplication">
+    <uap3:AppExecutionAlias>
+        <desktop:ExecutionAlias Alias="[AliasName]" />
+    </uap3:AppExecutionAlias>
+</uap3:Extension>
+```
+
+|名稱 |描述 |
+|-------|-------------|
+|類別 |一定是 ``windows.appExecutionAlias``。 |
+|可執行檔 |叫用別名時欲啟動之可執行檔的相對路徑。 |
+|Alias |適用於您應用程式的簡短名稱。 其必須一律以副檔名「.exe」結尾。 |
 
 <a id="point"></a>
 
@@ -59,7 +141,7 @@ ms.locfileid: "100335105"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration)找到完整的結構描述參考。
 
-|名稱 | 說明 |
+|名稱 | 描述 |
 |-------|-------------|
 |類別 |一律為 ``windows.desktopAppMigration``。
 |AumID |封裝應用程式的應用程式使用者模型識別碼。 |
@@ -119,9 +201,9 @@ ms.locfileid: "100335105"
 
 您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation)找到完整的結構描述參考。
 
-|名稱 |說明 |
+|名稱 |描述 |
 |-------|-------------|
-|類別 |一律為 ``windows.fileTypeAssociation``。
+|類別 |一定是 ``windows.fileTypeAssociation``。
 |名稱 |檔案類型關聯的名稱。 您可以使用此名稱來組織檔案類型，並將其分組。 名稱必須全部是小寫，而且沒有任何空格。 |
 |MigrationProgId |[程式設計識別碼 (ProgID)](/windows/desktop/shell/fa-progids) 針對您想要繼承檔案關聯的傳統型應用程式，描述其應用程式、元件，以及版本。|
 
