@@ -7,12 +7,12 @@ keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: a68219986b66e96786cd4b0d0f3a553d8ea04e9b
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 91daca9b36eca88adbf13ff6be740852f76a1386
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730492"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549664"
 ---
 # <a name="build-desktop-windows-apps-with-project-reunion-05"></a>使用 Project 留尼旺島0.5 建立桌面 Windows 應用程式
 
@@ -61,10 +61,27 @@ Project 留尼旺島 Api 適用于 Windows 10 版本1809和所有較新版本的
 
 ## <a name="limitations-and-known-issues"></a>限制與已知問題
 
+下列限制和已知問題通常適用于 Project 留尼旺島0.5。
+
 - 傳統型 **應用程式 (c #/.NET 5 或 c + +/Win32)**： Project 留尼旺島0.5 無法用於未封裝的桌面應用程式 (c #/.NET 5 或 c + +/Win32) 。 此版本僅支援在 MSIX 封裝的桌面應用程式中使用。
 - **Uwp 應用程式**：在生產環境中使用的 uwp 應用程式不支援 Project 留尼旺島0.5。 若要在 UWP 應用程式中使用專案留尼旺島，您必須使用不支援生產環境的 Project 留尼旺島0.5 延伸模組預覽版本。 如需安裝預覽延伸模組的詳細資訊，請參閱 [設定您的開發環境](get-started-with-project-reunion.md#set-up-your-development-environment)。
 - [WinUI 3 開發人員工具限制](..\winui\winui3\index.md#developer-tools)也適用于使用 project 留尼旺島0.5 的任何專案。
-- 在現有的專案中安裝 Project 留尼旺島 0.5 NuGet 套件有 [一些限制](get-started-with-project-reunion.md#limitations-for-using-project-reunion-in-existing-projects) 。
+
+下列限制和已知問題適用于特定開發人員案例。
+
+### <a name="using-the-project-reunion-nuget-package-in-existing-projects"></a>在現有的專案中使用 Project 留尼旺島 NuGet 套件
+
+如果您想要 [在現有的專案中使用 Project 留尼旺島 0.5 NuGet 套件](get-started-with-project-reunion.md#use-project-reunion-in-an-existing-project)，請注意下列限制：
+
+- Project 留尼旺島 0.5 NuGet 套件支援在生產環境中使用 desktop (c #/.NET 5 和 c + +/WinRT) 專案。 它是 UWP 專案的開發人員預覽版本，不支援在生產環境中搭配 UWP 專案使用。
+-  (名為 **ProjectReunion**) 的 Project 留尼旺島 0.5 NuGet 套件包含其他的子封裝 (包括 **ProjectReunion** 、mrt.log Core 和 WinUI 在內的元件的執行，包括 **ProjectReunion) 。** 您無法個別安裝這些子封裝來參考專案中的特定元件。 您必須安裝 **ProjectReunion** 封裝，其中包含所有的元件。  
+- 如果您將 Project 留尼旺島 0.5 NuGet 套件安裝到現有的專案中，您只能在專案中使用屬於 Project 留尼旺島的非 WinUI 3 元件。 若要使用 WinUI 3，您必須依照上一節所述，使用其中一個 WinUI 3 專案範本來建立新專案。
+- WPF 專案目前不支援安裝 Project 留尼旺島 0.5 NuGet 套件。
+- 安裝 Project 留尼旺島 0.5 NuGet 套件會導致以 **AnyCPU** 為目標之專案中的組建失敗。 若要修正錯誤，請將下列 **ProjectReunionCopyXamlToolingLibs** 專案加入至專案檔中的 **PropertyGroup** 元素。
+
+    ```xml
+    <ProjectReunionCopyXamlToolingLibs>false</ProjectReunionCopyXamlToolingLibs>
+    ```
 
 #### <a name="asta-to-sta-threading-model"></a>ASTA 至 STA 執行緒模型
 

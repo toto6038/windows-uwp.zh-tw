@@ -7,12 +7,12 @@ keywords: windows win32, 桌面開發, project reunion
 ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b07229f381575da29d25353ca8147e712482bef
-ms.sourcegitcommit: 3942f09c620e3f3065cae91dc51505e86ec0969b
+ms.openlocfilehash: 5ca69825acd12d67167b009474a2afe9fecc8187
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2021
-ms.locfileid: "106376586"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549674"
 ---
 # <a name="get-started-with-project-reunion"></a>開始使用 Project 留尼旺島
 
@@ -89,7 +89,7 @@ ms.locfileid: "106376586"
 
 ## <a name="use-project-reunion-in-an-existing-project"></a>在現有的專案中使用專案留尼旺島
 
-如果您有想要使用 Project 留尼旺島的現有專案，可以在專案中安裝 Project 留尼旺島 0.5 NuGet 套件。 此案例有 [一些限制](#limitations-for-using-project-reunion-in-existing-projects)。
+如果您有想要使用 Project 留尼旺島的現有專案，可以在專案中安裝 Project 留尼旺島 0.5 NuGet 套件。 此案例有 [一些限制](index.md#using-the-project-reunion-nuget-package-in-existing-projects)。
 
 1. 開啟現有的桌面專案 (Visual Studio 2019 中的 c #/.NET 5 或 c + +/WinRT) 或 UWP 專案。
 
@@ -113,15 +113,6 @@ ms.locfileid: "106376586"
 
     - [管理資源的 MRT.LOG 核心](mrtcore/mrtcore-overview.md)
     - [使用 DWriteCore 轉譯文字](dwritecore.md)
-
-### <a name="limitations-for-using-project-reunion-in-existing-projects"></a>在現有的專案中使用專案留尼旺島的限制
-
-如果您想要在現有的專案中使用 Project 留尼旺島0.5，請注意下列限制：
-
-- 如果您將 Project 留尼旺島 0.5 NuGet 套件安裝到現有的專案中，您只能在專案中使用屬於 Project 留尼旺島的非 WinUI 3 元件。 若要使用 WinUI 3，您必須依照上一節所述，使用其中一個 WinUI 3 專案範本來建立新專案。
--  (名為 **ProjectReunion**) 的 Project 留尼旺島 0.5 NuGet 套件包含其他的子封裝 (包括 **ProjectReunion** 、mrt.log Core 和 WinUI 在內的元件的執行，包括 **ProjectReunion) 。** 在目前的版本中，您不能個別安裝這些子封裝來參考專案中的特定元件。 您必須安裝 **ProjectReunion** 封裝，其中包含所有的元件。  
-- WPF 專案目前不支援安裝 Project 留尼旺島 0.5 NuGet 套件。
-- Project 留尼旺島 0.5 NuGet 套件支援在生產環境中使用 desktop (c #/.NET 5 和 c + +/WinRT) 專案。 它是 UWP 專案的開發人員預覽版本，不支援在生產環境中搭配 UWP 專案使用。
 
 ## <a name="samples"></a>範例
 

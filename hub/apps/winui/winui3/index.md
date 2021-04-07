@@ -3,12 +3,12 @@ title: 'WinUI 3 Project 留尼旺島 0.5 (三月 2021) '
 description: WinUI 3 Project 留尼旺島0.5 的總覽。
 ms.date: 03/19/2021
 ms.topic: article
-ms.openlocfilehash: 92437934b7a07c6409d5d44325094f8dd024f443
-ms.sourcegitcommit: 7f2a09e8d5d37cb5860a5f2ece5351ea6907b94c
+ms.openlocfilehash: 685fd1525088bd662435b95f727c1e9fa5de5d81
+ms.sourcegitcommit: 0be372d792b58a260634b4e008e180f0447a46ff
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2021
-ms.locfileid: "105730461"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "106549684"
 ---
 # <a name="windows-ui-library-3---project-reunion-05-march-2021"></a>Windows UI 程式庫 3-Project 留尼旺島 0.5 (三月 2021) 
 
@@ -56,7 +56,7 @@ WinUI 3 API 參考檔可在此處取得： [WinUI 3 Api 參考](/windows/winui/a
 
 | VS 版本  | WinUI 3-Project 留尼旺島0。5  |
 |---|---|
-| 16.8  | 否   |
+| 16.8  | No   |
 | 16.9  | 是，但是沒有熱重新載入、即時視覺化樹狀結構或即時屬性瀏覽器  |
 | 16.10 預覽版  | 是，所有 WinUI 3 工具   |
 
@@ -138,36 +138,33 @@ WinUI 3 API 參考檔可在此處取得： [WinUI 3 Api 參考](/windows/winui/a
     新增此區段：
 
     ```xml
+      <ItemGroup>
+        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0]">
+          <IncludeAssets>build</IncludeAssets>
+        </PackageReference>
+      </ItemGroup>
+    ```
+    然後移除下列幾行：
+    ```xml
+      <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
+    ```
+    及
+
+    ```xml
+      <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
+      <Import Project="$(Microsoft_WinUI_AppX_targets)" />
+    ```
+    和這個專案群組：
+    ```xml
     <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0]">
-        <IncludeAssets>build</IncludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    ```
-    然後移除下列幾行 (如果存在) ：
-    ```xml
-    <AppxTargetsLocation Condition="'$(AppxTargetsLocation)'==''">$(MSBuildThisFileDirectory)build\</AppxTargetsLocation>
-    ```
-
-    ```xml
-    <Import Project="$(Microsoft_ProjectReunion_AppXReference_props)" />
-    <Import Project="$(Microsoft_WinUI_AppX_targets)" />
-    ```
-
-    然後移除這個專案群組：
-
-    ```xml
-    <ItemGroup>
-      <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
-        <ExcludeAssets>all</ExcludeAssets>
-      </PackageReference>
-      <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
-        <ExcludeAssets>all</ExcludeAssets>
-      </PackageReference>
-    </ItemGroup>
-    ```
-
-5. 刪除專案的 `Microsoft.WinUI.AppX.targets` {yourproject。} (套件) /build/資料夾下的現有檔案。
+        <PackageReference Include="Microsoft.ProjectReunion" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
+          <ExcludeAssets>all</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="[0.5.0-prerelease]" GeneratePathProperty="true">
+          <ExcludeAssets>all</ExcludeAssets>
+        </PackageReference>
+      </ItemGroup>
+      ```
 
 ## <a name="major-changes-introduced-in-this-release"></a>此版本中引進的重大變更
 
