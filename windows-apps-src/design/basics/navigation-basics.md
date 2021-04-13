@@ -10,12 +10,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 36a5489ab4fa278163fd5fad53be4d28156d4cf4
-ms.sourcegitcommit: 6661f4d564d45ba10e5253864ac01e43b743c560
+ms.openlocfilehash: 63ea04040d550bced414e9591dbf3ffd44de8da2
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104804455"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219085"
 ---
 # <a name="navigation-design-basics-for-windows-apps"></a>Windows 應用程式的瀏覽設計基本知識
 
@@ -154,7 +154,7 @@ ms.locfileid: "104804455"
 
 如果您的瀏覽結構有多個層級，我們建議讓對等瀏覽元素只連結到其目前所在子樹系中的對等元素。 請思考相鄰的圖例，其中顯示具有兩個層級的瀏覽結構：
 
-- 在層級 1，對等瀏覽元素應提供對頁面 A、B、C 和 D 的存取功能。
+- 在層級1，點對點導覽元素應該提供對頁面 A、B 和 C 的存取。
 - 在層級 2 中，A2 頁面的對等瀏覽元素應只連結到其他 A2 頁面。 它們不應連結到 C 子樹系中的層級 2 頁面。
     :::column-end:::
 :::row-end:::

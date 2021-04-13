@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1f6474170967986bfee555eb07d7ea41601e9e48
-ms.sourcegitcommit: aaa72ddeb01b074266f4cd51740eec8d1905d62d
-ms.translationtype: HT
+ms.openlocfilehash: 57612b41cc1ee31d2e7fd7c8e91e7b7772dab38d
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94339756"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219031"
 ---
 # <a name="introduction-to-windows-app-design"></a>Windows 應用程式設計簡介
 
@@ -47,9 +47,9 @@ UWP 應用程式會自動調整控 UI 元素的大小，因此在所有裝置和
 
 :::row:::
     :::column span:::
-在 UWP 應用程式中，UI 元素的大小、邊界及位置應一律為 **4 epx 的倍數** 。
+在 UWP 應用程式中，UI 元素的大小、邊界及位置應一律為 **4 epx 的倍數**。
 
-UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 400% 的縮放水準調整各種裝置。 基礎單位為 4，因為它是唯一可依非整數調整的整數 (例如 4*1.5 = 6)。 使用四的倍數將所有 UI 元素與整個像素對齊，並確保 UI 元素具有清晰、銳利的邊緣。 (請注意，文字並不具有此需求；文字可以有任何大小和位置。)
+UWP 可透過 100%、125%、150%、175%、200%、225%、250%、300%、350% 和 400% 的縮放水準調整各種裝置。 基底單位是4，因為它可以調整為這些達持平狀態的整數 (例如：4 x 125% = 5，4 x 150% = 6) 。 使用四的倍數將所有 UI 元素與整個像素對齊，並確保 UI 元素具有清晰、銳利的邊緣。 (請注意，文字並不具有此需求；文字可以有任何大小和位置。)
     :::column-end:::
     :::column:::
 ![方格](images/4epx.svg)

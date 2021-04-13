@@ -1,17 +1,20 @@
 ---
 title: 安裝 PowerToys
-description: 使用可執行檔或封裝管理員 (WinGet、Chocolatey、內幕) 安裝 Powertoy，這是一組用來自訂 Windows 10 的公用程式。
+description: 安裝 Powertoy，這是使用可執行檔或封裝管理員 (WinGet、Chocolatey、內幕) 自訂 Windows 10 的一組公用程式。
 ms.date: 12/02/2020
 ms.topic: quickstart
 ms.localizationpriority: medium
-ms.openlocfilehash: c7add819c201678ceca72814d36c585859972e23
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 2e6a585a6acd6bc9ec209b07e101daf8d844be34
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417049"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107218120"
 ---
 # <a name="install-powertoys"></a>安裝 PowerToys
+
+> [!WARNING]
+> Powertoy v 0.37 和以上版本將需要 Windows 10 v1903 或更新版本。 V1 設定（支援較舊的 Windows 版本）將于 v 0.37 中移除。
 
 建議您使用下列連結的 Windows 可執行檔按鈕來安裝 Powertoy，但如果您偏好使用封裝管理員，也會列出替代安裝方法。
 
@@ -34,19 +37,19 @@ ms.locfileid: "103417049"
 - [.Net Core 3.1 桌面運行](https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-desktop-3.1.4-windows-x64-installer)時間。 Powertoy 安裝程式將會處理這項需求。
 - 目前支援 x64 架構。 ARM 和 x86 支援將于稍後推出。
 
-若要確定您的電腦符合這些需求，請選取 [ **⊞ Win** *(windows 鍵])* R 以檢查您的 Windows 10 版本和組建編號，  +  然後輸入 **winver**，選取 **[確定]**。 (或在 Windows 命令提示字元中輸入 `ver` 命令)。 您可以在 [**設定**] 功能表中 [更新至最新的 Windows 版本](ms-settings:windowsupdate)。
+若要確定您的電腦符合這些需求，請選取 [ **⊞ Win]** *(Windows key)*  +  **R**，然後輸入 **winver**，選取 **[確定]**，以檢查您的 Windows 10 版本和組建編號。 (或在 Windows 命令提示字元中輸入 `ver` 命令)。 您可以在 [**設定**] 功能表中 [更新至最新的 Windows 版本](ms-settings:windowsupdate)。
 
 ## <a name="alternative-install-methods"></a>替代安裝方法
 
 <!--  - **[Windows executable .exe file](#install-with-windows-executable-file)** *(Recommended)* -->
-- [Windows 套件管理員](#install-with-windows-package-manager-preview) *(預覽)*
+- [Windows 封裝管理員](#install-with-windows-package-manager-preview) *(Preview)*
 - *(未正式支援* 的 [社區驅動安裝工具](#community-driven-install-tools)) 
 
-## <a name="install-with-windows-package-manager-preview"></a>使用 Windows 套件管理員安裝 (預覽版) 
+## <a name="install-with-windows-package-manager-preview"></a>使用 Windows 封裝管理員 (Preview 安裝) 
 
-若要使用 Windows 套件管理員安裝 Powertoy， (WinGet) preview：
+若要使用 Windows 封裝管理員 (WinGet) preview 來安裝 Powertoy：
 
-1. 從 [Windows 套件管理員](https://github.com/microsoft/winget-cli/releases)下載 powertoy。
+1. 從 [Windows 封裝管理員](https://github.com/microsoft/winget-cli/releases)下載 powertoy。
 2. 從命令列/PowerShell 執行下列命令：
 
 ```powershell

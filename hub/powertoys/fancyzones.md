@@ -1,15 +1,15 @@
 ---
-title: 適用于 Windows 10 的 Powertoy FancyZones 公用程式
+title: Windows 10 的 Powertoy FancyZones 公用程式
 description: 視窗管理員公用程式，可將視窗排列和貼齊有效率的版面配置
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e297467f6681d3060e085ee4b60fe8c51f1ec21
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 4e85193aca4ffda4f863cca7321ca870a08694a3
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417121"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219005"
 ---
 # <a name="fancyzones-utility"></a>FancyZones 公用程式
 
@@ -69,6 +69,14 @@ Subtractive **方格** 模型會以三個數據行格線開始，並允許透過
 
 ![FancyZones 視窗編輯器模式](../images/pt-fancyzones-canvaseditor.png)
 
+### <a name="quickly-changing-between-layouts"></a>快速在版面配置之間變更
+
+使用自訂配置時，可以將此配置設定為使用者定義的熱鍵，以快速將它套用至所需的桌面。 您可以開啟自訂版面配置的 [編輯] 功能表來設定此快速鍵。 設定之後，您可以按下系結來套用自訂版面配置 `Win ⊞ + Ctrl + Alt + [hotkey]` 。 您也可以在拖曳視窗時按下熱鍵來套用配置。
+
+在下面的示範中，我們會從套用至畫面的預設範本開始，並從我們為其指派快速鍵的2個自訂版面配置開始。 接著，我們會使用系結 `Win ⊞ + Ctrl + Alt + [hotkey]` 來套用第一個自訂版面配置，並將視窗系結至該配置。 最後，我們會在拖曳視窗時套用第二個自訂版面配置，並將視窗系結至該配置。
+
+![FancyZones Quick-Swap 版面配置](../images/pt-fancyzones-quickswap.gif) 
+
 ## <a name="snapping-a-window-to-two-or-more-zones"></a>將視窗貼到兩個或多個區域
 
 如果兩個區域是連續的，則可以將視窗貼齊至其區域的總和， (四捨五入至同時包含這兩個) 的最小矩形。 當滑鼠游標接近兩個區域的一般邊緣時，就會同時啟用這兩個區域，讓您可以將視窗放入這兩個區域中。  
@@ -86,7 +94,7 @@ Subtractive **方格** 模型會以三個數據行格線開始，並允許透過
 | Win ⊞ + \` |Windows 鍵 + 倒引號 (⊞ + \` ) 會啟動編輯器 (此快捷方式可在 [設定] 對話方塊中編輯)  |
 | Win ⊞ + 向左/向右箭號 | 只有在開啟設定時，才會在區域之間移動焦點視窗 (`Override Windows Snap hotkeys` ，在此情況下，只 `Windows ⊞ key + Left Arrow` 會覆 `Windows key ⊞ + Right Arrow` 寫和，而 `Win ⊞ + Up Arrow` 並 `Win ⊞ + Down Arrow` 保持正常運作)  |
 
-FancyZones 不會覆寫 Windows 10 `Win ⊞ + Shift + Arrow` 來快速將視窗移到連續的監視器。
+FancyZones 不會覆寫 Windows 10 `Win ⊞ + Shift + Arrow` ，以快速將視窗移到連續的監視器。
 
 ## <a name="settings"></a>設定
 

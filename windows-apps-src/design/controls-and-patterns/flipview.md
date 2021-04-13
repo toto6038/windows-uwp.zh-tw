@@ -4,19 +4,19 @@ title: 翻轉檢視控制項的指導方針
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/07/2021
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1637845752d713482ad668cfb7078d5e4c138e84
-ms.sourcegitcommit: a3bbd3dd13be5d2f8a2793717adf4276840ee17d
-ms.translationtype: HT
+ms.openlocfilehash: 4196be2a8eaff179fa8654e844e168b11bf23d7e
+ms.sourcegitcommit: 5dc630ecdc9c852bcad96c172c63d6f8d3a7e696
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93032301"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107214015"
 ---
 # <a name="flip-view"></a>翻轉檢視
 
@@ -130,7 +130,8 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意：** &nbsp;&nbsp;填入翻轉檢視有兩種方法，您可以將項目新增到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+> [!CAUTION]
+> 您可以藉由將專案加入至專案集合，或是設定其 ItemsSource 屬性來擴展翻轉視圖，但無法同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
 ### <a name="specify-the-look-of-the-items"></a>指定項目的外觀
 
@@ -146,7 +147,7 @@ stackPanel1.Children.Add(flipView1);
             <Grid>
                 <Image Width="480" Height="270" Stretch="UniformToFill"
                        Source="{Binding Image}"/>
-                <Border Background="#A5000000" Height="80" VerticalAlignment="Bottom">
+                <Border Background="#75000000" Height="80" VerticalAlignment="Bottom">
                     <TextBlock Text="{Binding Name}" 
                                FontFamily="Segoe UI" FontSize="26.667" 
                                Foreground="#CCFFFFFF" Padding="15,20"/>
@@ -159,7 +160,7 @@ stackPanel1.Children.Add(flipView1);
 
 這裡是資料範本定義的配置看起來的樣子。
 
-翻轉檢視資料範本。
+![具有資料範本的翻轉視圖範例](images/flip-view-template.png)
 
 ### <a name="set-the-orientation-of-the-flip-view"></a>設定翻轉檢視的方向
 

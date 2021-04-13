@@ -8,12 +8,12 @@ ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: high
 ms.custom: 19H1
-ms.openlocfilehash: 3caadca2c6aae1ecceed534f9d9597f126310f3d
-ms.sourcegitcommit: bcdec8bda3106cd5588464531e582101d52dcc80
+ms.openlocfilehash: b0616219b1950d476a1b5dd281281399196aad3e
+ms.sourcegitcommit: 4b4ace01ab130f0f9784fa0be0dcce28bdfc422f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2021
-ms.locfileid: "102254622"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "107265703"
 ---
 # <a name="templated-xaml-controls-for-winui-3-apps-with-c"></a>使用 C# 製作的適用於 WinUI 3 應用程式的樣板化 XAML 控制項
 
@@ -33,7 +33,7 @@ ms.locfileid: "102254622"
 
 ## <a name="update-the-custom-control-c-file"></a>更新自訂控制項 c # 檔案
 
-在 c # 檔案中 BgLabelControl.cs，請注意，此函式會定義控制項的 **DefaultStyleKey** 屬性。 此索引鍵會識別當控制項的取用者未明確指定範本時，將會使用的預設範本。 索引鍵值是控制項的「類型」。 我們會在稍後實作泛型範本檔案時，看到此索引鍵在使用中。
+在 c # 檔案（BgLabelControl）中，請注意，此函式會定義控制項的 **DefaultStyleKey** 屬性。 此索引鍵會識別當控制項的取用者未明確指定範本時，將會使用的預設範本。 索引鍵值是控制項的「類型」。 我們會在稍後實作泛型範本檔案時，看到此索引鍵在使用中。
 
 ```csharp
 public BgLabelControl()
@@ -58,7 +58,7 @@ DependencyProperty LabelProperty = DependencyProperty.Register(
     nameof(Label), 
     typeof(string),
     typeof(BgLabelControl), 
-    new PropertyMetadata(default(string)));
+    new PropertyMetadata(default(string), new PropertyChangedCallback(OnLabelChanged)));
 ```
 
 這兩個步驟都是實作相依性屬性的必要步驟，但是在此範例中，我們將為 **OnLabelChanged** 事件新增選擇性的處理常式。 每當更新屬性值時，系統就會引發這個事件。 在此情況下，我們會檢查新的標籤文字是否為空字串，並據以更新類別變數。
@@ -68,17 +68,15 @@ public bool HasLabelValue { get; set; }
 
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 {
+    BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
+    String s = e.NewValue as String; //null checks omitted
+    if (s == String.Empty)
     {
-        BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
-        String s = e.NewValue as String; //null checks omitted
-        if (s == String.Empty)
-        {
-            labelControl.HasLabelValue = false;
-        }
-        else
-        {
-            labelControl.HasLabelValue = true;
-        }
+        labelControl.HasLabelValue = false;
+    }
+    else
+    {
+        labelControl.HasLabelValue = true;
     }
 }
 ```

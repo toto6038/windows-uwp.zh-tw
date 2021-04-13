@@ -1,15 +1,15 @@
 ---
-title: 適用于 Windows 10 的 Powertoy 執行公用程式
+title: Windows 10 的 Powertoy 執行公用程式
 description: 適用于 power 使用者的快速啟動程式，其中包含一些額外的功能，而不會犧牲效能。
 ms.date: 12/02/2020
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ce71ac5f4667952be8beb790b0890aadd0d8eb54
-ms.sourcegitcommit: a1b251971f7ac574275d53bbe3e9ef4a3a9dc15c
+ms.openlocfilehash: 8d9c67b38f9a7c7729c0f4839a327a2527aa116d
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2021
-ms.locfileid: "103417109"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107218133"
 ---
 # <a name="powertoys-run-utility"></a>Powertoy 執行公用程式
 
@@ -59,24 +59,25 @@ Powertoy 執行功能包括：
   | Alt + 空格鍵 | 開啟或隱藏 Powertoy 執行 |
   | Esc | 隱藏 Powertoy 執行 |
   | Ctrl+Shift+Enter |  (僅適用于應用程式) 以系統管理員身分開啟選取的應用程式 |
-  | CTRL+SHIFT+E |  (僅適用于應用程式和檔案) 在檔案瀏覽器中開啟包含資料夾 |
+  | CTRL+SHIFT+E |  (僅適用于應用程式和檔案) 在檔案總管中開啟包含資料夾 |
   | Ctrl+C |  (僅適用于) 複製路徑位置的資料夾和檔案 |
   | 索引標籤 | 流覽搜尋結果和內容功能表按鈕 |
 
-## <a name="action-key"></a>動作金鑰
+## <a name="action-keys"></a>動作按鍵
 
 這些預設啟用片語會強制 Powertoy 只執行到目標外掛程式。
 
   | **動作金鑰** | **動作** |
   | --- | --- |
-  | `=` | 只有計算機。 範例 `=2+2` |
-  | `?` | 僅搜尋檔案。 `?road`要尋找的範例`roadmap.txt` |
+  | `=` | 只有計算機。 範例 `=2+2` 。 |
+  | `?` | 僅搜尋檔案。 `?road`要尋找 `roadmap.txt` 的範例。 |
   | `.` | 僅限已安裝的程式。 `.code`取得 Visual Studio Code 的範例。 請參閱 [程式參數](#program-parameters) ，以取得將參數加入程式啟動時的選項。 |
-  | `//` | 僅限 Url。 `//docs.microsoft.com`讓您的預設瀏覽器移至的範例https://docs.microsoft.com |
-  | `<` | 僅執行進程。 `<outlook`尋找包含 outlook 的所有進程的範例 |
-  | `>` | 僅限 Shell 命令。 `>ping localhost`執行 ping 查詢的範例 |
-  | `:` | 僅限登錄機碼。 搜尋 HKEY_CURRENT_USER 登錄機碼的範例 `:hkcu` |
-  | `!` | 僅限 Windows 服務。 `!alg`搜尋要啟動或停止的應用層閘道服務的範例 |
+  | `//` | 僅限 Url。 `//docs.microsoft.com`讓您的預設瀏覽器移至的範例 https://docs.microsoft.com 。 |
+  | `<` | 僅執行進程。 `<outlook`尋找包含 outlook 的所有進程的範例。 |
+  | `>` | 僅限 Shell 命令。 `>ping localhost`執行 ping 查詢的範例。 |
+  | `:` | 僅限登錄機碼。 搜尋 HKEY_CURRENT_USER 登錄機碼的範例 `:hkcu` 。 |
+  | `!` | 僅限 Windows 服務。 `!alg`搜尋要啟動或停止的應用層閘道服務的範例。 |
+  | `{` | Visual Studio Code 先前開啟的工作區、遠端電腦 (SSH 或 Codespaces) 和容器。 `{powertoys`搜尋路徑中包含 ' powertoy ' 之工作區的範例。 此外掛程式預設為關閉。
 
 ## <a name="system-commands"></a>系統命令
 
@@ -94,13 +95,13 @@ Powertoy 執行會啟用一組可以執行的系統層級動作。
 
 ## <a name="plugin-manager"></a>外掛程式管理員
 
-使用 Powertoy v 0.33 和 on 時，[Powertoy 執行設定] 功能表包含一個外掛程式管理員，可讓您啟用/停用目前可用的各種外掛程式。 藉由選取和展開區段，您可以自訂每個外掛程式所使用的啟用片語。 此外，您可以選取外掛程式是否出現在全域結果中，以及設定可用的其他外掛程式選項。 
+[Powertoy 回合設定] 功能表包含外掛程式管理員，可讓您啟用/停用目前可用的各種外掛程式。 藉由選取和展開區段，您可以自訂每個外掛程式所使用的啟用片語。 此外，您可以選取外掛程式是否出現在全域結果中，以及設定可用的其他外掛程式選項。 
 
 ## <a name="program-parameters"></a>程式參數
 
-使用 Powertoy v 0.33 和更新版本時，Powertoy 執行程式外掛程式可讓您在啟動應用程式時新增程式引數。 程式引數必須遵循程式的命令列介面所定義的預期格式。
+Powertoy 執行程式外掛程式可讓您在啟動應用程式時加入程式引數。 程式引數必須遵循程式的命令列介面所定義的預期格式。
 
-例如，啟動 Visual Studio Code 時，您可以指定要開啟的資料夾：
+例如，當啟動 Visual Studio Code 時，您可以指定要開啟的資料夾：
 
 `Visual Studio Code -- C:\myFolder`
 
@@ -112,19 +113,29 @@ Visual Studio Code 也支援一組 [命令列參數](https://code.visualstudio.c
 
 `.Visual Studio Code -- C:\myFolder`
 
-## <a name="windows-search-settings"></a>Windows 搜尋設定
+## <a name="monitor-positioning"></a>監視定位
 
-如果未將 Windows 搜尋外掛程式設定為涵蓋所有磁片磁碟機，您將會收到下列警告：
+如果有多個監視正在使用中，您可以在 [設定] 功能表中設定適當的啟動行為，以在所需的監視器上啟動 Powertoy 回合。 選項包括開啟：
+
+- 主要監視
+- 使用滑鼠游標進行監視
+- 以焦點視窗監視
+
+![Powertoy 執行監視選取專案](../images/pt-run-monitor.png)
+
+## <a name="windows-search-settings"></a>Windows Search 設定
+
+如果 Windows Search 外掛程式未設定為涵蓋所有磁片磁碟機，您將會收到下列警告：
 
 ![Powertoy 執行索引子警告](../images/pt-run-warning.png)
 
-您可以關閉 Windows 搜尋的 [Powertoy 執行外掛程式管理員] 選項中的警告，或選取警告來展開正在編制索引的磁片磁碟機。 選取警告之後，Windows 10 設定的 [搜尋視窗] 選項功能表隨即開啟。
+您可以關閉 Windows Search 的 [Powertoy 執行外掛程式管理員] 選項中的警告，或選取警告來展開正在編制索引的磁片磁碟機。 選取警告之後，會開啟 [搜尋 Windows] 選項功能表 Windows 10 設定]。
 
 ![編制索引設定](../images/pt-run-indexing.png)
 
 在此 [搜尋視窗] 功能表中，您可以：
 
-- 選取 [增強] 模式可讓您在 Windows 10 電腦上的所有磁片磁碟機上進行索引編制。
+- 選取 [增強] 模式可讓您在 Windows 10 機上的所有磁片磁碟機上進行索引編制。
 - 指定要排除的檔案夾路徑。
 - 選取功能表選項底部附近的 [先進搜尋索引子設定] (，) 以設定 Advanced index 設定、新增或移除搜尋位置、編制加密檔案的索引等。
 

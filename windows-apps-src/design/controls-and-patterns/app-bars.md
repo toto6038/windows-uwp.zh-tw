@@ -13,12 +13,12 @@ design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a84dcc209fa0fcd897668293cb136a5448e7254
-ms.sourcegitcommit: 4f032d7bb11ea98783db937feed0fa2b6f9950ef
-ms.translationtype: HT
+ms.openlocfilehash: f3d21f60a26f7a1c6a63d678c60e1d9538580d55
+ms.sourcegitcommit: 77af97719a439f5e73a6109b42fd3110bcb2843b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91829520"
+ms.lasthandoff: 04/08/2021
+ms.locfileid: "107219041"
 ---
 # <a name="command-bar"></a>命令列
 
@@ -126,9 +126,14 @@ PrimaryCommands 和 SecondaryCommands 只能填入 [AppBarButton](/uwp/api/Windo
 
 應用程式列按鈕控制項可依圖示和文字標籤加以區分。 這些控制項最適合在命令列中使用，其外觀會改變，取決於控制項是在命令列還是在溢位功能表中使用。
 
-溢位功能表中圖示的大小為 16x16px，這小於主要命令區域中圖示的大小 (20x20px)。 如果您使用 SymbolIcon、FontIcon 或 PathIcon，當命令進入次要命令區域時，圖示將會自動縮放至正確大小，但逼真度並不會降低。 
+#### <a name="icons"></a>圖示
 
-### <a name="button-labels"></a>按鈕標籤
+主要命令區域中顯示的圖示大小為 20x20px;在溢位功能表中，圖示會顯示在16x16px。 如果您使用 [SymbolIcon](/uwp/api/windows.ui.xaml.controls.symbolicon)、 [FontIcon](/uwp/api/windows.ui.xaml.controls.fonticon)或 [PathIcon](/uwp/api/windows.ui.xaml.controls.pathicon)，則當命令進入次要命令區域時，圖示會自動調整為正確的大小，而不會遺失精確度。
+
+如需設定圖示的詳細資訊和範例，請參閱 [icon](/uwp/api/windows.ui.xaml.controls.appbarbutton) 類別的檔。
+
+#### <a name="labels"></a>標籤
+
 AppBarButton [IsCompact](/uwp/api/windows.ui.xaml.controls.appbarbutton.IsCompact) 屬性決定是否顯示標籤。 在 CommandBar 控制項中，當命令列開啟或關閉時，命令列會自動覆寫按鈕的 IsCompact 屬性。
 
 若要放置應用程式列按鈕標籤，請使用 CommandBar 的 [DefaultLabelPosition](/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelposition) 屬性。
@@ -211,7 +216,7 @@ private void CommandBar_Closing(object sender, object e)
 
 ### <a name="issticky"></a>IsSticky
 
-如果使用者在命令列開啟時與應用程式的其他部分互動，則命令列會自動關閉。 這稱為*消失關閉*。 您可以設定 [IsSticky](/uwp/api/windows.ui.xaml.controls.appbar.issticky) 屬性來控制消失關閉行為。 當 `IsSticky="true"` 時，命令列會保持開啟，直到使用者按 [查看更多] \[•••\] 按鈕，或從溢位功能表中選取項目為止。 
+如果使用者在命令列開啟時與應用程式的其他部分互動，則命令列會自動關閉。 這稱為 *消失關閉*。 您可以設定 [IsSticky](/uwp/api/windows.ui.xaml.controls.appbar.issticky) 屬性來控制消失關閉行為。 當 `IsSticky="true"` 時，命令列會保持開啟，直到使用者按 [查看更多] \[•••\] 按鈕，或從溢位功能表中選取項目為止。 
 
 建議您避免使用相黏命令列，因為它們不符合使用者對[消失關閉和鍵盤焦點行為](./menus.md#light-dismiss)的預期效果。
 
