@@ -8,12 +8,12 @@ ms.topic: article
 keywords: rust、windows 10、microsoft、learning rust、windows 上適用于初學者的 rust、使用 vs code 的 rust、rust for windows
 ms.localizationpriority: medium
 ms.date: 03/04/2021
-ms.openlocfilehash: aa3288d01207b7f51fe0f63ea996c4ea5cbdde48
-ms.sourcegitcommit: 85b9a5fc16f4486bc23b4ec8f4fae5ab6211a066
+ms.openlocfilehash: 1ba0acf298a3bd492ceac9adccafcac857f67cba
+ms.sourcegitcommit: f7c7a2ae6367e114a8b9d438963082440cd24043
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "102194481"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107315061"
 ---
 # <a name="rust-for-windows-and-the-windows-crate"></a>適用于 Windows 的 Rust 和 *windows* 包裝箱
 
@@ -44,7 +44,7 @@ Rust for Windows 存放庫也有一些您可以遵循的 [簡單範例](https://
 
 ## <a name="rust-documentation-for-the-windows-api"></a>Windows API 的 Rust 檔
 
-Rust for Windows 受益于 Rust 開發人員所喜愛的完美工具鏈。 但是，如果您手邊的整個 Windows API 看起來有點令人望而生畏，也有 [Rust 的 WINDOWS api 檔](https://microsoft.github.io/windows-docs-rs/doc/bindings/windows/)。
+Rust for Windows 受益于 Rust 開發人員所喜愛的完美工具鏈。 但是，如果您手邊的整個 Windows API 看起來有點令人望而生畏，也有 [Rust 的 WINDOWS api 檔](https://microsoft.github.io/windows-docs-rs/doc/bindings/Windows/)。
 
 此資源基本上記載了 Windows Api 和類型投射到慣用 Rust 的方式。 您可以使用它來流覽或搜尋您需要知道的 Api，以及您需要知道如何呼叫的 Api。
 

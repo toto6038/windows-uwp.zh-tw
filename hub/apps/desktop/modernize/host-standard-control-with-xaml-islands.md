@@ -8,12 +8,12 @@ ms.author: mcleans
 author: mcleanbyron
 ms.localizationpriority: medium
 ms.custom: 19H1
-ms.openlocfilehash: 4d98877fb0d48d2c3c677af5f2b89d9fd65c05f1
-ms.sourcegitcommit: b4c782b2403da83a6e0b5b7416cc4dc835b068d9
+ms.openlocfilehash: 3358e679b44affdb5207207a30fe6b5282ac6759
+ms.sourcegitcommit: f7c7a2ae6367e114a8b9d438963082440cd24043
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98922750"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107315081"
 ---
 # <a name="host-a-standard-winrt-xaml-control-in-a-wpf-app-using-xaml-islands"></a>使用 XAML Islands 在 WPF 應用程式中裝載標準 WinRT XAML 控制項
 
@@ -62,8 +62,8 @@ ms.locfileid: "98922750"
 5. 將您的方案設定為以特定平台 (例如 x86 或 x64) 為目標。 在以 **任何 CPU** 為目標的專案中，不支援大部分的 XAML Islands 案例。
 
     1. 在 [方案總管] 中，以滑鼠右鍵按一下方案節點，然後選取 [屬性] -> [設定屬性] -> [設定管理員]。 
-    2. 在 [使用中的方案平台] 中，選取 [新增]。 
-    3. 在 [新增方案平台] 對話方塊中，選取 [x64] 或 [x86]，然後按 [確定]。 
+    2. 在 [使用中的方案平台]  中，選取 [新增]  。 
+    3. 在 [新增方案平台]  對話方塊中，選取 [x64]  或 [x86]  ，然後按 [確定]  。 
     4. 關閉已開啟的對話方塊。
 
 ## <a name="define-a-xamlapplication-class-in-a-uwp-app-project"></a>在 UWP 應用程式專案中定義 XamlApplication 類別
@@ -74,7 +74,7 @@ ms.locfileid: "98922750"
 > 雖然裝載第一方 WinRT XAML 控制項不需要執行此步驟，但您的應用程式需要 `XamlApplication` 物件來支援完整範圍的 XAML Island 案例，包括裝載自訂 WinRT XAML 控制項。 因此，我們建議您一律在任何使用 XAML Islands 的方案中定義 `XamlApplication` 物件。
 
 1. 在 [方案總管] 中，在方案節點上按一下滑鼠右鍵，然後選取 [新增] -> [新增專案]。
-2. 將 [空白應用程式 (通用 Windows)] 專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。
+2. 將 [空白應用程式 (通用 Windows)]  專案新增到您的方案。 請確定目標版本和最低版本都設定為 [Windows 10 1903 版 (組件 18362)] 或更新版本。 也請確定這個新的 UWP 專案不在 WPF 專案的子資料夾中。 否則，WPF 應用程式稍後會嘗試建立 UWP XAML 標記，就像是 WPF XAML 一樣。
 3. 在 UWP 應用程式專案中，安裝 [Microsoft.Toolkit.Win32.UI.XamlApplication](https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication) NuGet 套件 (最新的穩定版本)。
 4. 開啟 **pp.xaml** 檔案，並以下列 XAML 取代此檔案的內容。 以您 UWP 應用程式專案的命名空間取代 `MyUWPApp`。
 
