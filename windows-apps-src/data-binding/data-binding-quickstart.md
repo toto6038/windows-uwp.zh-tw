@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 3f1aeb24a50d0e1f4d1e7c1ee702ea078582b4e5
-ms.sourcegitcommit: efa5f793607481dcae24cd1b886886a549e8d6e5
-ms.translationtype: HT
+ms.openlocfilehash: c21ea3baaa5992877d1fc0f695e36dda53f69ce2
+ms.sourcegitcommit: 27787a579e497d097382338654ed371b661cc3b5
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89412002"
+ms.lasthandoff: 04/13/2021
+ms.locfileid: "107321709"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
@@ -324,7 +324,7 @@ MainPage::MainPage()
 
 ## <a name="binding-to-a-collection-of-items"></a>繫結到項目集合
 
-常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;** ](/dotnet/api/system.collections.objectmodel.observablecollection-1) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) 和 [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
+常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;**](/dotnet/api/system.collections.objectmodel.observablecollection-1) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) 和 [**INotifyCollectionChanged**](/dotnet/api/system.collections.specialized.inotifycollectionchanged) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
 如果您使用 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md)，您可以在 [XAML 項目控制項；繫結至一個 C++/WinRT 集合](../cpp-and-winrt-apis/binding-collection.md)深入瞭解如何繫結至可觀察的集合。 如果您先閱讀該主題，下面顯示的C++/WinRT 程式碼清單的目的將會更清楚。
 
@@ -617,6 +617,10 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ```
 
 ```cppwinrt
+// pch.h
+...
+#include <winrt/Windows.Globalization.h>
+
 // StringFormatter.idl
 namespace Quickstart
 {
@@ -705,7 +709,7 @@ public:
 ```
 
 > [!NOTE]
-> 針對上述 C++/WinRT 程式碼清單，在 `StringFormatter.idl` 中，我們使用[預設屬性](/windows/desktop/midl/default)將 **IValueConverter** 宣告為預設介面。 在清單中，**StringFormatter** 只有一個建構函式，沒有任何方法，因此不會為其產生任何預設介面。 如果您不會將實例成員加入 **StringFormatter**，`default` 屬性是最佳選擇，因為不需要 QueryInterface 就能呼叫 **IValueConverter** 方法。 或者，您也可以提示要產生預設 **IStringFormatter** 介面，並使用 [default_interface 屬性](/uwp/midl-3/predefined-attributes#the-default_interface-attribute)來標註執行階段類別本身來完成此動作。 如果您將實例成員加入 **StringFormatter** (被呼叫的頻率高於 **IValueConverter** 的方法)，該選項就是最佳做法，因為這樣不需要 QueryInterface 就能呼叫實例成員。
+> 針對上述 C++/WinRT 程式碼清單，在 `StringFormatter.idl` 中，我們使用 [預設屬性](/windows/desktop/midl/default)將 **IValueConverter** 宣告為預設介面。 在清單中，**StringFormatter** 只有一個建構函式，沒有任何方法，因此不會為其產生任何預設介面。 如果您不會將實例成員加入 **StringFormatter**，`default` 屬性是最佳選擇，因為不需要 QueryInterface 就能呼叫 **IValueConverter** 方法。 或者，您也可以提示要產生預設 **IStringFormatter** 介面，並使用 [default_interface 屬性](/uwp/midl-3/predefined-attributes#the-default_interface-attribute)來標註執行階段類別本身來完成此動作。 如果您將實例成員加入 **StringFormatter** (被呼叫的頻率高於 **IValueConverter** 的方法)，該選項就是最佳做法，因為這樣不需要 QueryInterface 就能呼叫實例成員。
 
 現在我們可以加入 **StringFormatter** 的實例做為頁面資源，並在顯示 **ReleaseDateTime** 屬性的 **TextBlock** 的繫結中使用它。
 
