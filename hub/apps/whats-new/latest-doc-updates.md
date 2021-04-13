@@ -6,16 +6,16 @@ ms.date: 4/9/2021
 ms.localizationpriority: medium
 ms.author: quradic
 author: QuinnRadich
-ms.openlocfilehash: e78b6cdc0f21d6328992358e25d4cc0e116f5ffe
-ms.sourcegitcommit: f7c7a2ae6367e114a8b9d438963082440cd24043
+ms.openlocfilehash: 11d1e203867d9b094172c522dd2e4fbfc18f2093
+ms.sourcegitcommit: 40dc4a908f68d55a58343d1d3002f97cd5dbaf60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/13/2021
-ms.locfileid: "107315071"
+ms.locfileid: "107381059"
 ---
 # <a name="latest-updates-to-the-windows-developer-docs"></a>Windows 開發人員文件的最新更新
 
-Windows 開發人員文件會定期更新，並提供新的和改進的資訊及內容。 以下是 Apeil 9，2021的變更摘要。
+Windows 開發人員文件會定期更新，並提供新的和改進的資訊及內容。 以下是2021年4月9日的變更摘要。
 
 注意：如需新增為 Windows 10 組建 19041 (也稱為 2004) 一部分的特定 API 清單，請參閱[此清單](/windows/uwp/whats-new/windows-10-build-19041-api-diff)。
 
@@ -23,13 +23,19 @@ Windows 開發人員文件會定期更新，並提供新的和改進的資訊及
 
 我們繼續在整個檔集內搜尋和移除不區分語言的使用方式。
 
-如需參與 Microsoft 檔的詳細資訊，請參閱《 [參與者指南》](/contribute/)。
+很多人都感謝所有參與檔的人。 您的修正和建議很歡迎。 如需參與 Microsoft 檔的詳細資訊，請參閱《 [參與者指南》](/contribute/)。
 
 本月重點包括：
 
 ### <a name="new-content"></a>新內容
 
+
+* [Project Reunion](https://docs.microsoft.com/windows/apps/project-reunion/)
+* [WinUI 3](https://docs.microsoft.com/windows/apps/winui/winui3/)
 * [在 Windows 上使用 Rust 進行開發](https://docs.microsoft.com/windows/dev-environment/rust/)
+* [將您現有的桌面應用程式重新導向至您的已封裝應用程式](https://docs.microsoft.com/windows/apps/desktop/modernize/desktop-to-uwp-extensions#redirect)
+
+
 
 ### <a name="related-content"></a>相關內容 
 
@@ -45,8 +51,9 @@ Windows 開發人員文件會定期更新，並提供新的和改進的資訊及
 
 在下列參考主題可看到過去一個月的重大更新：
 
-<h2>在上個月結束2021-04-09 更新</h2>
+
 ## <a name="windows-conceptual-content"></a>Windows 概念內容
+
 <ul>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/author-apis">使用 C++/WinRT 撰寫 API</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started">開始使用 C++/WinRT</a></li>
@@ -67,7 +74,9 @@ Windows 開發人員文件會定期更新，並提供新的和改進的資訊及
 <li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-remoteinput-api">裝置入口網站遠端輸入 API 參考</a></li>
 <li><a href="https://docs.microsoft.com/windows/uwp/xbox-apps/uwp-sshpins-api">裝置入口網站 SSH Pin API 參考</a></li>
 </ul>
-## Win32 概念內容
+
+## <a name="win32-conceptual-content"></a>Win32 概念內容
+
 <ul>
 <li><a href="https://docs.microsoft.com/windows/desktop/Controls/property-sheets">關於屬性工作表</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/Controls/pss-propsheetheader">PROPSHEETHEADER 結構 (Prsht.idl .h) </a></li>
@@ -79,7 +88,9 @@ Windows 開發人員文件會定期更新，並提供新的和改進的資訊及
 <li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-sample-animated-gif">WIC 動畫 Gif 範例</a></li>
 <li><a href="https://docs.microsoft.com/windows/desktop/wic/-wic-sample-d2d-viewer">使用 Direct2D 範例的 WIC 影像檢視器</a></li>
 </ul>
-## WIN32 API 參考
+
+## <a name="win32-api-reference"></a>Win32 API 參考
+
 <ul>
 <li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iazrole">IAzRole (azroles) </a></li>
 <li><a href="https://docs.microsoft.com/windows/win32/api/azroles/nn-azroles-iazscope">IAzScope (azroles) </a></li>
@@ -189,8 +200,11 @@ Windows 開發人員文件會定期更新，並提供新的和改進的資訊及
 <li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll2">IEnroll2 (xenroll.h) </a></li>
 <li><a href="https://docs.microsoft.com/windows/win32/api/xenroll/nn-xenroll-ienroll4">IEnroll4 (xenroll.dll) </a></li>
 </ul>
-## WinRT API 參考
+
+## <a name="winrt-api-reference"></a>WinRT API 參考
+
 <ul>
+
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemswrapgrid.itemwidth">ItemsWrapGrid. ItemWidth （UI）</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid.itemheight">WrapGrid. ItemHeight （UI）</a></li>
 <li><a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.wrapgrid.itemwidth">WrapGrid. ItemWidth （UI）</a></li>
