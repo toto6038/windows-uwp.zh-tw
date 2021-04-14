@@ -1,27 +1,30 @@
 ---
-description: 在傳遞至需要 **IInspectable** 的函示之前，必須將純量數值包裝在參考資料類別物件中。 該包裝程序稱為「boxing」  值。
-title: 使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable
+description: 必須先將純量或陣列值包裝在參考類別物件內，才能傳遞至預期 **IInspectable** 的函式。 該包裝程序稱為「boxing」值。
+title: 使用 c + +/WinRT 將值裝箱和取消 IInspectable
 ms.date: 04/23/2019
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制項, boxing, 純量, 數值
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c1a64b97b40608e877f18b764ae92835d2bc4a7
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 08c36c735b319bb1658b2d4ce745ae0fdb7bdeee
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89154372"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466418"
 ---
-# <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable
- 
-Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是每個執行階段類別的根介面。 這是類似在每個 COM 介面與類別根的 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)；以及在每個[一般類型系統](/dotnet/standard/base-types/common-type-system)類別根的 **System.Object** 的想法。
+# <a name="boxing-and-unboxing-values-to-iinspectable-with-cwinrt"></a>使用 c + +/WinRT 將值裝箱和取消 IInspectable
 
-換言之，預期 **IInspectable** 的函式可以傳遞任何執行階段類別的執行個體。 但您無法直接將純量數值 (例如數字或文字值) 傳遞至此類函式。 而是需要將純量數值包裝於參考類別物件中。 該包裝程序稱為「boxing」  值。
+> [!NOTE]
+> 您不僅可以將純量值放在一起，也可以將大部分的陣列 (，但使用 [**winrt：： box_value**](/uwp/cpp-ref-for-winrt/box-value) 和 [**winrt：： unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 函式) 的列舉陣列除外。 您只能使用 [**winrt：： unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式，將純量值取消裝箱。
+
+Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)是每個執行階段類別的根介面。 這是類似在每個 COM 介面與類別根的 [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)；以及在每個 [一般類型系統](/dotnet/standard/base-types/common-type-system)類別根的 **System.Object** 的想法。
+
+換言之，預期 **IInspectable** 的函式可以傳遞任何執行階段類別的執行個體。 但是您無法直接將純量值傳遞給這類函式 (例如數值或文字值) 以及陣列。 相反地，純量或陣列值必須包裝在參考類別物件內。 該包裝程序稱為「boxing」值。
 
 > [!IMPORTANT]
-> 您可以對任何可傳至 Windows 執行階段 API 的類型進行 Box 和 Unbox 處理。 換句話說，即 Windows 執行階段類型。 以上提供的是數值和文字值 (字串) 的範例。 另一個範例是您在 IDL 中定義的 `struct`。 如果您嘗試對一般 C++ `struct` (未定義於 IDL 中) 進行 Box 處理，則編譯器會提醒您，您只能對 Windows 執行階段類型進行 Box 處理。 執行階段類別是一種 Windows 執行階段類型，但您理當可將執行階段類別傳至 Windows 執行階段 API，而不需要進行其 Box 處理。
+> 您可以將任何可傳遞至 Windows 執行階段 API 的類型加入方塊並取消裝箱。 換句話說，Windows 執行階段型別。 數值和文字值 (字串) 和陣列是上述的一些範例。 另一個範例是 `struct` 您在 IDL 中定義的。 如果您嘗試將 `struct` 未在 IDL) 中定義的一般 c + + (，則編譯器會提醒您，您只能將 Windows 執行階段類型。 執行時間類別是 Windows 執行階段型別，但是您當然可以將執行時間類別傳遞給 Windows 執行階段的 Api，而不需要將它們裝箱。
 
-[C++/WinRT](./intro-to-using-cpp-with-winrt.md) 提供 [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) 函式，該函式採用純量數值，並傳回經過 Box 處理到 **IInspectable** 的值。 針對將 **IInspectable** Unbox 回純量數值，有 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
+[C + +/WinRT](./intro-to-using-cpp-with-winrt.md) 提供 [**WinRT：： box_value**](/uwp/cpp-ref-for-winrt/box-value) 函式，它接受純量或陣列值，並傳回已封裝至 **IInspectable** 的值。 若要將 **IInspectable** 取消加入純量或陣列值，可以使用 [**winrt：： unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 函式。 若要將 **IInspectable** 取消加入純量值，也有 [**winrt：： unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
 
 ## <a name="examples-of-boxing-a-value"></a>Boxing 值的範例
 [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) 存取子函式傳回 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)，即為純量數值。 我們可以 box 該 **hstring** 值，並將其傳遞至預期 **IInspectable** 的函式，如下所示。
@@ -56,7 +59,7 @@ void Unbox(winrt::Windows::Foundation::IInspectable const& object)
 ```
 
 ## <a name="determine-the-type-of-a-boxed-value"></a>判斷 Boxed 實值的類型
-如果您收到 Boxed 實值，但不確定它包含哪些類型 (需要知道其類型以便 Unbox)，您可以查詢 Boxed 實值的 [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) 介面，然後呼叫其**類型**。 以下是程式碼範例。
+如果您收到 Boxed 實值，但不確定它包含哪些類型 (需要知道其類型以便 Unbox)，您可以查詢 Boxed 實值的 [**IPropertyValue**](/uwp/api/windows.foundation.ipropertyvalue) 介面，然後呼叫其 **類型**。 以下是程式碼範例。
 
 `WINRT_ASSERT` 是巨集定義，而且會發展為 [_ASSERTE](/cpp/c-runtime-library/reference/assert-asserte-assert-expr-macros)。
 

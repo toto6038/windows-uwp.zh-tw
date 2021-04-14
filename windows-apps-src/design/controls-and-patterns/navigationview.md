@@ -14,12 +14,12 @@ ms.custom: RS5
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: b5e80a1c8f77fe10748eb671476b4cd81d3c4e37
-ms.sourcegitcommit: 23f3d452806f40752d7c2ebd07b7b056ac5d8934
+ms.openlocfilehash: 959fc9f77c94ee05bf4191bd3ce01049a8163bde
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2021
-ms.locfileid: "107031527"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466448"
 ---
 # <a name="navigationview"></a>NavigationView
 
@@ -1021,7 +1021,7 @@ namespace winrt::NavigationViewCppWinRT::implementation
 
 上述 c # 和 c + +/WinRT 程式碼的設計目的，是為了讓您可以針對這兩個版本使用相同的 XAML 標記。 不過，還有另一種方式可以實作本節中所述的 C++/WinRT 版本，建議您採用這個方式。
 
-以下是替代版本的 **NavView_ItemInvoked** 處理常式。 此版本處理常式的技巧需要先儲存 (在 [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem) 的標籤中) 要瀏覽的頁面所用的完整類型名稱。 在處理常式中，您會對該值進行 unbox 處理，將它變成 [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) 物件，並使用它來瀏覽至目的地頁面。 不需要上述範例中名稱為 `_pages` 的對應變數，而且您將能夠建立單元測試，確認標記內的值屬於有效類型。 另請參閱[使用 C++/WinRT，Boxing 和 unboxing 純量數值到 IInspectable](../../cpp-and-winrt-apis/boxing.md)。
+以下是替代版本的 **NavView_ItemInvoked** 處理常式。 此版本處理常式的技巧需要先儲存 (在 [**NavigationViewItem**](/uwp/api/windows.ui.xaml.controls.navigationviewitem) 的標籤中) 要瀏覽的頁面所用的完整類型名稱。 在處理常式中，您會對該值進行 unbox 處理，將它變成 [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename) 物件，並使用它來瀏覽至目的地頁面。 不需要上述範例中名稱為 `_pages` 的對應變數，而且您將能夠建立單元測試，確認標記內的值屬於有效類型。 另請參閱 [使用 c + +/WinRT IInspectable 的裝箱和取消裝箱值](../../cpp-and-winrt-apis/boxing.md)。
 
 ```cppwinrt
 void MainPage::NavView_ItemInvoked(

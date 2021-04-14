@@ -5,12 +5,12 @@ ms.date: 04/13/2020
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 移植, 移轉, C#, 範例, 剪貼簿, 案例研究
 ms.localizationpriority: medium
-ms.openlocfilehash: f862dd01e91d99e19fb6996921dbc20a33d714da
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: cef005e00302efe850e19fff27318495efb275e9
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629366"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466438"
 ---
 # <a name="porting-the-clipboard-sample-to-cwinrt-from-cmdasha-case-study"></a>將剪貼簿範例從 C# 移植到 C++/WinRT &mdash; 案例研究
 
@@ -456,7 +456,7 @@ public partial class MainPage : Page
 - 執行階段類別，或
 - [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。
 
-針對 **IInspectable** 案例，如果元素本身不是執行階段類別，則這些元素的類型必須可在 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 中進行 Box 和 Bnbox 處理。 也就是說，這些必須是 Windows 執行階段類型 (請參閱[將純量數值 Boxing 和 unboxing 到 IInspectable](./boxing.md))。
+針對 **IInspectable** 案例，如果元素本身不是執行階段類別，則這些元素的類型必須可在 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) 中進行 Box 和 Bnbox 處理。 這表示它們必須是 Windows 執行階段類型 (查看 IInspectable) 的 [裝箱和取消裝箱值](./boxing.md) 。
 
 在此案例研究中，我們不會將 **Scenario** 設為執行階段類別。 但是，這仍然是合理的選項。 而且在您自己的移植工作中，有時候一定會遇到執行階段類別。 例如，如果您需要讓元素類型變成 *可觀察的* (請參閱 [XAML 控制項；繫結至一個 C++/WinRT 屬性](./binding-property.md))，或如果元素因為其他任何原因而需要有方法，而且不只是一組資料成員，就會遇到執行階段類別。
 
@@ -1099,7 +1099,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Win
 }
 ```
 
-一如往常，我們會將事件處理常式設為 `public`。 我們會對 *sender* 物件使用 [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 函式，以便將其轉換成 **HyperlinkButton**。 在 C++/WinRT 中，**Tag** 屬性是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (等同於 [**Object**](/dotnet/api/system.object))。 但是在 **IInspectable** 上沒有 **Tostring**。 我們必須改為將 **IInspectable** Unbox 為純量值 (在此案例中為字串)。 同樣地，如需有關 Boxing 和 Unboxing 的詳細資訊，請參閱[將純量數值 Boxing 和 unboxing 到 IInspectable](./boxing.md)。
+一如往常，我們會將事件處理常式設為 `public`。 我們會對 *sender* 物件使用 [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 函式，以便將其轉換成 **HyperlinkButton**。 在 C++/WinRT 中，**Tag** 屬性是 [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (等同於 [**Object**](/dotnet/api/system.object))。 但是在 **IInspectable** 上沒有 **Tostring**。 我們必須改為將 **IInspectable** Unbox 為純量值 (在此案例中為字串)。 同樣地，如需有關裝箱和取消加入的詳細資訊，請參閱 [IInspectable 的裝箱和取消裝箱值](./boxing.md)。
 
 最後兩行會重複我們之前所看到的移植模式，而這些模式會對 C# 版本有相當大的回應。
 

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 7812eca3263e266820f3624f88aad41b2d6e6ef5
-ms.sourcegitcommit: 539b428bcf3d72c6bda211893df51f2a27ac5206
+ms.openlocfilehash: 21b7aebe0ad270ab8f722e2cea9d6ac5202381c5
+ms.sourcegitcommit: b89d3bc42713fbe4c0ada99d6f514f1304821221
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "102629376"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107466428"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -54,7 +54,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [Photo Editor C++/WinRT 範例應用程式](./photo-editor-sample.md) | Photo Editor 是 UWP 範例應用程式，展示使用 C++/WinRT 語言投影進行開發。 範例應用程式可讓您從 **圖片** 庫擷取相片，然後以混合的相片效果編輯所選的影像。 | 
 | [字串處理](./strings.md) | 使用 C++/WinRT，您可以使用標準 C++ 寬字串類型呼叫 Windows 執行階段 API，或可以使用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 類型。 |
 | [標準 C++ 資料類型與 C++/WinRT](./std-cpp-data-types.md) | 使用 C++/WinRT，您可以使用標準 C++ 資料類型呼叫 Windows 執行階段 API。 |
-| [將純量數值 Boxing 和 unboxing 到 IInspectable](./boxing.md) | 在傳遞至需要 **IInspectable** 的函示之前，必須將純量數值包裝在參考資料類別物件中。 該包裝程序稱為「boxing」值。 |
+| [要 IInspectable 的裝箱和取消裝箱值](./boxing.md) | 必須先將純量或陣列值包裝在參考類別物件內，才能傳遞至預期 **IInspectable** 的函式。 該包裝程序稱為「boxing」值。 |
 | [使用 C++/WinRT 取用 API](./consume-apis.md) | 本主題示範如何取用 C++/WinRT API，無論 Windows、第三方元件廠商或您自己是否實作它們。 |
 | [使用 C++/WinRT 撰寫 API](./author-apis.md) | 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。 |
 | [使用 C++/WinRT 處理錯誤](./error-handling.md) | 本主題討論使用 C++/WinRT 程式設計時處理錯誤的策略。 |
