@@ -102,19 +102,19 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E701.png" width="32" height="32" alt="Wifi" /></td>
   <td>E701</td>
-  <td>Wifi</td>
+  <td>Wi-Fi</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E702.png" width="32" height="32" alt="Bluetooth" /></td>
   <td>E702</td>
-  <td>Bluetooth</td>
+  <td>藍芽</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E703.png" width="32" height="32" alt="Connect" /></td>
   <td>E703</td>
-  <td>將</td>
+  <td>連線</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E704.png" width="32" height="32" alt="InternetSharing" /></td>
   <td>E704</td>
-  <td>InternetSharing</td>
+  <td>分享網路</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E705.png" width="32" height="32" alt="VPN" /></td>
   <td>E705</td>
@@ -126,7 +126,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E707.png" width="32" height="32" alt="MapPin" /></td>
   <td>E707</td>
-  <td>MapPin</td>
+  <td>地圖大頭針</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E708.png" width="32" height="32" alt="QuietHours" /></td>
   <td>E708</td>
@@ -134,15 +134,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E709.png" width="32" height="32" alt="Airplane" /></td>
   <td>E709</td>
-  <td>Airplane</td>
+  <td>飛機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E70A.png" width="32" height="32" alt="Tablet" /></td>
   <td>E70A</td>
-  <td>Tablet</td>
+  <td>平板電腦</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E70B.png" width="32" height="32" alt="QuickNote" /></td>
   <td>E70B</td>
-  <td>QuickNote</td>
+  <td>快捷便籤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E70C.png" width="32" height="32" alt="RememberedDevice" /></td>
   <td>E70C</td>
@@ -166,7 +166,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E711.png" width="32" height="32" alt="Cancel" /></td>
   <td>E711</td>
-  <td>[取消]</td>
+  <td>取消</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E712.png" width="32" height="32" alt="More" /></td>
   <td>E712</td>
@@ -182,7 +182,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E715.png" width="32" height="32" alt="Mail" /></td>
   <td>E715</td>
-  <td>Mail</td>
+  <td>郵件</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E716.png" width="32" height="32" alt="People" /></td>
   <td>E716</td>
@@ -194,7 +194,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E718.png" width="32" height="32" alt="Pin" /></td>
   <td>E718</td>
-  <td>Pin</td>
+  <td>釘選大頭針</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E719.png" width="32" height="32" alt="Shop" /></td>
   <td>E719</td>
@@ -210,11 +210,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E71C.png" width="32" height="32" alt="Filter" /></td>
   <td>E71C</td>
-  <td>篩選器</td>
+  <td>篩選</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E71D.png" width="32" height="32" alt="AllApps" /></td>
   <td>E71D</td>
-  <td>AllApps</td>
+  <td>所有應用程式</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E71E.png" width="32" height="32" alt="Zoom" /></td>
   <td>E71E</td>
@@ -238,15 +238,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E723.png" width="32" height="32" alt="Attach" /></td>
   <td>E723</td>
-  <td>Attach</td>
+  <td>附加檔案</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E724.png" width="32" height="32" alt="Send" /></td>
   <td>E724</td>
-  <td>Send</td>
+  <td>寄送</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E725.png" width="32" height="32" alt="SendFill" /></td>
   <td>E725</td>
-  <td>SendFill</td>
+  <td>寄送（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E726.png" width="32" height="32" alt="WalkSolid" /></td>
   <td>E726</td>
@@ -258,7 +258,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E728.png" width="32" height="32" alt="FavoriteList" /></td>
   <td>E728</td>
-  <td>FavoriteList</td>
+  <td>最愛清單</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E729.png" width="32" height="32" alt="PageSolid" /></td>
   <td>E729</td>
@@ -294,15 +294,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E734.png" width="32" height="32" alt="FavoriteStar" /></td>
   <td>E734</td>
-  <td>FavoriteStar</td>
+  <td>最愛</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E735.png" width="32" height="32" alt="FavoriteStarFill" /></td>
   <td>E735</td>
-  <td>FavoriteStarFill</td>
+  <td>最愛（填滿）</td>
  </tr>
  <tr><td><img src="images/segoe-mdl/E736.png" width="32" height="32" alt="ReadingMode" /></td>
   <td>E736</td>
-  <td>ReadingMode</td>
+  <td>閱讀模式</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/E737.png" width="32" height="32" alt="Favicon" /></td>
   <td>E737</td>
@@ -322,7 +322,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E73B.png" width="32" height="32" alt="CheckboxFill" /></td>
   <td>E73B</td>
-  <td>CheckboxFill</td>
+  <td>核取方塊（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E73C.png" width="32" height="32" alt="CheckboxIndeterminate" /></td>
   <td>E73C</td>
@@ -334,15 +334,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E73E.png" width="32" height="32" alt="CheckMark" /></td>
   <td>E73E</td>
-  <td>CheckMark</td>
+  <td>打勾</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E73F.png" width="32" height="32" alt="BackToWindow" /></td>
   <td>E73F</td>
-  <td>BackToWindow</td>
+  <td>返回視窗</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E740.png" width="32" height="32" alt="FullScreen" /></td>
   <td>E740</td>
-  <td>FullScreen</td>
+  <td>全螢幕</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E741.png" width="32" height="32" alt="ResizeTouchLarger" /></td>
   <td>E741</td>
@@ -374,7 +374,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E748.png" width="32" height="32" alt="SwitchUser" /></td>
   <td>E748</td>
-  <td>SwitchUser</td>
+  <td>切換使用者</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E749.png" width="32" height="32" alt="Print" /></td>
   <td>E749</td>
@@ -382,11 +382,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E74A.png" width="32" height="32" alt="Up" /></td>
   <td>E74A</td>
-  <td>Up</td>
+  <td>上</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74B.png" width="32" height="32" alt="Down" /></td>
   <td>E74B</td>
-  <td>Down</td>
+  <td>下</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E74C.png" width="32" height="32" alt="OEM" /></td>
   <td>E74C</td>
@@ -402,7 +402,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E74F.png" width="32" height="32" alt="Mute" /></td>
   <td>E74F</td>
-  <td>Mute</td>
+  <td>靜音</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E750.png" width="32" height="32" alt="BackSpaceQWERTY" /></td>
   <td>E750</td>
@@ -422,15 +422,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E754.png" width="32" height="32" alt="Flashlight" /></td>
   <td>E754</td>
-  <td>Flashlight</td>
+  <td>手電筒</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E755.png" width="32" height="32" alt="RotationLock" /></td>
   <td>E755</td>
-  <td>RotationLock</td>
+  <td>旋轉鎖定</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E756.png" width="32" height="32" alt="CommandPrompt" /></td>
   <td>E756</td>
-  <td>CommandPrompt</td>
+  <td>命令提示字元</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E759.png" width="32" height="32" alt="SIPMove" /></td>
   <td>E759</td>
@@ -446,7 +446,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E75C.png" width="32" height="32" alt="EraseTool" /></td>
   <td>E75C</td>
-  <td>EraseTool</td>
+  <td>擦除工具</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E75D.png" width="32" height="32" alt="UnderscoreSpace" /></td>
   <td>E75D</td>
@@ -458,43 +458,43 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E75F.png" width="32" height="32" alt="Dialpad" /></td>
   <td>E75F</td>
-  <td>Dialpad</td>
+  <td>撥號盤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E760.png" width="32" height="32" alt="PageLeft" /></td>
   <td>E760</td>
-  <td>PageLeft</td>
+  <td>左頁</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E761.png" width="32" height="32" alt="PageRight" /></td>
   <td>E761</td>
-  <td>PageRight</td>
+  <td>右頁</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E762.png" width="32" height="32" alt="MultiSelect" /></td>
   <td>E762</td>
-  <td>MultiSelect</td>
+  <td>多選</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E763.png" width="32" height="32" alt="KeyboardLeftHanded" /></td>
   <td>E763</td>
-  <td>KeyboardLeftHanded</td>
+  <td>左手鍵盤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E764.png" width="32" height="32" alt="KeyboardRightHanded" /></td>
   <td>E764</td>
-  <td>KeyboardRightHanded</td>
+  <td>右手鍵盤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E765.png" width="32" height="32" alt="KeyboardClassic" /></td>
   <td>E765</td>
-  <td>KeyboardClassic</td>
+  <td>一般鍵盤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E766.png" width="32" height="32" alt="KeyboardSplit" /></td>
   <td>E766</td>
-  <td>KeyboardSplit</td>
+  <td>分割鍵盤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E767.png" width="32" height="32" alt="Volume" /></td>
   <td>E767</td>
-  <td>磁碟區</td>
+  <td>音量</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E768.png" width="32" height="32" alt="Play" /></td>
   <td>E768</td>
-  <td>Play</td>
+  <td>播放</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E769.png" width="32" height="32" alt="Pause" /></td>
   <td>E769</td>
@@ -510,7 +510,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E76D.png" width="32" height="32" alt="InkingTool" /></td>
   <td>E76D</td>
-  <td>InkingTool</td>
+  <td>標記工具</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E76E.png" width="32" height="32" alt="Emoji2" /></td>
   <td>E76E</td>
@@ -522,11 +522,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E770.png" width="32" height="32" alt="System" /></td>
   <td>E770</td>
-  <td>System</td>
+  <td>系統</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E771.png" width="32" height="32" alt="Personalize" /></td>
   <td>E771</td>
-  <td>Personalize</td>
+  <td>個人化</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E772.png" width="32" height="32" alt="Devices" /></td>
   <td>E772</td>
@@ -542,31 +542,31 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E775.png" width="32" height="32" alt="TimeLanguage" /></td>
   <td>E775</td>
-  <td>TimeLanguage</td>
+  <td>時間及語言</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E776.png" width="32" height="32" alt="EaseOfAccess" /></td>
   <td>E776</td>
-  <td>EaseOfAccess</td>
+  <td>輕鬆存取</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E777.png" width="32" height="32" alt="UpdateRestore" /></td>
   <td>E777</td>
-  <td>UpdateRestore</td>
+  <td>更新及還原</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E778.png" width="32" height="32" alt="HangUp" /></td>
   <td>E778</td>
-  <td>HangUp</td>
+  <td>掛斷通話</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E779.png" width="32" height="32" alt="ContactInfo" /></td>
   <td>E779</td>
-  <td>ContactInfo</td>
+  <td>聯絡人資訊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E77A.png" width="32" height="32" alt="Unpin" /></td>
   <td>E77A</td>
-  <td>Unpin</td>
+  <td>取消釘選</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E77B.png" width="32" height="32" alt="Contact" /></td>
   <td>E77B</td>
-  <td>Contact</td>
+  <td>聯絡人</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E77C.png" width="32" height="32" alt="Memo" /></td>
   <td>E77C</td>
@@ -574,7 +574,7 @@ ms.locfileid: "97865511"
  </tr>
  <tr><td><img src="images/segoe-mdl/E77E.png" width="32" height="32" alt="IncomingCall" /></td>
   <td>E77E</td>
-  <td>IncomingCall</td>
+  <td>來電</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/E77F.png" width="32" height="32" alt="Paste" /></td>
   <td>E77F</td>
@@ -582,11 +582,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E780.png" width="32" height="32" alt="PhoneBook" /></td>
   <td>E780</td>
-  <td>PhoneBook</td>
+  <td>電話簿</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E781.png" width="32" height="32" alt="LEDLight" /></td>
   <td>E781</td>
-  <td>LEDLight</td>
+  <td>LED燈</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E783.png" width="32" height="32" alt="Error" /></td>
   <td>E783</td>
@@ -598,15 +598,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E785.png" width="32" height="32" alt="Unlock" /></td>
   <td>E785</td>
-  <td>Unlock</td>
+  <td>解鎖</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E786.png" width="32" height="32" alt="Slideshow" /></td>
   <td>E786</td>
-  <td>Slideshow</td>
+  <td>幻燈片播映</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E787.png" width="32" height="32" alt="Calendar" /></td>
   <td>E787</td>
-  <td>Calendar</td>
+  <td>日曆</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E788.png" width="32" height="32" alt="GripperResize" /></td>
   <td>E788</td>
@@ -614,23 +614,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E789.png" width="32" height="32" alt="Megaphone" /></td>
   <td>E789</td>
-  <td>Megaphone</td>
+  <td>大聲公</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E78A.png" width="32" height="32" alt="Trim" /></td>
   <td>E78A</td>
-  <td>Trim</td>
+  <td>裁剪</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E78B.png" width="32" height="32" alt="NewWindow" /></td>
   <td>E78B</td>
-  <td>NewWindow</td>
+  <td>新視窗</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E78C.png" width="32" height="32" alt="SaveLocal" /></td>
   <td>E78C</td>
-  <td>SaveLocal</td>
+  <td>儲存於本機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E790.png" width="32" height="32" alt="Color" /></td>
   <td>E790</td>
-  <td>Color</td>
+  <td>色彩</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E791.png" width="32" height="32" alt="DataSense" /></td>
   <td>E791</td>
@@ -638,15 +638,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E792.png" width="32" height="32" alt="SaveAs" /></td>
   <td>E792</td>
-  <td>SaveAs</td>
+  <td>另存為</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E793.png" width="32" height="32" alt="Light" /></td>
   <td>E793</td>
-  <td>輕量型</td>
+  <td>Light</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E799.png" width="32" height="32" alt="AspectRatio" /></td>
   <td>E799</td>
-  <td>AspectRatio</td>
+  <td>畫面比例</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7A5.png" width="32" height="32" alt="DataSenseBar" /></td>
   <td>E7A5</td>
@@ -662,19 +662,19 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7A8.png" width="32" height="32" alt="Crop" /></td>
   <td>E7A8</td>
-  <td>Crop</td>
+  <td>裁切</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7AC.png" width="32" height="32" alt="OpenWith" /></td>
   <td>E7AC</td>
-  <td>OpenWith</td>
+  <td>以…開啟</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7AD.png" width="32" height="32" alt="Rotate" /></td>
   <td>E7AD</td>
-  <td>Rotate</td>
+  <td>旋轉</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7B3.png" width="32" height="32" alt="RedEye" /></td>
   <td>E7B3</td>
-  <td>RedEye</td>
+  <td>紅眼</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7B5.png" width="32" height="32" alt="SetlockScreen" /></td>
   <td>E7B5</td>
@@ -682,7 +682,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7B7.png" width="32" height="32" alt="MapPin2" /></td>
   <td>E7B7</td>
-  <td>MapPin2</td>
+  <td>地圖大頭針2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7B8.png" width="32" height="32" alt="Package" /></td>
   <td>E7B8</td>
@@ -690,11 +690,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BA.png" width="32" height="32" alt="Warning" /></td>
   <td>E7BA</td>
-  <td>Warning</td>
+  <td>警告</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BC.png" width="32" height="32" alt="ReadingList" /></td>
   <td>E7BC</td>
-  <td>ReadingList</td>
+  <td>閱讀清單</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BE.png" width="32" height="32" alt="Education" /></td>
   <td>E7BE</td>
@@ -702,11 +702,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7BF.png" width="32" height="32" alt="ShoppingCart" /></td>
   <td>E7BF</td>
-  <td>ShoppingCart</td>
+  <td>購物車</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C0.png" width="32" height="32" alt="Train" /></td>
   <td>E7C0</td>
-  <td>Train</td>
+  <td>火車</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C1.png" width="32" height="32" alt="Flag" /></td>
   <td>E7C1</td>
@@ -718,7 +718,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C4.png" width="32" height="32" alt="TaskView" /></td>
   <td>E7C4</td>
-  <td>TaskView</td>
+  <td>工作檢視</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C5.png" width="32" height="32" alt="BrowsePhotos" /></td>
   <td>E7C5</td>
@@ -726,15 +726,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C6.png" width="32" height="32" alt="HalfStarLeft" /></td>
   <td>E7C6</td>
-  <td>HalfStarLeft</td>
+  <td>左半星</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C7.png" width="32" height="32" alt="HalfStarRight" /></td>
   <td>E7C7</td>
-  <td>HalfStarRight</td>
+  <td>右半星</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C8.png" width="32" height="32" alt="Record" /></td>
   <td>E7C8</td>
-  <td>Record</td>
+  <td>錄製</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7C9.png" width="32" height="32" alt="TouchPointer" /></td>
   <td>E7C9</td>
@@ -742,11 +742,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7DE.png" width="32" height="32" alt="LangJPN" /></td>
   <td>E7DE</td>
-  <td>LangJPN</td>
+  <td>[語言]日本</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E3.png" width="32" height="32" alt="Ferry" /></td>
   <td>E7E3</td>
-  <td>Ferry</td>
+  <td>渡輪</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E6.png" width="32" height="32" alt="Highlight" /></td>
   <td>E7E6</td>
@@ -758,7 +758,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7E8.png" width="32" height="32" alt="PowerButton" /></td>
   <td>E7E8</td>
-  <td>PowerButton</td>
+  <td>電源按鈕</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7EA.png" width="32" height="32" alt="ResizeTouchNarrower" /></td>
   <td>E7EA</td>
@@ -770,7 +770,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7EC.png" width="32" height="32" alt="DrivingMode" /></td>
   <td>E7EC</td>
-  <td>DrivingMode</td>
+  <td>駕駛模式</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7ED.png" width="32" height="32" alt="RingerSilent" /></td>
   <td>E7ED</td>
@@ -778,7 +778,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7EE.png" width="32" height="32" alt="OtherUser" /></td>
   <td>E7EE</td>
-  <td>OtherUser</td>
+  <td>其他使用者</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7EF.png" width="32" height="32" alt="Admin" /></td>
   <td>E7EF</td>
@@ -786,11 +786,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F0.png" width="32" height="32" alt="CC" /></td>
   <td>E7F0</td>
-  <td>CC</td>
+  <td>CC字幕</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F1.png" width="32" height="32" alt="SDCard" /></td>
   <td>E7F1</td>
-  <td>SDCard</td>
+  <td>記憶卡</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F2.png" width="32" height="32" alt="CallForwarding" /></td>
   <td>E7F2</td>
@@ -802,15 +802,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F4.png" width="32" height="32" alt="TVMonitor" /></td>
   <td>E7F4</td>
-  <td>TVMonitor</td>
+  <td>電視螢幕</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F5.png" width="32" height="32" alt="Speakers" /></td>
   <td>E7F5</td>
-  <td>Speakers</td>
+  <td>喇叭</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F6.png" width="32" height="32" alt="Headphone" /></td>
   <td>E7F6</td>
-  <td>Headphone</td>
+  <td>耳機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7F7.png" width="32" height="32" alt="DeviceLaptopPic" /></td>
   <td>E7F7</td>
@@ -834,11 +834,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E7FC.png" width="32" height="32" alt="Game" /></td>
   <td>E7FC</td>
-  <td>Game</td>
+  <td>遊戲</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E7FD.png" width="32" height="32" alt="HorizontalTabKey" /></td>
   <td>E7FD</td>
-  <td>HorizontalTabKey</td>
+  <td>橫向 Tab 鍵</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E802.png" width="32" height="32" alt="StreetsideSplitMinimize" /></td>
   <td>E802</td>
@@ -850,27 +850,27 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E804.png" width="32" height="32" alt="Car" /></td>
   <td>E804</td>
-  <td>Car</td>
+  <td>汽車</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E805.png" width="32" height="32" alt="Walk" /></td>
   <td>E805</td>
-  <td>Walk</td>
+  <td>步行</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E806.png" width="32" height="32" alt="Bus" /></td>
   <td>E806</td>
-  <td>Bus</td>
+  <td>公車</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E809.png" width="32" height="32" alt="TiltUp" /></td>
   <td>E809</td>
-  <td>TiltUp</td>
+  <td>向上傾斜</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E80A.png" width="32" height="32" alt="TiltDown" /></td>
   <td>E80A</td>
-  <td>TiltDown</td>
+  <td>向下傾斜</td>
  </tr>
  <tr><td><img src="images/segoe-mdl/E80B.png" width="32" height="32" alt="CallControl" /></td>
   <td>E80B</td>
-  <td>CallControl</td>
+  <td>通話控制</td>
 </tr>
 <tr><td><img src="images/segoe-mdl/E80C.png" width="32" height="32" alt="RotateMapRight" /></td>
   <td>E80C</td>
@@ -886,15 +886,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E811.png" width="32" height="32" alt="ParkingLocation" /></td>
   <td>E811</td>
-  <td>ParkingLocation</td>
+  <td>停車位置</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E812.png" width="32" height="32" alt="MapCompassTop" /></td>
   <td>E812</td>
-  <td>MapCompassTop</td>
+  <td>［地圖］指北針上</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E813.png" width="32" height="32" alt="MapCompassBottom" /></td>
   <td>E813</td>
-  <td>MapCompassBottom</td>
+  <td>［地圖］指北針下</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E814.png" width="32" height="32" alt="IncidentTriangle" /></td>
   <td>E814</td>
@@ -906,19 +906,19 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E816.png" width="32" height="32" alt="MapDirections" /></td>
   <td>E816</td>
-  <td>MapDirections</td>
+  <td>［地圖］規劃路線</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E819.png" width="32" height="32" alt="StartPoint" /></td>
   <td>E819</td>
-  <td>StartPoint</td>
+  <td>起始點</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81A.png" width="32" height="32" alt="StopPoint" /></td>
   <td>E81A</td>
-  <td>StopPoint</td>
+  <td>停靠點</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81B.png" width="32" height="32" alt="EndPoint" /></td>
   <td>E81B</td>
-  <td>EndPoint</td>
+  <td>終點</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81C.png" width="32" height="32" alt="History" /></td>
   <td>E81C</td>
@@ -930,19 +930,19 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E81E.png" width="32" height="32" alt="MapLayers" /></td>
   <td>E81E</td>
-  <td>MapLayers</td>
+  <td>〔地圖〕圖層</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E81F.png" width="32" height="32" alt="Accident" /></td>
   <td>E81F</td>
-  <td>Accident</td>
+  <td>交通事故</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E821.png" width="32" height="32" alt="Work" /></td>
   <td>E821</td>
-  <td>Work</td>
+  <td>工作</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E822.png" width="32" height="32" alt="Construction" /></td>
   <td>E822</td>
-  <td>建築業</td>
+  <td>施工</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E823.png" width="32" height="32" alt="Recent" /></td>
   <td>E823</td>
@@ -950,11 +950,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E825.png" width="32" height="32" alt="Bank" /></td>
   <td>E825</td>
-  <td>Bank</td>
+  <td>銀行</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E826.png" width="32" height="32" alt="DownloadMap" /></td>
   <td>E826</td>
-  <td>DownloadMap</td>
+  <td>下載地圖</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E829.png" width="32" height="32" alt="InkingToolFill2" /></td>
   <td>E829</td>
@@ -966,19 +966,19 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E82B.png" width="32" height="32" alt="EraseToolFill" /></td>
   <td>E82B</td>
-  <td>EraseToolFill</td>
+  <td>擦除工具（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E82C.png" width="32" height="32" alt="EraseToolFill2" /></td>
   <td>E82C</td>
-  <td>EraseToolFill2</td>
+  <td>擦除工具（填滿）2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E82D.png" width="32" height="32" alt="Dictionary" /></td>
   <td>E82D</td>
-  <td>Dictionary</td>
+  <td>字典</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E82E.png" width="32" height="32" alt="DictionaryAdd" /></td>
   <td>E82E</td>
-  <td>DictionaryAdd</td>
+  <td>新增至字典</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E82F.png" width="32" height="32" alt="ToolTip" /></td>
   <td>E82F</td>
@@ -1014,35 +1014,35 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E83C.png" width="32" height="32" alt=" DialUp" /></td>
   <td>E83C</td>
-  <td> DialUp</td>
+  <td> 撥號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E83D.png" width="32" height="32" alt="DefenderApp " /></td>
   <td>E83D</td>
-  <td>DefenderApp </td>
+  <td>Windows Defender</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E83E.png" width="32" height="32" alt="BatteryCharging9" /></td>
   <td>E83E</td>
-  <td>BatteryCharging9</td>
+  <td>電池9</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E83F.png" width="32" height="32" alt="Battery10" /></td>
   <td>E83F</td>
-  <td>Battery10</td>
+  <td>電池10</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E840.png" width="32" height="32" alt="Pinned" /></td>
   <td>E840</td>
-  <td>Pinned</td>
+  <td>已釘選</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E841.png" width="32" height="32" alt="PinFill" /></td>
   <td>E841</td>
-  <td>PinFill</td>
+  <td>釘選（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E842.png" width="32" height="32" alt="PinnedFill" /></td>
   <td>E842</td>
-  <td>PinnedFill</td>
+  <td>已釘選（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E843.png" width="32" height="32" alt="PeriodKey" /></td>
   <td>E843</td>
-  <td>PeriodKey</td>
+  <td>句號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E844.png" width="32" height="32" alt="PuncKey" /></td>
   <td>E844</td>
@@ -1062,11 +1062,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E848.png" width="32" height="32" alt="LeftQuote" /></td>
   <td>E848</td>
-  <td>LeftQuote</td>
+  <td>上引號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E849.png" width="32" height="32" alt="RightQuote" /></td>
   <td>E849</td>
-  <td>RightQuote</td>
+  <td>下引號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E84A.png" width="32" height="32" alt="DownShiftKey" /></td>
   <td>E84A</td>
@@ -1094,139 +1094,139 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E850.png" width="32" height="32" alt="Battery0" /></td>
   <td>E850</td>
-  <td>Battery0</td>
+  <td>電池0</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E851.png" width="32" height="32" alt="Battery1" /></td>
   <td>E851</td>
-  <td>Battery1</td>
+  <td>電池1</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E852.png" width="32" height="32" alt="Battery2" /></td>
   <td>E852</td>
-  <td>Battery2</td>
+  <td>電池2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E853.png" width="32" height="32" alt="Battery3" /></td>
   <td>E853</td>
-  <td>Battery3</td>
+  <td>電池3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E854.png" width="32" height="32" alt="Battery4" /></td>
   <td>E854</td>
-  <td>Battery4</td>
+  <td>電池4</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E855.png" width="32" height="32" alt="Battery5" /></td>
   <td>E855</td>
-  <td>Battery5</td>
+  <td>電池5</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E856.png" width="32" height="32" alt="Battery6" /></td>
   <td>E856</td>
-  <td>Battery6</td>
+  <td>電池6</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E857.png" width="32" height="32" alt="Battery7" /></td>
   <td>E857</td>
-  <td>Battery7</td>
+  <td>電池7</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E858.png" width="32" height="32" alt="Battery8" /></td>
   <td>E858</td>
-  <td>Battery8</td>
+  <td>電池8</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E859.png" width="32" height="32" alt="Battery9" /></td>
   <td>E859</td>
-  <td>Battery9</td>
+  <td>電池9</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E85A.png" width="32" height="32" alt="BatteryCharging0" /></td>
   <td>E85A</td>
-  <td>BatteryCharging0</td>
+  <td>電池充電中0</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E85B.png" width="32" height="32" alt="BatteryCharging1" /></td>
   <td>E85B</td>
-  <td>BatteryCharging1</td>
+  <td>電池充電中1</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E85C.png" width="32" height="32" alt="BatteryCharging2" /></td>
   <td>E85C</td>
-  <td>BatteryCharging2</td>
+  <td>電池充電中2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E85D.png" width="32" height="32" alt="BatteryCharging3" /></td>
   <td>E85D</td>
-  <td>BatteryCharging3</td>
+  <td>電池充電中3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E85E.png" width="32" height="32" alt="BatteryCharging4" /></td>
   <td>E85E</td>
-  <td>BatteryCharging4</td>
+  <td>電池充電中4</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E85F.png" width="32" height="32" alt="BatteryCharging5" /></td>
   <td>E85F</td>
-  <td>BatteryCharging5</td>
+  <td>電池充電中5</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E860.png" width="32" height="32" alt="BatteryCharging6" /></td>
   <td>E860</td>
-  <td>BatteryCharging6</td>
+  <td>電池充電中6</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E861.png" width="32" height="32" alt="BatteryCharging7" /></td>
   <td>E861</td>
-  <td>BatteryCharging7</td>
+  <td>電池充電中7</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E862.png" width="32" height="32" alt="BatteryCharging8" /></td>
   <td>E862</td>
-  <td>BatteryCharging8</td>
+  <td>電池充電中8</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E863.png" width="32" height="32" alt="BatterySaver0" /></td>
   <td>E863</td>
-  <td>BatterySaver0</td>
+  <td>電池省電模式0</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E864.png" width="32" height="32" alt="BatterySaver1" /></td>
   <td>E864</td>
-  <td>BatterySaver1</td>
+  <td>電池省電模式1</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E865.png" width="32" height="32" alt="BatterySaver2" /></td>
   <td>E865</td>
-  <td>BatterySaver2</td>
+  <td>電池省電模式2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E866.png" width="32" height="32" alt="BatterySaver3" /></td>
   <td>E866</td>
-  <td>BatterySaver3</td>
+  <td>電池省電模式3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E867.png" width="32" height="32" alt="BatterySaver4" /></td>
   <td>E867</td>
-  <td>BatterySaver4</td>
+  <td>電池省電模式4</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E868.png" width="32" height="32" alt="BatterySaver5" /></td>
   <td>E868</td>
-  <td>BatterySaver5</td>
+  <td>電池省電模式5</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E869.png" width="32" height="32" alt="BatterySaver6" /></td>
   <td>E869</td>
-  <td>BatterySaver6</td>
+  <td>電池省電模式6</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E86A.png" width="32" height="32" alt="BatterySaver7" /></td>
   <td>E86A</td>
-  <td>BatterySaver7</td>
+  <td>電池省電模式7</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E86B.png" width="32" height="32" alt="BatterySaver8" /></td>
   <td>E86B</td>
-  <td>BatterySaver8</td>
+  <td>電池省電模式8</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E86C.png" width="32" height="32" alt="SignalBars1" /></td>
   <td>E86C</td>
-  <td>SignalBars1</td>
+  <td>訊號強度1</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E86D.png" width="32" height="32" alt="SignalBars2" /></td>
   <td>E86D</td>
-  <td>SignalBars2</td>
+  <td>訊號強度2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E86E.png" width="32" height="32" alt="SignalBars3" /></td>
   <td>E86E</td>
-  <td>SignalBars3</td>
+  <td>訊號強度3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E86F.png" width="32" height="32" alt="SignalBars4" /></td>
   <td>E86F</td>
-  <td>SignalBars4</td>
+  <td>訊號強度4</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E870.png" width="32" height="32" alt="SignalBars5" /></td>
   <td>E870</td>
-  <td>SignalBars5</td>
+  <td>訊號強度5</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E871.png" width="32" height="32" alt="SignalNotConnected" /></td>
   <td>E871</td>
-  <td>SignalNotConnected</td>
+  <td>訊號未連線</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E872.png" width="32" height="32" alt="Wifi1" /></td>
   <td>E872</td>
@@ -1242,31 +1242,31 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E875.png" width="32" height="32" alt="MobSIMLock" /></td>
   <td>E875</td>
-  <td>MobSIMLock</td>
+  <td>SIM卡鎖</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E876.png" width="32" height="32" alt="MobSIMMissing" /></td>
   <td>E876</td>
-  <td>MobSIMMissing</td>
+  <td>無SIM卡</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E877.png" width="32" height="32" alt="Vibrate" /></td>
   <td>E877</td>
-  <td>Vibrate</td>
+  <td>震動</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E878.png" width="32" height="32" alt="RoamingInternational" /></td>
   <td>E878</td>
-  <td>RoamingInternational</td>
+  <td>國際漫遊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E879.png" width="32" height="32" alt="RoamingDomestic" /></td>
   <td>E879</td>
-  <td>RoamingDomestic</td>
+  <td>國內漫遊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E87A.png" width="32" height="32" alt="CallForwardInternational" /></td>
   <td>E87A</td>
-  <td>CallForwardInternational</td>
+  <td>國際通話轉接</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E87B.png" width="32" height="32" alt="CallForwardRoaming" /></td>
   <td>E87B</td>
-  <td>CallForwardRoaming</td>
+  <td>國內通話轉接</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E87C.png" width="32" height="32" alt="JpnRomanji" /></td>
   <td>E87C</td>
@@ -1294,23 +1294,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E882.png" width="32" height="32" alt="StatusDualSIM2" /></td>
   <td>E882</td>
-  <td>StatusDualSIM2</td>
+  <td>［狀態］SIM卡2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E883.png" width="32" height="32" alt="StatusDualSIM2VPN" /></td>
   <td>E883</td>
-  <td>StatusDualSIM2VPN</td>
+  <td>［狀態］SIM卡2 VPN</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E884.png" width="32" height="32" alt="StatusDualSIM1" /></td>
   <td>E884</td>
-  <td>StatusDualSIM1</td>
+  <td>［狀態］SIN卡1</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E885.png" width="32" height="32" alt="StatusDualSIM1VPN" /></td>
   <td>E885</td>
-  <td>StatusDualSIM1VPN</td>
+  <td>［狀態］SIM卡1 VPN</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E886.png" width="32" height="32" alt="StatusSGLTE" /></td>
   <td>E886</td>
-  <td>StatusSGLTE</td>
+  <td>［狀態］LTE訊號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E887.png" width="32" height="32" alt="StatusSGLTECell" /></td>
   <td>E887</td>
@@ -1318,27 +1318,27 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E888.png" width="32" height="32" alt="StatusSGLTEDataVPN" /></td>
   <td>E888</td>
-  <td>StatusSGLTEDataVPN</td>
+  <td>［狀態］LTE 行動數據 VPN</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E889.png" width="32" height="32" alt="StatusVPN" /></td>
   <td>E889</td>
-  <td>StatusVPN</td>
+  <td>［狀態］VPN</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E88A.png" width="32" height="32" alt="WifiHotspot" /></td>
   <td>E88A</td>
-  <td>WifiHotspot</td>
+  <td>WiFi 熱點</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E88B.png" width="32" height="32" alt="LanguageKor" /></td>
   <td>E88B</td>
-  <td>LanguageKor</td>
+  <td>韓文</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E88C.png" width="32" height="32" alt="LanguageCht" /></td>
   <td>E88C</td>
-  <td>LanguageCht</td>
+  <td>正體中文</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E88D.png" width="32" height="32" alt="LanguageChs" /></td>
   <td>E88D</td>
-  <td>LanguageChs</td>
+  <td>簡體中文</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E88E.png" width="32" height="32" alt="USB" /></td>
   <td>E88E</td>
@@ -1362,7 +1362,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E893.png" width="32" height="32" alt="Next" /></td>
   <td>E893</td>
-  <td>[下一步]</td>
+  <td>下一步</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E894.png" width="32" height="32" alt="Clear" /></td>
   <td>E894</td>
@@ -1390,7 +1390,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E89A.png" width="32" height="32" alt="TwoPage" /></td>
   <td>E89A</td>
-  <td>TwoPage</td>
+  <td>雙頁</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E89B.png" width="32" height="32" alt="LeaveChat" /></td>
   <td>E89B</td>
@@ -1402,7 +1402,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E89E.png" width="32" height="32" alt="RotateCamera" /></td>
   <td>E89E</td>
-  <td>RotateCamera</td>
+  <td>切換鏡頭</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E89F.png" width="32" height="32" alt="ClosePane" /></td>
   <td>E89F</td>
@@ -1414,7 +1414,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A1.png" width="32" height="32" alt="PreviewLink" /></td>
   <td>E8A1</td>
-  <td>PreviewLink</td>
+  <td>連結預覽</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A2.png" width="32" height="32" alt="AttachCamera" /></td>
   <td>E8A2</td>
@@ -1422,11 +1422,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A3.png" width="32" height="32" alt="ZoomIn" /></td>
   <td>E8A3</td>
-  <td>ZoomIn</td>
+  <td>放大檢視</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A4.png" width="32" height="32" alt="Bookmarks" /></td>
   <td>E8A4</td>
-  <td>Bookmarks</td>
+  <td>書籤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A5.png" width="32" height="32" alt="Document" /></td>
   <td>E8A5</td>
@@ -1434,27 +1434,27 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A6.png" width="32" height="32" alt="ProtectedDocument" /></td>
   <td>E8A6</td>
-  <td>ProtectedDocument</td>
+  <td>受保護的文件</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A7.png" width="32" height="32" alt="OpenInNewWindow" /></td>
   <td>E8A7</td>
-  <td>OpenInNewWindow</td>
+  <td>在新視窗中開啟</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A8.png" width="32" height="32" alt="MailFill" /></td>
   <td>E8A8</td>
-  <td>MailFill</td>
+  <td>郵件（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8A9.png" width="32" height="32" alt="ViewAll" /></td>
   <td>E8A9</td>
-  <td>ViewAll</td>
+  <td>檢視全部</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AA.png" width="32" height="32" alt="VideoChat" /></td>
   <td>E8AA</td>
-  <td>VideoChat</td>
+  <td>視訊通話</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AB.png" width="32" height="32" alt="Switch" /></td>
   <td>E8AB</td>
-  <td>參數</td>
+  <td>切換</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AC.png" width="32" height="32" alt="Rename" /></td>
   <td>E8AC</td>
@@ -1470,7 +1470,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8AF.png" width="32" height="32" alt="Remote" /></td>
   <td>E8AF</td>
-  <td>遠端</td>
+  <td>遠端連線</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B0.png" width="32" height="32" alt="Click" /></td>
   <td>E8B0</td>
@@ -1478,19 +1478,19 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B1.png" width="32" height="32" alt="Shuffle" /></td>
   <td>E8B1</td>
-  <td>Shuffle</td>
+  <td>隨機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B2.png" width="32" height="32" alt="Movies" /></td>
   <td>E8B2</td>
-  <td>Movies</td>
+  <td>電影</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B3.png" width="32" height="32" alt="SelectAll" /></td>
   <td>E8B3</td>
-  <td>SelectAll</td>
+  <td>選取全部</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B4.png" width="32" height="32" alt="Orientation" /></td>
   <td>E8B4</td>
-  <td>Orientation</td>
+  <td>旋轉方向</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B5.png" width="32" height="32" alt="Import" /></td>
   <td>E8B5</td>
@@ -1498,7 +1498,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B6.png" width="32" height="32" alt="ImportAll" /></td>
   <td>E8B6</td>
-  <td>ImportAll</td>
+  <td>匯入全部</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B7.png" width="32" height="32" alt="Folder" /></td>
   <td>E8B7</td>
@@ -1510,7 +1510,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8B9.png" width="32" height="32" alt="Picture" /></td>
   <td>E8B9</td>
-  <td>Picture</td>
+  <td>圖片</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BA.png" width="32" height="32" alt="Caption" /></td>
   <td>E8BA</td>
@@ -1518,11 +1518,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BB.png" width="32" height="32" alt="ChromeClose" /></td>
   <td>E8BB</td>
-  <td>ChromeClose</td>
+  <td>［Chrome］關閉</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BC.png" width="32" height="32" alt="ShowResults" /></td>
   <td>E8BC</td>
-  <td>ShowResults</td>
+  <td>顯示結果</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BD.png" width="32" height="32" alt="Message" /></td>
   <td>E8BD</td>
@@ -1530,23 +1530,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BE.png" width="32" height="32" alt="Leaf" /></td>
   <td>E8BE</td>
-  <td>Leaf</td>
+  <td>葉子</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8BF.png" width="32" height="32" alt="CalendarDay" /></td>
   <td>E8BF</td>
-  <td>CalendarDay</td>
+  <td>［日曆］天</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C0.png" width="32" height="32" alt="CalendarWeek" /></td>
   <td>E8C0</td>
-  <td>CalendarWeek</td>
+  <td>［日曆］週</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C1.png" width="32" height="32" alt="Characters" /></td>
   <td>E8C1</td>
-  <td>Characters</td>
+  <td>字元</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C2.png" width="32" height="32" alt="MailReplyAll" /></td>
   <td>E8C2</td>
-  <td>MailReplyAll</td>
+  <td>［郵件］回覆所有人</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C3.png" width="32" height="32" alt="Read" /></td>
   <td>E8C3</td>
@@ -1554,11 +1554,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C4.png" width="32" height="32" alt="ShowBcc" /></td>
   <td>E8C4</td>
-  <td>ShowBcc</td>
+  <td>顯示密件副本</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C5.png" width="32" height="32" alt="HideBcc" /></td>
   <td>E8C5</td>
-  <td>HideBcc</td>
+  <td>隱藏密件副本</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8C6.png" width="32" height="32" alt="Cut" /></td>
   <td>E8C6</td>
@@ -1578,23 +1578,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CA.png" width="32" height="32" alt="MailReply" /></td>
   <td>E8CA</td>
-  <td>MailReply</td>
+  <td>［郵件］回覆</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CB.png" width="32" height="32" alt="Sort" /></td>
   <td>E8CB</td>
-  <td>Sort</td>
+  <td>排序</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CC.png" width="32" height="32" alt="MobileTablet" /></td>
   <td>E8CC</td>
-  <td>MobileTablet</td>
+  <td>手機及平板電腦</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CD.png" width="32" height="32" alt="DisconnectDrive" /></td>
   <td>E8CD</td>
-  <td>DisconnectDrive</td>
+  <td>中斷網路磁碟機連線</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CE.png" width="32" height="32" alt="MapDrive" /></td>
   <td>E8CE</td>
-  <td>MapDrive</td>
+  <td>連線到網路磁碟機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8CF.png" width="32" height="32" alt="ContactPresence" /></td>
   <td>E8CF</td>
@@ -1606,7 +1606,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D1.png" width="32" height="32" alt="GotoToday" /></td>
   <td>E8D1</td>
-  <td>GotoToday</td>
+  <td>回到今天</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D2.png" width="32" height="32" alt="Font" /></td>
   <td>E8D2</td>
@@ -1614,15 +1614,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D3.png" width="32" height="32" alt="FontColor" /></td>
   <td>E8D3</td>
-  <td>FontColor</td>
+  <td>字型顏色</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D4.png" width="32" height="32" alt="Contact2" /></td>
   <td>E8D4</td>
-  <td>Contact2</td>
+  <td>聯絡人2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D5.png" width="32" height="32" alt="FolderFill" /></td>
   <td>E8D5</td>
-  <td>FolderFill</td>
+  <td>資料夾（填滿）</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D6.png" width="32" height="32" alt="Audio" /></td>
   <td>E8D6</td>
@@ -1634,11 +1634,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D8.png" width="32" height="32" alt="DisableUpdates" /></td>
   <td>E8D8</td>
-  <td>DisableUpdates</td>
+  <td>停用更新</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8D9.png" width="32" height="32" alt="Unfavorite" /></td>
   <td>E8D9</td>
-  <td>Unfavorite</td>
+  <td>移除最愛</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DA.png" width="32" height="32" alt="OpenLocal" /></td>
   <td>E8DA</td>
@@ -1650,7 +1650,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DC.png" width="32" height="32" alt="Underline" /></td>
   <td>E8DC</td>
-  <td>Underline</td>
+  <td>劃底線</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DD.png" width="32" height="32" alt="Bold" /></td>
   <td>E8DD</td>
@@ -1658,59 +1658,59 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DE.png" width="32" height="32" alt="MoveToFolder" /></td>
   <td>E8DE</td>
-  <td>MoveToFolder</td>
+  <td>移動至資料夾</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8DF.png" width="32" height="32" alt="LikeDislike" /></td>
   <td>E8DF</td>
-  <td>LikeDislike</td>
+  <td>讚、倒讚</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E0.png" width="32" height="32" alt="Dislike" /></td>
   <td>E8E0</td>
-  <td>Dislike</td>
+  <td>倒讚</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E1.png" width="32" height="32" alt="Like" /></td>
   <td>E8E1</td>
-  <td>Like</td>
+  <td>讚</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E2.png" width="32" height="32" alt="AlignRight" /></td>
   <td>E8E2</td>
-  <td>AlignRight</td>
+  <td>靠右對齊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E3.png" width="32" height="32" alt="AlignCenter" /></td>
   <td>E8E3</td>
-  <td>AlignCenter</td>
+  <td>置中對齊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E4.png" width="32" height="32" alt="AlignLeft" /></td>
   <td>E8E4</td>
-  <td>AlignLeft</td>
+  <td>靠左對齊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E5.png" width="32" height="32" alt="OpenFile" /></td>
   <td>E8E5</td>
-  <td>OpenFile</td>
+  <td>開啟檔案</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E6.png" width="32" height="32" alt="ClearSelection" /></td>
   <td>E8E6</td>
-  <td>ClearSelection</td>
+  <td>清除選取</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E7.png" width="32" height="32" alt="FontDecrease" /></td>
   <td>E8E7</td>
-  <td>FontDecrease</td>
+  <td>縮小字級</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E8.png" width="32" height="32" alt="FontIncrease" /></td>
   <td>E8E8</td>
-  <td>FontIncrease</td>
+  <td>放大字級</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8E9.png" width="32" height="32" alt="FontSize" /></td>
   <td>E8E9</td>
-  <td>FontSize</td>
+  <td>文字尺寸</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EA.png" width="32" height="32" alt="CellPhone" /></td>
   <td>E8EA</td>
-  <td>CellPhone</td>
+  <td>手機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EB.png" width="32" height="32" alt="Reshare" /></td>
   <td>E8EB</td>
-  <td>Reshare</td>
+  <td>轉傳</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EC.png" width="32" height="32" alt="Tag" /></td>
   <td>E8EC</td>
@@ -1718,15 +1718,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8ED.png" width="32" height="32" alt="RepeatOne" /></td>
   <td>E8ED</td>
-  <td>RepeatOne</td>
+  <td>單一重複</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EE.png" width="32" height="32" alt="RepeatAll" /></td>
   <td>E8EE</td>
-  <td>RepeatAll</td>
+  <td>全部重複</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8EF.png" width="32" height="32" alt="Calculator" /></td>
   <td>E8EF</td>
-  <td>Calculator</td>
+  <td>計算機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F0.png" width="32" height="32" alt="Directions" /></td>
   <td>E8F0</td>
@@ -1738,7 +1738,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F2.png" width="32" height="32" alt="ChatBubbles" /></td>
   <td>E8F2</td>
-  <td>ChatBubbles</td>
+  <td>聊天氣球</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F3.png" width="32" height="32" alt="PostUpdate" /></td>
   <td>E8F3</td>
@@ -1746,7 +1746,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F4.png" width="32" height="32" alt="NewFolder" /></td>
   <td>E8F4</td>
-  <td>NewFolder</td>
+  <td>新資料夾</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F5.png" width="32" height="32" alt="CalendarReply" /></td>
   <td>E8F5</td>
@@ -1754,23 +1754,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F6.png" width="32" height="32" alt="UnsyncFolder" /></td>
   <td>E8F6</td>
-  <td>UnsyncFolder</td>
+  <td>停止同步資料夾</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F7.png" width="32" height="32" alt="SyncFolder" /></td>
   <td>E8F7</td>
-  <td>SyncFolder</td>
+  <td>同步資料夾</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F8.png" width="32" height="32" alt="BlockContact" /></td>
   <td>E8F8</td>
-  <td>BlockContact</td>
+  <td>封鎖聯絡人</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8F9.png" width="32" height="32" alt="SwitchApps" /></td>
   <td>E8F9</td>
-  <td>SwitchApps</td>
+  <td>切換應用程式</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FA.png" width="32" height="32" alt="AddFriend" /></td>
   <td>E8FA</td>
-  <td>AddFriend</td>
+  <td>新增好友</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E8FB.png" width="32" height="32" alt="Accept" /></td>
   <td>E8FB</td>
@@ -1798,27 +1798,27 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E904.png" width="32" height="32" alt="ZeroBars" /></td>
   <td>E904</td>
-  <td>ZeroBars</td>
+  <td>無訊號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E905.png" width="32" height="32" alt="OneBar" /></td>
   <td>E905</td>
-  <td>OneBar</td>
+  <td>一格訊號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E906.png" width="32" height="32" alt="TwoBars" /></td>
   <td>E906</td>
-  <td>TwoBars</td>
+  <td>兩格訊號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E907.png" width="32" height="32" alt="ThreeBars" /></td>
   <td>E907</td>
-  <td>ThreeBars</td>
+  <td>三格訊號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E908.png" width="32" height="32" alt="FourBars" /></td>
   <td>E908</td>
-  <td>FourBars</td>
+  <td>滿格訊號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E909.png" width="32" height="32" alt="World" /></td>
   <td>E909</td>
-  <td>World</td>
+  <td>世界</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E90A.png" width="32" height="32" alt="Comment" /></td>
   <td>E90A</td>
@@ -1826,7 +1826,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E90B.png" width="32" height="32" alt="MusicInfo" /></td>
   <td>E90B</td>
-  <td>MusicInfo</td>
+  <td>音樂資訊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E90C.png" width="32" height="32" alt="DockLeft" /></td>
   <td>E90C</td>
@@ -1858,11 +1858,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E913.png" width="32" height="32" alt="Street" /></td>
   <td>E913</td>
-  <td>Street</td>
+  <td>街道</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E914.png" width="32" height="32" alt="Printer3D" /></td>
   <td>E914</td>
-  <td>Printer3D</td>
+  <td>3D列印機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E915.png" width="32" height="32" alt="RadioBullet" /></td>
   <td>E915</td>
@@ -1870,11 +1870,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E916.png" width="32" height="32" alt="Stopwatch" /></td>
   <td>E916</td>
-  <td>Stopwatch</td>
+  <td>碼表</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E91B.png" width="32" height="32" alt="Photo" /></td>
   <td>E91B</td>
-  <td>Photo</td>
+  <td>相片</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E91C.png" width="32" height="32" alt="ActionCenter" /></td>
   <td>E91C</td>
@@ -1886,15 +1886,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E921.png" width="32" height="32" alt="ChromeMinimize" /></td>
   <td>E921</td>
-  <td>ChromeMinimize</td>
+  <td>［Chrome］最小化</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E922.png" width="32" height="32" alt="ChromeMaximize" /></td>
   <td>E922</td>
-  <td>ChromeMaximize</td>
+  <td>［Chrome］最大化</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E923.png" width="32" height="32" alt="ChromeRestore" /></td>
   <td>E923</td>
-  <td>ChromeRestore</td>
+  <td>［Chrome］還原視窗</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E924.png" width="32" height="32" alt="Annotation" /></td>
   <td>E924</td>
@@ -1910,23 +1910,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E927.png" width="32" height="32" alt="Swipe" /></td>
   <td>E927</td>
-  <td>Swipe</td>
+  <td>滑動</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E928.png" width="32" height="32" alt="Fingerprint" /></td>
   <td>E928</td>
-  <td>Fingerprint</td>
+  <td>指紋</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E929.png" width="32" height="32" alt="Handwriting" /></td>
   <td>E929</td>
-  <td>Handwriting</td>
+  <td>手寫</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E92C.png" width="32" height="32" alt="ChromeBackToWindow" /></td>
   <td>E92C</td>
-  <td>ChromeBackToWindow</td>
+  <td>［Chrome］回到視窗</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E92D.png" width="32" height="32" alt="ChromeFullScreen" /></td>
   <td>E92D</td>
-  <td>ChromeFullScreen</td>
+  <td>［Chrome］全螢幕</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E92E.png" width="32" height="32" alt="KeyboardStandard" /></td>
   <td>E92E</td>
@@ -1934,11 +1934,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E92F.png" width="32" height="32" alt="KeyboardDismiss" /></td>
   <td>E92F</td>
-  <td>KeyboardDismiss</td>
+  <td>收起鍵盤</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E930.png" width="32" height="32" alt="Completed" /></td>
   <td>E930</td>
-  <td>Completed</td>
+  <td>完成</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E931.png" width="32" height="32" alt="ChromeAnnotate" /></td>
   <td>E931</td>
@@ -1978,15 +1978,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E93C.png" width="32" height="32" alt="MusicAlbum" /></td>
   <td>E93C</td>
-  <td>MusicAlbum</td>
+  <td>音樂專輯</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E93E.png" width="32" height="32" alt="Streaming" /></td>
   <td>E93E</td>
-  <td>Streaming</td>
+  <td>正在串流中</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E943.png" width="32" height="32" alt="Code" /></td>
   <td>E943</td>
-  <td>代碼</td>
+  <td>程式碼</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E944.png" width="32" height="32" alt="ReturnToWindow" /></td>
   <td>E944</td>
@@ -1994,47 +1994,47 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E945.png" width="32" height="32" alt="LightningBolt" /></td>
   <td>E945</td>
-  <td>LightningBolt</td>
+  <td>閃電</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E946.png" width="32" height="32" alt="Info" /></td>
   <td>E946</td>
-  <td>Info</td>
+  <td>資訊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E947.png" width="32" height="32" alt="CalculatorMultiply" /></td>
   <td>E947</td>
-  <td>CalculatorMultiply</td>
+  <td>［計算機］乘</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E948.png" width="32" height="32" alt="CalculatorAddition" /></td>
   <td>E948</td>
-  <td>CalculatorAddition</td>
+  <td>［計算機］加</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E949.png" width="32" height="32" alt="CalculatorSubtract" /></td>
   <td>E949</td>
-  <td>CalculatorSubtract</td>
+  <td>［計算機］減</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E94A.png" width="32" height="32" alt="CalculatorDivide" /></td>
   <td>E94A</td>
-  <td>CalculatorDivide</td>
+  <td>［計算機］除</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E94B.png" width="32" height="32" alt="CalculatorSquareroot" /></td>
   <td>E94B</td>
-  <td>CalculatorSquareroot</td>
+  <td>［計算機］開平方根</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E94C.png" width="32" height="32" alt="CalculatorPercentage" /></td>
   <td>E94C</td>
-  <td>CalculatorPercentage</td>
+  <td>［計算機］百分比</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E94D.png" width="32" height="32" alt="CalculatorNegate" /></td>
   <td>E94D</td>
-  <td>CalculatorNegate</td>
+  <td>［計算機］正負號</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E94E.png" width="32" height="32" alt="CalculatorEqualTo" /></td>
   <td>E94E</td>
-  <td>CalculatorEqualTo</td>
+  <td>［計算機］等於</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E94F.png" width="32" height="32" alt="CalculatorBackspace" /></td>
   <td>E94F</td>
-  <td>CalculatorBackspace</td>
+  <td>［計算機］刪除</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E950.png" width="32" height="32" alt="Component" /></td>
   <td>E950</td>
@@ -2050,39 +2050,39 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E953.png" width="32" height="32" alt="MultimediaDMS" /></td>
   <td>E953</td>
-  <td>MultimediaDMS</td>
+  <td>［多媒體］DMS</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E954.png" width="32" height="32" alt="MultimediaDVR" /></td>
   <td>E954</td>
-  <td>MultimediaDVR</td>
+  <td>［多媒體］DVR</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E955.png" width="32" height="32" alt="MultimediaPMP" /></td>
   <td>E955</td>
-  <td>MultimediaPMP</td>
+  <td>［多媒體］PMP</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E956.png" width="32" height="32" alt="PrintfaxPrinterFile" /></td>
   <td>E956</td>
-  <td>PrintfaxPrinterFile</td>
+  <td>傳真機列印檔案</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E957.png" width="32" height="32" alt="Sensor" /></td>
   <td>E957</td>
-  <td>Sensor</td>
+  <td>感應器</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E958.png" width="32" height="32" alt="StorageOptical" /></td>
   <td>E958</td>
-  <td>StorageOptical</td>
+  <td>光碟</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95A.png" width="32" height="32" alt="Communications" /></td>
   <td>E95A</td>
-  <td>Communications</td>
+  <td>通訊</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95B.png" width="32" height="32" alt="Headset" /></td>
   <td>E95B</td>
-  <td>Headset</td>
+  <td>頭戴耳機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95D.png" width="32" height="32" alt="Projector" /></td>
   <td>E95D</td>
-  <td>Projector</td>
+  <td>投影機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E95E.png" width="32" height="32" alt="Health" /></td>
   <td>E95E</td>
@@ -2094,7 +2094,7 @@ ms.locfileid: "97865511"
 </tr>
 <tr><td><img src="images/segoe-mdl/E960.png" width="32" height="32" alt="Webcam2" /></td>
   <td>E960</td>
-  <td>Webcam2</td>
+  <td>網路攝影機2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E961.png" width="32" height="32" alt="Input" /></td>
   <td>E961</td>
@@ -2106,11 +2106,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E963.png" width="32" height="32" alt="Smartcard" /></td>
   <td>E963</td>
-  <td>Smartcard</td>
+  <td>智慧卡</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E964.png" width="32" height="32" alt="SmartcardVirtual" /></td>
   <td>E964</td>
-  <td>SmartcardVirtual</td>
+  <td>虛擬智慧卡</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E965.png" width="32" height="32" alt="MediaStorageTower" /></td>
   <td>E965</td>
@@ -2122,7 +2122,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E967.png" width="32" height="32" alt="GameConsole" /></td>
   <td>E967</td>
-  <td>GameConsole</td>
+  <td>遊戲家機</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E968.png" width="32" height="32" alt="Network" /></td>
   <td>E968</td>
@@ -2130,11 +2130,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E969.png" width="32" height="32" alt="StorageNetworkWireless" /></td>
   <td>E969</td>
-  <td>StorageNetworkWireless</td>
+  <td>無線儲存空間</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E96A.png" width="32" height="32" alt="StorageTape" /></td>
   <td>E96A</td>
-  <td>StorageTape</td>
+  <td>磁帶</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E96D.png" width="32" height="32" alt="ChevronUpSmall" /></td>
   <td>E96D</td>
@@ -2170,7 +2170,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E975.png" width="32" height="32" alt="Devices2" /></td>
   <td>E975</td>
-  <td>Devices2</td>
+  <td>裝置2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E976.png" width="32" height="32" alt="ExpandTile" /></td>
   <td>E976</td>
@@ -2206,11 +2206,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E97E.png" width="32" height="32" alt="HalfAlpha" /></td>
   <td>E97E</td>
-  <td>HalfAlpha</td>
+  <td>半形</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E97F.png" width="32" height="32" alt="FullAlpha" /></td>
   <td>E97F</td>
-  <td>FullAlpha</td>
+  <td>全形</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E980.png" width="32" height="32" alt="Key12On" /></td>
   <td>E980</td>
@@ -2218,7 +2218,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E981.png" width="32" height="32" alt="ChineseChangjie" /></td>
   <td>E981</td>
-  <td>ChineseChangjie</td>
+  <td>倉頡輸入法</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E982.png" width="32" height="32" alt="QWERTYOn" /></td>
   <td>E982</td>
@@ -2230,7 +2230,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E984.png" width="32" height="32" alt="ChineseQuick" /></td>
   <td>E984</td>
-  <td>ChineseQuick</td>
+  <td>速成輸入法</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E985.png" width="32" height="32" alt="Japanese" /></td>
   <td>E985</td>
@@ -2250,15 +2250,15 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E989.png" width="32" height="32" alt="ChineseBoPoMoFo" /></td>
   <td>E989</td>
-  <td>ChineseBoPoMoFo</td>
+  <td>注音輸入法</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E98A.png" width="32" height="32" alt="ChinesePinyin" /></td>
   <td>E98A</td>
-  <td>ChinesePinyin</td>
+  <td>簡體拼音輸入法</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E98F.png" width="32" height="32" alt="ConstructionCone" /></td>
   <td>E98F</td>
-  <td>ConstructionCone</td>
+  <td>交通錐</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E990.png" width="32" height="32" alt="XboxOneConsole" /></td>
   <td>E990</td>
@@ -2266,23 +2266,23 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E992.png" width="32" height="32" alt="Volume0" /></td>
   <td>E992</td>
-  <td>Volume0</td>
+  <td>音量0</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E993.png" width="32" height="32" alt="Volume1" /></td>
   <td>E993</td>
-  <td>Volume1</td>
+  <td>音量1</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E994.png" width="32" height="32" alt="Volume2" /></td>
   <td>E994</td>
-  <td>Volume2</td>
+  <td>音量2</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E995.png" width="32" height="32" alt="Volume3" /></td>
   <td>E995</td>
-  <td>Volume3</td>
+  <td>音量3</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E996.png" width="32" height="32" alt="BatteryUnknown" /></td>
   <td>E996</td>
-  <td>BatteryUnknown</td>
+  <td>電池資訊不明</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E998.png" width="32" height="32" alt="WifiAttentionOverlay" /></td>
   <td>E998</td>
@@ -2290,7 +2290,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E99A.png" width="32" height="32" alt="Robot" /></td>
   <td>E99A</td>
-  <td>Robot</td>
+  <td>機器人</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9A1.png" width="32" height="32" alt="TapAndSend" /></td>
   <td>E9A1</td>
@@ -2302,11 +2302,11 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9A8.png" width="32" height="32" alt="PasswordKeyShow" /></td>
   <td>E9A8</td>
-  <td>PasswordKeyShow</td>
+  <td>顯示密碼</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9A9.png" width="32" height="32" alt="PasswordKeyHide" /></td>
   <td>E9A9</td>
-  <td>PasswordKeyHide</td>
+  <td>隱藏密碼</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9AA.png" width="32" height="32" alt="BidiLtr" /></td>
   <td>E9AA</td>
@@ -2390,7 +2390,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9CE.png" width="32" height="32" alt="Unknown" /></td>
   <td>E9CE</td>
-  <td>Unknown</td>
+  <td>不明的</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9D2.png" width="32" height="32" alt="AreaChart" /></td>
   <td>E9D2</td>
@@ -2410,7 +2410,7 @@ ms.locfileid: "97865511"
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F3.png" width="32" height="32" alt="Process" /></td>
   <td>E9F3</td>
-  <td>處理序</td>
+  <td>處理程序</td>
  </tr>
 <tr><td><img src="images/segoe-mdl/E9F5.png" width="32" height="32" alt="Processing" /></td>
   <td>E9F5</td>
