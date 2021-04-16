@@ -12,12 +12,12 @@ design-contact: jeffarn
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ba67dfa51c039055cc5bc4cb31d4aff4de6765
-ms.sourcegitcommit: b99fe39126fbb457c3690312641f57d22ba7c8b6
-ms.translationtype: HT
+ms.openlocfilehash: 95adaae83596ab33bccbf5e0268d21dbfd53bad2
+ms.sourcegitcommit: 8f7d30ad2040a3a4b0cb520b86f8fb448086aae6
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603881"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107562537"
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -172,13 +172,13 @@ Imports muxc = Microsoft.UI.Xaml.Controls
 
 **ProgressRing - 不確定**
 
-![「不確定」的 ProgressRing 範例](images/PR_IndeterminateExample.png)
+![「不確定」的 ProgressRing 範例](images/progress-ring-indeterminate-example.png)
 
 當使用者與應用程式之間任何進一步的互動停止時，或應用程式正在等候使用者輸入以繼續時，會使用不確定的 ProgressRing。 上方的「正在登入...」範例是絕佳的 ProgressRing 案例，使用者必須等到簽署完成後，才能繼續使用應用程式。
 
 **ProgressRing - 確定**
 
-![確定 ProgressRing 範例](images/progress_ring_determinate_example.png)
+![確定 ProgressRing 範例](images/progress-ring-determinate-example.png)
 
 當作業的持續時間是已知且希望是環形視覺效果 (如正在安裝、下載、設定等時候)，則確定 ProgressRing 是最佳的選項。
 

@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a67c88eb7eb70308e6dcbbd096289c0617793b1
-ms.sourcegitcommit: 53c00939b20d4b0a294936df3d395adb0c13e231
+ms.openlocfilehash: 229f02769c213b1fab04d3694040eb3271f88649
+ms.sourcegitcommit: 6cd970686d1ea7176b7e6651f349a14551709820
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91933069"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "107559376"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -24,7 +24,7 @@ ms.locfileid: "91933069"
 
 首先，在 Visual Studio 中建立新的空白應用程式。 
 
-其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這樣做，請以滑鼠右鍵按一下您的專案，選擇 [**存放區**  >  **關聯應用程式與存放區**]，然後依照嚮導的指示進行。 
+其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這樣做，請以滑鼠右鍵按一下您的專案，選擇 [**儲存/發行**  >  **關聯應用程式與存放區**]，然後依照嚮導的指示進行。 
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -133,7 +133,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 請注意，我們也會傳送字串「consumers」到選擇性的 *authority* 參數。 這是因為 Microsoft 提供兩種不同類型的驗證 - 針對「consumers (消費者)」的 Microsoft 帳戶 (MSA)，針對「organizations (組織)」的 Azure Active Directory (AAD)。 「consumers (消費者)」授權表示我們想要 MSA 選項。 如果您是在開發企業應用程式，請改為使用「organizations (組織)」字串。
 
-最後，建立新的**[WebAccountProviderCommand](/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** ，如下所示，將提供者新增至**AccountsSettingsPane** ： 
+最後，建立新的 **[WebAccountProviderCommand](/uwp/api/windows.ui.applicationsettings.webaccountprovidercommand)** ，如下所示，將提供者新增至 **AccountsSettingsPane** ： 
 
 ```csharp
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -250,7 +250,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 權杖對於立即取得使用者的相關資訊非常有用，但它們通常具有不同的壽命 - 例如 MSA 權杖僅在幾個小時內有效。 幸運的是，您不需要每次在權杖到期時都重新顯示 **AccountsSettingsPane**。 使用者只要授權您的應用程式一次，您就可以儲存使用者的帳戶資訊供以後使用。 
 
-若要這樣做，請使用 **[WebAccount](/uwp/api/windows.security.credentials.webaccount)** 類別。 **WebAccount**會透過您用來要求權杖的相同方法傳回：
+若要這樣做，請使用 **[WebAccount](/uwp/api/windows.security.credentials.webaccount)** 類別。 **WebAccount** 會透過您用來要求權杖的相同方法傳回：
 
 ```csharp
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
