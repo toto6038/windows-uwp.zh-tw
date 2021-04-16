@@ -761,7 +761,7 @@
           href: ../cpp-and-winrt-apis/strings.md
         - name: 標準 C++ 資料類型
           href: ../cpp-and-winrt-apis/std-cpp-data-types.md
-        - name: 將純量數值 Boxing 和 unboxing 到 IInspectable
+        - name: 要 IInspectable 的裝箱和取消裝箱值
           href: ../cpp-and-winrt-apis/boxing.md
         - name: 取用 API
           href: ../cpp-and-winrt-apis/consume-apis.md
@@ -819,7 +819,7 @@
           items:
             - name: 值類別，以及參考
               href: ../cpp-and-winrt-apis/cpp-value-categories.md
-        - name: '撰寫用來從 c + +/WinRT 應用程式使用的 c # Windows 執行時間元件'
+        - name: '撰寫 c # Windows 執行階段元件以從 c + +/WinRT 應用程式使用'
           href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
     - name: C#/WinRT
       items:

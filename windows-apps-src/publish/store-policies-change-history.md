@@ -1,20 +1,19 @@
 ---
 title: Microsoft Store 原則變更歷程記錄
 description: 檢視說明 Microsoft Store 原則變更歷程記錄的資料表，其中描述每項變更的新增、更新和刪除。
-ms.date: 10/01/2019
+ms.date: 04/15/2021
 ms.topic: article
 keywords: microsoft store 原則合約
 ms.localizationpriority: high
 ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
-ms.openlocfilehash: 7460658e2622fe1a08983a9519e9eda9f5b4b1ac
-ms.sourcegitcommit: 7b2febddb3e8a17c9ab158abcdd2a59ce126661c
-ms.translationtype: HT
+ms.openlocfilehash: 269b665eb9f48dd82629371af09310cdf8b2f3cb
+ms.sourcegitcommit: a54eaafdd00991a20be582732e7eb02541d4525c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "89161842"
+ms.lasthandoff: 04/15/2021
+ms.locfileid: "107521292"
 ---
 # <a name="change-history-for-microsoft-store-policies"></a>Microsoft Store 原則變更歷程記錄
-
 
 <table>
 <colgroup>
@@ -30,9 +29,17 @@ ms.locfileid: "89161842"
 </tr>
 </thead>
 <tbody>
+<tr class="even">
+<td>2021 年 4 月 15 日</td>
+<td><a href="https://docs.microsoft.com/windows/uwp/publish/store-policies">7.13</a></td>
+<td><p>更新至原則 10.1 以包含中繼資料的範例 (其中包含產品類別)，並針對認定為遊戲的產品提供指引。 </p>
+<p>使用適用於 PC 遊戲訂閱產品的特定原則來更新原則 10.8.6。</p>
+<p>更新至原則 10.13 以移除創作者產品的 XBL 需求；同時從 Store 原則中移除任何 XBL 特定原則，因為 XBL 需求可在 https://aka.ms/xboxlivepolicy 中找到。</p>
+<p>更新至原則 11.12，以釐清與使用者產生內容相關的原則需求。</p></td>
+</tr>
 <tr class="odd">
 <td>2019 年 10 月 1 日</td>
-<td>7.12</td>
+<td><a href="https://docs.microsoft.com/windows/uwp/publish/store-policy-archive/store-policy-7-12">7.12</a></td>
 <td><p>在新增的新原則 10.2.6 中，禁用在裝置上挖掘加密貨幣的應用程式。</p>
 <p>在 10.8.4 更新版本中，針對提供「戰利品箱」或其他隨機虛擬物品的產品，新增了揭露機率的要求。</p>
 <p>在 10.8.7 更新版本中，新增與定價規定相關的要求。</p>
@@ -193,7 +200,6 @@ ms.locfileid: "89161842"
 </tr>
 </tbody>
 </table>
-
 
 ### <a name="see-also"></a>另請參閱
 
